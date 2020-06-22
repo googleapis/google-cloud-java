@@ -135,6 +135,7 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The logName.
    */
+  @java.lang.Override
   public java.lang.String getLogName() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for logName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {

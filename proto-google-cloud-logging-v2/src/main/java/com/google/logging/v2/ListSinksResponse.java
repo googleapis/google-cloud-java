@@ -137,6 +137,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.logging.v2.LogSink> getSinksList() {
     return sinks_;
   }
@@ -149,6 +150,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.logging.v2.LogSinkOrBuilder> getSinksOrBuilderList() {
     return sinks_;
   }
@@ -161,6 +163,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
+  @java.lang.Override
   public int getSinksCount() {
     return sinks_.size();
   }
@@ -173,6 +176,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogSink getSinks(int index) {
     return sinks_.get(index);
   }
@@ -185,6 +189,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogSinkOrBuilder getSinksOrBuilder(int index) {
     return sinks_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

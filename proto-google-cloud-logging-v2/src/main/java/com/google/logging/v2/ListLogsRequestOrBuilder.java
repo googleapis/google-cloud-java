@@ -34,7 +34,9 @@ public interface ListLogsRequestOrBuilder
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -50,7 +52,9 @@ public interface ListLogsRequestOrBuilder
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -65,7 +69,7 @@ public interface ListLogsRequestOrBuilder
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -81,7 +85,7 @@ public interface ListLogsRequestOrBuilder
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -96,7 +100,7 @@ public interface ListLogsRequestOrBuilder
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

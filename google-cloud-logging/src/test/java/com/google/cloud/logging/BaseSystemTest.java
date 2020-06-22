@@ -38,7 +38,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.logging.v2.LogName;
-import com.google.logging.v2.ProjectLogName;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
@@ -210,7 +209,7 @@ public abstract class BaseSystemTest {
   public void testWriteAndListLogEntries() throws InterruptedException {
     String logId = formatForTest("test-write-log-entries-log");
     LoggingOptions loggingOptions = logging().getOptions();
-    LogName logName = ProjectLogName.of(loggingOptions.getProjectId(), logId);
+    LogName logName = LogName.ofProjectLogName(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry =
         LogEntry.newBuilder(firstPayload)
@@ -297,7 +296,7 @@ public abstract class BaseSystemTest {
   public void testLoggingHandler() throws InterruptedException {
     String logId = formatForTest("test-logging-handler");
     LoggingOptions options = logging().getOptions();
-    LogName logName = ProjectLogName.of(options.getProjectId(), logId);
+    LogName logName = LogName.ofProjectLogName(options.getProjectId(), logId);
     LoggingHandler handler = new LoggingHandler(logId, options);
     handler.setLevel(Level.INFO);
     Logger logger = Logger.getLogger(getClass().getName());
@@ -337,7 +336,7 @@ public abstract class BaseSystemTest {
   public void testSyncLoggingHandler() throws InterruptedException {
     String logId = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
-    LogName logName = ProjectLogName.of(options.getProjectId(), logId);
+    LogName logName = LogName.ofProjectLogName(options.getProjectId(), logId);
     MonitoredResource resource =
         MonitoredResource.of(
             "gce_instance",

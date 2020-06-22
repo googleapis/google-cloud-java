@@ -244,22 +244,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 202:
-            {
-              com.google.api.MonitoredResourceMetadata.Builder subBuilder = null;
-              if (metadata_ != null) {
-                subBuilder = metadata_.toBuilder();
-              }
-              metadata_ =
-                  input.readMessage(
-                      com.google.api.MonitoredResourceMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 218:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -377,9 +361,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * A project number may optionally be used in place of PROJECT_ID. The project
-   * number is translated to its corresponding PROJECT_ID internally and the
-   * `log_name` field will contain PROJECT_ID in queries and exports.
+   * A project number may be used in place of PROJECT_ID. The project number is
+   * translated to its corresponding PROJECT_ID internally and the `log_name`
+   * field will contain PROJECT_ID in queries and exports.
    * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
    * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -392,10 +376,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * any results.
    * </pre>
    *
-   * <code>string log_name = 12;</code>
+   * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The logName.
    */
+  @java.lang.Override
   public java.lang.String getLogName() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
@@ -416,9 +401,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * A project number may optionally be used in place of PROJECT_ID. The project
-   * number is translated to its corresponding PROJECT_ID internally and the
-   * `log_name` field will contain PROJECT_ID in queries and exports.
+   * A project number may be used in place of PROJECT_ID. The project number is
+   * translated to its corresponding PROJECT_ID internally and the `log_name`
+   * field will contain PROJECT_ID in queries and exports.
    * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
    * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -431,10 +416,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * any results.
    * </pre>
    *
-   * <code>string log_name = 12;</code>
+   * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for logName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
@@ -459,10 +445,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * the error.
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 8;</code>
+   * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -476,10 +464,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * the error.
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 8;</code>
+   * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
@@ -493,8 +483,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * the error.
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 8;</code>
+   * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
     return getResource();
   }
@@ -516,6 +508,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the protoPayload field is set.
    */
+  @java.lang.Override
   public boolean hasProtoPayload() {
     return payloadCase_ == 2;
   }
@@ -535,6 +528,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The protoPayload.
    */
+  @java.lang.Override
   public com.google.protobuf.Any getProtoPayload() {
     if (payloadCase_ == 2) {
       return (com.google.protobuf.Any) payload_;
@@ -555,6 +549,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Any proto_payload = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getProtoPayloadOrBuilder() {
     if (payloadCase_ == 2) {
       return (com.google.protobuf.Any) payload_;
@@ -631,6 +626,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the jsonPayload field is set.
    */
+  @java.lang.Override
   public boolean hasJsonPayload() {
     return payloadCase_ == 6;
   }
@@ -646,6 +642,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jsonPayload.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getJsonPayload() {
     if (payloadCase_ == 6) {
       return (com.google.protobuf.Struct) payload_;
@@ -662,6 +659,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct json_payload = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getJsonPayloadOrBuilder() {
     if (payloadCase_ == 6) {
       return (com.google.protobuf.Struct) payload_;
@@ -675,23 +673,24 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The time the event described by the log entry occurred.  This
-   * time is used to compute the log entry's age and to enforce the logs
-   * retention period. If this field is omitted in a new log entry, then Logging
-   * assigns it the current time.  Timestamps have nanosecond accuracy, but
-   * trailing zeros in the fractional seconds might be omitted when the
-   * timestamp is displayed.
+   * Optional. The time the event described by the log entry occurred. This time is used
+   * to compute the log entry's age and to enforce the logs retention period.
+   * If this field is omitted in a new log entry, then Logging assigns it the
+   * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+   * the fractional seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than the [logs
-   * retention period](/logging/quotas) in the past, and no more than 24 hours
+   * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
    * in the future. Log entries outside those time boundaries will not be
    * available when calling `entries.list`, but those log entries can still be
-   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the timestamp field is set.
    */
+  @java.lang.Override
   public boolean hasTimestamp() {
     return timestamp_ != null;
   }
@@ -699,23 +698,24 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The time the event described by the log entry occurred.  This
-   * time is used to compute the log entry's age and to enforce the logs
-   * retention period. If this field is omitted in a new log entry, then Logging
-   * assigns it the current time.  Timestamps have nanosecond accuracy, but
-   * trailing zeros in the fractional seconds might be omitted when the
-   * timestamp is displayed.
+   * Optional. The time the event described by the log entry occurred. This time is used
+   * to compute the log entry's age and to enforce the logs retention period.
+   * If this field is omitted in a new log entry, then Logging assigns it the
+   * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+   * the fractional seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than the [logs
-   * retention period](/logging/quotas) in the past, and no more than 24 hours
+   * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
    * in the future. Log entries outside those time boundaries will not be
    * available when calling `entries.list`, but those log entries can still be
-   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The timestamp.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
@@ -723,21 +723,22 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The time the event described by the log entry occurred.  This
-   * time is used to compute the log entry's age and to enforce the logs
-   * retention period. If this field is omitted in a new log entry, then Logging
-   * assigns it the current time.  Timestamps have nanosecond accuracy, but
-   * trailing zeros in the fractional seconds might be omitted when the
-   * timestamp is displayed.
+   * Optional. The time the event described by the log entry occurred. This time is used
+   * to compute the log entry's age and to enforce the logs retention period.
+   * If this field is omitted in a new log entry, then Logging assigns it the
+   * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+   * the fractional seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than the [logs
-   * retention period](/logging/quotas) in the past, and no more than 24 hours
+   * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
    * in the future. Log entries outside those time boundaries will not be
    * available when calling `entries.list`, but those log entries can still be
-   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
     return getTimestamp();
   }
@@ -751,10 +752,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the log entry was received by Logging.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+   * <code>
+   * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the receiveTimestamp field is set.
    */
+  @java.lang.Override
   public boolean hasReceiveTimestamp() {
     return receiveTimestamp_ != null;
   }
@@ -765,10 +769,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the log entry was received by Logging.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+   * <code>
+   * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The receiveTimestamp.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReceiveTimestamp() {
     return receiveTimestamp_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -781,8 +788,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the log entry was received by Logging.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+   * <code>
+   * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReceiveTimestampOrBuilder() {
     return getReceiveTimestamp();
   }
@@ -793,14 +803,15 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of the log entry. The default value is
-   * `LogSeverity.DEFAULT`.
+   * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
    * </pre>
    *
-   * <code>.google.logging.type.LogSeverity severity = 10;</code>
+   * <code>.google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for severity.
    */
+  @java.lang.Override
   public int getSeverityValue() {
     return severity_;
   }
@@ -808,14 +819,15 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of the log entry. The default value is
-   * `LogSeverity.DEFAULT`.
+   * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
    * </pre>
    *
-   * <code>.google.logging.type.LogSeverity severity = 10;</code>
+   * <code>.google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The severity.
    */
+  @java.lang.Override
   public com.google.logging.type.LogSeverity getSeverity() {
     @SuppressWarnings("deprecation")
     com.google.logging.type.LogSeverity result =
@@ -829,8 +841,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Logging considers other log entries in the same project, with the same
+   * Optional. A unique identifier for the log entry. If you provide a value, then
+   * Logging considers other log entries in the same project, with the same
    * `timestamp`, and with the same `insert_id` to be duplicates which are
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
@@ -840,10 +852,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * the same `log_name` and `timestamp` values.
    * </pre>
    *
-   * <code>string insert_id = 4;</code>
+   * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The insertId.
    */
+  @java.lang.Override
   public java.lang.String getInsertId() {
     java.lang.Object ref = insertId_;
     if (ref instanceof java.lang.String) {
@@ -859,8 +872,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Logging considers other log entries in the same project, with the same
+   * Optional. A unique identifier for the log entry. If you provide a value, then
+   * Logging considers other log entries in the same project, with the same
    * `timestamp`, and with the same `insert_id` to be duplicates which are
    * removed in a single query result. However, there are no guarantees of
    * de-duplication in the export of logs.
@@ -870,10 +883,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * the same `log_name` and `timestamp` values.
    * </pre>
    *
-   * <code>string insert_id = 4;</code>
+   * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for insertId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInsertIdBytes() {
     java.lang.Object ref = insertId_;
     if (ref instanceof java.lang.String) {
@@ -892,14 +906,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Information about the HTTP request associated with this log
-   * entry, if applicable.
+   * Optional. Information about the HTTP request associated with this log entry, if
+   * applicable.
    * </pre>
    *
-   * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+   * <code>
+   * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the httpRequest field is set.
    */
+  @java.lang.Override
   public boolean hasHttpRequest() {
     return httpRequest_ != null;
   }
@@ -907,14 +924,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Information about the HTTP request associated with this log
-   * entry, if applicable.
+   * Optional. Information about the HTTP request associated with this log entry, if
+   * applicable.
    * </pre>
    *
-   * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+   * <code>
+   * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The httpRequest.
    */
+  @java.lang.Override
   public com.google.logging.type.HttpRequest getHttpRequest() {
     return httpRequest_ == null
         ? com.google.logging.type.HttpRequest.getDefaultInstance()
@@ -924,12 +944,15 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Information about the HTTP request associated with this log
-   * entry, if applicable.
+   * Optional. Information about the HTTP request associated with this log entry, if
+   * applicable.
    * </pre>
    *
-   * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+   * <code>
+   * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.logging.type.HttpRequestOrBuilder getHttpRequestOrBuilder() {
     return getHttpRequest();
   }
@@ -967,8 +990,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * information about the log entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 11;</code>
+   * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -976,6 +1000,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -988,8 +1013,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * information about the log entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 11;</code>
+   * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -1001,8 +1027,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * information about the log entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 11;</code>
+   * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1018,8 +1045,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * information about the log entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 11;</code>
+   * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1029,75 +1057,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
-  }
-
-  public static final int METADATA_FIELD_NUMBER = 25;
-  private com.google.api.MonitoredResourceMetadata metadata_;
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. Output only. Additional metadata about the monitored resource.
-   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-   * this field populated for GKE versions older than 1.12.6. For GKE versions
-   * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-   * pod labels that used to be in `metadata.userLabels` will now be present in
-   * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-   * labels that were present in the `metadata.systemLabels` field will no
-   * longer be available in the LogEntry.
-   * </pre>
-   *
-   * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-   *
-   * @return Whether the metadata field is set.
-   */
-  @java.lang.Deprecated
-  public boolean hasMetadata() {
-    return metadata_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. Output only. Additional metadata about the monitored resource.
-   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-   * this field populated for GKE versions older than 1.12.6. For GKE versions
-   * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-   * pod labels that used to be in `metadata.userLabels` will now be present in
-   * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-   * labels that were present in the `metadata.systemLabels` field will no
-   * longer be available in the LogEntry.
-   * </pre>
-   *
-   * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-   *
-   * @return The metadata.
-   */
-  @java.lang.Deprecated
-  public com.google.api.MonitoredResourceMetadata getMetadata() {
-    return metadata_ == null
-        ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
-        : metadata_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. Output only. Additional metadata about the monitored resource.
-   * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-   * this field populated for GKE versions older than 1.12.6. For GKE versions
-   * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-   * pod labels that used to be in `metadata.userLabels` will now be present in
-   * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-   * labels that were present in the `metadata.systemLabels` field will no
-   * longer be available in the LogEntry.
-   * </pre>
-   *
-   * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
   }
 
   public static final int OPERATION_FIELD_NUMBER = 15;
@@ -1110,10 +1069,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * applicable.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+   * <code>
+   * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the operation field is set.
    */
+  @java.lang.Override
   public boolean hasOperation() {
     return operation_ != null;
   }
@@ -1125,10 +1087,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * applicable.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+   * <code>
+   * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The operation.
    */
+  @java.lang.Override
   public com.google.logging.v2.LogEntryOperation getOperation() {
     return operation_ == null
         ? com.google.logging.v2.LogEntryOperation.getDefaultInstance()
@@ -1142,8 +1107,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * applicable.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+   * <code>
+   * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogEntryOperationOrBuilder getOperationOrBuilder() {
     return getOperation();
   }
@@ -1154,16 +1122,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource name of the trace associated with the log entry, if any.
-   * If it contains a relative resource name, the name is assumed to be relative
-   * to `//tracing.googleapis.com`. Example:
+   * Optional. Resource name of the trace associated with the log entry, if any. If it
+   * contains a relative resource name, the name is assumed to be relative to
+   * `//tracing.googleapis.com`. Example:
    * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
    * </pre>
    *
-   * <code>string trace = 22;</code>
+   * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The trace.
    */
+  @java.lang.Override
   public java.lang.String getTrace() {
     java.lang.Object ref = trace_;
     if (ref instanceof java.lang.String) {
@@ -1179,16 +1148,17 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource name of the trace associated with the log entry, if any.
-   * If it contains a relative resource name, the name is assumed to be relative
-   * to `//tracing.googleapis.com`. Example:
+   * Optional. Resource name of the trace associated with the log entry, if any. If it
+   * contains a relative resource name, the name is assumed to be relative to
+   * `//tracing.googleapis.com`. Example:
    * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
    * </pre>
    *
-   * <code>string trace = 22;</code>
+   * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for trace.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTraceBytes() {
     java.lang.Object ref = trace_;
     if (ref instanceof java.lang.String) {
@@ -1210,13 +1180,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * Optional. The span ID within the trace associated with the log entry.
    * For Trace spans, this is the same format that the Trace API v2 uses: a
    * 16-character hexadecimal encoding of an 8-byte array, such as
-   * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+   * `000000000000004a`.
    * </pre>
    *
-   * <code>string span_id = 27;</code>
+   * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The spanId.
    */
+  @java.lang.Override
   public java.lang.String getSpanId() {
     java.lang.Object ref = spanId_;
     if (ref instanceof java.lang.String) {
@@ -1235,13 +1206,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * Optional. The span ID within the trace associated with the log entry.
    * For Trace spans, this is the same format that the Trace API v2 uses: a
    * 16-character hexadecimal encoding of an 8-byte array, such as
-   * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+   * `000000000000004a`.
    * </pre>
    *
-   * <code>string span_id = 27;</code>
+   * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for spanId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSpanIdBytes() {
     java.lang.Object ref = spanId_;
     if (ref instanceof java.lang.String) {
@@ -1268,10 +1240,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * request correlation identifier. The default is False.
    * </pre>
    *
-   * <code>bool trace_sampled = 30;</code>
+   * <code>bool trace_sampled = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The traceSampled.
    */
+  @java.lang.Override
   public boolean getTraceSampled() {
     return traceSampled_;
   }
@@ -1282,14 +1255,16 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source code location information associated with the log entry,
-   * if any.
+   * Optional. Source code location information associated with the log entry, if any.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+   * <code>
+   * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sourceLocation field is set.
    */
+  @java.lang.Override
   public boolean hasSourceLocation() {
     return sourceLocation_ != null;
   }
@@ -1297,14 +1272,16 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source code location information associated with the log entry,
-   * if any.
+   * Optional. Source code location information associated with the log entry, if any.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+   * <code>
+   * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sourceLocation.
    */
+  @java.lang.Override
   public com.google.logging.v2.LogEntrySourceLocation getSourceLocation() {
     return sourceLocation_ == null
         ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()
@@ -1314,12 +1291,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source code location information associated with the log entry,
-   * if any.
+   * Optional. Source code location information associated with the log entry, if any.
    * </pre>
    *
-   * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+   * <code>
+   * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogEntrySourceLocationOrBuilder getSourceLocationOrBuilder() {
     return getSourceLocation();
   }
@@ -1378,9 +1357,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     if (receiveTimestamp_ != null) {
       output.writeMessage(24, getReceiveTimestamp());
-    }
-    if (metadata_ != null) {
-      output.writeMessage(25, getMetadata());
     }
     if (!getSpanIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, spanId_);
@@ -1450,9 +1426,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (receiveTimestamp_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReceiveTimestamp());
     }
-    if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getMetadata());
-    }
     if (!getSpanIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, spanId_);
     }
@@ -1494,10 +1467,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (!getHttpRequest().equals(other.getHttpRequest())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (hasMetadata() != other.hasMetadata()) return false;
-    if (hasMetadata()) {
-      if (!getMetadata().equals(other.getMetadata())) return false;
-    }
     if (hasOperation() != other.hasOperation()) return false;
     if (hasOperation()) {
       if (!getOperation().equals(other.getOperation())) return false;
@@ -1559,10 +1528,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
-    }
-    if (hasMetadata()) {
-      hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + getMetadata().hashCode();
     }
     if (hasOperation()) {
       hash = (37 * hash) + OPERATION_FIELD_NUMBER;
@@ -1788,12 +1753,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         httpRequestBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
-        metadataBuilder_ = null;
-      }
       if (operationBuilder_ == null) {
         operation_ = null;
       } else {
@@ -1883,11 +1842,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
       if (operationBuilder_ == null) {
         result.operation_ = operation_;
       } else {
@@ -1975,9 +1929,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         mergeHttpRequest(other.getHttpRequest());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      if (other.hasMetadata()) {
-        mergeMetadata(other.getMetadata());
-      }
       if (other.hasOperation()) {
         mergeOperation(other.getOperation());
       }
@@ -2073,9 +2024,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
      *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     * A project number may optionally be used in place of PROJECT_ID. The project
-     * number is translated to its corresponding PROJECT_ID internally and the
-     * `log_name` field will contain PROJECT_ID in queries and exports.
+     * A project number may be used in place of PROJECT_ID. The project number is
+     * translated to its corresponding PROJECT_ID internally and the `log_name`
+     * field will contain PROJECT_ID in queries and exports.
      * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
      * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -2088,7 +2039,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * any results.
      * </pre>
      *
-     * <code>string log_name = 12;</code>
+     * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The logName.
      */
@@ -2112,9 +2063,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
      *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     * A project number may optionally be used in place of PROJECT_ID. The project
-     * number is translated to its corresponding PROJECT_ID internally and the
-     * `log_name` field will contain PROJECT_ID in queries and exports.
+     * A project number may be used in place of PROJECT_ID. The project number is
+     * translated to its corresponding PROJECT_ID internally and the `log_name`
+     * field will contain PROJECT_ID in queries and exports.
      * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
      * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -2127,7 +2078,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * any results.
      * </pre>
      *
-     * <code>string log_name = 12;</code>
+     * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for logName.
      */
@@ -2151,9 +2102,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
      *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     * A project number may optionally be used in place of PROJECT_ID. The project
-     * number is translated to its corresponding PROJECT_ID internally and the
-     * `log_name` field will contain PROJECT_ID in queries and exports.
+     * A project number may be used in place of PROJECT_ID. The project number is
+     * translated to its corresponding PROJECT_ID internally and the `log_name`
+     * field will contain PROJECT_ID in queries and exports.
      * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
      * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -2166,7 +2117,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * any results.
      * </pre>
      *
-     * <code>string log_name = 12;</code>
+     * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The logName to set.
      * @return This builder for chaining.
@@ -2189,9 +2140,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
      *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     * A project number may optionally be used in place of PROJECT_ID. The project
-     * number is translated to its corresponding PROJECT_ID internally and the
-     * `log_name` field will contain PROJECT_ID in queries and exports.
+     * A project number may be used in place of PROJECT_ID. The project number is
+     * translated to its corresponding PROJECT_ID internally and the `log_name`
+     * field will contain PROJECT_ID in queries and exports.
      * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
      * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -2204,7 +2155,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * any results.
      * </pre>
      *
-     * <code>string log_name = 12;</code>
+     * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -2223,9 +2174,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
      *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-     * A project number may optionally be used in place of PROJECT_ID. The project
-     * number is translated to its corresponding PROJECT_ID internally and the
-     * `log_name` field will contain PROJECT_ID in queries and exports.
+     * A project number may be used in place of PROJECT_ID. The project number is
+     * translated to its corresponding PROJECT_ID internally and the `log_name`
+     * field will contain PROJECT_ID in queries and exports.
      * `[LOG_ID]` must be URL-encoded within `log_name`. Example:
      * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
      * `[LOG_ID]` must be less than 512 characters long and can only include the
@@ -2238,7 +2189,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * any results.
      * </pre>
      *
-     * <code>string log_name = 12;</code>
+     * <code>string log_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for logName to set.
      * @return This builder for chaining.
@@ -2270,7 +2221,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the resource field is set.
      */
@@ -2287,7 +2239,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The resource.
      */
@@ -2310,7 +2263,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
@@ -2335,7 +2289,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
@@ -2357,7 +2312,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
@@ -2386,7 +2342,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearResource() {
       if (resourceBuilder_ == null) {
@@ -2409,7 +2366,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
 
@@ -2426,7 +2384,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
       if (resourceBuilder_ != null) {
@@ -2447,7 +2406,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the error.
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 8;</code>
+     * <code>.google.api.MonitoredResource resource = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.api.MonitoredResource,
@@ -2487,6 +2447,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the protoPayload field is set.
      */
+    @java.lang.Override
     public boolean hasProtoPayload() {
       return payloadCase_ == 2;
     }
@@ -2506,6 +2467,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The protoPayload.
      */
+    @java.lang.Override
     public com.google.protobuf.Any getProtoPayload() {
       if (protoPayloadBuilder_ == null) {
         if (payloadCase_ == 2) {
@@ -2665,6 +2627,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Any proto_payload = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.AnyOrBuilder getProtoPayloadOrBuilder() {
       if ((payloadCase_ == 2) && (protoPayloadBuilder_ != null)) {
         return protoPayloadBuilder_.getMessageOrBuilder();
@@ -2723,6 +2686,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textPayload.
      */
+    @java.lang.Override
     public java.lang.String getTextPayload() {
       java.lang.Object ref = "";
       if (payloadCase_ == 3) {
@@ -2750,6 +2714,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for textPayload.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTextPayloadBytes() {
       java.lang.Object ref = "";
       if (payloadCase_ == 3) {
@@ -2846,6 +2811,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the jsonPayload field is set.
      */
+    @java.lang.Override
     public boolean hasJsonPayload() {
       return payloadCase_ == 6;
     }
@@ -2861,6 +2827,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The jsonPayload.
      */
+    @java.lang.Override
     public com.google.protobuf.Struct getJsonPayload() {
       if (jsonPayloadBuilder_ == null) {
         if (payloadCase_ == 6) {
@@ -2996,6 +2963,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Struct json_payload = 6;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.StructOrBuilder getJsonPayloadOrBuilder() {
       if ((payloadCase_ == 6) && (jsonPayloadBuilder_ != null)) {
         return jsonPayloadBuilder_.getMessageOrBuilder();
@@ -3049,20 +3017,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the timestamp field is set.
      */
@@ -3073,20 +3041,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The timestamp.
      */
@@ -3101,20 +3069,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
@@ -3133,20 +3101,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timestampBuilder_ == null) {
@@ -3162,20 +3130,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
@@ -3196,20 +3164,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTimestamp() {
       if (timestampBuilder_ == null) {
@@ -3226,20 +3194,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
 
@@ -3250,20 +3218,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
       if (timestampBuilder_ != null) {
@@ -3276,20 +3244,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The time the event described by the log entry occurred.  This
-     * time is used to compute the log entry's age and to enforce the logs
-     * retention period. If this field is omitted in a new log entry, then Logging
-     * assigns it the current time.  Timestamps have nanosecond accuracy, but
-     * trailing zeros in the fractional seconds might be omitted when the
-     * timestamp is displayed.
+     * Optional. The time the event described by the log entry occurred. This time is used
+     * to compute the log entry's age and to enforce the logs retention period.
+     * If this field is omitted in a new log entry, then Logging assigns it the
+     * current time. Timestamps have nanosecond accuracy, but trailing zeros in
+     * the fractional seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than the [logs
-     * retention period](/logging/quotas) in the past, and no more than 24 hours
+     * retention period](https://cloud.google.com/logging/quotas) in the past, and no more than 24 hours
      * in the future. Log entries outside those time boundaries will not be
      * available when calling `entries.list`, but those log entries can still be
-     * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+     * [exported with LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp timestamp = 9;</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3321,7 +3289,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the receiveTimestamp field is set.
      */
@@ -3335,7 +3305,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The receiveTimestamp.
      */
@@ -3355,7 +3327,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setReceiveTimestamp(com.google.protobuf.Timestamp value) {
       if (receiveTimestampBuilder_ == null) {
@@ -3377,7 +3351,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setReceiveTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (receiveTimestampBuilder_ == null) {
@@ -3396,7 +3372,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeReceiveTimestamp(com.google.protobuf.Timestamp value) {
       if (receiveTimestampBuilder_ == null) {
@@ -3422,7 +3400,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearReceiveTimestamp() {
       if (receiveTimestampBuilder_ == null) {
@@ -3442,7 +3422,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getReceiveTimestampBuilder() {
 
@@ -3456,7 +3438,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getReceiveTimestampOrBuilder() {
       if (receiveTimestampBuilder_ != null) {
@@ -3474,7 +3458,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
+     * <code>
+     * .google.protobuf.Timestamp receive_timestamp = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3498,14 +3484,16 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of the log entry. The default value is
-     * `LogSeverity.DEFAULT`.
+     * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
      * </pre>
      *
-     * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     * <code>
+     * .google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for severity.
      */
+    @java.lang.Override
     public int getSeverityValue() {
       return severity_;
     }
@@ -3513,16 +3501,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of the log entry. The default value is
-     * `LogSeverity.DEFAULT`.
+     * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
      * </pre>
      *
-     * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     * <code>
+     * .google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for severity to set.
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
+
       severity_ = value;
       onChanged();
       return this;
@@ -3531,14 +3521,16 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of the log entry. The default value is
-     * `LogSeverity.DEFAULT`.
+     * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
      * </pre>
      *
-     * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     * <code>
+     * .google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The severity.
      */
+    @java.lang.Override
     public com.google.logging.type.LogSeverity getSeverity() {
       @SuppressWarnings("deprecation")
       com.google.logging.type.LogSeverity result =
@@ -3549,11 +3541,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of the log entry. The default value is
-     * `LogSeverity.DEFAULT`.
+     * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
      * </pre>
      *
-     * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     * <code>
+     * .google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The severity to set.
      * @return This builder for chaining.
@@ -3571,11 +3564,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of the log entry. The default value is
-     * `LogSeverity.DEFAULT`.
+     * Optional. The severity of the log entry. The default value is `LogSeverity.DEFAULT`.
      * </pre>
      *
-     * <code>.google.logging.type.LogSeverity severity = 10;</code>
+     * <code>
+     * .google.logging.type.LogSeverity severity = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3591,8 +3585,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Logging considers other log entries in the same project, with the same
+     * Optional. A unique identifier for the log entry. If you provide a value, then
+     * Logging considers other log entries in the same project, with the same
      * `timestamp`, and with the same `insert_id` to be duplicates which are
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
@@ -3602,7 +3596,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the same `log_name` and `timestamp` values.
      * </pre>
      *
-     * <code>string insert_id = 4;</code>
+     * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The insertId.
      */
@@ -3621,8 +3615,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Logging considers other log entries in the same project, with the same
+     * Optional. A unique identifier for the log entry. If you provide a value, then
+     * Logging considers other log entries in the same project, with the same
      * `timestamp`, and with the same `insert_id` to be duplicates which are
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
@@ -3632,7 +3626,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the same `log_name` and `timestamp` values.
      * </pre>
      *
-     * <code>string insert_id = 4;</code>
+     * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for insertId.
      */
@@ -3651,8 +3645,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Logging considers other log entries in the same project, with the same
+     * Optional. A unique identifier for the log entry. If you provide a value, then
+     * Logging considers other log entries in the same project, with the same
      * `timestamp`, and with the same `insert_id` to be duplicates which are
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
@@ -3662,7 +3656,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the same `log_name` and `timestamp` values.
      * </pre>
      *
-     * <code>string insert_id = 4;</code>
+     * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The insertId to set.
      * @return This builder for chaining.
@@ -3680,8 +3674,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Logging considers other log entries in the same project, with the same
+     * Optional. A unique identifier for the log entry. If you provide a value, then
+     * Logging considers other log entries in the same project, with the same
      * `timestamp`, and with the same `insert_id` to be duplicates which are
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
@@ -3691,7 +3685,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the same `log_name` and `timestamp` values.
      * </pre>
      *
-     * <code>string insert_id = 4;</code>
+     * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3705,8 +3699,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Logging considers other log entries in the same project, with the same
+     * Optional. A unique identifier for the log entry. If you provide a value, then
+     * Logging considers other log entries in the same project, with the same
      * `timestamp`, and with the same `insert_id` to be duplicates which are
      * removed in a single query result. However, there are no guarantees of
      * de-duplication in the export of logs.
@@ -3716,7 +3710,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * the same `log_name` and `timestamp` values.
      * </pre>
      *
-     * <code>string insert_id = 4;</code>
+     * <code>string insert_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for insertId to set.
      * @return This builder for chaining.
@@ -3742,11 +3736,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the httpRequest field is set.
      */
@@ -3757,11 +3753,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The httpRequest.
      */
@@ -3778,11 +3776,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHttpRequest(com.google.logging.type.HttpRequest value) {
       if (httpRequestBuilder_ == null) {
@@ -3801,11 +3801,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHttpRequest(com.google.logging.type.HttpRequest.Builder builderForValue) {
       if (httpRequestBuilder_ == null) {
@@ -3821,11 +3823,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeHttpRequest(com.google.logging.type.HttpRequest value) {
       if (httpRequestBuilder_ == null) {
@@ -3848,11 +3852,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearHttpRequest() {
       if (httpRequestBuilder_ == null) {
@@ -3869,11 +3875,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.type.HttpRequest.Builder getHttpRequestBuilder() {
 
@@ -3884,11 +3892,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.type.HttpRequestOrBuilder getHttpRequestOrBuilder() {
       if (httpRequestBuilder_ != null) {
@@ -3903,11 +3913,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Information about the HTTP request associated with this log
-     * entry, if applicable.
+     * Optional. Information about the HTTP request associated with this log entry, if
+     * applicable.
      * </pre>
      *
-     * <code>.google.logging.type.HttpRequest http_request = 7;</code>
+     * <code>
+     * .google.logging.type.HttpRequest http_request = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.type.HttpRequest,
@@ -3959,8 +3971,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3968,6 +3981,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -3980,8 +3994,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -3993,8 +4008,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -4011,8 +4027,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4036,7 +4053,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -4058,7 +4075,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4078,267 +4095,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * information about the log entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 11;</code>
+     * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
-    }
-
-    private com.google.api.MonitoredResourceMetadata metadata_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResourceMetadata,
-            com.google.api.MonitoredResourceMetadata.Builder,
-            com.google.api.MonitoredResourceMetadataOrBuilder>
-        metadataBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     *
-     * @return Whether the metadata field is set.
-     */
-    @java.lang.Deprecated
-    public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     *
-     * @return The metadata.
-     */
-    @java.lang.Deprecated
-    public com.google.api.MonitoredResourceMetadata getMetadata() {
-      if (metadataBuilder_ == null) {
-        return metadata_ == null
-            ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
-            : metadata_;
-      } else {
-        return metadataBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setMetadata(com.google.api.MonitoredResourceMetadata value) {
-      if (metadataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        metadata_ = value;
-        onChanged();
-      } else {
-        metadataBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setMetadata(com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
-      if (metadataBuilder_ == null) {
-        metadata_ = builderForValue.build();
-        onChanged();
-      } else {
-        metadataBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder mergeMetadata(com.google.api.MonitoredResourceMetadata value) {
-      if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.api.MonitoredResourceMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          metadata_ = value;
-        }
-        onChanged();
-      } else {
-        metadataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
-        metadataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.api.MonitoredResourceMetadata.Builder getMetadataBuilder() {
-
-      onChanged();
-      return getMetadataFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
-      if (metadataBuilder_ != null) {
-        return metadataBuilder_.getMessageOrBuilder();
-      } else {
-        return metadata_ == null
-            ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
-            : metadata_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. Output only. Additional metadata about the monitored resource.
-     * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
-     * this field populated for GKE versions older than 1.12.6. For GKE versions
-     * 1.12.6 and above, the `metadata` field has been deprecated. The Kubernetes
-     * pod labels that used to be in `metadata.userLabels` will now be present in
-     * the `labels` field with a key prefix of `k8s-pod/`. The Stackdriver system
-     * labels that were present in the `metadata.systemLabels` field will no
-     * longer be available in the LogEntry.
-     * </pre>
-     *
-     * <code>.google.api.MonitoredResourceMetadata metadata = 25 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResourceMetadata,
-            com.google.api.MonitoredResourceMetadata.Builder,
-            com.google.api.MonitoredResourceMetadataOrBuilder>
-        getMetadataFieldBuilder() {
-      if (metadataBuilder_ == null) {
-        metadataBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.api.MonitoredResourceMetadata,
-                com.google.api.MonitoredResourceMetadata.Builder,
-                com.google.api.MonitoredResourceMetadataOrBuilder>(
-                getMetadata(), getParentForChildren(), isClean());
-        metadata_ = null;
-      }
-      return metadataBuilder_;
     }
 
     private com.google.logging.v2.LogEntryOperation operation_;
@@ -4355,7 +4116,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the operation field is set.
      */
@@ -4370,7 +4133,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The operation.
      */
@@ -4391,7 +4156,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOperation(com.google.logging.v2.LogEntryOperation value) {
       if (operationBuilder_ == null) {
@@ -4414,7 +4181,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOperation(com.google.logging.v2.LogEntryOperation.Builder builderForValue) {
       if (operationBuilder_ == null) {
@@ -4434,7 +4203,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeOperation(com.google.logging.v2.LogEntryOperation value) {
       if (operationBuilder_ == null) {
@@ -4461,7 +4232,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOperation() {
       if (operationBuilder_ == null) {
@@ -4482,7 +4255,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.v2.LogEntryOperation.Builder getOperationBuilder() {
 
@@ -4497,7 +4272,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.v2.LogEntryOperationOrBuilder getOperationOrBuilder() {
       if (operationBuilder_ != null) {
@@ -4516,7 +4293,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * applicable.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
+     * <code>
+     * .google.logging.v2.LogEntryOperation operation = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogEntryOperation,
@@ -4540,13 +4319,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of the trace associated with the log entry, if any.
-     * If it contains a relative resource name, the name is assumed to be relative
-     * to `//tracing.googleapis.com`. Example:
+     * Optional. Resource name of the trace associated with the log entry, if any. If it
+     * contains a relative resource name, the name is assumed to be relative to
+     * `//tracing.googleapis.com`. Example:
      * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
      * </pre>
      *
-     * <code>string trace = 22;</code>
+     * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The trace.
      */
@@ -4565,13 +4344,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of the trace associated with the log entry, if any.
-     * If it contains a relative resource name, the name is assumed to be relative
-     * to `//tracing.googleapis.com`. Example:
+     * Optional. Resource name of the trace associated with the log entry, if any. If it
+     * contains a relative resource name, the name is assumed to be relative to
+     * `//tracing.googleapis.com`. Example:
      * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
      * </pre>
      *
-     * <code>string trace = 22;</code>
+     * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for trace.
      */
@@ -4590,13 +4369,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of the trace associated with the log entry, if any.
-     * If it contains a relative resource name, the name is assumed to be relative
-     * to `//tracing.googleapis.com`. Example:
+     * Optional. Resource name of the trace associated with the log entry, if any. If it
+     * contains a relative resource name, the name is assumed to be relative to
+     * `//tracing.googleapis.com`. Example:
      * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
      * </pre>
      *
-     * <code>string trace = 22;</code>
+     * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The trace to set.
      * @return This builder for chaining.
@@ -4614,13 +4393,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of the trace associated with the log entry, if any.
-     * If it contains a relative resource name, the name is assumed to be relative
-     * to `//tracing.googleapis.com`. Example:
+     * Optional. Resource name of the trace associated with the log entry, if any. If it
+     * contains a relative resource name, the name is assumed to be relative to
+     * `//tracing.googleapis.com`. Example:
      * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
      * </pre>
      *
-     * <code>string trace = 22;</code>
+     * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4634,13 +4413,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource name of the trace associated with the log entry, if any.
-     * If it contains a relative resource name, the name is assumed to be relative
-     * to `//tracing.googleapis.com`. Example:
+     * Optional. Resource name of the trace associated with the log entry, if any. If it
+     * contains a relative resource name, the name is assumed to be relative to
+     * `//tracing.googleapis.com`. Example:
      * `projects/my-projectid/traces/06796866738c859f2f19b7cfb3214824`
      * </pre>
      *
-     * <code>string trace = 22;</code>
+     * <code>string trace = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for trace to set.
      * @return This builder for chaining.
@@ -4664,10 +4443,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
      * 16-character hexadecimal encoding of an 8-byte array, such as
-     * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+     * `000000000000004a`.
      * </pre>
      *
-     * <code>string span_id = 27;</code>
+     * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The spanId.
      */
@@ -4689,10 +4468,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
      * 16-character hexadecimal encoding of an 8-byte array, such as
-     * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+     * `000000000000004a`.
      * </pre>
      *
-     * <code>string span_id = 27;</code>
+     * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for spanId.
      */
@@ -4714,10 +4493,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
      * 16-character hexadecimal encoding of an 8-byte array, such as
-     * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+     * `000000000000004a`.
      * </pre>
      *
-     * <code>string span_id = 27;</code>
+     * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The spanId to set.
      * @return This builder for chaining.
@@ -4738,10 +4517,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
      * 16-character hexadecimal encoding of an 8-byte array, such as
-     * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+     * `000000000000004a`.
      * </pre>
      *
-     * <code>string span_id = 27;</code>
+     * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4758,10 +4537,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace API v2 uses: a
      * 16-character hexadecimal encoding of an 8-byte array, such as
-     * &lt;code&gt;"000000000000004a"&lt;/code&gt;.
+     * `000000000000004a`.
      * </pre>
      *
-     * <code>string span_id = 27;</code>
+     * <code>string span_id = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for spanId to set.
      * @return This builder for chaining.
@@ -4790,10 +4569,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * request correlation identifier. The default is False.
      * </pre>
      *
-     * <code>bool trace_sampled = 30;</code>
+     * <code>bool trace_sampled = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The traceSampled.
      */
+    @java.lang.Override
     public boolean getTraceSampled() {
       return traceSampled_;
     }
@@ -4809,7 +4589,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * request correlation identifier. The default is False.
      * </pre>
      *
-     * <code>bool trace_sampled = 30;</code>
+     * <code>bool trace_sampled = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The traceSampled to set.
      * @return This builder for chaining.
@@ -4832,7 +4612,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * request correlation identifier. The default is False.
      * </pre>
      *
-     * <code>bool trace_sampled = 30;</code>
+     * <code>bool trace_sampled = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4853,11 +4633,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the sourceLocation field is set.
      */
@@ -4868,11 +4649,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The sourceLocation.
      */
@@ -4889,11 +4671,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSourceLocation(com.google.logging.v2.LogEntrySourceLocation value) {
       if (sourceLocationBuilder_ == null) {
@@ -4912,11 +4695,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSourceLocation(
         com.google.logging.v2.LogEntrySourceLocation.Builder builderForValue) {
@@ -4933,11 +4717,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSourceLocation(com.google.logging.v2.LogEntrySourceLocation value) {
       if (sourceLocationBuilder_ == null) {
@@ -4960,11 +4745,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSourceLocation() {
       if (sourceLocationBuilder_ == null) {
@@ -4981,11 +4767,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.v2.LogEntrySourceLocation.Builder getSourceLocationBuilder() {
 
@@ -4996,11 +4783,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.logging.v2.LogEntrySourceLocationOrBuilder getSourceLocationOrBuilder() {
       if (sourceLocationBuilder_ != null) {
@@ -5015,11 +4803,12 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source code location information associated with the log entry,
-     * if any.
+     * Optional. Source code location information associated with the log entry, if any.
      * </pre>
      *
-     * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
+     * <code>
+     * .google.logging.v2.LogEntrySourceLocation source_location = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.LogEntrySourceLocation,

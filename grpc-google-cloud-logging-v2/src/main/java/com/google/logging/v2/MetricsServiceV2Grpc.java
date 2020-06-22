@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/logging/v2/logging_metrics.proto")
 public final class MetricsServiceV2Grpc {
 
@@ -39,26 +39,18 @@ public final class MetricsServiceV2Grpc {
   public static final String SERVICE_NAME = "google.logging.v2.MetricsServiceV2";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListLogMetricsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListLogMetricsRequest, com.google.logging.v2.ListLogMetricsResponse>
-      METHOD_LIST_LOG_METRICS = getListLogMetricsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.ListLogMetricsRequest, com.google.logging.v2.ListLogMetricsResponse>
       getListLogMetricsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLogMetrics",
+      requestType = com.google.logging.v2.ListLogMetricsRequest.class,
+      responseType = com.google.logging.v2.ListLogMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.ListLogMetricsRequest, com.google.logging.v2.ListLogMetricsResponse>
       getListLogMetricsMethod() {
-    return getListLogMetricsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListLogMetricsRequest, com.google.logging.v2.ListLogMetricsResponse>
-      getListLogMetricsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.ListLogMetricsRequest,
             com.google.logging.v2.ListLogMetricsResponse>
@@ -73,9 +65,7 @@ public final class MetricsServiceV2Grpc {
                           com.google.logging.v2.ListLogMetricsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.MetricsServiceV2", "ListLogMetrics"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLogMetrics"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -92,26 +82,18 @@ public final class MetricsServiceV2Grpc {
     return getListLogMetricsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetLogMetricMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
-      METHOD_GET_LOG_METRIC = getGetLogMetricMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
       getGetLogMetricMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLogMetric",
+      requestType = com.google.logging.v2.GetLogMetricRequest.class,
+      responseType = com.google.logging.v2.LogMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
       getGetLogMetricMethod() {
-    return getGetLogMetricMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
-      getGetLogMetricMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
         getGetLogMetricMethod;
@@ -124,9 +106,7 @@ public final class MetricsServiceV2Grpc {
                       .<com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.MetricsServiceV2", "GetLogMetric"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLogMetric"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -143,26 +123,18 @@ public final class MetricsServiceV2Grpc {
     return getGetLogMetricMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateLogMetricMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>
-      METHOD_CREATE_LOG_METRIC = getCreateLogMetricMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>
       getCreateLogMetricMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateLogMetric",
+      requestType = com.google.logging.v2.CreateLogMetricRequest.class,
+      responseType = com.google.logging.v2.LogMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>
       getCreateLogMetricMethod() {
-    return getCreateLogMetricMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>
-      getCreateLogMetricMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>
         getCreateLogMetricMethod;
@@ -176,9 +148,7 @@ public final class MetricsServiceV2Grpc {
                           com.google.logging.v2.LogMetric>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.MetricsServiceV2", "CreateLogMetric"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateLogMetric"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -195,26 +165,18 @@ public final class MetricsServiceV2Grpc {
     return getCreateLogMetricMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateLogMetricMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>
-      METHOD_UPDATE_LOG_METRIC = getUpdateLogMetricMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>
       getUpdateLogMetricMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLogMetric",
+      requestType = com.google.logging.v2.UpdateLogMetricRequest.class,
+      responseType = com.google.logging.v2.LogMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>
       getUpdateLogMetricMethod() {
-    return getUpdateLogMetricMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>
-      getUpdateLogMetricMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>
         getUpdateLogMetricMethod;
@@ -228,9 +190,7 @@ public final class MetricsServiceV2Grpc {
                           com.google.logging.v2.LogMetric>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.MetricsServiceV2", "UpdateLogMetric"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLogMetric"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -247,26 +207,18 @@ public final class MetricsServiceV2Grpc {
     return getUpdateLogMetricMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteLogMetricMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_LOG_METRIC = getDeleteLogMetricMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
       getDeleteLogMetricMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLogMetric",
+      requestType = com.google.logging.v2.DeleteLogMetricRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
       getDeleteLogMetricMethod() {
-    return getDeleteLogMetricMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
-      getDeleteLogMetricMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
         getDeleteLogMetricMethod;
@@ -279,9 +231,7 @@ public final class MetricsServiceV2Grpc {
                       .<com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.MetricsServiceV2", "DeleteLogMetric"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteLogMetric"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -300,19 +250,43 @@ public final class MetricsServiceV2Grpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static MetricsServiceV2Stub newStub(io.grpc.Channel channel) {
-    return new MetricsServiceV2Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2Stub>() {
+          @java.lang.Override
+          public MetricsServiceV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetricsServiceV2Stub(channel, callOptions);
+          }
+        };
+    return MetricsServiceV2Stub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static MetricsServiceV2BlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new MetricsServiceV2BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2BlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2BlockingStub>() {
+          @java.lang.Override
+          public MetricsServiceV2BlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetricsServiceV2BlockingStub(channel, callOptions);
+          }
+        };
+    return MetricsServiceV2BlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static MetricsServiceV2FutureStub newFutureStub(io.grpc.Channel channel) {
-    return new MetricsServiceV2FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2FutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetricsServiceV2FutureStub>() {
+          @java.lang.Override
+          public MetricsServiceV2FutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetricsServiceV2FutureStub(channel, callOptions);
+          }
+        };
+    return MetricsServiceV2FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -335,7 +309,7 @@ public final class MetricsServiceV2Grpc {
         com.google.logging.v2.ListLogMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogMetricsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListLogMetricsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListLogMetricsMethod(), responseObserver);
     }
 
     /**
@@ -348,7 +322,7 @@ public final class MetricsServiceV2Grpc {
     public void getLogMetric(
         com.google.logging.v2.GetLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetLogMetricMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetLogMetricMethod(), responseObserver);
     }
 
     /**
@@ -361,7 +335,7 @@ public final class MetricsServiceV2Grpc {
     public void createLogMetric(
         com.google.logging.v2.CreateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateLogMetricMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateLogMetricMethod(), responseObserver);
     }
 
     /**
@@ -374,7 +348,7 @@ public final class MetricsServiceV2Grpc {
     public void updateLogMetric(
         com.google.logging.v2.UpdateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateLogMetricMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateLogMetricMethod(), responseObserver);
     }
 
     /**
@@ -387,39 +361,39 @@ public final class MetricsServiceV2Grpc {
     public void deleteLogMetric(
         com.google.logging.v2.DeleteLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteLogMetricMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteLogMetricMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListLogMetricsMethodHelper(),
+              getListLogMetricsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.ListLogMetricsRequest,
                       com.google.logging.v2.ListLogMetricsResponse>(
                       this, METHODID_LIST_LOG_METRICS)))
           .addMethod(
-              getGetLogMetricMethodHelper(),
+              getGetLogMetricMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>(
                       this, METHODID_GET_LOG_METRIC)))
           .addMethod(
-              getCreateLogMetricMethodHelper(),
+              getCreateLogMetricMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.CreateLogMetricRequest,
                       com.google.logging.v2.LogMetric>(this, METHODID_CREATE_LOG_METRIC)))
           .addMethod(
-              getUpdateLogMetricMethodHelper(),
+              getUpdateLogMetricMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.UpdateLogMetricRequest,
                       com.google.logging.v2.LogMetric>(this, METHODID_UPDATE_LOG_METRIC)))
           .addMethod(
-              getDeleteLogMetricMethodHelper(),
+              getDeleteLogMetricMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>(
@@ -436,11 +410,7 @@ public final class MetricsServiceV2Grpc {
    * </pre>
    */
   public static final class MetricsServiceV2Stub
-      extends io.grpc.stub.AbstractStub<MetricsServiceV2Stub> {
-    private MetricsServiceV2Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<MetricsServiceV2Stub> {
     private MetricsServiceV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -462,7 +432,7 @@ public final class MetricsServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogMetricsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListLogMetricsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListLogMetricsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -478,7 +448,7 @@ public final class MetricsServiceV2Grpc {
         com.google.logging.v2.GetLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetLogMetricMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetLogMetricMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -494,7 +464,7 @@ public final class MetricsServiceV2Grpc {
         com.google.logging.v2.CreateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateLogMetricMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateLogMetricMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -510,7 +480,7 @@ public final class MetricsServiceV2Grpc {
         com.google.logging.v2.UpdateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateLogMetricMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateLogMetricMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -526,7 +496,7 @@ public final class MetricsServiceV2Grpc {
         com.google.logging.v2.DeleteLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteLogMetricMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteLogMetricMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -540,11 +510,7 @@ public final class MetricsServiceV2Grpc {
    * </pre>
    */
   public static final class MetricsServiceV2BlockingStub
-      extends io.grpc.stub.AbstractStub<MetricsServiceV2BlockingStub> {
-    private MetricsServiceV2BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<MetricsServiceV2BlockingStub> {
     private MetricsServiceV2BlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -564,8 +530,7 @@ public final class MetricsServiceV2Grpc {
      */
     public com.google.logging.v2.ListLogMetricsResponse listLogMetrics(
         com.google.logging.v2.ListLogMetricsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListLogMetricsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListLogMetricsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -577,8 +542,7 @@ public final class MetricsServiceV2Grpc {
      */
     public com.google.logging.v2.LogMetric getLogMetric(
         com.google.logging.v2.GetLogMetricRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetLogMetricMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetLogMetricMethod(), getCallOptions(), request);
     }
 
     /**
@@ -590,8 +554,7 @@ public final class MetricsServiceV2Grpc {
      */
     public com.google.logging.v2.LogMetric createLogMetric(
         com.google.logging.v2.CreateLogMetricRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateLogMetricMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateLogMetricMethod(), getCallOptions(), request);
     }
 
     /**
@@ -603,8 +566,7 @@ public final class MetricsServiceV2Grpc {
      */
     public com.google.logging.v2.LogMetric updateLogMetric(
         com.google.logging.v2.UpdateLogMetricRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateLogMetricMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateLogMetricMethod(), getCallOptions(), request);
     }
 
     /**
@@ -616,8 +578,7 @@ public final class MetricsServiceV2Grpc {
      */
     public com.google.protobuf.Empty deleteLogMetric(
         com.google.logging.v2.DeleteLogMetricRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteLogMetricMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteLogMetricMethod(), getCallOptions(), request);
     }
   }
 
@@ -629,11 +590,7 @@ public final class MetricsServiceV2Grpc {
    * </pre>
    */
   public static final class MetricsServiceV2FutureStub
-      extends io.grpc.stub.AbstractStub<MetricsServiceV2FutureStub> {
-    private MetricsServiceV2FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<MetricsServiceV2FutureStub> {
     private MetricsServiceV2FutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -655,7 +612,7 @@ public final class MetricsServiceV2Grpc {
             com.google.logging.v2.ListLogMetricsResponse>
         listLogMetrics(com.google.logging.v2.ListLogMetricsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListLogMetricsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListLogMetricsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -668,7 +625,7 @@ public final class MetricsServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogMetric>
         getLogMetric(com.google.logging.v2.GetLogMetricRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetLogMetricMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetLogMetricMethod(), getCallOptions()), request);
     }
 
     /**
@@ -681,7 +638,7 @@ public final class MetricsServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogMetric>
         createLogMetric(com.google.logging.v2.CreateLogMetricRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateLogMetricMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateLogMetricMethod(), getCallOptions()), request);
     }
 
     /**
@@ -694,7 +651,7 @@ public final class MetricsServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogMetric>
         updateLogMetric(com.google.logging.v2.UpdateLogMetricRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateLogMetricMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateLogMetricMethod(), getCallOptions()), request);
     }
 
     /**
@@ -707,7 +664,7 @@ public final class MetricsServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteLogMetric(com.google.logging.v2.DeleteLogMetricRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteLogMetricMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteLogMetricMethod(), getCallOptions()), request);
     }
   }
 
@@ -824,11 +781,11 @@ public final class MetricsServiceV2Grpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new MetricsServiceV2FileDescriptorSupplier())
-                      .addMethod(getListLogMetricsMethodHelper())
-                      .addMethod(getGetLogMetricMethodHelper())
-                      .addMethod(getCreateLogMetricMethodHelper())
-                      .addMethod(getUpdateLogMetricMethodHelper())
-                      .addMethod(getDeleteLogMetricMethodHelper())
+                      .addMethod(getListLogMetricsMethod())
+                      .addMethod(getGetLogMetricMethod())
+                      .addMethod(getCreateLogMetricMethod())
+                      .addMethod(getUpdateLogMetricMethod())
+                      .addMethod(getDeleteLogMetricMethod())
                       .build();
         }
       }

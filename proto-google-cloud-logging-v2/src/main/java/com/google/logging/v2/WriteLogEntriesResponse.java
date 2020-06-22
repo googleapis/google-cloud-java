@@ -23,7 +23,6 @@ package com.google.logging.v2;
  *
  * <pre>
  * Result returned from WriteLogEntries.
- * empty
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.WriteLogEntriesResponse}
@@ -258,7 +257,6 @@ public final class WriteLogEntriesResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Result returned from WriteLogEntries.
-   * empty
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.WriteLogEntriesResponse}

@@ -117,8 +117,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The full resource name of the sink to delete, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to delete, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -132,6 +132,7 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The sinkName.
    */
+  @java.lang.Override
   public java.lang.String getSinkName() {
     java.lang.Object ref = sinkName_;
     if (ref instanceof java.lang.String) {
@@ -147,8 +148,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The full resource name of the sink to delete, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to delete, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -162,6 +163,7 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for sinkName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSinkNameBytes() {
     java.lang.Object ref = sinkName_;
     if (ref instanceof java.lang.String) {
@@ -494,8 +496,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -524,8 +526,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -554,8 +556,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -583,8 +585,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -608,8 +610,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"

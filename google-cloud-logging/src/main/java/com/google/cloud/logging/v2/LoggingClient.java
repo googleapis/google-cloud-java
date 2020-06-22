@@ -30,7 +30,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2Stub;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2StubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.logging.v2.BillingAccountName;
 import com.google.logging.v2.DeleteLogRequest;
+import com.google.logging.v2.FolderName;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogsRequest;
@@ -39,7 +41,8 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
-import com.google.logging.v2.ParentName;
+import com.google.logging.v2.OrganizationName;
+import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -59,7 +62,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (LoggingClient loggingClient = LoggingClient.create()) {
- *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+ *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
  *   loggingClient.deleteLog(logName);
  * }
  * </code>
@@ -177,7 +180,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   loggingClient.deleteLog(logName);
    * }
    * </code></pre>
@@ -208,7 +211,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   loggingClient.deleteLog(logName.toString());
    * }
    * </code></pre>
@@ -236,7 +239,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogName(logName.toString())
    *     .build();
@@ -261,7 +264,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
    *     .setLogName(logName.toString())
    *     .build();
@@ -277,6 +280,142 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](https://cloud.google.com/logging/docs/export).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
+   *   String filter = "";
+   *   String orderBy = "";
+   *   for (LogEntry element : loggingClient.listLogEntries(formattedResourceNames, filter, orderBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param resourceNames Required. Names of one or more parent resources from which to retrieve log
+   *     entries:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Projects listed in the `project_ids` field are added to this list.
+   * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
+   *     Queries](https://cloud.google.com/logging/docs/view/advanced-queries). Only log entries
+   *     that match the filter are returned. An empty filter matches all log entries in the
+   *     resources listed in `resource_names`. Referencing a parent resource that is not listed in
+   *     `resource_names` will cause the filter to return no results. The maximum length of the
+   *     filter is 20000 characters.
+   * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
+   *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
+   *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
+   *     returns entries in order of decreasing timestamps (newest first). Entries with equal
+   *     timestamps are returned in order of their `insert_id` values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogEntriesPagedResponse listLogEntries(
+      List<String> resourceNames, String filter, String orderBy) {
+    ListLogEntriesRequest request =
+        ListLogEntriesRequest.newBuilder()
+            .addAllResourceNames(resourceNames)
+            .setFilter(filter)
+            .setOrderBy(orderBy)
+            .build();
+    return listLogEntries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](https://cloud.google.com/logging/docs/export).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   List&lt;ProjectName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllResourceNames(ProjectName.toStringList(resourceNames))
+   *     .build();
+   *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogEntriesPagedResponse listLogEntries(ListLogEntriesRequest request) {
+    return listLogEntriesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](https://cloud.google.com/logging/docs/export).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   List&lt;ProjectName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllResourceNames(ProjectName.toStringList(resourceNames))
+   *     .build();
+   *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
+      listLogEntriesPagedCallable() {
+    return stub.listLogEntriesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](https://cloud.google.com/logging/docs/export).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   List&lt;ProjectName&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllResourceNames(ProjectName.toStringList(resourceNames))
+   *     .build();
+   *   while (true) {
+   *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
+   *     for (LogEntry element : response.getEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse>
+      listLogEntriesCallable() {
+    return stub.listLogEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Writes log entries to Logging. This API method is the only way to send log entries to Logging.
    * This method is used, directly or indirectly, by the Logging agent (fluentd) and all logging
    * libraries configured to use Logging. A single request may contain log entries for a maximum of
@@ -286,7 +425,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -301,10 +440,9 @@ public class LoggingClient implements BackgroundResource {
    *     <p>`[LOG_ID]` must be URL-encoded. For example:
    *     <p>"projects/my-project-id/logs/syslog"
    *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-   *     <p>The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-   *     project, organization, billing account, or folder that is receiving new log entries,
-   *     whether the resource is specified in &lt;code&gt;logName&lt;/code&gt; or in an individual
-   *     log entry.
+   *     <p>The permission `logging.logEntries.create` is needed on each project, organization,
+   *     billing account, or folder that is receiving new log entries, whether the resource is
+   *     specified in `logName` or in an individual log entry.
    * @param resource Optional. A default monitored resource object that is assigned to all log
    *     entries in `entries` that do not specify a value for `resource`. Example:
    *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
@@ -325,12 +463,14 @@ public class LoggingClient implements BackgroundResource {
    *     earlier in the list will sort before the entries later in the list. See the `entries.list`
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
-   *     available when calling `entries.list`. However, those log entries can still be [exported
-   *     with LogSinks](/logging/docs/api/tasks/exporting-logs).
-   *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
-   *     for calls to `entries.write`, you should try to include several log entries in this list,
-   *     rather than calling this method for each individual log entry.
+   *     period](https://cloud.google.com/logging/quota-policy) in the past or more than 24 hours in
+   *     the future will not be available when calling `entries.list`. However, those log entries
+   *     can still be [exported with
+   *     LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *     <p>To improve throughput and to avoid exceeding the [quota
+   *     limit](https://cloud.google.com/logging/quota-policy) for calls to `entries.write`, you
+   *     should try to include several log entries in this list, rather than calling this method for
+   *     each individual log entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
@@ -359,7 +499,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
+   *   LogName logName = LogName.ofProjectLogName("[PROJECT]", "[LOG]");
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -374,10 +514,9 @@ public class LoggingClient implements BackgroundResource {
    *     <p>`[LOG_ID]` must be URL-encoded. For example:
    *     <p>"projects/my-project-id/logs/syslog"
    *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-   *     <p>The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-   *     project, organization, billing account, or folder that is receiving new log entries,
-   *     whether the resource is specified in &lt;code&gt;logName&lt;/code&gt; or in an individual
-   *     log entry.
+   *     <p>The permission `logging.logEntries.create` is needed on each project, organization,
+   *     billing account, or folder that is receiving new log entries, whether the resource is
+   *     specified in `logName` or in an individual log entry.
    * @param resource Optional. A default monitored resource object that is assigned to all log
    *     entries in `entries` that do not specify a value for `resource`. Example:
    *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
@@ -398,12 +537,14 @@ public class LoggingClient implements BackgroundResource {
    *     earlier in the list will sort before the entries later in the list. See the `entries.list`
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
-   *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
-   *     available when calling `entries.list`. However, those log entries can still be [exported
-   *     with LogSinks](/logging/docs/api/tasks/exporting-logs).
-   *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
-   *     for calls to `entries.write`, you should try to include several log entries in this list,
-   *     rather than calling this method for each individual log entry.
+   *     period](https://cloud.google.com/logging/quota-policy) in the past or more than 24 hours in
+   *     the future will not be available when calling `entries.list`. However, those log entries
+   *     can still be [exported with
+   *     LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *     <p>To improve throughput and to avoid exceeding the [quota
+   *     limit](https://cloud.google.com/logging/quota-policy) for calls to `entries.write`, you
+   *     should try to include several log entries in this list, rather than calling this method for
+   *     each individual log entry.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
@@ -471,142 +612,6 @@ public class LoggingClient implements BackgroundResource {
   public final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable() {
     return stub.writeLogEntriesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists log entries. Use this method to retrieve log entries that originated from a
-   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
-   * Logs](/logging/docs/export).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;String&gt; formattedResourceNames = new ArrayList&lt;&gt;();
-   *   String filter = "";
-   *   String orderBy = "";
-   *   for (LogEntry element : loggingClient.listLogEntries(formattedResourceNames, filter, orderBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param resourceNames Required. Names of one or more parent resources from which to retrieve log
-   *     entries:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   *     <p>Projects listed in the `project_ids` field are added to this list.
-   * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
-   *     Queries](/logging/docs/view/advanced-queries). Only log entries that match the filter are
-   *     returned. An empty filter matches all log entries in the resources listed in
-   *     `resource_names`. Referencing a parent resource that is not listed in `resource_names` will
-   *     cause the filter to return no results. The maximum length of the filter is 20000
-   *     characters.
-   * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
-   *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
-   *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
-   *     returns entries in order of decreasing timestamps (newest first). Entries with equal
-   *     timestamps are returned in order of their `insert_id` values.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLogEntriesPagedResponse listLogEntries(
-      List<String> resourceNames, String filter, String orderBy) {
-    ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder()
-            .addAllResourceNames(resourceNames)
-            .setFilter(filter)
-            .setOrderBy(orderBy)
-            .build();
-    return listLogEntries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists log entries. Use this method to retrieve log entries that originated from a
-   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
-   * Logs](/logging/docs/export).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
-   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
-   *     .build();
-   *   for (LogEntry element : loggingClient.listLogEntries(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListLogEntriesPagedResponse listLogEntries(ListLogEntriesRequest request) {
-    return listLogEntriesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists log entries. Use this method to retrieve log entries that originated from a
-   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
-   * Logs](/logging/docs/export).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
-   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
-   *     .build();
-   *   ApiFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingClient.listLogEntriesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (LogEntry element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
-      listLogEntriesPagedCallable() {
-    return stub.listLogEntriesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists log entries. Use this method to retrieve log entries that originated from a
-   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
-   * Logs](/logging/docs/export).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   List&lt;ParentName&gt; resourceNames = new ArrayList&lt;&gt;();
-   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllResourceNames(ParentName.toStringList(resourceNames))
-   *     .build();
-   *   while (true) {
-   *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
-   *     for (LogEntry element : response.getEntriesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse>
-      listLogEntriesCallable() {
-    return stub.listLogEntriesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -694,7 +699,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -706,7 +711,7 @@ public class LoggingClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLogsPagedResponse listLogs(ParentName parent) {
+  public final ListLogsPagedResponse listLogs(ProjectName parent) {
     ListLogsRequest request =
         ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLogs(request);
@@ -721,7 +726,88 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name that owns the logs:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(OrganizationName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listLogs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name that owns the logs:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(FolderName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listLogs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   for (String element : loggingClient.listLogs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name that owns the logs:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(BillingAccountName parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listLogs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have
+   * entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (String element : loggingClient.listLogs(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -747,7 +833,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -773,7 +859,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -798,7 +884,7 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LoggingClient loggingClient = LoggingClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListLogsRequest request = ListLogsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

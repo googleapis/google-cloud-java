@@ -141,6 +141,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.MonitoredResourceDescriptor> getResourceDescriptorsList() {
     return resourceDescriptors_;
   }
@@ -153,6 +154,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.MonitoredResourceDescriptorOrBuilder>
       getResourceDescriptorsOrBuilderList() {
     return resourceDescriptors_;
@@ -166,6 +168,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
+  @java.lang.Override
   public int getResourceDescriptorsCount() {
     return resourceDescriptors_.size();
   }
@@ -178,6 +181,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceDescriptor getResourceDescriptors(int index) {
     return resourceDescriptors_.get(index);
   }
@@ -190,6 +194,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceDescriptorOrBuilder getResourceDescriptorsOrBuilder(
       int index) {
     return resourceDescriptors_.get(index);
@@ -210,6 +215,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListMonitoredResourceDescriptorsResponse
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -28,23 +28,35 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2Stub;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.logging.v2.BillingAccountLocationName;
+import com.google.logging.v2.BillingAccountName;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
-import com.google.logging.v2.ExclusionName;
+import com.google.logging.v2.FolderLocationName;
+import com.google.logging.v2.FolderName;
+import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListBucketsRequest;
+import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LocationName;
+import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
+import com.google.logging.v2.LogExclusionName;
 import com.google.logging.v2.LogSink;
-import com.google.logging.v2.ParentName;
-import com.google.logging.v2.SinkName;
+import com.google.logging.v2.LogSinkName;
+import com.google.logging.v2.OrganizationLocationName;
+import com.google.logging.v2.OrganizationName;
+import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
@@ -65,8 +77,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ConfigClient configClient = ConfigClient.create()) {
- *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
- *   LogSink response = configClient.getSink(sinkName);
+ *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+ *   configClient.deleteSink(sinkName);
  * }
  * </code>
  * </pre>
@@ -175,149 +187,20 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists sinks.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   for (LogSink element : configClient.listSinks(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   configClient.deleteSink(sinkName);
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource whose sinks are to be listed:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSinksPagedResponse listSinks(ParentName parent) {
-    ListSinksRequest request =
-        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
-    return listSinks(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists sinks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   for (LogSink element : configClient.listSinks(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The parent resource whose sinks are to be listed:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSinksPagedResponse listSinks(String parent) {
-    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
-    return listSinks(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists sinks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (LogSink element : configClient.listSinks(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSinksPagedResponse listSinks(ListSinksRequest request) {
-    return listSinksPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists sinks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSinksPagedResponse&gt; future = configClient.listSinksPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (LogSink element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
-    return stub.listSinksPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists sinks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   ListSinksRequest request = ListSinksRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListSinksResponse response = configClient.listSinksCallable().call(request);
-   *     for (LogSink element : response.getSinksList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
-    return stub.listSinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a sink.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   LogSink response = configClient.getSink(sinkName);
-   * }
-   * </code></pre>
-   *
-   * @param sinkName Required. The resource name of the sink:
+   * @param sinkName Required. The full resource name of the sink to delete, including the parent
+   *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -325,28 +208,30 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink getSink(SinkName sinkName) {
-    GetSinkRequest request =
-        GetSinkRequest.newBuilder()
+  public final void deleteSink(LogSinkName sinkName) {
+    DeleteSinkRequest request =
+        DeleteSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
             .build();
-    return getSink(request);
+    deleteSink(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   LogSink response = configClient.getSink(sinkName.toString());
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   configClient.deleteSink(sinkName.toString());
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The resource name of the sink:
+   * @param sinkName Required. The full resource name of the sink to delete, including the parent
+   *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -354,174 +239,56 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink getSink(String sinkName) {
-    GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName).build();
-    return getSink(request);
+  public final void deleteSink(String sinkName) {
+    DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(sinkName).build();
+    deleteSink(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   GetSinkRequest request = GetSinkRequest.newBuilder()
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
    *     .build();
-   *   LogSink response = configClient.getSink(request);
+   *   configClient.deleteSink(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink getSink(GetSinkRequest request) {
-    return getSinkCallable().call(request);
+  public final void deleteSink(DeleteSinkRequest request) {
+    deleteSinkCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   GetSinkRequest request = GetSinkRequest.newBuilder()
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
    *     .build();
-   *   ApiFuture&lt;LogSink&gt; future = configClient.getSinkCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = configClient.deleteSinkCallable().futureCall(request);
    *   // Do something
-   *   LogSink response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
-  public final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable() {
-    return stub.getSinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a sink that exports specified log entries to a destination. The export of
-   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
-   * permitted to write to the destination. A sink can export log entries only from the resource
-   * owning the sink.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   LogSink sink = LogSink.newBuilder().build();
-   *   LogSink response = configClient.createSink(parent, sink);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource in which to create the sink:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
-   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
-   *     already in use.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LogSink createSink(ParentName parent, LogSink sink) {
-    CreateSinkRequest request =
-        CreateSinkRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setSink(sink)
-            .build();
-    return createSink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a sink that exports specified log entries to a destination. The export of
-   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
-   * permitted to write to the destination. A sink can export log entries only from the resource
-   * owning the sink.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   LogSink sink = LogSink.newBuilder().build();
-   *   LogSink response = configClient.createSink(parent.toString(), sink);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource in which to create the sink:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
-   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
-   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
-   *     already in use.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LogSink createSink(String parent, LogSink sink) {
-    CreateSinkRequest request =
-        CreateSinkRequest.newBuilder().setParent(parent).setSink(sink).build();
-    return createSink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a sink that exports specified log entries to a destination. The export of
-   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
-   * permitted to write to the destination. A sink can export log entries only from the resource
-   * owning the sink.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   LogSink sink = LogSink.newBuilder().build();
-   *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSink(sink)
-   *     .build();
-   *   LogSink response = configClient.createSink(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LogSink createSink(CreateSinkRequest request) {
-    return createSinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a sink that exports specified log entries to a destination. The export of
-   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
-   * permitted to write to the destination. A sink can export log entries only from the resource
-   * owning the sink.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
-   *   LogSink sink = LogSink.newBuilder().build();
-   *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSink(sink)
-   *     .build();
-   *   ApiFuture&lt;LogSink&gt; future = configClient.createSinkCallable().futureCall(request);
-   *   // Do something
-   *   LogSink response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
-    return stub.createSinkCallable();
+  public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
+    return stub.deleteSinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -536,7 +303,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   LogSink response = configClient.updateSink(sinkName, sink, updateMask);
@@ -563,7 +330,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `updateMask=filter`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink updateSink(SinkName sinkName, LogSink sink, FieldMask updateMask) {
+  public final LogSink updateSink(LogSinkName sinkName, LogSink sink, FieldMask updateMask) {
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -585,7 +352,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   LogSink response = configClient.updateSink(sinkName.toString(), sink, updateMask);
@@ -634,7 +401,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   LogSink response = configClient.updateSink(sinkName, sink);
    * }
@@ -651,7 +418,7 @@ public class ConfigClient implements BackgroundResource {
    *     of `sink_name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogSink updateSink(SinkName sinkName, LogSink sink) {
+  public final LogSink updateSink(LogSinkName sinkName, LogSink sink) {
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder()
             .setSinkName(sinkName == null ? null : sinkName.toString())
@@ -672,7 +439,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   LogSink response = configClient.updateSink(sinkName.toString(), sink);
    * }
@@ -707,7 +474,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
@@ -736,7 +503,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(sinkName.toString())
@@ -754,108 +521,985 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
-   * deleted.
+   * Deletes an exclusion.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   configClient.deleteSink(sinkName);
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
+   *   configClient.deleteExclusion(name);
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The full resource name of the sink to delete, including the parent
-   *     resource and the sink identifier:
-   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
-   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param name Required. The resource name of an existing exclusion to delete:
+   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSink(SinkName sinkName) {
-    DeleteSinkRequest request =
-        DeleteSinkRequest.newBuilder()
-            .setSinkName(sinkName == null ? null : sinkName.toString())
-            .build();
-    deleteSink(request);
+  public final void deleteExclusion(LogExclusionName name) {
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteExclusion(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
-   * deleted.
+   * Deletes an exclusion.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   configClient.deleteSink(sinkName.toString());
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
+   *   configClient.deleteExclusion(name.toString());
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The full resource name of the sink to delete, including the parent
-   *     resource and the sink identifier:
-   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
-   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
-   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
-   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param name Required. The resource name of an existing exclusion to delete:
+   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
+   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
+   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSink(String sinkName) {
-    DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(sinkName).build();
-    deleteSink(request);
+  public final void deleteExclusion(String name) {
+    DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder().setName(name).build();
+    deleteExclusion(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
-   * deleted.
+   * Deletes an exclusion.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-   *     .setSinkName(sinkName.toString())
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
+   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
+   *     .setName(name.toString())
    *     .build();
-   *   configClient.deleteSink(request);
+   *   configClient.deleteExclusion(request);
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSink(DeleteSinkRequest request) {
-    deleteSinkCallable().call(request);
+  public final void deleteExclusion(DeleteExclusionRequest request) {
+    deleteExclusionCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
-   * deleted.
+   * Deletes an exclusion.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
-   *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-   *     .setSinkName(sinkName.toString())
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
+   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
+   *     .setName(name.toString())
    *     .build();
-   *   ApiFuture&lt;Void&gt; future = configClient.deleteSinkCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = configClient.deleteExclusionCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
    * </code></pre>
    */
-  public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
-    return stub.deleteSinkCallable();
+  public final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
+    return stub.deleteExclusionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (LogBucket element : configClient.listBuckets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose buckets are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *     <p>Note: The locations portion of the resource must be specified, but supplying the
+   *     character `-` in place of [LOCATION_ID] will return all buckets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(OrganizationLocationName parent) {
+    ListBucketsRequest request =
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBuckets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+   *   for (LogBucket element : configClient.listBuckets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose buckets are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *     <p>Note: The locations portion of the resource must be specified, but supplying the
+   *     character `-` in place of [LOCATION_ID] will return all buckets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(FolderLocationName parent) {
+    ListBucketsRequest request =
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBuckets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   BillingAccountLocationName parent = BillingAccountLocationName.of("[BILLING_ACCOUNT]", "[LOCATION]");
+   *   for (LogBucket element : configClient.listBuckets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose buckets are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *     <p>Note: The locations portion of the resource must be specified, but supplying the
+   *     character `-` in place of [LOCATION_ID] will return all buckets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(BillingAccountLocationName parent) {
+    ListBucketsRequest request =
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBuckets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (LogBucket element : configClient.listBuckets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose buckets are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *     <p>Note: The locations portion of the resource must be specified, but supplying the
+   *     character `-` in place of [LOCATION_ID] will return all buckets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(LocationName parent) {
+    ListBucketsRequest request =
+        ListBucketsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBuckets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (LogBucket element : configClient.listBuckets(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose buckets are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+   *     <p>Note: The locations portion of the resource must be specified, but supplying the
+   *     character `-` in place of [LOCATION_ID] will return all buckets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(String parent) {
+    ListBucketsRequest request = ListBucketsRequest.newBuilder().setParent(parent).build();
+    return listBuckets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   ListBucketsRequest request = ListBucketsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (LogBucket element : configClient.listBuckets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBucketsPagedResponse listBuckets(ListBucketsRequest request) {
+    return listBucketsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   ListBucketsRequest request = ListBucketsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListBucketsPagedResponse&gt; future = configClient.listBucketsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogBucket element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse>
+      listBucketsPagedCallable() {
+    return stub.listBucketsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists buckets (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   ListBucketsRequest request = ListBucketsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListBucketsResponse response = configClient.listBucketsCallable().call(request);
+   *     for (LogBucket element : response.getBucketsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
+    return stub.listBucketsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a bucket (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName name = LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   GetBucketRequest request = GetBucketRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   LogBucket response = configClient.getBucket(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogBucket getBucket(GetBucketRequest request) {
+    return getBucketCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a bucket (Beta).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName name = LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   GetBucketRequest request = GetBucketRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;LogBucket&gt; future = configClient.getBucketCallable().futureCall(request);
+   *   // Do something
+   *   LogBucket response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable() {
+    return stub.getBucketCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a bucket. This method replaces the following fields in the existing bucket with values
+   * from the new bucket: `retention_period`
+   *
+   * <p>If the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be
+   * returned.
+   *
+   * <p>If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be
+   * returned.
+   *
+   * <p>A buckets region may not be modified after it is created. This method is in Beta.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName name = LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   LogBucket bucket = LogBucket.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBucketRequest request = UpdateBucketRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBucket(bucket)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   LogBucket response = configClient.updateBucket(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogBucket updateBucket(UpdateBucketRequest request) {
+    return updateBucketCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a bucket. This method replaces the following fields in the existing bucket with values
+   * from the new bucket: `retention_period`
+   *
+   * <p>If the retention period is decreased and the bucket is locked, FAILED_PRECONDITION will be
+   * returned.
+   *
+   * <p>If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION will be
+   * returned.
+   *
+   * <p>A buckets region may not be modified after it is created. This method is in Beta.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName name = LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   LogBucket bucket = LogBucket.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBucketRequest request = UpdateBucketRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBucket(bucket)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;LogBucket&gt; future = configClient.updateBucketCallable().futureCall(request);
+   *   // Do something
+   *   LogBucket response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable() {
+    return stub.updateBucketCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (LogSink element : configClient.listSinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(ProjectName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listSinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (LogSink element : configClient.listSinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(OrganizationName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listSinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (LogSink element : configClient.listSinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(FolderName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listSinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   for (LogSink element : configClient.listSinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(BillingAccountName parent) {
+    ListSinksRequest request =
+        ListSinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listSinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (LogSink element : configClient.listSinks(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose sinks are to be listed:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(String parent) {
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
+    return listSinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListSinksRequest request = ListSinksRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (LogSink element : configClient.listSinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSinksPagedResponse listSinks(ListSinksRequest request) {
+    return listSinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListSinksRequest request = ListSinksRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListSinksPagedResponse&gt; future = configClient.listSinksPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogSink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
+    return stub.listSinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists sinks.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ListSinksRequest request = ListSinksRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListSinksResponse response = configClient.listSinksCallable().call(request);
+   *     for (LogSink element : response.getSinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
+    return stub.listSinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   LogSink response = configClient.getSink(sinkName);
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The resource name of the sink:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink getSink(LogSinkName sinkName) {
+    GetSinkRequest request =
+        GetSinkRequest.newBuilder()
+            .setSinkName(sinkName == null ? null : sinkName.toString())
+            .build();
+    return getSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   LogSink response = configClient.getSink(sinkName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param sinkName Required. The resource name of the sink:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
+   *     "folders/[FOLDER_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink getSink(String sinkName) {
+    GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName).build();
+    return getSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   GetSinkRequest request = GetSinkRequest.newBuilder()
+   *     .setSinkName(sinkName.toString())
+   *     .build();
+   *   LogSink response = configClient.getSink(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink getSink(GetSinkRequest request) {
+    return getSinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogSinkName sinkName = LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]");
+   *   GetSinkRequest request = GetSinkRequest.newBuilder()
+   *     .setSinkName(sinkName.toString())
+   *     .build();
+   *   ApiFuture&lt;LogSink&gt; future = configClient.getSinkCallable().futureCall(request);
+   *   // Do something
+   *   LogSink response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable() {
+    return stub.getSinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.createSink(parent, sink);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(ProjectName parent, LogSink sink) {
+    CreateSinkRequest request =
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
+    return createSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.createSink(parent, sink);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(OrganizationName parent, LogSink sink) {
+    CreateSinkRequest request =
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
+    return createSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.createSink(parent, sink);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(FolderName parent, LogSink sink) {
+    CreateSinkRequest request =
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
+    return createSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.createSink(parent, sink);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(BillingAccountName parent, LogSink sink) {
+    CreateSinkRequest request =
+        CreateSinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSink(sink)
+            .build();
+    return createSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   LogSink response = configClient.createSink(parent.toString(), sink);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(String parent, LogSink sink) {
+    CreateSinkRequest request =
+        CreateSinkRequest.newBuilder().setParent(parent).setSink(sink).build();
+    return createSink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setSink(sink)
+   *     .build();
+   *   LogSink response = configClient.createSink(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogSink createSink(CreateSinkRequest request) {
+    return createSinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the sink's `writer_identity` is not
+   * permitted to write to the destination. A sink can export log entries only from the resource
+   * owning the sink.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   LogSink sink = LogSink.newBuilder().build();
+   *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setSink(sink)
+   *     .build();
+   *   ApiFuture&lt;LogSink&gt; future = configClient.createSinkCallable().futureCall(request);
+   *   // Do something
+   *   LogSink response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
+    return stub.createSinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -866,7 +1510,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (LogExclusion element : configClient.listExclusions(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -878,7 +1522,7 @@ public class ConfigClient implements BackgroundResource {
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExclusionsPagedResponse listExclusions(ParentName parent) {
+  public final ListExclusionsPagedResponse listExclusions(ProjectName parent) {
     ListExclusionsRequest request =
         ListExclusionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -894,7 +1538,91 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (LogExclusion element : configClient.listExclusions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose exclusions are to be listed.
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExclusionsPagedResponse listExclusions(OrganizationName parent) {
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExclusions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (LogExclusion element : configClient.listExclusions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose exclusions are to be listed.
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExclusionsPagedResponse listExclusions(FolderName parent) {
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExclusions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   for (LogExclusion element : configClient.listExclusions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource whose exclusions are to be listed.
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExclusionsPagedResponse listExclusions(BillingAccountName parent) {
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExclusions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all the exclusions in a parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (LogExclusion element : configClient.listExclusions(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -919,7 +1647,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -944,7 +1672,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -969,7 +1697,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListExclusionsRequest request = ListExclusionsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -1001,7 +1729,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion response = configClient.getExclusion(name);
    * }
    * </code></pre>
@@ -1014,7 +1742,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion getExclusion(ExclusionName name) {
+  public final LogExclusion getExclusion(LogExclusionName name) {
     GetExclusionRequest request =
         GetExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExclusion(request);
@@ -1028,7 +1756,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion response = configClient.getExclusion(name.toString());
    * }
    * </code></pre>
@@ -1054,7 +1782,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1077,7 +1805,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   GetExclusionRequest request = GetExclusionRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1100,7 +1828,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   LogExclusion response = configClient.createExclusion(parent, exclusion);
    * }
@@ -1114,7 +1842,7 @@ public class ConfigClient implements BackgroundResource {
    *     is not already used in the parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LogExclusion createExclusion(ParentName parent, LogExclusion exclusion) {
+  public final LogExclusion createExclusion(ProjectName parent, LogExclusion exclusion) {
     CreateExclusionRequest request =
         CreateExclusionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1132,7 +1860,103 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   LogExclusion response = configClient.createExclusion(parent, exclusion);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource in which to create the exclusion:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param exclusion Required. The new exclusion, whose `name` parameter is an exclusion name that
+   *     is not already used in the parent resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion createExclusion(OrganizationName parent, LogExclusion exclusion) {
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExclusion(exclusion)
+            .build();
+    return createExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   LogExclusion response = configClient.createExclusion(parent, exclusion);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource in which to create the exclusion:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param exclusion Required. The new exclusion, whose `name` parameter is an exclusion name that
+   *     is not already used in the parent resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion createExclusion(FolderName parent, LogExclusion exclusion) {
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExclusion(exclusion)
+            .build();
+    return createExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   LogExclusion exclusion = LogExclusion.newBuilder().build();
+   *   LogExclusion response = configClient.createExclusion(parent, exclusion);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource in which to create the exclusion:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+   * @param exclusion Required. The new exclusion, whose `name` parameter is an exclusion name that
+   *     is not already used in the parent resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogExclusion createExclusion(BillingAccountName parent, LogExclusion exclusion) {
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExclusion(exclusion)
+            .build();
+    return createExclusion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   LogExclusion response = configClient.createExclusion(parent.toString(), exclusion);
    * }
@@ -1161,7 +1985,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1187,7 +2011,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ParentName parent = ProjectName.of("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   CreateExclusionRequest request = CreateExclusionRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -1211,7 +2035,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   LogExclusion response = configClient.updateExclusion(name, exclusion, updateMask);
@@ -1235,7 +2059,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LogExclusion updateExclusion(
-      ExclusionName name, LogExclusion exclusion, FieldMask updateMask) {
+      LogExclusionName name, LogExclusion exclusion, FieldMask updateMask) {
     UpdateExclusionRequest request =
         UpdateExclusionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1253,7 +2077,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   LogExclusion response = configClient.updateExclusion(name.toString(), exclusion, updateMask);
@@ -1295,7 +2119,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
@@ -1322,7 +2146,7 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
+   *   LogExclusionName name = LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]");
    *   LogExclusion exclusion = LogExclusion.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateExclusionRequest request = UpdateExclusionRequest.newBuilder()
@@ -1342,117 +2166,22 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an exclusion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
-   *   configClient.deleteExclusion(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of an existing exclusion to delete:
-   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteExclusion(ExclusionName name) {
-    DeleteExclusionRequest request =
-        DeleteExclusionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteExclusion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an exclusion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
-   *   configClient.deleteExclusion(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of an existing exclusion to delete:
-   *     <p>"projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]"
-   *     "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]"
-   *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteExclusion(String name) {
-    DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder().setName(name).build();
-    deleteExclusion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an exclusion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
-   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   configClient.deleteExclusion(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteExclusion(DeleteExclusionRequest request) {
-    deleteExclusionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an exclusion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConfigClient configClient = ConfigClient.create()) {
-   *   ExclusionName name = ProjectExclusionName.of("[PROJECT]", "[EXCLUSION]");
-   *   DeleteExclusionRequest request = DeleteExclusionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = configClient.deleteExclusionCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
-    return stub.deleteExclusionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Gets the Logs Router CMEK settings for the given resource.
    *
    * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
    * configured, it applies to all projects and folders in the GCP organization.
    *
-   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
-   * information.
+   * <p>See [Enabling CMEK for Logs
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+   *   CmekSettingsName name = CmekSettingsName.ofProjectCmekSettingsName("[PROJECT]");
+   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   CmekSettings response = configClient.getCmekSettings(request);
    * }
    * </code></pre>
@@ -1471,14 +2200,17 @@ public class ConfigClient implements BackgroundResource {
    * <p>Note: CMEK for the Logs Router can currently only be configured for GCP organizations. Once
    * configured, it applies to all projects and folders in the GCP organization.
    *
-   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
-   * information.
+   * <p>See [Enabling CMEK for Logs
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder().build();
+   *   CmekSettingsName name = CmekSettingsName.ofProjectCmekSettingsName("[PROJECT]");
+   *   GetCmekSettingsRequest request = GetCmekSettingsRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;CmekSettings&gt; future = configClient.getCmekSettingsCallable().futureCall(request);
    *   // Do something
    *   CmekSettings response = future.get();
@@ -1501,14 +2233,19 @@ public class ConfigClient implements BackgroundResource {
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or 3) access to the key
    * is disabled.
    *
-   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
-   * information.
+   * <p>See [Enabling CMEK for Logs
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+   *   String name = "";
+   *   CmekSettings cmekSettings = CmekSettings.newBuilder().build();
+   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder()
+   *     .setName(name)
+   *     .setCmekSettings(cmekSettings)
+   *     .build();
    *   CmekSettings response = configClient.updateCmekSettings(request);
    * }
    * </code></pre>
@@ -1532,14 +2269,19 @@ public class ConfigClient implements BackgroundResource {
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or 3) access to the key
    * is disabled.
    *
-   * <p>See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption) for more
-   * information.
+   * <p>See [Enabling CMEK for Logs
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder().build();
+   *   String name = "";
+   *   CmekSettings cmekSettings = CmekSettings.newBuilder().build();
+   *   UpdateCmekSettingsRequest request = UpdateCmekSettingsRequest.newBuilder()
+   *     .setName(name)
+   *     .setCmekSettings(cmekSettings)
+   *     .build();
    *   ApiFuture&lt;CmekSettings&gt; future = configClient.updateCmekSettingsCallable().futureCall(request);
    *   // Do something
    *   CmekSettings response = future.get();
@@ -1578,6 +2320,86 @@ public class ConfigClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListBucketsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBucketsRequest,
+          ListBucketsResponse,
+          LogBucket,
+          ListBucketsPage,
+          ListBucketsFixedSizeCollection> {
+
+    public static ApiFuture<ListBucketsPagedResponse> createAsync(
+        PageContext<ListBucketsRequest, ListBucketsResponse, LogBucket> context,
+        ApiFuture<ListBucketsResponse> futureResponse) {
+      ApiFuture<ListBucketsPage> futurePage =
+          ListBucketsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListBucketsPage, ListBucketsPagedResponse>() {
+            @Override
+            public ListBucketsPagedResponse apply(ListBucketsPage input) {
+              return new ListBucketsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBucketsPagedResponse(ListBucketsPage page) {
+      super(page, ListBucketsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBucketsPage
+      extends AbstractPage<ListBucketsRequest, ListBucketsResponse, LogBucket, ListBucketsPage> {
+
+    private ListBucketsPage(
+        PageContext<ListBucketsRequest, ListBucketsResponse, LogBucket> context,
+        ListBucketsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBucketsPage createEmptyPage() {
+      return new ListBucketsPage(null, null);
+    }
+
+    @Override
+    protected ListBucketsPage createPage(
+        PageContext<ListBucketsRequest, ListBucketsResponse, LogBucket> context,
+        ListBucketsResponse response) {
+      return new ListBucketsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBucketsPage> createPageAsync(
+        PageContext<ListBucketsRequest, ListBucketsResponse, LogBucket> context,
+        ApiFuture<ListBucketsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBucketsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBucketsRequest,
+          ListBucketsResponse,
+          LogBucket,
+          ListBucketsPage,
+          ListBucketsFixedSizeCollection> {
+
+    private ListBucketsFixedSizeCollection(List<ListBucketsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBucketsFixedSizeCollection createEmptyCollection() {
+      return new ListBucketsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBucketsFixedSizeCollection createCollection(
+        List<ListBucketsPage> pages, int collectionSize) {
+      return new ListBucketsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListSinksPagedResponse

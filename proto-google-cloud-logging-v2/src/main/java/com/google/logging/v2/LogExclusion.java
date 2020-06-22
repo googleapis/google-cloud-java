@@ -173,16 +173,17 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A client-assigned identifier, such as
-   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-   * can include only letters, digits, underscores, hyphens, and periods.
-   * First character has to be alphanumeric.
+   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+   * Identifiers are limited to 100 characters and can include only letters,
+   * digits, underscores, hyphens, and periods. First character has to be
+   * alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,16 +199,17 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A client-assigned identifier, such as
-   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-   * can include only letters, digits, underscores, hyphens, and periods.
-   * First character has to be alphanumeric.
+   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+   * Identifiers are limited to 100 characters and can include only letters,
+   * digits, underscores, hyphens, and periods. First character has to be
+   * alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -229,10 +231,11 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * Optional. A description of this exclusion.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -251,10 +254,11 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * Optional. A description of this exclusion.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -273,19 +277,20 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+   * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced-queries#sample),
+   * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
    * For example, the following query matches 99% of low-severity log
    * entries from Google Cloud Storage buckets:
    * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -301,19 +306,20 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+   * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced-queries#sample),
+   * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
    * For example, the following query matches 99% of low-severity log
    * entries from Google Cloud Storage buckets:
    * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -338,10 +344,11 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * value of this field.
    * </pre>
    *
-   * <code>bool disabled = 4;</code>
+   * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -356,10 +363,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -371,10 +380,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -386,8 +397,10 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -402,10 +415,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -417,10 +432,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -432,8 +449,10 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -864,13 +883,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A client-assigned identifier, such as
-     * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-     * can include only letters, digits, underscores, hyphens, and periods.
-     * First character has to be alphanumeric.
+     * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+     * Identifiers are limited to 100 characters and can include only letters,
+     * digits, underscores, hyphens, and periods. First character has to be
+     * alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The name.
      */
@@ -889,13 +908,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A client-assigned identifier, such as
-     * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-     * can include only letters, digits, underscores, hyphens, and periods.
-     * First character has to be alphanumeric.
+     * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+     * Identifiers are limited to 100 characters and can include only letters,
+     * digits, underscores, hyphens, and periods. First character has to be
+     * alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for name.
      */
@@ -914,13 +933,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A client-assigned identifier, such as
-     * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-     * can include only letters, digits, underscores, hyphens, and periods.
-     * First character has to be alphanumeric.
+     * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+     * Identifiers are limited to 100 characters and can include only letters,
+     * digits, underscores, hyphens, and periods. First character has to be
+     * alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -938,13 +957,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A client-assigned identifier, such as
-     * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-     * can include only letters, digits, underscores, hyphens, and periods.
-     * First character has to be alphanumeric.
+     * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+     * Identifiers are limited to 100 characters and can include only letters,
+     * digits, underscores, hyphens, and periods. First character has to be
+     * alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -958,13 +977,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A client-assigned identifier, such as
-     * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-     * can include only letters, digits, underscores, hyphens, and periods.
-     * First character has to be alphanumeric.
+     * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+     * Identifiers are limited to 100 characters and can include only letters,
+     * digits, underscores, hyphens, and periods. First character has to be
+     * alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -988,7 +1007,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * Optional. A description of this exclusion.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1010,7 +1029,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * Optional. A description of this exclusion.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1032,7 +1051,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * Optional. A description of this exclusion.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1053,7 +1072,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * Optional. A description of this exclusion.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1070,7 +1089,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * Optional. A description of this exclusion.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1091,16 +1110,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+     * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced-queries#sample),
+     * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
      * For example, the following query matches 99% of low-severity log
      * entries from Google Cloud Storage buckets:
      * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The filter.
      */
@@ -1119,16 +1138,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+     * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced-queries#sample),
+     * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
      * For example, the following query matches 99% of low-severity log
      * entries from Google Cloud Storage buckets:
      * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for filter.
      */
@@ -1147,16 +1166,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+     * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced-queries#sample),
+     * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
      * For example, the following query matches 99% of low-severity log
      * entries from Google Cloud Storage buckets:
      * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1174,16 +1193,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+     * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced-queries#sample),
+     * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
      * For example, the following query matches 99% of low-severity log
      * entries from Google Cloud Storage buckets:
      * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1197,16 +1216,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
+     * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced-queries#sample),
+     * [sample function](https://cloud.google.com/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
      * For example, the following query matches 99% of low-severity log
      * entries from Google Cloud Storage buckets:
      * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1233,10 +1252,11 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * value of this field.
      * </pre>
      *
-     * <code>bool disabled = 4;</code>
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }
@@ -1250,7 +1270,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * value of this field.
      * </pre>
      *
-     * <code>bool disabled = 4;</code>
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
@@ -1271,7 +1291,7 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * value of this field.
      * </pre>
      *
-     * <code>bool disabled = 4;</code>
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1296,7 +1316,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1311,7 +1333,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1332,7 +1356,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1355,7 +1381,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1375,7 +1403,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1400,7 +1430,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -1421,7 +1453,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -1436,7 +1470,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1455,7 +1491,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1488,7 +1526,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -1503,7 +1543,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -1524,7 +1566,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1547,7 +1591,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -1567,7 +1613,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1592,7 +1640,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -1613,7 +1663,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -1628,7 +1680,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1647,7 +1701,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      * This field may not be present for older exclusions.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

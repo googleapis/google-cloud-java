@@ -15,6 +15,7 @@
  */
 package com.google.cloud.logging.v2.stub;
 
+import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 
@@ -26,15 +27,20 @@ import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListBucketsRequest;
+import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
@@ -51,6 +57,34 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
+  public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSinkCallable()");
+  }
+
+  public UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSinkCallable()");
+  }
+
+  public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExclusionCallable()");
+  }
+
+  public UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBucketsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBucketsCallable()");
+  }
+
+  public UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBucketCallable()");
+  }
+
+  public UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBucketCallable()");
+  }
+
   public UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSinksPagedCallable()");
   }
@@ -65,14 +99,6 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     throw new UnsupportedOperationException("Not implemented: createSinkCallable()");
-  }
-
-  public UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateSinkCallable()");
-  }
-
-  public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteSinkCallable()");
   }
 
   public UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
@@ -94,10 +120,6 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateExclusionCallable()");
-  }
-
-  public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteExclusionCallable()");
   }
 
   public UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable() {

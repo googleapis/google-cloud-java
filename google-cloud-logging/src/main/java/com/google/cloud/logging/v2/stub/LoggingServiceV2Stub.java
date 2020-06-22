@@ -48,10 +48,6 @@ public abstract class LoggingServiceV2Stub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteLogCallable()");
   }
 
-  public UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse> writeLogEntriesCallable() {
-    throw new UnsupportedOperationException("Not implemented: writeLogEntriesCallable()");
-  }
-
   public UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
       listLogEntriesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listLogEntriesPagedCallable()");
@@ -59,6 +55,10 @@ public abstract class LoggingServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listLogEntriesCallable()");
+  }
+
+  public UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse> writeLogEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: writeLogEntriesCallable()");
   }
 
   public UnaryCallable<

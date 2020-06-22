@@ -24,7 +24,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
 import com.google.logging.v2.LogEntrySourceLocation;
-import com.google.logging.v2.ProjectLogName;
+import com.google.logging.v2.LogName;
 import com.google.protobuf.Timestamp;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -466,7 +466,7 @@ public class LogEntry implements Serializable {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
     if (logName != null) {
-      builder.setLogName(ProjectLogName.of(projectId, logName).toString());
+      builder.setLogName(LogName.ofProjectLogName(projectId, logName).toString());
     }
     if (resource != null) {
       builder.setResource(resource.toPb());
@@ -525,7 +525,7 @@ public class LogEntry implements Serializable {
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
     if (!entryPb.getLogName().equals("")) {
-      builder.setLogName(ProjectLogName.parse(entryPb.getLogName()).getLog());
+      builder.setLogName(LogName.parse(entryPb.getLogName()).getLog());
     }
     if (!entryPb.getResource().equals(com.google.api.MonitoredResource.getDefaultInstance())) {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));

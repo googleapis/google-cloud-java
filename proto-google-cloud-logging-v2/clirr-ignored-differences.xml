@@ -17,13 +17,68 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 1.102.0 is released -->
+  <!-- TODO: remove after 2.0.0 is released -->
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/logging/type/HttpRequest*</className>
+    <className>com/google/logging/v2/*Name*</className>
   </difference>
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/logging/type/LogSeverity*</className>
+    <className>com/google/logging/type/*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/LogSink*Builder</className>
+    <method>*StartTime*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/LogSink*Builder</className>
+    <method>*EndTime*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/LogSink</className>
+    <method>*StartTime*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/LogSink</className>
+    <method>*EndTime*</method>
+  </difference>
+  <difference>
+    <differenceType>5001</differenceType>
+    <className>com/google/logging/v2/*Name</className>
+    <to>com/google/logging/v2/ParentName</to>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/logging/v2/LogSink</className>
+    <field>START_TIME_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/logging/v2/LogSink</className>
+    <field>END_TIME_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/LogEntry*</className>
+    <method>*Metadata*</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/logging/v2/LogEntry</className>
+    <field>METADATA_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/logging/v2/ListLogEntriesRequest</className>
+    <field>PROJECT_IDS_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/logging/v2/ListLogEntriesRequest*</className>
+    <method>*ProjectIds*</method>
   </difference>
 </differences>

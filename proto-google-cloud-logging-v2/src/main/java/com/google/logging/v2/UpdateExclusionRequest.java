@@ -161,6 +161,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +191,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -208,8 +210,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -217,6 +219,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the exclusion field is set.
    */
+  @java.lang.Override
   public boolean hasExclusion() {
     return exclusion_ != null;
   }
@@ -224,8 +227,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -233,6 +236,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return The exclusion.
    */
+  @java.lang.Override
   public com.google.logging.v2.LogExclusion getExclusion() {
     return exclusion_ == null
         ? com.google.logging.v2.LogExclusion.getDefaultInstance()
@@ -242,13 +246,14 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
     return getExclusion();
   }
@@ -259,8 +264,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -272,6 +277,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -279,8 +285,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -292,6 +298,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -299,8 +306,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -310,6 +317,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -837,8 +845,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -854,8 +862,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -877,8 +885,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -902,8 +910,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -924,8 +932,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -953,8 +961,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -976,8 +984,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -993,8 +1001,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -1014,8 +1022,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>
@@ -1049,8 +1057,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1069,8 +1077,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1095,8 +1103,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1123,8 +1131,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1148,8 +1156,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1178,8 +1186,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1204,8 +1212,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1224,8 +1232,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1248,8 +1256,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,

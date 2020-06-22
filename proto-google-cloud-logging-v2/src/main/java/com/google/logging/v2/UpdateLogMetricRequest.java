@@ -145,6 +145,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * @return The metricName.
    */
+  @java.lang.Override
   public java.lang.String getMetricName() {
     java.lang.Object ref = metricName_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for metricName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMetricNameBytes() {
     java.lang.Object ref = metricName_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the metric field is set.
    */
+  @java.lang.Override
   public boolean hasMetric() {
     return metric_ != null;
   }
@@ -212,6 +215,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * @return The metric.
    */
+  @java.lang.Override
   public com.google.logging.v2.LogMetric getMetric() {
     return metric_ == null ? com.google.logging.v2.LogMetric.getDefaultInstance() : metric_;
   }
@@ -224,6 +228,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.logging.v2.LogMetric metric = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder() {
     return getMetric();
   }

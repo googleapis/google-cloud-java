@@ -116,11 +116,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           .build();
 
   private final UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
-  private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesSettings;
   private final PagedCallSettings<
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       listLogEntriesSettings;
+  private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings;
   private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest,
           ListMonitoredResourceDescriptorsResponse,
@@ -134,17 +134,17 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
     return deleteLogSettings;
   }
 
-  /** Returns the object with the settings used for calls to writeLogEntries. */
-  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesSettings() {
-    return writeLogEntriesSettings;
-  }
-
   /** Returns the object with the settings used for calls to listLogEntries. */
   public PagedCallSettings<
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       listLogEntriesSettings() {
     return listLogEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to writeLogEntries. */
+  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings() {
+    return writeLogEntriesSettings;
   }
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
@@ -232,8 +232,8 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
     super(settingsBuilder);
 
     deleteLogSettings = settingsBuilder.deleteLogSettings().build();
-    writeLogEntriesSettings = settingsBuilder.writeLogEntriesSettings().build();
     listLogEntriesSettings = settingsBuilder.listLogEntriesSettings().build();
+    writeLogEntriesSettings = settingsBuilder.writeLogEntriesSettings().build();
     listMonitoredResourceDescriptorsSettings =
         settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
     listLogsSettings = settingsBuilder.listLogsSettings().build();
@@ -493,11 +493,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
-    private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings;
+    private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest,
             ListMonitoredResourceDescriptorsResponse,
@@ -521,6 +521,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -540,17 +545,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("list", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -563,11 +557,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
 
       deleteLogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      listLogEntriesSettings = PagedCallSettings.newBuilder(LIST_LOG_ENTRIES_PAGE_STR_FACT);
+
       writeLogEntriesSettings =
           BatchingCallSettings.newBuilder(WRITE_LOG_ENTRIES_BATCHING_DESC)
               .setBatchingSettings(BatchingSettings.newBuilder().build());
-
-      listLogEntriesSettings = PagedCallSettings.newBuilder(LIST_LOG_ENTRIES_PAGE_STR_FACT);
 
       listMonitoredResourceDescriptorsSettings =
           PagedCallSettings.newBuilder(LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
@@ -577,8 +571,8 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLogSettings,
-              writeLogEntriesSettings,
               listLogEntriesSettings,
+              writeLogEntriesSettings,
               listMonitoredResourceDescriptorsSettings,
               listLogsSettings);
 
@@ -602,6 +596,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listLogEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .writeLogEntriesSettings()
           .setBatchingSettings(
               BatchingSettings.newBuilder()
@@ -621,18 +620,13 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .listLogEntriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listMonitoredResourceDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listLogsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -642,8 +636,8 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       super(settings);
 
       deleteLogSettings = settings.deleteLogSettings.toBuilder();
-      writeLogEntriesSettings = settings.writeLogEntriesSettings.toBuilder();
       listLogEntriesSettings = settings.listLogEntriesSettings.toBuilder();
+      writeLogEntriesSettings = settings.writeLogEntriesSettings.toBuilder();
       listMonitoredResourceDescriptorsSettings =
           settings.listMonitoredResourceDescriptorsSettings.toBuilder();
       listLogsSettings = settings.listLogsSettings.toBuilder();
@@ -651,8 +645,8 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLogSettings,
-              writeLogEntriesSettings,
               listLogEntriesSettings,
+              writeLogEntriesSettings,
               listMonitoredResourceDescriptorsSettings,
               listLogsSettings);
     }
@@ -678,17 +672,17 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       return deleteLogSettings;
     }
 
-    /** Returns the builder for the settings used for calls to writeLogEntries. */
-    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesSettings() {
-      return writeLogEntriesSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listLogEntries. */
     public PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings() {
       return listLogEntriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to writeLogEntries. */
+    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings() {
+      return writeLogEntriesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */

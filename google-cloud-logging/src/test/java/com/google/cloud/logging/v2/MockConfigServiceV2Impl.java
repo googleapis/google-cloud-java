@@ -22,15 +22,20 @@ import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListBucketsRequest;
+import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
@@ -72,6 +77,50 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void listBuckets(
+      ListBucketsRequest request, StreamObserver<ListBucketsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListBucketsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListBucketsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getBucket(GetBucketRequest request, StreamObserver<LogBucket> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LogBucket) {
+      requests.add(request);
+      responseObserver.onNext((LogBucket) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateBucket(
+      UpdateBucketRequest request, StreamObserver<LogBucket> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LogBucket) {
+      requests.add(request);
+      responseObserver.onNext((LogBucket) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override

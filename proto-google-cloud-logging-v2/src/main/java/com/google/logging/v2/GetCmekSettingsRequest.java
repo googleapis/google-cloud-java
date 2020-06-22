@@ -24,7 +24,7 @@ package com.google.logging.v2;
  * <pre>
  * The parameters to
  * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
- * See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption)
+ * See [Enabling CMEK for Logs Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
  * for more information.
  * </pre>
  *
@@ -131,10 +131,13 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -161,10 +164,13 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -342,7 +348,7 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The parameters to
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
-   * See [Enabling CMEK for Logs Router](/logging/docs/routing/managed-encryption)
+   * See [Enabling CMEK for Logs Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
    * for more information.
    * </pre>
    *
@@ -512,7 +518,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -542,7 +550,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -572,7 +582,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -601,7 +613,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -626,7 +640,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

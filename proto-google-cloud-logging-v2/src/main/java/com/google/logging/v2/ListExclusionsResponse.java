@@ -138,6 +138,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList() {
     return exclusions_;
   }
@@ -150,6 +151,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
       getExclusionsOrBuilderList() {
     return exclusions_;
@@ -163,6 +165,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
+  @java.lang.Override
   public int getExclusionsCount() {
     return exclusions_.size();
   }
@@ -175,6 +178,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogExclusion getExclusions(int index) {
     return exclusions_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(int index) {
     return exclusions_.get(index);
   }
@@ -206,6 +211,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

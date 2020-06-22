@@ -38,7 +38,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -58,7 +58,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -70,10 +70,12 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * <pre>
    * Required. The CMEK settings to update.
    * See [Enabling CMEK for Logs
-   * Router](/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>
+   * .google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the cmekSettings field is set.
    */
@@ -84,10 +86,12 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * <pre>
    * Required. The CMEK settings to update.
    * See [Enabling CMEK for Logs
-   * Router](/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>
+   * .google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The cmekSettings.
    */
@@ -98,10 +102,12 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * <pre>
    * Required. The CMEK settings to update.
    * See [Enabling CMEK for Logs
-   * Router](/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>
+   * .google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder();
 
@@ -116,7 +122,8 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -132,7 +139,8 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -148,7 +156,8 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

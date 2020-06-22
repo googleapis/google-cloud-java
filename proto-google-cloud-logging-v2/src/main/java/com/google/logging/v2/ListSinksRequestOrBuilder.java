@@ -70,7 +70,7 @@ public interface ListSinksRequestOrBuilder
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -85,7 +85,7 @@ public interface ListSinksRequestOrBuilder
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -100,7 +100,7 @@ public interface ListSinksRequestOrBuilder
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */

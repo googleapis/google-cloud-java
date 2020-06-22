@@ -51,6 +51,24 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
 
+  private static final MethodDescriptor<UpdateLogMetricRequest, LogMetric>
+      updateLogMetricMethodDescriptor =
+          MethodDescriptor.<UpdateLogMetricRequest, LogMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/UpdateLogMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteLogMetricRequest, Empty>
+      deleteLogMetricMethodDescriptor =
+          MethodDescriptor.<DeleteLogMetricRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.MetricsServiceV2/DeleteLogMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLogMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListLogMetricsRequest, ListLogMetricsResponse>
       listLogMetricsMethodDescriptor =
           MethodDescriptor.<ListLogMetricsRequest, ListLogMetricsResponse>newBuilder()
@@ -78,34 +96,16 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   ProtoUtils.marshaller(CreateLogMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<UpdateLogMetricRequest, LogMetric>
-      updateLogMetricMethodDescriptor =
-          MethodDescriptor.<UpdateLogMetricRequest, LogMetric>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.logging.v2.MetricsServiceV2/UpdateLogMetric")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateLogMetricRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(LogMetric.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteLogMetricRequest, Empty>
-      deleteLogMetricMethodDescriptor =
-          MethodDescriptor.<DeleteLogMetricRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.logging.v2.MetricsServiceV2/DeleteLogMetric")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteLogMetricRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
+  private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
   private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
   private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
       listLogMetricsPagedCallable;
   private final UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
   private final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
-  private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
-  private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -148,6 +148,32 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
+        GrpcCallSettings.<UpdateLogMetricRequest, LogMetric>newBuilder()
+            .setMethodDescriptor(updateLogMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateLogMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateLogMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("metric_name", String.valueOf(request.getMetricName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
+        GrpcCallSettings.<DeleteLogMetricRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteLogMetricMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteLogMetricRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteLogMetricRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("metric_name", String.valueOf(request.getMetricName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListLogMetricsRequest, ListLogMetricsResponse>
         listLogMetricsTransportSettings =
             GrpcCallSettings.<ListLogMetricsRequest, ListLogMetricsResponse>newBuilder()
@@ -188,33 +214,13 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   }
                 })
             .build();
-    GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
-        GrpcCallSettings.<UpdateLogMetricRequest, LogMetric>newBuilder()
-            .setMethodDescriptor(updateLogMetricMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("metric_name", String.valueOf(request.getMetricName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
-        GrpcCallSettings.<DeleteLogMetricRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteLogMetricMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteLogMetricRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteLogMetricRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("metric_name", String.valueOf(request.getMetricName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.updateLogMetricCallable =
+        callableFactory.createUnaryCallable(
+            updateLogMetricTransportSettings, settings.updateLogMetricSettings(), clientContext);
+    this.deleteLogMetricCallable =
+        callableFactory.createUnaryCallable(
+            deleteLogMetricTransportSettings, settings.deleteLogMetricSettings(), clientContext);
     this.listLogMetricsCallable =
         callableFactory.createUnaryCallable(
             listLogMetricsTransportSettings, settings.listLogMetricsSettings(), clientContext);
@@ -227,14 +233,16 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
     this.createLogMetricCallable =
         callableFactory.createUnaryCallable(
             createLogMetricTransportSettings, settings.createLogMetricSettings(), clientContext);
-    this.updateLogMetricCallable =
-        callableFactory.createUnaryCallable(
-            updateLogMetricTransportSettings, settings.updateLogMetricSettings(), clientContext);
-    this.deleteLogMetricCallable =
-        callableFactory.createUnaryCallable(
-            deleteLogMetricTransportSettings, settings.deleteLogMetricSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
+    return updateLogMetricCallable;
+  }
+
+  public UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
+    return deleteLogMetricCallable;
   }
 
   public UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
@@ -252,14 +260,6 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
 
   public UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
     return createLogMetricCallable;
-  }
-
-  public UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
-    return updateLogMetricCallable;
-  }
-
-  public UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
-    return deleteLogMetricCallable;
   }
 
   @Override

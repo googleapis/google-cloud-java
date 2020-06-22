@@ -31,7 +31,7 @@ public interface LogEntrySourceLocationOrBuilder
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The file.
    */
@@ -44,7 +44,7 @@ public interface LogEntrySourceLocationOrBuilder
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for file.
    */
@@ -58,7 +58,7 @@ public interface LogEntrySourceLocationOrBuilder
    * available.
    * </pre>
    *
-   * <code>int64 line = 2;</code>
+   * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The line.
    */
@@ -76,7 +76,7 @@ public interface LogEntrySourceLocationOrBuilder
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The function.
    */
@@ -93,7 +93,7 @@ public interface LogEntrySourceLocationOrBuilder
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for function.
    */

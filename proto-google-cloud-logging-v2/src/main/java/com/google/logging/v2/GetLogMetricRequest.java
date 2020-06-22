@@ -127,6 +127,7 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The metricName.
    */
+  @java.lang.Override
   public java.lang.String getMetricName() {
     java.lang.Object ref = metricName_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for metricName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMetricNameBytes() {
     java.lang.Object ref = metricName_;
     if (ref instanceof java.lang.String) {

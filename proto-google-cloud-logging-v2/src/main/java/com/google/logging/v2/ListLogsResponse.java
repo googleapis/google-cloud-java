@@ -210,6 +210,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +235,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

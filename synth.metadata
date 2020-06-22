@@ -11,9 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "83c6f84035ee0f80eaa44d8b688a010461cc4080",
-        "internalRef": "297918498",
-        "log": "83c6f84035ee0f80eaa44d8b688a010461cc4080\nUpdate google/api/auth.proto to make AuthProvider to have JwtLocation\n\nPiperOrigin-RevId: 297918498\n\ne9e90a787703ec5d388902e2cb796aaed3a385b4\nDialogflow weekly v2/v2beta1 library update:\n  - adding get validation result\n  - adding field mask override control for output audio config\nImportant updates are also posted at:\nhttps://cloud.google.com/dialogflow/docs/release-notes\n\nPiperOrigin-RevId: 297671458\n\n1a2b05cc3541a5f7714529c665aecc3ea042c646\nAdding .yaml and .json config files.\n\nPiperOrigin-RevId: 297570622\n\ndfe1cf7be44dee31d78f78e485d8c95430981d6e\nPublish `QueryOptions` proto.\n\nIntroduced a `query_options` input in `ExecuteSqlRequest`.\n\nPiperOrigin-RevId: 297497710\n\ndafc905f71e5d46f500b41ed715aad585be062c3\npubsub: revert pull init_rpc_timeout & max_rpc_timeout back to 25 seconds and reset multiplier to 1.0\n\nPiperOrigin-RevId: 297486523\n\n"
+        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
+        "internalRef": "313460921"
       }
     },
     {
@@ -31,8 +30,7 @@
         "apiName": "logging",
         "apiVersion": "v2",
         "language": "java",
-        "generator": "gapic",
-        "config": "google/logging/artman_logging.yaml"
+        "generator": "bazel"
       }
     }
   ]

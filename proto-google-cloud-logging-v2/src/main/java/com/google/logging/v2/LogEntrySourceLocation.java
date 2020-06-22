@@ -135,10 +135,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The file.
    */
+  @java.lang.Override
   public java.lang.String getFile() {
     java.lang.Object ref = file_;
     if (ref instanceof java.lang.String) {
@@ -158,10 +159,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for file.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFileBytes() {
     java.lang.Object ref = file_;
     if (ref instanceof java.lang.String) {
@@ -184,10 +186,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * available.
    * </pre>
    *
-   * <code>int64 line = 2;</code>
+   * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The line.
    */
+  @java.lang.Override
   public long getLine() {
     return line_;
   }
@@ -206,10 +209,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The function.
    */
+  @java.lang.Override
   public java.lang.String getFunction() {
     java.lang.Object ref = function_;
     if (ref instanceof java.lang.String) {
@@ -233,10 +237,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for function.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFunctionBytes() {
     java.lang.Object ref = function_;
     if (ref instanceof java.lang.String) {
@@ -606,7 +611,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The file.
      */
@@ -629,7 +634,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for file.
      */
@@ -652,7 +657,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The file to set.
      * @return This builder for chaining.
@@ -674,7 +679,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -692,7 +697,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for file to set.
      * @return This builder for chaining.
@@ -717,10 +722,11 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The line.
      */
+    @java.lang.Override
     public long getLine() {
       return line_;
     }
@@ -732,7 +738,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The line to set.
      * @return This builder for chaining.
@@ -751,7 +757,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -775,7 +781,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The function.
      */
@@ -802,7 +808,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for function.
      */
@@ -829,7 +835,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The function to set.
      * @return This builder for chaining.
@@ -855,7 +861,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -877,7 +883,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for function to set.
      * @return This builder for chaining.

@@ -30,7 +30,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.10.0)",
+    value = "by gRPC proto compiler",
     comments = "Source: google/logging/v2/logging_config.proto")
 public final class ConfigServiceV2Grpc {
 
@@ -39,26 +39,141 @@ public final class ConfigServiceV2Grpc {
   public static final String SERVICE_NAME = "google.logging.v2.ConfigServiceV2";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListSinksMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListSinksRequest, com.google.logging.v2.ListSinksResponse>
-      METHOD_LIST_SINKS = getListSinksMethodHelper();
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListBucketsRequest, com.google.logging.v2.ListBucketsResponse>
+      getListBucketsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBuckets",
+      requestType = com.google.logging.v2.ListBucketsRequest.class,
+      responseType = com.google.logging.v2.ListBucketsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListBucketsRequest, com.google.logging.v2.ListBucketsResponse>
+      getListBucketsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.ListBucketsRequest, com.google.logging.v2.ListBucketsResponse>
+        getListBucketsMethod;
+    if ((getListBucketsMethod = ConfigServiceV2Grpc.getListBucketsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getListBucketsMethod = ConfigServiceV2Grpc.getListBucketsMethod) == null) {
+          ConfigServiceV2Grpc.getListBucketsMethod =
+              getListBucketsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.ListBucketsRequest,
+                          com.google.logging.v2.ListBucketsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBuckets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListBucketsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListBucketsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("ListBuckets"))
+                      .build();
+        }
+      }
+    }
+    return getListBucketsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>
+      getGetBucketMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBucket",
+      requestType = com.google.logging.v2.GetBucketRequest.class,
+      responseType = com.google.logging.v2.LogBucket.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>
+      getGetBucketMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>
+        getGetBucketMethod;
+    if ((getGetBucketMethod = ConfigServiceV2Grpc.getGetBucketMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getGetBucketMethod = ConfigServiceV2Grpc.getGetBucketMethod) == null) {
+          ConfigServiceV2Grpc.getGetBucketMethod =
+              getGetBucketMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBucket"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.GetBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogBucket.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigServiceV2MethodDescriptorSupplier("GetBucket"))
+                      .build();
+        }
+      }
+    }
+    return getGetBucketMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>
+      getUpdateBucketMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBucket",
+      requestType = com.google.logging.v2.UpdateBucketRequest.class,
+      responseType = com.google.logging.v2.LogBucket.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>
+      getUpdateBucketMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>
+        getUpdateBucketMethod;
+    if ((getUpdateBucketMethod = ConfigServiceV2Grpc.getUpdateBucketMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUpdateBucketMethod = ConfigServiceV2Grpc.getUpdateBucketMethod) == null) {
+          ConfigServiceV2Grpc.getUpdateBucketMethod =
+              getUpdateBucketMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBucket"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UpdateBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogBucket.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UpdateBucket"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBucketMethod;
+  }
 
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.ListSinksRequest, com.google.logging.v2.ListSinksResponse>
       getListSinksMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSinks",
+      requestType = com.google.logging.v2.ListSinksRequest.class,
+      responseType = com.google.logging.v2.ListSinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.ListSinksRequest, com.google.logging.v2.ListSinksResponse>
       getListSinksMethod() {
-    return getListSinksMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListSinksRequest, com.google.logging.v2.ListSinksResponse>
-      getListSinksMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.ListSinksRequest, com.google.logging.v2.ListSinksResponse>
         getListSinksMethod;
@@ -72,8 +187,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.ListSinksResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.logging.v2.ConfigServiceV2", "ListSinks"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSinks"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -89,26 +203,18 @@ public final class ConfigServiceV2Grpc {
     return getListSinksMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetSinkMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
-      METHOD_GET_SINK = getGetSinkMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
       getGetSinkMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSink",
+      requestType = com.google.logging.v2.GetSinkRequest.class,
+      responseType = com.google.logging.v2.LogSink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
       getGetSinkMethod() {
-    return getGetSinkMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
-      getGetSinkMethodHelper() {
     io.grpc.MethodDescriptor<com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
         getGetSinkMethod;
     if ((getGetSinkMethod = ConfigServiceV2Grpc.getGetSinkMethod) == null) {
@@ -120,8 +226,7 @@ public final class ConfigServiceV2Grpc {
                       .<com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.logging.v2.ConfigServiceV2", "GetSink"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSink"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -137,26 +242,18 @@ public final class ConfigServiceV2Grpc {
     return getGetSinkMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateSinkMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
-      METHOD_CREATE_SINK = getCreateSinkMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
       getCreateSinkMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSink",
+      requestType = com.google.logging.v2.CreateSinkRequest.class,
+      responseType = com.google.logging.v2.LogSink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
       getCreateSinkMethod() {
-    return getCreateSinkMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
-      getCreateSinkMethodHelper() {
     io.grpc.MethodDescriptor<com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
         getCreateSinkMethod;
     if ((getCreateSinkMethod = ConfigServiceV2Grpc.getCreateSinkMethod) == null) {
@@ -168,8 +265,7 @@ public final class ConfigServiceV2Grpc {
                       .<com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.logging.v2.ConfigServiceV2", "CreateSink"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSink"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -186,26 +282,18 @@ public final class ConfigServiceV2Grpc {
     return getCreateSinkMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateSinkMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
-      METHOD_UPDATE_SINK = getUpdateSinkMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
       getUpdateSinkMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSink",
+      requestType = com.google.logging.v2.UpdateSinkRequest.class,
+      responseType = com.google.logging.v2.LogSink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
       getUpdateSinkMethod() {
-    return getUpdateSinkMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
-      getUpdateSinkMethodHelper() {
     io.grpc.MethodDescriptor<com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
         getUpdateSinkMethod;
     if ((getUpdateSinkMethod = ConfigServiceV2Grpc.getUpdateSinkMethod) == null) {
@@ -217,8 +305,7 @@ public final class ConfigServiceV2Grpc {
                       .<com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.logging.v2.ConfigServiceV2", "UpdateSink"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSink"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -235,26 +322,18 @@ public final class ConfigServiceV2Grpc {
     return getUpdateSinkMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteSinkMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_SINK = getDeleteSinkMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
       getDeleteSinkMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSink",
+      requestType = com.google.logging.v2.DeleteSinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
       getDeleteSinkMethod() {
-    return getDeleteSinkMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
-      getDeleteSinkMethodHelper() {
     io.grpc.MethodDescriptor<com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
         getDeleteSinkMethod;
     if ((getDeleteSinkMethod = ConfigServiceV2Grpc.getDeleteSinkMethod) == null) {
@@ -266,8 +345,7 @@ public final class ConfigServiceV2Grpc {
                       .<com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName("google.logging.v2.ConfigServiceV2", "DeleteSink"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSink"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -284,26 +362,18 @@ public final class ConfigServiceV2Grpc {
     return getDeleteSinkMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getListExclusionsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListExclusionsRequest, com.google.logging.v2.ListExclusionsResponse>
-      METHOD_LIST_EXCLUSIONS = getListExclusionsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.ListExclusionsRequest, com.google.logging.v2.ListExclusionsResponse>
       getListExclusionsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListExclusions",
+      requestType = com.google.logging.v2.ListExclusionsRequest.class,
+      responseType = com.google.logging.v2.ListExclusionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.ListExclusionsRequest, com.google.logging.v2.ListExclusionsResponse>
       getListExclusionsMethod() {
-    return getListExclusionsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.ListExclusionsRequest, com.google.logging.v2.ListExclusionsResponse>
-      getListExclusionsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.ListExclusionsRequest,
             com.google.logging.v2.ListExclusionsResponse>
@@ -318,9 +388,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.ListExclusionsResponse>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "ListExclusions"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListExclusions"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -337,26 +405,18 @@ public final class ConfigServiceV2Grpc {
     return getListExclusionsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetExclusionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetExclusionRequest, com.google.logging.v2.LogExclusion>
-      METHOD_GET_EXCLUSION = getGetExclusionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.GetExclusionRequest, com.google.logging.v2.LogExclusion>
       getGetExclusionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExclusion",
+      requestType = com.google.logging.v2.GetExclusionRequest.class,
+      responseType = com.google.logging.v2.LogExclusion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.GetExclusionRequest, com.google.logging.v2.LogExclusion>
       getGetExclusionMethod() {
-    return getGetExclusionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetExclusionRequest, com.google.logging.v2.LogExclusion>
-      getGetExclusionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.GetExclusionRequest, com.google.logging.v2.LogExclusion>
         getGetExclusionMethod;
@@ -370,9 +430,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.LogExclusion>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "GetExclusion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetExclusion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -389,26 +447,18 @@ public final class ConfigServiceV2Grpc {
     return getGetExclusionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getCreateExclusionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateExclusionRequest, com.google.logging.v2.LogExclusion>
-      METHOD_CREATE_EXCLUSION = getCreateExclusionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateExclusionRequest, com.google.logging.v2.LogExclusion>
       getCreateExclusionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateExclusion",
+      requestType = com.google.logging.v2.CreateExclusionRequest.class,
+      responseType = com.google.logging.v2.LogExclusion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateExclusionRequest, com.google.logging.v2.LogExclusion>
       getCreateExclusionMethod() {
-    return getCreateExclusionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.CreateExclusionRequest, com.google.logging.v2.LogExclusion>
-      getCreateExclusionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.CreateExclusionRequest, com.google.logging.v2.LogExclusion>
         getCreateExclusionMethod;
@@ -422,9 +472,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.LogExclusion>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "CreateExclusion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateExclusion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -441,26 +489,18 @@ public final class ConfigServiceV2Grpc {
     return getCreateExclusionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateExclusionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateExclusionRequest, com.google.logging.v2.LogExclusion>
-      METHOD_UPDATE_EXCLUSION = getUpdateExclusionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateExclusionRequest, com.google.logging.v2.LogExclusion>
       getUpdateExclusionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExclusion",
+      requestType = com.google.logging.v2.UpdateExclusionRequest.class,
+      responseType = com.google.logging.v2.LogExclusion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateExclusionRequest, com.google.logging.v2.LogExclusion>
       getUpdateExclusionMethod() {
-    return getUpdateExclusionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateExclusionRequest, com.google.logging.v2.LogExclusion>
-      getUpdateExclusionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.UpdateExclusionRequest, com.google.logging.v2.LogExclusion>
         getUpdateExclusionMethod;
@@ -474,9 +514,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.LogExclusion>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "UpdateExclusion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateExclusion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -493,26 +531,18 @@ public final class ConfigServiceV2Grpc {
     return getUpdateExclusionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getDeleteExclusionMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
-      METHOD_DELETE_EXCLUSION = getDeleteExclusionMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
       getDeleteExclusionMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteExclusion",
+      requestType = com.google.logging.v2.DeleteExclusionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
       getDeleteExclusionMethod() {
-    return getDeleteExclusionMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
-      getDeleteExclusionMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
         getDeleteExclusionMethod;
@@ -525,9 +555,7 @@ public final class ConfigServiceV2Grpc {
                       .<com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "DeleteExclusion"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteExclusion"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -544,26 +572,18 @@ public final class ConfigServiceV2Grpc {
     return getDeleteExclusionMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetCmekSettingsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
-      METHOD_GET_CMEK_SETTINGS = getGetCmekSettingsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
       getGetCmekSettingsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCmekSettings",
+      requestType = com.google.logging.v2.GetCmekSettingsRequest.class,
+      responseType = com.google.logging.v2.CmekSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
       getGetCmekSettingsMethod() {
-    return getGetCmekSettingsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
-      getGetCmekSettingsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.GetCmekSettingsRequest, com.google.logging.v2.CmekSettings>
         getGetCmekSettingsMethod;
@@ -577,9 +597,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.CmekSettings>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "GetCmekSettings"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCmekSettings"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -596,26 +614,18 @@ public final class ConfigServiceV2Grpc {
     return getGetCmekSettingsMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getUpdateCmekSettingsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
-      METHOD_UPDATE_CMEK_SETTINGS = getUpdateCmekSettingsMethodHelper();
-
   private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
       getUpdateCmekSettingsMethod;
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCmekSettings",
+      requestType = com.google.logging.v2.UpdateCmekSettingsRequest.class,
+      responseType = com.google.logging.v2.CmekSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
       getUpdateCmekSettingsMethod() {
-    return getUpdateCmekSettingsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
-      getUpdateCmekSettingsMethodHelper() {
     io.grpc.MethodDescriptor<
             com.google.logging.v2.UpdateCmekSettingsRequest, com.google.logging.v2.CmekSettings>
         getUpdateCmekSettingsMethod;
@@ -630,9 +640,7 @@ public final class ConfigServiceV2Grpc {
                           com.google.logging.v2.CmekSettings>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.logging.v2.ConfigServiceV2", "UpdateCmekSettings"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCmekSettings"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
@@ -651,19 +659,43 @@ public final class ConfigServiceV2Grpc {
 
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigServiceV2Stub newStub(io.grpc.Channel channel) {
-    return new ConfigServiceV2Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2Stub>() {
+          @java.lang.Override
+          public ConfigServiceV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigServiceV2Stub(channel, callOptions);
+          }
+        };
+    return ConfigServiceV2Stub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static ConfigServiceV2BlockingStub newBlockingStub(io.grpc.Channel channel) {
-    return new ConfigServiceV2BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2BlockingStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2BlockingStub>() {
+          @java.lang.Override
+          public ConfigServiceV2BlockingStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigServiceV2BlockingStub(channel, callOptions);
+          }
+        };
+    return ConfigServiceV2BlockingStub.newStub(factory, channel);
   }
 
   /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
   public static ConfigServiceV2FutureStub newFutureStub(io.grpc.Channel channel) {
-    return new ConfigServiceV2FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2FutureStub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2FutureStub>() {
+          @java.lang.Override
+          public ConfigServiceV2FutureStub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigServiceV2FutureStub(channel, callOptions);
+          }
+        };
+    return ConfigServiceV2FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -679,13 +711,59 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Lists buckets (Beta).
+     * </pre>
+     */
+    public void listBuckets(
+        com.google.logging.v2.ListBucketsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListBucketsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListBucketsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a bucket (Beta).
+     * </pre>
+     */
+    public void getBucket(
+        com.google.logging.v2.GetBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a bucket. This method replaces the following fields in the
+     * existing bucket with values from the new bucket: `retention_period`
+     * If the retention period is decreased and the bucket is locked,
+     * FAILED_PRECONDITION will be returned.
+     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+     * will be returned.
+     * A buckets region may not be modified after it is created.
+     * This method is in Beta.
+     * </pre>
+     */
+    public void updateBucket(
+        com.google.logging.v2.UpdateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists sinks.
      * </pre>
      */
     public void listSinks(
         com.google.logging.v2.ListSinksRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListSinksResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListSinksMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListSinksMethod(), responseObserver);
     }
 
     /**
@@ -698,7 +776,7 @@ public final class ConfigServiceV2Grpc {
     public void getSink(
         com.google.logging.v2.GetSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSinkMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetSinkMethod(), responseObserver);
     }
 
     /**
@@ -714,7 +792,7 @@ public final class ConfigServiceV2Grpc {
     public void createSink(
         com.google.logging.v2.CreateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSinkMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateSinkMethod(), responseObserver);
     }
 
     /**
@@ -730,7 +808,7 @@ public final class ConfigServiceV2Grpc {
     public void updateSink(
         com.google.logging.v2.UpdateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSinkMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateSinkMethod(), responseObserver);
     }
 
     /**
@@ -744,7 +822,7 @@ public final class ConfigServiceV2Grpc {
     public void deleteSink(
         com.google.logging.v2.DeleteSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSinkMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteSinkMethod(), responseObserver);
     }
 
     /**
@@ -758,7 +836,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.ListExclusionsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListExclusionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListExclusionsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getListExclusionsMethod(), responseObserver);
     }
 
     /**
@@ -771,7 +849,7 @@ public final class ConfigServiceV2Grpc {
     public void getExclusion(
         com.google.logging.v2.GetExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetExclusionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetExclusionMethod(), responseObserver);
     }
 
     /**
@@ -786,7 +864,7 @@ public final class ConfigServiceV2Grpc {
     public void createExclusion(
         com.google.logging.v2.CreateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateExclusionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getCreateExclusionMethod(), responseObserver);
     }
 
     /**
@@ -799,7 +877,7 @@ public final class ConfigServiceV2Grpc {
     public void updateExclusion(
         com.google.logging.v2.UpdateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateExclusionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateExclusionMethod(), responseObserver);
     }
 
     /**
@@ -812,7 +890,7 @@ public final class ConfigServiceV2Grpc {
     public void deleteExclusion(
         com.google.logging.v2.DeleteExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteExclusionMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteExclusionMethod(), responseObserver);
     }
 
     /**
@@ -824,13 +902,13 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public void getCmekSettings(
         com.google.logging.v2.GetCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCmekSettingsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetCmekSettingsMethod(), responseObserver);
     }
 
     /**
@@ -847,87 +925,105 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public void updateCmekSettings(
         com.google.logging.v2.UpdateCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCmekSettingsMethodHelper(), responseObserver);
+      asyncUnimplementedUnaryCall(getUpdateCmekSettingsMethod(), responseObserver);
     }
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-              getListSinksMethodHelper(),
+              getListBucketsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.ListBucketsRequest,
+                      com.google.logging.v2.ListBucketsResponse>(this, METHODID_LIST_BUCKETS)))
+          .addMethod(
+              getGetBucketMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>(
+                      this, METHODID_GET_BUCKET)))
+          .addMethod(
+              getUpdateBucketMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>(
+                      this, METHODID_UPDATE_BUCKET)))
+          .addMethod(
+              getListSinksMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.ListSinksRequest,
                       com.google.logging.v2.ListSinksResponse>(this, METHODID_LIST_SINKS)))
           .addMethod(
-              getGetSinkMethodHelper(),
+              getGetSinkMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.GetSinkRequest, com.google.logging.v2.LogSink>(
                       this, METHODID_GET_SINK)))
           .addMethod(
-              getCreateSinkMethodHelper(),
+              getCreateSinkMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.CreateSinkRequest, com.google.logging.v2.LogSink>(
                       this, METHODID_CREATE_SINK)))
           .addMethod(
-              getUpdateSinkMethodHelper(),
+              getUpdateSinkMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.UpdateSinkRequest, com.google.logging.v2.LogSink>(
                       this, METHODID_UPDATE_SINK)))
           .addMethod(
-              getDeleteSinkMethodHelper(),
+              getDeleteSinkMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_SINK)))
           .addMethod(
-              getListExclusionsMethodHelper(),
+              getListExclusionsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.ListExclusionsRequest,
                       com.google.logging.v2.ListExclusionsResponse>(
                       this, METHODID_LIST_EXCLUSIONS)))
           .addMethod(
-              getGetExclusionMethodHelper(),
+              getGetExclusionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.GetExclusionRequest,
                       com.google.logging.v2.LogExclusion>(this, METHODID_GET_EXCLUSION)))
           .addMethod(
-              getCreateExclusionMethodHelper(),
+              getCreateExclusionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.CreateExclusionRequest,
                       com.google.logging.v2.LogExclusion>(this, METHODID_CREATE_EXCLUSION)))
           .addMethod(
-              getUpdateExclusionMethodHelper(),
+              getUpdateExclusionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.UpdateExclusionRequest,
                       com.google.logging.v2.LogExclusion>(this, METHODID_UPDATE_EXCLUSION)))
           .addMethod(
-              getDeleteExclusionMethodHelper(),
+              getDeleteExclusionMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.DeleteExclusionRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_EXCLUSION)))
           .addMethod(
-              getGetCmekSettingsMethodHelper(),
+              getGetCmekSettingsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.GetCmekSettingsRequest,
                       com.google.logging.v2.CmekSettings>(this, METHODID_GET_CMEK_SETTINGS)))
           .addMethod(
-              getUpdateCmekSettingsMethodHelper(),
+              getUpdateCmekSettingsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.UpdateCmekSettingsRequest,
@@ -944,11 +1040,7 @@ public final class ConfigServiceV2Grpc {
    * </pre>
    */
   public static final class ConfigServiceV2Stub
-      extends io.grpc.stub.AbstractStub<ConfigServiceV2Stub> {
-    private ConfigServiceV2Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractAsyncStub<ConfigServiceV2Stub> {
     private ConfigServiceV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -962,6 +1054,59 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Lists buckets (Beta).
+     * </pre>
+     */
+    public void listBuckets(
+        com.google.logging.v2.ListBucketsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListBucketsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListBucketsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a bucket (Beta).
+     * </pre>
+     */
+    public void getBucket(
+        com.google.logging.v2.GetBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetBucketMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a bucket. This method replaces the following fields in the
+     * existing bucket with values from the new bucket: `retention_period`
+     * If the retention period is decreased and the bucket is locked,
+     * FAILED_PRECONDITION will be returned.
+     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+     * will be returned.
+     * A buckets region may not be modified after it is created.
+     * This method is in Beta.
+     * </pre>
+     */
+    public void updateBucket(
+        com.google.logging.v2.UpdateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateBucketMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists sinks.
      * </pre>
      */
@@ -969,9 +1114,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.ListSinksRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListSinksResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListSinksMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getListSinksMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -985,9 +1128,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.GetSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetSinkMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getGetSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1004,9 +1145,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.CreateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateSinkMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getCreateSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1023,9 +1162,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.UpdateSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogSink> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateSinkMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getUpdateSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1040,9 +1177,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.DeleteSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteSinkMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
+          getChannel().newCall(getDeleteSinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1057,7 +1192,7 @@ public final class ConfigServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListExclusionsResponse>
             responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getListExclusionsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getListExclusionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1073,7 +1208,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.GetExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetExclusionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetExclusionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1091,7 +1226,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.CreateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getCreateExclusionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getCreateExclusionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1107,7 +1242,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.UpdateExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogExclusion> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateExclusionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateExclusionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1123,7 +1258,7 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.DeleteExclusionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteExclusionMethodHelper(), getCallOptions()),
+          getChannel().newCall(getDeleteExclusionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1137,14 +1272,14 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public void getCmekSettings(
         com.google.logging.v2.GetCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetCmekSettingsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getGetCmekSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1163,14 +1298,14 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public void updateCmekSettings(
         com.google.logging.v2.UpdateCmekSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.CmekSettings> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getUpdateCmekSettingsMethodHelper(), getCallOptions()),
+          getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1184,11 +1319,7 @@ public final class ConfigServiceV2Grpc {
    * </pre>
    */
   public static final class ConfigServiceV2BlockingStub
-      extends io.grpc.stub.AbstractStub<ConfigServiceV2BlockingStub> {
-    private ConfigServiceV2BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractBlockingStub<ConfigServiceV2BlockingStub> {
     private ConfigServiceV2BlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1203,12 +1334,55 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Lists buckets (Beta).
+     * </pre>
+     */
+    public com.google.logging.v2.ListBucketsResponse listBuckets(
+        com.google.logging.v2.ListBucketsRequest request) {
+      return blockingUnaryCall(getChannel(), getListBucketsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a bucket (Beta).
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket getBucket(
+        com.google.logging.v2.GetBucketRequest request) {
+      return blockingUnaryCall(getChannel(), getGetBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a bucket. This method replaces the following fields in the
+     * existing bucket with values from the new bucket: `retention_period`
+     * If the retention period is decreased and the bucket is locked,
+     * FAILED_PRECONDITION will be returned.
+     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+     * will be returned.
+     * A buckets region may not be modified after it is created.
+     * This method is in Beta.
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket updateBucket(
+        com.google.logging.v2.UpdateBucketRequest request) {
+      return blockingUnaryCall(getChannel(), getUpdateBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists sinks.
      * </pre>
      */
     public com.google.logging.v2.ListSinksResponse listSinks(
         com.google.logging.v2.ListSinksRequest request) {
-      return blockingUnaryCall(getChannel(), getListSinksMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListSinksMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1219,7 +1393,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.LogSink getSink(com.google.logging.v2.GetSinkRequest request) {
-      return blockingUnaryCall(getChannel(), getGetSinkMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetSinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1234,8 +1408,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.LogSink createSink(
         com.google.logging.v2.CreateSinkRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateSinkMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateSinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1250,8 +1423,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.LogSink updateSink(
         com.google.logging.v2.UpdateSinkRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateSinkMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateSinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1263,8 +1435,7 @@ public final class ConfigServiceV2Grpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSink(com.google.logging.v2.DeleteSinkRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteSinkMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteSinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1276,8 +1447,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.ListExclusionsResponse listExclusions(
         com.google.logging.v2.ListExclusionsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListExclusionsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getListExclusionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1289,8 +1459,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.LogExclusion getExclusion(
         com.google.logging.v2.GetExclusionRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetExclusionMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetExclusionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1304,8 +1473,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.LogExclusion createExclusion(
         com.google.logging.v2.CreateExclusionRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateExclusionMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getCreateExclusionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1317,8 +1485,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.logging.v2.LogExclusion updateExclusion(
         com.google.logging.v2.UpdateExclusionRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateExclusionMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getUpdateExclusionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1330,8 +1497,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.protobuf.Empty deleteExclusion(
         com.google.logging.v2.DeleteExclusionRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteExclusionMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getDeleteExclusionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1343,13 +1509,12 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public com.google.logging.v2.CmekSettings getCmekSettings(
         com.google.logging.v2.GetCmekSettingsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetCmekSettingsMethodHelper(), getCallOptions(), request);
+      return blockingUnaryCall(getChannel(), getGetCmekSettingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1366,13 +1531,13 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public com.google.logging.v2.CmekSettings updateCmekSettings(
         com.google.logging.v2.UpdateCmekSettingsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getUpdateCmekSettingsMethodHelper(), getCallOptions(), request);
+          getChannel(), getUpdateCmekSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1384,11 +1549,7 @@ public final class ConfigServiceV2Grpc {
    * </pre>
    */
   public static final class ConfigServiceV2FutureStub
-      extends io.grpc.stub.AbstractStub<ConfigServiceV2FutureStub> {
-    private ConfigServiceV2FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
+      extends io.grpc.stub.AbstractFutureStub<ConfigServiceV2FutureStub> {
     private ConfigServiceV2FutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
@@ -1403,14 +1564,59 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Lists buckets (Beta).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.logging.v2.ListBucketsResponse>
+        listBuckets(com.google.logging.v2.ListBucketsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListBucketsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a bucket (Beta).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
+        getBucket(com.google.logging.v2.GetBucketRequest request) {
+      return futureUnaryCall(getChannel().newCall(getGetBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a bucket. This method replaces the following fields in the
+     * existing bucket with values from the new bucket: `retention_period`
+     * If the retention period is decreased and the bucket is locked,
+     * FAILED_PRECONDITION will be returned.
+     * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+     * will be returned.
+     * A buckets region may not be modified after it is created.
+     * This method is in Beta.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
+        updateBucket(com.google.logging.v2.UpdateBucketRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists sinks.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.logging.v2.ListSinksResponse>
         listSinks(com.google.logging.v2.ListSinksRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListSinksMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getListSinksMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1422,8 +1628,7 @@ public final class ConfigServiceV2Grpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink>
         getSink(com.google.logging.v2.GetSinkRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetSinkMethodHelper(), getCallOptions()), request);
+      return futureUnaryCall(getChannel().newCall(getGetSinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1439,7 +1644,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink>
         createSink(com.google.logging.v2.CreateSinkRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateSinkMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateSinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1455,7 +1660,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogSink>
         updateSink(com.google.logging.v2.UpdateSinkRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateSinkMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateSinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1469,7 +1674,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteSink(
         com.google.logging.v2.DeleteSinkRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteSinkMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteSinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1483,7 +1688,7 @@ public final class ConfigServiceV2Grpc {
             com.google.logging.v2.ListExclusionsResponse>
         listExclusions(com.google.logging.v2.ListExclusionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getListExclusionsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getListExclusionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1496,7 +1701,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
         getExclusion(com.google.logging.v2.GetExclusionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetExclusionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetExclusionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1511,7 +1716,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
         createExclusion(com.google.logging.v2.CreateExclusionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getCreateExclusionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getCreateExclusionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1524,7 +1729,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogExclusion>
         updateExclusion(com.google.logging.v2.UpdateExclusionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateExclusionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateExclusionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1537,7 +1742,7 @@ public final class ConfigServiceV2Grpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteExclusion(com.google.logging.v2.DeleteExclusionRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteExclusionMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getDeleteExclusionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1549,13 +1754,13 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>
         getCmekSettings(com.google.logging.v2.GetCmekSettingsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetCmekSettingsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getGetCmekSettingsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1572,28 +1777,31 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>
         updateCmekSettings(com.google.logging.v2.UpdateCmekSettingsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getUpdateCmekSettingsMethodHelper(), getCallOptions()), request);
+          getChannel().newCall(getUpdateCmekSettingsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_LIST_SINKS = 0;
-  private static final int METHODID_GET_SINK = 1;
-  private static final int METHODID_CREATE_SINK = 2;
-  private static final int METHODID_UPDATE_SINK = 3;
-  private static final int METHODID_DELETE_SINK = 4;
-  private static final int METHODID_LIST_EXCLUSIONS = 5;
-  private static final int METHODID_GET_EXCLUSION = 6;
-  private static final int METHODID_CREATE_EXCLUSION = 7;
-  private static final int METHODID_UPDATE_EXCLUSION = 8;
-  private static final int METHODID_DELETE_EXCLUSION = 9;
-  private static final int METHODID_GET_CMEK_SETTINGS = 10;
-  private static final int METHODID_UPDATE_CMEK_SETTINGS = 11;
+  private static final int METHODID_LIST_BUCKETS = 0;
+  private static final int METHODID_GET_BUCKET = 1;
+  private static final int METHODID_UPDATE_BUCKET = 2;
+  private static final int METHODID_LIST_SINKS = 3;
+  private static final int METHODID_GET_SINK = 4;
+  private static final int METHODID_CREATE_SINK = 5;
+  private static final int METHODID_UPDATE_SINK = 6;
+  private static final int METHODID_DELETE_SINK = 7;
+  private static final int METHODID_LIST_EXCLUSIONS = 8;
+  private static final int METHODID_GET_EXCLUSION = 9;
+  private static final int METHODID_CREATE_EXCLUSION = 10;
+  private static final int METHODID_UPDATE_EXCLUSION = 11;
+  private static final int METHODID_DELETE_EXCLUSION = 12;
+  private static final int METHODID_GET_CMEK_SETTINGS = 13;
+  private static final int METHODID_UPDATE_CMEK_SETTINGS = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1612,6 +1820,22 @@ public final class ConfigServiceV2Grpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_BUCKETS:
+          serviceImpl.listBuckets(
+              (com.google.logging.v2.ListBucketsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.ListBucketsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BUCKET:
+          serviceImpl.getBucket(
+              (com.google.logging.v2.GetBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
+          break;
+        case METHODID_UPDATE_BUCKET:
+          serviceImpl.updateBucket(
+              (com.google.logging.v2.UpdateBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
+          break;
         case METHODID_LIST_SINKS:
           serviceImpl.listSinks(
               (com.google.logging.v2.ListSinksRequest) request,
@@ -1738,18 +1962,21 @@ public final class ConfigServiceV2Grpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ConfigServiceV2FileDescriptorSupplier())
-                      .addMethod(getListSinksMethodHelper())
-                      .addMethod(getGetSinkMethodHelper())
-                      .addMethod(getCreateSinkMethodHelper())
-                      .addMethod(getUpdateSinkMethodHelper())
-                      .addMethod(getDeleteSinkMethodHelper())
-                      .addMethod(getListExclusionsMethodHelper())
-                      .addMethod(getGetExclusionMethodHelper())
-                      .addMethod(getCreateExclusionMethodHelper())
-                      .addMethod(getUpdateExclusionMethodHelper())
-                      .addMethod(getDeleteExclusionMethodHelper())
-                      .addMethod(getGetCmekSettingsMethodHelper())
-                      .addMethod(getUpdateCmekSettingsMethodHelper())
+                      .addMethod(getListBucketsMethod())
+                      .addMethod(getGetBucketMethod())
+                      .addMethod(getUpdateBucketMethod())
+                      .addMethod(getListSinksMethod())
+                      .addMethod(getGetSinkMethod())
+                      .addMethod(getCreateSinkMethod())
+                      .addMethod(getUpdateSinkMethod())
+                      .addMethod(getDeleteSinkMethod())
+                      .addMethod(getListExclusionsMethod())
+                      .addMethod(getGetExclusionMethod())
+                      .addMethod(getCreateExclusionMethod())
+                      .addMethod(getUpdateExclusionMethod())
+                      .addMethod(getDeleteExclusionMethod())
+                      .addMethod(getGetCmekSettingsMethod())
+                      .addMethod(getUpdateCmekSettingsMethod())
                       .build();
         }
       }

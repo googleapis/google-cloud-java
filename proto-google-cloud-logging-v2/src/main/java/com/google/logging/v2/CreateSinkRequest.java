@@ -150,6 +150,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +180,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the sink field is set.
    */
+  @java.lang.Override
   public boolean hasSink() {
     return sink_ != null;
   }
@@ -220,6 +223,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The sink.
    */
+  @java.lang.Override
   public com.google.logging.v2.LogSink getSink() {
     return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
   }
@@ -233,6 +237,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
     return getSink();
   }
@@ -255,10 +260,11 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
    * </pre>
    *
-   * <code>bool unique_writer_identity = 3;</code>
+   * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The uniqueWriterIdentity.
    */
+  @java.lang.Override
   public boolean getUniqueWriterIdentity() {
     return uniqueWriterIdentity_;
   }
@@ -966,10 +972,11 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The uniqueWriterIdentity.
      */
+    @java.lang.Override
     public boolean getUniqueWriterIdentity() {
       return uniqueWriterIdentity_;
     }
@@ -989,7 +996,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The uniqueWriterIdentity to set.
      * @return This builder for chaining.
@@ -1016,7 +1023,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

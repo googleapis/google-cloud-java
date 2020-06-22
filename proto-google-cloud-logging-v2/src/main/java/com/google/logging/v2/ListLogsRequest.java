@@ -137,10 +137,13 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -163,10 +166,13 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -190,10 +196,11 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -210,10 +217,11 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -235,10 +243,11 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -608,7 +617,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *     "folders/[FOLDER_ID]"
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -634,7 +645,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *     "folders/[FOLDER_ID]"
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -660,7 +673,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *     "folders/[FOLDER_ID]"
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -685,7 +700,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *     "folders/[FOLDER_ID]"
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -706,7 +723,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *     "folders/[FOLDER_ID]"
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -732,10 +751,11 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -748,7 +768,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -768,7 +788,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -790,7 +810,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -815,7 +835,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -840,7 +860,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -864,7 +884,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -884,7 +904,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

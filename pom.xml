@@ -308,13 +308,4 @@
       </plugin>
     </plugins>
   </reporting>
-
-  <profiles>
-    <profile>
-      <id>enable-samples</id>
-      <modules>
-        <module>samples</module>
-      </modules>
-    </profile>
-  </profiles>
 </project>

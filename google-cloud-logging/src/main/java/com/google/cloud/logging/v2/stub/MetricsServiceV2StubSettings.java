@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getLogMetric to 30 seconds:
+ * <p>For example, to set the total timeout of updateLogMetric to 30 seconds:
  *
  * <pre>
  * <code>
  * MetricsServiceV2StubSettings.Builder metricsSettingsBuilder =
  *     MetricsServiceV2StubSettings.newBuilder();
  * metricsSettingsBuilder
- *     .getLogMetricSettings()
+ *     .updateLogMetricSettings()
  *     .setRetrySettings(
- *         metricsSettingsBuilder.getLogMetricSettings().getRetrySettings().toBuilder()
+ *         metricsSettingsBuilder.updateLogMetricSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsServiceV2StubSettings metricsSettings = metricsSettingsBuilder.build();
@@ -100,13 +100,23 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
+  private final UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
+  private final UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
   private final PagedCallSettings<
           ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
       listLogMetricsSettings;
   private final UnaryCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
   private final UnaryCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
-  private final UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-  private final UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+
+  /** Returns the object with the settings used for calls to updateLogMetric. */
+  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+    return updateLogMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLogMetric. */
+  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+    return deleteLogMetricSettings;
+  }
 
   /** Returns the object with the settings used for calls to listLogMetrics. */
   public PagedCallSettings<
@@ -123,16 +133,6 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
   /** Returns the object with the settings used for calls to createLogMetric. */
   public UnaryCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
     return createLogMetricSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateLogMetric. */
-  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-    return updateLogMetricSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteLogMetric. */
-  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-    return deleteLogMetricSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -204,11 +204,11 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
   protected MetricsServiceV2StubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
+    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
     listLogMetricsSettings = settingsBuilder.listLogMetricsSettings().build();
     getLogMetricSettings = settingsBuilder.getLogMetricSettings().build();
     createLogMetricSettings = settingsBuilder.createLogMetricSettings().build();
-    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
-    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
 
   private static final PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
@@ -269,15 +269,15 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
   public static class Builder extends StubSettings.Builder<MetricsServiceV2StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
+        updateLogMetricSettings;
+    private final UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
     private final PagedCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
         listLogMetricsSettings;
     private final UnaryCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
     private final UnaryCallSettings.Builder<CreateLogMetricRequest, LogMetric>
         createLogMetricSettings;
-    private final UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
-        updateLogMetricSettings;
-    private final UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -293,6 +293,11 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -322,23 +327,23 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      updateLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listLogMetricsSettings = PagedCallSettings.newBuilder(LIST_LOG_METRICS_PAGE_STR_FACT);
 
       getLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      updateLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              updateLogMetricSettings,
+              deleteLogMetricSettings,
               listLogMetricsSettings,
               getLogMetricSettings,
-              createLogMetricSettings,
-              updateLogMetricSettings,
-              deleteLogMetricSettings);
+              createLogMetricSettings);
 
       initDefaults(this);
     }
@@ -355,21 +360,6 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .listLogMetricsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .updateLogMetricSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -379,25 +369,40 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .listLogMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
     protected Builder(MetricsServiceV2StubSettings settings) {
       super(settings);
 
+      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
+      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
       listLogMetricsSettings = settings.listLogMetricsSettings.toBuilder();
       getLogMetricSettings = settings.getLogMetricSettings.toBuilder();
       createLogMetricSettings = settings.createLogMetricSettings.toBuilder();
-      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
-      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              updateLogMetricSettings,
+              deleteLogMetricSettings,
               listLogMetricsSettings,
               getLogMetricSettings,
-              createLogMetricSettings,
-              updateLogMetricSettings,
-              deleteLogMetricSettings);
+              createLogMetricSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -416,6 +421,16 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to updateLogMetric. */
+    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+      return updateLogMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLogMetric. */
+    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+      return deleteLogMetricSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLogMetrics. */
     public PagedCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
@@ -431,16 +446,6 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     /** Returns the builder for the settings used for calls to createLogMetric. */
     public UnaryCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
       return createLogMetricSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateLogMetric. */
-    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-      return updateLogMetricSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteLogMetric. */
-    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-      return deleteLogMetricSettings;
     }
 
     @Override

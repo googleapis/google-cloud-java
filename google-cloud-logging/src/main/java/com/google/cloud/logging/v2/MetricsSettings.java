@@ -56,16 +56,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getLogMetric to 30 seconds:
+ * <p>For example, to set the total timeout of updateLogMetric to 30 seconds:
  *
  * <pre>
  * <code>
  * MetricsSettings.Builder metricsSettingsBuilder =
  *     MetricsSettings.newBuilder();
  * metricsSettingsBuilder
- *     .getLogMetricSettings()
+ *     .updateLogMetricSettings()
  *     .setRetrySettings(
- *         metricsSettingsBuilder.getLogMetricSettings().getRetrySettings().toBuilder()
+ *         metricsSettingsBuilder.updateLogMetricSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsSettings metricsSettings = metricsSettingsBuilder.build();
@@ -75,6 +75,16 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class MetricsSettings extends ClientSettings<MetricsSettings> {
+  /** Returns the object with the settings used for calls to updateLogMetric. */
+  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+    return ((MetricsServiceV2StubSettings) getStubSettings()).updateLogMetricSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLogMetric. */
+  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+    return ((MetricsServiceV2StubSettings) getStubSettings()).deleteLogMetricSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLogMetrics. */
   public PagedCallSettings<
           ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
@@ -90,16 +100,6 @@ public class MetricsSettings extends ClientSettings<MetricsSettings> {
   /** Returns the object with the settings used for calls to createLogMetric. */
   public UnaryCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
     return ((MetricsServiceV2StubSettings) getStubSettings()).createLogMetricSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateLogMetric. */
-  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-    return ((MetricsServiceV2StubSettings) getStubSettings()).updateLogMetricSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteLogMetric. */
-  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-    return ((MetricsServiceV2StubSettings) getStubSettings()).deleteLogMetricSettings();
   }
 
   public static final MetricsSettings create(MetricsServiceV2StubSettings stub) throws IOException {
@@ -198,6 +198,16 @@ public class MetricsSettings extends ClientSettings<MetricsSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to updateLogMetric. */
+    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+      return getStubSettingsBuilder().updateLogMetricSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLogMetric. */
+    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+      return getStubSettingsBuilder().deleteLogMetricSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listLogMetrics. */
     public PagedCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
@@ -213,16 +223,6 @@ public class MetricsSettings extends ClientSettings<MetricsSettings> {
     /** Returns the builder for the settings used for calls to createLogMetric. */
     public UnaryCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
       return getStubSettingsBuilder().createLogMetricSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateLogMetric. */
-    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-      return getStubSettingsBuilder().updateLogMetricSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteLogMetric. */
-    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-      return getStubSettingsBuilder().deleteLogMetricSettings();
     }
 
     @Override
