@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-datacatalog.git",
-        "sha": "b61736c322fb2496be77ab4cc078ff7f42c94cfc"
+        "remote": "https://github.com/googleapis/java-datacatalog.git",
+        "sha": "f74bfda82ab97f1f2ce7877ac134592c2f50b5a0"
       }
     },
     {
