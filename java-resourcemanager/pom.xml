@@ -63,21 +63,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-resourcemanager-parent</site.installationModule>
-    <google.core.version>1.93.5</google.core.version>
-    <google.api-common.version>1.9.2</google.api-common.version>
-    <gax.version>1.56.0</gax.version>
-    <junit.version>4.13</junit.version>
-    <guava.version>29.0-android</guava.version>
-    <threeten.version>1.4.4</threeten.version>
-    <google.core-http.version>1.93.5</google.core-http.version>
-    <api-client.version>1.30.9</api-client.version>
-    <easymock.version>3.6</easymock.version>
-    <mockito.version>1.10.19</mockito.version>
-    <objenesis.version>2.6</objenesis.version>
-    <google.auth.version>0.20.0</google.auth.version>
-    <http-client-bom.version>1.35.0</http-client-bom.version>
-    <protobuf.version>3.12.2</protobuf.version>
-    <errorprone.version>2.3.4</errorprone.version>
   </properties>
 
   <dependencyManagement>
@@ -88,58 +73,16 @@
         <version>0.117.3-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-bom</artifactId>
-        <version>${gax.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava-bom</artifactId>
-        <version>${guava.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api-client</groupId>
-        <artifactId>google-api-client-bom</artifactId>
-        <version>${api-client.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-bom</artifactId>
-        <version>${google.auth.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-bom</artifactId>
-        <version>${http-client-bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-bom</artifactId>
-        <version>${protobuf.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-bom</artifactId>
-        <version>${google.core.version}</version>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>0.8.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
-        <version>${errorprone.version}</version>
+        <version>2.3.4</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -147,12 +90,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>${google.api-common.version}</version>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
-      <version>${threeten.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
@@ -191,13 +132,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>${easymock.version}</version>
+      <version>3.6</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -209,19 +150,18 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
-      <version>${mockito.version}</version>
+      <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
-      <version>${objenesis.version}</version>
+      <version>2.6</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${google.core-http.version}</version>
       <scope>test</scope>
       <type>test-jar</type>
     </dependency>
@@ -304,7 +244,7 @@
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://googleapis.dev/java/google-auth-library/latest/</link>
             <link>https://googleapis.dev/java/gax/latest/</link>
-            <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
+            <link>https://googleapis.github.io/api-common-java/</link>
           </links>
         </configuration>
       </plugin>
