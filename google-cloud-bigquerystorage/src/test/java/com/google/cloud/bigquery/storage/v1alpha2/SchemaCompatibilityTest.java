@@ -729,7 +729,9 @@ public class SchemaCompatibilityTest {
                 Fixed64Type.getDescriptor(),
                 SFixed32Type.getDescriptor(),
                 SFixed64Type.getDescriptor(),
-                BytesType.getDescriptor()));
+                BytesType.getDescriptor(),
+                FloatType.getDescriptor(),
+                DoubleType.getDescriptor()));
 
     for (Descriptors.Descriptor descriptor : type_descriptors) {
       if (compatible.contains(descriptor)) {

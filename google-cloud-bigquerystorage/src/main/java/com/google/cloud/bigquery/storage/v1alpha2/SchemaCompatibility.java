@@ -206,6 +206,11 @@ public class SchemaCompatibility {
       return true;
     }
 
+    if (field == Descriptors.FieldDescriptor.Type.FLOAT
+        || field == Descriptors.FieldDescriptor.Type.DOUBLE) {
+      return true;
+    }
+
     return false;
   }
 
