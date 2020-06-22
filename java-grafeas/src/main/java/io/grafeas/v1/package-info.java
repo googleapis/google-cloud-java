@@ -40,7 +40,7 @@
  * <code>
  * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
  *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   grafeasClient.deleteOccurrence(name);
+ *   Occurrence response = grafeasClient.getOccurrence(name);
  * }
  * </code>
  * </pre>

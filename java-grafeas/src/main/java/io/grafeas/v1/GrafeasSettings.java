@@ -52,16 +52,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteOccurrence to 30 seconds:
+ * <p>For example, to set the total timeout of getOccurrence to 30 seconds:
  *
  * <pre>
  * <code>
  * GrafeasSettings.Builder grafeasSettingsBuilder =
  *     GrafeasSettings.newBuilder();
  * grafeasSettingsBuilder
- *     .deleteOccurrenceSettings()
+ *     .getOccurrenceSettings()
  *     .setRetrySettings(
- *         grafeasSettingsBuilder.deleteOccurrenceSettings().getRetrySettings().toBuilder()
+ *         grafeasSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GrafeasSettings grafeasSettings = grafeasSettingsBuilder.build();
@@ -71,16 +71,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
-  /** Returns the object with the settings used for calls to deleteOccurrence. */
-  public UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
-    return ((GrafeasStubSettings) getStubSettings()).deleteOccurrenceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteNote. */
-  public UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings() {
-    return ((GrafeasStubSettings) getStubSettings()).deleteNoteSettings();
-  }
-
   /** Returns the object with the settings used for calls to getOccurrence. */
   public UnaryCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceSettings() {
     return ((GrafeasStubSettings) getStubSettings()).getOccurrenceSettings();
@@ -91,6 +81,11 @@ public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
           ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
       listOccurrencesSettings() {
     return ((GrafeasStubSettings) getStubSettings()).listOccurrencesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOccurrence. */
+  public UnaryCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
+    return ((GrafeasStubSettings) getStubSettings()).deleteOccurrenceSettings();
   }
 
   /** Returns the object with the settings used for calls to createOccurrence. */
@@ -123,6 +118,11 @@ public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
   public PagedCallSettings<ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
       listNotesSettings() {
     return ((GrafeasStubSettings) getStubSettings()).listNotesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNote. */
+  public UnaryCallSettings<DeleteNoteRequest, Empty> deleteNoteSettings() {
+    return ((GrafeasStubSettings) getStubSettings()).deleteNoteSettings();
   }
 
   /** Returns the object with the settings used for calls to createNote. */
@@ -244,16 +244,6 @@ public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteOccurrence. */
-    public UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
-      return getStubSettingsBuilder().deleteOccurrenceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteNote. */
-    public UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings() {
-      return getStubSettingsBuilder().deleteNoteSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getOccurrence. */
     public UnaryCallSettings.Builder<GetOccurrenceRequest, Occurrence> getOccurrenceSettings() {
       return getStubSettingsBuilder().getOccurrenceSettings();
@@ -264,6 +254,11 @@ public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
             ListOccurrencesRequest, ListOccurrencesResponse, ListOccurrencesPagedResponse>
         listOccurrencesSettings() {
       return getStubSettingsBuilder().listOccurrencesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOccurrence. */
+    public UnaryCallSettings.Builder<DeleteOccurrenceRequest, Empty> deleteOccurrenceSettings() {
+      return getStubSettingsBuilder().deleteOccurrenceSettings();
     }
 
     /** Returns the builder for the settings used for calls to createOccurrence. */
@@ -298,6 +293,11 @@ public class GrafeasSettings extends ClientSettings<GrafeasSettings> {
     public PagedCallSettings.Builder<ListNotesRequest, ListNotesResponse, ListNotesPagedResponse>
         listNotesSettings() {
       return getStubSettingsBuilder().listNotesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNote. */
+    public UnaryCallSettings.Builder<DeleteNoteRequest, Empty> deleteNoteSettings() {
+      return getStubSettingsBuilder().deleteNoteSettings();
     }
 
     /** Returns the builder for the settings used for calls to createNote. */
