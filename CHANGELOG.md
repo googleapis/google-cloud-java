@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.134.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.134.0...v0.134.1) (2020-06-22)
+
+
+### Bug Fixes
+
+* BQ Numeric is compatible with double and float protobuf types ([#367](https://www.github.com/googleapis/java-bigquerystorage/issues/367)) ([1b2f110](https://www.github.com/googleapis/java-bigquerystorage/commit/1b2f1103d83502836dbc2d6a0d5659e44cd9836d))
+* Renamed SchemaCompact.java to SchemaCompatibility.java ([#362](https://www.github.com/googleapis/java-bigquerystorage/issues/362)) ([d3f4787](https://www.github.com/googleapis/java-bigquerystorage/commit/d3f47877003d24aabe76c5ddf4c78a70a4d86a03))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.3 ([#361](https://www.github.com/googleapis/java-bigquerystorage/issues/361)) ([e88095f](https://www.github.com/googleapis/java-bigquerystorage/commit/e88095f45b48b781eca2ee572fcb841ef8a430ee))
+
 ## [0.134.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.4...v0.134.0) (2020-06-18)
 
 
