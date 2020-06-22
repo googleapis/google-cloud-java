@@ -29,8 +29,9 @@
  * <pre>
  * <code>
  * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ApplicationName name = ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
- *   applicationServiceClient.deleteApplication(name);
+ *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+ *   Application application = Application.newBuilder().build();
+ *   Application response = applicationServiceClient.createApplication(parent, application);
  * }
  * </code>
  * </pre>
@@ -45,8 +46,9 @@
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
- *   companyServiceClient.deleteCompany(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Company company = Company.newBuilder().build();
+ *   Company response = companyServiceClient.createCompany(parent, company);
  * }
  * </code>
  * </pre>
@@ -99,8 +101,9 @@
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
- *   jobServiceClient.deleteJob(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Job job = Job.newBuilder().build();
+ *   Job response = jobServiceClient.createJob(parent, job);
  * }
  * </code>
  * </pre>
@@ -115,8 +118,9 @@
  * <pre>
  * <code>
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   profileServiceClient.deleteProfile(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Profile profile = Profile.newBuilder().build();
+ *   Profile response = profileServiceClient.createProfile(parent, profile);
  * }
  * </code>
  * </pre>
@@ -130,8 +134,9 @@
  * <pre>
  * <code>
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
- *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
- *   tenantServiceClient.deleteTenant(name);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Tenant tenant = Tenant.newBuilder().build();
+ *   Tenant response = tenantServiceClient.createTenant(parent, tenant);
  * }
  * </code>
  * </pre>

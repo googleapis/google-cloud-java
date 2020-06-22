@@ -85,16 +85,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteJob to 30 seconds:
+ * <p>For example, to set the total timeout of createJob to 30 seconds:
  *
  * <pre>
  * <code>
  * JobServiceStubSettings.Builder jobServiceSettingsBuilder =
  *     JobServiceStubSettings.newBuilder();
  * jobServiceSettingsBuilder
- *     .deleteJobSettings()
+ *     .createJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.deleteJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceStubSettings jobServiceSettings = jobServiceSettingsBuilder.build();
@@ -111,7 +111,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
-  private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
   private final UnaryCallSettings<CreateJobRequest, Job> createJobSettings;
   private final UnaryCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsSettings;
   private final OperationCallSettings<
@@ -123,6 +122,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final OperationCallSettings<
           BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationSettings;
+  private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
   private final UnaryCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
@@ -131,11 +131,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final PagedCallSettings<
           SearchJobsRequest, SearchJobsResponse, SearchJobsForAlertPagedResponse>
       searchJobsForAlertSettings;
-
-  /** Returns the object with the settings used for calls to deleteJob. */
-  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
-    return deleteJobSettings;
-  }
 
   /** Returns the object with the settings used for calls to createJob. */
   public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
@@ -174,6 +169,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   public OperationCallSettings<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationSettings() {
     return batchUpdateJobsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteJob. */
+  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
+    return deleteJobSettings;
   }
 
   /** Returns the object with the settings used for calls to batchDeleteJobs. */
@@ -268,7 +268,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   protected JobServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteJobSettings = settingsBuilder.deleteJobSettings().build();
     createJobSettings = settingsBuilder.createJobSettings().build();
     batchCreateJobsSettings = settingsBuilder.batchCreateJobsSettings().build();
     batchCreateJobsOperationSettings = settingsBuilder.batchCreateJobsOperationSettings().build();
@@ -276,6 +275,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     updateJobSettings = settingsBuilder.updateJobSettings().build();
     batchUpdateJobsSettings = settingsBuilder.batchUpdateJobsSettings().build();
     batchUpdateJobsOperationSettings = settingsBuilder.batchUpdateJobsOperationSettings().build();
+    deleteJobSettings = settingsBuilder.deleteJobSettings().build();
     batchDeleteJobsSettings = settingsBuilder.batchDeleteJobsSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     searchJobsSettings = settingsBuilder.searchJobsSettings().build();
@@ -453,7 +453,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   public static class Builder extends StubSettings.Builder<JobServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
     private final UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings;
     private final UnaryCallSettings.Builder<BatchCreateJobsRequest, Operation>
         batchCreateJobsSettings;
@@ -467,6 +466,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private final OperationCallSettings.Builder<
             BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchUpdateJobsOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
     private final UnaryCallSettings.Builder<BatchDeleteJobsRequest, Empty> batchDeleteJobsSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -484,12 +484,14 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "idempotent",
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -500,15 +502,25 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_3_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -518,8 +530,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
-
-      deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -535,6 +545,8 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
       batchUpdateJobsOperationSettings = OperationCallSettings.newBuilder();
 
+      deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       batchDeleteJobsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
@@ -546,12 +558,12 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteJobSettings,
               createJobSettings,
               batchCreateJobsSettings,
               getJobSettings,
               updateJobSettings,
               batchUpdateJobsSettings,
+              deleteJobSettings,
               batchDeleteJobsSettings,
               listJobsSettings,
               searchJobsSettings,
@@ -572,61 +584,61 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .batchCreateJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .getJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .updateJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .batchUpdateJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .batchDeleteJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .listJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .searchJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .searchJobsForAlertSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
       builder
           .batchCreateJobsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchCreateJobsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(JobOperationResult.class))
@@ -648,8 +660,8 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchUpdateJobsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(JobOperationResult.class))
@@ -673,7 +685,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     protected Builder(JobServiceStubSettings settings) {
       super(settings);
 
-      deleteJobSettings = settings.deleteJobSettings.toBuilder();
       createJobSettings = settings.createJobSettings.toBuilder();
       batchCreateJobsSettings = settings.batchCreateJobsSettings.toBuilder();
       batchCreateJobsOperationSettings = settings.batchCreateJobsOperationSettings.toBuilder();
@@ -681,6 +692,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
       updateJobSettings = settings.updateJobSettings.toBuilder();
       batchUpdateJobsSettings = settings.batchUpdateJobsSettings.toBuilder();
       batchUpdateJobsOperationSettings = settings.batchUpdateJobsOperationSettings.toBuilder();
+      deleteJobSettings = settings.deleteJobSettings.toBuilder();
       batchDeleteJobsSettings = settings.batchDeleteJobsSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
       searchJobsSettings = settings.searchJobsSettings.toBuilder();
@@ -688,12 +700,12 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteJobSettings,
               createJobSettings,
               batchCreateJobsSettings,
               getJobSettings,
               updateJobSettings,
               batchUpdateJobsSettings,
+              deleteJobSettings,
               batchDeleteJobsSettings,
               listJobsSettings,
               searchJobsSettings,
@@ -714,11 +726,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteJob. */
-    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
-      return deleteJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to createJob. */
@@ -762,6 +769,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchUpdateJobsOperationSettings() {
       return batchUpdateJobsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteJob. */
+    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
+      return deleteJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteJobs. */

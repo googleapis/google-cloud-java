@@ -45,8 +45,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   profileServiceClient.deleteProfile(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Profile profile = Profile.newBuilder().build();
+ *   Profile response = profileServiceClient.createProfile(parent, profile);
  * }
  * </code>
  * </pre>
@@ -153,102 +154,6 @@ public class ProfileServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfileServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the profile to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-   *     example, "projects/foo/tenants/bar/profiles/baz".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(ProfileName name) {
-    DeleteProfileRequest request =
-        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   profileServiceClient.deleteProfile(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the profile to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-   *     example, "projects/foo/tenants/bar/profiles/baz".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(String name) {
-    DeleteProfileRequest request = DeleteProfileRequest.newBuilder().setName(name).build();
-    deleteProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   profileServiceClient.deleteProfile(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProfile(DeleteProfileRequest request) {
-    deleteProfileCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
-   * assignments associated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
-   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = profileServiceClient.deleteProfileCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
-    return stub.deleteProfileCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -751,6 +656,102 @@ public class ProfileServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return stub.updateProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   profileServiceClient.deleteProfile(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the profile to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   *     example, "projects/foo/tenants/bar/profiles/baz".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(ProfileName name) {
+    DeleteProfileRequest request =
+        DeleteProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   profileServiceClient.deleteProfile(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the profile to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   *     example, "projects/foo/tenants/bar/profiles/baz".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(String name) {
+    DeleteProfileRequest request = DeleteProfileRequest.newBuilder().setName(name).build();
+    deleteProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   profileServiceClient.deleteProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProfile(DeleteProfileRequest request) {
+    deleteProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+   *   DeleteProfileRequest request = DeleteProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = profileServiceClient.deleteProfileCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
+    return stub.deleteProfileCallable();
   }
 
   @Override

@@ -101,43 +101,6 @@ public class ProfileServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteProfileTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockProfileService.addResponse(expectedResponse);
-
-    ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-
-    client.deleteProfile(name);
-
-    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteProfileRequest actualRequest = (DeleteProfileRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProfileName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProfileExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProfileService.addException(exception);
-
-    try {
-      ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
-
-      client.deleteProfile(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void searchProfilesTest() {
     long estimatedTotalSize = 1882144769L;
     String nextPageToken = "";
@@ -408,6 +371,43 @@ public class ProfileServiceClientTest {
       Profile profile = Profile.newBuilder().build();
 
       client.updateProfile(profile);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProfileTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockProfileService.addResponse(expectedResponse);
+
+    ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+
+    client.deleteProfile(name);
+
+    List<AbstractMessage> actualRequests = mockProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteProfileRequest actualRequest = (DeleteProfileRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProfileName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProfileService.addException(exception);
+
+    try {
+      ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
+
+      client.deleteProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

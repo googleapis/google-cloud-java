@@ -54,13 +54,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcProfileServiceStub extends ProfileServiceStub {
 
-  private static final MethodDescriptor<DeleteProfileRequest, Empty> deleteProfileMethodDescriptor =
-      MethodDescriptor.<DeleteProfileRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/DeleteProfile")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProfileRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<SearchProfilesRequest, SearchProfilesResponse>
       searchProfilesMethodDescriptor =
           MethodDescriptor.<SearchProfilesRequest, SearchProfilesResponse>newBuilder()
@@ -105,10 +98,16 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
                   ProtoUtils.marshaller(UpdateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteProfileRequest, Empty> deleteProfileMethodDescriptor =
+      MethodDescriptor.<DeleteProfileRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/DeleteProfile")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProfileRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable;
   private final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable;
   private final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
       searchProfilesPagedCallable;
@@ -118,6 +117,7 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
   private final UnaryCallable<CreateProfileRequest, Profile> createProfileCallable;
   private final UnaryCallable<GetProfileRequest, Profile> getProfileCallable;
   private final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable;
+  private final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -160,19 +160,6 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteProfileRequest, Empty> deleteProfileTransportSettings =
-        GrpcCallSettings.<DeleteProfileRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteProfileMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<SearchProfilesRequest, SearchProfilesResponse>
         searchProfilesTransportSettings =
             GrpcCallSettings.<SearchProfilesRequest, SearchProfilesResponse>newBuilder()
@@ -239,10 +226,20 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteProfileRequest, Empty> deleteProfileTransportSettings =
+        GrpcCallSettings.<DeleteProfileRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.deleteProfileCallable =
-        callableFactory.createUnaryCallable(
-            deleteProfileTransportSettings, settings.deleteProfileSettings(), clientContext);
     this.searchProfilesCallable =
         callableFactory.createUnaryCallable(
             searchProfilesTransportSettings, settings.searchProfilesSettings(), clientContext);
@@ -264,12 +261,11 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
     this.updateProfileCallable =
         callableFactory.createUnaryCallable(
             updateProfileTransportSettings, settings.updateProfileSettings(), clientContext);
+    this.deleteProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteProfileTransportSettings, settings.deleteProfileSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
-    return deleteProfileCallable;
   }
 
   public UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
@@ -299,6 +295,10 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
 
   public UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return updateProfileCallable;
+  }
+
+  public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
+    return deleteProfileCallable;
   }
 
   @Override

@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteApplication to 30 seconds:
+ * <p>For example, to set the total timeout of createApplication to 30 seconds:
  *
  * <pre>
  * <code>
  * ApplicationServiceStubSettings.Builder applicationServiceSettingsBuilder =
  *     ApplicationServiceStubSettings.newBuilder();
  * applicationServiceSettingsBuilder
- *     .deleteApplicationSettings()
+ *     .createApplicationSettings()
  *     .setRetrySettings(
- *         applicationServiceSettingsBuilder.deleteApplicationSettings().getRetrySettings().toBuilder()
+ *         applicationServiceSettingsBuilder.createApplicationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApplicationServiceStubSettings applicationServiceSettings = applicationServiceSettingsBuilder.build();
@@ -97,18 +97,13 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
-  private final UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings;
   private final UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings;
   private final UnaryCallSettings<GetApplicationRequest, Application> getApplicationSettings;
   private final UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings;
+  private final UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings;
   private final PagedCallSettings<
           ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
       listApplicationsSettings;
-
-  /** Returns the object with the settings used for calls to deleteApplication. */
-  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-    return deleteApplicationSettings;
-  }
 
   /** Returns the object with the settings used for calls to createApplication. */
   public UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings() {
@@ -123,6 +118,11 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
   /** Returns the object with the settings used for calls to updateApplication. */
   public UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings() {
     return updateApplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteApplication. */
+  public UnaryCallSettings<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+    return deleteApplicationSettings;
   }
 
   /** Returns the object with the settings used for calls to listApplications. */
@@ -201,10 +201,10 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
   protected ApplicationServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteApplicationSettings = settingsBuilder.deleteApplicationSettings().build();
     createApplicationSettings = settingsBuilder.createApplicationSettings().build();
     getApplicationSettings = settingsBuilder.getApplicationSettings().build();
     updateApplicationSettings = settingsBuilder.updateApplicationSettings().build();
+    deleteApplicationSettings = settingsBuilder.deleteApplicationSettings().build();
     listApplicationsSettings = settingsBuilder.listApplicationsSettings().build();
   }
 
@@ -272,14 +272,14 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       extends StubSettings.Builder<ApplicationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteApplicationRequest, Empty>
-        deleteApplicationSettings;
     private final UnaryCallSettings.Builder<CreateApplicationRequest, Application>
         createApplicationSettings;
     private final UnaryCallSettings.Builder<GetApplicationRequest, Application>
         getApplicationSettings;
     private final UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
         updateApplicationSettings;
+    private final UnaryCallSettings.Builder<DeleteApplicationRequest, Empty>
+        deleteApplicationSettings;
     private final PagedCallSettings.Builder<
             ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
         listApplicationsSettings;
@@ -291,11 +291,48 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -306,15 +343,120 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -325,22 +467,22 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listApplicationsSettings = PagedCallSettings.newBuilder(LIST_APPLICATIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteApplicationSettings,
               createApplicationSettings,
               getApplicationSettings,
               updateApplicationSettings,
+              deleteApplicationSettings,
               listApplicationsSettings);
 
       initDefaults(this);
@@ -358,29 +500,29 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteApplicationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createApplicationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .getApplicationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .updateApplicationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .deleteApplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .listApplicationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       return builder;
     }
@@ -388,18 +530,18 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     protected Builder(ApplicationServiceStubSettings settings) {
       super(settings);
 
-      deleteApplicationSettings = settings.deleteApplicationSettings.toBuilder();
       createApplicationSettings = settings.createApplicationSettings.toBuilder();
       getApplicationSettings = settings.getApplicationSettings.toBuilder();
       updateApplicationSettings = settings.updateApplicationSettings.toBuilder();
+      deleteApplicationSettings = settings.deleteApplicationSettings.toBuilder();
       listApplicationsSettings = settings.listApplicationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteApplicationSettings,
               createApplicationSettings,
               getApplicationSettings,
               updateApplicationSettings,
+              deleteApplicationSettings,
               listApplicationsSettings);
     }
 
@@ -419,11 +561,6 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteApplication. */
-    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
-      return deleteApplicationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createApplication. */
     public UnaryCallSettings.Builder<CreateApplicationRequest, Application>
         createApplicationSettings() {
@@ -439,6 +576,11 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     public UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
         updateApplicationSettings() {
       return updateApplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApplication. */
+    public UnaryCallSettings.Builder<DeleteApplicationRequest, Empty> deleteApplicationSettings() {
+      return deleteApplicationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listApplications. */

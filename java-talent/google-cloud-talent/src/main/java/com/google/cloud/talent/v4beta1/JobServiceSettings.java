@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteJob to 30 seconds:
+ * <p>For example, to set the total timeout of createJob to 30 seconds:
  *
  * <pre>
  * <code>
  * JobServiceSettings.Builder jobServiceSettingsBuilder =
  *     JobServiceSettings.newBuilder();
  * jobServiceSettingsBuilder
- *     .deleteJobSettings()
+ *     .createJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.deleteJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceSettings jobServiceSettings = jobServiceSettingsBuilder.build();
@@ -72,11 +72,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteJob. */
-  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
-    return ((JobServiceStubSettings) getStubSettings()).deleteJobSettings();
-  }
-
   /** Returns the object with the settings used for calls to createJob. */
   public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).createJobSettings();
@@ -116,6 +111,11 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   public OperationCallSettings<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationSettings() {
     return ((JobServiceStubSettings) getStubSettings()).batchUpdateJobsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteJob. */
+  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).deleteJobSettings();
   }
 
   /** Returns the object with the settings used for calls to batchDeleteJobs. */
@@ -237,11 +237,6 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteJob. */
-    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
-      return getStubSettingsBuilder().deleteJobSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createJob. */
     public UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings() {
       return getStubSettingsBuilder().createJobSettings();
@@ -283,6 +278,11 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
             BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchUpdateJobsOperationSettings() {
       return getStubSettingsBuilder().batchUpdateJobsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteJob. */
+    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
+      return getStubSettingsBuilder().deleteJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteJobs. */

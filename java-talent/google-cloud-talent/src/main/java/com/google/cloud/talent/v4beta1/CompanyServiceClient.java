@@ -44,8 +44,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
- *   companyServiceClient.deleteCompany(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Company company = Company.newBuilder().build();
+ *   Company response = companyServiceClient.createCompany(parent, company);
  * }
  * </code>
  * </pre>
@@ -152,102 +153,6 @@ public class CompanyServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompanyServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   companyServiceClient.deleteCompany(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the company to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   *     example, "projects/foo/tenants/bar/companies/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used, for example,
-   *     "projects/foo/companies/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCompany(CompanyName name) {
-    DeleteCompanyRequest request =
-        DeleteCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteCompany(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   companyServiceClient.deleteCompany(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the company to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   *     example, "projects/foo/tenants/bar/companies/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used, for example,
-   *     "projects/foo/companies/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCompany(String name) {
-    DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder().setName(name).build();
-    deleteCompany(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   companyServiceClient.deleteCompany(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCompany(DeleteCompanyRequest request) {
-    deleteCompanyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = companyServiceClient.deleteCompanyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
-    return stub.deleteCompanyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -546,6 +451,102 @@ public class CompanyServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     return stub.updateCompanyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   companyServiceClient.deleteCompany(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the company to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   *     example, "projects/foo/tenants/bar/companies/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
+   *     "projects/foo/companies/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCompany(CompanyName name) {
+    DeleteCompanyRequest request =
+        DeleteCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   companyServiceClient.deleteCompany(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the company to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   *     example, "projects/foo/tenants/bar/companies/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used, for example,
+   *     "projects/foo/companies/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCompany(String name) {
+    DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder().setName(name).build();
+    deleteCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   companyServiceClient.deleteCompany(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCompany(DeleteCompanyRequest request) {
+    deleteCompanyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes specified company. Prerequisite: The company has no jobs associated with it.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = companyServiceClient.deleteCompanyCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
+    return stub.deleteCompanyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

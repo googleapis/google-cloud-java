@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteProfile to 30 seconds:
+ * <p>For example, to set the total timeout of createProfile to 30 seconds:
  *
  * <pre>
  * <code>
  * ProfileServiceStubSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceStubSettings.newBuilder();
  * profileServiceSettingsBuilder
- *     .deleteProfileSettings()
+ *     .createProfileSettings()
  *     .setRetrySettings(
- *         profileServiceSettingsBuilder.deleteProfileSettings().getRetrySettings().toBuilder()
+ *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfileServiceStubSettings profileServiceSettings = profileServiceSettingsBuilder.build();
@@ -101,7 +101,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
-  private final UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings;
   private final PagedCallSettings<
           SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
       searchProfilesSettings;
@@ -111,11 +110,7 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   private final UnaryCallSettings<CreateProfileRequest, Profile> createProfileSettings;
   private final UnaryCallSettings<GetProfileRequest, Profile> getProfileSettings;
   private final UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings;
-
-  /** Returns the object with the settings used for calls to deleteProfile. */
-  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
-    return deleteProfileSettings;
-  }
+  private final UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings;
 
   /** Returns the object with the settings used for calls to searchProfiles. */
   public PagedCallSettings<
@@ -143,6 +138,11 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   /** Returns the object with the settings used for calls to updateProfile. */
   public UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings() {
     return updateProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProfile. */
+  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
+    return deleteProfileSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -214,12 +214,12 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   protected ProfileServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteProfileSettings = settingsBuilder.deleteProfileSettings().build();
     searchProfilesSettings = settingsBuilder.searchProfilesSettings().build();
     listProfilesSettings = settingsBuilder.listProfilesSettings().build();
     createProfileSettings = settingsBuilder.createProfileSettings().build();
     getProfileSettings = settingsBuilder.getProfileSettings().build();
     updateProfileSettings = settingsBuilder.updateProfileSettings().build();
+    deleteProfileSettings = settingsBuilder.deleteProfileSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -336,7 +336,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   public static class Builder extends StubSettings.Builder<ProfileServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings;
     private final PagedCallSettings.Builder<
             SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
         searchProfilesSettings;
@@ -346,6 +345,7 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     private final UnaryCallSettings.Builder<CreateProfileRequest, Profile> createProfileSettings;
     private final UnaryCallSettings.Builder<GetProfileRequest, Profile> getProfileSettings;
     private final UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings;
+    private final UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -354,11 +354,13 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -372,12 +374,22 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_4_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -387,8 +399,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
-
-      deleteProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       searchProfilesSettings = PagedCallSettings.newBuilder(SEARCH_PROFILES_PAGE_STR_FACT);
 
@@ -400,14 +410,16 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
       updateProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteProfileSettings,
               searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
-              updateProfileSettings);
+              updateProfileSettings,
+              deleteProfileSettings);
 
       initDefaults(this);
     }
@@ -424,34 +436,34 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .searchProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .listProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .createProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .getProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       return builder;
     }
@@ -459,21 +471,21 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     protected Builder(ProfileServiceStubSettings settings) {
       super(settings);
 
-      deleteProfileSettings = settings.deleteProfileSettings.toBuilder();
       searchProfilesSettings = settings.searchProfilesSettings.toBuilder();
       listProfilesSettings = settings.listProfilesSettings.toBuilder();
       createProfileSettings = settings.createProfileSettings.toBuilder();
       getProfileSettings = settings.getProfileSettings.toBuilder();
       updateProfileSettings = settings.updateProfileSettings.toBuilder();
+      deleteProfileSettings = settings.deleteProfileSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteProfileSettings,
               searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
-              updateProfileSettings);
+              updateProfileSettings,
+              deleteProfileSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -490,11 +502,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteProfile. */
-    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
-      return deleteProfileSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchProfiles. */
@@ -524,6 +531,11 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     /** Returns the builder for the settings used for calls to updateProfile. */
     public UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings() {
       return updateProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProfile. */
+    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
+      return deleteProfileSettings;
     }
 
     @Override

@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteTenant to 30 seconds:
+ * <p>For example, to set the total timeout of createTenant to 30 seconds:
  *
  * <pre>
  * <code>
  * TenantServiceStubSettings.Builder tenantServiceSettingsBuilder =
  *     TenantServiceStubSettings.newBuilder();
  * tenantServiceSettingsBuilder
- *     .deleteTenantSettings()
+ *     .createTenantSettings()
  *     .setRetrySettings(
- *         tenantServiceSettingsBuilder.deleteTenantSettings().getRetrySettings().toBuilder()
+ *         tenantServiceSettingsBuilder.createTenantSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TenantServiceStubSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
@@ -97,17 +97,12 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
           .add("https://www.googleapis.com/auth/jobs")
           .build();
 
-  private final UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings;
   private final UnaryCallSettings<CreateTenantRequest, Tenant> createTenantSettings;
   private final UnaryCallSettings<GetTenantRequest, Tenant> getTenantSettings;
   private final UnaryCallSettings<UpdateTenantRequest, Tenant> updateTenantSettings;
+  private final UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings;
   private final PagedCallSettings<ListTenantsRequest, ListTenantsResponse, ListTenantsPagedResponse>
       listTenantsSettings;
-
-  /** Returns the object with the settings used for calls to deleteTenant. */
-  public UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings() {
-    return deleteTenantSettings;
-  }
 
   /** Returns the object with the settings used for calls to createTenant. */
   public UnaryCallSettings<CreateTenantRequest, Tenant> createTenantSettings() {
@@ -122,6 +117,11 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
   /** Returns the object with the settings used for calls to updateTenant. */
   public UnaryCallSettings<UpdateTenantRequest, Tenant> updateTenantSettings() {
     return updateTenantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTenant. */
+  public UnaryCallSettings<DeleteTenantRequest, Empty> deleteTenantSettings() {
+    return deleteTenantSettings;
   }
 
   /** Returns the object with the settings used for calls to listTenants. */
@@ -199,10 +199,10 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
   protected TenantServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteTenantSettings = settingsBuilder.deleteTenantSettings().build();
     createTenantSettings = settingsBuilder.createTenantSettings().build();
     getTenantSettings = settingsBuilder.getTenantSettings().build();
     updateTenantSettings = settingsBuilder.updateTenantSettings().build();
+    deleteTenantSettings = settingsBuilder.deleteTenantSettings().build();
     listTenantsSettings = settingsBuilder.listTenantsSettings().build();
   }
 
@@ -263,10 +263,10 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
   public static class Builder extends StubSettings.Builder<TenantServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings;
     private final UnaryCallSettings.Builder<CreateTenantRequest, Tenant> createTenantSettings;
     private final UnaryCallSettings.Builder<GetTenantRequest, Tenant> getTenantSettings;
     private final UnaryCallSettings.Builder<UpdateTenantRequest, Tenant> updateTenantSettings;
+    private final UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings;
     private final PagedCallSettings.Builder<
             ListTenantsRequest, ListTenantsResponse, ListTenantsPagedResponse>
         listTenantsSettings;
@@ -278,11 +278,48 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -293,15 +330,120 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -312,22 +454,22 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteTenantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTenantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getTenantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateTenantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteTenantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listTenantsSettings = PagedCallSettings.newBuilder(LIST_TENANTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteTenantSettings,
               createTenantSettings,
               getTenantSettings,
               updateTenantSettings,
+              deleteTenantSettings,
               listTenantsSettings);
 
       initDefaults(this);
@@ -345,29 +487,29 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteTenantSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createTenantSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
 
       builder
           .getTenantSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateTenantSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .deleteTenantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listTenantsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -375,18 +517,18 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     protected Builder(TenantServiceStubSettings settings) {
       super(settings);
 
-      deleteTenantSettings = settings.deleteTenantSettings.toBuilder();
       createTenantSettings = settings.createTenantSettings.toBuilder();
       getTenantSettings = settings.getTenantSettings.toBuilder();
       updateTenantSettings = settings.updateTenantSettings.toBuilder();
+      deleteTenantSettings = settings.deleteTenantSettings.toBuilder();
       listTenantsSettings = settings.listTenantsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteTenantSettings,
               createTenantSettings,
               getTenantSettings,
               updateTenantSettings,
+              deleteTenantSettings,
               listTenantsSettings);
     }
 
@@ -406,11 +548,6 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteTenant. */
-    public UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings() {
-      return deleteTenantSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createTenant. */
     public UnaryCallSettings.Builder<CreateTenantRequest, Tenant> createTenantSettings() {
       return createTenantSettings;
@@ -424,6 +561,11 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     /** Returns the builder for the settings used for calls to updateTenant. */
     public UnaryCallSettings.Builder<UpdateTenantRequest, Tenant> updateTenantSettings() {
       return updateTenantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTenant. */
+    public UnaryCallSettings.Builder<DeleteTenantRequest, Empty> deleteTenantSettings() {
+      return deleteTenantSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTenants. */

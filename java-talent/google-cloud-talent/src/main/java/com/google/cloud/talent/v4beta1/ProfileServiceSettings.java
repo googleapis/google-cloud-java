@@ -50,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteProfile to 30 seconds:
+ * <p>For example, to set the total timeout of createProfile to 30 seconds:
  *
  * <pre>
  * <code>
  * ProfileServiceSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceSettings.newBuilder();
  * profileServiceSettingsBuilder
- *     .deleteProfileSettings()
+ *     .createProfileSettings()
  *     .setRetrySettings(
- *         profileServiceSettingsBuilder.deleteProfileSettings().getRetrySettings().toBuilder()
+ *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfileServiceSettings profileServiceSettings = profileServiceSettingsBuilder.build();
@@ -69,11 +69,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ProfileServiceSettings extends ClientSettings<ProfileServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteProfile. */
-  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
-    return ((ProfileServiceStubSettings) getStubSettings()).deleteProfileSettings();
-  }
-
   /** Returns the object with the settings used for calls to searchProfiles. */
   public PagedCallSettings<
           SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
@@ -100,6 +95,11 @@ public class ProfileServiceSettings extends ClientSettings<ProfileServiceSetting
   /** Returns the object with the settings used for calls to updateProfile. */
   public UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings() {
     return ((ProfileServiceStubSettings) getStubSettings()).updateProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProfile. */
+  public UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings() {
+    return ((ProfileServiceStubSettings) getStubSettings()).deleteProfileSettings();
   }
 
   public static final ProfileServiceSettings create(ProfileServiceStubSettings stub)
@@ -199,11 +199,6 @@ public class ProfileServiceSettings extends ClientSettings<ProfileServiceSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteProfile. */
-    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
-      return getStubSettingsBuilder().deleteProfileSettings();
-    }
-
     /** Returns the builder for the settings used for calls to searchProfiles. */
     public PagedCallSettings.Builder<
             SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
@@ -231,6 +226,11 @@ public class ProfileServiceSettings extends ClientSettings<ProfileServiceSetting
     /** Returns the builder for the settings used for calls to updateProfile. */
     public UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings() {
       return getStubSettingsBuilder().updateProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProfile. */
+    public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
+      return getStubSettingsBuilder().deleteProfileSettings();
     }
 
     @Override

@@ -43,10 +43,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ProfileServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteProfileCallable()");
-  }
-
   public UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
       searchProfilesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: searchProfilesPagedCallable()");
@@ -74,6 +70,10 @@ public abstract class ProfileServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     throw new UnsupportedOperationException("Not implemented: updateProfileCallable()");
+  }
+
+  public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteProfileCallable()");
   }
 
   @Override

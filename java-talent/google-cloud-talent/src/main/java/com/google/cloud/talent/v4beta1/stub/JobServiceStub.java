@@ -57,10 +57,6 @@ public abstract class JobServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
-  }
-
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     throw new UnsupportedOperationException("Not implemented: createJobCallable()");
   }
@@ -91,6 +87,10 @@ public abstract class JobServiceStub implements BackgroundResource {
 
   public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchUpdateJobsCallable()");
+  }
+
+  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
   }
 
   public UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {

@@ -40,10 +40,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ApplicationServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteApplicationCallable()");
-  }
-
   public UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
     throw new UnsupportedOperationException("Not implemented: createApplicationCallable()");
   }
@@ -54,6 +50,10 @@ public abstract class ApplicationServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateApplicationCallable()");
+  }
+
+  public UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteApplicationCallable()");
   }
 
   public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>

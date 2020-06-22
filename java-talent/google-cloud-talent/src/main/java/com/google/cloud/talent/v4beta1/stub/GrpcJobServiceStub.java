@@ -63,13 +63,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcJobServiceStub extends JobServiceStub {
 
-  private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
-      MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.JobService/DeleteJob")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
       MethodDescriptor.<CreateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -109,6 +102,13 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(BatchUpdateJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
+      MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.JobService/DeleteJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<BatchDeleteJobsRequest, Empty>
       batchDeleteJobsMethodDescriptor =
           MethodDescriptor.<BatchDeleteJobsRequest, Empty>newBuilder()
@@ -146,7 +146,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable;
   private final OperationCallable<
@@ -158,6 +157,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final OperationCallable<
           BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationCallable;
+  private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
   private final UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
@@ -207,19 +207,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
-        GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
             .setMethodDescriptor(createJobMethodDescriptor)
@@ -285,6 +272,19 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
+        GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<BatchDeleteJobsRequest, Empty> batchDeleteJobsTransportSettings =
         GrpcCallSettings.<BatchDeleteJobsRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteJobsMethodDescriptor)
@@ -338,9 +338,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
                 })
             .build();
 
-    this.deleteJobCallable =
-        callableFactory.createUnaryCallable(
-            deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
     this.createJobCallable =
         callableFactory.createUnaryCallable(
             createJobTransportSettings, settings.createJobSettings(), clientContext);
@@ -368,6 +365,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             settings.batchUpdateJobsOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.deleteJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
     this.batchDeleteJobsCallable =
         callableFactory.createUnaryCallable(
             batchDeleteJobsTransportSettings, settings.batchDeleteJobsSettings(), clientContext);
@@ -402,10 +402,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return operationsStub;
   }
 
-  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return deleteJobCallable;
-  }
-
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return createJobCallable;
   }
@@ -436,6 +432,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
 
   public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
     return batchUpdateJobsCallable;
+  }
+
+  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return deleteJobCallable;
   }
 
   public UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {

@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "30b36788ec5754bc4dc9d7935f0e8a3b59b0b917"
+        "sha": "9ccd8a51047e0d869b410adc688c52fd430328dd"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8070bcb140b06991a636d4ba7d665c5adab1675d",
-        "internalRef": "314792023"
+        "sha": "fa4d2ecd0804eb92f27a65fe65ce2a554a361b93",
+        "internalRef": "317110673"
       }
     },
     {

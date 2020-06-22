@@ -100,45 +100,6 @@ public class ApplicationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteApplicationTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockApplicationService.addResponse(expectedResponse);
-
-    ApplicationName name =
-        ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-
-    client.deleteApplication(name);
-
-    List<AbstractMessage> actualRequests = mockApplicationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteApplicationRequest actualRequest = (DeleteApplicationRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ApplicationName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteApplicationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockApplicationService.addException(exception);
-
-    try {
-      ApplicationName name =
-          ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-
-      client.deleteApplication(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createApplicationTest() {
     ApplicationName name =
         ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
@@ -304,6 +265,45 @@ public class ApplicationServiceClientTest {
       Application application = Application.newBuilder().build();
 
       client.updateApplication(application);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteApplicationTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockApplicationService.addResponse(expectedResponse);
+
+    ApplicationName name =
+        ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+
+    client.deleteApplication(name);
+
+    List<AbstractMessage> actualRequests = mockApplicationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteApplicationRequest actualRequest = (DeleteApplicationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ApplicationName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteApplicationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockApplicationService.addException(exception);
+
+    try {
+      ApplicationName name =
+          ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+
+      client.deleteApplication(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

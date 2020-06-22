@@ -40,10 +40,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TenantServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTenantCallable()");
-  }
-
   public UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable() {
     throw new UnsupportedOperationException("Not implemented: createTenantCallable()");
   }
@@ -54,6 +50,10 @@ public abstract class TenantServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTenantCallable()");
+  }
+
+  public UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTenantCallable()");
   }
 
   public UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse> listTenantsPagedCallable() {

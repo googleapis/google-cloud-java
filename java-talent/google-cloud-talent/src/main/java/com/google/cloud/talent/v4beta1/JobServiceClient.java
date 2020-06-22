@@ -49,8 +49,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
- *   jobServiceClient.deleteJob(name);
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Job job = Job.newBuilder().build();
+ *   Job response = jobServiceClient.createJob(parent, job);
  * }
  * </code>
  * </pre>
@@ -168,110 +169,6 @@ public class JobServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-   *   jobServiceClient.deleteJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the job to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
-   *     "projects/foo/tenants/bar/jobs/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used. For example,
-   *     "projects/foo/jobs/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(JobName name) {
-    DeleteJobRequest request =
-        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-   *   jobServiceClient.deleteJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the job to be deleted.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
-   *     "projects/foo/tenants/bar/jobs/baz".
-   *     <p>If tenant id is unspecified, the default tenant is used. For example,
-   *     "projects/foo/jobs/bar".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(String name) {
-    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.deleteJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(DeleteJobRequest request) {
-    deleteJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified job.
-   *
-   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.deleteJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return stub.deleteJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -936,6 +833,110 @@ public class JobServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
     return stub.batchUpdateJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+   *   jobServiceClient.deleteJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the job to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   *     "projects/foo/tenants/bar/jobs/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used. For example,
+   *     "projects/foo/jobs/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(JobName name) {
+    DeleteJobRequest request =
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+   *   jobServiceClient.deleteJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the job to be deleted.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   *     "projects/foo/tenants/bar/jobs/baz".
+   *     <p>If tenant id is unspecified, the default tenant is used. For example,
+   *     "projects/foo/jobs/bar".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(String name) {
+    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   jobServiceClient.deleteJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(DeleteJobRequest request) {
+    deleteJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified job.
+   *
+   * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = jobServiceClient.deleteJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return stub.deleteJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

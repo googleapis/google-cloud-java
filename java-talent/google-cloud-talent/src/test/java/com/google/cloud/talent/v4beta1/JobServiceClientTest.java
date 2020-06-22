@@ -107,43 +107,6 @@ public class JobServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteJobTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockJobService.addResponse(expectedResponse);
-
-    JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-
-    client.deleteJob(name);
-
-    List<AbstractMessage> actualRequests = mockJobService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockJobService.addException(exception);
-
-    try {
-      JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
-
-      client.deleteJob(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createJobTest() {
     JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
     CompanyName company =
@@ -435,6 +398,43 @@ public class JobServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+
+    client.deleteJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      JobName name = JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]");
+
+      client.deleteJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 
