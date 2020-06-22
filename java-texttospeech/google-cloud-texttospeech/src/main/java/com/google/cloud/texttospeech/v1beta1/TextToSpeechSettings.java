@@ -45,16 +45,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of synthesizeSpeech to 30 seconds:
+ * <p>For example, to set the total timeout of listVoices to 30 seconds:
  *
  * <pre>
  * <code>
  * TextToSpeechSettings.Builder textToSpeechSettingsBuilder =
  *     TextToSpeechSettings.newBuilder();
  * textToSpeechSettingsBuilder
- *     .synthesizeSpeechSettings()
+ *     .listVoicesSettings()
  *     .setRetrySettings(
- *         textToSpeechSettingsBuilder.synthesizeSpeechSettings().getRetrySettings().toBuilder()
+ *         textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TextToSpeechSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
@@ -64,15 +64,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
+  /** Returns the object with the settings used for calls to listVoices. */
+  public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
+    return ((TextToSpeechStubSettings) getStubSettings()).listVoicesSettings();
+  }
+
   /** Returns the object with the settings used for calls to synthesizeSpeech. */
   public UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings() {
     return ((TextToSpeechStubSettings) getStubSettings()).synthesizeSpeechSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listVoices. */
-  public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
-    return ((TextToSpeechStubSettings) getStubSettings()).listVoicesSettings();
   }
 
   public static final TextToSpeechSettings create(TextToSpeechStubSettings stub)
@@ -172,15 +172,15 @@ public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to listVoices. */
+    public UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
+      return getStubSettingsBuilder().listVoicesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to synthesizeSpeech. */
     public UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings() {
       return getStubSettingsBuilder().synthesizeSpeechSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listVoices. */
-    public UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
-      return getStubSettingsBuilder().listVoicesSettings();
     }
 
     @Override

@@ -34,13 +34,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TextToSpeechStub implements BackgroundResource {
 
+  public UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listVoicesCallable()");
+  }
+
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     throw new UnsupportedOperationException("Not implemented: synthesizeSpeechCallable()");
-  }
-
-  public UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
-    throw new UnsupportedOperationException("Not implemented: listVoicesCallable()");
   }
 
   @Override

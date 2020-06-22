@@ -28,10 +28,8 @@
  * <pre>
  * <code>
  * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
- *   SynthesisInput input = SynthesisInput.newBuilder().build();
- *   VoiceSelectionParams voice = VoiceSelectionParams.newBuilder().build();
- *   AudioConfig audioConfig = AudioConfig.newBuilder().build();
- *   SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(input, voice, audioConfig);
+ *   String languageCode = "";
+ *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
  * }
  * </code>
  * </pre>

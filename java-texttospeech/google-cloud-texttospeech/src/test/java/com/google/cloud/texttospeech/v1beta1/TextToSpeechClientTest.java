@@ -77,6 +77,44 @@ public class TextToSpeechClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listVoicesTest() {
+    ListVoicesResponse expectedResponse = ListVoicesResponse.newBuilder().build();
+    mockTextToSpeech.addResponse(expectedResponse);
+
+    String languageCode = "languageCode-412800396";
+
+    ListVoicesResponse actualResponse = client.listVoices(languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListVoicesRequest actualRequest = (ListVoicesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listVoicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTextToSpeech.addException(exception);
+
+    try {
+      String languageCode = "languageCode-412800396";
+
+      client.listVoices(languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void synthesizeSpeechTest() {
     ByteString audioContent = ByteString.copyFromUtf8("16");
     SynthesizeSpeechResponse expectedResponse =
@@ -115,44 +153,6 @@ public class TextToSpeechClientTest {
       AudioConfig audioConfig = AudioConfig.newBuilder().build();
 
       client.synthesizeSpeech(input, voice, audioConfig);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listVoicesTest() {
-    ListVoicesResponse expectedResponse = ListVoicesResponse.newBuilder().build();
-    mockTextToSpeech.addResponse(expectedResponse);
-
-    String languageCode = "languageCode-412800396";
-
-    ListVoicesResponse actualResponse = client.listVoices(languageCode);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListVoicesRequest actualRequest = (ListVoicesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listVoicesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockTextToSpeech.addException(exception);
-
-    try {
-      String languageCode = "languageCode-412800396";
-
-      client.listVoices(languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -42,6 +42,14 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcTextToSpeechStub extends TextToSpeechStub {
 
+  private static final MethodDescriptor<ListVoicesRequest, ListVoicesResponse>
+      listVoicesMethodDescriptor =
+          MethodDescriptor.<ListVoicesRequest, ListVoicesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.texttospeech.v1beta1.TextToSpeech/ListVoices")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListVoicesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListVoicesResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechMethodDescriptor =
           MethodDescriptor.<SynthesizeSpeechRequest, SynthesizeSpeechResponse>newBuilder()
@@ -52,20 +60,12 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SynthesizeSpeechResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListVoicesRequest, ListVoicesResponse>
-      listVoicesMethodDescriptor =
-          MethodDescriptor.<ListVoicesRequest, ListVoicesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.texttospeech.v1beta1.TextToSpeech/ListVoices")
-              .setRequestMarshaller(ProtoUtils.marshaller(ListVoicesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ListVoicesResponse.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable;
   private final UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable;
-  private final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -106,33 +106,33 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesTransportSettings =
+        GrpcCallSettings.<ListVoicesRequest, ListVoicesResponse>newBuilder()
+            .setMethodDescriptor(listVoicesMethodDescriptor)
+            .build();
     GrpcCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechTransportSettings =
             GrpcCallSettings.<SynthesizeSpeechRequest, SynthesizeSpeechResponse>newBuilder()
                 .setMethodDescriptor(synthesizeSpeechMethodDescriptor)
                 .build();
-    GrpcCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesTransportSettings =
-        GrpcCallSettings.<ListVoicesRequest, ListVoicesResponse>newBuilder()
-            .setMethodDescriptor(listVoicesMethodDescriptor)
-            .build();
 
-    this.synthesizeSpeechCallable =
-        callableFactory.createUnaryCallable(
-            synthesizeSpeechTransportSettings, settings.synthesizeSpeechSettings(), clientContext);
     this.listVoicesCallable =
         callableFactory.createUnaryCallable(
             listVoicesTransportSettings, settings.listVoicesSettings(), clientContext);
+    this.synthesizeSpeechCallable =
+        callableFactory.createUnaryCallable(
+            synthesizeSpeechTransportSettings, settings.synthesizeSpeechSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
+    return listVoicesCallable;
   }
 
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return synthesizeSpeechCallable;
-  }
-
-  public UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
-    return listVoicesCallable;
   }
 
   @Override

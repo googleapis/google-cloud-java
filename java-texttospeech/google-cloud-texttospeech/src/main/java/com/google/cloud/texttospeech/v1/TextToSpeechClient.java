@@ -34,10 +34,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
- *   SynthesisInput input = SynthesisInput.newBuilder().build();
- *   VoiceSelectionParams voice = VoiceSelectionParams.newBuilder().build();
- *   AudioConfig audioConfig = AudioConfig.newBuilder().build();
- *   SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(input, voice, audioConfig);
+ *   String languageCode = "";
+ *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
  * }
  * </code>
  * </pre>
@@ -147,6 +145,73 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns a list of Voice supported for synthesis.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   String languageCode = "";
+   *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
+   * }
+   * </code></pre>
+   *
+   * @param languageCode Optional. Recommended.
+   *     [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If specified, the
+   *     ListVoices call will only return voices that can be used to synthesize this language_code.
+   *     E.g. when specifying "en-NZ", you will get supported "en-&#42;" voices; when specifying
+   *     "no", you will get supported "no-&#42;" (Norwegian) and "nb-&#42;" (Norwegian Bokmal)
+   *     voices; specifying "zh" will also get supported "cmn-&#42;" voices; specifying "zh-hk" will
+   *     also get supported "yue-&#42;" voices.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVoicesResponse listVoices(String languageCode) {
+    ListVoicesRequest request =
+        ListVoicesRequest.newBuilder().setLanguageCode(languageCode).build();
+    return listVoices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns a list of Voice supported for synthesis.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   ListVoicesRequest request = ListVoicesRequest.newBuilder().build();
+   *   ListVoicesResponse response = textToSpeechClient.listVoices(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListVoicesResponse listVoices(ListVoicesRequest request) {
+    return listVoicesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns a list of Voice supported for synthesis.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   ListVoicesRequest request = ListVoicesRequest.newBuilder().build();
+   *   ApiFuture&lt;ListVoicesResponse&gt; future = textToSpeechClient.listVoicesCallable().futureCall(request);
+   *   // Do something
+   *   ListVoicesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
+    return stub.listVoicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Synthesizes speech synchronously: receive results after all text input has been processed.
    *
    * <p>Sample code:
@@ -228,73 +293,6 @@ public class TextToSpeechClient implements BackgroundResource {
   public final UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return stub.synthesizeSpeechCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns a list of Voice supported for synthesis.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
-   *   String languageCode = "";
-   *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
-   * }
-   * </code></pre>
-   *
-   * @param languageCode Optional. Recommended.
-   *     [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If specified, the
-   *     ListVoices call will only return voices that can be used to synthesize this language_code.
-   *     E.g. when specifying "en-NZ", you will get supported "en-&#42;" voices; when specifying
-   *     "no", you will get supported "no-&#42;" (Norwegian) and "nb-&#42;" (Norwegian Bokmal)
-   *     voices; specifying "zh" will also get supported "cmn-&#42;" voices; specifying "zh-hk" will
-   *     also get supported "yue-&#42;" voices.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListVoicesResponse listVoices(String languageCode) {
-    ListVoicesRequest request =
-        ListVoicesRequest.newBuilder().setLanguageCode(languageCode).build();
-    return listVoices(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns a list of Voice supported for synthesis.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
-   *   ListVoicesRequest request = ListVoicesRequest.newBuilder().build();
-   *   ListVoicesResponse response = textToSpeechClient.listVoices(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListVoicesResponse listVoices(ListVoicesRequest request) {
-    return listVoicesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns a list of Voice supported for synthesis.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
-   *   ListVoicesRequest request = ListVoicesRequest.newBuilder().build();
-   *   ApiFuture&lt;ListVoicesResponse&gt; future = textToSpeechClient.listVoicesCallable().futureCall(request);
-   *   // Do something
-   *   ListVoicesResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
-    return stub.listVoicesCallable();
   }
 
   @Override
