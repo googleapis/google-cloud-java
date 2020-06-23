@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-os-login/compare/v1.0.2...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#186](https://www.github.com/googleapis/java-os-login/issues/186)) ([996c2ba](https://www.github.com/googleapis/java-os-login/commit/996c2ba4eefa888885a4eda69de1a23c4fbf8651))
+
+
+### Bug Fixes
+
+* migrate oslogin/v1 to grpc_service_config ([#177](https://www.github.com/googleapis/java-os-login/issues/177)) ([3ae5f85](https://www.github.com/googleapis/java-os-login/commit/3ae5f85dd7e1f3f03c88d4077ae11fe7055aa5b4))
+* restore GAPIC v2 retry configs ([#157](https://www.github.com/googleapis/java-os-login/issues/157)) ([c4d419f](https://www.github.com/googleapis/java-os-login/commit/c4d419f5e6207f87d03dc2032d84624a98deae2c))
+
+
+### Dependencies
+
+* update core dependencies ([#163](https://www.github.com/googleapis/java-os-login/issues/163)) ([52063f4](https://www.github.com/googleapis/java-os-login/commit/52063f48997e051298683d35737abcf5ea68a50b))
+* update dependency com.google.api:api-common to v1.9.1 ([#162](https://www.github.com/googleapis/java-os-login/issues/162)) ([58eeea7](https://www.github.com/googleapis/java-os-login/commit/58eeea7e7e69e81421779843c9ff7edff80c32cd))
+* update dependency com.google.api:api-common to v1.9.2 ([#169](https://www.github.com/googleapis/java-os-login/issues/169)) ([b430f97](https://www.github.com/googleapis/java-os-login/commit/b430f97003bf8609cb7a0f85728cd4c38cfb010a))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#150](https://www.github.com/googleapis/java-os-login/issues/150)) ([e811b80](https://www.github.com/googleapis/java-os-login/commit/e811b807425a978f47c8412c6fc56b5f941a32f6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#154](https://www.github.com/googleapis/java-os-login/issues/154)) ([22cdd1e](https://www.github.com/googleapis/java-os-login/commit/22cdd1e8f8270bb29f99a26cb716a28eab529bb6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#160](https://www.github.com/googleapis/java-os-login/issues/160)) ([37c64a8](https://www.github.com/googleapis/java-os-login/commit/37c64a857b3aa65881410fda26a74fba8e872533))
+* update dependency com.google.protobuf:protobuf-java-util to v3.12.2 ([#155](https://www.github.com/googleapis/java-os-login/issues/155)) ([ee5bb12](https://www.github.com/googleapis/java-os-login/commit/ee5bb122fe12b0b0d1e56fbcffebf2f87ef80e6b))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#142](https://www.github.com/googleapis/java-os-login/issues/142)) ([192d1ae](https://www.github.com/googleapis/java-os-login/commit/192d1ae3971b0662c64977b64cbcbbd469c86a6f))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#144](https://www.github.com/googleapis/java-os-login/issues/144)) ([8fbfd24](https://www.github.com/googleapis/java-os-login/commit/8fbfd2471495ea0ebc99503d39106e39175de8b4))
+
 ### [1.0.2](https://www.github.com/googleapis/java-os-login/compare/v1.0.1...v1.0.2) (2020-04-20)
 
 
