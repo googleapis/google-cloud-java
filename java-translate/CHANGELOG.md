@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.95.0](https://www.github.com/googleapis/java-translate/compare/v1.94.5...v1.95.0) (2020-06-23)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#220](https://www.github.com/googleapis/java-translate/issues/220)) ([e2af685](https://www.github.com/googleapis/java-translate/commit/e2af68575cd22523d44ffdc5e7e36cd0eaf331e3))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#228](https://www.github.com/googleapis/java-translate/issues/228)) ([516440b](https://www.github.com/googleapis/java-translate/commit/516440b6175e4832b400a74481b580ef07df40c2))
+* restore GAPIC v2 retry configs ([#188](https://www.github.com/googleapis/java-translate/issues/188)) ([92d4eaa](https://www.github.com/googleapis/java-translate/commit/92d4eaafba966a443e4366d32516d17ef0081826))
+
+
+### Dependencies
+
+* update core dependencies to v1.93.5 ([#195](https://www.github.com/googleapis/java-translate/issues/195)) ([9ea3bcc](https://www.github.com/googleapis/java-translate/commit/9ea3bcc14ecfa82d79afad13cd618c7fcdeddd6e))
+* update dependency com.google.api:api-common to v1.9.1 ([#194](https://www.github.com/googleapis/java-translate/issues/194)) ([224dd18](https://www.github.com/googleapis/java-translate/commit/224dd18065ae5fe6d014a66aa31815fbcb57fcc0))
+* update dependency com.google.api:api-common to v1.9.2 ([#202](https://www.github.com/googleapis/java-translate/issues/202)) ([10ebc9a](https://www.github.com/googleapis/java-translate/commit/10ebc9ac50cdf5d817fee9510b1bdecaa16850db))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#182](https://www.github.com/googleapis/java-translate/issues/182)) ([3bf0c6b](https://www.github.com/googleapis/java-translate/commit/3bf0c6bf445f2a3ea91f598bb2c8385295b6a3e3))
+* update dependency com.google.guava:guava-bom to v29 ([#141](https://www.github.com/googleapis/java-translate/issues/141)) ([ca6a29f](https://www.github.com/googleapis/java-translate/commit/ca6a29fb0ad417a15fe3111a9d79b29ba67e6905))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#178](https://www.github.com/googleapis/java-translate/issues/178)) ([3da16ec](https://www.github.com/googleapis/java-translate/commit/3da16ecb1aa4b5ba12223cd6148a9e44332e0e16))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.1 ([#186](https://www.github.com/googleapis/java-translate/issues/186)) ([ec26b9e](https://www.github.com/googleapis/java-translate/commit/ec26b9ed4c546cc1da68654617ac6904d62a1e09))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#196](https://www.github.com/googleapis/java-translate/issues/196)) ([84ff951](https://www.github.com/googleapis/java-translate/commit/84ff951fdd77e1ab2ab38c713fbe66c9c7f7c2c2))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#172](https://www.github.com/googleapis/java-translate/issues/172)) ([71f424d](https://www.github.com/googleapis/java-translate/commit/71f424d44fdaaf927937c96e3d2a169adb4c73ce))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#206](https://www.github.com/googleapis/java-translate/issues/206)) ([3e46b1e](https://www.github.com/googleapis/java-translate/commit/3e46b1e935f908186ad80e0a35ecf51068b8a295))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#177](https://www.github.com/googleapis/java-translate/issues/177)) ([d99012f](https://www.github.com/googleapis/java-translate/commit/d99012f6c3accfc243925c86630c851d6669c391))
+
 ### [1.94.5](https://www.github.com/googleapis/java-translate/compare/v1.94.4...v1.94.5) (2020-04-07)
 
 
