@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.117.0...v0.118.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#166](https://www.github.com/googleapis/java-websecurityscanner/issues/166)) ([e3871d0](https://www.github.com/googleapis/java-websecurityscanner/commit/e3871d022e448a2847f292d7123e7504cc2f7112))
+
+
+### Bug Fixes
+
+* migrate retry settings to grpc_service_config ([#169](https://www.github.com/googleapis/java-websecurityscanner/issues/169)) ([ef27c8e](https://www.github.com/googleapis/java-websecurityscanner/commit/ef27c8e5076ed8d84561ccd3fd35b470bfaf6127))
+
 ## [0.117.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.3...v0.117.0) (2020-06-16)
 
 
