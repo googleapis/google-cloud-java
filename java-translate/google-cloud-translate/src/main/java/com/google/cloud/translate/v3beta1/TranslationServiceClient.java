@@ -175,133 +175,6 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
-   * NOT_FOUND, if the glossary doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the glossary to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
-      GlossaryName name) {
-    DeleteGlossaryRequest request =
-        DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteGlossaryAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
-   * NOT_FOUND, if the glossary doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the glossary to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
-      String name) {
-    DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder().setName(name).build();
-    return deleteGlossaryAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
-   * NOT_FOUND, if the glossary doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
-      DeleteGlossaryRequest request) {
-    return deleteGlossaryOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
-   * NOT_FOUND, if the glossary doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;DeleteGlossaryResponse, DeleteGlossaryMetadata&gt; future = translationServiceClient.deleteGlossaryOperationCallable().futureCall(request);
-   *   // Do something
-   *   DeleteGlossaryResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationCallable() {
-    return stub.deleteGlossaryOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
-   * NOT_FOUND, if the glossary doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = translationServiceClient.deleteGlossaryCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
-    return stub.deleteGlossaryCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Translates input text and returns translated text.
    *
    * <p>Sample code:
@@ -1150,6 +1023,133 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     return stub.getGlossaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
+   * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the glossary to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
+      GlossaryName name) {
+    DeleteGlossaryRequest request =
+        DeleteGlossaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteGlossaryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
+   * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the glossary to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
+      String name) {
+    DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder().setName(name).build();
+    return deleteGlossaryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
+   * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> deleteGlossaryAsync(
+      DeleteGlossaryRequest request) {
+    return deleteGlossaryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
+   * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;DeleteGlossaryResponse, DeleteGlossaryMetadata&gt; future = translationServiceClient.deleteGlossaryOperationCallable().futureCall(request);
+   *   // Do something
+   *   DeleteGlossaryResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationCallable() {
+    return stub.deleteGlossaryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
+   * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryRequest request = DeleteGlossaryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = translationServiceClient.deleteGlossaryCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
+    return stub.deleteGlossaryCallable();
   }
 
   @Override

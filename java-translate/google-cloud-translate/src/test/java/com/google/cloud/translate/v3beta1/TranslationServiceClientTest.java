@@ -84,54 +84,6 @@ public class TranslationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteGlossaryTest() throws Exception {
-    String name2 = "name2-1052831874";
-    DeleteGlossaryResponse expectedResponse =
-        DeleteGlossaryResponse.newBuilder().setName(name2).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteGlossaryTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockTranslationService.addResponse(resultOperation);
-
-    GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-
-    DeleteGlossaryResponse actualResponse = client.deleteGlossaryAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteGlossaryRequest actualRequest = (DeleteGlossaryRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, GlossaryName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteGlossaryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockTranslationService.addException(exception);
-
-    try {
-      GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
-
-      client.deleteGlossaryAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void translateTextTest() {
     TranslateTextResponse expectedResponse = TranslateTextResponse.newBuilder().build();
     mockTranslationService.addResponse(expectedResponse);
@@ -547,6 +499,54 @@ public class TranslationServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteGlossaryTest() throws Exception {
+    String name2 = "name2-1052831874";
+    DeleteGlossaryResponse expectedResponse =
+        DeleteGlossaryResponse.newBuilder().setName(name2).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGlossaryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTranslationService.addResponse(resultOperation);
+
+    GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+
+    DeleteGlossaryResponse actualResponse = client.deleteGlossaryAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGlossaryRequest actualRequest = (DeleteGlossaryRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, GlossaryName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteGlossaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+
+      client.deleteGlossaryAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

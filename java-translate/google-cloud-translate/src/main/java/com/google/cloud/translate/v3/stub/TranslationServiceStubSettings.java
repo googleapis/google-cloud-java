@@ -112,10 +112,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .add("https://www.googleapis.com/auth/cloud-translation")
           .build();
 
-  private final UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings;
-  private final OperationCallSettings<
-          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationSettings;
   private final UnaryCallSettings<TranslateTextRequest, TranslateTextResponse>
       translateTextSettings;
   private final UnaryCallSettings<DetectLanguageRequest, DetectLanguageResponse>
@@ -133,19 +129,10 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
       listGlossariesSettings;
   private final UnaryCallSettings<GetGlossaryRequest, Glossary> getGlossarySettings;
-
-  /** Returns the object with the settings used for calls to deleteGlossary. */
-  public UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
-    return deleteGlossarySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteGlossary. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
+  private final UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings;
+  private final OperationCallSettings<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationSettings() {
-    return deleteGlossaryOperationSettings;
-  }
+      deleteGlossaryOperationSettings;
 
   /** Returns the object with the settings used for calls to translateText. */
   public UnaryCallSettings<TranslateTextRequest, TranslateTextResponse> translateTextSettings() {
@@ -198,6 +185,19 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   /** Returns the object with the settings used for calls to getGlossary. */
   public UnaryCallSettings<GetGlossaryRequest, Glossary> getGlossarySettings() {
     return getGlossarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGlossary. */
+  public UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
+    return deleteGlossarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGlossary. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationSettings() {
+    return deleteGlossaryOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -269,8 +269,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   protected TranslationServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteGlossarySettings = settingsBuilder.deleteGlossarySettings().build();
-    deleteGlossaryOperationSettings = settingsBuilder.deleteGlossaryOperationSettings().build();
     translateTextSettings = settingsBuilder.translateTextSettings().build();
     detectLanguageSettings = settingsBuilder.detectLanguageSettings().build();
     getSupportedLanguagesSettings = settingsBuilder.getSupportedLanguagesSettings().build();
@@ -281,6 +279,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     createGlossaryOperationSettings = settingsBuilder.createGlossaryOperationSettings().build();
     listGlossariesSettings = settingsBuilder.listGlossariesSettings().build();
     getGlossarySettings = settingsBuilder.getGlossarySettings().build();
+    deleteGlossarySettings = settingsBuilder.deleteGlossarySettings().build();
+    deleteGlossaryOperationSettings = settingsBuilder.deleteGlossaryOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListGlossariesRequest, ListGlossariesResponse, Glossary>
@@ -342,11 +342,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       extends StubSettings.Builder<TranslationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation>
-        deleteGlossarySettings;
-    private final OperationCallSettings.Builder<
-            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-        deleteGlossaryOperationSettings;
     private final UnaryCallSettings.Builder<TranslateTextRequest, TranslateTextResponse>
         translateTextSettings;
     private final UnaryCallSettings.Builder<DetectLanguageRequest, DetectLanguageResponse>
@@ -367,6 +362,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
         listGlossariesSettings;
     private final UnaryCallSettings.Builder<GetGlossaryRequest, Glossary> getGlossarySettings;
+    private final UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation>
+        deleteGlossarySettings;
+    private final OperationCallSettings.Builder<
+            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+        deleteGlossaryOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -375,11 +375,13 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -393,12 +395,22 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -408,10 +420,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
-
-      deleteGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteGlossaryOperationSettings = OperationCallSettings.newBuilder();
 
       translateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -431,16 +439,20 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
       getGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteGlossaryOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteGlossarySettings,
               translateTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
               batchTranslateTextSettings,
               createGlossarySettings,
               listGlossariesSettings,
-              getGlossarySettings);
+              getGlossarySettings,
+              deleteGlossarySettings);
 
       initDefaults(this);
     }
@@ -457,74 +469,51 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteGlossarySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .translateTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .detectLanguageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getSupportedLanguagesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .batchTranslateTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createGlossarySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listGlossariesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getGlossarySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       builder
-          .deleteGlossaryOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteGlossaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(DeleteGlossaryResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteGlossaryMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
+          .deleteGlossarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .batchTranslateTextOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<BatchTranslateTextRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(BatchTranslateResponse.class))
@@ -546,13 +535,36 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateGlossaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Glossary.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(CreateGlossaryMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .deleteGlossaryOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGlossaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeleteGlossaryResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteGlossaryMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -571,8 +583,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     protected Builder(TranslationServiceStubSettings settings) {
       super(settings);
 
-      deleteGlossarySettings = settings.deleteGlossarySettings.toBuilder();
-      deleteGlossaryOperationSettings = settings.deleteGlossaryOperationSettings.toBuilder();
       translateTextSettings = settings.translateTextSettings.toBuilder();
       detectLanguageSettings = settings.detectLanguageSettings.toBuilder();
       getSupportedLanguagesSettings = settings.getSupportedLanguagesSettings.toBuilder();
@@ -583,17 +593,19 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       createGlossaryOperationSettings = settings.createGlossaryOperationSettings.toBuilder();
       listGlossariesSettings = settings.listGlossariesSettings.toBuilder();
       getGlossarySettings = settings.getGlossarySettings.toBuilder();
+      deleteGlossarySettings = settings.deleteGlossarySettings.toBuilder();
+      deleteGlossaryOperationSettings = settings.deleteGlossaryOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteGlossarySettings,
               translateTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
               batchTranslateTextSettings,
               createGlossarySettings,
               listGlossariesSettings,
-              getGlossarySettings);
+              getGlossarySettings,
+              deleteGlossarySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -610,20 +622,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGlossary. */
-    public UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
-      return deleteGlossarySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGlossary. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-        deleteGlossaryOperationSettings() {
-      return deleteGlossaryOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to translateText. */
@@ -682,6 +680,20 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     /** Returns the builder for the settings used for calls to getGlossary. */
     public UnaryCallSettings.Builder<GetGlossaryRequest, Glossary> getGlossarySettings() {
       return getGlossarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGlossary. */
+    public UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
+      return deleteGlossarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGlossary. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+        deleteGlossaryOperationSettings() {
+      return deleteGlossaryOperationSettings;
     }
 
     @Override

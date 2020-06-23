@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-translate.git",
-        "sha": "d1f4972a1d9d76a7fafc000a9067327fed6d344c"
+        "sha": "f6e7a377818c7876dc7bc02d34044eceedd48e42"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "97e94f5367165e4ec2ea4f3c2096b41877cbfb17",
+        "internalRef": "317700003"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "97e94f5367165e4ec2ea4f3c2096b41877cbfb17",
+        "internalRef": "317700003"
       }
     },
     {
