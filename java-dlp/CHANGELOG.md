@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-dlp/compare/v1.1.4...v2.0.0) (2020-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* Location name helpers have been removed in preparation for regionalization support. Please use a parent string directly instead.
+
+### Features
+
+* add WORD and PDF file type enums and new MetadataLocation proto ([#176](https://www.github.com/googleapis/java-dlp/issues/176)) ([12aeb68](https://www.github.com/googleapis/java-dlp/commit/12aeb68a7626eecccc877bdc993e89150991718c)), closes [#533](https://www.github.com/googleapis/java-dlp/issues/533) [#535](https://www.github.com/googleapis/java-dlp/issues/535)
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#212](https://www.github.com/googleapis/java-dlp/issues/212)) ([8039912](https://www.github.com/googleapis/java-dlp/commit/8039912581d117e07c96f64440b8b4c2263296fc))
+
+
+### Bug Fixes
+
+* change routing to remove location parameter in preparation for the addition of regional support ([#178](https://www.github.com/googleapis/java-dlp/issues/178)) ([4be3740](https://www.github.com/googleapis/java-dlp/commit/4be3740cf5fc967b7ba84a53c9d568f0d8502308))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#187](https://www.github.com/googleapis/java-dlp/issues/187)) ([ef3a106](https://www.github.com/googleapis/java-dlp/commit/ef3a106e19a2e3b7fc62fe7e1ad7fac476168d09))
+* update dependency com.google.api:api-common to v1.9.2 ([#194](https://www.github.com/googleapis/java-dlp/issues/194)) ([1584607](https://www.github.com/googleapis/java-dlp/commit/1584607c7e36d3a074dea94d3b6ff2a242f8e9c9))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#173](https://www.github.com/googleapis/java-dlp/issues/173)) ([a1b65d4](https://www.github.com/googleapis/java-dlp/commit/a1b65d4fb390533ba5a92d03bfe482455ef43163))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#180](https://www.github.com/googleapis/java-dlp/issues/180)) ([546af1c](https://www.github.com/googleapis/java-dlp/commit/546af1cd30706075872e9ebe2bdb0dcc1387cb80))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#185](https://www.github.com/googleapis/java-dlp/issues/185)) ([4cf7620](https://www.github.com/googleapis/java-dlp/commit/4cf76208bc70e1ac6e02757fb7c7c41dad4cc381))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#198](https://www.github.com/googleapis/java-dlp/issues/198)) ([0701b8f](https://www.github.com/googleapis/java-dlp/commit/0701b8f3fc11ddd3b159d7584e90736f98d594a4))
+
+
+### Documentation
+
+* regenerate with fixed URLs and new protoc ([#192](https://www.github.com/googleapis/java-dlp/issues/192)) ([16d6d74](https://www.github.com/googleapis/java-dlp/commit/16d6d7486b36ccbfeca3c026226848fc55b0004a))
+
 ### [1.1.4](https://www.github.com/googleapis/java-dlp/compare/v1.1.3...v1.1.4) (2020-05-01)
 
 
