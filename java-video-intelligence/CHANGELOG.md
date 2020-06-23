@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.3.0...v1.4.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#199](https://www.github.com/googleapis/java-video-intelligence/issues/199)) ([d72ffa6](https://www.github.com/googleapis/java-video-intelligence/commit/d72ffa6a911e7ebda0b3d5de204e0d2506123074))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#198](https://www.github.com/googleapis/java-video-intelligence/issues/198)) ([1f4f1c0](https://www.github.com/googleapis/java-video-intelligence/commit/1f4f1c0075d7fd2ad945f82a20aa68426f1f9114))
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#188](https://www.github.com/googleapis/java-video-intelligence/issues/188)) ([bdd712d](https://www.github.com/googleapis/java-video-intelligence/commit/bdd712d541c45ee0a4567adff8fded04e0f719ff))
+
 ## [1.3.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.2.1...v1.3.0) (2020-06-11)
 
 
