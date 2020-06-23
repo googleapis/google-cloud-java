@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.2.0...v0.3.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#96](https://www.github.com/googleapis/java-recommendations-ai/issues/96)) ([29e51a1](https://www.github.com/googleapis/java-recommendations-ai/commit/29e51a16c7ef3a8c95b1296dd99a5eeea7d50022))
+
+
+### Bug Fixes
+
+* migrate recommendationengine/v1beta1 to grpc_service_config ([#90](https://www.github.com/googleapis/java-recommendations-ai/issues/90)) ([0f6d2ee](https://www.github.com/googleapis/java-recommendations-ai/commit/0f6d2ee976a4fc9f654738ed4866cc1ec8250c5f))
+* remove duplicate classes provided by api-common ([#71](https://www.github.com/googleapis/java-recommendations-ai/issues/71)) ([ba11473](https://www.github.com/googleapis/java-recommendations-ai/commit/ba1147376591bbf7c174b87a42811e3571e8c69e))
+* remove redundant properties from root pom ([#98](https://www.github.com/googleapis/java-recommendations-ai/issues/98)) ([87a89eb](https://www.github.com/googleapis/java-recommendations-ai/commit/87a89eb13b3516bfefb7db6fa99664828fc8671c))
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#87](https://www.github.com/googleapis/java-recommendations-ai/issues/87)) ([5c8b6e3](https://www.github.com/googleapis/java-recommendations-ai/commit/5c8b6e34a4bcecc714b5ec8b3bdf1f9735cc7d03))
+* update dependency com.google.api:api-common to v1.9.1 ([#65](https://www.github.com/googleapis/java-recommendations-ai/issues/65)) ([2c74179](https://www.github.com/googleapis/java-recommendations-ai/commit/2c74179881cfdff0b70cac7665b5130646f178f4))
+* update dependency com.google.api:api-common to v1.9.2 ([#75](https://www.github.com/googleapis/java-recommendations-ai/issues/75)) ([9b9581e](https://www.github.com/googleapis/java-recommendations-ai/commit/9b9581e5bc12da23c6880f06daf270b5704d88f8))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#55](https://www.github.com/googleapis/java-recommendations-ai/issues/55)) ([850525a](https://www.github.com/googleapis/java-recommendations-ai/commit/850525a2b640dde72b9ce0a0d766e62253f2a6e2))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#60](https://www.github.com/googleapis/java-recommendations-ai/issues/60)) ([2adb32b](https://www.github.com/googleapis/java-recommendations-ai/commit/2adb32baa656df64acaeb15940ad592c5eee817b))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#63](https://www.github.com/googleapis/java-recommendations-ai/issues/63)) ([8f5904d](https://www.github.com/googleapis/java-recommendations-ai/commit/8f5904d21fe85e71827456812c04baaabb455394))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#82](https://www.github.com/googleapis/java-recommendations-ai/issues/82)) ([3f87f2d](https://www.github.com/googleapis/java-recommendations-ai/commit/3f87f2d4265aecd2c7ae2364e9fcb9cba51ff89f))
+
 ## [0.2.0](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.1.1...v0.2.0) (2020-05-04)
 
 
