@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.0.0...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#181](https://www.github.com/googleapis/java-securitycenter/issues/181)) ([f11d67b](https://www.github.com/googleapis/java-securitycenter/commit/f11d67bc730214d3170929e4e8872ea23ab8099f))
+
+
+### Documentation
+
+* specify allowed fields for UpdateNotificationConfig ([#174](https://www.github.com/googleapis/java-securitycenter/issues/174)) ([2bdf201](https://www.github.com/googleapis/java-securitycenter/commit/2bdf20193d74f4d33e7519f12afe027cc23e4647))
+
 ## [1.0.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.122.0...v1.0.0) (2020-06-12)
 
 
