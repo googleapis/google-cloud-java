@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.31.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.30.1...v0.31.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#164](https://www.github.com/googleapis/java-recaptchaenterprise/issues/164)) ([761ff85](https://www.github.com/googleapis/java-recaptchaenterprise/commit/761ff85b03fe8116cd7bc3efd27dddb791ba468e))
+
+
+### Bug Fixes
+
+* update retry settings from grpc_service_config ([#155](https://www.github.com/googleapis/java-recaptchaenterprise/issues/155)) ([33aedfd](https://www.github.com/googleapis/java-recaptchaenterprise/commit/33aedfdd1ee68b870d994268d3569add8179f579))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#139](https://www.github.com/googleapis/java-recaptchaenterprise/issues/139)) ([d2d9a11](https://www.github.com/googleapis/java-recaptchaenterprise/commit/d2d9a11d2730859f5338e1c3d32809d9fcb353a5))
+* update dependency com.google.api:api-common to v1.9.2 ([#146](https://www.github.com/googleapis/java-recaptchaenterprise/issues/146)) ([bdc7c1d](https://www.github.com/googleapis/java-recaptchaenterprise/commit/bdc7c1dca721a9dd010b2dd9f31882cd04575428))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#129](https://www.github.com/googleapis/java-recaptchaenterprise/issues/129)) ([86d4147](https://www.github.com/googleapis/java-recaptchaenterprise/commit/86d4147325ca61d67bebb7233ee4eb43b5dd48c1))
+* update dependency com.google.guava:guava-bom to v29 ([#106](https://www.github.com/googleapis/java-recaptchaenterprise/issues/106)) ([92d5845](https://www.github.com/googleapis/java-recaptchaenterprise/commit/92d584529bd3a0aa2b3e33fc5b391b050b9c7e14))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#133](https://www.github.com/googleapis/java-recaptchaenterprise/issues/133)) ([77fc9c5](https://www.github.com/googleapis/java-recaptchaenterprise/commit/77fc9c5a64defbb1cedf0fd51e8061a93b4dd52f))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#137](https://www.github.com/googleapis/java-recaptchaenterprise/issues/137)) ([8545792](https://www.github.com/googleapis/java-recaptchaenterprise/commit/8545792a40f98deb0ec187cd5702a785d88ffc51))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#120](https://www.github.com/googleapis/java-recaptchaenterprise/issues/120)) ([292bb3c](https://www.github.com/googleapis/java-recaptchaenterprise/commit/292bb3cf76dcb9fa6b7fcd3688fc9e36ffdb4598))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#150](https://www.github.com/googleapis/java-recaptchaenterprise/issues/150)) ([f37391a](https://www.github.com/googleapis/java-recaptchaenterprise/commit/f37391a262c90d418b8d9b0907454bae50201957))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#125](https://www.github.com/googleapis/java-recaptchaenterprise/issues/125)) ([f369c05](https://www.github.com/googleapis/java-recaptchaenterprise/commit/f369c0571ed45123632168fc2862228b3804d80c))
+
 ### [0.30.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v0.30.0...v0.30.1) (2020-04-06)
 
 
