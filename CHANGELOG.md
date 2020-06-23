@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.134.1...v1.0.0) (2020-06-23)
+
+
+### Features
+
+* promote to GA ([#374](https://www.github.com/googleapis/java-bigquerystorage/issues/374)) ([9d2b891](https://www.github.com/googleapis/java-bigquerystorage/commit/9d2b8916315ae106a8b24c74f786bb2e5dea10e5))
+
 ### [0.134.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.134.0...v0.134.1) (2020-06-22)
 
 
