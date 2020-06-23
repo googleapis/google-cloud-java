@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-iamcredentials/compare/v1.0.2...v1.1.0) (2020-06-23)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#176](https://www.github.com/googleapis/java-iamcredentials/issues/176)) ([da2c012](https://www.github.com/googleapis/java-iamcredentials/commit/da2c01228df6ec735319e091c1df715175463eaa))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#183](https://www.github.com/googleapis/java-iamcredentials/issues/183)) ([30cb933](https://www.github.com/googleapis/java-iamcredentials/commit/30cb93339daf94fd3db63ed91b1368c72d832eba))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#153](https://www.github.com/googleapis/java-iamcredentials/issues/153)) ([3770bf2](https://www.github.com/googleapis/java-iamcredentials/commit/3770bf2b161dc12878a2c3ec08da2cade8111184))
+* update dependency com.google.api:api-common to v1.9.2 ([#160](https://www.github.com/googleapis/java-iamcredentials/issues/160)) ([09de6df](https://www.github.com/googleapis/java-iamcredentials/commit/09de6df9ecd15cb71556027783e599494217922b))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#143](https://www.github.com/googleapis/java-iamcredentials/issues/143)) ([67cf930](https://www.github.com/googleapis/java-iamcredentials/commit/67cf9302e63757dea578fefb0a8264575f4178c6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#147](https://www.github.com/googleapis/java-iamcredentials/issues/147)) ([3f8820a](https://www.github.com/googleapis/java-iamcredentials/commit/3f8820a382b652ad9c3fe530a5e4fa672ea639e6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#151](https://www.github.com/googleapis/java-iamcredentials/issues/151)) ([4c39e57](https://www.github.com/googleapis/java-iamcredentials/commit/4c39e571baef3b98792158c1aadb39ebaa0e5b00))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#135](https://www.github.com/googleapis/java-iamcredentials/issues/135)) ([a97d269](https://www.github.com/googleapis/java-iamcredentials/commit/a97d26903271b53a2ee8210ffb0e05e26f113515))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#164](https://www.github.com/googleapis/java-iamcredentials/issues/164)) ([eda4b98](https://www.github.com/googleapis/java-iamcredentials/commit/eda4b98616d4add7fce1ba4bb8a6e7f5ac40cf28))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#137](https://www.github.com/googleapis/java-iamcredentials/issues/137)) ([687f03c](https://www.github.com/googleapis/java-iamcredentials/commit/687f03c723ee66762a5bfca7dc45d741440ca2b6))
+
 ### [1.0.2](https://www.github.com/googleapis/java-iamcredentials/compare/v1.0.1...v1.0.2) (2020-04-20)
 
 
