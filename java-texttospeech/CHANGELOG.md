@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.2...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#178](https://www.github.com/googleapis/java-texttospeech/issues/178)) ([093cbc1](https://www.github.com/googleapis/java-texttospeech/commit/093cbc1d475217347e0fc7a5aa92a9222961c6cd))
+
+
+### Bug Fixes
+
+* migrate retry settings to grpc_service_config ([#177](https://www.github.com/googleapis/java-texttospeech/issues/177)) ([94644ec](https://www.github.com/googleapis/java-texttospeech/commit/94644ecdced8f730f56bee1ebf6b0e061f222dfe))
+* restore GAPIC v2 retry configs ([#143](https://www.github.com/googleapis/java-texttospeech/issues/143)) ([a500ecb](https://www.github.com/googleapis/java-texttospeech/commit/a500ecbd982b182d81b49b717192a2088e8cdc0b))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#150](https://www.github.com/googleapis/java-texttospeech/issues/150)) ([95c6aa9](https://www.github.com/googleapis/java-texttospeech/commit/95c6aa90f66439e554830e5c0e00db101e46e65d))
+* update dependency com.google.api:api-common to v1.9.2 ([#156](https://www.github.com/googleapis/java-texttospeech/issues/156)) ([2a0a811](https://www.github.com/googleapis/java-texttospeech/commit/2a0a811b6663d74029e0f6d5ad1e13debb300b34))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#137](https://www.github.com/googleapis/java-texttospeech/issues/137)) ([a3bb294](https://www.github.com/googleapis/java-texttospeech/commit/a3bb294e84eee6429f3046d2777070530447222a))
+* update dependency com.google.guava:guava-bom to v29 ([#114](https://www.github.com/googleapis/java-texttospeech/issues/114)) ([9bd8f9a](https://www.github.com/googleapis/java-texttospeech/commit/9bd8f9a310f0d10c8eb1de18f77ea776a5bc8cf3))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#141](https://www.github.com/googleapis/java-texttospeech/issues/141)) ([1695b41](https://www.github.com/googleapis/java-texttospeech/commit/1695b41e392adb2418abb481d526797985762313))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#148](https://www.github.com/googleapis/java-texttospeech/issues/148)) ([7829cc9](https://www.github.com/googleapis/java-texttospeech/commit/7829cc9d3950f76e1c6dda933a6ae2e39af9669d))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#128](https://www.github.com/googleapis/java-texttospeech/issues/128)) ([8c69682](https://www.github.com/googleapis/java-texttospeech/commit/8c696822b48583fdf2a83de1fe557fbbf72b1e64))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#160](https://www.github.com/googleapis/java-texttospeech/issues/160)) ([d4c7066](https://www.github.com/googleapis/java-texttospeech/commit/d4c706677e337a5fc0f96d919156dfc4e48440cf))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#133](https://www.github.com/googleapis/java-texttospeech/issues/133)) ([2422613](https://www.github.com/googleapis/java-texttospeech/commit/24226135e45f6e2183d766b526463c39f5b6914d))
+
+
+### Documentation
+
+* update relative URLs and regenerate with updated protoc ([#154](https://www.github.com/googleapis/java-texttospeech/issues/154)) ([3e7b0a5](https://www.github.com/googleapis/java-texttospeech/commit/3e7b0a51ec4113dc7f70715151af57a425f5b881))
+
 ### [1.0.2](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.1...v1.0.2) (2020-04-06)
 
 
