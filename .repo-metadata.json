@@ -2,7 +2,7 @@
   "name": "datastore",
   "name_pretty": "Cloud Datastore",
   "product_documentation": "https://cloud.google.com/datastore",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/asset/v1beta1/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-datastore/latest/index.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559768",
   "release_level": "ga",
   "language": "java",
