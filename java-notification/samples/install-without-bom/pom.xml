@@ -25,13 +25,11 @@
 
 
   <dependencies>
-    <!-- [START notification_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-notification</artifactId>
       <version>0.120.2-beta</version>
     </dependency>
-    <!-- [END notification_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -47,7 +45,6 @@
     </dependency>
   </dependencies>
 
-  <!-- compile and run all snippet tests -->
   <build>
     <plugins>
       <plugin>
