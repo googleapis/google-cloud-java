@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.2...v0.120.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#175](https://www.github.com/googleapis/java-errorreporting/issues/175)) ([7ca8b66](https://www.github.com/googleapis/java-errorreporting/commit/7ca8b66b01b2d5f9009a62a1a7be7e055a32ede6))
+
+
+### Bug Fixes
+
+* restore GAPIC v2 retry configs ([#143](https://www.github.com/googleapis/java-errorreporting/issues/143)) ([fc9837e](https://www.github.com/googleapis/java-errorreporting/commit/fc9837e073c9f48e8e35b9a5ab15cc4188e60982))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#149](https://www.github.com/googleapis/java-errorreporting/issues/149)) ([438aad7](https://www.github.com/googleapis/java-errorreporting/commit/438aad7173bc0012823339ac81f272f9b99ab209))
+* update dependency com.google.api:api-common to v1.9.2 ([#156](https://www.github.com/googleapis/java-errorreporting/issues/156)) ([5a537fa](https://www.github.com/googleapis/java-errorreporting/commit/5a537fa3a8223ab4445598c0eeb42ac2a0f15389))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#137](https://www.github.com/googleapis/java-errorreporting/issues/137)) ([7278629](https://www.github.com/googleapis/java-errorreporting/commit/7278629514fe46c820c88f6b20dd8f533dd8d296))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#150](https://www.github.com/googleapis/java-errorreporting/issues/150)) ([ad3af0e](https://www.github.com/googleapis/java-errorreporting/commit/ad3af0e085f8917a19c32f67728837897e387e12))
+* update dependency com.google.guava:guava-bom to v29 ([#113](https://www.github.com/googleapis/java-errorreporting/issues/113)) ([12b9e4f](https://www.github.com/googleapis/java-errorreporting/commit/12b9e4f21e80de984e88c8f87e38f705225b9b2a))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#141](https://www.github.com/googleapis/java-errorreporting/issues/141)) ([f92537d](https://www.github.com/googleapis/java-errorreporting/commit/f92537d97b57be7eb897b717fb488c52641c1f83))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#147](https://www.github.com/googleapis/java-errorreporting/issues/147)) ([2aa5cd1](https://www.github.com/googleapis/java-errorreporting/commit/2aa5cd1e995721146204825ad7b2743e6107affd))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#128](https://www.github.com/googleapis/java-errorreporting/issues/128)) ([00f5a8c](https://www.github.com/googleapis/java-errorreporting/commit/00f5a8cc86814cbe3626daf4cb28c74933f778f5))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#161](https://www.github.com/googleapis/java-errorreporting/issues/161)) ([917227f](https://www.github.com/googleapis/java-errorreporting/commit/917227f8d35e899134dc5999f08e9b5ebe27a804))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#133](https://www.github.com/googleapis/java-errorreporting/issues/133)) ([77ba87d](https://www.github.com/googleapis/java-errorreporting/commit/77ba87db15f7f2428e6a06a612d0886539af1d4c))
+
+
+### Documentation
+
+* fix several broken links in the docs. ([#157](https://www.github.com/googleapis/java-errorreporting/issues/157)) ([9606c51](https://www.github.com/googleapis/java-errorreporting/commit/9606c5160319e86c0b49ce573a30e2b3b95fb656))
+
 ### [0.119.2](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.1...v0.119.2) (2020-04-07)
 
 
