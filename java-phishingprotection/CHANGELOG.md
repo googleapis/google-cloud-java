@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.29.0](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.4...v0.29.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#165](https://www.github.com/googleapis/java-phishingprotection/issues/165)) ([69fb3da](https://www.github.com/googleapis/java-phishingprotection/commit/69fb3daea7c5ac02546cb007439545021e5e704e))
+
+
+### Bug Fixes
+
+* migrate phishingprotection/v1beta1 to grpc_service_config ([#156](https://www.github.com/googleapis/java-phishingprotection/issues/156)) ([0aa00b6](https://www.github.com/googleapis/java-phishingprotection/commit/0aa00b6ed53cb83ef87b9864f6eee1dc54990627))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#140](https://www.github.com/googleapis/java-phishingprotection/issues/140)) ([e49bc50](https://www.github.com/googleapis/java-phishingprotection/commit/e49bc5009e0e17b40cca1801398f6fc1fa572cb2))
+* update dependency com.google.api:api-common to v1.9.2 ([#147](https://www.github.com/googleapis/java-phishingprotection/issues/147)) ([41eb428](https://www.github.com/googleapis/java-phishingprotection/commit/41eb428c3c9b67ce7bff01cf88abf45a650f5692))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#130](https://www.github.com/googleapis/java-phishingprotection/issues/130)) ([1546fd6](https://www.github.com/googleapis/java-phishingprotection/commit/1546fd69d9336ae9a4d9cb820a9b8084f4263d00))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#134](https://www.github.com/googleapis/java-phishingprotection/issues/134)) ([a084ef0](https://www.github.com/googleapis/java-phishingprotection/commit/a084ef00f685db7344932b08b13244823bbc97bd))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#138](https://www.github.com/googleapis/java-phishingprotection/issues/138)) ([8002a6b](https://www.github.com/googleapis/java-phishingprotection/commit/8002a6bd69a344682aaa900ca08c9bb0e62a99ec))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#122](https://www.github.com/googleapis/java-phishingprotection/issues/122)) ([231d835](https://www.github.com/googleapis/java-phishingprotection/commit/231d83525140a62fad807d32f6396035997133cb))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#151](https://www.github.com/googleapis/java-phishingprotection/issues/151)) ([02b0f92](https://www.github.com/googleapis/java-phishingprotection/commit/02b0f926e8d9f42ff392f211a6758074d4f9b5b2))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#124](https://www.github.com/googleapis/java-phishingprotection/issues/124)) ([d08cbab](https://www.github.com/googleapis/java-phishingprotection/commit/d08cbabc391ab308d5ddbf269504caeb93fcd2c5))
+
 ### [0.28.4](https://www.github.com/googleapis/java-phishingprotection/compare/v0.28.3...v0.28.4) (2020-04-20)
 
 
