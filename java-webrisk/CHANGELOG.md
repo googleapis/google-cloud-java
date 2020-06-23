@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-webrisk/compare/v1.0.0...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#187](https://www.github.com/googleapis/java-webrisk/issues/187)) ([db4d292](https://www.github.com/googleapis/java-webrisk/commit/db4d29225228d7b498b7c35f3ddca79d6b86512c))
+
+
+### Bug Fixes
+
+* migrate retry settings to grpc_service_config ([#192](https://www.github.com/googleapis/java-webrisk/issues/192)) ([c99f508](https://www.github.com/googleapis/java-webrisk/commit/c99f5089e2e5822ea3147f3216cb5cbdf31634d4))
+
 ## [1.0.0](https://www.github.com/googleapis/java-webrisk/compare/v0.33.3...v1.0.0) (2020-06-18)
 
 
