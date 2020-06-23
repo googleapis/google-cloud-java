@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-billing/compare/v1.0.2...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#129](https://www.github.com/googleapis/java-billing/issues/129)) ([2150b92](https://www.github.com/googleapis/java-billing/commit/2150b921462fed1bb264aee3a8d332580535504f))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#107](https://www.github.com/googleapis/java-billing/issues/107)) ([e3f4372](https://www.github.com/googleapis/java-billing/commit/e3f437246fd8a6122b7f5ee52967b2e4bbd4aa66))
+* update dependency com.google.api:api-common to v1.9.2 ([#115](https://www.github.com/googleapis/java-billing/issues/115)) ([9c5b80e](https://www.github.com/googleapis/java-billing/commit/9c5b80eb5d4ce8775b0e313c6f55b991a0437055))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#95](https://www.github.com/googleapis/java-billing/issues/95)) ([50afb0e](https://www.github.com/googleapis/java-billing/commit/50afb0e301f97194bf58c78b0133606cf140784f))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#108](https://www.github.com/googleapis/java-billing/issues/108)) ([3f36a7a](https://www.github.com/googleapis/java-billing/commit/3f36a7a10df4c5d025c006d901c55a4889b1483f))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#100](https://www.github.com/googleapis/java-billing/issues/100)) ([ec9a2ca](https://www.github.com/googleapis/java-billing/commit/ec9a2ca64b712b26399d0d6a6ca9818e2f6d04d5))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#105](https://www.github.com/googleapis/java-billing/issues/105)) ([1e34acb](https://www.github.com/googleapis/java-billing/commit/1e34acb932d11c886ed8e8e26047d3c429c8dbb8))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#87](https://www.github.com/googleapis/java-billing/issues/87)) ([0d14162](https://www.github.com/googleapis/java-billing/commit/0d14162c88a00a2b07a0e8c5c6893cb0e46ef9f2))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#120](https://www.github.com/googleapis/java-billing/issues/120)) ([b53e066](https://www.github.com/googleapis/java-billing/commit/b53e066423cb9561814dfc40bffa77f54a137311))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#89](https://www.github.com/googleapis/java-billing/issues/89)) ([cb6ab45](https://www.github.com/googleapis/java-billing/commit/cb6ab45d1f1f21faa79af8a50fc9daa92b8707e2))
+
 ### [1.0.2](https://www.github.com/googleapis/java-billing/compare/v1.0.1...v1.0.2) (2020-04-20)
 
 
