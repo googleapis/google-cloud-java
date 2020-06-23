@@ -42,6 +42,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   private Queue() {
     name_ = "";
     state_ = 0;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -168,6 +169,13 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
                 stackdriverLoggingConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 88:
+            {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
           default:
@@ -417,6 +425,163 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.tasks.v2beta3.Queue.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the queue.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.tasks.v2beta3.Queue.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * A pull queue.
+     * </pre>
+     *
+     * <code>PULL = 1;</code>
+     */
+    PULL(1),
+    /**
+     *
+     *
+     * <pre>
+     * A push queue.
+     * </pre>
+     *
+     * <code>PUSH = 2;</code>
+     */
+    PUSH(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * A pull queue.
+     * </pre>
+     *
+     * <code>PULL = 1;</code>
+     */
+    public static final int PULL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A push queue.
+     * </pre>
+     *
+     * <code>PUSH = 2;</code>
+     */
+    public static final int PUSH_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return PULL;
+        case 2:
+          return PUSH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta3.Queue.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.tasks.v2beta3.Queue.Type)
   }
 
   private int queueTypeCase_ = 0;
@@ -948,6 +1113,52 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     return getStackdriverLoggingConfig();
   }
 
+  public static final int TYPE_FIELD_NUMBER = 11;
+  private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The type of a queue (push or pull).
+   * `Queue.type` is an immutable property of the queue that is set at the queue
+   * creation time. When left unspecified, the default value of `PUSH` is
+   * selected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The type of a queue (push or pull).
+   * `Queue.type` is an immutable property of the queue that is set at the queue
+   * creation time. When left unspecified, the default value of `PUSH` is
+   * selected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.Queue.Type getType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.tasks.v2beta3.Queue.Type result =
+        com.google.cloud.tasks.v2beta3.Queue.Type.valueOf(type_);
+    return result == null ? com.google.cloud.tasks.v2beta3.Queue.Type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -983,6 +1194,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (stackdriverLoggingConfig_ != null) {
       output.writeMessage(10, getStackdriverLoggingConfig());
     }
+    if (type_ != com.google.cloud.tasks.v2beta3.Queue.Type.TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1017,6 +1231,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getStackdriverLoggingConfig());
     }
+    if (type_ != com.google.cloud.tasks.v2beta3.Queue.Type.TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1050,6 +1267,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (hasStackdriverLoggingConfig()) {
       if (!getStackdriverLoggingConfig().equals(other.getStackdriverLoggingConfig())) return false;
     }
+    if (type_ != other.type_) return false;
     if (!getQueueTypeCase().equals(other.getQueueTypeCase())) return false;
     switch (queueTypeCase_) {
       case 3:
@@ -1089,6 +1307,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STACKDRIVER_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStackdriverLoggingConfig().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     switch (queueTypeCase_) {
       case 3:
         hash = (37 * hash) + APP_ENGINE_HTTP_QUEUE_FIELD_NUMBER;
@@ -1271,6 +1491,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         stackdriverLoggingConfig_ = null;
         stackdriverLoggingConfigBuilder_ = null;
       }
+      type_ = 0;
+
       queueTypeCase_ = 0;
       queueType_ = null;
       return this;
@@ -1328,6 +1550,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.stackdriverLoggingConfig_ = stackdriverLoggingConfigBuilder_.build();
       }
+      result.type_ = type_;
       result.queueTypeCase_ = queueTypeCase_;
       onBuilt();
       return result;
@@ -1396,6 +1619,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStackdriverLoggingConfig()) {
         mergeStackdriverLoggingConfig(other.getStackdriverLoggingConfig());
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       switch (other.getQueueTypeCase()) {
         case APP_ENGINE_HTTP_QUEUE:
@@ -3052,6 +3278,122 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         stackdriverLoggingConfig_ = null;
       }
       return stackdriverLoggingConfigBuilder_;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The type of a queue (push or pull).
+     * `Queue.type` is an immutable property of the queue that is set at the queue
+     * creation time. When left unspecified, the default value of `PUSH` is
+     * selected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The type of a queue (push or pull).
+     * `Queue.type` is an immutable property of the queue that is set at the queue
+     * creation time. When left unspecified, the default value of `PUSH` is
+     * selected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The type of a queue (push or pull).
+     * `Queue.type` is an immutable property of the queue that is set at the queue
+     * creation time. When left unspecified, the default value of `PUSH` is
+     * selected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.tasks.v2beta3.Queue.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.tasks.v2beta3.Queue.Type result =
+          com.google.cloud.tasks.v2beta3.Queue.Type.valueOf(type_);
+      return result == null ? com.google.cloud.tasks.v2beta3.Queue.Type.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The type of a queue (push or pull).
+     * `Queue.type` is an immutable property of the queue that is set at the queue
+     * creation time. When left unspecified, the default value of `PUSH` is
+     * selected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.tasks.v2beta3.Queue.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The type of a queue (push or pull).
+     * `Queue.type` is an immutable property of the queue that is set at the queue
+     * creation time. When left unspecified, the default value of `PUSH` is
+     * selected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+
+      type_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -406,5 +406,40 @@ public interface QueueOrBuilder
   com.google.cloud.tasks.v2beta3.StackdriverLoggingConfigOrBuilder
       getStackdriverLoggingConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The type of a queue (push or pull).
+   * `Queue.type` is an immutable property of the queue that is set at the queue
+   * creation time. When left unspecified, the default value of `PUSH` is
+   * selected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The type of a queue (push or pull).
+   * `Queue.type` is an immutable property of the queue that is set at the queue
+   * creation time. When left unspecified, the default value of `PUSH` is
+   * selected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.Queue.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.tasks.v2beta3.Queue.Type getType();
+
   public com.google.cloud.tasks.v2beta3.Queue.QueueTypeCase getQueueTypeCase();
 }

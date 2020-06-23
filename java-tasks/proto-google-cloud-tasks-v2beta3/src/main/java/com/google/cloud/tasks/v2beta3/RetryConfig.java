@@ -431,7 +431,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
    * A task's retry interval starts at
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff], then doubles
    * `max_doublings` times, then increases linearly, and finally
-   * retries retries at intervals of
+   * retries at intervals of
    * [max_backoff][google.cloud.tasks.v2beta3.RetryConfig.max_backoff] up to
    * [max_attempts][google.cloud.tasks.v2beta3.RetryConfig.max_attempts] times.
    * For example, if [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] is 10s,
@@ -1801,7 +1801,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2beta3.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2beta3.RetryConfig.max_attempts] times.
      * For example, if [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] is 10s,
@@ -1836,7 +1836,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2beta3.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2beta3.RetryConfig.max_attempts] times.
      * For example, if [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] is 10s,
@@ -1874,7 +1874,7 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
      * A task's retry interval starts at
      * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff], then doubles
      * `max_doublings` times, then increases linearly, and finally
-     * retries retries at intervals of
+     * retries at intervals of
      * [max_backoff][google.cloud.tasks.v2beta3.RetryConfig.max_backoff] up to
      * [max_attempts][google.cloud.tasks.v2beta3.RetryConfig.max_attempts] times.
      * For example, if [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] is 10s,
