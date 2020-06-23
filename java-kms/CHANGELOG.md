@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.39.0](https://www.github.com/googleapis/java-kms/compare/v1.38.1...v1.39.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#203](https://www.github.com/googleapis/java-kms/issues/203)) ([4dbf4db](https://www.github.com/googleapis/java-kms/commit/4dbf4dbe2bbf36c9000ae283a3ad25041ca99068))
+
+
+### Bug Fixes
+
+* migrate kms/v1 to grpc_service_config ([#193](https://www.github.com/googleapis/java-kms/issues/193)) ([959cd01](https://www.github.com/googleapis/java-kms/commit/959cd0129fa2d4b7d0abca8e8708a3ed61b86604))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#175](https://www.github.com/googleapis/java-kms/issues/175)) ([25969ce](https://www.github.com/googleapis/java-kms/commit/25969ce37393f849505d17cd14560af9a2005c4c))
+* update dependency com.google.api:api-common to v1.9.2 ([#183](https://www.github.com/googleapis/java-kms/issues/183)) ([4e6d75f](https://www.github.com/googleapis/java-kms/commit/4e6d75f17d13db31b9b3320a42d00afbe1ce776b))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#164](https://www.github.com/googleapis/java-kms/issues/164)) ([5cff5b7](https://www.github.com/googleapis/java-kms/commit/5cff5b7993329624debe15b28363457c8c07e7b1))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#176](https://www.github.com/googleapis/java-kms/issues/176)) ([a042993](https://www.github.com/googleapis/java-kms/commit/a04299315634d343379db7e6b7d442a9c7648db9))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#159](https://www.github.com/googleapis/java-kms/issues/159)) ([3f7d1da](https://www.github.com/googleapis/java-kms/commit/3f7d1da6041b1bf1e488f834fa9dd4740e195a68))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#168](https://www.github.com/googleapis/java-kms/issues/168)) ([4e9597f](https://www.github.com/googleapis/java-kms/commit/4e9597f3e5bb2ad45a16c1a5fb7663f13f1c4f0a))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#173](https://www.github.com/googleapis/java-kms/issues/173)) ([c9855e4](https://www.github.com/googleapis/java-kms/commit/c9855e4a55eb9ed8cb479e2755cf22b80a0cd95d))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#152](https://www.github.com/googleapis/java-kms/issues/152)) ([b351d28](https://www.github.com/googleapis/java-kms/commit/b351d28f8cc878e7f6f727ee31d3ac62fd4d877e))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#188](https://www.github.com/googleapis/java-kms/issues/188)) ([2d8865f](https://www.github.com/googleapis/java-kms/commit/2d8865fdd4df78d3bb1f588e287f36d1bb55f636))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#158](https://www.github.com/googleapis/java-kms/issues/158)) ([6b68afe](https://www.github.com/googleapis/java-kms/commit/6b68afe3ff0c4f1e0e65c595a8d4da1667abe2ce))
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links. ([#184](https://www.github.com/googleapis/java-kms/issues/184)) ([b7a6bcd](https://www.github.com/googleapis/java-kms/commit/b7a6bcd21a92a23e3af54ca5ec04cb9fe689f4ab))
+
 ### [1.38.1](https://www.github.com/googleapis/java-kms/compare/v1.38.0...v1.38.1) (2020-04-20)
 
 
