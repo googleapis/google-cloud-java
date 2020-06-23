@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iamcredentials.git",
-        "sha": "b99221b17b17537c81175bc2b877e8bb91840760"
+        "sha": "1026e15ec0cfaf083690d79f74cbc323d772ffeb"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "e2022bea2cd3273b0e42e0ac034d08c16aaa0ea0",
+        "internalRef": "317698083"
       }
     },
     {
