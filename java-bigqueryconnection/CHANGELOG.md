@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.1.0...v0.2.0) (2020-06-23)
+
+
+### Features
+
+* proto changes ([#64](https://www.github.com/googleapis/java-bigqueryconnection/issues/64)) ([cf48513](https://www.github.com/googleapis/java-bigqueryconnection/commit/cf48513fd40c12e2aaac198a3d1895afeb367271))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#50](https://www.github.com/googleapis/java-bigqueryconnection/issues/50)) ([9adf051](https://www.github.com/googleapis/java-bigqueryconnection/commit/9adf051263dccbda3b6e3ecc9d7006ae340d700d))
+
 ## 0.1.0 (2020-05-29)
 
 
