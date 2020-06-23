@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-recommender/compare/v1.0.0...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#213](https://www.github.com/googleapis/java-recommender/issues/213)) ([8ef8da6](https://www.github.com/googleapis/java-recommender/commit/8ef8da6b1f7039adaf8e68c687662842728aa6f1))
+
+
+### Bug Fixes
+
+* update retry settings from grpc_service_config ([#201](https://www.github.com/googleapis/java-recommender/issues/201)) ([1bb2dea](https://www.github.com/googleapis/java-recommender/commit/1bb2dea350680d51ff1e0dcd5705a752c5d1f771))
+
 ## [1.0.0](https://www.github.com/googleapis/java-recommender/compare/v0.4.1...v1.0.0) (2020-06-12)
 
 
