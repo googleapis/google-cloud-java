@@ -2,7 +2,7 @@
   "name": "logging-logback",
   "name_pretty": "Cloud Logging Logback Appender",
   "product_documentation": "https://cloud.google.com/logging-logback/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/logging/logback/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-logging-logback/latest/index.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559764",
   "release_level": "alpha",
   "language": "java",
