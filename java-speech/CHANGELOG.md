@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.24.0](https://www.github.com/googleapis/java-speech/compare/v1.23.0...v1.24.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#218](https://www.github.com/googleapis/java-speech/issues/218)) ([d1a0e06](https://www.github.com/googleapis/java-speech/commit/d1a0e0672ff8f50768ccc4e6d77e3084950e839f))
+
+
+### Bug Fixes
+
+* **generator:** delay removing streaming response until used ([#166](https://www.github.com/googleapis/java-speech/issues/166)) ([fef1a16](https://www.github.com/googleapis/java-speech/commit/fef1a16937ff81ea96e8504b053289d2025d8a21))
+* migrate retry configs to grpc_service_config ([#217](https://www.github.com/googleapis/java-speech/issues/217)) ([9a07a5e](https://www.github.com/googleapis/java-speech/commit/9a07a5ed85ceac5f6c2b2212101fa13e0d46374d))
+* restore GAPIC v2 retry configs ([#178](https://www.github.com/googleapis/java-speech/issues/178)) ([243add1](https://www.github.com/googleapis/java-speech/commit/243add1197d7407d48422f9432086331f243947a))
+
+
+### Dependencies
+
+* update core dependencies ([#205](https://www.github.com/googleapis/java-speech/issues/205)) ([cc7ae23](https://www.github.com/googleapis/java-speech/commit/cc7ae23507808c0d9619e6f081016cdb8aefc5ac))
+* update dependency com.google.api:api-common to v1.9.1 ([#184](https://www.github.com/googleapis/java-speech/issues/184)) ([a9f07eb](https://www.github.com/googleapis/java-speech/commit/a9f07eb60c37dec5ab0b26aa88a4285b85ed7600))
+* update dependency com.google.api:api-common to v1.9.2 ([#194](https://www.github.com/googleapis/java-speech/issues/194)) ([9b2b2d1](https://www.github.com/googleapis/java-speech/commit/9b2b2d12ef28434ae07ae51fa399b290a374a839))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#172](https://www.github.com/googleapis/java-speech/issues/172)) ([8028557](https://www.github.com/googleapis/java-speech/commit/80285577a0186f7e2618e3c6a61110bcd5431690))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.5 ([#188](https://www.github.com/googleapis/java-speech/issues/188)) ([c782fda](https://www.github.com/googleapis/java-speech/commit/c782fda74917c861b5a4761e2c1e94cb09f0be45))
+* update dependency com.google.errorprone:error_prone_annotations to v2.4.0 ([#186](https://www.github.com/googleapis/java-speech/issues/186)) ([2b37cf2](https://www.github.com/googleapis/java-speech/commit/2b37cf25478e62799fb0695baf3bbcd013700503))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#176](https://www.github.com/googleapis/java-speech/issues/176)) ([34a68fc](https://www.github.com/googleapis/java-speech/commit/34a68fca5b5eb8a3be33a0d23dad3a45334f10a1))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#159](https://www.github.com/googleapis/java-speech/issues/159)) ([8fe074c](https://www.github.com/googleapis/java-speech/commit/8fe074c183d0521a4ea645c3c498248b33d7debd))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#198](https://www.github.com/googleapis/java-speech/issues/198)) ([e4056d1](https://www.github.com/googleapis/java-speech/commit/e4056d1bdf41fb0d2e733fa3805a7379d3628edb))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#165](https://www.github.com/googleapis/java-speech/issues/165)) ([b2520fa](https://www.github.com/googleapis/java-speech/commit/b2520fab884d15591cbd0167f582602239a3f1eb))
+
 ## [1.23.0](https://www.github.com/googleapis/java-speech/compare/v1.22.6...v1.23.0) (2020-04-21)
 
 
