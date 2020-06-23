@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.0.1...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#168](https://www.github.com/googleapis/java-secretmanager/issues/168)) ([9267f53](https://www.github.com/googleapis/java-secretmanager/commit/9267f535b6d91324162df2bc84a8e11d924aae87))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#138](https://www.github.com/googleapis/java-secretmanager/issues/138)) ([6155389](https://www.github.com/googleapis/java-secretmanager/commit/6155389082723b0cd6b372ff9505998d753c825c))
+* update dependency com.google.api:api-common to v1.9.2 ([#145](https://www.github.com/googleapis/java-secretmanager/issues/145)) ([2800d57](https://www.github.com/googleapis/java-secretmanager/commit/2800d577c5dbc613ae6cf178303790d2fec8d630))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#124](https://www.github.com/googleapis/java-secretmanager/issues/124)) ([efe745d](https://www.github.com/googleapis/java-secretmanager/commit/efe745dd8e8966f284f47cb7958127892b4ce2e6))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#139](https://www.github.com/googleapis/java-secretmanager/issues/139)) ([b1c06f1](https://www.github.com/googleapis/java-secretmanager/commit/b1c06f113b4a7cd7bb5471cf34318846eb6d6123))
+* update dependency com.google.guava:guava-bom to v29 ([#99](https://www.github.com/googleapis/java-secretmanager/issues/99)) ([e0072b7](https://www.github.com/googleapis/java-secretmanager/commit/e0072b7051516d192ae9b8364dbb78c66e138ed0))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#130](https://www.github.com/googleapis/java-secretmanager/issues/130)) ([36b78e6](https://www.github.com/googleapis/java-secretmanager/commit/36b78e6fbc4503f41a511bc47483f7913ae07bab))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#136](https://www.github.com/googleapis/java-secretmanager/issues/136)) ([a7ab7dc](https://www.github.com/googleapis/java-secretmanager/commit/a7ab7dca291cb343e97e46400b73a8b79c552b45))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#112](https://www.github.com/googleapis/java-secretmanager/issues/112)) ([c4ad682](https://www.github.com/googleapis/java-secretmanager/commit/c4ad68221128b1ea513c243183a9a7712f43b396))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#149](https://www.github.com/googleapis/java-secretmanager/issues/149)) ([d5ad8de](https://www.github.com/googleapis/java-secretmanager/commit/d5ad8def2720cc75c615812230cccc22788e35b5))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#117](https://www.github.com/googleapis/java-secretmanager/issues/117)) ([33d0ca0](https://www.github.com/googleapis/java-secretmanager/commit/33d0ca0f96c857edbc52ac20169d3b1f02c61433))
+
+
+### Documentation
+
+* **regen:** update generated documentation ([#126](https://www.github.com/googleapis/java-secretmanager/issues/126)) ([b0d790f](https://www.github.com/googleapis/java-secretmanager/commit/b0d790f5ee63d7e00ceeef8a08cd80cf20a06e94))
+* regenerate docs from protos ([#127](https://www.github.com/googleapis/java-secretmanager/issues/127)) ([8beb466](https://www.github.com/googleapis/java-secretmanager/commit/8beb466cebb94c680673eed607f05c643138603c))
+
 ### [1.0.1](https://www.github.com/googleapis/java-secretmanager/compare/v1.0.0...v1.0.1) (2020-04-07)
 
 
