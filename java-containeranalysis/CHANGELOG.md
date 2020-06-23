@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.0.0...v1.1.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#184](https://www.github.com/googleapis/java-containeranalysis/issues/184)) ([ab9f795](https://www.github.com/googleapis/java-containeranalysis/commit/ab9f7954a65a1af2926ef91e943ffd62f6368841))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.12.2 ([#152](https://www.github.com/googleapis/java-containeranalysis/issues/152)) ([853394e](https://www.github.com/googleapis/java-containeranalysis/commit/853394e8a44a71f31a456fb212b6350f928537a9))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#168](https://www.github.com/googleapis/java-containeranalysis/issues/168)) ([5b4e230](https://www.github.com/googleapis/java-containeranalysis/commit/5b4e23051c58b3b9cf17f1aab1e36e6a0de0fcba))
+
 ## [1.0.0](https://www.github.com/googleapis/java-containeranalysis/compare/v0.120.0...v1.0.0) (2020-06-11)
 
 
