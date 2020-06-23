@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.23.0](https://www.github.com/googleapis/java-scheduler/compare/v1.22.4...v1.23.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#174](https://www.github.com/googleapis/java-scheduler/issues/174)) ([caa7ac7](https://www.github.com/googleapis/java-scheduler/commit/caa7ac7d54e85106c54e67b9391c3a258644f8db))
+
+
+### Bug Fixes
+
+* migrate scheduler/v1beta1 to grpc_service_config ([#167](https://www.github.com/googleapis/java-scheduler/issues/167)) ([666c094](https://www.github.com/googleapis/java-scheduler/commit/666c09498e39d570df5f93ca02e169c43c9111f8))
+* restore GAPIC v2 retry configs ([#143](https://www.github.com/googleapis/java-scheduler/issues/143)) ([ecf5504](https://www.github.com/googleapis/java-scheduler/commit/ecf5504c820e18bb72c25bedfa8fd9b0ed5ff0ff))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#148](https://www.github.com/googleapis/java-scheduler/issues/148)) ([ba8465c](https://www.github.com/googleapis/java-scheduler/commit/ba8465c6afa37918c3a1bb2b5b5b5e6803668a25))
+* update dependency com.google.api:api-common to v1.9.2 ([#155](https://www.github.com/googleapis/java-scheduler/issues/155)) ([754607f](https://www.github.com/googleapis/java-scheduler/commit/754607f621c5b3ff721199c9ed2d423cefeb6718))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#136](https://www.github.com/googleapis/java-scheduler/issues/136)) ([17755d3](https://www.github.com/googleapis/java-scheduler/commit/17755d3456a6bba3a9a927694fbcb9b6975bfb28))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#149](https://www.github.com/googleapis/java-scheduler/issues/149)) ([a08c23e](https://www.github.com/googleapis/java-scheduler/commit/a08c23ed707f497bc010e3c435a05636619734cb))
+* update dependency com.google.guava:guava-bom to v29 ([#112](https://www.github.com/googleapis/java-scheduler/issues/112)) ([488aeac](https://www.github.com/googleapis/java-scheduler/commit/488aeacc498c222402848f6f17bb8775ba0d900c))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#141](https://www.github.com/googleapis/java-scheduler/issues/141)) ([934b641](https://www.github.com/googleapis/java-scheduler/commit/934b641f4af38f9cb0dc67ddb0c3a680327a2856))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#146](https://www.github.com/googleapis/java-scheduler/issues/146)) ([e5f0741](https://www.github.com/googleapis/java-scheduler/commit/e5f0741d29c20ff53977cd2729fbeba723cec835))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#129](https://www.github.com/googleapis/java-scheduler/issues/129)) ([f4f63c2](https://www.github.com/googleapis/java-scheduler/commit/f4f63c2028bbed8746bead3f50b30a1c7fecff10))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#159](https://www.github.com/googleapis/java-scheduler/issues/159)) ([a577b9c](https://www.github.com/googleapis/java-scheduler/commit/a577b9c9bb6348f65477b7ac575c5f262dbf13b4))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#131](https://www.github.com/googleapis/java-scheduler/issues/131)) ([7d30b87](https://www.github.com/googleapis/java-scheduler/commit/7d30b877cae228eee4a1bddb4f632a97255815a8))
+
 ### [1.22.4](https://www.github.com/googleapis/java-scheduler/compare/v1.22.3...v1.22.4) (2020-04-10)
 
 
