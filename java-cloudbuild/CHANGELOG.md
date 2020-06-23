@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-cloudbuild/compare/v1.1.1...v2.0.0) (2020-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* createBuild, retryBuild, runBuildTrigger are LRO, listBuildTriggers returns paginated responses (#150)
+
+### Features
+
+* createBuild, retryBuild, runBuildTrigger are LRO, listBuildTriggers returns paginated responses ([#150](https://www.github.com/googleapis/java-cloudbuild/issues/150)) ([e66c82d](https://www.github.com/googleapis/java-cloudbuild/commit/e66c82db4ed0b3501dd08f4bb3af9ec989a670ef))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#188](https://www.github.com/googleapis/java-cloudbuild/issues/188)) ([d06149a](https://www.github.com/googleapis/java-cloudbuild/commit/d06149ad9b062e610381774b5ee26f420b080770))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#167](https://www.github.com/googleapis/java-cloudbuild/issues/167)) ([7cf2b56](https://www.github.com/googleapis/java-cloudbuild/commit/7cf2b563f9d6ae8995ab1ddaf4876ff3e932ef8e))
+* update dependency com.google.api:api-common to v1.9.2 ([#175](https://www.github.com/googleapis/java-cloudbuild/issues/175)) ([09291dc](https://www.github.com/googleapis/java-cloudbuild/commit/09291dcbe5a375d6ee850e4425bc0c94a44cfba2))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#155](https://www.github.com/googleapis/java-cloudbuild/issues/155)) ([02d3f71](https://www.github.com/googleapis/java-cloudbuild/commit/02d3f71eee4332c8176858fd29cb1f4b21f9ff86))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.93.5 ([#168](https://www.github.com/googleapis/java-cloudbuild/issues/168)) ([41a763a](https://www.github.com/googleapis/java-cloudbuild/commit/41a763ad751322853a50f6206c2447d7027b55bc))
+* update dependency com.google.guava:guava-bom to v29 ([#131](https://www.github.com/googleapis/java-cloudbuild/issues/131)) ([f8a5099](https://www.github.com/googleapis/java-cloudbuild/commit/f8a509970b28211531595e743a9579c8725b86e7))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#159](https://www.github.com/googleapis/java-cloudbuild/issues/159)) ([555e370](https://www.github.com/googleapis/java-cloudbuild/commit/555e3706c2080b90ff69d2c20a2e15f4dc959531))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#165](https://www.github.com/googleapis/java-cloudbuild/issues/165)) ([407e6c5](https://www.github.com/googleapis/java-cloudbuild/commit/407e6c556cfc02f73cd13865f104cec99dafaef4))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#145](https://www.github.com/googleapis/java-cloudbuild/issues/145)) ([9080b63](https://www.github.com/googleapis/java-cloudbuild/commit/9080b63eddefbceafde6cffd0776ade99278a2fd))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#179](https://www.github.com/googleapis/java-cloudbuild/issues/179)) ([588e18d](https://www.github.com/googleapis/java-cloudbuild/commit/588e18df2a838cdacac2ca3eee3b474c8d2f5578))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#149](https://www.github.com/googleapis/java-cloudbuild/issues/149)) ([1802480](https://www.github.com/googleapis/java-cloudbuild/commit/1802480470a975495c54a3eed9285963af391fc0))
+
 ### [1.1.1](https://www.github.com/googleapis/java-cloudbuild/compare/v1.1.0...v1.1.1) (2020-04-07)
 
 
