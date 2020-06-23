@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.4...v0.2.0) (2020-06-22)
+
+
+### Features
+
+* add support for secondary_aggregation and Monitoring Query Language. ([#126](https://www.github.com/googleapis/java-monitoring-dashboards/issues/126)) ([9a1edf2](https://www.github.com/googleapis/java-monitoring-dashboards/commit/9a1edf2182aa89d5195642d5fff605d33cb5d14b))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#136](https://www.github.com/googleapis/java-monitoring-dashboards/issues/136)) ([282a917](https://www.github.com/googleapis/java-monitoring-dashboards/commit/282a917cdc342aa39b4e667f2a504e7be33c7cfb))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#106](https://www.github.com/googleapis/java-monitoring-dashboards/issues/106)) ([b8bcf33](https://www.github.com/googleapis/java-monitoring-dashboards/commit/b8bcf3377310a7622d04bebf2bf3dff710587192))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#110](https://www.github.com/googleapis/java-monitoring-dashboards/issues/110)) ([4bc3b39](https://www.github.com/googleapis/java-monitoring-dashboards/commit/4bc3b39e40c6967ac9a60489ba31757df7e55bf3))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#113](https://www.github.com/googleapis/java-monitoring-dashboards/issues/113)) ([c1777e7](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c1777e7b2b6006596356c286135758426a28c737))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#100](https://www.github.com/googleapis/java-monitoring-dashboards/issues/100)) ([facb46b](https://www.github.com/googleapis/java-monitoring-dashboards/commit/facb46bd1b44f26fbe312683e882031f3c704a87))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#125](https://www.github.com/googleapis/java-monitoring-dashboards/issues/125)) ([731588f](https://www.github.com/googleapis/java-monitoring-dashboards/commit/731588fc0afe3f4495cb1dd3180098ad56efe54d))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#103](https://www.github.com/googleapis/java-monitoring-dashboards/issues/103)) ([3d828d0](https://www.github.com/googleapis/java-monitoring-dashboards/commit/3d828d07619430a5f47c77b911ecff7c9e88d450))
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links. ([#118](https://www.github.com/googleapis/java-monitoring-dashboards/issues/118)) ([9730070](https://www.github.com/googleapis/java-monitoring-dashboards/commit/9730070065791bd6e4aa272d12a716d8e696c8c0))
+
 ### [0.1.4](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.3...v0.1.4) (2020-04-20)
 
 
