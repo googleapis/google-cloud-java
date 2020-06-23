@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-memcache/compare/v0.1.2...v0.2.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#102](https://www.github.com/googleapis/java-memcache/issues/102)) ([c8f29cf](https://www.github.com/googleapis/java-memcache/commit/c8f29cf5740213869d612e2d54816a56339b8d69))
+
+
+### Bug Fixes
+
+* migrate memcache/v1beta2 to grpc_service_config ([#97](https://www.github.com/googleapis/java-memcache/issues/97)) ([b311cec](https://www.github.com/googleapis/java-memcache/commit/b311cec81d8561f6e759edd658af78bac362fb85))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#74](https://www.github.com/googleapis/java-memcache/issues/74)) ([5ce0c92](https://www.github.com/googleapis/java-memcache/commit/5ce0c9209c405f895be38c2af8d4f3583db61cb1))
+* update dependency com.google.api:api-common to v1.9.2 ([#85](https://www.github.com/googleapis/java-memcache/issues/85)) ([c64a289](https://www.github.com/googleapis/java-memcache/commit/c64a28915bae2f4188bf515202597cc1191831e5))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#63](https://www.github.com/googleapis/java-memcache/issues/63)) ([e9b2486](https://www.github.com/googleapis/java-memcache/commit/e9b248690d27dd1c8e870759279c25f367405dbf))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#75](https://www.github.com/googleapis/java-memcache/issues/75)) ([eecfe8a](https://www.github.com/googleapis/java-memcache/commit/eecfe8a7446636ebbba8ede7a0d9f17fd67478cc))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#67](https://www.github.com/googleapis/java-memcache/issues/67)) ([598e994](https://www.github.com/googleapis/java-memcache/commit/598e994e6e3691bb429bb294f0e3a459b9c36a89))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#72](https://www.github.com/googleapis/java-memcache/issues/72)) ([a7fae5a](https://www.github.com/googleapis/java-memcache/commit/a7fae5a645ec7b0e4f46eb831c41515c0c71cf64))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#53](https://www.github.com/googleapis/java-memcache/issues/53)) ([73bb1e3](https://www.github.com/googleapis/java-memcache/commit/73bb1e3ac64a02f51be9920783d1a14519478b2a))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#90](https://www.github.com/googleapis/java-memcache/issues/90)) ([dab0eb6](https://www.github.com/googleapis/java-memcache/commit/dab0eb60ed23f7bd00961cf5e28d79aa2f53f18c))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#59](https://www.github.com/googleapis/java-memcache/issues/59)) ([2a99c8a](https://www.github.com/googleapis/java-memcache/commit/2a99c8aa4097157e7c1959a2f6bc442d261f1b79))
+
+
+### Documentation
+
+* Change relative URLs to absolute URLs to fix broken links. ([#94](https://www.github.com/googleapis/java-memcache/issues/94)) ([d807788](https://www.github.com/googleapis/java-memcache/commit/d80778819479c5736a9d704fe86c175ed469768f))
+
 ### [0.1.2](https://www.github.com/googleapis/java-memcache/compare/v0.1.1...v0.1.2) (2020-04-20)
 
 
