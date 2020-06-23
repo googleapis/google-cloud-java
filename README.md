@@ -73,28 +73,28 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
 ```xml
 <configuration>
   <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
-    <!-- Optional: filter logs at and above this level --> 
+    <!-- Optional: filter logs at and above this level -->
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
         <level>INFO</level>
     </filter>
-    
+
     <!-- Optional: defaults to "java.log" -->
     <log>application.log</log>
-  
+
     <!-- Optional: defaults to "ERROR" -->
     <flushLevel>WARNING</flushLevel>
-  
+
     <!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". See supported resource types  -->
     <resourceType></resourceType>
-  
+
     <!-- Optional: defaults to the default credentials of the environment -->
     <credentialsFile>/path/to/credentials/file</credentialsFile>
-  
+
     <!-- Optional: add custom labels to log entries using LoggingEnhancer classes -->
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer>
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer>
   </appender>
-   
+
   <root level="info">
     <appender-ref ref="CLOUD" />
   </root>
@@ -121,6 +121,17 @@ public class TestLogger {
 }
 ```
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-logging-logback/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Quickstart | [source code](https://github.com/googleapis/java-logging-logback/blob/master/samples/snippets/src/main/java/com/example/logging/logback/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging-logback&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/logback/Quickstart.java) |
+| Example Enhancer | [source code](https://github.com/googleapis/java-logging-logback/blob/master/samples/snippets/src/main/java/com/example/logging/logback/enhancers/ExampleEnhancer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging-logback&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/logback/enhancers/ExampleEnhancer.java) |
 
 
 
