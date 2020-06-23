@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-logging-logback/compare/v0.117.0...v0.118.0) (2020-06-23)
+
+
+### Features
+
+* **deps:** use google-cloud-shared-dependencies and flatten pom ([#105](https://www.github.com/googleapis/java-logging-logback/issues/105)) ([95410fc](https://www.github.com/googleapis/java-logging-logback/commit/95410fcb2b9d1f87fcc49930d31f4263b8608c0d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#71](https://www.github.com/googleapis/java-logging-logback/issues/71)) ([b4b2641](https://www.github.com/googleapis/java-logging-logback/commit/b4b2641e20dbecc20e28dc24422dcbb5c2e64e6a))
+* update dependency com.google.cloud:google-cloud-logging to v1.101.2 ([#75](https://www.github.com/googleapis/java-logging-logback/issues/75)) ([bef40a1](https://www.github.com/googleapis/java-logging-logback/commit/bef40a1d8bb7358a034026023800939e945a46d3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#108](https://www.github.com/googleapis/java-logging-logback/issues/108)) ([3a67939](https://www.github.com/googleapis/java-logging-logback/commit/3a67939e256b2a2923284a493abc57b3e78be996))
+* update dependency com.google.guava:guava-bom to v29 ([#77](https://www.github.com/googleapis/java-logging-logback/issues/77)) ([e4a14bf](https://www.github.com/googleapis/java-logging-logback/commit/e4a14bfa5b48d0f5a1857ab081ac46d6dcee02d0))
+
+
+### Documentation
+
+* fix example in javadoc, update version number and usage ([#92](https://www.github.com/googleapis/java-logging-logback/issues/92)) ([4ad9d23](https://www.github.com/googleapis/java-logging-logback/commit/4ad9d23996da0ae29986181b9679ed220c19b54b))
+* generate readme from synth.py ([#96](https://www.github.com/googleapis/java-logging-logback/issues/96)) ([17abe99](https://www.github.com/googleapis/java-logging-logback/commit/17abe996c2e25f593cf5dbd36a898170887fe26d))
+
 ## [0.117.0](https://www.github.com/googleapis/java-logging-logback/compare/0.116.0...v0.117.0) (2020-04-02)
 
 
