@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.0.0...v2.1.0) (2020-06-22)
+
+
+### Features
+
+* configure retry for Diaglogflow v2.Environments.ListEnvironments and v2beta1.Environments.ListEnvironments ([#172](https://www.github.com/googleapis/java-dialogflow/issues/172)) ([93c1869](https://www.github.com/googleapis/java-dialogflow/commit/93c1869c94075b07caffccd30ef5fdbe3096105a))
+* **v2beta1:** add enableReload, reloadStatus to Document, add additional method binding for SearchAgent ([#206](https://www.github.com/googleapis/java-dialogflow/issues/206)) ([0a471e5](https://www.github.com/googleapis/java-dialogflow/commit/0a471e52638a1ccff555b94ea8f189cab299ded1))
+
+
+### Bug Fixes
+
+* restore retry configs and update generated docs ([#187](https://www.github.com/googleapis/java-dialogflow/issues/187)) ([605e949](https://www.github.com/googleapis/java-dialogflow/commit/605e949493d9a4d56f8a7d372718363c67e9a418))
+
+
+### Documentation
+
+* minor comments change ([#178](https://www.github.com/googleapis/java-dialogflow/issues/178)) ([2c91e2b](https://www.github.com/googleapis/java-dialogflow/commit/2c91e2bdaf1ddd5c7fc025832bfca7213157bea4))
+* regenerate javadoc from protos ([#224](https://www.github.com/googleapis/java-dialogflow/issues/224)) ([03bdbe3](https://www.github.com/googleapis/java-dialogflow/commit/03bdbe32cf8bd273ad328d2fba247d37dd365114))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#179](https://www.github.com/googleapis/java-dialogflow/issues/179)) ([466ed51](https://www.github.com/googleapis/java-dialogflow/commit/466ed5137026a895dc4aa2946fc1b1913c6e0472))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#215](https://www.github.com/googleapis/java-dialogflow/issues/215)) ([1e3d4b2](https://www.github.com/googleapis/java-dialogflow/commit/1e3d4b2f15ac27f95fa028b521d724bc653f2128))
+
 ## [2.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v1.0.0...v2.0.0) (2020-04-27)
 
 
