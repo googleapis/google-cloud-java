@@ -527,10 +527,10 @@ public final class Cloudbuild {
           + "e.devtools.cloudbuild.v1.ListWorkerPools"
           + "Response\"\000\032M\312A\031cloudbuild.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformBk\n\030com.google.cloudbuild.v1P\001Z"
-          + "Ggoogle.golang.org/genproto/googleapis/d"
-          + "evtools/cloudbuild/v1;cloudbuild\242\002\003GCBb\006"
-          + "proto3"
+          + "-platformB\206\001\n\030com.google.cloudbuild.v1P\001"
+          + "ZGgoogle.golang.org/genproto/googleapis/"
+          + "devtools/cloudbuild/v1;cloudbuild\242\002\003GCB\352"
+          + "\002\030Google::Cloud::Build::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
