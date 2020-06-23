@@ -23,13 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start::current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-securitycenter-settings</artifactId>
-      <version>0.2.0</version>
+      <version>0.2.1-SNAPSHOT</version>
     </dependency>
+    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -44,9 +45,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
-  <!-- compile and run all snippet tests -->
   <build>
     <plugins>
       <plugin>

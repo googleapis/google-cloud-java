@@ -23,8 +23,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
-  <!-- [START securitycenter-settings_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -41,8 +39,9 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-securitycenter-settings</artifactId>
+      <!-- TODO: REMOVE VERSION SPECIFIED BELOW WHEN THE CLIENT GOES GA-->
+      <version>0.2.0</version>
     </dependency>
-    <!-- [END securitycenter-settings_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
