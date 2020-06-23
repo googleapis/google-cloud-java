@@ -75,22 +75,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAutoMlStub extends AutoMlStub {
 
-  private static final MethodDescriptor<DeleteDatasetRequest, Operation>
-      deleteDatasetMethodDescriptor =
-          MethodDescriptor.<DeleteDatasetRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.automl.v1.AutoMl/DeleteDataset")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
-      MethodDescriptor.<DeleteModelRequest, Operation>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.automl.v1.AutoMl/DeleteModel")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<CreateDatasetRequest, Operation>
       createDatasetMethodDescriptor =
           MethodDescriptor.<CreateDatasetRequest, Operation>newBuilder()
@@ -124,6 +108,15 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteDatasetRequest, Operation>
+      deleteDatasetMethodDescriptor =
+          MethodDescriptor.<DeleteDatasetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.automl.v1.AutoMl/DeleteDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
@@ -170,6 +163,13 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
+      MethodDescriptor.<DeleteModelRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.automl.v1.AutoMl/DeleteModel")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
       MethodDescriptor.<UpdateModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -223,12 +223,6 @@ public class GrpcAutoMlStub extends AutoMlStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable;
-  private final OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationCallable;
-  private final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable;
-  private final OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable;
   private final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable;
   private final OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationCallable;
@@ -237,6 +231,9 @@ public class GrpcAutoMlStub extends AutoMlStub {
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable;
   private final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable;
+  private final UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable;
+  private final OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationCallable;
   private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
   private final OperationCallable<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationCallable;
@@ -250,6 +247,9 @@ public class GrpcAutoMlStub extends AutoMlStub {
   private final UnaryCallable<GetModelRequest, Model> getModelCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable;
+  private final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable;
+  private final OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable;
   private final UnaryCallable<UpdateModelRequest, Model> updateModelCallable;
   private final UnaryCallable<DeployModelRequest, Operation> deployModelCallable;
   private final OperationCallable<DeployModelRequest, Empty, OperationMetadata>
@@ -304,32 +304,6 @@ public class GrpcAutoMlStub extends AutoMlStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
-        GrpcCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteDatasetMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
-        GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteModelMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateDatasetRequest, Operation> createDatasetTransportSettings =
         GrpcCallSettings.<CreateDatasetRequest, Operation>newBuilder()
             .setMethodDescriptor(createDatasetMethodDescriptor)
@@ -378,6 +352,19 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   public Map<String, String> extract(UpdateDatasetRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("dataset.name", String.valueOf(request.getDataset().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
+        GrpcCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDatasetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDatasetRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDatasetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -456,6 +443,19 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   public Map<String, String> extract(ListModelsRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
+        GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteModelMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteModelRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteModelRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -541,24 +541,6 @@ public class GrpcAutoMlStub extends AutoMlStub {
                     })
                 .build();
 
-    this.deleteDatasetCallable =
-        callableFactory.createUnaryCallable(
-            deleteDatasetTransportSettings, settings.deleteDatasetSettings(), clientContext);
-    this.deleteDatasetOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteDatasetTransportSettings,
-            settings.deleteDatasetOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.deleteModelCallable =
-        callableFactory.createUnaryCallable(
-            deleteModelTransportSettings, settings.deleteModelSettings(), clientContext);
-    this.deleteModelOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteModelTransportSettings,
-            settings.deleteModelOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.createDatasetCallable =
         callableFactory.createUnaryCallable(
             createDatasetTransportSettings, settings.createDatasetSettings(), clientContext);
@@ -580,6 +562,15 @@ public class GrpcAutoMlStub extends AutoMlStub {
     this.updateDatasetCallable =
         callableFactory.createUnaryCallable(
             updateDatasetTransportSettings, settings.updateDatasetSettings(), clientContext);
+    this.deleteDatasetCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatasetTransportSettings, settings.deleteDatasetSettings(), clientContext);
+    this.deleteDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatasetTransportSettings,
+            settings.deleteDatasetOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -621,6 +612,15 @@ public class GrpcAutoMlStub extends AutoMlStub {
     this.listModelsPagedCallable =
         callableFactory.createPagedCallable(
             listModelsTransportSettings, settings.listModelsSettings(), clientContext);
+    this.deleteModelCallable =
+        callableFactory.createUnaryCallable(
+            deleteModelTransportSettings, settings.deleteModelSettings(), clientContext);
+    this.deleteModelOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteModelTransportSettings,
+            settings.deleteModelOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
             updateModelTransportSettings, settings.updateModelSettings(), clientContext);
@@ -676,26 +676,6 @@ public class GrpcAutoMlStub extends AutoMlStub {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationCallable() {
-    return deleteDatasetOperationCallable;
-  }
-
-  public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
-    return deleteDatasetCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable() {
-    return deleteModelOperationCallable;
-  }
-
-  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
-    return deleteModelCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationCallable() {
     return createDatasetOperationCallable;
@@ -719,6 +699,16 @@ public class GrpcAutoMlStub extends AutoMlStub {
 
   public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
     return updateDatasetCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationCallable() {
+    return deleteDatasetOperationCallable;
+  }
+
+  public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
+    return deleteDatasetCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -765,6 +755,16 @@ public class GrpcAutoMlStub extends AutoMlStub {
 
   public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return listModelsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable() {
+    return deleteModelOperationCallable;
+  }
+
+  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
+    return deleteModelCallable;
   }
 
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {

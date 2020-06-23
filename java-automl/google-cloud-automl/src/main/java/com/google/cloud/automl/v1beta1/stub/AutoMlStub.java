@@ -81,6 +81,26 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
+  }
+
+  public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDatasetCallable()");
+  }
+
+  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetsCallable()");
+  }
+
+  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
       deleteDatasetOperationCallable() {
@@ -109,68 +129,6 @@ public abstract class AutoMlStub implements BackgroundResource {
 
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteModelOperationCallable()");
-  }
-
-  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
-      exportModelOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportModelOperationCallable()");
-  }
-
-  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
-      exportEvaluatedExamplesOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: exportEvaluatedExamplesOperationCallable()");
-  }
-
-  public UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
-      exportEvaluatedExamplesCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportEvaluatedExamplesCallable()");
-  }
-
-  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
-      listModelEvaluationsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listModelEvaluationsPagedCallable()");
-  }
-
-  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
-      listModelEvaluationsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listModelEvaluationsCallable()");
-  }
-
-  public UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
-  }
-
-  public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: getDatasetCallable()");
-  }
-
-  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listDatasetsPagedCallable()");
-  }
-
-  public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listDatasetsCallable()");
-  }
-
-  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
   }
 
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
@@ -234,6 +192,16 @@ public abstract class AutoMlStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
       deployModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deployModelOperationCallable()");
@@ -253,8 +221,40 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: undeployModelCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
+      exportEvaluatedExamplesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportEvaluatedExamplesOperationCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluatedExamplesRequest, Operation>
+      exportEvaluatedExamplesCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluatedExamplesCallable()");
+  }
+
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
     throw new UnsupportedOperationException("Not implemented: getModelEvaluationCallable()");
+  }
+
+  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
+      listModelEvaluationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelEvaluationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
+      listModelEvaluationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelEvaluationsCallable()");
   }
 
   @Override

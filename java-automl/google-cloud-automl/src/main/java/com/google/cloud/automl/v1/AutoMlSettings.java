@@ -72,32 +72,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
-    return ((AutoMlStubSettings) getStubSettings()).deleteDatasetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationSettings() {
-    return ((AutoMlStubSettings) getStubSettings()).deleteDatasetOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteModel. */
-  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
-    return ((AutoMlStubSettings) getStubSettings()).deleteModelSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationSettings() {
-    return ((AutoMlStubSettings) getStubSettings()).deleteModelOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createDatasetSettings();
@@ -125,6 +99,19 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   /** Returns the object with the settings used for calls to updateDataset. */
   public UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
     return ((AutoMlStubSettings) getStubSettings()).updateDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deleteDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deleteDatasetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to importData. */
@@ -180,6 +167,19 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
       listModelsSettings() {
     return ((AutoMlStubSettings) getStubSettings()).listModelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deleteModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deleteModelOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updateModel. */
@@ -337,32 +337,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
-      return getStubSettingsBuilder().deleteDatasetSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
-        deleteDatasetOperationSettings() {
-      return getStubSettingsBuilder().deleteDatasetOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteModel. */
-    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
-      return getStubSettingsBuilder().deleteModelSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
-        deleteModelOperationSettings() {
-      return getStubSettingsBuilder().deleteModelOperationSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createDataset. */
     public UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings() {
       return getStubSettingsBuilder().createDatasetSettings();
@@ -391,6 +365,19 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     /** Returns the builder for the settings used for calls to updateDataset. */
     public UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
       return getStubSettingsBuilder().updateDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+      return getStubSettingsBuilder().deleteDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
+        deleteDatasetOperationSettings() {
+      return getStubSettingsBuilder().deleteDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importData. */
@@ -447,6 +434,19 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
         listModelsSettings() {
       return getStubSettingsBuilder().listModelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
+      return getStubSettingsBuilder().deleteModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
+        deleteModelOperationSettings() {
+      return getStubSettingsBuilder().deleteModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateModel. */

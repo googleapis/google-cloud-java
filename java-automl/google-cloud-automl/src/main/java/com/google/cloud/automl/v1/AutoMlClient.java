@@ -184,264 +184,6 @@ public class AutoMlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a dataset and all of its contents. Returns empty response in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   autoMlClient.deleteDatasetAsync(name).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the dataset to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
-    DeleteDatasetRequest request =
-        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteDatasetAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset and all of its contents. Returns empty response in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   autoMlClient.deleteDatasetAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the dataset to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(String name) {
-    DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
-    return deleteDatasetAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset and all of its contents. Returns empty response in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   autoMlClient.deleteDatasetAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
-      DeleteDatasetRequest request) {
-    return deleteDatasetOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset and all of its contents. Returns empty response in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteDatasetOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationCallable() {
-    return stub.deleteDatasetOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset and all of its contents. Returns empty response in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = autoMlClient.deleteDatasetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
-    return stub.deleteDatasetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a model. Returns `google.protobuf.Empty` in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   autoMlClient.deleteModelAsync(name).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the model being deleted.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
-    DeleteModelRequest request =
-        DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deleteModelAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a model. Returns `google.protobuf.Empty` in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   autoMlClient.deleteModelAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the model being deleted.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(String name) {
-    DeleteModelRequest request = DeleteModelRequest.newBuilder().setName(name).build();
-    return deleteModelAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a model. Returns `google.protobuf.Empty` in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   autoMlClient.deleteModelAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
-      DeleteModelRequest request) {
-    return deleteModelOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a model. Returns `google.protobuf.Empty` in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable() {
-    return stub.deleteModelOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a model. Returns `google.protobuf.Empty` in the
-   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
-   * in the [metadata][google.longrunning.Operation.metadata] field.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = autoMlClient.deleteModelCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
-    return stub.deleteModelCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Creates a dataset.
    *
    * <p>Sample code:
@@ -864,6 +606,135 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
     return stub.updateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset and all of its contents. Returns empty response in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   autoMlClient.deleteDatasetAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the dataset to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
+    DeleteDatasetRequest request =
+        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset and all of its contents. Returns empty response in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   autoMlClient.deleteDatasetAsync(name.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the dataset to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(String name) {
+    DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
+    return deleteDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset and all of its contents. Returns empty response in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   autoMlClient.deleteDatasetAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
+      DeleteDatasetRequest request) {
+    return deleteDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset and all of its contents. Returns empty response in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteDatasetOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationCallable() {
+    return stub.deleteDatasetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset and all of its contents. Returns empty response in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.deleteDatasetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
+    return stub.deleteDatasetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1613,6 +1484,135 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return stub.listModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a model. Returns `google.protobuf.Empty` in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.deleteModelAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the model being deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
+    DeleteModelRequest request =
+        DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a model. Returns `google.protobuf.Empty` in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.deleteModelAsync(name.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the model being deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(String name) {
+    DeleteModelRequest request = DeleteModelRequest.newBuilder().setName(name).build();
+    return deleteModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a model. Returns `google.protobuf.Empty` in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   autoMlClient.deleteModelAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
+      DeleteModelRequest request) {
+    return deleteModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a model. Returns `google.protobuf.Empty` in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable() {
+    return stub.deleteModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a model. Returns `google.protobuf.Empty` in the
+   * [response][google.longrunning.Operation.response] field when it completes, and `delete_details`
+   * in the [metadata][google.longrunning.Operation.metadata] field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.deleteModelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
+    return stub.deleteModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

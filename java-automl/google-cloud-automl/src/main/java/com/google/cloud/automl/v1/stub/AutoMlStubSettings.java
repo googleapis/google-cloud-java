@@ -120,12 +120,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings;
-  private final OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationSettings;
-  private final UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings;
-  private final OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationSettings;
   private final UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings;
   private final OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationSettings;
@@ -134,6 +128,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       listDatasetsSettings;
   private final UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings;
+  private final UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings;
+  private final OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationSettings;
   private final UnaryCallSettings<ImportDataRequest, Operation> importDataSettings;
   private final OperationCallSettings<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationSettings;
@@ -148,6 +145,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   private final UnaryCallSettings<GetModelRequest, Model> getModelSettings;
   private final PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
       listModelsSettings;
+  private final UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings;
+  private final OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationSettings;
   private final UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings;
   private final UnaryCallSettings<DeployModelRequest, Operation> deployModelSettings;
   private final OperationCallSettings<DeployModelRequest, Empty, OperationMetadata>
@@ -165,30 +165,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
-
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
-    return deleteDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationSettings() {
-    return deleteDatasetOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteModel. */
-  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
-    return deleteModelSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationSettings() {
-    return deleteModelOperationSettings;
-  }
 
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
@@ -216,6 +192,18 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   /** Returns the object with the settings used for calls to updateDataset. */
   public UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
     return updateDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+    return deleteDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationSettings() {
+    return deleteDatasetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to importData. */
@@ -268,6 +256,18 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
       listModelsSettings() {
     return listModelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
+    return deleteModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationSettings() {
+    return deleteModelOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateModel. */
@@ -394,15 +394,13 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   protected AutoMlStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
-    deleteDatasetOperationSettings = settingsBuilder.deleteDatasetOperationSettings().build();
-    deleteModelSettings = settingsBuilder.deleteModelSettings().build();
-    deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
     createDatasetSettings = settingsBuilder.createDatasetSettings().build();
     createDatasetOperationSettings = settingsBuilder.createDatasetOperationSettings().build();
     getDatasetSettings = settingsBuilder.getDatasetSettings().build();
     listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
     updateDatasetSettings = settingsBuilder.updateDatasetSettings().build();
+    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
+    deleteDatasetOperationSettings = settingsBuilder.deleteDatasetOperationSettings().build();
     importDataSettings = settingsBuilder.importDataSettings().build();
     importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
     exportDataSettings = settingsBuilder.exportDataSettings().build();
@@ -412,6 +410,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     createModelOperationSettings = settingsBuilder.createModelOperationSettings().build();
     getModelSettings = settingsBuilder.getModelSettings().build();
     listModelsSettings = settingsBuilder.listModelsSettings().build();
+    deleteModelSettings = settingsBuilder.deleteModelSettings().build();
+    deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
     updateModelSettings = settingsBuilder.updateModelSettings().build();
     deployModelSettings = settingsBuilder.deployModelSettings().build();
     deployModelOperationSettings = settingsBuilder.deployModelOperationSettings().build();
@@ -598,12 +598,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   public static class Builder extends StubSettings.Builder<AutoMlStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings;
-    private final OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
-        deleteDatasetOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings;
-    private final OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
-        deleteModelOperationSettings;
     private final UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings;
     private final OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
         createDatasetOperationSettings;
@@ -612,6 +606,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
         listDatasetsSettings;
     private final UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings;
+    private final UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings;
+    private final OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
+        deleteDatasetOperationSettings;
     private final UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings;
     private final OperationCallSettings.Builder<ImportDataRequest, Empty, OperationMetadata>
         importDataOperationSettings;
@@ -627,6 +624,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     private final PagedCallSettings.Builder<
             ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
         listModelsSettings;
+    private final UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings;
+    private final OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
+        deleteModelOperationSettings;
     private final UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings;
     private final UnaryCallSettings.Builder<DeployModelRequest, Operation> deployModelSettings;
     private final OperationCallSettings.Builder<DeployModelRequest, Empty, OperationMetadata>
@@ -652,11 +652,13 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -670,12 +672,22 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(5000L))
+              .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(5000L))
+              .setTotalTimeout(Duration.ofMillis(5000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -686,14 +698,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteDatasetOperationSettings = OperationCallSettings.newBuilder();
-
-      deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteModelOperationSettings = OperationCallSettings.newBuilder();
-
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createDatasetOperationSettings = OperationCallSettings.newBuilder();
@@ -703,6 +707,10 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
 
       updateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteDatasetOperationSettings = OperationCallSettings.newBuilder();
 
       importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -721,6 +729,10 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
+
+      deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteModelOperationSettings = OperationCallSettings.newBuilder();
 
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -743,18 +755,18 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteDatasetSettings,
-              deleteModelSettings,
               createDatasetSettings,
               getDatasetSettings,
               listDatasetsSettings,
               updateDatasetSettings,
+              deleteDatasetSettings,
               importDataSettings,
               exportDataSettings,
               getAnnotationSpecSettings,
               createModelSettings,
               getModelSettings,
               listModelsSettings,
+              deleteModelSettings,
               updateModelSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -777,146 +789,101 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .importDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .exportDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getAnnotationSpecSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listModelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deployModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .undeployModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .exportModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getModelEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listModelEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-      builder
-          .deleteDatasetOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .createDatasetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Dataset.class))
@@ -934,11 +901,34 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
+          .deleteDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
           .importDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -959,8 +949,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .exportDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -981,8 +971,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .createModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<CreateModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Model.class))
@@ -1000,11 +990,33 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
+          .deleteModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
           .deployModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1026,8 +1038,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UndeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1048,8 +1060,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .exportModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1073,15 +1085,13 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     protected Builder(AutoMlStubSettings settings) {
       super(settings);
 
-      deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
-      deleteDatasetOperationSettings = settings.deleteDatasetOperationSettings.toBuilder();
-      deleteModelSettings = settings.deleteModelSettings.toBuilder();
-      deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
       createDatasetSettings = settings.createDatasetSettings.toBuilder();
       createDatasetOperationSettings = settings.createDatasetOperationSettings.toBuilder();
       getDatasetSettings = settings.getDatasetSettings.toBuilder();
       listDatasetsSettings = settings.listDatasetsSettings.toBuilder();
       updateDatasetSettings = settings.updateDatasetSettings.toBuilder();
+      deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
+      deleteDatasetOperationSettings = settings.deleteDatasetOperationSettings.toBuilder();
       importDataSettings = settings.importDataSettings.toBuilder();
       importDataOperationSettings = settings.importDataOperationSettings.toBuilder();
       exportDataSettings = settings.exportDataSettings.toBuilder();
@@ -1091,6 +1101,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       createModelOperationSettings = settings.createModelOperationSettings.toBuilder();
       getModelSettings = settings.getModelSettings.toBuilder();
       listModelsSettings = settings.listModelsSettings.toBuilder();
+      deleteModelSettings = settings.deleteModelSettings.toBuilder();
+      deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
       updateModelSettings = settings.updateModelSettings.toBuilder();
       deployModelSettings = settings.deployModelSettings.toBuilder();
       deployModelOperationSettings = settings.deployModelOperationSettings.toBuilder();
@@ -1103,18 +1115,18 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteDatasetSettings,
-              deleteModelSettings,
               createDatasetSettings,
               getDatasetSettings,
               listDatasetsSettings,
               updateDatasetSettings,
+              deleteDatasetSettings,
               importDataSettings,
               exportDataSettings,
               getAnnotationSpecSettings,
               createModelSettings,
               getModelSettings,
               listModelsSettings,
+              deleteModelSettings,
               updateModelSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -1137,32 +1149,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
-      return deleteDatasetSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
-        deleteDatasetOperationSettings() {
-      return deleteDatasetOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteModel. */
-    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
-      return deleteModelSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
-        deleteModelOperationSettings() {
-      return deleteModelOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDataset. */
@@ -1193,6 +1179,19 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     /** Returns the builder for the settings used for calls to updateDataset. */
     public UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings() {
       return updateDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+      return deleteDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
+        deleteDatasetOperationSettings() {
+      return deleteDatasetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to importData. */
@@ -1249,6 +1248,19 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
         listModelsSettings() {
       return listModelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
+      return deleteModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
+        deleteModelOperationSettings() {
+      return deleteModelOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateModel. */

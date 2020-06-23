@@ -90,98 +90,6 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteDatasetTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteDatasetTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockAutoMl.addResponse(resultOperation);
-
-    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-
-    Empty actualResponse = client.deleteDatasetAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAutoMl.addException(exception);
-
-    try {
-      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-
-      client.deleteDatasetAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteModelTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteModelTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockAutoMl.addResponse(resultOperation);
-
-    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-
-    Empty actualResponse = client.deleteModelAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAutoMl.addException(exception);
-
-    try {
-      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-
-      client.deleteModelAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createDatasetTest() throws Exception {
     DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
     String displayName = "displayName1615086568";
@@ -389,6 +297,52 @@ public class AutoMlClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    Empty actualResponse = client.deleteDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoMl.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+      client.deleteDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -688,6 +642,52 @@ public class AutoMlClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteModelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    Empty actualResponse = client.deleteModelAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAutoMl.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
