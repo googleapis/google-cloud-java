@@ -110,14 +110,14 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.bigquery.connection.v1.ConnectionProto
+    return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.connection.v1.ConnectionProto
+    return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.bigquery.connection.v1.ListConnectionsRequest.class,
@@ -438,14 +438,14 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.connection.v1.ListConnectionsRequest)
       com.google.cloud.bigquery.connection.v1.ListConnectionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.bigquery.connection.v1.ConnectionProto
+      return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
           .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.connection.v1.ConnectionProto
+      return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
           .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.bigquery.connection.v1.ListConnectionsRequest.class,
@@ -480,7 +480,7 @@ public final class ListConnectionsRequest extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.bigquery.connection.v1.ConnectionProto
+      return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
           .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsRequest_descriptor;
     }
 

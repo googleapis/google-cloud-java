@@ -222,14 +222,8 @@ public class ConnectionServiceClientTest {
     mockConnectionService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-    int pageSize = 883849137;
-    ListConnectionsRequest request =
-        ListConnectionsRequest.newBuilder()
-            .setParent(parent.toString())
-            .setPageSize(pageSize)
-            .build();
 
-    ListConnectionsPagedResponse pagedListResponse = client.listConnections(request);
+    ListConnectionsPagedResponse pagedListResponse = client.listConnections(parent);
 
     List<Connection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -240,7 +234,6 @@ public class ConnectionServiceClientTest {
     ListConnectionsRequest actualRequest = (ListConnectionsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(pageSize, actualRequest.getPageSize());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -255,14 +248,8 @@ public class ConnectionServiceClientTest {
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      int pageSize = 883849137;
-      ListConnectionsRequest request =
-          ListConnectionsRequest.newBuilder()
-              .setParent(parent.toString())
-              .setPageSize(pageSize)
-              .build();
 
-      client.listConnections(request);
+      client.listConnections(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

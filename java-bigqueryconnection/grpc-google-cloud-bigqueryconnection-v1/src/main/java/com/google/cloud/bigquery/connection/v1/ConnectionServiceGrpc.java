@@ -536,7 +536,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified resource. Replaces any
      * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+     * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
     public void setIamPolicy(
@@ -551,7 +551,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
+     * permissions, not a `NOT_FOUND` error.
      * Note: This operation is designed to be used for building permission-aware
      * UIs and command-line tools, not for authorization checking. This operation
      * may "fail open" without warning.
@@ -752,7 +752,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified resource. Replaces any
      * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+     * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
     public void setIamPolicy(
@@ -770,7 +770,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
+     * permissions, not a `NOT_FOUND` error.
      * Note: This operation is designed to be used for building permission-aware
      * UIs and command-line tools, not for authorization checking. This operation
      * may "fail open" without warning.
@@ -890,7 +890,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified resource. Replaces any
      * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+     * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -903,7 +903,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
+     * permissions, not a `NOT_FOUND` error.
      * Note: This operation is designed to be used for building permission-aware
      * UIs and command-line tools, not for authorization checking. This operation
      * may "fail open" without warning.
@@ -1026,7 +1026,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified resource. Replaces any
      * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+     * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1041,7 +1041,7 @@ public final class ConnectionServiceGrpc {
      * <pre>
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
+     * permissions, not a `NOT_FOUND` error.
      * Note: This operation is designed to be used for building permission-aware
      * UIs and command-line tools, not for authorization checking. This operation
      * may "fail open" without warning.
@@ -1150,7 +1150,7 @@ public final class ConnectionServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.cloud.bigquery.connection.v1.ConnectionProto.getDescriptor();
+      return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass.getDescriptor();
     }
 
     @java.lang.Override
