@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-servicedirectory/compare/v0.1.1...v0.2.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#95](https://www.github.com/googleapis/java-servicedirectory/issues/95)) ([7ee3370](https://www.github.com/googleapis/java-servicedirectory/commit/7ee3370a28c6fc2f595016f9c6c42f1904f85570))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#69](https://www.github.com/googleapis/java-servicedirectory/issues/69)) ([264faac](https://www.github.com/googleapis/java-servicedirectory/commit/264faacc50d5309d81db5ac15454633017d332ac))
+* update dependency com.google.api:api-common to v1.9.2 ([#76](https://www.github.com/googleapis/java-servicedirectory/issues/76)) ([c47ccb9](https://www.github.com/googleapis/java-servicedirectory/commit/c47ccb913ae831d4c6877748e15e2c87f1449e62))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#59](https://www.github.com/googleapis/java-servicedirectory/issues/59)) ([b54b8ae](https://www.github.com/googleapis/java-servicedirectory/commit/b54b8ae510984f84c2abe157ff7bfd1b3d64911e))
+* update dependency com.google.guava:guava-bom to v29 ([#38](https://www.github.com/googleapis/java-servicedirectory/issues/38)) ([8d2bcff](https://www.github.com/googleapis/java-servicedirectory/commit/8d2bcffd2fe5809ddd92eb2d09fe0d0967fe3f23))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#63](https://www.github.com/googleapis/java-servicedirectory/issues/63)) ([295e2c4](https://www.github.com/googleapis/java-servicedirectory/commit/295e2c411ed808228eaf5236644747172732686c))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#67](https://www.github.com/googleapis/java-servicedirectory/issues/67)) ([16c8128](https://www.github.com/googleapis/java-servicedirectory/commit/16c81289ee6ef6bd43ccb00b9c3ad8f5afb9721f))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#50](https://www.github.com/googleapis/java-servicedirectory/issues/50)) ([a27b830](https://www.github.com/googleapis/java-servicedirectory/commit/a27b830a65f0c69d1261405cb26017e03e2e89be))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#81](https://www.github.com/googleapis/java-servicedirectory/issues/81)) ([2fe087f](https://www.github.com/googleapis/java-servicedirectory/commit/2fe087f32c2ed86b158520c4cc2aca2636ac91d2))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#55](https://www.github.com/googleapis/java-servicedirectory/issues/55)) ([159cabb](https://www.github.com/googleapis/java-servicedirectory/commit/159cabbb19c59c83b67403781fcbc472355b75ab))
+
 ### [0.1.1](https://www.github.com/googleapis/java-servicedirectory/compare/v0.1.0...v0.1.1) (2020-04-06)
 
 
