@@ -34,6 +34,7 @@ public class Reads {
 
   // Write your code here.
   // [START_EXCLUDE]
+  // [START bigtable_reads_row]
   public static void readRow() {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
