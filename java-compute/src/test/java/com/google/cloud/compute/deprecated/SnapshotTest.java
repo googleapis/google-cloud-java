@@ -140,7 +140,7 @@ public class SnapshotTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -153,7 +153,7 @@ public class SnapshotTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -165,7 +165,7 @@ public class SnapshotTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedSnapshot(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(expectedSnapshot);
@@ -177,7 +177,7 @@ public class SnapshotTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedSnapshot(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(null);
@@ -188,7 +188,7 @@ public class SnapshotTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedSnapshot(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), Compute.SnapshotOption.fields()))

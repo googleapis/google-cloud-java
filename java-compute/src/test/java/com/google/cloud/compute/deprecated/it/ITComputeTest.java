@@ -82,7 +82,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TimeoutException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -717,7 +716,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteRegionAddress() throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeleteRegionAddress() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-region-address";
     AddressId addressId = RegionAddressId.of(REGION, name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
@@ -750,7 +749,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testListRegionAddresses() throws InterruptedException, TimeoutException {
+  public void testListRegionAddresses() throws InterruptedException {
     String prefix = BASE_RESOURCE_NAME + "list-region-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
@@ -805,7 +804,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListAddresses() throws InterruptedException, TimeoutException {
+  public void testAggregatedListAddresses() throws InterruptedException {
     String prefix = BASE_RESOURCE_NAME + "aggregated-list-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
@@ -836,7 +835,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteGlobalAddress() throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeleteGlobalAddress() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-global-address";
     AddressId addressId = GlobalAddressId.of(name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
@@ -867,7 +866,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testListGlobalAddresses() throws InterruptedException, TimeoutException {
+  public void testListGlobalAddresses() throws InterruptedException {
     String prefix = BASE_RESOURCE_NAME + "list-global-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = GlobalAddressId.of(addressNames[0]);
@@ -919,8 +918,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetResizeAndDeleteStandardDisk()
-      throws InterruptedException, TimeoutException {
+  public void testCreateGetResizeAndDeleteStandardDisk() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-standard-disk";
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo =
@@ -965,7 +963,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteImageDisk() throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeleteImageDisk() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-image-disk";
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo = DiskInfo.of(diskId, ImageDiskConfiguration.of(IMAGE_ID));
@@ -1012,8 +1010,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteSnapshotAndSnapshotDisk()
-      throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeleteSnapshotAndSnapshotDisk() throws InterruptedException {
     String diskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk1";
     String snapshotDiskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk2";
     DiskId diskId = DiskId.of(ZONE, diskName);
@@ -1106,7 +1103,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testListDisksAndSnapshots() throws InterruptedException, TimeoutException {
+  public void testListDisksAndSnapshots() throws InterruptedException {
     String prefix = BASE_RESOURCE_NAME + "list-disks-and-snapshots-disk";
     String[] diskNames = {prefix + "1", prefix + "2"};
     DiskId firstDiskId = DiskId.of(ZONE, diskNames[0]);
@@ -1222,7 +1219,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListDisks() throws InterruptedException, TimeoutException {
+  public void testAggregatedListDisks() throws InterruptedException {
     String prefix = BASE_RESOURCE_NAME + "list-aggregated-disk";
     String[] diskZones = {"us-central1-a", "us-east1-c"};
     String[] diskNames = {prefix + "1", prefix + "2"};
@@ -1261,7 +1258,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeprecateImage() throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeprecateImage() throws InterruptedException {
     String diskName = BASE_RESOURCE_NAME + "create-and-get-image-disk";
     String imageName = BASE_RESOURCE_NAME + "create-and-get-image";
     DiskId diskId = DiskId.of(ZONE, diskName);
@@ -1389,7 +1386,7 @@ public class ITComputeTest {
 
   @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
-  public void testCreateAndGetNetwork() throws InterruptedException, TimeoutException {
+  public void testCreateAndGetNetwork() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-network";
     NetworkId networkId = NetworkId.of(name);
     NetworkInfo networkInfo =
@@ -1425,7 +1422,7 @@ public class ITComputeTest {
 
   @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
-  public void testListNetworks() throws InterruptedException, TimeoutException {
+  public void testListNetworks() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "list-network";
     NetworkId networkId = NetworkId.of(name);
     NetworkInfo networkInfo =
@@ -1476,7 +1473,7 @@ public class ITComputeTest {
 
   @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
-  public void testCreateNetworkAndSubnetwork() throws InterruptedException, TimeoutException {
+  public void testCreateNetworkAndSubnetwork() throws InterruptedException {
     String networkName = BASE_RESOURCE_NAME + "create-subnetwork-network";
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
@@ -1569,7 +1566,7 @@ public class ITComputeTest {
 
   @Ignore("Avoid leaving orphan networks when interrupted: see #2118")
   @Test
-  public void testAggregatedListSubnetworks() throws InterruptedException, TimeoutException {
+  public void testAggregatedListSubnetworks() throws InterruptedException {
     String networkName = BASE_RESOURCE_NAME + "list-subnetwork-network";
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
@@ -1628,7 +1625,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteInstance() throws InterruptedException, TimeoutException {
+  public void testCreateGetAndDeleteInstance() throws InterruptedException {
     String instanceName = BASE_RESOURCE_NAME + "create-and-get-instance";
     String addressName = BASE_RESOURCE_NAME + "create-and-get-instance-address";
     // Create an address to assign to the instance
@@ -1724,7 +1721,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testStartStopAndResetInstance() throws InterruptedException, TimeoutException {
+  public void testStartStopAndResetInstance() throws InterruptedException {
     String instanceName = BASE_RESOURCE_NAME + "start-stop-reset-instance";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
@@ -1766,7 +1763,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testSetInstanceProperties() throws InterruptedException, TimeoutException {
+  public void testSetInstanceProperties() throws InterruptedException {
     String instanceName = BASE_RESOURCE_NAME + "set-properties-instance";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
@@ -1814,7 +1811,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAttachAndDetachDisk() throws InterruptedException, TimeoutException {
+  public void testAttachAndDetachDisk() throws InterruptedException {
     String instanceName = BASE_RESOURCE_NAME + "attach-and-detach-disk-instance";
     String diskName = BASE_RESOURCE_NAME + "attach-and-detach-disk";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
@@ -1868,7 +1865,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAddAndRemoveAccessConfig() throws InterruptedException, TimeoutException {
+  public void testAddAndRemoveAccessConfig() throws InterruptedException {
     String instanceName = BASE_RESOURCE_NAME + "add-and-remove-access-instance";
     String addressName = BASE_RESOURCE_NAME + "add-and-remove-access-address";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);

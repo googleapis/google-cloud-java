@@ -246,7 +246,7 @@ public class DiskTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -258,7 +258,7 @@ public class DiskTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -270,7 +270,7 @@ public class DiskTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedDisk(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID)).andReturn(imageDisk);
@@ -282,7 +282,7 @@ public class DiskTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedDisk(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID)).andReturn(null);
@@ -293,7 +293,7 @@ public class DiskTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedDisk(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID, Compute.DiskOption.fields())).andReturn(imageDisk);

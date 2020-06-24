@@ -228,7 +228,7 @@ public class AddressTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -241,7 +241,7 @@ public class AddressTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -253,7 +253,7 @@ public class AddressTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedAddress(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(regionForwardingAddress);
@@ -265,7 +265,7 @@ public class AddressTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedAddress(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(null);
@@ -276,7 +276,7 @@ public class AddressTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedAddress(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID, Compute.AddressOption.fields()))

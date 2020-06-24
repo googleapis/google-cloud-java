@@ -304,7 +304,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {Compute.OperationOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -316,7 +316,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {Compute.OperationOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -328,7 +328,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testIsDone_True() throws Exception {
+  public void testIsDone_True() {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {
       Compute.OperationOption.fields(Compute.OperationField.STATUS)
@@ -342,7 +342,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testIsDone_False() throws Exception {
+  public void testIsDone_False() {
     initializeExpectedOperation(4);
     Compute.OperationOption[] expectedOptions = {
       Compute.OperationOption.fields(Compute.OperationField.STATUS)
@@ -359,7 +359,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testIsDone_NotExists() throws Exception {
+  public void testIsDone_NotExists() {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {
       Compute.OperationOption.fields(Compute.OperationField.STATUS)
@@ -476,7 +476,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedOperation(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(globalOperation);
@@ -488,7 +488,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedOperation(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
@@ -499,7 +499,7 @@ public class OperationTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedOperation(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, Compute.OperationOption.fields()))

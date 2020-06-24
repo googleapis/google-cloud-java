@@ -154,7 +154,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedNetwork(2);
     Compute.NetworkOption[] expectedOptions = {Compute.NetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -166,7 +166,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedNetwork(2);
     Compute.NetworkOption[] expectedOptions = {Compute.NetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -178,7 +178,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedNetwork(4);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getNetwork(NETWORK_ID.getNetwork())).andReturn(standardNetwork);
@@ -190,7 +190,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedNetwork(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getNetwork(NETWORK_ID.getNetwork())).andReturn(null);
@@ -201,7 +201,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedNetwork(4);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getNetwork(NETWORK_ID.getNetwork(), Compute.NetworkOption.fields()))
@@ -214,7 +214,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testCreateSubnetwork() throws Exception {
+  public void testCreateSubnetwork() {
     initializeExpectedNetwork(3);
     Operation operation =
         new Operation.Builder(serviceMockReturnsOptions)
@@ -230,7 +230,7 @@ public class NetworkTest {
   }
 
   @Test
-  public void testCreateSubnetworkWithOptions() throws Exception {
+  public void testCreateSubnetworkWithOptions() {
     initializeExpectedNetwork(3);
     Operation operation =
         new Operation.Builder(serviceMockReturnsOptions)

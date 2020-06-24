@@ -138,7 +138,7 @@ public class SubnetworkTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedSubnetwork(1);
     Compute.SubnetworkOption[] expectedOptions = {Compute.SubnetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -150,7 +150,7 @@ public class SubnetworkTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedSubnetwork(1);
     Compute.SubnetworkOption[] expectedOptions = {Compute.SubnetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -162,7 +162,7 @@ public class SubnetworkTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedSubnetwork(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID)).andReturn(expectedSubnetwork);
@@ -174,7 +174,7 @@ public class SubnetworkTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedSubnetwork(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID)).andReturn(null);
@@ -185,7 +185,7 @@ public class SubnetworkTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedSubnetwork(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID, Compute.SubnetworkOption.fields()))

@@ -205,7 +205,7 @@ public class ImageTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -217,7 +217,7 @@ public class ImageTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -229,7 +229,7 @@ public class ImageTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedImage(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID)).andReturn(storageImage);
@@ -241,7 +241,7 @@ public class ImageTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedImage(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID)).andReturn(null);
@@ -252,7 +252,7 @@ public class ImageTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedImage(5);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID, Compute.ImageOption.fields())).andReturn(storageImage);

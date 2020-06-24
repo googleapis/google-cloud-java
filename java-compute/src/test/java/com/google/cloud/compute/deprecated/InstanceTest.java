@@ -215,7 +215,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testExists_True() throws Exception {
+  public void testExists_True() {
     initializeExpectedInstance(1);
     Compute.InstanceOption[] expectedOptions = {Compute.InstanceOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -227,7 +227,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testExists_False() throws Exception {
+  public void testExists_False() {
     initializeExpectedInstance(1);
     Compute.InstanceOption[] expectedOptions = {Compute.InstanceOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -239,7 +239,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testReload() throws Exception {
+  public void testReload() {
     initializeExpectedInstance(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID)).andReturn(expectedInstance);
@@ -251,7 +251,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testReloadNull() throws Exception {
+  public void testReloadNull() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID)).andReturn(null);
@@ -262,7 +262,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
+  public void testReloadWithOptions() {
     initializeExpectedInstance(3);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID, Compute.InstanceOption.fields()))
@@ -275,7 +275,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAddAccessConfig() throws Exception {
+  public void testAddAccessConfig() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
@@ -290,7 +290,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAddAccessConfig_Null() throws Exception {
+  public void testAddAccessConfig_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
@@ -301,7 +301,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAddAccessConfigWithOptions() throws Exception {
+  public void testAddAccessConfigWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
@@ -321,7 +321,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDisk() throws Exception {
+  public void testAttachDisk() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -337,7 +337,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDisk_Null() throws Exception {
+  public void testAttachDisk_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -349,7 +349,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskWithOptions() throws Exception {
+  public void testAttachDiskWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -366,7 +366,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskName() throws Exception {
+  public void testAttachDiskName() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -382,7 +382,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskName_Null() throws Exception {
+  public void testAttachDiskName_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -394,7 +394,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskNameWithOptions() throws Exception {
+  public void testAttachDiskNameWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -412,7 +412,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskNameIndex() throws Exception {
+  public void testAttachDiskNameIndex() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -428,7 +428,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskNameIndex_Null() throws Exception {
+  public void testAttachDiskNameIndex_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -440,7 +440,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testAttachDiskNameIndexWithOptions() throws Exception {
+  public void testAttachDiskNameIndexWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
@@ -460,7 +460,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDeleteAccessConfig() throws Exception {
+  public void testDeleteAccessConfig() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -474,7 +474,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDeleteAccessConfig_Null() throws Exception {
+  public void testDeleteAccessConfig_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteAccessConfig(INSTANCE_ID, "nic0", "NAT")).andReturn(null);
@@ -484,7 +484,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDeleteAccessConfigWithOptions() throws Exception {
+  public void testDeleteAccessConfigWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -500,7 +500,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDetachDisk() throws Exception {
+  public void testDetachDisk() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -514,7 +514,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDetachDisk_Null() throws Exception {
+  public void testDetachDisk_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.detachDisk(INSTANCE_ID, "dev0")).andReturn(null);
@@ -524,7 +524,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testDetachDiskWithOptions() throws Exception {
+  public void testDetachDiskWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -539,7 +539,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testGetSerialPortOutputWithNumber() throws Exception {
+  public void testGetSerialPortOutputWithNumber() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSerialPortOutput(INSTANCE_ID, 2)).andReturn("output");
@@ -549,7 +549,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testGetSerialPortOutput() throws Exception {
+  public void testGetSerialPortOutput() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSerialPortOutput(INSTANCE_ID)).andReturn("output");
@@ -583,7 +583,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetDiskAutodelete() throws Exception {
+  public void testSetDiskAutodelete() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -597,7 +597,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetDiskAutodelete_Null() throws Exception {
+  public void testSetDiskAutodelete_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.setDiskAutoDelete(INSTANCE_ID, "dev0", false)).andReturn(null);
@@ -607,7 +607,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetDiskAutodeleteWithOptions() throws Exception {
+  public void testSetDiskAutodeleteWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -623,7 +623,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMachineType() throws Exception {
+  public void testSetMachineType() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -637,7 +637,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMachineType_Null() throws Exception {
+  public void testSetMachineType_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.setMachineType(INSTANCE_ID, MACHINE_TYPE)).andReturn(null);
@@ -647,7 +647,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMachineTypeWithOptions() throws Exception {
+  public void testSetMachineTypeWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -662,7 +662,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadata() throws Exception {
+  public void testSetMetadata() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -677,7 +677,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadata_Null() throws Exception {
+  public void testSetMetadata_Null() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Metadata metadata = Metadata.newBuilder().add("k", "v").setFingerprint("fingerprint").build();
@@ -688,7 +688,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadataWithOptions() throws Exception {
+  public void testSetMetadataWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -704,7 +704,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadataFromMap() throws Exception {
+  public void testSetMetadataFromMap() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -721,7 +721,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadataFromMap_Null() throws Exception {
+  public void testSetMetadataFromMap_Null() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Map<String, String> metadataMap = ImmutableMap.of("k", "v");
@@ -734,7 +734,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetMetadataFromMapWithOptions() throws Exception {
+  public void testSetMetadataFromMapWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -752,7 +752,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetSchedulingOptions() throws Exception {
+  public void testSetSchedulingOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -768,7 +768,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetSchedulingOptions_Null() throws Exception {
+  public void testSetSchedulingOptions_Null() {
     initializeExpectedInstance(1);
     expect(compute.getOptions()).andReturn(mockOptions);
     SchedulingOptions schedulingOptions =
@@ -780,7 +780,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetSchedulingOptionsWithOptions() throws Exception {
+  public void testSetSchedulingOptionsWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -801,7 +801,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTags() throws Exception {
+  public void testSetTags() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -816,7 +816,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTags_Null() throws Exception {
+  public void testSetTags_Null() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Tags tags = Tags.newBuilder().setValues("v1", "v2").setFingerprint("fingerprint").build();
@@ -827,7 +827,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTagsWithOptions() throws Exception {
+  public void testSetTagsWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -843,7 +843,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTagsFromList() throws Exception {
+  public void testSetTagsFromList() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
@@ -859,7 +859,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTagsFromList_Null() throws Exception {
+  public void testSetTagsFromList_Null() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     List<String> tagList = ImmutableList.of("v1", "v2");
@@ -871,7 +871,7 @@ public class InstanceTest {
   }
 
   @Test
-  public void testSetTagsFromListWithOptions() throws Exception {
+  public void testSetTagsFromListWithOptions() {
     initializeExpectedInstance(2);
     expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation =
