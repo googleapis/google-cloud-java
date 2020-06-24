@@ -332,6 +332,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 ackLatencyDistribution,
                 subStub,
                 i,
+                flowControlSettings,
                 flowController,
                 executor,
                 alarmsExecutor,
