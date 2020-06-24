@@ -21,6 +21,9 @@ import com.google.cloud.compute.v1.Allowed;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallClient;
 import com.google.cloud.compute.v1.FirewallSettings;
+import com.google.cloud.compute.v1.Network;
+import com.google.cloud.compute.v1.NetworkClient;
+import com.google.cloud.compute.v1.NetworkSettings;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectGlobalFirewallName;
 import com.google.common.collect.ArrayListMultimap;
@@ -49,6 +52,7 @@ public class ITFirewallTest extends BaseTest {
       String.format("%s/global/firewalls/%s", PROJECT_LINK, FIREWALL_NAME);
 
   private static FirewallClient firewallClient;
+  private static NetworkClient networkClient;
   private static ListMultimap<String, String> resourcesToCleanUp = ArrayListMultimap.create();
 
   @BeforeClass
@@ -57,14 +61,25 @@ public class ITFirewallTest extends BaseTest {
         FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     firewallClient = FirewallClient.create(firewallSettings);
 
+    NetworkSettings networkSettings =
+        NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+    networkClient = NetworkClient.create(networkSettings);
+
+    Network networkResource =
+        Network.newBuilder().setAutoCreateSubnetworks(Boolean.FALSE).setName(NETWORK_NAME).build();
+    Operation completedOperation =
+        waitForOperation(networkClient.insertNetwork(PROJECT_NAME, networkResource));
+    resourcesToCleanUp.put("firewall-network", completedOperation.getTargetLink());
+
     Firewall firewallResource =
         Firewall.newBuilder()
             .setName(FIREWALL_NAME)
             .setPriority(FIREWALL_PRIORITY)
+            .setNetwork(completedOperation.getTargetLink())
             .setDescription(FIREWALL_DESCRIPTION)
             .addAllAllowed(ALLOWEDS)
             .build();
-    Operation completedOperation =
+    completedOperation =
         waitForOperation(firewallClient.insertFirewall(PROJECT_NAME, firewallResource));
     resourcesToCleanUp.put("firewall", completedOperation.getTargetLink());
   }
@@ -73,6 +88,9 @@ public class ITFirewallTest extends BaseTest {
   public static void tearDown() {
     for (String firewall : resourcesToCleanUp.get("firewall")) {
       waitForOperation(firewallClient.deleteFirewall(firewall));
+    }
+    for (String network : resourcesToCleanUp.get("firewall-network")) {
+      waitForOperation(networkClient.deleteNetwork(network));
     }
     firewallClient.close();
   }
