@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://www.github.com/googleapis/java-shared-config/compare/v0.8.1...v0.9.0) (2020-06-25)
+
+
+### Features
+
+* add ignore rule for javax annotations to handle error in java11 ([#171](https://www.github.com/googleapis/java-shared-config/issues/171)) ([cd635ad](https://www.github.com/googleapis/java-shared-config/commit/cd635ad6e8e5d71ac3a30e7656eb788027f1c370))
+
 ### [0.8.1](https://www.github.com/googleapis/java-shared-config/compare/v0.8.0...v0.8.1) (2020-06-15)
 
 
