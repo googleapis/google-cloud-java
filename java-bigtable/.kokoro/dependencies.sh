@@ -41,10 +41,8 @@ echo "****************** DEPENDENCY LIST COMPLETENESS CHECK *******************"
 ## Run dependency list completeness check
 function completenessCheck() {
   # Output dep list with compile scope generated using the original pom
-  # Running mvn dependency:list on Java versions that support modules will also include the module of the dependency.
-  # This is stripped from the output as it is not present in the flattened pom.
   msg "Generating dependency list using original pom..."
-  mvn dependency:list -f pom.xml -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' | sed -e s/\\s--\\smodule.*// | grep -v ':test$' >.org-list.txt
+  mvn dependency:list -f pom.xml -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' | grep -v ':test$' >.org-list.txt
 
   # Output dep list generated using the flattened pom (test scope deps are ommitted)
   msg "Generating dependency list using flattened pom..."
