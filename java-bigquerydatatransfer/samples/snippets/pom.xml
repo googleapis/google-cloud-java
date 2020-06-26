@@ -57,5 +57,11 @@
       <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquery</artifactId>
+      <version>1.116.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>
