@@ -43,6 +43,9 @@ class LanguageSentimentAnalysisPredict {
     try (PredictionServiceClient client = PredictionServiceClient.create()) {
       // Get the full path of the model.
       ModelName name = ModelName.of(projectId, "us-central1", modelId);
+
+      // For available mime types, see:
+      // https://cloud.google.com/automl/docs/reference/rest/v1/projects.locations.models/predict#textsnippet
       TextSnippet textSnippet =
           TextSnippet.newBuilder()
               .setContent(content)
