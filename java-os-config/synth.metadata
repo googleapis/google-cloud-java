@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-config.git",
-        "sha": "0c014496ad8814aa5f8c7fc1b0ef929886d08f34"
+        "sha": "b078b9bf3c48679b5ae46fa895beaf6074d6a585"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "77e7fa104755fbf38b02502fc406fd3bbac7afb6",
-        "internalRef": "316127857"
+        "sha": "02c23d62c7a133608fcf6ea33aea90ed0e0d098a",
+        "internalRef": "317658441"
       }
     },
     {
