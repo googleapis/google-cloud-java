@@ -117,85 +117,6 @@ public class ServiceMonitoringServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteServiceTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockServiceMonitoringService.addResponse(expectedResponse);
-
-    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-
-    client.deleteService(name);
-
-    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteServiceRequest actualRequest = (DeleteServiceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ServiceName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockServiceMonitoringService.addException(exception);
-
-    try {
-      ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-
-      client.deleteService(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceLevelObjectiveTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockServiceMonitoringService.addResponse(expectedResponse);
-
-    ServiceLevelObjectiveName name =
-        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
-            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-
-    client.deleteServiceLevelObjective(name);
-
-    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteServiceLevelObjectiveRequest actualRequest =
-        (DeleteServiceLevelObjectiveRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ServiceLevelObjectiveName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceLevelObjectiveExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockServiceMonitoringService.addException(exception);
-
-    try {
-      ServiceLevelObjectiveName name =
-          ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
-              "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-
-      client.deleteServiceLevelObjective(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createServiceTest() {
     ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
     String displayName = "displayName1615086568";
@@ -362,6 +283,43 @@ public class ServiceMonitoringServiceClientTest {
       Service service = Service.newBuilder().build();
 
       client.updateService(service);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServiceMonitoringService.addResponse(expectedResponse);
+
+    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+
+    client.deleteService(name);
+
+    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServiceRequest actualRequest = (DeleteServiceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ServiceName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockServiceMonitoringService.addException(exception);
+
+    try {
+      ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+
+      client.deleteService(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -570,6 +528,48 @@ public class ServiceMonitoringServiceClientTest {
       ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
 
       client.updateServiceLevelObjective(serviceLevelObjective);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceLevelObjectiveTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServiceMonitoringService.addResponse(expectedResponse);
+
+    ServiceLevelObjectiveName name =
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+
+    client.deleteServiceLevelObjective(name);
+
+    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServiceLevelObjectiveRequest actualRequest =
+        (DeleteServiceLevelObjectiveRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ServiceLevelObjectiveName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceLevelObjectiveExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockServiceMonitoringService.addException(exception);
+
+    try {
+      ServiceLevelObjectiveName name =
+          ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+              "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+
+      client.deleteServiceLevelObjective(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

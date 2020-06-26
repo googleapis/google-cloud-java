@@ -503,11 +503,13 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -518,15 +520,25 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(12000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(12000L))
+              .setTotalTimeout(Duration.ofMillis(12000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.3)
-              .setMaxRpcTimeout(Duration.ofMillis(90000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -582,43 +594,43 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
       builder
           .listMonitoredResourceDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .getMonitoredResourceDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .listMetricDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .getMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .createMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .deleteMetricDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .listTimeSeriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .createTimeSeriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       return builder;
     }

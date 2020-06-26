@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateGroup to 30 seconds:
+ * <p>For example, to set the total timeout of getGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * GroupServiceStubSettings.Builder groupServiceSettingsBuilder =
  *     GroupServiceStubSettings.newBuilder();
  * groupServiceSettingsBuilder
- *     .updateGroupSettings()
+ *     .getGroupSettings()
  *     .setRetrySettings(
- *         groupServiceSettingsBuilder.updateGroupSettings().getRetrySettings().toBuilder()
+ *         groupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GroupServiceStubSettings groupServiceSettings = groupServiceSettingsBuilder.build();
@@ -102,25 +102,15 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
-  private final UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings;
-  private final UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings;
   private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings;
   private final UnaryCallSettings<GetGroupRequest, Group> getGroupSettings;
   private final UnaryCallSettings<CreateGroupRequest, Group> createGroupSettings;
+  private final UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings;
+  private final UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings;
   private final PagedCallSettings<
           ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
       listGroupMembersSettings;
-
-  /** Returns the object with the settings used for calls to updateGroup. */
-  public UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings() {
-    return updateGroupSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteGroup. */
-  public UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings() {
-    return deleteGroupSettings;
-  }
 
   /** Returns the object with the settings used for calls to listGroups. */
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
@@ -136,6 +126,16 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
   /** Returns the object with the settings used for calls to createGroup. */
   public UnaryCallSettings<CreateGroupRequest, Group> createGroupSettings() {
     return createGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings() {
+    return updateGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGroup. */
+  public UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings() {
+    return deleteGroupSettings;
   }
 
   /** Returns the object with the settings used for calls to listGroupMembers. */
@@ -214,11 +214,11 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
   protected GroupServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    updateGroupSettings = settingsBuilder.updateGroupSettings().build();
-    deleteGroupSettings = settingsBuilder.deleteGroupSettings().build();
     listGroupsSettings = settingsBuilder.listGroupsSettings().build();
     getGroupSettings = settingsBuilder.getGroupSettings().build();
     createGroupSettings = settingsBuilder.createGroupSettings().build();
+    updateGroupSettings = settingsBuilder.updateGroupSettings().build();
+    deleteGroupSettings = settingsBuilder.deleteGroupSettings().build();
     listGroupMembersSettings = settingsBuilder.listGroupMembersSettings().build();
   }
 
@@ -338,13 +338,13 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
   public static class Builder extends StubSettings.Builder<GroupServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings;
-    private final UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings;
     private final PagedCallSettings.Builder<
             ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings;
     private final UnaryCallSettings.Builder<GetGroupRequest, Group> getGroupSettings;
     private final UnaryCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings;
+    private final UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings;
+    private final UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings;
     private final PagedCallSettings.Builder<
             ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
         listGroupMembersSettings;
@@ -356,11 +356,48 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -371,15 +408,120 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(12000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(12000L))
+              .setTotalTimeout(Duration.ofMillis(12000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -390,25 +532,25 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listGroupsSettings = PagedCallSettings.newBuilder(LIST_GROUPS_PAGE_STR_FACT);
 
       getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listGroupMembersSettings = PagedCallSettings.newBuilder(LIST_GROUP_MEMBERS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateGroupSettings,
-              deleteGroupSettings,
               listGroupsSettings,
               getGroupSettings,
               createGroupSettings,
+              updateGroupSettings,
+              deleteGroupSettings,
               listGroupMembersSettings);
 
       initDefaults(this);
@@ -426,34 +568,34 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .updateGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listGroupsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .updateGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listGroupMembersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -461,20 +603,20 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     protected Builder(GroupServiceStubSettings settings) {
       super(settings);
 
-      updateGroupSettings = settings.updateGroupSettings.toBuilder();
-      deleteGroupSettings = settings.deleteGroupSettings.toBuilder();
       listGroupsSettings = settings.listGroupsSettings.toBuilder();
       getGroupSettings = settings.getGroupSettings.toBuilder();
       createGroupSettings = settings.createGroupSettings.toBuilder();
+      updateGroupSettings = settings.updateGroupSettings.toBuilder();
+      deleteGroupSettings = settings.deleteGroupSettings.toBuilder();
       listGroupMembersSettings = settings.listGroupMembersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateGroupSettings,
-              deleteGroupSettings,
               listGroupsSettings,
               getGroupSettings,
               createGroupSettings,
+              updateGroupSettings,
+              deleteGroupSettings,
               listGroupMembersSettings);
     }
 
@@ -494,16 +636,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to updateGroup. */
-    public UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings() {
-      return updateGroupSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGroup. */
-    public UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings() {
-      return deleteGroupSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listGroups. */
     public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
@@ -518,6 +650,16 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     /** Returns the builder for the settings used for calls to createGroup. */
     public UnaryCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings() {
       return createGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings() {
+      return updateGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGroup. */
+    public UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings() {
+      return deleteGroupSettings;
     }
 
     /** Returns the builder for the settings used for calls to listGroupMembers. */

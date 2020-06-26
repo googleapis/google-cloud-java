@@ -109,44 +109,6 @@ public class AlertPolicyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteAlertPolicyTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockAlertPolicyService.addResponse(expectedResponse);
-
-    AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-
-    client.deleteAlertPolicy(name);
-
-    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAlertPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAlertPolicyService.addException(exception);
-
-    try {
-      AlertPolicyName name =
-          AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-
-      client.deleteAlertPolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listAlertPoliciesTest() {
     String nextPageToken = "";
     AlertPolicy alertPoliciesElement = AlertPolicy.newBuilder().build();
@@ -273,6 +235,44 @@ public class AlertPolicyServiceClientTest {
       AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
 
       client.createAlertPolicy(name, alertPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAlertPolicyTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAlertPolicyService.addResponse(expectedResponse);
+
+    AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+
+    client.deleteAlertPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAlertPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAlertPolicyService.addException(exception);
+
+    try {
+      AlertPolicyName name =
+          AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+
+      client.deleteAlertPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

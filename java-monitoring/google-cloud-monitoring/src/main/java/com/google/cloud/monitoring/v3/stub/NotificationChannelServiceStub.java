@@ -49,24 +49,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class NotificationChannelServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteNotificationChannelRequest, Empty>
-      deleteNotificationChannelCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteNotificationChannelCallable()");
-  }
-
-  public UnaryCallable<
-          GetNotificationChannelVerificationCodeRequest,
-          GetNotificationChannelVerificationCodeResponse>
-      getNotificationChannelVerificationCodeCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getNotificationChannelVerificationCodeCallable()");
-  }
-
-  public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
-      verifyNotificationChannelCallable() {
-    throw new UnsupportedOperationException("Not implemented: verifyNotificationChannelCallable()");
-  }
-
   public UnaryCallable<
           ListNotificationChannelDescriptorsRequest,
           ListNotificationChannelDescriptorsPagedResponse>
@@ -114,10 +96,28 @@ public abstract class NotificationChannelServiceStub implements BackgroundResour
     throw new UnsupportedOperationException("Not implemented: updateNotificationChannelCallable()");
   }
 
+  public UnaryCallable<DeleteNotificationChannelRequest, Empty>
+      deleteNotificationChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNotificationChannelCallable()");
+  }
+
   public UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: sendNotificationChannelVerificationCodeCallable()");
+  }
+
+  public UnaryCallable<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getNotificationChannelVerificationCodeCallable()");
+  }
+
+  public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyNotificationChannelCallable()");
   }
 
   @Override

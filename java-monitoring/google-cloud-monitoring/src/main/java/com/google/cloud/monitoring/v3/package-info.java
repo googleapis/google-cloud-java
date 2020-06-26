@@ -34,7 +34,7 @@
  * <code>
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
  *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
- *   alertPolicyServiceClient.deleteAlertPolicy(name);
+ *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
  * }
  * </code>
  * </pre>
@@ -56,8 +56,8 @@
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   Group group = Group.newBuilder().build();
- *   Group response = groupServiceClient.updateGroup(group);
+ *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
  * }
  * </code>
  * </pre>
@@ -89,9 +89,8 @@
  * <pre>
  * <code>
  * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
- *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
- *   boolean force = false;
- *   notificationChannelServiceClient.deleteNotificationChannel(name, force);
+ *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.ofProjectChannelDescriptorName("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+ *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
  * }
  * </code>
  * </pre>
@@ -107,8 +106,9 @@
  * <pre>
  * <code>
  * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
- *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
- *   serviceMonitoringServiceClient.deleteService(name);
+ *   ResourceName parent = ProjectName.of("[PROJECT]");
+ *   Service service = Service.newBuilder().build();
+ *   Service response = serviceMonitoringServiceClient.createService(parent, service);
  * }
  * </code>
  * </pre>
@@ -128,7 +128,7 @@
  * <code>
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
  *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
- *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name);
+ *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(name);
  * }
  * </code>
  * </pre>

@@ -60,45 +60,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcNotificationChannelServiceStub extends NotificationChannelServiceStub {
 
-  private static final MethodDescriptor<DeleteNotificationChannelRequest, Empty>
-      deleteNotificationChannelMethodDescriptor =
-          MethodDescriptor.<DeleteNotificationChannelRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.monitoring.v3.NotificationChannelService/DeleteNotificationChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteNotificationChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<
-          GetNotificationChannelVerificationCodeRequest,
-          GetNotificationChannelVerificationCodeResponse>
-      getNotificationChannelVerificationCodeMethodDescriptor =
-          MethodDescriptor
-              .<GetNotificationChannelVerificationCodeRequest,
-                  GetNotificationChannelVerificationCodeResponse>
-                  newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.monitoring.v3.NotificationChannelService/GetNotificationChannelVerificationCode")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      GetNotificationChannelVerificationCodeRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(
-                      GetNotificationChannelVerificationCodeResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<VerifyNotificationChannelRequest, NotificationChannel>
-      verifyNotificationChannelMethodDescriptor =
-          MethodDescriptor.<VerifyNotificationChannelRequest, NotificationChannel>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.monitoring.v3.NotificationChannelService/VerifyNotificationChannel")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(VerifyNotificationChannelRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<
           ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse>
       listNotificationChannelDescriptorsMethodDescriptor =
@@ -176,6 +137,16 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteNotificationChannelRequest, Empty>
+      deleteNotificationChannelMethodDescriptor =
+          MethodDescriptor.<DeleteNotificationChannelRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.NotificationChannelService/DeleteNotificationChannel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNotificationChannelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeMethodDescriptor =
           MethodDescriptor.<SendNotificationChannelVerificationCodeRequest, Empty>newBuilder()
@@ -187,17 +158,38 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       SendNotificationChannelVerificationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeMethodDescriptor =
+          MethodDescriptor
+              .<GetNotificationChannelVerificationCodeRequest,
+                  GetNotificationChannelVerificationCodeResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.NotificationChannelService/GetNotificationChannelVerificationCode")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetNotificationChannelVerificationCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GetNotificationChannelVerificationCodeResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelMethodDescriptor =
+          MethodDescriptor.<VerifyNotificationChannelRequest, NotificationChannel>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.NotificationChannelService/VerifyNotificationChannel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyNotificationChannelRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteNotificationChannelRequest, Empty>
-      deleteNotificationChannelCallable;
-  private final UnaryCallable<
-          GetNotificationChannelVerificationCodeRequest,
-          GetNotificationChannelVerificationCodeResponse>
-      getNotificationChannelVerificationCodeCallable;
-  private final UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
-      verifyNotificationChannelCallable;
   private final UnaryCallable<
           ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse>
       listNotificationChannelDescriptorsCallable;
@@ -219,8 +211,16 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
       createNotificationChannelCallable;
   private final UnaryCallable<UpdateNotificationChannelRequest, NotificationChannel>
       updateNotificationChannelCallable;
+  private final UnaryCallable<DeleteNotificationChannelRequest, Empty>
+      deleteNotificationChannelCallable;
   private final UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeCallable;
+  private final UnaryCallable<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeCallable;
+  private final UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -266,54 +266,6 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteNotificationChannelRequest, Empty>
-        deleteNotificationChannelTransportSettings =
-            GrpcCallSettings.<DeleteNotificationChannelRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteNotificationChannelMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<
-            GetNotificationChannelVerificationCodeRequest,
-            GetNotificationChannelVerificationCodeResponse>
-        getNotificationChannelVerificationCodeTransportSettings =
-            GrpcCallSettings
-                .<GetNotificationChannelVerificationCodeRequest,
-                    GetNotificationChannelVerificationCodeResponse>
-                    newBuilder()
-                .setMethodDescriptor(getNotificationChannelVerificationCodeMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<GetNotificationChannelVerificationCodeRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetNotificationChannelVerificationCodeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
-        verifyNotificationChannelTransportSettings =
-            GrpcCallSettings.<VerifyNotificationChannelRequest, NotificationChannel>newBuilder()
-                .setMethodDescriptor(verifyNotificationChannelMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<VerifyNotificationChannelRequest>() {
-                      @Override
-                      public Map<String, String> extract(VerifyNotificationChannelRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<
             ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse>
         listNotificationChannelDescriptorsTransportSettings =
@@ -409,6 +361,20 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteNotificationChannelRequest, Empty>
+        deleteNotificationChannelTransportSettings =
+            GrpcCallSettings.<DeleteNotificationChannelRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteNotificationChannelMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteNotificationChannelRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteNotificationChannelRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<SendNotificationChannelVerificationCodeRequest, Empty>
         sendNotificationChannelVerificationCodeTransportSettings =
             GrpcCallSettings.<SendNotificationChannelVerificationCodeRequest, Empty>newBuilder()
@@ -424,22 +390,41 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       }
                     })
                 .build();
+    GrpcCallSettings<
+            GetNotificationChannelVerificationCodeRequest,
+            GetNotificationChannelVerificationCodeResponse>
+        getNotificationChannelVerificationCodeTransportSettings =
+            GrpcCallSettings
+                .<GetNotificationChannelVerificationCodeRequest,
+                    GetNotificationChannelVerificationCodeResponse>
+                    newBuilder()
+                .setMethodDescriptor(getNotificationChannelVerificationCodeMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetNotificationChannelVerificationCodeRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          GetNotificationChannelVerificationCodeRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
+        verifyNotificationChannelTransportSettings =
+            GrpcCallSettings.<VerifyNotificationChannelRequest, NotificationChannel>newBuilder()
+                .setMethodDescriptor(verifyNotificationChannelMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<VerifyNotificationChannelRequest>() {
+                      @Override
+                      public Map<String, String> extract(VerifyNotificationChannelRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.deleteNotificationChannelCallable =
-        callableFactory.createUnaryCallable(
-            deleteNotificationChannelTransportSettings,
-            settings.deleteNotificationChannelSettings(),
-            clientContext);
-    this.getNotificationChannelVerificationCodeCallable =
-        callableFactory.createUnaryCallable(
-            getNotificationChannelVerificationCodeTransportSettings,
-            settings.getNotificationChannelVerificationCodeSettings(),
-            clientContext);
-    this.verifyNotificationChannelCallable =
-        callableFactory.createUnaryCallable(
-            verifyNotificationChannelTransportSettings,
-            settings.verifyNotificationChannelSettings(),
-            clientContext);
     this.listNotificationChannelDescriptorsCallable =
         callableFactory.createUnaryCallable(
             listNotificationChannelDescriptorsTransportSettings,
@@ -480,30 +465,28 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
             updateNotificationChannelTransportSettings,
             settings.updateNotificationChannelSettings(),
             clientContext);
+    this.deleteNotificationChannelCallable =
+        callableFactory.createUnaryCallable(
+            deleteNotificationChannelTransportSettings,
+            settings.deleteNotificationChannelSettings(),
+            clientContext);
     this.sendNotificationChannelVerificationCodeCallable =
         callableFactory.createUnaryCallable(
             sendNotificationChannelVerificationCodeTransportSettings,
             settings.sendNotificationChannelVerificationCodeSettings(),
             clientContext);
+    this.getNotificationChannelVerificationCodeCallable =
+        callableFactory.createUnaryCallable(
+            getNotificationChannelVerificationCodeTransportSettings,
+            settings.getNotificationChannelVerificationCodeSettings(),
+            clientContext);
+    this.verifyNotificationChannelCallable =
+        callableFactory.createUnaryCallable(
+            verifyNotificationChannelTransportSettings,
+            settings.verifyNotificationChannelSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteNotificationChannelRequest, Empty>
-      deleteNotificationChannelCallable() {
-    return deleteNotificationChannelCallable;
-  }
-
-  public UnaryCallable<
-          GetNotificationChannelVerificationCodeRequest,
-          GetNotificationChannelVerificationCodeResponse>
-      getNotificationChannelVerificationCodeCallable() {
-    return getNotificationChannelVerificationCodeCallable;
-  }
-
-  public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
-      verifyNotificationChannelCallable() {
-    return verifyNotificationChannelCallable;
   }
 
   public UnaryCallable<
@@ -549,9 +532,26 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
     return updateNotificationChannelCallable;
   }
 
+  public UnaryCallable<DeleteNotificationChannelRequest, Empty>
+      deleteNotificationChannelCallable() {
+    return deleteNotificationChannelCallable;
+  }
+
   public UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeCallable() {
     return sendNotificationChannelVerificationCodeCallable;
+  }
+
+  public UnaryCallable<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeCallable() {
+    return getNotificationChannelVerificationCodeCallable;
+  }
+
+  public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelCallable() {
+    return verifyNotificationChannelCallable;
   }
 
   @Override

@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteAlertPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of getAlertPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AlertPolicyServiceStubSettings.Builder alertPolicyServiceSettingsBuilder =
  *     AlertPolicyServiceStubSettings.newBuilder();
  * alertPolicyServiceSettingsBuilder
- *     .deleteAlertPolicySettings()
+ *     .getAlertPolicySettings()
  *     .setRetrySettings(
- *         alertPolicyServiceSettingsBuilder.deleteAlertPolicySettings().getRetrySettings().toBuilder()
+ *         alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlertPolicyServiceStubSettings alertPolicyServiceSettings = alertPolicyServiceSettingsBuilder.build();
@@ -98,18 +98,13 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
-  private final UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings;
   private final PagedCallSettings<
           ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
       listAlertPoliciesSettings;
   private final UnaryCallSettings<GetAlertPolicyRequest, AlertPolicy> getAlertPolicySettings;
   private final UnaryCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicySettings;
+  private final UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings;
   private final UnaryCallSettings<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicySettings;
-
-  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
-  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-    return deleteAlertPolicySettings;
-  }
 
   /** Returns the object with the settings used for calls to listAlertPolicies. */
   public PagedCallSettings<
@@ -126,6 +121,11 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
   /** Returns the object with the settings used for calls to createAlertPolicy. */
   public UnaryCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicySettings() {
     return createAlertPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
+  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+    return deleteAlertPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to updateAlertPolicy. */
@@ -202,10 +202,10 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
   protected AlertPolicyServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteAlertPolicySettings = settingsBuilder.deleteAlertPolicySettings().build();
     listAlertPoliciesSettings = settingsBuilder.listAlertPoliciesSettings().build();
     getAlertPolicySettings = settingsBuilder.getAlertPolicySettings().build();
     createAlertPolicySettings = settingsBuilder.createAlertPolicySettings().build();
+    deleteAlertPolicySettings = settingsBuilder.deleteAlertPolicySettings().build();
     updateAlertPolicySettings = settingsBuilder.updateAlertPolicySettings().build();
   }
 
@@ -275,8 +275,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       extends StubSettings.Builder<AlertPolicyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty>
-        deleteAlertPolicySettings;
     private final PagedCallSettings.Builder<
             ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
         listAlertPoliciesSettings;
@@ -284,6 +282,8 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
         getAlertPolicySettings;
     private final UnaryCallSettings.Builder<CreateAlertPolicyRequest, AlertPolicy>
         createAlertPolicySettings;
+    private final UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty>
+        deleteAlertPolicySettings;
     private final UnaryCallSettings.Builder<UpdateAlertPolicyRequest, AlertPolicy>
         updateAlertPolicySettings;
 
@@ -294,11 +294,48 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -309,15 +346,120 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(12000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(12000L))
+              .setTotalTimeout(Duration.ofMillis(12000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -328,22 +470,22 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAlertPoliciesSettings = PagedCallSettings.newBuilder(LIST_ALERT_POLICIES_PAGE_STR_FACT);
 
       getAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteAlertPolicySettings,
               listAlertPoliciesSettings,
               getAlertPolicySettings,
               createAlertPolicySettings,
+              deleteAlertPolicySettings,
               updateAlertPolicySettings);
 
       initDefaults(this);
@@ -361,29 +503,29 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listAlertPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .getAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .createAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteAlertPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .updateAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       return builder;
     }
@@ -391,18 +533,18 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     protected Builder(AlertPolicyServiceStubSettings settings) {
       super(settings);
 
-      deleteAlertPolicySettings = settings.deleteAlertPolicySettings.toBuilder();
       listAlertPoliciesSettings = settings.listAlertPoliciesSettings.toBuilder();
       getAlertPolicySettings = settings.getAlertPolicySettings.toBuilder();
       createAlertPolicySettings = settings.createAlertPolicySettings.toBuilder();
+      deleteAlertPolicySettings = settings.deleteAlertPolicySettings.toBuilder();
       updateAlertPolicySettings = settings.updateAlertPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteAlertPolicySettings,
               listAlertPoliciesSettings,
               getAlertPolicySettings,
               createAlertPolicySettings,
+              deleteAlertPolicySettings,
               updateAlertPolicySettings);
     }
 
@@ -422,11 +564,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
-    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-      return deleteAlertPolicySettings;
-    }
-
     /** Returns the builder for the settings used for calls to listAlertPolicies. */
     public PagedCallSettings.Builder<
             ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
@@ -443,6 +580,11 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     public UnaryCallSettings.Builder<CreateAlertPolicyRequest, AlertPolicy>
         createAlertPolicySettings() {
       return createAlertPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
+    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+      return deleteAlertPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to updateAlertPolicy. */

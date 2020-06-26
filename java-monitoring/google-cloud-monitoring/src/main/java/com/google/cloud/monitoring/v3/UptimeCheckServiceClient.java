@@ -62,7 +62,7 @@ import javax.annotation.Generated;
  * <code>
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
  *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
- *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name);
+ *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(name);
  * }
  * </code>
  * </pre>
@@ -169,108 +169,6 @@ public class UptimeCheckServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UptimeCheckServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
-   * configuration is referenced by an alert policy or other dependent configs that would be
-   * rendered invalid by the deletion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The Uptime check configuration to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUptimeCheckConfig(UptimeCheckConfigName name) {
-    DeleteUptimeCheckConfigRequest request =
-        DeleteUptimeCheckConfigRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteUptimeCheckConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
-   * configuration is referenced by an alert policy or other dependent configs that would be
-   * rendered invalid by the deletion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The Uptime check configuration to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUptimeCheckConfig(String name) {
-    DeleteUptimeCheckConfigRequest request =
-        DeleteUptimeCheckConfigRequest.newBuilder().setName(name).build();
-    deleteUptimeCheckConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
-   * configuration is referenced by an alert policy or other dependent configs that would be
-   * rendered invalid by the deletion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-   *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request) {
-    deleteUptimeCheckConfigCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
-   * configuration is referenced by an alert policy or other dependent configs that would be
-   * rendered invalid by the deletion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
-   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-   *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = uptimeCheckServiceClient.deleteUptimeCheckConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigCallable() {
-    return stub.deleteUptimeCheckConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -696,6 +594,108 @@ public class UptimeCheckServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigCallable() {
     return stub.updateUptimeCheckConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
+   * configuration is referenced by an alert policy or other dependent configs that would be
+   * rendered invalid by the deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The Uptime check configuration to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUptimeCheckConfig(UptimeCheckConfigName name) {
+    DeleteUptimeCheckConfigRequest request =
+        DeleteUptimeCheckConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteUptimeCheckConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
+   * configuration is referenced by an alert policy or other dependent configs that would be
+   * rendered invalid by the deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The Uptime check configuration to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUptimeCheckConfig(String name) {
+    DeleteUptimeCheckConfigRequest request =
+        DeleteUptimeCheckConfigRequest.newBuilder().setName(name).build();
+    deleteUptimeCheckConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
+   * configuration is referenced by an alert policy or other dependent configs that would be
+   * rendered invalid by the deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+   *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   uptimeCheckServiceClient.deleteUptimeCheckConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteUptimeCheckConfig(DeleteUptimeCheckConfigRequest request) {
+    deleteUptimeCheckConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
+   * configuration is referenced by an alert policy or other dependent configs that would be
+   * rendered invalid by the deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+   *   DeleteUptimeCheckConfigRequest request = DeleteUptimeCheckConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = uptimeCheckServiceClient.deleteUptimeCheckConfigCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigCallable() {
+    return stub.deleteUptimeCheckConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

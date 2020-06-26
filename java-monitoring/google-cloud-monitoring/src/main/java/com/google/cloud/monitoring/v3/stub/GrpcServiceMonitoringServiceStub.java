@@ -59,23 +59,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceStub {
 
-  private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
-      MethodDescriptor.<DeleteServiceRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.monitoring.v3.ServiceMonitoringService/DeleteService")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveMethodDescriptor =
-          MethodDescriptor.<DeleteServiceLevelObjectiveRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.monitoring.v3.ServiceMonitoringService/DeleteServiceLevelObjective")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteServiceLevelObjectiveRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateServiceRequest, Service>
       createServiceMethodDescriptor =
           MethodDescriptor.<CreateServiceRequest, Service>newBuilder()
@@ -110,6 +93,13 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
+      MethodDescriptor.<DeleteServiceRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.ServiceMonitoringService/DeleteService")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
       createServiceLevelObjectiveMethodDescriptor =
           MethodDescriptor.<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>newBuilder()
@@ -156,18 +146,26 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceLevelObjective.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveMethodDescriptor =
+          MethodDescriptor.<DeleteServiceLevelObjectiveRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.monitoring.v3.ServiceMonitoringService/DeleteServiceLevelObjective")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteServiceLevelObjectiveRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable;
-  private final UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveCallable;
   private final UnaryCallable<CreateServiceRequest, Service> createServiceCallable;
   private final UnaryCallable<GetServiceRequest, Service> getServiceCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable;
   private final UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable;
+  private final UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable;
   private final UnaryCallable<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
       createServiceLevelObjectiveCallable;
   private final UnaryCallable<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -179,6 +177,8 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
       listServiceLevelObjectivesPagedCallable;
   private final UnaryCallable<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveCallable;
+  private final UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -222,34 +222,6 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteServiceRequest, Empty> deleteServiceTransportSettings =
-        GrpcCallSettings.<DeleteServiceRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteServiceMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteServiceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteServiceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
-        deleteServiceLevelObjectiveTransportSettings =
-            GrpcCallSettings.<DeleteServiceLevelObjectiveRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteServiceLevelObjectiveMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteServiceLevelObjectiveRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteServiceLevelObjectiveRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
         GrpcCallSettings.<CreateServiceRequest, Service>newBuilder()
             .setMethodDescriptor(createServiceMethodDescriptor)
@@ -298,6 +270,19 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   public Map<String, String> extract(UpdateServiceRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("service.name", String.valueOf(request.getService().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteServiceRequest, Empty> deleteServiceTransportSettings =
+        GrpcCallSettings.<DeleteServiceRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteServiceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteServiceRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteServiceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -364,15 +349,22 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
+        deleteServiceLevelObjectiveTransportSettings =
+            GrpcCallSettings.<DeleteServiceLevelObjectiveRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteServiceLevelObjectiveMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteServiceLevelObjectiveRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          DeleteServiceLevelObjectiveRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.deleteServiceCallable =
-        callableFactory.createUnaryCallable(
-            deleteServiceTransportSettings, settings.deleteServiceSettings(), clientContext);
-    this.deleteServiceLevelObjectiveCallable =
-        callableFactory.createUnaryCallable(
-            deleteServiceLevelObjectiveTransportSettings,
-            settings.deleteServiceLevelObjectiveSettings(),
-            clientContext);
     this.createServiceCallable =
         callableFactory.createUnaryCallable(
             createServiceTransportSettings, settings.createServiceSettings(), clientContext);
@@ -388,6 +380,9 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
     this.updateServiceCallable =
         callableFactory.createUnaryCallable(
             updateServiceTransportSettings, settings.updateServiceSettings(), clientContext);
+    this.deleteServiceCallable =
+        callableFactory.createUnaryCallable(
+            deleteServiceTransportSettings, settings.deleteServiceSettings(), clientContext);
     this.createServiceLevelObjectiveCallable =
         callableFactory.createUnaryCallable(
             createServiceLevelObjectiveTransportSettings,
@@ -413,17 +408,13 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
             updateServiceLevelObjectiveTransportSettings,
             settings.updateServiceLevelObjectiveSettings(),
             clientContext);
+    this.deleteServiceLevelObjectiveCallable =
+        callableFactory.createUnaryCallable(
+            deleteServiceLevelObjectiveTransportSettings,
+            settings.deleteServiceLevelObjectiveSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
-    return deleteServiceCallable;
-  }
-
-  public UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveCallable() {
-    return deleteServiceLevelObjectiveCallable;
   }
 
   public UnaryCallable<CreateServiceRequest, Service> createServiceCallable() {
@@ -444,6 +435,10 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
 
   public UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     return updateServiceCallable;
+  }
+
+  public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
+    return deleteServiceCallable;
   }
 
   public UnaryCallable<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -469,6 +464,11 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
   public UnaryCallable<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveCallable() {
     return updateServiceLevelObjectiveCallable;
+  }
+
+  public UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveCallable() {
+    return deleteServiceLevelObjectiveCallable;
   }
 
   @Override

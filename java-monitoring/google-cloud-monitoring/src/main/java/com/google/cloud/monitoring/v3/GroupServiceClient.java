@@ -64,8 +64,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   Group group = Group.newBuilder().build();
- *   Group response = groupServiceClient.updateGroup(group);
+ *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
  * }
  * </code>
  * </pre>
@@ -170,163 +170,6 @@ public class GroupServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GroupServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an existing group. You can change any group attributes except `name`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   Group group = Group.newBuilder().build();
-   *   Group response = groupServiceClient.updateGroup(group);
-   * }
-   * </code></pre>
-   *
-   * @param group Required. The new definition of the group. All fields of the existing group,
-   *     excepting `name`, are replaced with the corresponding fields of this group.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group updateGroup(Group group) {
-    UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
-    return updateGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an existing group. You can change any group attributes except `name`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   Group group = Group.newBuilder().build();
-   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
-   *     .setGroup(group)
-   *     .build();
-   *   Group response = groupServiceClient.updateGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group updateGroup(UpdateGroupRequest request) {
-    return updateGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates an existing group. You can change any group attributes except `name`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   Group group = Group.newBuilder().build();
-   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
-   *     .setGroup(group)
-   *     .build();
-   *   ApiFuture&lt;Group&gt; future = groupServiceClient.updateGroupCallable().futureCall(request);
-   *   // Do something
-   *   Group response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
-    return stub.updateGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
-   *   groupServiceClient.deleteGroup(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The group to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteGroup(GroupName name) {
-    DeleteGroupRequest request =
-        DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
-   *   groupServiceClient.deleteGroup(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The group to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteGroup(String name) {
-    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setName(name).build();
-    deleteGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
-   *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   groupServiceClient.deleteGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteGroup(DeleteGroupRequest request) {
-    deleteGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
-   *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
-    return stub.deleteGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -650,6 +493,163 @@ public class GroupServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
     return stub.createGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing group. You can change any group attributes except `name`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   Group group = Group.newBuilder().build();
+   *   Group response = groupServiceClient.updateGroup(group);
+   * }
+   * </code></pre>
+   *
+   * @param group Required. The new definition of the group. All fields of the existing group,
+   *     excepting `name`, are replaced with the corresponding fields of this group.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group updateGroup(Group group) {
+    UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
+    return updateGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing group. You can change any group attributes except `name`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   Group group = Group.newBuilder().build();
+   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
+   *     .setGroup(group)
+   *     .build();
+   *   Group response = groupServiceClient.updateGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group updateGroup(UpdateGroupRequest request) {
+    return updateGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates an existing group. You can change any group attributes except `name`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   Group group = Group.newBuilder().build();
+   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
+   *     .setGroup(group)
+   *     .build();
+   *   ApiFuture&lt;Group&gt; future = groupServiceClient.updateGroupCallable().futureCall(request);
+   *   // Do something
+   *   Group response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
+    return stub.updateGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   groupServiceClient.deleteGroup(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The group to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteGroup(GroupName name) {
+    DeleteGroupRequest request =
+        DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   groupServiceClient.deleteGroup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The group to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteGroup(String name) {
+    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setName(name).build();
+    deleteGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   groupServiceClient.deleteGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteGroup(DeleteGroupRequest request) {
+    deleteGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
+    return stub.deleteGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

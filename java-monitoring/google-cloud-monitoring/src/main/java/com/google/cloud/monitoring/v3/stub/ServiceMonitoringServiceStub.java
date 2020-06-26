@@ -48,16 +48,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ServiceMonitoringServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteServiceCallable()");
-  }
-
-  public UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteServiceLevelObjectiveCallable()");
-  }
-
   public UnaryCallable<CreateServiceRequest, Service> createServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: createServiceCallable()");
   }
@@ -76,6 +66,10 @@ public abstract class ServiceMonitoringServiceStub implements BackgroundResource
 
   public UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateServiceCallable()");
+  }
+
+  public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteServiceCallable()");
   }
 
   public UnaryCallable<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -105,6 +99,12 @@ public abstract class ServiceMonitoringServiceStub implements BackgroundResource
       updateServiceLevelObjectiveCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateServiceLevelObjectiveCallable()");
+  }
+
+  public UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteServiceLevelObjectiveCallable()");
   }
 
   @Override

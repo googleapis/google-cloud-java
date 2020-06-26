@@ -51,15 +51,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
 
-  private static final MethodDescriptor<DeleteAlertPolicyRequest, Empty>
-      deleteAlertPolicyMethodDescriptor =
-          MethodDescriptor.<DeleteAlertPolicyRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.monitoring.v3.AlertPolicyService/DeleteAlertPolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAlertPolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesMethodDescriptor =
           MethodDescriptor.<ListAlertPoliciesRequest, ListAlertPoliciesResponse>newBuilder()
@@ -88,6 +79,15 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   ProtoUtils.marshaller(CreateAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteAlertPolicyRequest, Empty>
+      deleteAlertPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteAlertPolicyRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.AlertPolicyService/DeleteAlertPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAlertPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<UpdateAlertPolicyRequest, AlertPolicy>
       updateAlertPolicyMethodDescriptor =
           MethodDescriptor.<UpdateAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -100,13 +100,13 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable;
   private final UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesCallable;
   private final UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
       listAlertPoliciesPagedCallable;
   private final UnaryCallable<GetAlertPolicyRequest, AlertPolicy> getAlertPolicyCallable;
   private final UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable;
+  private final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable;
   private final UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable;
 
   private final GrpcStubCallableFactory callableFactory;
@@ -150,19 +150,6 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyTransportSettings =
-        GrpcCallSettings.<DeleteAlertPolicyRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteAlertPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAlertPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAlertPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
         listAlertPoliciesTransportSettings =
             GrpcCallSettings.<ListAlertPoliciesRequest, ListAlertPoliciesResponse>newBuilder()
@@ -203,6 +190,19 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyTransportSettings =
+        GrpcCallSettings.<DeleteAlertPolicyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAlertPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAlertPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAlertPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyTransportSettings =
         GrpcCallSettings.<UpdateAlertPolicyRequest, AlertPolicy>newBuilder()
             .setMethodDescriptor(updateAlertPolicyMethodDescriptor)
@@ -218,11 +218,6 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                 })
             .build();
 
-    this.deleteAlertPolicyCallable =
-        callableFactory.createUnaryCallable(
-            deleteAlertPolicyTransportSettings,
-            settings.deleteAlertPolicySettings(),
-            clientContext);
     this.listAlertPoliciesCallable =
         callableFactory.createUnaryCallable(
             listAlertPoliciesTransportSettings,
@@ -241,6 +236,11 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
             createAlertPolicyTransportSettings,
             settings.createAlertPolicySettings(),
             clientContext);
+    this.deleteAlertPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAlertPolicyTransportSettings,
+            settings.deleteAlertPolicySettings(),
+            clientContext);
     this.updateAlertPolicyCallable =
         callableFactory.createUnaryCallable(
             updateAlertPolicyTransportSettings,
@@ -248,10 +248,6 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
-    return deleteAlertPolicyCallable;
   }
 
   public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
@@ -270,6 +266,10 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
 
   public UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable() {
     return createAlertPolicyCallable;
+  }
+
+  public UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
+    return deleteAlertPolicyCallable;
   }
 
   public UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable() {

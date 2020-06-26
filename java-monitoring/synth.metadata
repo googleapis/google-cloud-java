@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "530254585197a52d39042ae60555881ad296fa20"
+        "sha": "7eb7f204268788738032ef5590036b04dd8eb212"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "51362f378a286494980ffc9a5199ab6e3cefd6d5",
-        "internalRef": "314788297"
+        "sha": "7c577e89f1c84545113b393b7d7964473251d123",
+        "internalRef": "318542700"
       }
     },
     {

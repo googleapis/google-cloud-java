@@ -59,16 +59,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateGroup to 30 seconds:
+ * <p>For example, to set the total timeout of getGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * GroupServiceSettings.Builder groupServiceSettingsBuilder =
  *     GroupServiceSettings.newBuilder();
  * groupServiceSettingsBuilder
- *     .updateGroupSettings()
+ *     .getGroupSettings()
  *     .setRetrySettings(
- *         groupServiceSettingsBuilder.updateGroupSettings().getRetrySettings().toBuilder()
+ *         groupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GroupServiceSettings groupServiceSettings = groupServiceSettingsBuilder.build();
@@ -77,16 +77,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class GroupServiceSettings extends ClientSettings<GroupServiceSettings> {
-  /** Returns the object with the settings used for calls to updateGroup. */
-  public UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings() {
-    return ((GroupServiceStubSettings) getStubSettings()).updateGroupSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteGroup. */
-  public UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings() {
-    return ((GroupServiceStubSettings) getStubSettings()).deleteGroupSettings();
-  }
-
   /** Returns the object with the settings used for calls to listGroups. */
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings() {
@@ -101,6 +91,16 @@ public class GroupServiceSettings extends ClientSettings<GroupServiceSettings> {
   /** Returns the object with the settings used for calls to createGroup. */
   public UnaryCallSettings<CreateGroupRequest, Group> createGroupSettings() {
     return ((GroupServiceStubSettings) getStubSettings()).createGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public UnaryCallSettings<UpdateGroupRequest, Group> updateGroupSettings() {
+    return ((GroupServiceStubSettings) getStubSettings()).updateGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGroup. */
+  public UnaryCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings() {
+    return ((GroupServiceStubSettings) getStubSettings()).deleteGroupSettings();
   }
 
   /** Returns the object with the settings used for calls to listGroupMembers. */
@@ -207,16 +207,6 @@ public class GroupServiceSettings extends ClientSettings<GroupServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to updateGroup. */
-    public UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings() {
-      return getStubSettingsBuilder().updateGroupSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGroup. */
-    public UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings() {
-      return getStubSettingsBuilder().deleteGroupSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listGroups. */
     public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
@@ -231,6 +221,16 @@ public class GroupServiceSettings extends ClientSettings<GroupServiceSettings> {
     /** Returns the builder for the settings used for calls to createGroup. */
     public UnaryCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings() {
       return getStubSettingsBuilder().createGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public UnaryCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings() {
+      return getStubSettingsBuilder().updateGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGroup. */
+    public UnaryCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings() {
+      return getStubSettingsBuilder().deleteGroupSettings();
     }
 
     /** Returns the builder for the settings used for calls to listGroupMembers. */

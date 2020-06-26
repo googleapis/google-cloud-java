@@ -60,7 +60,7 @@ import javax.annotation.Generated;
  * <code>
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
  *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
- *   alertPolicyServiceClient.deleteAlertPolicy(name);
+ *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
  * }
  * </code>
  * </pre>
@@ -167,100 +167,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AlertPolicyServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-   *   alertPolicyServiceClient.deleteAlertPolicy(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The alerting policy to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(AlertPolicyName name) {
-    DeleteAlertPolicyRequest request =
-        DeleteAlertPolicyRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteAlertPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-   *   alertPolicyServiceClient.deleteAlertPolicy(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The alerting policy to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(String name) {
-    DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder().setName(name).build();
-    deleteAlertPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   alertPolicyServiceClient.deleteAlertPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(DeleteAlertPolicyRequest request) {
-    deleteAlertPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
-   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = alertPolicyServiceClient.deleteAlertPolicyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
-    return stub.deleteAlertPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -606,6 +512,100 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable() {
     return stub.createAlertPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   alertPolicyServiceClient.deleteAlertPolicy(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The alerting policy to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(AlertPolicyName name) {
+    DeleteAlertPolicyRequest request =
+        DeleteAlertPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAlertPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   alertPolicyServiceClient.deleteAlertPolicy(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The alerting policy to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(String name) {
+    DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder().setName(name).build();
+    deleteAlertPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   alertPolicyServiceClient.deleteAlertPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(DeleteAlertPolicyRequest request) {
+    deleteAlertPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = alertPolicyServiceClient.deleteAlertPolicyCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
+    return stub.deleteAlertPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

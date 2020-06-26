@@ -59,16 +59,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteUptimeCheckConfig to 30 seconds:
+ * <p>For example, to set the total timeout of getUptimeCheckConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * UptimeCheckServiceSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceSettings.newBuilder();
  * uptimeCheckServiceSettingsBuilder
- *     .deleteUptimeCheckConfigSettings()
+ *     .getUptimeCheckConfigSettings()
  *     .setRetrySettings(
- *         uptimeCheckServiceSettingsBuilder.deleteUptimeCheckConfigSettings().getRetrySettings().toBuilder()
+ *         uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UptimeCheckServiceSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
@@ -77,12 +77,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
-  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigSettings() {
-    return ((UptimeCheckServiceStubSettings) getStubSettings()).deleteUptimeCheckConfigSettings();
-  }
-
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
           ListUptimeCheckConfigsRequest,
@@ -108,6 +102,12 @@ public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServic
   public UnaryCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigSettings() {
     return ((UptimeCheckServiceStubSettings) getStubSettings()).updateUptimeCheckConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
+  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigSettings() {
+    return ((UptimeCheckServiceStubSettings) getStubSettings()).deleteUptimeCheckConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to listUptimeCheckIps. */
@@ -214,12 +214,6 @@ public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServic
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
-    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigSettings() {
-      return getStubSettingsBuilder().deleteUptimeCheckConfigSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
     public PagedCallSettings.Builder<
             ListUptimeCheckConfigsRequest,
@@ -245,6 +239,12 @@ public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServic
     public UnaryCallSettings.Builder<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigSettings() {
       return getStubSettingsBuilder().updateUptimeCheckConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
+    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigSettings() {
+      return getStubSettingsBuilder().deleteUptimeCheckConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listUptimeCheckIps. */

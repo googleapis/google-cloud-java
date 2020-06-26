@@ -56,16 +56,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteAlertPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of getAlertPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AlertPolicyServiceSettings.Builder alertPolicyServiceSettingsBuilder =
  *     AlertPolicyServiceSettings.newBuilder();
  * alertPolicyServiceSettingsBuilder
- *     .deleteAlertPolicySettings()
+ *     .getAlertPolicySettings()
  *     .setRetrySettings(
- *         alertPolicyServiceSettingsBuilder.deleteAlertPolicySettings().getRetrySettings().toBuilder()
+ *         alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlertPolicyServiceSettings alertPolicyServiceSettings = alertPolicyServiceSettingsBuilder.build();
@@ -74,11 +74,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class AlertPolicyServiceSettings extends ClientSettings<AlertPolicyServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
-  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-    return ((AlertPolicyServiceStubSettings) getStubSettings()).deleteAlertPolicySettings();
-  }
-
   /** Returns the object with the settings used for calls to listAlertPolicies. */
   public PagedCallSettings<
           ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
@@ -94,6 +89,11 @@ public class AlertPolicyServiceSettings extends ClientSettings<AlertPolicyServic
   /** Returns the object with the settings used for calls to createAlertPolicy. */
   public UnaryCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicySettings() {
     return ((AlertPolicyServiceStubSettings) getStubSettings()).createAlertPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
+  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+    return ((AlertPolicyServiceStubSettings) getStubSettings()).deleteAlertPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to updateAlertPolicy. */
@@ -198,11 +198,6 @@ public class AlertPolicyServiceSettings extends ClientSettings<AlertPolicyServic
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
-    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-      return getStubSettingsBuilder().deleteAlertPolicySettings();
-    }
-
     /** Returns the builder for the settings used for calls to listAlertPolicies. */
     public PagedCallSettings.Builder<
             ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
@@ -219,6 +214,11 @@ public class AlertPolicyServiceSettings extends ClientSettings<AlertPolicyServic
     public UnaryCallSettings.Builder<CreateAlertPolicyRequest, AlertPolicy>
         createAlertPolicySettings() {
       return getStubSettingsBuilder().createAlertPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
+    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+      return getStubSettingsBuilder().deleteAlertPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to updateAlertPolicy. */

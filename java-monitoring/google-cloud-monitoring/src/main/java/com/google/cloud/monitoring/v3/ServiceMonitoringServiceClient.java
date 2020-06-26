@@ -63,8 +63,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
- *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
- *   serviceMonitoringServiceClient.deleteService(name);
+ *   ResourceName parent = ProjectName.of("[PROJECT]");
+ *   Service service = Service.newBuilder().build();
+ *   Service response = serviceMonitoringServiceClient.createService(parent, service);
  * }
  * </code>
  * </pre>
@@ -173,190 +174,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceMonitoringServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   serviceMonitoringServiceClient.deleteService(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the `Service` to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteService(ServiceName name) {
-    DeleteServiceRequest request =
-        DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteService(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   serviceMonitoringServiceClient.deleteService(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the `Service` to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteService(String name) {
-    DeleteServiceRequest request = DeleteServiceRequest.newBuilder().setName(name).build();
-    deleteService(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   serviceMonitoringServiceClient.deleteService(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteService(DeleteServiceRequest request) {
-    deleteServiceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
-    return stub.deleteServiceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteServiceLevelObjective(ServiceLevelObjectiveName name) {
-    DeleteServiceLevelObjectiveRequest request =
-        DeleteServiceLevelObjectiveRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteServiceLevelObjective(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteServiceLevelObjective(String name) {
-    DeleteServiceLevelObjectiveRequest request =
-        DeleteServiceLevelObjectiveRequest.newBuilder().setName(name).build();
-    deleteServiceLevelObjective(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteServiceLevelObjective(DeleteServiceLevelObjectiveRequest request) {
-    deleteServiceLevelObjectiveCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceLevelObjectiveCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveCallable() {
-    return stub.deleteServiceLevelObjectiveCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -750,6 +567,96 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     return stub.updateServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Soft delete this `Service`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+   *   serviceMonitoringServiceClient.deleteService(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the `Service` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteService(ServiceName name) {
+    DeleteServiceRequest request =
+        DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Soft delete this `Service`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+   *   serviceMonitoringServiceClient.deleteService(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the `Service` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteService(String name) {
+    DeleteServiceRequest request = DeleteServiceRequest.newBuilder().setName(name).build();
+    deleteService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Soft delete this `Service`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   serviceMonitoringServiceClient.deleteService(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteService(DeleteServiceRequest request) {
+    deleteServiceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Soft delete this `Service`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
+    return stub.deleteServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1170,6 +1077,100 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveCallable() {
     return stub.updateServiceLevelObjectiveCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Delete the given `ServiceLevelObjective`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServiceLevelObjective(ServiceLevelObjectiveName name) {
+    DeleteServiceLevelObjectiveRequest request =
+        DeleteServiceLevelObjectiveRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteServiceLevelObjective(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Delete the given `ServiceLevelObjective`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServiceLevelObjective(String name) {
+    DeleteServiceLevelObjectiveRequest request =
+        DeleteServiceLevelObjectiveRequest.newBuilder().setName(name).build();
+    deleteServiceLevelObjective(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Delete the given `ServiceLevelObjective`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServiceLevelObjective(DeleteServiceLevelObjectiveRequest request) {
+    deleteServiceLevelObjectiveCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Delete the given `ServiceLevelObjective`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceLevelObjectiveCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveCallable() {
+    return stub.deleteServiceLevelObjectiveCallable();
   }
 
   @Override

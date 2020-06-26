@@ -112,47 +112,6 @@ public class UptimeCheckServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteUptimeCheckConfigTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockUptimeCheckService.addResponse(expectedResponse);
-
-    UptimeCheckConfigName name =
-        UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-
-    client.deleteUptimeCheckConfig(name);
-
-    List<AbstractMessage> actualRequests = mockUptimeCheckService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteUptimeCheckConfigRequest actualRequest =
-        (DeleteUptimeCheckConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, UptimeCheckConfigName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteUptimeCheckConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockUptimeCheckService.addException(exception);
-
-    try {
-      UptimeCheckConfigName name =
-          UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
-              "[PROJECT]", "[UPTIME_CHECK_CONFIG]");
-
-      client.deleteUptimeCheckConfig(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listUptimeCheckConfigsTest() {
     String nextPageToken = "";
     int totalSize = 705419236;
@@ -345,6 +304,47 @@ public class UptimeCheckServiceClientTest {
       UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
 
       client.updateUptimeCheckConfig(uptimeCheckConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteUptimeCheckConfigTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockUptimeCheckService.addResponse(expectedResponse);
+
+    UptimeCheckConfigName name =
+        UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+
+    client.deleteUptimeCheckConfig(name);
+
+    List<AbstractMessage> actualRequests = mockUptimeCheckService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteUptimeCheckConfigRequest actualRequest =
+        (DeleteUptimeCheckConfigRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, UptimeCheckConfigName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteUptimeCheckConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockUptimeCheckService.addException(exception);
+
+    try {
+      UptimeCheckConfigName name =
+          UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
+              "[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+
+      client.deleteUptimeCheckConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

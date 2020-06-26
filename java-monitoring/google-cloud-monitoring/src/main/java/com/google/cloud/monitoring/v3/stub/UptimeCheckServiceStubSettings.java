@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteUptimeCheckConfig to 30 seconds:
+ * <p>For example, to set the total timeout of getUptimeCheckConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * UptimeCheckServiceStubSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceStubSettings.newBuilder();
  * uptimeCheckServiceSettingsBuilder
- *     .deleteUptimeCheckConfigSettings()
+ *     .getUptimeCheckConfigSettings()
  *     .setRetrySettings(
- *         uptimeCheckServiceSettingsBuilder.deleteUptimeCheckConfigSettings().getRetrySettings().toBuilder()
+ *         uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UptimeCheckServiceStubSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
@@ -102,8 +102,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
-  private final UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigSettings;
   private final PagedCallSettings<
           ListUptimeCheckConfigsRequest,
           ListUptimeCheckConfigsResponse,
@@ -115,15 +113,11 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       createUptimeCheckConfigSettings;
   private final UnaryCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigSettings;
+  private final UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigSettings;
   private final PagedCallSettings<
           ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsSettings;
-
-  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
-  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigSettings() {
-    return deleteUptimeCheckConfigSettings;
-  }
 
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
@@ -150,6 +144,12 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
   public UnaryCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigSettings() {
     return updateUptimeCheckConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
+  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigSettings() {
+    return deleteUptimeCheckConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to listUptimeCheckIps. */
@@ -228,11 +228,11 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
   protected UptimeCheckServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteUptimeCheckConfigSettings = settingsBuilder.deleteUptimeCheckConfigSettings().build();
     listUptimeCheckConfigsSettings = settingsBuilder.listUptimeCheckConfigsSettings().build();
     getUptimeCheckConfigSettings = settingsBuilder.getUptimeCheckConfigSettings().build();
     createUptimeCheckConfigSettings = settingsBuilder.createUptimeCheckConfigSettings().build();
     updateUptimeCheckConfigSettings = settingsBuilder.updateUptimeCheckConfigSettings().build();
+    deleteUptimeCheckConfigSettings = settingsBuilder.deleteUptimeCheckConfigSettings().build();
     listUptimeCheckIpsSettings = settingsBuilder.listUptimeCheckIpsSettings().build();
   }
 
@@ -372,8 +372,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       extends StubSettings.Builder<UptimeCheckServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigSettings;
     private final PagedCallSettings.Builder<
             ListUptimeCheckConfigsRequest,
             ListUptimeCheckConfigsResponse,
@@ -385,6 +383,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
         createUptimeCheckConfigSettings;
     private final UnaryCallSettings.Builder<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigSettings;
     private final PagedCallSettings.Builder<
             ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
         listUptimeCheckIpsSettings;
@@ -396,11 +396,48 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -411,15 +448,120 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(12000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(12000L))
+              .setTotalTimeout(Duration.ofMillis(12000L))
+              .build();
+      definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -430,8 +572,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUptimeCheckConfigsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT);
 
@@ -441,16 +581,18 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
       updateUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listUptimeCheckIpsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteUptimeCheckConfigSettings,
               listUptimeCheckConfigsSettings,
               getUptimeCheckConfigSettings,
               createUptimeCheckConfigSettings,
               updateUptimeCheckConfigSettings,
+              deleteUptimeCheckConfigSettings,
               listUptimeCheckIpsSettings);
 
       initDefaults(this);
@@ -468,34 +610,34 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listUptimeCheckConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .getUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .createUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .updateUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .deleteUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .listUptimeCheckIpsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       return builder;
     }
@@ -503,20 +645,20 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     protected Builder(UptimeCheckServiceStubSettings settings) {
       super(settings);
 
-      deleteUptimeCheckConfigSettings = settings.deleteUptimeCheckConfigSettings.toBuilder();
       listUptimeCheckConfigsSettings = settings.listUptimeCheckConfigsSettings.toBuilder();
       getUptimeCheckConfigSettings = settings.getUptimeCheckConfigSettings.toBuilder();
       createUptimeCheckConfigSettings = settings.createUptimeCheckConfigSettings.toBuilder();
       updateUptimeCheckConfigSettings = settings.updateUptimeCheckConfigSettings.toBuilder();
+      deleteUptimeCheckConfigSettings = settings.deleteUptimeCheckConfigSettings.toBuilder();
       listUptimeCheckIpsSettings = settings.listUptimeCheckIpsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteUptimeCheckConfigSettings,
               listUptimeCheckConfigsSettings,
               getUptimeCheckConfigSettings,
               createUptimeCheckConfigSettings,
               updateUptimeCheckConfigSettings,
+              deleteUptimeCheckConfigSettings,
               listUptimeCheckIpsSettings);
     }
 
@@ -534,12 +676,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
-    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigSettings() {
-      return deleteUptimeCheckConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
@@ -567,6 +703,12 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     public UnaryCallSettings.Builder<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigSettings() {
       return updateUptimeCheckConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
+    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigSettings() {
+      return deleteUptimeCheckConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listUptimeCheckIps. */
