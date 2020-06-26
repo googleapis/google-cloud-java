@@ -28,8 +28,9 @@
  * <pre>
  * <code>
  * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
- *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
- *   dataLabelingServiceClient.deleteDataset(name);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Dataset dataset = Dataset.newBuilder().build();
+ *   Dataset response = dataLabelingServiceClient.createDataset(parent, dataset);
  * }
  * </code>
  * </pre>

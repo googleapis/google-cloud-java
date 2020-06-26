@@ -93,222 +93,6 @@ public class DataLabelingServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteDatasetTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataLabelingService.addResponse(expectedResponse);
-
-    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-
-    client.deleteDataset(name);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-
-      client.deleteDataset(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void exportDataTest() throws Exception {
-    String dataset = "dataset1443214456";
-    int totalCount = 407761836;
-    int exportCount = 529256252;
-    ExportDataOperationResponse expectedResponse =
-        ExportDataOperationResponse.newBuilder()
-            .setDataset(dataset)
-            .setTotalCount(totalCount)
-            .setExportCount(exportCount)
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("exportDataTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockDataLabelingService.addResponse(resultOperation);
-
-    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-    AnnotatedDatasetName annotatedDataset =
-        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-    String filter = "filter-1274492040";
-    OutputConfig outputConfig = OutputConfig.newBuilder().build();
-
-    ExportDataOperationResponse actualResponse =
-        client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
-    Assert.assertEquals(
-        annotatedDataset, AnnotatedDatasetName.parse(actualRequest.getAnnotatedDataset()));
-    Assert.assertEquals(filter, actualRequest.getFilter());
-    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void exportDataExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-      AnnotatedDatasetName annotatedDataset =
-          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-      String filter = "filter-1274492040";
-      OutputConfig outputConfig = OutputConfig.newBuilder().build();
-
-      client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAnnotationSpecSetTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataLabelingService.addResponse(expectedResponse);
-
-    AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-
-    client.deleteAnnotationSpecSet(name);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAnnotationSpecSetRequest actualRequest =
-        (DeleteAnnotationSpecSetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, AnnotationSpecSetName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAnnotationSpecSetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-
-      client.deleteAnnotationSpecSet(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteInstructionTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataLabelingService.addResponse(expectedResponse);
-
-    InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-
-    client.deleteInstruction(name);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteInstructionRequest actualRequest = (DeleteInstructionRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, InstructionName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteInstructionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-
-      client.deleteInstruction(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEvaluationJobTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataLabelingService.addResponse(expectedResponse);
-
-    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-
-    client.deleteEvaluationJob(name);
-
-    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteEvaluationJobRequest actualRequest = (DeleteEvaluationJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEvaluationJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataLabelingService.addException(exception);
-
-    try {
-      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-
-      client.deleteEvaluationJob(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createDatasetTest() {
     DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
     String displayName = "displayName1615086568";
@@ -459,6 +243,43 @@ public class DataLabelingServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteDatasetTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+
+    client.deleteDataset(name);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+
+      client.deleteDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void importDataTest() throws Exception {
     String dataset = "dataset1443214456";
     int totalCount = 407761836;
@@ -506,6 +327,73 @@ public class DataLabelingServiceClientTest {
       InputConfig inputConfig = InputConfig.newBuilder().build();
 
       client.importDataAsync(name, inputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void exportDataTest() throws Exception {
+    String dataset = "dataset1443214456";
+    int totalCount = 407761836;
+    int exportCount = 529256252;
+    ExportDataOperationResponse expectedResponse =
+        ExportDataOperationResponse.newBuilder()
+            .setDataset(dataset)
+            .setTotalCount(totalCount)
+            .setExportCount(exportCount)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataLabelingService.addResponse(resultOperation);
+
+    DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+    AnnotatedDatasetName annotatedDataset =
+        AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+    String filter = "filter-1274492040";
+    OutputConfig outputConfig = OutputConfig.newBuilder().build();
+
+    ExportDataOperationResponse actualResponse =
+        client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(
+        annotatedDataset, AnnotatedDatasetName.parse(actualRequest.getAnnotatedDataset()));
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void exportDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+      AnnotatedDatasetName annotatedDataset =
+          AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+      String filter = "filter-1274492040";
+      OutputConfig outputConfig = OutputConfig.newBuilder().build();
+
+      client.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1197,6 +1085,44 @@ public class DataLabelingServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteAnnotationSpecSetTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+
+    client.deleteAnnotationSpecSet(name);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAnnotationSpecSetRequest actualRequest =
+        (DeleteAnnotationSpecSetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, AnnotationSpecSetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAnnotationSpecSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+
+      client.deleteAnnotationSpecSet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createInstructionTest() throws Exception {
     InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
     String displayName = "displayName1615086568";
@@ -1343,6 +1269,43 @@ public class DataLabelingServiceClientTest {
       String filter = "filter-1274492040";
 
       client.listInstructions(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteInstructionTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+
+    client.deleteInstruction(name);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteInstructionRequest actualRequest = (DeleteInstructionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InstructionName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteInstructionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+
+      client.deleteInstruction(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1727,6 +1690,43 @@ public class DataLabelingServiceClientTest {
       EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
 
       client.resumeEvaluationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEvaluationJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataLabelingService.addResponse(expectedResponse);
+
+    EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+
+    client.deleteEvaluationJob(name);
+
+    List<AbstractMessage> actualRequests = mockDataLabelingService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEvaluationJobRequest actualRequest = (DeleteEvaluationJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, EvaluationJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEvaluationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataLabelingService.addException(exception);
+
+    try {
+      EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+
+      client.deleteEvaluationJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

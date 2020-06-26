@@ -134,16 +134,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteDataset to 30 seconds:
+ * <p>For example, to set the total timeout of createDataset to 30 seconds:
  *
  * <pre>
  * <code>
  * DataLabelingServiceStubSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceStubSettings.newBuilder();
  * dataLabelingServiceSettingsBuilder
- *     .deleteDatasetSettings()
+ *     .createDatasetSettings()
  *     .setRetrySettings(
- *         dataLabelingServiceSettingsBuilder.deleteDatasetSettings().getRetrySettings().toBuilder()
+ *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataLabelingServiceStubSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
@@ -157,24 +157,20 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings;
-  private final UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings;
-  private final OperationCallSettings<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationSettings;
-  private final UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetSettings;
-  private final UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings;
-  private final UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings;
   private final UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings;
   private final UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings;
   private final PagedCallSettings<
           ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
       listDatasetsSettings;
+  private final UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings;
   private final UnaryCallSettings<ImportDataRequest, Operation> importDataSettings;
   private final OperationCallSettings<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationSettings;
+  private final UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings;
+  private final OperationCallSettings<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationSettings;
   private final UnaryCallSettings<GetDataItemRequest, DataItem> getDataItemSettings;
   private final PagedCallSettings<
           ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
@@ -210,6 +206,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListAnnotationSpecSetsResponse,
           ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsSettings;
+  private final UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetSettings;
   private final UnaryCallSettings<CreateInstructionRequest, Operation> createInstructionSettings;
   private final OperationCallSettings<
           CreateInstructionRequest, Instruction, CreateInstructionMetadata>
@@ -218,6 +216,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final PagedCallSettings<
           ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
       listInstructionsSettings;
+  private final UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings;
   private final UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings;
   private final PagedCallSettings<
           SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
@@ -234,43 +233,10 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings;
   private final UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings;
   private final UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings;
+  private final UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings;
   private final PagedCallSettings<
           ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
       listEvaluationJobsSettings;
-
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
-    return deleteDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
-    return exportDataSettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationSettings() {
-    return exportDataOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
-  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetSettings() {
-    return deleteAnnotationSpecSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteInstruction. */
-  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
-    return deleteInstructionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
-  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
-    return deleteEvaluationJobSettings;
-  }
 
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
@@ -288,6 +254,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return listDatasetsSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
+    return deleteDatasetSettings;
+  }
+
   /** Returns the object with the settings used for calls to importData. */
   public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
     return importDataSettings;
@@ -299,6 +270,19 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationSettings() {
     return importDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return exportDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationSettings() {
+    return exportDataOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getDataItem. */
@@ -400,6 +384,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return listAnnotationSpecSetsSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
+  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetSettings() {
+    return deleteAnnotationSpecSetSettings;
+  }
+
   /** Returns the object with the settings used for calls to createInstruction. */
   public UnaryCallSettings<CreateInstructionRequest, Operation> createInstructionSettings() {
     return createInstructionSettings;
@@ -422,6 +412,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
       listInstructionsSettings() {
     return listInstructionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteInstruction. */
+  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
+    return deleteInstructionSettings;
   }
 
   /** Returns the object with the settings used for calls to getEvaluation. */
@@ -470,6 +465,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   /** Returns the object with the settings used for calls to resumeEvaluationJob. */
   public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
     return resumeEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
+  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
+    return deleteEvaluationJobSettings;
   }
 
   /** Returns the object with the settings used for calls to listEvaluationJobs. */
@@ -548,17 +548,14 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   protected DataLabelingServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
-    exportDataSettings = settingsBuilder.exportDataSettings().build();
-    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
-    deleteAnnotationSpecSetSettings = settingsBuilder.deleteAnnotationSpecSetSettings().build();
-    deleteInstructionSettings = settingsBuilder.deleteInstructionSettings().build();
-    deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
     createDatasetSettings = settingsBuilder.createDatasetSettings().build();
     getDatasetSettings = settingsBuilder.getDatasetSettings().build();
     listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
+    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
     importDataSettings = settingsBuilder.importDataSettings().build();
     importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
+    exportDataSettings = settingsBuilder.exportDataSettings().build();
+    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
     getDataItemSettings = settingsBuilder.getDataItemSettings().build();
     listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
     getAnnotatedDatasetSettings = settingsBuilder.getAnnotatedDatasetSettings().build();
@@ -575,11 +572,13 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     createAnnotationSpecSetSettings = settingsBuilder.createAnnotationSpecSetSettings().build();
     getAnnotationSpecSetSettings = settingsBuilder.getAnnotationSpecSetSettings().build();
     listAnnotationSpecSetsSettings = settingsBuilder.listAnnotationSpecSetsSettings().build();
+    deleteAnnotationSpecSetSettings = settingsBuilder.deleteAnnotationSpecSetSettings().build();
     createInstructionSettings = settingsBuilder.createInstructionSettings().build();
     createInstructionOperationSettings =
         settingsBuilder.createInstructionOperationSettings().build();
     getInstructionSettings = settingsBuilder.getInstructionSettings().build();
     listInstructionsSettings = settingsBuilder.listInstructionsSettings().build();
+    deleteInstructionSettings = settingsBuilder.deleteInstructionSettings().build();
     getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
     searchEvaluationsSettings = settingsBuilder.searchEvaluationsSettings().build();
     searchExampleComparisonsSettings = settingsBuilder.searchExampleComparisonsSettings().build();
@@ -588,6 +587,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     getEvaluationJobSettings = settingsBuilder.getEvaluationJobSettings().build();
     pauseEvaluationJobSettings = settingsBuilder.pauseEvaluationJobSettings().build();
     resumeEvaluationJobSettings = settingsBuilder.resumeEvaluationJobSettings().build();
+    deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
     listEvaluationJobsSettings = settingsBuilder.listEvaluationJobsSettings().build();
   }
 
@@ -1147,26 +1147,20 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       extends StubSettings.Builder<DataLabelingServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings;
-    private final UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings;
-    private final OperationCallSettings.Builder<
-            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-        exportDataOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
-        deleteAnnotationSpecSetSettings;
-    private final UnaryCallSettings.Builder<DeleteInstructionRequest, Empty>
-        deleteInstructionSettings;
-    private final UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
-        deleteEvaluationJobSettings;
     private final UnaryCallSettings.Builder<CreateDatasetRequest, Dataset> createDatasetSettings;
     private final UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings;
     private final PagedCallSettings.Builder<
             ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
         listDatasetsSettings;
+    private final UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings;
     private final UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings;
     private final OperationCallSettings.Builder<
             ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
         importDataOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings;
+    private final OperationCallSettings.Builder<
+            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+        exportDataOperationSettings;
     private final UnaryCallSettings.Builder<GetDataItemRequest, DataItem> getDataItemSettings;
     private final PagedCallSettings.Builder<
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
@@ -1205,6 +1199,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ListAnnotationSpecSetsResponse,
             ListAnnotationSpecSetsPagedResponse>
         listAnnotationSpecSetsSettings;
+    private final UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
+        deleteAnnotationSpecSetSettings;
     private final UnaryCallSettings.Builder<CreateInstructionRequest, Operation>
         createInstructionSettings;
     private final OperationCallSettings.Builder<
@@ -1215,6 +1211,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final PagedCallSettings.Builder<
             ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
         listInstructionsSettings;
+    private final UnaryCallSettings.Builder<DeleteInstructionRequest, Empty>
+        deleteInstructionSettings;
     private final UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings;
     private final PagedCallSettings.Builder<
             SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
@@ -1234,6 +1232,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
         pauseEvaluationJobSettings;
     private final UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
         resumeEvaluationJobSettings;
+    private final UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings;
     private final PagedCallSettings.Builder<
             ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
         listEvaluationJobsSettings;
@@ -1245,11 +1245,13 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1263,12 +1265,22 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1279,27 +1291,21 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      exportDataOperationSettings = OperationCallSettings.newBuilder();
-
-      deleteAnnotationSpecSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
 
+      deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       importDataOperationSettings = OperationCallSettings.newBuilder();
+
+      exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      exportDataOperationSettings = OperationCallSettings.newBuilder();
 
       getDataItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1335,6 +1341,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       listAnnotationSpecSetsSettings =
           PagedCallSettings.newBuilder(LIST_ANNOTATION_SPEC_SETS_PAGE_STR_FACT);
 
+      deleteAnnotationSpecSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createInstructionOperationSettings = OperationCallSettings.newBuilder();
@@ -1342,6 +1350,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       getInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listInstructionsSettings = PagedCallSettings.newBuilder(LIST_INSTRUCTIONS_PAGE_STR_FACT);
+
+      deleteInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1360,19 +1370,18 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
       resumeEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listEvaluationJobsSettings = PagedCallSettings.newBuilder(LIST_EVALUATION_JOBS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteDatasetSettings,
-              exportDataSettings,
-              deleteAnnotationSpecSetSettings,
-              deleteInstructionSettings,
-              deleteEvaluationJobSettings,
               createDatasetSettings,
               getDatasetSettings,
               listDatasetsSettings,
+              deleteDatasetSettings,
               importDataSettings,
+              exportDataSettings,
               getDataItemSettings,
               listDataItemsSettings,
               getAnnotatedDatasetSettings,
@@ -1386,9 +1395,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               createAnnotationSpecSetSettings,
               getAnnotationSpecSetSettings,
               listAnnotationSpecSetsSettings,
+              deleteAnnotationSpecSetSettings,
               createInstructionSettings,
               getInstructionSettings,
               listInstructionsSettings,
+              deleteInstructionSettings,
               getEvaluationSettings,
               searchEvaluationsSettings,
               searchExampleComparisonsSettings,
@@ -1397,6 +1408,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               getEvaluationJobSettings,
               pauseEvaluationJobSettings,
               resumeEvaluationJobSettings,
+              deleteEvaluationJobSettings,
               listEvaluationJobsSettings);
 
       initDefaults(this);
@@ -1414,204 +1426,180 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .exportDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .importDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getDataItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listDataItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getAnnotatedDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listAnnotatedDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .deleteAnnotatedDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .labelImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .labelVideoSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .labelTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getExampleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listExamplesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listAnnotationSpecSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAnnotationSpecSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listInstructionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteInstructionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .searchEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .searchExampleComparisonsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .pauseEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .resumeEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listEvaluationJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-      builder
-          .exportDataOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  ExportDataOperationResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  ExportDataOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .importDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -1631,11 +1619,35 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
+          .exportDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportDataOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
           .labelImageOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
@@ -1656,8 +1668,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .labelVideoOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelVideoRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
@@ -1678,8 +1690,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .labelTextOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<LabelTextRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
@@ -1701,8 +1713,8 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateInstructionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Instruction.class))
@@ -1727,17 +1739,14 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     protected Builder(DataLabelingServiceStubSettings settings) {
       super(settings);
 
-      deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
-      exportDataSettings = settings.exportDataSettings.toBuilder();
-      exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
-      deleteAnnotationSpecSetSettings = settings.deleteAnnotationSpecSetSettings.toBuilder();
-      deleteInstructionSettings = settings.deleteInstructionSettings.toBuilder();
-      deleteEvaluationJobSettings = settings.deleteEvaluationJobSettings.toBuilder();
       createDatasetSettings = settings.createDatasetSettings.toBuilder();
       getDatasetSettings = settings.getDatasetSettings.toBuilder();
       listDatasetsSettings = settings.listDatasetsSettings.toBuilder();
+      deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
       importDataSettings = settings.importDataSettings.toBuilder();
       importDataOperationSettings = settings.importDataOperationSettings.toBuilder();
+      exportDataSettings = settings.exportDataSettings.toBuilder();
+      exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
       getDataItemSettings = settings.getDataItemSettings.toBuilder();
       listDataItemsSettings = settings.listDataItemsSettings.toBuilder();
       getAnnotatedDatasetSettings = settings.getAnnotatedDatasetSettings.toBuilder();
@@ -1754,10 +1763,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       createAnnotationSpecSetSettings = settings.createAnnotationSpecSetSettings.toBuilder();
       getAnnotationSpecSetSettings = settings.getAnnotationSpecSetSettings.toBuilder();
       listAnnotationSpecSetsSettings = settings.listAnnotationSpecSetsSettings.toBuilder();
+      deleteAnnotationSpecSetSettings = settings.deleteAnnotationSpecSetSettings.toBuilder();
       createInstructionSettings = settings.createInstructionSettings.toBuilder();
       createInstructionOperationSettings = settings.createInstructionOperationSettings.toBuilder();
       getInstructionSettings = settings.getInstructionSettings.toBuilder();
       listInstructionsSettings = settings.listInstructionsSettings.toBuilder();
+      deleteInstructionSettings = settings.deleteInstructionSettings.toBuilder();
       getEvaluationSettings = settings.getEvaluationSettings.toBuilder();
       searchEvaluationsSettings = settings.searchEvaluationsSettings.toBuilder();
       searchExampleComparisonsSettings = settings.searchExampleComparisonsSettings.toBuilder();
@@ -1766,19 +1777,17 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       getEvaluationJobSettings = settings.getEvaluationJobSettings.toBuilder();
       pauseEvaluationJobSettings = settings.pauseEvaluationJobSettings.toBuilder();
       resumeEvaluationJobSettings = settings.resumeEvaluationJobSettings.toBuilder();
+      deleteEvaluationJobSettings = settings.deleteEvaluationJobSettings.toBuilder();
       listEvaluationJobsSettings = settings.listEvaluationJobsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteDatasetSettings,
-              exportDataSettings,
-              deleteAnnotationSpecSetSettings,
-              deleteInstructionSettings,
-              deleteEvaluationJobSettings,
               createDatasetSettings,
               getDatasetSettings,
               listDatasetsSettings,
+              deleteDatasetSettings,
               importDataSettings,
+              exportDataSettings,
               getDataItemSettings,
               listDataItemsSettings,
               getAnnotatedDatasetSettings,
@@ -1792,9 +1801,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               createAnnotationSpecSetSettings,
               getAnnotationSpecSetSettings,
               listAnnotationSpecSetsSettings,
+              deleteAnnotationSpecSetSettings,
               createInstructionSettings,
               getInstructionSettings,
               listInstructionsSettings,
+              deleteInstructionSettings,
               getEvaluationSettings,
               searchEvaluationsSettings,
               searchExampleComparisonsSettings,
@@ -1803,6 +1814,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               getEvaluationJobSettings,
               pauseEvaluationJobSettings,
               resumeEvaluationJobSettings,
+              deleteEvaluationJobSettings,
               listEvaluationJobsSettings);
     }
 
@@ -1822,42 +1834,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    public UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
-      return deleteDatasetSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to exportData. */
-    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
-      return exportDataSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-        exportDataOperationSettings() {
-      return exportDataOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAnnotationSpecSet. */
-    public UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
-        deleteAnnotationSpecSetSettings() {
-      return deleteAnnotationSpecSetSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteInstruction. */
-    public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
-      return deleteInstructionSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
-    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
-        deleteEvaluationJobSettings() {
-      return deleteEvaluationJobSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createDataset. */
     public UnaryCallSettings.Builder<CreateDatasetRequest, Dataset> createDatasetSettings() {
       return createDatasetSettings;
@@ -1875,6 +1851,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       return listDatasetsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
+      return deleteDatasetSettings;
+    }
+
     /** Returns the builder for the settings used for calls to importData. */
     public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
       return importDataSettings;
@@ -1887,6 +1868,20 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
       return importDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return exportDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+        exportDataOperationSettings() {
+      return exportDataOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getDataItem. */
@@ -1996,6 +1991,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       return listAnnotationSpecSetsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteAnnotationSpecSet. */
+    public UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
+        deleteAnnotationSpecSetSettings() {
+      return deleteAnnotationSpecSetSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createInstruction. */
     public UnaryCallSettings.Builder<CreateInstructionRequest, Operation>
         createInstructionSettings() {
@@ -2021,6 +2022,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
         listInstructionsSettings() {
       return listInstructionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteInstruction. */
+    public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
+      return deleteInstructionSettings;
     }
 
     /** Returns the builder for the settings used for calls to getEvaluation. */
@@ -2072,6 +2078,12 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     public UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
         resumeEvaluationJobSettings() {
       return resumeEvaluationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
+    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings() {
+      return deleteEvaluationJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to listEvaluationJobs. */
