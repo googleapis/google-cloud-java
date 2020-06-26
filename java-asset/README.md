@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>7.0.0</version>
+      <version>7.0.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
 </dependency>
 
 ```
@@ -84,6 +84,25 @@ use this Cloud Asset Inventory Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-asset/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Batch Get Assets History Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/BatchGetAssetsHistoryExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/BatchGetAssetsHistoryExample.java) |
+| Create Feed Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/CreateFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/CreateFeedExample.java) |
+| Delete Feed Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/DeleteFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/DeleteFeedExample.java) |
+| Export Assets Bigquery Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/ExportAssetsBigqueryExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ExportAssetsBigqueryExample.java) |
+| Export Assets Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/ExportAssetsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ExportAssetsExample.java) |
+| Get Feed Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/GetFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/GetFeedExample.java) |
+| List Feeds Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/ListFeedsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ListFeedsExample.java) |
+| Search All Iam Policies Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/SearchAllIamPoliciesExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/SearchAllIamPoliciesExample.java) |
+| Search All Resources Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/SearchAllResourcesExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/SearchAllResourcesExample.java) |
+| Update Feed Example | [source code](https://github.com/googleapis/java-asset/blob/master/samples/snippets/src/main/java/com/example/asset/UpdateFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/UpdateFeedExample.java) |
 
 
 

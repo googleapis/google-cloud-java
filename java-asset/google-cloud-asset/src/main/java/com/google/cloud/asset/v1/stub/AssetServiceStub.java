@@ -57,10 +57,6 @@ public abstract class AssetServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteFeedCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable() {
@@ -90,6 +86,10 @@ public abstract class AssetServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     throw new UnsupportedOperationException("Not implemented: updateFeedCallable()");
+  }
+
+  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFeedCallable()");
   }
 
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>

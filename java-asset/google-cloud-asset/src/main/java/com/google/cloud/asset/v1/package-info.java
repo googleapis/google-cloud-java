@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
- *   assetServiceClient.deleteFeed(name);
+ *   String parent = "";
+ *   Feed response = assetServiceClient.createFeed(parent);
  * }
  * </code>
  * </pre>

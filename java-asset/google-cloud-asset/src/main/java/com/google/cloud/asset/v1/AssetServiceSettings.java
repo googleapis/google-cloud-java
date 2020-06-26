@@ -52,16 +52,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteFeed to 30 seconds:
+ * <p>For example, to set the total timeout of createFeed to 30 seconds:
  *
  * <pre>
  * <code>
  * AssetServiceSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceSettings.newBuilder();
  * assetServiceSettingsBuilder
- *     .deleteFeedSettings()
+ *     .createFeedSettings()
  *     .setRetrySettings(
- *         assetServiceSettingsBuilder.deleteFeedSettings().getRetrySettings().toBuilder()
+ *         assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
@@ -71,11 +71,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteFeed. */
-  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).deleteFeedSettings();
-  }
-
   /** Returns the object with the settings used for calls to exportAssets. */
   public UnaryCallSettings<ExportAssetsRequest, Operation> exportAssetsSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).exportAssetsSettings();
@@ -113,6 +108,11 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   /** Returns the object with the settings used for calls to updateFeed. */
   public UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).updateFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeed. */
+  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).deleteFeedSettings();
   }
 
   /** Returns the object with the settings used for calls to searchAllResources. */
@@ -228,11 +228,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteFeed. */
-    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
-      return getStubSettingsBuilder().deleteFeedSettings();
-    }
-
     /** Returns the builder for the settings used for calls to exportAssets. */
     public UnaryCallSettings.Builder<ExportAssetsRequest, Operation> exportAssetsSettings() {
       return getStubSettingsBuilder().exportAssetsSettings();
@@ -271,6 +266,11 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     /** Returns the builder for the settings used for calls to updateFeed. */
     public UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings() {
       return getStubSettingsBuilder().updateFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeed. */
+    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
+      return getStubSettingsBuilder().deleteFeedSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchAllResources. */
