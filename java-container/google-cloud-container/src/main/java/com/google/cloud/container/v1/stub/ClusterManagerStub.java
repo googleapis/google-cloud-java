@@ -72,14 +72,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ClusterManagerStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
-  }
-
-  public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteNodePoolCallable()");
-  }
-
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
   }
@@ -128,6 +120,10 @@ public abstract class ClusterManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setMasterAuthCallable()");
   }
 
+  public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
+  }
+
   public UnaryCallable<ListOperationsRequest, ListOperationsResponse> listOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listOperationsCallable()");
   }
@@ -154,6 +150,10 @@ public abstract class ClusterManagerStub implements BackgroundResource {
 
   public UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: createNodePoolCallable()");
+  }
+
+  public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNodePoolCallable()");
   }
 
   public UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>

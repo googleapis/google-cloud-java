@@ -30,8 +30,7 @@
  * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
  *   String projectId = "";
  *   String zone = "";
- *   String clusterId = "";
- *   Operation response = clusterManagerClient.deleteCluster(projectId, zone, clusterId);
+ *   ListClustersResponse response = clusterManagerClient.listClusters(projectId, zone);
  * }
  * </code>
  * </pre>

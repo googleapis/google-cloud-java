@@ -83,24 +83,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcClusterManagerStub extends ClusterManagerStub {
 
-  private static final MethodDescriptor<DeleteClusterRequest, Operation>
-      deleteClusterMethodDescriptor =
-          MethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/DeleteCluster")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteNodePoolRequest, Operation>
-      deleteNodePoolMethodDescriptor =
-          MethodDescriptor.<DeleteNodePoolRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1.ClusterManager/DeleteNodePool")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListClustersRequest, ListClustersResponse>
       listClustersMethodDescriptor =
           MethodDescriptor.<ListClustersRequest, ListClustersResponse>newBuilder()
@@ -205,6 +187,15 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(SetMasterAuthRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteClusterRequest, Operation>
+      deleteClusterMethodDescriptor =
+          MethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1.ClusterManager/DeleteCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListOperationsRequest, ListOperationsResponse>
       listOperationsMethodDescriptor =
           MethodDescriptor.<ListOperationsRequest, ListOperationsResponse>newBuilder()
@@ -265,6 +256,15 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setFullMethodName("google.container.v1.ClusterManager/CreateNodePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodePoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteNodePoolRequest, Operation>
+      deleteNodePoolMethodDescriptor =
+          MethodDescriptor.<DeleteNodePoolRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1.ClusterManager/DeleteNodePool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<RollbackNodePoolUpgradeRequest, Operation>
@@ -359,8 +359,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
-  private final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -374,6 +372,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<SetLocationsRequest, Operation> setLocationsCallable;
   private final UnaryCallable<UpdateMasterRequest, Operation> updateMasterCallable;
   private final UnaryCallable<SetMasterAuthRequest, Operation> setMasterAuthCallable;
+  private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final UnaryCallable<ListOperationsRequest, ListOperationsResponse> listOperationsCallable;
   private final UnaryCallable<GetOperationRequest, Operation> getOperationCallable;
   private final UnaryCallable<CancelOperationRequest, Empty> cancelOperationCallable;
@@ -381,6 +380,7 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable;
   private final UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable;
   private final UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable;
+  private final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable;
   private final UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeCallable;
   private final UnaryCallable<SetNodePoolManagementRequest, Operation>
@@ -438,32 +438,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
-        GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteClusterMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteClusterRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteClusterRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolTransportSettings =
-        GrpcCallSettings.<DeleteNodePoolRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteNodePoolMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteNodePoolRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteNodePoolRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
@@ -621,6 +595,19 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
+        GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListOperationsRequest, ListOperationsResponse>
         listOperationsTransportSettings =
             GrpcCallSettings.<ListOperationsRequest, ListOperationsResponse>newBuilder()
@@ -709,6 +696,19 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   public Map<String, String> extract(CreateNodePoolRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolTransportSettings =
+        GrpcCallSettings.<DeleteNodePoolRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteNodePoolMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteNodePoolRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteNodePoolRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -848,12 +848,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                     })
                 .build();
 
-    this.deleteClusterCallable =
-        callableFactory.createUnaryCallable(
-            deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
-    this.deleteNodePoolCallable =
-        callableFactory.createUnaryCallable(
-            deleteNodePoolTransportSettings, settings.deleteNodePoolSettings(), clientContext);
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
@@ -896,6 +890,9 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.setMasterAuthCallable =
         callableFactory.createUnaryCallable(
             setMasterAuthTransportSettings, settings.setMasterAuthSettings(), clientContext);
+    this.deleteClusterCallable =
+        callableFactory.createUnaryCallable(
+            deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
     this.listOperationsCallable =
         callableFactory.createUnaryCallable(
             listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
@@ -917,6 +914,9 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.createNodePoolCallable =
         callableFactory.createUnaryCallable(
             createNodePoolTransportSettings, settings.createNodePoolSettings(), clientContext);
+    this.deleteNodePoolCallable =
+        callableFactory.createUnaryCallable(
+            deleteNodePoolTransportSettings, settings.deleteNodePoolSettings(), clientContext);
     this.rollbackNodePoolUpgradeCallable =
         callableFactory.createUnaryCallable(
             rollbackNodePoolUpgradeTransportSettings,
@@ -964,14 +964,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
-    return deleteClusterCallable;
-  }
-
-  public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
-    return deleteNodePoolCallable;
   }
 
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
@@ -1022,6 +1014,10 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     return setMasterAuthCallable;
   }
 
+  public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
+    return deleteClusterCallable;
+  }
+
   public UnaryCallable<ListOperationsRequest, ListOperationsResponse> listOperationsCallable() {
     return listOperationsCallable;
   }
@@ -1048,6 +1044,10 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
 
   public UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable() {
     return createNodePoolCallable;
+  }
+
+  public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
+    return deleteNodePoolCallable;
   }
 
   public UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>
