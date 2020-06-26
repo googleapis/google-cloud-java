@@ -137,11 +137,12 @@ public final class LoggingMetricsProto {
           + "only,https://www.googleapis.com/auth/log"
           + "ging.admin,https://www.googleapis.com/au"
           + "th/logging.read,https://www.googleapis.c"
-          + "om/auth/logging.writeB\237\001\n\025com.google.log"
+          + "om/auth/logging.writeB\274\001\n\025com.google.log"
           + "ging.v2B\023LoggingMetricsProtoP\001Z8google.g"
           + "olang.org/genproto/googleapis/logging/v2"
           + ";logging\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027"
-          + "Google\\Cloud\\Logging\\V2b\006proto3"
+          + "Google\\Cloud\\Logging\\V2\352\002\032Google::Cloud:"
+          + ":Logging::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

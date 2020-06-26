@@ -162,11 +162,12 @@ public final class LoggingProto {
           + "s://www.googleapis.com/auth/logging.admi"
           + "n,https://www.googleapis.com/auth/loggin"
           + "g.read,https://www.googleapis.com/auth/l"
-          + "ogging.writeB\230\001\n\025com.google.logging.v2B\014"
+          + "ogging.writeB\265\001\n\025com.google.logging.v2B\014"
           + "LoggingProtoP\001Z8google.golang.org/genpro"
           + "to/googleapis/logging/v2;logging\370\001\001\252\002\027Go"
           + "ogle.Cloud.Logging.V2\312\002\027Google\\Cloud\\Log"
-          + "ging\\V2b\006proto3"
+          + "ging\\V2\352\002\032Google::Cloud::Logging::V2b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

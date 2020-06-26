@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>5.7.0</version>
+      <version>7.0.1</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>1.101.2-SNAPSHOT</version>
+  <version>1.101.3-SNAPSHOT</version>
 </dependency>
 
 ```

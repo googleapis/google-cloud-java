@@ -90,11 +90,12 @@ public final class LogEntryProto {
           + "roducer\030\002 \001(\tB\003\340A\001\022\022\n\005first\030\003 \001(\010B\003\340A\001\022\021"
           + "\n\004last\030\004 \001(\010B\003\340A\001\"U\n\026LogEntrySourceLocat"
           + "ion\022\021\n\004file\030\001 \001(\tB\003\340A\001\022\021\n\004line\030\002 \001(\003B\003\340A"
-          + "\001\022\025\n\010function\030\003 \001(\tB\003\340A\001B\231\001\n\025com.google."
+          + "\001\022\025\n\010function\030\003 \001(\tB\003\340A\001B\266\001\n\025com.google."
           + "logging.v2B\rLogEntryProtoP\001Z8google.gola"
           + "ng.org/genproto/googleapis/logging/v2;lo"
           + "gging\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027Goo"
-          + "gle\\Cloud\\Logging\\V2b\006proto3"
+          + "gle\\Cloud\\Logging\\V2\352\002\032Google::Cloud::Lo"
+          + "gging::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
