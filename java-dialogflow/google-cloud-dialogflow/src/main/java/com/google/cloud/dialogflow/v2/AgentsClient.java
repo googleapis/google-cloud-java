@@ -763,9 +763,15 @@ public class AgentsClient implements BackgroundResource {
    * Restores the specified agent from a ZIP file.
    *
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -793,9 +799,15 @@ public class AgentsClient implements BackgroundResource {
    * Restores the specified agent from a ZIP file.
    *
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -822,9 +834,15 @@ public class AgentsClient implements BackgroundResource {
    * Restores the specified agent from a ZIP file.
    *
    * <p>Replaces the current agent version with a new one. All the intents and entity types in the
-   * older version are deleted.
+   * older version are deleted. After the restore, the restored draft agent will be trained
+   * automatically (unless disabled in agent settings). However, once the restore is done, training
+   * may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when restoring is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -939,9 +957,16 @@ public class AgentsClient implements BackgroundResource {
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -969,9 +994,16 @@ public class AgentsClient implements BackgroundResource {
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
@@ -997,9 +1029,16 @@ public class AgentsClient implements BackgroundResource {
    * Imports the specified agent from a ZIP file.
    *
    * <p>Uploads new intents and entity types without deleting the existing ones. Intents and entity
-   * types with the same name are replaced with the new versions from ImportAgentRequest.
+   * types with the same name are replaced with the new versions from
+   * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After the import, the
+   * imported draft agent will be trained automatically (unless disabled in agent settings).
+   * However, once the import is done, training may not be completed yet. Please call
+   * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the operation it
+   * returns in order to train explicitly.
    *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt; An operation
+   * which tracks when importing is complete. It only tracks when the draft agent is updated not
+   * when it is done training.
    *
    * <p>Sample code:
    *
