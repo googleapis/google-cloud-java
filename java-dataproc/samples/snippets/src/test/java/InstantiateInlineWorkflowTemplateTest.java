@@ -30,7 +30,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class InstantiateInlineWorkflowTemplateTest {
 
-
   private static final String REGION = "us-central1";
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
