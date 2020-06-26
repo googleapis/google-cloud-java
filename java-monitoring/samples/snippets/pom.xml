@@ -43,7 +43,11 @@
       <artifactId>google-cloud-monitoring</artifactId>
     </dependency>
     <!-- [END monitoring_install_with_bom] -->
-
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.12.2</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
