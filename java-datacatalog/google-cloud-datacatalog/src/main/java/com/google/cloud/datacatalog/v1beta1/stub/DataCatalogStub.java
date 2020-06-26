@@ -83,36 +83,12 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: searchCatalogCallable()");
   }
 
-  public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEntryGroupCallable()");
-  }
-
-  public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEntryCallable()");
-  }
-
   public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntryCallable()");
   }
 
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: lookupEntryCallable()");
-  }
-
-  public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTagTemplateCallable()");
-  }
-
-  public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTagTemplateFieldCallable()");
-  }
-
-  public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTagCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
   public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
@@ -125,6 +101,10 @@ public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntryGroupCallable()");
+  }
+
+  public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntryGroupCallable()");
   }
 
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
@@ -142,6 +122,10 @@ public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEntryCallable()");
+  }
+
+  public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntryCallable()");
   }
 
   public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
@@ -164,6 +148,10 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateTagTemplateCallable()");
   }
 
+  public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTagTemplateCallable()");
+  }
+
   public UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagTemplateFieldCallable()");
@@ -179,12 +167,20 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: renameTagTemplateFieldCallable()");
   }
 
+  public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTagTemplateFieldCallable()");
+  }
+
   public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagCallable()");
   }
 
   public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTagCallable()");
+  }
+
+  public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTagCallable()");
   }
 
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
@@ -197,6 +193,10 @@ public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>

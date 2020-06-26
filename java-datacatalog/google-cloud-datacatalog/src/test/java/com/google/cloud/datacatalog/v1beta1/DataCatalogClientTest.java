@@ -150,80 +150,6 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteEntryGroupTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-
-    client.deleteEntryGroup(name);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteEntryGroupRequest actualRequest = (DeleteEntryGroupRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, EntryGroupName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEntryGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-
-      client.deleteEntryGroup(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEntryTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-    client.deleteEntry(name);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteEntryRequest actualRequest = (DeleteEntryRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, EntryName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEntryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-      client.deleteEntry(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getEntryTest() {
     EntryName name2 = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
     String linkedResource = "linkedResource1544625012";
@@ -319,166 +245,6 @@ public class DataCatalogClientTest {
       LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
 
       client.lookupEntry(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagTemplateTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-    boolean force = false;
-
-    client.deleteTagTemplate(name, force);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTagTemplateRequest actualRequest = (DeleteTagTemplateRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, TagTemplateName.parse(actualRequest.getName()));
-    Assert.assertEquals(force, actualRequest.getForce());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagTemplateExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-      boolean force = false;
-
-      client.deleteTagTemplate(name, force);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagTemplateFieldTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    TagTemplateFieldName name =
-        TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-    boolean force = false;
-
-    client.deleteTagTemplateField(name, force);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTagTemplateFieldRequest actualRequest =
-        (DeleteTagTemplateFieldRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, TagTemplateFieldName.parse(actualRequest.getName()));
-    Assert.assertEquals(force, actualRequest.getForce());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagTemplateFieldExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      TagTemplateFieldName name =
-          TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-      boolean force = false;
-
-      client.deleteTagTemplateField(name, force);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-    client.deleteTag(name);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTagRequest actualRequest = (DeleteTagRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, EntryName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-      client.deleteTag(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getIamPolicyTest() {
-    int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("21");
-    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockDataCatalog.addResponse(expectedResponse);
-
-    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-    Policy actualResponse = client.getIamPolicy(resource);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataCatalog.addException(exception);
-
-    try {
-      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-
-      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -726,6 +492,43 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteEntryGroupTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+
+    client.deleteEntryGroup(name);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryGroupRequest actualRequest = (DeleteEntryGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, EntryGroupName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEntryGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+
+      client.deleteEntryGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listEntryGroupsTest() {
     String nextPageToken = "";
     EntryGroup entryGroupsElement = EntryGroup.newBuilder().build();
@@ -928,6 +731,43 @@ public class DataCatalogClientTest {
       Entry entry = Entry.newBuilder().build();
 
       client.updateEntry(entry);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEntryTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+    client.deleteEntry(name);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryRequest actualRequest = (DeleteEntryRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, EntryName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+      client.deleteEntry(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1146,6 +986,46 @@ public class DataCatalogClientTest {
       TagTemplate tagTemplate = TagTemplate.newBuilder().build();
 
       client.updateTagTemplate(tagTemplate);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTagTemplateTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+    boolean force = false;
+
+    client.deleteTagTemplate(name, force);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTagTemplateRequest actualRequest = (DeleteTagTemplateRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TagTemplateName.parse(actualRequest.getName()));
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTagTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+      boolean force = false;
+
+      client.deleteTagTemplate(name, force);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1380,6 +1260,49 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteTagTemplateFieldTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    TagTemplateFieldName name =
+        TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+    boolean force = false;
+
+    client.deleteTagTemplateField(name, force);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTagTemplateFieldRequest actualRequest =
+        (DeleteTagTemplateFieldRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TagTemplateFieldName.parse(actualRequest.getName()));
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTagTemplateFieldExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      TagTemplateFieldName name =
+          TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+      boolean force = false;
+
+      client.deleteTagTemplateField(name, force);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createTagTest() {
     TagName name = TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]");
     String template = "template-1321546630";
@@ -1527,6 +1450,43 @@ public class DataCatalogClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteTagTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+    client.deleteTag(name);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTagRequest actualRequest = (DeleteTagRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, EntryName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTagExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+      client.deleteTag(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listTagsTest() {
     String nextPageToken = "";
     Tag tagsElement = Tag.newBuilder().build();
@@ -1607,6 +1567,46 @@ public class DataCatalogClientTest {
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyTest() {
+    int version = 351608024;
+    ByteString etag = ByteString.copyFromUtf8("21");
+    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

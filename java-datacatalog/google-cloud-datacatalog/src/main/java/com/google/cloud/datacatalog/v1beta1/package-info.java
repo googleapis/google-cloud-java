@@ -29,8 +29,8 @@
  * <pre>
  * <code>
  * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
- *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
- *   dataCatalogClient.deleteEntryGroup(name);
+ *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+ *   Entry response = dataCatalogClient.getEntry(name);
  * }
  * </code>
  * </pre>

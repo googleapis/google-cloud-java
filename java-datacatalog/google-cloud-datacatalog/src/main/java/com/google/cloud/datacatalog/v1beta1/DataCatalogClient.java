@@ -52,8 +52,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
- *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
- *   dataCatalogClient.deleteEntryGroup(name);
+ *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+ *   Entry response = dataCatalogClient.getEntry(name);
  * }
  * </code>
  * </pre>
@@ -333,216 +333,6 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
-   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-   *   dataCatalogClient.deleteEntryGroup(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entry group. For example,
-   *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntryGroup(EntryGroupName name) {
-    DeleteEntryGroupRequest request =
-        DeleteEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteEntryGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
-   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-   *   dataCatalogClient.deleteEntryGroup(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entry group. For example,
-   *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntryGroup(String name) {
-    DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder().setName(name).build();
-    deleteEntryGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
-   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-   *   DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataCatalogClient.deleteEntryGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntryGroup(DeleteEntryGroupRequest request) {
-    deleteEntryGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
-   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
-   * Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
-   *   DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteEntryGroupCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
-    return stub.deleteEntryGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing entry. Only entries created through
-   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   dataCatalogClient.deleteEntry(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entry. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntry(EntryName name) {
-    DeleteEntryRequest request =
-        DeleteEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteEntry(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing entry. Only entries created through
-   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   dataCatalogClient.deleteEntry(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entry. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntry(String name) {
-    DeleteEntryRequest request = DeleteEntryRequest.newBuilder().setName(name).build();
-    deleteEntry(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing entry. Only entries created through
-   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   DeleteEntryRequest request = DeleteEntryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataCatalogClient.deleteEntry(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntry(DeleteEntryRequest request) {
-    deleteEntryCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing entry. Only entries created through
-   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
-   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
-   * [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   DeleteEntryRequest request = DeleteEntryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteEntryCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
-    return stub.deleteEntryCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Gets an entry.
    *
    * <p>Sample code:
@@ -672,465 +462,6 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return stub.lookupEntryCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
-   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-   *   boolean force = false;
-   *   dataCatalogClient.deleteTagTemplate(name, force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag template to delete. Example:
-   *     <p>&#42; projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * @param force Required. Currently, this field must always be set to `true`. This confirms the
-   *     deletion of any possible tags using this template. `force = false` will be supported in the
-   *     future.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplate(TagTemplateName name, boolean force) {
-    DeleteTagTemplateRequest request =
-        DeleteTagTemplateRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setForce(force)
-            .build();
-    deleteTagTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
-   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-   *   boolean force = false;
-   *   dataCatalogClient.deleteTagTemplate(name.toString(), force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag template to delete. Example:
-   *     <p>&#42; projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * @param force Required. Currently, this field must always be set to `true`. This confirms the
-   *     deletion of any possible tags using this template. `force = false` will be supported in the
-   *     future.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplate(String name, boolean force) {
-    DeleteTagTemplateRequest request =
-        DeleteTagTemplateRequest.newBuilder().setName(name).setForce(force).build();
-    deleteTagTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
-   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-   *   boolean force = false;
-   *   DeleteTagTemplateRequest request = DeleteTagTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setForce(force)
-   *     .build();
-   *   dataCatalogClient.deleteTagTemplate(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplate(DeleteTagTemplateRequest request) {
-    deleteTagTemplateCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
-   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
-   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
-   *   boolean force = false;
-   *   DeleteTagTemplateRequest request = DeleteTagTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setForce(force)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagTemplateCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
-    return stub.deleteTagTemplateCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
-   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
-   * information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-   *   boolean force = false;
-   *   dataCatalogClient.deleteTagTemplateField(name, force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag template field to delete. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-   * @param force Required. Currently, this field must always be set to `true`. This confirms the
-   *     deletion of this field from any tags using this field. `force = false` will be supported in
-   *     the future.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplateField(TagTemplateFieldName name, boolean force) {
-    DeleteTagTemplateFieldRequest request =
-        DeleteTagTemplateFieldRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setForce(force)
-            .build();
-    deleteTagTemplateField(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
-   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
-   * information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-   *   boolean force = false;
-   *   dataCatalogClient.deleteTagTemplateField(name.toString(), force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag template field to delete. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-   * @param force Required. Currently, this field must always be set to `true`. This confirms the
-   *     deletion of this field from any tags using this field. `force = false` will be supported in
-   *     the future.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplateField(String name, boolean force) {
-    DeleteTagTemplateFieldRequest request =
-        DeleteTagTemplateFieldRequest.newBuilder().setName(name).setForce(force).build();
-    deleteTagTemplateField(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
-   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
-   * information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-   *   boolean force = false;
-   *   DeleteTagTemplateFieldRequest request = DeleteTagTemplateFieldRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setForce(force)
-   *     .build();
-   *   dataCatalogClient.deleteTagTemplateField(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTagTemplateField(DeleteTagTemplateFieldRequest request) {
-    deleteTagTemplateFieldCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
-   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
-   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
-   * information).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
-   *   boolean force = false;
-   *   DeleteTagTemplateFieldRequest request = DeleteTagTemplateFieldRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setForce(force)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagTemplateFieldCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteTagTemplateFieldRequest, Empty>
-      deleteTagTemplateFieldCallable() {
-    return stub.deleteTagTemplateFieldCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   dataCatalogClient.deleteTag(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag to delete. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTag(EntryName name) {
-    DeleteTagRequest request =
-        DeleteTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteTag(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   dataCatalogClient.deleteTag(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the tag to delete. Example:
-   *     <p>&#42;
-   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTag(String name) {
-    DeleteTagRequest request = DeleteTagRequest.newBuilder().setName(name).build();
-    deleteTag(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   DeleteTagRequest request = DeleteTagRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataCatalogClient.deleteTag(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteTag(DeleteTagRequest request) {
-    deleteTagCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a tag.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   DeleteTagRequest request = DeleteTagRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
-    return stub.deleteTagCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
-   * does not exist. An empty policy is returned if the resource exists but does not have a policy
-   * set on it.
-   *
-   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
-   * resources synced to Data Catalog.
-   *
-   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
-   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
-   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   Policy response = dataCatalogClient.getIamPolicy(resource);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(ResourceName resource) {
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
-   * does not exist. An empty policy is returned if the resource exists but does not have a policy
-   * set on it.
-   *
-   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
-   * resources synced to Data Catalog.
-   *
-   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
-   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
-   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   Policy response = dataCatalogClient.getIamPolicy(resource.toString());
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(String resource) {
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
-   * does not exist. An empty policy is returned if the resource exists but does not have a policy
-   * set on it.
-   *
-   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
-   * resources synced to Data Catalog.
-   *
-   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
-   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
-   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   Policy response = dataCatalogClient.getIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
-   * does not exist. An empty policy is returned if the resource exists but does not have a policy
-   * set on it.
-   *
-   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
-   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
-   * resources synced to Data Catalog.
-   *
-   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
-   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
-   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = dataCatalogClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return stub.getIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1518,6 +849,108 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   dataCatalogClient.deleteEntryGroup(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entry group. For example,
+   *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntryGroup(EntryGroupName name) {
+    DeleteEntryGroupRequest request =
+        DeleteEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteEntryGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   dataCatalogClient.deleteEntryGroup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entry group. For example,
+   *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntryGroup(String name) {
+    DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder().setName(name).build();
+    deleteEntryGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataCatalogClient.deleteEntryGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntryGroup(DeleteEntryGroupRequest request) {
+    deleteEntryGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an EntryGroup. Only entry groups that do not contain entries can be deleted. Users
+   * should enable the Data Catalog API in the project identified by the `name` parameter (see [Data
+   * Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryGroupName name = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteEntryGroupCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
+    return stub.deleteEntryGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists entry groups.
    *
    * <p>Sample code:
@@ -1897,6 +1330,114 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     return stub.updateEntryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing entry. Only entries created through
+   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   dataCatalogClient.deleteEntry(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entry. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntry(EntryName name) {
+    DeleteEntryRequest request =
+        DeleteEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing entry. Only entries created through
+   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   dataCatalogClient.deleteEntry(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entry. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntry(String name) {
+    DeleteEntryRequest request = DeleteEntryRequest.newBuilder().setName(name).build();
+    deleteEntry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing entry. Only entries created through
+   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   DeleteEntryRequest request = DeleteEntryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataCatalogClient.deleteEntry(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntry(DeleteEntryRequest request) {
+    deleteEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing entry. Only entries created through
+   * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry] method can be deleted.
+   * Users should enable the Data Catalog API in the project identified by the `name` parameter (see
+   * [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   DeleteEntryRequest request = DeleteEntryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteEntryCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
+    return stub.deleteEntryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2371,6 +1912,120 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
+   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+   *   boolean force = false;
+   *   dataCatalogClient.deleteTagTemplate(name, force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag template to delete. Example:
+   *     <p>&#42; projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * @param force Required. Currently, this field must always be set to `true`. This confirms the
+   *     deletion of any possible tags using this template. `force = false` will be supported in the
+   *     future.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplate(TagTemplateName name, boolean force) {
+    DeleteTagTemplateRequest request =
+        DeleteTagTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    deleteTagTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
+   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+   *   boolean force = false;
+   *   dataCatalogClient.deleteTagTemplate(name.toString(), force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag template to delete. Example:
+   *     <p>&#42; projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   * @param force Required. Currently, this field must always be set to `true`. This confirms the
+   *     deletion of any possible tags using this template. `force = false` will be supported in the
+   *     future.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplate(String name, boolean force) {
+    DeleteTagTemplateRequest request =
+        DeleteTagTemplateRequest.newBuilder().setName(name).setForce(force).build();
+    deleteTagTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
+   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+   *   boolean force = false;
+   *   DeleteTagTemplateRequest request = DeleteTagTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setForce(force)
+   *     .build();
+   *   dataCatalogClient.deleteTagTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplate(DeleteTagTemplateRequest request) {
+    deleteTagTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag template and all tags using the template. Users should enable the Data Catalog
+   * API in the project identified by the `name` parameter (see [Data Catalog Resource Project]
+   * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateName name = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]");
+   *   boolean force = false;
+   *   DeleteTagTemplateRequest request = DeleteTagTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setForce(force)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagTemplateCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
+    return stub.deleteTagTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a field in a tag template. The user should enable the Data Catalog API in the project
    * identified by the `parent` parameter (see [Data Catalog Resource
    * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
@@ -2840,6 +2495,127 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
+   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+   *   boolean force = false;
+   *   dataCatalogClient.deleteTagTemplateField(name, force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag template field to delete. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * @param force Required. Currently, this field must always be set to `true`. This confirms the
+   *     deletion of this field from any tags using this field. `force = false` will be supported in
+   *     the future.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplateField(TagTemplateFieldName name, boolean force) {
+    DeleteTagTemplateFieldRequest request =
+        DeleteTagTemplateFieldRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    deleteTagTemplateField(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
+   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+   *   boolean force = false;
+   *   dataCatalogClient.deleteTagTemplateField(name.toString(), force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag template field to delete. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * @param force Required. Currently, this field must always be set to `true`. This confirms the
+   *     deletion of this field from any tags using this field. `force = false` will be supported in
+   *     the future.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplateField(String name, boolean force) {
+    DeleteTagTemplateFieldRequest request =
+        DeleteTagTemplateFieldRequest.newBuilder().setName(name).setForce(force).build();
+    deleteTagTemplateField(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
+   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+   *   boolean force = false;
+   *   DeleteTagTemplateFieldRequest request = DeleteTagTemplateFieldRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setForce(force)
+   *     .build();
+   *   dataCatalogClient.deleteTagTemplateField(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTagTemplateField(DeleteTagTemplateFieldRequest request) {
+    deleteTagTemplateFieldCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a field in a tag template and all uses of that field. Users should enable the Data
+   * Catalog API in the project identified by the `name` parameter (see [Data Catalog Resource
+   * Project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for more
+   * information).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   TagTemplateFieldName name = TagTemplateFieldName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]", "[FIELD]");
+   *   boolean force = false;
+   *   DeleteTagTemplateFieldRequest request = DeleteTagTemplateFieldRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setForce(force)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagTemplateFieldCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteTagTemplateFieldRequest, Empty>
+      deleteTagTemplateFieldCallable() {
+    return stub.deleteTagTemplateFieldCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry]. Note: The project
    * identified by the `parent` parameter for the
    * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
@@ -3056,6 +2832,98 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return stub.updateTagCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   dataCatalogClient.deleteTag(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag to delete. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTag(EntryName name) {
+    DeleteTagRequest request =
+        DeleteTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   dataCatalogClient.deleteTag(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the tag to delete. Example:
+   *     <p>&#42;
+   *     projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTag(String name) {
+    DeleteTagRequest request = DeleteTagRequest.newBuilder().setName(name).build();
+    deleteTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataCatalogClient.deleteTag(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTag(DeleteTagRequest request) {
+    deleteTagCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   EntryName name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   DeleteTagRequest request = DeleteTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataCatalogClient.deleteTagCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
+    return stub.deleteTagCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -3327,6 +3195,138 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy response = dataCatalogClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy response = dataCatalogClient.getIamPolicy(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = dataCatalogClient.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = dataCatalogClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
