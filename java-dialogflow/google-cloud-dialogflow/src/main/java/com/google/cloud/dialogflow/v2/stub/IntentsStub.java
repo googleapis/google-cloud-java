@@ -52,21 +52,6 @@ public abstract class IntentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteIntentCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
-      batchDeleteIntentsOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: batchDeleteIntentsOperationCallable()");
-  }
-
-  public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchDeleteIntentsCallable()");
-  }
-
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listIntentsPagedCallable()");
   }
@@ -87,6 +72,10 @@ public abstract class IntentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateIntentCallable()");
   }
 
+  public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIntentCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
@@ -96,6 +85,17 @@ public abstract class IntentsStub implements BackgroundResource {
 
   public UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchUpdateIntentsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteIntentsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteIntentsCallable()");
   }
 
   @Override

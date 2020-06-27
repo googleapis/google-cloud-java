@@ -100,48 +100,6 @@ public class SessionEntityTypesClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteSessionEntityTypeTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockSessionEntityTypes.addResponse(expectedResponse);
-
-    SessionEntityTypeName name =
-        SessionEntityTypeName.ofProjectSessionEntityTypeName(
-            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-
-    client.deleteSessionEntityType(name);
-
-    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteSessionEntityTypeRequest actualRequest =
-        (DeleteSessionEntityTypeRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, SessionEntityTypeName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteSessionEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockSessionEntityTypes.addException(exception);
-
-    try {
-      SessionEntityTypeName name =
-          SessionEntityTypeName.ofProjectSessionEntityTypeName(
-              "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-
-      client.deleteSessionEntityType(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listSessionEntityTypesTest() {
     String nextPageToken = "";
     SessionEntityType sessionEntityTypesElement = SessionEntityType.newBuilder().build();
@@ -361,6 +319,48 @@ public class SessionEntityTypesClientTest {
       SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
 
       client.updateSessionEntityType(sessionEntityType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSessionEntityTypeTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSessionEntityTypes.addResponse(expectedResponse);
+
+    SessionEntityTypeName name =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+
+    client.deleteSessionEntityType(name);
+
+    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSessionEntityTypeRequest actualRequest =
+        (DeleteSessionEntityTypeRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, SessionEntityTypeName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSessionEntityTypeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSessionEntityTypes.addException(exception);
+
+    try {
+      SessionEntityTypeName name =
+          SessionEntityTypeName.ofProjectSessionEntityTypeName(
+              "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+
+      client.deleteSessionEntityType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

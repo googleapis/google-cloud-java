@@ -51,16 +51,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
 
-  private static final MethodDescriptor<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeMethodDescriptor =
-          MethodDescriptor.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.dialogflow.v2.SessionEntityTypes/DeleteSessionEntityType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteSessionEntityTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<
           ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesMethodDescriptor =
@@ -104,11 +94,19 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                   ProtoUtils.marshaller(UpdateSessionEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SessionEntityType.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeMethodDescriptor =
+          MethodDescriptor.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.SessionEntityTypes/DeleteSessionEntityType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSessionEntityTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeCallable;
   private final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable;
   private final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
@@ -119,6 +117,8 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
       createSessionEntityTypeCallable;
   private final UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable;
+  private final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -161,20 +161,6 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteSessionEntityTypeRequest, Empty>
-        deleteSessionEntityTypeTransportSettings =
-            GrpcCallSettings.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteSessionEntityTypeMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteSessionEntityTypeRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteSessionEntityTypeRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
         listSessionEntityTypesTransportSettings =
             GrpcCallSettings
@@ -234,12 +220,21 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteSessionEntityTypeRequest, Empty>
+        deleteSessionEntityTypeTransportSettings =
+            GrpcCallSettings.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSessionEntityTypeMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteSessionEntityTypeRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteSessionEntityTypeRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.deleteSessionEntityTypeCallable =
-        callableFactory.createUnaryCallable(
-            deleteSessionEntityTypeTransportSettings,
-            settings.deleteSessionEntityTypeSettings(),
-            clientContext);
     this.listSessionEntityTypesCallable =
         callableFactory.createUnaryCallable(
             listSessionEntityTypesTransportSettings,
@@ -265,12 +260,13 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
             updateSessionEntityTypeTransportSettings,
             settings.updateSessionEntityTypeSettings(),
             clientContext);
+    this.deleteSessionEntityTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteSessionEntityTypeTransportSettings,
+            settings.deleteSessionEntityTypeSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
-    return deleteSessionEntityTypeCallable;
   }
 
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
@@ -296,6 +292,10 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   public UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     return updateSessionEntityTypeCallable;
+  }
+
+  public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
+    return deleteSessionEntityTypeCallable;
   }
 
   @Override

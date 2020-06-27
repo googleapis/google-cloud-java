@@ -55,32 +55,6 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEntityTypeCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: batchDeleteEntityTypesOperationCallable()");
-  }
-
-  public UnaryCallable<BatchDeleteEntityTypesRequest, Operation> batchDeleteEntityTypesCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchDeleteEntityTypesCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: batchDeleteEntitiesOperationCallable()");
-  }
-
-  public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchDeleteEntitiesCallable()");
-  }
-
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntityTypesPagedCallable()");
@@ -102,6 +76,10 @@ public abstract class EntityTypesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateEntityTypeCallable()");
   }
 
+  public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntityTypeCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
@@ -111,6 +89,17 @@ public abstract class EntityTypesStub implements BackgroundResource {
 
   public UnaryCallable<BatchUpdateEntityTypesRequest, Operation> batchUpdateEntityTypesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchUpdateEntityTypesCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteEntityTypesOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteEntityTypesRequest, Operation> batchDeleteEntityTypesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteEntityTypesCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -133,6 +122,17 @@ public abstract class EntityTypesStub implements BackgroundResource {
 
   public UnaryCallable<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchUpdateEntitiesCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteEntitiesOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteEntitiesCallable()");
   }
 
   @Override

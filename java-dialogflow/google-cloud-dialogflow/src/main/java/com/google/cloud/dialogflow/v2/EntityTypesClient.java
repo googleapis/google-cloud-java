@@ -74,7 +74,7 @@ import javax.annotation.Generated;
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
- *   entityTypesClient.deleteEntityType(name);
+ *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * </code>
  * </pre>
@@ -193,481 +193,6 @@ public class EntityTypesClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   entityTypesClient.deleteEntityType(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntityType(EntityTypeName name) {
-    DeleteEntityTypeRequest request =
-        DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteEntityType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   entityTypesClient.deleteEntityType(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntityType(String name) {
-    DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder().setName(name).build();
-    deleteEntityType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   entityTypesClient.deleteEntityType(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEntityType(DeleteEntityTypeRequest request) {
-    deleteEntityTypeCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = entityTypesClient.deleteEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
-    return stub.deleteEntityTypeCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
-   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   entityTypesClient.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
-   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
-   *     same agent as `parent`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
-      AgentName parent, List<String> entityTypeNames) {
-    BatchDeleteEntityTypesRequest request =
-        BatchDeleteEntityTypesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllEntityTypeNames(entityTypeNames)
-            .build();
-    return batchDeleteEntityTypesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
-   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   entityTypesClient.batchDeleteEntityTypesAsync(parent.toString(), entityTypeNames).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
-   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
-   *     same agent as `parent`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
-      String parent, List<String> entityTypeNames) {
-    BatchDeleteEntityTypesRequest request =
-        BatchDeleteEntityTypesRequest.newBuilder()
-            .setParent(parent)
-            .addAllEntityTypeNames(entityTypeNames)
-            .build();
-    return batchDeleteEntityTypesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
-   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityTypeNames(entityTypeNames)
-   *     .build();
-   *   entityTypesClient.batchDeleteEntityTypesAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
-      BatchDeleteEntityTypesRequest request) {
-    return batchDeleteEntityTypesOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
-   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityTypeNames(entityTypeNames)
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntityTypesOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationCallable() {
-    return stub.batchDeleteEntityTypesOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
-   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityTypeNames(entityTypeNames)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntityTypesCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchDeleteEntityTypesRequest, Operation>
-      batchDeleteEntityTypesCallable() {
-    return stub.batchDeleteEntityTypesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
-   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      EntityTypeName parent, List<String> entityValues) {
-    BatchDeleteEntitiesRequest request =
-        BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllEntityValues(entityValues)
-            .build();
-    return batchDeleteEntitiesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
-   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      String parent, List<String> entityValues) {
-    BatchDeleteEntitiesRequest request =
-        BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(parent)
-            .addAllEntityValues(entityValues)
-            .build();
-    return batchDeleteEntitiesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   String languageCode = "";
-   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
-   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @param languageCode Optional. The language used to access language-specific data. If not
-   *     specified, the agent's default language is used. For more information, see [Multilingual
-   *     intent and entity
-   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      EntityTypeName parent, List<String> entityValues, String languageCode) {
-    BatchDeleteEntitiesRequest request =
-        BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllEntityValues(entityValues)
-            .setLanguageCode(languageCode)
-            .build();
-    return batchDeleteEntitiesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   String languageCode = "";
-   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues, languageCode).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
-   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
-   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
-   * @param languageCode Optional. The language used to access language-specific data. If not
-   *     specified, the agent's default language is used. For more information, see [Multilingual
-   *     intent and entity
-   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      String parent, List<String> entityValues, String languageCode) {
-    BatchDeleteEntitiesRequest request =
-        BatchDeleteEntitiesRequest.newBuilder()
-            .setParent(parent)
-            .addAllEntityValues(entityValues)
-            .setLanguageCode(languageCode)
-            .build();
-    return batchDeleteEntitiesAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityValues(entityValues)
-   *     .build();
-   *   entityTypesClient.batchDeleteEntitiesAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
-      BatchDeleteEntitiesRequest request) {
-    return batchDeleteEntitiesOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityValues(entityValues)
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntitiesOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationCallable() {
-    return stub.batchDeleteEntitiesOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes entities in the specified entity type.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
-   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllEntityValues(entityValues)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntitiesCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
-    return stub.batchDeleteEntitiesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1286,6 +811,96 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   entityTypesClient.deleteEntityType(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntityType(EntityTypeName name) {
+    DeleteEntityTypeRequest request =
+        DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   entityTypesClient.deleteEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntityType(String name) {
+    DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder().setName(name).build();
+    deleteEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   entityTypesClient.deleteEntityType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEntityType(DeleteEntityTypeRequest request) {
+    deleteEntityTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   DeleteEntityTypeRequest request = DeleteEntityTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = entityTypesClient.deleteEntityTypeCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
+    return stub.deleteEntityTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Updates/Creates multiple entity types in the specified agent.
    *
    * <p>Operation &lt;response:
@@ -1365,6 +980,159 @@ public class EntityTypesClient implements BackgroundResource {
   public final UnaryCallable<BatchUpdateEntityTypesRequest, Operation>
       batchUpdateEntityTypesCallable() {
     return stub.batchUpdateEntityTypesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
+   *     same agent as `parent`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
+      AgentName parent, List<String> entityTypeNames) {
+    BatchDeleteEntityTypesRequest request =
+        BatchDeleteEntityTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllEntityTypeNames(entityTypeNames)
+            .build();
+    return batchDeleteEntityTypesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(parent.toString(), entityTypeNames).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to delete all entities types for. Format:
+   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param entityTypeNames Required. The names entity types to delete. All names must point to the
+   *     same agent as `parent`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
+      String parent, List<String> entityTypeNames) {
+    BatchDeleteEntityTypesRequest request =
+        BatchDeleteEntityTypesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityTypeNames(entityTypeNames)
+            .build();
+    return batchDeleteEntityTypesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityTypeNames(entityTypeNames)
+   *     .build();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntityTypesAsync(
+      BatchDeleteEntityTypesRequest request) {
+    return batchDeleteEntityTypesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityTypeNames(entityTypeNames)
+   *     .build();
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntityTypesOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationCallable() {
+    return stub.batchDeleteEntityTypesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entity types in the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntityTypesRequest request = BatchDeleteEntityTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityTypeNames(entityTypeNames)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntityTypesCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesCallable() {
+    return stub.batchDeleteEntityTypesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1822,6 +1590,238 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesCallable() {
     return stub.batchUpdateEntitiesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      EntityTypeName parent, List<String> entityValues) {
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllEntityValues(entityValues)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      String parent, List<String> entityValues) {
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityValues(entityValues)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   String languageCode = "";
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      EntityTypeName parent, List<String> entityValues, String languageCode) {
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllEntityValues(entityValues)
+            .setLanguageCode(languageCode)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   String languageCode = "";
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues, languageCode).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the entity type to delete entries for. Format:
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param entityValues Required. The reference `values` of the entities to delete. Note that these
+   *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
+   * @param languageCode Optional. The language used to access language-specific data. If not
+   *     specified, the agent's default language is used. For more information, see [Multilingual
+   *     intent and entity
+   *     data](https://cloud.google.com/dialogflow/docs/agents-multilingual#intent-entity).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      String parent, List<String> entityValues, String languageCode) {
+    BatchDeleteEntitiesRequest request =
+        BatchDeleteEntitiesRequest.newBuilder()
+            .setParent(parent)
+            .addAllEntityValues(entityValues)
+            .setLanguageCode(languageCode)
+            .build();
+    return batchDeleteEntitiesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityValues(entityValues)
+   *     .build();
+   *   entityTypesClient.batchDeleteEntitiesAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, Struct> batchDeleteEntitiesAsync(
+      BatchDeleteEntitiesRequest request) {
+    return batchDeleteEntitiesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityValues(entityValues)
+   *     .build();
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntitiesOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationCallable() {
+    return stub.batchDeleteEntitiesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes entities in the specified entity type.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+   *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
+   *   BatchDeleteEntitiesRequest request = BatchDeleteEntitiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllEntityValues(entityValues)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntitiesCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
+    return stub.batchDeleteEntitiesCallable();
   }
 
   @Override

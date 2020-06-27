@@ -101,82 +101,6 @@ public class ContextsClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteContextTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockContexts.addResponse(expectedResponse);
-
-    ContextName name =
-        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
-
-    client.deleteContext(name);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteContextRequest actualRequest = (DeleteContextRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteContextExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      ContextName name =
-          ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
-
-      client.deleteContext(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAllContextsTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockContexts.addResponse(expectedResponse);
-
-    SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-
-    client.deleteAllContexts(parent);
-
-    List<AbstractMessage> actualRequests = mockContexts.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAllContextsRequest actualRequest = (DeleteAllContextsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAllContextsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockContexts.addException(exception);
-
-    try {
-      SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-
-      client.deleteAllContexts(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listContextsTest() {
     String nextPageToken = "";
     Context contextsElement = Context.newBuilder().build();
@@ -351,6 +275,82 @@ public class ContextsClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateContext(context, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteContextTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContexts.addResponse(expectedResponse);
+
+    ContextName name =
+        ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+
+    client.deleteContext(name);
+
+    List<AbstractMessage> actualRequests = mockContexts.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteContextRequest actualRequest = (DeleteContextRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ContextName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteContextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockContexts.addException(exception);
+
+    try {
+      ContextName name =
+          ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+
+      client.deleteContext(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAllContextsTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContexts.addResponse(expectedResponse);
+
+    SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
+    client.deleteAllContexts(parent);
+
+    List<AbstractMessage> actualRequests = mockContexts.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAllContextsRequest actualRequest = (DeleteAllContextsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, SessionName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAllContextsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockContexts.addException(exception);
+
+    try {
+      SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
+      client.deleteAllContexts(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

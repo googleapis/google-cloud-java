@@ -105,92 +105,6 @@ public class IntentsClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteIntentTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockIntents.addResponse(expectedResponse);
-
-    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-
-    client.deleteIntent(name);
-
-    List<AbstractMessage> actualRequests = mockIntents.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIntents.addException(exception);
-
-    try {
-      IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
-
-      client.deleteIntent(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchDeleteIntentsTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("batchDeleteIntentsTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockIntents.addResponse(resultOperation);
-
-    AgentName parent = AgentName.of("[PROJECT]");
-    List<Intent> intents = new ArrayList<>();
-
-    Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIntents.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
-    Assert.assertEquals(intents, actualRequest.getIntentsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchDeleteIntentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIntents.addException(exception);
-
-    try {
-      AgentName parent = AgentName.of("[PROJECT]");
-      List<Intent> intents = new ArrayList<>();
-
-      client.batchDeleteIntentsAsync(parent, intents).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listIntentsTest() {
     String nextPageToken = "";
     Intent intentsElement = Intent.newBuilder().build();
@@ -656,6 +570,43 @@ public class IntentsClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteIntentTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIntents.addResponse(expectedResponse);
+
+    IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+
+    client.deleteIntent(name);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteIntentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+
+      client.deleteIntent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void batchUpdateIntentsTest() throws Exception {
     BatchUpdateIntentsResponse expectedResponse = BatchUpdateIntentsResponse.newBuilder().build();
     Operation resultOperation =
@@ -746,6 +697,55 @@ public class IntentsClientTest {
       IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
 
       client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchDeleteIntentsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    AgentName parent = AgentName.of("[PROJECT]");
+    List<Intent> intents = new ArrayList<>();
+
+    Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(intents, actualRequest.getIntentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchDeleteIntentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      AgentName parent = AgentName.of("[PROJECT]");
+      List<Intent> intents = new ArrayList<>();
+
+      client.batchDeleteIntentsAsync(parent, intents).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

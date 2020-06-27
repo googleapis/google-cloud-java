@@ -41,14 +41,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ContextsStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteContextCallable()");
-  }
-
-  public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAllContextsCallable()");
-  }
-
   public UnaryCallable<ListContextsRequest, ListContextsPagedResponse> listContextsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listContextsPagedCallable()");
   }
@@ -67,6 +59,14 @@ public abstract class ContextsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateContextRequest, Context> updateContextCallable() {
     throw new UnsupportedOperationException("Not implemented: updateContextCallable()");
+  }
+
+  public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteContextCallable()");
+  }
+
+  public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAllContextsCallable()");
   }
 
   @Override

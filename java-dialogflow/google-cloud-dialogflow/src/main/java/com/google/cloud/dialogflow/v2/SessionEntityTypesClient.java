@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
- *   sessionEntityTypesClient.deleteSessionEntityType(name);
+ *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
  * </pre>
@@ -166,120 +166,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionEntityTypesStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified session entity type.
-   *
-   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
-   * you need to use session entities with Google Assistant integration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   sessionEntityTypesClient.deleteSessionEntityType(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSessionEntityType(SessionEntityTypeName name) {
-    DeleteSessionEntityTypeRequest request =
-        DeleteSessionEntityTypeRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteSessionEntityType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified session entity type.
-   *
-   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
-   * you need to use session entities with Google Assistant integration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   sessionEntityTypesClient.deleteSessionEntityType(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSessionEntityType(String name) {
-    DeleteSessionEntityTypeRequest request =
-        DeleteSessionEntityTypeRequest.newBuilder().setName(name).build();
-    deleteSessionEntityType(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified session entity type.
-   *
-   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
-   * you need to use session entities with Google Assistant integration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   sessionEntityTypesClient.deleteSessionEntityType(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSessionEntityType(DeleteSessionEntityTypeRequest request) {
-    deleteSessionEntityTypeCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified session entity type.
-   *
-   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
-   * you need to use session entities with Google Assistant integration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = sessionEntityTypesClient.deleteSessionEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeCallable() {
-    return stub.deleteSessionEntityTypeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -792,6 +678,120 @@ public class SessionEntityTypesClient implements BackgroundResource {
   public final UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     return stub.updateSessionEntityTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   sessionEntityTypesClient.deleteSessionEntityType(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
+   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
+   *     not specified, we assume default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSessionEntityType(SessionEntityTypeName name) {
+    DeleteSessionEntityTypeRequest request =
+        DeleteSessionEntityTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSessionEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   sessionEntityTypesClient.deleteSessionEntityType(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
+   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
+   *     not specified, we assume default '-' user.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSessionEntityType(String name) {
+    DeleteSessionEntityTypeRequest request =
+        DeleteSessionEntityTypeRequest.newBuilder().setName(name).build();
+    deleteSessionEntityType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   sessionEntityTypesClient.deleteSessionEntityType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSessionEntityType(DeleteSessionEntityTypeRequest request) {
+    deleteSessionEntityTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = sessionEntityTypesClient.deleteSessionEntityTypeCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeCallable() {
+    return stub.deleteSessionEntityTypeCallable();
   }
 
   @Override

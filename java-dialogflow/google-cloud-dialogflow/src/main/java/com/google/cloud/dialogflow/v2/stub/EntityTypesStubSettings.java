@@ -83,16 +83,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteEntityType to 30 seconds:
+ * <p>For example, to set the total timeout of getEntityType to 30 seconds:
  *
  * <pre>
  * <code>
  * EntityTypesStubSettings.Builder entityTypesSettingsBuilder =
  *     EntityTypesStubSettings.newBuilder();
  * entityTypesSettingsBuilder
- *     .deleteEntityTypeSettings()
+ *     .getEntityTypeSettings()
  *     .setRetrySettings(
- *         entityTypesSettingsBuilder.deleteEntityTypeSettings().getRetrySettings().toBuilder()
+ *         entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
@@ -109,26 +109,22 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
-  private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
-  private final UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
-      batchDeleteEntityTypesSettings;
-  private final OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationSettings;
-  private final UnaryCallSettings<BatchDeleteEntitiesRequest, Operation>
-      batchDeleteEntitiesSettings;
-  private final OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationSettings;
   private final PagedCallSettings<
           ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
       listEntityTypesSettings;
   private final UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
   private final UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings;
   private final UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings;
+  private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
   private final UnaryCallSettings<BatchUpdateEntityTypesRequest, Operation>
       batchUpdateEntityTypesSettings;
   private final OperationCallSettings<
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationSettings;
+  private final UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesSettings;
+  private final OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationSettings;
   private final UnaryCallSettings<BatchCreateEntitiesRequest, Operation>
       batchCreateEntitiesSettings;
   private final OperationCallSettings<BatchCreateEntitiesRequest, Empty, Struct>
@@ -137,36 +133,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       batchUpdateEntitiesSettings;
   private final OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationSettings;
-
-  /** Returns the object with the settings used for calls to deleteEntityType. */
-  public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
-    return deleteEntityTypeSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
-  public UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
-      batchDeleteEntityTypesSettings() {
-    return batchDeleteEntityTypesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
-      batchDeleteEntityTypesOperationSettings() {
-    return batchDeleteEntityTypesOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteEntities. */
-  public UnaryCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesSettings() {
-    return batchDeleteEntitiesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteEntities. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
-      batchDeleteEntitiesOperationSettings() {
-    return batchDeleteEntitiesOperationSettings;
-  }
+  private final UnaryCallSettings<BatchDeleteEntitiesRequest, Operation>
+      batchDeleteEntitiesSettings;
+  private final OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationSettings;
 
   /** Returns the object with the settings used for calls to listEntityTypes. */
   public PagedCallSettings<
@@ -190,6 +160,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     return updateEntityTypeSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteEntityType. */
+  public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
+    return deleteEntityTypeSettings;
+  }
+
   /** Returns the object with the settings used for calls to batchUpdateEntityTypes. */
   public UnaryCallSettings<BatchUpdateEntityTypesRequest, Operation>
       batchUpdateEntityTypesSettings() {
@@ -202,6 +177,19 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationSettings() {
     return batchUpdateEntityTypesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
+  public UnaryCallSettings<BatchDeleteEntityTypesRequest, Operation>
+      batchDeleteEntityTypesSettings() {
+    return batchDeleteEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
+      batchDeleteEntityTypesOperationSettings() {
+    return batchDeleteEntityTypesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to batchCreateEntities. */
@@ -226,6 +214,18 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   public OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationSettings() {
     return batchUpdateEntitiesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntities. */
+  public UnaryCallSettings<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesSettings() {
+    return batchDeleteEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteEntities. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
+      batchDeleteEntitiesOperationSettings() {
+    return batchDeleteEntitiesOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -297,26 +297,26 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   protected EntityTypesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
-    batchDeleteEntityTypesSettings = settingsBuilder.batchDeleteEntityTypesSettings().build();
-    batchDeleteEntityTypesOperationSettings =
-        settingsBuilder.batchDeleteEntityTypesOperationSettings().build();
-    batchDeleteEntitiesSettings = settingsBuilder.batchDeleteEntitiesSettings().build();
-    batchDeleteEntitiesOperationSettings =
-        settingsBuilder.batchDeleteEntitiesOperationSettings().build();
     listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
     getEntityTypeSettings = settingsBuilder.getEntityTypeSettings().build();
     createEntityTypeSettings = settingsBuilder.createEntityTypeSettings().build();
     updateEntityTypeSettings = settingsBuilder.updateEntityTypeSettings().build();
+    deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
     batchUpdateEntityTypesSettings = settingsBuilder.batchUpdateEntityTypesSettings().build();
     batchUpdateEntityTypesOperationSettings =
         settingsBuilder.batchUpdateEntityTypesOperationSettings().build();
+    batchDeleteEntityTypesSettings = settingsBuilder.batchDeleteEntityTypesSettings().build();
+    batchDeleteEntityTypesOperationSettings =
+        settingsBuilder.batchDeleteEntityTypesOperationSettings().build();
     batchCreateEntitiesSettings = settingsBuilder.batchCreateEntitiesSettings().build();
     batchCreateEntitiesOperationSettings =
         settingsBuilder.batchCreateEntitiesOperationSettings().build();
     batchUpdateEntitiesSettings = settingsBuilder.batchUpdateEntitiesSettings().build();
     batchUpdateEntitiesOperationSettings =
         settingsBuilder.batchUpdateEntitiesOperationSettings().build();
+    batchDeleteEntitiesSettings = settingsBuilder.batchDeleteEntitiesSettings().build();
+    batchDeleteEntitiesOperationSettings =
+        settingsBuilder.batchDeleteEntitiesOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -379,16 +379,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   public static class Builder extends StubSettings.Builder<EntityTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
-        deleteEntityTypeSettings;
-    private final UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
-        batchDeleteEntityTypesSettings;
-    private final OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
-        batchDeleteEntityTypesOperationSettings;
-    private final UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
-        batchDeleteEntitiesSettings;
-    private final OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
-        batchDeleteEntitiesOperationSettings;
     private final PagedCallSettings.Builder<
             ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
         listEntityTypesSettings;
@@ -397,11 +387,17 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         createEntityTypeSettings;
     private final UnaryCallSettings.Builder<UpdateEntityTypeRequest, EntityType>
         updateEntityTypeSettings;
+    private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
+        deleteEntityTypeSettings;
     private final UnaryCallSettings.Builder<BatchUpdateEntityTypesRequest, Operation>
         batchUpdateEntityTypesSettings;
     private final OperationCallSettings.Builder<
             BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
         batchUpdateEntityTypesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
+        batchDeleteEntityTypesSettings;
+    private final OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
+        batchDeleteEntityTypesOperationSettings;
     private final UnaryCallSettings.Builder<BatchCreateEntitiesRequest, Operation>
         batchCreateEntitiesSettings;
     private final OperationCallSettings.Builder<BatchCreateEntitiesRequest, Empty, Struct>
@@ -410,6 +406,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         batchUpdateEntitiesSettings;
     private final OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
         batchUpdateEntitiesOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
+        batchDeleteEntitiesSettings;
+    private final OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
+        batchDeleteEntitiesOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -421,6 +421,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -440,8 +445,27 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -452,16 +476,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      batchDeleteEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      batchDeleteEntityTypesOperationSettings = OperationCallSettings.newBuilder();
-
-      batchDeleteEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      batchDeleteEntitiesOperationSettings = OperationCallSettings.newBuilder();
-
       listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
 
       getEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -470,9 +484,15 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
       updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       batchUpdateEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       batchUpdateEntityTypesOperationSettings = OperationCallSettings.newBuilder();
+
+      batchDeleteEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchDeleteEntityTypesOperationSettings = OperationCallSettings.newBuilder();
 
       batchCreateEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -482,18 +502,22 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
       batchUpdateEntitiesOperationSettings = OperationCallSettings.newBuilder();
 
+      batchDeleteEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchDeleteEntitiesOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteEntityTypeSettings,
-              batchDeleteEntityTypesSettings,
-              batchDeleteEntitiesSettings,
               listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
+              deleteEntityTypeSettings,
               batchUpdateEntityTypesSettings,
+              batchDeleteEntityTypesSettings,
               batchCreateEntitiesSettings,
-              batchUpdateEntitiesSettings);
+              batchUpdateEntitiesSettings,
+              batchDeleteEntitiesSettings);
 
       initDefaults(this);
     }
@@ -508,21 +532,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .deleteEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchDeleteEntityTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchDeleteEntitiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listEntityTypesSettings()
@@ -545,7 +554,17 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .deleteEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .batchUpdateEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .batchDeleteEntityTypesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -558,52 +577,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .batchUpdateEntitiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       builder
-          .batchDeleteEntityTypesOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<BatchDeleteEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .batchDeleteEntitiesOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<BatchDeleteEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
+          .batchDeleteEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .batchUpdateEntityTypesOperationSettings()
           .setInitialCallSettings(
@@ -615,6 +593,29 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
                   BatchUpdateEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .batchDeleteEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
@@ -674,6 +675,29 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+      builder
+          .batchDeleteEntitiesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteEntitiesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -681,39 +705,39 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(EntityTypesStubSettings settings) {
       super(settings);
 
-      deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
-      batchDeleteEntityTypesSettings = settings.batchDeleteEntityTypesSettings.toBuilder();
-      batchDeleteEntityTypesOperationSettings =
-          settings.batchDeleteEntityTypesOperationSettings.toBuilder();
-      batchDeleteEntitiesSettings = settings.batchDeleteEntitiesSettings.toBuilder();
-      batchDeleteEntitiesOperationSettings =
-          settings.batchDeleteEntitiesOperationSettings.toBuilder();
       listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
       getEntityTypeSettings = settings.getEntityTypeSettings.toBuilder();
       createEntityTypeSettings = settings.createEntityTypeSettings.toBuilder();
       updateEntityTypeSettings = settings.updateEntityTypeSettings.toBuilder();
+      deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
       batchUpdateEntityTypesSettings = settings.batchUpdateEntityTypesSettings.toBuilder();
       batchUpdateEntityTypesOperationSettings =
           settings.batchUpdateEntityTypesOperationSettings.toBuilder();
+      batchDeleteEntityTypesSettings = settings.batchDeleteEntityTypesSettings.toBuilder();
+      batchDeleteEntityTypesOperationSettings =
+          settings.batchDeleteEntityTypesOperationSettings.toBuilder();
       batchCreateEntitiesSettings = settings.batchCreateEntitiesSettings.toBuilder();
       batchCreateEntitiesOperationSettings =
           settings.batchCreateEntitiesOperationSettings.toBuilder();
       batchUpdateEntitiesSettings = settings.batchUpdateEntitiesSettings.toBuilder();
       batchUpdateEntitiesOperationSettings =
           settings.batchUpdateEntitiesOperationSettings.toBuilder();
+      batchDeleteEntitiesSettings = settings.batchDeleteEntitiesSettings.toBuilder();
+      batchDeleteEntitiesOperationSettings =
+          settings.batchDeleteEntitiesOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteEntityTypeSettings,
-              batchDeleteEntityTypesSettings,
-              batchDeleteEntitiesSettings,
               listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
+              deleteEntityTypeSettings,
               batchUpdateEntityTypesSettings,
+              batchDeleteEntityTypesSettings,
               batchCreateEntitiesSettings,
-              batchUpdateEntitiesSettings);
+              batchUpdateEntitiesSettings,
+              batchDeleteEntitiesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -730,39 +754,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEntityType. */
-    public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
-      return deleteEntityTypeSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
-    public UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
-        batchDeleteEntityTypesSettings() {
-      return batchDeleteEntityTypesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
-        batchDeleteEntityTypesOperationSettings() {
-      return batchDeleteEntityTypesOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
-    public UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
-        batchDeleteEntitiesSettings() {
-      return batchDeleteEntitiesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
-        batchDeleteEntitiesOperationSettings() {
-      return batchDeleteEntitiesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listEntityTypes. */
@@ -789,6 +780,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       return updateEntityTypeSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteEntityType. */
+    public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
+      return deleteEntityTypeSettings;
+    }
+
     /** Returns the builder for the settings used for calls to batchUpdateEntityTypes. */
     public UnaryCallSettings.Builder<BatchUpdateEntityTypesRequest, Operation>
         batchUpdateEntityTypesSettings() {
@@ -802,6 +798,20 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
         batchUpdateEntityTypesOperationSettings() {
       return batchUpdateEntityTypesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
+    public UnaryCallSettings.Builder<BatchDeleteEntityTypesRequest, Operation>
+        batchDeleteEntityTypesSettings() {
+      return batchDeleteEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
+        batchDeleteEntityTypesOperationSettings() {
+      return batchDeleteEntityTypesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchCreateEntities. */
@@ -830,6 +840,20 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     public OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
         batchUpdateEntitiesOperationSettings() {
       return batchUpdateEntitiesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
+    public UnaryCallSettings.Builder<BatchDeleteEntitiesRequest, Operation>
+        batchDeleteEntitiesSettings() {
+      return batchDeleteEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteEntities. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
+        batchDeleteEntitiesOperationSettings() {
+      return batchDeleteEntitiesOperationSettings;
     }
 
     @Override

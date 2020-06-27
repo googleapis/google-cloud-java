@@ -447,9 +447,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The agentVersion.
    */
@@ -473,9 +471,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
    * </pre>
    *
-   * <code>
-   * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for agentVersion.
    */
@@ -1218,9 +1214,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The agentVersion.
      */
@@ -1243,9 +1237,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for agentVersion.
      */
@@ -1268,9 +1260,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The agentVersion to set.
      * @return This builder for chaining.
@@ -1292,9 +1282,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1312,9 +1300,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for agentVersion to set.
      * @return This builder for chaining.

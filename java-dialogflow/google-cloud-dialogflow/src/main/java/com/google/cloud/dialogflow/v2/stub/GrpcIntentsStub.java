@@ -58,22 +58,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcIntentsStub extends IntentsStub {
 
-  private static final MethodDescriptor<DeleteIntentRequest, Empty> deleteIntentMethodDescriptor =
-      MethodDescriptor.<DeleteIntentRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.dialogflow.v2.Intents/DeleteIntent")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteIntentRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<BatchDeleteIntentsRequest, Operation>
-      batchDeleteIntentsMethodDescriptor =
-          MethodDescriptor.<BatchDeleteIntentsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.Intents/BatchDeleteIntents")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchDeleteIntentsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListIntentsRequest, ListIntentsResponse>
       listIntentsMethodDescriptor =
           MethodDescriptor.<ListIntentsRequest, ListIntentsResponse>newBuilder()
@@ -104,6 +88,13 @@ public class GrpcIntentsStub extends IntentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<DeleteIntentRequest, Empty> deleteIntentMethodDescriptor =
+      MethodDescriptor.<DeleteIntentRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.v2.Intents/DeleteIntent")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteIntentRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<BatchUpdateIntentsRequest, Operation>
       batchUpdateIntentsMethodDescriptor =
           MethodDescriptor.<BatchUpdateIntentsRequest, Operation>newBuilder()
@@ -113,23 +104,32 @@ public class GrpcIntentsStub extends IntentsStub {
                   ProtoUtils.marshaller(BatchUpdateIntentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<BatchDeleteIntentsRequest, Operation>
+      batchDeleteIntentsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteIntentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Intents/BatchDeleteIntents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteIntentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable;
-  private final UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable;
-  private final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
-      batchDeleteIntentsOperationCallable;
   private final UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable;
   private final UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse>
       listIntentsPagedCallable;
   private final UnaryCallable<GetIntentRequest, Intent> getIntentCallable;
   private final UnaryCallable<CreateIntentRequest, Intent> createIntentCallable;
   private final UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable;
+  private final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable;
   private final UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable;
   private final OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable;
+  private final UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable;
+  private final OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -168,32 +168,6 @@ public class GrpcIntentsStub extends IntentsStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteIntentRequest, Empty> deleteIntentTransportSettings =
-        GrpcCallSettings.<DeleteIntentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteIntentMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteIntentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteIntentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsTransportSettings =
-        GrpcCallSettings.<BatchDeleteIntentsRequest, Operation>newBuilder()
-            .setMethodDescriptor(batchDeleteIntentsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<BatchDeleteIntentsRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchDeleteIntentsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListIntentsRequest, ListIntentsResponse> listIntentsTransportSettings =
         GrpcCallSettings.<ListIntentsRequest, ListIntentsResponse>newBuilder()
             .setMethodDescriptor(listIntentsMethodDescriptor)
@@ -246,6 +220,19 @@ public class GrpcIntentsStub extends IntentsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteIntentRequest, Empty> deleteIntentTransportSettings =
+        GrpcCallSettings.<DeleteIntentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteIntentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteIntentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteIntentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsTransportSettings =
         GrpcCallSettings.<BatchUpdateIntentsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchUpdateIntentsMethodDescriptor)
@@ -259,21 +246,20 @@ public class GrpcIntentsStub extends IntentsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsTransportSettings =
+        GrpcCallSettings.<BatchDeleteIntentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteIntentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchDeleteIntentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchDeleteIntentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.deleteIntentCallable =
-        callableFactory.createUnaryCallable(
-            deleteIntentTransportSettings, settings.deleteIntentSettings(), clientContext);
-    this.batchDeleteIntentsCallable =
-        callableFactory.createUnaryCallable(
-            batchDeleteIntentsTransportSettings,
-            settings.batchDeleteIntentsSettings(),
-            clientContext);
-    this.batchDeleteIntentsOperationCallable =
-        callableFactory.createOperationCallable(
-            batchDeleteIntentsTransportSettings,
-            settings.batchDeleteIntentsOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.listIntentsCallable =
         callableFactory.createUnaryCallable(
             listIntentsTransportSettings, settings.listIntentsSettings(), clientContext);
@@ -289,6 +275,9 @@ public class GrpcIntentsStub extends IntentsStub {
     this.updateIntentCallable =
         callableFactory.createUnaryCallable(
             updateIntentTransportSettings, settings.updateIntentSettings(), clientContext);
+    this.deleteIntentCallable =
+        callableFactory.createUnaryCallable(
+            deleteIntentTransportSettings, settings.deleteIntentSettings(), clientContext);
     this.batchUpdateIntentsCallable =
         callableFactory.createUnaryCallable(
             batchUpdateIntentsTransportSettings,
@@ -300,6 +289,17 @@ public class GrpcIntentsStub extends IntentsStub {
             settings.batchUpdateIntentsOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.batchDeleteIntentsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteIntentsTransportSettings,
+            settings.batchDeleteIntentsSettings(),
+            clientContext);
+    this.batchDeleteIntentsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteIntentsTransportSettings,
+            settings.batchDeleteIntentsOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -307,20 +307,6 @@ public class GrpcIntentsStub extends IntentsStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
-    return deleteIntentCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
-      batchDeleteIntentsOperationCallable() {
-    return batchDeleteIntentsOperationCallable;
-  }
-
-  public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
-    return batchDeleteIntentsCallable;
   }
 
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
@@ -343,6 +329,10 @@ public class GrpcIntentsStub extends IntentsStub {
     return updateIntentCallable;
   }
 
+  public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
+    return deleteIntentCallable;
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
@@ -351,6 +341,16 @@ public class GrpcIntentsStub extends IntentsStub {
 
   public UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable() {
     return batchUpdateIntentsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
+      batchDeleteIntentsOperationCallable() {
+    return batchDeleteIntentsOperationCallable;
+  }
+
+  public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
+    return batchDeleteIntentsCallable;
   }
 
   @Override

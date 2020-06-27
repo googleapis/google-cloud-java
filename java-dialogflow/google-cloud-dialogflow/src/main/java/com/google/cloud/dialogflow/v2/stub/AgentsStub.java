@@ -55,6 +55,10 @@ public abstract class AgentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAgentCallable()");
+  }
+
   public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: setAgentCallable()");
   }
@@ -91,25 +95,21 @@ public abstract class AgentsStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: restoreAgentOperationCallable()");
-  }
-
-  public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
-    throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
-  }
-
-  public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
-    throw new UnsupportedOperationException("Not implemented: getAgentCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importAgentOperationCallable()");
   }
 
   public UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: importAgentCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreAgentOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
   }
 
   public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {

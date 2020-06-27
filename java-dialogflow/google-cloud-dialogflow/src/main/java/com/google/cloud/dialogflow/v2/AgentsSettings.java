@@ -52,16 +52,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of setAgent to 30 seconds:
+ * <p>For example, to set the total timeout of getAgent to 30 seconds:
  *
  * <pre>
  * <code>
  * AgentsSettings.Builder agentsSettingsBuilder =
  *     AgentsSettings.newBuilder();
  * agentsSettingsBuilder
- *     .setAgentSettings()
+ *     .getAgentSettings()
  *     .setRetrySettings(
- *         agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
+ *         agentsSettingsBuilder.getAgentSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AgentsSettings agentsSettings = agentsSettingsBuilder.build();
@@ -71,6 +71,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class AgentsSettings extends ClientSettings<AgentsSettings> {
+  /** Returns the object with the settings used for calls to getAgent. */
+  public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getAgentSettings();
+  }
+
   /** Returns the object with the settings used for calls to setAgent. */
   public UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings() {
     return ((AgentsStubSettings) getStubSettings()).setAgentSettings();
@@ -112,23 +117,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return ((AgentsStubSettings) getStubSettings()).exportAgentOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to restoreAgent. */
-  public UnaryCallSettings<RestoreAgentRequest, Operation> restoreAgentSettings() {
-    return ((AgentsStubSettings) getStubSettings()).restoreAgentSettings();
-  }
-
-  /** Returns the object with the settings used for calls to restoreAgent. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<RestoreAgentRequest, Empty, Struct> restoreAgentOperationSettings() {
-    return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getAgent. */
-  public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
-    return ((AgentsStubSettings) getStubSettings()).getAgentSettings();
-  }
-
   /** Returns the object with the settings used for calls to importAgent. */
   public UnaryCallSettings<ImportAgentRequest, Operation> importAgentSettings() {
     return ((AgentsStubSettings) getStubSettings()).importAgentSettings();
@@ -139,6 +127,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ImportAgentRequest, Empty, Struct> importAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).importAgentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreAgent. */
+  public UnaryCallSettings<RestoreAgentRequest, Operation> restoreAgentSettings() {
+    return ((AgentsStubSettings) getStubSettings()).restoreAgentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreAgent. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<RestoreAgentRequest, Empty, Struct> restoreAgentOperationSettings() {
+    return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getValidationResult. */
@@ -243,6 +243,11 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to getAgent. */
+    public UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings() {
+      return getStubSettingsBuilder().getAgentSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setAgent. */
     public UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings() {
       return getStubSettingsBuilder().setAgentSettings();
@@ -286,24 +291,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       return getStubSettingsBuilder().exportAgentOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to restoreAgent. */
-    public UnaryCallSettings.Builder<RestoreAgentRequest, Operation> restoreAgentSettings() {
-      return getStubSettingsBuilder().restoreAgentSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to restoreAgent. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
-        restoreAgentOperationSettings() {
-      return getStubSettingsBuilder().restoreAgentOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getAgent. */
-    public UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings() {
-      return getStubSettingsBuilder().getAgentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to importAgent. */
     public UnaryCallSettings.Builder<ImportAgentRequest, Operation> importAgentSettings() {
       return getStubSettingsBuilder().importAgentSettings();
@@ -315,6 +302,19 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public OperationCallSettings.Builder<ImportAgentRequest, Empty, Struct>
         importAgentOperationSettings() {
       return getStubSettingsBuilder().importAgentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreAgent. */
+    public UnaryCallSettings.Builder<RestoreAgentRequest, Operation> restoreAgentSettings() {
+      return getStubSettingsBuilder().restoreAgentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreAgent. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
+        restoreAgentOperationSettings() {
+      return getStubSettingsBuilder().restoreAgentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getValidationResult. */

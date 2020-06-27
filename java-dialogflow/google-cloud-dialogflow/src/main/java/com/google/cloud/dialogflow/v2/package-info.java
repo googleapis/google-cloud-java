@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   Agent agent = Agent.newBuilder().build();
- *   Agent response = agentsClient.setAgent(agent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
  * </pre>
@@ -58,7 +58,7 @@
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
- *   contextsClient.deleteContext(name);
+ *   Context response = contextsClient.getContext(name);
  * }
  * </code>
  * </pre>
@@ -97,7 +97,7 @@
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
- *   entityTypesClient.deleteEntityType(name);
+ *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * </code>
  * </pre>
@@ -156,7 +156,7 @@
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
- *   intentsClient.deleteIntent(name);
+ *   Intent response = intentsClient.getIntent(name);
  * }
  * </code>
  * </pre>
@@ -183,7 +183,7 @@
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
- *   sessionEntityTypesClient.deleteSessionEntityType(name);
+ *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
  * </pre>

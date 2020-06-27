@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteSessionEntityType to 30 seconds:
+ * <p>For example, to set the total timeout of getSessionEntityType to 30 seconds:
  *
  * <pre>
  * <code>
  * SessionEntityTypesStubSettings.Builder sessionEntityTypesSettingsBuilder =
  *     SessionEntityTypesStubSettings.newBuilder();
  * sessionEntityTypesSettingsBuilder
- *     .deleteSessionEntityTypeSettings()
+ *     .getSessionEntityTypeSettings()
  *     .setRetrySettings(
- *         sessionEntityTypesSettingsBuilder.deleteSessionEntityTypeSettings().getRetrySettings().toBuilder()
+ *         sessionEntityTypesSettingsBuilder.getSessionEntityTypeSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SessionEntityTypesStubSettings sessionEntityTypesSettings = sessionEntityTypesSettingsBuilder.build();
@@ -97,8 +97,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
-  private final UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeSettings;
   private final PagedCallSettings<
           ListSessionEntityTypesRequest,
           ListSessionEntityTypesResponse,
@@ -110,12 +108,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
       createSessionEntityTypeSettings;
   private final UnaryCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeSettings;
-
-  /** Returns the object with the settings used for calls to deleteSessionEntityType. */
-  public UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
-      deleteSessionEntityTypeSettings() {
-    return deleteSessionEntityTypeSettings;
-  }
+  private final UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeSettings;
 
   /** Returns the object with the settings used for calls to listSessionEntityTypes. */
   public PagedCallSettings<
@@ -142,6 +136,12 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
   public UnaryCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeSettings() {
     return updateSessionEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSessionEntityType. */
+  public UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
+      deleteSessionEntityTypeSettings() {
+    return deleteSessionEntityTypeSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -213,11 +213,11 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
   protected SessionEntityTypesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteSessionEntityTypeSettings = settingsBuilder.deleteSessionEntityTypeSettings().build();
     listSessionEntityTypesSettings = settingsBuilder.listSessionEntityTypesSettings().build();
     getSessionEntityTypeSettings = settingsBuilder.getSessionEntityTypeSettings().build();
     createSessionEntityTypeSettings = settingsBuilder.createSessionEntityTypeSettings().build();
     updateSessionEntityTypeSettings = settingsBuilder.updateSessionEntityTypeSettings().build();
+    deleteSessionEntityTypeSettings = settingsBuilder.deleteSessionEntityTypeSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -295,8 +295,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
       extends StubSettings.Builder<SessionEntityTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
-        deleteSessionEntityTypeSettings;
     private final PagedCallSettings.Builder<
             ListSessionEntityTypesRequest,
             ListSessionEntityTypesResponse,
@@ -308,6 +306,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
         createSessionEntityTypeSettings;
     private final UnaryCallSettings.Builder<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeSettings;
+    private final UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
+        deleteSessionEntityTypeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -319,6 +319,11 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -338,8 +343,27 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -350,8 +374,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteSessionEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSessionEntityTypesSettings =
           PagedCallSettings.newBuilder(LIST_SESSION_ENTITY_TYPES_PAGE_STR_FACT);
 
@@ -361,13 +383,15 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
 
       updateSessionEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteSessionEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSessionEntityTypeSettings,
               listSessionEntityTypesSettings,
               getSessionEntityTypeSettings,
               createSessionEntityTypeSettings,
-              updateSessionEntityTypeSettings);
+              updateSessionEntityTypeSettings,
+              deleteSessionEntityTypeSettings);
 
       initDefaults(this);
     }
@@ -382,11 +406,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .deleteSessionEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listSessionEntityTypesSettings()
@@ -408,25 +427,30 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .deleteSessionEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       return builder;
     }
 
     protected Builder(SessionEntityTypesStubSettings settings) {
       super(settings);
 
-      deleteSessionEntityTypeSettings = settings.deleteSessionEntityTypeSettings.toBuilder();
       listSessionEntityTypesSettings = settings.listSessionEntityTypesSettings.toBuilder();
       getSessionEntityTypeSettings = settings.getSessionEntityTypeSettings.toBuilder();
       createSessionEntityTypeSettings = settings.createSessionEntityTypeSettings.toBuilder();
       updateSessionEntityTypeSettings = settings.updateSessionEntityTypeSettings.toBuilder();
+      deleteSessionEntityTypeSettings = settings.deleteSessionEntityTypeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSessionEntityTypeSettings,
               listSessionEntityTypesSettings,
               getSessionEntityTypeSettings,
               createSessionEntityTypeSettings,
-              updateSessionEntityTypeSettings);
+              updateSessionEntityTypeSettings,
+              deleteSessionEntityTypeSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -443,12 +467,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSessionEntityType. */
-    public UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
-        deleteSessionEntityTypeSettings() {
-      return deleteSessionEntityTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSessionEntityTypes. */
@@ -476,6 +494,12 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
     public UnaryCallSettings.Builder<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeSettings() {
       return updateSessionEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSessionEntityType. */
+    public UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
+        deleteSessionEntityTypeSettings() {
+      return deleteSessionEntityTypeSettings;
     }
 
     @Override
