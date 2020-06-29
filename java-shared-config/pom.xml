@@ -61,7 +61,7 @@
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
     <auto-value-annotation.version>1.7.2</auto-value-annotation.version>
-    <docRoot>/java/reference/</docRoot>
+    <docRoot>/java/docs/reference/</docRoot>
   </properties>
 
   <build>
