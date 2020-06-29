@@ -22,6 +22,10 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.Schema;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,10 +36,9 @@ public class AddEmptyColumnIT {
   private PrintStream out;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
-  private static final String BIGQUERY_TEST_TABLE = System.getenv("BIGQUERY_TEST_TABLE");
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(
+    assertNotNull (
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
   }
@@ -43,7 +46,6 @@ public class AddEmptyColumnIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("BIGQUERY_DATASET_NAME");
-    requireEnvVar("BIGQUERY_TEST_TABLE");
   }
 
   @Before
@@ -60,8 +62,17 @@ public class AddEmptyColumnIT {
 
   @Test
   public void addEmptyColumn() {
+    String tableName = "AddEmptyColumnTestTable_" + UUID.randomUUID().toString().replace('-', '_');
+    Schema schema =
+            Schema.of(
+                    Field.of("booleanField", LegacySQLTypeName.BOOLEAN),
+                    Field.of("numericField", LegacySQLTypeName.NUMERIC));
+
+    // Create table in dataset for testing
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
+
     String randomColumnName = "new_" + UUID.randomUUID().toString().replace('-', '_');
-    AddEmptyColumn.addEmptyColumn(randomColumnName, BIGQUERY_DATASET_NAME, BIGQUERY_TEST_TABLE);
+    AddEmptyColumn.addEmptyColumn(randomColumnName, BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString()).contains("Empty column successfully added to table");
   }
 }
