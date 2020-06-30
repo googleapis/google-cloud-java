@@ -16,8 +16,9 @@
 
 package com.example.dialogflow;
 
-// Imports the Google Cloud client library
+// [START dialogflow_detect_intent_knowledge]
 
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers;
@@ -29,33 +30,20 @@ import com.google.cloud.dialogflow.v2beta1.SessionName;
 import com.google.cloud.dialogflow.v2beta1.SessionsClient;
 import com.google.cloud.dialogflow.v2beta1.TextInput;
 import com.google.common.collect.Maps;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-/**
- * DialogFlow API Detect Intent sample with querying knowledge connector.
- */
 public class DetectIntentKnowledge {
-  // [START dialogflow_detect_intent_knowledge]
 
-  /**
-   * Returns the result of detect intent with text as input.
-   *
-   * <p>Using the same `session_id` between requests allows continuation of the conversation.
-   *
-   * @param projectId         Project/Agent Id.
-   * @param knowledgeBaseName Knowledge base Id.
-   * @param sessionId         Identifier of the DetectIntent session.
-   * @param languageCode      Language code of the query.
-   * @param texts             The texts to be processed.
-   * @return The KnowledgeAnswers found for each text.
-   */
+  // DialogFlow API Detect Intent sample with querying knowledge connector.
   public static Map<String, KnowledgeAnswers> detectIntentKnowledge(
       String projectId,
       String knowledgeBaseName,
       String sessionId,
       String languageCode,
-      List<String> texts) throws Exception {
+      List<String> texts)
+      throws IOException, ApiException {
     // Instantiates a client
     Map<String, KnowledgeAnswers> allKnowledgeAnswers = Maps.newHashMap();
     try (SessionsClient sessionsClient = SessionsClient.create()) {
@@ -72,9 +60,7 @@ public class DetectIntentKnowledge {
         QueryInput queryInput = QueryInput.newBuilder().setText(textInput).build();
 
         QueryParameters queryParameters =
-            QueryParameters.newBuilder()
-                .addKnowledgeBaseNames(knowledgeBaseName)
-                .build();
+            QueryParameters.newBuilder().addKnowledgeBaseNames(knowledgeBaseName).build();
 
         DetectIntentRequest detectIntentRequest =
             DetectIntentRequest.newBuilder()
@@ -107,5 +93,5 @@ public class DetectIntentKnowledge {
     }
     return allKnowledgeAnswers;
   }
-  // [END dialogflow_detect_intent_knowledge]
 }
+// [END dialogflow_detect_intent_knowledge]

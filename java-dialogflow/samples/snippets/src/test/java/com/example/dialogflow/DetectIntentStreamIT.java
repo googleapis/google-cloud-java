@@ -19,6 +19,7 @@ package com.example.dialogflow;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
@@ -27,18 +28,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link DetectIntentStream}.
- */
+/** Integration (system) tests for {@link DetectIntentStream}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentStreamIT {
 
-  private ByteArrayOutputStream bout;
-
   private static String audioFilePath = "resources/book_a_room.wav";
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = UUID.randomUUID().toString();
+  private ByteArrayOutputStream bout;
 
   @Before
   public void setUp() {
@@ -53,9 +51,8 @@ public class DetectIntentStreamIT {
   }
 
   @Test
-  public void testStreamingDetectIntentCallable() {
-    DetectIntentStream.detectIntentStream(
-            PROJECT_ID, audioFilePath, SESSION_ID);
+  public void testStreamingDetectIntentCallable() throws IOException {
+    DetectIntentStream.detectIntentStream(PROJECT_ID, audioFilePath, SESSION_ID);
 
     String output = bout.toString();
 

@@ -16,6 +16,9 @@
 
 package com.example.dialogflow;
 
+//   [START dialogflow_detect_intent_with_texttospeech_response]
+
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
 import com.google.cloud.dialogflow.v2.OutputAudioConfig;
@@ -26,28 +29,15 @@ import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.common.collect.Maps;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 public class DetectIntentWithTextToSpeechResponse {
-  //   [START dialogflow_detect_intent_with_texttospeech_response]
 
-  /**
-   * Returns the result of detect intent with texts as inputs.
-   *
-   * <p>Using the same `session_id` between requests allows continuation of the conversation.
-   *
-   * @param projectId    Project/Agent Id.
-   * @param texts        The text intents to be detected based on what a user says.
-   * @param sessionId    Identifier of the DetectIntent session.
-   * @param languageCode Language code of the query.
-   * @return The QueryResult for each input text.
-   */
   public static Map<String, QueryResult> detectIntentWithTexttoSpeech(
-      String projectId,
-      List<String> texts,
-      String sessionId,
-      String languageCode) throws Exception {
+      String projectId, List<String> texts, String sessionId, String languageCode)
+      throws IOException, ApiException {
     Map<String, QueryResult> queryResults = Maps.newHashMap();
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create()) {
@@ -98,5 +88,5 @@ public class DetectIntentWithTextToSpeechResponse {
     }
     return queryResults;
   }
-  // [END dialogflow_detect_intent_with_texttospeech_response]
 }
+// [END dialogflow_detect_intent_with_texttospeech_response]

@@ -44,9 +44,7 @@ public class CreateKnowledgeBaseTest {
   private String knowledgeBaseName;
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(
-        "Environment variable '%s' is required to perform these tests.".format(varName),
-        String.format(varName));
+    assertNotNull(String.format(varName), String.format(varName));
   }
 
   @BeforeClass

@@ -16,32 +16,29 @@
 
 package com.example.dialogflow;
 
+// [START dialogflow_create_document]
+
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.Document;
 import com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType;
 import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class DocumentManagement {
-  // [START dialogflow_create_document]
 
-  /**
-   * @param knowledgeBaseName Knowledge Base id.
-   * @param displayName       display name of the Document.
-   * @param mimeType          MIME type of the Document. e.g. text/csv, text/html
-   * @param knowledgeType     Knowledge Type of the Document. e.g. FAQ, EXTRACTIVE_QA
-   * @param contentUri        Uri of the Document. e.g. gs://path/mydoc.csv, http://mypage.com/faq.html
-   * @return The created document.
-   */
   public static Document createDocument(
       String knowledgeBaseName,
       String displayName,
       String mimeType,
       String knowledgeType,
       String contentUri)
-      throws Exception {
+      throws IOException, ApiException, InterruptedException, ExecutionException, TimeoutException {
     // Instantiates a client
     try (DocumentsClient documentsClient = DocumentsClient.create()) {
       Document document =
@@ -71,5 +68,5 @@ public class DocumentManagement {
       return createdDocument;
     }
   }
-  // [END dialogflow_create_document]
 }
+// [END dialogflow_create_document]

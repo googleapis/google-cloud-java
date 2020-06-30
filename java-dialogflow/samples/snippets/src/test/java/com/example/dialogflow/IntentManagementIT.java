@@ -21,9 +21,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.dialogflow.v2.AgentName;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.IntentsClient;
-import com.google.cloud.dialogflow.v2.ProjectAgentName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
@@ -35,19 +35,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link IntentManagement}.
- */
+/** Integration (system) tests for {@link IntentManagement}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class IntentManagementIT {
   private static String INTENT_DISPLAY_NAME = UUID.randomUUID().toString();
-  private static List<String> MESSAGE_TEXTS = Arrays.asList(
-      "fake_message_text_for_testing_1",
-      "fake_message_text_for_testing_2");
-  private static List<String> TRAINING_PHRASE_PARTS = Arrays.asList(
-      "fake_training_phrase_part_1",
-      "fake_training_phrase_part_2");
+  private static List<String> MESSAGE_TEXTS =
+      Arrays.asList("fake_message_text_for_testing_1", "fake_message_text_for_testing_2");
+  private static List<String> TRAINING_PHRASE_PARTS =
+      Arrays.asList("fake_training_phrase_part_1", "fake_training_phrase_part_2");
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
 
   @Before
@@ -59,7 +55,7 @@ public class IntentManagementIT {
   public void tearDown() throws Exception {
     try (IntentsClient intentsClient = IntentsClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
-      ProjectAgentName parent = ProjectAgentName.of(PROJECT_ID);
+      AgentName parent = AgentName.of(PROJECT_ID);
 
       // Performs the list intents request
       for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
@@ -74,8 +70,9 @@ public class IntentManagementIT {
   @Test
   public void testCreateIntent() throws Exception {
     // Create the intent
-    Intent intent = IntentManagement.createIntent(
-        INTENT_DISPLAY_NAME, PROJECT_ID, TRAINING_PHRASE_PARTS, MESSAGE_TEXTS);
+    Intent intent =
+        IntentManagement.createIntent(
+            INTENT_DISPLAY_NAME, PROJECT_ID, TRAINING_PHRASE_PARTS, MESSAGE_TEXTS);
     assertNotNull(intent);
 
     List<String> intentIds = IntentManagement.getIntentIds(intent.getDisplayName(), PROJECT_ID);
@@ -85,8 +82,9 @@ public class IntentManagementIT {
     assertTrue(intents.size() > 0);
     assertThat(intents).contains(intent);
     for (String messageText : MESSAGE_TEXTS) {
-      assertTrue(intent.getMessagesList()
-          .stream().anyMatch(message -> message.getText().toString().contains(messageText)));
+      assertTrue(
+          intent.getMessagesList().stream()
+              .anyMatch(message -> message.getText().toString().contains(messageText)));
     }
 
     for (String intentId : intentIds) {

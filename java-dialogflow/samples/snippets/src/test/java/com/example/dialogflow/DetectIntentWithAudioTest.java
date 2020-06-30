@@ -40,19 +40,25 @@ public class DetectIntentWithAudioTest {
   protected static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   protected static String SESSION_ID = UUID.randomUUID().toString();
   protected static String LANGUAGE_CODE = "en-US";
-  protected static List<String> QUESTIONS = ImmutableList.of(
-      "What date?",
-      "What time will the meeting start?",
-      "How long will it last?",
-      "Thanks. How many people are attending?",
-      "I can help with that. Where would you like to reserve a room?");
-  protected static Map<String, String> ANSWERS = ImmutableMap.of(
-      "I can help with that. Where would you like to reserve a room?",
-      "resources/mountain_view.wav",
-      "What date?", "resources/today.wav",
-      "What time will the meeting start?", "resources/230pm.wav",
-      "How long will it last?", "resources/half_an_hour.wav",
-      "Thanks. How many people are attending?", "resources/two_people.wav");
+  protected static List<String> QUESTIONS =
+      ImmutableList.of(
+          "What date?",
+          "What time will the meeting start?",
+          "How long will it last?",
+          "Thanks. How many people are attending?",
+          "I can help with that. Where would you like to reserve a room?");
+  protected static Map<String, String> ANSWERS =
+      ImmutableMap.of(
+          "I can help with that. Where would you like to reserve a room?",
+          "resources/mountain_view.wav",
+          "What date?",
+          "resources/today.wav",
+          "What time will the meeting start?",
+          "resources/230pm.wav",
+          "How long will it last?",
+          "resources/half_an_hour.wav",
+          "Thanks. How many people are attending?",
+          "resources/two_people.wav");
 
   @Before
   public void setUp() {
@@ -67,8 +73,9 @@ public class DetectIntentWithAudioTest {
   @Test
   public void testDetectIntentAudio() throws Exception {
     List<String> askedQuestions = Lists.newArrayList();
-    com.google.cloud.dialogflow.v2.QueryResult result = DetectIntentAudio.detectIntentAudio(
-        PROJECT_ID, "resources/book_a_room.wav", SESSION_ID, LANGUAGE_CODE);
+    com.google.cloud.dialogflow.v2.QueryResult result =
+        DetectIntentAudio.detectIntentAudio(
+            PROJECT_ID, "resources/book_a_room.wav", SESSION_ID, LANGUAGE_CODE);
     String fulfillmentText = result.getFulfillmentText();
     while (!result.getAllRequiredParamsPresent()
         && ANSWERS.containsKey(fulfillmentText)
@@ -76,8 +83,9 @@ public class DetectIntentWithAudioTest {
       askedQuestions.add(result.getFulfillmentText());
       assertEquals("room.reservation", result.getAction());
       assertThat(QUESTIONS).contains(fulfillmentText);
-      result = DetectIntentAudio.detectIntentAudio(
-          PROJECT_ID, ANSWERS.get(fulfillmentText), SESSION_ID, LANGUAGE_CODE);
+      result =
+          DetectIntentAudio.detectIntentAudio(
+              PROJECT_ID, ANSWERS.get(fulfillmentText), SESSION_ID, LANGUAGE_CODE);
       fulfillmentText = result.getFulfillmentText();
     }
     assertTrue(result.getAllRequiredParamsPresent());

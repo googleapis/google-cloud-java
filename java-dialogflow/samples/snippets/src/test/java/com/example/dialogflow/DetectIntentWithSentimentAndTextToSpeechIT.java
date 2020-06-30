@@ -32,9 +32,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}.
- */
+/** Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentWithSentimentAndTextToSpeechIT {
@@ -42,16 +40,17 @@ public class DetectIntentWithSentimentAndTextToSpeechIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
-  private static List<String> TEXTS = Arrays.asList(
-      "hello",
-      "book a meeting room",
-      "Mountain View",
-      "tomorrow",
-      "10 am",
-      "2 hours",
-      "10 people",
-      "A",
-      "yes");
+  private static List<String> TEXTS =
+      Arrays.asList(
+          "hello",
+          "book a meeting room",
+          "Mountain View",
+          "tomorrow",
+          "10 am",
+          "2 hours",
+          "10 people",
+          "A",
+          "yes");
 
   @Before
   public void setUp() {
@@ -65,7 +64,7 @@ public class DetectIntentWithSentimentAndTextToSpeechIT {
 
   @Test
   public void testDetectIntentTexts() throws Exception {
-    Map<String, com.google.cloud.dialogflow.v2.QueryResult> queryResults =
+    Map<String, QueryResult> queryResults =
         DetectIntentTexts.detectIntentTexts(PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE);
     com.google.cloud.dialogflow.v2.QueryResult finalResult =
         queryResults.get(TEXTS.get(TEXTS.size() - 1));
@@ -75,14 +74,16 @@ public class DetectIntentWithSentimentAndTextToSpeechIT {
 
   @Test
   public void testDetectIntentWithSentimentAnalysis() throws Exception {
-    assertResults(DetectIntentWithSentimentAnalysis
-        .detectIntentSentimentAnalysis(PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE));
+    assertResults(
+        DetectIntentWithSentimentAnalysis.detectIntentSentimentAnalysis(
+            PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE));
   }
 
   @Test
   public void testDetectIntentTextToSpeech() throws Exception {
-    assertResults(DetectIntentWithTextToSpeechResponse
-        .detectIntentWithTexttoSpeech(PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE));
+    assertResults(
+        DetectIntentWithTextToSpeechResponse.detectIntentWithTexttoSpeech(
+            PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE));
   }
 
   private void assertResults(Map<String, QueryResult> queryResults) {

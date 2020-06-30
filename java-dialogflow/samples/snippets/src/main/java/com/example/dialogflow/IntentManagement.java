@@ -18,6 +18,8 @@ package com.example.dialogflow;
 
 // Imports the Google Cloud client library
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.dialogflow.v2.AgentName;
 import com.google.cloud.dialogflow.v2.Context;
 import com.google.cloud.dialogflow.v2.Intent;
 import com.google.cloud.dialogflow.v2.Intent.Message;
@@ -26,14 +28,12 @@ import com.google.cloud.dialogflow.v2.Intent.TrainingPhrase;
 import com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part;
 import com.google.cloud.dialogflow.v2.IntentName;
 import com.google.cloud.dialogflow.v2.IntentsClient;
-import com.google.cloud.dialogflow.v2.ProjectAgentName;
 import com.google.common.collect.Lists;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DialogFlow API Intent sample.
- */
+/** DialogFlow API Intent sample. */
 public class IntentManagement {
   // [START dialogflow_list_intents]
 
@@ -43,12 +43,12 @@ public class IntentManagement {
    * @param projectId Project/Agent Id.
    * @return Intents found.
    */
-  public static List<Intent> listIntents(String projectId) throws Exception {
+  public static List<Intent> listIntents(String projectId) throws ApiException, IOException {
     List<Intent> intents = Lists.newArrayList();
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
-      ProjectAgentName parent = ProjectAgentName.of(projectId);
+      AgentName parent = AgentName.of(projectId);
 
       // Performs the list intents request
       for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
@@ -80,44 +80,43 @@ public class IntentManagement {
   /**
    * Create an intent of the given intent type
    *
-   * @param displayName          The display name of the intent.
-   * @param projectId            Project/Agent Id.
+   * @param displayName The display name of the intent.
+   * @param projectId Project/Agent Id.
    * @param trainingPhrasesParts Training phrases.
-   * @param messageTexts         Message texts for the agent's response when the intent is detected.
+   * @param messageTexts Message texts for the agent's response when the intent is detected.
    * @return The created Intent.
    */
   public static Intent createIntent(
       String displayName,
       String projectId,
       List<String> trainingPhrasesParts,
-      List<String> messageTexts) throws Exception {
+      List<String> messageTexts)
+      throws ApiException, IOException {
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
       // Set the project agent name using the projectID (my-project-id)
-      ProjectAgentName parent = ProjectAgentName.of(projectId);
+      AgentName parent = AgentName.of(projectId);
 
       // Build the trainingPhrases from the trainingPhrasesParts
       List<TrainingPhrase> trainingPhrases = new ArrayList<>();
       for (String trainingPhrase : trainingPhrasesParts) {
         trainingPhrases.add(
-            TrainingPhrase.newBuilder().addParts(
-                Part.newBuilder().setText(trainingPhrase).build())
+            TrainingPhrase.newBuilder()
+                .addParts(Part.newBuilder().setText(trainingPhrase).build())
                 .build());
       }
 
       // Build the message texts for the agent's response
-      Message message = Message.newBuilder()
-          .setText(
-              Text.newBuilder()
-                  .addAllText(messageTexts).build()
-          ).build();
+      Message message =
+          Message.newBuilder().setText(Text.newBuilder().addAllText(messageTexts).build()).build();
 
       // Build the intent
-      Intent intent = Intent.newBuilder()
-          .setDisplayName(displayName)
-          .addMessages(message)
-          .addAllTrainingPhrases(trainingPhrases)
-          .build();
+      Intent intent =
+          Intent.newBuilder()
+              .setDisplayName(displayName)
+              .addMessages(message)
+              .addAllTrainingPhrases(trainingPhrases)
+              .build();
 
       // Performs the create intent request
       Intent response = intentsClient.createIntent(parent, intent);
@@ -133,10 +132,11 @@ public class IntentManagement {
   /**
    * Delete intent with the given intent type and intent value
    *
-   * @param intentId  The id of the intent.
+   * @param intentId The id of the intent.
    * @param projectId Project/Agent Id.
    */
-  public static void deleteIntent(String intentId, String projectId) throws Exception {
+  public static void deleteIntent(String intentId, String projectId)
+      throws ApiException, IOException {
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
       IntentName name = IntentName.of(projectId, intentId);
@@ -146,15 +146,14 @@ public class IntentManagement {
   }
   // [END dialogflow_delete_intent]
 
-  /**
-   * Helper method for testing to get intentIds from displayName.
-   */
-  public static List<String> getIntentIds(String displayName, String projectId) throws Exception {
+  /** Helper method for testing to get intentIds from displayName. */
+  public static List<String> getIntentIds(String displayName, String projectId)
+      throws ApiException, IOException {
     List<String> intentIds = new ArrayList<>();
 
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create()) {
-      ProjectAgentName parent = ProjectAgentName.of(projectId);
+      AgentName parent = AgentName.of(projectId);
       for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
         if (intent.getDisplayName().equals(displayName)) {
           String[] splitName = intent.getName().split("/");

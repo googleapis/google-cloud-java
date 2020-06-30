@@ -16,23 +16,19 @@
 
 package com.example.dialogflow;
 
+// [START dialogflow_create_knowledge_base]
+
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
-
+import java.io.IOException;
 
 public class KnowledgeBaseManagement {
-  // [START dialogflow_create_knowledge_base]
 
-  /**
-   * Create a Knowledge base
-   *
-   * @param projectId   Project/agent id.
-   * @param displayName Name of the knowledge base.
-   * @return The created KnowledgeBase.
-   */
+  // Create a Knowledge base
   public static KnowledgeBase createKnowledgeBase(String projectId, String displayName)
-      throws Exception {
+      throws ApiException, IOException {
     // Instantiates a client
     try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
       KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().setDisplayName(displayName).build();
@@ -45,6 +41,5 @@ public class KnowledgeBaseManagement {
       return response;
     }
   }
-  // [END dialogflow_create_knowledge_base]
-
 }
+// [END dialogflow_create_knowledge_base]
