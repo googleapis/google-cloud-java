@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.8.2](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.1...v0.8.2) (2020-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v0.21.0 ([#86](https://www.github.com/googleapis/java-shared-dependencies/issues/86)) ([dc9d717](https://www.github.com/googleapis/java-shared-dependencies/commit/dc9d717fdec4f0962141ba34e98f5737ec3bc57a))
+* update dependency com.google.http-client:google-http-client-bom to v1.36.0 ([#89](https://www.github.com/googleapis/java-shared-dependencies/issues/89)) ([12437d7](https://www.github.com/googleapis/java-shared-dependencies/commit/12437d7392a430299c3372d18d2650b62be60eaf))
+* update dependency io.grpc:grpc-bom to v1.30.1 ([#82](https://www.github.com/googleapis/java-shared-dependencies/issues/82)) ([a5199a0](https://www.github.com/googleapis/java-shared-dependencies/commit/a5199a02d5bde75e86349b37c1efae64a6379a40))
+* update dependency io.grpc:grpc-bom to v1.30.2 ([#85](https://www.github.com/googleapis/java-shared-dependencies/issues/85)) ([084d18d](https://www.github.com/googleapis/java-shared-dependencies/commit/084d18daab010c6b0be04e67b42ca8ab8ba5f3d5))
+
 ### [0.8.1](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.0...v0.8.1) (2020-06-13)
 
 
