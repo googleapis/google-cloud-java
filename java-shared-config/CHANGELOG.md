@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.9.1](https://www.github.com/googleapis/java-shared-config/compare/v0.9.0...v0.9.1) (2020-07-01)
+
+
+### Bug Fixes
+
+* maven-dependency-plugin configuration breaking downstream config ([#174](https://www.github.com/googleapis/java-shared-config/issues/174)) ([507217f](https://www.github.com/googleapis/java-shared-config/commit/507217fe509cd4f16eb50c8075ab43229238e08d))
+
+
+### Documentation
+
+* change Devsite output path to /java/docs/reference ([#176](https://www.github.com/googleapis/java-shared-config/issues/176)) ([8b98af5](https://www.github.com/googleapis/java-shared-config/commit/8b98af54bf503d97bb86b6d02a5c4301b39384e1))
+
 ## [0.9.0](https://www.github.com/googleapis/java-shared-config/compare/v0.8.1...v0.9.0) (2020-06-25)
 
 
