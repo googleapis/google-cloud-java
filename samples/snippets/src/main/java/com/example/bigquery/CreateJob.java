@@ -59,12 +59,12 @@ public class CreateJob {
       // Get a job that was just created
       Job job = bigquery.getJob(jobId);
       if (job.getJobId().getJob().equals(jobId.getJob())) {
-        System.out.println("Job created successfully");
+        System.out.print("Job created successfully." + job.getJobId().getJob());
       } else {
-        System.out.println("Job was not created");
+        System.out.print("Job was not created");
       }
     } catch (BigQueryException e) {
-      System.out.println("Job was not created. \n" + e.toString());
+      System.out.print("Job was not created. \n" + e.toString());
     }
   }
 }
