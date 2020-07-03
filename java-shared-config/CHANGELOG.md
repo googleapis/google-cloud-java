@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.9.2](https://www.github.com/googleapis/java-shared-config/compare/v0.9.1...v0.9.2) (2020-07-02)
+
+
+### Dependencies
+
+* update dependency org.apache.maven.surefire:surefire-junit47 to v3.0.0-M5 ([#180](https://www.github.com/googleapis/java-shared-config/issues/180)) ([802d9c5](https://www.github.com/googleapis/java-shared-config/commit/802d9c528d34b386face69ca75a014ce57fc3ac1))
+
 ### [0.9.1](https://www.github.com/googleapis/java-shared-config/compare/v0.9.0...v0.9.1) (2020-07-01)
 
 
