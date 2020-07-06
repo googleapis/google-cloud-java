@@ -68,6 +68,7 @@ class MessageDispatcher {
 
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
+  private final int maxSecondsPerAckExtension;
   private final MessageReceiver receiver;
   private final AckProcessor ackProcessor;
 
@@ -190,6 +191,7 @@ class MessageDispatcher {
       AckProcessor ackProcessor,
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
+      Duration maxDurationPerAckExtension,
       Distribution ackLatencyDistribution,
       FlowController flowController,
       Executor executor,
@@ -199,6 +201,7 @@ class MessageDispatcher {
     this.systemExecutor = systemExecutor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.maxAckExtensionPeriod = maxAckExtensionPeriod;
+    this.maxSecondsPerAckExtension = Math.toIntExact(maxDurationPerAckExtension.getSeconds());
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
@@ -406,6 +409,10 @@ class MessageDispatcher {
   @InternalApi
   int computeDeadlineSeconds() {
     int sec = ackLatencyDistribution.getPercentile(PERCENTILE_FOR_ACK_DEADLINE_UPDATES);
+
+    if ((maxSecondsPerAckExtension > 0) && (sec > maxSecondsPerAckExtension)) {
+      sec = maxSecondsPerAckExtension;
+    }
 
     // Use Ints.constrainToRange when we get guava 21.
     if (sec < Subscriber.MIN_ACK_DEADLINE_SECONDS) {

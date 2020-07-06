@@ -54,6 +54,7 @@ public class MessageDispatcherTest {
           // No-op; don't do anything.
         }
       };
+  private static final int MAX_SECONDS_PER_ACK_EXTENSION = 60;
 
   private MessageDispatcher dispatcher;
   private LinkedBlockingQueue<AckReplyConsumer> consumers;
@@ -128,6 +129,7 @@ public class MessageDispatcherTest {
             processor,
             Duration.ofSeconds(5),
             Duration.ofMinutes(60),
+            Duration.ofSeconds(MAX_SECONDS_PER_ACK_EXTENSION),
             new Distribution(Subscriber.MAX_ACK_DEADLINE_SECONDS + 1),
             flowController,
             MoreExecutors.directExecutor(),
@@ -234,5 +236,16 @@ public class MessageDispatcherTest {
     consumers.take().ack();
 
     assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
+  }
+
+  @Test
+  public void testMaxDurationPerAckExtension() throws Exception {
+    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(10);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    clock.advance(MAX_SECONDS_PER_ACK_EXTENSION + 5, TimeUnit.SECONDS);
+    consumers.take().ack();
+
+    assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(MAX_SECONDS_PER_ACK_EXTENSION);
   }
 }

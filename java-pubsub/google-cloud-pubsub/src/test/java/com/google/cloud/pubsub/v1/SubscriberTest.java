@@ -45,6 +45,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
 public class SubscriberTest {
@@ -236,6 +237,7 @@ public class SubscriberTest {
             FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
-        .setParallelPullCount(1);
+        .setParallelPullCount(1)
+        .setMaxDurationPerAckExtension(Duration.ofSeconds(5));
   }
 }

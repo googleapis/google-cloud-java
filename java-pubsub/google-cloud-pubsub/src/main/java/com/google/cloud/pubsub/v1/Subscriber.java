@@ -104,6 +104,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final Duration maxAckExtensionPeriod;
+  private final Duration maxDurationPerAckExtension;
   // The ExecutorProvider used to generate executors for processing messages.
   private final ExecutorProvider executorProvider;
   // An instantiation of the SystemExecutorProvider used for processing acks
@@ -128,6 +129,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     subscriptionName = builder.subscriptionName;
 
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
+    maxDurationPerAckExtension = builder.maxDurationPerAckExtension;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
     flowController =
@@ -329,6 +331,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 receiver,
                 ACK_EXPIRATION_PADDING,
                 maxAckExtensionPeriod,
+                maxDurationPerAckExtension,
                 ackLatencyDistribution,
                 subStub,
                 i,
@@ -415,6 +418,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private MessageReceiver receiver;
 
     private Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
+    private Duration maxDurationPerAckExtension = Duration.ofMillis(0);
 
     private FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder()
@@ -512,6 +516,22 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     public Builder setMaxAckExtensionPeriod(Duration maxAckExtensionPeriod) {
       Preconditions.checkArgument(maxAckExtensionPeriod.toMillis() >= 0);
       this.maxAckExtensionPeriod = maxAckExtensionPeriod;
+      return this;
+    }
+
+    /**
+     * Set the upper bound for a single mod ack extention period.
+     *
+     * <p>The ack deadline will continue to be extended by up to this duration until
+     * MaxAckExtensionPeriod is reached. Setting MaxDurationPerAckExtension bounds the maximum
+     * amount of time before a mesage re-delivery in the event the Subscriber fails to extend the
+     * deadline.
+     *
+     * <p>MaxDurationPerAckExtension configuration can be disabled by specifying a zero duration.
+     */
+    public Builder setMaxDurationPerAckExtension(Duration maxDurationPerAckExtension) {
+      Preconditions.checkArgument(maxDurationPerAckExtension.toMillis() >= 0);
+      this.maxDurationPerAckExtension = maxDurationPerAckExtension;
       return this;
     }
 
