@@ -153,8 +153,7 @@ public class PublisherImplTest {
 
     assertFalse(publishFuture3.isDone());
 
-    ApiFuture<String> publishFuture4 =
-        publisher.publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("D")).build());
+    ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
 
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
