@@ -39,7 +39,7 @@ import io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel;
 import io.grpc.netty.shaded.io.netty.util.ReferenceCountUtil;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.TimeUnit;
@@ -67,11 +67,15 @@ public class DirectPathFallbackIT {
   private static final int MIN_COMPLETE_READ_CALLS = 40;
   private static final int NUM_RPCS_TO_SEND = 20;
 
+  // IP address prefixes allocated for DirectPath backends.
+  private static final String DP_IPV6_PREFIX = "2001:4860:8040";
+  private static final String DP_IPV4_PREFIX = "34.126";
+
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
-  private AtomicBoolean blackholeIPv6 = new AtomicBoolean();
+  private AtomicBoolean blackholeDpAddr = new AtomicBoolean();
   private AtomicInteger numBlocked = new AtomicInteger();
-  private AtomicInteger numIPv6Read = new AtomicInteger();
+  private AtomicInteger numDpAddrRead = new AtomicInteger();
 
   private ChannelFactory<NioSocketChannel> channelFactory;
   private EventLoopGroup eventLoopGroup;
@@ -97,6 +101,7 @@ public class DirectPathFallbackIT {
     InstantiatingGrpcChannelProvider instrumentedTransportChannelProvider =
         defaultTransportProvider
             .toBuilder()
+            .setAttemptDirectPath(true)
             .setPoolSize(1)
             .setChannelConfigurator(
                 new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
@@ -140,8 +145,8 @@ public class DirectPathFallbackIT {
     // Precondition: wait for DirectPath to connect
     assertWithMessage("Failed to observe RPCs over DirectPath").that(exerciseDirectPath()).isTrue();
 
-    // Enable the blackhole, which will prevent communication via IPv6 and thus DirectPath.
-    blackholeIPv6.set(true);
+    // Enable the blackhole, which will prevent communication with grpclb and thus DirectPath.
+    blackholeDpAddr.set(true);
 
     // Send a request, which should be routed over IPv4 and CFE.
     instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
@@ -154,14 +159,14 @@ public class DirectPathFallbackIT {
 
     // Make sure that the client will start reading from IPv6 again by sending new requests and
     // checking the injected IPv6 counter has been updated.
-    blackholeIPv6.set(false);
+    blackholeDpAddr.set(false);
 
     assertWithMessage("Failed to upgrade back to DirectPath").that(exerciseDirectPath()).isTrue();
   }
 
   private boolean exerciseDirectPath() throws InterruptedException, TimeoutException {
     Stopwatch stopwatch = Stopwatch.createStarted();
-    numIPv6Read.set(0);
+    numDpAddrRead.set(0);
 
     boolean seenEnough = false;
 
@@ -170,7 +175,7 @@ public class DirectPathFallbackIT {
         instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
       }
       Thread.sleep(100);
-      seenEnough = numIPv6Read.get() >= MIN_COMPLETE_READ_CALLS;
+      seenEnough = numDpAddrRead.get() >= MIN_COMPLETE_READ_CALLS;
     }
     return seenEnough;
   }
@@ -215,7 +220,7 @@ public class DirectPathFallbackIT {
    * make IPv6 packets disappear
    */
   private class MyChannelHandler extends ChannelDuplexHandler {
-    private boolean isIPv6;
+    private boolean isDpAddr;
 
     @Override
     public void connect(
@@ -225,11 +230,13 @@ public class DirectPathFallbackIT {
         ChannelPromise promise)
         throws Exception {
 
-      this.isIPv6 =
-          (remoteAddress instanceof InetSocketAddress)
-              && ((InetSocketAddress) remoteAddress).getAddress() instanceof Inet6Address;
+      if (remoteAddress instanceof InetSocketAddress) {
+        InetAddress inetAddress = ((InetSocketAddress) remoteAddress).getAddress();
+        String addr = inetAddress.getHostAddress();
+        isDpAddr = addr.startsWith(DP_IPV6_PREFIX) || addr.startsWith(DP_IPV4_PREFIX);
+      }
 
-      if (!(isIPv6 && blackholeIPv6.get())) {
+      if (!(isDpAddr && blackholeDpAddr.get())) {
         super.connect(ctx, remoteAddress, localAddress, promise);
       } else {
         // Fail the connection fast
@@ -239,7 +246,7 @@ public class DirectPathFallbackIT {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-      boolean dropCall = isIPv6 && blackholeIPv6.get();
+      boolean dropCall = isDpAddr && blackholeDpAddr.get();
 
       if (dropCall) {
         // Don't notify the next handler and increment counter
@@ -252,14 +259,14 @@ public class DirectPathFallbackIT {
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-      boolean dropCall = isIPv6 && blackholeIPv6.get();
+      boolean dropCall = isDpAddr && blackholeDpAddr.get();
 
       if (dropCall) {
         // Don't notify the next handler and increment counter
         numBlocked.incrementAndGet();
       } else {
-        if (isIPv6) {
-          numIPv6Read.incrementAndGet();
+        if (isDpAddr) {
+          numDpAddrRead.incrementAndGet();
         }
         super.channelReadComplete(ctx);
       }

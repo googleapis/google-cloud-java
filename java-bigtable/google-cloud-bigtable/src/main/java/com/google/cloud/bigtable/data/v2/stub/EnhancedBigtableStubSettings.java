@@ -82,10 +82,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
-  // TODO(igorbernstein2): Remove this once DirectPath goes to public beta
-  // Temporary endpoint for the DirectPath private alpha
-  private static final String DIRECT_PATH_ENV_VAR = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH";
-  private static final String DIRECT_PATH_ENDPOINT = "directpath-bigtable.googleapis.com:443";
+  // TODO(weiranf): Remove this temporary endpoint once DirectPath goes to public beta
+  private static final String DIRECT_PATH_ENDPOINT =
+      "testdirectpath-bigtable.sandbox.googleapis.com:443";
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
@@ -231,7 +230,14 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
         .setPoolSize(getDefaultChannelPoolSize())
-        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
+        // TODO(weiranf): Set this to true by default once DirectPath goes to public beta
+        .setAttemptDirectPath(isDirectPathEnabled());
+  }
+
+  // TODO(weiranf): Remove this once DirectPath goes to public beta
+  private static boolean isDirectPathEnabled() {
+    return Boolean.getBoolean("bigtable.attempt-directpath");
   }
 
   static int getDefaultChannelPoolSize() {
@@ -504,7 +510,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       // Defaults provider
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
-      // TODO(igorbernstein): remove this once DirectPath goes to public Beta and uses the default
+      // TODO(weiranf): remove this once DirectPath goes to public Beta and uses the default
       // endpoint.
       if (isDirectPathEnabled()) {
         setEndpoint(DIRECT_PATH_ENDPOINT);
@@ -625,22 +631,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         UnaryCallSettings.Builder<?, ?> source, UnaryCallSettings.Builder<?, ?> dest) {
       dest.setRetryableCodes(source.getRetryableCodes());
       dest.setRetrySettings(source.getRetrySettings());
-    }
-
-    // TODO(igorbernstein): Remove this once DirectPath goes to public beta
-    // Extracted from InstantiatingGrpcChannelProvider#isDirectPathEnabled
-    private static boolean isDirectPathEnabled() {
-      String whiteList = System.getenv(DIRECT_PATH_ENV_VAR);
-      if (whiteList == null) {
-        return false;
-      }
-
-      for (String service : whiteList.split(",")) {
-        if (!service.isEmpty() && DIRECT_PATH_ENDPOINT.contains(service)) {
-          return true;
-        }
-      }
-      return false;
     }
     // </editor-fold>
 

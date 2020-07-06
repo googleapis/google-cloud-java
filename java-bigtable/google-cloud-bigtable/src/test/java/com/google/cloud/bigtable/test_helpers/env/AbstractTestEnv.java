@@ -75,7 +75,7 @@ public abstract class AbstractTestEnv {
   }
 
   public boolean isDirectPathEnabled() {
-    return "bigtable".equals(System.getenv("GOOGLE_CLOUD_ENABLE_DIRECT_PATH"));
+    return Boolean.getBoolean("bigtable.attempt-directpath");
   }
 
   public String getPrimaryZone() {

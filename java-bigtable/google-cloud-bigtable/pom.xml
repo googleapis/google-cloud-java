@@ -323,11 +323,8 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
+                    <bigtable.attempt-directpath>true</bigtable.attempt-directpath>
                   </systemPropertyVariables>
-                  <!-- Enable directpath for bigtable -->
-                  <environmentVariables>
-                    <GOOGLE_CLOUD_ENABLE_DIRECT_PATH>bigtable</GOOGLE_CLOUD_ENABLE_DIRECT_PATH>
-                  </environmentVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                     <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
