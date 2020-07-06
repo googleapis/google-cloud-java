@@ -211,6 +211,7 @@
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>com.google.http-client:google-http-client-jackson2</ignoredUnusedDeclaredDependency>
               <ignoredUnusedDeclaredDependency>com.google.oauth-client:google-oauth-client</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
