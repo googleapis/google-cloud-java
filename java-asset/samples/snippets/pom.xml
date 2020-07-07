@@ -23,7 +23,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
   <!-- [START cloudasset_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
@@ -42,8 +41,31 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-asset</artifactId>
     </dependency>
-    <!-- [END cloudasset_install_with_bom] -->
-
+    <!-- [START_EXCLUDE] -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquery</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pubsub</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-resourcemanager</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -56,5 +78,7 @@
       <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- [END_EXCLUDE] -->
   </dependencies>
+  <!-- [END cloudasset_install_with_bom] -->
 </project>

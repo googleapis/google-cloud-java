@@ -23,14 +23,44 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-asset:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-asset</artifactId>
-      <version>1.4.0</version>
+      <version>1.4.1-SNAPSHOT</version>
     </dependency>
+    <!-- {x-version-update-end} -->
 
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <version>1.93.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.111.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquery</artifactId>
+      <version>1.116.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pubsub</artifactId>
+      <version>1.107.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-resourcemanager</artifactId>
+      <version>0.117.2-alpha</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -44,7 +74,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
