@@ -1187,6 +1187,21 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoDataOrBuilder
         getProtoRowsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Only initial request setting is respected. If true, drop unknown input
+     * fields. Otherwise, the extra fields will cause append to fail. Default
+     * value is false.
+     * </pre>
+     *
+     * <code>bool ignore_unknown_fields = 5;</code>
+     *
+     * @return The ignoreUnknownFields.
+     */
+    boolean getIgnoreUnknownFields();
+
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.RowsCase
         getRowsCase();
   }
@@ -1289,6 +1304,11 @@ public final class Storage {
                   rows_ = subBuilder.buildPartial();
                 }
                 rowsCase_ = 4;
+                break;
+              }
+            case 40:
+              {
+                ignoreUnknownFields_ = input.readBool();
                 break;
               }
             default:
@@ -2660,6 +2680,26 @@ public final class Storage {
           .getDefaultInstance();
     }
 
+    public static final int IGNORE_UNKNOWN_FIELDS_FIELD_NUMBER = 5;
+    private boolean ignoreUnknownFields_;
+    /**
+     *
+     *
+     * <pre>
+     * Only initial request setting is respected. If true, drop unknown input
+     * fields. Otherwise, the extra fields will cause append to fail. Default
+     * value is false.
+     * </pre>
+     *
+     * <code>bool ignore_unknown_fields = 5;</code>
+     *
+     * @return The ignoreUnknownFields.
+     */
+    @java.lang.Override
+    public boolean getIgnoreUnknownFields() {
+      return ignoreUnknownFields_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2691,6 +2731,9 @@ public final class Storage {
             4,
             (com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoData) rows_);
       }
+      if (ignoreUnknownFields_ != false) {
+        output.writeBool(5, ignoreUnknownFields_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2713,6 +2756,9 @@ public final class Storage {
                 (com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoData)
                     rows_);
       }
+      if (ignoreUnknownFields_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, ignoreUnknownFields_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2734,6 +2780,7 @@ public final class Storage {
       if (hasOffset()) {
         if (!getOffset().equals(other.getOffset())) return false;
       }
+      if (getIgnoreUnknownFields() != other.getIgnoreUnknownFields()) return false;
       if (!getRowsCase().equals(other.getRowsCase())) return false;
       switch (rowsCase_) {
         case 4:
@@ -2759,6 +2806,8 @@ public final class Storage {
         hash = (37 * hash) + OFFSET_FIELD_NUMBER;
         hash = (53 * hash) + getOffset().hashCode();
       }
+      hash = (37 * hash) + IGNORE_UNKNOWN_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreUnknownFields());
       switch (rowsCase_) {
         case 4:
           hash = (37 * hash) + PROTO_ROWS_FIELD_NUMBER;
@@ -2925,6 +2974,8 @@ public final class Storage {
           offset_ = null;
           offsetBuilder_ = null;
         }
+        ignoreUnknownFields_ = false;
+
         rowsCase_ = 0;
         rows_ = null;
         return this;
@@ -2970,6 +3021,7 @@ public final class Storage {
             result.rows_ = protoRowsBuilder_.build();
           }
         }
+        result.ignoreUnknownFields_ = ignoreUnknownFields_;
         result.rowsCase_ = rowsCase_;
         onBuilt();
         return result;
@@ -3032,6 +3084,9 @@ public final class Storage {
         }
         if (other.hasOffset()) {
           mergeOffset(other.getOffset());
+        }
+        if (other.getIgnoreUnknownFields() != false) {
+          setIgnoreUnknownFields(other.getIgnoreUnknownFields());
         }
         switch (other.getRowsCase()) {
           case PROTO_ROWS:
@@ -3615,6 +3670,64 @@ public final class Storage {
         return protoRowsBuilder_;
       }
 
+      private boolean ignoreUnknownFields_;
+      /**
+       *
+       *
+       * <pre>
+       * Only initial request setting is respected. If true, drop unknown input
+       * fields. Otherwise, the extra fields will cause append to fail. Default
+       * value is false.
+       * </pre>
+       *
+       * <code>bool ignore_unknown_fields = 5;</code>
+       *
+       * @return The ignoreUnknownFields.
+       */
+      @java.lang.Override
+      public boolean getIgnoreUnknownFields() {
+        return ignoreUnknownFields_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only initial request setting is respected. If true, drop unknown input
+       * fields. Otherwise, the extra fields will cause append to fail. Default
+       * value is false.
+       * </pre>
+       *
+       * <code>bool ignore_unknown_fields = 5;</code>
+       *
+       * @param value The ignoreUnknownFields to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnoreUnknownFields(boolean value) {
+
+        ignoreUnknownFields_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only initial request setting is respected. If true, drop unknown input
+       * fields. Otherwise, the extra fields will cause append to fail. Default
+       * value is false.
+       * </pre>
+       *
+       * <code>bool ignore_unknown_fields = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnoreUnknownFields() {
+
+        ignoreUnknownFields_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3726,6 +3839,48 @@ public final class Storage {
      */
     com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     *
+     * @return Whether the updatedSchema field is set.
+     */
+    boolean hasUpdatedSchema();
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     *
+     * @return The updatedSchema.
+     */
+    com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema getUpdatedSchema();
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     */
+    com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder
+        getUpdatedSchemaOrBuilder();
+
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse.ResponseCase
         getResponseCase();
   }
@@ -3797,6 +3952,24 @@ public final class Storage {
                   response_ = subBuilder.buildPartial();
                 }
                 responseCase_ = 2;
+                break;
+              }
+            case 26:
+              {
+                com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder subBuilder =
+                    null;
+                if (updatedSchema_ != null) {
+                  subBuilder = updatedSchema_.toBuilder();
+                }
+                updatedSchema_ =
+                    input.readMessage(
+                        com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(updatedSchema_);
+                  updatedSchema_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -3954,6 +4127,61 @@ public final class Storage {
       return com.google.rpc.Status.getDefaultInstance();
     }
 
+    public static final int UPDATED_SCHEMA_FIELD_NUMBER = 3;
+    private com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema updatedSchema_;
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     *
+     * @return Whether the updatedSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedSchema() {
+      return updatedSchema_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     *
+     * @return The updatedSchema.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema getUpdatedSchema() {
+      return updatedSchema_ == null
+          ? com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.getDefaultInstance()
+          : updatedSchema_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If backend detects a schema update, pass it to user so that user can
+     * use it to input new type of message. It will be empty when there is no
+     * schema updates.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder
+        getUpdatedSchemaOrBuilder() {
+      return getUpdatedSchema();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3974,6 +4202,9 @@ public final class Storage {
       if (responseCase_ == 2) {
         output.writeMessage(2, (com.google.rpc.Status) response_);
       }
+      if (updatedSchema_ != null) {
+        output.writeMessage(3, getUpdatedSchema());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3993,6 +4224,9 @@ public final class Storage {
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.rpc.Status) response_);
       }
+      if (updatedSchema_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdatedSchema());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4009,6 +4243,10 @@ public final class Storage {
       com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse other =
           (com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse) obj;
 
+      if (hasUpdatedSchema() != other.hasUpdatedSchema()) return false;
+      if (hasUpdatedSchema()) {
+        if (!getUpdatedSchema().equals(other.getUpdatedSchema())) return false;
+      }
       if (!getResponseCase().equals(other.getResponseCase())) return false;
       switch (responseCase_) {
         case 1:
@@ -4031,6 +4269,10 @@ public final class Storage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUpdatedSchema()) {
+        hash = (37 * hash) + UPDATED_SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdatedSchema().hashCode();
+      }
       switch (responseCase_) {
         case 1:
           hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -4194,6 +4436,12 @@ public final class Storage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (updatedSchemaBuilder_ == null) {
+          updatedSchema_ = null;
+        } else {
+          updatedSchema_ = null;
+          updatedSchemaBuilder_ = null;
+        }
         responseCase_ = 0;
         response_ = null;
         return this;
@@ -4235,6 +4483,11 @@ public final class Storage {
           } else {
             result.response_ = errorBuilder_.build();
           }
+        }
+        if (updatedSchemaBuilder_ == null) {
+          result.updatedSchema_ = updatedSchema_;
+        } else {
+          result.updatedSchema_ = updatedSchemaBuilder_.build();
         }
         result.responseCase_ = responseCase_;
         onBuilt();
@@ -4293,6 +4546,9 @@ public final class Storage {
         if (other
             == com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse
                 .getDefaultInstance()) return this;
+        if (other.hasUpdatedSchema()) {
+          mergeUpdatedSchema(other.getUpdatedSchema());
+        }
         switch (other.getResponseCase()) {
           case OFFSET:
             {
@@ -4616,6 +4872,215 @@ public final class Storage {
         onChanged();
         ;
         return errorBuilder_;
+      }
+
+      private com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema updatedSchema_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema,
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder,
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder>
+          updatedSchemaBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       *
+       * @return Whether the updatedSchema field is set.
+       */
+      public boolean hasUpdatedSchema() {
+        return updatedSchemaBuilder_ != null || updatedSchema_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       *
+       * @return The updatedSchema.
+       */
+      public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema getUpdatedSchema() {
+        if (updatedSchemaBuilder_ == null) {
+          return updatedSchema_ == null
+              ? com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.getDefaultInstance()
+              : updatedSchema_;
+        } else {
+          return updatedSchemaBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public Builder setUpdatedSchema(
+          com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema value) {
+        if (updatedSchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updatedSchema_ = value;
+          onChanged();
+        } else {
+          updatedSchemaBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public Builder setUpdatedSchema(
+          com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder builderForValue) {
+        if (updatedSchemaBuilder_ == null) {
+          updatedSchema_ = builderForValue.build();
+          onChanged();
+        } else {
+          updatedSchemaBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public Builder mergeUpdatedSchema(
+          com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema value) {
+        if (updatedSchemaBuilder_ == null) {
+          if (updatedSchema_ != null) {
+            updatedSchema_ =
+                com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.newBuilder(
+                        updatedSchema_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            updatedSchema_ = value;
+          }
+          onChanged();
+        } else {
+          updatedSchemaBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public Builder clearUpdatedSchema() {
+        if (updatedSchemaBuilder_ == null) {
+          updatedSchema_ = null;
+          onChanged();
+        } else {
+          updatedSchema_ = null;
+          updatedSchemaBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder
+          getUpdatedSchemaBuilder() {
+
+        onChanged();
+        return getUpdatedSchemaFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder
+          getUpdatedSchemaOrBuilder() {
+        if (updatedSchemaBuilder_ != null) {
+          return updatedSchemaBuilder_.getMessageOrBuilder();
+        } else {
+          return updatedSchema_ == null
+              ? com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.getDefaultInstance()
+              : updatedSchema_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If backend detects a schema update, pass it to user so that user can
+       * use it to input new type of message. It will be empty when there is no
+       * schema updates.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1alpha2.TableSchema updated_schema = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema,
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder,
+              com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder>
+          getUpdatedSchemaFieldBuilder() {
+        if (updatedSchemaBuilder_ == null) {
+          updatedSchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema,
+                  com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.Builder,
+                  com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder>(
+                  getUpdatedSchema(), getParentForChildren(), isClean());
+          updatedSchema_ = null;
+        }
+        return updatedSchemaBuilder_;
       }
 
       @java.lang.Override
@@ -9932,77 +10397,80 @@ public final class Storage {
           + "\006parent\030\001 \001(\tB,\340A\002\372A&\n$bigquerystorage.g"
           + "oogleapis.com/Table\022N\n\014write_stream\030\002 \001("
           + "\01323.google.cloud.bigquery.storage.v1alph"
-          + "a2.WriteStreamB\003\340A\002\"\215\003\n\021AppendRowsReques"
+          + "a2.WriteStreamB\003\340A\002\"\254\003\n\021AppendRowsReques"
           + "t\022H\n\014write_stream\030\001 \001(\tB2\340A\002\372A,\n*bigquer"
           + "ystorage.googleapis.com/WriteStream\0220\n\006o"
           + "ffset\030\002 \001(\0132\033.google.protobuf.Int64Value"
           + "B\003\340A\001\022Y\n\nproto_rows\030\004 \001(\0132C.google.cloud"
           + ".bigquery.storage.v1alpha2.AppendRowsReq"
-          + "uest.ProtoDataH\000\032\230\001\n\tProtoData\022J\n\rwriter"
-          + "_schema\030\001 \001(\01323.google.cloud.bigquery.st"
-          + "orage.v1alpha2.ProtoSchema\022?\n\004rows\030\002 \001(\013"
-          + "21.google.cloud.bigquery.storage.v1alpha"
-          + "2.ProtoRowsB\006\n\004rows\"W\n\022AppendRowsRespons"
-          + "e\022\020\n\006offset\030\001 \001(\003H\000\022#\n\005error\030\002 \001(\0132\022.goo"
-          + "gle.rpc.StatusH\000B\n\n\010response\"Y\n\025GetWrite"
-          + "StreamRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*big"
-          + "querystorage.googleapis.com/WriteStream\""
-          + "z\n\036BatchCommitWriteStreamsRequest\022<\n\006par"
-          + "ent\030\001 \001(\tB,\340A\002\372A&\n$bigquerystorage.googl"
-          + "eapis.com/Table\022\032\n\rwrite_streams\030\002 \003(\tB\003"
-          + "\340A\002\"R\n\037BatchCommitWriteStreamsResponse\022/"
-          + "\n\013commit_time\030\001 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\"^\n\032FinalizeWriteStreamRequest\022@\n"
-          + "\004name\030\001 \001(\tB2\340A\002\372A,\n*bigquerystorage.goo"
-          + "gleapis.com/WriteStream\"0\n\033FinalizeWrite"
-          + "StreamResponse\022\021\n\trow_count\030\001 \001(\003\"l\n\020Flu"
-          + "shRowsRequest\022H\n\014write_stream\030\001 \001(\tB2\340A\002"
-          + "\372A,\n*bigquerystorage.googleapis.com/Writ"
-          + "eStream\022\016\n\006offset\030\002 \001(\003\"#\n\021FlushRowsResp"
-          + "onse\022\016\n\006offset\030\001 \001(\0032\250\014\n\rBigQueryWrite\022\351"
-          + "\001\n\021CreateWriteStream\022@.google.cloud.bigq"
-          + "uery.storage.v1alpha2.CreateWriteStreamR"
-          + "equest\0323.google.cloud.bigquery.storage.v"
-          + "1alpha2.WriteStream\"]\202\323\344\223\002A\"1/v1alpha2/{"
-          + "parent=projects/*/datasets/*/tables/*}:\014"
-          + "write_stream\332A\023parent,write_stream\022\344\001\n\nA"
-          + "ppendRows\0229.google.cloud.bigquery.storag"
-          + "e.v1alpha2.AppendRowsRequest\032:.google.cl"
-          + "oud.bigquery.storage.v1alpha2.AppendRows"
-          + "Response\"[\202\323\344\223\002F\"A/v1alpha2/{write_strea"
-          + "m=projects/*/datasets/*/tables/*/streams"
-          + "/*}:\001*\332A\014write_stream(\0010\001\022\321\001\n\016GetWriteSt"
-          + "ream\022=.google.cloud.bigquery.storage.v1a"
-          + "lpha2.GetWriteStreamRequest\0323.google.clo"
-          + "ud.bigquery.storage.v1alpha2.WriteStream"
-          + "\"K\202\323\344\223\002>\"9/v1alpha2/{name=projects/*/dat"
-          + "asets/*/tables/*/streams/*}:\001*\332A\004name\022\353\001"
-          + "\n\023FinalizeWriteStream\022B.google.cloud.big"
-          + "query.storage.v1alpha2.FinalizeWriteStre"
-          + "amRequest\032C.google.cloud.bigquery.storag"
-          + "e.v1alpha2.FinalizeWriteStreamResponse\"K"
-          + "\202\323\344\223\002>\"9/v1alpha2/{name=projects/*/datas"
-          + "ets/*/tables/*/streams/*}:\001*\332A\004name\022\356\001\n\027"
-          + "BatchCommitWriteStreams\022F.google.cloud.b"
-          + "igquery.storage.v1alpha2.BatchCommitWrit"
-          + "eStreamsRequest\032G.google.cloud.bigquery."
-          + "storage.v1alpha2.BatchCommitWriteStreams"
-          + "Response\"B\202\323\344\223\0023\0221/v1alpha2/{parent=proj"
-          + "ects/*/datasets/*/tables/*}\332A\006parent\022\335\001\n"
-          + "\tFlushRows\0228.google.cloud.bigquery.stora"
-          + "ge.v1alpha2.FlushRowsRequest\0329.google.cl"
-          + "oud.bigquery.storage.v1alpha2.FlushRowsR"
-          + "esponse\"[\202\323\344\223\002F\"A/v1alpha2/{write_stream"
-          + "=projects/*/datasets/*/tables/*/streams/"
-          + "*}:\001*\332A\014write_stream\032\260\001\312A\036bigquerystorag"
-          + "e.googleapis.com\322A\213\001https://www.googleap"
-          + "is.com/auth/bigquery,https://www.googlea"
-          + "pis.com/auth/bigquery.insertdata,https:/"
-          + "/www.googleapis.com/auth/cloud-platformB"
-          + "{\n*com.google.cloud.bigquery.storage.v1a"
-          + "lpha2ZMgoogle.golang.org/genproto/google"
-          + "apis/cloud/bigquery/storage/v1alpha2;sto"
-          + "rageb\006proto3"
+          + "uest.ProtoDataH\000\022\035\n\025ignore_unknown_field"
+          + "s\030\005 \001(\010\032\230\001\n\tProtoData\022J\n\rwriter_schema\030\001"
+          + " \001(\01323.google.cloud.bigquery.storage.v1a"
+          + "lpha2.ProtoSchema\022?\n\004rows\030\002 \001(\01321.google"
+          + ".cloud.bigquery.storage.v1alpha2.ProtoRo"
+          + "wsB\006\n\004rows\"\244\001\n\022AppendRowsResponse\022\020\n\006off"
+          + "set\030\001 \001(\003H\000\022#\n\005error\030\002 \001(\0132\022.google.rpc."
+          + "StatusH\000\022K\n\016updated_schema\030\003 \001(\01323.googl"
+          + "e.cloud.bigquery.storage.v1alpha2.TableS"
+          + "chemaB\n\n\010response\"Y\n\025GetWriteStreamReque"
+          + "st\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*bigquerystorag"
+          + "e.googleapis.com/WriteStream\"z\n\036BatchCom"
+          + "mitWriteStreamsRequest\022<\n\006parent\030\001 \001(\tB,"
+          + "\340A\002\372A&\n$bigquerystorage.googleapis.com/T"
+          + "able\022\032\n\rwrite_streams\030\002 \003(\tB\003\340A\002\"R\n\037Batc"
+          + "hCommitWriteStreamsResponse\022/\n\013commit_ti"
+          + "me\030\001 \001(\0132\032.google.protobuf.Timestamp\"^\n\032"
+          + "FinalizeWriteStreamRequest\022@\n\004name\030\001 \001(\t"
+          + "B2\340A\002\372A,\n*bigquerystorage.googleapis.com"
+          + "/WriteStream\"0\n\033FinalizeWriteStreamRespo"
+          + "nse\022\021\n\trow_count\030\001 \001(\003\"l\n\020FlushRowsReque"
+          + "st\022H\n\014write_stream\030\001 \001(\tB2\340A\002\372A,\n*bigque"
+          + "rystorage.googleapis.com/WriteStream\022\016\n\006"
+          + "offset\030\002 \001(\003\"#\n\021FlushRowsResponse\022\016\n\006off"
+          + "set\030\001 \001(\0032\250\014\n\rBigQueryWrite\022\351\001\n\021CreateWr"
+          + "iteStream\022@.google.cloud.bigquery.storag"
+          + "e.v1alpha2.CreateWriteStreamRequest\0323.go"
+          + "ogle.cloud.bigquery.storage.v1alpha2.Wri"
+          + "teStream\"]\202\323\344\223\002A\"1/v1alpha2/{parent=proj"
+          + "ects/*/datasets/*/tables/*}:\014write_strea"
+          + "m\332A\023parent,write_stream\022\344\001\n\nAppendRows\0229"
+          + ".google.cloud.bigquery.storage.v1alpha2."
+          + "AppendRowsRequest\032:.google.cloud.bigquer"
+          + "y.storage.v1alpha2.AppendRowsResponse\"[\202"
+          + "\323\344\223\002F\"A/v1alpha2/{write_stream=projects/"
+          + "*/datasets/*/tables/*/streams/*}:\001*\332A\014wr"
+          + "ite_stream(\0010\001\022\321\001\n\016GetWriteStream\022=.goog"
+          + "le.cloud.bigquery.storage.v1alpha2.GetWr"
+          + "iteStreamRequest\0323.google.cloud.bigquery"
+          + ".storage.v1alpha2.WriteStream\"K\202\323\344\223\002>\"9/"
+          + "v1alpha2/{name=projects/*/datasets/*/tab"
+          + "les/*/streams/*}:\001*\332A\004name\022\353\001\n\023FinalizeW"
+          + "riteStream\022B.google.cloud.bigquery.stora"
+          + "ge.v1alpha2.FinalizeWriteStreamRequest\032C"
+          + ".google.cloud.bigquery.storage.v1alpha2."
+          + "FinalizeWriteStreamResponse\"K\202\323\344\223\002>\"9/v1"
+          + "alpha2/{name=projects/*/datasets/*/table"
+          + "s/*/streams/*}:\001*\332A\004name\022\356\001\n\027BatchCommit"
+          + "WriteStreams\022F.google.cloud.bigquery.sto"
+          + "rage.v1alpha2.BatchCommitWriteStreamsReq"
+          + "uest\032G.google.cloud.bigquery.storage.v1a"
+          + "lpha2.BatchCommitWriteStreamsResponse\"B\202"
+          + "\323\344\223\0023\0221/v1alpha2/{parent=projects/*/data"
+          + "sets/*/tables/*}\332A\006parent\022\335\001\n\tFlushRows\022"
+          + "8.google.cloud.bigquery.storage.v1alpha2"
+          + ".FlushRowsRequest\0329.google.cloud.bigquer"
+          + "y.storage.v1alpha2.FlushRowsResponse\"[\202\323"
+          + "\344\223\002F\"A/v1alpha2/{write_stream=projects/*"
+          + "/datasets/*/tables/*/streams/*}:\001*\332A\014wri"
+          + "te_stream\032\260\001\312A\036bigquerystorage.googleapi"
+          + "s.com\322A\213\001https://www.googleapis.com/auth"
+          + "/bigquery,https://www.googleapis.com/aut"
+          + "h/bigquery.insertdata,https://www.google"
+          + "apis.com/auth/cloud-platformB{\n*com.goog"
+          + "le.cloud.bigquery.storage.v1alpha2ZMgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "bigquery/storage/v1alpha2;storageb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -10034,7 +10502,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1alpha2_AppendRowsRequest_descriptor,
             new java.lang.String[] {
-              "WriteStream", "Offset", "ProtoRows", "Rows",
+              "WriteStream", "Offset", "ProtoRows", "IgnoreUnknownFields", "Rows",
             });
     internal_static_google_cloud_bigquery_storage_v1alpha2_AppendRowsRequest_ProtoData_descriptor =
         internal_static_google_cloud_bigquery_storage_v1alpha2_AppendRowsRequest_descriptor
@@ -10052,7 +10520,7 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1alpha2_AppendRowsResponse_descriptor,
             new java.lang.String[] {
-              "Offset", "Error", "Response",
+              "Offset", "Error", "UpdatedSchema", "Response",
             });
     internal_static_google_cloud_bigquery_storage_v1alpha2_GetWriteStreamRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
