@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+package com.google.cloud.bigquery.storage.test;
+
+message ComplexRoot {
+  optional int64 test_int = 1;
+  repeated string test_string = 2;
+  required bytes test_bytes = 3;
+  optional bool test_bool = 4;
+  repeated double test_double = 5;
+  required ComplexLvl1 complexLvl1 = 6;
+  required ComplexLvl2 complexLvl2 = 7;
+}
+
+message ComplexLvl1 {
+  optional int64 test_int = 1;
+  required ComplexLvl2 complexLvl2 = 2;
+}
+
+message ComplexLvl2 {
+  optional int64 test_int = 1;
+}
+
+message OptionTest {
+  optional int64 test_optional = 1;
+  required int64 test_required = 2;
+  repeated int64 test_repeated = 3;
+}
+
+message ReuseRoot {
+  optional ReuseLvl1 reuse_lvl1 = 1;
+  optional ReuseLvl1 reuse_lvl1_1 = 2;
+  optional ReuseLvl1 reuse_lvl1_2 = 3;
+}
+
+message ReuseLvl1 {
+  optional int64 test_int = 1;
+  optional ReuseLvl2 reuse_lvl2 = 2;
+}
+
+message ReuseLvl2 {
+  optional int64 test_int = 1;
+}
