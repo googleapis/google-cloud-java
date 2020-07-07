@@ -4,54 +4,62 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "5ea164b86c15ee444c285699e76ebc5ea2b64d62"
+        "sha": "0ff54327bffe1b7a74d822c78e90729f82a89956"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8385a4863e19248b71dd1cbe0df5ff51c7a3c3e",
-        "internalRef": "317872667"
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8385a4863e19248b71dd1cbe0df5ff51c7a3c3e",
-        "internalRef": "317872667"
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8385a4863e19248b71dd1cbe0df5ff51c7a3c3e",
-        "internalRef": "317872667"
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8385a4863e19248b71dd1cbe0df5ff51c7a3c3e",
-        "internalRef": "317872667"
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8385a4863e19248b71dd1cbe0df5ff51c7a3c3e",
-        "internalRef": "317872667"
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
+        "internalRef": "320022685"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c4f3059c27591eb24d6942a0e357ec94c80459f2"
+        "sha": "d53e4b70cf091cba04362c2fac3cda0546121641"
       }
     }
   ],
@@ -97,6 +105,15 @@
         "source": "googleapis",
         "apiName": "asset",
         "apiVersion": "v1p4beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "asset",
+        "apiVersion": "v1p5beta1",
         "language": "java",
         "generator": "bazel"
       }

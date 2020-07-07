@@ -6,9 +6,11 @@ proto-google-cloud-asset-v1p1beta1:0.89.0:0.89.1-SNAPSHOT
 proto-google-cloud-asset-v1p2beta1:0.89.0:0.89.1-SNAPSHOT
 proto-google-cloud-asset-v1beta1:0.89.0:0.89.1-SNAPSHOT
 proto-google-cloud-asset-v1p4beta1:0.89.0:0.89.1-SNAPSHOT
+proto-google-cloud-asset-v1p5beta1:0.89.0:0.89.1-SNAPSHOT
 grpc-google-cloud-asset-v1:1.4.0:1.4.1-SNAPSHOT
 grpc-google-cloud-asset-v1beta1:0.89.0:0.89.1-SNAPSHOT
 grpc-google-cloud-asset-v1p1beta1:0.89.0:0.89.1-SNAPSHOT
 grpc-google-cloud-asset-v1p2beta1:0.89.0:0.89.1-SNAPSHOT
 grpc-google-cloud-asset-v1p4beta1:0.89.0:0.89.1-SNAPSHOT
+grpc-google-cloud-asset-v1p5beta1:0.89.0:0.89.1-SNAPSHOT
 google-cloud-asset:1.4.0:1.4.1-SNAPSHOT
