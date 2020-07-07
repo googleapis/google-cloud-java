@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.1...v1.0.2) (2020-07-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#231](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/231)) ([1ab2436](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/1ab24361d368a22e224351b1516b193a89e9bc35))
+
+
+### Documentation
+
+* **samples:** create and delete scheduled query ([#225](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/225)) ([d2eb675](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d2eb675e6114fe84459626f26e261b1cd0f96ebe))
+
 ### [1.0.1](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.0...v1.0.1) (2020-06-23)
 
 
