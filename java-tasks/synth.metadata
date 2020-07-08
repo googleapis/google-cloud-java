@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "2db1d4172504574bdc85f7be01d885dda0b7a33f"
+        "sha": "08e66a2ae918b7aec09b1b0ff54aea210258b1da"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c4f3059c27591eb24d6942a0e357ec94c80459f2"
+        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
       }
     }
   ],
