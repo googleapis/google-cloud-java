@@ -69,12 +69,12 @@ public final class TraceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/devtools/cloudtrace/v1/trace.pr"
-          + "oto\022\035google.devtools.cloudtrace.v1\032\034goog"
-          + "le/api/annotations.proto\032\027google/api/cli"
-          + "ent.proto\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032\033google/pr"
-          + "otobuf/empty.proto\032\037google/protobuf/time"
-          + "stamp.proto\"f\n\005Trace\022\022\n\nproject_id\030\001 \001(\t"
+          + "oto\022\035google.devtools.cloudtrace.v1\032\027goog"
+          + "le/api/client.proto\032\037google/api/field_be"
+          + "havior.proto\032\031google/api/resource.proto\032"
+          + "\033google/protobuf/empty.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\032\034google/api/annota"
+          + "tions.proto\"f\n\005Trace\022\022\n\nproject_id\030\001 \001(\t"
           + "\022\020\n\010trace_id\030\002 \001(\t\0227\n\005spans\030\003 \003(\0132(.goog"
           + "le.devtools.cloudtrace.v1.TraceSpan\">\n\006T"
           + "races\0224\n\006traces\030\001 \003(\0132$.google.devtools."
@@ -134,12 +134,12 @@ public final class TraceProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_devtools_cloudtrace_v1_Trace_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -221,12 +221,12 @@ public final class TraceProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

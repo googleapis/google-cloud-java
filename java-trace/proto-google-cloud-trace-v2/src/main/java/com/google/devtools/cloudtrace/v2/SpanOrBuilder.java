@@ -27,7 +27,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The resource name of the span in the following format:
+   * Required. The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
    * [TRACE_ID] is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array.
@@ -44,7 +44,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The resource name of the span in the following format:
+   * Required. The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
    * [TRACE_ID] is a unique identifier for a trace within a project;
    * it is a 32-character hexadecimal encoding of a 16-byte array.
@@ -62,7 +62,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The [SPAN_ID] portion of the span's resource name.
+   * Required. The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,7 +74,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The [SPAN_ID] portion of the span's resource name.
+   * Required. The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -114,7 +114,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * A description of the span's operation (up to 128 bytes).
+   * Required. A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
    * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
@@ -134,7 +134,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * A description of the span's operation (up to 128 bytes).
+   * Required. A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
    * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
@@ -154,7 +154,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * A description of the span's operation (up to 128 bytes).
+   * Required. A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
    * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
@@ -173,7 +173,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The start time of the span. On the client side, this is the time kept by
+   * Required. The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
    * is the time when the server's application handler starts running.
    * </pre>
@@ -188,7 +188,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The start time of the span. On the client side, this is the time kept by
+   * Required. The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
    * is the time when the server's application handler starts running.
    * </pre>
@@ -203,7 +203,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The start time of the span. On the client side, this is the time kept by
+   * Required. The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
    * is the time when the server's application handler starts running.
    * </pre>
@@ -217,7 +217,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The end time of the span. On the client side, this is the time kept by
+   * Required. The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
    * is the time when the server application handler stops running.
    * </pre>
@@ -231,7 +231,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The end time of the span. On the client side, this is the time kept by
+   * Required. The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
    * is the time when the server application handler stops running.
    * </pre>
@@ -245,7 +245,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The end time of the span. On the client side, this is the time kept by
+   * Required. The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
    * is the time when the server application handler stops running.
    * </pre>
@@ -528,4 +528,37 @@ public interface SpanOrBuilder
    * </code>
    */
   com.google.protobuf.Int32ValueOrBuilder getChildSpanCountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Distinguishes between spans generated in a particular context. For example,
+   * two spans with the same name may be distinguished using `CLIENT` (caller)
+   * and `SERVER` (callee) to identify an RPC call.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudtrace.v2.Span.SpanKind span_kind = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for spanKind.
+   */
+  int getSpanKindValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Distinguishes between spans generated in a particular context. For example,
+   * two spans with the same name may be distinguished using `CLIENT` (caller)
+   * and `SERVER` (callee) to identify an RPC call.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudtrace.v2.Span.SpanKind span_kind = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spanKind.
+   */
+  com.google.devtools.cloudtrace.v2.Span.SpanKind getSpanKind();
 }

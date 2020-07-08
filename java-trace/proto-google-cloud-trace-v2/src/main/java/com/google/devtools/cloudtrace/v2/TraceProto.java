@@ -97,12 +97,12 @@ public final class TraceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/devtools/cloudtrace/v2/trace.pr"
-          + "oto\022\035google.devtools.cloudtrace.v2\032\034goog"
-          + "le/api/annotations.proto\032\037google/api/fie"
-          + "ld_behavior.proto\032\031google/api/resource.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\036g"
-          + "oogle/protobuf/wrappers.proto\032\027google/rp"
-          + "c/status.proto\"\302\020\n\004Span\022\021\n\004name\030\001 \001(\tB\003\340"
+          + "oto\022\035google.devtools.cloudtrace.v2\032\037goog"
+          + "le/api/field_behavior.proto\032\031google/api/"
+          + "resource.proto\032\037google/protobuf/timestam"
+          + "p.proto\032\036google/protobuf/wrappers.proto\032"
+          + "\027google/rpc/status.proto\032\034google/api/ann"
+          + "otations.proto\"\361\021\n\004Span\022\021\n\004name\030\001 \001(\tB\003\340"
           + "A\002\022\024\n\007span_id\030\002 \001(\tB\003\340A\002\022\026\n\016parent_span_"
           + "id\030\003 \001(\t\022K\n\014display_name\030\004 \001(\01320.google."
           + "devtools.cloudtrace.v2.TruncatableString"
@@ -119,84 +119,89 @@ public final class TraceProto {
           + "atusB\003\340A\001\022D\n\033same_process_as_parent_span"
           + "\030\014 \001(\0132\032.google.protobuf.BoolValueB\003\340A\001\022"
           + ":\n\020child_span_count\030\r \001(\0132\033.google.proto"
-          + "buf.Int32ValueB\003\340A\001\032\353\001\n\nAttributes\022W\n\rat"
-          + "tribute_map\030\001 \003(\0132@.google.devtools.clou"
-          + "dtrace.v2.Span.Attributes.AttributeMapEn"
-          + "try\022 \n\030dropped_attributes_count\030\002 \001(\005\032b\n"
-          + "\021AttributeMapEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value"
-          + "\030\002 \001(\0132-.google.devtools.cloudtrace.v2.A"
-          + "ttributeValue:\0028\001\032\337\004\n\tTimeEvent\022(\n\004time\030"
-          + "\001 \001(\0132\032.google.protobuf.Timestamp\022N\n\nann"
-          + "otation\030\002 \001(\01328.google.devtools.cloudtra"
-          + "ce.v2.Span.TimeEvent.AnnotationH\000\022S\n\rmes"
-          + "sage_event\030\003 \001(\0132:.google.devtools.cloud"
-          + "trace.v2.Span.TimeEvent.MessageEventH\000\032\227"
-          + "\001\n\nAnnotation\022E\n\013description\030\001 \001(\01320.goo"
-          + "gle.devtools.cloudtrace.v2.TruncatableSt"
-          + "ring\022B\n\nattributes\030\002 \001(\0132..google.devtoo"
-          + "ls.cloudtrace.v2.Span.Attributes\032\337\001\n\014Mes"
-          + "sageEvent\022M\n\004type\030\001 \001(\0162?.google.devtool"
-          + "s.cloudtrace.v2.Span.TimeEvent.MessageEv"
-          + "ent.Type\022\n\n\002id\030\002 \001(\003\022\037\n\027uncompressed_siz"
-          + "e_bytes\030\003 \001(\003\022\035\n\025compressed_size_bytes\030\004"
-          + " \001(\003\"4\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004SE"
-          + "NT\020\001\022\014\n\010RECEIVED\020\002B\007\n\005value\032\230\001\n\nTimeEven"
-          + "ts\022A\n\ntime_event\030\001 \003(\0132-.google.devtools"
-          + ".cloudtrace.v2.Span.TimeEvent\022!\n\031dropped"
-          + "_annotations_count\030\002 \001(\005\022$\n\034dropped_mess"
-          + "age_events_count\030\003 \001(\005\032\367\001\n\004Link\022\020\n\010trace"
-          + "_id\030\001 \001(\t\022\017\n\007span_id\030\002 \001(\t\022;\n\004type\030\003 \001(\016"
-          + "2-.google.devtools.cloudtrace.v2.Span.Li"
-          + "nk.Type\022B\n\nattributes\030\004 \001(\0132..google.dev"
-          + "tools.cloudtrace.v2.Span.Attributes\"K\n\004T"
-          + "ype\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021CHILD_LINKE"
-          + "D_SPAN\020\001\022\026\n\022PARENT_LINKED_SPAN\020\002\032\\\n\005Link"
-          + "s\0226\n\004link\030\001 \003(\0132(.google.devtools.cloudt"
-          + "race.v2.Span.Link\022\033\n\023dropped_links_count"
-          + "\030\002 \001(\005:S\352AP\n\036cloudtrace.googleapis.com/S"
-          + "pan\022.projects/{project}/traces/{trace}/s"
-          + "pans/{span}\"\216\001\n\016AttributeValue\022H\n\014string"
-          + "_value\030\001 \001(\01320.google.devtools.cloudtrac"
-          + "e.v2.TruncatableStringH\000\022\023\n\tint_value\030\002 "
-          + "\001(\003H\000\022\024\n\nbool_value\030\003 \001(\010H\000B\007\n\005value\"\211\005\n"
-          + "\nStackTrace\022K\n\014stack_frames\030\001 \001(\01325.goog"
-          + "le.devtools.cloudtrace.v2.StackTrace.Sta"
-          + "ckFrames\022\033\n\023stack_trace_hash_id\030\002 \001(\003\032\236\003"
-          + "\n\nStackFrame\022G\n\rfunction_name\030\001 \001(\01320.go"
-          + "ogle.devtools.cloudtrace.v2.TruncatableS"
-          + "tring\022P\n\026original_function_name\030\002 \001(\01320."
-          + "google.devtools.cloudtrace.v2.Truncatabl"
-          + "eString\022C\n\tfile_name\030\003 \001(\01320.google.devt"
-          + "ools.cloudtrace.v2.TruncatableString\022\023\n\013"
-          + "line_number\030\004 \001(\003\022\025\n\rcolumn_number\030\005 \001(\003"
-          + "\022:\n\013load_module\030\006 \001(\0132%.google.devtools."
-          + "cloudtrace.v2.Module\022H\n\016source_version\030\007"
-          + " \001(\01320.google.devtools.cloudtrace.v2.Tru"
-          + "ncatableString\032p\n\013StackFrames\022C\n\005frame\030\001"
-          + " \003(\01324.google.devtools.cloudtrace.v2.Sta"
-          + "ckTrace.StackFrame\022\034\n\024dropped_frames_cou"
-          + "nt\030\002 \001(\005\"\216\001\n\006Module\022@\n\006module\030\001 \001(\01320.go"
-          + "ogle.devtools.cloudtrace.v2.TruncatableS"
-          + "tring\022B\n\010build_id\030\002 \001(\01320.google.devtool"
-          + "s.cloudtrace.v2.TruncatableString\"@\n\021Tru"
-          + "ncatableString\022\r\n\005value\030\001 \001(\t\022\034\n\024truncat"
-          + "ed_byte_count\030\002 \001(\005B\305\001\n!com.google.devto"
-          + "ols.cloudtrace.v2B\nTraceProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/devtools/"
-          + "cloudtrace/v2;cloudtrace\252\002\025Google.Cloud."
-          + "Trace.V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Googl"
-          + "e::Cloud::Trace::V2b\006proto3"
+          + "buf.Int32ValueB\003\340A\001\022D\n\tspan_kind\030\016 \001(\0162,"
+          + ".google.devtools.cloudtrace.v2.Span.Span"
+          + "KindB\003\340A\001\032\353\001\n\nAttributes\022W\n\rattribute_ma"
+          + "p\030\001 \003(\0132@.google.devtools.cloudtrace.v2."
+          + "Span.Attributes.AttributeMapEntry\022 \n\030dro"
+          + "pped_attributes_count\030\002 \001(\005\032b\n\021Attribute"
+          + "MapEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.g"
+          + "oogle.devtools.cloudtrace.v2.AttributeVa"
+          + "lue:\0028\001\032\337\004\n\tTimeEvent\022(\n\004time\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022N\n\nannotation\030\002 "
+          + "\001(\01328.google.devtools.cloudtrace.v2.Span"
+          + ".TimeEvent.AnnotationH\000\022S\n\rmessage_event"
+          + "\030\003 \001(\0132:.google.devtools.cloudtrace.v2.S"
+          + "pan.TimeEvent.MessageEventH\000\032\227\001\n\nAnnotat"
+          + "ion\022E\n\013description\030\001 \001(\01320.google.devtoo"
+          + "ls.cloudtrace.v2.TruncatableString\022B\n\nat"
+          + "tributes\030\002 \001(\0132..google.devtools.cloudtr"
+          + "ace.v2.Span.Attributes\032\337\001\n\014MessageEvent\022"
+          + "M\n\004type\030\001 \001(\0162?.google.devtools.cloudtra"
+          + "ce.v2.Span.TimeEvent.MessageEvent.Type\022\n"
+          + "\n\002id\030\002 \001(\003\022\037\n\027uncompressed_size_bytes\030\003 "
+          + "\001(\003\022\035\n\025compressed_size_bytes\030\004 \001(\003\"4\n\004Ty"
+          + "pe\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004SENT\020\001\022\014\n\010RE"
+          + "CEIVED\020\002B\007\n\005value\032\230\001\n\nTimeEvents\022A\n\ntime"
+          + "_event\030\001 \003(\0132-.google.devtools.cloudtrac"
+          + "e.v2.Span.TimeEvent\022!\n\031dropped_annotatio"
+          + "ns_count\030\002 \001(\005\022$\n\034dropped_message_events"
+          + "_count\030\003 \001(\005\032\367\001\n\004Link\022\020\n\010trace_id\030\001 \001(\t\022"
+          + "\017\n\007span_id\030\002 \001(\t\022;\n\004type\030\003 \001(\0162-.google."
+          + "devtools.cloudtrace.v2.Span.Link.Type\022B\n"
+          + "\nattributes\030\004 \001(\0132..google.devtools.clou"
+          + "dtrace.v2.Span.Attributes\"K\n\004Type\022\024\n\020TYP"
+          + "E_UNSPECIFIED\020\000\022\025\n\021CHILD_LINKED_SPAN\020\001\022\026"
+          + "\n\022PARENT_LINKED_SPAN\020\002\032\\\n\005Links\0226\n\004link\030"
+          + "\001 \003(\0132(.google.devtools.cloudtrace.v2.Sp"
+          + "an.Link\022\033\n\023dropped_links_count\030\002 \001(\005\"g\n\010"
+          + "SpanKind\022\031\n\025SPAN_KIND_UNSPECIFIED\020\000\022\014\n\010I"
+          + "NTERNAL\020\001\022\n\n\006SERVER\020\002\022\n\n\006CLIENT\020\003\022\014\n\010PRO"
+          + "DUCER\020\004\022\014\n\010CONSUMER\020\005:S\352AP\n\036cloudtrace.g"
+          + "oogleapis.com/Span\022.projects/{project}/t"
+          + "races/{trace}/spans/{span}\"\216\001\n\016Attribute"
+          + "Value\022H\n\014string_value\030\001 \001(\01320.google.dev"
+          + "tools.cloudtrace.v2.TruncatableStringH\000\022"
+          + "\023\n\tint_value\030\002 \001(\003H\000\022\024\n\nbool_value\030\003 \001(\010"
+          + "H\000B\007\n\005value\"\211\005\n\nStackTrace\022K\n\014stack_fram"
+          + "es\030\001 \001(\01325.google.devtools.cloudtrace.v2"
+          + ".StackTrace.StackFrames\022\033\n\023stack_trace_h"
+          + "ash_id\030\002 \001(\003\032\236\003\n\nStackFrame\022G\n\rfunction_"
+          + "name\030\001 \001(\01320.google.devtools.cloudtrace."
+          + "v2.TruncatableString\022P\n\026original_functio"
+          + "n_name\030\002 \001(\01320.google.devtools.cloudtrac"
+          + "e.v2.TruncatableString\022C\n\tfile_name\030\003 \001("
+          + "\01320.google.devtools.cloudtrace.v2.Trunca"
+          + "tableString\022\023\n\013line_number\030\004 \001(\003\022\025\n\rcolu"
+          + "mn_number\030\005 \001(\003\022:\n\013load_module\030\006 \001(\0132%.g"
+          + "oogle.devtools.cloudtrace.v2.Module\022H\n\016s"
+          + "ource_version\030\007 \001(\01320.google.devtools.cl"
+          + "oudtrace.v2.TruncatableString\032p\n\013StackFr"
+          + "ames\022C\n\005frame\030\001 \003(\01324.google.devtools.cl"
+          + "oudtrace.v2.StackTrace.StackFrame\022\034\n\024dro"
+          + "pped_frames_count\030\002 \001(\005\"\216\001\n\006Module\022@\n\006mo"
+          + "dule\030\001 \001(\01320.google.devtools.cloudtrace."
+          + "v2.TruncatableString\022B\n\010build_id\030\002 \001(\01320"
+          + ".google.devtools.cloudtrace.v2.Truncatab"
+          + "leString\"@\n\021TruncatableString\022\r\n\005value\030\001"
+          + " \001(\t\022\034\n\024truncated_byte_count\030\002 \001(\005B\305\001\n!c"
+          + "om.google.devtools.cloudtrace.v2B\nTraceP"
+          + "rotoP\001ZGgoogle.golang.org/genproto/googl"
+          + "eapis/devtools/cloudtrace/v2;cloudtrace\252"
+          + "\002\025Google.Cloud.Trace.V2\312\002\025Google\\Cloud\\T"
+          + "race\\V2\352\002\030Google::Cloud::Trace::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_devtools_cloudtrace_v2_Span_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -217,6 +222,7 @@ public final class TraceProto {
               "Status",
               "SameProcessAsParentSpan",
               "ChildSpanCount",
+              "SpanKind",
             });
     internal_static_google_devtools_cloudtrace_v2_Span_Attributes_descriptor =
         internal_static_google_devtools_cloudtrace_v2_Span_descriptor.getNestedTypes().get(0);
@@ -348,12 +354,12 @@ public final class TraceProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
