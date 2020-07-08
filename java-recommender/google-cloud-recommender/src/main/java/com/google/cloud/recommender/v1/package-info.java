@@ -21,18 +21,18 @@
  *
  * <p>================= RecommenderClient =================
  *
- * <p>Service Description: Provides recommendations for cloud customers for various categories like
- * performance optimization, cost savings, reliability, feature discovery, etc. These
- * recommendations are generated automatically based on analysis of user resources, configuration
- * and monitoring metrics.
+ * <p>Service Description: Provides insights and recommendations for cloud customers for various
+ * categories like performance optimization, cost savings, reliability, feature discovery, etc.
+ * Insights and recommendations are generated automatically based on analysis of user resources,
+ * configuration and monitoring metrics.
  *
  * <p>Sample for RecommenderClient:
  *
  * <pre>
  * <code>
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
- *   Recommendation response = recommenderClient.getRecommendation(name);
+ *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+ *   Insight response = recommenderClient.getInsight(name);
  * }
  * </code>
  * </pre>

@@ -57,6 +57,50 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   }
 
   @Override
+  public void listInsights(
+      ListInsightsRequest request, StreamObserver<ListInsightsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListInsightsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListInsightsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getInsight(GetInsightRequest request, StreamObserver<Insight> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Insight) {
+      requests.add(request);
+      responseObserver.onNext((Insight) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void markInsightAccepted(
+      MarkInsightAcceptedRequest request, StreamObserver<Insight> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Insight) {
+      requests.add(request);
+      responseObserver.onNext((Insight) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void listRecommendations(
       ListRecommendationsRequest request,
       StreamObserver<ListRecommendationsResponse> responseObserver) {

@@ -26,10 +26,10 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Provides recommendations for cloud customers for various categories like
- * performance optimization, cost savings, reliability, feature discovery, etc.
- * These recommendations are generated automatically based on analysis of user
- * resources, configuration and monitoring metrics.
+ * Provides insights and recommendations for cloud customers for various
+ * categories like performance optimization, cost savings, reliability, feature
+ * discovery, etc. Insights and recommendations are generated automatically
+ * based on analysis of user resources, configuration and monitoring metrics.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -42,6 +42,144 @@ public final class RecommenderGrpc {
   public static final String SERVICE_NAME = "google.cloud.recommender.v1.Recommender";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.ListInsightsRequest,
+          com.google.cloud.recommender.v1.ListInsightsResponse>
+      getListInsightsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListInsights",
+      requestType = com.google.cloud.recommender.v1.ListInsightsRequest.class,
+      responseType = com.google.cloud.recommender.v1.ListInsightsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.ListInsightsRequest,
+          com.google.cloud.recommender.v1.ListInsightsResponse>
+      getListInsightsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.ListInsightsRequest,
+            com.google.cloud.recommender.v1.ListInsightsResponse>
+        getListInsightsMethod;
+    if ((getListInsightsMethod = RecommenderGrpc.getListInsightsMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getListInsightsMethod = RecommenderGrpc.getListInsightsMethod) == null) {
+          RecommenderGrpc.getListInsightsMethod =
+              getListInsightsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.ListInsightsRequest,
+                          com.google.cloud.recommender.v1.ListInsightsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInsights"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.ListInsightsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.ListInsightsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new RecommenderMethodDescriptorSupplier("ListInsights"))
+                      .build();
+        }
+      }
+    }
+    return getListInsightsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetInsightRequest,
+          com.google.cloud.recommender.v1.Insight>
+      getGetInsightMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInsight",
+      requestType = com.google.cloud.recommender.v1.GetInsightRequest.class,
+      responseType = com.google.cloud.recommender.v1.Insight.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetInsightRequest,
+          com.google.cloud.recommender.v1.Insight>
+      getGetInsightMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.GetInsightRequest,
+            com.google.cloud.recommender.v1.Insight>
+        getGetInsightMethod;
+    if ((getGetInsightMethod = RecommenderGrpc.getGetInsightMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getGetInsightMethod = RecommenderGrpc.getGetInsightMethod) == null) {
+          RecommenderGrpc.getGetInsightMethod =
+              getGetInsightMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.GetInsightRequest,
+                          com.google.cloud.recommender.v1.Insight>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInsight"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.GetInsightRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.Insight.getDefaultInstance()))
+                      .setSchemaDescriptor(new RecommenderMethodDescriptorSupplier("GetInsight"))
+                      .build();
+        }
+      }
+    }
+    return getGetInsightMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1.Insight>
+      getMarkInsightAcceptedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MarkInsightAccepted",
+      requestType = com.google.cloud.recommender.v1.MarkInsightAcceptedRequest.class,
+      responseType = com.google.cloud.recommender.v1.Insight.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkInsightAcceptedRequest,
+          com.google.cloud.recommender.v1.Insight>
+      getMarkInsightAcceptedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.MarkInsightAcceptedRequest,
+            com.google.cloud.recommender.v1.Insight>
+        getMarkInsightAcceptedMethod;
+    if ((getMarkInsightAcceptedMethod = RecommenderGrpc.getMarkInsightAcceptedMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getMarkInsightAcceptedMethod = RecommenderGrpc.getMarkInsightAcceptedMethod) == null) {
+          RecommenderGrpc.getMarkInsightAcceptedMethod =
+              getMarkInsightAcceptedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.MarkInsightAcceptedRequest,
+                          com.google.cloud.recommender.v1.Insight>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MarkInsightAccepted"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.MarkInsightAcceptedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.Insight.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("MarkInsightAccepted"))
+                      .build();
+        }
+      }
+    }
+    return getMarkInsightAcceptedMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.recommender.v1.ListRecommendationsRequest,
           com.google.cloud.recommender.v1.ListRecommendationsResponse>
@@ -330,13 +468,59 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public abstract static class RecommenderImplBase implements io.grpc.BindableService {
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public void listInsights(
+        com.google.cloud.recommender.v1.ListInsightsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.ListInsightsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListInsightsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public void getInsight(
+        com.google.cloud.recommender.v1.GetInsightRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetInsightMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public void markInsightAccepted(
+        com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight> responseObserver) {
+      asyncUnimplementedUnaryCall(getMarkInsightAcceptedMethod(), responseObserver);
+    }
 
     /**
      *
@@ -372,10 +556,10 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
      * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
      * SUCCEEDED, FAILED, or ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -393,10 +577,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -414,10 +599,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -434,6 +620,26 @@ public final class RecommenderGrpc {
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+              getListInsightsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.ListInsightsRequest,
+                      com.google.cloud.recommender.v1.ListInsightsResponse>(
+                      this, METHODID_LIST_INSIGHTS)))
+          .addMethod(
+              getGetInsightMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.GetInsightRequest,
+                      com.google.cloud.recommender.v1.Insight>(this, METHODID_GET_INSIGHT)))
+          .addMethod(
+              getMarkInsightAcceptedMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.MarkInsightAcceptedRequest,
+                      com.google.cloud.recommender.v1.Insight>(
+                      this, METHODID_MARK_INSIGHT_ACCEPTED)))
           .addMethod(
               getListRecommendationsMethod(),
               asyncUnaryCall(
@@ -477,10 +683,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderStub
@@ -492,6 +698,59 @@ public final class RecommenderGrpc {
     @java.lang.Override
     protected RecommenderStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RecommenderStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public void listInsights(
+        com.google.cloud.recommender.v1.ListInsightsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.ListInsightsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListInsightsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public void getInsight(
+        com.google.cloud.recommender.v1.GetInsightRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetInsightMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public void markInsightAccepted(
+        com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMarkInsightAcceptedMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -534,10 +793,10 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
      * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
      * SUCCEEDED, FAILED, or ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -558,10 +817,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -582,10 +842,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -607,10 +868,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderBlockingStub
@@ -623,6 +884,49 @@ public final class RecommenderGrpc {
     protected RecommenderBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RecommenderBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.ListInsightsResponse listInsights(
+        com.google.cloud.recommender.v1.ListInsightsRequest request) {
+      return blockingUnaryCall(getChannel(), getListInsightsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.Insight getInsight(
+        com.google.cloud.recommender.v1.GetInsightRequest request) {
+      return blockingUnaryCall(getChannel(), getGetInsightMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.Insight markInsightAccepted(
+        com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getMarkInsightAcceptedMethod(), getCallOptions(), request);
     }
 
     /**
@@ -657,10 +961,10 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
      * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
      * SUCCEEDED, FAILED, or ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -677,10 +981,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -697,10 +1002,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -718,10 +1024,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderFutureStub
@@ -734,6 +1040,54 @@ public final class RecommenderGrpc {
     protected RecommenderFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RecommenderFutureStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists insights for a Cloud project. Requires the recommender.*.list IAM
+     * permission for the specified insight type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.ListInsightsResponse>
+        listInsights(com.google.cloud.recommender.v1.ListInsightsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListInsightsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested insight. Requires the recommender.*.get IAM permission
+     * for the specified insight type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.Insight>
+        getInsight(com.google.cloud.recommender.v1.GetInsightRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetInsightMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the Insight State as Accepted. Users can use this method to
+     * indicate to the Recommender API that they have applied some action based
+     * on the insight. This stops the insight content from being updated.
+     * MarkInsightAccepted can be applied to insights in ACTIVE state. Requires
+     * the recommender.*.update IAM permission for the specified insight.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.Insight>
+        markInsightAccepted(com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMarkInsightAcceptedMethod(), getCallOptions()), request);
     }
 
     /**
@@ -770,10 +1124,10 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
      * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
      * SUCCEEDED, FAILED, or ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -792,10 +1146,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -814,10 +1169,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -833,11 +1189,14 @@ public final class RecommenderGrpc {
     }
   }
 
-  private static final int METHODID_LIST_RECOMMENDATIONS = 0;
-  private static final int METHODID_GET_RECOMMENDATION = 1;
-  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 2;
-  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 3;
-  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 4;
+  private static final int METHODID_LIST_INSIGHTS = 0;
+  private static final int METHODID_GET_INSIGHT = 1;
+  private static final int METHODID_MARK_INSIGHT_ACCEPTED = 2;
+  private static final int METHODID_LIST_RECOMMENDATIONS = 3;
+  private static final int METHODID_GET_RECOMMENDATION = 4;
+  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 5;
+  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 6;
+  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -856,6 +1215,24 @@ public final class RecommenderGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_INSIGHTS:
+          serviceImpl.listInsights(
+              (com.google.cloud.recommender.v1.ListInsightsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.ListInsightsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INSIGHT:
+          serviceImpl.getInsight(
+              (com.google.cloud.recommender.v1.GetInsightRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight>)
+                  responseObserver);
+          break;
+        case METHODID_MARK_INSIGHT_ACCEPTED:
+          serviceImpl.markInsightAccepted(
+              (com.google.cloud.recommender.v1.MarkInsightAcceptedRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Insight>)
+                  responseObserver);
+          break;
         case METHODID_LIST_RECOMMENDATIONS:
           serviceImpl.listRecommendations(
               (com.google.cloud.recommender.v1.ListRecommendationsRequest) request,
@@ -951,6 +1328,9 @@ public final class RecommenderGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new RecommenderFileDescriptorSupplier())
+                      .addMethod(getListInsightsMethod())
+                      .addMethod(getGetInsightMethod())
+                      .addMethod(getMarkInsightAcceptedMethod())
                       .addMethod(getListRecommendationsMethod())
                       .addMethod(getGetRecommendationMethod())
                       .addMethod(getMarkRecommendationClaimedMethod())
