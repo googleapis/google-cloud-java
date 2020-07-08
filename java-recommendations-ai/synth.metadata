@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "be230adbc8727a2ab50852ec251acfeb7eff4a4f"
+        "sha": "a2f082a14079927cf7a17de4523ce874bb969de3"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c4f3059c27591eb24d6942a0e357ec94c80459f2"
+        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
       }
     }
   ],
