@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "637350b4cc034f603cde3a18c0a73f7cc6cc0f82"
+        "sha": "b4edbd5cf420c652dec71ecccc236dbe823cfa4c"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6d3eed67a45fd58f9c7bfa173c32e4fd4fed058f"
+        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
       }
     }
   ],
