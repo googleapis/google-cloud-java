@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.93.7](https://www.github.com/googleapis/java-core/compare/v1.93.6...v1.93.7) (2020-07-08)
+
+
+### Dependencies
+
+* update core dependencies ([#241](https://www.github.com/googleapis/java-core/issues/241)) ([60a4a05](https://www.github.com/googleapis/java-core/commit/60a4a054d54119807aa8d0342f76d2925c35f2a6))
+* update dependency com.google.api:api-common to v1.9.3 ([#250](https://www.github.com/googleapis/java-core/issues/250)) ([792cb60](https://www.github.com/googleapis/java-core/commit/792cb6016cf3d509667e3b03b5f25847c0430af8))
+* update dependency com.google.api:gax-bom to v1.57.1 ([#251](https://www.github.com/googleapis/java-core/issues/251)) ([dd1a8a9](https://www.github.com/googleapis/java-core/commit/dd1a8a9814f244b2516283d23938f8f49a92f190))
+* update dependency com.google.auth:google-auth-library-bom to v0.21.1 ([#252](https://www.github.com/googleapis/java-core/issues/252)) ([4844b26](https://www.github.com/googleapis/java-core/commit/4844b268e81b69e409f887272f3bed30709ec33d))
+* update dependency com.google.errorprone:error_prone_annotations to v2.4.0 ([#226](https://www.github.com/googleapis/java-core/issues/226)) ([b2fd33c](https://www.github.com/googleapis/java-core/commit/b2fd33c3a1dfa8269f67986211af5f93bacdfad9))
+* update dependency com.google.http-client:google-http-client-bom to v1.36.0 ([#248](https://www.github.com/googleapis/java-core/issues/248)) ([34deaf9](https://www.github.com/googleapis/java-core/commit/34deaf94190cfa2aa9dee5edabbe6bf5dccb0a90))
+
 ### [1.93.6](https://www.github.com/googleapis/java-core/compare/v1.93.5...v1.93.6) (2020-06-12)
 
 
