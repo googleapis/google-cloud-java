@@ -166,6 +166,36 @@ public abstract class DlpServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteDeidentifyTemplateCallable()");
   }
 
+  public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: createJobTriggerCallable()");
+  }
+
+  public UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateJobTriggerCallable()");
+  }
+
+  public UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
+      hybridInspectJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: hybridInspectJobTriggerCallable()");
+  }
+
+  public UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: getJobTriggerCallable()");
+  }
+
+  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
+      listJobTriggersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listJobTriggersPagedCallable()");
+  }
+
+  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> listJobTriggersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listJobTriggersCallable()");
+  }
+
+  public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteJobTriggerCallable()");
+  }
+
   public UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable() {
     throw new UnsupportedOperationException("Not implemented: createDlpJobCallable()");
   }
@@ -188,45 +218,6 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelDlpJobRequest, Empty> cancelDlpJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelDlpJobCallable()");
-  }
-
-  public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: finishDlpJobCallable()");
-  }
-
-  public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
-      hybridInspectDlpJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: hybridInspectDlpJobCallable()");
-  }
-
-  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
-      listJobTriggersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listJobTriggersPagedCallable()");
-  }
-
-  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> listJobTriggersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listJobTriggersCallable()");
-  }
-
-  public UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: getJobTriggerCallable()");
-  }
-
-  public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteJobTriggerCallable()");
-  }
-
-  public UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
-      hybridInspectJobTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: hybridInspectJobTriggerCallable()");
-  }
-
-  public UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateJobTriggerCallable()");
-  }
-
-  public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: createJobTriggerCallable()");
   }
 
   public UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType> createStoredInfoTypeCallable() {
@@ -253,6 +244,15 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteStoredInfoTypeCallable()");
+  }
+
+  public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
+      hybridInspectDlpJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: hybridInspectDlpJobCallable()");
+  }
+
+  public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: finishDlpJobCallable()");
   }
 
   @Override
