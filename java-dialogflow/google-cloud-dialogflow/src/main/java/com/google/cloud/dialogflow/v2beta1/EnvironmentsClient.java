@@ -169,8 +169,9 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all environments from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all environments from. Format: -
+   *     `projects/&lt;Project Number / ID&gt;/agent` - `projects/&lt;Project Number /
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(ProjectAgentName parent) {
@@ -196,8 +197,9 @@ public class EnvironmentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all environments from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all environments from. Format: -
+   *     `projects/&lt;Project Number / ID&gt;/agent` - `projects/&lt;Project Number /
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(String parent) {

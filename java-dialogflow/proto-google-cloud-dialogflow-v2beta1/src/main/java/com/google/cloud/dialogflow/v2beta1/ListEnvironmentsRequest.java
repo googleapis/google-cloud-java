@@ -131,7 +131,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The agent to list all environments from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format:
+   * - `projects/&lt;Project Number / ID&gt;/agent`
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * ID&gt;/agent
    * </pre>
    *
    * <code>
@@ -157,7 +160,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The agent to list all environments from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format:
+   * - `projects/&lt;Project Number / ID&gt;/agent`
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+   * ID&gt;/agent
    * </pre>
    *
    * <code>
@@ -603,7 +609,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The agent to list all environments from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Format:
+     * - `projects/&lt;Project Number / ID&gt;/agent`
+     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * ID&gt;/agent
      * </pre>
      *
      * <code>
@@ -628,7 +637,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The agent to list all environments from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Format:
+     * - `projects/&lt;Project Number / ID&gt;/agent`
+     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * ID&gt;/agent
      * </pre>
      *
      * <code>
@@ -653,7 +665,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The agent to list all environments from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Format:
+     * - `projects/&lt;Project Number / ID&gt;/agent`
+     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * ID&gt;/agent
      * </pre>
      *
      * <code>
@@ -677,7 +692,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The agent to list all environments from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Format:
+     * - `projects/&lt;Project Number / ID&gt;/agent`
+     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * ID&gt;/agent
      * </pre>
      *
      * <code>
@@ -697,7 +715,10 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The agent to list all environments from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Format:
+     * - `projects/&lt;Project Number / ID&gt;/agent`
+     * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
+     * ID&gt;/agent
      * </pre>
      *
      * <code>
