@@ -37,6 +37,7 @@ import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
 import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
+import com.google.cloud.examples.storage.buckets.RemoveBucketCors;
 import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
@@ -356,6 +357,19 @@ public class ITBucketSnippets {
     assertTrue(cors.getResponseHeaders().contains("Content-Type"));
     assertEquals(3600, cors.getMaxAgeSeconds().intValue());
     assertTrue(cors.getMethods().get(0).toString().equalsIgnoreCase("GET"));
+  }
+
+  @Test
+  public void testRemoveBucketCors() {
+    ConfigureBucketCors.configureBucketCors(
+        PROJECT_ID, BUCKET, "http://example.appspot.com", "Content-Type", 3600);
+    Cors cors = storage.get(BUCKET).getCors().get(0);
+    assertTrue(cors.getOrigins().get(0).toString().contains("example.appspot.com"));
+    assertTrue(cors.getResponseHeaders().contains("Content-Type"));
+    assertEquals(3600, cors.getMaxAgeSeconds().intValue());
+    assertTrue(cors.getMethods().get(0).toString().equalsIgnoreCase("GET"));
+    RemoveBucketCors.removeBucketCors(PROJECT_ID, BUCKET);
+    assertNull(storage.get(BUCKET).getCors());
   }
 
   @Test
