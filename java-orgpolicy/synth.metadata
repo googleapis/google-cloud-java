@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-orgpolicy.git",
-        "sha": "dd1cb56c710a647b0f18f18ca93df821d31a8fec"
+        "sha": "99833ef77091ab48dd70107432624caa1fff8d17"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "c4f3059c27591eb24d6942a0e357ec94c80459f2"
+        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
       }
     }
   ],
