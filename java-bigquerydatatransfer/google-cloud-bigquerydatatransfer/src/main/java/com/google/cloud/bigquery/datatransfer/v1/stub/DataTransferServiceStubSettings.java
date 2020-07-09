@@ -93,16 +93,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteTransferConfig to 30 seconds:
+ * <p>For example, to set the total timeout of getDataSource to 30 seconds:
  *
  * <pre>
  * <code>
  * DataTransferServiceStubSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceStubSettings.newBuilder();
  * dataTransferServiceSettingsBuilder
- *     .deleteTransferConfigSettings()
+ *     .getDataSourceSettings()
  *     .setRetrySettings(
- *         dataTransferServiceSettingsBuilder.deleteTransferConfigSettings().getRetrySettings().toBuilder()
+ *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataTransferServiceStubSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
@@ -116,10 +116,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings;
-  private final UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings;
-  private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
-      checkValidCredsSettings;
   private final UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings;
   private final PagedCallSettings<
           ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
@@ -128,6 +124,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       createTransferConfigSettings;
   private final UnaryCallSettings<UpdateTransferConfigRequest, TransferConfig>
       updateTransferConfigSettings;
+  private final UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings;
   private final UnaryCallSettings<GetTransferConfigRequest, TransferConfig>
       getTransferConfigSettings;
   private final PagedCallSettings<
@@ -138,28 +135,15 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   private final UnaryCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
       startManualTransferRunsSettings;
   private final UnaryCallSettings<GetTransferRunRequest, TransferRun> getTransferRunSettings;
+  private final UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings;
   private final PagedCallSettings<
           ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
       listTransferRunsSettings;
   private final PagedCallSettings<
           ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
       listTransferLogsSettings;
-
-  /** Returns the object with the settings used for calls to deleteTransferConfig. */
-  public UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings() {
-    return deleteTransferConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteTransferRun. */
-  public UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
-    return deleteTransferRunSettings;
-  }
-
-  /** Returns the object with the settings used for calls to checkValidCreds. */
-  public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
-      checkValidCredsSettings() {
-    return checkValidCredsSettings;
-  }
+  private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
+      checkValidCredsSettings;
 
   /** Returns the object with the settings used for calls to getDataSource. */
   public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
@@ -183,6 +167,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   public UnaryCallSettings<UpdateTransferConfigRequest, TransferConfig>
       updateTransferConfigSettings() {
     return updateTransferConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTransferConfig. */
+  public UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings() {
+    return deleteTransferConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to getTransferConfig. */
@@ -214,6 +203,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return getTransferRunSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteTransferRun. */
+  public UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
+    return deleteTransferRunSettings;
+  }
+
   /** Returns the object with the settings used for calls to listTransferRuns. */
   public PagedCallSettings<
           ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
@@ -226,6 +220,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
           ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
       listTransferLogsSettings() {
     return listTransferLogsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkValidCreds. */
+  public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
+      checkValidCredsSettings() {
+    return checkValidCredsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -297,20 +297,20 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
   protected DataTransferServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteTransferConfigSettings = settingsBuilder.deleteTransferConfigSettings().build();
-    deleteTransferRunSettings = settingsBuilder.deleteTransferRunSettings().build();
-    checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
     getDataSourceSettings = settingsBuilder.getDataSourceSettings().build();
     listDataSourcesSettings = settingsBuilder.listDataSourcesSettings().build();
     createTransferConfigSettings = settingsBuilder.createTransferConfigSettings().build();
     updateTransferConfigSettings = settingsBuilder.updateTransferConfigSettings().build();
+    deleteTransferConfigSettings = settingsBuilder.deleteTransferConfigSettings().build();
     getTransferConfigSettings = settingsBuilder.getTransferConfigSettings().build();
     listTransferConfigsSettings = settingsBuilder.listTransferConfigsSettings().build();
     scheduleTransferRunsSettings = settingsBuilder.scheduleTransferRunsSettings().build();
     startManualTransferRunsSettings = settingsBuilder.startManualTransferRunsSettings().build();
     getTransferRunSettings = settingsBuilder.getTransferRunSettings().build();
+    deleteTransferRunSettings = settingsBuilder.deleteTransferRunSettings().build();
     listTransferRunsSettings = settingsBuilder.listTransferRunsSettings().build();
     listTransferLogsSettings = settingsBuilder.listTransferLogsSettings().build();
+    checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -553,12 +553,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       extends StubSettings.Builder<DataTransferServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
-        deleteTransferConfigSettings;
-    private final UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty>
-        deleteTransferRunSettings;
-    private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
-        checkValidCredsSettings;
     private final UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings;
     private final PagedCallSettings.Builder<
             ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
@@ -567,6 +561,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         createTransferConfigSettings;
     private final UnaryCallSettings.Builder<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
+        deleteTransferConfigSettings;
     private final UnaryCallSettings.Builder<GetTransferConfigRequest, TransferConfig>
         getTransferConfigSettings;
     private final PagedCallSettings.Builder<
@@ -582,12 +578,16 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         startManualTransferRunsSettings;
     private final UnaryCallSettings.Builder<GetTransferRunRequest, TransferRun>
         getTransferRunSettings;
+    private final UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty>
+        deleteTransferRunSettings;
     private final PagedCallSettings.Builder<
             ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
         listTransferRunsSettings;
     private final PagedCallSettings.Builder<
             ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
         listTransferLogsSettings;
+    private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
+        checkValidCredsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -596,11 +596,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -617,9 +619,19 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(20000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -630,12 +642,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDataSourcesSettings = PagedCallSettings.newBuilder(LIST_DATA_SOURCES_PAGE_STR_FACT);
@@ -643,6 +649,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       createTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -655,26 +663,30 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
       getTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listTransferRunsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_RUNS_PAGE_STR_FACT);
 
       listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
 
+      checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteTransferConfigSettings,
-              deleteTransferRunSettings,
-              checkValidCredsSettings,
               getDataSourceSettings,
               listDataSourcesSettings,
               createTransferConfigSettings,
               updateTransferConfigSettings,
+              deleteTransferConfigSettings,
               getTransferConfigSettings,
               listTransferConfigsSettings,
               scheduleTransferRunsSettings,
               startManualTransferRunsSettings,
               getTransferRunSettings,
+              deleteTransferRunSettings,
               listTransferRunsSettings,
-              listTransferLogsSettings);
+              listTransferLogsSettings,
+              checkValidCredsSettings);
 
       initDefaults(this);
     }
@@ -691,74 +703,74 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteTransferRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .checkValidCredsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .getDataSourceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listDataSourcesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteTransferConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listTransferConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .scheduleTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .startManualTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getTransferRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteTransferRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listTransferLogsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .checkValidCredsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -766,37 +778,37 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     protected Builder(DataTransferServiceStubSettings settings) {
       super(settings);
 
-      deleteTransferConfigSettings = settings.deleteTransferConfigSettings.toBuilder();
-      deleteTransferRunSettings = settings.deleteTransferRunSettings.toBuilder();
-      checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
       getDataSourceSettings = settings.getDataSourceSettings.toBuilder();
       listDataSourcesSettings = settings.listDataSourcesSettings.toBuilder();
       createTransferConfigSettings = settings.createTransferConfigSettings.toBuilder();
       updateTransferConfigSettings = settings.updateTransferConfigSettings.toBuilder();
+      deleteTransferConfigSettings = settings.deleteTransferConfigSettings.toBuilder();
       getTransferConfigSettings = settings.getTransferConfigSettings.toBuilder();
       listTransferConfigsSettings = settings.listTransferConfigsSettings.toBuilder();
       scheduleTransferRunsSettings = settings.scheduleTransferRunsSettings.toBuilder();
       startManualTransferRunsSettings = settings.startManualTransferRunsSettings.toBuilder();
       getTransferRunSettings = settings.getTransferRunSettings.toBuilder();
+      deleteTransferRunSettings = settings.deleteTransferRunSettings.toBuilder();
       listTransferRunsSettings = settings.listTransferRunsSettings.toBuilder();
       listTransferLogsSettings = settings.listTransferLogsSettings.toBuilder();
+      checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteTransferConfigSettings,
-              deleteTransferRunSettings,
-              checkValidCredsSettings,
               getDataSourceSettings,
               listDataSourcesSettings,
               createTransferConfigSettings,
               updateTransferConfigSettings,
+              deleteTransferConfigSettings,
               getTransferConfigSettings,
               listTransferConfigsSettings,
               scheduleTransferRunsSettings,
               startManualTransferRunsSettings,
               getTransferRunSettings,
+              deleteTransferRunSettings,
               listTransferRunsSettings,
-              listTransferLogsSettings);
+              listTransferLogsSettings,
+              checkValidCredsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -813,23 +825,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteTransferConfig. */
-    public UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
-        deleteTransferConfigSettings() {
-      return deleteTransferConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteTransferRun. */
-    public UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
-      return deleteTransferRunSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to checkValidCreds. */
-    public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
-        checkValidCredsSettings() {
-      return checkValidCredsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getDataSource. */
@@ -854,6 +849,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     public UnaryCallSettings.Builder<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigSettings() {
       return updateTransferConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTransferConfig. */
+    public UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
+        deleteTransferConfigSettings() {
+      return deleteTransferConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to getTransferConfig. */
@@ -889,6 +890,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       return getTransferRunSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTransferRun. */
+    public UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
+      return deleteTransferRunSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listTransferRuns. */
     public PagedCallSettings.Builder<
             ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
@@ -901,6 +907,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
             ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
         listTransferLogsSettings() {
       return listTransferLogsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkValidCreds. */
+    public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
+        checkValidCredsSettings() {
+      return checkValidCredsSettings;
     }
 
     @Override

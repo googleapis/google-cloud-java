@@ -85,124 +85,6 @@ public class DataTransferServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteTransferConfigTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataTransferService.addResponse(expectedResponse);
-
-    TransferConfigName name =
-        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
-
-    client.deleteTransferConfig(name);
-
-    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTransferConfigRequest actualRequest = (DeleteTransferConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, TransferConfigName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTransferConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataTransferService.addException(exception);
-
-    try {
-      TransferConfigName name =
-          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
-
-      client.deleteTransferConfig(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTransferRunTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDataTransferService.addResponse(expectedResponse);
-
-    RunName name =
-        RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
-
-    client.deleteTransferRun(name);
-
-    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTransferRunRequest actualRequest = (DeleteTransferRunRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, RunName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTransferRunExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataTransferService.addException(exception);
-
-    try {
-      RunName name =
-          RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
-
-      client.deleteTransferRun(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void checkValidCredsTest() {
-    boolean hasValidCreds = false;
-    CheckValidCredsResponse expectedResponse =
-        CheckValidCredsResponse.newBuilder().setHasValidCreds(hasValidCreds).build();
-    mockDataTransferService.addResponse(expectedResponse);
-
-    DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
-
-    CheckValidCredsResponse actualResponse = client.checkValidCreds(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CheckValidCredsRequest actualRequest = (CheckValidCredsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DataSourceName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void checkValidCredsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataTransferService.addException(exception);
-
-    try {
-      DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
-
-      client.checkValidCreds(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getDataSourceTest() {
     DataSourceName name2 = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
     String dataSourceId = "dataSourceId-1015796374";
@@ -435,6 +317,45 @@ public class DataTransferServiceClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateTransferConfig(transferConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTransferConfigTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    TransferConfigName name =
+        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+
+    client.deleteTransferConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTransferConfigRequest actualRequest = (DeleteTransferConfigRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TransferConfigName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTransferConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      TransferConfigName name =
+          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+
+      client.deleteTransferConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -696,6 +617,45 @@ public class DataTransferServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteTransferRunTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    RunName name =
+        RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+
+    client.deleteTransferRun(name);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTransferRunRequest actualRequest = (DeleteTransferRunRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, RunName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTransferRunExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      RunName name =
+          RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+
+      client.deleteTransferRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listTransferRunsTest() {
     String nextPageToken = "";
     TransferRun transferRunsElement = TransferRun.newBuilder().build();
@@ -788,6 +748,46 @@ public class DataTransferServiceClientTest {
           RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
 
       client.listTransferLogs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void checkValidCredsTest() {
+    boolean hasValidCreds = false;
+    CheckValidCredsResponse expectedResponse =
+        CheckValidCredsResponse.newBuilder().setHasValidCreds(hasValidCreds).build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+
+    CheckValidCredsResponse actualResponse = client.checkValidCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckValidCredsRequest actualRequest = (CheckValidCredsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DataSourceName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void checkValidCredsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+
+      client.checkValidCreds(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

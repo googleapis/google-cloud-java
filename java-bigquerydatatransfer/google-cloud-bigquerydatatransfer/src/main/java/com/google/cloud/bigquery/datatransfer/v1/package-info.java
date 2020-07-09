@@ -30,8 +30,8 @@
  * <pre>
  * <code>
  * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
- *   TransferConfigName name = TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
- *   dataTransferServiceClient.deleteTransferConfig(name);
+ *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+ *   DataSource response = dataTransferServiceClient.getDataSource(name);
  * }
  * </code>
  * </pre>

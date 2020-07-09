@@ -60,18 +60,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DataTransferServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTransferConfigCallable()");
-  }
-
-  public UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteTransferRunCallable()");
-  }
-
-  public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
-    throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
-  }
-
   public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: getDataSourceCallable()");
   }
@@ -91,6 +79,10 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateTransferConfigRequest, TransferConfig> updateTransferConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTransferConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTransferConfigCallable()");
   }
 
   public UnaryCallable<GetTransferConfigRequest, TransferConfig> getTransferConfigCallable() {
@@ -121,6 +113,10 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getTransferRunCallable()");
   }
 
+  public UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTransferRunCallable()");
+  }
+
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
       listTransferRunsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTransferRunsPagedCallable()");
@@ -139,6 +135,10 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTransferLogsCallable()");
+  }
+
+  public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
+    throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
   }
 
   @Override
