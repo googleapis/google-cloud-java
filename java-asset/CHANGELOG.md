@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-asset/compare/v1.4.0...v1.5.0) (2020-07-09)
+
+
+### Features
+
+* **v1p5beta1:** add v1p5beta1 client ([#246](https://www.github.com/googleapis/java-asset/issues/246)) ([c5777f9](https://www.github.com/googleapis/java-asset/commit/c5777f91741b439c9396d50c778739fbab719551))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#238](https://www.github.com/googleapis/java-asset/issues/238)) ([5ea164b](https://www.github.com/googleapis/java-asset/commit/5ea164b86c15ee444c285699e76ebc5ea2b64d62))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v0.2.0 ([#235](https://www.github.com/googleapis/java-asset/issues/235)) ([48fdde6](https://www.github.com/googleapis/java-asset/commit/48fdde6813aa936d3ebcc42e4442db46a30bd4e7))
+* update dependency com.google.cloud:google-cloud-core to v1.93.7 ([#250](https://www.github.com/googleapis/java-asset/issues/250)) ([de0ff23](https://www.github.com/googleapis/java-asset/commit/de0ff23b9ad8cda16ac6e4800eefed25076b2956))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#243](https://www.github.com/googleapis/java-asset/issues/243)) ([67f9b0b](https://www.github.com/googleapis/java-asset/commit/67f9b0b30bc1f8d0e0029466fd8d21eded1a5e46))
+
 ## [1.4.0](https://www.github.com/googleapis/java-asset/compare/v1.3.0...v1.4.0) (2020-06-22)
 
 
