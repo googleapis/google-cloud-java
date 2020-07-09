@@ -60,16 +60,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteConnection to 30 seconds:
+ * <p>For example, to set the total timeout of createConnection to 30 seconds:
  *
  * <pre>
  * <code>
  * ConnectionServiceSettings.Builder connectionServiceSettingsBuilder =
  *     ConnectionServiceSettings.newBuilder();
  * connectionServiceSettingsBuilder
- *     .deleteConnectionSettings()
+ *     .createConnectionSettings()
  *     .setRetrySettings(
- *         connectionServiceSettingsBuilder.deleteConnectionSettings().getRetrySettings().toBuilder()
+ *         connectionServiceSettingsBuilder.createConnectionSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ConnectionServiceSettings connectionServiceSettings = connectionServiceSettingsBuilder.build();
@@ -79,11 +79,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteConnection. */
-  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
-    return ((ConnectionServiceStubSettings) getStubSettings()).deleteConnectionSettings();
-  }
-
   /** Returns the object with the settings used for calls to createConnection. */
   public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
     return ((ConnectionServiceStubSettings) getStubSettings()).createConnectionSettings();
@@ -109,6 +104,11 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
   public UnaryCallSettings<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialSettings() {
     return ((ConnectionServiceStubSettings) getStubSettings()).updateConnectionCredentialSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnection. */
+  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+    return ((ConnectionServiceStubSettings) getStubSettings()).deleteConnectionSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -224,11 +224,6 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteConnection. */
-    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
-      return getStubSettingsBuilder().deleteConnectionSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createConnection. */
     public UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
         createConnectionSettings() {
@@ -256,6 +251,11 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
     public UnaryCallSettings.Builder<UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialSettings() {
       return getStubSettingsBuilder().updateConnectionCredentialSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnection. */
+    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+      return getStubSettingsBuilder().deleteConnectionSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

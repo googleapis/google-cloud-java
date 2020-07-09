@@ -69,16 +69,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteConnection to 30 seconds:
+ * <p>For example, to set the total timeout of createConnection to 30 seconds:
  *
  * <pre>
  * <code>
  * ConnectionServiceStubSettings.Builder connectionServiceSettingsBuilder =
  *     ConnectionServiceStubSettings.newBuilder();
  * connectionServiceSettingsBuilder
- *     .deleteConnectionSettings()
+ *     .createConnectionSettings()
  *     .setRetrySettings(
- *         connectionServiceSettingsBuilder.deleteConnectionSettings().getRetrySettings().toBuilder()
+ *         connectionServiceSettingsBuilder.createConnectionSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ConnectionServiceStubSettings connectionServiceSettings = connectionServiceSettingsBuilder.build();
@@ -95,7 +95,6 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings;
   private final UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings;
   private final UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings;
   private final UnaryCallSettings<ListConnectionsRequest, ListConnectionsResponse>
@@ -103,15 +102,11 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
   private final UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings;
   private final UnaryCallSettings<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialSettings;
+  private final UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-
-  /** Returns the object with the settings used for calls to deleteConnection. */
-  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
-    return deleteConnectionSettings;
-  }
 
   /** Returns the object with the settings used for calls to createConnection. */
   public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
@@ -138,6 +133,11 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
   public UnaryCallSettings<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialSettings() {
     return updateConnectionCredentialSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnection. */
+  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+    return deleteConnectionSettings;
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -225,13 +225,13 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
   protected ConnectionServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteConnectionSettings = settingsBuilder.deleteConnectionSettings().build();
     createConnectionSettings = settingsBuilder.createConnectionSettings().build();
     getConnectionSettings = settingsBuilder.getConnectionSettings().build();
     listConnectionsSettings = settingsBuilder.listConnectionsSettings().build();
     updateConnectionSettings = settingsBuilder.updateConnectionSettings().build();
     updateConnectionCredentialSettings =
         settingsBuilder.updateConnectionCredentialSettings().build();
+    deleteConnectionSettings = settingsBuilder.deleteConnectionSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -241,8 +241,6 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
   public static class Builder extends StubSettings.Builder<ConnectionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteConnectionRequest, Empty>
-        deleteConnectionSettings;
     private final UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
         createConnectionSettings;
     private final UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings;
@@ -252,6 +250,8 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
         updateConnectionSettings;
     private final UnaryCallSettings.Builder<UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialSettings;
+    private final UnaryCallSettings.Builder<DeleteConnectionRequest, Empty>
+        deleteConnectionSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -264,11 +264,13 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -282,12 +284,22 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -297,8 +309,6 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
-
-      deleteConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -310,6 +320,8 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
 
       updateConnectionCredentialSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deleteConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -318,12 +330,12 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteConnectionSettings,
               createConnectionSettings,
               getConnectionSettings,
               listConnectionsSettings,
               updateConnectionSettings,
               updateConnectionCredentialSettings,
+              deleteConnectionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -343,49 +355,49 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listConnectionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateConnectionCredentialSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       return builder;
     }
@@ -393,24 +405,24 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     protected Builder(ConnectionServiceStubSettings settings) {
       super(settings);
 
-      deleteConnectionSettings = settings.deleteConnectionSettings.toBuilder();
       createConnectionSettings = settings.createConnectionSettings.toBuilder();
       getConnectionSettings = settings.getConnectionSettings.toBuilder();
       listConnectionsSettings = settings.listConnectionsSettings.toBuilder();
       updateConnectionSettings = settings.updateConnectionSettings.toBuilder();
       updateConnectionCredentialSettings = settings.updateConnectionCredentialSettings.toBuilder();
+      deleteConnectionSettings = settings.deleteConnectionSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteConnectionSettings,
               createConnectionSettings,
               getConnectionSettings,
               listConnectionsSettings,
               updateConnectionSettings,
               updateConnectionCredentialSettings,
+              deleteConnectionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -430,11 +442,6 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteConnection. */
-    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
-      return deleteConnectionSettings;
     }
 
     /** Returns the builder for the settings used for calls to createConnection. */
@@ -464,6 +471,11 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     public UnaryCallSettings.Builder<UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialSettings() {
       return updateConnectionCredentialSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnection. */
+    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+      return deleteConnectionSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

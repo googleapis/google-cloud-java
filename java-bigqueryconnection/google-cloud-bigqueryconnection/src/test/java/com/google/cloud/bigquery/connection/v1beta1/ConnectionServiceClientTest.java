@@ -98,43 +98,6 @@ public class ConnectionServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteConnectionTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockConnectionService.addResponse(expectedResponse);
-
-    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-
-    client.deleteConnection(name);
-
-    List<AbstractMessage> actualRequests = mockConnectionService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteConnectionRequest actualRequest = (DeleteConnectionRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ConnectionName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteConnectionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockConnectionService.addException(exception);
-
-    try {
-      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-
-      client.deleteConnection(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createConnectionTest() {
     ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
     String friendlyName = "friendlyName1451097503";
@@ -379,6 +342,43 @@ public class ConnectionServiceClientTest {
       ConnectionCredential credential = ConnectionCredential.newBuilder().build();
 
       client.updateConnectionCredential(name, credential);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteConnectionTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockConnectionService.addResponse(expectedResponse);
+
+    ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+
+    client.deleteConnection(name);
+
+    List<AbstractMessage> actualRequests = mockConnectionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConnectionRequest actualRequest = (DeleteConnectionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ConnectionName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConnectionService.addException(exception);
+
+    try {
+      ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+
+      client.deleteConnection(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

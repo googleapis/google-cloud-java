@@ -44,10 +44,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ConnectionServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteConnectionCallable()");
-  }
-
   public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: createConnectionCallable()");
   }
@@ -68,6 +64,10 @@ public abstract class ConnectionServiceStub implements BackgroundResource {
       updateConnectionCredentialCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateConnectionCredentialCallable()");
+  }
+
+  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteConnectionCallable()");
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {

@@ -28,8 +28,10 @@
  * <pre>
  * <code>
  * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
- *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
- *   connectionServiceClient.deleteConnection(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Connection connection = Connection.newBuilder().build();
+ *   String connectionId = "";
+ *   Connection response = connectionServiceClient.createConnection(parent, connection, connectionId);
  * }
  * </code>
  * </pre>
