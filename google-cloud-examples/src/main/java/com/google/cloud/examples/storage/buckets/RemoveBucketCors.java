@@ -15,13 +15,13 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
+// [START storage_remove_cors_configuration]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Cors;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.ImmutableList;
 
-// [START storage_remove_cors_configuration]
 public class RemoveBucketCors {
   public static void removeBucketCors(String projectId, String bucketName) {
     // The ID of your GCP project
