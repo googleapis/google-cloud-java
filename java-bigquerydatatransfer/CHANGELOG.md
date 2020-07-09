@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.2...v1.0.3) (2020-07-09)
+
+
+### Bug Fixes
+
+* migrate bq/datatransfer/v1 to grpc_service_config ([#239](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/239)) ([dd11852](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/dd118521eea3c9c60dfae633995b4d522fab6086))
+
 ### [1.0.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.1...v1.0.2) (2020-07-07)
 
 
