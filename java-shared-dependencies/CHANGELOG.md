@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.8.3](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.2...v0.8.3) (2020-07-09)
+
+
+### Dependencies
+
+* update core dependencies ([#96](https://www.github.com/googleapis/java-shared-dependencies/issues/96)) ([978e69e](https://www.github.com/googleapis/java-shared-dependencies/commit/978e69e9b5999630354ea204c034be2d6b8a2d80))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.10 ([#99](https://www.github.com/googleapis/java-shared-dependencies/issues/99)) ([65c9cce](https://www.github.com/googleapis/java-shared-dependencies/commit/65c9ccea34275fa6f9599043d6e06df169bc433a))
+* update dependency com.google.api:api-common to v1.9.3 ([#91](https://www.github.com/googleapis/java-shared-dependencies/issues/91)) ([2a23a50](https://www.github.com/googleapis/java-shared-dependencies/commit/2a23a50ee5c73b581a02171048e20b14f999949f))
+
 ### [0.8.2](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.1...v0.8.2) (2020-07-01)
 
 
