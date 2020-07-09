@@ -85,122 +85,6 @@ public class ReservationServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteReservationTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockReservationService.addResponse(expectedResponse);
-
-    ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-
-    client.deleteReservation(name);
-
-    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteReservationRequest actualRequest = (DeleteReservationRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ReservationName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteReservationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockReservationService.addException(exception);
-
-    try {
-      ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-
-      client.deleteReservation(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCapacityCommitmentTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockReservationService.addResponse(expectedResponse);
-
-    CapacityCommitmentName name =
-        CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-
-    client.deleteCapacityCommitment(name);
-
-    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCapacityCommitmentRequest actualRequest =
-        (DeleteCapacityCommitmentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CapacityCommitmentName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCapacityCommitmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockReservationService.addException(exception);
-
-    try {
-      CapacityCommitmentName name =
-          CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-
-      client.deleteCapacityCommitment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAssignmentTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockReservationService.addResponse(expectedResponse);
-
-    AssignmentName name =
-        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-
-    client.deleteAssignment(name);
-
-    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAssignmentRequest actualRequest = (DeleteAssignmentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, AssignmentName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAssignmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockReservationService.addException(exception);
-
-    try {
-      AssignmentName name =
-          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-
-      client.deleteAssignment(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createReservationTest() {
     ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
     long slotCapacity = 1516717605L;
@@ -339,6 +223,43 @@ public class ReservationServiceClientTest {
       ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
 
       client.getReservation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteReservationTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+
+    client.deleteReservation(name);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReservationRequest actualRequest = (DeleteReservationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ReservationName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteReservationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+
+      client.deleteReservation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -528,6 +449,46 @@ public class ReservationServiceClientTest {
           CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
 
       client.getCapacityCommitment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCapacityCommitmentTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockReservationService.addResponse(expectedResponse);
+
+    CapacityCommitmentName name =
+        CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+
+    client.deleteCapacityCommitment(name);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCapacityCommitmentRequest actualRequest =
+        (DeleteCapacityCommitmentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CapacityCommitmentName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCapacityCommitmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      CapacityCommitmentName name =
+          CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+
+      client.deleteCapacityCommitment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -761,6 +722,45 @@ public class ReservationServiceClientTest {
       ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
 
       client.listAssignments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAssignmentTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockReservationService.addResponse(expectedResponse);
+
+    AssignmentName name =
+        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+
+    client.deleteAssignment(name);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAssignmentRequest actualRequest = (DeleteAssignmentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, AssignmentName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      AssignmentName name =
+          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+
+      client.deleteAssignment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -64,18 +64,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ReservationServiceStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteReservationCallable()");
-  }
-
-  public UnaryCallable<DeleteCapacityCommitmentRequest, Empty> deleteCapacityCommitmentCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteCapacityCommitmentCallable()");
-  }
-
-  public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAssignmentCallable()");
-  }
-
   public UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable() {
     throw new UnsupportedOperationException("Not implemented: createReservationCallable()");
   }
@@ -92,6 +80,10 @@ public abstract class ReservationServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
     throw new UnsupportedOperationException("Not implemented: getReservationCallable()");
+  }
+
+  public UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteReservationCallable()");
   }
 
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
@@ -117,6 +109,10 @@ public abstract class ReservationServiceStub implements BackgroundResource {
   public UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable() {
     throw new UnsupportedOperationException("Not implemented: getCapacityCommitmentCallable()");
+  }
+
+  public UnaryCallable<DeleteCapacityCommitmentRequest, Empty> deleteCapacityCommitmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCapacityCommitmentCallable()");
   }
 
   public UnaryCallable<UpdateCapacityCommitmentRequest, CapacityCommitment>
@@ -145,6 +141,10 @@ public abstract class ReservationServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> listAssignmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAssignmentsCallable()");
+  }
+
+  public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAssignmentCallable()");
   }
 
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>

@@ -96,16 +96,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteReservation to 30 seconds:
+ * <p>For example, to set the total timeout of createReservation to 30 seconds:
  *
  * <pre>
  * <code>
  * ReservationServiceStubSettings.Builder reservationServiceSettingsBuilder =
  *     ReservationServiceStubSettings.newBuilder();
  * reservationServiceSettingsBuilder
- *     .deleteReservationSettings()
+ *     .createReservationSettings()
  *     .setRetrySettings(
- *         reservationServiceSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
+ *         reservationServiceSettingsBuilder.createReservationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ReservationServiceStubSettings reservationServiceSettings = reservationServiceSettingsBuilder.build();
@@ -122,15 +122,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings;
-  private final UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentSettings;
-  private final UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings;
   private final UnaryCallSettings<CreateReservationRequest, Reservation> createReservationSettings;
   private final PagedCallSettings<
           ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
       listReservationsSettings;
   private final UnaryCallSettings<GetReservationRequest, Reservation> getReservationSettings;
+  private final UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings;
   private final UnaryCallSettings<UpdateReservationRequest, Reservation> updateReservationSettings;
   private final UnaryCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentSettings;
@@ -141,6 +138,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       listCapacityCommitmentsSettings;
   private final UnaryCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentSettings;
+  private final UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentSettings;
   private final UnaryCallSettings<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentSettings;
   private final UnaryCallSettings<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
@@ -151,6 +150,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final PagedCallSettings<
           ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
       listAssignmentsSettings;
+  private final UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings;
   private final PagedCallSettings<
           SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
       searchAssignmentsSettings;
@@ -158,22 +158,6 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings;
   private final UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
       updateBiReservationSettings;
-
-  /** Returns the object with the settings used for calls to deleteReservation. */
-  public UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings() {
-    return deleteReservationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCapacityCommitment. */
-  public UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentSettings() {
-    return deleteCapacityCommitmentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAssignment. */
-  public UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
-    return deleteAssignmentSettings;
-  }
 
   /** Returns the object with the settings used for calls to createReservation. */
   public UnaryCallSettings<CreateReservationRequest, Reservation> createReservationSettings() {
@@ -190,6 +174,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   /** Returns the object with the settings used for calls to getReservation. */
   public UnaryCallSettings<GetReservationRequest, Reservation> getReservationSettings() {
     return getReservationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReservation. */
+  public UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings() {
+    return deleteReservationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateReservation. */
@@ -216,6 +205,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   public UnaryCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentSettings() {
     return getCapacityCommitmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCapacityCommitment. */
+  public UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentSettings() {
+    return deleteCapacityCommitmentSettings;
   }
 
   /** Returns the object with the settings used for calls to updateCapacityCommitment. */
@@ -246,6 +241,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
       listAssignmentsSettings() {
     return listAssignmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAssignment. */
+  public UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
+    return deleteAssignmentSettings;
   }
 
   /** Returns the object with the settings used for calls to searchAssignments. */
@@ -340,21 +340,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   protected ReservationServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteReservationSettings = settingsBuilder.deleteReservationSettings().build();
-    deleteCapacityCommitmentSettings = settingsBuilder.deleteCapacityCommitmentSettings().build();
-    deleteAssignmentSettings = settingsBuilder.deleteAssignmentSettings().build();
     createReservationSettings = settingsBuilder.createReservationSettings().build();
     listReservationsSettings = settingsBuilder.listReservationsSettings().build();
     getReservationSettings = settingsBuilder.getReservationSettings().build();
+    deleteReservationSettings = settingsBuilder.deleteReservationSettings().build();
     updateReservationSettings = settingsBuilder.updateReservationSettings().build();
     createCapacityCommitmentSettings = settingsBuilder.createCapacityCommitmentSettings().build();
     listCapacityCommitmentsSettings = settingsBuilder.listCapacityCommitmentsSettings().build();
     getCapacityCommitmentSettings = settingsBuilder.getCapacityCommitmentSettings().build();
+    deleteCapacityCommitmentSettings = settingsBuilder.deleteCapacityCommitmentSettings().build();
     updateCapacityCommitmentSettings = settingsBuilder.updateCapacityCommitmentSettings().build();
     splitCapacityCommitmentSettings = settingsBuilder.splitCapacityCommitmentSettings().build();
     mergeCapacityCommitmentsSettings = settingsBuilder.mergeCapacityCommitmentsSettings().build();
     createAssignmentSettings = settingsBuilder.createAssignmentSettings().build();
     listAssignmentsSettings = settingsBuilder.listAssignmentsSettings().build();
+    deleteAssignmentSettings = settingsBuilder.deleteAssignmentSettings().build();
     searchAssignmentsSettings = settingsBuilder.searchAssignmentsSettings().build();
     moveAssignmentSettings = settingsBuilder.moveAssignmentSettings().build();
     getBiReservationSettings = settingsBuilder.getBiReservationSettings().build();
@@ -614,12 +614,6 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       extends StubSettings.Builder<ReservationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteReservationRequest, Empty>
-        deleteReservationSettings;
-    private final UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
-        deleteCapacityCommitmentSettings;
-    private final UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty>
-        deleteAssignmentSettings;
     private final UnaryCallSettings.Builder<CreateReservationRequest, Reservation>
         createReservationSettings;
     private final PagedCallSettings.Builder<
@@ -627,6 +621,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         listReservationsSettings;
     private final UnaryCallSettings.Builder<GetReservationRequest, Reservation>
         getReservationSettings;
+    private final UnaryCallSettings.Builder<DeleteReservationRequest, Empty>
+        deleteReservationSettings;
     private final UnaryCallSettings.Builder<UpdateReservationRequest, Reservation>
         updateReservationSettings;
     private final UnaryCallSettings.Builder<CreateCapacityCommitmentRequest, CapacityCommitment>
@@ -638,6 +634,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         listCapacityCommitmentsSettings;
     private final UnaryCallSettings.Builder<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentSettings;
+    private final UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
+        deleteCapacityCommitmentSettings;
     private final UnaryCallSettings.Builder<UpdateCapacityCommitmentRequest, CapacityCommitment>
         updateCapacityCommitmentSettings;
     private final UnaryCallSettings.Builder<
@@ -650,6 +648,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     private final PagedCallSettings.Builder<
             ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
         listAssignmentsSettings;
+    private final UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty>
+        deleteAssignmentSettings;
     private final PagedCallSettings.Builder<
             SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
         searchAssignmentsSettings;
@@ -667,11 +667,13 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -685,12 +687,22 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -701,17 +713,13 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listReservationsSettings = PagedCallSettings.newBuilder(LIST_RESERVATIONS_PAGE_STR_FACT);
 
       getReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -721,6 +729,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           PagedCallSettings.newBuilder(LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT);
 
       getCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -732,6 +742,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
       listAssignmentsSettings = PagedCallSettings.newBuilder(LIST_ASSIGNMENTS_PAGE_STR_FACT);
 
+      deleteAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       searchAssignmentsSettings = PagedCallSettings.newBuilder(SEARCH_ASSIGNMENTS_PAGE_STR_FACT);
 
       moveAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -742,21 +754,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteReservationSettings,
-              deleteCapacityCommitmentSettings,
-              deleteAssignmentSettings,
               createReservationSettings,
               listReservationsSettings,
               getReservationSettings,
+              deleteReservationSettings,
               updateReservationSettings,
               createCapacityCommitmentSettings,
               listCapacityCommitmentsSettings,
               getCapacityCommitmentSettings,
+              deleteCapacityCommitmentSettings,
               updateCapacityCommitmentSettings,
               splitCapacityCommitmentSettings,
               mergeCapacityCommitmentsSettings,
               createAssignmentSettings,
               listAssignmentsSettings,
+              deleteAssignmentSettings,
               searchAssignmentsSettings,
               moveAssignmentSettings,
               getBiReservationSettings,
@@ -777,99 +789,99 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listReservationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listCapacityCommitmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .splitCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .mergeCapacityCommitmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listAssignmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .searchAssignmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .moveAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getBiReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateBiReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       return builder;
     }
@@ -877,21 +889,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     protected Builder(ReservationServiceStubSettings settings) {
       super(settings);
 
-      deleteReservationSettings = settings.deleteReservationSettings.toBuilder();
-      deleteCapacityCommitmentSettings = settings.deleteCapacityCommitmentSettings.toBuilder();
-      deleteAssignmentSettings = settings.deleteAssignmentSettings.toBuilder();
       createReservationSettings = settings.createReservationSettings.toBuilder();
       listReservationsSettings = settings.listReservationsSettings.toBuilder();
       getReservationSettings = settings.getReservationSettings.toBuilder();
+      deleteReservationSettings = settings.deleteReservationSettings.toBuilder();
       updateReservationSettings = settings.updateReservationSettings.toBuilder();
       createCapacityCommitmentSettings = settings.createCapacityCommitmentSettings.toBuilder();
       listCapacityCommitmentsSettings = settings.listCapacityCommitmentsSettings.toBuilder();
       getCapacityCommitmentSettings = settings.getCapacityCommitmentSettings.toBuilder();
+      deleteCapacityCommitmentSettings = settings.deleteCapacityCommitmentSettings.toBuilder();
       updateCapacityCommitmentSettings = settings.updateCapacityCommitmentSettings.toBuilder();
       splitCapacityCommitmentSettings = settings.splitCapacityCommitmentSettings.toBuilder();
       mergeCapacityCommitmentsSettings = settings.mergeCapacityCommitmentsSettings.toBuilder();
       createAssignmentSettings = settings.createAssignmentSettings.toBuilder();
       listAssignmentsSettings = settings.listAssignmentsSettings.toBuilder();
+      deleteAssignmentSettings = settings.deleteAssignmentSettings.toBuilder();
       searchAssignmentsSettings = settings.searchAssignmentsSettings.toBuilder();
       moveAssignmentSettings = settings.moveAssignmentSettings.toBuilder();
       getBiReservationSettings = settings.getBiReservationSettings.toBuilder();
@@ -899,21 +911,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteReservationSettings,
-              deleteCapacityCommitmentSettings,
-              deleteAssignmentSettings,
               createReservationSettings,
               listReservationsSettings,
               getReservationSettings,
+              deleteReservationSettings,
               updateReservationSettings,
               createCapacityCommitmentSettings,
               listCapacityCommitmentsSettings,
               getCapacityCommitmentSettings,
+              deleteCapacityCommitmentSettings,
               updateCapacityCommitmentSettings,
               splitCapacityCommitmentSettings,
               mergeCapacityCommitmentsSettings,
               createAssignmentSettings,
               listAssignmentsSettings,
+              deleteAssignmentSettings,
               searchAssignmentsSettings,
               moveAssignmentSettings,
               getBiReservationSettings,
@@ -936,22 +948,6 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteReservation. */
-    public UnaryCallSettings.Builder<DeleteReservationRequest, Empty> deleteReservationSettings() {
-      return deleteReservationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCapacityCommitment. */
-    public UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
-        deleteCapacityCommitmentSettings() {
-      return deleteCapacityCommitmentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAssignment. */
-    public UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
-      return deleteAssignmentSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createReservation. */
     public UnaryCallSettings.Builder<CreateReservationRequest, Reservation>
         createReservationSettings() {
@@ -968,6 +964,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     /** Returns the builder for the settings used for calls to getReservation. */
     public UnaryCallSettings.Builder<GetReservationRequest, Reservation> getReservationSettings() {
       return getReservationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReservation. */
+    public UnaryCallSettings.Builder<DeleteReservationRequest, Empty> deleteReservationSettings() {
+      return deleteReservationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateReservation. */
@@ -995,6 +996,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     public UnaryCallSettings.Builder<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentSettings() {
       return getCapacityCommitmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCapacityCommitment. */
+    public UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
+        deleteCapacityCommitmentSettings() {
+      return deleteCapacityCommitmentSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateCapacityCommitment. */
@@ -1027,6 +1034,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
             ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
         listAssignmentsSettings() {
       return listAssignmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAssignment. */
+    public UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
+      return deleteAssignmentSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchAssignments. */

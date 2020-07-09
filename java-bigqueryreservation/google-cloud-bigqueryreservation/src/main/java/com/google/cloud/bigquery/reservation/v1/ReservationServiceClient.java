@@ -57,8 +57,10 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
- *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
- *   reservationServiceClient.deleteReservation(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Reservation reservation = Reservation.newBuilder().build();
+ *   String reservationId = "";
+ *   Reservation response = reservationServiceClient.createReservation(parent, reservation, reservationId);
  * }
  * </code>
  * </pre>
@@ -166,334 +168,6 @@ public class ReservationServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReservationServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
-   * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   reservationServiceClient.deleteReservation(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the reservation to retrieve. E.g.,
-   *     `projects/myproject/locations/US/reservations/team1-prod`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReservation(ReservationName name) {
-    DeleteReservationRequest request =
-        DeleteReservationRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteReservation(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
-   * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   reservationServiceClient.deleteReservation(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the reservation to retrieve. E.g.,
-   *     `projects/myproject/locations/US/reservations/team1-prod`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReservation(String name) {
-    DeleteReservationRequest request = DeleteReservationRequest.newBuilder().setName(name).build();
-    deleteReservation(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
-   * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteReservation(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReservation(DeleteReservationRequest request) {
-    deleteReservationCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
-   * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteReservationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
-    return stub.deleteReservationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
-   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   reservationServiceClient.deleteCapacityCommitment(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the capacity commitment to delete. E.g.,
-   *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCapacityCommitment(CapacityCommitmentName name) {
-    DeleteCapacityCommitmentRequest request =
-        DeleteCapacityCommitmentRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteCapacityCommitment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
-   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   reservationServiceClient.deleteCapacityCommitment(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the capacity commitment to delete. E.g.,
-   *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCapacityCommitment(String name) {
-    DeleteCapacityCommitmentRequest request =
-        DeleteCapacityCommitmentRequest.newBuilder().setName(name).build();
-    deleteCapacityCommitment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
-   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteCapacityCommitment(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCapacityCommitment(DeleteCapacityCommitmentRequest request) {
-    deleteCapacityCommitmentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
-   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentCallable() {
-    return stub.deleteCapacityCommitmentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a assignment. No expansion will happen.
-   *
-   * <p>Example:
-   *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
-   *
-   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
-   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
-   * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   reservationServiceClient.deleteAssignment(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the resource, e.g.
-   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAssignment(AssignmentName name) {
-    DeleteAssignmentRequest request =
-        DeleteAssignmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteAssignment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a assignment. No expansion will happen.
-   *
-   * <p>Example:
-   *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
-   *
-   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
-   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
-   * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   reservationServiceClient.deleteAssignment(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the resource, e.g.
-   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAssignment(String name) {
-    DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder().setName(name).build();
-    deleteAssignment(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a assignment. No expansion will happen.
-   *
-   * <p>Example:
-   *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
-   *
-   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
-   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
-   * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteAssignment(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAssignment(DeleteAssignmentRequest request) {
-    deleteAssignmentCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a assignment. No expansion will happen.
-   *
-   * <p>Example:
-   *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
-   *
-   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
-   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
-   * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteAssignmentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
-    return stub.deleteAssignmentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -827,6 +501,102 @@ public class ReservationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
     return stub.getReservationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   reservationServiceClient.deleteReservation(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the reservation to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservations/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservation(ReservationName name) {
+    DeleteReservationRequest request =
+        DeleteReservationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReservation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   reservationServiceClient.deleteReservation(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the reservation to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservations/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservation(String name) {
+    DeleteReservationRequest request = DeleteReservationRequest.newBuilder().setName(name).build();
+    deleteReservation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   reservationServiceClient.deleteReservation(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservation(DeleteReservationRequest request) {
+    deleteReservationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteReservationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
+    return stub.deleteReservationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1227,6 +997,104 @@ public class ReservationServiceClient implements BackgroundResource {
   public final UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable() {
     return stub.getCapacityCommitmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
+   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+   *   reservationServiceClient.deleteCapacityCommitment(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the capacity commitment to delete. E.g.,
+   *     `projects/myproject/locations/US/capacityCommitments/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCapacityCommitment(CapacityCommitmentName name) {
+    DeleteCapacityCommitmentRequest request =
+        DeleteCapacityCommitmentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCapacityCommitment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
+   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+   *   reservationServiceClient.deleteCapacityCommitment(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the capacity commitment to delete. E.g.,
+   *     `projects/myproject/locations/US/capacityCommitments/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCapacityCommitment(String name) {
+    DeleteCapacityCommitmentRequest request =
+        DeleteCapacityCommitmentRequest.newBuilder().setName(name).build();
+    deleteCapacityCommitment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
+   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   reservationServiceClient.deleteCapacityCommitment(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCapacityCommitment(DeleteCapacityCommitmentRequest request) {
+    deleteCapacityCommitmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a capacity commitment. Attempting to delete capacity commitment before its
+   * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
+   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteCapacityCommitmentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentCallable() {
+    return stub.deleteCapacityCommitmentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1985,6 +1853,140 @@ public class ReservationServiceClient implements BackgroundResource {
   public final UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse>
       listAssignmentsCallable() {
     return stub.listAssignmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a assignment. No expansion will happen.
+   *
+   * <p>Example:
+   *
+   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
+   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
+   * previously to define the following associations between entities and reservations:
+   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   *
+   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
+   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
+   * still use `res1` while queries from `project2` will switch to use on-demand mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   reservationServiceClient.deleteAssignment(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the resource, e.g.
+   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAssignment(AssignmentName name) {
+    DeleteAssignmentRequest request =
+        DeleteAssignmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteAssignment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a assignment. No expansion will happen.
+   *
+   * <p>Example:
+   *
+   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
+   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
+   * previously to define the following associations between entities and reservations:
+   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   *
+   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
+   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
+   * still use `res1` while queries from `project2` will switch to use on-demand mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   reservationServiceClient.deleteAssignment(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the resource, e.g.
+   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAssignment(String name) {
+    DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder().setName(name).build();
+    deleteAssignment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a assignment. No expansion will happen.
+   *
+   * <p>Example:
+   *
+   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
+   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
+   * previously to define the following associations between entities and reservations:
+   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   *
+   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
+   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
+   * still use `res1` while queries from `project2` will switch to use on-demand mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   reservationServiceClient.deleteAssignment(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAssignment(DeleteAssignmentRequest request) {
+    deleteAssignmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a assignment. No expansion will happen.
+   *
+   * <p>Example:
+   *
+   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
+   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
+   * previously to define the following associations between entities and reservations:
+   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   *
+   * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
+   * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
+   * still use `res1` while queries from `project2` will switch to use on-demand mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteAssignmentCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
+    return stub.deleteAssignmentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

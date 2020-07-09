@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteReservation to 30 seconds:
+ * <p>For example, to set the total timeout of createReservation to 30 seconds:
  *
  * <pre>
  * <code>
  * ReservationServiceSettings.Builder reservationServiceSettingsBuilder =
  *     ReservationServiceSettings.newBuilder();
  * reservationServiceSettingsBuilder
- *     .deleteReservationSettings()
+ *     .createReservationSettings()
  *     .setRetrySettings(
- *         reservationServiceSettingsBuilder.deleteReservationSettings().getRetrySettings().toBuilder()
+ *         reservationServiceSettingsBuilder.createReservationSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ReservationServiceSettings reservationServiceSettings = reservationServiceSettingsBuilder.build();
@@ -72,22 +72,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ReservationServiceSettings extends ClientSettings<ReservationServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteReservation. */
-  public UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings() {
-    return ((ReservationServiceStubSettings) getStubSettings()).deleteReservationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteCapacityCommitment. */
-  public UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentSettings() {
-    return ((ReservationServiceStubSettings) getStubSettings()).deleteCapacityCommitmentSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteAssignment. */
-  public UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
-    return ((ReservationServiceStubSettings) getStubSettings()).deleteAssignmentSettings();
-  }
-
   /** Returns the object with the settings used for calls to createReservation. */
   public UnaryCallSettings<CreateReservationRequest, Reservation> createReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).createReservationSettings();
@@ -103,6 +87,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   /** Returns the object with the settings used for calls to getReservation. */
   public UnaryCallSettings<GetReservationRequest, Reservation> getReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).getReservationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteReservation. */
+  public UnaryCallSettings<DeleteReservationRequest, Empty> deleteReservationSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).deleteReservationSettings();
   }
 
   /** Returns the object with the settings used for calls to updateReservation. */
@@ -129,6 +118,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   public UnaryCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).getCapacityCommitmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCapacityCommitment. */
+  public UnaryCallSettings<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).deleteCapacityCommitmentSettings();
   }
 
   /** Returns the object with the settings used for calls to updateCapacityCommitment. */
@@ -159,6 +154,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
           ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
       listAssignmentsSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).listAssignmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAssignment. */
+  public UnaryCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).deleteAssignmentSettings();
   }
 
   /** Returns the object with the settings used for calls to searchAssignments. */
@@ -281,22 +281,6 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteReservation. */
-    public UnaryCallSettings.Builder<DeleteReservationRequest, Empty> deleteReservationSettings() {
-      return getStubSettingsBuilder().deleteReservationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCapacityCommitment. */
-    public UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
-        deleteCapacityCommitmentSettings() {
-      return getStubSettingsBuilder().deleteCapacityCommitmentSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAssignment. */
-    public UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
-      return getStubSettingsBuilder().deleteAssignmentSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createReservation. */
     public UnaryCallSettings.Builder<CreateReservationRequest, Reservation>
         createReservationSettings() {
@@ -313,6 +297,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     /** Returns the builder for the settings used for calls to getReservation. */
     public UnaryCallSettings.Builder<GetReservationRequest, Reservation> getReservationSettings() {
       return getStubSettingsBuilder().getReservationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReservation. */
+    public UnaryCallSettings.Builder<DeleteReservationRequest, Empty> deleteReservationSettings() {
+      return getStubSettingsBuilder().deleteReservationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateReservation. */
@@ -340,6 +329,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     public UnaryCallSettings.Builder<GetCapacityCommitmentRequest, CapacityCommitment>
         getCapacityCommitmentSettings() {
       return getStubSettingsBuilder().getCapacityCommitmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCapacityCommitment. */
+    public UnaryCallSettings.Builder<DeleteCapacityCommitmentRequest, Empty>
+        deleteCapacityCommitmentSettings() {
+      return getStubSettingsBuilder().deleteCapacityCommitmentSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateCapacityCommitment. */
@@ -372,6 +367,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
             ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
         listAssignmentsSettings() {
       return getStubSettingsBuilder().listAssignmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAssignment. */
+    public UnaryCallSettings.Builder<DeleteAssignmentRequest, Empty> deleteAssignmentSettings() {
+      return getStubSettingsBuilder().deleteAssignmentSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchAssignments. */

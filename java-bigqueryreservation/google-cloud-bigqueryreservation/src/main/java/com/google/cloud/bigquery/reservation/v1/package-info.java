@@ -40,8 +40,10 @@
  * <pre>
  * <code>
  * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
- *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
- *   reservationServiceClient.deleteReservation(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Reservation reservation = Reservation.newBuilder().build();
+ *   String reservationId = "";
+ *   Reservation response = reservationServiceClient.createReservation(parent, reservation, reservationId);
  * }
  * </code>
  * </pre>

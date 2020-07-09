@@ -75,36 +75,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcReservationServiceStub extends ReservationServiceStub {
 
-  private static final MethodDescriptor<DeleteReservationRequest, Empty>
-      deleteReservationMethodDescriptor =
-          MethodDescriptor.<DeleteReservationRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteReservation")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteReservationRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentMethodDescriptor =
-          MethodDescriptor.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteCapacityCommitment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteCapacityCommitmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteAssignmentRequest, Empty>
-      deleteAssignmentMethodDescriptor =
-          MethodDescriptor.<DeleteAssignmentRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteAssignment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAssignmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateReservationRequest, Reservation>
       createReservationMethodDescriptor =
           MethodDescriptor.<CreateReservationRequest, Reservation>newBuilder()
@@ -135,6 +105,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteReservationRequest, Empty>
+      deleteReservationMethodDescriptor =
+          MethodDescriptor.<DeleteReservationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteReservation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteReservationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<UpdateReservationRequest, Reservation>
       updateReservationMethodDescriptor =
@@ -178,6 +158,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentMethodDescriptor =
+          MethodDescriptor.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteCapacityCommitment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCapacityCommitmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentMethodDescriptor =
@@ -233,6 +223,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAssignmentsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteAssignmentRequest, Empty>
+      deleteAssignmentMethodDescriptor =
+          MethodDescriptor.<DeleteAssignmentRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsMethodDescriptor =
           MethodDescriptor.<SearchAssignmentsRequest, SearchAssignmentsResponse>newBuilder()
@@ -277,16 +277,13 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable;
-  private final UnaryCallable<DeleteCapacityCommitmentRequest, Empty>
-      deleteCapacityCommitmentCallable;
-  private final UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable;
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
       listReservationsPagedCallable;
   private final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable;
+  private final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable;
   private final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable;
   private final UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable;
@@ -296,6 +293,8 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
       listCapacityCommitmentsPagedCallable;
   private final UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable;
+  private final UnaryCallable<DeleteCapacityCommitmentRequest, Empty>
+      deleteCapacityCommitmentCallable;
   private final UnaryCallable<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentCallable;
   private final UnaryCallable<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
@@ -307,6 +306,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
       listAssignmentsCallable;
   private final UnaryCallable<ListAssignmentsRequest, ListAssignmentsPagedResponse>
       listAssignmentsPagedCallable;
+  private final UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable;
   private final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable;
   private final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
@@ -357,46 +357,6 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
-        GrpcCallSettings.<DeleteReservationRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteReservationMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteReservationRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteReservationRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteCapacityCommitmentRequest, Empty>
-        deleteCapacityCommitmentTransportSettings =
-            GrpcCallSettings.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteCapacityCommitmentMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteCapacityCommitmentRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteCapacityCommitmentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
-        GrpcCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteAssignmentMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAssignmentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAssignmentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateReservationRequest, Reservation> createReservationTransportSettings =
         GrpcCallSettings.<CreateReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(createReservationMethodDescriptor)
@@ -431,6 +391,19 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                 new RequestParamsExtractor<GetReservationRequest>() {
                   @Override
                   public Map<String, String> extract(GetReservationRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteReservationRequest, Empty> deleteReservationTransportSettings =
+        GrpcCallSettings.<DeleteReservationRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteReservationMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteReservationRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteReservationRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -488,6 +461,20 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                     new RequestParamsExtractor<GetCapacityCommitmentRequest>() {
                       @Override
                       public Map<String, String> extract(GetCapacityCommitmentRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteCapacityCommitmentRequest, Empty>
+        deleteCapacityCommitmentTransportSettings =
+            GrpcCallSettings.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteCapacityCommitmentMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteCapacityCommitmentRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteCapacityCommitmentRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
@@ -566,6 +553,19 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteAssignmentRequest, Empty> deleteAssignmentTransportSettings =
+        GrpcCallSettings.<DeleteAssignmentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAssignmentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteAssignmentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteAssignmentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<SearchAssignmentsRequest, SearchAssignmentsResponse>
         searchAssignmentsTransportSettings =
             GrpcCallSettings.<SearchAssignmentsRequest, SearchAssignmentsResponse>newBuilder()
@@ -623,19 +623,6 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                     })
                 .build();
 
-    this.deleteReservationCallable =
-        callableFactory.createUnaryCallable(
-            deleteReservationTransportSettings,
-            settings.deleteReservationSettings(),
-            clientContext);
-    this.deleteCapacityCommitmentCallable =
-        callableFactory.createUnaryCallable(
-            deleteCapacityCommitmentTransportSettings,
-            settings.deleteCapacityCommitmentSettings(),
-            clientContext);
-    this.deleteAssignmentCallable =
-        callableFactory.createUnaryCallable(
-            deleteAssignmentTransportSettings, settings.deleteAssignmentSettings(), clientContext);
     this.createReservationCallable =
         callableFactory.createUnaryCallable(
             createReservationTransportSettings,
@@ -650,6 +637,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     this.getReservationCallable =
         callableFactory.createUnaryCallable(
             getReservationTransportSettings, settings.getReservationSettings(), clientContext);
+    this.deleteReservationCallable =
+        callableFactory.createUnaryCallable(
+            deleteReservationTransportSettings,
+            settings.deleteReservationSettings(),
+            clientContext);
     this.updateReservationCallable =
         callableFactory.createUnaryCallable(
             updateReservationTransportSettings,
@@ -675,6 +667,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             getCapacityCommitmentTransportSettings,
             settings.getCapacityCommitmentSettings(),
             clientContext);
+    this.deleteCapacityCommitmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteCapacityCommitmentTransportSettings,
+            settings.deleteCapacityCommitmentSettings(),
+            clientContext);
     this.updateCapacityCommitmentCallable =
         callableFactory.createUnaryCallable(
             updateCapacityCommitmentTransportSettings,
@@ -699,6 +696,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     this.listAssignmentsPagedCallable =
         callableFactory.createPagedCallable(
             listAssignmentsTransportSettings, settings.listAssignmentsSettings(), clientContext);
+    this.deleteAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteAssignmentTransportSettings, settings.deleteAssignmentSettings(), clientContext);
     this.searchAssignmentsCallable =
         callableFactory.createUnaryCallable(
             searchAssignmentsTransportSettings,
@@ -724,18 +724,6 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
-    return deleteReservationCallable;
-  }
-
-  public UnaryCallable<DeleteCapacityCommitmentRequest, Empty> deleteCapacityCommitmentCallable() {
-    return deleteCapacityCommitmentCallable;
-  }
-
-  public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
-    return deleteAssignmentCallable;
-  }
-
   public UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable() {
     return createReservationCallable;
   }
@@ -752,6 +740,10 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
 
   public UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
     return getReservationCallable;
+  }
+
+  public UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
+    return deleteReservationCallable;
   }
 
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
@@ -776,6 +768,10 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   public UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable() {
     return getCapacityCommitmentCallable;
+  }
+
+  public UnaryCallable<DeleteCapacityCommitmentRequest, Empty> deleteCapacityCommitmentCallable() {
+    return deleteCapacityCommitmentCallable;
   }
 
   public UnaryCallable<UpdateCapacityCommitmentRequest, CapacityCommitment>
@@ -804,6 +800,10 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
 
   public UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> listAssignmentsCallable() {
     return listAssignmentsCallable;
+  }
+
+  public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
+    return deleteAssignmentCallable;
   }
 
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
