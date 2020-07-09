@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.storage.buckets;
 
+// [START storage_disable_bucket_lifecycle_management]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -34,3 +35,4 @@ public class DisableLifecycleManagement {
     System.out.println("Lifecycle management was disabled for bucket " + bucketName);
   }
 }
+// [END storage_disable_bucket_lifecycle_management]
