@@ -9,5 +9,6 @@
   "repo": "googleapis/java-datastore",
   "repo_short": "java-datastore",
   "distribution_name": "com.google.cloud:google-cloud-datastore",
+  "codeowner_team": "@googleapis/firestore-dpe",
   "api_id": "datastore.googleapis.com"
 }
