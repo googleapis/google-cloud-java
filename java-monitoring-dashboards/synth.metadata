@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring-dashboards.git",
-        "sha": "47da4ab302b855d6307f4d0b44a0502925d227c2"
+        "sha": "97e33a31aba4a2f134f2f6c61eb7269c6ac51f53"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "3c5166c1db0f1804af7acdbbd79137630a00ce63",
-        "internalRef": "315496921"
+        "sha": "ca88164f0a037c0b8ed88c4a69e0b94fddbf797a",
+        "internalRef": "320447395"
       }
     },
     {
