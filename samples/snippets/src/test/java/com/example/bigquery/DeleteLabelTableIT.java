@@ -19,16 +19,9 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardTableDefinition;
-import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.TableInfo;
-import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Map;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -58,14 +51,14 @@ public class DeleteLabelTableIT {
 
   @Before
   public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
     // create a temporary table
     tableName = "MY_TABLE_TEST_" + UUID.randomUUID().toString().substring(0, 8);
-    Map<String, String> labels = ImmutableMap.of("color", "green");
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
-    TableId tableId = TableId.of(BIGQUERY_DATASET_NAME, tableName);
-    StandardTableDefinition tableDefinition = StandardTableDefinition.of(Schema.of());
-    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).setLabels(labels).build();
-    bigQuery.create(tableInfo);
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, Schema.of());
+    // add label on a table
+    LabelTable.labelTable(BIGQUERY_DATASET_NAME, tableName);
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
