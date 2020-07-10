@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TimePartitioning;
 
+// Sample to create a partition table
 public class CreatePartitionedTable {
 
   public static void runCreatePartitionedTable() {
@@ -36,9 +37,9 @@ public class CreatePartitionedTable {
     String tableName = "MY_TABLE_NAME";
     Schema schema =
         Schema.of(
-            Field.of("stringField", StandardSQLTypeName.STRING),
-            Field.of("booleanField", StandardSQLTypeName.BOOL),
-            Field.of("dateField", StandardSQLTypeName.DATE));
+            Field.of("name", StandardSQLTypeName.STRING),
+            Field.of("post_abbr", StandardSQLTypeName.STRING),
+            Field.of("date", StandardSQLTypeName.DATE));
     createPartitionedTable(datasetName, tableName, schema);
   }
 
@@ -50,7 +51,11 @@ public class CreatePartitionedTable {
 
       TableId tableId = TableId.of(datasetName, tableName);
 
-      TimePartitioning partitioning = TimePartitioning.of(TimePartitioning.Type.DAY);
+      TimePartitioning partitioning =
+          TimePartitioning.newBuilder(TimePartitioning.Type.DAY)
+              .setField("date") //  name of column to use for partitioning
+              .setExpirationMs(7776000000L) // 90 days
+              .build();
 
       StandardTableDefinition tableDefinition =
           StandardTableDefinition.newBuilder()
