@@ -19,13 +19,8 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.DatasetInfo;
-import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Map;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -55,12 +50,14 @@ public class DeleteLabelDatasetIT {
 
   @Before
   public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
     // create a temporary dataset
     datasetName = "MY_DATASET_TEST_" + UUID.randomUUID().toString().substring(0, 8);
-    Map<String, String> labels = ImmutableMap.of("color", "green");
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
-    DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).setLabels(labels).build();
-    bigQuery.create(datasetInfo);
+    CreateDataset.createDataset(datasetName);
+    // add a label on dataset
+    LabelDataset.labelDataset(datasetName);
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
