@@ -507,8 +507,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -525,8 +525,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -545,8 +545,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -2179,8 +2179,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2196,8 +2196,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2219,8 +2219,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2245,8 +2245,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2268,8 +2268,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2298,8 +2298,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2321,8 +2321,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2339,8 +2339,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>
@@ -2361,8 +2361,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rules to apply to all updates to the actual spend, regardless
-     * of the thresholds set in `threshold_rules`.
+     * Optional. Rules to apply to notifications sent based on budget spend and
+     * thresholds.
      * </pre>
      *
      * <code>

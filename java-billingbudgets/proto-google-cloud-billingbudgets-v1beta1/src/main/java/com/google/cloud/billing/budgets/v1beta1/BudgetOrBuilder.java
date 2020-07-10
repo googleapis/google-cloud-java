@@ -236,8 +236,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -251,8 +251,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>
@@ -266,8 +266,8 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Rules to apply to all updates to the actual spend, regardless
-   * of the thresholds set in `threshold_rules`.
+   * Optional. Rules to apply to notifications sent based on budget spend and
+   * thresholds.
    * </pre>
    *
    * <code>

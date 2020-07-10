@@ -27,10 +27,10 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Required. The name of the Cloud Pub/Sub topic where budget related messages
+   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
    * for more details.
    * Caller is expected to have
@@ -49,10 +49,10 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Required. The name of the Cloud Pub/Sub topic where budget related messages
+   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
    * for more details.
    * Caller is expected to have
@@ -72,7 +72,7 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The schema version of the notification.
+   * Required. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
    * </pre>
@@ -86,7 +86,7 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The schema version of the notification.
+   * Required. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
    * </pre>
@@ -96,4 +96,83 @@ public interface AllUpdatesRuleOrBuilder
    * @return The bytes for schemaVersion.
    */
   com.google.protobuf.ByteString getSchemaVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the monitoringNotificationChannels.
+   */
+  java.util.List<java.lang.String> getMonitoringNotificationChannelsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of monitoringNotificationChannels.
+   */
+  int getMonitoringNotificationChannelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The monitoringNotificationChannels at the given index.
+   */
+  java.lang.String getMonitoringNotificationChannels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the monitoringNotificationChannels at the given index.
+   */
+  com.google.protobuf.ByteString getMonitoringNotificationChannelsBytes(int index);
 }

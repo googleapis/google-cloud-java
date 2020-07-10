@@ -22,9 +22,8 @@ package com.google.cloud.billing.budgets.v1beta1;
  *
  *
  * <pre>
- * AllUpdatesRule defines notifications that are sent on every update to the
- * billing account's spend, regardless of the thresholds defined using
- * threshold rules.
+ * AllUpdatesRule defines notifications that are sent based on budget spend
+ * and thresholds.
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.AllUpdatesRule}
@@ -42,6 +41,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   private AllUpdatesRule() {
     pubsubTopic_ = "";
     schemaVersion_ = "";
+    monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -63,6 +63,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -87,6 +88,16 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
               schemaVersion_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                monitoringNotificationChannels_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              monitoringNotificationChannels_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +112,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        monitoringNotificationChannels_ = monitoringNotificationChannels_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -127,10 +141,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Required. The name of the Cloud Pub/Sub topic where budget related messages
+   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
    * for more details.
    * Caller is expected to have
@@ -160,10 +174,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Required. The name of the Cloud Pub/Sub topic where budget related messages
+   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
    * for more details.
    * Caller is expected to have
@@ -196,7 +210,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The schema version of the notification.
+   * Required. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
    * </pre>
@@ -221,7 +235,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The schema version of the notification.
+   * Required. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
    * </pre>
@@ -241,6 +255,95 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MONITORING_NOTIFICATION_CHANNELS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList monitoringNotificationChannels_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the monitoringNotificationChannels.
+   */
+  public com.google.protobuf.ProtocolStringList getMonitoringNotificationChannelsList() {
+    return monitoringNotificationChannels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of monitoringNotificationChannels.
+   */
+  public int getMonitoringNotificationChannelsCount() {
+    return monitoringNotificationChannels_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The monitoringNotificationChannels at the given index.
+   */
+  public java.lang.String getMonitoringNotificationChannels(int index) {
+    return monitoringNotificationChannels_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account roles.
+   * The value is the full REST resource name of a monitoring notification
+   * channel with the form
+   * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+   * channels are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the monitoringNotificationChannels at the given index.
+   */
+  public com.google.protobuf.ByteString getMonitoringNotificationChannelsBytes(int index) {
+    return monitoringNotificationChannels_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,6 +366,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     if (!getSchemaVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, schemaVersion_);
     }
+    for (int i = 0; i < monitoringNotificationChannels_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 3, monitoringNotificationChannels_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -277,6 +384,14 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSchemaVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, schemaVersion_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < monitoringNotificationChannels_.size(); i++) {
+        dataSize += computeStringSizeNoTag(monitoringNotificationChannels_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMonitoringNotificationChannelsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -296,6 +411,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPubsubTopic().equals(other.getPubsubTopic())) return false;
     if (!getSchemaVersion().equals(other.getSchemaVersion())) return false;
+    if (!getMonitoringNotificationChannelsList()
+        .equals(other.getMonitoringNotificationChannelsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -311,6 +428,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPubsubTopic().hashCode();
     hash = (37 * hash) + SCHEMA_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getSchemaVersion().hashCode();
+    if (getMonitoringNotificationChannelsCount() > 0) {
+      hash = (37 * hash) + MONITORING_NOTIFICATION_CHANNELS_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringNotificationChannelsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -416,9 +537,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * AllUpdatesRule defines notifications that are sent on every update to the
-   * billing account's spend, regardless of the thresholds defined using
-   * threshold rules.
+   * AllUpdatesRule defines notifications that are sent based on budget spend
+   * and thresholds.
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.AllUpdatesRule}
@@ -463,6 +583,8 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
 
       schemaVersion_ = "";
 
+      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -490,8 +612,14 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result =
           new com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule(this);
+      int from_bitField0_ = bitField0_;
       result.pubsubTopic_ = pubsubTopic_;
       result.schemaVersion_ = schemaVersion_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        monitoringNotificationChannels_ = monitoringNotificationChannels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.monitoringNotificationChannels_ = monitoringNotificationChannels_;
       onBuilt();
       return result;
     }
@@ -550,6 +678,16 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
         schemaVersion_ = other.schemaVersion_;
         onChanged();
       }
+      if (!other.monitoringNotificationChannels_.isEmpty()) {
+        if (monitoringNotificationChannels_.isEmpty()) {
+          monitoringNotificationChannels_ = other.monitoringNotificationChannels_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureMonitoringNotificationChannelsIsMutable();
+          monitoringNotificationChannels_.addAll(other.monitoringNotificationChannels_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -580,15 +718,17 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object pubsubTopic_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Required. The name of the Cloud Pub/Sub topic where budget related messages
+     * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
      * for more details.
      * Caller is expected to have
@@ -617,10 +757,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Required. The name of the Cloud Pub/Sub topic where budget related messages
+     * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
      * for more details.
      * Caller is expected to have
@@ -649,10 +789,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Required. The name of the Cloud Pub/Sub topic where budget related messages
+     * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
      * for more details.
      * Caller is expected to have
@@ -680,10 +820,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Required. The name of the Cloud Pub/Sub topic where budget related messages
+     * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
      * for more details.
      * Caller is expected to have
@@ -707,10 +847,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Required. The name of the Cloud Pub/Sub topic where budget related messages
+     * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
      * for more details.
      * Caller is expected to have
@@ -741,7 +881,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The schema version of the notification.
+     * Required. The schema version of the notification sent to `pubsub_topic`.
      * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
      * </pre>
@@ -765,7 +905,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The schema version of the notification.
+     * Required. The schema version of the notification sent to `pubsub_topic`.
      * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
      * </pre>
@@ -789,7 +929,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The schema version of the notification.
+     * Required. The schema version of the notification sent to `pubsub_topic`.
      * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
      * </pre>
@@ -812,7 +952,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The schema version of the notification.
+     * Required. The schema version of the notification sent to `pubsub_topic`.
      * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
      * </pre>
@@ -831,7 +971,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The schema version of the notification.
+     * Required. The schema version of the notification sent to `pubsub_topic`.
      * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
      * </pre>
@@ -848,6 +988,240 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       schemaVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList monitoringNotificationChannels_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureMonitoringNotificationChannelsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        monitoringNotificationChannels_ =
+            new com.google.protobuf.LazyStringArrayList(monitoringNotificationChannels_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the monitoringNotificationChannels.
+     */
+    public com.google.protobuf.ProtocolStringList getMonitoringNotificationChannelsList() {
+      return monitoringNotificationChannels_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of monitoringNotificationChannels.
+     */
+    public int getMonitoringNotificationChannelsCount() {
+      return monitoringNotificationChannels_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The monitoringNotificationChannels at the given index.
+     */
+    public java.lang.String getMonitoringNotificationChannels(int index) {
+      return monitoringNotificationChannels_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the monitoringNotificationChannels at the given index.
+     */
+    public com.google.protobuf.ByteString getMonitoringNotificationChannelsBytes(int index) {
+      return monitoringNotificationChannels_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The monitoringNotificationChannels to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMonitoringNotificationChannels(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMonitoringNotificationChannelsIsMutable();
+      monitoringNotificationChannels_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The monitoringNotificationChannels to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMonitoringNotificationChannels(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMonitoringNotificationChannelsIsMutable();
+      monitoringNotificationChannels_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The monitoringNotificationChannels to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMonitoringNotificationChannels(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMonitoringNotificationChannelsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, monitoringNotificationChannels_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMonitoringNotificationChannels() {
+      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account roles.
+     * The value is the full REST resource name of a monitoring notification
+     * channel with the form
+     * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
+     * channels are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string monitoring_notification_channels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the monitoringNotificationChannels to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMonitoringNotificationChannelsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureMonitoringNotificationChannelsIsMutable();
+      monitoringNotificationChannels_.add(value);
       onChanged();
       return this;
     }
