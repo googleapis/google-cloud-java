@@ -30,12 +30,16 @@ import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.TopicName;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -89,23 +93,50 @@ public class ITPubSubTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
+  private Subscription getSubscription(
+      ProjectSubscriptionName subscriptionName,
+      TopicName topicName,
+      PushConfig pushConfig,
+      int ackDeadline) {
+    return Subscription.newBuilder()
+        .setName(subscriptionName.toString())
+        .setTopic(topicName.toString())
+        .setPushConfig(pushConfig)
+        .setAckDeadlineSeconds(ackDeadline)
+        .build();
+  }
+
   @Test
   public void testTopicPolicy() {
-    ProjectTopicName topicName =
-        ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
+    TopicName topicName =
+        TopicName.newBuilder()
+            .setProject(projectId)
+            .setTopic(formatForTest("testing-topic-policy"))
+            .build();
     topicAdminClient.createTopic(topicName);
-    Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
+
+    Policy policy =
+        topicAdminClient.getIamPolicy(
+            GetIamPolicyRequest.newBuilder().setResource(topicName.toString()).build());
     Binding binding =
         Binding.newBuilder().setRole("roles/viewer").addMembers("allAuthenticatedUsers").build();
+
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
-            topicName.toString(), policy.toBuilder().addBindings(binding).build());
+            SetIamPolicyRequest.newBuilder()
+                .setResource(topicName.toString())
+                .setPolicy(policy.toBuilder().addBindings(binding).build())
+                .build());
     assertThat(newPolicy.getBindingsList()).contains(binding);
 
     String permissionName = "pubsub.topics.get";
     List<String> permissions =
         topicAdminClient
-            .testIamPermissions(topicName.toString(), Collections.singletonList(permissionName))
+            .testIamPermissions(
+                TestIamPermissionsRequest.newBuilder()
+                    .setResource(topicName.toString())
+                    .addAllPermissions(Collections.singletonList(permissionName))
+                    .build())
             .getPermissionsList();
     assertThat(permissions).contains(permissionName);
 
@@ -115,8 +146,11 @@ public class ITPubSubTest {
   @Test
   public void testVPCPushSubscriber() {
     assumeTrue(IS_VPC_TEST);
-    ProjectTopicName topicName =
-        ProjectTopicName.of(projectId, formatForTest("testing-vpc-push-subscriber-topic"));
+    TopicName topicName =
+        TopicName.newBuilder()
+            .setProject(projectId)
+            .setTopic(formatForTest("testing-vpc-push-subscriber-topic"))
+            .build();
     ProjectSubscriptionName subscriptionName =
         ProjectSubscriptionName.of(
             projectId, formatForTest("testing-vpc-push-subscriber-subscription"));
@@ -124,10 +158,11 @@ public class ITPubSubTest {
 
     try {
       subscriptionAdminClient.createSubscription(
-          subscriptionName,
-          topicName,
-          PushConfig.newBuilder().setPushEndpoint("https://random_point").build(),
-          10);
+          getSubscription(
+              subscriptionName,
+              topicName,
+              PushConfig.newBuilder().setPushEndpoint("https://random_point").build(),
+              10));
       subscriptionAdminClient.deleteSubscription(subscriptionName);
       Assert.fail("No exception raised");
     } catch (PermissionDeniedException e) {
@@ -139,15 +174,19 @@ public class ITPubSubTest {
 
   @Test
   public void testPublishSubscribe() throws Exception {
-    ProjectTopicName topicName =
-        ProjectTopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
+    TopicName topicName =
+        TopicName.newBuilder()
+            .setProject(projectId)
+            .setTopic(formatForTest("testing-publish-subscribe-topic"))
+            .build();
     ProjectSubscriptionName subscriptionName =
         ProjectSubscriptionName.of(
             projectId, formatForTest("testing-publish-subscribe-subscription"));
 
     topicAdminClient.createTopic(topicName);
+
     subscriptionAdminClient.createSubscription(
-        subscriptionName, topicName, PushConfig.newBuilder().build(), 10);
+        getSubscription(subscriptionName, topicName, PushConfig.newBuilder().build(), 10));
 
     final BlockingQueue<Object> receiveQueue = new LinkedBlockingQueue<>();
     Subscriber subscriber =
