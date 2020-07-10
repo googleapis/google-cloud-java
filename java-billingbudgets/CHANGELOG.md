@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-billingbudgets/compare/v0.3.0...v0.4.0) (2020-07-10)
+
+
+### Features
+
+* **v1beta1:** added monitoring_notification_channels field to allow configuration of additional budget alert recipients ([#203](https://www.github.com/googleapis/java-billingbudgets/issues/203)) ([7b4c0a7](https://www.github.com/googleapis/java-billingbudgets/commit/7b4c0a72d0d9cc4a931606825a7c1a10cb45db15))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#194](https://www.github.com/googleapis/java-billingbudgets/issues/194)) ([8fd3008](https://www.github.com/googleapis/java-billingbudgets/commit/8fd30085fef6a2a3f30c6f571bd8848eaea8e81d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#201](https://www.github.com/googleapis/java-billingbudgets/issues/201)) ([31140e9](https://www.github.com/googleapis/java-billingbudgets/commit/31140e9099a1534b92b2bbae6760b5cb0a2c4a31))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#204](https://www.github.com/googleapis/java-billingbudgets/issues/204)) ([9903198](https://www.github.com/googleapis/java-billingbudgets/commit/9903198176cd469109b4f6f1cf8de48747bb644e))
+
 ## [0.3.0](https://www.github.com/googleapis/java-billingbudgets/compare/v0.2.4...v0.3.0) (2020-06-22)
 
 
