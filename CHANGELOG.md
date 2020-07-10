@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.116.6](https://www.github.com/googleapis/java-bigquery/compare/v1.116.5...v1.116.6) (2020-07-10)
+
+
+### Bug Fixes
+
+* handle malformed backend responses. ([#522](https://www.github.com/googleapis/java-bigquery/issues/522)) ([64de23a](https://www.github.com/googleapis/java-bigquery/commit/64de23a95736ffaaae7a05e0fd2c6f5f8c5c3665))
+
+
+### Documentation
+
+* **samples:** add label dataset ([#526](https://www.github.com/googleapis/java-bigquery/issues/526)) ([d775818](https://www.github.com/googleapis/java-bigquery/commit/d775818bda5c3a9c310ce7747f575200ce72fd9d))
+* **samples:** add label table ([#527](https://www.github.com/googleapis/java-bigquery/issues/527)) ([d7cf47d](https://www.github.com/googleapis/java-bigquery/commit/d7cf47d1a1f6eda47637e49983086d79ed1cd7ac))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#523](https://www.github.com/googleapis/java-bigquery/issues/523)) ([82341cb](https://www.github.com/googleapis/java-bigquery/commit/82341cbb12ad6f5e020b5ba15701f66f0cbbfa19))
+
 ### [1.116.5](https://www.github.com/googleapis/java-bigquery/compare/v1.116.4...v1.116.5) (2020-07-08)
 
 
