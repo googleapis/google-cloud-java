@@ -60,6 +60,10 @@ public abstract class PolicyTags implements Serializable {
 
   static PolicyTags fromPb(
       com.google.api.services.bigquery.model.TableFieldSchema.PolicyTags tagPb) {
-    return newBuilder().setNames(tagPb.getNames()).build();
+    // Treat a PolicyTag message without a Names subfield as invalid.
+    if (tagPb.getNames() != null) {
+      return newBuilder().setNames(tagPb.getNames()).build();
+    }
+    return null;
   }
 }

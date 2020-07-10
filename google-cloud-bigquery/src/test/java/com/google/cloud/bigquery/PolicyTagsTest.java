@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -44,6 +45,13 @@ public class PolicyTagsTest {
   public void testBuilder() {
     assertEquals(POLICIES, POLICY_TAGS.getNames());
     assertNotEquals(POLICY_TAGS, POLICIES);
+  }
+
+  @Test
+  public void testWithoutNames() {
+    com.google.api.services.bigquery.model.TableFieldSchema.PolicyTags PARTIALTAG =
+        new com.google.api.services.bigquery.model.TableFieldSchema.PolicyTags();
+    assertNull(PolicyTags.fromPb(PARTIALTAG));
   }
 
   @Test
