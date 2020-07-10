@@ -71,19 +71,6 @@ import javax.annotation.Generated;
 @BetaApi
 public class WorkflowTemplateServiceSettings
     extends ClientSettings<WorkflowTemplateServiceSettings> {
-  /** Returns the object with the settings used for calls to createWorkflowTemplate. */
-  public UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateSettings() {
-    return ((WorkflowTemplateServiceStubSettings) getStubSettings())
-        .createWorkflowTemplateSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getWorkflowTemplate. */
-  public UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateSettings() {
-    return ((WorkflowTemplateServiceStubSettings) getStubSettings()).getWorkflowTemplateSettings();
-  }
-
   /** Returns the object with the settings used for calls to instantiateWorkflowTemplate. */
   public UnaryCallSettings<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateSettings() {
@@ -114,6 +101,19 @@ public class WorkflowTemplateServiceSettings
       instantiateInlineWorkflowTemplateOperationSettings() {
     return ((WorkflowTemplateServiceStubSettings) getStubSettings())
         .instantiateInlineWorkflowTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWorkflowTemplate. */
+  public UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateSettings() {
+    return ((WorkflowTemplateServiceStubSettings) getStubSettings())
+        .createWorkflowTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getWorkflowTemplate. */
+  public UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateSettings() {
+    return ((WorkflowTemplateServiceStubSettings) getStubSettings()).getWorkflowTemplateSettings();
   }
 
   /** Returns the object with the settings used for calls to updateWorkflowTemplate. */
@@ -237,18 +237,6 @@ public class WorkflowTemplateServiceSettings
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createWorkflowTemplate. */
-    public UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
-        createWorkflowTemplateSettings() {
-      return getStubSettingsBuilder().createWorkflowTemplateSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getWorkflowTemplate. */
-    public UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
-        getWorkflowTemplateSettings() {
-      return getStubSettingsBuilder().getWorkflowTemplateSettings();
-    }
-
     /** Returns the builder for the settings used for calls to instantiateWorkflowTemplate. */
     public UnaryCallSettings.Builder<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateSettings() {
@@ -277,6 +265,18 @@ public class WorkflowTemplateServiceSettings
             InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateInlineWorkflowTemplateOperationSettings() {
       return getStubSettingsBuilder().instantiateInlineWorkflowTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkflowTemplate. */
+    public UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
+        createWorkflowTemplateSettings() {
+      return getStubSettingsBuilder().createWorkflowTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getWorkflowTemplate. */
+    public UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
+        getWorkflowTemplateSettings() {
+      return getStubSettingsBuilder().getWorkflowTemplateSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateWorkflowTemplate. */

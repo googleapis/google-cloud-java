@@ -51,15 +51,6 @@ public abstract class WorkflowTemplateServiceStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateCallable() {
-    throw new UnsupportedOperationException("Not implemented: createWorkflowTemplateCallable()");
-  }
-
-  public UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate> getWorkflowTemplateCallable() {
-    throw new UnsupportedOperationException("Not implemented: getWorkflowTemplateCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateWorkflowTemplateOperationCallable() {
@@ -84,6 +75,15 @@ public abstract class WorkflowTemplateServiceStub implements BackgroundResource 
       instantiateInlineWorkflowTemplateCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: instantiateInlineWorkflowTemplateCallable()");
+  }
+
+  public UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: createWorkflowTemplateCallable()");
+  }
+
+  public UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate> getWorkflowTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getWorkflowTemplateCallable()");
   }
 
   public UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>

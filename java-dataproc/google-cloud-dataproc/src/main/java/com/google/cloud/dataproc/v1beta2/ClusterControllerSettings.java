@@ -109,17 +109,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     return ((ClusterControllerStubSettings) getStubSettings()).deleteClusterOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getCluster. */
-  public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
-    return ((ClusterControllerStubSettings) getStubSettings()).getClusterSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listClusters. */
-  public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
-      listClustersSettings() {
-    return ((ClusterControllerStubSettings) getStubSettings()).listClustersSettings();
-  }
-
   /** Returns the object with the settings used for calls to diagnoseCluster. */
   public UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterSettings();
@@ -131,6 +120,17 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   public OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
       diagnoseClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCluster. */
+  public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).getClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listClusters. */
+  public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
+      listClustersSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).listClustersSettings();
   }
 
   public static final ClusterControllerSettings create(ClusterControllerStubSettings stub)
@@ -269,18 +269,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
       return getStubSettingsBuilder().deleteClusterOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getCluster. */
-    public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
-      return getStubSettingsBuilder().getClusterSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listClusters. */
-    public PagedCallSettings.Builder<
-            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
-        listClustersSettings() {
-      return getStubSettingsBuilder().listClustersSettings();
-    }
-
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
     public UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
       return getStubSettingsBuilder().diagnoseClusterSettings();
@@ -292,6 +280,18 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {
       return getStubSettingsBuilder().diagnoseClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCluster. */
+    public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
+      return getStubSettingsBuilder().getClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listClusters. */
+    public PagedCallSettings.Builder<
+            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
+        listClustersSettings() {
+      return getStubSettingsBuilder().listClustersSettings();
     }
 
     @Override

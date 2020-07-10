@@ -177,265 +177,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The Dataproc workflow template to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate createWorkflowTemplate(
-      RegionName parent, WorkflowTemplate template) {
-    CreateWorkflowTemplateRequest request =
-        CreateWorkflowTemplateRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setTemplate(template)
-            .build();
-    return createWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The Dataproc workflow template to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate createWorkflowTemplate(
-      LocationName parent, WorkflowTemplate template) {
-    CreateWorkflowTemplateRequest request =
-        CreateWorkflowTemplateRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setTemplate(template)
-            .build();
-    return createWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent.toString(), template);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The Dataproc workflow template to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate createWorkflowTemplate(String parent, WorkflowTemplate template) {
-    CreateWorkflowTemplateRequest request =
-        CreateWorkflowTemplateRequest.newBuilder().setParent(parent).setTemplate(template).build();
-    return createWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate createWorkflowTemplate(CreateWorkflowTemplateRequest request) {
-    return createWorkflowTemplateCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.createWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   WorkflowTemplate response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateCallable() {
-    return stub.createWorkflowTemplateCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the latest workflow template.
-   *
-   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
-    GetWorkflowTemplateRequest request =
-        GetWorkflowTemplateRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the latest workflow template.
-   *
-   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate getWorkflowTemplate(String name) {
-    GetWorkflowTemplateRequest request =
-        GetWorkflowTemplateRequest.newBuilder().setName(name).build();
-    return getWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the latest workflow template.
-   *
-   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate getWorkflowTemplate(GetWorkflowTemplateRequest request) {
-    return getWorkflowTemplateCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the latest workflow template.
-   *
-   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.getWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   WorkflowTemplate response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateCallable() {
-    return stub.getWorkflowTemplateCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Instantiates a template and begins execution.
    *
    * <p>The returned Operation can be used to track execution of workflow by polling
@@ -1069,6 +810,265 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
   public final UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
       instantiateInlineWorkflowTemplateCallable() {
     return stub.instantiateInlineWorkflowTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
+   * @param template Required. The Dataproc workflow template to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(
+      RegionName parent, WorkflowTemplate template) {
+    CreateWorkflowTemplateRequest request =
+        CreateWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return createWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
+   * @param template Required. The Dataproc workflow template to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(
+      LocationName parent, WorkflowTemplate template) {
+    CreateWorkflowTemplateRequest request =
+        CreateWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return createWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent.toString(), template);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
+   * @param template Required. The Dataproc workflow template to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(String parent, WorkflowTemplate template) {
+    CreateWorkflowTemplateRequest request =
+        CreateWorkflowTemplateRequest.newBuilder().setParent(parent).setTemplate(template).build();
+    return createWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setTemplate(template)
+   *     .build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(CreateWorkflowTemplateRequest request) {
+    return createWorkflowTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setTemplate(template)
+   *     .build();
+   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.createWorkflowTemplateCallable().futureCall(request);
+   *   // Do something
+   *   WorkflowTemplate response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateCallable() {
+    return stub.createWorkflowTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the latest workflow template.
+   *
+   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
+    GetWorkflowTemplateRequest request =
+        GetWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the latest workflow template.
+   *
+   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate getWorkflowTemplate(String name) {
+    GetWorkflowTemplateRequest request =
+        GetWorkflowTemplateRequest.newBuilder().setName(name).build();
+    return getWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the latest workflow template.
+   *
+   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate getWorkflowTemplate(GetWorkflowTemplateRequest request) {
+    return getWorkflowTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the latest workflow template.
+   *
+   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.getWorkflowTemplateCallable().futureCall(request);
+   *   // Do something
+   *   WorkflowTemplate response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateCallable() {
+    return stub.getWorkflowTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

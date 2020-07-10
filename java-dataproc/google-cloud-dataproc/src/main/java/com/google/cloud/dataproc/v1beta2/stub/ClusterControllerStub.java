@@ -80,6 +80,16 @@ public abstract class ClusterControllerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
+      diagnoseClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: diagnoseClusterOperationCallable()");
+  }
+
+  public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: diagnoseClusterCallable()");
+  }
+
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: getClusterCallable()");
   }
@@ -90,16 +100,6 @@ public abstract class ClusterControllerStub implements BackgroundResource {
 
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
-      diagnoseClusterOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: diagnoseClusterOperationCallable()");
-  }
-
-  public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
-    throw new UnsupportedOperationException("Not implemented: diagnoseClusterCallable()");
   }
 
   @Override

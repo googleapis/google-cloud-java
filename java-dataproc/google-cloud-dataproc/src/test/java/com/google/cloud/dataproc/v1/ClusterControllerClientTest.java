@@ -275,6 +275,58 @@ public class ClusterControllerClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void diagnoseClusterTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("diagnoseClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockClusterController.addResponse(resultOperation);
+
+    String projectId = "projectId-1969970175";
+    String region = "region-934795532";
+    String clusterName = "clusterName-1018081872";
+
+    Empty actualResponse = client.diagnoseClusterAsync(projectId, region, clusterName).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DiagnoseClusterRequest actualRequest = (DiagnoseClusterRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(region, actualRequest.getRegion());
+    Assert.assertEquals(clusterName, actualRequest.getClusterName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void diagnoseClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockClusterController.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String region = "region-934795532";
+      String clusterName = "clusterName-1018081872";
+
+      client.diagnoseClusterAsync(projectId, region, clusterName).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getClusterTest() {
     String projectId2 = "projectId2939242356";
     String clusterName2 = "clusterName2875867491";
@@ -424,58 +476,6 @@ public class ClusterControllerClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void diagnoseClusterTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("diagnoseClusterTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockClusterController.addResponse(resultOperation);
-
-    String projectId = "projectId-1969970175";
-    String region = "region-934795532";
-    String clusterName = "clusterName-1018081872";
-
-    Empty actualResponse = client.diagnoseClusterAsync(projectId, region, clusterName).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DiagnoseClusterRequest actualRequest = (DiagnoseClusterRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(region, actualRequest.getRegion());
-    Assert.assertEquals(clusterName, actualRequest.getClusterName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void diagnoseClusterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockClusterController.addException(exception);
-
-    try {
-      String projectId = "projectId-1969970175";
-      String region = "region-934795532";
-      String clusterName = "clusterName-1018081872";
-
-      client.diagnoseClusterAsync(projectId, region, clusterName).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

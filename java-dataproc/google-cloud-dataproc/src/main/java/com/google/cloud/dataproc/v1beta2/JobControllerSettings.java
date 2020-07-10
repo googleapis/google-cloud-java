@@ -75,6 +75,19 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
     return ((JobControllerStubSettings) getStubSettings()).submitJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings() {
+    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getJob. */
   public UnaryCallSettings<GetJobRequest, Job> getJobSettings() {
     return ((JobControllerStubSettings) getStubSettings()).getJobSettings();
@@ -99,19 +112,6 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return ((JobControllerStubSettings) getStubSettings()).deleteJobSettings();
-  }
-
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
-    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
-      submitJobAsOperationOperationSettings() {
-    return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationOperationSettings();
   }
 
   public static final JobControllerSettings create(JobControllerStubSettings stub)
@@ -216,6 +216,19 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
       return getStubSettingsBuilder().submitJobSettings();
     }
 
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+      return getStubSettingsBuilder().submitJobAsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings() {
+      return getStubSettingsBuilder().submitJobAsOperationOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getJob. */
     public UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings() {
       return getStubSettingsBuilder().getJobSettings();
@@ -240,19 +253,6 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return getStubSettingsBuilder().deleteJobSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
-      return getStubSettingsBuilder().submitJobAsOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
-        submitJobAsOperationOperationSettings() {
-      return getStubSettingsBuilder().submitJobAsOperationOperationSettings();
     }
 
     @Override

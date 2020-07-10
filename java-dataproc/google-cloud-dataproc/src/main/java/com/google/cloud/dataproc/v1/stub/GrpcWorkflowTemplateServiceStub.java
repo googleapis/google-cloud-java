@@ -57,26 +57,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub {
 
-  private static final MethodDescriptor<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateMethodDescriptor =
-          MethodDescriptor.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.dataproc.v1.WorkflowTemplateService/CreateWorkflowTemplate")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateWorkflowTemplateRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateMethodDescriptor =
-          MethodDescriptor.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.dataproc.v1.WorkflowTemplateService/GetWorkflowTemplate")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetWorkflowTemplateRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateMethodDescriptor =
           MethodDescriptor.<InstantiateWorkflowTemplateRequest, Operation>newBuilder()
@@ -97,6 +77,26 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   ProtoUtils.marshaller(
                       InstantiateInlineWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateMethodDescriptor =
+          MethodDescriptor.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataproc.v1.WorkflowTemplateService/CreateWorkflowTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWorkflowTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateMethodDescriptor =
+          MethodDescriptor.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataproc.v1.WorkflowTemplateService/GetWorkflowTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWorkflowTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateMethodDescriptor =
@@ -133,10 +133,6 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateCallable;
-  private final UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateCallable;
   private final UnaryCallable<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateCallable;
   private final OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
@@ -145,6 +141,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
       instantiateInlineWorkflowTemplateCallable;
   private final OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateInlineWorkflowTemplateOperationCallable;
+  private final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateCallable;
+  private final UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateCallable;
   private final UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateCallable;
   private final UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
@@ -196,34 +196,6 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
-        createWorkflowTemplateTransportSettings =
-            GrpcCallSettings.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
-                .setMethodDescriptor(createWorkflowTemplateMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
-        getWorkflowTemplateTransportSettings =
-            GrpcCallSettings.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
-                .setMethodDescriptor(getWorkflowTemplateMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<GetWorkflowTemplateRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetWorkflowTemplateRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateTransportSettings =
             GrpcCallSettings.<InstantiateWorkflowTemplateRequest, Operation>newBuilder()
@@ -250,6 +222,34 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                           InstantiateInlineWorkflowTemplateRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
+        createWorkflowTemplateTransportSettings =
+            GrpcCallSettings.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
+                .setMethodDescriptor(createWorkflowTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateWorkflowTemplateRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateWorkflowTemplateRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
+        getWorkflowTemplateTransportSettings =
+            GrpcCallSettings.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
+                .setMethodDescriptor(getWorkflowTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetWorkflowTemplateRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetWorkflowTemplateRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
                         return params.build();
                       }
                     })
@@ -298,16 +298,6 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                 })
             .build();
 
-    this.createWorkflowTemplateCallable =
-        callableFactory.createUnaryCallable(
-            createWorkflowTemplateTransportSettings,
-            settings.createWorkflowTemplateSettings(),
-            clientContext);
-    this.getWorkflowTemplateCallable =
-        callableFactory.createUnaryCallable(
-            getWorkflowTemplateTransportSettings,
-            settings.getWorkflowTemplateSettings(),
-            clientContext);
     this.instantiateWorkflowTemplateCallable =
         callableFactory.createUnaryCallable(
             instantiateWorkflowTemplateTransportSettings,
@@ -330,6 +320,16 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             settings.instantiateInlineWorkflowTemplateOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.createWorkflowTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createWorkflowTemplateTransportSettings,
+            settings.createWorkflowTemplateSettings(),
+            clientContext);
+    this.getWorkflowTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getWorkflowTemplateTransportSettings,
+            settings.getWorkflowTemplateSettings(),
+            clientContext);
     this.updateWorkflowTemplateCallable =
         callableFactory.createUnaryCallable(
             updateWorkflowTemplateTransportSettings,
@@ -359,15 +359,6 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
     return operationsStub;
   }
 
-  public UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateCallable() {
-    return createWorkflowTemplateCallable;
-  }
-
-  public UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate> getWorkflowTemplateCallable() {
-    return getWorkflowTemplateCallable;
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateWorkflowTemplateOperationCallable() {
@@ -388,6 +379,15 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
   public UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
       instantiateInlineWorkflowTemplateCallable() {
     return instantiateInlineWorkflowTemplateCallable;
+  }
+
+  public UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateCallable() {
+    return createWorkflowTemplateCallable;
+  }
+
+  public UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate> getWorkflowTemplateCallable() {
+    return getWorkflowTemplateCallable;
   }
 
   public UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>

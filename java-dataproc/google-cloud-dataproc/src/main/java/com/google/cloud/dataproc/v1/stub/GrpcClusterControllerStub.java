@@ -81,6 +81,15 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DiagnoseClusterRequest, Operation>
+      diagnoseClusterMethodDescriptor =
+          MethodDescriptor.<DiagnoseClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataproc.v1.ClusterController/DiagnoseCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DiagnoseClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
       MethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -97,15 +106,6 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DiagnoseClusterRequest, Operation>
-      diagnoseClusterMethodDescriptor =
-          MethodDescriptor.<DiagnoseClusterRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dataproc.v1.ClusterController/DiagnoseCluster")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DiagnoseClusterRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -119,13 +119,13 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable;
+  private final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable;
+  private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+      diagnoseClusterOperationCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
-  private final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable;
-  private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
-      diagnoseClusterOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -181,6 +181,10 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .build();
+    GrpcCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterTransportSettings =
+        GrpcCallSettings.<DiagnoseClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(diagnoseClusterMethodDescriptor)
+            .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
@@ -188,10 +192,6 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
             .setMethodDescriptor(listClustersMethodDescriptor)
-            .build();
-    GrpcCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterTransportSettings =
-        GrpcCallSettings.<DiagnoseClusterRequest, Operation>newBuilder()
-            .setMethodDescriptor(diagnoseClusterMethodDescriptor)
             .build();
 
     this.createClusterCallable =
@@ -221,15 +221,6 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.getClusterCallable =
-        callableFactory.createUnaryCallable(
-            getClusterTransportSettings, settings.getClusterSettings(), clientContext);
-    this.listClustersCallable =
-        callableFactory.createUnaryCallable(
-            listClustersTransportSettings, settings.listClustersSettings(), clientContext);
-    this.listClustersPagedCallable =
-        callableFactory.createPagedCallable(
-            listClustersTransportSettings, settings.listClustersSettings(), clientContext);
     this.diagnoseClusterCallable =
         callableFactory.createUnaryCallable(
             diagnoseClusterTransportSettings, settings.diagnoseClusterSettings(), clientContext);
@@ -239,6 +230,15 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
             settings.diagnoseClusterOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.getClusterCallable =
+        callableFactory.createUnaryCallable(
+            getClusterTransportSettings, settings.getClusterSettings(), clientContext);
+    this.listClustersCallable =
+        callableFactory.createUnaryCallable(
+            listClustersTransportSettings, settings.listClustersSettings(), clientContext);
+    this.listClustersPagedCallable =
+        callableFactory.createPagedCallable(
+            listClustersTransportSettings, settings.listClustersSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -278,6 +278,16 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     return deleteClusterCallable;
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+      diagnoseClusterOperationCallable() {
+    return diagnoseClusterOperationCallable;
+  }
+
+  public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
+    return diagnoseClusterCallable;
+  }
+
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
   }
@@ -288,16 +298,6 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
 
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return listClustersCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
-      diagnoseClusterOperationCallable() {
-    return diagnoseClusterOperationCallable;
-  }
-
-  public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
-    return diagnoseClusterCallable;
   }
 
   @Override

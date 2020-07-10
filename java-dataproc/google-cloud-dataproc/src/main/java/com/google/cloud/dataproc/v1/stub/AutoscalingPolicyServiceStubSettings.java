@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateAutoscalingPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of createAutoscalingPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AutoscalingPolicyServiceStubSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceStubSettings.newBuilder();
  * autoscalingPolicyServiceSettingsBuilder
- *     .updateAutoscalingPolicySettings()
+ *     .createAutoscalingPolicySettings()
  *     .setRetrySettings(
- *         autoscalingPolicyServiceSettingsBuilder.updateAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoscalingPolicyServiceStubSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
@@ -95,10 +95,10 @@ public class AutoscalingPolicyServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
-      updateAutoscalingPolicySettings;
   private final UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicySettings;
+  private final UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
+      updateAutoscalingPolicySettings;
   private final UnaryCallSettings<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicySettings;
   private final PagedCallSettings<
@@ -109,16 +109,16 @@ public class AutoscalingPolicyServiceStubSettings
   private final UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicySettings;
 
-  /** Returns the object with the settings used for calls to updateAutoscalingPolicy. */
-  public UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
-      updateAutoscalingPolicySettings() {
-    return updateAutoscalingPolicySettings;
-  }
-
   /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
   public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicySettings() {
     return createAutoscalingPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoscalingPolicy. */
+  public UnaryCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
+      updateAutoscalingPolicySettings() {
+    return updateAutoscalingPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to getAutoscalingPolicy. */
@@ -211,8 +211,8 @@ public class AutoscalingPolicyServiceStubSettings
   protected AutoscalingPolicyServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    updateAutoscalingPolicySettings = settingsBuilder.updateAutoscalingPolicySettings().build();
     createAutoscalingPolicySettings = settingsBuilder.createAutoscalingPolicySettings().build();
+    updateAutoscalingPolicySettings = settingsBuilder.updateAutoscalingPolicySettings().build();
     getAutoscalingPolicySettings = settingsBuilder.getAutoscalingPolicySettings().build();
     listAutoscalingPoliciesSettings = settingsBuilder.listAutoscalingPoliciesSettings().build();
     deleteAutoscalingPolicySettings = settingsBuilder.deleteAutoscalingPolicySettings().build();
@@ -295,10 +295,10 @@ public class AutoscalingPolicyServiceStubSettings
       extends StubSettings.Builder<AutoscalingPolicyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
-        updateAutoscalingPolicySettings;
     private final UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
         createAutoscalingPolicySettings;
+    private final UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
+        updateAutoscalingPolicySettings;
     private final UnaryCallSettings.Builder<GetAutoscalingPolicyRequest, AutoscalingPolicy>
         getAutoscalingPolicySettings;
     private final PagedCallSettings.Builder<
@@ -316,11 +316,43 @@ public class AutoscalingPolicyServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_7_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -334,12 +366,88 @@ public class AutoscalingPolicyServiceStubSettings
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
+              .build();
+      definitions.put("retry_policy_7_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -350,9 +458,9 @@ public class AutoscalingPolicyServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      updateAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -363,8 +471,8 @@ public class AutoscalingPolicyServiceStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateAutoscalingPolicySettings,
               createAutoscalingPolicySettings,
+              updateAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
               deleteAutoscalingPolicySettings);
@@ -384,29 +492,29 @@ public class AutoscalingPolicyServiceStubSettings
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .updateAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .createAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .createAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .updateAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listAutoscalingPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .deleteAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       return builder;
     }
@@ -414,16 +522,16 @@ public class AutoscalingPolicyServiceStubSettings
     protected Builder(AutoscalingPolicyServiceStubSettings settings) {
       super(settings);
 
-      updateAutoscalingPolicySettings = settings.updateAutoscalingPolicySettings.toBuilder();
       createAutoscalingPolicySettings = settings.createAutoscalingPolicySettings.toBuilder();
+      updateAutoscalingPolicySettings = settings.updateAutoscalingPolicySettings.toBuilder();
       getAutoscalingPolicySettings = settings.getAutoscalingPolicySettings.toBuilder();
       listAutoscalingPoliciesSettings = settings.listAutoscalingPoliciesSettings.toBuilder();
       deleteAutoscalingPolicySettings = settings.deleteAutoscalingPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateAutoscalingPolicySettings,
               createAutoscalingPolicySettings,
+              updateAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
               deleteAutoscalingPolicySettings);
@@ -445,16 +553,16 @@ public class AutoscalingPolicyServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to updateAutoscalingPolicy. */
-    public UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
-        updateAutoscalingPolicySettings() {
-      return updateAutoscalingPolicySettings;
-    }
-
     /** Returns the builder for the settings used for calls to createAutoscalingPolicy. */
     public UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
         createAutoscalingPolicySettings() {
       return createAutoscalingPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoscalingPolicy. */
+    public UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
+        updateAutoscalingPolicySettings() {
+      return updateAutoscalingPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to getAutoscalingPolicy. */

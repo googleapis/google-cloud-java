@@ -103,10 +103,6 @@ public class WorkflowTemplateServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateSettings;
-  private final UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateSettings;
   private final UnaryCallSettings<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateSettings;
   private final OperationCallSettings<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
@@ -116,6 +112,10 @@ public class WorkflowTemplateServiceStubSettings
   private final OperationCallSettings<
           InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateInlineWorkflowTemplateOperationSettings;
+  private final UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateSettings;
+  private final UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateSettings;
   private final UnaryCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateSettings;
   private final PagedCallSettings<
@@ -125,18 +125,6 @@ public class WorkflowTemplateServiceStubSettings
       listWorkflowTemplatesSettings;
   private final UnaryCallSettings<DeleteWorkflowTemplateRequest, Empty>
       deleteWorkflowTemplateSettings;
-
-  /** Returns the object with the settings used for calls to createWorkflowTemplate. */
-  public UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
-      createWorkflowTemplateSettings() {
-    return createWorkflowTemplateSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getWorkflowTemplate. */
-  public UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
-      getWorkflowTemplateSettings() {
-    return getWorkflowTemplateSettings;
-  }
 
   /** Returns the object with the settings used for calls to instantiateWorkflowTemplate. */
   public UnaryCallSettings<InstantiateWorkflowTemplateRequest, Operation>
@@ -162,6 +150,18 @@ public class WorkflowTemplateServiceStubSettings
   public OperationCallSettings<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateInlineWorkflowTemplateOperationSettings() {
     return instantiateInlineWorkflowTemplateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWorkflowTemplate. */
+  public UnaryCallSettings<CreateWorkflowTemplateRequest, WorkflowTemplate>
+      createWorkflowTemplateSettings() {
+    return createWorkflowTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getWorkflowTemplate. */
+  public UnaryCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
+      getWorkflowTemplateSettings() {
+    return getWorkflowTemplateSettings;
   }
 
   /** Returns the object with the settings used for calls to updateWorkflowTemplate. */
@@ -253,8 +253,6 @@ public class WorkflowTemplateServiceStubSettings
   protected WorkflowTemplateServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createWorkflowTemplateSettings = settingsBuilder.createWorkflowTemplateSettings().build();
-    getWorkflowTemplateSettings = settingsBuilder.getWorkflowTemplateSettings().build();
     instantiateWorkflowTemplateSettings =
         settingsBuilder.instantiateWorkflowTemplateSettings().build();
     instantiateWorkflowTemplateOperationSettings =
@@ -263,6 +261,8 @@ public class WorkflowTemplateServiceStubSettings
         settingsBuilder.instantiateInlineWorkflowTemplateSettings().build();
     instantiateInlineWorkflowTemplateOperationSettings =
         settingsBuilder.instantiateInlineWorkflowTemplateOperationSettings().build();
+    createWorkflowTemplateSettings = settingsBuilder.createWorkflowTemplateSettings().build();
+    getWorkflowTemplateSettings = settingsBuilder.getWorkflowTemplateSettings().build();
     updateWorkflowTemplateSettings = settingsBuilder.updateWorkflowTemplateSettings().build();
     listWorkflowTemplatesSettings = settingsBuilder.listWorkflowTemplatesSettings().build();
     deleteWorkflowTemplateSettings = settingsBuilder.deleteWorkflowTemplateSettings().build();
@@ -338,10 +338,6 @@ public class WorkflowTemplateServiceStubSettings
       extends StubSettings.Builder<WorkflowTemplateServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
-        createWorkflowTemplateSettings;
-    private final UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
-        getWorkflowTemplateSettings;
     private final UnaryCallSettings.Builder<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateSettings;
     private final OperationCallSettings.Builder<
@@ -352,6 +348,10 @@ public class WorkflowTemplateServiceStubSettings
     private final OperationCallSettings.Builder<
             InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateInlineWorkflowTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
+        createWorkflowTemplateSettings;
+    private final UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
+        getWorkflowTemplateSettings;
     private final UnaryCallSettings.Builder<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateSettings;
     private final PagedCallSettings.Builder<
@@ -369,14 +369,15 @@ public class WorkflowTemplateServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "non_idempotent",
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -391,12 +392,25 @@ public class WorkflowTemplateServiceStubSettings
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -407,10 +421,6 @@ public class WorkflowTemplateServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       instantiateWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       instantiateWorkflowTemplateOperationSettings = OperationCallSettings.newBuilder();
@@ -418,6 +428,10 @@ public class WorkflowTemplateServiceStubSettings
       instantiateInlineWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       instantiateInlineWorkflowTemplateOperationSettings = OperationCallSettings.newBuilder();
+
+      createWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -428,10 +442,10 @@ public class WorkflowTemplateServiceStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createWorkflowTemplateSettings,
-              getWorkflowTemplateSettings,
               instantiateWorkflowTemplateSettings,
               instantiateInlineWorkflowTemplateSettings,
+              createWorkflowTemplateSettings,
+              getWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
               deleteWorkflowTemplateSettings);
@@ -451,47 +465,47 @@ public class WorkflowTemplateServiceStubSettings
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .createWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .instantiateWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .instantiateInlineWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .createWorkflowTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .getWorkflowTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .listWorkflowTemplatesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .deleteWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
       builder
           .instantiateWorkflowTemplateOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InstantiateWorkflowTemplateRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -514,8 +528,8 @@ public class WorkflowTemplateServiceStubSettings
               UnaryCallSettings
                   .<InstantiateInlineWorkflowTemplateRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -539,8 +553,6 @@ public class WorkflowTemplateServiceStubSettings
     protected Builder(WorkflowTemplateServiceStubSettings settings) {
       super(settings);
 
-      createWorkflowTemplateSettings = settings.createWorkflowTemplateSettings.toBuilder();
-      getWorkflowTemplateSettings = settings.getWorkflowTemplateSettings.toBuilder();
       instantiateWorkflowTemplateSettings =
           settings.instantiateWorkflowTemplateSettings.toBuilder();
       instantiateWorkflowTemplateOperationSettings =
@@ -549,16 +561,18 @@ public class WorkflowTemplateServiceStubSettings
           settings.instantiateInlineWorkflowTemplateSettings.toBuilder();
       instantiateInlineWorkflowTemplateOperationSettings =
           settings.instantiateInlineWorkflowTemplateOperationSettings.toBuilder();
+      createWorkflowTemplateSettings = settings.createWorkflowTemplateSettings.toBuilder();
+      getWorkflowTemplateSettings = settings.getWorkflowTemplateSettings.toBuilder();
       updateWorkflowTemplateSettings = settings.updateWorkflowTemplateSettings.toBuilder();
       listWorkflowTemplatesSettings = settings.listWorkflowTemplatesSettings.toBuilder();
       deleteWorkflowTemplateSettings = settings.deleteWorkflowTemplateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createWorkflowTemplateSettings,
-              getWorkflowTemplateSettings,
               instantiateWorkflowTemplateSettings,
               instantiateInlineWorkflowTemplateSettings,
+              createWorkflowTemplateSettings,
+              getWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
               deleteWorkflowTemplateSettings);
@@ -578,18 +592,6 @@ public class WorkflowTemplateServiceStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to createWorkflowTemplate. */
-    public UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
-        createWorkflowTemplateSettings() {
-      return createWorkflowTemplateSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getWorkflowTemplate. */
-    public UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
-        getWorkflowTemplateSettings() {
-      return getWorkflowTemplateSettings;
     }
 
     /** Returns the builder for the settings used for calls to instantiateWorkflowTemplate. */
@@ -620,6 +622,18 @@ public class WorkflowTemplateServiceStubSettings
             InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateInlineWorkflowTemplateOperationSettings() {
       return instantiateInlineWorkflowTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkflowTemplate. */
+    public UnaryCallSettings.Builder<CreateWorkflowTemplateRequest, WorkflowTemplate>
+        createWorkflowTemplateSettings() {
+      return createWorkflowTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getWorkflowTemplate. */
+    public UnaryCallSettings.Builder<GetWorkflowTemplateRequest, WorkflowTemplate>
+        getWorkflowTemplateSettings() {
+      return getWorkflowTemplateSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateWorkflowTemplate. */

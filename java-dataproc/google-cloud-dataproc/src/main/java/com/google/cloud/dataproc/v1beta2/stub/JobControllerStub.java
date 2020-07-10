@@ -54,6 +54,17 @@ public abstract class JobControllerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: submitJobCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: submitJobAsOperationOperationCallable()");
+  }
+
+  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitJobAsOperationCallable()");
+  }
+
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     throw new UnsupportedOperationException("Not implemented: getJobCallable()");
   }
@@ -76,17 +87,6 @@ public abstract class JobControllerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SubmitJobRequest, Job, JobMetadata>
-      submitJobAsOperationOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: submitJobAsOperationOperationCallable()");
-  }
-
-  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: submitJobAsOperationCallable()");
   }
 
   @Override

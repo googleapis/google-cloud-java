@@ -111,13 +111,13 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationSettings;
+  private final UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings;
+  private final OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+      diagnoseClusterOperationSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
   private final PagedCallSettings<
           ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       listClustersSettings;
-  private final UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings;
-  private final OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
-      diagnoseClusterOperationSettings;
 
   /** Returns the object with the settings used for calls to createCluster. */
   public UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings() {
@@ -155,17 +155,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     return deleteClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getCluster. */
-  public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
-    return getClusterSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listClusters. */
-  public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
-      listClustersSettings() {
-    return listClustersSettings;
-  }
-
   /** Returns the object with the settings used for calls to diagnoseCluster. */
   public UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
     return diagnoseClusterSettings;
@@ -176,6 +165,17 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   public OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
       diagnoseClusterOperationSettings() {
     return diagnoseClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCluster. */
+  public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
+    return getClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listClusters. */
+  public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
+      listClustersSettings() {
+    return listClustersSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -253,10 +253,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
-    getClusterSettings = settingsBuilder.getClusterSettings().build();
-    listClustersSettings = settingsBuilder.listClustersSettings().build();
     diagnoseClusterSettings = settingsBuilder.diagnoseClusterSettings().build();
     diagnoseClusterOperationSettings = settingsBuilder.diagnoseClusterOperationSettings().build();
+    getClusterSettings = settingsBuilder.getClusterSettings().build();
+    listClustersSettings = settingsBuilder.listClustersSettings().build();
   }
 
   private static final PagedListDescriptor<ListClustersRequest, ListClustersResponse, Cluster>
@@ -328,15 +328,15 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     private final OperationCallSettings.Builder<
             DeleteClusterRequest, Empty, ClusterOperationMetadata>
         deleteClusterOperationSettings;
-    private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
-    private final PagedCallSettings.Builder<
-            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
-        listClustersSettings;
     private final UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation>
         diagnoseClusterSettings;
     private final OperationCallSettings.Builder<
             DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
         diagnoseClusterOperationSettings;
+    private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
+    private final PagedCallSettings.Builder<
+            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
+        listClustersSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -345,14 +345,15 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "non_idempotent",
+          "retry_policy_5_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -367,12 +368,25 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -395,22 +409,22 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
 
-      getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listClustersSettings = PagedCallSettings.newBuilder(LIST_CLUSTERS_PAGE_STR_FACT);
-
       diagnoseClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       diagnoseClusterOperationSettings = OperationCallSettings.newBuilder();
+
+      getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listClustersSettings = PagedCallSettings.newBuilder(LIST_CLUSTERS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createClusterSettings,
               updateClusterSettings,
               deleteClusterSettings,
+              diagnoseClusterSettings,
               getClusterSettings,
-              listClustersSettings,
-              diagnoseClusterSettings);
+              listClustersSettings);
 
       initDefaults(this);
     }
@@ -428,40 +442,40 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
       builder
           .createClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .updateClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listClustersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .diagnoseClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .getClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listClustersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
       builder
           .createClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
@@ -483,8 +497,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
@@ -506,8 +520,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -529,8 +543,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DiagnoseClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -560,19 +574,19 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
-      getClusterSettings = settings.getClusterSettings.toBuilder();
-      listClustersSettings = settings.listClustersSettings.toBuilder();
       diagnoseClusterSettings = settings.diagnoseClusterSettings.toBuilder();
       diagnoseClusterOperationSettings = settings.diagnoseClusterOperationSettings.toBuilder();
+      getClusterSettings = settings.getClusterSettings.toBuilder();
+      listClustersSettings = settings.listClustersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createClusterSettings,
               updateClusterSettings,
               deleteClusterSettings,
+              diagnoseClusterSettings,
               getClusterSettings,
-              listClustersSettings,
-              diagnoseClusterSettings);
+              listClustersSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -630,18 +644,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       return deleteClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getCluster. */
-    public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
-      return getClusterSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listClusters. */
-    public PagedCallSettings.Builder<
-            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
-        listClustersSettings() {
-      return listClustersSettings;
-    }
-
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
     public UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
       return diagnoseClusterSettings;
@@ -653,6 +655,18 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
         diagnoseClusterOperationSettings() {
       return diagnoseClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCluster. */
+    public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
+      return getClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listClusters. */
+    public PagedCallSettings.Builder<
+            ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
+        listClustersSettings() {
+      return listClustersSettings;
     }
 
     @Override

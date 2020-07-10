@@ -102,19 +102,31 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<SubmitJobRequest, Job> submitJobSettings;
+  private final UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings;
+  private final OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings;
   private final UnaryCallSettings<GetJobRequest, Job> getJobSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
   private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
   private final UnaryCallSettings<CancelJobRequest, Job> cancelJobSettings;
   private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
-  private final UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings;
-  private final OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
-      submitJobAsOperationOperationSettings;
 
   /** Returns the object with the settings used for calls to submitJob. */
   public UnaryCallSettings<SubmitJobRequest, Job> submitJobSettings() {
     return submitJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+    return submitJobAsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
+      submitJobAsOperationOperationSettings() {
+    return submitJobAsOperationOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getJob. */
@@ -141,18 +153,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return deleteJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
-    return submitJobAsOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
-      submitJobAsOperationOperationSettings() {
-    return submitJobAsOperationOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -225,14 +225,14 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     super(settingsBuilder);
 
     submitJobSettings = settingsBuilder.submitJobSettings().build();
+    submitJobAsOperationSettings = settingsBuilder.submitJobAsOperationSettings().build();
+    submitJobAsOperationOperationSettings =
+        settingsBuilder.submitJobAsOperationOperationSettings().build();
     getJobSettings = settingsBuilder.getJobSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     updateJobSettings = settingsBuilder.updateJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
-    submitJobAsOperationSettings = settingsBuilder.submitJobAsOperationSettings().build();
-    submitJobAsOperationOperationSettings =
-        settingsBuilder.submitJobAsOperationOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
@@ -292,6 +292,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<SubmitJobRequest, Job> submitJobSettings;
+    private final UnaryCallSettings.Builder<SubmitJobRequest, Operation>
+        submitJobAsOperationSettings;
+    private final OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings;
     private final UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -299,10 +303,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Job> cancelJobSettings;
     private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
-    private final UnaryCallSettings.Builder<SubmitJobRequest, Operation>
-        submitJobAsOperationSettings;
-    private final OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
-        submitJobAsOperationOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -311,17 +311,43 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_5_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "non_idempotent2", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "non_idempotent",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_7_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -335,12 +361,88 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_6_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_7_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
+              .build();
+      definitions.put("retry_policy_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -353,6 +455,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
 
       submitJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      submitJobAsOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      submitJobAsOperationOperationSettings = OperationCallSettings.newBuilder();
+
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
@@ -363,19 +469,15 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
 
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      submitJobAsOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      submitJobAsOperationOperationSettings = OperationCallSettings.newBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               submitJobSettings,
+              submitJobAsOperationSettings,
               getJobSettings,
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings,
-              submitJobAsOperationSettings);
+              deleteJobSettings);
 
       initDefaults(this);
     }
@@ -393,44 +495,44 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
 
       builder
           .submitJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .cancelJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .submitJobAsOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .getJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .listJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .updateJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .cancelJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
       builder
           .submitJobAsOperationOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<SubmitJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"))
                   .build())
           .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Job.class))
           .setMetadataTransformer(
@@ -454,24 +556,24 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       super(settings);
 
       submitJobSettings = settings.submitJobSettings.toBuilder();
+      submitJobAsOperationSettings = settings.submitJobAsOperationSettings.toBuilder();
+      submitJobAsOperationOperationSettings =
+          settings.submitJobAsOperationOperationSettings.toBuilder();
       getJobSettings = settings.getJobSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
       updateJobSettings = settings.updateJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
-      submitJobAsOperationSettings = settings.submitJobAsOperationSettings.toBuilder();
-      submitJobAsOperationOperationSettings =
-          settings.submitJobAsOperationOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               submitJobSettings,
+              submitJobAsOperationSettings,
               getJobSettings,
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings,
-              submitJobAsOperationSettings);
+              deleteJobSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -493,6 +595,19 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     /** Returns the builder for the settings used for calls to submitJob. */
     public UnaryCallSettings.Builder<SubmitJobRequest, Job> submitJobSettings() {
       return submitJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
+      return submitJobAsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
+        submitJobAsOperationOperationSettings() {
+      return submitJobAsOperationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getJob. */
@@ -519,19 +634,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return deleteJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
-      return submitJobAsOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
-        submitJobAsOperationOperationSettings() {
-      return submitJobAsOperationOperationSettings;
     }
 
     @Override
