@@ -42,7 +42,7 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * General file metadata provided by GCS.
+   * General file metadata provided by Cloud Storage.
    * </pre>
    *
    * <code>STORAGE_METADATA = 2;</code>
@@ -65,7 +65,7 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * General file metadata provided by GCS.
+   * General file metadata provided by Cloud Storage.
    * </pre>
    *
    * <code>STORAGE_METADATA = 2;</code>

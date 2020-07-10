@@ -117,8 +117,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the organization and storedInfoType to be
-   * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of the organization and storedInfoType to be deleted, for
+   * example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *
@@ -144,8 +144,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the organization and storedInfoType to be
-   * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of the organization and storedInfoType to be deleted, for
+   * example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *
@@ -492,8 +492,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the organization and storedInfoType to be
-     * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+     * Required. Resource name of the organization and storedInfoType to be deleted, for
+     * example `organizations/433245324/storedInfoTypes/432452342` or
      * projects/project-id/storedInfoTypes/432452342.
      * </pre>
      *
@@ -518,8 +518,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the organization and storedInfoType to be
-     * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+     * Required. Resource name of the organization and storedInfoType to be deleted, for
+     * example `organizations/433245324/storedInfoTypes/432452342` or
      * projects/project-id/storedInfoTypes/432452342.
      * </pre>
      *
@@ -544,8 +544,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the organization and storedInfoType to be
-     * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+     * Required. Resource name of the organization and storedInfoType to be deleted, for
+     * example `organizations/433245324/storedInfoTypes/432452342` or
      * projects/project-id/storedInfoTypes/432452342.
      * </pre>
      *
@@ -569,8 +569,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the organization and storedInfoType to be
-     * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+     * Required. Resource name of the organization and storedInfoType to be deleted, for
+     * example `organizations/433245324/storedInfoTypes/432452342` or
      * projects/project-id/storedInfoTypes/432452342.
      * </pre>
      *
@@ -590,8 +590,8 @@ public final class DeleteStoredInfoTypeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the organization and storedInfoType to be
-     * deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
+     * Required. Resource name of the organization and storedInfoType to be deleted, for
+     * example `organizations/433245324/storedInfoTypes/432452342` or
      * projects/project-id/storedInfoTypes/432452342.
      * </pre>
      *

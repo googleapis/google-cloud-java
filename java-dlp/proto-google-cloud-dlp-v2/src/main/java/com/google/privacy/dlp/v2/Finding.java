@@ -259,8 +259,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>
@@ -284,8 +284,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>
@@ -1500,8 +1500,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1524,8 +1524,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1548,8 +1548,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1571,8 +1571,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1590,8 +1590,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>

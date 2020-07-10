@@ -190,6 +190,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -215,6 +217,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -1023,6 +1027,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -1047,6 +1053,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -1071,6 +1079,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -1094,6 +1104,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -1113,6 +1125,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>

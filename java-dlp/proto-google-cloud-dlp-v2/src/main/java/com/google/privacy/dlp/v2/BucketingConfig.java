@@ -211,11 +211,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the replacementValue field is set.
      */
@@ -224,11 +225,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The replacementValue.
      */
@@ -237,11 +239,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder();
   }
@@ -475,11 +478,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the replacementValue field is set.
      */
@@ -491,11 +495,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The replacementValue.
      */
@@ -509,11 +514,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Replacement value for this bucket. If not provided
-     * the default behavior will be to hyphenate the min-max range.
+     * Required. Replacement value for this bucket.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder() {
@@ -1285,11 +1291,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the replacementValue field is set.
        */
@@ -1300,11 +1307,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The replacementValue.
        */
@@ -1321,11 +1329,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setReplacementValue(com.google.privacy.dlp.v2.Value value) {
         if (replacementValueBuilder_ == null) {
@@ -1344,11 +1353,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setReplacementValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (replacementValueBuilder_ == null) {
@@ -1364,11 +1374,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeReplacementValue(com.google.privacy.dlp.v2.Value value) {
         if (replacementValueBuilder_ == null) {
@@ -1391,11 +1402,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearReplacementValue() {
         if (replacementValueBuilder_ == null) {
@@ -1412,11 +1424,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getReplacementValueBuilder() {
 
@@ -1427,11 +1440,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder() {
         if (replacementValueBuilder_ != null) {
@@ -1446,11 +1460,12 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Replacement value for this bucket. If not provided
-       * the default behavior will be to hyphenate the min-max range.
+       * Required. Replacement value for this bucket.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.Value replacement_value = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.Value,

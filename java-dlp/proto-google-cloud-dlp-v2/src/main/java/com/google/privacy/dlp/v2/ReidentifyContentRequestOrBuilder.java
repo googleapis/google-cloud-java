@@ -28,6 +28,8 @@ public interface ReidentifyContentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -42,6 +44,8 @@ public interface ReidentifyContentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>

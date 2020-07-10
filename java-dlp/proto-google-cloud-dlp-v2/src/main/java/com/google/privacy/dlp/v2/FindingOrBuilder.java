@@ -28,8 +28,8 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>
@@ -42,8 +42,8 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>

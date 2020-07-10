@@ -22,7 +22,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Definitions of file type groups to scan.
+ * Definitions of file type groups to scan. New types will be added to this
+ * list.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.FileType}
@@ -42,7 +43,11 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Includes all file extensions not covered by text file types.
+   * Includes all file extensions not covered by another entry. Binary
+   * scanning attempts to convert the content of the file to utf_8 to scan
+   * the file.
+   * If you wish to avoid this fall back, specify one or more of the other
+   * FileType's in your storage scan.
    * </pre>
    *
    * <code>BINARY_FILE = 1;</code>
@@ -80,6 +85,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Word files &gt;30 MB will be scanned as binary files.
    * Included file extensions:
    *   docx, dotx, docm, dotm
    * </pre>
@@ -91,6 +97,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * PDF files &gt;30 MB will be scanned as binary files.
    * Included file extensions:
    *   pdf
    * </pre>
@@ -109,6 +116,28 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVRO = 7;</code>
    */
   AVRO(7),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   csv
+   * </pre>
+   *
+   * <code>CSV = 8;</code>
+   */
+  CSV(8),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   tsv
+   * </pre>
+   *
+   * <code>TSV = 9;</code>
+   */
+  TSV(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -126,7 +155,11 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Includes all file extensions not covered by text file types.
+   * Includes all file extensions not covered by another entry. Binary
+   * scanning attempts to convert the content of the file to utf_8 to scan
+   * the file.
+   * If you wish to avoid this fall back, specify one or more of the other
+   * FileType's in your storage scan.
    * </pre>
    *
    * <code>BINARY_FILE = 1;</code>
@@ -164,6 +197,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Word files &gt;30 MB will be scanned as binary files.
    * Included file extensions:
    *   docx, dotx, docm, dotm
    * </pre>
@@ -175,6 +209,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * PDF files &gt;30 MB will be scanned as binary files.
    * Included file extensions:
    *   pdf
    * </pre>
@@ -193,6 +228,28 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVRO = 7;</code>
    */
   public static final int AVRO_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   csv
+   * </pre>
+   *
+   * <code>CSV = 8;</code>
+   */
+  public static final int CSV_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   tsv
+   * </pre>
+   *
+   * <code>TSV = 9;</code>
+   */
+  public static final int TSV_VALUE = 9;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -232,6 +289,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
         return PDF;
       case 7:
         return AVRO;
+      case 8:
+        return CSV;
+      case 9:
+        return TSV;
       default:
         return null;
     }

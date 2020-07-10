@@ -227,6 +227,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>AVRO = 11;</code>
      */
     AVRO(11),
+    /**
+     *
+     *
+     * <pre>
+     * csv
+     * </pre>
+     *
+     * <code>CSV = 12;</code>
+     */
+    CSV(12),
+    /**
+     *
+     *
+     * <pre>
+     * tsv
+     * </pre>
+     *
+     * <code>TSV = 13;</code>
+     */
+    TSV(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -330,6 +350,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>AVRO = 11;</code>
      */
     public static final int AVRO_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * csv
+     * </pre>
+     *
+     * <code>CSV = 12;</code>
+     */
+    public static final int CSV_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * tsv
+     * </pre>
+     *
+     * <code>TSV = 13;</code>
+     */
+    public static final int TSV_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -375,6 +415,10 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return PDF;
         case 11:
           return AVRO;
+        case 12:
+          return CSV;
+        case 13:
+          return TSV;
         default:
           return null;
       }

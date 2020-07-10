@@ -150,8 +150,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * Required. Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:organizations/[ORGANIZATION-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -176,8 +179,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * Required. Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:organizations/[ORGANIZATION-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -741,8 +747,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:organizations/[ORGANIZATION-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -766,8 +775,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:organizations/[ORGANIZATION-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -791,8 +803,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:organizations/[ORGANIZATION-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -815,8 +830,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:organizations/[ORGANIZATION-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -835,8 +853,11 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:organizations/[ORGANIZATION-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * - Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>

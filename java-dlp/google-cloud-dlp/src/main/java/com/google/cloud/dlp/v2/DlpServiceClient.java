@@ -443,7 +443,7 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The parent resource name, for example locations/{location_id}
+   * @param parent The parent resource name. - Format:locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInfoTypesResponse listInfoTypes(String parent) {
@@ -507,8 +507,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location-id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -537,8 +539,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location-id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -567,8 +571,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location-id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -597,8 +603,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location-id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -627,8 +635,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location-id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -925,8 +935,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(
@@ -953,8 +965,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(ProjectName parent) {
@@ -980,8 +994,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(OrganizationName parent) {
@@ -1007,8 +1023,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(LocationName parent) {
@@ -1034,8 +1052,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(String parent) {
@@ -1242,8 +1262,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1273,8 +1295,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1304,8 +1328,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1335,8 +1361,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1366,8 +1394,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1669,8 +1699,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
@@ -1698,8 +1730,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(ProjectName parent) {
@@ -1726,8 +1760,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
@@ -1755,8 +1791,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(LocationName parent) {
@@ -1783,8 +1821,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(String parent) {
@@ -1994,12 +2034,41 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JobTrigger createJobTrigger(ProjectName parent, JobTrigger jobTrigger) {
+    CreateJobTriggerRequest request =
+        CreateJobTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJobTrigger(jobTrigger)
+            .build();
+    return createJobTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   JobTrigger jobTrigger = JobTrigger.newBuilder().build();
+   *   JobTrigger response = dlpServiceClient.createJobTrigger(parent, jobTrigger);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param jobTrigger Required. The JobTrigger to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final JobTrigger createJobTrigger(LocationName parent, JobTrigger jobTrigger) {
     CreateJobTriggerRequest request =
         CreateJobTriggerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2023,8 +2092,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2410,11 +2479,38 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example `projects/my-project-id` or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
+    ListJobTriggersRequest request =
+        ListJobTriggersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listJobTriggers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (JobTrigger element : dlpServiceClient.listJobTriggers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobTriggersPagedResponse listJobTriggers(LocationName parent) {
     ListJobTriggersRequest request =
         ListJobTriggersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2437,8 +2533,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example `projects/my-project-id` or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobTriggersPagedResponse listJobTriggers(String parent) {
@@ -2642,12 +2738,46 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param inspectJob Set to control what and how to inspect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(ProjectName parent, InspectJobConfig inspectJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInspectJob(inspectJob)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, inspectJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param inspectJob Set to control what and how to inspect.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(LocationName parent, InspectJobConfig inspectJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2676,8 +2806,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param inspectJob Set to control what and how to inspect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2707,12 +2837,46 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param riskJob Set to choose what metric to calculate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DlpJob createDlpJob(ProjectName parent, RiskAnalysisJobConfig riskJob) {
+    CreateDlpJobRequest request =
+        CreateDlpJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRiskJob(riskJob)
+            .build();
+    return createDlpJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
+   * automatically choose what detectors to run. By default this may be all types, but may change
+   * over time as detectors are updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
+   *   DlpJob response = dlpServiceClient.createDlpJob(parent, riskJob);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param riskJob Set to choose what metric to calculate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DlpJob createDlpJob(LocationName parent, RiskAnalysisJobConfig riskJob) {
     CreateDlpJobRequest request =
         CreateDlpJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2741,8 +2905,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @param riskJob Set to choose what metric to calculate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2826,11 +2990,40 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDlpJobsPagedResponse listDlpJobs(ProjectName parent) {
+    ListDlpJobsRequest request =
+        ListDlpJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDlpJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DlpJob element : dlpServiceClient.listDlpJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDlpJobsPagedResponse listDlpJobs(LocationName parent) {
     ListDlpJobsRequest request =
         ListDlpJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2855,8 +3048,8 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDlpJobsPagedResponse listDlpJobs(String parent) {
@@ -3213,8 +3406,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3243,8 +3438,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3273,8 +3470,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3303,8 +3502,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3333,8 +3534,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3632,8 +3835,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
@@ -3661,8 +3866,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(ProjectName parent) {
@@ -3689,8 +3896,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(OrganizationName parent) {
@@ -3717,8 +3926,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(LocationName parent) {
@@ -3745,8 +3956,10 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The parent resource name, for example projects/my-project-id or
-   *     organizations/my-org-id or projects/my-project-id/locations/{location_id}.
+   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
+   *     Format:organizations/[ORGANIZATION-ID] -
+   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
+   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(String parent) {

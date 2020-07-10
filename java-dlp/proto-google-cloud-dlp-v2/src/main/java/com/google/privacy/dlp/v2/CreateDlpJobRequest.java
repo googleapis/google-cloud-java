@@ -214,8 +214,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id
-   * or projects/my-project-id/locations/{location_id}.
+   * Required. Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -240,8 +241,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id
-   * or projects/my-project-id/locations/{location_id}.
+   * Required. Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>
@@ -910,8 +912,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -935,8 +938,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -960,8 +964,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -984,8 +989,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>
@@ -1004,8 +1010,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}.
+     * Required. Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>

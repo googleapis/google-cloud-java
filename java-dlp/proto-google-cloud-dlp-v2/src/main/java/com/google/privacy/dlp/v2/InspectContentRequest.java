@@ -165,8 +165,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id
-   * or projects/my-project-id/locations/{location_id}
+   * Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -189,8 +190,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id
-   * or projects/my-project-id/locations/{location_id}
+   * Parent resource name.
+   * - Format:projects/[PROJECT-ID]
+   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -823,8 +825,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}
+     * Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -846,8 +849,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}
+     * Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -869,8 +873,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}
+     * Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -891,8 +896,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}
+     * Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -909,8 +915,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id
-     * or projects/my-project-id/locations/{location_id}
+     * Parent resource name.
+     * - Format:projects/[PROJECT-ID]
+     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
