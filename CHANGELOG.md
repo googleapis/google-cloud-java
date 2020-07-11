@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.0.0...v1.1.0) (2020-07-10)
+
+
+### Features
+
+* add two new fields, ignoreUnknownFields in AppendRowsRequest and update_schema in AppendRowsResponse. ([#389](https://www.github.com/googleapis/java-bigquerystorage/issues/389)) ([3e9d4c8](https://www.github.com/googleapis/java-bigquerystorage/commit/3e9d4c8abae73b25894d330a99e4213057777bc8))
+* Added BQSchemaToProtoDescriptor.java ([#395](https://www.github.com/googleapis/java-bigquerystorage/issues/395)) ([c3a9542](https://www.github.com/googleapis/java-bigquerystorage/commit/c3a9542b146c2a95bd69e6bb940e02f72354141c))
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson.core:jackson-core to v2.11.1 ([#383](https://www.github.com/googleapis/java-bigquerystorage/issues/383)) ([004e78b](https://www.github.com/googleapis/java-bigquerystorage/commit/004e78be6e5de02ce83ef95e5a40c0f23f4b11a0))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.4 ([#404](https://www.github.com/googleapis/java-bigquerystorage/issues/404)) ([dd56e6c](https://www.github.com/googleapis/java-bigquerystorage/commit/dd56e6c2e9fca51d569a700b4d0bb9527b1e347c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#393](https://www.github.com/googleapis/java-bigquerystorage/issues/393)) ([4d3bce6](https://www.github.com/googleapis/java-bigquerystorage/commit/4d3bce618f39b44048ee20ed47b1cd61354117ad))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#405](https://www.github.com/googleapis/java-bigquerystorage/issues/405)) ([01c59e2](https://www.github.com/googleapis/java-bigquerystorage/commit/01c59e26c6c5f8bc42112aa89a90da5786343efc))
+* update dependency org.apache.avro:avro to v1.10.0 ([#392](https://www.github.com/googleapis/java-bigquerystorage/issues/392)) ([25dd6d5](https://www.github.com/googleapis/java-bigquerystorage/commit/25dd6d54e129cfb4e0f87f9f05abe4314a01a0dd))
+
 ## [1.0.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.134.1...v1.0.0) (2020-06-23)
 
 
