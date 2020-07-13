@@ -1,6 +1,6 @@
 # Changelog
 
-### [1.116.7](https://www.github.com/googleapis/java-bigquery/compare/v1.116.6...v1.116.7) (2020-07-10)
+### [1.116.6](https://www.github.com/googleapis/java-bigquery/compare/v1.116.5...v1.116.6) (2020-07-10)
 
 
 ### Dependencies
@@ -8,7 +8,7 @@
 * update dependency com.google.apis:google-api-services-bigquery to v2-rev20200625-1.30.10 ([#533](https://www.github.com/googleapis/java-bigquery/issues/533)) ([d5b4b49](https://www.github.com/googleapis/java-bigquery/commit/d5b4b496b062c6c7f402503524732381915fd688))
 * update dependency com.google.cloud:google-cloud-storage to v1.111.2 ([#531](https://www.github.com/googleapis/java-bigquery/issues/531)) ([9b2aeb4](https://www.github.com/googleapis/java-bigquery/commit/9b2aeb4d729b0719e19fcc054eabb08527dd4ac2))
 
-### [1.116.6](https://www.github.com/googleapis/java-bigquery/compare/v1.116.5...v1.116.6) (2020-07-10)
+### [1.116.5](https://www.github.com/googleapis/java-bigquery/compare/v1.116.4...v1.116.5) (2020-07-10)
 
 
 ### Bug Fixes
@@ -26,7 +26,7 @@
 
 * update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#523](https://www.github.com/googleapis/java-bigquery/issues/523)) ([82341cb](https://www.github.com/googleapis/java-bigquery/commit/82341cbb12ad6f5e020b5ba15701f66f0cbbfa19))
 
-### [1.116.5](https://www.github.com/googleapis/java-bigquery/compare/v1.116.4...v1.116.5) (2020-07-08)
+### [1.116.4](https://www.github.com/googleapis/java-bigquery/compare/v1.116.3...v1.116.4) (2020-07-08)
 
 
 ### Dependencies
@@ -57,7 +57,7 @@
 * **samples:** add insert data types ([#479](https://www.github.com/googleapis/java-bigquery/issues/479)) ([12a2bea](https://www.github.com/googleapis/java-bigquery/commit/12a2bea2c65d80a1c401cb65f3d826eb07fc3037))
 * **samples:** add query batch ([#469](https://www.github.com/googleapis/java-bigquery/issues/469)) ([0ffbac3](https://www.github.com/googleapis/java-bigquery/commit/0ffbac349cc27ce72b06e05723e45a973b69cef1))
 
-### [1.116.4](https://www.github.com/googleapis/java-bigquery/compare/v1.116.3...v1.116.4) (2020-06-18)
+### [1.116.3](https://www.github.com/googleapis/java-bigquery/compare/v1.116.2...v1.116.3) (2020-06-18)
 
 
 ### Documentation
