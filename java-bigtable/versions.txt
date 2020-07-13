@@ -1,9 +1,9 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bigtable:1.13.0:1.13.1-SNAPSHOT
-grpc-google-cloud-bigtable-admin-v2:1.13.0:1.13.1-SNAPSHOT
-grpc-google-cloud-bigtable-v2:1.13.0:1.13.1-SNAPSHOT
-proto-google-cloud-bigtable-admin-v2:1.13.0:1.13.1-SNAPSHOT
-proto-google-cloud-bigtable-v2:1.13.0:1.13.1-SNAPSHOT
-google-cloud-bigtable-emulator:0.122.0:0.122.1-SNAPSHOT
+google-cloud-bigtable:1.13.1:1.13.1
+grpc-google-cloud-bigtable-admin-v2:1.13.1:1.13.1
+grpc-google-cloud-bigtable-v2:1.13.1:1.13.1
+proto-google-cloud-bigtable-admin-v2:1.13.1:1.13.1
+proto-google-cloud-bigtable-v2:1.13.1:1.13.1
+google-cloud-bigtable-emulator:0.122.1:0.122.1
