@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.1.0...v1.1.1) (2020-07-14)
+
+
+### Bug Fixes
+
+* BQTableSchemaToProtoDescriptor change type mapping ([#402](https://www.github.com/googleapis/java-bigquerystorage/issues/402)) ([413d6f0](https://www.github.com/googleapis/java-bigquerystorage/commit/413d6f03f288fa21511daaa3442fc1fde9ca246f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.6 ([#407](https://www.github.com/googleapis/java-bigquerystorage/issues/407)) ([d0aa73d](https://www.github.com/googleapis/java-bigquerystorage/commit/d0aa73d0fe6233878935ad510bb5d648764872cd))
+
 ## [1.1.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.0.0...v1.1.0) (2020-07-10)
 
 
