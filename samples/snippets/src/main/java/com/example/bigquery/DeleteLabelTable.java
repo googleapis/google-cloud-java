@@ -54,4 +54,4 @@ public class DeleteLabelTable {
     }
   }
 }
-// [START bigquery_delete_label_table]
+// [END bigquery_delete_label_table]
