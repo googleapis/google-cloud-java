@@ -38,7 +38,7 @@ public class BQTableSchemaToProtoDescriptorTest {
           new ImmutableMap.Builder<Table.TableFieldSchema.Type, Descriptor>()
               .put(Table.TableFieldSchema.Type.BOOL, BoolType.getDescriptor())
               .put(Table.TableFieldSchema.Type.BYTES, BytesType.getDescriptor())
-              .put(Table.TableFieldSchema.Type.DATE, Int64Type.getDescriptor())
+              .put(Table.TableFieldSchema.Type.DATE, Int32Type.getDescriptor())
               .put(Table.TableFieldSchema.Type.DATETIME, Int64Type.getDescriptor())
               .put(Table.TableFieldSchema.Type.DOUBLE, DoubleType.getDescriptor())
               .put(Table.TableFieldSchema.Type.GEOGRAPHY, BytesType.getDescriptor())
@@ -101,7 +101,7 @@ public class BQTableSchemaToProtoDescriptorTest {
       final Table.TableSchema tableSchema =
           Table.TableSchema.newBuilder().addFields(0, tableFieldSchema).build();
       final Descriptor descriptor =
-          BQTableSchemaToProtoDescriptor.ConvertBQTableSchemaToProtoDescriptor(tableSchema);
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
       isDescriptorEqual(descriptor, entry.getValue());
     }
   }
@@ -124,7 +124,7 @@ public class BQTableSchemaToProtoDescriptorTest {
     final Table.TableSchema tableSchema =
         Table.TableSchema.newBuilder().addFields(0, tableFieldSchema).build();
     final Descriptor descriptor =
-        BQTableSchemaToProtoDescriptor.ConvertBQTableSchemaToProtoDescriptor(tableSchema);
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
     isDescriptorEqual(descriptor, MessageType.getDescriptor());
   }
 
@@ -160,6 +160,12 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(Table.TableFieldSchema.Mode.REPEATED)
             .setName("test_double")
             .build();
+    final Table.TableFieldSchema test_date =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.DATE)
+            .setMode(Table.TableFieldSchema.Mode.REQUIRED)
+            .setName("test_date")
+            .build();
     final Table.TableFieldSchema ComplexLvl2 =
         Table.TableFieldSchema.newBuilder()
             .setType(Table.TableFieldSchema.Type.STRUCT)
@@ -182,11 +188,12 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(2, test_bytes)
             .addFields(3, test_bool)
             .addFields(4, test_double)
-            .addFields(5, ComplexLvl1)
-            .addFields(6, ComplexLvl2)
+            .addFields(5, test_date)
+            .addFields(6, ComplexLvl1)
+            .addFields(7, ComplexLvl2)
             .build();
     final Descriptor descriptor =
-        BQTableSchemaToProtoDescriptor.ConvertBQTableSchemaToProtoDescriptor(tableSchema);
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
     isDescriptorEqual(descriptor, ComplexRoot.getDescriptor());
   }
 
@@ -217,7 +224,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(2, optional)
             .build();
     final Descriptor descriptor =
-        BQTableSchemaToProtoDescriptor.ConvertBQTableSchemaToProtoDescriptor(tableSchema);
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
     isDescriptorEqual(descriptor, OptionTest.getDescriptor());
   }
 
@@ -267,7 +274,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(2, reuse_lvl1_2)
             .build();
     final Descriptor descriptor =
-        BQTableSchemaToProtoDescriptor.ConvertBQTableSchemaToProtoDescriptor(tableSchema);
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
     HashMap<String, Integer> descriptorToCount = new HashMap<String, Integer>();
     mapDescriptorToCount(descriptor, descriptorToCount);
     assertEquals(descriptorToCount.size(), 2);

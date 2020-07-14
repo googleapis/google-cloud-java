@@ -8,8 +8,9 @@ message ComplexRoot {
   required bytes test_bytes = 3;
   optional bool test_bool = 4;
   repeated double test_double = 5;
-  required ComplexLvl1 complexLvl1 = 6;
-  required ComplexLvl2 complexLvl2 = 7;
+  required int32 test_date = 6;
+  required ComplexLvl1 complexLvl1 = 7;
+  required ComplexLvl2 complexLvl2 = 8;
 }
 
 message ComplexLvl1 {

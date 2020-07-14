@@ -44,7 +44,7 @@ public class BQTableSchemaToProtoDescriptor {
           new ImmutableMap.Builder<Table.TableFieldSchema.Type, FieldDescriptorProto.Type>()
               .put(Table.TableFieldSchema.Type.BOOL, FieldDescriptorProto.Type.TYPE_BOOL)
               .put(Table.TableFieldSchema.Type.BYTES, FieldDescriptorProto.Type.TYPE_BYTES)
-              .put(Table.TableFieldSchema.Type.DATE, FieldDescriptorProto.Type.TYPE_INT64)
+              .put(Table.TableFieldSchema.Type.DATE, FieldDescriptorProto.Type.TYPE_INT32)
               .put(Table.TableFieldSchema.Type.DATETIME, FieldDescriptorProto.Type.TYPE_INT64)
               .put(Table.TableFieldSchema.Type.DOUBLE, FieldDescriptorProto.Type.TYPE_DOUBLE)
               .put(Table.TableFieldSchema.Type.GEOGRAPHY, FieldDescriptorProto.Type.TYPE_BYTES)
@@ -62,9 +62,9 @@ public class BQTableSchemaToProtoDescriptor {
    * @param BQTableSchema
    * @throws Descriptors.DescriptorValidationException
    */
-  public static Descriptor ConvertBQTableSchemaToProtoDescriptor(Table.TableSchema BQTableSchema)
+  public static Descriptor convertBQTableSchemaToProtoDescriptor(Table.TableSchema BQTableSchema)
       throws Descriptors.DescriptorValidationException {
-    return ConvertBQTableSchemaToProtoDescriptorImpl(
+    return convertBQTableSchemaToProtoDescriptorImpl(
         BQTableSchema, "root", new HashMap<ImmutableList<Table.TableFieldSchema>, Descriptor>());
   }
 
@@ -77,7 +77,7 @@ public class BQTableSchemaToProtoDescriptor {
    * @param dependencyMap Stores already constructed descriptors to prevent reconstruction
    * @throws Descriptors.DescriptorValidationException
    */
-  private static Descriptor ConvertBQTableSchemaToProtoDescriptorImpl(
+  private static Descriptor convertBQTableSchemaToProtoDescriptorImpl(
       Table.TableSchema BQTableSchema,
       String scope,
       HashMap<ImmutableList<Table.TableFieldSchema>, Descriptor> dependencyMap)
@@ -93,19 +93,19 @@ public class BQTableSchemaToProtoDescriptor {
         if (dependencyMap.containsKey(fieldList)) {
           Descriptor descriptor = dependencyMap.get(fieldList);
           dependenciesList.add(descriptor.getFile());
-          fields.add(ConvertBQTableFieldToProtoField(BQTableField, index++, descriptor.getName()));
+          fields.add(convertBQTableFieldToProtoField(BQTableField, index++, descriptor.getName()));
         } else {
           Descriptor descriptor =
-              ConvertBQTableSchemaToProtoDescriptorImpl(
+              convertBQTableSchemaToProtoDescriptorImpl(
                   Table.TableSchema.newBuilder().addAllFields(fieldList).build(),
                   currentScope,
                   dependencyMap);
           dependenciesList.add(descriptor.getFile());
           dependencyMap.put(fieldList, descriptor);
-          fields.add(ConvertBQTableFieldToProtoField(BQTableField, index++, currentScope));
+          fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
         }
       } else {
-        fields.add(ConvertBQTableFieldToProtoField(BQTableField, index++, currentScope));
+        fields.add(convertBQTableFieldToProtoField(BQTableField, index++, currentScope));
       }
     }
     FileDescriptor[] dependenciesArray = new FileDescriptor[dependenciesList.size()];
@@ -127,7 +127,7 @@ public class BQTableSchemaToProtoDescriptor {
    * @param index Index for protobuf fields.
    * @param scope used to name descriptors
    */
-  private static FieldDescriptorProto ConvertBQTableFieldToProtoField(
+  private static FieldDescriptorProto convertBQTableFieldToProtoField(
       Table.TableFieldSchema BQTableField, int index, String scope) {
     Table.TableFieldSchema.Mode mode = BQTableField.getMode();
     String fieldName = BQTableField.getName();
