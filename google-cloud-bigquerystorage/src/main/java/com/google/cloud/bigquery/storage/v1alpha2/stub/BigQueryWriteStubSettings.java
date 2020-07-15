@@ -236,11 +236,19 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -254,12 +262,36 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(86400000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(86400000L))
+              .setTotalTimeout(Duration.ofMillis(86400000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -306,28 +338,28 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
 
       builder
           .createWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .finalizeWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .batchCommitWriteStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .flushRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
