@@ -45,7 +45,7 @@ public class LoadCsvFromGcs {
       Table table = bigquery.getTable(datasetName, tableName);
       Job loadJob = table.load(FormatOptions.csv(), sourceUri);
 
-      // Load data from a GCS parquet file into the table
+      // Load data from a GCS CSV file into the table
       // Blocks until this load table job completes its execution, either failing or succeeding.
       Job completedJob = loadJob.waitFor();
 
