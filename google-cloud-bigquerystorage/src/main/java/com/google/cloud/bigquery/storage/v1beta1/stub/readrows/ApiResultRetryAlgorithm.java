@@ -29,14 +29,19 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   // Duration to sleep on if the error is DEADLINE_EXCEEDED.
   public static final Duration DEADLINE_SLEEP_DURATION = Duration.ofMillis(1);
 
+  private boolean isRetryableStatus(Status status) {
+    return status.getCode() == Status.Code.INTERNAL
+        && status.getDescription() != null
+        && (status.getDescription().contains("Received unexpected EOS on DATA frame from server")
+            || status.getDescription().contains("Received Rst Stream"));
+  }
+
   @Override
   public TimedAttemptSettings createNextAttempt(
       Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (status.getCode() == Status.Code.INTERNAL
-          && status.getDescription() != null
-          && status.getDescription().equals("Received unexpected EOS on DATA frame from server")) {
+      if (isRetryableStatus(status)) {
         return TimedAttemptSettings.newBuilder()
             .setGlobalSettings(prevSettings.getGlobalSettings())
             .setRetryDelay(prevSettings.getRetryDelay())
@@ -54,9 +59,7 @@ public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<
   public boolean shouldRetry(Throwable prevThrowable, ResponseT prevResponse) {
     if (prevThrowable != null) {
       Status status = Status.fromThrowable(prevThrowable);
-      if (status.getCode() == Status.Code.INTERNAL
-          && status.getDescription() != null
-          && status.getDescription().equals("Received unexpected EOS on DATA frame from server")) {
+      if (isRetryableStatus(status)) {
         return true;
       }
     }

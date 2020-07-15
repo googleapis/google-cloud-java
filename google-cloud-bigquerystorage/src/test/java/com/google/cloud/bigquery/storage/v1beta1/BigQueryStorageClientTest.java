@@ -17,11 +17,14 @@ package com.google.cloud.bigquery.storage.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
@@ -40,6 +43,7 @@ import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableRefere
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -295,10 +299,38 @@ public class BigQueryStorageClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsRetryingExceptionTest() throws ExecutionException, InterruptedException {
-    StatusRuntimeException exception =
-        new StatusRuntimeException(
-            Status.INTERNAL.withDescription("Received unexpected EOS on DATA frame from server"));
+  public void readRowsRetryingEOSExceptionTest() throws ExecutionException, InterruptedException {
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(
+                Status.INTERNAL.withDescription(
+                    "Received unexpected EOS on DATA frame from server")),
+            GrpcStatusCode.of(Code.INTERNAL),
+            /* retryable = */ false);
+    mockBigQueryStorage.addException(exception);
+    long rowCount = 1340416618L;
+    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
+    mockBigQueryStorage.addResponse(expectedResponse);
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+
+    MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
+    callable.serverStreamingCall(request, responseObserver);
+    List<ReadRowsResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void readRowsRetryingHttp2StreamRstTest() throws ExecutionException, InterruptedException {
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(
+                Status.INTERNAL.withDescription(
+                    "HTTP/2 error code: INTERNAL_ERROR\nReceived Rst Stream")),
+            GrpcStatusCode.of(Code.INTERNAL),
+            /* retryable = */ false);
     mockBigQueryStorage.addException(exception);
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
