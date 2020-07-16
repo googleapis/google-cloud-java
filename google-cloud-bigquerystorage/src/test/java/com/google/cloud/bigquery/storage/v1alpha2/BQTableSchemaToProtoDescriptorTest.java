@@ -171,7 +171,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setType(Table.TableFieldSchema.Type.STRUCT)
             .setMode(Table.TableFieldSchema.Mode.REQUIRED)
             .addFields(0, test_int)
-            .setName("complexLvl2")
+            .setName("complex_lvl2")
             .build();
     final Table.TableFieldSchema ComplexLvl1 =
         Table.TableFieldSchema.newBuilder()
@@ -179,7 +179,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(Table.TableFieldSchema.Mode.REQUIRED)
             .addFields(0, test_int)
             .addFields(1, ComplexLvl2)
-            .setName("complexLvl1")
+            .setName("complex_lvl1")
             .build();
     final Table.TableSchema tableSchema =
         Table.TableSchema.newBuilder()
@@ -195,6 +195,86 @@ public class BQTableSchemaToProtoDescriptorTest {
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
     isDescriptorEqual(descriptor, ComplexRoot.getDescriptor());
+  }
+
+  @Test
+  public void testCasingComplexStruct() throws Exception {
+    final Table.TableFieldSchema required =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.INT64)
+            .setMode(Table.TableFieldSchema.Mode.REQUIRED)
+            .setName("tEsT_ReQuIrEd")
+            .build();
+    final Table.TableFieldSchema repeated =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.INT64)
+            .setMode(Table.TableFieldSchema.Mode.REPEATED)
+            .setName("tESt_repEATed")
+            .build();
+    final Table.TableFieldSchema optional =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.INT64)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("test_opTIONal")
+            .build();
+    final Table.TableFieldSchema test_int =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.INT64)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("TEST_INT")
+            .build();
+    final Table.TableFieldSchema test_string =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.STRING)
+            .setMode(Table.TableFieldSchema.Mode.REPEATED)
+            .setName("TEST_STRING")
+            .build();
+    final Table.TableFieldSchema test_bytes =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.BYTES)
+            .setMode(Table.TableFieldSchema.Mode.REQUIRED)
+            .setName("TEST_BYTES")
+            .build();
+    final Table.TableFieldSchema test_bool =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.BOOL)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("TEST_BOOL")
+            .build();
+    final Table.TableFieldSchema test_double =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.DOUBLE)
+            .setMode(Table.TableFieldSchema.Mode.REPEATED)
+            .setName("TEST_DOUBLE")
+            .build();
+    final Table.TableFieldSchema test_date =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.DATE)
+            .setMode(Table.TableFieldSchema.Mode.REQUIRED)
+            .setName("TEST_DATE")
+            .build();
+    final Table.TableFieldSchema option_test =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.STRUCT)
+            .setMode(Table.TableFieldSchema.Mode.REQUIRED)
+            .addFields(0, required)
+            .addFields(1, repeated)
+            .addFields(2, optional)
+            .setName("option_test")
+            .build();
+    final Table.TableSchema tableSchema =
+        Table.TableSchema.newBuilder()
+            .addFields(0, test_int)
+            .addFields(1, test_string)
+            .addFields(2, test_bytes)
+            .addFields(3, test_bool)
+            .addFields(4, test_double)
+            .addFields(5, test_date)
+            .addFields(6, option_test)
+            .build();
+    final Descriptor descriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
+    isDescriptorEqual(descriptor, CasingComplex.getDescriptor());
   }
 
   @Test

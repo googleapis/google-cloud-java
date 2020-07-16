@@ -28,8 +28,9 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Converts a BQ table schema to protobuf descriptor. The mapping between field types and field
- * modes are shown in the ImmutableMaps below.
+ * Converts a BQ table schema to protobuf descriptor. All field names will be converted to lowercase
+ * when constructing the protobuf descriptor. The mapping between field types and field modes are
+ * shown in the ImmutableMaps below.
  */
 public class BQTableSchemaToProtoDescriptor {
   private static ImmutableMap<Table.TableFieldSchema.Mode, FieldDescriptorProto.Label>
@@ -130,7 +131,7 @@ public class BQTableSchemaToProtoDescriptor {
   private static FieldDescriptorProto convertBQTableFieldToProtoField(
       Table.TableFieldSchema BQTableField, int index, String scope) {
     Table.TableFieldSchema.Mode mode = BQTableField.getMode();
-    String fieldName = BQTableField.getName();
+    String fieldName = BQTableField.getName().toLowerCase();
     if (BQTableField.getType() == Table.TableFieldSchema.Type.STRUCT) {
       return FieldDescriptorProto.newBuilder()
           .setName(fieldName)

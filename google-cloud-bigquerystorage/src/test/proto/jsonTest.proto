@@ -9,13 +9,23 @@ message ComplexRoot {
   optional bool test_bool = 4;
   repeated double test_double = 5;
   required int32 test_date = 6;
-  required ComplexLvl1 complexLvl1 = 7;
-  required ComplexLvl2 complexLvl2 = 8;
+  required ComplexLvl1 complex_lvl1 = 7;
+  required ComplexLvl2 complex_lvl2 = 8;
+}
+
+message CasingComplex {
+  optional int64 test_int = 1;
+  repeated string test_string = 2;
+  required bytes test_bytes = 3;
+  optional bool test_bool = 4;
+  repeated double test_double = 5;
+  required int32 test_date = 6;
+  required OptionTest option_test = 7;
 }
 
 message ComplexLvl1 {
   optional int64 test_int = 1;
-  required ComplexLvl2 complexLvl2 = 2;
+  required ComplexLvl2 complex_lvl2 = 2;
 }
 
 message ComplexLvl2 {
