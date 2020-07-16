@@ -19,15 +19,11 @@ package com.google.cloud.translate.spi.v2;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.translate.Translate;
-import com.google.api.services.translate.model.DetectionsListResponse;
 import com.google.api.services.translate.model.DetectionsResourceItems;
-import com.google.api.services.translate.model.LanguagesListResponse;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.http.HttpTransportOptions;
@@ -35,7 +31,6 @@ import com.google.cloud.translate.TranslateException;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
@@ -73,20 +68,8 @@ public class HttpTranslateRpc implements TranslateRpc {
   @Override
   public List<List<DetectionsResourceItems>> detect(List<String> texts) {
     try {
-      Map<String, ?> content = ImmutableMap.of("q", texts);
-      HttpRequest httpRequest =
-          translate
-              .getRequestFactory()
-              .buildPostRequest(
-                  buildTargetUrl("detect"),
-                  new JsonHttpContent(translate.getJsonFactory(), content))
-              .setParser(translate.getObjectParser());
       List<List<DetectionsResourceItems>> detections =
-          httpRequest.execute().parseAs(DetectionsListResponse.class).getDetections();
-      // TODO use REST apiary as soon as it supports POST
-      // List<List<DetectionsResourceItems>> detections =
-      //
-      // translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();
+          translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();
       return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();
     } catch (IOException ex) {
       throw translate(ex);
@@ -96,27 +79,16 @@ public class HttpTranslateRpc implements TranslateRpc {
   @Override
   public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {
     try {
-      Map<String, ?> content =
-          ImmutableMap.of(
-              "target",
-              firstNonNull(
-                  Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
-      HttpRequest httpRequest =
-          translate
-              .getRequestFactory()
-              .buildPostRequest(
-                  buildTargetUrl("languages"),
-                  new JsonHttpContent(translate.getJsonFactory(), content))
-              .setParser(translate.getObjectParser());
       List<LanguagesResource> languages =
-          httpRequest.execute().parseAs(LanguagesListResponse.class).getLanguages();
-      // TODO use REST apiary as soon as it supports POST
-      // List<LanguagesResource> languages = translate.languages()
-      //     .list()
-      //     .setKey(options.getApiKey())
-      //     .setTarget(
-      //         firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()))
-      //     .execute().getLanguages();
+          translate
+              .languages()
+              .list()
+              .setKey(options.getApiKey())
+              .setTarget(
+                  firstNonNull(
+                      Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()))
+              .execute()
+              .getLanguages();
       return languages != null ? languages : ImmutableList.<LanguagesResource>of();
     } catch (IOException ex) {
       throw translate(ex);
