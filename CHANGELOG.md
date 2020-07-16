@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.1.1...v1.2.0) (2020-07-16)
+
+
+### Features
+
+* add 'Received Rst Stream' to automatic retry strings ([#419](https://www.github.com/googleapis/java-bigquerystorage/issues/419)) ([1584bdb](https://www.github.com/googleapis/java-bigquerystorage/commit/1584bdbf5820a378d844d333e8546b6a26b3c643))
+
+
+### Bug Fixes
+
+* BQTableSchemaToProtobufDescriptor will now only generate lower-cased fieldnames in the protobuf descriptor ([#415](https://www.github.com/googleapis/java-bigquerystorage/issues/415)) ([4672939](https://www.github.com/googleapis/java-bigquerystorage/commit/46729398eee0f728c3de731f803580342fbe787f))
+
 ### [1.1.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.1.0...v1.1.1) (2020-07-14)
 
 
