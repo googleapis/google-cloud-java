@@ -25,16 +25,19 @@ public class TranslationTest {
 
   private static final String TRANSLATED_TEXT = "Hello world";
   private static final String SOURCE_LANGUAGE = "en";
+  private static final String MODEL = "nmt";
   private static final TranslationsResource TRANSLATION_PB =
       new TranslationsResource()
           .setTranslatedText(TRANSLATED_TEXT)
-          .setDetectedSourceLanguage(SOURCE_LANGUAGE);
+          .setDetectedSourceLanguage(SOURCE_LANGUAGE)
+          .setModel(MODEL);
   private static final Translation TRANSLATION = Translation.fromPb(TRANSLATION_PB);
 
   @Test
   public void testFromPb() {
     assertEquals(TRANSLATED_TEXT, TRANSLATION.getTranslatedText());
     assertEquals(SOURCE_LANGUAGE, TRANSLATION.getSourceLanguage());
+    assertEquals(MODEL, TRANSLATION.getModel());
     compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
   }
 
@@ -42,6 +45,7 @@ public class TranslationTest {
     assertEquals(expected, value);
     assertEquals(expected.getTranslatedText(), value.getTranslatedText());
     assertEquals(expected.getSourceLanguage(), value.getSourceLanguage());
+    assertEquals(expected.getModel(), value.getModel());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

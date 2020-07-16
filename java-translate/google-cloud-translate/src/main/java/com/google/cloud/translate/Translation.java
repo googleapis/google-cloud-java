@@ -104,10 +104,9 @@ public class Translation implements Serializable {
   }
 
   static Translation fromPb(TranslationsResource translationPb) {
-    // TODO remove get("model") as soon as REST apiary supports model
     return new Translation(
         translationPb.getTranslatedText(),
         translationPb.getDetectedSourceLanguage(),
-        (String) translationPb.get("model"));
+        translationPb.getModel());
   }
 }
