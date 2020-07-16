@@ -29,6 +29,7 @@ import com.google.cloud.examples.storage.buckets.ConfigureBucketCors;
 import com.google.cloud.examples.storage.buckets.CreateBucketWithStorageClassAndLocation;
 import com.google.cloud.examples.storage.buckets.DeleteBucket;
 import com.google.cloud.examples.storage.buckets.DisableBucketVersioning;
+import com.google.cloud.examples.storage.buckets.DisableLifecycleManagement;
 import com.google.cloud.examples.storage.buckets.DisableRequesterPays;
 import com.google.cloud.examples.storage.buckets.EnableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.EnableLifecycleManagement;
@@ -269,6 +270,23 @@ public class ITBucketSnippets {
   public void testEnableLifecycleManagement() {
     EnableLifecycleManagement.enableLifecycleManagement(PROJECT_ID, BUCKET);
     assertEquals(1, storage.get(BUCKET).getLifecycleRules().size());
+  }
+
+  @Test
+  public void testDisableLifecycleManagement() {
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setLifecycleRules(
+            ImmutableList.of(
+                new BucketInfo.LifecycleRule(
+                    BucketInfo.LifecycleRule.LifecycleAction.newDeleteAction(),
+                    BucketInfo.LifecycleRule.LifecycleCondition.newBuilder().setAge(5).build())))
+        .build()
+        .update();
+    assertEquals(1, storage.get(BUCKET).getLifecycleRules().size());
+    DisableLifecycleManagement.disableLifecycleManagement(PROJECT_ID, BUCKET);
+    assertEquals(0, storage.get(BUCKET).getLifecycleRules().size());
   }
 
   @Test
