@@ -1,0 +1,15 @@
+{
+  "name": "analytics-admin",
+  "name_pretty": "Analytics Admin",
+  "product_documentation": "https://developers.google.com/analytics",
+  "api_description": "allows you to manage Google Analytics accounts and properties.",
+  "client_documentation": "https://googleapis.dev/java/google-analytics-admin/latest/index.html",
+  "release_level": "alpha",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-analytics-admin",
+  "repo_short": "java-analytics-admin",
+  "distribution_name": "com.google.analytics:google-analytics-admin",
+  "api_id": "analyticsadmin.googleapis.com",
+  "requires_billing": true
+}
