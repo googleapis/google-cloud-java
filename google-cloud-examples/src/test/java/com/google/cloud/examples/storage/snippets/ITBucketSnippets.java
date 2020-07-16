@@ -274,6 +274,17 @@ public class ITBucketSnippets {
 
   @Test
   public void testDisableLifecycleManagement() {
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setLifecycleRules(
+            ImmutableList.of(
+                new BucketInfo.LifecycleRule(
+                    BucketInfo.LifecycleRule.LifecycleAction.newDeleteAction(),
+                    BucketInfo.LifecycleRule.LifecycleCondition.newBuilder().setAge(5).build())))
+        .build()
+        .update();
+    assertEquals(1, storage.get(BUCKET).getLifecycleRules().size());
     DisableLifecycleManagement.disableLifecycleManagement(PROJECT_ID, BUCKET);
     assertEquals(0, storage.get(BUCKET).getLifecycleRules().size());
   }
