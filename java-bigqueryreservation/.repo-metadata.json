@@ -3,7 +3,7 @@
   "name_pretty": "Cloud BigQuery Reservation",
   "product_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc",
   "api_description": "allows users to manage their flat-rate BigQuery reservations.",
-  "client_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc/google.cloud.bigquery.reservation.v1",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-bigqueryreservation/latest/index.html",
   "release_level": "beta",
   "transport": "grpc",
   "language": "java",
