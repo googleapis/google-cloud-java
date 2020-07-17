@@ -47,7 +47,16 @@
       <version>1.116.7-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
-
+    <dependency>
+      <groupId>com.google.oauth-client</groupId>
+      <artifactId>google-oauth-client-java6</artifactId>
+      <version>1.30.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.oauth-client</groupId>
+      <artifactId>google-oauth-client-jetty</artifactId>
+      <version>1.30.6</version>
+    </dependency>
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -61,7 +70,6 @@
       <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
 
   <!-- compile and run all snippet tests -->
