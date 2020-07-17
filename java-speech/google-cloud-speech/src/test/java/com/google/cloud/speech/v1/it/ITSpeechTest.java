@@ -25,11 +25,9 @@ import com.google.cloud.speech.v1.SpeechClient;
 import com.google.cloud.speech.v1.StreamingRecognitionConfig;
 import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
-import com.google.common.io.Resources;
 import com.google.common.truth.Truth;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
-import java.net.URL;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -76,7 +74,8 @@ public class ITSpeechTest {
   @Test
   public void streamingRecognize() throws Exception {
     byte[] audioBytes =
-        Resources.toByteArray(new URL("https://storage.googleapis.com/gapic-toolkit/hello.flac"));
+        ByteString.readFrom(getClass().getClassLoader().getResourceAsStream("hello.flac"))
+            .toByteArray();
 
     StreamingRecognitionConfig streamingConfig =
         StreamingRecognitionConfig.newBuilder().setConfig(config()).build();
