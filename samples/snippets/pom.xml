@@ -59,6 +59,7 @@
     <!-- [END bigquery_java_dependencies] -->
     <!-- [END bigquery_install_with_bom] -->
 
+    <!-- [START bigquery-enduser-installed-packages] -->
     <dependency>
       <groupId>com.google.oauth-client</groupId>
       <artifactId>google-oauth-client-java6</artifactId>
@@ -69,6 +70,8 @@
       <artifactId>google-oauth-client-jetty</artifactId>
       <version>1.31.0</version>
     </dependency>
+    <!-- [START bigquery-enduser-installed-packages] -->
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
