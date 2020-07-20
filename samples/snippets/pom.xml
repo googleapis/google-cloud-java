@@ -70,7 +70,7 @@
       <artifactId>google-oauth-client-jetty</artifactId>
       <version>1.31.0</version>
     </dependency>
-    <!-- [START bigquery-enduser-installed-packages] -->
+    <!-- [END bigquery-enduser-installed-packages] -->
 
     <!-- Test dependencies -->
     <dependency>
