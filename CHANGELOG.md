@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.2.0...v1.2.1) (2020-07-20)
+
+
+### Bug Fixes
+
+* ProtoSchemaConver's problem when converting fields reference same… ([#428](https://www.github.com/googleapis/java-bigquerystorage/issues/428)) ([1ce2621](https://www.github.com/googleapis/java-bigquerystorage/commit/1ce2621fe633f29c57bc4f4df84b2bcc2c57bdb8))
+
 ## [1.2.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.1.1...v1.2.0) (2020-07-16)
 
 
