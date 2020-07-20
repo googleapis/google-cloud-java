@@ -19,21 +19,34 @@ import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
+import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.DefaultMarshaller;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.Backup;
+import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.GCRules;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
+import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
@@ -47,6 +60,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Nonnull;
 
 /**
@@ -773,6 +787,413 @@ public final class BigtableTableAdminClient implements AutoCloseable {
 
     ApiExceptions.callAndTranslateApiException(
         stub.awaitReplicationCallable().futureCall(tableName));
+  }
+
+  /**
+   * Creates a backup with the specified configuration.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * CreateBackupRequest request =
+   *         CreateBackupRequest.of(clusterId, backupId)
+   *             .setSourceTableId(tableId)
+   *             .setExpireTime(expireTime);
+   * Backup response = client.createBackup(request);
+   * }</pre>
+   */
+  public Backup createBackup(CreateBackupRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createBackupAsync(request));
+  }
+
+  /**
+   * Creates a backup with the specified configuration asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * CreateBackupRequest request =
+   *         CreateBackupRequest.of(clusterId, backupId)
+   *             .setSourceTableId(tableId)
+   *             .setExpireTime(expireTime);
+   * ApiFuture<Backup> future = client.createBackupAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Backup>() {
+   *     public void onSuccess(Backup backup) {
+   *       System.out.println("Successfully create the backup " + backup.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Backup> createBackupAsync(CreateBackupRequest request) {
+    return ApiFutures.transform(
+        stub.createBackupOperationCallable().futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Backup, Backup>() {
+          @Override
+          public Backup apply(com.google.bigtable.admin.v2.Backup backupProto) {
+            return Backup.fromProto(backupProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Gets a backup with the specified backup ID in the specified cluster.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * Backup backup = client.getBackup(clusterId, backupId);
+   * }</pre>
+   */
+  public Backup getBackup(String clusterId, String backupId) {
+    return ApiExceptions.callAndTranslateApiException(getBackupAsync(clusterId, backupId));
+  }
+
+  /**
+   * Gets a backup with the specified backup ID in the specified cluster asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * ApiFuture<Backup> future = client.getBackupAsync(clusterId, backupId);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Backup>() {
+   *     public void onSuccess(Backup backup) {
+   *       System.out.println("Successfully get the backup " + backup.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Backup> getBackupAsync(String clusterId, String backupId) {
+    GetBackupRequest request =
+        GetBackupRequest.newBuilder()
+            .setName(NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId))
+            .build();
+    return ApiFutures.transform(
+        this.stub.getBackupCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.Backup, Backup>() {
+          @Override
+          public Backup apply(com.google.bigtable.admin.v2.Backup backup) {
+            return Backup.fromProto(backup);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Lists backups in the specified cluster.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * List<String> backups = client.listBackups(clusterId);
+   * }</pre>
+   */
+  public List<String> listBackups(String clusterId) {
+    return ApiExceptions.callAndTranslateApiException(listBackupsAsync(clusterId));
+  }
+
+  /**
+   * Lists backups in the specified cluster asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> listFuture = client.listBackupsAsync(clusterId);
+   *
+   * ApiFutures.addCallback(
+   *   listFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> backupIds) {
+   *       System.out.println("Got list of backups:");
+   *       for (String backupId : backupIds) {
+   *         System.out.println(backupId);
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<List<String>> listBackupsAsync(String clusterId) {
+    ListBackupsRequest request =
+        ListBackupsRequest.newBuilder()
+            .setParent(NameUtil.formatClusterName(projectId, instanceId, clusterId))
+            .build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListBackupsPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listBackupsPagedCallable().futureCall(request),
+            new ApiFunction<ListBackupsPagedResponse, ListBackupsPage>() {
+              @Override
+              public ListBackupsPage apply(ListBackupsPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.Backup>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<ListBackupsPage, List<com.google.bigtable.admin.v2.Backup>>() {
+              List<com.google.bigtable.admin.v2.Backup> responseAccumulator = Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.Backup>> apply(
+                  ListBackupsPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.Backup>, List<String>>() {
+          @Override
+          public List<String> apply(List<com.google.bigtable.admin.v2.Backup> protos) {
+            List<String> results = Lists.newArrayListWithCapacity(protos.size());
+            for (com.google.bigtable.admin.v2.Backup proto : protos) {
+              results.add(NameUtil.extractBackupIdFromBackupName(proto.getName()));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Deletes a backup with the specified backup ID in the specified cluster.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * client.deleteBackup(clusterId, backupId);
+   * }</pre>
+   */
+  public void deleteBackup(String clusterId, String backupId) {
+    ApiExceptions.callAndTranslateApiException(deleteBackupAsync(clusterId, backupId));
+  }
+
+  /**
+   * Deletes a backup with the specified backup ID in the specified cluster asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * ApiFuture<Void> future = client.deleteBackupAsync(clusterId, backupId);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Backup>() {
+   *     public void onSuccess(Void unused) {
+   *       System.out.println("Successfully delete the backup.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Void> deleteBackupAsync(String clusterId, String backupId) {
+    DeleteBackupRequest request =
+        DeleteBackupRequest.newBuilder()
+            .setName(NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId))
+            .build();
+
+    return transformToVoid(this.stub.deleteBackupCallable().futureCall(request));
+  }
+
+  /**
+   * Updates a backup with the specified configuration.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * Backup backup = client.updateBackup(clusterId, backupId);
+   * }</pre>
+   */
+  public Backup updateBackup(UpdateBackupRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateBackupAsync(request));
+  }
+
+  /**
+   * Updates a backup with the specified configuration asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * ApiFuture<Backup> future = client.updateBackupAsync(clusterId, backupId);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Backup>() {
+   *     public void onSuccess(Backup backup) {
+   *       System.out.println("Successfully update the backup " + backup.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Backup> updateBackupAsync(UpdateBackupRequest request) {
+    return ApiFutures.transform(
+        stub.updateBackupCallable().futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.Backup, Backup>() {
+          @Override
+          public Backup apply(com.google.bigtable.admin.v2.Backup proto) {
+            return Backup.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Restores a backup to a new table with the specified configuration.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * RestoredTableResult result =
+   *     client.restoreTable(RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   * }</pre>
+   */
+  public RestoredTableResult restoreTable(RestoreTableRequest request)
+      throws ExecutionException, InterruptedException {
+    return ApiExceptions.callAndTranslateApiException(restoreTableAsync(request));
+  }
+
+  /** Restores a backup to a new table with the specified configuration asynchronously.
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * ApiFuture<RestoredTableResult> future = client.restoreTableAsync(
+   *     RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<RestoredTableResult>() {
+   *     public void onSuccess(RestoredTableResult result) {
+   *       System.out.println("Successfully restore the table.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * </pre>
+   * */
+  public ApiFuture<RestoredTableResult> restoreTableAsync(RestoreTableRequest request) {
+    final OperationFuture<com.google.bigtable.admin.v2.Table, RestoreTableMetadata> future =
+        this.stub
+            .restoreTableOperationCallable()
+            .futureCall(request.toProto(projectId, instanceId));
+    return ApiFutures.transformAsync(
+        future,
+        new ApiAsyncFunction<com.google.bigtable.admin.v2.Table, RestoredTableResult>() {
+          @Override
+          public ApiFuture<RestoredTableResult> apply(com.google.bigtable.admin.v2.Table table)
+              throws Exception {
+            return ApiFutures.immediateFuture(
+                // When apply is called, the future should have been resolved and it's safe to
+                // pull the metadata.
+                new RestoredTableResult(
+                    Table.fromProto(table),
+                    future.getMetadata().get().getOptimizeTableOperationName()));
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Awaits a restored table is fully optimized.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * RestoredTableResult result =
+   *     client.restoreTable(RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   * client.awaitOptimizeRestoredTable(result.getOptimizeRestoredTableOperationToken());
+   * }</pre>
+   */
+  public void awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken token)
+      throws ExecutionException, InterruptedException {
+    awaitOptimizeRestoredTableAsync(token).get();
+  }
+
+  /** Awaits a restored table is fully optimized asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * RestoredTableResult result =
+   *     client.restoreTable(RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   * ApiFuture<Void> future = client.awaitOptimizeRestoredTableAsync(
+   *     result.getOptimizeRestoredTableOperationToken());
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void unused) {
+   *       System.out.println("The optimization of the restored table is done.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * */
+  public ApiFuture<Void> awaitOptimizeRestoredTableAsync(
+      OptimizeRestoredTableOperationToken token) {
+    return transformToVoid(
+        stub.awaitOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName()));
   }
 
   /**

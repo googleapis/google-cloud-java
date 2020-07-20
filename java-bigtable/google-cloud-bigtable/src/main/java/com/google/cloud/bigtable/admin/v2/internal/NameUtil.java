@@ -31,6 +31,8 @@ public class NameUtil {
       Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");
   private static final Pattern LOCATION_PATTERN =
       Pattern.compile("projects/([^/]+)/locations/([^/]+)");
+  private static final Pattern BACKUP_PATTERN =
+      Pattern.compile("projects/([^/]+)/instances/([^/]+)/clusters/([^/]+)/backups/([^/]+)");
 
   public static String formatProjectName(String projectId) {
     return "projects/" + projectId;
@@ -48,12 +50,25 @@ public class NameUtil {
     return formatProjectName(projectId) + "/locations/" + zone;
   }
 
+  public static String formatBackupName(
+      String projectId, String instanceId, String clusterId, String backupId) {
+    return formatClusterName(projectId, instanceId, clusterId) + "/backups/" + backupId;
+  }
+
   public static String extractTableIdFromTableName(String fullTableName) {
     Matcher matcher = TABLE_PATTERN.matcher(fullTableName);
     if (!matcher.matches()) {
       throw new IllegalArgumentException("Invalid table name: " + fullTableName);
     }
     return matcher.group(3);
+  }
+
+  public static String extractBackupIdFromBackupName(String fullBackupName) {
+    Matcher matcher = BACKUP_PATTERN.matcher(fullBackupName);
+    if (!matcher.matches()) {
+      throw new IllegalArgumentException("Invalid backup name: " + fullBackupName);
+    }
+    return matcher.group(4);
   }
 
   public static String extractZoneIdFromLocationName(String fullLocationName) {
