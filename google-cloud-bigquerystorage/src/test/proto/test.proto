@@ -55,6 +55,17 @@ message RecursiveType {
   optional ContainsRecursive field = 2;
 }
 
+message RecursiveTypeTopMessage {
+  optional RecursiveTypeTopMessage field = 2;
+}
+
 message FooType {
   optional string foo = 1;
+}
+
+message DuplicateType {
+  optional TestEnum f1 = 1;
+  optional TestEnum f2 = 2;
+  optional ComplicateType f3 = 3;
+  optional ComplicateType f4 = 4;
 }

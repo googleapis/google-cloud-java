@@ -19,6 +19,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoSchema;
 import com.google.protobuf.DescriptorProtos.DescriptorProto;
+import com.google.protobuf.DescriptorProtos.EnumDescriptorProto;
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
@@ -29,51 +30,95 @@ import java.util.*;
 // protobuf::DescriptorProto
 // that can be reconstructed by the backend.
 public class ProtoSchemaConverter {
-  private static class StructName {
-    public String getName() {
-      count++;
-      return count == 1 ? "__ROOT__" : "__S" + count;
-    }
-
-    private int count = 0;
-  }
-
   private static ProtoSchema convertInternal(
-      Descriptor input, List<String> visitedTypes, StructName structName) {
+      Descriptor input,
+      Set<String> visitedTypes,
+      Set<String> enumTypes,
+      Set<String> structTypes,
+      DescriptorProto.Builder rootProtoSchema) {
     DescriptorProto.Builder resultProto = DescriptorProto.newBuilder();
-    resultProto.setName(structName.getName());
+    if (rootProtoSchema == null) {
+      rootProtoSchema = resultProto;
+    }
+    String protoName = input.getFullName();
+    protoName = protoName.replace('.', '_');
+    resultProto.setName(protoName);
+    Set<String> localEnumTypes = new HashSet<String>();
     visitedTypes.add(input.getFullName());
     for (int i = 0; i < input.getFields().size(); i++) {
       FieldDescriptor inputField = input.getFields().get(i);
       FieldDescriptorProto.Builder resultField = inputField.toProto().toBuilder();
       if (inputField.getType() == FieldDescriptor.Type.GROUP
           || inputField.getType() == FieldDescriptor.Type.MESSAGE) {
-        if (visitedTypes.contains(inputField.getMessageType().getFullName())) {
-          throw new InvalidArgumentException(
-              "Recursive type is not supported:" + inputField.getMessageType().getFullName(),
-              null,
-              GrpcStatusCode.of(Status.Code.INVALID_ARGUMENT),
-              false);
+        String msgFullName = inputField.getMessageType().getFullName();
+        msgFullName = msgFullName.replace('.', '_');
+        if (structTypes.contains(msgFullName)) {
+          resultField.setTypeName(msgFullName);
+        } else {
+          if (visitedTypes.contains(msgFullName)) {
+            throw new InvalidArgumentException(
+                "Recursive type is not supported:" + inputField.getMessageType().getFullName(),
+                null,
+                GrpcStatusCode.of(Status.Code.INVALID_ARGUMENT),
+                false);
+          }
+          visitedTypes.add(msgFullName);
+          rootProtoSchema.addNestedType(
+              convertInternal(
+                      inputField.getMessageType(),
+                      visitedTypes,
+                      enumTypes,
+                      structTypes,
+                      rootProtoSchema)
+                  .getProtoDescriptor());
+          visitedTypes.remove(msgFullName);
+          resultField.setTypeName(
+              rootProtoSchema.getNestedType(rootProtoSchema.getNestedTypeCount() - 1).getName());
         }
-        resultProto.addNestedType(
-            convertInternal(inputField.getMessageType(), visitedTypes, structName)
-                .getProtoDescriptor());
-        visitedTypes.remove(inputField.getMessageType().getFullName());
-        resultField.setTypeName(
-            resultProto.getNestedType(resultProto.getNestedTypeCount() - 1).getName());
       }
       if (inputField.getType() == FieldDescriptor.Type.ENUM) {
-        resultProto.addEnumType(inputField.getEnumType().toProto());
-        resultField.setTypeName(
-            resultProto.getEnumType(resultProto.getEnumTypeCount() - 1).getName());
+        String enumFullName = inputField.getEnumType().getFullName();
+        // If the enum is defined within the current message, we don't want to
+        // pull it out to the top since then the same enum values will not be
+        // allowed if the value collides with other enums.
+        if (enumFullName.startsWith(input.getFullName())) {
+          String enumName = inputField.getEnumType().getName();
+          if (localEnumTypes.contains(enumName)) {
+            resultField.setTypeName(enumName);
+          } else {
+            resultProto.addEnumType(inputField.getEnumType().toProto());
+            resultField.setTypeName(enumName);
+            localEnumTypes.add(enumName);
+          }
+        } else {
+          // If the enum is defined elsewhere, then redefine it at the top
+          // message scope. There is a problem that different enum values might
+          // be OK when living under its original scope, but when they all live
+          // in top scope, their values cannot collide. Say if thers A.Color with
+          // RED and B.Color with RED, if they are redefined here, the RED will
+          // collide with each other and thus not allowed.
+          enumFullName = enumFullName.replace('.', '_');
+          if (enumTypes.contains(enumFullName)) {
+            resultField.setTypeName(enumFullName);
+          } else {
+            EnumDescriptorProto enumType =
+                inputField.getEnumType().toProto().toBuilder().setName(enumFullName).build();
+            resultProto.addEnumType(enumType);
+            resultField.setTypeName(enumFullName);
+            enumTypes.add(enumFullName);
+          }
+        }
       }
       resultProto.addField(resultField);
     }
+    structTypes.add(protoName);
     return ProtoSchema.newBuilder().setProtoDescriptor(resultProto.build()).build();
   }
 
   public static ProtoSchema convert(Descriptor descriptor) {
-    ArrayList<String> visitedTypes = new ArrayList<String>();
-    return convertInternal(descriptor, visitedTypes, new StructName());
+    Set<String> visitedTypes = new HashSet<String>();
+    Set<String> enumTypes = new HashSet<String>();
+    Set<String> structTypes = new HashSet<String>();
+    return convertInternal(descriptor, visitedTypes, enumTypes, structTypes, null);
   }
 }

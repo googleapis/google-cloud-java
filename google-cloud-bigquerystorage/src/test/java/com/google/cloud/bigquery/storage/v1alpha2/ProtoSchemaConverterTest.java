@@ -17,6 +17,8 @@ package com.google.cloud.bigquery.storage.v1alpha2;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.test.Test.*;
+import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
+import com.google.protobuf.Descriptors;
 import org.junit.*;
 
 public class ProtoSchemaConverterTest {
@@ -26,7 +28,7 @@ public class ProtoSchemaConverterTest {
     ProtoBufProto.ProtoSchema protoSchema =
         ProtoSchemaConverter.convert(testProto.getDescriptorForType());
     Assert.assertEquals(
-        "name: \"__ROOT__\"\n"
+        "name: \"com_google_cloud_bigquery_storage_test_AllSupportedTypes\"\n"
             + "field {\n"
             + "  name: \"int32_value\"\n"
             + "  number: 1\n"
@@ -74,7 +76,7 @@ public class ProtoSchemaConverterTest {
             + "  number: 8\n"
             + "  label: LABEL_OPTIONAL\n"
             + "  type: TYPE_ENUM\n"
-            + "  type_name: \"TestEnum\"\n"
+            + "  type_name: \"com_google_cloud_bigquery_storage_test_TestEnum\"\n"
             + "}\n"
             + "field {\n"
             + "  name: \"string_value\"\n"
@@ -83,7 +85,7 @@ public class ProtoSchemaConverterTest {
             + "  type: TYPE_STRING\n"
             + "}\n"
             + "enum_type {\n"
-            + "  name: \"TestEnum\"\n"
+            + "  name: \"com_google_cloud_bigquery_storage_test_TestEnum\"\n"
             + "  value {\n"
             + "    name: \"TestEnum0\"\n"
             + "    number: 0\n"
@@ -102,47 +104,38 @@ public class ProtoSchemaConverterTest {
     ProtoBufProto.ProtoSchema protoSchema =
         ProtoSchemaConverter.convert(testProto.getDescriptorForType());
     Assert.assertEquals(
-        "name: \"__ROOT__\"\n"
+        "name: \"com_google_cloud_bigquery_storage_test_ComplicateType\"\n"
             + "field {\n"
             + "  name: \"nested_repeated_type\"\n"
             + "  number: 1\n"
             + "  label: LABEL_REPEATED\n"
             + "  type: TYPE_MESSAGE\n"
-            + "  type_name: \"__S2\"\n"
+            + "  type_name: \"com_google_cloud_bigquery_storage_test_NestedType\"\n"
             + "}\n"
             + "field {\n"
             + "  name: \"inner_type\"\n"
             + "  number: 2\n"
             + "  label: LABEL_OPTIONAL\n"
             + "  type: TYPE_MESSAGE\n"
-            + "  type_name: \"__S4\"\n"
+            + "  type_name: \"com_google_cloud_bigquery_storage_test_InnerType\"\n"
             + "}\n"
             + "nested_type {\n"
-            + "  name: \"__S2\"\n"
-            + "  field {\n"
-            + "    name: \"inner_type\"\n"
-            + "    number: 1\n"
-            + "    label: LABEL_REPEATED\n"
-            + "    type: TYPE_MESSAGE\n"
-            + "    type_name: \"__S3\"\n"
-            + "  }\n"
-            + "  nested_type {\n"
-            + "    name: \"__S3\"\n"
-            + "    field {\n"
-            + "      name: \"value\"\n"
-            + "      number: 1\n"
-            + "      label: LABEL_REPEATED\n"
-            + "      type: TYPE_STRING\n"
-            + "    }\n"
-            + "  }\n"
-            + "}\n"
-            + "nested_type {\n"
-            + "  name: \"__S4\"\n"
+            + "  name: \"com_google_cloud_bigquery_storage_test_InnerType\"\n"
             + "  field {\n"
             + "    name: \"value\"\n"
             + "    number: 1\n"
             + "    label: LABEL_REPEATED\n"
             + "    type: TYPE_STRING\n"
+            + "  }\n"
+            + "}\n"
+            + "nested_type {\n"
+            + "  name: \"com_google_cloud_bigquery_storage_test_NestedType\"\n"
+            + "  field {\n"
+            + "    name: \"inner_type\"\n"
+            + "    number: 1\n"
+            + "    label: LABEL_REPEATED\n"
+            + "    type: TYPE_MESSAGE\n"
+            + "    type_name: \"com_google_cloud_bigquery_storage_test_InnerType\"\n"
             + "  }\n"
             + "}\n",
         protoSchema.getProtoDescriptor().toString());
@@ -156,7 +149,46 @@ public class ProtoSchemaConverterTest {
           ProtoSchemaConverter.convert(testProto.getDescriptorForType());
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      Assert.assertEquals(
+          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.ContainsRecursive",
+          e.getMessage());
+    }
+  }
+
+  @Test
+  public void convertRecursiveTopMessage() {
+    try {
+      RecursiveTypeTopMessage testProto = RecursiveTypeTopMessage.newBuilder().build();
+      ProtoBufProto.ProtoSchema protoSchema =
+          ProtoSchemaConverter.convert(testProto.getDescriptorForType());
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      Assert.assertEquals(
+          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
+          e.getMessage());
+    }
+  }
+
+  @Test
+  public void convertDuplicateType() {
+    DuplicateType testProto = DuplicateType.newBuilder().build();
+    ProtoBufProto.ProtoSchema protoSchema =
+        ProtoSchemaConverter.convert(testProto.getDescriptorForType());
+
+    FileDescriptorProto fileDescriptorProto =
+        FileDescriptorProto.newBuilder()
+            .setName("foo.proto")
+            .addMessageType(protoSchema.getProtoDescriptor())
+            .build();
+    try {
+      Descriptors.FileDescriptor fs =
+          Descriptors.FileDescriptor.buildFrom(
+              fileDescriptorProto, new Descriptors.FileDescriptor[0]);
+      Descriptors.Descriptor type =
+          fs.findMessageTypeByName(protoSchema.getProtoDescriptor().getName());
+      Assert.assertEquals(4, type.getFields().size());
+    } catch (Descriptors.DescriptorValidationException ex) {
+      Assert.fail("Got unexpected exception: " + ex.getMessage());
     }
   }
 }
