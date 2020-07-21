@@ -33,6 +33,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TableInsertRowsIT {
+
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -54,16 +56,8 @@ public class TableInsertRowsIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-  }
 
-  @After
-  public void tearDown() {
-    System.setOut(null);
-  }
-
-  @Test
-  public void testTableInsertRows() {
-    String tableName = "InsertRowsTestTable_" + UUID.randomUUID().toString().replace('-', '_');
+    tableName = "INSERT_ROW_INTO_TABLE_TEST" + UUID.randomUUID().toString().substring(0, 8);
     Schema schema =
         Schema.of(
             Field.of("booleanField", LegacySQLTypeName.BOOLEAN),
@@ -72,16 +66,26 @@ public class TableInsertRowsIT {
     // Create table in dataset for testing
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
 
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+  }
+
+  @After
+  public void tearDown() {
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    System.setOut(null);
+  }
+
+  @Test
+  public void testTableInsertRows() {
     // Create a row to insert
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     rowContent.put("numericField", "3.14");
-
     // Testing
     TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName, rowContent);
     assertThat(bout.toString()).contains("Rows successfully inserted into table");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }

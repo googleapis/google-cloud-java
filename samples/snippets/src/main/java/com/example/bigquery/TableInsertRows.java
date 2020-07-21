@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// Sample to inserting rows into a table without running a load job.
 public class TableInsertRows {
 
   public static void runTableInsertRows() {
@@ -54,7 +55,13 @@ public class TableInsertRows {
 
       // Inserts rowContent into datasetName:tableId.
       InsertAllResponse response =
-          bigquery.insertAll(InsertAllRequest.newBuilder(tableId).addRow(rowContent).build());
+          bigquery.insertAll(
+              InsertAllRequest.newBuilder(tableId)
+                  // More rows can be added in the same RPC by invoking .addRow() on the builder.
+                  // You can also supply optional unique row keys to support de-duplication
+                  // scenarios.
+                  .addRow(rowContent)
+                  .build());
 
       if (response.hasErrors()) {
         // If any of the insertions failed, this lets you inspect the errors
