@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
   <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <name>Google Cloud Game Services Parent</name>
-  <url>https://github.com/googleapis/java-gameservices</url>
+  <url>https://github.com/googleapis/java-game-servers-v1beta</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -32,13 +32,13 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-gameservices.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-gameservices.git</developerConnection>
-    <url>https://github.com/googleapis/java-gameservices</url>
+    <connection>scm:git:git@github.com:googleapis/java-game-servers-v1beta.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-game-servers-v1beta.git</developerConnection>
+    <url>https://github.com/googleapis/java-game-servers-v1beta</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
-    <url>https://github.com/googleapis/java-gameservices/issues</url>
+    <url>https://github.com/googleapis/java-game-servers-v1beta/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>
@@ -62,7 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-gameservices-parent</site.installationModule>
+    <site.installationModule>google-cloud-game-servers-v1beta-parent</site.installationModule>
   </properties>
 
   <dependencyManagement>
