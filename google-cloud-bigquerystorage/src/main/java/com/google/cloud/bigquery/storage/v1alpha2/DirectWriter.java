@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoRows;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Message;
@@ -60,6 +61,9 @@ public class DirectWriter {
    */
   public static <T extends Message> ApiFuture<Long> append(String tableName, List<T> protoRows)
       throws IOException, InterruptedException, InvalidArgumentException {
+    Preconditions.checkNotNull(tableName, "TableName is null.");
+    Preconditions.checkNotNull(protoRows, "ProtoRows is null.");
+
     if (protoRows.isEmpty()) {
       throw new InvalidArgumentException(
           new Exception("Empty rows are not allowed"),

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.storage.v1alpha2;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.DescriptorProtos.DescriptorProto;
@@ -65,6 +66,7 @@ public class BQTableSchemaToProtoDescriptor {
    */
   public static Descriptor convertBQTableSchemaToProtoDescriptor(Table.TableSchema BQTableSchema)
       throws Descriptors.DescriptorValidationException {
+    Preconditions.checkNotNull(BQTableSchema, "BQTableSchema is null.");
     return convertBQTableSchemaToProtoDescriptorImpl(
         BQTableSchema, "root", new HashMap<ImmutableList<Table.TableFieldSchema>, Descriptor>());
   }

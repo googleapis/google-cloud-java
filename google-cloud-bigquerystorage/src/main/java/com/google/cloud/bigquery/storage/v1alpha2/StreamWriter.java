@@ -217,7 +217,7 @@ public class StreamWriter implements AutoCloseable {
    */
   public ApiFuture<AppendRowsResponse> append(AppendRowsRequest message) {
     Preconditions.checkState(!shutdown.get(), "Cannot append on a shut-down writer.");
-
+    Preconditions.checkNotNull(message, "Message is null.");
     final AppendRequestAndFutureResponse outstandingAppend =
         new AppendRequestAndFutureResponse(message);
     List<InflightBatch> batchesToSend;
@@ -556,6 +556,7 @@ public class StreamWriter implements AutoCloseable {
    * }</pre>
    */
   public static Builder newBuilder(String streamName) {
+    Preconditions.checkNotNull(streamName, "StreamName is null.");
     return new Builder(streamName, null);
   }
 
@@ -563,7 +564,8 @@ public class StreamWriter implements AutoCloseable {
    * Constructs a new {@link Builder} using the given stream and an existing BigQueryWriteClient.
    */
   public static Builder newBuilder(String streamName, BigQueryWriteClient client) {
-    Preconditions.checkArgument(client != null);
+    Preconditions.checkNotNull(streamName, "StreamName is null.");
+    Preconditions.checkNotNull(client, "Client is null.");
     return new Builder(streamName, client);
   }
 
@@ -631,13 +633,15 @@ public class StreamWriter implements AutoCloseable {
      * {@link com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder#setPoolSize(int)}.
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
-      this.channelProvider = Preconditions.checkNotNull(channelProvider);
+      this.channelProvider =
+          Preconditions.checkNotNull(channelProvider, "ChannelProvider is null.");
       return this;
     }
 
     /** {@code CredentialsProvider} to use to create Credentials to authenticate calls. */
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
-      this.credentialsProvider = Preconditions.checkNotNull(credentialsProvider);
+      this.credentialsProvider =
+          Preconditions.checkNotNull(credentialsProvider, "CredentialsProvider is null.");
       return this;
     }
 
@@ -648,7 +652,7 @@ public class StreamWriter implements AutoCloseable {
      * @return
      */
     public Builder setBatchingSettings(BatchingSettings batchingSettings) {
-      Preconditions.checkNotNull(batchingSettings);
+      Preconditions.checkNotNull(batchingSettings, "BatchingSettings is null.");
 
       BatchingSettings.Builder builder = batchingSettings.toBuilder();
       Preconditions.checkNotNull(batchingSettings.getElementCountThreshold());
@@ -722,20 +726,20 @@ public class StreamWriter implements AutoCloseable {
      * @return
      */
     public Builder setRetrySettings(RetrySettings retrySettings) {
-      Preconditions.checkNotNull(retrySettings);
-      this.retrySettings = retrySettings;
+      this.retrySettings = Preconditions.checkNotNull(retrySettings, "RetrySettings is null.");
       return this;
     }
 
     /** Gives the ability to set a custom executor to be used by the library. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      this.executorProvider = Preconditions.checkNotNull(executorProvider);
+      this.executorProvider =
+          Preconditions.checkNotNull(executorProvider, "ExecutorProvider is null.");
       return this;
     }
 
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
-      this.endpoint = endpoint;
+      this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
       return this;
     }
 

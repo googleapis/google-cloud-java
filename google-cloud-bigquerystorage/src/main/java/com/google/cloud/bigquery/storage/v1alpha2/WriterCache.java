@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1alpha2;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalListener;
@@ -47,11 +48,11 @@ public class WriterCache {
   private static final int MAX_WRITERS_PER_TABLE = 2;
 
   private final BigQueryWriteClient stub;
-  private final SchemaCompatibility compact;
+  private final SchemaCompatibility compat;
 
-  private WriterCache(BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compact) {
+  private WriterCache(BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compat) {
     this.stub = stub;
-    this.compact = compact;
+    this.compat = compat;
     writerCache =
         CacheBuilder.newBuilder()
             .maximumSize(maxTableEntry)
@@ -79,8 +80,10 @@ public class WriterCache {
   /** Returns a cache with custom stub used by test. */
   @VisibleForTesting
   public static WriterCache getTestInstance(
-      BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compact) {
-    return new WriterCache(stub, maxTableEntry, compact);
+      BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compat) {
+    Preconditions.checkNotNull(stub, "Stub is null.");
+    Preconditions.checkNotNull(stub, "Compat is null.");
+    return new WriterCache(stub, maxTableEntry, compat);
   }
 
   /** Returns an entry with {@code StreamWriter} and expiration time in millis. */
@@ -115,6 +118,8 @@ public class WriterCache {
    */
   public StreamWriter getTableWriter(String tableName, Descriptor userSchema)
       throws IllegalArgumentException, IOException, InterruptedException {
+    Preconditions.checkNotNull(tableName, "TableName is null.");
+    Preconditions.checkNotNull(tableName, "UserSchema is null.");
     Matcher matcher = tablePattern.matcher(tableName);
     if (!matcher.matches()) {
       throw new IllegalArgumentException("Invalid table name: " + tableName);
@@ -136,12 +141,12 @@ public class WriterCache {
             writer.close();
           }
         }
-        compact.check(tableName, userSchema);
+        compat.check(tableName, userSchema);
         streamName = CreateNewStream(tableName);
         writer = CreateNewWriter(streamName);
         tableEntry.put(userSchema, writer);
       } else {
-        compact.check(tableName, userSchema);
+        compat.check(tableName, userSchema);
         streamName = CreateNewStream(tableName);
         tableEntry =
             CacheBuilder.newBuilder()

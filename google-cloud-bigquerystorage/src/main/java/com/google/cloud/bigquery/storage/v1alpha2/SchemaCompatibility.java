@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import java.util.Arrays;
 import java.util.Collections;
@@ -43,7 +44,7 @@ import java.util.regex.Pattern;
  */
 public class SchemaCompatibility {
   private BigQuery bigquery;
-  private static SchemaCompatibility compact;
+  private static SchemaCompatibility compat;
   private static String tablePatternString = "projects/([^/]+)/datasets/([^/]+)/tables/([^/]+)";
   private static Pattern tablePattern = Pattern.compile(tablePatternString);
   private static final int NestingLimit = 15;
@@ -81,11 +82,11 @@ public class SchemaCompatibility {
    * @return
    */
   public static SchemaCompatibility getInstance() {
-    if (compact == null) {
+    if (compat == null) {
       RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-      compact = new SchemaCompatibility(bigqueryHelper.getOptions().getService());
+      compat = new SchemaCompatibility(bigqueryHelper.getOptions().getService());
     }
-    return compact;
+    return compat;
   }
 
   /**
@@ -96,6 +97,7 @@ public class SchemaCompatibility {
    */
   @VisibleForTesting
   public static SchemaCompatibility getInstance(BigQuery bigquery) {
+    Preconditions.checkNotNull(bigquery, "BigQuery is null.");
     return new SchemaCompatibility(bigquery);
   }
 
@@ -112,6 +114,7 @@ public class SchemaCompatibility {
    * @return True if fieldtype is supported by BQ Schema
    */
   public static boolean isSupportedType(Descriptors.FieldDescriptor field) {
+    Preconditions.checkNotNull(field, "Field is null.");
     Descriptors.FieldDescriptor.Type fieldType = field.getType();
     if (!SupportedTypes.contains(fieldType)) {
       return false;
@@ -508,6 +511,9 @@ public class SchemaCompatibility {
   public void check(
       String BQTableName, Descriptors.Descriptor protoSchema, boolean allowUnknownFields)
       throws IllegalArgumentException {
+    Preconditions.checkNotNull(BQTableName, "TableName is null.");
+    Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
+
     TableId tableId = getTableId(BQTableName);
     Table table = bigquery.getTable(tableId);
     Schema BQSchema = table.getDefinition().getSchema();
