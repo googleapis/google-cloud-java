@@ -1,5 +1,39 @@
 # Changelog
 
+### [1.116.7](https://www.github.com/googleapis/java-bigquery/compare/v1.116.6...v1.116.7) (2020-07-21)
+
+
+### Bug Fixes
+
+* **sample:** region tag ([#544](https://www.github.com/googleapis/java-bigquery/issues/544)) ([f7f6e73](https://www.github.com/googleapis/java-bigquery/commit/f7f6e73ef82924fb0f7cbae5c871f1cd27620cc6))
+
+
+### Documentation
+
+* **samples:** add auth user flow and query ([#478](https://www.github.com/googleapis/java-bigquery/issues/478)) ([65dffac](https://www.github.com/googleapis/java-bigquery/commit/65dffac6af316d0baca5cfbd2b3dd3fae323549d))
+* **samples:** add create view ddl ([#558](https://www.github.com/googleapis/java-bigquery/issues/558)) ([9253218](https://www.github.com/googleapis/java-bigquery/commit/925321881cde3edd187a9a442a26eb508535744a))
+* **samples:** add extract compressed table ([#538](https://www.github.com/googleapis/java-bigquery/issues/538)) ([3f129a6](https://www.github.com/googleapis/java-bigquery/commit/3f129a6a4fff2162d1aef5ba29b4fa6246793d97))
+* **samples:** add get dataset labels ([#539](https://www.github.com/googleapis/java-bigquery/issues/539)) ([563157c](https://www.github.com/googleapis/java-bigquery/commit/563157cc40727cb7cb9aed16dfbb956a668ead51))
+* **samples:** add get table labels ([#540](https://www.github.com/googleapis/java-bigquery/issues/540)) ([a6d9491](https://www.github.com/googleapis/java-bigquery/commit/a6d94913f74a6b4d29e9314a0652a9e3fa30aed9))
+* **samples:** add grant view access ([#563](https://www.github.com/googleapis/java-bigquery/issues/563)) ([0c092e0](https://www.github.com/googleapis/java-bigquery/commit/0c092e06cdf47882a38901e8e4814afa87c7eba4))
+* **samples:** add insert rows without rowids in a table ([#573](https://www.github.com/googleapis/java-bigquery/issues/573)) ([b07dee3](https://www.github.com/googleapis/java-bigquery/commit/b07dee31e4b6fec8bf05f23ed52006829dbdbc4a))
+* **samples:** add list dataset by label ([#555](https://www.github.com/googleapis/java-bigquery/issues/555)) ([a0d7bea](https://www.github.com/googleapis/java-bigquery/commit/a0d7beab025a2895f0efc1e9888594e386a0a1b3))
+* **samples:** add list jobs ([#554](https://www.github.com/googleapis/java-bigquery/issues/554)) ([b87cecf](https://www.github.com/googleapis/java-bigquery/commit/b87cecff3f41339b20382b26381c38c4d7150305))
+* **samples:** add list routines ([#546](https://www.github.com/googleapis/java-bigquery/issues/546)) ([2cd81d4](https://www.github.com/googleapis/java-bigquery/commit/2cd81d4fb616588e9ed966f6dd32cd4615d305c4))
+* **samples:** add load avro table with truncate from gcs ([#567](https://www.github.com/googleapis/java-bigquery/issues/567)) ([fa998ba](https://www.github.com/googleapis/java-bigquery/commit/fa998baa32437a5e39670c5c7399c0945de56d52))
+* **samples:** add load json file from gcs into a table ([#568](https://www.github.com/googleapis/java-bigquery/issues/568)) ([3d65821](https://www.github.com/googleapis/java-bigquery/commit/3d658210650d2849c86df96dccd3587e95a6f4a6))
+* **samples:** add load json file from gcs into a table with autodetect schema ([#569](https://www.github.com/googleapis/java-bigquery/issues/569)) ([259d470](https://www.github.com/googleapis/java-bigquery/commit/259d470ecadc9f384920164c8a2f45643cff130a))
+* **samples:** add load json table with encryption key from gcs ([#575](https://www.github.com/googleapis/java-bigquery/issues/575)) ([2ac556e](https://www.github.com/googleapis/java-bigquery/commit/2ac556e2707b3088446353ca03d9a8d08b6d66e2))
+* **samples:** add load table from gcs using avro file ([#564](https://www.github.com/googleapis/java-bigquery/issues/564)) ([219f7a9](https://www.github.com/googleapis/java-bigquery/commit/219f7a978ab83421917ec4eb0295af38f4a9dd04))
+* **samples:** add query destination table with encryption key ([#576](https://www.github.com/googleapis/java-bigquery/issues/576)) ([29b8a7f](https://www.github.com/googleapis/java-bigquery/commit/29b8a7f179bf1fcd125f211353ef95021c0142d8))
+* **samples:** add region tag for oauth dependencies ([#570](https://www.github.com/googleapis/java-bigquery/issues/570)) ([8ed6bd6](https://www.github.com/googleapis/java-bigquery/commit/8ed6bd679761744bed7f4dcb4f66bf6f37119154))
+* correct comment ([#553](https://www.github.com/googleapis/java-bigquery/issues/553)) ([48cdc92](https://www.github.com/googleapis/java-bigquery/commit/48cdc92b6f1e128b4f0c8c25cd9ea907ab77bd93))
+
+
+### Dependencies
+
+* update core transport dependencies to v1.31.0 ([#565](https://www.github.com/googleapis/java-bigquery/issues/565)) ([5fd73ee](https://www.github.com/googleapis/java-bigquery/commit/5fd73eeb5b5d8c91154c23642737c9ece37b1750))
+
 ### [1.116.6](https://www.github.com/googleapis/java-bigquery/compare/v1.116.5...v1.116.6) (2020-07-10)
 
 
