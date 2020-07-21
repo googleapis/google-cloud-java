@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  * <code>
  * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
  *   TableReference tableReference = TableReference.newBuilder().build();
- *   String parent = "";
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   int requestedStreams = 0;
  *   ReadSession response = baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
  * }
@@ -180,9 +180,54 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <pre><code>
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   TableReference tableReference = TableReference.newBuilder().build();
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   int requestedStreams = 0;
    *   ReadSession response = baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
+   * }
+   * </code></pre>
+   *
+   * @param tableReference Required. Reference to the table to read.
+   * @param parent Required. String of the form `projects/{project_id}` indicating the project this
+   *     ReadSession is associated with. This is the project that will be billed for usage.
+   * @param requestedStreams Initial number of streams. If unset or 0, we will provide a value of
+   *     streams so as to produce reasonable throughput. Must be non-negative. The number of streams
+   *     may be lower than the requested number, depending on the amount parallelism that is
+   *     reasonable for the table and the maximum amount of parallelism allowed by the system.
+   *     <p>Streams must be read starting from offset 0.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadSession createReadSession(
+      TableReference tableReference, ProjectName parent, int requestedStreams) {
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setTableReference(tableReference)
+            .setParent(parent == null ? null : parent.toString())
+            .setRequestedStreams(requestedStreams)
+            .build();
+    return createReadSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new read session. A read session divides the contents of a BigQuery table into one or
+   * more streams, which can then be used to read data from the table. The read session also
+   * specifies properties of the data to be read, such as a list of columns or a push-down filter
+   * describing the rows to be returned.
+   *
+   * <p>A particular row can be read by at most one stream. When the caller has reached the end of
+   * each stream in the session, then all the data in the table has been read.
+   *
+   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * clean-up by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   TableReference tableReference = TableReference.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   int requestedStreams = 0;
+   *   ReadSession response = baseBigQueryStorageClient.createReadSession(tableReference, parent.toString(), requestedStreams);
    * }
    * </code></pre>
    *
@@ -225,10 +270,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <pre><code>
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   TableReference tableReference = TableReference.newBuilder().build();
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
    *     .setTableReference(tableReference)
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ReadSession response = baseBigQueryStorageClient.createReadSession(request);
    * }
@@ -259,10 +304,10 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <pre><code>
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   TableReference tableReference = TableReference.newBuilder().build();
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
    *     .setTableReference(tableReference)
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ReadSession&gt; future = baseBigQueryStorageClient.createReadSessionCallable().futureCall(request);
    *   // Do something

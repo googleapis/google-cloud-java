@@ -94,12 +94,12 @@ public class BaseBigQueryStorageClientTest {
   @Test
   @SuppressWarnings("all")
   public void createReadSessionTest() {
-    String name = "name3373707";
-    ReadSession expectedResponse = ReadSession.newBuilder().setName(name).build();
+    ReadSessionName name = ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]");
+    ReadSession expectedResponse = ReadSession.newBuilder().setName(name.toString()).build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     TableReference tableReference = TableReference.newBuilder().build();
-    String parent = "parent-995424086";
+    ProjectName parent = ProjectName.of("[PROJECT]");
     int requestedStreams = 1017221410;
 
     ReadSession actualResponse = client.createReadSession(tableReference, parent, requestedStreams);
@@ -110,7 +110,7 @@ public class BaseBigQueryStorageClientTest {
     CreateReadSessionRequest actualRequest = (CreateReadSessionRequest) actualRequests.get(0);
 
     Assert.assertEquals(tableReference, actualRequest.getTableReference());
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(requestedStreams, actualRequest.getRequestedStreams());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -126,7 +126,7 @@ public class BaseBigQueryStorageClientTest {
 
     try {
       TableReference tableReference = TableReference.newBuilder().build();
-      String parent = "parent-995424086";
+      ProjectName parent = ProjectName.of("[PROJECT]");
       int requestedStreams = 1017221410;
 
       client.createReadSession(tableReference, parent, requestedStreams);

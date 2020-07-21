@@ -31,7 +31,7 @@
  * <code>
  * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
  *   TableReference tableReference = TableReference.newBuilder().build();
- *   String parent = "";
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   int requestedStreams = 0;
  *   ReadSession response = baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
  * }
