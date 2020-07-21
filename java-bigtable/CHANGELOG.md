@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://www.github.com/googleapis/java-bigtable/compare/v1.13.1...v1.14.0) (2020-07-20)
+
+
+### Features
+
+* Cloud Bigtable Managed Backup Implementation ([#305](https://www.github.com/googleapis/java-bigtable/issues/305)) ([9e3307a](https://www.github.com/googleapis/java-bigtable/commit/9e3307a4872d3bae3c04e7857a9eb4859151965e))
+
 ### [1.13.1](https://www.github.com/googleapis/java-bigtable/compare/v1.13.0...v1.13.1) (2020-07-10)
 
 

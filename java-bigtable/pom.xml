@@ -4,7 +4,7 @@
 
     <artifactId>google-cloud-bigtable-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.13.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>1.14.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <name>Google Cloud Bigtable Parent</name>
     <url>https://github.com/googleapis/java-bigtable</url>
     <description>
