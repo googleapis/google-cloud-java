@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/docs/games/products/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-game-servers/latest/",
   "issue_tracker": "",
-  "release_level": "alpha",
+  "release_level": "beta",
   "language": "java",
   "repo": "googleapis/java-game-servers",
   "repo_short": "java-game-servers",
