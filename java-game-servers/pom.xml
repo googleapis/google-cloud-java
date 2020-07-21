@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gameservices-parent</artifactId>
+  <artifactId>google-cloud-game-servers-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-gameservices:current} -->
+  <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <name>Google Cloud Game Services Parent</name>
   <url>https://github.com/googleapis/java-gameservices</url>
   <description>
@@ -82,6 +82,21 @@
         <artifactId>google-cloud-gameservices</artifactId>
         <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-gameservices:current} -->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
+        <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
+        <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-game-servers</artifactId>
+        <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+      </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -122,6 +137,10 @@
     <module>grpc-google-cloud-gameservices-v1alpha</module>
     <module>google-cloud-gameservices</module>
     <module>google-cloud-gameservices-bom</module>
+    <module>proto-google-cloud-game-servers-v1beta</module>
+    <module>grpc-google-cloud-game-servers-v1beta</module>
+    <module>google-cloud-game-servers</module>
+    <module>google-cloud-game-servers-bom</module>
   </modules>
 
   <reporting>

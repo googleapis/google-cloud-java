@@ -1,31 +1,36 @@
 {
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "2.0.0",
-        "dockerImage": "googleapis/artman@sha256:b3b47805231a305d0f40c4bf069df20f6a2635574e6d4259fac651d3f9f6e098"
-      }
-    },
-    {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "1430222cb617dd025d6ed2024e3d1ed5968db1bd"
+        "remote": "git@github.com:googleapis/java-gameservices.git",
+        "sha": "4de46b82a5ff87622675cafe5ff77c1ed747c2d4"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "d7a347b819096886f4644b0ed5a978a777f4bbb4",
+        "internalRef": "322235422"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
+        "sha": "b8ff6a41e195cda91bbfb20d9f11d5e58b7cc218"
       }
-    },
+    }
+  ],
+  "destinations": [
     {
-      "git": {
-        "name": "synthtool",
-        "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
+      "client": {
+        "source": "googleapis",
+        "apiName": "gaming",
+        "apiVersion": "v1beta",
+        "language": "java",
+        "generator": "bazel"
       }
     }
   ]

@@ -10,8 +10,8 @@
   <description>Java idiomatic client for Google Cloud Game Services</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gameservices-parent</artifactId>
-    <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-gameservices:current} -->
+    <artifactId>google-cloud-game-servers-parent</artifactId>
+    <version>0.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gameservices</site.installationModule>

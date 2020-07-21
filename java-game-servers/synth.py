@@ -20,6 +20,14 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
+service = 'gaming'
+versions = ['v1beta']
+
+for version in versions:
+    library = java.bazel_library(
+        service=service,
+        version=version,
+        destination_name="game-servers",
+    )
+
 java.common_templates()

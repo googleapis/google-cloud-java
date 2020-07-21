@@ -4,3 +4,6 @@
 proto-google-cloud-gameservices-v1alpha:0.19.1:0.19.2-SNAPSHOT
 grpc-google-cloud-gameservices-v1alpha:0.19.1:0.19.2-SNAPSHOT
 google-cloud-gameservices:0.19.1:0.19.2-SNAPSHOT
+proto-google-cloud-game-servers-v1beta:0.19.1:0.19.2-SNAPSHOT
+grpc-google-cloud-game-servers-v1beta:0.19.1:0.19.2-SNAPSHOT
+google-cloud-game-servers:0.19.1:0.19.2-SNAPSHOT
