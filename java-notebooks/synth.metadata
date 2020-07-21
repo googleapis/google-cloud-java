@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
+        "sha": "6f0930432b2f7eaa6f5c3606f9d5e4d104dac1eb"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "8f2eda119e11c8bd0c189b545da18bba9019c83e",
+        "internalRef": "322293383"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "99c93fe09f8c1dca09dfc0301c8668e3a70dd796"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "notebooks",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
