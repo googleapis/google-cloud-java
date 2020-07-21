@@ -32,6 +32,14 @@ message ComplexLvl2 {
   optional int64 test_int = 1;
 }
 
+message ObjectType {
+  optional ComplexLvl2 test_field_type = 1;
+}
+
+message RepeatedType {
+  repeated int64 test_field_type = 1;
+}
+
 message OptionTest {
   optional int64 test_optional = 1;
   required int64 test_required = 2;
@@ -51,4 +59,70 @@ message ReuseLvl1 {
 
 message ReuseLvl2 {
   optional int64 test_int = 1;
+}
+
+message RepeatedInt64 {
+  repeated int64 test_repeated = 1;
+}
+
+message RepeatedInt32 {
+  repeated int32 test_repeated = 1;
+}
+
+message RepeatedDouble {
+  repeated double test_repeated = 1;
+}
+
+message RepeatedString {
+  repeated string test_repeated = 1;
+}
+
+message RepeatedBool {
+  repeated bool test_repeated = 1;
+}
+
+message RepeatedBytes {
+  repeated bytes test_repeated = 1;
+}
+
+message RepeatedObject {
+  repeated ComplexLvl2 test_repeated = 1;
+}
+
+message TestInt64 {
+  optional int64 byte = 1;
+  optional int64 short = 2;
+  optional int64 int = 3;
+  optional int64 long = 4;
+}
+
+message TestInt32 {
+  optional int32 byte = 1;
+  optional int32 short = 2;
+  optional int32 int = 3;
+}
+
+message TestDouble {
+  optional double double = 1;
+  optional double float = 2;
+}
+
+message NestedRepeated {
+  repeated int64 int = 1;
+  repeated double double = 2;
+  optional RepeatedString repeated_string = 3;
+}
+
+message TestRequired {
+  optional double optional_double = 1;
+  required double required_double = 2;
+}
+
+message TestRepeatedIsOptional {
+  optional double required_double = 1;
+  repeated double repeated_double = 2;
+}
+
+message TopLevelMismatch {
+  optional double mismatch_double = 1;
 }

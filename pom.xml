@@ -155,6 +155,12 @@
         <artifactId>commons-lang3</artifactId>
         <version>${commons-lang3.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20200518</version>
+      </dependency>
+
 
       <!-- Test dependencies -->
       <dependency>
