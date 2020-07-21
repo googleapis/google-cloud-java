@@ -20,7 +20,8 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Cors;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RemoveBucketCors {
   public static void removeBucketCors(String projectId, String bucketName) {
@@ -31,9 +32,20 @@ public class RemoveBucketCors {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket = storage.get(bucketName);
-    bucket.toBuilder().setCors(ImmutableList.<Cors>of()).build().update();
+    Bucket bucket =
+        storage.get(bucketName, Storage.BucketGetOption.fields(Storage.BucketField.CORS));
 
+    // getCors() returns the List and copying over to an ArrayList so it's mutable.
+    List<Cors> cors = new ArrayList<>(bucket.getCors());
+
+    // Remove bucket CORS configuration.
+    for (int index = 0; index < cors.size(); index++) {
+      Cors value = cors.get(index);
+      cors.remove(value);
+    }
+
+    // Update bucket to remove CORS
+    bucket.toBuilder().setCors(cors).build().update();
     System.out.println("Removed CORS configuration from bucket " + bucketName);
   }
 }

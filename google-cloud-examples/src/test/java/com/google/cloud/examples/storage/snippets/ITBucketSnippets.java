@@ -50,6 +50,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Cors;
+import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
@@ -361,9 +362,21 @@ public class ITBucketSnippets {
 
   @Test
   public void testRemoveBucketCors() {
-    ConfigureBucketCors.configureBucketCors(
-        PROJECT_ID, BUCKET, "http://example.appspot.com", "Content-Type", 3600);
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setCors(
+            ImmutableList.of(
+                Cors.newBuilder()
+                    .setOrigins(ImmutableList.of(Cors.Origin.of("http://example.appspot.com")))
+                    .setMethods(ImmutableList.of(HttpMethod.GET))
+                    .setResponseHeaders(ImmutableList.of("Content-Type"))
+                    .setMaxAgeSeconds(3600)
+                    .build()))
+        .build()
+        .update();
     Cors cors = storage.get(BUCKET).getCors().get(0);
+    assertNotNull(cors);
     assertTrue(cors.getOrigins().get(0).toString().contains("example.appspot.com"));
     assertTrue(cors.getResponseHeaders().contains("Content-Type"));
     assertEquals(3600, cors.getMaxAgeSeconds().intValue());
