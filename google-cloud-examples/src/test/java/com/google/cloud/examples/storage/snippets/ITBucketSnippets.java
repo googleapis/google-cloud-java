@@ -38,6 +38,7 @@ import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
 import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
+import com.google.cloud.examples.storage.buckets.RemoveBucketCors;
 import com.google.cloud.examples.storage.buckets.RemoveBucketDefaultKMSKey;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBinding;
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
@@ -50,6 +51,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Cors;
+import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
@@ -374,6 +376,31 @@ public class ITBucketSnippets {
     assertTrue(cors.getResponseHeaders().contains("Content-Type"));
     assertEquals(3600, cors.getMaxAgeSeconds().intValue());
     assertTrue(cors.getMethods().get(0).toString().equalsIgnoreCase("GET"));
+  }
+
+  @Test
+  public void testRemoveBucketCors() {
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setCors(
+            ImmutableList.of(
+                Cors.newBuilder()
+                    .setOrigins(ImmutableList.of(Cors.Origin.of("http://example.appspot.com")))
+                    .setMethods(ImmutableList.of(HttpMethod.GET))
+                    .setResponseHeaders(ImmutableList.of("Content-Type"))
+                    .setMaxAgeSeconds(3600)
+                    .build()))
+        .build()
+        .update();
+    Cors cors = storage.get(BUCKET).getCors().get(0);
+    assertNotNull(cors);
+    assertTrue(cors.getOrigins().get(0).toString().contains("example.appspot.com"));
+    assertTrue(cors.getResponseHeaders().contains("Content-Type"));
+    assertEquals(3600, cors.getMaxAgeSeconds().intValue());
+    assertTrue(cors.getMethods().get(0).toString().equalsIgnoreCase("GET"));
+    RemoveBucketCors.removeBucketCors(PROJECT_ID, BUCKET);
+    assertNull(storage.get(BUCKET).getCors());
   }
 
   @Test
