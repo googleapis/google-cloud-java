@@ -38,7 +38,7 @@ public class CreateBucketWithStorageClassAndLocation {
 
     // See this documentation for other valid locations:
     // http://g.co/cloud/storage/docs/bucket-locations#location-mr
-    String location = "asia";
+    String location = "ASIA";
 
     Bucket bucket =
         storage.create(
