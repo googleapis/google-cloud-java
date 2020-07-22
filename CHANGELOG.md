@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.2.1...v1.3.0) (2020-07-21)
+
+
+### Features
+
+* Adding JsonToProtoMessage.java ([#400](https://www.github.com/googleapis/java-bigquerystorage/issues/400)) ([200da6d](https://www.github.com/googleapis/java-bigquerystorage/commit/200da6d66e82eaabceeae56e4ff3d1b8e112bd8d))
+* re-generated to pick up changes from googleapis. ([#435](https://www.github.com/googleapis/java-bigquerystorage/issues/435)) ([bdf35e0](https://www.github.com/googleapis/java-bigquerystorage/commit/bdf35e08987ffdf49f7545131cd0dba56ff72bd9)), closes [#436](https://www.github.com/googleapis/java-bigquerystorage/issues/436)
+
 ### [1.2.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.2.0...v1.2.1) (2020-07-20)
 
 
