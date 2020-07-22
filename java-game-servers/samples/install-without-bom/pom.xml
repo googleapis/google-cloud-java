@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gameservices-install-without-bom</artifactId>
+  <artifactId>game-servers-install-without-bom</artifactId>
   <packaging>jar</packaging>
   <name>Google Cloud Gaming Install Without Bom</name>
-  <url>https://github.com/googleapis/java-gameservices</url>
+  <url>https://github.com/googleapis/java-game-servers</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START gameservices_install_without_bom] -->
+    <!-- [START game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-gameservices</artifactId>
-      <version>0.19.1</version>
+      <artifactId>google-cloud-game-servers</artifactId>
+      <version>0.19.2-SNAPSHOT</version>
     </dependency>
-    <!-- [END gameservices_install_without_bom] -->
+    <!-- [END game_servers_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>

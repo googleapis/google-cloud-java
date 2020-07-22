@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gameservices-snippets</artifactId>
+  <artifactId>game-servers-snippets</artifactId>
   <packaging>jar</packaging>
   <name>Google Cloud Gaming Snippets</name>
-  <url>https://github.com/googleapis/java-gameservices</url>
+  <url>https://github.com/googleapis/java-game-servers</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -23,8 +23,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
-  <!-- [START gameservices_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -38,12 +36,12 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- TODO: use libraries-bom when google-cloud-game-servers is included -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-gameservices</artifactId>
+      <artifactId>google-cloud-game-servers</artifactId>
+      <version>0.19.2-SNAPSHOT</version>
     </dependency>
-    <!-- [END gameservices_install_with_bom] -->
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
