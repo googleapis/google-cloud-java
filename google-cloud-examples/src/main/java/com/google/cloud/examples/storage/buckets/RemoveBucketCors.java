@@ -38,13 +38,10 @@ public class RemoveBucketCors {
     // getCors() returns the List and copying over to an ArrayList so it's mutable.
     List<Cors> cors = new ArrayList<>(bucket.getCors());
 
-    // Remove bucket CORS configuration.
-    for (int index = 0; index < cors.size(); index++) {
-      Cors value = cors.get(index);
-      cors.remove(value);
-    }
+    // Clear bucket CORS configuration.
+    cors.clear();
 
-    // Update bucket to remove CORS
+    // Update bucket to remove CORS.
     bucket.toBuilder().setCors(cors).build().update();
     System.out.println("Removed CORS configuration from bucket " + bucketName);
   }
