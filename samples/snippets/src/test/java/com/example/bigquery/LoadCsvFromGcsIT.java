@@ -20,8 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -58,15 +58,7 @@ public class LoadCsvFromGcsIT {
     System.setOut(out);
 
     // Create a test table
-    tableName = "loadCsvFromGcs_TEST_" + UUID.randomUUID().toString().replace('-', '_');
-
-    Schema schema =
-        Schema.of(
-            Field.of("name", LegacySQLTypeName.STRING),
-            Field.of("post_abbr", LegacySQLTypeName.STRING));
-
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
-
+    tableName = "LOAD_CSV_TABLE_FROM_GCS_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -80,9 +72,13 @@ public class LoadCsvFromGcsIT {
   }
 
   @Test
-  public void loadCsvFromGcs() throws Exception {
+  public void loadCsvFromGcs() {
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
-    LoadCsvFromGcs.loadCsvFromGcs(BIGQUERY_DATASET_NAME, tableName, sourceUri);
+    Schema schema =
+        Schema.of(
+            Field.of("name", StandardSQLTypeName.STRING),
+            Field.of("post_abbr", StandardSQLTypeName.STRING));
+    LoadCsvFromGcs.loadCsvFromGcs(BIGQUERY_DATASET_NAME, tableName, sourceUri, schema);
     assertThat(bout.toString()).contains("CSV from GCS successfully added during load append job");
   }
 }
