@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-analytics-admin-parent</artifactId>
+  <artifactId>google-analytics-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analytics-admin:current} -->
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   <name>Google Analytics Admin Parent</name>
   <url>https://github.com/googleapis/java-analytics-admin</url>
   <description>
@@ -62,7 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-analytics-admin-parent</site.installationModule>
+    <site.installationModule>google-analytics-admin-parent</site.installationModule>
   </properties>
 
   <dependencyManagement>
@@ -100,7 +100,10 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies>
+              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
+              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+            </ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
       </plugins>
@@ -111,7 +114,7 @@
     <module>google-analytics-admin</module>
     <module>proto-google-analytics-admin-v1alpha</module>
     <module>grpc-google-analytics-admin-v1alpha</module>
-    <module>google-cloud-analytics-admin-bom</module>
+    <module>google-analytics-admin-bom</module>
   </modules>
 
   <reporting>

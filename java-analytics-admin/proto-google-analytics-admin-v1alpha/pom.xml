@@ -9,8 +9,8 @@
   <description>PROTO library for proto-google-analytics-admin-v1alpha</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-analytics-admin-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analytics-admin:current} -->
+    <artifactId>google-analytics-admin-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <dependencies>
     <dependency>

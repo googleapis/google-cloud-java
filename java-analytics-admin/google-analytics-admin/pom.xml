@@ -10,7 +10,7 @@
   <description>allows you to manage Google Analytics accounts and properties.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-analytics-admin-parent</artifactId>
+    <artifactId>google-analytics-admin-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <properties>
