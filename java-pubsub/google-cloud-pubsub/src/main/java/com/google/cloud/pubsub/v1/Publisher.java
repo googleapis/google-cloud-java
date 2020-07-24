@@ -233,7 +233,9 @@ public class Publisher implements PublisherInterface {
     final String orderingKey = message.getOrderingKey();
     Preconditions.checkState(
         orderingKey.isEmpty() || enableMessageOrdering,
-        "Cannot publish a message with an ordering key when message ordering is not enabled.");
+        "Cannot publish a message with an ordering key when message ordering is not enabled in the "
+            + "Publisher client. Please create a Publisher client with "
+            + "setEnableMessageOrdering(true) in the builder.");
 
     final OutstandingPublish outstandingPublish =
         new OutstandingPublish(messageTransform.apply(message));
