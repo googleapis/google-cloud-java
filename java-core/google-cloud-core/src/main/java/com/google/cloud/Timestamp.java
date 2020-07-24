@@ -28,6 +28,7 @@ import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.format.DateTimeParseException;
 import org.threeten.bp.temporal.TemporalAccessor;
 
 /**
@@ -189,8 +190,13 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   }
 
   /**
-   * Creates a Timestamp instance from the given string. String is in the RFC 3339 format without
-   * the timezone offset (always ends in "Z").
+   * Creates a Timestamp instance from the given string. Input string should be in the RFC 3339
+   * format, like '2020-12-01T10:15:30.000Z' or with the timezone offset, such as
+   * '2020-12-01T10:15:30+01:00'.
+   *
+   * @param timestamp string in the RFC 3339 format
+   * @return created Timestamp
+   * @throws DateTimeParseException if unable to parse
    */
   public static Timestamp parseTimestamp(String timestamp) {
     TemporalAccessor temporalAccessor = timestampParser.parse(timestamp);
