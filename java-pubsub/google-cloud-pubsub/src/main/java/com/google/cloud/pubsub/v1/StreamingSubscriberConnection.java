@@ -216,8 +216,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             .setSubscription(subscription)
             .setStreamAckDeadlineSeconds(60)
             .setClientId(clientId)
-            .setMaxOutstandingMessages(flowControlSettings.getMaxOutstandingElementCount())
-            .setMaxOutstandingBytes(flowControlSettings.getMaxOutstandingRequestBytes())
+            .setMaxOutstandingMessages(
+                valueOrZero(flowControlSettings.getMaxOutstandingElementCount()))
+            .setMaxOutstandingBytes(
+                valueOrZero(flowControlSettings.getMaxOutstandingRequestBytes()))
             .build());
 
     /**
@@ -279,6 +281,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
           }
         },
         MoreExecutors.directExecutor());
+  }
+
+  private Long valueOrZero(Long value) {
+    return value != null ? value : 0;
   }
 
   private boolean isAlive() {

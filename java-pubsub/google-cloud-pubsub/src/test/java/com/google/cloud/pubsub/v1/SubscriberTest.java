@@ -19,6 +19,7 @@ package com.google.cloud.pubsub.v1;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -238,6 +239,8 @@ public class SubscriberTest {
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
         .setParallelPullCount(1)
-        .setMaxDurationPerAckExtension(Duration.ofSeconds(5));
+        .setMaxDurationPerAckExtension(Duration.ofSeconds(5))
+        .setFlowControlSettings(
+            FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build());
   }
 }
