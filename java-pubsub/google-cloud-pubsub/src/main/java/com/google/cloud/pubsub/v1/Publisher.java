@@ -171,7 +171,8 @@ public class Publisher implements PublisherInterface {
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
             .setTransportChannelProvider(builder.channelProvider)
-            .setEndpoint(builder.endpoint);
+            .setEndpoint(builder.endpoint)
+            .setHeaderProvider(builder.headerProvider);
     stubSettings
         .publishSettings()
         .setRetryableCodes(
