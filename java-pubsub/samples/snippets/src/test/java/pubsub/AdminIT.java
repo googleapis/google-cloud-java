@@ -43,6 +43,7 @@ public class AdminIT {
   private static final String topicId = "iam-topic-" + _suffix;
   private static final String pullSubscriptionId = "iam-pull-subscription-" + _suffix;
   private static final String pushSubscriptionId = "iam-push-subscription-" + _suffix;
+  private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
 
   private static final ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
@@ -50,6 +51,8 @@ public class AdminIT {
       ProjectSubscriptionName.of(projectId, pullSubscriptionId);
   private static final ProjectSubscriptionName pushSubscriptionName =
       ProjectSubscriptionName.of(projectId, pushSubscriptionId);
+  private static final ProjectSubscriptionName orderedSubscriptionName =
+      ProjectSubscriptionName.of(projectId, orderedSubscriptionId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -78,6 +81,7 @@ public class AdminIT {
       try {
         subscriptionAdminClient.deleteSubscription(pullSubscriptionName);
         subscriptionAdminClient.deleteSubscription(pushSubscriptionName);
+        subscriptionAdminClient.deleteSubscription(orderedSubscriptionName);
       } catch (NotFoundException e) {
       }
     }
@@ -166,9 +170,17 @@ public class AdminIT {
     assertThat(bout.toString()).contains("permissions: \"pubsub.subscriptions.update\"");
 
     bout.reset();
+    // Test create a subscription with ordering
+    CreateSubscriptionWithOrdering.createSubscriptionWithOrderingExample(
+        projectId, topicId, orderedSubscriptionId);
+    assertThat(bout.toString()).contains("Created a subscription with ordering");
+    assertThat(bout.toString()).contains("enable_message_ordering=true");
+
+    bout.reset();
     // Test delete subscription. Run twice to delete both pull and push subscriptions.
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pullSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pushSubscriptionId);
+    DeleteSubscriptionExample.deleteSubscriptionExample(projectId, orderedSubscriptionId);
     assertThat(bout.toString()).contains("Deleted subscription.");
 
     bout.reset();

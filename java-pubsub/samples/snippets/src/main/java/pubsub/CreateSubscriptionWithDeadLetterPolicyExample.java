@@ -17,7 +17,6 @@
 package pubsub;
 
 // [START pubsub_dead_letter_create_subscription]
-
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.DeadLetterPolicy;
 import com.google.pubsub.v1.ProjectSubscriptionName;

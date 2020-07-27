@@ -105,5 +105,19 @@ public class PublisherIT {
     // Test publish with Retry settings.
     PublishWithRetrySettingsExample.publishWithRetrySettingsExample(projectId, topicId);
     assertThat(bout.toString()).contains("Published a message with retry settings: ");
+
+    bout.reset();
+    // Test publish with ordering keys.
+    PublishWithOrderingKeys.publishWithOrderingKeysExample(projectId, topicId);
+    for (int i = 1; i <= 4; i++) {
+      assertThat(bout.toString()).contains("message" + i);
+    }
+
+    bout.reset();
+    // Test resume publish with ordering keys.
+    ResumePublishWithOrderingKeys.resumePublishWithOrderingKeysExample(projectId, topicId);
+    for (int i = 1; i <= 4; i++) {
+      assertThat(bout.toString()).contains("message" + i);
+    }
   }
 }
