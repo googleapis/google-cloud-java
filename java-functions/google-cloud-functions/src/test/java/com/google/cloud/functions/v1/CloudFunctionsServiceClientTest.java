@@ -316,7 +316,7 @@ public class CloudFunctionsServiceClientTest {
             .build();
     mockCloudFunctionsService.addResponse(resultOperation);
 
-    CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+    CloudFunction function = CloudFunction.newBuilder().build();
 
     CloudFunction actualResponse = client.updateFunctionAsync(function).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -325,7 +325,7 @@ public class CloudFunctionsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateFunctionRequest actualRequest = (UpdateFunctionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(function, CloudFunctionName.parse(actualRequest.getFunction()));
+    Assert.assertEquals(function, actualRequest.getFunction());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -339,7 +339,7 @@ public class CloudFunctionsServiceClientTest {
     mockCloudFunctionsService.addException(exception);
 
     try {
-      CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+      CloudFunction function = CloudFunction.newBuilder().build();
 
       client.updateFunctionAsync(function).get();
       Assert.fail("No exception raised");

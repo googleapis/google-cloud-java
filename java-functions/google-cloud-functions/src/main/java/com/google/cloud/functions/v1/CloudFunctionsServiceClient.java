@@ -487,35 +487,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.create()) {
-   *   CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   CloudFunction function = CloudFunction.newBuilder().build();
    *   CloudFunction response = cloudFunctionsServiceClient.updateFunctionAsync(function).get();
-   * }
-   * </code></pre>
-   *
-   * @param function Required. New version of the function.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<CloudFunction, OperationMetadataV1> updateFunctionAsync(
-      CloudFunctionName function) {
-    UpdateFunctionRequest request =
-        UpdateFunctionRequest.newBuilder()
-            .setFunction(function == null ? null : function.toString())
-            .build();
-    return updateFunctionAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates existing function.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.create()) {
-   *   CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
-   *   CloudFunction response = cloudFunctionsServiceClient.updateFunctionAsync(function.toString()).get();
    * }
    * </code></pre>
    *
@@ -539,9 +512,9 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.create()) {
-   *   CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   CloudFunction function = CloudFunction.newBuilder().build();
    *   UpdateFunctionRequest request = UpdateFunctionRequest.newBuilder()
-   *     .setFunction(function.toString())
+   *     .setFunction(function)
    *     .build();
    *   CloudFunction response = cloudFunctionsServiceClient.updateFunctionAsync(request).get();
    * }
@@ -565,9 +538,9 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.create()) {
-   *   CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   CloudFunction function = CloudFunction.newBuilder().build();
    *   UpdateFunctionRequest request = UpdateFunctionRequest.newBuilder()
-   *     .setFunction(function.toString())
+   *     .setFunction(function)
    *     .build();
    *   OperationFuture&lt;CloudFunction, OperationMetadataV1&gt; future = cloudFunctionsServiceClient.updateFunctionOperationCallable().futureCall(request);
    *   // Do something
@@ -589,9 +562,9 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.create()) {
-   *   CloudFunctionName function = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   CloudFunction function = CloudFunction.newBuilder().build();
    *   UpdateFunctionRequest request = UpdateFunctionRequest.newBuilder()
-   *     .setFunction(function.toString())
+   *     .setFunction(function)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudFunctionsServiceClient.updateFunctionCallable().futureCall(request);
    *   // Do something

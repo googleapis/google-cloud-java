@@ -143,7 +143,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the function field is set.
@@ -160,7 +160,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The function.
@@ -179,7 +179,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -605,7 +605,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the function field is set.
@@ -621,7 +621,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The function.
@@ -643,7 +643,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setFunction(com.google.cloud.functions.v1.CloudFunction value) {
@@ -667,7 +667,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setFunction(
@@ -689,7 +689,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeFunction(com.google.cloud.functions.v1.CloudFunction value) {
@@ -717,7 +717,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearFunction() {
@@ -739,7 +739,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.functions.v1.CloudFunction.Builder getFunctionBuilder() {
@@ -755,7 +755,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.functions.v1.CloudFunctionOrBuilder getFunctionOrBuilder() {
@@ -775,7 +775,7 @@ public final class UpdateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </pre>
      *
      * <code>
-     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

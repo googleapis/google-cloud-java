@@ -22,6 +22,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-functions</artifactId>
   <version>0.0.0</version>
 </dependency>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-functions:released})

@@ -31,7 +31,7 @@ public interface UpdateFunctionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the function field is set.
@@ -45,7 +45,7 @@ public interface UpdateFunctionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The function.
@@ -59,7 +59,7 @@ public interface UpdateFunctionRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.functions.v1.CloudFunction function = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.functions.v1.CloudFunctionOrBuilder getFunctionOrBuilder();
