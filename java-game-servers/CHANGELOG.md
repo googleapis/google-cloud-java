@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.20.0](https://www.github.com/googleapis/java-game-servers/compare/v0.19.1...v0.20.0) (2020-07-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove v1alpha client (#177)
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#159](https://www.github.com/googleapis/java-game-servers/issues/159)) ([871c822](https://www.github.com/googleapis/java-game-servers/commit/871c8220f663daf99947dcc6fcb885beec3b62cd))
+* add v1beta client ([#176](https://www.github.com/googleapis/java-game-servers/issues/176)) ([d818dd4](https://www.github.com/googleapis/java-game-servers/commit/d818dd45282989d7f437466e2b6378b27a820a7c))
+* remove v1alpha client ([#177](https://www.github.com/googleapis/java-game-servers/issues/177)) ([948776f](https://www.github.com/googleapis/java-game-servers/commit/948776f3975770a5e7f2d2bec1435e8727bd2638))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#138](https://www.github.com/googleapis/java-game-servers/issues/138)) ([6e0743e](https://www.github.com/googleapis/java-game-servers/commit/6e0743e1b0d0e064d6e80e48ae7b4bb54ef3a5af))
+* update dependency com.google.api:api-common to v1.9.2 ([#143](https://www.github.com/googleapis/java-game-servers/issues/143)) ([0a794e9](https://www.github.com/googleapis/java-game-servers/commit/0a794e9f4a0c880d00bf6be7f92a709115631294))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#129](https://www.github.com/googleapis/java-game-servers/issues/129)) ([9bd660b](https://www.github.com/googleapis/java-game-servers/commit/9bd660be9f5dcad15850c26d1401f47fc7c37c98))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#171](https://www.github.com/googleapis/java-game-servers/issues/171)) ([043e1c0](https://www.github.com/googleapis/java-game-servers/commit/043e1c05b791d9057e3095cca5a073d99764d5b5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#173](https://www.github.com/googleapis/java-game-servers/issues/173)) ([eeb1a1b](https://www.github.com/googleapis/java-game-servers/commit/eeb1a1b5b559f1e3f52bccb3e894cfcfde8b5648))
+* update dependency com.google.guava:guava-bom to v29 ([#107](https://www.github.com/googleapis/java-game-servers/issues/107)) ([5d8453f](https://www.github.com/googleapis/java-game-servers/commit/5d8453f9cc18b55a6dcec181e1c43b23593bb634))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#132](https://www.github.com/googleapis/java-game-servers/issues/132)) ([3976e6f](https://www.github.com/googleapis/java-game-servers/commit/3976e6fa0706939307673ebd014abddbb7e1c318))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#136](https://www.github.com/googleapis/java-game-servers/issues/136)) ([3722284](https://www.github.com/googleapis/java-game-servers/commit/3722284784dbcdadc9f688de7c9db5492e740dd4))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#121](https://www.github.com/googleapis/java-game-servers/issues/121)) ([1a3260b](https://www.github.com/googleapis/java-game-servers/commit/1a3260bd287d63402fa94ee7418748f821c7c5da))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#147](https://www.github.com/googleapis/java-game-servers/issues/147)) ([a715575](https://www.github.com/googleapis/java-game-servers/commit/a7155750469f762e54b8ef0fce44db56a76c3fe0))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#125](https://www.github.com/googleapis/java-game-servers/issues/125)) ([ce50084](https://www.github.com/googleapis/java-game-servers/commit/ce50084b59e665c995eeb2db2684f080e326eff3))
+
 ### [0.19.1](https://www.github.com/googleapis/java-gameservices/compare/v0.19.0...v0.19.1) (2020-04-07)
 
 
