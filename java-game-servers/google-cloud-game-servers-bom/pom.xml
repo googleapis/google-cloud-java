@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-game-servers-bom</artifactId>
-  <version>0.20.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+  <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.20.0</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
+        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-game-servers</artifactId>
-        <version>0.20.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.20.0</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
+        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
