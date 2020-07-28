@@ -22,7 +22,14 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Represents a conversational agent.
+ * A Dialogflow agent is a virtual agent that handles conversations with your
+ * end-users. It is a natural language understanding module that understands the
+ * nuances of human language. Dialogflow translates end-user text or audio
+ * during a conversation to structured data that your apps and services can
+ * understand. You design and build a Dialogflow agent to handle the types of
+ * conversations required for your system.
+ * For more information about agents, see the
+ * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.Agent}
@@ -1540,7 +1547,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a conversational agent.
+   * A Dialogflow agent is a virtual agent that handles conversations with your
+   * end-users. It is a natural language understanding module that understands the
+   * nuances of human language. Dialogflow translates end-user text or audio
+   * during a conversation to structured data that your apps and services can
+   * understand. You design and build a Dialogflow agent to handle the types of
+   * conversations required for your system.
+   * For more information about agents, see the
+   * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.Agent}

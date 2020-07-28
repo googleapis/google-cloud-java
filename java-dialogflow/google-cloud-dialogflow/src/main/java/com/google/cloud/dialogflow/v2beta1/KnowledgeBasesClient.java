@@ -36,9 +36,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages knowledge bases.
- *
- * <p>Allows users to setup and maintain knowledge bases with their knowledge data.
+ * Service Description: Service for managing
+ * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

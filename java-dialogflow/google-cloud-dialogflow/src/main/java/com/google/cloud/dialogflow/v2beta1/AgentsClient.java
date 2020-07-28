@@ -41,30 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Agents are best described as Natural Language Understanding (NLU) modules
- * that transform user requests into actionable data. You can include agents in your app, product,
- * or service to determine user intent and respond to the user in a natural way.
- *
- * <p>After you create an agent, you can add [Intents][google.cloud.dialogflow.v2beta1.Intents],
- * [Contexts][google.cloud.dialogflow.v2beta1.Contexts], [Entity
- * Types][google.cloud.dialogflow.v2beta1.EntityTypes],
- * [Webhooks][google.cloud.dialogflow.v2beta1.WebhookRequest], and so on to manage the flow of a
- * conversation and match user input to predefined intents and actions.
- *
- * <p>You can create an agent using both Dialogflow Standard Edition and Dialogflow Enterprise
- * Edition. For details, see [Dialogflow
- * Editions](https://cloud.google.com/dialogflow/docs/editions).
- *
- * <p>You can save your agent for backup or versioning by exporting the agent by using the
- * [ExportAgent][google.cloud.dialogflow.v2beta1.Agents.ExportAgent] method. You can import a saved
- * agent by using the [ImportAgent][google.cloud.dialogflow.v2beta1.Agents.ImportAgent] method.
- *
- * <p>Dialogflow provides several [prebuilt
- * agents](https://cloud.google.com/dialogflow/docs/agents-prebuilt) for common conversation
- * scenarios such as determining a date and time, converting currency, and so on.
- *
- * <p>For more information about agents, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+ * Service Description: Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

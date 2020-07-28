@@ -58,11 +58,11 @@ public interface ListDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return in a single page. By
+   * The maximum number of items to return in a single page. By
    * default 10 and at most 100.
    * </pre>
    *
-   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 page_size = 2;</code>
    *
    * @return The pageSize.
    */
@@ -72,10 +72,10 @@ public interface ListDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 3;</code>
    *
    * @return The pageToken.
    */
@@ -84,10 +84,10 @@ public interface ListDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 3;</code>
    *
    * @return The bytes for pageToken.
    */

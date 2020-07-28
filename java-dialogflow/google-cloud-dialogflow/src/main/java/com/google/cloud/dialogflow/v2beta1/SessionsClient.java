@@ -27,10 +27,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: A session represents an interaction with a user. You retrieve user input and
- * pass it to the [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method
- * to determine user intent and respond.
+ * Service Description: A service used for session interactions.
+ *
+ * <p>For more information, see the [API interactions
+ * guide](https://cloud.google.com/dialogflow/docs/api-overview).
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -171,6 +171,8 @@ public class SessionsClient implements BackgroundResource {
    *     appropriate `Session ID` and `User Id`. They can be a random number or some type of user
    *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
    *     must not exceed 36 characters.
+   *     <p>For more information, see the [API interactions
+   *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -211,6 +213,8 @@ public class SessionsClient implements BackgroundResource {
    *     appropriate `Session ID` and `User Id`. They can be a random number or some type of user
    *     and session identifiers (preferably hashed). The length of the `Session ID` and `User ID`
    *     must not exceed 36 characters.
+   *     <p>For more information, see the [API interactions
+   *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,

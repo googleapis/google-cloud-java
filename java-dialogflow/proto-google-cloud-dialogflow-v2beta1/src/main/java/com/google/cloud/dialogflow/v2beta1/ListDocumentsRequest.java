@@ -185,11 +185,11 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return in a single page. By
+   * The maximum number of items to return in a single page. By
    * default 10 and at most 100.
    * </pre>
    *
-   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 page_size = 2;</code>
    *
    * @return The pageSize.
    */
@@ -204,10 +204,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 3;</code>
    *
    * @return The pageToken.
    */
@@ -227,10 +227,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous list request.
+   * The next_page_token value returned from a previous list request.
    * </pre>
    *
-   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string page_token = 3;</code>
    *
    * @return The bytes for pageToken.
    */
@@ -723,11 +723,11 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By
+     * The maximum number of items to return in a single page. By
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 2;</code>
      *
      * @return The pageSize.
      */
@@ -739,11 +739,11 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By
+     * The maximum number of items to return in a single page. By
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 2;</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -758,11 +758,11 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By
+     * The maximum number of items to return in a single page. By
      * default 10 and at most 100.
      * </pre>
      *
-     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 page_size = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -778,10 +778,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The next_page_token value returned from a previous list request.
+     * The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 3;</code>
      *
      * @return The pageToken.
      */
@@ -800,10 +800,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The next_page_token value returned from a previous list request.
+     * The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 3;</code>
      *
      * @return The bytes for pageToken.
      */
@@ -822,10 +822,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The next_page_token value returned from a previous list request.
+     * The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 3;</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -843,10 +843,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The next_page_token value returned from a previous list request.
+     * The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -860,10 +860,10 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The next_page_token value returned from a previous list request.
+     * The next_page_token value returned from a previous list request.
      * </pre>
      *
-     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string page_token = 3;</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

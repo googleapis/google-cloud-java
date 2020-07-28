@@ -36,21 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: A context represents additional information included with user input or with
- * an intent returned by the Dialogflow API. Contexts are helpful for differentiating user input
- * which may be vague or have a different meaning depending on additional details from your
- * application such as user setting and preferences, previous user input, where the user is in your
- * application, geographic location, and so on.
- *
- * <p>You can include contexts as input parameters of a
- * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) request,
- * or as output contexts included in the returned intent. Contexts expire when an intent is matched,
- * after the number of `DetectIntent` requests specified by the `lifespan_count` parameter, or after
- * 20 minutes if no intents are matched for a `DetectIntent` request.
- *
- * <p>For more information about contexts, see the [Dialogflow
- * documentation](https://cloud.google.com/dialogflow/docs/contexts-overview).
+ * Service Description: Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

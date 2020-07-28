@@ -26,7 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Manages documents of a knowledge base.
+ * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -354,7 +354,7 @@ public final class DocumentsGrpc {
    *
    *
    * <pre>
-   * Manages documents of a knowledge base.
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
    * </pre>
    */
   public abstract static class DocumentsImplBase implements io.grpc.BindableService {
@@ -502,7 +502,7 @@ public final class DocumentsGrpc {
    *
    *
    * <pre>
-   * Manages documents of a knowledge base.
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
    * </pre>
    */
   public static final class DocumentsStub extends io.grpc.stub.AbstractAsyncStub<DocumentsStub> {
@@ -633,7 +633,7 @@ public final class DocumentsGrpc {
    *
    *
    * <pre>
-   * Manages documents of a knowledge base.
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
    * </pre>
    */
   public static final class DocumentsBlockingStub
@@ -740,7 +740,7 @@ public final class DocumentsGrpc {
    *
    *
    * <pre>
-   * Manages documents of a knowledge base.
+   * Service for managing knowledge [Documents][google.cloud.dialogflow.v2beta1.Document].
    * </pre>
    */
   public static final class DocumentsFutureStub

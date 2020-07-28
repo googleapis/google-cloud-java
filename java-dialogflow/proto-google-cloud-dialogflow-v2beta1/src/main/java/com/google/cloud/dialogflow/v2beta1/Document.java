@@ -22,7 +22,9 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * A document resource.
+ * A knowledge document to be used by a [KnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+ * For more information, see the [knowledge base
+ * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
  * </pre>
@@ -2286,7 +2288,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A document resource.
+   * A knowledge document to be used by a [KnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * For more information, see the [knowledge base
+   * guide](https://cloud.google.com/dialogflow/docs/how/knowledge-bases).
    * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
    * only use `projects.knowledgeBases.documents`.
    * </pre>

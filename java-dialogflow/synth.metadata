@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "c9d9d2e6a59d1277e44d348dfd2da5fa0cf14e8e"
+        "sha": "76a5386164f197eb7432ec0a3ed570d8f1e50124"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4139410a6b2a3ce9df083c3d97f98498cefbfd78",
-        "internalRef": "320004023"
+        "sha": "84ebe7c62f4c0875e001752fa84e87e629a1d418",
+        "internalRef": "321243814"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4139410a6b2a3ce9df083c3d97f98498cefbfd78",
-        "internalRef": "320004023"
+        "sha": "84ebe7c62f4c0875e001752fa84e87e629a1d418",
+        "internalRef": "321243814"
       }
     },
     {
