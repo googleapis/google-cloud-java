@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
-      <version>0.19.2-SNAPSHOT</version>
+      <version>0.20.0</version>
     </dependency>
     <!-- [END game_servers_install_without_bom] -->
 
