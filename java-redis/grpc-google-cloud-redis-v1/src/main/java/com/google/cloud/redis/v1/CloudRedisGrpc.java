@@ -218,6 +218,49 @@ public final class CloudRedisGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.UpgradeInstanceRequest, com.google.longrunning.Operation>
+      getUpgradeInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpgradeInstance",
+      requestType = com.google.cloud.redis.v1.UpgradeInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.v1.UpgradeInstanceRequest, com.google.longrunning.Operation>
+      getUpgradeInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.v1.UpgradeInstanceRequest, com.google.longrunning.Operation>
+        getUpgradeInstanceMethod;
+    if ((getUpgradeInstanceMethod = CloudRedisGrpc.getUpgradeInstanceMethod) == null) {
+      synchronized (CloudRedisGrpc.class) {
+        if ((getUpgradeInstanceMethod = CloudRedisGrpc.getUpgradeInstanceMethod) == null) {
+          CloudRedisGrpc.getUpgradeInstanceMethod =
+              getUpgradeInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.v1.UpgradeInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpgradeInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.v1.UpgradeInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisMethodDescriptorSupplier("UpgradeInstance"))
+                      .build();
+        }
+      }
+    }
+    return getUpgradeInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
       getImportInstanceMethod;
 
@@ -516,6 +559,20 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Upgrades Redis instance to the newer Redis version specified in the
+     * request.
+     * </pre>
+     */
+    public void upgradeInstance(
+        com.google.cloud.redis.v1.UpgradeInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpgradeInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
      * Redis may stop serving during this operation. Instance state will be
      * IMPORTING for entire operation. When complete, the instance will contain
@@ -602,6 +659,12 @@ public final class CloudRedisGrpc {
                   new MethodHandlers<
                       com.google.cloud.redis.v1.UpdateInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
+          .addMethod(
+              getUpgradeInstanceMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.redis.v1.UpgradeInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_INSTANCE)))
           .addMethod(
               getImportInstanceMethod(),
               asyncUnaryCall(
@@ -735,6 +798,23 @@ public final class CloudRedisGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades Redis instance to the newer Redis version specified in the
+     * request.
+     * </pre>
+     */
+    public void upgradeInstance(
+        com.google.cloud.redis.v1.UpgradeInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpgradeInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -912,6 +992,19 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Upgrades Redis instance to the newer Redis version specified in the
+     * request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeInstance(
+        com.google.cloud.redis.v1.UpgradeInstanceRequest request) {
+      return blockingUnaryCall(getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
      * Redis may stop serving during this operation. Instance state will be
      * IMPORTING for entire operation. When complete, the instance will contain
@@ -1070,6 +1163,20 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
+     * Upgrades Redis instance to the newer Redis version specified in the
+     * request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        upgradeInstance(com.google.cloud.redis.v1.UpgradeInstanceRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpgradeInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
      * Redis may stop serving during this operation. Instance state will be
      * IMPORTING for entire operation. When complete, the instance will contain
@@ -1133,10 +1240,11 @@ public final class CloudRedisGrpc {
   private static final int METHODID_GET_INSTANCE = 1;
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
-  private static final int METHODID_IMPORT_INSTANCE = 4;
-  private static final int METHODID_EXPORT_INSTANCE = 5;
-  private static final int METHODID_FAILOVER_INSTANCE = 6;
-  private static final int METHODID_DELETE_INSTANCE = 7;
+  private static final int METHODID_UPGRADE_INSTANCE = 4;
+  private static final int METHODID_IMPORT_INSTANCE = 5;
+  private static final int METHODID_EXPORT_INSTANCE = 6;
+  private static final int METHODID_FAILOVER_INSTANCE = 7;
+  private static final int METHODID_DELETE_INSTANCE = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1174,6 +1282,11 @@ public final class CloudRedisGrpc {
         case METHODID_UPDATE_INSTANCE:
           serviceImpl.updateInstance(
               (com.google.cloud.redis.v1.UpdateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPGRADE_INSTANCE:
+          serviceImpl.upgradeInstance(
+              (com.google.cloud.redis.v1.UpgradeInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_IMPORT_INSTANCE:
@@ -1264,6 +1377,7 @@ public final class CloudRedisGrpc {
                       .addMethod(getGetInstanceMethod())
                       .addMethod(getCreateInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
+                      .addMethod(getUpgradeInstanceMethod())
                       .addMethod(getImportInstanceMethod())
                       .addMethod(getExportInstanceMethod())
                       .addMethod(getFailoverInstanceMethod())

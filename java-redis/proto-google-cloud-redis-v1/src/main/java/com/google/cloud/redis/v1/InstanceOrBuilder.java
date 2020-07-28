@@ -668,9 +668,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>
@@ -684,9 +683,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>

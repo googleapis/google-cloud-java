@@ -37,6 +37,7 @@ import com.google.cloud.redis.v1.ListInstancesRequest;
 import com.google.cloud.redis.v1.ListInstancesResponse;
 import com.google.cloud.redis.v1.OperationMetadata;
 import com.google.cloud.redis.v1.UpdateInstanceRequest;
+import com.google.cloud.redis.v1.UpgradeInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -129,6 +130,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<UpgradeInstanceRequest, Operation>
+      upgradeInstanceMethodDescriptor =
+          MethodDescriptor.<UpgradeInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1.CloudRedis/UpgradeInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpgradeInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -155,6 +165,9 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable;
+  private final OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
+      upgradeInstanceOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -300,6 +313,19 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   }
                 })
             .build();
+    GrpcCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
+        GrpcCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpgradeInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpgradeInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -364,6 +390,15 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.upgradeInstanceCallable =
+        callableFactory.createUnaryCallable(
+            upgradeInstanceTransportSettings, settings.upgradeInstanceSettings(), clientContext);
+    this.upgradeInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeInstanceTransportSettings,
+            settings.upgradeInstanceOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -444,6 +479,16 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
 
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
+      upgradeInstanceOperationCallable() {
+    return upgradeInstanceOperationCallable;
+  }
+
+  public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
+    return upgradeInstanceCallable;
   }
 
   @Override

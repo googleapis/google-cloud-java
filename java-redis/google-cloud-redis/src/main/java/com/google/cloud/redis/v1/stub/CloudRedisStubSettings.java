@@ -54,6 +54,7 @@ import com.google.cloud.redis.v1.ListInstancesRequest;
 import com.google.cloud.redis.v1.ListInstancesResponse;
 import com.google.cloud.redis.v1.OperationMetadata;
 import com.google.cloud.redis.v1.UpdateInstanceRequest;
+import com.google.cloud.redis.v1.UpgradeInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -125,6 +126,9 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceSettings;
+  private final OperationCallSettings<UpgradeInstanceRequest, Instance, OperationMetadata>
+      upgradeInstanceOperationSettings;
 
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
@@ -207,6 +211,18 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   /** Returns the object with the settings used for calls to getInstance. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
     return getInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeInstance. */
+  public UnaryCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
+    return upgradeInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeInstance. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<UpgradeInstanceRequest, Instance, OperationMetadata>
+      upgradeInstanceOperationSettings() {
+    return upgradeInstanceOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -292,6 +308,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
+    upgradeInstanceSettings = settingsBuilder.upgradeInstanceSettings().build();
+    upgradeInstanceOperationSettings = settingsBuilder.upgradeInstanceOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
@@ -380,6 +398,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
         listInstancesSettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<UpgradeInstanceRequest, Operation>
+        upgradeInstanceSettings;
+    private final OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
+        upgradeInstanceOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -446,6 +468,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      upgradeInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      upgradeInstanceOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createInstanceSettings,
@@ -455,7 +481,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
               failoverInstanceSettings,
               deleteInstanceSettings,
               listInstancesSettings,
-              getInstanceSettings);
+              getInstanceSettings,
+              upgradeInstanceSettings);
 
       initDefaults(this);
     }
@@ -508,6 +535,11 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       builder
           .getInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .upgradeInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
       builder
@@ -648,6 +680,29 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
+      builder
+          .upgradeInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpgradeInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -669,6 +724,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
+      upgradeInstanceSettings = settings.upgradeInstanceSettings.toBuilder();
+      upgradeInstanceOperationSettings = settings.upgradeInstanceOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -679,7 +736,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
               failoverInstanceSettings,
               deleteInstanceSettings,
               listInstancesSettings,
-              getInstanceSettings);
+              getInstanceSettings,
+              upgradeInstanceSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -787,6 +845,19 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     /** Returns the builder for the settings used for calls to getInstance. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
       return getInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    public UnaryCallSettings.Builder<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
+      return upgradeInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
+        upgradeInstanceOperationSettings() {
+      return upgradeInstanceOperationSettings;
     }
 
     @Override

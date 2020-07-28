@@ -756,7 +756,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Connect via directly peering with memorystore redis hosted service.
+     * Connect via direct peering to the Memorystore for Redis hosted service.
      * </pre>
      *
      * <code>DIRECT_PEERING = 1;</code>
@@ -766,8 +766,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Connect with google via private service access and share connection
-     * across google managed services.
+     * Connect your Memorystore for Redis instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Memorystore.
      * </pre>
      *
      * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
@@ -790,7 +791,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Connect via directly peering with memorystore redis hosted service.
+     * Connect via direct peering to the Memorystore for Redis hosted service.
      * </pre>
      *
      * <code>DIRECT_PEERING = 1;</code>
@@ -800,8 +801,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Connect with google via private service access and share connection
-     * across google managed services.
+     * Connect your Memorystore for Redis instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Memorystore.
      * </pre>
      *
      * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
@@ -1922,9 +1924,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>
@@ -1941,9 +1942,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The connect mode of Redis instance.
-   * If not provided, default one will be used.
-   * Current default: DIRECT_PEERING.
+   * Optional. The network connect mode of the Redis instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
    * </pre>
    *
    * <code>
@@ -4875,9 +4875,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>
@@ -4894,9 +4893,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>
@@ -4916,9 +4914,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>
@@ -4938,9 +4935,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>
@@ -4963,9 +4959,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The connect mode of Redis instance.
-     * If not provided, default one will be used.
-     * Current default: DIRECT_PEERING.
+     * Optional. The network connect mode of the Redis instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
      * </pre>
      *
      * <code>
