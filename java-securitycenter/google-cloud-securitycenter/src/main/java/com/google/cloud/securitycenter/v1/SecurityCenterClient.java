@@ -56,8 +56,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
- *   Policy response = securityCenterClient.getIamPolicy(resource);
+ *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+ *   Source source = Source.newBuilder().build();
+ *   Source response = securityCenterClient.createSource(parent, source);
  * }
  * </code>
  * </pre>
@@ -177,470 +178,6 @@ public class SecurityCenterClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy response = securityCenterClient.getIamPolicy(resource);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(ResourceName resource) {
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy response = securityCenterClient.getIamPolicy(resource.toString());
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(String resource) {
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   Policy response = securityCenterClient.getIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = securityCenterClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return stub.getIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization's assets and groups them by their specified properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   for (GroupResult element : securityCenterClient.groupAssets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GroupAssetsPagedResponse groupAssets(GroupAssetsRequest request) {
-    return groupAssetsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization's assets and groups them by their specified properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   ApiFuture&lt;GroupAssetsPagedResponse&gt; future = securityCenterClient.groupAssetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (GroupResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
-      groupAssetsPagedCallable() {
-    return stub.groupAssetsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization's assets and groups them by their specified properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   while (true) {
-   *     GroupAssetsResponse response = securityCenterClient.groupAssetsCallable().call(request);
-   *     for (GroupResult element : response.getGroupByResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
-    return stub.groupAssetsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization or source's findings and groups them by their specified properties.
-   *
-   * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   for (GroupResult element : securityCenterClient.groupFindings(parent, groupBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Name of the source to groupBy. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
-   * @param groupBy Required. Expression that defines what assets fields to use for grouping
-   *     (including `state_change`). The string value should follow SQL syntax: comma separated list
-   *     of fields. For example: "parent,resource_name".
-   *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
-   *     <p>The following fields are supported when compare_duration is set:
-   *     <p>&#42; state_change
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
-    GroupFindingsRequest request =
-        GroupFindingsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setGroupBy(groupBy)
-            .build();
-    return groupFindings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization or source's findings and groups them by their specified properties.
-   *
-   * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   for (GroupResult element : securityCenterClient.groupFindings(parent.toString(), groupBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Name of the source to groupBy. Its format is
-   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
-   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
-   * @param groupBy Required. Expression that defines what assets fields to use for grouping
-   *     (including `state_change`). The string value should follow SQL syntax: comma separated list
-   *     of fields. For example: "parent,resource_name".
-   *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
-   *     <p>The following fields are supported when compare_duration is set:
-   *     <p>&#42; state_change
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GroupFindingsPagedResponse groupFindings(String parent, String groupBy) {
-    GroupFindingsRequest request =
-        GroupFindingsRequest.newBuilder().setParent(parent).setGroupBy(groupBy).build();
-    return groupFindings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization or source's findings and groups them by their specified properties.
-   *
-   * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   for (GroupResult element : securityCenterClient.groupFindings(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GroupFindingsPagedResponse groupFindings(GroupFindingsRequest request) {
-    return groupFindingsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization or source's findings and groups them by their specified properties.
-   *
-   * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   ApiFuture&lt;GroupFindingsPagedResponse&gt; future = securityCenterClient.groupFindingsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (GroupResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
-      groupFindingsPagedCallable() {
-    return stub.groupFindingsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Filters an organization or source's findings and groups them by their specified properties.
-   *
-   * <p>To group across all sources provide a `-` as the source id. Example:
-   * /v1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   while (true) {
-   *     GroupFindingsResponse response = securityCenterClient.groupFindingsCallable().call(request);
-   *     for (GroupResult element : response.getGroupByResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
-    return stub.groupFindingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource, permissions);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource.toString(), permissions);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      String resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource)
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = securityCenterClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return stub.testIamPermissionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1149,6 +686,98 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy on the specified Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   Policy response = securityCenterClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy on the specified Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   Policy response = securityCenterClient.getIamPolicy(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy on the specified Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = securityCenterClient.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy on the specified Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = securityCenterClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Gets a notification config.
    *
    * <p>Sample code:
@@ -1424,6 +1053,266 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
     return stub.getSourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization's assets and groups them by their specified properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String groupBy = "";
+   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   for (GroupResult element : securityCenterClient.groupAssets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GroupAssetsPagedResponse groupAssets(GroupAssetsRequest request) {
+    return groupAssetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization's assets and groups them by their specified properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String groupBy = "";
+   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   ApiFuture&lt;GroupAssetsPagedResponse&gt; future = securityCenterClient.groupAssetsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (GroupResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
+      groupAssetsPagedCallable() {
+    return stub.groupAssetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization's assets and groups them by their specified properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   String groupBy = "";
+   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   while (true) {
+   *     GroupAssetsResponse response = securityCenterClient.groupAssetsCallable().call(request);
+   *     for (GroupResult element : response.getGroupByResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
+    return stub.groupAssetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization or source's findings and groups them by their specified properties.
+   *
+   * <p>To group across all sources provide a `-` as the source id. Example:
+   * /v1/organizations/{organization_id}/sources/-/findings
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   String groupBy = "";
+   *   for (GroupResult element : securityCenterClient.groupFindings(parent, groupBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the source to groupBy. Its format is
+   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
+   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   * @param groupBy Required. Expression that defines what assets fields to use for grouping
+   *     (including `state_change`). The string value should follow SQL syntax: comma separated list
+   *     of fields. For example: "parent,resource_name".
+   *     <p>The following fields are supported:
+   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
+   *     <p>The following fields are supported when compare_duration is set:
+   *     <p>&#42; state_change
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
+    GroupFindingsRequest request =
+        GroupFindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setGroupBy(groupBy)
+            .build();
+    return groupFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization or source's findings and groups them by their specified properties.
+   *
+   * <p>To group across all sources provide a `-` as the source id. Example:
+   * /v1/organizations/{organization_id}/sources/-/findings
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   String groupBy = "";
+   *   for (GroupResult element : securityCenterClient.groupFindings(parent.toString(), groupBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Name of the source to groupBy. Its format is
+   *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
+   *     provide a source_id of `-`. For example: organizations/{organization_id}/sources/-
+   * @param groupBy Required. Expression that defines what assets fields to use for grouping
+   *     (including `state_change`). The string value should follow SQL syntax: comma separated list
+   *     of fields. For example: "parent,resource_name".
+   *     <p>The following fields are supported:
+   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent
+   *     <p>The following fields are supported when compare_duration is set:
+   *     <p>&#42; state_change
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GroupFindingsPagedResponse groupFindings(String parent, String groupBy) {
+    GroupFindingsRequest request =
+        GroupFindingsRequest.newBuilder().setParent(parent).setGroupBy(groupBy).build();
+    return groupFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization or source's findings and groups them by their specified properties.
+   *
+   * <p>To group across all sources provide a `-` as the source id. Example:
+   * /v1/organizations/{organization_id}/sources/-/findings
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   String groupBy = "";
+   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   for (GroupResult element : securityCenterClient.groupFindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GroupFindingsPagedResponse groupFindings(GroupFindingsRequest request) {
+    return groupFindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization or source's findings and groups them by their specified properties.
+   *
+   * <p>To group across all sources provide a `-` as the source id. Example:
+   * /v1/organizations/{organization_id}/sources/-/findings
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   String groupBy = "";
+   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   ApiFuture&lt;GroupFindingsPagedResponse&gt; future = securityCenterClient.groupFindingsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (GroupResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
+      groupFindingsPagedCallable() {
+    return stub.groupFindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Filters an organization or source's findings and groups them by their specified properties.
+   *
+   * <p>To group across all sources provide a `-` as the source id. Example:
+   * /v1/organizations/{organization_id}/sources/-/findings
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   String groupBy = "";
+   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGroupBy(groupBy)
+   *     .build();
+   *   while (true) {
+   *     GroupFindingsResponse response = securityCenterClient.groupFindingsCallable().call(request);
+   *     for (GroupResult element : response.getGroupByResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
+    return stub.groupFindingsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2226,6 +2115,118 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the permissions that a caller has on the specified source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      ResourceName resource, List<String> permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the permissions that a caller has on the specified source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource.toString(), permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      String resource, List<String> permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource)
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the permissions that a caller has on the specified source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the permissions that a caller has on the specified source.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = securityCenterClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

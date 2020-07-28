@@ -83,32 +83,6 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: groupAssetsPagedCallable()");
-  }
-
-  public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
-    throw new UnsupportedOperationException("Not implemented: groupAssetsCallable()");
-  }
-
-  public UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
-      groupFindingsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: groupFindingsPagedCallable()");
-  }
-
-  public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
-    throw new UnsupportedOperationException("Not implemented: groupFindingsCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
-  }
-
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: createSourceCallable()");
   }
@@ -126,6 +100,10 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteNotificationConfigCallable()");
   }
 
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
   public UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getNotificationConfigCallable()");
@@ -138,6 +116,23 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: getSourceCallable()");
+  }
+
+  public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: groupAssetsPagedCallable()");
+  }
+
+  public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: groupAssetsCallable()");
+  }
+
+  public UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
+      groupFindingsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: groupFindingsPagedCallable()");
+  }
+
+  public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: groupFindingsCallable()");
   }
 
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
@@ -192,6 +187,11 @@ public abstract class SecurityCenterStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
