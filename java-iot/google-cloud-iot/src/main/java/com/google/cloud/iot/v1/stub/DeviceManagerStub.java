@@ -65,24 +65,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DeviceManagerStub implements BackgroundResource {
 
-  public UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDeviceRegistryCallable()");
-  }
-
-  public UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDeviceCallable()");
-  }
-
-  public UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: modifyCloudToDeviceConfigCallable()");
-  }
-
-  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceCallable() {
-    throw new UnsupportedOperationException("Not implemented: sendCommandToDeviceCallable()");
-  }
-
   public UnaryCallable<CreateDeviceRegistryRequest, DeviceRegistry> createDeviceRegistryCallable() {
     throw new UnsupportedOperationException("Not implemented: createDeviceRegistryCallable()");
   }
@@ -93,6 +75,10 @@ public abstract class DeviceManagerStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDeviceRegistryRequest, DeviceRegistry> updateDeviceRegistryCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDeviceRegistryCallable()");
+  }
+
+  public UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDeviceRegistryCallable()");
   }
 
   public UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesPagedResponse>
@@ -117,12 +103,21 @@ public abstract class DeviceManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDeviceCallable()");
   }
 
+  public UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDeviceCallable()");
+  }
+
   public UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse> listDevicesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listDevicesPagedCallable()");
   }
 
   public UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listDevicesCallable()");
+  }
+
+  public UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyCloudToDeviceConfigCallable()");
   }
 
   public UnaryCallable<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
@@ -146,6 +141,11 @@ public abstract class DeviceManagerStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    throw new UnsupportedOperationException("Not implemented: sendCommandToDeviceCallable()");
   }
 
   public UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>

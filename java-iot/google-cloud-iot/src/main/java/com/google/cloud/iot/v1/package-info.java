@@ -29,8 +29,9 @@
  * <pre>
  * <code>
  * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
- *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
- *   deviceManagerClient.deleteDeviceRegistry(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   DeviceRegistry deviceRegistry = DeviceRegistry.newBuilder().build();
+ *   DeviceRegistry response = deviceManagerClient.createDeviceRegistry(parent, deviceRegistry);
  * }
  * </code>
  * </pre>

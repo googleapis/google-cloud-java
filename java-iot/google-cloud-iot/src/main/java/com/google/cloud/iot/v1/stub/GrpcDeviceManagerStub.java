@@ -76,41 +76,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDeviceManagerStub extends DeviceManagerStub {
 
-  private static final MethodDescriptor<DeleteDeviceRegistryRequest, Empty>
-      deleteDeviceRegistryMethodDescriptor =
-          MethodDescriptor.<DeleteDeviceRegistryRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.iot.v1.DeviceManager/DeleteDeviceRegistry")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteDeviceRegistryRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteDeviceRequest, Empty> deleteDeviceMethodDescriptor =
-      MethodDescriptor.<DeleteDeviceRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.iot.v1.DeviceManager/DeleteDevice")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteDeviceRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigMethodDescriptor =
-          MethodDescriptor.<ModifyCloudToDeviceConfigRequest, DeviceConfig>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.iot.v1.DeviceManager/ModifyCloudToDeviceConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ModifyCloudToDeviceConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(DeviceConfig.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceMethodDescriptor =
-          MethodDescriptor.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.iot.v1.DeviceManager/SendCommandToDevice")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(SendCommandToDeviceRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SendCommandToDeviceResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateDeviceRegistryRequest, DeviceRegistry>
       createDeviceRegistryMethodDescriptor =
           MethodDescriptor.<CreateDeviceRegistryRequest, DeviceRegistry>newBuilder()
@@ -137,6 +102,15 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeviceRegistryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceRegistry.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteDeviceRegistryRequest, Empty>
+      deleteDeviceRegistryMethodDescriptor =
+          MethodDescriptor.<DeleteDeviceRegistryRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/DeleteDeviceRegistry")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDeviceRegistryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
       listDeviceRegistriesMethodDescriptor =
@@ -169,6 +143,13 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateDeviceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Device.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<DeleteDeviceRequest, Empty> deleteDeviceMethodDescriptor =
+      MethodDescriptor.<DeleteDeviceRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.iot.v1.DeviceManager/DeleteDevice")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteDeviceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ListDevicesRequest, ListDevicesResponse>
       listDevicesMethodDescriptor =
           MethodDescriptor.<ListDevicesRequest, ListDevicesResponse>newBuilder()
@@ -177,6 +158,15 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDevicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDevicesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigMethodDescriptor =
+          MethodDescriptor.<ModifyCloudToDeviceConfigRequest, DeviceConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/ModifyCloudToDeviceConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ModifyCloudToDeviceConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DeviceConfig.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<
           ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
@@ -224,6 +214,16 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceMethodDescriptor =
+          MethodDescriptor.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/SendCommandToDevice")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SendCommandToDeviceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SendCommandToDeviceResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
       bindDeviceToGatewayMethodDescriptor =
           MethodDescriptor.<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>newBuilder()
@@ -249,17 +249,12 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable;
-  private final UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable;
-  private final UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigCallable;
-  private final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceCallable;
   private final UnaryCallable<CreateDeviceRegistryRequest, DeviceRegistry>
       createDeviceRegistryCallable;
   private final UnaryCallable<GetDeviceRegistryRequest, DeviceRegistry> getDeviceRegistryCallable;
   private final UnaryCallable<UpdateDeviceRegistryRequest, DeviceRegistry>
       updateDeviceRegistryCallable;
+  private final UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable;
   private final UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
       listDeviceRegistriesCallable;
   private final UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesPagedResponse>
@@ -267,9 +262,12 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
   private final UnaryCallable<CreateDeviceRequest, Device> createDeviceCallable;
   private final UnaryCallable<GetDeviceRequest, Device> getDeviceCallable;
   private final UnaryCallable<UpdateDeviceRequest, Device> updateDeviceCallable;
+  private final UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable;
   private final UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable;
   private final UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse>
       listDevicesPagedCallable;
+  private final UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigCallable;
   private final UnaryCallable<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
       listDeviceConfigVersionsCallable;
   private final UnaryCallable<ListDeviceStatesRequest, ListDeviceStatesResponse>
@@ -278,6 +276,8 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable;
   private final UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
       bindDeviceToGatewayCallable;
   private final UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
@@ -322,60 +322,6 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryTransportSettings =
-        GrpcCallSettings.<DeleteDeviceRegistryRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteDeviceRegistryMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDeviceRegistryRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDeviceRegistryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteDeviceRequest, Empty> deleteDeviceTransportSettings =
-        GrpcCallSettings.<DeleteDeviceRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteDeviceMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDeviceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDeviceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-        modifyCloudToDeviceConfigTransportSettings =
-            GrpcCallSettings.<ModifyCloudToDeviceConfigRequest, DeviceConfig>newBuilder()
-                .setMethodDescriptor(modifyCloudToDeviceConfigMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ModifyCloudToDeviceConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(ModifyCloudToDeviceConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-        sendCommandToDeviceTransportSettings =
-            GrpcCallSettings.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
-                .setMethodDescriptor(sendCommandToDeviceMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<SendCommandToDeviceRequest>() {
-                      @Override
-                      public Map<String, String> extract(SendCommandToDeviceRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
         createDeviceRegistryTransportSettings =
             GrpcCallSettings.<CreateDeviceRegistryRequest, DeviceRegistry>newBuilder()
@@ -419,6 +365,19 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryTransportSettings =
+        GrpcCallSettings.<DeleteDeviceRegistryRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDeviceRegistryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDeviceRegistryRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDeviceRegistryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
         listDeviceRegistriesTransportSettings =
             GrpcCallSettings.<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>newBuilder()
@@ -472,6 +431,19 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteDeviceRequest, Empty> deleteDeviceTransportSettings =
+        GrpcCallSettings.<DeleteDeviceRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDeviceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDeviceRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDeviceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         GrpcCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
             .setMethodDescriptor(listDevicesMethodDescriptor)
@@ -485,6 +457,20 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+        modifyCloudToDeviceConfigTransportSettings =
+            GrpcCallSettings.<ModifyCloudToDeviceConfigRequest, DeviceConfig>newBuilder()
+                .setMethodDescriptor(modifyCloudToDeviceConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ModifyCloudToDeviceConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(ModifyCloudToDeviceConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsTransportSettings =
             GrpcCallSettings
@@ -554,6 +540,20 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceTransportSettings =
+            GrpcCallSettings.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
+                .setMethodDescriptor(sendCommandToDeviceMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SendCommandToDeviceRequest>() {
+                      @Override
+                      public Map<String, String> extract(SendCommandToDeviceRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewayTransportSettings =
             GrpcCallSettings.<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>newBuilder()
@@ -584,24 +584,6 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                     })
                 .build();
 
-    this.deleteDeviceRegistryCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeviceRegistryTransportSettings,
-            settings.deleteDeviceRegistrySettings(),
-            clientContext);
-    this.deleteDeviceCallable =
-        callableFactory.createUnaryCallable(
-            deleteDeviceTransportSettings, settings.deleteDeviceSettings(), clientContext);
-    this.modifyCloudToDeviceConfigCallable =
-        callableFactory.createUnaryCallable(
-            modifyCloudToDeviceConfigTransportSettings,
-            settings.modifyCloudToDeviceConfigSettings(),
-            clientContext);
-    this.sendCommandToDeviceCallable =
-        callableFactory.createUnaryCallable(
-            sendCommandToDeviceTransportSettings,
-            settings.sendCommandToDeviceSettings(),
-            clientContext);
     this.createDeviceRegistryCallable =
         callableFactory.createUnaryCallable(
             createDeviceRegistryTransportSettings,
@@ -616,6 +598,11 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
         callableFactory.createUnaryCallable(
             updateDeviceRegistryTransportSettings,
             settings.updateDeviceRegistrySettings(),
+            clientContext);
+    this.deleteDeviceRegistryCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeviceRegistryTransportSettings,
+            settings.deleteDeviceRegistrySettings(),
             clientContext);
     this.listDeviceRegistriesCallable =
         callableFactory.createUnaryCallable(
@@ -636,12 +623,20 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
     this.updateDeviceCallable =
         callableFactory.createUnaryCallable(
             updateDeviceTransportSettings, settings.updateDeviceSettings(), clientContext);
+    this.deleteDeviceCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeviceTransportSettings, settings.deleteDeviceSettings(), clientContext);
     this.listDevicesCallable =
         callableFactory.createUnaryCallable(
             listDevicesTransportSettings, settings.listDevicesSettings(), clientContext);
     this.listDevicesPagedCallable =
         callableFactory.createPagedCallable(
             listDevicesTransportSettings, settings.listDevicesSettings(), clientContext);
+    this.modifyCloudToDeviceConfigCallable =
+        callableFactory.createUnaryCallable(
+            modifyCloudToDeviceConfigTransportSettings,
+            settings.modifyCloudToDeviceConfigSettings(),
+            clientContext);
     this.listDeviceConfigVersionsCallable =
         callableFactory.createUnaryCallable(
             listDeviceConfigVersionsTransportSettings,
@@ -661,6 +656,11 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.sendCommandToDeviceCallable =
+        callableFactory.createUnaryCallable(
+            sendCommandToDeviceTransportSettings,
+            settings.sendCommandToDeviceSettings(),
+            clientContext);
     this.bindDeviceToGatewayCallable =
         callableFactory.createUnaryCallable(
             bindDeviceToGatewayTransportSettings,
@@ -675,24 +675,6 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
-    return deleteDeviceRegistryCallable;
-  }
-
-  public UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
-    return deleteDeviceCallable;
-  }
-
-  public UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigCallable() {
-    return modifyCloudToDeviceConfigCallable;
-  }
-
-  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceCallable() {
-    return sendCommandToDeviceCallable;
-  }
-
   public UnaryCallable<CreateDeviceRegistryRequest, DeviceRegistry> createDeviceRegistryCallable() {
     return createDeviceRegistryCallable;
   }
@@ -703,6 +685,10 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
 
   public UnaryCallable<UpdateDeviceRegistryRequest, DeviceRegistry> updateDeviceRegistryCallable() {
     return updateDeviceRegistryCallable;
+  }
+
+  public UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
+    return deleteDeviceRegistryCallable;
   }
 
   public UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesPagedResponse>
@@ -727,12 +713,21 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
     return updateDeviceCallable;
   }
 
+  public UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
+    return deleteDeviceCallable;
+  }
+
   public UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse> listDevicesPagedCallable() {
     return listDevicesPagedCallable;
   }
 
   public UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     return listDevicesCallable;
+  }
+
+  public UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigCallable() {
+    return modifyCloudToDeviceConfigCallable;
   }
 
   public UnaryCallable<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
@@ -756,6 +751,11 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    return sendCommandToDeviceCallable;
   }
 
   public UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
