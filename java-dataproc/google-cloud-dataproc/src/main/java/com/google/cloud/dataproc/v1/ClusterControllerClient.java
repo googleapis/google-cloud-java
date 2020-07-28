@@ -607,7 +607,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *   String projectId = "";
    *   String region = "";
    *   String clusterName = "";
-   *   clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
+   *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
    * }
    * </code></pre>
    *
@@ -619,8 +619,8 @@ public class ClusterControllerClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, DiagnoseClusterResults> diagnoseClusterAsync(
-      String projectId, String region, String clusterName) {
+  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
+      diagnoseClusterAsync(String projectId, String region, String clusterName) {
     DiagnoseClusterRequest request =
         DiagnoseClusterRequest.newBuilder()
             .setProjectId(projectId)
@@ -651,7 +651,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   clusterControllerClient.diagnoseClusterAsync(request).get();
+   *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(request).get();
    * }
    * </code></pre>
    *
@@ -660,8 +660,8 @@ public class ClusterControllerClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, DiagnoseClusterResults> diagnoseClusterAsync(
-      DiagnoseClusterRequest request) {
+  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
+      diagnoseClusterAsync(DiagnoseClusterRequest request) {
     return diagnoseClusterOperationCallable().futureCall(request);
   }
 
@@ -686,14 +686,15 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   OperationFuture&lt;Empty, DiagnoseClusterResults&gt; future = clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;DiagnoseClusterResults, ClusterOperationMetadata&gt; future = clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   DiagnoseClusterResults response = future.get();
    * }
    * </code></pre>
    */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public final OperationCallable<
+          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     return stub.diagnoseClusterOperationCallable();
   }
@@ -721,7 +722,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = clusterControllerClient.diagnoseClusterCallable().futureCall(request);
    *   // Do something
-   *   future.get();
+   *   Operation response = future.get();
    * }
    * </code></pre>
    */

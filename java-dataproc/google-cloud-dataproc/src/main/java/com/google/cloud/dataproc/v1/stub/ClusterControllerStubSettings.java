@@ -112,7 +112,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   private final OperationCallSettings<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationSettings;
   private final UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings;
-  private final OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  private final OperationCallSettings<
+          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
   private final PagedCallSettings<
@@ -162,7 +163,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
   /** Returns the object with the settings used for calls to diagnoseCluster. */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallSettings<
+          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationSettings() {
     return diagnoseClusterOperationSettings;
   }
@@ -331,7 +333,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     private final UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation>
         diagnoseClusterSettings;
     private final OperationCallSettings.Builder<
-            DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+            DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
         diagnoseClusterOperationSettings;
     private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
     private final PagedCallSettings.Builder<
@@ -547,9 +549,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+              ProtoOperationTransformers.ResponseTransformer.create(DiagnoseClusterResults.class))
           .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DiagnoseClusterResults.class))
+              ProtoOperationTransformers.MetadataTransformer.create(ClusterOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -652,7 +654,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+    public OperationCallSettings.Builder<
+            DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {
       return diagnoseClusterOperationSettings;
     }

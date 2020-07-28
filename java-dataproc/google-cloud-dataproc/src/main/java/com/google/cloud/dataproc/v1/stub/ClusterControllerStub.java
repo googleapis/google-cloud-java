@@ -82,7 +82,7 @@ public abstract class ClusterControllerStub implements BackgroundResource {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallable<DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: diagnoseClusterOperationCallable()");
   }

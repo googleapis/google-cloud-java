@@ -120,7 +120,8 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable;
   private final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable;
-  private final OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  private final OperationCallable<
+          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
@@ -279,7 +280,7 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DiagnoseClusterRequest, Empty, DiagnoseClusterResults>
+  public OperationCallable<DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     return diagnoseClusterOperationCallable;
   }

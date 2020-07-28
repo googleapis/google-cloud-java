@@ -276,7 +276,9 @@ public class ClusterControllerClientTest {
   @Test
   @SuppressWarnings("all")
   public void diagnoseClusterTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    String outputUri = "outputUri-1273518802";
+    DiagnoseClusterResults expectedResponse =
+        DiagnoseClusterResults.newBuilder().setOutputUri(outputUri).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("diagnoseClusterTest")
@@ -289,7 +291,8 @@ public class ClusterControllerClientTest {
     String region = "region-934795532";
     String clusterName = "clusterName-1018081872";
 
-    Empty actualResponse = client.diagnoseClusterAsync(projectId, region, clusterName).get();
+    DiagnoseClusterResults actualResponse =
+        client.diagnoseClusterAsync(projectId, region, clusterName).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterController.getRequests();
