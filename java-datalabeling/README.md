@@ -50,11 +50,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datalabeling:0.118.2'
+compile 'com.google.cloud:google-cloud-datalabeling:0.119.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datalabeling" % "0.118.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-datalabeling" % "0.119.0"
 ```
 [//]: # ({x-version-update-end})
 

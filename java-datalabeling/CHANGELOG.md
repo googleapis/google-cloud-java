@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-datalabeling/compare/v0.118.2...v0.119.0) (2020-07-28)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#197](https://www.github.com/googleapis/java-datalabeling/issues/197)) ([19b99ce](https://www.github.com/googleapis/java-datalabeling/commit/19b99cebe0c983c03099df1782d1f2f8a2c92551))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#207](https://www.github.com/googleapis/java-datalabeling/issues/207)) ([a64b484](https://www.github.com/googleapis/java-datalabeling/commit/a64b484ce3df7470033a8fc656a55f23dfd43c20))
+* restore GAPIC v2 retry configs ([#170](https://www.github.com/googleapis/java-datalabeling/issues/170)) ([8ea2edc](https://www.github.com/googleapis/java-datalabeling/commit/8ea2edc682c0e1ddcdb291831c84fde4f1aae122))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#176](https://www.github.com/googleapis/java-datalabeling/issues/176)) ([3aa9a7f](https://www.github.com/googleapis/java-datalabeling/commit/3aa9a7fcf9684f8878265caf0c3703af2f57ef13))
+* update dependency com.google.api:api-common to v1.9.2 ([#181](https://www.github.com/googleapis/java-datalabeling/issues/181)) ([ce13caa](https://www.github.com/googleapis/java-datalabeling/commit/ce13caaf0cb045b4fdb26a705df19db5615d25cc))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#164](https://www.github.com/googleapis/java-datalabeling/issues/164)) ([7ee8db8](https://www.github.com/googleapis/java-datalabeling/commit/7ee8db8c0ea7b9108a5f647fc3509c7c1e0a253b))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#177](https://www.github.com/googleapis/java-datalabeling/issues/177)) ([b16e87f](https://www.github.com/googleapis/java-datalabeling/commit/b16e87f30e95d46d217eada9a3fbfb6d3582bfe5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#212](https://www.github.com/googleapis/java-datalabeling/issues/212)) ([0f93ac9](https://www.github.com/googleapis/java-datalabeling/commit/0f93ac9de1d78d4d0dd3f54b936f0b084b8e5916))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#214](https://www.github.com/googleapis/java-datalabeling/issues/214)) ([d6b4d35](https://www.github.com/googleapis/java-datalabeling/commit/d6b4d3571fe531e9ce0711346a134bbd8531a1e3))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#168](https://www.github.com/googleapis/java-datalabeling/issues/168)) ([1600926](https://www.github.com/googleapis/java-datalabeling/commit/1600926add6d1be14023ffcb8edae576e899c66e))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#173](https://www.github.com/googleapis/java-datalabeling/issues/173)) ([f26007a](https://www.github.com/googleapis/java-datalabeling/commit/f26007a94fb9aad386c1bc0a8531910b2e935a59))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#156](https://www.github.com/googleapis/java-datalabeling/issues/156)) ([c2335ba](https://www.github.com/googleapis/java-datalabeling/commit/c2335babb35b70f573fbe70df5b7aaa48e6d51e7))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#185](https://www.github.com/googleapis/java-datalabeling/issues/185)) ([62005b0](https://www.github.com/googleapis/java-datalabeling/commit/62005b0a0e6606975a05cab69e89de48e03ecddc))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#158](https://www.github.com/googleapis/java-datalabeling/issues/158)) ([2d5b6b3](https://www.github.com/googleapis/java-datalabeling/commit/2d5b6b33e74e3f1eeb1c93582cafb90d9685faf9))
+
 ### [0.118.2](https://www.github.com/googleapis/java-datalabeling/compare/v0.118.1...v0.118.2) (2020-04-20)
 
 
