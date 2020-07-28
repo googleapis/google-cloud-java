@@ -39,4 +39,96 @@ public interface SynthesizeSpeechResponseOrBuilder
    * @return The audioContent.
    */
   com.google.protobuf.ByteString getAudioContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> getTimepointsList();
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.Timepoint getTimepoints(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  int getTimepointsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  java.util.List<? extends com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
+      getTimepointsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder getTimepointsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   *
+   * @return Whether the audioConfig field is set.
+   */
+  boolean hasAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   *
+   * @return The audioConfig.
+   */
+  com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder();
 }

@@ -64,6 +64,16 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * MP3 at 64kbps.
+   * </pre>
+   *
+   * <code>MP3_64_KBPS = 4;</code>
+   */
+  MP3_64_KBPS(4),
+  /**
+   *
+   *
+   * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
@@ -73,6 +83,17 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OGG_OPUS = 3;</code>
    */
   OGG_OPUS(3),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * Audio content returned as MULAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>MULAW = 5;</code>
+   */
+  MULAW(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -111,6 +132,16 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * MP3 at 64kbps.
+   * </pre>
+   *
+   * <code>MP3_64_KBPS = 4;</code>
+   */
+  public static final int MP3_64_KBPS_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
@@ -120,6 +151,17 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OGG_OPUS = 3;</code>
    */
   public static final int OGG_OPUS_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * Audio content returned as MULAW also contains a WAV header.
+   * </pre>
+   *
+   * <code>MULAW = 5;</code>
+   */
+  public static final int MULAW_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -151,8 +193,12 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return LINEAR16;
       case 2:
         return MP3;
+      case 4:
+        return MP3_64_KBPS;
       case 3:
         return OGG_OPUS;
+      case 5:
+        return MULAW;
       default:
         return null;
     }

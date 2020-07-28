@@ -39,6 +39,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
 
   private SynthesizeSpeechResponse() {
     audioContent_ = com.google.protobuf.ByteString.EMPTY;
+    timepoints_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -60,6 +61,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,6 +75,35 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
           case 10:
             {
               audioContent_ = input.readBytes();
+              break;
+            }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                timepoints_ =
+                    new java.util.ArrayList<com.google.cloud.texttospeech.v1beta1.Timepoint>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              timepoints_.add(
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1beta1.Timepoint.parser(), extensionRegistry));
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder subBuilder = null;
+              if (audioConfig_ != null) {
+                subBuilder = audioConfig_.toBuilder();
+              }
+              audioConfig_ =
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1beta1.AudioConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(audioConfig_);
+                audioConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -89,6 +120,9 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        timepoints_ = java.util.Collections.unmodifiableList(timepoints_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -131,6 +165,129 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     return audioContent_;
   }
 
+  public static final int TIMEPOINTS_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> timepoints_;
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> getTimepointsList() {
+    return timepoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
+      getTimepointsOrBuilderList() {
+    return timepoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  @java.lang.Override
+  public int getTimepointsCount() {
+    return timepoints_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.Timepoint getTimepoints(int index) {
+    return timepoints_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A link between a position in the original request input and a corresponding
+   * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder getTimepointsOrBuilder(
+      int index) {
+    return timepoints_.get(index);
+  }
+
+  public static final int AUDIO_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.texttospeech.v1beta1.AudioConfig audioConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   *
+   * @return Whether the audioConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioConfig() {
+    return audioConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   *
+   * @return The audioConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig() {
+    return audioConfig_ == null
+        ? com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()
+        : audioConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The audio metadata of `audio_content`.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
+    return getAudioConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -148,6 +305,12 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     if (!audioContent_.isEmpty()) {
       output.writeBytes(1, audioContent_);
     }
+    for (int i = 0; i < timepoints_.size(); i++) {
+      output.writeMessage(2, timepoints_.get(i));
+    }
+    if (audioConfig_ != null) {
+      output.writeMessage(4, getAudioConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -159,6 +322,12 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     size = 0;
     if (!audioContent_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, audioContent_);
+    }
+    for (int i = 0; i < timepoints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, timepoints_.get(i));
+    }
+    if (audioConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAudioConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -177,6 +346,11 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
         (com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse) obj;
 
     if (!getAudioContent().equals(other.getAudioContent())) return false;
+    if (!getTimepointsList().equals(other.getTimepointsList())) return false;
+    if (hasAudioConfig() != other.hasAudioConfig()) return false;
+    if (hasAudioConfig()) {
+      if (!getAudioConfig().equals(other.getAudioConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -190,6 +364,14 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AUDIO_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getAudioContent().hashCode();
+    if (getTimepointsCount() > 0) {
+      hash = (37 * hash) + TIMEPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTimepointsList().hashCode();
+    }
+    if (hasAudioConfig()) {
+      hash = (37 * hash) + AUDIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,7 +512,9 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTimepointsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -338,6 +522,18 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       super.clear();
       audioContent_ = com.google.protobuf.ByteString.EMPTY;
 
+      if (timepointsBuilder_ == null) {
+        timepoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        timepointsBuilder_.clear();
+      }
+      if (audioConfigBuilder_ == null) {
+        audioConfig_ = null;
+      } else {
+        audioConfig_ = null;
+        audioConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -366,7 +562,22 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse buildPartial() {
       com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse result =
           new com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse(this);
+      int from_bitField0_ = bitField0_;
       result.audioContent_ = audioContent_;
+      if (timepointsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          timepoints_ = java.util.Collections.unmodifiableList(timepoints_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.timepoints_ = timepoints_;
+      } else {
+        result.timepoints_ = timepointsBuilder_.build();
+      }
+      if (audioConfigBuilder_ == null) {
+        result.audioConfig_ = audioConfig_;
+      } else {
+        result.audioConfig_ = audioConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -421,6 +632,36 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       if (other.getAudioContent() != com.google.protobuf.ByteString.EMPTY) {
         setAudioContent(other.getAudioContent());
       }
+      if (timepointsBuilder_ == null) {
+        if (!other.timepoints_.isEmpty()) {
+          if (timepoints_.isEmpty()) {
+            timepoints_ = other.timepoints_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTimepointsIsMutable();
+            timepoints_.addAll(other.timepoints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.timepoints_.isEmpty()) {
+          if (timepointsBuilder_.isEmpty()) {
+            timepointsBuilder_.dispose();
+            timepointsBuilder_ = null;
+            timepoints_ = other.timepoints_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            timepointsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTimepointsFieldBuilder()
+                    : null;
+          } else {
+            timepointsBuilder_.addAllMessages(other.timepoints_);
+          }
+        }
+      }
+      if (other.hasAudioConfig()) {
+        mergeAudioConfig(other.getAudioConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -451,6 +692,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -517,6 +760,562 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       audioContent_ = getDefaultInstance().getAudioContent();
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> timepoints_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTimepointsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        timepoints_ =
+            new java.util.ArrayList<com.google.cloud.texttospeech.v1beta1.Timepoint>(timepoints_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.Timepoint,
+            com.google.cloud.texttospeech.v1beta1.Timepoint.Builder,
+            com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
+        timepointsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> getTimepointsList() {
+      if (timepointsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(timepoints_);
+      } else {
+        return timepointsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public int getTimepointsCount() {
+      if (timepointsBuilder_ == null) {
+        return timepoints_.size();
+      } else {
+        return timepointsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.Timepoint getTimepoints(int index) {
+      if (timepointsBuilder_ == null) {
+        return timepoints_.get(index);
+      } else {
+        return timepointsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder setTimepoints(int index, com.google.cloud.texttospeech.v1beta1.Timepoint value) {
+      if (timepointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimepointsIsMutable();
+        timepoints_.set(index, value);
+        onChanged();
+      } else {
+        timepointsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder setTimepoints(
+        int index, com.google.cloud.texttospeech.v1beta1.Timepoint.Builder builderForValue) {
+      if (timepointsBuilder_ == null) {
+        ensureTimepointsIsMutable();
+        timepoints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        timepointsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder addTimepoints(com.google.cloud.texttospeech.v1beta1.Timepoint value) {
+      if (timepointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimepointsIsMutable();
+        timepoints_.add(value);
+        onChanged();
+      } else {
+        timepointsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder addTimepoints(int index, com.google.cloud.texttospeech.v1beta1.Timepoint value) {
+      if (timepointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimepointsIsMutable();
+        timepoints_.add(index, value);
+        onChanged();
+      } else {
+        timepointsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder addTimepoints(
+        com.google.cloud.texttospeech.v1beta1.Timepoint.Builder builderForValue) {
+      if (timepointsBuilder_ == null) {
+        ensureTimepointsIsMutable();
+        timepoints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        timepointsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder addTimepoints(
+        int index, com.google.cloud.texttospeech.v1beta1.Timepoint.Builder builderForValue) {
+      if (timepointsBuilder_ == null) {
+        ensureTimepointsIsMutable();
+        timepoints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        timepointsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder addAllTimepoints(
+        java.lang.Iterable<? extends com.google.cloud.texttospeech.v1beta1.Timepoint> values) {
+      if (timepointsBuilder_ == null) {
+        ensureTimepointsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, timepoints_);
+        onChanged();
+      } else {
+        timepointsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder clearTimepoints() {
+      if (timepointsBuilder_ == null) {
+        timepoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        timepointsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public Builder removeTimepoints(int index) {
+      if (timepointsBuilder_ == null) {
+        ensureTimepointsIsMutable();
+        timepoints_.remove(index);
+        onChanged();
+      } else {
+        timepointsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.Timepoint.Builder getTimepointsBuilder(int index) {
+      return getTimepointsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder getTimepointsOrBuilder(
+        int index) {
+      if (timepointsBuilder_ == null) {
+        return timepoints_.get(index);
+      } else {
+        return timepointsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public java.util.List<? extends com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
+        getTimepointsOrBuilderList() {
+      if (timepointsBuilder_ != null) {
+        return timepointsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(timepoints_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.Timepoint.Builder addTimepointsBuilder() {
+      return getTimepointsFieldBuilder()
+          .addBuilder(com.google.cloud.texttospeech.v1beta1.Timepoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.Timepoint.Builder addTimepointsBuilder(int index) {
+      return getTimepointsFieldBuilder()
+          .addBuilder(index, com.google.cloud.texttospeech.v1beta1.Timepoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A link between a position in the original request input and a corresponding
+     * time in the output audio. It's only supported via `&lt;mark&gt;` of SSML input.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
+     */
+    public java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint.Builder>
+        getTimepointsBuilderList() {
+      return getTimepointsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.Timepoint,
+            com.google.cloud.texttospeech.v1beta1.Timepoint.Builder,
+            com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
+        getTimepointsFieldBuilder() {
+      if (timepointsBuilder_ == null) {
+        timepointsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.texttospeech.v1beta1.Timepoint,
+                com.google.cloud.texttospeech.v1beta1.Timepoint.Builder,
+                com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>(
+                timepoints_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        timepoints_ = null;
+      }
+      return timepointsBuilder_;
+    }
+
+    private com.google.cloud.texttospeech.v1beta1.AudioConfig audioConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.AudioConfig,
+            com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder,
+            com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder>
+        audioConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     *
+     * @return Whether the audioConfig field is set.
+     */
+    public boolean hasAudioConfig() {
+      return audioConfigBuilder_ != null || audioConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     *
+     * @return The audioConfig.
+     */
+    public com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig() {
+      if (audioConfigBuilder_ == null) {
+        return audioConfig_ == null
+            ? com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()
+            : audioConfig_;
+      } else {
+        return audioConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public Builder setAudioConfig(com.google.cloud.texttospeech.v1beta1.AudioConfig value) {
+      if (audioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audioConfig_ = value;
+        onChanged();
+      } else {
+        audioConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public Builder setAudioConfig(
+        com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder builderForValue) {
+      if (audioConfigBuilder_ == null) {
+        audioConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public Builder mergeAudioConfig(com.google.cloud.texttospeech.v1beta1.AudioConfig value) {
+      if (audioConfigBuilder_ == null) {
+        if (audioConfig_ != null) {
+          audioConfig_ =
+              com.google.cloud.texttospeech.v1beta1.AudioConfig.newBuilder(audioConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          audioConfig_ = value;
+        }
+        onChanged();
+      } else {
+        audioConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public Builder clearAudioConfig() {
+      if (audioConfigBuilder_ == null) {
+        audioConfig_ = null;
+        onChanged();
+      } else {
+        audioConfig_ = null;
+        audioConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder getAudioConfigBuilder() {
+
+      onChanged();
+      return getAudioConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    public com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
+      if (audioConfigBuilder_ != null) {
+        return audioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return audioConfig_ == null
+            ? com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()
+            : audioConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio metadata of `audio_content`.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1beta1.AudioConfig,
+            com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder,
+            com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder>
+        getAudioConfigFieldBuilder() {
+      if (audioConfigBuilder_ == null) {
+        audioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1beta1.AudioConfig,
+                com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder,
+                com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder>(
+                getAudioConfig(), getParentForChildren(), isClean());
+        audioConfig_ = null;
+      }
+      return audioConfigBuilder_;
     }
 
     @java.lang.Override

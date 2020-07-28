@@ -37,7 +37,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private SynthesizeSpeechRequest() {}
+  private SynthesizeSpeechRequest() {
+    enableTimePointing_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -58,6 +60,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -119,6 +122,31 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
 
               break;
             }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                enableTimePointing_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              enableTimePointing_.add(rawValue);
+              break;
+            }
+          case 34:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  enableTimePointing_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                enableTimePointing_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,6 +161,9 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        enableTimePointing_ = java.util.Collections.unmodifiableList(enableTimePointing_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -151,6 +182,143 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.class,
             com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of timepoint information that is returned in the response.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType}
+   */
+  public enum TimepointType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not specified. No timepoint information will be returned.
+     * </pre>
+     *
+     * <code>TIMEPOINT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TIMEPOINT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Timepoint information of `&lt;mark&gt;` tags in SSML input will be returned.
+     * </pre>
+     *
+     * <code>SSML_MARK = 1;</code>
+     */
+    SSML_MARK(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not specified. No timepoint information will be returned.
+     * </pre>
+     *
+     * <code>TIMEPOINT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TIMEPOINT_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Timepoint information of `&lt;mark&gt;` tags in SSML input will be returned.
+     * </pre>
+     *
+     * <code>SSML_MARK = 1;</code>
+     */
+    public static final int SSML_MARK_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TimepointType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TimepointType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TIMEPOINT_TYPE_UNSPECIFIED;
+        case 1:
+          return SSML_MARK;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TimepointType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TimepointType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TimepointType>() {
+          public TimepointType findValueByNumber(int number) {
+            return TimepointType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TimepointType[] VALUES = values();
+
+    public static TimepointType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TimepointType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType)
   }
 
   public static final int INPUT_FIELD_NUMBER = 1;
@@ -315,6 +483,122 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     return getAudioConfig();
   }
 
+  public static final int ENABLE_TIME_POINTING_FIELD_NUMBER = 4;
+  private java.util.List<java.lang.Integer> enableTimePointing_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer,
+          com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>
+      enableTimePointing_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>() {
+            public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType
+                convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType result =
+                  com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType
+                      .valueOf(from);
+              return result == null
+                  ? com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return A list containing the enableTimePointing.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>
+      getEnableTimePointingList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer,
+        com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>(
+        enableTimePointing_, enableTimePointing_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return The count of enableTimePointing.
+   */
+  @java.lang.Override
+  public int getEnableTimePointingCount() {
+    return enableTimePointing_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The enableTimePointing at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType
+      getEnableTimePointing(int index) {
+    return enableTimePointing_converter_.convert(enableTimePointing_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for enableTimePointing.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getEnableTimePointingValueList() {
+    return enableTimePointing_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of enableTimePointing at the given index.
+   */
+  @java.lang.Override
+  public int getEnableTimePointingValue(int index) {
+    return enableTimePointing_.get(index);
+  }
+
+  private int enableTimePointingMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -329,6 +613,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (input_ != null) {
       output.writeMessage(1, getInput());
     }
@@ -337,6 +622,13 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     }
     if (audioConfig_ != null) {
       output.writeMessage(3, getAudioConfig());
+    }
+    if (getEnableTimePointingList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(enableTimePointingMemoizedSerializedSize);
+    }
+    for (int i = 0; i < enableTimePointing_.size(); i++) {
+      output.writeEnumNoTag(enableTimePointing_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -355,6 +647,19 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     }
     if (audioConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAudioConfig());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < enableTimePointing_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(enableTimePointing_.get(i));
+      }
+      size += dataSize;
+      if (!getEnableTimePointingList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      enableTimePointingMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -384,6 +689,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     if (hasAudioConfig()) {
       if (!getAudioConfig().equals(other.getAudioConfig())) return false;
     }
+    if (!enableTimePointing_.equals(other.enableTimePointing_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -406,6 +712,10 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     if (hasAudioConfig()) {
       hash = (37 * hash) + AUDIO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAudioConfig().hashCode();
+    }
+    if (getEnableTimePointingCount() > 0) {
+      hash = (37 * hash) + ENABLE_TIME_POINTING_FIELD_NUMBER;
+      hash = (53 * hash) + enableTimePointing_.hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -571,6 +881,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         audioConfig_ = null;
         audioConfigBuilder_ = null;
       }
+      enableTimePointing_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -599,6 +911,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
     public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest buildPartial() {
       com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest result =
           new com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest(this);
+      int from_bitField0_ = bitField0_;
       if (inputBuilder_ == null) {
         result.input_ = input_;
       } else {
@@ -614,6 +927,11 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       } else {
         result.audioConfig_ = audioConfigBuilder_.build();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        enableTimePointing_ = java.util.Collections.unmodifiableList(enableTimePointing_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.enableTimePointing_ = enableTimePointing_;
       onBuilt();
       return result;
     }
@@ -674,6 +992,16 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       if (other.hasAudioConfig()) {
         mergeAudioConfig(other.getAudioConfig());
       }
+      if (!other.enableTimePointing_.isEmpty()) {
+        if (enableTimePointing_.isEmpty()) {
+          enableTimePointing_ = other.enableTimePointing_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureEnableTimePointingIsMutable();
+          enableTimePointing_.addAll(other.enableTimePointing_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -704,6 +1032,8 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.texttospeech.v1beta1.SynthesisInput input_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1315,6 +1645,263 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
         audioConfig_ = null;
       }
       return audioConfigBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> enableTimePointing_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEnableTimePointingIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        enableTimePointing_ = new java.util.ArrayList<java.lang.Integer>(enableTimePointing_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @return A list containing the enableTimePointing.
+     */
+    public java.util.List<
+            com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>
+        getEnableTimePointingList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>(
+          enableTimePointing_, enableTimePointing_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @return The count of enableTimePointing.
+     */
+    public int getEnableTimePointingCount() {
+      return enableTimePointing_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The enableTimePointing at the given index.
+     */
+    public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType
+        getEnableTimePointing(int index) {
+      return enableTimePointing_converter_.convert(enableTimePointing_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enableTimePointing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableTimePointing(
+        int index,
+        com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEnableTimePointingIsMutable();
+      enableTimePointing_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param value The enableTimePointing to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEnableTimePointing(
+        com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEnableTimePointingIsMutable();
+      enableTimePointing_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param values The enableTimePointing to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEnableTimePointing(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>
+            values) {
+      ensureEnableTimePointingIsMutable();
+      for (com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType value :
+          values) {
+        enableTimePointing_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableTimePointing() {
+      enableTimePointing_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for enableTimePointing.
+     */
+    public java.util.List<java.lang.Integer> getEnableTimePointingValueList() {
+      return java.util.Collections.unmodifiableList(enableTimePointing_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of enableTimePointing at the given index.
+     */
+    public int getEnableTimePointingValue(int index) {
+      return enableTimePointing_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of enableTimePointing at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableTimePointingValue(int index, int value) {
+      ensureEnableTimePointingIsMutable();
+      enableTimePointing_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for enableTimePointing to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEnableTimePointingValue(int value) {
+      ensureEnableTimePointingIsMutable();
+      enableTimePointing_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether and what timepoints should be returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for enableTimePointing to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEnableTimePointingValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureEnableTimePointingIsMutable();
+      for (int value : values) {
+        enableTimePointing_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

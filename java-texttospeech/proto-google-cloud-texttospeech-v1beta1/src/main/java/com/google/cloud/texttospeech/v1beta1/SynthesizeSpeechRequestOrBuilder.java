@@ -145,4 +145,79 @@ public interface SynthesizeSpeechRequestOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return A list containing the enableTimePointing.
+   */
+  java.util.List<com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType>
+      getEnableTimePointingList();
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return The count of enableTimePointing.
+   */
+  int getEnableTimePointingCount();
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The enableTimePointing at the given index.
+   */
+  com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType getEnableTimePointing(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for enableTimePointing.
+   */
+  java.util.List<java.lang.Integer> getEnableTimePointingValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Whether and what timepoints should be returned in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest.TimepointType enable_time_pointing = 4;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of enableTimePointing at the given index.
+   */
+  int getEnableTimePointingValue(int index);
 }
