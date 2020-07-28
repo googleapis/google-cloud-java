@@ -396,12 +396,13 @@ public final class ReservationProto {
           + "servation,update_mask\032\177\312A\"bigqueryreserv"
           + "ation.googleapis.com\322AWhttps://www.googl"
           + "eapis.com/auth/bigquery,https://www.goog"
-          + "leapis.com/auth/cloud-platformB\266\001\n(com.g"
+          + "leapis.com/auth/cloud-platformB\335\001\n(com.g"
           + "oogle.cloud.bigquery.reservation.v1B\020Res"
           + "ervationProtoP\001ZOgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/bigquery/reservatio"
           + "n/v1;reservation\252\002$Google.Cloud.BigQuery"
-          + ".Reservation.V1b\006proto3"
+          + ".Reservation.V1\312\002$Google\\Cloud\\BigQuery\\"
+          + "Reservation\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
