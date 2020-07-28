@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-errorreporting.git",
-        "sha": "5ea002b1d7f717d4ae7cf8b68b68bd2177b4f870"
+        "sha": "448334a1aea40931db906bb14d2d029737867eca"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "de8e811fc05b55cf7906c4fd65a1e174f454b02c",
-        "internalRef": "316113675"
+        "sha": "fe312530ec0a99b1e7e498253573ff70f2c6c6cb",
+        "internalRef": "321573684"
       }
     },
     {
