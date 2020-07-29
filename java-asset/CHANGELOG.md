@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.5.1](https://www.github.com/googleapis/java-asset/compare/v1.5.0...v1.5.1) (2020-07-28)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#256](https://www.github.com/googleapis/java-asset/issues/256)) ([7ae5ba4](https://www.github.com/googleapis/java-asset/commit/7ae5ba42ee6702f166e662ffe8abe1d5fc3a87f9))
+
 ## [1.5.0](https://www.github.com/googleapis/java-asset/compare/v1.4.0...v1.5.0) (2020-07-09)
 
 
