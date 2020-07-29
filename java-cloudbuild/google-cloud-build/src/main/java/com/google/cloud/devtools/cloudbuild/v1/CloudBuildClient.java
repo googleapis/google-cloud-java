@@ -1522,7 +1522,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List project's `WorkerPool`s.
+   * List project's `WorkerPools`.
    *
    * <p>This API is experimental.
    *
@@ -1544,7 +1544,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List project's `WorkerPool`s.
+   * List project's `WorkerPools`.
    *
    * <p>This API is experimental.
    *

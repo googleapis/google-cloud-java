@@ -1013,7 +1013,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPool`s.
+     * List project's `WorkerPools`.
      * This API is experimental.
      * </pre>
      */
@@ -1425,7 +1425,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPool`s.
+     * List project's `WorkerPools`.
      * This API is experimental.
      * </pre>
      */
@@ -1690,7 +1690,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPool`s.
+     * List project's `WorkerPools`.
      * This API is experimental.
      * </pre>
      */
@@ -1958,7 +1958,7 @@ public final class CloudBuildGrpc {
      *
      *
      * <pre>
-     * List project's `WorkerPool`s.
+     * List project's `WorkerPools`.
      * This API is experimental.
      * </pre>
      */

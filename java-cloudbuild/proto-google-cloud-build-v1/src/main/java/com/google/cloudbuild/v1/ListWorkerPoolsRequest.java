@@ -22,7 +22,7 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Request to list `WorkerPool`s.
+ * Request to list `WorkerPools`.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.ListWorkerPoolsRequest}
@@ -323,7 +323,7 @@ public final class ListWorkerPoolsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request to list `WorkerPool`s.
+   * Request to list `WorkerPools`.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.ListWorkerPoolsRequest}
