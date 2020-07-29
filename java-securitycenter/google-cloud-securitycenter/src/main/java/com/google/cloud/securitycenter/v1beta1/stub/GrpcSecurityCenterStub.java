@@ -72,7 +72,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Cloud Security Command Center API.
+ * gRPC stub implementation for Security Command Center API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

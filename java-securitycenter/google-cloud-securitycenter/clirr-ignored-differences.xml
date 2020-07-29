@@ -3,8 +3,8 @@
 <differences>
   <difference>
     <differenceType>7005</differenceType>
-    <className>com/google/cloud/securitycenter/v1/SecurityCenterClient</className>
-    <method>*Iam*</method>
+    <className>com/google/cloud/securitycenter/v1beta1/SecurityCenterClient</className>
+    <method>*SourceName*</method>
     <to>*ResourceName*</to>
   </difference>
 </differences>

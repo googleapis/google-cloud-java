@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -47,6 +48,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
@@ -97,12 +99,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void createSourceTest() {
-    String name = "name3373707";
+    SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -146,14 +148,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void createFindingTest() {
-    String name = "name3373707";
+    FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent2 = "parent21175163357";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setParent(parent2)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -207,7 +209,7 @@ public class SecurityCenterClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -216,7 +218,7 @@ public class SecurityCenterClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(resource, SourceName.parse(actualRequest.getResource()));
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -230,7 +232,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -242,11 +244,11 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void getOrganizationSettingsTest() {
-    String name2 = "name2-1052831874";
+    OrganizationSettingsName name2 = OrganizationSettingsName.of("[ORGANIZATION]");
     boolean enableAssetDiscovery = false;
     OrganizationSettings expectedResponse =
         OrganizationSettings.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setEnableAssetDiscovery(enableAssetDiscovery)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -287,12 +289,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSourceTest() {
-    String name2 = "name2-1052831874";
+    SourceName name2 = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -643,14 +645,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void setFindingStateTest() {
-    String name2 = "name2-1052831874";
+    FindingName name2 = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent = "parent-995424086";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setParent(parent)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -704,7 +706,7 @@ public class SecurityCenterClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -714,7 +716,7 @@ public class SecurityCenterClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(resource, SourceName.parse(actualRequest.getResource()));
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -729,7 +731,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -745,7 +747,7 @@ public class SecurityCenterClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+    ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -755,7 +757,7 @@ public class SecurityCenterClientTest {
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(resource, SourceName.parse(actualRequest.getResource()));
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -770,7 +772,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      SourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+      ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
@@ -783,14 +785,14 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateFindingTest() {
-    String name = "name3373707";
+    FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
     String parent = "parent-995424086";
     String resourceName = "resourceName979421212";
     String category = "category50511102";
     String externalUri = "externalUri-1385596168";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setParent(parent)
             .setResourceName(resourceName)
             .setCategory(category)
@@ -833,11 +835,11 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateOrganizationSettingsTest() {
-    String name = "name3373707";
+    OrganizationSettingsName name = OrganizationSettingsName.of("[ORGANIZATION]");
     boolean enableAssetDiscovery = false;
     OrganizationSettings expectedResponse =
         OrganizationSettings.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setEnableAssetDiscovery(enableAssetDiscovery)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -878,12 +880,12 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSourceTest() {
-    String name = "name3373707";
+    SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Source expectedResponse =
         Source.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -924,8 +926,9 @@ public class SecurityCenterClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateSecurityMarksTest() {
-    String name = "name3373707";
-    SecurityMarks expectedResponse = SecurityMarks.newBuilder().setName(name).build();
+    SecurityMarksName name =
+        SecurityMarksName.ofOrganizationAssetSecurityMarksName("[ORGANIZATION]", "[ASSET]");
+    SecurityMarks expectedResponse = SecurityMarks.newBuilder().setName(name.toString()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
     SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
