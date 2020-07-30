@@ -25,21 +25,26 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoadTableClusteredIT {
+
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
+  private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -49,6 +54,7 @@ public class LoadTableClusteredIT {
 
   @Before
   public void setUp() {
+    tableName = "LOAD_CLUSTERED_TABLE_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -56,15 +62,14 @@ public class LoadTableClusteredIT {
 
   @After
   public void tearDown() {
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
     System.setOut(null);
   }
 
   @Test
-  public void loadTableClustered() throws Exception {
+  public void testLoadTableClustered() {
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states-by-date-no-header.csv";
-
-    String tableName = "LOAD_CLUSTERED_TABLE_TEST";
-
     Schema schema =
         Schema.of(
             Field.of("name", StandardSQLTypeName.STRING),
@@ -73,11 +78,7 @@ public class LoadTableClusteredIT {
 
     LoadTableClustered.loadTableClustered(
         BIGQUERY_DATASET_NAME, tableName, sourceUri, schema, ImmutableList.of("name", "post_abbr"));
-
     assertThat(bout.toString())
         .contains("Data successfully loaded into clustered table during load job");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }

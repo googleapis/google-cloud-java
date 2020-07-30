@@ -33,9 +33,10 @@ import com.google.cloud.bigquery.TimePartitioning;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 
+// Sample to load clustered table.
 public class LoadTableClustered {
 
-  public static void runLoadTableClustered() throws Exception {
+  public static void runLoadTableClustered() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
@@ -54,8 +55,7 @@ public class LoadTableClustered {
       String tableName,
       String sourceUri,
       Schema schema,
-      List<String> clusteringFields)
-      throws Exception {
+      List<String> clusteringFields) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -80,19 +80,16 @@ public class LoadTableClustered {
 
       // Load data from a GCS parquet file into the table
       // Blocks until this load table job completes its execution, either failing or succeeding.
-      Job completedJob = loadJob.waitFor();
+      Job job = loadJob.waitFor();
 
       // Check for errors
-      if (completedJob == null) {
-        throw new Exception("Job not executed since it no longer exists.");
-      } else if (completedJob.getStatus().getError() != null) {
-        // You can also look at queryJob.getStatus().getExecutionErrors() for all
-        // errors, not just the latest one.
-        throw new Exception(
-            "BigQuery was unable to load into the table due to an error: \n"
-                + loadJob.getStatus().getError());
+      if (job.isDone() && job.getStatus().getError() == null) {
+        System.out.println("Data successfully loaded into clustered table during load job");
+      } else {
+        System.out.println(
+            "BigQuery was unable to load into the table due to an error:"
+                + job.getStatus().getError());
       }
-      System.out.println("Data successfully loaded into clustered table during load job");
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Data not loaded into clustered table during load job \n" + e.toString());
     }
