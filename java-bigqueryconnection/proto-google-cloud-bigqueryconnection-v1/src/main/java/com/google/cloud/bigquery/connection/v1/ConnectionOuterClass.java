@@ -164,12 +164,12 @@ public final class ConnectionOuterClass {
           + "A!bigqueryconnection.googleapis.com\322AWht"
           + "tps://www.googleapis.com/auth/bigquery,h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\313\001\n\'com.google.cloud.bigquery.conn"
+          + "tformB\306\001\n\'com.google.cloud.bigquery.conn"
           + "ection.v1P\001ZMgoogle.golang.org/genproto/"
           + "googleapis/cloud/bigquery/connection/v1;"
           + "connection\252\002#Google.Cloud.BigQuery.Conne"
-          + "ction.V1\312\002(Google\\Cloud\\BigQuery\\Connect"
-          + "ion\\V1beta1b\006proto3"
+          + "ction.V1\312\002#Google\\Cloud\\BigQuery\\Connect"
+          + "ion\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
