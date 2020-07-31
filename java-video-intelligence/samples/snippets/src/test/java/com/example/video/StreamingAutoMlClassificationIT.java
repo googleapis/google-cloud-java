@@ -18,6 +18,8 @@ package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -51,9 +53,24 @@ public class StreamingAutoMlClassificationIT {
 
   @Test
   public void testStreamingAutoMlClassification() {
-    StreamingAutoMlClassification.streamingAutoMlClassification(
-        "resources/cat.mp4", PROJECT_ID, MODEL_ID);
+    // Bad Gateway sporadically occurs
+    int tryCount = 0;
+    int maxTries = 3;
+    while (tryCount < maxTries) {
+      try {
+        StreamingAutoMlClassification.streamingAutoMlClassification(
+            "resources/cat.mp4", PROJECT_ID, MODEL_ID);
+        assertThat(bout.toString()).contains("Video streamed successfully.");
 
-    assertThat(bout.toString()).contains("Video streamed successfully.");
+        break;
+      } catch (StatusRuntimeException ex) {
+        if (ex.getStatus().getCode() == Status.Code.UNAVAILABLE) {
+          assertThat(ex.getMessage()).contains("Bad Gateway");
+          tryCount++;
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
   }
 }

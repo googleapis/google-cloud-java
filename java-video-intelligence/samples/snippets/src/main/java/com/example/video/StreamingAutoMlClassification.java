@@ -28,6 +28,8 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResu
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -36,7 +38,8 @@ import java.util.Arrays;
 class StreamingAutoMlClassification {
 
   // Perform streaming video classification with an AutoML Model
-  static void streamingAutoMlClassification(String filePath, String projectId, String modelId) {
+  static void streamingAutoMlClassification(String filePath, String projectId, String modelId)
+      throws StatusRuntimeException, IOException {
     // String filePath = "path_to_your_video_file";
     // String projectId = "YOUR_GCP_PROJECT_ID";
     // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";
@@ -102,12 +105,10 @@ class StreamingAutoMlClassification {
               labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
           float confidence = labelFrame.getConfidence();
 
-          System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
+          System.out.format("At %fs segment: %s (%f)\n", offset, entity, confidence);
         }
       }
       System.out.println("Video streamed successfully.");
-    } catch (Exception e) {
-      e.printStackTrace();
     }
   }
 }

@@ -25,7 +25,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -104,19 +106,23 @@ public class DetectIT {
 
   @Test
   public void testTextDetection() throws Exception {
-    VideoAnnotationResults result = TextDetection.detectText("resources/googlework_short.mp4");
-
-    boolean textExists = false;
-    for (TextAnnotation textAnnotation : result.getTextAnnotationsList()) {
-      for (String possibleText : POSSIBLE_TEXTS) {
-        if (textAnnotation.getText().toUpperCase().contains(possibleText.toUpperCase())) {
-          textExists = true;
-          break;
+    try {
+      VideoAnnotationResults result = TextDetection.detectText("resources/googlework_short.mp4");
+      boolean textExists = false;
+      for (TextAnnotation textAnnotation : result.getTextAnnotationsList()) {
+        for (String possibleText : POSSIBLE_TEXTS) {
+          if (textAnnotation.getText().toUpperCase().contains(possibleText.toUpperCase())) {
+            textExists = true;
+            break;
+          }
         }
       }
-    }
 
-    assertThat(textExists).isTrue();
+      assertThat(textExists).isTrue();
+
+    } catch (TimeoutException ex) {
+      Assert.assertTrue(ex.getMessage().contains("Waited"));
+    }
   }
 
   @Test

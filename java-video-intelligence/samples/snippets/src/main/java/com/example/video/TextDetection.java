@@ -30,21 +30,28 @@ import com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceClie
 import com.google.cloud.videointelligence.v1p2beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import io.grpc.StatusRuntimeException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class TextDetection {
 
   // [START video_detect_text_beta]
+
   /**
    * Detect text in a video.
    *
    * @param filePath the path to the video file to analyze.
    */
-  public static VideoAnnotationResults detectText(String filePath) throws Exception {
+  public static VideoAnnotationResults detectText(String filePath)
+      throws IOException, StatusRuntimeException, TimeoutException, ExecutionException,
+          InterruptedException {
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Read file
       Path path = Paths.get(filePath);
@@ -108,6 +115,7 @@ public class TextDetection {
   // [END video_detect_text_beta]
 
   // [START video_detect_text_gcs_beta]
+
   /**
    * Detect Text in a video.
    *
