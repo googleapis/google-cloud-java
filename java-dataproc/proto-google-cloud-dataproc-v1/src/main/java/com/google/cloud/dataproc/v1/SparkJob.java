@@ -518,8 +518,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of files to be copied to the working directory of
-   * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+   * Optional. HCFS URIs of files to be placed in the working directory of
+   * each executor. Useful for naively parallel tasks.
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -533,8 +533,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of files to be copied to the working directory of
-   * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+   * Optional. HCFS URIs of files to be placed in the working directory of
+   * each executor. Useful for naively parallel tasks.
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -548,8 +548,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of files to be copied to the working directory of
-   * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+   * Optional. HCFS URIs of files to be placed in the working directory of
+   * each executor. Useful for naively parallel tasks.
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -564,8 +564,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of files to be copied to the working directory of
-   * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+   * Optional. HCFS URIs of files to be placed in the working directory of
+   * each executor. Useful for naively parallel tasks.
    * </pre>
    *
    * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -583,8 +583,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of archives to be extracted in the working directory
-   * of Spark drivers and tasks. Supported file types:
+   * Optional. HCFS URIs of archives to be extracted into the working directory
+   * of each executor. Supported file types:
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
@@ -599,8 +599,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of archives to be extracted in the working directory
-   * of Spark drivers and tasks. Supported file types:
+   * Optional. HCFS URIs of archives to be extracted into the working directory
+   * of each executor. Supported file types:
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
@@ -615,8 +615,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of archives to be extracted in the working directory
-   * of Spark drivers and tasks. Supported file types:
+   * Optional. HCFS URIs of archives to be extracted into the working directory
+   * of each executor. Supported file types:
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
@@ -632,8 +632,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. HCFS URIs of archives to be extracted in the working directory
-   * of Spark drivers and tasks. Supported file types:
+   * Optional. HCFS URIs of archives to be extracted into the working directory
+   * of each executor. Supported file types:
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
@@ -2015,8 +2015,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2030,8 +2030,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2045,8 +2045,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2061,8 +2061,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2077,8 +2077,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2100,8 +2100,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2122,8 +2122,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2141,8 +2141,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2159,8 +2159,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of files to be copied to the working directory of
-     * Spark drivers and distributed tasks. Useful for naively parallel tasks.
+     * Optional. HCFS URIs of files to be placed in the working directory of
+     * each executor. Useful for naively parallel tasks.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2192,8 +2192,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2208,8 +2208,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2224,8 +2224,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2241,8 +2241,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2258,8 +2258,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2282,8 +2282,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2305,8 +2305,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2325,8 +2325,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
@@ -2344,8 +2344,8 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. HCFS URIs of archives to be extracted in the working directory
-     * of Spark drivers and tasks. Supported file types:
+     * Optional. HCFS URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types:
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *

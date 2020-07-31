@@ -125,11 +125,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The ID of the Google Cloud Platform project that the job
-   * belongs to.
+   * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+   * specified, must match the request project ID.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -149,11 +149,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The ID of the Google Cloud Platform project that the job
-   * belongs to.
+   * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+   * specified, must match the request project ID.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -562,11 +562,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform project that the job
-     * belongs to.
+     * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+     * specified, must match the request project ID.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The projectId.
      */
@@ -585,11 +585,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform project that the job
-     * belongs to.
+     * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+     * specified, must match the request project ID.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for projectId.
      */
@@ -608,11 +608,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform project that the job
-     * belongs to.
+     * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+     * specified, must match the request project ID.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -630,11 +630,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform project that the job
-     * belongs to.
+     * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+     * specified, must match the request project ID.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -648,11 +648,11 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform project that the job
-     * belongs to.
+     * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+     * specified, must match the request project ID.
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.

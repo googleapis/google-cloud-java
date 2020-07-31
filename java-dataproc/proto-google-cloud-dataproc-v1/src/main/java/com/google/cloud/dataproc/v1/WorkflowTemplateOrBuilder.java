@@ -371,7 +371,7 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. emplate parameters whose values are substituted into the
+   * Optional. Template parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
@@ -385,7 +385,7 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. emplate parameters whose values are substituted into the
+   * Optional. Template parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
@@ -399,7 +399,7 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. emplate parameters whose values are substituted into the
+   * Optional. Template parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
@@ -413,7 +413,7 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. emplate parameters whose values are substituted into the
+   * Optional. Template parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
@@ -428,7 +428,7 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. emplate parameters whose values are substituted into the
+   * Optional. Template parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>

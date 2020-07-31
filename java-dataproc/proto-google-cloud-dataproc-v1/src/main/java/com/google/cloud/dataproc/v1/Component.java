@@ -32,7 +32,7 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified component.
+   * Unspecified component. Specifying this will cause Cluster creation to fail.
    * </pre>
    *
    * <code>COMPONENT_UNSPECIFIED = 0;</code>
@@ -105,7 +105,7 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified component.
+   * Unspecified component. Specifying this will cause Cluster creation to fail.
    * </pre>
    *
    * <code>COMPONENT_UNSPECIFIED = 0;</code>
