@@ -3,15 +3,15 @@
     {
       "generator": {
         "name": "artman",
-        "version": "2.0.0",
-        "dockerImage": "googleapis/artman@sha256:b3b47805231a305d0f40c4bf069df20f6a2635574e6d4259fac651d3f9f6e098"
+        "version": "2.4.4",
+        "dockerImage": "googleapis/artman@sha256:0da97ae2ac274adc8ee147fd1eb6736f8186d1684b0f58bce91f4295797a5dcd"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "de7e56136b7dda7b6b20708492f79cdae8f81fdb"
+        "sha": "5cfefd325d2e68318e8ac6e7e0a98e63837ec194"
       }
     },
     {
@@ -50,7 +50,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
+        "sha": "dd230c816f88d0141fcd0be83498986287220d1b"
       }
     }
   ],
