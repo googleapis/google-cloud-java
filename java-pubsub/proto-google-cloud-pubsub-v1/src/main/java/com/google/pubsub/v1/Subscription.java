@@ -460,10 +460,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
-   * window. This must be true if you would like to
-   * &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
-   * Seek to a timestamp&lt;/a&gt;.
+   * window. This must be true if you would like to [Seek to a timestamp]
+   * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
    * </pre>
    *
    * <code>bool retain_acked_messages = 7;</code>
@@ -650,9 +648,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * will be delivered to the subscribers in the order in which they
    * are received by the Pub/Sub system. Otherwise, they may be delivered in
    * any order.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>bool enable_message_ordering = 10;</code>
@@ -2094,10 +2089,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to
-     * &lt;a
-     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
-     * Seek to a timestamp&lt;/a&gt;.
+     * window. This must be true if you would like to [Seek to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -2115,10 +2108,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to
-     * &lt;a
-     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
-     * Seek to a timestamp&lt;/a&gt;.
+     * window. This must be true if you would like to [Seek to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -2139,10 +2130,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window. This must be true if you would like to
-     * &lt;a
-     * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
-     * Seek to a timestamp&lt;/a&gt;.
+     * window. This must be true if you would like to [Seek to a timestamp]
+     * (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
      * </pre>
      *
      * <code>bool retain_acked_messages = 7;</code>
@@ -2560,9 +2549,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
@@ -2581,9 +2567,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>
@@ -2605,9 +2588,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * will be delivered to the subscribers in the order in which they
      * are received by the Pub/Sub system. Otherwise, they may be delivered in
      * any order.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>bool enable_message_ordering = 10;</code>

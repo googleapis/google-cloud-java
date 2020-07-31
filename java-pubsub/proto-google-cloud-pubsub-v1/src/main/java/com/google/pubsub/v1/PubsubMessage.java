@@ -25,11 +25,11 @@ package com.google.pubsub.v1;
  * A message that is published by publishers and consumed by subscribers. The
  * message must contain either a non-empty data field or at least one attribute.
  * Note that client libraries represent this object differently
- * depending on the language. See the corresponding
- * &lt;a href="https://cloud.google.com/pubsub/docs/reference/libraries"&gt;client
- * library documentation&lt;/a&gt; for more information. See
- * &lt;a href="https://cloud.google.com/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt;
- * for more information about message limits.
+ * depending on the language. See the corresponding [client library
+ * documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for
+ * more information. See [quotas and limits]
+ * (https://cloud.google.com/pubsub/quotas) for more information about message
+ * limits.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PubsubMessage}
@@ -419,9 +419,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -450,9 +447,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -685,11 +679,11 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * A message that is published by publishers and consumed by subscribers. The
    * message must contain either a non-empty data field or at least one attribute.
    * Note that client libraries represent this object differently
-   * depending on the language. See the corresponding
-   * &lt;a href="https://cloud.google.com/pubsub/docs/reference/libraries"&gt;client
-   * library documentation&lt;/a&gt; for more information. See
-   * &lt;a href="https://cloud.google.com/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt;
-   * for more information about message limits.
+   * depending on the language. See the corresponding [client library
+   * documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for
+   * more information. See [quotas and limits]
+   * (https://cloud.google.com/pubsub/quotas) for more information about message
+   * limits.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PubsubMessage}
@@ -1462,9 +1456,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1492,9 +1483,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1522,9 +1510,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1551,9 +1536,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>
@@ -1576,9 +1558,6 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      * delivered to subscribers in the order in which they are received by the
      * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
      * must specify the same `ordering_key` value.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string ordering_key = 5;</code>

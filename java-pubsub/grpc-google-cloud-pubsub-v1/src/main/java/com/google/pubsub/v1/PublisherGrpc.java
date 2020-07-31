@@ -468,9 +468,8 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Creates the given topic with the given name. See the
-     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-     * resource name rules&lt;/a&gt;.
+     * Creates the given topic with the given name. See the [resource name rules](
+     * https://cloud.google.com/pubsub/docs/admin#resource_names).
      * </pre>
      */
     public void createTopic(
@@ -552,11 +551,10 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Lists the names of the snapshots on this topic. Snapshots are used in
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
-     * operations, which allow
-     * you to manage message acknowledgments in bulk. That is, you can set the
-     * acknowledgment state of messages in an existing subscription to the state
-     * captured by a snapshot.
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
      * </pre>
      */
     public void listTopicSnapshots(
@@ -685,9 +683,8 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Creates the given topic with the given name. See the
-     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-     * resource name rules&lt;/a&gt;.
+     * Creates the given topic with the given name. See the [resource name rules](
+     * https://cloud.google.com/pubsub/docs/admin#resource_names).
      * </pre>
      */
     public void createTopic(
@@ -781,11 +778,10 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Lists the names of the snapshots on this topic. Snapshots are used in
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
-     * operations, which allow
-     * you to manage message acknowledgments in bulk. That is, you can set the
-     * acknowledgment state of messages in an existing subscription to the state
-     * captured by a snapshot.
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
      * </pre>
      */
     public void listTopicSnapshots(
@@ -863,9 +859,8 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Creates the given topic with the given name. See the
-     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-     * resource name rules&lt;/a&gt;.
+     * Creates the given topic with the given name. See the [resource name rules](
+     * https://cloud.google.com/pubsub/docs/admin#resource_names).
      * </pre>
      */
     public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
@@ -938,11 +933,10 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Lists the names of the snapshots on this topic. Snapshots are used in
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
-     * operations, which allow
-     * you to manage message acknowledgments in bulk. That is, you can set the
-     * acknowledgment state of messages in an existing subscription to the state
-     * captured by a snapshot.
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicSnapshotsResponse listTopicSnapshots(
@@ -1006,9 +1000,8 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Creates the given topic with the given name. See the
-     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
-     * resource name rules&lt;/a&gt;.
+     * Creates the given topic with the given name. See the [resource name rules](
+     * https://cloud.google.com/pubsub/docs/admin#resource_names).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Topic>
@@ -1089,11 +1082,10 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Lists the names of the snapshots on this topic. Snapshots are used in
-     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
-     * operations, which allow
-     * you to manage message acknowledgments in bulk. That is, you can set the
-     * acknowledgment state of messages in an existing subscription to the state
-     * captured by a snapshot.
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

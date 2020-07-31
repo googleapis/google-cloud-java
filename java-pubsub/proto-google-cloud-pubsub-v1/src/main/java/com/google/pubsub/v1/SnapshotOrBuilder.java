@@ -139,8 +139,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -150,8 +150,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -164,8 +164,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -175,8 +175,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -186,8 +186,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
-   * managing labels&lt;/a&gt;.
+   * See [Creating and managing labels]
+   * (https://cloud.google.com/pubsub/docs/labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>

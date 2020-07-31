@@ -183,9 +183,6 @@ public interface PubsubMessageOrBuilder
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>
@@ -203,9 +200,6 @@ public interface PubsubMessageOrBuilder
    * delivered to subscribers in the order in which they are received by the
    * Pub/Sub system. All `PubsubMessage`s published in a given `PublishRequest`
    * must specify the same `ordering_key` value.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string ordering_key = 5;</code>

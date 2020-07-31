@@ -182,9 +182,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name. See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
-   * rules&lt;/a&gt;.
+   * Creates the given topic with the given name. See the [resource name rules](
+   * https://cloud.google.com/pubsub/docs/admin#resource_names).
    *
    * <p>Sample code:
    *
@@ -209,9 +208,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name. See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
-   * rules&lt;/a&gt;.
+   * Creates the given topic with the given name. See the [resource name rules](
+   * https://cloud.google.com/pubsub/docs/admin#resource_names).
    *
    * <p>Sample code:
    *
@@ -264,9 +262,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name. See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
-   * rules&lt;/a&gt;.
+   * Creates the given topic with the given name. See the [resource name rules](
+   * https://cloud.google.com/pubsub/docs/admin#resource_names).
    *
    * <p>Sample code:
    *
@@ -289,9 +286,8 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates the given topic with the given name. See the &lt;a
-   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
-   * rules&lt;/a&gt;.
+   * Creates the given topic with the given name. See the [resource name rules](
+   * https://cloud.google.com/pubsub/docs/admin#resource_names).
    *
    * <p>Sample code:
    *
@@ -889,10 +885,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
-   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a snapshot.
+   * Lists the names of the snapshots on this topic. Snapshots are used in
+   * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+   * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+   * messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -919,10 +915,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
-   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a snapshot.
+   * Lists the names of the snapshots on this topic. Snapshots are used in
+   * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+   * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+   * messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -947,10 +943,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
-   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a snapshot.
+   * Lists the names of the snapshots on this topic. Snapshots are used in
+   * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+   * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+   * messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -976,10 +972,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
-   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a snapshot.
+   * Lists the names of the snapshots on this topic. Snapshots are used in
+   * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+   * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+   * messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
@@ -1005,10 +1001,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
-   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
-   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
-   * state of messages in an existing subscription to the state captured by a snapshot.
+   * Lists the names of the snapshots on this topic. Snapshots are used in
+   * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+   * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+   * messages in an existing subscription to the state captured by a snapshot.
    *
    * <p>Sample code:
    *
