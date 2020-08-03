@@ -5,7 +5,6 @@ Java protobuf classes for [Cloud Organization Policy][product-docs].
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
-- [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
 > Note: This client is a work-in-progress, and may occasionally
@@ -50,7 +49,7 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: TODO
-[javadocs]: https://googleapis.dev/java/google-cloud-orgpolicy/latest/index.html
+[javadocs]: https://googleapis.dev/java/proto-google-cloud-orgpolicy-v1/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java8.svg
@@ -62,8 +61,8 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-orgpolicy.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-orgpolicy&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-cloud-orgpolicy-v1.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-cloud-orgpolicy-v1&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
