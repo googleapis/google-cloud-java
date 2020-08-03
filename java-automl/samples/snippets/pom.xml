@@ -42,8 +42,12 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-automl</artifactId>
     </dependency>
-    <!-- [END automl_install_with_bom] -->
-
+    <!-- START_EXCLUDE -->
+    <dependency>
+      <groupId>net.sourceforge.argparse4j</groupId>
+      <artifactId>argparse4j</artifactId>
+      <version>0.8.1</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -56,5 +60,7 @@
       <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- END_EXCLUDE -->
   </dependencies>
+  <!-- [END automl_install_with_bom] -->
 </project>
