@@ -23,14 +23,20 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-kms:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-kms</artifactId>
       <version>1.39.0</version>
     </dependency>
+    <!-- {x-version-update-end} -->
 
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.12.2</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -44,7 +50,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
