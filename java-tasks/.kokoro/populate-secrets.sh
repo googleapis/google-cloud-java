@@ -19,7 +19,6 @@ function now { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n' ;}
 function msg { println "$*" >&2 ;}
 function println { printf '%s\n' "$(now) $*" ;}
 
-
 # Populates requested secrets set in SECRET_MANAGER_KEYS from service account:
 # kokoro-trampoline@cloud-devrel-kokoro-resources.iam.gserviceaccount.com
 SECRET_LOCATION="${KOKORO_GFILE_DIR}/secret_manager"
