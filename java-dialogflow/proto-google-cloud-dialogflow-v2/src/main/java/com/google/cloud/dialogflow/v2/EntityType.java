@@ -22,9 +22,16 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Represents an entity type.
- * Entity types serve as a tool for extracting parameter values from natural
- * language queries.
+ * Each intent parameter has a type, called the entity type, which dictates
+ * exactly how data from an end-user expression is extracted.
+ * Dialogflow provides predefined system entities that can match many common
+ * types of data. For example, there are system entities for matching dates,
+ * times, colors, email addresses, and so on. You can also create your own
+ * custom entities for matching custom data. For example, you could define a
+ * vegetable entity that can match the types of vegetables available for
+ * purchase with a grocery store agent.
+ * For more information, see the
+ * [Entity guide](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.EntityType}
@@ -2104,9 +2111,16 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an entity type.
-   * Entity types serve as a tool for extracting parameter values from natural
-   * language queries.
+   * Each intent parameter has a type, called the entity type, which dictates
+   * exactly how data from an end-user expression is extracted.
+   * Dialogflow provides predefined system entities that can match many common
+   * types of data. For example, there are system entities for matching dates,
+   * times, colors, email addresses, and so on. You can also create your own
+   * custom entities for matching custom data. For example, you could define a
+   * vegetable entity that can match the types of vegetables available for
+   * purchase with a grocery store agent.
+   * For more information, see the
+   * [Entity guide](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.EntityType}

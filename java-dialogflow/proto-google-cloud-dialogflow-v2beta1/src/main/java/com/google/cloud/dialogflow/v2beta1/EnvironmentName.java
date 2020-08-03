@@ -16,25 +16,37 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class EnvironmentName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected EnvironmentName() {}
+
+  private static final PathTemplate PROJECT_ENVIRONMENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}");
+  private static final PathTemplate PROJECT_LOCATION_ENVIRONMENT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/environments/{environment}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String environment;
+  private String project;
+  private String environment;
+  private String location;
 
   public String getProject() {
     return project;
@@ -44,35 +56,94 @@ public class EnvironmentName implements ResourceName {
     return environment;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
+  private EnvironmentName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    pathTemplate = PROJECT_ENVIRONMENT_PATH_TEMPLATE;
+  }
+
+  private EnvironmentName(ProjectLocationEnvironmentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    pathTemplate = PROJECT_LOCATION_ENVIRONMENT_PATH_TEMPLATE;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectEnvironmentBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationEnvironmentBuilder newProjectLocationEnvironmentBuilder() {
+    return new ProjectLocationEnvironmentBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  private EnvironmentName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    environment = Preconditions.checkNotNull(builder.getEnvironment());
+  public static EnvironmentName of(String project, String environment) {
+    return newProjectEnvironmentBuilder().setProject(project).setEnvironment(environment).build();
   }
 
-  public static EnvironmentName of(String project, String environment) {
-    return newBuilder().setProject(project).setEnvironment(environment).build();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static EnvironmentName ofProjectEnvironmentName(String project, String environment) {
+    return newProjectEnvironmentBuilder().setProject(project).setEnvironment(environment).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static EnvironmentName ofProjectLocationEnvironmentName(
+      String project, String location, String environment) {
+    return newProjectLocationEnvironmentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .build();
   }
 
   public static String format(String project, String environment) {
     return newBuilder().setProject(project).setEnvironment(environment).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectEnvironmentName(String project, String environment) {
+    return newBuilder().setProject(project).setEnvironment(environment).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationEnvironmentName(
+      String project, String location, String environment) {
+    return newProjectLocationEnvironmentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .build()
+        .toString();
+  }
+
   public static EnvironmentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "EnvironmentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("environment"));
+    if (PROJECT_ENVIRONMENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_ENVIRONMENT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectEnvironmentName(matchMap.get("project"), matchMap.get("environment"));
+    } else if (PROJECT_LOCATION_ENVIRONMENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_ENVIRONMENT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectLocationEnvironmentName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("environment"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<EnvironmentName> parseList(List<String> formattedStrings) {
@@ -84,7 +155,7 @@ public class EnvironmentName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EnvironmentName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EnvironmentName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +167,25 @@ public class EnvironmentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_ENVIRONMENT_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_ENVIRONMENT_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("environment", environment);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (environment != null) {
+            fieldMapBuilder.put("environment", environment);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +199,16 @@ public class EnvironmentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "environment", environment);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for EnvironmentName. */
+  /** Builder for projects/{project}/agent/environments/{environment}. */
   public static class Builder {
 
     private String project;
     private String environment;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,11 +228,55 @@ public class EnvironmentName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EnvironmentName environmentName) {
+      Preconditions.checkArgument(
+          environmentName.pathTemplate == PROJECT_ENVIRONMENT_PATH_TEMPLATE,
+          "toBuilder is only supported when EnvironmentName has the pattern of "
+              + "projects/{project}/agent/environments/{environment}.");
       project = environmentName.project;
       environment = environmentName.environment;
+    }
+
+    public EnvironmentName build() {
+      return new EnvironmentName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/agent/environments/{environment}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationEnvironmentBuilder {
+
+    private String project;
+    private String location;
+    private String environment;
+
+    private ProjectLocationEnvironmentBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public ProjectLocationEnvironmentBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentBuilder setEnvironment(String environment) {
+      this.environment = environment;
+      return this;
     }
 
     public EnvironmentName build() {
@@ -163,9 +289,11 @@ public class EnvironmentName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof EnvironmentName) {
+    if (o != null || getClass() == o.getClass()) {
       EnvironmentName that = (EnvironmentName) o;
-      return (this.project.equals(that.project)) && (this.environment.equals(that.environment));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.environment, that.environment))
+          && (Objects.equals(this.location, that.location));
     }
     return false;
   }
@@ -174,9 +302,13 @@ public class EnvironmentName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= environment.hashCode();
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 }

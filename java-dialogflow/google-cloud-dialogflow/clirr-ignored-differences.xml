@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- TODO: remove after 2.1.0 is released -->
+  <!-- TODO: remove after 2.2.0 is released -->
   <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/dialogflow/v2beta1/EnvironmentsClient</className>
-    <method>com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse listEnvironments(com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest)</method>
-    <to>com.google.cloud.dialogflow.v2beta1.EnvironmentsClient$ListEnvironmentsPagedResponse</to>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/DocumentsClient</className>
+    <method>com.google.longrunning.Operation reloadDocument(com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest)</method>
   </difference>
   <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/dialogflow/v2beta1/EnvironmentsSettings*</className>
-    <method>com.google.api.gax.rpc.UnaryCallSettings* listEnvironmentsSettings()</method>
-    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
-  </difference>
-  <difference>
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/dialogflow/v2beta1/stub/EnvironmentsStubSettings*</className>
-    <method>com.google.api.gax.rpc.UnaryCallSettings* listEnvironmentsSettings()</method>
-    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/*Client</className>
+    <method>* *(com.google.cloud.dialogflow.v2beta1.ProjectAgentName*)</method>
+    <to>* *(com.google.cloud.dialogflow.v2beta1.AgentName*)</to>
   </difference>
 </differences>

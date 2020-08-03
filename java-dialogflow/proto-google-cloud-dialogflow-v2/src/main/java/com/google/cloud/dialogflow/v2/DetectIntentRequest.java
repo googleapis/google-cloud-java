@@ -195,6 +195,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
    * <code>
@@ -228,6 +230,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
    * <code>
@@ -957,6 +961,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
+     * For more information, see the [API interactions
+     * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
      * <code>
@@ -989,6 +995,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
+     * For more information, see the [API interactions
+     * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
      * <code>
@@ -1021,6 +1029,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
+     * For more information, see the [API interactions
+     * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
      * <code>
@@ -1052,6 +1062,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
+     * For more information, see the [API interactions
+     * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
      * <code>
@@ -1079,6 +1091,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * `User Id`. They can be a random number or some type of user and session
      * identifiers (preferably hashed). The length of the `Session ID` and
      * `User ID` must not exceed 36 characters.
+     * For more information, see the [API interactions
+     * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
      * <code>

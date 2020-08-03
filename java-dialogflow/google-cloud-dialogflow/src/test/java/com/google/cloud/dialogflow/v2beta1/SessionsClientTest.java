@@ -44,11 +44,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class SessionsClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -59,11 +59,11 @@ public class SessionsClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -72,11 +72,11 @@ public class SessionsClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -118,7 +118,7 @@ public class SessionsClientTest {
             .build();
     mockSessions.addResponse(expectedResponse);
 
-    SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
 
     DetectIntentResponse actualResponse = client.detectIntent(session, queryInput);
@@ -143,7 +143,7 @@ public class SessionsClientTest {
     mockSessions.addException(exception);
 
     try {
-      SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+      SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       QueryInput queryInput = QueryInput.newBuilder().build();
 
       client.detectIntent(session, queryInput);

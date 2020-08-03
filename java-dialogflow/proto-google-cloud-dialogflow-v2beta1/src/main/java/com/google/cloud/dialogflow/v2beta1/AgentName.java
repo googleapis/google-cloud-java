@@ -29,48 +29,40 @@ import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class EntityTypeName implements ResourceName {
+public class AgentName implements ResourceName {
 
   @Deprecated
-  protected EntityTypeName() {}
+  protected AgentName() {}
 
-  private static final PathTemplate PROJECT_ENTITY_TYPE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/entityTypes/{entity_type}");
-  private static final PathTemplate PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/agent/entityTypes/{entity_type}");
+  private static final PathTemplate PROJECT_AGENT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent");
+  private static final PathTemplate PROJECT_LOCATION_AGENT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/agent");
 
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
 
   private String project;
-  private String entityType;
   private String location;
 
   public String getProject() {
     return project;
   }
 
-  public String getEntityType() {
-    return entityType;
-  }
-
   public String getLocation() {
     return location;
   }
 
-  private EntityTypeName(Builder builder) {
+  private AgentName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    pathTemplate = PROJECT_ENTITY_TYPE_PATH_TEMPLATE;
+    pathTemplate = PROJECT_AGENT_PATH_TEMPLATE;
   }
 
-  private EntityTypeName(ProjectLocationEntityTypeBuilder builder) {
+  private AgentName(ProjectLocationAgentBuilder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    pathTemplate = PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE;
+    pathTemplate = PROJECT_LOCATION_AGENT_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -78,85 +70,76 @@ public class EntityTypeName implements ResourceName {
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static Builder newProjectEntityTypeBuilder() {
+  public static Builder newProjectAgentBuilder() {
     return new Builder();
   }
 
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static ProjectLocationEntityTypeBuilder newProjectLocationEntityTypeBuilder() {
-    return new ProjectLocationEntityTypeBuilder();
+  public static ProjectLocationAgentBuilder newProjectLocationAgentBuilder() {
+    return new ProjectLocationAgentBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  public static EntityTypeName of(String project, String entityType) {
-    return newProjectEntityTypeBuilder().setProject(project).setEntityType(entityType).build();
+  public static AgentName of(String project) {
+    return newProjectAgentBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static EntityTypeName ofProjectEntityTypeName(String project, String entityType) {
-    return newProjectEntityTypeBuilder().setProject(project).setEntityType(entityType).build();
+  public static AgentName ofProjectAgentName(String project) {
+    return newProjectAgentBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
-  public static EntityTypeName ofProjectLocationEntityTypeName(
-      String project, String location, String entityType) {
-    return newProjectLocationEntityTypeBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setEntityType(entityType)
-        .build();
+  public static AgentName ofProjectLocationAgentName(String project, String location) {
+    return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
-  public static String format(String project, String entityType) {
-    return newBuilder().setProject(project).setEntityType(entityType).build().toString();
+  public static String format(String project) {
+    return newBuilder().setProject(project).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectEntityTypeName(String project, String entityType) {
-    return newBuilder().setProject(project).setEntityType(entityType).build().toString();
+  public static String formatProjectAgentName(String project) {
+    return newBuilder().setProject(project).build().toString();
   }
 
   @BetaApi("The static format methods are not stable yet and may be changed in the future.")
-  public static String formatProjectLocationEntityTypeName(
-      String project, String location, String entityType) {
-    return newProjectLocationEntityTypeBuilder()
+  public static String formatProjectLocationAgentName(String project, String location) {
+    return newProjectLocationAgentBuilder()
         .setProject(project)
         .setLocation(location)
-        .setEntityType(entityType)
         .build()
         .toString();
   }
 
-  public static EntityTypeName parse(String formattedString) {
+  public static AgentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
-      return ofProjectEntityTypeName(matchMap.get("project"), matchMap.get("entity_type"));
-    } else if (PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
-      return ofProjectLocationEntityTypeName(
-          matchMap.get("project"), matchMap.get("location"), matchMap.get("entity_type"));
+    if (PROJECT_AGENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_AGENT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectAgentName(matchMap.get("project"));
+    } else if (PROJECT_LOCATION_AGENT_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_AGENT_PATH_TEMPLATE.match(formattedString);
+      return ofProjectLocationAgentName(matchMap.get("project"), matchMap.get("location"));
     }
     throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
-  public static List<EntityTypeName> parseList(List<String> formattedStrings) {
-    List<EntityTypeName> list = new ArrayList<>(formattedStrings.size());
+  public static List<AgentName> parseList(List<String> formattedStrings) {
+    List<AgentName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<EntityTypeName> values) {
+  public static List<String> toStringList(List<AgentName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (EntityTypeName value : values) {
+    for (AgentName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -167,8 +150,8 @@ public class EntityTypeName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_AGENT_PATH_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_AGENT_PATH_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -179,9 +162,6 @@ public class EntityTypeName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (project != null) {
             fieldMapBuilder.put("project", project);
-          }
-          if (entityType != null) {
-            fieldMapBuilder.put("entity_type", entityType);
           }
           if (location != null) {
             fieldMapBuilder.put("location", location);
@@ -202,11 +182,10 @@ public class EntityTypeName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for projects/{project}/agent/entityTypes/{entity_type}. */
+  /** Builder for projects/{project}/agent. */
   public static class Builder {
 
     private String project;
-    private String entityType;
 
     protected Builder() {}
 
@@ -214,43 +193,32 @@ public class EntityTypeName implements ResourceName {
       return project;
     }
 
-    public String getEntityType() {
-      return entityType;
-    }
-
     public Builder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public Builder setEntityType(String entityType) {
-      this.entityType = entityType;
-      return this;
-    }
-
-    private Builder(EntityTypeName entityTypeName) {
+    private Builder(AgentName agentName) {
       Preconditions.checkArgument(
-          entityTypeName.pathTemplate == PROJECT_ENTITY_TYPE_PATH_TEMPLATE,
-          "toBuilder is only supported when EntityTypeName has the pattern of "
-              + "projects/{project}/agent/entityTypes/{entity_type}.");
-      project = entityTypeName.project;
-      entityType = entityTypeName.entityType;
+          agentName.pathTemplate == PROJECT_AGENT_PATH_TEMPLATE,
+          "toBuilder is only supported when AgentName has the pattern of "
+              + "projects/{project}/agent.");
+      project = agentName.project;
     }
 
-    public EntityTypeName build() {
-      return new EntityTypeName(this);
+    public AgentName build() {
+      return new AgentName(this);
     }
   }
 
-  /** Builder for projects/{project}/locations/{location}/agent/entityTypes/{entity_type}. */
+  /** Builder for projects/{project}/locations/{location}/agent. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class ProjectLocationEntityTypeBuilder {
+  public static class ProjectLocationAgentBuilder {
 
     private String project;
     private String location;
-    private String entityType;
 
-    private ProjectLocationEntityTypeBuilder() {}
+    private ProjectLocationAgentBuilder() {}
 
     public String getProject() {
       return project;
@@ -260,27 +228,18 @@ public class EntityTypeName implements ResourceName {
       return location;
     }
 
-    public String getEntityType() {
-      return entityType;
-    }
-
-    public ProjectLocationEntityTypeBuilder setProject(String project) {
+    public ProjectLocationAgentBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public ProjectLocationEntityTypeBuilder setLocation(String location) {
+    public ProjectLocationAgentBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public ProjectLocationEntityTypeBuilder setEntityType(String entityType) {
-      this.entityType = entityType;
-      return this;
-    }
-
-    public EntityTypeName build() {
-      return new EntityTypeName(this);
+    public AgentName build() {
+      return new AgentName(this);
     }
   }
 
@@ -290,9 +249,8 @@ public class EntityTypeName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      EntityTypeName that = (EntityTypeName) o;
+      AgentName that = (AgentName) o;
       return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.entityType, that.entityType))
           && (Objects.equals(this.location, that.location));
     }
     return false;
@@ -305,8 +263,6 @@ public class EntityTypeName implements ResourceName {
     h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
     h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(entityType);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     return h;

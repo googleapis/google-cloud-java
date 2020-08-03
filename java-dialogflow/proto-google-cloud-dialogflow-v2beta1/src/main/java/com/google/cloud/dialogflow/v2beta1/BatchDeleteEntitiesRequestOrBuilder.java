@@ -63,7 +63,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the entityValues.
    */
@@ -77,7 +77,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of entityValues.
    */
@@ -91,7 +91,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The entityValues at the given index.
@@ -106,7 +106,7 @@ public interface BatchDeleteEntitiesRequestOrBuilder
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the entityValues at the given index.

@@ -118,6 +118,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   private final OperationCallSettings<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationSettings;
   private final UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings;
+  private final OperationCallSettings<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationSettings;
 
   /** Returns the object with the settings used for calls to listDocuments. */
   public PagedCallSettings<ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
@@ -169,6 +171,13 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   /** Returns the object with the settings used for calls to reloadDocument. */
   public UnaryCallSettings<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
     return reloadDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reloadDocument. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationSettings() {
+    return reloadDocumentOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -248,6 +257,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     updateDocumentSettings = settingsBuilder.updateDocumentSettings().build();
     updateDocumentOperationSettings = settingsBuilder.updateDocumentOperationSettings().build();
     reloadDocumentSettings = settingsBuilder.reloadDocumentSettings().build();
+    reloadDocumentOperationSettings = settingsBuilder.reloadDocumentOperationSettings().build();
   }
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
@@ -328,6 +338,9 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
         updateDocumentOperationSettings;
     private final UnaryCallSettings.Builder<ReloadDocumentRequest, Operation>
         reloadDocumentSettings;
+    private final OperationCallSettings.Builder<
+            ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+        reloadDocumentOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -336,11 +349,17 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_1_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -354,12 +373,44 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(180000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(180000L))
+              .setTotalTimeout(Duration.ofMillis(180000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -388,6 +439,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
       reloadDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      reloadDocumentOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDocumentsSettings,
@@ -413,40 +466,40 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
       builder
           .listDocumentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .deleteDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .reloadDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .createDocumentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Document.class))
@@ -469,8 +522,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -493,8 +546,32 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Document.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  KnowledgeOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
+          .reloadDocumentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ReloadDocumentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Document.class))
@@ -528,6 +605,7 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       updateDocumentSettings = settings.updateDocumentSettings.toBuilder();
       updateDocumentOperationSettings = settings.updateDocumentOperationSettings.toBuilder();
       reloadDocumentSettings = settings.reloadDocumentSettings.toBuilder();
+      reloadDocumentOperationSettings = settings.reloadDocumentOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -611,6 +689,15 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     /** Returns the builder for the settings used for calls to reloadDocument. */
     public UnaryCallSettings.Builder<ReloadDocumentRequest, Operation> reloadDocumentSettings() {
       return reloadDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reloadDocument. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+        reloadDocumentOperationSettings() {
+      return reloadDocumentOperationSettings;
     }
 
     @Override

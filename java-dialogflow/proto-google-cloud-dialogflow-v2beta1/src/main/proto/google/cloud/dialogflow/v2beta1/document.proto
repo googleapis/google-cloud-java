@@ -122,6 +122,7 @@ service Documents {
       }
     };
     option (google.api.method_signature) = "document,update_mask";
+    option (google.api.method_signature) = "document";
     option (google.longrunning.operation_info) = {
       response_type: "Document"
       metadata_type: "KnowledgeOperationMetadata"
@@ -380,4 +381,16 @@ message ReloadDocumentRequest {
     // If not provided, the Document's existing source will be reloaded.
     GcsSource gcs_source = 3;
   }
+}
+
+// Response message for [Documents.AutoApproveSmartMessagingEntries].
+message AutoApproveSmartMessagingEntriesResponse {
+  // Number of smart messaging entries enabled.
+  int32 enabled_count = 1;
+
+  // Number of smart messaging entries disabled.
+  int32 disabled_count = 2;
+
+  // Number of smart messaging entries unreviewed.
+  int32 unreviewed_count = 3;
 }

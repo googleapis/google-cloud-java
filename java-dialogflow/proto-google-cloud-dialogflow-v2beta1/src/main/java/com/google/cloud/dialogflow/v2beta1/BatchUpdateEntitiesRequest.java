@@ -217,7 +217,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to update or create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
@@ -230,7 +232,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to update or create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
@@ -244,7 +248,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to update or create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public int getEntitiesCount() {
@@ -257,7 +263,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to update or create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
@@ -270,7 +278,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    * Required. The entities to update or create.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
@@ -951,7 +961,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
       if (entitiesBuilder_ == null) {
@@ -967,7 +979,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getEntitiesCount() {
       if (entitiesBuilder_ == null) {
@@ -983,7 +997,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -999,7 +1015,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
@@ -1022,7 +1040,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -1042,7 +1062,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -1064,7 +1086,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
@@ -1087,7 +1111,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -1107,7 +1133,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -1127,7 +1155,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllEntities(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.EntityType.Entity>
@@ -1148,7 +1178,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
@@ -1167,7 +1199,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -1186,7 +1220,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder getEntitiesBuilder(
         int index) {
@@ -1199,7 +1235,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
         int index) {
@@ -1216,7 +1254,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
         getEntitiesOrBuilderList() {
@@ -1233,7 +1273,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder() {
       return getEntitiesFieldBuilder()
@@ -1246,7 +1288,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder(
         int index) {
@@ -1261,7 +1305,9 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
      * Required. The entities to update or create.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder>
         getEntitiesBuilderList() {

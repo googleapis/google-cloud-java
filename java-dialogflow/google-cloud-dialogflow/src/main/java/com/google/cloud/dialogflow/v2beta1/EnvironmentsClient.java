@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+ *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
  *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
@@ -163,7 +163,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -175,7 +175,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/agent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnvironmentsPagedResponse listEnvironments(ProjectAgentName parent) {
+  public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
     ListEnvironmentsRequest request =
         ListEnvironmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -191,7 +191,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   for (Environment element : environmentsClient.listEnvironments(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -217,7 +217,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -242,7 +242,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -267,7 +267,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

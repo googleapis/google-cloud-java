@@ -231,7 +231,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The session.
    */
@@ -265,7 +265,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for session.
    */
@@ -343,7 +343,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the queryInput field is set.
    */
@@ -362,7 +364,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The queryInput.
    */
@@ -383,7 +387,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.QueryInputOrBuilder getQueryInputOrBuilder() {
@@ -1060,7 +1066,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The session.
      */
@@ -1093,7 +1099,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for session.
      */
@@ -1126,7 +1132,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The session to set.
      * @return This builder for chaining.
@@ -1158,7 +1164,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1186,7 +1192,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for session to set.
      * @return This builder for chaining.
@@ -1405,7 +1411,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the queryInput field is set.
      */
@@ -1423,7 +1431,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The queryInput.
      */
@@ -1447,7 +1457,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueryInput(com.google.cloud.dialogflow.v2beta1.QueryInput value) {
       if (queryInputBuilder_ == null) {
@@ -1473,7 +1485,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueryInput(
         com.google.cloud.dialogflow.v2beta1.QueryInput.Builder builderForValue) {
@@ -1497,7 +1511,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeQueryInput(com.google.cloud.dialogflow.v2beta1.QueryInput value) {
       if (queryInputBuilder_ == null) {
@@ -1527,7 +1543,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearQueryInput() {
       if (queryInputBuilder_ == null) {
@@ -1551,7 +1569,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryInput.Builder getQueryInputBuilder() {
 
@@ -1569,7 +1589,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryInputOrBuilder getQueryInputOrBuilder() {
       if (queryInputBuilder_ != null) {
@@ -1591,7 +1613,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.QueryInput,

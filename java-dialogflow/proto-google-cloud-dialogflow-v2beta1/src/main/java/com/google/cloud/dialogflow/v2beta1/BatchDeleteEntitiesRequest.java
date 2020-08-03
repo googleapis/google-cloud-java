@@ -200,7 +200,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the entityValues.
    */
@@ -216,7 +216,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of entityValues.
    */
@@ -232,7 +232,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The entityValues at the given index.
@@ -249,7 +249,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
    * `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>repeated string entity_values = 2;</code>
+   * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the entityValues at the given index.
@@ -828,7 +828,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return A list containing the entityValues.
      */
@@ -844,7 +844,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The count of entityValues.
      */
@@ -860,7 +860,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the element to return.
      * @return The entityValues at the given index.
@@ -877,7 +877,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the entityValues at the given index.
@@ -894,7 +894,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index to set the value at.
      * @param value The entityValues to set.
@@ -918,7 +918,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The entityValues to add.
      * @return This builder for chaining.
@@ -941,7 +941,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param values The entityValues to add.
      * @return This builder for chaining.
@@ -961,7 +961,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -980,7 +980,7 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
      * `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>repeated string entity_values = 2;</code>
+     * <code>repeated string entity_values = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes of the entityValues to add.
      * @return This builder for chaining.

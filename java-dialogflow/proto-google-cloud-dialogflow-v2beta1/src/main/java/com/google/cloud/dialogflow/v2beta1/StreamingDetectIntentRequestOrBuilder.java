@@ -41,7 +41,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The session.
    */
@@ -64,7 +64,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for session.
    */
@@ -116,7 +116,9 @@ public interface StreamingDetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the queryInput field is set.
    */
@@ -132,7 +134,9 @@ public interface StreamingDetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The queryInput.
    */
@@ -148,7 +152,9 @@ public interface StreamingDetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryInputOrBuilder getQueryInputOrBuilder();
 

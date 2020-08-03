@@ -46,11 +46,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class AgentsClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -61,11 +61,11 @@ public class AgentsClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -74,11 +74,11 @@ public class AgentsClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -106,6 +106,62 @@ public class AgentsClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getAgentTest() {
+    String parent2 = "parent21175163357";
+    String displayName = "displayName1615086568";
+    String defaultLanguageCode = "defaultLanguageCode856575222";
+    String timeZone = "timeZone36848094";
+    String description = "description-1724546052";
+    String avatarUri = "avatarUri-402824826";
+    boolean enableLogging = false;
+    float classificationThreshold = 1.11581064E8F;
+    Agent expectedResponse =
+        Agent.newBuilder()
+            .setParent(parent2)
+            .setDisplayName(displayName)
+            .setDefaultLanguageCode(defaultLanguageCode)
+            .setTimeZone(timeZone)
+            .setDescription(description)
+            .setAvatarUri(avatarUri)
+            .setEnableLogging(enableLogging)
+            .setClassificationThreshold(classificationThreshold)
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    Agent actualResponse = client.getAgent(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAgentRequest actualRequest = (GetAgentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getAgentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+
+      client.getAgent(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -195,62 +251,6 @@ public class AgentsClientTest {
       ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.deleteAgent(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getAgentTest() {
-    String parent2 = "parent21175163357";
-    String displayName = "displayName1615086568";
-    String defaultLanguageCode = "defaultLanguageCode856575222";
-    String timeZone = "timeZone36848094";
-    String description = "description-1724546052";
-    String avatarUri = "avatarUri-402824826";
-    boolean enableLogging = false;
-    float classificationThreshold = 1.11581064E8F;
-    Agent expectedResponse =
-        Agent.newBuilder()
-            .setParent(parent2)
-            .setDisplayName(displayName)
-            .setDefaultLanguageCode(defaultLanguageCode)
-            .setTimeZone(timeZone)
-            .setDescription(description)
-            .setAvatarUri(avatarUri)
-            .setEnableLogging(enableLogging)
-            .setClassificationThreshold(classificationThreshold)
-            .build();
-    mockAgents.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-
-    Agent actualResponse = client.getAgent(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAgents.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetAgentRequest actualRequest = (GetAgentRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getAgentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAgents.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-
-      client.getAgent(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -505,7 +505,9 @@ public class AgentsClientTest {
     ValidationResult expectedResponse = ValidationResult.newBuilder().build();
     mockAgents.addResponse(expectedResponse);
 
-    GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    GetValidationResultRequest request =
+        GetValidationResultRequest.newBuilder().setParent(parent.toString()).build();
 
     ValidationResult actualResponse = client.getValidationResult(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -514,6 +516,7 @@ public class AgentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetValidationResultRequest actualRequest = (GetValidationResultRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -527,7 +530,9 @@ public class AgentsClientTest {
     mockAgents.addException(exception);
 
     try {
-      GetValidationResultRequest request = GetValidationResultRequest.newBuilder().build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      GetValidationResultRequest request =
+          GetValidationResultRequest.newBuilder().setParent(parent.toString()).build();
 
       client.getValidationResult(request);
       Assert.fail("No exception raised");

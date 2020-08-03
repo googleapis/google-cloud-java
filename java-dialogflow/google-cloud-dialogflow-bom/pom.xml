@@ -11,7 +11,7 @@
     <version>0.9.2</version>
   </parent>
 
-  <name>Google Cloud dialogflow BOM</name>
+  <name>Google Cloud Dialogflow BOM</name>
   <url>https://github.com/googleapis/java-dialogflow</url>
   <description>
     BOM for Google Cloud Dialog Flow API

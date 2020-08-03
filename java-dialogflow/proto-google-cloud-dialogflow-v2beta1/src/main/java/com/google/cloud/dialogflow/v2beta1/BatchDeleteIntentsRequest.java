@@ -192,7 +192,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList() {
@@ -206,7 +208,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
@@ -221,7 +225,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public int getIntentsCount() {
@@ -235,7 +241,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index) {
@@ -249,7 +257,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index) {
@@ -781,7 +791,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList() {
       if (intentsBuilder_ == null) {
@@ -798,7 +810,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getIntentsCount() {
       if (intentsBuilder_ == null) {
@@ -815,7 +829,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index) {
       if (intentsBuilder_ == null) {
@@ -832,7 +848,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntents(int index, com.google.cloud.dialogflow.v2beta1.Intent value) {
       if (intentsBuilder_ == null) {
@@ -855,7 +873,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntents(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Builder builderForValue) {
@@ -876,7 +896,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addIntents(com.google.cloud.dialogflow.v2beta1.Intent value) {
       if (intentsBuilder_ == null) {
@@ -899,7 +921,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addIntents(int index, com.google.cloud.dialogflow.v2beta1.Intent value) {
       if (intentsBuilder_ == null) {
@@ -922,7 +946,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addIntents(com.google.cloud.dialogflow.v2beta1.Intent.Builder builderForValue) {
       if (intentsBuilder_ == null) {
@@ -942,7 +968,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addIntents(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Builder builderForValue) {
@@ -963,7 +991,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllIntents(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Intent> values) {
@@ -984,7 +1014,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearIntents() {
       if (intentsBuilder_ == null) {
@@ -1004,7 +1036,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeIntents(int index) {
       if (intentsBuilder_ == null) {
@@ -1024,7 +1058,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
@@ -1037,7 +1073,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index) {
       if (intentsBuilder_ == null) {
@@ -1054,7 +1092,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
         getIntentsOrBuilderList() {
@@ -1072,7 +1112,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Builder addIntentsBuilder() {
       return getIntentsFieldBuilder()
@@ -1086,7 +1128,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Builder addIntentsBuilder(int index) {
       return getIntentsFieldBuilder()
@@ -1100,7 +1144,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * filled in.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Builder>
         getIntentsBuilderList() {

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -42,11 +43,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class KnowledgeBasesClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -57,11 +58,11 @@ public class KnowledgeBasesClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -70,11 +71,11 @@ public class KnowledgeBasesClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -299,8 +300,9 @@ public class KnowledgeBasesClientTest {
     mockKnowledgeBases.addResponse(expectedResponse);
 
     KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    KnowledgeBase actualResponse = client.updateKnowledgeBase(knowledgeBase);
+    KnowledgeBase actualResponse = client.updateKnowledgeBase(knowledgeBase, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockKnowledgeBases.getRequests();
@@ -308,6 +310,7 @@ public class KnowledgeBasesClientTest {
     UpdateKnowledgeBaseRequest actualRequest = (UpdateKnowledgeBaseRequest) actualRequests.get(0);
 
     Assert.assertEquals(knowledgeBase, actualRequest.getKnowledgeBase());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -322,8 +325,58 @@ public class KnowledgeBasesClientTest {
 
     try {
       KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateKnowledgeBase(knowledgeBase);
+      client.updateKnowledgeBase(knowledgeBase, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateKnowledgeBaseTest2() {
+    KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
+    String displayName = "displayName1615086568";
+    String languageCode = "languageCode-412800396";
+    KnowledgeBase expectedResponse =
+        KnowledgeBase.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setLanguageCode(languageCode)
+            .build();
+    mockKnowledgeBases.addResponse(expectedResponse);
+
+    KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    KnowledgeBase actualResponse = client.updateKnowledgeBase(knowledgeBase, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKnowledgeBases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateKnowledgeBaseRequest actualRequest = (UpdateKnowledgeBaseRequest) actualRequests.get(0);
+
+    Assert.assertEquals(knowledgeBase, actualRequest.getKnowledgeBase());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateKnowledgeBaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKnowledgeBases.addException(exception);
+
+    try {
+      KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateKnowledgeBase(knowledgeBase, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

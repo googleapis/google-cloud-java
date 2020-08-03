@@ -61,7 +61,9 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the intent field is set.
    */
@@ -73,7 +75,9 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The intent.
    */
@@ -85,7 +89,9 @@ public interface CreateIntentRequestOrBuilder
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder();
 

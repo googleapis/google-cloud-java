@@ -69,7 +69,9 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sessionEntityType field is set.
    */
@@ -81,7 +83,9 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sessionEntityType.
    */
@@ -93,7 +97,9 @@ public interface CreateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder();
 }

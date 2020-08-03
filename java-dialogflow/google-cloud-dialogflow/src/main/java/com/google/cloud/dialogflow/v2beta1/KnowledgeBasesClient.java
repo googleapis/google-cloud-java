@@ -29,6 +29,7 @@ import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStub;
 import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -628,6 +629,38 @@ public class KnowledgeBasesClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     return stub.deleteKnowledgeBaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified knowledge base.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases` resource is deprecated; only use
+   * `projects.knowledgeBases`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   KnowledgeBase response = knowledgeBasesClient.updateKnowledgeBase(knowledgeBase, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param knowledgeBase Required. The knowledge base to update.
+   * @param updateMask Optional. Not specified means `update all`. Currently, only `display_name`
+   *     can be updated, an InvalidArgument will be returned for attempting to update other fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KnowledgeBase updateKnowledgeBase(
+      KnowledgeBase knowledgeBase, FieldMask updateMask) {
+    UpdateKnowledgeBaseRequest request =
+        UpdateKnowledgeBaseRequest.newBuilder()
+            .setKnowledgeBase(knowledgeBase)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateKnowledgeBase(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

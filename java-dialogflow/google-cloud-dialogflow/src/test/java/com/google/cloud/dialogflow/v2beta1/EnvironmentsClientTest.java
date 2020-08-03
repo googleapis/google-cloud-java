@@ -41,11 +41,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class EnvironmentsClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -56,11 +56,11 @@ public class EnvironmentsClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -69,11 +69,11 @@ public class EnvironmentsClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -116,7 +116,7 @@ public class EnvironmentsClientTest {
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
-    ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
     ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
 
@@ -128,7 +128,7 @@ public class EnvironmentsClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListEnvironmentsRequest actualRequest = (ListEnvironmentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectAgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -142,7 +142,7 @@ public class EnvironmentsClientTest {
     mockEnvironments.addException(exception);
 
     try {
-      ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
 
       client.listEnvironments(parent);
       Assert.fail("No exception raised");

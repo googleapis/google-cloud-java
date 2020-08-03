@@ -19,7 +19,23 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============ AgentsClient ============
+ * <p>================== EnvironmentsClient ==================
+ *
+ * <p>Service Description: Service for managing
+ * [Environments][google.cloud.dialogflow.v2beta1.Environment].
+ *
+ * <p>Sample for EnvironmentsClient:
+ *
+ * <pre>
+ * <code>
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+ *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironments(parent);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============ AgentsClient ============
  *
  * <p>Service Description: Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
  *
@@ -28,8 +44,8 @@
  * <pre>
  * <code>
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   Agent agent = Agent.newBuilder().build();
- *   Agent response = agentsClient.setAgent(agent);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Agent response = agentsClient.getAgent(parent);
  * }
  * </code>
  * </pre>
@@ -43,7 +59,7 @@
  * <pre>
  * <code>
  * try (ContextsClient contextsClient = ContextsClient.create()) {
- *   ContextName name = ContextName.of("[PROJECT]", "[SESSION]", "[CONTEXT]");
+ *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
  * }
  * </code>
@@ -75,24 +91,8 @@
  * <pre>
  * <code>
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
- *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+ *   EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
- * }
- * </code>
- * </pre>
- *
- * ================== EnvironmentsClient ==================
- *
- * <p>Service Description: Service for managing
- * [Environments][google.cloud.dialogflow.v2beta1.Environment].
- *
- * <p>Sample for EnvironmentsClient:
- *
- * <pre>
- * <code>
- * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
- *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironments(parent);
  * }
  * </code>
  * </pre>
@@ -106,7 +106,7 @@
  * <pre>
  * <code>
  * try (IntentsClient intentsClient = IntentsClient.create()) {
- *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+ *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
  * }
  * </code>
@@ -138,7 +138,7 @@
  * <pre>
  * <code>
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
  * }
  * </code>
@@ -156,7 +156,7 @@
  * <pre>
  * <code>
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.of("[PROJECT]", "[SESSION]");
+ *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
  * }

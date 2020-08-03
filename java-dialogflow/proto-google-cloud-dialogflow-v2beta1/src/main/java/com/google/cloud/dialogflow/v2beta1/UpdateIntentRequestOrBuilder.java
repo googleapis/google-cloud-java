@@ -30,7 +30,9 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the intent field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The intent.
    */
@@ -54,7 +58,9 @@ public interface UpdateIntentRequestOrBuilder
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder();
 

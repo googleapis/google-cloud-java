@@ -142,7 +142,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the agent field is set.
    */
@@ -157,7 +159,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The agent.
    */
@@ -172,7 +176,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentOrBuilder getAgentOrBuilder() {
@@ -596,7 +602,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the agent field is set.
      */
@@ -610,7 +618,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The agent.
      */
@@ -630,7 +640,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAgent(com.google.cloud.dialogflow.v2beta1.Agent value) {
       if (agentBuilder_ == null) {
@@ -652,7 +664,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAgent(com.google.cloud.dialogflow.v2beta1.Agent.Builder builderForValue) {
       if (agentBuilder_ == null) {
@@ -671,7 +685,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAgent(com.google.cloud.dialogflow.v2beta1.Agent value) {
       if (agentBuilder_ == null) {
@@ -697,7 +713,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAgent() {
       if (agentBuilder_ == null) {
@@ -717,7 +735,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Agent.Builder getAgentBuilder() {
 
@@ -731,7 +751,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.AgentOrBuilder getAgentOrBuilder() {
       if (agentBuilder_ != null) {
@@ -749,7 +771,9 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Agent,

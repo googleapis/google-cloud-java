@@ -50,13 +50,13 @@ public final class EnvironmentProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/dialogflow/v2beta1/enviro"
           + "nment.proto\022\037google.cloud.dialogflow.v2b"
-          + "eta1\032\034google/api/annotations.proto\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\0322google/cloud/dialogflow/"
-          + "v2beta1/audio_config.proto\032\033google/proto"
-          + "buf/empty.proto\032 google/protobuf/field_m"
-          + "ask.proto\032\037google/protobuf/timestamp.pro"
-          + "to\032\027google/api/client.proto\"\310\003\n\013Environm"
+          + "eta1\032\034google/api/annotations.proto\032\027goog"
+          + "le/api/client.proto\032\037google/api/field_be"
+          + "havior.proto\032\031google/api/resource.proto\032"
+          + "2google/cloud/dialogflow/v2beta1/audio_c"
+          + "onfig.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\"\310\003\n\013Environm"
           + "ent\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\030\n\013description\030\002 "
           + "\001(\tB\003\340A\001\022\032\n\ragent_version\030\003 \001(\tB\003\340A\001\022F\n\005"
           + "state\030\004 \001(\01622.google.cloud.dialogflow.v2"
@@ -74,35 +74,35 @@ public final class EnvironmentProto {
           + "\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"w\n\030ListEnviro"
           + "nmentsResponse\022B\n\014environments\030\001 \003(\0132,.g"
           + "oogle.cloud.dialogflow.v2beta1.Environme"
-          + "nt\022\027\n\017next_page_token\030\002 \001(\t2\212\003\n\014Environm"
-          + "ents\022\377\001\n\020ListEnvironments\0228.google.cloud"
+          + "nt\022\027\n\017next_page_token\030\002 \001(\t2\223\003\n\014Environm"
+          + "ents\022\210\002\n\020ListEnvironments\0228.google.cloud"
           + ".dialogflow.v2beta1.ListEnvironmentsRequ"
           + "est\0329.google.cloud.dialogflow.v2beta1.Li"
-          + "stEnvironmentsResponse\"v\202\323\344\223\002p\022//v2beta1"
+          + "stEnvironmentsResponse\"\177\202\323\344\223\002p\022//v2beta1"
           + "/{parent=projects/*/agent}/environmentsZ"
           + "=\022;/v2beta1/{parent=projects/*/locations"
-          + "/*/agent}/environments\032x\312A\031dialogflow.go"
-          + "ogleapis.com\322AYhttps://www.googleapis.co"
-          + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/dialogflowB\256\001\n#com.google."
-          + "cloud.dialogflow.v2beta1B\020EnvironmentPro"
-          + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/dialogflow/v2beta1;dialogflow\370"
-          + "\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2beta"
-          + "1b\006proto3"
+          + "/*/agent}/environments\332A\006parent\032x\312A\031dial"
+          + "ogflow.googleapis.com\322AYhttps://www.goog"
+          + "leapis.com/auth/cloud-platform,https://w"
+          + "ww.googleapis.com/auth/dialogflowB\256\001\n#co"
+          + "m.google.cloud.dialogflow.v2beta1B\020Envir"
+          + "onmentProtoP\001ZIgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/dialogflow/v2beta1;di"
+          + "alogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogfl"
+          + "ow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_Environment_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -133,19 +133,20 @@ public final class EnvironmentProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

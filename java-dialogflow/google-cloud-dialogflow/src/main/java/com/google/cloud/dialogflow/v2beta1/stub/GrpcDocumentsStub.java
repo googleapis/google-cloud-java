@@ -127,6 +127,8 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationCallable;
   private final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable;
+  private final OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -285,6 +287,12 @@ public class GrpcDocumentsStub extends DocumentsStub {
     this.reloadDocumentCallable =
         callableFactory.createUnaryCallable(
             reloadDocumentTransportSettings, settings.reloadDocumentSettings(), clientContext);
+    this.reloadDocumentOperationCallable =
+        callableFactory.createOperationCallable(
+            reloadDocumentTransportSettings,
+            settings.reloadDocumentOperationSettings(),
+            clientContext,
+            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -335,6 +343,12 @@ public class GrpcDocumentsStub extends DocumentsStub {
 
   public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
     return updateDocumentCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationCallable() {
+    return reloadDocumentOperationCallable;
   }
 
   public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {

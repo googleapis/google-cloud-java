@@ -93,6 +93,12 @@ public abstract class DocumentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDocumentCallable()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: reloadDocumentOperationCallable()");
+  }
+
   public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: reloadDocumentCallable()");
   }

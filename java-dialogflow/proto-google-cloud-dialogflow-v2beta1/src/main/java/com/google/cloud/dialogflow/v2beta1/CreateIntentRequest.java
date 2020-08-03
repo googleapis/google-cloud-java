@@ -207,7 +207,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the intent field is set.
    */
@@ -222,7 +224,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The intent.
    */
@@ -239,7 +243,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder() {
@@ -853,7 +859,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the intent field is set.
      */
@@ -867,7 +875,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The intent.
      */
@@ -887,7 +897,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntent(com.google.cloud.dialogflow.v2beta1.Intent value) {
       if (intentBuilder_ == null) {
@@ -909,7 +921,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntent(com.google.cloud.dialogflow.v2beta1.Intent.Builder builderForValue) {
       if (intentBuilder_ == null) {
@@ -928,7 +942,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeIntent(com.google.cloud.dialogflow.v2beta1.Intent value) {
       if (intentBuilder_ == null) {
@@ -954,7 +970,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearIntent() {
       if (intentBuilder_ == null) {
@@ -974,7 +992,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Builder getIntentBuilder() {
 
@@ -988,7 +1008,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder() {
       if (intentBuilder_ != null) {
@@ -1006,7 +1028,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Intent intent = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Intent,

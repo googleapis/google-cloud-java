@@ -29,10 +29,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * A session represents an interaction with a user. You retrieve user input
- * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
- * user intent and respond.
+ * A service used for session interactions.
+ * For more information, see the [API interactions
+ * guide](https://cloud.google.com/dialogflow/docs/api-overview).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -184,10 +183,9 @@ public final class SessionsGrpc {
    *
    *
    * <pre>
-   * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
-   * user intent and respond.
+   * A service used for session interactions.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    */
   public abstract static class SessionsImplBase implements io.grpc.BindableService {
@@ -251,10 +249,9 @@ public final class SessionsGrpc {
    *
    *
    * <pre>
-   * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
-   * user intent and respond.
+   * A service used for session interactions.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    */
   public static final class SessionsStub extends io.grpc.stub.AbstractAsyncStub<SessionsStub> {
@@ -311,10 +308,9 @@ public final class SessionsGrpc {
    *
    *
    * <pre>
-   * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
-   * user intent and respond.
+   * A service used for session interactions.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    */
   public static final class SessionsBlockingStub
@@ -348,10 +344,9 @@ public final class SessionsGrpc {
    *
    *
    * <pre>
-   * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]) method to determine
-   * user intent and respond.
+   * A service used for session interactions.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    */
   public static final class SessionsFutureStub

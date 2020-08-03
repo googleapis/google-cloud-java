@@ -201,7 +201,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sessionEntityType field is set.
    */
@@ -216,7 +218,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sessionEntityType.
    */
@@ -233,7 +237,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * Required. The session entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
@@ -750,7 +756,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the sessionEntityType field is set.
      */
@@ -764,7 +772,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The sessionEntityType.
      */
@@ -784,7 +794,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
@@ -807,7 +819,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder builderForValue) {
@@ -827,7 +841,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSessionEntityType(
         com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
@@ -854,7 +870,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSessionEntityType() {
       if (sessionEntityTypeBuilder_ == null) {
@@ -874,7 +892,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder
         getSessionEntityTypeBuilder() {
@@ -889,7 +909,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
         getSessionEntityTypeOrBuilder() {
@@ -908,7 +930,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * Required. The session entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.SessionEntityType,

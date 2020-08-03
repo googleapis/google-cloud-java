@@ -42,11 +42,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class SessionEntityTypesClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -57,11 +57,11 @@ public class SessionEntityTypesClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -70,11 +70,11 @@ public class SessionEntityTypesClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -117,7 +117,7 @@ public class SessionEntityTypesClientTest {
             .build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
-    SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+    SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
 
     ListSessionEntityTypesPagedResponse pagedListResponse = client.listSessionEntityTypes(parent);
 
@@ -144,7 +144,7 @@ public class SessionEntityTypesClientTest {
     mockSessionEntityTypes.addException(exception);
 
     try {
-      SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+      SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
 
       client.listSessionEntityTypes(parent);
       Assert.fail("No exception raised");
@@ -157,13 +157,15 @@ public class SessionEntityTypesClientTest {
   @SuppressWarnings("all")
   public void getSessionEntityTypeTest() {
     SessionEntityTypeName name2 =
-        SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
         SessionEntityType.newBuilder().setName(name2.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionEntityTypeName name =
-        SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
 
     SessionEntityType actualResponse = client.getSessionEntityType(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -187,7 +189,8 @@ public class SessionEntityTypesClientTest {
 
     try {
       SessionEntityTypeName name =
-          SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+          SessionEntityTypeName.ofProjectSessionEntityTypeName(
+              "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
 
       client.getSessionEntityType(name);
       Assert.fail("No exception raised");
@@ -200,12 +203,13 @@ public class SessionEntityTypesClientTest {
   @SuppressWarnings("all")
   public void createSessionEntityTypeTest() {
     SessionEntityTypeName name =
-        SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
         SessionEntityType.newBuilder().setName(name.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
-    SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+    SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
 
     SessionEntityType actualResponse = client.createSessionEntityType(parent, sessionEntityType);
@@ -231,7 +235,7 @@ public class SessionEntityTypesClientTest {
     mockSessionEntityTypes.addException(exception);
 
     try {
-      SessionName parent = SessionName.of("[PROJECT]", "[SESSION]");
+      SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
 
       client.createSessionEntityType(parent, sessionEntityType);
@@ -245,7 +249,8 @@ public class SessionEntityTypesClientTest {
   @SuppressWarnings("all")
   public void updateSessionEntityTypeTest() {
     SessionEntityTypeName name =
-        SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
     SessionEntityType expectedResponse =
         SessionEntityType.newBuilder().setName(name.toString()).build();
     mockSessionEntityTypes.addResponse(expectedResponse);
@@ -285,12 +290,56 @@ public class SessionEntityTypesClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void updateSessionEntityTypeTest2() {
+    SessionEntityTypeName name =
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+    SessionEntityType expectedResponse =
+        SessionEntityType.newBuilder().setName(name.toString()).build();
+    mockSessionEntityTypes.addResponse(expectedResponse);
+
+    SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+
+    SessionEntityType actualResponse = client.updateSessionEntityType(sessionEntityType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessionEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSessionEntityTypeRequest actualRequest =
+        (UpdateSessionEntityTypeRequest) actualRequests.get(0);
+
+    Assert.assertEquals(sessionEntityType, actualRequest.getSessionEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateSessionEntityTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSessionEntityTypes.addException(exception);
+
+    try {
+      SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+
+      client.updateSessionEntityType(sessionEntityType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSessionEntityTypeTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSessionEntityTypes.addResponse(expectedResponse);
 
     SessionEntityTypeName name =
-        SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+        SessionEntityTypeName.ofProjectSessionEntityTypeName(
+            "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
 
     client.deleteSessionEntityType(name);
 
@@ -314,7 +363,8 @@ public class SessionEntityTypesClientTest {
 
     try {
       SessionEntityTypeName name =
-          SessionEntityTypeName.of("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+          SessionEntityTypeName.ofProjectSessionEntityTypeName(
+              "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
 
       client.deleteSessionEntityType(name);
       Assert.fail("No exception raised");

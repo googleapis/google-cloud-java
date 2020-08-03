@@ -30,6 +30,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -46,11 +47,11 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class DocumentsClientTest {
+  private static MockEnvironments mockEnvironments;
   private static MockAgents mockAgents;
   private static MockContexts mockContexts;
   private static MockDocuments mockDocuments;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
   private static MockIntents mockIntents;
   private static MockKnowledgeBases mockKnowledgeBases;
   private static MockSessionEntityTypes mockSessionEntityTypes;
@@ -61,11 +62,11 @@ public class DocumentsClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockEnvironments = new MockEnvironments();
     mockAgents = new MockAgents();
     mockContexts = new MockContexts();
     mockDocuments = new MockDocuments();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
     mockIntents = new MockIntents();
     mockKnowledgeBases = new MockKnowledgeBases();
     mockSessionEntityTypes = new MockSessionEntityTypes();
@@ -74,11 +75,11 @@ public class DocumentsClientTest {
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
+                mockEnvironments,
                 mockAgents,
                 mockContexts,
                 mockDocuments,
                 mockEntityTypes,
-                mockEnvironments,
                 mockIntents,
                 mockKnowledgeBases,
                 mockSessionEntityTypes,
@@ -338,8 +339,9 @@ public class DocumentsClientTest {
     mockDocuments.addResponse(resultOperation);
 
     Document document = Document.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Document actualResponse = client.updateDocumentAsync(document).get();
+    Document actualResponse = client.updateDocumentAsync(document, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocuments.getRequests();
@@ -347,6 +349,7 @@ public class DocumentsClientTest {
     UpdateDocumentRequest actualRequest = (UpdateDocumentRequest) actualRequests.get(0);
 
     Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -361,8 +364,9 @@ public class DocumentsClientTest {
 
     try {
       Document document = Document.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateDocumentAsync(document).get();
+      client.updateDocumentAsync(document, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -373,21 +377,101 @@ public class DocumentsClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void reloadDocumentTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockDocuments.addResponse(expectedResponse);
+  public void updateDocumentTest2() throws Exception {
+    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    String displayName = "displayName1615086568";
+    String mimeType = "mimeType-196041627";
+    String contentUri = "contentUri-388807514";
+    boolean enableAutoReload = false;
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMimeType(mimeType)
+            .setContentUri(contentUri)
+            .setEnableAutoReload(enableAutoReload)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDocumentTest2")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocuments.addResponse(resultOperation);
 
-    ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+    Document document = Document.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Operation actualResponse = client.reloadDocument(request);
+    Document actualResponse = client.updateDocumentAsync(document, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocuments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDocumentRequest actualRequest = (UpdateDocumentRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateDocumentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDocuments.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateDocumentAsync(document, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void reloadDocumentTest() throws Exception {
+    DocumentName name2 = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    String displayName = "displayName1615086568";
+    String mimeType = "mimeType-196041627";
+    String contentUri = "contentUri-388807514";
+    boolean enableAutoReload = false;
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setMimeType(mimeType)
+            .setContentUri(contentUri)
+            .setEnableAutoReload(enableAutoReload)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("reloadDocumentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocuments.addResponse(resultOperation);
+
+    DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+    ReloadDocumentRequest request =
+        ReloadDocumentRequest.newBuilder().setName(name.toString()).build();
+
+    Document actualResponse = client.reloadDocumentAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocuments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReloadDocumentRequest actualRequest = (ReloadDocumentRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, DocumentName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -401,12 +485,16 @@ public class DocumentsClientTest {
     mockDocuments.addException(exception);
 
     try {
-      ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+      DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+      ReloadDocumentRequest request =
+          ReloadDocumentRequest.newBuilder().setName(name.toString()).build();
 
-      client.reloadDocument(request);
+      client.reloadDocumentAsync(request).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

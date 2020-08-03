@@ -62,7 +62,9 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList();
   /**
@@ -73,7 +75,9 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index);
   /**
@@ -84,7 +88,9 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getIntentsCount();
   /**
@@ -95,7 +101,9 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
@@ -107,7 +115,9 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * filled in.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index);
 }

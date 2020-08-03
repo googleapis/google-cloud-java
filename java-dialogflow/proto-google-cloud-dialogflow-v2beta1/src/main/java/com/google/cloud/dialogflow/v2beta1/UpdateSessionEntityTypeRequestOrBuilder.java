@@ -30,7 +30,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sessionEntityType field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sessionEntityType.
    */
@@ -54,7 +58,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Required. The session entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder();
 

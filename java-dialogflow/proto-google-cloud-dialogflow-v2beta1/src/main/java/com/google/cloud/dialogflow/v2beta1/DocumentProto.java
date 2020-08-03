@@ -67,6 +67,10 @@ public final class DocumentProto {
       internal_static_google_cloud_dialogflow_v2beta1_ReloadDocumentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_ReloadDocumentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AutoApproveSmartMessagingEntriesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AutoApproveSmartMessagingEntriesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -128,59 +132,62 @@ public final class DocumentProto {
           + "est\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"dialogflow.go"
           + "ogleapis.com/Document\022@\n\ngcs_source\030\003 \001("
           + "\0132*.google.cloud.dialogflow.v2beta1.GcsS"
-          + "ourceH\000B\010\n\006source2\362\016\n\tDocuments\022\212\002\n\rList"
-          + "Documents\0225.google.cloud.dialogflow.v2be"
-          + "ta1.ListDocumentsRequest\0326.google.cloud."
-          + "dialogflow.v2beta1.ListDocumentsResponse"
-          + "\"\211\001\202\323\344\223\002z\0227/v2beta1/{parent=projects/*/k"
-          + "nowledgeBases/*}/documentsZ?\022=/v2beta1/{"
-          + "parent=projects/*/agent/knowledgeBases/*"
-          + "}/documents\332A\006parent\022\367\001\n\013GetDocument\0223.g"
-          + "oogle.cloud.dialogflow.v2beta1.GetDocume"
-          + "ntRequest\032).google.cloud.dialogflow.v2be"
-          + "ta1.Document\"\207\001\202\323\344\223\002z\0227/v2beta1/{name=pr"
-          + "ojects/*/knowledgeBases/*/documents/*}Z?"
-          + "\022=/v2beta1/{name=projects/*/agent/knowle"
-          + "dgeBases/*/documents/*}\332A\004name\022\272\002\n\016Creat"
-          + "eDocument\0226.google.cloud.dialogflow.v2be"
-          + "ta1.CreateDocumentRequest\032\035.google.longr"
-          + "unning.Operation\"\320\001\202\323\344\223\002\216\001\"7/v2beta1/{pa"
-          + "rent=projects/*/knowledgeBases/*}/docume"
-          + "nts:\010documentZI\"=/v2beta1/{parent=projec"
-          + "ts/*/agent/knowledgeBases/*}/documents:\010"
-          + "document\332A\017parent,document\312A&\n\010Document\022"
-          + "\032KnowledgeOperationMetadata\022\247\002\n\016DeleteDo"
+          + "ourceH\000B\010\n\006source\"s\n(AutoApproveSmartMes"
+          + "sagingEntriesResponse\022\025\n\renabled_count\030\001"
+          + " \001(\005\022\026\n\016disabled_count\030\002 \001(\005\022\030\n\020unreview"
+          + "ed_count\030\003 \001(\0052\375\016\n\tDocuments\022\212\002\n\rListDoc"
+          + "uments\0225.google.cloud.dialogflow.v2beta1"
+          + ".ListDocumentsRequest\0326.google.cloud.dia"
+          + "logflow.v2beta1.ListDocumentsResponse\"\211\001"
+          + "\202\323\344\223\002z\0227/v2beta1/{parent=projects/*/know"
+          + "ledgeBases/*}/documentsZ?\022=/v2beta1/{par"
+          + "ent=projects/*/agent/knowledgeBases/*}/d"
+          + "ocuments\332A\006parent\022\367\001\n\013GetDocument\0223.goog"
+          + "le.cloud.dialogflow.v2beta1.GetDocumentR"
+          + "equest\032).google.cloud.dialogflow.v2beta1"
+          + ".Document\"\207\001\202\323\344\223\002z\0227/v2beta1/{name=proje"
+          + "cts/*/knowledgeBases/*/documents/*}Z?\022=/"
+          + "v2beta1/{name=projects/*/agent/knowledge"
+          + "Bases/*/documents/*}\332A\004name\022\272\002\n\016CreateDo"
           + "cument\0226.google.cloud.dialogflow.v2beta1"
-          + ".DeleteDocumentRequest\032\035.google.longrunn"
-          + "ing.Operation\"\275\001\202\323\344\223\002z*7/v2beta1/{name=p"
-          + "rojects/*/knowledgeBases/*/documents/*}Z"
-          + "?*=/v2beta1/{name=projects/*/agent/knowl"
-          + "edgeBases/*/documents/*}\332A\004name\312A3\n\025goog"
-          + "le.protobuf.Empty\022\032KnowledgeOperationMet"
-          + "adata\022\321\002\n\016UpdateDocument\0226.google.cloud."
-          + "dialogflow.v2beta1.UpdateDocumentRequest"
-          + "\032\035.google.longrunning.Operation\"\347\001\202\323\344\223\002\240"
-          + "\0012@/v2beta1/{document.name=projects/*/kn"
-          + "owledgeBases/*/documents/*}:\010documentZR2"
-          + "F/v2beta1/{document.name=projects/*/agen"
-          + "t/knowledgeBases/*/documents/*}:\010documen"
-          + "t\332A\024document,update_mask\312A&\n\010Document\022\032K"
-          + "nowledgeOperationMetadata\022\250\002\n\016ReloadDocu"
-          + "ment\0226.google.cloud.dialogflow.v2beta1.R"
-          + "eloadDocumentRequest\032\035.google.longrunnin"
-          + "g.Operation\"\276\001\202\323\344\223\002\216\001\">/v2beta1/{name=pr"
-          + "ojects/*/knowledgeBases/*/documents/*}:r"
-          + "eload:\001*ZI\"D/v2beta1/{name=projects/*/ag"
-          + "ent/knowledgeBases/*/documents/*}:reload"
-          + ":\001*\312A&\n\010Document\022\032KnowledgeOperationMeta"
-          + "data\032x\312A\031dialogflow.googleapis.com\322AYhtt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "orm,https://www.googleapis.com/auth/dial"
-          + "ogflowB\253\001\n#com.google.cloud.dialogflow.v"
-          + "2beta1B\rDocumentProtoP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/dialogflow/"
-          + "v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Clou"
-          + "d.Dialogflow.V2beta1b\006proto3"
+          + ".CreateDocumentRequest\032\035.google.longrunn"
+          + "ing.Operation\"\320\001\202\323\344\223\002\216\001\"7/v2beta1/{paren"
+          + "t=projects/*/knowledgeBases/*}/documents"
+          + ":\010documentZI\"=/v2beta1/{parent=projects/"
+          + "*/agent/knowledgeBases/*}/documents:\010doc"
+          + "ument\332A\017parent,document\312A&\n\010Document\022\032Kn"
+          + "owledgeOperationMetadata\022\247\002\n\016DeleteDocum"
+          + "ent\0226.google.cloud.dialogflow.v2beta1.De"
+          + "leteDocumentRequest\032\035.google.longrunning"
+          + ".Operation\"\275\001\202\323\344\223\002z*7/v2beta1/{name=proj"
+          + "ects/*/knowledgeBases/*/documents/*}Z?*="
+          + "/v2beta1/{name=projects/*/agent/knowledg"
+          + "eBases/*/documents/*}\332A\004name\312A3\n\025google."
+          + "protobuf.Empty\022\032KnowledgeOperationMetada"
+          + "ta\022\334\002\n\016UpdateDocument\0226.google.cloud.dia"
+          + "logflow.v2beta1.UpdateDocumentRequest\032\035."
+          + "google.longrunning.Operation\"\362\001\202\323\344\223\002\240\0012@"
+          + "/v2beta1/{document.name=projects/*/knowl"
+          + "edgeBases/*/documents/*}:\010documentZR2F/v"
+          + "2beta1/{document.name=projects/*/agent/k"
+          + "nowledgeBases/*/documents/*}:\010document\332A"
+          + "\024document,update_mask\332A\010document\312A&\n\010Doc"
+          + "ument\022\032KnowledgeOperationMetadata\022\250\002\n\016Re"
+          + "loadDocument\0226.google.cloud.dialogflow.v"
+          + "2beta1.ReloadDocumentRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\276\001\202\323\344\223\002\216\001\">/v2beta1/"
+          + "{name=projects/*/knowledgeBases/*/docume"
+          + "nts/*}:reload:\001*ZI\"D/v2beta1/{name=proje"
+          + "cts/*/agent/knowledgeBases/*/documents/*"
+          + "}:reload:\001*\312A&\n\010Document\022\032KnowledgeOpera"
+          + "tionMetadata\032x\312A\031dialogflow.googleapis.c"
+          + "om\322AYhttps://www.googleapis.com/auth/clo"
+          + "ud-platform,https://www.googleapis.com/a"
+          + "uth/dialogflowB\253\001\n#com.google.cloud.dial"
+          + "ogflow.v2beta1B\rDocumentProtoP\001ZIgoogle."
+          + "golang.org/genproto/googleapis/cloud/dia"
+          + "logflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037Goo"
+          + "gle.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -285,6 +292,14 @@ public final class DocumentProto {
             internal_static_google_cloud_dialogflow_v2beta1_ReloadDocumentRequest_descriptor,
             new java.lang.String[] {
               "Name", "GcsSource", "Source",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AutoApproveSmartMessagingEntriesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_dialogflow_v2beta1_AutoApproveSmartMessagingEntriesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AutoApproveSmartMessagingEntriesResponse_descriptor,
+            new java.lang.String[] {
+              "EnabledCount", "DisabledCount", "UnreviewedCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

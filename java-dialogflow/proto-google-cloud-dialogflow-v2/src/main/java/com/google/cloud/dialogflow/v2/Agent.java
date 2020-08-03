@@ -29,8 +29,7 @@ package com.google.cloud.dialogflow.v2;
  * understand. You design and build a Dialogflow agent to handle the types of
  * conversations required for your system.
  * For more information about agents, see the
- * [Agents
- * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+ * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.Agent}
@@ -1567,8 +1566,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * understand. You design and build a Dialogflow agent to handle the types of
    * conversations required for your system.
    * For more information about agents, see the
-   * [Agents
-   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
+   * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.Agent}

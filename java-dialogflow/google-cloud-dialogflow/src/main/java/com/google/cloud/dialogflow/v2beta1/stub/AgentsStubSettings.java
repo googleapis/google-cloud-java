@@ -83,16 +83,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of setAgent to 30 seconds:
+ * <p>For example, to set the total timeout of getAgent to 30 seconds:
  *
  * <pre>
  * <code>
  * AgentsStubSettings.Builder agentsSettingsBuilder =
  *     AgentsStubSettings.newBuilder();
  * agentsSettingsBuilder
- *     .setAgentSettings()
+ *     .getAgentSettings()
  *     .setRetrySettings(
- *         agentsSettingsBuilder.setAgentSettings().getRetrySettings().toBuilder()
+ *         agentsSettingsBuilder.getAgentSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AgentsStubSettings agentsSettings = agentsSettingsBuilder.build();
@@ -109,9 +109,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
+  private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
   private final UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings;
   private final UnaryCallSettings<DeleteAgentRequest, Empty> deleteAgentSettings;
-  private final UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings;
   private final PagedCallSettings<
           SearchAgentsRequest, SearchAgentsResponse, SearchAgentsPagedResponse>
       searchAgentsSettings;
@@ -129,6 +129,11 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   private final UnaryCallSettings<GetValidationResultRequest, ValidationResult>
       getValidationResultSettings;
 
+  /** Returns the object with the settings used for calls to getAgent. */
+  public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
+    return getAgentSettings;
+  }
+
   /** Returns the object with the settings used for calls to setAgent. */
   public UnaryCallSettings<SetAgentRequest, Agent> setAgentSettings() {
     return setAgentSettings;
@@ -137,11 +142,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   /** Returns the object with the settings used for calls to deleteAgent. */
   public UnaryCallSettings<DeleteAgentRequest, Empty> deleteAgentSettings() {
     return deleteAgentSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getAgent. */
-  public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
-    return getAgentSettings;
   }
 
   /** Returns the object with the settings used for calls to searchAgents. */
@@ -269,9 +269,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   protected AgentsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    getAgentSettings = settingsBuilder.getAgentSettings().build();
     setAgentSettings = settingsBuilder.setAgentSettings().build();
     deleteAgentSettings = settingsBuilder.deleteAgentSettings().build();
-    getAgentSettings = settingsBuilder.getAgentSettings().build();
     searchAgentsSettings = settingsBuilder.searchAgentsSettings().build();
     trainAgentSettings = settingsBuilder.trainAgentSettings().build();
     trainAgentOperationSettings = settingsBuilder.trainAgentOperationSettings().build();
@@ -341,9 +341,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   public static class Builder extends StubSettings.Builder<AgentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings;
     private final UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings;
     private final UnaryCallSettings.Builder<DeleteAgentRequest, Empty> deleteAgentSettings;
-    private final UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings;
     private final PagedCallSettings.Builder<
             SearchAgentsRequest, SearchAgentsResponse, SearchAgentsPagedResponse>
         searchAgentsSettings;
@@ -369,11 +369,17 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_1_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_2_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -387,12 +393,44 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(180000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(180000L))
+              .setTotalTimeout(Duration.ofMillis(180000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(220000L))
+              .setTotalTimeout(Duration.ofMillis(220000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -403,11 +441,11 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      getAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       deleteAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       searchAgentsSettings = PagedCallSettings.newBuilder(SEARCH_AGENTS_PAGE_STR_FACT);
 
@@ -431,9 +469,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getAgentSettings,
               setAgentSettings,
               deleteAgentSettings,
-              getAgentSettings,
               searchAgentsSettings,
               trainAgentSettings,
               exportAgentSettings,
@@ -456,55 +494,55 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .getAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .setAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .deleteAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .searchAgentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .trainAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .exportAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .importAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .restoreAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getValidationResultSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
           .trainAgentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<TrainAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -525,8 +563,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
           .exportAgentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ExportAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ExportAgentResponse.class))
@@ -547,8 +585,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
           .importAgentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -570,8 +608,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RestoreAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -595,9 +633,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     protected Builder(AgentsStubSettings settings) {
       super(settings);
 
+      getAgentSettings = settings.getAgentSettings.toBuilder();
       setAgentSettings = settings.setAgentSettings.toBuilder();
       deleteAgentSettings = settings.deleteAgentSettings.toBuilder();
-      getAgentSettings = settings.getAgentSettings.toBuilder();
       searchAgentsSettings = settings.searchAgentsSettings.toBuilder();
       trainAgentSettings = settings.trainAgentSettings.toBuilder();
       trainAgentOperationSettings = settings.trainAgentOperationSettings.toBuilder();
@@ -611,9 +649,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getAgentSettings,
               setAgentSettings,
               deleteAgentSettings,
-              getAgentSettings,
               searchAgentsSettings,
               trainAgentSettings,
               exportAgentSettings,
@@ -638,6 +676,11 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to getAgent. */
+    public UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings() {
+      return getAgentSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setAgent. */
     public UnaryCallSettings.Builder<SetAgentRequest, Agent> setAgentSettings() {
       return setAgentSettings;
@@ -646,11 +689,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     /** Returns the builder for the settings used for calls to deleteAgent. */
     public UnaryCallSettings.Builder<DeleteAgentRequest, Empty> deleteAgentSettings() {
       return deleteAgentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getAgent. */
-    public UnaryCallSettings.Builder<GetAgentRequest, Agent> getAgentSettings() {
-      return getAgentSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchAgents. */

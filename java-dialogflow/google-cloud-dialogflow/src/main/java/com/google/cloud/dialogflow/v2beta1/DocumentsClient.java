@@ -33,6 +33,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -720,6 +721,37 @@ public class DocumentsClient implements BackgroundResource {
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   Document document = Document.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Document response = documentsClient.updateDocumentAsync(document, updateMask).get();
+   * }
+   * </code></pre>
+   *
+   * @param document Required. The document to update.
+   * @param updateMask Optional. Not specified means `update all`. Currently, only `display_name`
+   *     can be updated, an InvalidArgument will be returned for attempting to update other fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> updateDocumentAsync(
+      Document document, FieldMask updateMask) {
+    UpdateDocumentRequest request =
+        UpdateDocumentRequest.newBuilder().setDocument(document).setUpdateMask(updateMask).build();
+    return updateDocumentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified document.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   Document document = Document.newBuilder().build();
    *   Document response = documentsClient.updateDocumentAsync(document).get();
    * }
    * </code></pre>
@@ -831,16 +863,22 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
-   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
-   *   Operation response = documentsClient.reloadDocument(request);
+   *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Document response = documentsClient.reloadDocumentAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation reloadDocument(ReloadDocumentRequest request) {
-    return reloadDocumentCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> reloadDocumentAsync(
+      ReloadDocumentRequest request) {
+    return reloadDocumentOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -857,7 +895,40 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
-   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder().build();
+   *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Document, KnowledgeOperationMetadata&gt; future = documentsClient.reloadDocumentOperationCallable().futureCall(request);
+   *   // Do something
+   *   Document response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationCallable() {
+    return stub.reloadDocumentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Reloads the specified document from its specified source, content_uri or content. The
+   * previously loaded content of the document will be deleted. Note: Even when the content of the
+   * document has not changed, there still may be side effects because of internal implementation
+   * changes.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;Operation&gt; future = documentsClient.reloadDocumentCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
