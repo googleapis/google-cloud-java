@@ -86,6 +86,24 @@ use this Dialogflow API Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Detect Intent Audio | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentAudio.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentAudio.java) |
+| Detect Intent Knowledge | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentKnowledge.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentKnowledge.java) |
+| Detect Intent Stream | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentStream.java) |
+| Detect Intent Texts | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentTexts.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentTexts.java) |
+| Detect Intent With Sentiment Analysis | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentWithSentimentAnalysis.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentWithSentimentAnalysis.java) |
+| Detect Intent With Text To Speech Response | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DetectIntentWithTextToSpeechResponse.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DetectIntentWithTextToSpeechResponse.java) |
+| Document Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/DocumentManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/DocumentManagement.java) |
+| Intent Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/IntentManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/IntentManagement.java) |
+| Knowledge Base Management | [source code](https://github.com/googleapis/java-dialogflow/blob/master/samples/snippets/src/main/java/com/example/dialogflow/KnowledgeBaseManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/dialogflow/KnowledgeBaseManagement.java) |
+
+
 
 ## Troubleshooting
 
