@@ -42,13 +42,12 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-secretmanager</artifactId>
     </dependency>
+    <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
       <version>3.12.4</version>
     </dependency>
-
-    <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
