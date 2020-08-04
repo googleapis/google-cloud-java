@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.108.1](https://www.github.com/googleapis/java-pubsub/compare/v1.108.0...v1.108.1) (2020-08-04)
+
+
+### Bug Fixes
+
+* add header providers to PublisherStubSettings ([#294](https://www.github.com/googleapis/java-pubsub/issues/294)) ([6bd5016](https://www.github.com/googleapis/java-pubsub/commit/6bd5016dafe85c7af92a44a8e9a34b2fcb95e64d))
+* if a flow control setting is not provided use zero ([#292](https://www.github.com/googleapis/java-pubsub/issues/292)) ([d56155b](https://www.github.com/googleapis/java-pubsub/commit/d56155b640d13fa78d28031862aabe4814ce201d))
+* Make error message more clear about where ordering must be enabled when publishing ([#293](https://www.github.com/googleapis/java-pubsub/issues/293)) ([f54ed02](https://www.github.com/googleapis/java-pubsub/commit/f54ed0284a9c7e1a337481e13388397adfa33abf))
+
+
+### Documentation
+
+* remove experimental warning for ordering keys properties. ([#297](https://www.github.com/googleapis/java-pubsub/issues/297)) ([3fa5164](https://www.github.com/googleapis/java-pubsub/commit/3fa516496315b882da7ffbbc230a3e69acf08a48))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#282](https://www.github.com/googleapis/java-pubsub/issues/282)) ([744c268](https://www.github.com/googleapis/java-pubsub/commit/744c2687d50c79ff8556d455aab60928ab2f790c))
+
 ## [1.108.0](https://www.github.com/googleapis/java-pubsub/compare/v1.107.0...v1.108.0) (2020-07-09)
 
 
