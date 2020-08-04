@@ -20,8 +20,6 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'automl'
 versions = ['v1beta1', 'v1']
 
@@ -32,4 +30,8 @@ for version in versions:
       bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
-java.common_templates()
+java.common_templates(exclude=[
+    '.kokoro/build.sh',
+    '.kokoro/nightly/samples.cfg',
+    '.kokoro/presubmit/samples.cfg',
+])

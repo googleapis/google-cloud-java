@@ -1,40 +1,33 @@
 {
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "2.4.4",
-        "dockerImage": "googleapis/artman@sha256:0da97ae2ac274adc8ee147fd1eb6736f8186d1684b0f58bce91f4295797a5dcd"
-      }
-    },
-    {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "135c6e2fb2de1f58983cbf392625ec7e0c5d9625"
+        "sha": "2b2aa6d712c9e0b0dcfdd3ed7c5beaf15a6b0a6f"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5b85137bf6fb01dcf8a949a6a04eee6ed0c22bec",
-        "internalRef": "317760971"
+        "sha": "868615a5c1c1059c636bb3d82a555edb1d5a251e",
+        "internalRef": "324294521"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5b85137bf6fb01dcf8a949a6a04eee6ed0c22bec",
-        "internalRef": "317760971"
+        "sha": "868615a5c1c1059c636bb3d82a555edb1d5a251e",
+        "internalRef": "324294521"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "dd230c816f88d0141fcd0be83498986287220d1b"
+        "sha": "4f8f5dc24af79694887385015294e4dbb214c352"
       }
     }
   ],
@@ -68,7 +61,6 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
-    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
@@ -94,7 +86,6 @@
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
     ".kokoro/nightly/lint.cfg",
-    ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
@@ -107,7 +98,6 @@
     ".kokoro/presubmit/java8.cfg",
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
-    ".kokoro/presubmit/samples.cfg",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
     ".kokoro/release/common.sh",
