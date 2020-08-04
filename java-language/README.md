@@ -118,6 +118,17 @@ In [AnalyzeSentiment.java](https://github.com/googleapis/google-cloud-java/blob/
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-language/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/com/example/language/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/QuickstartSample.java) |
+| Set Endpoint | [source code](https://github.com/googleapis/java-language/blob/master/samples/snippets/src/main/java/com/example/language/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/SetEndpoint.java) |
+
+
 
 ## Troubleshooting
 
