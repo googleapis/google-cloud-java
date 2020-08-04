@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "d3d5ef1effb1f1f61ee8a24ec8db9dd2a775e327"
+        "sha": "f9613027fbe0acc65653668fd22c0c3e92f2e7cd"
       }
     },
     {
@@ -62,7 +62,6 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
-    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
