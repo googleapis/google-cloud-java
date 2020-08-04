@@ -1,5 +1,48 @@
 # Changelog
 
+### [1.116.8](https://www.github.com/googleapis/java-bigquery/compare/v1.116.7...v1.116.8) (2020-08-04)
+
+
+### Reverts
+
+* Revert "docs(samples): add undelete table (#611)" (#620) ([e28abed](https://www.github.com/googleapis/java-bigquery/commit/e28abed3cd414cc7432ea188eacde8b53b7819e3)), closes [#611](https://www.github.com/googleapis/java-bigquery/issues/611) [#620](https://www.github.com/googleapis/java-bigquery/issues/620)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200719-1.30.10 ([#602](https://www.github.com/googleapis/java-bigquery/issues/602)) ([8dc5bc3](https://www.github.com/googleapis/java-bigquery/commit/8dc5bc3851124b340a3454ce4df54ff44ac44379))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.4 ([#639](https://www.github.com/googleapis/java-bigquery/issues/639)) ([46f929b](https://www.github.com/googleapis/java-bigquery/commit/46f929b1ac9a4a731c98e83b444d29573ab8572d))
+
+
+### Documentation
+
+* **samples:** add authorized view tutorial ([#637](https://www.github.com/googleapis/java-bigquery/issues/637)) ([91cdf72](https://www.github.com/googleapis/java-bigquery/commit/91cdf72efc93dc9fcf06a25b06ef227fa43359ed))
+* **samples:** add delete dataset and contents ([#629](https://www.github.com/googleapis/java-bigquery/issues/629)) ([209d035](https://www.github.com/googleapis/java-bigquery/commit/209d035c66fe776ad31db848d4d1b7c669f73595))
+* **samples:** add load json table with overwrite data from gcs ([#582](https://www.github.com/googleapis/java-bigquery/issues/582)) ([f127475](https://www.github.com/googleapis/java-bigquery/commit/f127475100a307970a0af5227d367d790b434775))
+* **samples:** add load orc file and overwrite data into a table from gcs ([#584](https://www.github.com/googleapis/java-bigquery/issues/584)) ([b3621df](https://www.github.com/googleapis/java-bigquery/commit/b3621df78f2c06cefdb637048dd91e11dbf8256f))
+* **samples:** add query disable cache ([#595](https://www.github.com/googleapis/java-bigquery/issues/595)) ([8ef8db2](https://www.github.com/googleapis/java-bigquery/commit/8ef8db2e2fbcbff5136b18423746b25384a082ef))
+* **samples:** add query dry run ([#587](https://www.github.com/googleapis/java-bigquery/issues/587)) ([55cd52c](https://www.github.com/googleapis/java-bigquery/commit/55cd52cf5e0f06afcbb7c1d961daca04cc5fe7a9))
+* **samples:** add query legacy large results ([#594](https://www.github.com/googleapis/java-bigquery/issues/594)) ([4787dd0](https://www.github.com/googleapis/java-bigquery/commit/4787dd07202b6312b1a25957fee6a14e500dce48))
+* **samples:** add query on external table from gcs ([#588](https://www.github.com/googleapis/java-bigquery/issues/588)) ([64bed25](https://www.github.com/googleapis/java-bigquery/commit/64bed2591daefed7bb8c8f93aa0a3d748a41a20d))
+* **samples:** add query on external temp table from gcs ([#593](https://www.github.com/googleapis/java-bigquery/issues/593)) ([ef757ad](https://www.github.com/googleapis/java-bigquery/commit/ef757ad44dcc2745f2d07b799a1af63166d79d4f))
+* **samples:** add query pagination ([#596](https://www.github.com/googleapis/java-bigquery/issues/596)) ([918c8bd](https://www.github.com/googleapis/java-bigquery/commit/918c8bd78d3654120f18db49058085c321c05819))
+* **samples:** add query partitioned table ([#597](https://www.github.com/googleapis/java-bigquery/issues/597)) ([055ebc0](https://www.github.com/googleapis/java-bigquery/commit/055ebc09b36afc278a728d5ce1af5362ea0b5794))
+* **samples:** add query script ([#605](https://www.github.com/googleapis/java-bigquery/issues/605)) ([ca07302](https://www.github.com/googleapis/java-bigquery/commit/ca073025b8d156bf9e76656fb36f49a5f81927c9))
+* **samples:** add query total rows ([#609](https://www.github.com/googleapis/java-bigquery/issues/609)) ([0da5fd1](https://www.github.com/googleapis/java-bigquery/commit/0da5fd16747445819212741dd55c224b867f1629))
+* **samples:** add query with arrays parameters ([#603](https://www.github.com/googleapis/java-bigquery/issues/603)) ([1eeffe6](https://www.github.com/googleapis/java-bigquery/commit/1eeffe6c8cc6cf131137cfadef46782012d6e47f))
+* **samples:** add query with name types parameters ([#633](https://www.github.com/googleapis/java-bigquery/issues/633)) ([082f1a2](https://www.github.com/googleapis/java-bigquery/commit/082f1a2c2aeeaf1243681bee921fc54328969728))
+* **samples:** add query with positional type parameters ([#634](https://www.github.com/googleapis/java-bigquery/issues/634)) ([208883c](https://www.github.com/googleapis/java-bigquery/commit/208883c2205abeeaee6c5162253eefc569fcba78))
+* **samples:** add query with timestamp parameters ([#604](https://www.github.com/googleapis/java-bigquery/issues/604)) ([0abdd90](https://www.github.com/googleapis/java-bigquery/commit/0abdd902ec4a6758be4aed91b16a3df0c0afbd94))
+* **samples:** add table exists ([#610](https://www.github.com/googleapis/java-bigquery/issues/610)) ([db9eef7](https://www.github.com/googleapis/java-bigquery/commit/db9eef76c066ba2b57fe2b6f64d6c966474b9071))
+* **samples:** add undelete table ([#611](https://www.github.com/googleapis/java-bigquery/issues/611)) ([6c763d5](https://www.github.com/googleapis/java-bigquery/commit/6c763d58f2f13f52a44983b56b74b300a17468cc))
+* **samples:** add update dataset partition expiration ([#612](https://www.github.com/googleapis/java-bigquery/issues/612)) ([720b5ac](https://www.github.com/googleapis/java-bigquery/commit/720b5acfe2f9f46eebb18b6e5d0db881b0ad7e2a))
+* **samples:** add update model description ([#617](https://www.github.com/googleapis/java-bigquery/issues/617)) ([a8cb797](https://www.github.com/googleapis/java-bigquery/commit/a8cb797ab9f758c1af74faa84e8f71bf76a69223))
+* **samples:** add update routine ([#618](https://www.github.com/googleapis/java-bigquery/issues/618)) ([a889800](https://www.github.com/googleapis/java-bigquery/commit/a889800b16483a85400198b2cb261d95afb2c69b))
+* **samples:** add update table cmek ([#619](https://www.github.com/googleapis/java-bigquery/issues/619)) ([31cc937](https://www.github.com/googleapis/java-bigquery/commit/31cc9375c78156643b03374fddeb7aab4b26b4f3))
+* **samples:** add update table require partition filter ([#624](https://www.github.com/googleapis/java-bigquery/issues/624)) ([29272bb](https://www.github.com/googleapis/java-bigquery/commit/29272bb9a3238b2f0dab2e44b23db6909d3809a2))
+* **samples:** load orc file into a table from gcs ([#583](https://www.github.com/googleapis/java-bigquery/issues/583)) ([cbb1902](https://www.github.com/googleapis/java-bigquery/commit/cbb1902e1e3d7017b1cd9be0e51243e5840ace96))
+* **samples:** update view query ([#625](https://www.github.com/googleapis/java-bigquery/issues/625)) ([8d71720](https://www.github.com/googleapis/java-bigquery/commit/8d717202ed36f55dd141ba45243f2dc30b597d99))
+
 ### [1.116.7](https://www.github.com/googleapis/java-bigquery/compare/v1.116.6...v1.116.7) (2020-07-21)
 
 
