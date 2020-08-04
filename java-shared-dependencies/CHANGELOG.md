@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.8.4](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.3...v0.8.4) (2020-08-04)
+
+
+### Dependencies
+
+* update core dependencies ([#104](https://www.github.com/googleapis/java-shared-dependencies/issues/104)) ([5046818](https://www.github.com/googleapis/java-shared-dependencies/commit/504681803d2bba888404acffe9a8853746501358))
+* update dependency com.google.api:api-common to v1.10.0 ([#101](https://www.github.com/googleapis/java-shared-dependencies/issues/101)) ([6472fac](https://www.github.com/googleapis/java-shared-dependencies/commit/6472face89700e3f2f982c04a5e88801876580be))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.4 ([#103](https://www.github.com/googleapis/java-shared-dependencies/issues/103)) ([885bd0e](https://www.github.com/googleapis/java-shared-dependencies/commit/885bd0ef3c9e344bd1fc60e0f3264995064001d9))
+
 ### [0.8.3](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.2...v0.8.3) (2020-07-09)
 
 
