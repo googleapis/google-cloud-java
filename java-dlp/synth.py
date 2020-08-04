@@ -30,4 +30,8 @@ for version in versions:
       destination_name='dlp',
   )
 
-java.common_templates()
+java.common_templates(excludes=[
+    '.kokoro/presubmit/samples.cfg',
+    '.kokoro/nightly/samples.cfg',
+    '.kokoro/build.sh',
+])
