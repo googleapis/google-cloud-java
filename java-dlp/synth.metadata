@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "dac8c202408f0855cacc7697e4bd47216a3fdd14"
+        "sha": "5a3686f6703c1e23cddc86e01029d9660af27042"
       }
     },
     {
@@ -57,6 +57,7 @@
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/lint.cfg",
     ".kokoro/continuous/propose_release.cfg",
+    ".kokoro/continuous/samples.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
@@ -80,7 +81,6 @@
     ".kokoro/presubmit/java8.cfg",
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
-    ".kokoro/presubmit/samples.cfg",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
     ".kokoro/release/common.sh",
