@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -23,7 +26,20 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall.SimpleForwardingClientCall;
+import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
+import io.grpc.Grpc;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 import javax.annotation.Nullable;
 
 /**
@@ -37,6 +53,10 @@ import javax.annotation.Nullable;
  * </ul>
  */
 class CloudEnv extends AbstractTestEnv {
+  // IP address prefixes allocated for DirectPath backends.
+  public static final String DP_IPV6_PREFIX = "2001:4860:8040";
+  public static final String DP_IPV4_PREFIX = "34.126";
+
   private static final String DATA_ENDPOINT_PROPERTY_NAME = "bigtable.data-endpoint";
   private static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
 
@@ -79,6 +99,26 @@ class CloudEnv extends AbstractTestEnv {
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
     if (!Strings.isNullOrEmpty(dataEndpoint)) {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
+    }
+
+    if (isDirectPathEnabled()) {
+      TransportChannelProvider channelProvider =
+          dataSettings.stubSettings().getTransportChannelProvider();
+      InstantiatingGrpcChannelProvider defaultTransportProvider =
+          (InstantiatingGrpcChannelProvider) channelProvider;
+      InstantiatingGrpcChannelProvider instrumentedTransportChannelProvider =
+          defaultTransportProvider
+              .toBuilder()
+              .setChannelConfigurator(
+                  new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                    @Override
+                    public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
+                      builder.intercept(directPathAddressCheckInterceptor());
+                      return builder;
+                    }
+                  })
+              .build();
+      dataSettings.stubSettings().setTransportChannelProvider(instrumentedTransportChannelProvider);
     }
 
     this.tableAdminSettings =
@@ -152,5 +192,58 @@ class CloudEnv extends AbstractTestEnv {
       throw new RuntimeException("Missing system property: " + prop);
     }
     return value;
+  }
+
+  /**
+   * Captures the request attributes "Grpc.TRANSPORT_ATTR_REMOTE_ADDR" when connection is
+   * established and verifies if the remote address is a DirectPath address. This is only used for
+   * DirectPath testing. {@link ClientCall#getAttributes()}
+   */
+  private ClientInterceptor directPathAddressCheckInterceptor() {
+    return new ClientInterceptor() {
+      @Override
+      public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+          MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        final ClientCall<ReqT, RespT> clientCall = next.newCall(method, callOptions);
+        return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
+          @Override
+          public void start(Listener<RespT> responseListener, Metadata headers) {
+            super.start(
+                new SimpleForwardingClientCallListener<RespT>(responseListener) {
+                  @Override
+                  public void onHeaders(Metadata headers) {
+                    // Check peer IP after connection is established.
+                    SocketAddress remoteAddr =
+                        clientCall.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
+                    if (!verifyRemoteAddress(remoteAddr)) {
+                      throw new RuntimeException(
+                          String.format(
+                              "Synthetically aborting the current request because it did not adhere"
+                                  + " to the test environment's requirement for DirectPath."
+                                  + " Expected test to access DirectPath via %s,"
+                                  + " but RPC was destined for %s",
+                              isDirectPathIpv4() ? "ipv4" : "ipv6", remoteAddr.toString()));
+                    }
+                    super.onHeaders(headers);
+                  }
+                },
+                headers);
+          }
+        };
+      }
+    };
+  }
+
+  private boolean verifyRemoteAddress(SocketAddress remoteAddr) {
+    if (remoteAddr instanceof InetSocketAddress) {
+      InetAddress inetAddress = ((InetSocketAddress) remoteAddr).getAddress();
+      String addr = inetAddress.getHostAddress();
+      if (isDirectPathIpv4()) {
+        return addr.startsWith(DP_IPV4_PREFIX);
+      } else {
+        return addr.startsWith(DP_IPV6_PREFIX);
+      }
+    }
+    return true;
   }
 }

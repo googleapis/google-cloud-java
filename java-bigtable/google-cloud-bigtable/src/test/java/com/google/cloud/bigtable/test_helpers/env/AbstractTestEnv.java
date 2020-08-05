@@ -78,6 +78,10 @@ public abstract class AbstractTestEnv {
     return Boolean.getBoolean("bigtable.attempt-directpath");
   }
 
+  public boolean isDirectPathIpv4() {
+    return Boolean.getBoolean("bigtable.directpath-ipv4");
+  }
+
   public String getPrimaryZone() {
     return "us-central1-b";
   }
