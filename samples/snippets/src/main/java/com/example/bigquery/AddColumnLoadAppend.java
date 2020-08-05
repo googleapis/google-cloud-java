@@ -36,9 +36,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+// Sample to append column in existing table.
 public class AddColumnLoadAppend {
 
-  public static void runAddColumnLoadAppend() throws Exception {
+  public static void runAddColumnLoadAppend() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
@@ -65,7 +66,7 @@ public class AddColumnLoadAppend {
   }
 
   public static void addColumnLoadAppend(
-      String datasetName, String tableName, String sourceUri, Schema newSchema) throws Exception {
+      String datasetName, String tableName, String sourceUri, Schema newSchema) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -87,19 +88,16 @@ public class AddColumnLoadAppend {
 
       // Load data from a GCS parquet file into the table
       // Blocks until this load table job completes its execution, either failing or succeeding.
-      Job completedJob = loadJob.waitFor();
+      Job job = loadJob.waitFor();
 
       // Check for errors
-      if (completedJob == null) {
-        throw new Exception("Job not executed since it no longer exists.");
-      } else if (completedJob.getStatus().getError() != null) {
-        // You can also look at queryJob.getStatus().getExecutionErrors() for all
-        // errors, not just the latest one.
-        throw new Exception(
-            "BigQuery was unable to load into the table due to an error: \n"
-                + loadJob.getStatus().getError());
+      if (job.isDone() && job.getStatus().getError() == null) {
+        System.out.println("Column successfully added during load append job");
+      } else {
+        System.out.println(
+            "BigQuery was unable to load into the table due to an error:"
+                + job.getStatus().getError());
       }
-      System.out.println("Column successfully added during load append job");
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Column not added during load append \n" + e.toString());
     }

@@ -17,7 +17,6 @@
 package com.example.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.LegacySQLTypeName;
@@ -26,21 +25,28 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AddColumnLoadAppendIT {
+
+  private String tableName;
+  private Schema schema;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
+  private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
+    Assert.assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -53,41 +59,41 @@ public class AddColumnLoadAppendIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-  }
 
-  @After
-  public void tearDown() {
-    System.setOut(null);
-  }
-
-  @Test
-  public void testAddColumnLoadAppend() throws Exception {
-    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
-
-    String tableName = "ADD_COLUMN_LOAD_APPEND_TEST";
-    Schema originalSchema =
+    // create a test table.
+    tableName = "ADD_COLUMN_LOAD_APPEND_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    schema =
         Schema.of(
             Field.newBuilder("name", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.REQUIRED)
                 .build());
 
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, originalSchema);
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
 
-    List<Field> fields = originalSchema.getFields();
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+  }
+
+  @After
+  public void tearDown() {
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    System.setOut(null);
+  }
+
+  @Test
+  public void testAddColumnLoadAppend() {
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
     // Adding below additional column during the load job
     Field newField =
         Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
             .setMode(Field.Mode.NULLABLE)
             .build();
-    List<Field> newFields = new ArrayList<>(fields);
+    List<Field> newFields = new ArrayList<>(schema.getFields());
     newFields.add(newField);
-    Schema newSchema = Schema.of(newFields);
-
-    AddColumnLoadAppend.addColumnLoadAppend(BIGQUERY_DATASET_NAME, tableName, sourceUri, newSchema);
-
+    AddColumnLoadAppend.addColumnLoadAppend(
+        BIGQUERY_DATASET_NAME, tableName, sourceUri, Schema.of(newFields));
     assertThat(bout.toString()).contains("Column successfully added during load append job");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }
