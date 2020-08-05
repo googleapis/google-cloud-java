@@ -90,7 +90,7 @@ class LoggingConfig {
           Class<? extends LoggingEnhancer> clz =
               (Class<? extends LoggingEnhancer>)
                   ClassLoader.getSystemClassLoader().loadClass(e_name);
-          enhancers.add(clz.newInstance());
+          enhancers.add(clz.getDeclaredConstructor().newInstance());
         }
       }
       return enhancers;
@@ -122,7 +122,7 @@ class LoggingConfig {
     try {
       if (stringFilter != null) {
         Class clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
-        return (Filter) clz.newInstance();
+        return (Filter) clz.getDeclaredConstructor().newInstance();
       }
     } catch (Exception ex) {
       // If we cannot create the filter we fall back to default value
@@ -135,7 +135,7 @@ class LoggingConfig {
     try {
       if (stringFilter != null) {
         Class clz = ClassLoader.getSystemClassLoader().loadClass(stringFilter);
-        return (Formatter) clz.newInstance();
+        return (Formatter) clz.getDeclaredConstructor().newInstance();
       }
     } catch (Exception ex) {
       // If we cannot create the filter we fall back to default value
