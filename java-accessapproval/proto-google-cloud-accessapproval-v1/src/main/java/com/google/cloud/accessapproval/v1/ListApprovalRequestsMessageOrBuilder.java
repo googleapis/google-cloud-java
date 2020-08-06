@@ -56,13 +56,11 @@ public interface ListApprovalRequestsMessageOrBuilder
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
-   * &lt;ol&gt;
-   *   &lt;li&gt;[not set]: Requests that are pending or have active approvals.&lt;/li&gt;
-   *   &lt;li&gt;ALL: All requests.&lt;/li&gt;
-   *   &lt;li&gt;PENDING: Only pending requests.&lt;/li&gt;
-   *   &lt;li&gt;ACTIVE: Only active (i.e. currently approved) requests.&lt;/li&gt;
-   *   &lt;li&gt;DISMISSED: Only dismissed (including expired) requests.&lt;/li&gt;
-   * &lt;/ol&gt;
+   * - [not set]: Requests that are pending or have active approvals.
+   * - ALL: All requests.
+   * - PENDING: Only pending requests.
+   * - ACTIVE: Only active (i.e. currently approved) requests.
+   * - DISMISSED: Only dismissed (including expired) requests.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -76,13 +74,11 @@ public interface ListApprovalRequestsMessageOrBuilder
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
-   * &lt;ol&gt;
-   *   &lt;li&gt;[not set]: Requests that are pending or have active approvals.&lt;/li&gt;
-   *   &lt;li&gt;ALL: All requests.&lt;/li&gt;
-   *   &lt;li&gt;PENDING: Only pending requests.&lt;/li&gt;
-   *   &lt;li&gt;ACTIVE: Only active (i.e. currently approved) requests.&lt;/li&gt;
-   *   &lt;li&gt;DISMISSED: Only dismissed (including expired) requests.&lt;/li&gt;
-   * &lt;/ol&gt;
+   * - [not set]: Requests that are pending or have active approvals.
+   * - ALL: All requests.
+   * - PENDING: Only pending requests.
+   * - ACTIVE: Only active (i.e. currently approved) requests.
+   * - DISMISSED: Only dismissed (including expired) requests.
    * </pre>
    *
    * <code>string filter = 2;</code>

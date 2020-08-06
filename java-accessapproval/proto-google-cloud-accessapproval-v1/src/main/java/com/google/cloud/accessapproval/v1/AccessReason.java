@@ -137,14 +137,12 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Customer made a request or raised an issue that required the principal to
      * access customer data. `detail` is of the form ("#####" is the issue ID):
-     * &lt;ol&gt;
-     *   &lt;li&gt;"Feedback Report: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Case Number: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Case ID: #####"&lt;/li&gt;
-     *   &lt;li&gt;"E-PIN Reference: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Google-#####"&lt;/li&gt;
-     *   &lt;li&gt;"T-#####"&lt;/li&gt;
-     * &lt;/ol&gt;
+     * - "Feedback Report: #####"
+     * - "Case Number: #####"
+     * - "Case ID: #####"
+     * - "E-PIN Reference: #####"
+     * - "Google-#####"
+     * - "T-#####"
      * </pre>
      *
      * <code>CUSTOMER_INITIATED_SUPPORT = 1;</code>
@@ -193,14 +191,12 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Customer made a request or raised an issue that required the principal to
      * access customer data. `detail` is of the form ("#####" is the issue ID):
-     * &lt;ol&gt;
-     *   &lt;li&gt;"Feedback Report: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Case Number: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Case ID: #####"&lt;/li&gt;
-     *   &lt;li&gt;"E-PIN Reference: #####"&lt;/li&gt;
-     *   &lt;li&gt;"Google-#####"&lt;/li&gt;
-     *   &lt;li&gt;"T-#####"&lt;/li&gt;
-     * &lt;/ol&gt;
+     * - "Feedback Report: #####"
+     * - "Case Number: #####"
+     * - "Case ID: #####"
+     * - "E-PIN Reference: #####"
+     * - "Google-#####"
+     * - "T-#####"
      * </pre>
      *
      * <code>CUSTOMER_INITIATED_SUPPORT = 1;</code>

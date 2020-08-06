@@ -155,11 +155,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
-   * &lt;ol&gt;
-   *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-   *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-   *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-   * &lt;ol&gt;
+   * - "projects/{project_id}/accessApprovalSettings"
+   * - "folders/{folder_id}/accessApprovalSettings"
+   * - "organizations/{organization_id}/accessApprovalSettings"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -183,11 +181,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The resource name of the settings. Format is one of:
-   * &lt;ol&gt;
-   *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-   *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-   *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-   * &lt;ol&gt;
+   * - "projects/{project_id}/accessApprovalSettings"
+   * - "folders/{folder_id}/accessApprovalSettings"
+   * - "organizations/{organization_id}/accessApprovalSettings"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -849,11 +845,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * &lt;ol&gt;
-     *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-     * &lt;ol&gt;
+     * - "projects/{project_id}/accessApprovalSettings"
+     * - "folders/{folder_id}/accessApprovalSettings"
+     * - "organizations/{organization_id}/accessApprovalSettings"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -876,11 +870,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * &lt;ol&gt;
-     *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-     * &lt;ol&gt;
+     * - "projects/{project_id}/accessApprovalSettings"
+     * - "folders/{folder_id}/accessApprovalSettings"
+     * - "organizations/{organization_id}/accessApprovalSettings"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -903,11 +895,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * &lt;ol&gt;
-     *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-     * &lt;ol&gt;
+     * - "projects/{project_id}/accessApprovalSettings"
+     * - "folders/{folder_id}/accessApprovalSettings"
+     * - "organizations/{organization_id}/accessApprovalSettings"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -929,11 +919,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * &lt;ol&gt;
-     *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-     * &lt;ol&gt;
+     * - "projects/{project_id}/accessApprovalSettings"
+     * - "folders/{folder_id}/accessApprovalSettings"
+     * - "organizations/{organization_id}/accessApprovalSettings"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -951,11 +939,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The resource name of the settings. Format is one of:
-     * &lt;ol&gt;
-     *   &lt;li&gt;"projects/{project_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"folders/{folder_id}/accessApprovalSettings"&lt;/li&gt;
-     *   &lt;li&gt;"organizations/{organization_id}/accessApprovalSettings"&lt;/li&gt;
-     * &lt;ol&gt;
+     * - "projects/{project_id}/accessApprovalSettings"
+     * - "folders/{folder_id}/accessApprovalSettings"
+     * - "organizations/{organization_id}/accessApprovalSettings"
      * </pre>
      *
      * <code>string name = 1;</code>
