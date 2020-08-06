@@ -76,7 +76,7 @@ public class ProtoSchemaConverterTest {
             + "  number: 8\n"
             + "  label: LABEL_OPTIONAL\n"
             + "  type: TYPE_ENUM\n"
-            + "  type_name: \"com_google_cloud_bigquery_storage_test_TestEnum\"\n"
+            + "  type_name: \"com_google_cloud_bigquery_storage_test_TestEnum_E.TestEnum\"\n"
             + "}\n"
             + "field {\n"
             + "  name: \"string_value\"\n"
@@ -84,15 +84,18 @@ public class ProtoSchemaConverterTest {
             + "  label: LABEL_REQUIRED\n"
             + "  type: TYPE_STRING\n"
             + "}\n"
-            + "enum_type {\n"
-            + "  name: \"com_google_cloud_bigquery_storage_test_TestEnum\"\n"
-            + "  value {\n"
-            + "    name: \"TestEnum0\"\n"
-            + "    number: 0\n"
-            + "  }\n"
-            + "  value {\n"
-            + "    name: \"TestEnum1\"\n"
-            + "    number: 1\n"
+            + "nested_type {\n"
+            + "  name: \"com_google_cloud_bigquery_storage_test_TestEnum_E\"\n"
+            + "  enum_type {\n"
+            + "    name: \"TestEnum\"\n"
+            + "    value {\n"
+            + "      name: \"TestEnum0\"\n"
+            + "      number: 0\n"
+            + "    }\n"
+            + "    value {\n"
+            + "      name: \"TestEnum1\"\n"
+            + "      number: 1\n"
+            + "    }\n"
             + "  }\n"
             + "}\n",
         protoSchema.getProtoDescriptor().toString());
@@ -150,7 +153,7 @@ public class ProtoSchemaConverterTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       Assert.assertEquals(
-          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.ContainsRecursive",
+          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.RecursiveType",
           e.getMessage());
     }
   }

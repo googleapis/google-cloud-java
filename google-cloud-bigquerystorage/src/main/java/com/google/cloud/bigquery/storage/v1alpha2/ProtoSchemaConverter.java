@@ -30,6 +30,10 @@ import java.util.*;
 // protobuf::DescriptorProto
 // that can be reconstructed by the backend.
 public class ProtoSchemaConverter {
+  private static String getNameFromFullName(String fullName) {
+    return fullName.replace('.', '_');
+  }
+
   private static ProtoSchema convertInternal(
       Descriptor input,
       Set<String> visitedTypes,
@@ -40,8 +44,8 @@ public class ProtoSchemaConverter {
     if (rootProtoSchema == null) {
       rootProtoSchema = resultProto;
     }
-    String protoName = input.getFullName();
-    protoName = protoName.replace('.', '_');
+    String protoFullName = input.getFullName();
+    String protoName = getNameFromFullName(protoFullName);
     resultProto.setName(protoName);
     Set<String> localEnumTypes = new HashSet<String>();
     visitedTypes.add(input.getFullName());
@@ -51,9 +55,9 @@ public class ProtoSchemaConverter {
       if (inputField.getType() == FieldDescriptor.Type.GROUP
           || inputField.getType() == FieldDescriptor.Type.MESSAGE) {
         String msgFullName = inputField.getMessageType().getFullName();
-        msgFullName = msgFullName.replace('.', '_');
+        String msgName = getNameFromFullName(msgFullName);
         if (structTypes.contains(msgFullName)) {
-          resultField.setTypeName(msgFullName);
+          resultField.setTypeName(msgName);
         } else {
           if (visitedTypes.contains(msgFullName)) {
             throw new InvalidArgumentException(
@@ -76,42 +80,32 @@ public class ProtoSchemaConverter {
               rootProtoSchema.getNestedType(rootProtoSchema.getNestedTypeCount() - 1).getName());
         }
       }
+
       if (inputField.getType() == FieldDescriptor.Type.ENUM) {
+        // For enums, in order to avoid value conflict, we will always define
+        // a enclosing struct called enum_full_name_E that includes the actual
+        // enum.
         String enumFullName = inputField.getEnumType().getFullName();
-        // If the enum is defined within the current message, we don't want to
-        // pull it out to the top since then the same enum values will not be
-        // allowed if the value collides with other enums.
-        if (enumFullName.startsWith(input.getFullName())) {
-          String enumName = inputField.getEnumType().getName();
-          if (localEnumTypes.contains(enumName)) {
-            resultField.setTypeName(enumName);
-          } else {
-            resultProto.addEnumType(inputField.getEnumType().toProto());
-            resultField.setTypeName(enumName);
-            localEnumTypes.add(enumName);
-          }
+        String enclosingTypeName = getNameFromFullName(enumFullName) + "_E";
+        String enumName = inputField.getEnumType().getName();
+        String actualEnumFullName = enclosingTypeName + "." + enumName;
+        if (enumTypes.contains(enumFullName)) {
+          resultField.setTypeName(actualEnumFullName);
         } else {
-          // If the enum is defined elsewhere, then redefine it at the top
-          // message scope. There is a problem that different enum values might
-          // be OK when living under its original scope, but when they all live
-          // in top scope, their values cannot collide. Say if thers A.Color with
-          // RED and B.Color with RED, if they are redefined here, the RED will
-          // collide with each other and thus not allowed.
-          enumFullName = enumFullName.replace('.', '_');
-          if (enumTypes.contains(enumFullName)) {
-            resultField.setTypeName(enumFullName);
-          } else {
-            EnumDescriptorProto enumType =
-                inputField.getEnumType().toProto().toBuilder().setName(enumFullName).build();
-            resultProto.addEnumType(enumType);
-            resultField.setTypeName(enumFullName);
-            enumTypes.add(enumFullName);
-          }
+          EnumDescriptorProto enumType = inputField.getEnumType().toProto();
+          resultProto.addNestedType(
+              DescriptorProto.newBuilder()
+                  .setName(enclosingTypeName)
+                  .addEnumType(enumType.toBuilder().setName(enumName))
+                  .build());
+          resultField.setTypeName(actualEnumFullName);
+          enumTypes.add(enumFullName);
         }
       }
       resultProto.addField(resultField);
     }
-    structTypes.add(protoName);
+    structTypes.add(protoFullName);
+
     return ProtoSchema.newBuilder().setProtoDescriptor(resultProto.build()).build();
   }
 
