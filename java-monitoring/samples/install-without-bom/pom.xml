@@ -23,8 +23,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start:google-cloud-monitoring:released} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-monitoring:released} -->
     <!-- [START monitoring_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -32,13 +32,13 @@
       <version>1.100.2-SNAPSHOT</version>
     </dependency>
     <!-- [END monitoring_install_without_bom] -->
+    <!-- {x-version-update-end} -->
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-      <version>3.12.2</version>
+      <version>3.12.4</version>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
