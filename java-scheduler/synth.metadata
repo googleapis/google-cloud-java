@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "1765b6cb21d39362d7d9c7720a2ac56ba355ae66"
+        "sha": "c0d5bbe54cd561ad7de418d6d008b696a5b1f058"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "4f2c9f752a94042472fc03c5bd9e06e89817d2bd"
+        "sha": "dd230c816f88d0141fcd0be83498986287220d1b"
       }
     }
   ],
