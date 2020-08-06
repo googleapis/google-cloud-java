@@ -4,22 +4,22 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "563bd47f76e20b308b8db1491f60618e8cfe5aee"
+        "sha": "950d224fff63ef8c87a6604c436d3e144f8f28b3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "94fe3637559a257634d7b47a15bb8d976daff788",
-        "internalRef": "316039767"
+        "sha": "96ef637adf148d54236ad83fefa30c7f75f29737",
+        "internalRef": "325052820"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "dd230c816f88d0141fcd0be83498986287220d1b"
+        "sha": "4530cc6ff080ef8aca258c1ec92c4db10a1bbfb4"
       }
     }
   ],
@@ -57,26 +57,15 @@
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
-    ".kokoro/continuous/dependencies.cfg",
-    ".kokoro/continuous/integration.cfg",
-    ".kokoro/continuous/java11.cfg",
-    ".kokoro/continuous/java7.cfg",
-    ".kokoro/continuous/java8-osx.cfg",
-    ".kokoro/continuous/java8-win.cfg",
     ".kokoro/continuous/java8.cfg",
-    ".kokoro/continuous/lint.cfg",
-    ".kokoro/continuous/propose_release.cfg",
-    ".kokoro/continuous/samples.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
-    ".kokoro/nightly/dependencies.cfg",
     ".kokoro/nightly/java11.cfg",
     ".kokoro/nightly/java7.cfg",
     ".kokoro/nightly/java8-osx.cfg",
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
-    ".kokoro/nightly/lint.cfg",
     ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
