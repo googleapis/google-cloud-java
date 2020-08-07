@@ -219,7 +219,7 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/workerPools/{workerPool}
+   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
    * This field is experimental.
    * </pre>
    *
@@ -233,7 +233,7 @@ public interface BuildOptionsOrBuilder
    *
    * <pre>
    * Option to specify a `WorkerPool` for the build.
-   * Format: projects/{project}/workerPools/{workerPool}
+   * Format: projects/{project}/locations/{location}/workerPools/{workerPool}
    * This field is experimental.
    * </pre>
    *
