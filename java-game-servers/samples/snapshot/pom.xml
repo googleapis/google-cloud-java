@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
-      <version>0.20.1-SNAPSHOT</version>
+      <version>0.21.0</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
