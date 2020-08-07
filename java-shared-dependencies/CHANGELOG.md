@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.8.5](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.4...v0.8.5) (2020-08-07)
+
+
+### Dependencies
+
+* update gax to v1.58.1 ([#111](https://www.github.com/googleapis/java-shared-dependencies/issues/111)) ([93a1691](https://www.github.com/googleapis/java-shared-dependencies/commit/93a16915b863a610ffdabe0e23aec58c4ae5f4f1))
+
 ### [0.8.4](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.3...v0.8.4) (2020-08-04)
 
 
