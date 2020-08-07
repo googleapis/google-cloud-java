@@ -15,7 +15,9 @@
  */
 package com.google.cloud.bigquery.storage.v1alpha2;
 
-import com.google.api.core.*;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoRows;

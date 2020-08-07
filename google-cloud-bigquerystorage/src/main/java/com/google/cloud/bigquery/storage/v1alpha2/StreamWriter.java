@@ -29,7 +29,12 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.*;
+import com.google.api.gax.rpc.AbortedException;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientStream;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse;
@@ -37,7 +42,10 @@ import com.google.common.base.Preconditions;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -88,6 +96,7 @@ public class StreamWriter implements AutoCloseable {
   private BigQueryWriteSettings stubSettings;
 
   private final Lock messagesBatchLock;
+  private final Lock appendAndRefreshAppendLock;
   private final MessagesBatch messagesBatch;
 
   private BackgroundResource backgroundResources;
@@ -109,6 +118,11 @@ public class StreamWriter implements AutoCloseable {
   private Duration streamTTL = Duration.ofDays(1);
 
   private Integer currentRetries = 0;
+
+  // Used for schema updates
+  private OnSchemaUpdateRunnable onSchemaUpdateRunnable;
+
+  private final int REFRESH_STREAM_WAIT_TIME = 7;
 
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
@@ -133,6 +147,7 @@ public class StreamWriter implements AutoCloseable {
     this.retrySettings = builder.retrySettings;
     this.messagesBatch = new MessagesBatch(batchingSettings, this.streamName);
     messagesBatchLock = new ReentrantLock();
+    appendAndRefreshAppendLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     executor = builder.executorProvider.getExecutor();
     backgroundResourceList = new ArrayList<>();
@@ -155,8 +170,12 @@ public class StreamWriter implements AutoCloseable {
       stub = builder.client;
     }
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
-
     shutdown = new AtomicBoolean(false);
+    if (builder.onSchemaUpdateRunnable != null) {
+      this.onSchemaUpdateRunnable = builder.onSchemaUpdateRunnable;
+      this.onSchemaUpdateRunnable.setStreamWriter(this);
+    }
+
     refreshAppend();
     Stream.WriteStream stream =
         stub.getWriteStream(Storage.GetWriteStreamRequest.newBuilder().setName(streamName).build());
@@ -181,6 +200,11 @@ public class StreamWriter implements AutoCloseable {
   /** Table name we are writing to. */
   public String getTableNameString() {
     return tableName;
+  }
+
+  /** OnSchemaUpdateRunnable for this streamWriter. */
+  OnSchemaUpdateRunnable getOnSchemaUpdateRunnable() {
+    return this.onSchemaUpdateRunnable;
   }
 
   /** Returns if a stream has expired. */
@@ -216,6 +240,7 @@ public class StreamWriter implements AutoCloseable {
    * @return the message ID wrapped in a future.
    */
   public ApiFuture<AppendRowsResponse> append(AppendRowsRequest message) {
+    appendAndRefreshAppendLock.lock();
     Preconditions.checkState(!shutdown.get(), "Cannot append on a shut-down writer.");
     Preconditions.checkNotNull(message, "Message is null.");
     final AppendRequestAndFutureResponse outstandingAppend =
@@ -234,6 +259,7 @@ public class StreamWriter implements AutoCloseable {
       }
     } finally {
       messagesBatchLock.unlock();
+      appendAndRefreshAppendLock.unlock();
     }
 
     return outstandingAppend.appendResult;
@@ -268,26 +294,34 @@ public class StreamWriter implements AutoCloseable {
    * @throws IOException
    */
   public void refreshAppend() throws IOException, InterruptedException {
-    synchronized (this) {
-      if (shutdown.get()) {
-        LOG.warning("Cannot refresh on a already shutdown writer.");
-        return;
-      }
-      // There could be a moment, stub is not yet initialized.
-      if (clientStream != null) {
-        LOG.info("Closing the stream " + streamName);
-        clientStream.closeSend();
-      }
-      messagesBatch.resetAttachSchema();
-      bidiStreamingCallable = stub.appendRowsCallable();
-      clientStream = bidiStreamingCallable.splitCall(responseObserver);
+    appendAndRefreshAppendLock.lock();
+    if (shutdown.get()) {
+      LOG.warning("Cannot refresh on a already shutdown writer.");
+      appendAndRefreshAppendLock.unlock();
+      return;
     }
+    // There could be a moment, stub is not yet initialized.
+    if (clientStream != null) {
+      LOG.info("Closing the stream " + streamName);
+      clientStream.closeSend();
+    }
+    messagesBatch.resetAttachSchema();
+    bidiStreamingCallable = stub.appendRowsCallable();
+    clientStream = bidiStreamingCallable.splitCall(responseObserver);
     try {
       while (!clientStream.isSendReady()) {
         Thread.sleep(10);
       }
     } catch (InterruptedException expected) {
     }
+    // Currently there is a bug that it took reconnected stream 5 seconds to pick up
+    // stream count. So wait at least 7 seconds before sending a new request.
+    Thread.sleep(
+        Math.max(
+            this.retrySettings.getInitialRetryDelay().toMillis(),
+            Duration.ofSeconds(REFRESH_STREAM_WAIT_TIME).toMillis()));
+    // Can only unlock here since need to sleep the full 7 seconds before stream can allow appends.
+    appendAndRefreshAppendLock.unlock();
     LOG.info("Write Stream " + streamName + " connection established");
   }
 
@@ -620,6 +654,8 @@ public class StreamWriter implements AutoCloseable {
     private CredentialsProvider credentialsProvider =
         BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
 
+    private OnSchemaUpdateRunnable onSchemaUpdateRunnable;
+
     private Builder(String stream, BigQueryWriteClient client) {
       this.streamName = Preconditions.checkNotNull(stream);
       this.client = client;
@@ -743,6 +779,13 @@ public class StreamWriter implements AutoCloseable {
       return this;
     }
 
+    /** Gives the ability to set action on schema update. */
+    public Builder setOnSchemaUpdateRunnable(OnSchemaUpdateRunnable onSchemaUpdateRunnable) {
+      this.onSchemaUpdateRunnable =
+          Preconditions.checkNotNull(onSchemaUpdateRunnable, "onSchemaUpdateRunnable is null.");
+      return this;
+    }
+
     /** Builds the {@code StreamWriter}. */
     public StreamWriter build() throws IllegalArgumentException, IOException, InterruptedException {
       return new StreamWriter(this);
@@ -800,6 +843,13 @@ public class StreamWriter implements AutoCloseable {
         if (response == null) {
           inflightBatch.onFailure(new IllegalStateException("Response is null"));
         }
+        if (response.hasUpdatedSchema()) {
+          if (streamWriter.getOnSchemaUpdateRunnable() != null) {
+            streamWriter.getOnSchemaUpdateRunnable().setUpdatedSchema(response.getUpdatedSchema());
+            streamWriter.executor.schedule(
+                streamWriter.getOnSchemaUpdateRunnable(), 0L, TimeUnit.MILLISECONDS);
+          }
+        }
         // TODO: Deal with in stream errors.
         if (response.hasError()) {
           StatusRuntimeException exception =
@@ -850,12 +900,6 @@ public class StreamWriter implements AutoCloseable {
             if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
                 && !streamWriter.shutdown.get()) {
               streamWriter.refreshAppend();
-              // Currently there is a bug that it took reconnected stream 5 seconds to pick up
-              // stream count. So wait at least 7 seconds before sending a new request.
-              Thread.sleep(
-                  Math.min(
-                      streamWriter.getRetrySettings().getInitialRetryDelay().toMillis(),
-                      Duration.ofSeconds(7).toMillis()));
               LOG.info("Resending requests on transient error:" + streamWriter.currentRetries);
               streamWriter.writeBatch(inflightBatch);
               synchronized (streamWriter.currentRetries) {

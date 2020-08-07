@@ -24,7 +24,8 @@ import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import io.grpc.Status;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 // A Converter class that turns a native protobuf::DescriptorProto to a self contained
 // protobuf::DescriptorProto

@@ -63,6 +63,17 @@ message FooType {
   optional string foo = 1;
 }
 
+message UpdatedFooType {
+  optional string foo = 1;
+  optional string bar = 2;
+}
+
+message UpdatedFooType2 {
+  optional string foo = 1;
+  optional string bar = 2;
+  optional string baz = 3;
+}
+
 message DuplicateType {
   optional TestEnum f1 = 1;
   optional TestEnum f2 = 2;
