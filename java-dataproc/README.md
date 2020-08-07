@@ -29,6 +29,25 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataproc</artifactId>
   </dependency>
+  <!-- BEGIN_EXCLUDE -->
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-storage</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>com.google.truth</groupId>
+    <artifactId>truth</artifactId>
+    <version>1.0.1</version>
+    <scope>test</scope>
+  </dependency>
+  <!-- END_EXCLUDE -->
+</dependencies>
 
 ```
 
@@ -84,6 +103,20 @@ use this Dataproc Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-dataproc/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Create Cluster | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/CreateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateCluster.java) |
+| Create Cluster With Autoscaling | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) |
+| Instantiate Inline Workflow Template | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) |
+| Quickstart | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/Quickstart.java) |
+| Submit Hadoop Fs Job | [source code](https://github.com/googleapis/java-dataproc/blob/master/samples/snippets/src/main/java/SubmitHadoopFsJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitHadoopFsJob.java) |
 
 
 
