@@ -63,6 +63,11 @@
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-game-servers-v1</artifactId>
+        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
         <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
       </dependency>
@@ -70,6 +75,11 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-game-servers</artifactId>
         <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-game-servers-v1</artifactId>
+        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

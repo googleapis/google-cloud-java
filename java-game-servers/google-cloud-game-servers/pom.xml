@@ -44,6 +44,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-game-servers-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
     </dependency>
     <dependency>
@@ -70,6 +74,11 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-game-servers-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
