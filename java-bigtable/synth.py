@@ -37,6 +37,8 @@ def main():
     'README.md',
     '.kokoro/presubmit/integration.cfg',
     '.kokoro/nightly/integration.cfg',
+    '.kokoro/presubmit/samples.cfg',
+    '.kokoro/nightly/samples.cfg',
     # todo remove once template is updated
     '.github/ISSUE_TEMPLATE/bug_report.md',
     'CONTRIBUTING.md',
