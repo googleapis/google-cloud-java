@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/recaptcha-enterprise/docs/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-recaptchaenterprise/latest/",
   "issue_tracker": "",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-recaptchaenterprise",
   "repo_short": "java-recaptchaenterprise",
