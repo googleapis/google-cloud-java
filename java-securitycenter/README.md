@@ -30,6 +30,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <artifactId>google-cloud-securitycenter</artifactId>
   </dependency>
 
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pubsub</artifactId>
+  </dependency>
+
 ```
 
 If you are using Maven without BOM, add this to your dependencies:
@@ -84,6 +89,21 @@ use this Security Command Center Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-securitycenter/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Create Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/CreateNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/CreateNotificationConfigSnippets.java) |
+| Delete Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/DeleteNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/DeleteNotificationConfigSnippets.java) |
+| Get Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/GetNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/GetNotificationConfigSnippets.java) |
+| List Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/ListNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/ListNotificationConfigSnippets.java) |
+| Notification Receiver | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/NotificationReceiver.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/NotificationReceiver.java) |
+| Update Notification Config Snippets | [source code](https://github.com/googleapis/java-securitycenter/blob/master/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/UpdateNotificationConfigSnippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/UpdateNotificationConfigSnippets.java) |
 
 
 
