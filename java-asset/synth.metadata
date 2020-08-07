@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "638d737fdd493fef27ab79a4999dfc37a2f3d85b"
+        "sha": "9e0404022a2a9f856a3020060d7adb151a9c1949"
       }
     },
     {
@@ -59,7 +59,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "dd230c816f88d0141fcd0be83498986287220d1b"
+        "sha": "f8823dec98277a9516f2fb6fae9f58b3a59a23e1"
       }
     }
   ],
@@ -134,27 +134,16 @@
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
-    ".kokoro/continuous/dependencies.cfg",
-    ".kokoro/continuous/integration.cfg",
-    ".kokoro/continuous/java11.cfg",
-    ".kokoro/continuous/java7.cfg",
-    ".kokoro/continuous/java8-osx.cfg",
-    ".kokoro/continuous/java8-win.cfg",
     ".kokoro/continuous/java8.cfg",
-    ".kokoro/continuous/lint.cfg",
-    ".kokoro/continuous/propose_release.cfg",
-    ".kokoro/continuous/samples.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
-    ".kokoro/nightly/dependencies.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
     ".kokoro/nightly/java7.cfg",
     ".kokoro/nightly/java8-osx.cfg",
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
-    ".kokoro/nightly/lint.cfg",
     ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
