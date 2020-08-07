@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.116.9](https://www.github.com/googleapis/java-bigquery/compare/v1.116.8...v1.116.9) (2020-08-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.5 ([#654](https://www.github.com/googleapis/java-bigquery/issues/654)) ([cb1b8c4](https://www.github.com/googleapis/java-bigquery/commit/cb1b8c4d6bd739d2f803e96d8b32dcd02fb643ae))
+
+
+### Documentation
+
+* **samples:** add load csv autodetect data from gcs ([#655](https://www.github.com/googleapis/java-bigquery/issues/655)) ([497ddf4](https://www.github.com/googleapis/java-bigquery/commit/497ddf41a0faeef4d896fc7f8e3e78b2c295d4a0))
+* **samples:** add undelete table ([#638](https://www.github.com/googleapis/java-bigquery/issues/638)) ([e799bb3](https://www.github.com/googleapis/java-bigquery/commit/e799bb39022b6914678b085a000132d2fbca4a7f))
+* **samples:** fix region tag for bigquery_relax_column_query_append ([#651](https://www.github.com/googleapis/java-bigquery/issues/651)) ([319b982](https://www.github.com/googleapis/java-bigquery/commit/319b982a8a50f592c244301b6431352b140ee50d))
+
 ### [1.116.8](https://www.github.com/googleapis/java-bigquery/compare/v1.116.7...v1.116.8) (2020-08-04)
 
 
