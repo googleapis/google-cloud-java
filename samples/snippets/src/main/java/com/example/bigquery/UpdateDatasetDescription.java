@@ -24,7 +24,7 @@ import com.google.cloud.bigquery.Dataset;
 
 public class UpdateDatasetDescription {
 
-  public static void runUpdateDatasetDescription() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String newDescription = "this is the new dataset description";

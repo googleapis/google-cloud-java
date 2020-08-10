@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.DatasetId;
 // Sample to check dataset exist
 public class DatasetExists {
 
-  public static void runDatasetExists() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     datasetExists(datasetName);

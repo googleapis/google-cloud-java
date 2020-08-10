@@ -36,7 +36,7 @@ import java.util.UUID;
 
 public class LoadPartitionedTable {
 
-  public static void runLoadPartitionedTable() throws Exception {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

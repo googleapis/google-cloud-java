@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 // Sample to run query script.
 public class QueryScript {
 
-  public static void runQueryScript() {
+  public static void main(String[] args) {
     String script =
         "-- Declare a variable to hold names as an array.\n"
             + "DECLARE top_names ARRAY<STRING>;\n"

@@ -30,7 +30,7 @@ import java.util.List;
 // Sample to grant view access on dataset
 public class GrantViewAccess {
 
-  public static void runGrantViewAccess() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String srcDatasetId = "MY_DATASET_ID";
     String viewDatasetId = "MY_VIEW_DATASET_ID";

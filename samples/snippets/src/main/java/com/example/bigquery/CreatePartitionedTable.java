@@ -31,7 +31,7 @@ import com.google.cloud.bigquery.TimePartitioning;
 // Sample to create a partition table
 public class CreatePartitionedTable {
 
-  public static void runCreatePartitionedTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

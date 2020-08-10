@@ -31,7 +31,7 @@ import com.google.cloud.bigquery.TableInfo;
 
 public class NestedRepeatedSchema {
 
-  public static void runNestedRepeatedSchema() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

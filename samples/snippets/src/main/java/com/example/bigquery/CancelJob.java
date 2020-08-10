@@ -29,7 +29,7 @@ import java.util.UUID;
 // Sample to cancel a job
 public class CancelJob {
 
-  public static void runCancelJob() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String query = "SELECT country_name from `bigquery-public-data.utility_us.country_code_iso`";
     cancelJob(query);

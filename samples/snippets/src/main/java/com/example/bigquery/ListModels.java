@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.Model;
 
 public class ListModels {
 
-  public static void runListModels() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     listModels(datasetName);

@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableId;
 
 public class CopyTable {
 
-  public static void runCopyTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String destinationDatasetName = "MY_DESTINATION_DATASET_NAME";
     String destinationTableId = "MY_DESTINATION_TABLE_NAME";

@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.Table;
 
 public class GetDatasetInfo {
 
-  public static void runGetDatasetInfo() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

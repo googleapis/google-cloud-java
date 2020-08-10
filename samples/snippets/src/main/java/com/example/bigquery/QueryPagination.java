@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to run query with pagination.
 public class QueryPagination {
 
-  public static void runQueryPagination() {
+  public static void main(String[] args) {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     String query =

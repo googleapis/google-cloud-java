@@ -39,7 +39,7 @@ import java.util.UUID;
 // Sample to update data in BigQuery tables using DML query
 public class UpdateTableDML {
 
-  public static void runUpdateTableDML() throws IOException, InterruptedException {
+  public static void main(String[] args) throws IOException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

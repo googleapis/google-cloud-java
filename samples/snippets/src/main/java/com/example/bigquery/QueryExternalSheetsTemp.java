@@ -35,7 +35,7 @@ import java.io.IOException;
 // Sample to queries an external data source using a temporary table
 public class QueryExternalSheetsTemp {
 
-  public static void runQueryExternalSheetsTemp() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String tableName = "MY_TABLE_NAME";
     String sourceUri =

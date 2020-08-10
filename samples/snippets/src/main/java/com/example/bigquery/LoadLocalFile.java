@@ -37,7 +37,7 @@ import java.util.UUID;
 
 public class LoadLocalFile {
 
-  public static void runLoadLocalFile() throws IOException, InterruptedException {
+  public static void main(String[] args) throws IOException, InterruptedException {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");

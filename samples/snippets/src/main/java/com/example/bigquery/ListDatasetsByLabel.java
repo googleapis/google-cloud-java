@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.Dataset;
 // Sample to get list of datasets by label
 public class ListDatasetsByLabel {
 
-  public static void runListDatasetsByLabel() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String filter = "MY_LABEL_FILTER";

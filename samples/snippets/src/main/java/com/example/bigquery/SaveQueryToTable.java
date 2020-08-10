@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.TableId;
 
 public class SaveQueryToTable {
 
-  public static void runSaveQueryToTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     String destinationTable = "MY_TABLE";

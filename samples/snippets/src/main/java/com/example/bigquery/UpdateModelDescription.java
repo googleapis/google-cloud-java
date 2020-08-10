@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.ModelId;
 // Sample to update description on a model
 public class UpdateModelDescription {
 
-  public static void runUpdateModelDescription() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String modelName = "MY_MODEL_NAME";

@@ -27,7 +27,7 @@ import java.util.Map;
 // Sample to updates a label on dataset
 public class LabelDataset {
 
-  public static void runLabelDataset() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     labelDataset(datasetName);

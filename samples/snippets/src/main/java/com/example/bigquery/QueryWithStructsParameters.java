@@ -28,6 +28,10 @@ import java.util.Map;
 
 public class QueryWithStructsParameters {
 
+  public static void main(String[] args) {
+    queryWithStructsParameters();
+  }
+
   public static void queryWithStructsParameters() {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created

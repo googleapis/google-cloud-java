@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.TableResult;
 
 public class QueryClusteredTable {
 
-  public static void runQueryClusteredTable() throws Exception {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

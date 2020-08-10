@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.Dataset;
 // Sample to get dataset labels
 public class GetDatasetLabels {
 
-  public static void runGetDatasetLabels() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     getDatasetLabels(datasetName);

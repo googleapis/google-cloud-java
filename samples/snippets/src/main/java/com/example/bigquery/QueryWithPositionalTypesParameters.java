@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to run query with positional types parameters.
 public class QueryWithPositionalTypesParameters {
 
-  public static void runQueryWithPositionalTypesParameters() {
+  public static void main(String[] args) {
     String[] words = {"and", "is", "the", "moon"};
     String corpus = "romeoandjuliet";
     Integer wordsCount = 250;

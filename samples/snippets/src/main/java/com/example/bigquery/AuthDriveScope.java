@@ -28,6 +28,10 @@ import java.io.IOException;
 
 public class AuthDriveScope {
 
+  public static void main(String[] args) throws IOException {
+    setAuthDriveScope();
+  }
+
   public static void setAuthDriveScope() throws IOException {
     // Create credentials with Drive & BigQuery API scopes.
     // Both APIs must be enabled for your project before running this code.

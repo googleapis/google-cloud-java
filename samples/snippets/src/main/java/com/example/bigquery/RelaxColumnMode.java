@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.Table;
 
 public class RelaxColumnMode {
 
-  public static void runRelaxColumnMode() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableId = "MY_TABLE_NAME";

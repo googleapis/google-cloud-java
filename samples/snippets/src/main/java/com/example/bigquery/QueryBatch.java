@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to query batch in a table
 public class QueryBatch {
 
-  public static void runQueryBatch() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

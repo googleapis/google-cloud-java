@@ -29,7 +29,7 @@ import com.google.cloud.bigquery.TableId;
 // Sample to load Avro data from Cloud Storage into a new BigQuery table
 public class LoadAvroFromGCS {
 
-  public static void runLoadAvroFromGCS() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

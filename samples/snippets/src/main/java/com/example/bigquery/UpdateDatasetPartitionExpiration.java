@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 // Sample to update partition expiration on a dataset.
 public class UpdateDatasetPartitionExpiration {
 
-  public static void runUpdateDatasetPartitionExpiration() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     // Set the default partition expiration (applies to new tables, only) in

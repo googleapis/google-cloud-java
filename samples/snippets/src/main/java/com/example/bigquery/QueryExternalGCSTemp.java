@@ -31,7 +31,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to queries an external data source using a temporary table
 public class QueryExternalGCSTemp {
 
-  public static void runQueryExternalGCSTemp() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String tableName = "MY_TABLE_NAME";
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";

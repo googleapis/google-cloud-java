@@ -31,7 +31,7 @@ import java.util.Map;
 // Sample to inserting rows into a table without running a load job.
 public class TableInsertRows {
 
-  public static void runTableInsertRows() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

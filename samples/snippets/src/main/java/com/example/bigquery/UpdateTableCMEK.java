@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableId;
 // Sample to update a cmek table
 public class UpdateTableCMEK {
 
-  public static void runUpdateTableCMEK() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

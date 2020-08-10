@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.ModelId;
 
 public class GetModel {
 
-  public static void runGetModel() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String modelName = "MY_MODEL_ID";

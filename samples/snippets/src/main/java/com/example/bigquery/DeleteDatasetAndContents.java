@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.DatasetId;
 // Sample to delete dataset with contents.
 public class DeleteDatasetAndContents {
 
-  public static void runDeleteDatasetAndContents() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

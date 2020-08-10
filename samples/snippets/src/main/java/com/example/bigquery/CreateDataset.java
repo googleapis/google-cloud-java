@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.DatasetInfo;
 
 public class CreateDataset {
 
-  public static void runCreateDataset() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     createDataset(datasetName);

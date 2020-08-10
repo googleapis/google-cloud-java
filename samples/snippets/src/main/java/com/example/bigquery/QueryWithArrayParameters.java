@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to running a query with array query parameters.
 public class QueryWithArrayParameters {
 
-  public static void runQueryWithArrayParameters() {
+  public static void main(String[] args) {
     String gender = "M";
     String[] states = {"WA", "WI", "WV", "WY"};
     String query =

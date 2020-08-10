@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.Routine;
 // Sample to get list of routines
 public class ListRoutines {
 
-  public static void runListRoutines() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     listRoutines(datasetName);

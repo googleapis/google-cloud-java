@@ -29,7 +29,7 @@ import com.google.cloud.bigquery.TableId;
 // Sample to copy a cmek table
 public class CopyTableCMEK {
 
-  public static void runCopyTableCMEK() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String destinationDatasetName = "MY_DESTINATION_DATASET_NAME";
     String destinationTableId = "MY_DESTINATION_TABLE_NAME";

@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.Dataset;
 
 public class ListDatasets {
 
-  public static void runListDatasets() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     listDatasets(projectId);

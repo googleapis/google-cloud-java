@@ -30,7 +30,7 @@ import org.threeten.bp.ZonedDateTime;
 // Sample to running a query with timestamp query parameters.
 public class QueryWithTimestampParameters {
 
-  public static void runQueryWithTimestampParameters() {
+  public static void main(String[] args) {
     queryWithTimestampParameters();
   }
 

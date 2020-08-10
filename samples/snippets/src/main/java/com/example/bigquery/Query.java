@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to query in a table
 public class Query {
 
-  public static void runQuery() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

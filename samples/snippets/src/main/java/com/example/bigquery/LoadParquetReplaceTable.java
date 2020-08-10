@@ -31,7 +31,7 @@ import java.math.BigInteger;
 
 public class LoadParquetReplaceTable {
 
-  public static void runLoadParquetReplaceTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";

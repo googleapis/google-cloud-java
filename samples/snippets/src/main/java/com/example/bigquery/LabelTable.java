@@ -28,7 +28,7 @@ import java.util.Map;
 // Sample to adds a label to an existing table
 public class LabelTable {
 
-  public static void runLabelTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

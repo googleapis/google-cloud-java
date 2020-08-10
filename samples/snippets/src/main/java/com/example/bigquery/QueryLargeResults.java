@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to run query with large results and save the results to a table.
 public class QueryLargeResults {
 
-  public static void runQueryLargeResults() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String destinationDataset = "MY_DESTINATION_DATASET_NAME";
     String destinationTable = "MY_DESTINATION_TABLE_NAME";

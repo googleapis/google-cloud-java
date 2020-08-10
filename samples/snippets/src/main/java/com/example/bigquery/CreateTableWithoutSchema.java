@@ -29,7 +29,7 @@ import com.google.cloud.bigquery.TableInfo;
 // Sample to create a table without schema
 public class CreateTableWithoutSchema {
 
-  public static void runCreateTableWithoutSchema() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

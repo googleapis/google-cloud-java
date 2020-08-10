@@ -26,6 +26,10 @@ import com.google.cloud.bigquery.TableResult;
 
 public class QueryWithNamedParameters {
 
+  public static void main(String[] args) {
+    queryWithNamedParameters();
+  }
+
   public static void queryWithNamedParameters() {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created

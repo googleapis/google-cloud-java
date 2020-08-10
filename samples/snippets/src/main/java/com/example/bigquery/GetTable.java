@@ -25,7 +25,7 @@ import com.google.cloud.bigquery.TableId;
 
 public class GetTable {
 
-  public static void runGetTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "bigquery_public_data";
     String datasetName = "samples";

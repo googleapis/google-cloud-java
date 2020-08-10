@@ -31,7 +31,7 @@ import com.google.common.collect.ImmutableList;
 
 public class RelaxTableQuery {
 
-  public static void runRelaxTableQuery() throws Exception {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";

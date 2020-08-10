@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to directly browse a table with optional paging
 public class BrowseTable {
 
-  public static void runBrowseTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String table = "MY_TABLE_NAME";
     String dataset = "MY_DATASET_NAME";

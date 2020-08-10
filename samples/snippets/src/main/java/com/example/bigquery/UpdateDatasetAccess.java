@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class UpdateDatasetAccess {
 
-  public static void runUpdateDatasetAccess() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     // Create a new ACL granting the READER role to "sample.bigquery.dev@gmail.com"

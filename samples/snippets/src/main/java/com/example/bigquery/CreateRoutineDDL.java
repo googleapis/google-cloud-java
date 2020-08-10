@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 // Sample to create a routine using DDL
 public class CreateRoutineDDL {
 
-  public static void runCreateRoutineDDL() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";

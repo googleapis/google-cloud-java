@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 public class UpdateDatasetExpiration {
 
-  public static void runUpdateDatasetExpiration() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     // Update dataset expiration to one day

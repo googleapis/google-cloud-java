@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 // Sample to create a model
 public class CreateModel {
 
-  public static void runCreateModel() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String modelName = "MY_MODEL_NAME";

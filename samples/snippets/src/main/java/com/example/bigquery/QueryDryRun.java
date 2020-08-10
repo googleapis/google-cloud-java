@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 // Sample to run dry query on the table
 public class QueryDryRun {
 
-  public static void runQueryDryRun() {
+  public static void main(String[] args) {
     String query =
         "SELECT name, COUNT(*) as name_count "
             + "FROM `bigquery-public-data.usa_names.usa_1910_2013` "

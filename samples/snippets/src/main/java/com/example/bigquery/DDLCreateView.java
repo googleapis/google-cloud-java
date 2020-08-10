@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 // Sample to create a view using DDL
 public class DDLCreateView {
 
-  public static void runDDLCreateView() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";

@@ -24,7 +24,7 @@ import com.google.cloud.bigquery.Table;
 
 public class UpdateTableDescription {
 
-  public static void runUpdateTableDescription() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

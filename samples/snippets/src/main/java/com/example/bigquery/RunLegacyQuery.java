@@ -25,6 +25,10 @@ import com.google.cloud.bigquery.TableResult;
 
 public class RunLegacyQuery {
 
+  public static void main(String[] args) {
+    runLegacyQuery();
+  }
+
   public static void runLegacyQuery() {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created

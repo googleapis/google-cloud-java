@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to running a query with the cache disabled.
 public class QueryDisableCache {
 
-  public static void runQueryDisableCache() {
+  public static void main(String[] args) {
     String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     queryDisableCache(query);
   }

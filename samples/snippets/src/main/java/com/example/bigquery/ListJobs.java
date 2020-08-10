@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.Job;
 // Sample to get list of jobs
 public class ListJobs {
 
-  public static void runListJobs() {
+  public static void main(String[] args) {
     listJobs();
   }
 

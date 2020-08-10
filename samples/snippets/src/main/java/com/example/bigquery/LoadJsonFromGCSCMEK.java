@@ -30,7 +30,7 @@ import com.google.cloud.bigquery.TableId;
 // Sample to load JSON data with configuration key from Cloud Storage into a new BigQuery table
 public class LoadJsonFromGCSCMEK {
 
-  public static void runLoadJsonFromGCSCMEK() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

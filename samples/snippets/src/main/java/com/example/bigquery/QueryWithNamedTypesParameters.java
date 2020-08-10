@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to run query with named types parameters.
 public class QueryWithNamedTypesParameters {
 
-  public static void runQueryWithNamedTypesParameters() {
+  public static void main(String[] args) {
     String[] words = {"and", "is", "the", "moon"};
     String corpus = "romeoandjuliet";
     Integer wordsCount = 250;

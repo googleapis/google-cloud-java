@@ -28,7 +28,7 @@ import java.util.Arrays;
 
 public class CopyMultipleTables {
 
-  public static void runCopyMultipleTables() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String destinationDatasetName = "MY_DATASET_NAME";
     String destinationTableId = "MY_TABLE_NAME";

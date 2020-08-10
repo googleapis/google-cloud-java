@@ -25,6 +25,11 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.TableResult;
 
 public class QueryWithPositionalParameters {
+
+  public static void main(String[] args) {
+    queryWithPositionalParameters();
+  }
+
   public static void queryWithPositionalParameters() {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created

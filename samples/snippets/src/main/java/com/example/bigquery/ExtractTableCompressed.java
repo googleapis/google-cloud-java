@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.TableId;
 // Sample to extract a compressed table
 public class ExtractTableCompressed {
 
-  public static void runExtractTableCompressed() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectName = "MY_PROJECT_NAME";
     String datasetName = "MY_DATASET_NAME";

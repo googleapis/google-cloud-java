@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.RoutineId;
 // Sample to get a routine
 public class GetRoutine {
 
-  public static void runGetRoutine() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String routineName = "MY_ROUTINE_NAME";

@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.TableResult;
 // Sample to run query total rows
 public class QueryTotalRows {
 
-  public static void runQueryTotalRows() {
+  public static void main(String[] args) {
     String query =
         "SELECT name FROM `bigquery-public-data.usa_names.usa_1910_2013`"
             + " WHERE state = \"TX\""

@@ -28,7 +28,7 @@ import java.util.Map;
 // Sample tp deletes a label on a table.
 public class DeleteLabelTable {
 
-  public static void runDeleteLabelTable() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

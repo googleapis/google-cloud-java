@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.ViewDefinition;
 // Sample to update query on a view
 public class UpdateViewQuery {
 
-  public static void runUpdateViewQuery() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";

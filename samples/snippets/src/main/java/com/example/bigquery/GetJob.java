@@ -26,7 +26,7 @@ import com.google.cloud.bigquery.JobId;
 // Sample to get a job
 public class GetJob {
 
-  public static void runGetJob() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String jobName = "MY_JOB_NAME";
     getJob(jobName);

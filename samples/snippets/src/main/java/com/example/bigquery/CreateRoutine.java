@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableList;
 // Sample to create a routine
 public class CreateRoutine {
 
-  public static void runCreateRoutine() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String routineName = "MY_ROUTINE_NAME";
