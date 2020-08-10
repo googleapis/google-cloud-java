@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-game-servers.git",
-        "sha": "33aa9ddf8be196bac4f94a944fa9b588c4f28030"
+        "remote": "https://github.com/googleapis/java-game-servers.git",
+        "sha": "b9f3f1c2a593d5656f2f61c21280ba553af76c4b"
       }
     },
     {

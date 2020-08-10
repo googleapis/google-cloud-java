@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-game-servers</artifactId>
-  <version>0.20.0</version>
+  <version>0.21.0</version>
 </dependency>
 ```
 
