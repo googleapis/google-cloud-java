@@ -1,5 +1,45 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-monitoring/compare/v1.100.1...v2.0.0) (2020-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removing TimeSeriesQueryLanguageCondition as an alert condition type (#161)
+
+### Features
+
+* add body, ContentType, RequestMethod to UptimeCheckConfig ([#148](https://www.github.com/googleapis/java-monitoring/issues/148)) ([116b4f8](https://www.github.com/googleapis/java-monitoring/commit/116b4f8f45cdab473a271dcc2b9fddaa2c9fb019))
+* Removing TimeSeriesQueryLanguageCondition as an alert condition type ([#161](https://www.github.com/googleapis/java-monitoring/issues/161)) ([da7e3b9](https://www.github.com/googleapis/java-monitoring/commit/da7e3b938467c03fa8b65b0f58a57771fbf4e8aa))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#196](https://www.github.com/googleapis/java-monitoring/issues/196)) ([fb6d3f8](https://www.github.com/googleapis/java-monitoring/commit/fb6d3f8459fecbeb7d25b5889366350c2d65f983))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#202](https://www.github.com/googleapis/java-monitoring/issues/202)) ([82786bd](https://www.github.com/googleapis/java-monitoring/commit/82786bdc574892d8e86783889a1af481db581fb3))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#169](https://www.github.com/googleapis/java-monitoring/issues/169)) ([ab64333](https://www.github.com/googleapis/java-monitoring/commit/ab6433366df879b5aea7267119f34348ecbf769f))
+* update dependency com.google.api:api-common to v1.9.2 ([#172](https://www.github.com/googleapis/java-monitoring/issues/172)) ([568a61a](https://www.github.com/googleapis/java-monitoring/commit/568a61ae80726466b40680b4f99925550fc09bf7))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#159](https://www.github.com/googleapis/java-monitoring/issues/159)) ([6968856](https://www.github.com/googleapis/java-monitoring/commit/696885690e96065e83bdcf835624c027687c75d3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#205](https://www.github.com/googleapis/java-monitoring/issues/205)) ([80da1aa](https://www.github.com/googleapis/java-monitoring/commit/80da1aab31e92cbd6423b0115038babffaf2ea02))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#207](https://www.github.com/googleapis/java-monitoring/issues/207)) ([725e59a](https://www.github.com/googleapis/java-monitoring/commit/725e59a6cb62dc5dc542359fab5f3c5d98069e22))
+* update dependency com.google.guava:guava-bom to v29 ([#128](https://www.github.com/googleapis/java-monitoring/issues/128)) ([ef3c9fe](https://www.github.com/googleapis/java-monitoring/commit/ef3c9fe1ca1e0691132ba37f24cc20a3887e1a44))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#164](https://www.github.com/googleapis/java-monitoring/issues/164)) ([e0b27d2](https://www.github.com/googleapis/java-monitoring/commit/e0b27d2d6de799e0a8360e04d25ad078c0b7f9f9))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#168](https://www.github.com/googleapis/java-monitoring/issues/168)) ([cf387b5](https://www.github.com/googleapis/java-monitoring/commit/cf387b5331438fd696fac20ea6e887fdaf505100))
+* update dependency com.google.protobuf:protobuf-java-util to v3.12.4 ([#211](https://www.github.com/googleapis/java-monitoring/issues/211)) ([80a28da](https://www.github.com/googleapis/java-monitoring/commit/80a28da2064be473bb9018fea5517e9de4875c8c))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#150](https://www.github.com/googleapis/java-monitoring/issues/150)) ([e0508c2](https://www.github.com/googleapis/java-monitoring/commit/e0508c2a6d2029c1b34cfedceb7d6e66fb41e7f9))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#179](https://www.github.com/googleapis/java-monitoring/issues/179)) ([30e64ca](https://www.github.com/googleapis/java-monitoring/commit/30e64cab3aa0d5d1ed7f2277122dc4f6930f07cd))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#155](https://www.github.com/googleapis/java-monitoring/issues/155)) ([9f9f48d](https://www.github.com/googleapis/java-monitoring/commit/9f9f48d28c218656f316f31e4232ce02ec049ae1))
+
+
+### Documentation
+
+* fix relative URLs and regenerate with updated protoc ([#176](https://www.github.com/googleapis/java-monitoring/issues/176)) ([226e3af](https://www.github.com/googleapis/java-monitoring/commit/226e3af0f74f6e4407919dc781dcd5da0a531a99))
+* increase the required minimum difference between start time of the next interval ([#140](https://www.github.com/googleapis/java-monitoring/issues/140)) ([57347fd](https://www.github.com/googleapis/java-monitoring/commit/57347fd2d94ef8c102740a8edec20b887e9b2fd1))
+
 ### [1.100.1](https://www.github.com/googleapis/java-monitoring/compare/v1.100.0...v1.100.1) (2020-04-10)
 
 
