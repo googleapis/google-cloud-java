@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-os-config/compare/v0.2.0...v1.0.0) (2020-08-07)
+
+
+### Features
+
+* promote to GA ([#69](https://www.github.com/googleapis/java-os-config/issues/69)) ([6cc7b47](https://www.github.com/googleapis/java-os-config/commit/6cc7b478aa7ab4541304c9e40088b6cd74671c35))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#74](https://www.github.com/googleapis/java-os-config/issues/74)) ([5baf404](https://www.github.com/googleapis/java-os-config/commit/5baf404176820b99e5b0f9dd828ca125f503d4a0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([d7bfe40](https://www.github.com/googleapis/java-os-config/commit/d7bfe4098735db5ce0373f8e339589906a897bd8))
+
+
+### Documentation
+
+* Fix several broken links in reference documentation ([#70](https://www.github.com/googleapis/java-os-config/issues/70)) ([9cd3ad8](https://www.github.com/googleapis/java-os-config/commit/9cd3ad82a77d73c521c2388605c335cd0ddcc024))
+
 ## [0.2.0](https://www.github.com/googleapis/java-os-config/compare/v0.1.0...v0.2.0) (2020-06-19)
 
 
