@@ -1,0 +1,17 @@
+# Changelog
+
+## [0.14.0](https://www.github.com/googleapis/java-iam/compare/v0.13.0...v0.14.0) (2020-08-11)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#14](https://www.github.com/googleapis/java-iam/issues/14)) ([82c4bf5](https://www.github.com/googleapis/java-iam/commit/82c4bf50f419b7f57f9a0d15a554b7e8509b99db))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#2](https://www.github.com/googleapis/java-iam/issues/2)) ([81a7470](https://www.github.com/googleapis/java-iam/commit/81a7470ee9633ff052ccb679cbe37b0079ee51ef))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#18](https://www.github.com/googleapis/java-iam/issues/18)) ([13767ef](https://www.github.com/googleapis/java-iam/commit/13767ef1890b5c81cab43baee28a1b535e5b7211))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.0 ([#6](https://www.github.com/googleapis/java-iam/issues/6)) ([73b7a4a](https://www.github.com/googleapis/java-iam/commit/73b7a4a03411326f88e49c2efbd1e34d2170dc1b))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#8](https://www.github.com/googleapis/java-iam/issues/8)) ([5f005b4](https://www.github.com/googleapis/java-iam/commit/5f005b45498dc87aeb8cab35d72fbaae04386c24))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#10](https://www.github.com/googleapis/java-iam/issues/10)) ([f69ac15](https://www.github.com/googleapis/java-iam/commit/f69ac15807aafc345f980091feadd4eb3996976c))
