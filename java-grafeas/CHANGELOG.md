@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.25.0](https://www.github.com/googleapis/java-grafeas/compare/v0.24.1...v0.25.0) (2020-08-10)
+
+
+### Features
+
+* **deps:** import google-cloud-shared-dependencies and use maven-flatten-plugin ([#94](https://www.github.com/googleapis/java-grafeas/issues/94)) ([3836cc8](https://www.github.com/googleapis/java-grafeas/commit/3836cc8d9c370d3a5e6424fd61fce0aced79d93b))
+
+
+### Bug Fixes
+
+* migrate grafeas/v1 to grpc_service_config ([#119](https://www.github.com/googleapis/java-grafeas/issues/119)) ([b325e56](https://www.github.com/googleapis/java-grafeas/commit/b325e569d12b5737c5257dea7244ee4e8f2090b4))
+
+
+### Dependencies
+
+* update core dependencies to v29 ([#84](https://www.github.com/googleapis/java-grafeas/issues/84)) ([6dc9763](https://www.github.com/googleapis/java-grafeas/commit/6dc976344ee70d2f113dcabcd676050c79001023))
+* update dependency com.google.api:api-common to v1.9.1 ([#103](https://www.github.com/googleapis/java-grafeas/issues/103)) ([a4f9630](https://www.github.com/googleapis/java-grafeas/commit/a4f9630c3b05ea9a8789adfbe12836145a029e22))
+* update dependency com.google.api:api-common to v1.9.2 ([#110](https://www.github.com/googleapis/java-grafeas/issues/110)) ([f89ba91](https://www.github.com/googleapis/java-grafeas/commit/f89ba917b3d595de3703fc977a18af06f3f9e9a8))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#96](https://www.github.com/googleapis/java-grafeas/issues/96)) ([7175645](https://www.github.com/googleapis/java-grafeas/commit/7175645e19ca7a3bf43631ad5fa5a27a88f31d67))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.93.5 ([#104](https://www.github.com/googleapis/java-grafeas/issues/104)) ([b1aace4](https://www.github.com/googleapis/java-grafeas/commit/b1aace47e362f1e783b69a3e764c2244a20d90f6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#124](https://www.github.com/googleapis/java-grafeas/issues/124)) ([d5642dc](https://www.github.com/googleapis/java-grafeas/commit/d5642dc0d28fc1c31c5f225e729d02cdce85e5c3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#126](https://www.github.com/googleapis/java-grafeas/issues/126)) ([2e86975](https://www.github.com/googleapis/java-grafeas/commit/2e86975d14cd8b1961acd5ab6f437924c9ea1984))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([b6b87f4](https://www.github.com/googleapis/java-grafeas/commit/b6b87f4426bbbe11a33fd3697b28417d26ee91bd))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#93](https://www.github.com/googleapis/java-grafeas/issues/93)) ([43bb669](https://www.github.com/googleapis/java-grafeas/commit/43bb669ab49f8fedb046d4fcdbabce96f8d96f63))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#100](https://www.github.com/googleapis/java-grafeas/issues/100)) ([a14f1be](https://www.github.com/googleapis/java-grafeas/commit/a14f1be52f716db420e5c7eeefa74b22e0ad545f))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#102](https://www.github.com/googleapis/java-grafeas/issues/102)) ([6386ea8](https://www.github.com/googleapis/java-grafeas/commit/6386ea8f577c3fed5a437a326af1139b0877a7c6))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#91](https://www.github.com/googleapis/java-grafeas/issues/91)) ([ab00190](https://www.github.com/googleapis/java-grafeas/commit/ab001909f308103550c213900a11d4f961db0a65))
+* update grpc dependencies to v1.29.0 ([#90](https://www.github.com/googleapis/java-grafeas/issues/90)) ([2aad9b1](https://www.github.com/googleapis/java-grafeas/commit/2aad9b104f2525ae5a1a2ee43f8a942d19d77dac))
+
 ### [0.24.1](https://www.github.com/googleapis/java-grafeas/compare/v0.24.0...v0.24.1) (2020-04-09)
 
 
