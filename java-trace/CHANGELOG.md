@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-trace/compare/v1.1.0...v1.2.0) (2020-08-10)
+
+
+### Features
+
+* added support for span kind ([#228](https://www.github.com/googleapis/java-trace/issues/228)) ([534f960](https://www.github.com/googleapis/java-trace/commit/534f960f9138ec42bf5235ae7f12dfca0208ddc7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#225](https://www.github.com/googleapis/java-trace/issues/225)) ([134f1e4](https://www.github.com/googleapis/java-trace/commit/134f1e4ed2ff8f57fbb08a0426e83eec408d76e2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#230](https://www.github.com/googleapis/java-trace/issues/230)) ([51f3591](https://www.github.com/googleapis/java-trace/commit/51f359154ad0d1ecd9e4b750810b18bae2240a78))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#237](https://www.github.com/googleapis/java-trace/issues/237)) ([3836ed6](https://www.github.com/googleapis/java-trace/commit/3836ed6c559e6ae96d00d586f4c1f29f9e978991))
+
 ## [1.1.0](https://www.github.com/googleapis/java-trace/compare/v1.0.3...v1.1.0) (2020-06-22)
 
 
