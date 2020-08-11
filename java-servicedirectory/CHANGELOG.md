@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-servicedirectory/compare/v0.2.0...v0.2.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#110](https://www.github.com/googleapis/java-servicedirectory/issues/110)) ([5af8c14](https://www.github.com/googleapis/java-servicedirectory/commit/5af8c146bd0a0b28b1687047c78f889c49c0d902))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#111](https://www.github.com/googleapis/java-servicedirectory/issues/111)) ([5582a96](https://www.github.com/googleapis/java-servicedirectory/commit/5582a961d292d7727f324be19c7c45d964898c94))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#114](https://www.github.com/googleapis/java-servicedirectory/issues/114)) ([f4cdf0d](https://www.github.com/googleapis/java-servicedirectory/commit/f4cdf0d41bfd67c5779ac8ded4103a66bd24a438))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#122](https://www.github.com/googleapis/java-servicedirectory/issues/122)) ([984a72c](https://www.github.com/googleapis/java-servicedirectory/commit/984a72c5ac1dcdc81b6cbc521b66c5c5c258e0c1))
+
 ## [0.2.0](https://www.github.com/googleapis/java-servicedirectory/compare/v0.1.1...v0.2.0) (2020-06-22)
 
 
