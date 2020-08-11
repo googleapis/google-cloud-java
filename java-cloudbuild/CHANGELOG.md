@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-cloudbuild/compare/v2.0.0...v2.0.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* convert to grpc_service_config ([#213](https://www.github.com/googleapis/java-cloudbuild/issues/213)) ([c83d27e](https://www.github.com/googleapis/java-cloudbuild/commit/c83d27e4e93d159490de487d3da24db0e4ab40ef))
+* inline markup spans must be separated from the surrounding text by non-word characters ([#214](https://www.github.com/googleapis/java-cloudbuild/issues/214)) ([a692395](https://www.github.com/googleapis/java-cloudbuild/commit/a692395ed77d941ae96c5a5e290d5af9ef978aa2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#206](https://www.github.com/googleapis/java-cloudbuild/issues/206)) ([4aac14a](https://www.github.com/googleapis/java-cloudbuild/commit/4aac14afb46ed4aced878a8f2a5a194e06fc4ab5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#209](https://www.github.com/googleapis/java-cloudbuild/issues/209)) ([17c742d](https://www.github.com/googleapis/java-cloudbuild/commit/17c742d3a8b69b204a28b71e5c2341bcfe1d9fa1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([7311dea](https://www.github.com/googleapis/java-cloudbuild/commit/7311deaeeac8d375b814d6da444a746cb9a8adb1))
+
+
+### Documentation
+
+* update generated docs ([#216](https://www.github.com/googleapis/java-cloudbuild/issues/216)) ([ef26812](https://www.github.com/googleapis/java-cloudbuild/commit/ef26812c7c7b91258bcd326f892162bd92688fb2))
+
 ## [2.0.0](https://www.github.com/googleapis/java-cloudbuild/compare/v1.1.1...v2.0.0) (2020-06-23)
 
 
