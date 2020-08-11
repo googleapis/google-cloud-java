@@ -1,5 +1,43 @@
 # Changelog
 
+## [0.37.0](https://www.github.com/googleapis/java-talent/compare/v0.36.1...v0.37.0) (2020-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* The default `of` methods of CompanyName and JobName have changed. This should not happen again, but to insulate yourself, please use the specific `of[Named Type]Name()`
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#195](https://www.github.com/googleapis/java-talent/issues/195)) ([0c4c8a5](https://www.github.com/googleapis/java-talent/commit/0c4c8a58a75e227ae9fcca135dab732f4ce06f44))
+
+
+### Bug Fixes
+
+* migrate retry settings to grpc_service_config ([#194](https://www.github.com/googleapis/java-talent/issues/194)) ([dd16f4c](https://www.github.com/googleapis/java-talent/commit/dd16f4cc1f4413f283bcc0855185c0c4e4114b16))
+* reorder Company and Job resources in talent API to be consistent with old gapic config ([#143](https://www.github.com/googleapis/java-talent/issues/143)) ([e300534](https://www.github.com/googleapis/java-talent/commit/e3005343192bdb7519af9ed179afbe43ecc26902))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#167](https://www.github.com/googleapis/java-talent/issues/167)) ([d96c2a7](https://www.github.com/googleapis/java-talent/commit/d96c2a7bf2cf95c4b6da25ff25d56758dff61fa3))
+* update dependency com.google.api:api-common to v1.9.2 ([#175](https://www.github.com/googleapis/java-talent/issues/175)) ([ff9aa1f](https://www.github.com/googleapis/java-talent/commit/ff9aa1f1b854a7d498129456c0d1a5295c251c5b))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#157](https://www.github.com/googleapis/java-talent/issues/157)) ([83aebab](https://www.github.com/googleapis/java-talent/commit/83aebab68461f4ec0c50b492f66fac0205eb9d54))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#168](https://www.github.com/googleapis/java-talent/issues/168)) ([1ebe368](https://www.github.com/googleapis/java-talent/commit/1ebe368840d470e7c633eaeb9c79a1ad40c53947))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#205](https://www.github.com/googleapis/java-talent/issues/205)) ([c9fe2ef](https://www.github.com/googleapis/java-talent/commit/c9fe2ef4b868f752d5d104df97590d0f15377468))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([af2dd96](https://www.github.com/googleapis/java-talent/commit/af2dd96cbe4aed9b7b6a97f34f796db958e8713a))
+* update dependency com.google.guava:guava-bom to v29 ([#134](https://www.github.com/googleapis/java-talent/issues/134)) ([f7c95b3](https://www.github.com/googleapis/java-talent/commit/f7c95b3af542f453c0999da1895977c9475df9ad))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#161](https://www.github.com/googleapis/java-talent/issues/161)) ([55d07fd](https://www.github.com/googleapis/java-talent/commit/55d07fdf5cac41ef00e4266096202cb3c462f9ae))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#165](https://www.github.com/googleapis/java-talent/issues/165)) ([e6ebce7](https://www.github.com/googleapis/java-talent/commit/e6ebce7d6d84ec87f4fec078dbd9c831ac4ebe28))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#148](https://www.github.com/googleapis/java-talent/issues/148)) ([26de0d1](https://www.github.com/googleapis/java-talent/commit/26de0d1e818107190f738f529e76662a4af8e86a))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#180](https://www.github.com/googleapis/java-talent/issues/180)) ([7983067](https://www.github.com/googleapis/java-talent/commit/7983067e04480c7d7a311aa77163ab4fad7901d5))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#153](https://www.github.com/googleapis/java-talent/issues/153)) ([cb4a4a0](https://www.github.com/googleapis/java-talent/commit/cb4a4a0ae78c35a49749e3713a49d9fdbf2fb067))
+
+
+### Documentation
+
+* Remove a broken link from the documentation. ([#176](https://www.github.com/googleapis/java-talent/issues/176)) ([025c736](https://www.github.com/googleapis/java-talent/commit/025c736f5ff89f517e5b038d68af6dfd1640665f))
+
 ### [0.36.1](https://www.github.com/googleapis/java-talent/compare/v0.36.0...v0.36.1) (2020-04-07)
 
 
