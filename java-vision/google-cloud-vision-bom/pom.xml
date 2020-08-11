@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision-bom</artifactId>
-  <version>1.99.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+  <version>2.0.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,57 +64,57 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p4beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p4beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vision</artifactId>
-        <version>1.99.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+        <version>2.0.0</version><!-- {x-version-update:google-cloud-vision:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p3beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1</artifactId>
-        <version>1.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1:current} -->
+        <version>2.0.0</version><!-- {x-version-update:proto-google-cloud-vision-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p3beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p4beta1</artifactId>
-        <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p4beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.81.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
+        <version>2.0.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1</artifactId>
-        <version>1.81.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1:current} -->
+        <version>2.0.0</version><!-- {x-version-update:grpc-google-cloud-vision-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p2beta1:current} -->
+        <version>2.0.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p2beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

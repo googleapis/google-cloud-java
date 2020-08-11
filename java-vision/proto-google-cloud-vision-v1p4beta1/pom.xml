@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-vision-v1p4beta1</artifactId>
-  <version>0.82.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p4beta1:current} -->
+  <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-vision-v1p4beta1:current} -->
   <name>proto-google-cloud-vision-v1p4beta1</name>
   <description>PROTO library for proto-google-cloud-vision-v1p4beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vision-parent</artifactId>
-    <version>1.99.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+    <version>2.0.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   </parent>
   <dependencies>
     <dependency>

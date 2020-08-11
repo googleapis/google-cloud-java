@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision</artifactId>
-  <version>1.99.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+  <version>2.0.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Vision</name>
   <url>https://github.com/googleapis/java-vision</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vision-parent</artifactId>
-    <version>1.99.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+    <version>2.0.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vision</site.installationModule>
