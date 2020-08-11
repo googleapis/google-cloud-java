@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.116.10](https://www.github.com/googleapis/java-bigquery/compare/v1.116.9...v1.116.10) (2020-08-11)
+
+
+### Documentation
+
+* **samples:** add query external sheet permanent table ([#658](https://www.github.com/googleapis/java-bigquery/issues/658)) ([6488cd1](https://www.github.com/googleapis/java-bigquery/commit/6488cd1ef914b2c87fa823511126a51cc27712fa))
+* **samples:** add query external sheet temp table ([#659](https://www.github.com/googleapis/java-bigquery/issues/659)) ([9044050](https://www.github.com/googleapis/java-bigquery/commit/904405039a2d4dbb865451d7b1ac9257cc54efd2))
+* **samples:** add relax column load append ([#657](https://www.github.com/googleapis/java-bigquery/issues/657)) ([511e9d7](https://www.github.com/googleapis/java-bigquery/commit/511e9d7580c7ddcda6734dd5f0ad012035bc77d5))
+* remove outdated readme content ([#666](https://www.github.com/googleapis/java-bigquery/issues/666)) ([349e111](https://www.github.com/googleapis/java-bigquery/commit/349e11163773b22deae3dfb0ed4373f717711b79))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#661](https://www.github.com/googleapis/java-bigquery/issues/661)) ([df3788a](https://www.github.com/googleapis/java-bigquery/commit/df3788a2ba9223bd99c56b6e76fbc6b0ab2b302a))
+
 ### [1.116.9](https://www.github.com/googleapis/java-bigquery/compare/v1.116.8...v1.116.9) (2020-08-07)
 
 
