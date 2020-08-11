@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.1.5](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.4...v0.1.5) (2020-08-11)
+
+
+### Bug Fixes
+
+* migrate accessapproval/v1 to grpc_service_config ([#149](https://www.github.com/googleapis/java-accessapproval/issues/149)) ([5973560](https://www.github.com/googleapis/java-accessapproval/commit/597356065985872f580feb57a1c737d5521ef2ea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([8555847](https://www.github.com/googleapis/java-accessapproval/commit/855584704031338c8b22fc0cdfdd8bc204f981e9))
+
+
+### Documentation
+
+* replace html with markdown for accessapproval.proto ([#150](https://www.github.com/googleapis/java-accessapproval/issues/150)) ([77a2b68](https://www.github.com/googleapis/java-accessapproval/commit/77a2b685f7ff3121c416afe09756160fbddbe0cf))
+
 ### [0.1.4](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.3...v0.1.4) (2020-07-28)
 
 
