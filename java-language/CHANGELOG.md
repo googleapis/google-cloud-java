@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.101.0](https://www.github.com/googleapis/java-language/compare/v1.100.0...v1.101.0) (2020-08-07)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#176](https://www.github.com/googleapis/java-language/issues/176)) ([da9046c](https://www.github.com/googleapis/java-language/commit/da9046c2feaa90268761ba15e9b900ee183e2e3e))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#188](https://www.github.com/googleapis/java-language/issues/188)) ([3d1762d](https://www.github.com/googleapis/java-language/commit/3d1762d33fc2d18d79c4f238b62fc44954fab39e))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#150](https://www.github.com/googleapis/java-language/issues/150)) ([6d241fa](https://www.github.com/googleapis/java-language/commit/6d241fadb64cc5def074042ae80fc93042066463))
+* update dependency com.google.api:api-common to v1.9.2 ([#157](https://www.github.com/googleapis/java-language/issues/157)) ([83bf00b](https://www.github.com/googleapis/java-language/commit/83bf00b3217acff6ac7cc6d309a0c006c906d27a))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#139](https://www.github.com/googleapis/java-language/issues/139)) ([d1b8516](https://www.github.com/googleapis/java-language/commit/d1b8516a1229ecc0807144b69dc9fe9e48b63c78))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#189](https://www.github.com/googleapis/java-language/issues/189)) ([34c2867](https://www.github.com/googleapis/java-language/commit/34c2867a19c29f59f89e8205a8c6ebdcfbbf8285))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#191](https://www.github.com/googleapis/java-language/issues/191)) ([ab13ac1](https://www.github.com/googleapis/java-language/commit/ab13ac15c46bed94902d176fc0a4d1264aea4e7e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#199](https://www.github.com/googleapis/java-language/issues/199)) ([9608a5b](https://www.github.com/googleapis/java-language/commit/9608a5be225fcebf138bb820c049c555aaea195d))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#143](https://www.github.com/googleapis/java-language/issues/143)) ([9cc04fa](https://www.github.com/googleapis/java-language/commit/9cc04fa0e3be5864757f549f8c65b203c985ab34))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#148](https://www.github.com/googleapis/java-language/issues/148)) ([69a8524](https://www.github.com/googleapis/java-language/commit/69a85247c7f521e94d2f9c3a75e8dc2fb7ae2f42))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#129](https://www.github.com/googleapis/java-language/issues/129)) ([d24999c](https://www.github.com/googleapis/java-language/commit/d24999c81bcfb95ceeeb6dc1a92afc577838ef23))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#161](https://www.github.com/googleapis/java-language/issues/161)) ([09240a3](https://www.github.com/googleapis/java-language/commit/09240a31bb6f5e1d6ae597521ebab080c68ac896))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#135](https://www.github.com/googleapis/java-language/issues/135)) ([a4fdbc3](https://www.github.com/googleapis/java-language/commit/a4fdbc3265a02669fc1cd2494bb8fcbf5ca81bdd))
+
 ## [1.100.0](https://www.github.com/googleapis/java-language/compare/v1.99.4...v1.100.0) (2020-04-20)
 
 
