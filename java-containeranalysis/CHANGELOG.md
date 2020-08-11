@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-containeranalysis/compare/v1.1.0...v1.1.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#194](https://www.github.com/googleapis/java-containeranalysis/issues/194)) ([d235323](https://www.github.com/googleapis/java-containeranalysis/commit/d23532364670df3059246a879e34dff952cafa34))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#202](https://www.github.com/googleapis/java-containeranalysis/issues/202)) ([b1700ab](https://www.github.com/googleapis/java-containeranalysis/commit/b1700ab62c07a301c0ca27cd6bed7378b9461d0e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#204](https://www.github.com/googleapis/java-containeranalysis/issues/204)) ([f2730d1](https://www.github.com/googleapis/java-containeranalysis/commit/f2730d1cef2e3e91633ed6ce0554bd758a0714dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([904ca16](https://www.github.com/googleapis/java-containeranalysis/commit/904ca1636849b586328e5a31b530751f6a89ece3))
+
 ## [1.1.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.0.0...v1.1.0) (2020-06-22)
 
 
