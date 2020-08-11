@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-automl/compare/v1.2.0...v1.2.1) (2020-08-10)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#249](https://www.github.com/googleapis/java-automl/issues/249)) ([8c4e142](https://www.github.com/googleapis/java-automl/commit/8c4e1429abba5ab2e6ff43a24fdacfef08ade46d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#252](https://www.github.com/googleapis/java-automl/issues/252)) ([2c1edc0](https://www.github.com/googleapis/java-automl/commit/2c1edc095b9167b92f856cbc3bee70fade937d10))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#264](https://www.github.com/googleapis/java-automl/issues/264)) ([0afa5ba](https://www.github.com/googleapis/java-automl/commit/0afa5ba77db6153801d92a64fe728634d384fdee))
+
 ## [1.2.0](https://www.github.com/googleapis/java-automl/compare/v1.1.2...v1.2.0) (2020-06-23)
 
 
