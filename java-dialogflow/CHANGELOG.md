@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.1.0...v2.2.0) (2020-08-10)
+
+
+### Features
+
+* **v2beta1:** add Location parent to Environment resource ([#243](https://www.github.com/googleapis/java-dialogflow/issues/243)) ([e80418c](https://www.github.com/googleapis/java-dialogflow/commit/e80418c6f4095404abb5e7a6861e42db641a561e))
+* added support for custom content types ([#250](https://www.github.com/googleapis/java-dialogflow/issues/250)) ([f06e8af](https://www.github.com/googleapis/java-dialogflow/commit/f06e8aff54ff7d494793a30860d48141455be5f0))
+
+
+### Bug Fixes
+
+* update grpc config for retry ([#230](https://www.github.com/googleapis/java-dialogflow/issues/230)) ([4447393](https://www.github.com/googleapis/java-dialogflow/commit/4447393cd9a4aa2b9ad31cad31e7aca74aca32ad))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#240](https://www.github.com/googleapis/java-dialogflow/issues/240)) ([c871b9b](https://www.github.com/googleapis/java-dialogflow/commit/c871b9bb6f765f42a4d77b2088e4205f19d10603))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#245](https://www.github.com/googleapis/java-dialogflow/issues/245)) ([2897483](https://www.github.com/googleapis/java-dialogflow/commit/2897483bd41e21842ccd9b944d28c7a07138f085))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#254](https://www.github.com/googleapis/java-dialogflow/issues/254)) ([05369d5](https://www.github.com/googleapis/java-dialogflow/commit/05369d5fb93092f561083c69a025a05770dc1c00))
+
+
+### Documentation
+
+* more detailed docs on APIs such as Environment, Intents, Sessions. ([#247](https://www.github.com/googleapis/java-dialogflow/issues/247)) ([56a3db8](https://www.github.com/googleapis/java-dialogflow/commit/56a3db83aa1e27e8be2170502a1b1db4f10423c5))
+
 ## [2.1.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.0.0...v2.1.0) (2020-06-22)
 
 
