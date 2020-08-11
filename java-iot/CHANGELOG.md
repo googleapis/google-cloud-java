@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-iot/compare/v1.0.2...v1.1.0) (2020-08-10)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#174](https://www.github.com/googleapis/java-iot/issues/174)) ([272cb69](https://www.github.com/googleapis/java-iot/commit/272cb690cd954dcbe24f91a76107ea8afd379d51))
+
+
+### Bug Fixes
+
+* restore GAPIC v2 retry configs ([#144](https://www.github.com/googleapis/java-iot/issues/144)) ([f8ae7ba](https://www.github.com/googleapis/java-iot/commit/f8ae7bab29c0c7d0dde44cd142ac5081d18954c5))
+* **v1:** migrate to grpc_service_config ([#193](https://www.github.com/googleapis/java-iot/issues/193)) ([5dd9dcf](https://www.github.com/googleapis/java-iot/commit/5dd9dcfdf03cafce29d11518dca61f247627dc2b))
+
+
+### Dependencies
+
+* update core dependencies ([#165](https://www.github.com/googleapis/java-iot/issues/165)) ([5c3b059](https://www.github.com/googleapis/java-iot/commit/5c3b05901f87428ace2a6532b93764e095aea150))
+* update dependency com.google.api:api-common to v1.9.1 ([#149](https://www.github.com/googleapis/java-iot/issues/149)) ([9031980](https://www.github.com/googleapis/java-iot/commit/903198019ea5477dd32536a0c778db93c4cd2498))
+* update dependency com.google.api:api-common to v1.9.2 ([#156](https://www.github.com/googleapis/java-iot/issues/156)) ([975d1f5](https://www.github.com/googleapis/java-iot/commit/975d1f5f33a7a372dec507d2b81c9dde98068288))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#138](https://www.github.com/googleapis/java-iot/issues/138)) ([bba4e4b](https://www.github.com/googleapis/java-iot/commit/bba4e4b1f3f61a0bef0384b285694d14c0ea3417))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#150](https://www.github.com/googleapis/java-iot/issues/150)) ([aaf25dd](https://www.github.com/googleapis/java-iot/commit/aaf25dd0d66dbcd245563347e473534a5e6246c5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#186](https://www.github.com/googleapis/java-iot/issues/186)) ([00a0cb8](https://www.github.com/googleapis/java-iot/commit/00a0cb8d98360b57666b39de45ab6186448d8324))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#188](https://www.github.com/googleapis/java-iot/issues/188)) ([5f50037](https://www.github.com/googleapis/java-iot/commit/5f5003797131085392d53f2ba6d69924de1774d1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([b1c5afd](https://www.github.com/googleapis/java-iot/commit/b1c5afd9af67df7f8509540fcb366ccdbd9ec28f))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#142](https://www.github.com/googleapis/java-iot/issues/142)) ([6fa8924](https://www.github.com/googleapis/java-iot/commit/6fa892490fb8b82aabe1c5d977bfd70cf179aa53))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#147](https://www.github.com/googleapis/java-iot/issues/147)) ([ad04bfa](https://www.github.com/googleapis/java-iot/commit/ad04bfa78c1ad29c04ad15dca7c7b4c9938b885d))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#128](https://www.github.com/googleapis/java-iot/issues/128)) ([cafb37a](https://www.github.com/googleapis/java-iot/commit/cafb37a2a58d5b792e1896a1c08c1477eb1eda1f))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#160](https://www.github.com/googleapis/java-iot/issues/160)) ([718abd7](https://www.github.com/googleapis/java-iot/commit/718abd7c91b1a780aef4e95c04e92b1dd5bfe602))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#134](https://www.github.com/googleapis/java-iot/issues/134)) ([daf9439](https://www.github.com/googleapis/java-iot/commit/daf94390aaad11c2c4160488b94d4e5ce20069b7))
+
 ### [1.0.2](https://www.github.com/googleapis/java-iot/compare/v1.0.1...v1.0.2) (2020-04-17)
 
 
