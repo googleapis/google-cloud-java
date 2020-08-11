@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.120.1](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.0...v0.120.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* **v1beta1:** migrate to grpc_service_config ([#195](https://www.github.com/googleapis/java-errorreporting/issues/195)) ([3a2ddcf](https://www.github.com/googleapis/java-errorreporting/commit/3a2ddcfb8da2f376be800c62b32f96b271d9f1d2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#189](https://www.github.com/googleapis/java-errorreporting/issues/189)) ([fb6dbc7](https://www.github.com/googleapis/java-errorreporting/commit/fb6dbc7633397761772d812fa9f55923ea0ca006))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#193](https://www.github.com/googleapis/java-errorreporting/issues/193)) ([cdbb26b](https://www.github.com/googleapis/java-errorreporting/commit/cdbb26b95b4e9d90d664c91210512c70d112acde))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#198](https://www.github.com/googleapis/java-errorreporting/issues/198)) ([0d29ee2](https://www.github.com/googleapis/java-errorreporting/commit/0d29ee2023c45a49a08d0c8b08e1571137500cd1))
+
 ## [0.120.0](https://www.github.com/googleapis/java-errorreporting/compare/v0.119.2...v0.120.0) (2020-06-22)
 
 
