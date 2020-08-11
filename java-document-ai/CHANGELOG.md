@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-document-ai/compare/v0.2.0...v0.2.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* update generated retry settings ([#136](https://www.github.com/googleapis/java-document-ai/issues/136)) ([af46f54](https://www.github.com/googleapis/java-document-ai/commit/af46f54f08047a59abe9b8b8b612acca55a429bf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#132](https://www.github.com/googleapis/java-document-ai/issues/132)) ([9b8ccdf](https://www.github.com/googleapis/java-document-ai/commit/9b8ccdfb5617f2a5fd8414e05770978a3fda7294))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#137](https://www.github.com/googleapis/java-document-ai/issues/137)) ([e9e3bea](https://www.github.com/googleapis/java-document-ai/commit/e9e3bea39642fbdd13711b34075444594b259b4c))
+
 ## [0.2.0](https://www.github.com/googleapis/java-document-ai/compare/v0.1.1...v0.2.0) (2020-06-22)
 
 
