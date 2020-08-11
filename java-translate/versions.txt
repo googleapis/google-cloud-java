@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-translate-v3beta1:0.78.0:0.78.1-SNAPSHOT
-proto-google-cloud-translate-v3:1.1.0:1.1.1-SNAPSHOT
-grpc-google-cloud-translate-v3beta1:0.78.0:0.78.1-SNAPSHOT
-grpc-google-cloud-translate-v3:1.1.0:1.1.1-SNAPSHOT
-google-cloud-translate:1.95.0:1.95.1-SNAPSHOT
+proto-google-cloud-translate-v3beta1:0.78.1:0.78.1
+proto-google-cloud-translate-v3:1.1.1:1.1.1
+grpc-google-cloud-translate-v3beta1:0.78.1:0.78.1
+grpc-google-cloud-translate-v3:1.1.1:1.1.1
+google-cloud-translate:1.95.1:1.95.1

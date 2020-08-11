@@ -1,5 +1,25 @@
 # Changelog
 
+### [1.95.1](https://www.github.com/googleapis/java-translate/compare/v1.95.0...v1.95.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* replace get("model") with translationPb.getModel() ([#242](https://www.github.com/googleapis/java-translate/issues/242)) ([97f9664](https://www.github.com/googleapis/java-translate/commit/97f966404a115a5acb36c85fddb71a5b7c72b2e8)), closes [#240](https://www.github.com/googleapis/java-translate/issues/240)
+* use rest api for detect and listSupportedLanguages ([#243](https://www.github.com/googleapis/java-translate/issues/243)) ([448f307](https://www.github.com/googleapis/java-translate/commit/448f307cb5f88ae171680442589e1d19d9a4e189)), closes [#241](https://www.github.com/googleapis/java-translate/issues/241)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#237](https://www.github.com/googleapis/java-translate/issues/237)) ([6befa32](https://www.github.com/googleapis/java-translate/commit/6befa32053912c84629d973a668b10316fdfde1b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#244](https://www.github.com/googleapis/java-translate/issues/244)) ([5ec2720](https://www.github.com/googleapis/java-translate/commit/5ec27208fcfbf09c603070aa4722cb3b8d0e77dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#254](https://www.github.com/googleapis/java-translate/issues/254)) ([f595652](https://www.github.com/googleapis/java-translate/commit/f59565262faf8893962d6bb673d1dc5ece87f15a))
+
+
+### Documentation
+
+* corrects spelling of build dependency adds backticks in docstring to smooth doc generation ([#251](https://www.github.com/googleapis/java-translate/issues/251)) ([8e39d83](https://www.github.com/googleapis/java-translate/commit/8e39d8384b4b6f6ebf9823f6087a7aedb356d5e5))
+
 ## [1.95.0](https://www.github.com/googleapis/java-translate/compare/v1.94.5...v1.95.0) (2020-06-23)
 
 
