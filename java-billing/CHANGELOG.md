@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-billing/compare/v1.1.0...v1.1.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* migrate billing/v1 to grpc_service_config ([#146](https://www.github.com/googleapis/java-billing/issues/146)) ([9f29581](https://www.github.com/googleapis/java-billing/commit/9f29581ca034d56e1770714833dba468330bb093))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#147](https://www.github.com/googleapis/java-billing/issues/147)) ([319baeb](https://www.github.com/googleapis/java-billing/commit/319baeb5a9be9d9562f5522b14da21ba723610e8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([b7d938c](https://www.github.com/googleapis/java-billing/commit/b7d938cd0eb33730000668c328d73c1542ea8a46))
+
 ## [1.1.0](https://www.github.com/googleapis/java-billing/compare/v1.0.2...v1.1.0) (2020-06-22)
 
 
