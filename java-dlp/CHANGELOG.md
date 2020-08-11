@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-dlp/compare/v2.0.0...v2.1.0) (2020-08-10)
+
+
+### Features
+
+* add CSV and TSV to file types ([#232](https://www.github.com/googleapis/java-dlp/issues/232)) ([2f44354](https://www.github.com/googleapis/java-dlp/commit/2f44354fb6ebc7feaf1723b3fc287703dd6bea89))
+
+
+### Bug Fixes
+
+* migrate dlp/v2 to grpc_service_config ([#231](https://www.github.com/googleapis/java-dlp/issues/231)) ([e558868](https://www.github.com/googleapis/java-dlp/commit/e558868cd52c1f6f81cec647a46903b9cf562686))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#228](https://www.github.com/googleapis/java-dlp/issues/228)) ([e252739](https://www.github.com/googleapis/java-dlp/commit/e25273959b8e6369266d79c3c947697063c22509))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#233](https://www.github.com/googleapis/java-dlp/issues/233)) ([96530e4](https://www.github.com/googleapis/java-dlp/commit/96530e4d11bfbc5298559c4790ff55a1730f810a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#240](https://www.github.com/googleapis/java-dlp/issues/240)) ([f96525e](https://www.github.com/googleapis/java-dlp/commit/f96525e2b7fc8b2469f69d8f0049fd3d6393e8a8))
+
 ## [2.0.0](https://www.github.com/googleapis/java-dlp/compare/v1.1.4...v2.0.0) (2020-06-22)
 
 
