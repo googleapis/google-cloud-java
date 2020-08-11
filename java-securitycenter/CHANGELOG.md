@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.1.0...v1.2.0) (2020-08-10)
+
+
+### Features
+
+* **v1beta1:** migrate to gapic v2 - SourceName -> ResourceName ([#203](https://www.github.com/googleapis/java-securitycenter/issues/203)) ([4a88b5a](https://www.github.com/googleapis/java-securitycenter/commit/4a88b5a1b415b60e87fd0c9c8e1725cd61176479))
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#200](https://www.github.com/googleapis/java-securitycenter/issues/200)) ([7813a66](https://www.github.com/googleapis/java-securitycenter/commit/7813a6696e4cca71f53f6042c062ec19b2f63780))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#194](https://www.github.com/googleapis/java-securitycenter/issues/194)) ([b17809b](https://www.github.com/googleapis/java-securitycenter/commit/b17809bf2d595af90782dda81dc7bc90a8a61a24))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#198](https://www.github.com/googleapis/java-securitycenter/issues/198)) ([04158c2](https://www.github.com/googleapis/java-securitycenter/commit/04158c218955efcd85b1009cae71ac94884f85cb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#208](https://www.github.com/googleapis/java-securitycenter/issues/208)) ([9cf4964](https://www.github.com/googleapis/java-securitycenter/commit/9cf4964cb09196694b21705abf0c794e45dc587d))
+
 ## [1.1.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.0.0...v1.1.0) (2020-06-22)
 
 
