@@ -195,7 +195,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private <T> T getEnhancer(String enhancerClassName) {
     try {
       Class<T> clz = (Class<T>) Loader.loadClass(enhancerClassName.trim());
-      return clz.newInstance();
+      return clz.getDeclaredConstructor().newInstance();
     } catch (Exception ex) {
       // If we cannot create the enhancer we fallback to null
     }
