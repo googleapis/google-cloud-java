@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.2.0...v0.2.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* migrate monitoring/dashboard/v1 to grpc_service_config ([#152](https://www.github.com/googleapis/java-monitoring-dashboards/issues/152)) ([6ef3fdf](https://www.github.com/googleapis/java-monitoring-dashboards/commit/6ef3fdf4615fd8a513718d64f89dd229c41c2d2a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#148](https://www.github.com/googleapis/java-monitoring-dashboards/issues/148)) ([8e3cf65](https://www.github.com/googleapis/java-monitoring-dashboards/commit/8e3cf658d0970ee1cc0bba7eeb88976f97446318))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#151](https://www.github.com/googleapis/java-monitoring-dashboards/issues/151)) ([d667c22](https://www.github.com/googleapis/java-monitoring-dashboards/commit/d667c22539eba8cc6a53f3bff5bfea3f18caafe7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([bc93bd6](https://www.github.com/googleapis/java-monitoring-dashboards/commit/bc93bd67f0d0fa5d3f2a542532fbe5624dfce820))
+
 ## [0.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.1.4...v0.2.0) (2020-06-22)
 
 
