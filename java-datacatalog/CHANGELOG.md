@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-datacatalog/compare/v1.0.0...v1.0.1) (2020-08-07)
+
+
+### Bug Fixes
+
+* migrate to grpc_service_config ([#238](https://www.github.com/googleapis/java-datacatalog/issues/238)) ([b56b2fb](https://www.github.com/googleapis/java-datacatalog/commit/b56b2fb43d8c27d8c7bbf495c928587d5b27e554))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#242](https://www.github.com/googleapis/java-datacatalog/issues/242)) ([a8e70c0](https://www.github.com/googleapis/java-datacatalog/commit/a8e70c0f01aa991c0eee5dd2ea6cbf20965a8ec4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#244](https://www.github.com/googleapis/java-datacatalog/issues/244)) ([679fbe4](https://www.github.com/googleapis/java-datacatalog/commit/679fbe47d85fc4c28be75c4e8b0fadd7259b1212))
+
 ## [1.0.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.36.0...v1.0.0) (2020-06-17)
 
 
