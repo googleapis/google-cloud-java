@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-dns/compare/v0.117.5...v0.118.0) (2020-08-07)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#146](https://www.github.com/googleapis/java-dns/issues/146)) ([3fb794a](https://www.github.com/googleapis/java-dns/commit/3fb794a1205cbaca5c1d887a169464347a0ffc11))
+
+
+### Dependencies
+
+* update core dependencies ([#82](https://www.github.com/googleapis/java-dns/issues/82)) ([792c11f](https://www.github.com/googleapis/java-dns/commit/792c11f474d38f3bad78d54d0ed5eb51afc17502))
+* update core dependencies to v1.93.4 ([#104](https://www.github.com/googleapis/java-dns/issues/104)) ([3d11a45](https://www.github.com/googleapis/java-dns/commit/3d11a454cb26bdbc7ab375de9b54403ff28667e9))
+* update core dependencies to v1.93.5 ([#127](https://www.github.com/googleapis/java-dns/issues/127)) ([fcf8cc0](https://www.github.com/googleapis/java-dns/commit/fcf8cc0795924335095a8617cd6c43bb79133b41))
+* update dependency com.google.api:api-common to v1.9.0 ([#97](https://www.github.com/googleapis/java-dns/issues/97)) ([42ce30b](https://www.github.com/googleapis/java-dns/commit/42ce30b7048e2d24824125fbd06d94c5008dd29f))
+* update dependency com.google.api:api-common to v1.9.1 ([#126](https://www.github.com/googleapis/java-dns/issues/126)) ([aaf3ca8](https://www.github.com/googleapis/java-dns/commit/aaf3ca8b3a71a210f14fd98751efae8137865e4e))
+* update dependency com.google.api:api-common to v1.9.2 ([#133](https://www.github.com/googleapis/java-dns/issues/133)) ([95448e4](https://www.github.com/googleapis/java-dns/commit/95448e49a4d3755b01a7c00c9b31ea1799b5a032))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#157](https://www.github.com/googleapis/java-dns/issues/157)) ([0cc1c77](https://www.github.com/googleapis/java-dns/commit/0cc1c7760a5d085397004b90d1c9328bee2c1b2b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#160](https://www.github.com/googleapis/java-dns/issues/160)) ([09970c3](https://www.github.com/googleapis/java-dns/commit/09970c3e06cac95f77e64fd19e7befa8842f38c2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#162](https://www.github.com/googleapis/java-dns/issues/162)) ([c4a5a3a](https://www.github.com/googleapis/java-dns/commit/c4a5a3a50102262fee2d7e9b89bc3ebf38278b78))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#94](https://www.github.com/googleapis/java-dns/issues/94)) ([b82d042](https://www.github.com/googleapis/java-dns/commit/b82d0429143340c14bd4cb1e5cb1fb84873d30fe))
+* update dependency com.google.guava:guava-bom to v29 ([#109](https://www.github.com/googleapis/java-dns/issues/109)) ([9f04620](https://www.github.com/googleapis/java-dns/commit/9f046208b121ea5d10a9aa970ed84246f3bf9328))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#119](https://www.github.com/googleapis/java-dns/issues/119)) ([ba9bfe6](https://www.github.com/googleapis/java-dns/commit/ba9bfe6c3e84668ce1757a3a35f68c06d59a4b02))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#92](https://www.github.com/googleapis/java-dns/issues/92)) ([601cd80](https://www.github.com/googleapis/java-dns/commit/601cd8050f06c2117d44a918d186c4258b10e608))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#118](https://www.github.com/googleapis/java-dns/issues/118)) ([95ee472](https://www.github.com/googleapis/java-dns/commit/95ee472b640ae6ebc21f99b7915f5cb6f250187a))
+
 ### [0.117.5](https://www.github.com/googleapis/java-dns/compare/v0.117.4...v0.117.5) (2020-03-09)
 
 
