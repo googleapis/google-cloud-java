@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-resourcemanager/compare/v0.117.2...v0.118.0) (2020-08-10)
+
+
+### Features
+
+* expose apis of resourcemanager folders ([#99](https://www.github.com/googleapis/java-resourcemanager/issues/99)) ([d998fab](https://www.github.com/googleapis/java-resourcemanager/commit/d998fabea7126fe8653369258c82eac1f4b20b88))
+* implement testPermission api of organizations ([#125](https://www.github.com/googleapis/java-resourcemanager/issues/125)) ([317a172](https://www.github.com/googleapis/java-resourcemanager/commit/317a172b77bb76e053d2a5b9050c21d3c9526158))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#191](https://www.github.com/googleapis/java-resourcemanager/issues/191)) ([0c97eb5](https://www.github.com/googleapis/java-resourcemanager/commit/0c97eb584fcc37c66c3af01a67158d5a1155eb31))
+
+
+### Dependencies
+
+* update core dependencies ([#133](https://www.github.com/googleapis/java-resourcemanager/issues/133)) ([5b4393a](https://www.github.com/googleapis/java-resourcemanager/commit/5b4393a570b8578d4611c0dc14a07c97567b548a))
+* update core dependencies to v1.93.3 ([#104](https://www.github.com/googleapis/java-resourcemanager/issues/104)) ([273e621](https://www.github.com/googleapis/java-resourcemanager/commit/273e621ec47c63ec1245a4ba6862d564dd5db013))
+* update dependency com.google.api:api-common to v1.9.0 ([#120](https://www.github.com/googleapis/java-resourcemanager/issues/120)) ([7112223](https://www.github.com/googleapis/java-resourcemanager/commit/7112223387a6c5faef7626a6acfcbf4b6306377f))
+* update dependency com.google.api:api-common to v1.9.1 ([#168](https://www.github.com/googleapis/java-resourcemanager/issues/168)) ([9637680](https://www.github.com/googleapis/java-resourcemanager/commit/96376804729f407a8c329a117a5df5b119636ac5))
+* update dependency com.google.api:api-common to v1.9.2 ([#174](https://www.github.com/googleapis/java-resourcemanager/issues/174)) ([efc0b2d](https://www.github.com/googleapis/java-resourcemanager/commit/efc0b2dc8bbc9f0cb67eab0f386338f1eb013947))
+* update dependency com.google.api:gax-bom to v1.55.0 ([#124](https://www.github.com/googleapis/java-resourcemanager/issues/124)) ([dc2002f](https://www.github.com/googleapis/java-resourcemanager/commit/dc2002fe22146d67a2d31b38e163d6c029c161fc))
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20200311-1.30.9 ([#100](https://www.github.com/googleapis/java-resourcemanager/issues/100)) ([9af1f5d](https://www.github.com/googleapis/java-resourcemanager/commit/9af1f5d1fc1d17976b3e0a5ea9f5ebc4803993ee))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#204](https://www.github.com/googleapis/java-resourcemanager/issues/204)) ([c5fac70](https://www.github.com/googleapis/java-resourcemanager/commit/c5fac70539cba1593d31b845ee4e833dac3a4b19))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.4 ([#206](https://www.github.com/googleapis/java-resourcemanager/issues/206)) ([c16b9cf](https://www.github.com/googleapis/java-resourcemanager/commit/c16b9cf92f223a1de4a7e436c6b196d7610b25f4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#212](https://www.github.com/googleapis/java-resourcemanager/issues/212)) ([36522d3](https://www.github.com/googleapis/java-resourcemanager/commit/36522d355f4191c966b3b43f2b9a2be2c15e80d7))
+* update dependency com.google.guava:guava-bom to v29 ([#138](https://www.github.com/googleapis/java-resourcemanager/issues/138)) ([0a5b057](https://www.github.com/googleapis/java-resourcemanager/commit/0a5b05730f69b6e6307488b2e31ce8a148b68110))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#156](https://www.github.com/googleapis/java-resourcemanager/issues/156)) ([9a87e02](https://www.github.com/googleapis/java-resourcemanager/commit/9a87e026c77de190a0d5d3824fb5ff8adf024680))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.0 ([#162](https://www.github.com/googleapis/java-resourcemanager/issues/162)) ([2f40eaf](https://www.github.com/googleapis/java-resourcemanager/commit/2f40eafff39136104d1483bda82706ba599af7ca))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#166](https://www.github.com/googleapis/java-resourcemanager/issues/166)) ([1d8a5b9](https://www.github.com/googleapis/java-resourcemanager/commit/1d8a5b910520b351870e80b00ab85f2aa25a382a))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#112](https://www.github.com/googleapis/java-resourcemanager/issues/112)) ([da637f0](https://www.github.com/googleapis/java-resourcemanager/commit/da637f0a32a3bdc63faaffb564e06121e186b24c))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#131](https://www.github.com/googleapis/java-resourcemanager/issues/131)) ([ee08cde](https://www.github.com/googleapis/java-resourcemanager/commit/ee08cdea780a57b2b76295bc4081c35e03ffd0f2))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#155](https://www.github.com/googleapis/java-resourcemanager/issues/155)) ([1ba27f4](https://www.github.com/googleapis/java-resourcemanager/commit/1ba27f49ea1509f63dda378e9af326502d1606a2))
+
 ### [0.117.2](https://www.github.com/googleapis/java-resourcemanager/compare/v0.117.1...v0.117.2) (2020-03-10)
 
 
