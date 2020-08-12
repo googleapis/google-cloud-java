@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-grafeas/compare/v0.25.0...v1.0.0) (2020-08-12)
+
+
+### Features
+
+* promote to 1.0.0 ([#133](https://www.github.com/googleapis/java-grafeas/issues/133)) ([31eeadf](https://www.github.com/googleapis/java-grafeas/commit/31eeadf1cdc676d5eb7cd483d168005ff70935ac))
+
 ## [0.25.0](https://www.github.com/googleapis/java-grafeas/compare/v0.24.1...v0.25.0) (2020-08-10)
 
 
