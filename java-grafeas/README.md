@@ -7,9 +7,6 @@ Java idiomatic client for [Grafeas][grafeas].
 
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 ## Quickstart
 
 [//]: # ({x-version-update-start:grafeas:released})
@@ -76,9 +73,6 @@ Java 7 or above is required for using this client.
 
 This library follows [Semantic Versioning](http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 ## Contributing
 
 Contributions to this library are always welcome and highly encouraged.
@@ -115,7 +109,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java11.html
-[stability-image]: https://img.shields.io/badge/stability-alpha-orange
+[stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/io.grafeas/grafeas.svg
 [maven-version-link]: https://search.maven.org/search?q=g:io.grafeas%20AND%20a:grafeas&core=gav
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
