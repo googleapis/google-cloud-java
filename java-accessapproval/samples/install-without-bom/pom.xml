@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-accessapproval</artifactId>
-      <version>0.1.3</version>
+      <version>0.1.5</version>
     </dependency>
     <!-- [END accessapproval_install_without_bom] -->
 
