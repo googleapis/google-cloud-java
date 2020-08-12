@@ -59,5 +59,4 @@ public class ComposeObject {
             + secondObjectName);
   }
 }
-// [START storage_compose_file]g
-
+// [START storage_compose_file]
