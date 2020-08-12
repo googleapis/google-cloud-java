@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-dns/compare/v0.118.0...v1.0.0) (2020-08-12)
+
+
+### Features
+
+* promote to 1.0.0 ([#167](https://www.github.com/googleapis/java-dns/issues/167)) ([176d236](https://www.github.com/googleapis/java-dns/commit/176d236f7beee01000a72446f100211f8e5140dd))
+
 ## [0.118.0](https://www.github.com/googleapis/java-dns/compare/v0.117.5...v0.118.0) (2020-08-07)
 
 
