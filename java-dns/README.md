@@ -10,9 +10,6 @@ Java idiomatic client for [Google Cloud DNS][cloud-dns].
 - [Product Documentation][dns-product-docs]
 - [Client Library Documentation][dns-client-lib-docs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 Quickstart
 ----------
 If you are using Maven with a BOM, add this to your pom.xml file.
@@ -381,10 +378,6 @@ Versioning
 ----------
 
 This library follows [Semantic Versioning](http://semver.org/).
-
-It is currently in major version zero (``0.y.z``), which means that anything
-may change at any time and the public API should not be considered
-stable.
 
 Contributing
 ------------
