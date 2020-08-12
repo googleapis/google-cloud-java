@@ -23,7 +23,11 @@ import com.google.cloud.storage.StorageOptions;
 
 public class ComposeObject {
   public static void composeObject(
-      String bucketName, String firstObjectName, String secondObjectName, String targetObjectName, String projectId) {
+      String bucketName,
+      String firstObjectName,
+      String secondObjectName,
+      String targetObjectName,
+      String projectId) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -43,7 +47,8 @@ public class ComposeObject {
 
     Storage.ComposeRequest composeRequest =
         Storage.ComposeRequest.newBuilder()
-            // addSource takes varargs, so you can put as many objects here as you want
+            // addSource takes varargs, so you can put as many objects here as you want, up to the
+            // max of 32
             .addSource(firstObjectName, secondObjectName)
             .setTarget(BlobInfo.newBuilder(bucketName, targetObjectName).build())
             .build();
@@ -59,5 +64,4 @@ public class ComposeObject {
             + secondObjectName);
   }
 }
-// [START storage_compose_file]g
-
+// [START storage_compose_file]

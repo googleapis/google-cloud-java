@@ -400,6 +400,7 @@ public class ITBlobSnippets {
     ComposeObject.composeObject(BUCKET, firstObject, secondObject, targetObject, PROJECT_ID);
 
     System.out.println(new String(storage.get(BUCKET, targetObject).getContent()));
-    assertArrayEquals("firstObjectsecondObject".getBytes(UTF_8), storage.get(BUCKET, targetObject).getContent());
+    assertArrayEquals(
+        "firstObjectsecondObject".getBytes(UTF_8), storage.get(BUCKET, targetObject).getContent());
   }
 }
