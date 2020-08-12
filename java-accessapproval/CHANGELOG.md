@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.5...v1.0.0) (2020-08-12)
+
+
+### Features
+
+* promote to 1.0.0 ([#156](https://www.github.com/googleapis/java-accessapproval/issues/156)) ([44bd532](https://www.github.com/googleapis/java-accessapproval/commit/44bd532dd3842dcc4fcc3deb31528a434916df3c))
+
 ### [0.1.5](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.4...v0.1.5) (2020-08-11)
 
 
