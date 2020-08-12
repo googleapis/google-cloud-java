@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.93.8](https://www.github.com/googleapis/java-core/compare/v1.93.7...v1.93.8) (2020-08-12)
+
+
+### Bug Fixes
+
+* docs of com.google.cloud.Timestamp.parseTimestamp ([#258](https://www.github.com/googleapis/java-core/issues/258)) ([964dd14](https://www.github.com/googleapis/java-core/commit/964dd142609ae8923a285e20746ce9ee8c302bd5))
+
+
+### Dependencies
+
+* update core dependencies ([#263](https://www.github.com/googleapis/java-core/issues/263)) ([44023c3](https://www.github.com/googleapis/java-core/commit/44023c34d0b5d1990c5028f6e04479b8d7539e77))
+* update dependency com.google.api-client:google-api-client-bom to v1.30.10 ([#253](https://www.github.com/googleapis/java-core/issues/253)) ([0fd53fe](https://www.github.com/googleapis/java-core/commit/0fd53fe522e35fdd09783bb618ff7dcf01d82a95))
+* update dependency com.google.api:api-common to v1.10.0 ([#261](https://www.github.com/googleapis/java-core/issues/261)) ([1414e01](https://www.github.com/googleapis/java-core/commit/1414e01a8154533d53911933eb86fc785760af6c))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.1 ([#268](https://www.github.com/googleapis/java-core/issues/268)) ([b59a83c](https://www.github.com/googleapis/java-core/commit/b59a83c212f862043de0f5f8fa6ae7bb5d2baba4))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1 ([#269](https://www.github.com/googleapis/java-core/issues/269)) ([fe3987e](https://www.github.com/googleapis/java-core/commit/fe3987e2dffb2fe7b7bdd0d48266eba7aad7929b))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.4 ([#262](https://www.github.com/googleapis/java-core/issues/262)) ([2ffca65](https://www.github.com/googleapis/java-core/commit/2ffca65399a716a0b929ae3f1ae388481b187ae2))
+
 ### [1.93.7](https://www.github.com/googleapis/java-core/compare/v1.93.6...v1.93.7) (2020-07-08)
 
 
