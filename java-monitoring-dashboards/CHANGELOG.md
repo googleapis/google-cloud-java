@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.2.1...v1.0.0) (2020-08-12)
+
+
+### Features
+
+* promote to 1.0.0 ([#162](https://www.github.com/googleapis/java-monitoring-dashboards/issues/162)) ([6753965](https://www.github.com/googleapis/java-monitoring-dashboards/commit/67539656a8fd38b234dd6162fd7f5704aba1fbe3))
+
 ### [0.2.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v0.2.0...v0.2.1) (2020-08-07)
 
 
