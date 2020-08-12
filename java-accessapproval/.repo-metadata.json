@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/access-approval/docs/",
   "api_description": "enables controlling access to your organization's data by Google personnel.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-accessapproval/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "requires_billing": true,
   "language": "java",
