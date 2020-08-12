@@ -7,9 +7,6 @@ Java protobuf classes for IAM Policy.
 
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 ## Java Versions
 
 Java 7 or above is required for using this client.
@@ -56,7 +53,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-iam/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-iam/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-iam/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-iam-v1.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-iam-v1&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication

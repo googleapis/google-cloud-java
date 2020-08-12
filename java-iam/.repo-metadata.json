@@ -4,7 +4,7 @@
   "product_documentation": "n/a",
   "api_description": "n/a",
   "client_documentation": "https://googleapis.dev/java/proto-google-iam-v1/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "requires_billing": true,
   "language": "java",
