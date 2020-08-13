@@ -24,8 +24,8 @@ package com.google.cloud.kms.v1;
  * <pre>
  * A [CryptoKey][google.cloud.kms.v1.CryptoKey] represents a logical key that can be used for cryptographic
  * operations.
- * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of one or more [versions][google.cloud.kms.v1.CryptoKeyVersion], which
- * represent the actual key material used in cryptographic operations.
+ * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of zero or more [versions][google.cloud.kms.v1.CryptoKeyVersion],
+ * which represent the actual key material used in cryptographic operations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKey}
@@ -1257,8 +1257,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] represents a logical key that can be used for cryptographic
    * operations.
-   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of one or more [versions][google.cloud.kms.v1.CryptoKeyVersion], which
-   * represent the actual key material used in cryptographic operations.
+   * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of zero or more [versions][google.cloud.kms.v1.CryptoKeyVersion],
+   * which represent the actual key material used in cryptographic operations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKey}

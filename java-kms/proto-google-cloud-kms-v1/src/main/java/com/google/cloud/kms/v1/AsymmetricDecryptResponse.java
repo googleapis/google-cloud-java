@@ -75,6 +75,26 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
               plaintext_ = input.readBytes();
               break;
             }
+          case 18:
+            {
+              com.google.protobuf.Int64Value.Builder subBuilder = null;
+              if (plaintextCrc32C_ != null) {
+                subBuilder = plaintextCrc32C_.toBuilder();
+              }
+              plaintextCrc32C_ =
+                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(plaintextCrc32C_);
+                plaintextCrc32C_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 24:
+            {
+              verifiedCiphertextCrc32C_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -127,6 +147,113 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     return plaintext_;
   }
 
+  public static final int PLAINTEXT_CRC32C_FIELD_NUMBER = 2;
+  private com.google.protobuf.Int64Value plaintextCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+   * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+   * your results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   *
+   * @return Whether the plaintextCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasPlaintextCrc32C() {
+    return plaintextCrc32C_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+   * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+   * your results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   *
+   * @return The plaintextCrc32c.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getPlaintextCrc32C() {
+    return plaintextCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : plaintextCrc32C_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+   * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+   * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+   * your results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getPlaintextCrc32COrBuilder() {
+    return getPlaintextCrc32C();
+  }
+
+  public static final int VERIFIED_CIPHERTEXT_CRC32C_FIELD_NUMBER = 3;
+  private boolean verifiedCiphertextCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A flag indicating whether
+   * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+   * [ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]. A false value of this
+   * field indicates either that [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
+   * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
+   * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
+   * still false, discard the response and perform a limited number of retries.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>bool verified_ciphertext_crc32c = 3;</code>
+   *
+   * @return The verifiedCiphertextCrc32c.
+   */
+  @java.lang.Override
+  public boolean getVerifiedCiphertextCrc32C() {
+    return verifiedCiphertextCrc32C_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -144,6 +271,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     if (!plaintext_.isEmpty()) {
       output.writeBytes(1, plaintext_);
     }
+    if (plaintextCrc32C_ != null) {
+      output.writeMessage(2, getPlaintextCrc32C());
+    }
+    if (verifiedCiphertextCrc32C_ != false) {
+      output.writeBool(3, verifiedCiphertextCrc32C_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -155,6 +288,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     size = 0;
     if (!plaintext_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, plaintext_);
+    }
+    if (plaintextCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPlaintextCrc32C());
+    }
+    if (verifiedCiphertextCrc32C_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, verifiedCiphertextCrc32C_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -173,6 +312,11 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
         (com.google.cloud.kms.v1.AsymmetricDecryptResponse) obj;
 
     if (!getPlaintext().equals(other.getPlaintext())) return false;
+    if (hasPlaintextCrc32C() != other.hasPlaintextCrc32C()) return false;
+    if (hasPlaintextCrc32C()) {
+      if (!getPlaintextCrc32C().equals(other.getPlaintextCrc32C())) return false;
+    }
+    if (getVerifiedCiphertextCrc32C() != other.getVerifiedCiphertextCrc32C()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,6 +330,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PLAINTEXT_FIELD_NUMBER;
     hash = (53 * hash) + getPlaintext().hashCode();
+    if (hasPlaintextCrc32C()) {
+      hash = (37 * hash) + PLAINTEXT_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getPlaintextCrc32C().hashCode();
+    }
+    hash = (37 * hash) + VERIFIED_CIPHERTEXT_CRC32C_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedCiphertextCrc32C());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,6 +483,14 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       super.clear();
       plaintext_ = com.google.protobuf.ByteString.EMPTY;
 
+      if (plaintextCrc32CBuilder_ == null) {
+        plaintextCrc32C_ = null;
+      } else {
+        plaintextCrc32C_ = null;
+        plaintextCrc32CBuilder_ = null;
+      }
+      verifiedCiphertextCrc32C_ = false;
+
       return this;
     }
 
@@ -361,6 +519,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
       com.google.cloud.kms.v1.AsymmetricDecryptResponse result =
           new com.google.cloud.kms.v1.AsymmetricDecryptResponse(this);
       result.plaintext_ = plaintext_;
+      if (plaintextCrc32CBuilder_ == null) {
+        result.plaintextCrc32C_ = plaintextCrc32C_;
+      } else {
+        result.plaintextCrc32C_ = plaintextCrc32CBuilder_.build();
+      }
+      result.verifiedCiphertextCrc32C_ = verifiedCiphertextCrc32C_;
       onBuilt();
       return result;
     }
@@ -413,6 +577,12 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
         return this;
       if (other.getPlaintext() != com.google.protobuf.ByteString.EMPTY) {
         setPlaintext(other.getPlaintext());
+      }
+      if (other.hasPlaintextCrc32C()) {
+        mergePlaintextCrc32C(other.getPlaintextCrc32C());
+      }
+      if (other.getVerifiedCiphertextCrc32C() != false) {
+        setVerifiedCiphertextCrc32C(other.getVerifiedCiphertextCrc32C());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -495,6 +665,366 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
     public Builder clearPlaintext() {
 
       plaintext_ = getDefaultInstance().getPlaintext();
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Int64Value plaintextCrc32C_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        plaintextCrc32CBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     *
+     * @return Whether the plaintextCrc32c field is set.
+     */
+    public boolean hasPlaintextCrc32C() {
+      return plaintextCrc32CBuilder_ != null || plaintextCrc32C_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     *
+     * @return The plaintextCrc32c.
+     */
+    public com.google.protobuf.Int64Value getPlaintextCrc32C() {
+      if (plaintextCrc32CBuilder_ == null) {
+        return plaintextCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : plaintextCrc32C_;
+      } else {
+        return plaintextCrc32CBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public Builder setPlaintextCrc32C(com.google.protobuf.Int64Value value) {
+      if (plaintextCrc32CBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        plaintextCrc32C_ = value;
+        onChanged();
+      } else {
+        plaintextCrc32CBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public Builder setPlaintextCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (plaintextCrc32CBuilder_ == null) {
+        plaintextCrc32C_ = builderForValue.build();
+        onChanged();
+      } else {
+        plaintextCrc32CBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public Builder mergePlaintextCrc32C(com.google.protobuf.Int64Value value) {
+      if (plaintextCrc32CBuilder_ == null) {
+        if (plaintextCrc32C_ != null) {
+          plaintextCrc32C_ =
+              com.google.protobuf.Int64Value.newBuilder(plaintextCrc32C_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          plaintextCrc32C_ = value;
+        }
+        onChanged();
+      } else {
+        plaintextCrc32CBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public Builder clearPlaintextCrc32C() {
+      if (plaintextCrc32CBuilder_ == null) {
+        plaintextCrc32C_ = null;
+        onChanged();
+      } else {
+        plaintextCrc32C_ = null;
+        plaintextCrc32CBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getPlaintextCrc32CBuilder() {
+
+      onChanged();
+      return getPlaintextCrc32CFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getPlaintextCrc32COrBuilder() {
+      if (plaintextCrc32CBuilder_ != null) {
+        return plaintextCrc32CBuilder_.getMessageOrBuilder();
+      } else {
+        return plaintextCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : plaintextCrc32C_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext]. An integrity check of
+     * [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] can be performed by computing the
+     * CRC32C checksum of [AsymmetricDecryptResponse.plaintext][google.cloud.kms.v1.AsymmetricDecryptResponse.plaintext] and comparing
+     * your results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getPlaintextCrc32CFieldBuilder() {
+      if (plaintextCrc32CBuilder_ == null) {
+        plaintextCrc32CBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                getPlaintextCrc32C(), getParentForChildren(), isClean());
+        plaintextCrc32C_ = null;
+      }
+      return plaintextCrc32CBuilder_;
+    }
+
+    private boolean verifiedCiphertextCrc32C_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]. A false value of this
+     * field indicates either that [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
+     * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
+     * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
+     * still false, discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_ciphertext_crc32c = 3;</code>
+     *
+     * @return The verifiedCiphertextCrc32c.
+     */
+    @java.lang.Override
+    public boolean getVerifiedCiphertextCrc32C() {
+      return verifiedCiphertextCrc32C_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]. A false value of this
+     * field indicates either that [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
+     * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
+     * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
+     * still false, discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_ciphertext_crc32c = 3;</code>
+     *
+     * @param value The verifiedCiphertextCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerifiedCiphertextCrc32C(boolean value) {
+
+      verifiedCiphertextCrc32C_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [ciphertext][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext]. A false value of this
+     * field indicates either that [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
+     * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
+     * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
+     * still false, discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_ciphertext_crc32c = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerifiedCiphertextCrc32C() {
+
+      verifiedCiphertextCrc32C_ = false;
       onChanged();
       return this;
     }

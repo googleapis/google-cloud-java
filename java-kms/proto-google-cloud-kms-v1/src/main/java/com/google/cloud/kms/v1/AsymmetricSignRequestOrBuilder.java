@@ -92,4 +92,81 @@ public interface AsymmetricSignRequestOrBuilder
    * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
+   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the digestCrc32c field is set.
+   */
+  boolean hasDigestCrc32C();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
+   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The digestCrc32c.
+   */
+  com.google.protobuf.Int64Value getDigestCrc32C();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional CRC32C checksum of the [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. If
+   * specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+   * received [AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest] using this checksum.
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+   * fails. If you receive a checksum error, your client should verify that
+   * CRC32C([AsymmetricSignRequest.digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]) is equal to
+   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c], and if so, perform a limited
+   * number of retries. A persistent mismatch may indicate an issue in your
+   * computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.Int64ValueOrBuilder getDigestCrc32COrBuilder();
 }

@@ -35,4 +35,78 @@ public interface DecryptResponseOrBuilder
    * @return The plaintext.
    */
   com.google.protobuf.ByteString getPlaintext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext]. An integrity check of
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] can be performed by computing the CRC32C
+   * checksum of [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] and comparing your results to
+   * this field. Discard the response in case of non-matching checksum values,
+   * and perform a limited number of retries. A persistent mismatch may indicate
+   * an issue in your computation of the CRC32C checksum. Note: receiving this
+   * response message indicates that [KeyManagementService][google.cloud.kms.v1.KeyManagementService] is able to
+   * successfully decrypt the [ciphertext][google.cloud.kms.v1.DecryptRequest.ciphertext].
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   *
+   * @return Whether the plaintextCrc32c field is set.
+   */
+  boolean hasPlaintextCrc32C();
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext]. An integrity check of
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] can be performed by computing the CRC32C
+   * checksum of [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] and comparing your results to
+   * this field. Discard the response in case of non-matching checksum values,
+   * and perform a limited number of retries. A persistent mismatch may indicate
+   * an issue in your computation of the CRC32C checksum. Note: receiving this
+   * response message indicates that [KeyManagementService][google.cloud.kms.v1.KeyManagementService] is able to
+   * successfully decrypt the [ciphertext][google.cloud.kms.v1.DecryptRequest.ciphertext].
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   *
+   * @return The plaintextCrc32c.
+   */
+  com.google.protobuf.Int64Value getPlaintextCrc32C();
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext]. An integrity check of
+   * [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] can be performed by computing the CRC32C
+   * checksum of [DecryptResponse.plaintext][google.cloud.kms.v1.DecryptResponse.plaintext] and comparing your results to
+   * this field. Discard the response in case of non-matching checksum values,
+   * and perform a limited number of retries. A persistent mismatch may indicate
+   * an issue in your computation of the CRC32C checksum. Note: receiving this
+   * response message indicates that [KeyManagementService][google.cloud.kms.v1.KeyManagementService] is able to
+   * successfully decrypt the [ciphertext][google.cloud.kms.v1.DecryptRequest.ciphertext].
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
+   */
+  com.google.protobuf.Int64ValueOrBuilder getPlaintextCrc32COrBuilder();
 }

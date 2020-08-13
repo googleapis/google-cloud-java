@@ -39,6 +39,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
 
   private AsymmetricSignResponse() {
     signature_ = com.google.protobuf.ByteString.EMPTY;
+    name_ = "";
   }
 
   @java.lang.Override
@@ -73,6 +74,33 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
           case 10:
             {
               signature_ = input.readBytes();
+              break;
+            }
+          case 18:
+            {
+              com.google.protobuf.Int64Value.Builder subBuilder = null;
+              if (signatureCrc32C_ != null) {
+                subBuilder = signatureCrc32C_.toBuilder();
+              }
+              signatureCrc32C_ =
+                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signatureCrc32C_);
+                signatureCrc32C_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 24:
+            {
+              verifiedDigestCrc32C_ = input.readBool();
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
           default:
@@ -127,6 +155,166 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     return signature_;
   }
 
+  public static final int SIGNATURE_CRC32C_FIELD_NUMBER = 2;
+  private com.google.protobuf.Int64Value signatureCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+   *
+   * @return Whether the signatureCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasSignatureCrc32C() {
+    return signatureCrc32C_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+   *
+   * @return The signatureCrc32c.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getSignatureCrc32C() {
+    return signatureCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : signatureCrc32C_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+   * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+   * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+   * results to this field. Discard the response in case of non-matching
+   * checksum values, and perform a limited number of retries. A persistent
+   * mismatch may indicate an issue in your computation of the CRC32C checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getSignatureCrc32COrBuilder() {
+    return getSignatureCrc32C();
+  }
+
+  public static final int VERIFIED_DIGEST_CRC32C_FIELD_NUMBER = 3;
+  private boolean verifiedDigestCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A flag indicating whether
+   * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
+   * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+   * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
+   * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
+   * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+   * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
+   * discard the response and perform a limited number of retries.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>bool verified_digest_crc32c = 3;</code>
+   *
+   * @return The verifiedDigestCrc32c.
+   */
+  @java.lang.Override
+  public boolean getVerifiedDigestCrc32C() {
+    return verifiedDigestCrc32C_;
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+   * this field to verify that the intended resource was used for signing.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+   * this field to verify that the intended resource was used for signing.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -144,6 +332,15 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     if (!signature_.isEmpty()) {
       output.writeBytes(1, signature_);
     }
+    if (signatureCrc32C_ != null) {
+      output.writeMessage(2, getSignatureCrc32C());
+    }
+    if (verifiedDigestCrc32C_ != false) {
+      output.writeBool(3, verifiedDigestCrc32C_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -155,6 +352,15 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     size = 0;
     if (!signature_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, signature_);
+    }
+    if (signatureCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSignatureCrc32C());
+    }
+    if (verifiedDigestCrc32C_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, verifiedDigestCrc32C_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -173,6 +379,12 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         (com.google.cloud.kms.v1.AsymmetricSignResponse) obj;
 
     if (!getSignature().equals(other.getSignature())) return false;
+    if (hasSignatureCrc32C() != other.hasSignatureCrc32C()) return false;
+    if (hasSignatureCrc32C()) {
+      if (!getSignatureCrc32C().equals(other.getSignatureCrc32C())) return false;
+    }
+    if (getVerifiedDigestCrc32C() != other.getVerifiedDigestCrc32C()) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,6 +398,14 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
     hash = (53 * hash) + getSignature().hashCode();
+    if (hasSignatureCrc32C()) {
+      hash = (37 * hash) + SIGNATURE_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getSignatureCrc32C().hashCode();
+    }
+    hash = (37 * hash) + VERIFIED_DIGEST_CRC32C_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVerifiedDigestCrc32C());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,6 +553,16 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       super.clear();
       signature_ = com.google.protobuf.ByteString.EMPTY;
 
+      if (signatureCrc32CBuilder_ == null) {
+        signatureCrc32C_ = null;
+      } else {
+        signatureCrc32C_ = null;
+        signatureCrc32CBuilder_ = null;
+      }
+      verifiedDigestCrc32C_ = false;
+
+      name_ = "";
+
       return this;
     }
 
@@ -361,6 +591,13 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       com.google.cloud.kms.v1.AsymmetricSignResponse result =
           new com.google.cloud.kms.v1.AsymmetricSignResponse(this);
       result.signature_ = signature_;
+      if (signatureCrc32CBuilder_ == null) {
+        result.signatureCrc32C_ = signatureCrc32C_;
+      } else {
+        result.signatureCrc32C_ = signatureCrc32CBuilder_.build();
+      }
+      result.verifiedDigestCrc32C_ = verifiedDigestCrc32C_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -412,6 +649,16 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.kms.v1.AsymmetricSignResponse.getDefaultInstance()) return this;
       if (other.getSignature() != com.google.protobuf.ByteString.EMPTY) {
         setSignature(other.getSignature());
+      }
+      if (other.hasSignatureCrc32C()) {
+        mergeSignatureCrc32C(other.getSignatureCrc32C());
+      }
+      if (other.getVerifiedDigestCrc32C() != false) {
+        setVerifiedDigestCrc32C(other.getVerifiedDigestCrc32C());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -493,6 +740,482 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public Builder clearSignature() {
 
       signature_ = getDefaultInstance().getSignature();
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Int64Value signatureCrc32C_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        signatureCrc32CBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     *
+     * @return Whether the signatureCrc32c field is set.
+     */
+    public boolean hasSignatureCrc32C() {
+      return signatureCrc32CBuilder_ != null || signatureCrc32C_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     *
+     * @return The signatureCrc32c.
+     */
+    public com.google.protobuf.Int64Value getSignatureCrc32C() {
+      if (signatureCrc32CBuilder_ == null) {
+        return signatureCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : signatureCrc32C_;
+      } else {
+        return signatureCrc32CBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public Builder setSignatureCrc32C(com.google.protobuf.Int64Value value) {
+      if (signatureCrc32CBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        signatureCrc32C_ = value;
+        onChanged();
+      } else {
+        signatureCrc32CBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public Builder setSignatureCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (signatureCrc32CBuilder_ == null) {
+        signatureCrc32C_ = builderForValue.build();
+        onChanged();
+      } else {
+        signatureCrc32CBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public Builder mergeSignatureCrc32C(com.google.protobuf.Int64Value value) {
+      if (signatureCrc32CBuilder_ == null) {
+        if (signatureCrc32C_ != null) {
+          signatureCrc32C_ =
+              com.google.protobuf.Int64Value.newBuilder(signatureCrc32C_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          signatureCrc32C_ = value;
+        }
+        onChanged();
+      } else {
+        signatureCrc32CBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public Builder clearSignatureCrc32C() {
+      if (signatureCrc32CBuilder_ == null) {
+        signatureCrc32C_ = null;
+        onChanged();
+      } else {
+        signatureCrc32C_ = null;
+        signatureCrc32CBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getSignatureCrc32CBuilder() {
+
+      onChanged();
+      return getSignatureCrc32CFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getSignatureCrc32COrBuilder() {
+      if (signatureCrc32CBuilder_ != null) {
+        return signatureCrc32CBuilder_.getMessageOrBuilder();
+      } else {
+        return signatureCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : signatureCrc32C_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature]. An integrity check of
+     * [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] can be performed by computing the
+     * CRC32C checksum of [AsymmetricSignResponse.signature][google.cloud.kms.v1.AsymmetricSignResponse.signature] and comparing your
+     * results to this field. Discard the response in case of non-matching
+     * checksum values, and perform a limited number of retries. A persistent
+     * mismatch may indicate an issue in your computation of the CRC32C checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getSignatureCrc32CFieldBuilder() {
+      if (signatureCrc32CBuilder_ == null) {
+        signatureCrc32CBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                getSignatureCrc32C(), getParentForChildren(), isClean());
+        signatureCrc32C_ = null;
+      }
+      return signatureCrc32CBuilder_;
+    }
+
+    private boolean verifiedDigestCrc32C_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_digest_crc32c = 3;</code>
+     *
+     * @return The verifiedDigestCrc32c.
+     */
+    @java.lang.Override
+    public boolean getVerifiedDigestCrc32C() {
+      return verifiedDigestCrc32C_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_digest_crc32c = 3;</code>
+     *
+     * @param value The verifiedDigestCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerifiedDigestCrc32C(boolean value) {
+
+      verifiedDigestCrc32C_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A flag indicating whether
+     * [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was received by
+     * [KeyManagementService][google.cloud.kms.v1.KeyManagementService] and used for the integrity verification of the
+     * [digest][google.cloud.kms.v1.AsymmetricSignRequest.digest]. A false value of this field
+     * indicates either that [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] was left
+     * unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If you've
+     * set [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c] but this field is still false,
+     * discard the response and perform a limited number of retries.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>bool verified_digest_crc32c = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerifiedDigestCrc32C() {
+
+      verifiedDigestCrc32C_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+     * this field to verify that the intended resource was used for signing.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+     * this field to verify that the intended resource was used for signing.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+     * this field to verify that the intended resource was used for signing.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+     * this field to verify that the intended resource was used for signing.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used for signing. Check
+     * this field to verify that the intended resource was used for signing.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
       onChanged();
       return this;
     }

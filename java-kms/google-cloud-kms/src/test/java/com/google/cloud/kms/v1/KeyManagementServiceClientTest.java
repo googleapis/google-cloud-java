@@ -706,7 +706,11 @@ public class KeyManagementServiceClientTest {
   @SuppressWarnings("all")
   public void getPublicKeyTest() {
     String pem = "pem110872";
-    PublicKey expectedResponse = PublicKey.newBuilder().setPem(pem).build();
+    PublicKeyName name2 =
+        PublicKeyName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    PublicKey expectedResponse =
+        PublicKey.newBuilder().setPem(pem).setName(name2.toString()).build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =
@@ -1054,8 +1058,15 @@ public class KeyManagementServiceClientTest {
   public void encryptTest() {
     String name2 = "name2-1052831874";
     ByteString ciphertext = ByteString.copyFromUtf8("-72");
+    boolean verifiedPlaintextCrc32c = false;
+    boolean verifiedAdditionalAuthenticatedDataCrc32c = true;
     EncryptResponse expectedResponse =
-        EncryptResponse.newBuilder().setName(name2).setCiphertext(ciphertext).build();
+        EncryptResponse.newBuilder()
+            .setName(name2)
+            .setCiphertext(ciphertext)
+            .setVerifiedPlaintextCrc32C(verifiedPlaintextCrc32c)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(verifiedAdditionalAuthenticatedDataCrc32c)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     ResourceName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
@@ -1140,8 +1151,14 @@ public class KeyManagementServiceClientTest {
   @SuppressWarnings("all")
   public void asymmetricSignTest() {
     ByteString signature = ByteString.copyFromUtf8("106");
+    boolean verifiedDigestCrc32c = true;
+    String name2 = "name2-1052831874";
     AsymmetricSignResponse expectedResponse =
-        AsymmetricSignResponse.newBuilder().setSignature(signature).build();
+        AsymmetricSignResponse.newBuilder()
+            .setSignature(signature)
+            .setVerifiedDigestCrc32C(verifiedDigestCrc32c)
+            .setName(name2)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =
@@ -1187,8 +1204,12 @@ public class KeyManagementServiceClientTest {
   @SuppressWarnings("all")
   public void asymmetricDecryptTest() {
     ByteString plaintext = ByteString.copyFromUtf8("-9");
+    boolean verifiedCiphertextCrc32c = true;
     AsymmetricDecryptResponse expectedResponse =
-        AsymmetricDecryptResponse.newBuilder().setPlaintext(plaintext).build();
+        AsymmetricDecryptResponse.newBuilder()
+            .setPlaintext(plaintext)
+            .setVerifiedCiphertextCrc32C(verifiedCiphertextCrc32c)
+            .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
     CryptoKeyVersionName name =

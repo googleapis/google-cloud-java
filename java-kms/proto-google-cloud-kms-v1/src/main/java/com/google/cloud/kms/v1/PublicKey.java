@@ -41,6 +41,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   private PublicKey() {
     pem_ = "";
     algorithm_ = 0;
+    name_ = "";
   }
 
   @java.lang.Override
@@ -84,6 +85,28 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               algorithm_ = rawValue;
+              break;
+            }
+          case 26:
+            {
+              com.google.protobuf.Int64Value.Builder subBuilder = null;
+              if (pemCrc32C_ != null) {
+                subBuilder = pemCrc32C_.toBuilder();
+              }
+              pemCrc32C_ =
+                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pemCrc32C_);
+                pemCrc32C_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
           default:
@@ -217,6 +240,138 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int PEM_CRC32C_FIELD_NUMBER = 3;
+  private com.google.protobuf.Int64Value pemCrc32C_;
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+   * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+   * comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+   *
+   * @return Whether the pemCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasPemCrc32C() {
+    return pemCrc32C_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+   * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+   * comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+   *
+   * @return The pemCrc32c.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getPemCrc32C() {
+    return pemCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : pemCrc32C_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integrity verification field. A CRC32C checksum of the returned
+   * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+   * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+   * comparing your results to this field. Discard the response in case of
+   * non-matching checksum values, and perform a limited number of retries. A
+   * persistent mismatch may indicate an issue in your computation of the CRC32C
+   * checksum.
+   * Note: This field is defined as int64 for reasons of compatibility across
+   * different languages. However, it is a non-negative integer, which will
+   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+   * that support this type.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getPemCrc32COrBuilder() {
+    return getPemCrc32C();
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * Provided here for verification.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * Provided here for verification.
+   * NOTE: This field is in Beta.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -240,6 +395,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(2, algorithm_);
     }
+    if (pemCrc32C_ != null) {
+      output.writeMessage(3, getPemCrc32C());
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -258,6 +419,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, algorithm_);
     }
+    if (pemCrc32C_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPemCrc32C());
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -275,6 +442,11 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPem().equals(other.getPem())) return false;
     if (algorithm_ != other.algorithm_) return false;
+    if (hasPemCrc32C() != other.hasPemCrc32C()) return false;
+    if (hasPemCrc32C()) {
+      if (!getPemCrc32C().equals(other.getPemCrc32C())) return false;
+    }
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -290,6 +462,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPem().hashCode();
     hash = (37 * hash) + ALGORITHM_FIELD_NUMBER;
     hash = (53 * hash) + algorithm_;
+    if (hasPemCrc32C()) {
+      hash = (37 * hash) + PEM_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + getPemCrc32C().hashCode();
+    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,6 +617,14 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
       algorithm_ = 0;
 
+      if (pemCrc32CBuilder_ == null) {
+        pemCrc32C_ = null;
+      } else {
+        pemCrc32C_ = null;
+        pemCrc32CBuilder_ = null;
+      }
+      name_ = "";
+
       return this;
     }
 
@@ -467,6 +653,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.kms.v1.PublicKey result = new com.google.cloud.kms.v1.PublicKey(this);
       result.pem_ = pem_;
       result.algorithm_ = algorithm_;
+      if (pemCrc32CBuilder_ == null) {
+        result.pemCrc32C_ = pemCrc32C_;
+      } else {
+        result.pemCrc32C_ = pemCrc32CBuilder_.build();
+      }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -522,6 +714,13 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.algorithm_ != 0) {
         setAlgorithmValue(other.getAlgorithmValue());
+      }
+      if (other.hasPemCrc32C()) {
+        mergePemCrc32C(other.getPemCrc32C());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -773,6 +972,404 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAlgorithm() {
 
       algorithm_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Int64Value pemCrc32C_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        pemCrc32CBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     *
+     * @return Whether the pemCrc32c field is set.
+     */
+    public boolean hasPemCrc32C() {
+      return pemCrc32CBuilder_ != null || pemCrc32C_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     *
+     * @return The pemCrc32c.
+     */
+    public com.google.protobuf.Int64Value getPemCrc32C() {
+      if (pemCrc32CBuilder_ == null) {
+        return pemCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : pemCrc32C_;
+      } else {
+        return pemCrc32CBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public Builder setPemCrc32C(com.google.protobuf.Int64Value value) {
+      if (pemCrc32CBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pemCrc32C_ = value;
+        onChanged();
+      } else {
+        pemCrc32CBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public Builder setPemCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (pemCrc32CBuilder_ == null) {
+        pemCrc32C_ = builderForValue.build();
+        onChanged();
+      } else {
+        pemCrc32CBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public Builder mergePemCrc32C(com.google.protobuf.Int64Value value) {
+      if (pemCrc32CBuilder_ == null) {
+        if (pemCrc32C_ != null) {
+          pemCrc32C_ =
+              com.google.protobuf.Int64Value.newBuilder(pemCrc32C_).mergeFrom(value).buildPartial();
+        } else {
+          pemCrc32C_ = value;
+        }
+        onChanged();
+      } else {
+        pemCrc32CBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public Builder clearPemCrc32C() {
+      if (pemCrc32CBuilder_ == null) {
+        pemCrc32C_ = null;
+        onChanged();
+      } else {
+        pemCrc32C_ = null;
+        pemCrc32CBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getPemCrc32CBuilder() {
+
+      onChanged();
+      return getPemCrc32CFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getPemCrc32COrBuilder() {
+      if (pemCrc32CBuilder_ != null) {
+        return pemCrc32CBuilder_.getMessageOrBuilder();
+      } else {
+        return pemCrc32C_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : pemCrc32C_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integrity verification field. A CRC32C checksum of the returned
+     * [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem]. An integrity check of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] can be performed
+     * by computing the CRC32C checksum of [PublicKey.pem][google.cloud.kms.v1.PublicKey.pem] and
+     * comparing your results to this field. Discard the response in case of
+     * non-matching checksum values, and perform a limited number of retries. A
+     * persistent mismatch may indicate an issue in your computation of the CRC32C
+     * checksum.
+     * Note: This field is defined as int64 for reasons of compatibility across
+     * different languages. However, it is a non-negative integer, which will
+     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     * that support this type.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getPemCrc32CFieldBuilder() {
+      if (pemCrc32CBuilder_ == null) {
+        pemCrc32CBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                getPemCrc32C(), getParentForChildren(), isClean());
+        pemCrc32C_ = null;
+      }
+      return pemCrc32CBuilder_;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * Provided here for verification.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * Provided here for verification.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * Provided here for verification.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * Provided here for verification.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * Provided here for verification.
+     * NOTE: This field is in Beta.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
       onChanged();
       return this;
     }
