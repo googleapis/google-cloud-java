@@ -44,27 +44,6 @@ To run examples from your command line:
 
 4. Run an example from the command line using the Maven-generated scripts.
 
-  * Here's an example run of `BigQueryExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure
-    that BigQuery API is enabled. You can upload a CSV file `my_csv_file` to the `my_bucket` bucket
-    (replace `my_csv_file` and `my_bucket` with actual file and bucket names) using the Google Cloud
-    Storage [web browser](https://console.developers.google.com/storage/browser). The CSV file will
-    be used to load data into a BigQuery table and should look something like:
-    ```csv
-    value1
-    value2
-    value3
-    ```
-    Then you are ready to run the following example:
-    ```
-    target/appassembler/bin/BigQueryExample create dataset new_dataset_id
-    target/appassembler/bin/BigQueryExample create table new_dataset_id new_table_id field_name:string
-    target/appassembler/bin/BigQueryExample list tables new_dataset_id
-    target/appassembler/bin/BigQueryExample load new_dataset_id new_table_id CSV gs://my_bucket/my_csv_file
-    target/appassembler/bin/BigQueryExample query 'select * from new_dataset_id.new_table_id'
-    ```
-
   * Here's an example run of `ComputeExample`.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure
