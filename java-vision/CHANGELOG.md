@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://www.github.com/googleapis/java-vision/compare/v1.99.3...v2.0.0) (2020-08-10)
+## [1.100.0](https://www.github.com/googleapis/java-vision/compare/v1.99.3...v1.100.0) (2020-08-10)
 
 
 ### ⚠ BREAKING CHANGES
