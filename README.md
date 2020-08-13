@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.118.1-alpha</version>
+  <version>0.118.2-alpha</version>
 </dependency>
 ```
 
