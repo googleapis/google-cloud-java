@@ -18,5 +18,6 @@ from synthtool.languages import java
 
 java.common_templates(excludes=[
   "README.md",
-  "samples/*"
+  "samples/*",
+  "renovate.json",
 ])
