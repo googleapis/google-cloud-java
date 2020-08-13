@@ -43,7 +43,7 @@ public class DetectBetaIT {
   private static final String OUTPUT_PREFIX = "OUTPUT_VISION_BETA_" + UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private Detect app;
+  private DetectBeta app;
 
   @Before
   public void setUp() throws IOException {
