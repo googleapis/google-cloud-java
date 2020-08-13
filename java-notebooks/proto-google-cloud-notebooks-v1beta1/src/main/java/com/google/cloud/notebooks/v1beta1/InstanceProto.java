@@ -115,7 +115,7 @@ public final class InstanceProto {
           + "ebooks/v1beta1;notebooks\252\002\036Google.Cloud."
           + "Notebooks.V1Beta1\312\002\036Google\\Cloud\\Noteboo"
           + "ks\\V1Beta1\352\002!Google::Cloud::Notebooks::V"
-          + "1Beta1b\006proto3"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -307,7 +307,7 @@ public final class NotebooksProto {
           + "g/genproto/googleapis/cloud/notebooks/v1"
           + "beta1;notebooks\252\002\036Google.Cloud.Notebooks"
           + ".V1Beta1\312\002\036Google\\Cloud\\Notebooks\\V1Beta"
-          + "1\352\002!Google::Cloud::Notebooks::V1Beta1b\006p"
+          + "1\352\002!Google::Cloud::Notebooks::V1beta1b\006p"
           + "roto3"
     };
     descriptor =
