@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.100.0](https://www.github.com/googleapis/java-vision/compare/v1.99.3...v1.100.0) (2020-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v1p3beta1,v1p4beta:** The breaking changes are as follows. After discussion please see this PR, these seem to be acceptable given that this is a beta API.
+* **v1p3beta1,v1p4beta:** The breaking changes are as follows. After discussion please see [this PR](https://github.com/googleapis/gapic-generator/pull/3177), these seem to be acceptable given that this is a beta API.
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#172](https://www.github.com/googleapis/java-vision/issues/172)) ([6db89ba](https://www.github.com/googleapis/java-vision/commit/6db89bad7313b8508a596af169c2d22b9ff14d59))
+* **v1p3beta1,v1p4beta:** breaking resource name changes ([#133](https://www.github.com/googleapis/java-vision/issues/133)) ([b966ca5](https://www.github.com/googleapis/java-vision/commit/b966ca53df480ddd4fb365903fe1464798955e5a))
+
+
+### Bug Fixes
+
+* migrate retry settings to grpc_service_config ([#171](https://www.github.com/googleapis/java-vision/issues/171)) ([e661954](https://www.github.com/googleapis/java-vision/commit/e66195445b36f6a87be77d6502dc33f123d32eb8))
+* restore GAPIC v2 retry configs ([#140](https://www.github.com/googleapis/java-vision/issues/140)) ([b6ef0eb](https://www.github.com/googleapis/java-vision/commit/b6ef0ebad0e6db2cc9db06744417b9e2d98027a6))
+
+
+### Dependencies
+
+* update core dependencies ([#159](https://www.github.com/googleapis/java-vision/issues/159)) ([5efa57b](https://www.github.com/googleapis/java-vision/commit/5efa57b1daeb2a760dcca8cd3058e94386c414d5))
+* update dependency com.google.api:api-common to v1.9.1 ([#147](https://www.github.com/googleapis/java-vision/issues/147)) ([c19a1fd](https://www.github.com/googleapis/java-vision/commit/c19a1fdc7ea5c1538d2f96e4b5b86798517317c9))
+* update dependency com.google.api:api-common to v1.9.2 ([#152](https://www.github.com/googleapis/java-vision/issues/152)) ([2ad8ecf](https://www.github.com/googleapis/java-vision/commit/2ad8ecfdd46d8e17029cc4a490093bb6c1aeb2af))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#132](https://www.github.com/googleapis/java-vision/issues/132)) ([0903c75](https://www.github.com/googleapis/java-vision/commit/0903c7592112ecc6f157c8871f9526e69b965242))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#148](https://www.github.com/googleapis/java-vision/issues/148)) ([eb7bea0](https://www.github.com/googleapis/java-vision/commit/eb7bea0d29c5ab5a094dfa4e59cadd7c6fde0a7b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#184](https://www.github.com/googleapis/java-vision/issues/184)) ([baec0c2](https://www.github.com/googleapis/java-vision/commit/baec0c23972b7de002f5360f4d28876adcd6bd8b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([671a8ce](https://www.github.com/googleapis/java-vision/commit/671a8cef44e50fd10330b2a8b7e8f9eab0311f07))
+* update dependency com.google.guava:guava-bom to v29 ([#109](https://www.github.com/googleapis/java-vision/issues/109)) ([02771ae](https://www.github.com/googleapis/java-vision/commit/02771aef6fe28fb190b2775fa4a8c4b6f3a69ae1))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#138](https://www.github.com/googleapis/java-vision/issues/138)) ([93372b0](https://www.github.com/googleapis/java-vision/commit/93372b0e3608aa2d48ef21f142804919932e8687))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#146](https://www.github.com/googleapis/java-vision/issues/146)) ([05cbce1](https://www.github.com/googleapis/java-vision/commit/05cbce1fc881c878d37607d2926aeb5ece15d088))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#124](https://www.github.com/googleapis/java-vision/issues/124)) ([cc5a244](https://www.github.com/googleapis/java-vision/commit/cc5a2445a92ce3c1782b5ed2272dc9f91b980686))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#153](https://www.github.com/googleapis/java-vision/issues/153)) ([948d7b9](https://www.github.com/googleapis/java-vision/commit/948d7b92a066119f5c1ef00382f645e8f6568d25))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#126](https://www.github.com/googleapis/java-vision/issues/126)) ([5207f4d](https://www.github.com/googleapis/java-vision/commit/5207f4dc9aba330dc4f3219655631994a31c663d))
+
 ### [1.99.3](https://www.github.com/googleapis/java-vision/compare/v1.99.2...v1.99.3) (2020-04-07)
 
 

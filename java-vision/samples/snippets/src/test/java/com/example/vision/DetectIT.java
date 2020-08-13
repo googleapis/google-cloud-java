@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google Inc.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
@@ -37,20 +36,18 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String BUCKET = "java-docs-samples-testing";
-  private static final String OUTPUT_BUCKET = PROJECT_ID;
-  private static final String OUTPUT_PREFIX = "OUTPUT_VISION_BETA_" + UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private Detect app;
+  private static final String ASSET_BUCKET = "cloud-samples-data";
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String OUTPUT_BUCKET = PROJECT_ID;
+  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT_" + UUID.randomUUID().toString();
 
   @Before
-  public void setUp() throws IOException {
+  public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
-    app = new Detect();
   }
 
   @After
@@ -59,93 +56,71 @@ public class DetectIT {
   }
 
   @Test
-  public void testDetectLocalizedObjects() throws Exception {
+  public void testDocumentText() throws Exception {
     // Act
-    String[] args = {"object-localization", "./resources/puppies.jpg"};
-    Detect.argsHelper(args, out);
+    Detect.detectDocumentText("./resources/text.jpg");
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Dog");
+    assertThat(got).contains("After preparation is complete, the ");
+    assertThat(got).contains("37%");
+    assertThat(got).contains("Word text: class (confidence:");
   }
 
   @Test
-  public void testDetectHandwrittenOcr() throws Exception {
+  public void testDocumentTextGcs() throws Exception {
     // Act
-    String[] args = {"handwritten-ocr", "./resources/handwritten.jpg"};
-    Detect.argsHelper(args, out);
+    Detect.detectDocumentTextGcs("gs://" + ASSET_BUCKET + "/vision/text/screen.jpg");
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Google");
-    assertThat(got).contains("Cloud");
-    assertThat(got).contains("Platform");
+    assertThat(got).contains("After preparation is complete, the ");
+    assertThat(got).contains("37%");
+    assertThat(got).contains("Word text: class (confidence:");
+  }
+
+  @Test
+  public void testDetectDocumentsGcs() throws Exception {
+    // Act
+    Detect.detectDocumentsGcs(
+        "gs://" + ASSET_BUCKET + "/vision/document/custom_0773375000.pdf",
+        "gs://" + OUTPUT_BUCKET + "/" + OUTPUT_PREFIX + "/");
+
+    // Assert
+    String got = bout.toString();
+
+    assertThat(got).contains("OIL, GAS AND MINERAL LEASE");
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Blob> blobs =
+        storage.list(
+            OUTPUT_BUCKET,
+            BlobListOption.currentDirectory(),
+            BlobListOption.prefix(OUTPUT_PREFIX + "/"));
+    for (Blob blob : blobs.iterateAll()) {
+      blob.delete();
+    }
+  }
+
+  @Test
+  public void testDetectLocalizedObjects() throws Exception {
+    // Act
+    Detect.detectLocalizedObjects("./resources/puppies.jpg");
+
+    // Assert
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("dog");
   }
 
   @Test
   public void testDetectLocalizedObjectsGcs() throws Exception {
     // Act
-    String[] args = {"object-localization", "gs://cloud-samples-data/vision/puppies.jpg"};
-    Detect.argsHelper(args, out);
+    Detect.detectLocalizedObjectsGcs(
+        "gs://cloud-samples-data/vision/object_localization/puppies.jpg");
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Dog");
-  }
-
-  @Test
-  public void testDetectHandwrittenOcrGcs() throws Exception {
-    // Act
-    String[] args = {
-      "handwritten-ocr", "gs://cloud-samples-data/vision/handwritten.jpg",
-    };
-    Detect.argsHelper(args, out);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Google");
-    assertThat(got).contains("Cloud");
-    assertThat(got).contains("Platform");
-  }
-
-  @Test
-  public void testDetectDocumentFeatures() {
-    // Act
-    DetectBatchAnnotateFiles.detectBatchAnnotateFiles("./resources/kafka.pdf");
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Samsa");
-  }
-
-  @Test
-  public void testDetectDocumentFeaturesGcs() throws Exception {
-    // Act
-    DetectBatchAnnotateFilesGcs.detectBatchAnnotateFilesGcs(
-        "gs://cloud-samples-data/video/kafka.pdf");
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Samsa");
-  }
-
-  @Test
-  public void testAsyncBatchAnnotateImagesGcs() throws Exception {
-    // Act
-    AsyncBatchAnnotateImagesGcs.asyncBatchAnnotateImagesGcs(
-        "gs://cloud-samples-data/vision/label/wakeupcat.jpg",
-        "gs://" + OUTPUT_BUCKET + "/" + OUTPUT_PREFIX + "/");
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("red:");
-
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    Page<Blob> blobs = storage.list(OUTPUT_BUCKET, BlobListOption.currentDirectory(),
-        BlobListOption.prefix(OUTPUT_PREFIX + "/"));
-    for (Blob blob : blobs.iterateAll()) {
-      blob.delete();
-    }
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("dog");
   }
 }
