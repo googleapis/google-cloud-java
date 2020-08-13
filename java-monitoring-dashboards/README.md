@@ -17,7 +17,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-dashboard</artifactId>
-  <version>0.2.1</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
