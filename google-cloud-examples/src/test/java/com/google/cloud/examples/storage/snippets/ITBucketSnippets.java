@@ -35,6 +35,7 @@ import com.google.cloud.examples.storage.buckets.EnableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.EnableLifecycleManagement;
 import com.google.cloud.examples.storage.buckets.EnableRequesterPays;
 import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
+import com.google.cloud.examples.storage.buckets.GetBucketStorageClassAndLocation;
 import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
@@ -177,6 +178,20 @@ public class ITBucketSnippets {
     String newBucket = RemoteStorageHelper.generateBucketName();
     CreateBucketWithStorageClassAndLocation.createBucketWithStorageClassAndLocation(
         PROJECT_ID, newBucket);
+    try {
+      Bucket remoteBucket = storage.get(newBucket);
+      assertNotNull(remoteBucket);
+      assertEquals("COLDLINE", remoteBucket.getStorageClass().name());
+      assertEquals("ASIA", remoteBucket.getLocation());
+    } finally {
+      storage.delete(newBucket);
+    }
+  }
+
+  @Test
+  public void testGetBucketStorageClassAndLocation() {
+    String newBucket = RemoteStorageHelper.generateBucketName();
+    GetBucketStorageClassAndLocation.getBucketStorageClassAndLocation(PROJECT_ID, newBucket);
     try {
       Bucket remoteBucket = storage.get(newBucket);
       assertNotNull(remoteBucket);
