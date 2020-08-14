@@ -16,8 +16,8 @@
 package com.google.cloud.vision.it;
 
 import static com.google.cloud.vision.v1.Feature.Type;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.vision.v1.AddProductToProductSetRequest;
@@ -245,7 +245,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Whiskers"));
+    assertThat(actual).contains("Whiskers");
   }
 
   @Test
@@ -258,7 +258,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Whiskers"));
+    assertThat(actual).contains("Whiskers");
   }
 
   @Test
@@ -271,7 +271,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -283,7 +283,7 @@ public class ITSystemTest {
     AnnotateImageRequest request =
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
+        imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
@@ -291,7 +291,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -304,7 +304,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -339,7 +339,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("37%"));
+    assertThat(actual).contains("37%");
   }
 
   @Test
@@ -352,7 +352,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("37%"));
+    assertThat(actual).contains("37%");
   }
 
   @Test
@@ -366,7 +366,7 @@ public class ITSystemTest {
         actual.add(color.getPixelFraction());
       }
     }
-    assertTrue(actual.contains((float) 0.14140345));
+    assertThat(actual).contains((float) 0.14140345);
   }
 
   @Test
@@ -380,7 +380,7 @@ public class ITSystemTest {
         actual.add(color.getPixelFraction());
       }
     }
-    assertTrue(actual.contains((float) 0.14140345));
+    assertThat(actual).contains((float) 0.14140345);
   }
 
   @Test
@@ -414,7 +414,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("Skyscraper"));
+    assertThat(actual).contains("Skyscraper");
   }
 
   @Test
@@ -427,7 +427,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
+    assertThat(actual).contains("The Palace Of Fine Arts");
   }
 
   @Test
@@ -454,7 +454,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("Skyscraper"));
+    assertThat(actual).contains("Skyscraper");
   }
 
   @Test
@@ -482,7 +482,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
+    assertThat(actual).contains("The Palace Of Fine Arts");
   }
 
   @Test
@@ -526,7 +526,7 @@ public class ITSystemTest {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
       actual = annotation.getText();
     }
-    assertTrue(actual.contains("After preparation is complete"));
+    assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
@@ -538,7 +538,7 @@ public class ITSystemTest {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
       actual = annotation.getText();
     }
-    assertTrue(actual.contains("After preparation is complete"));
+    assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
@@ -551,7 +551,7 @@ public class ITSystemTest {
         actual.add(entity.getName());
       }
     }
-    assertTrue(actual.contains("Dog"));
+    assertThat(actual).contains("Dog");
   }
 
   @Test
@@ -564,7 +564,7 @@ public class ITSystemTest {
         actual.add(entity.getName());
       }
     }
-    assertTrue(actual.contains("Dog"));
+    assertThat(actual).contains("Dog");
   }
 
   @Test
