@@ -157,9 +157,9 @@ public interface GroupFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping
-   * (including `state_change`). The string value should follow SQL syntax:
-   * comma separated list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping (including
+   * `state_change`). The string value should follow SQL syntax: comma separated
+   * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category
@@ -178,9 +178,9 @@ public interface GroupFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping
-   * (including `state_change`). The string value should follow SQL syntax:
-   * comma separated list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping (including
+   * `state_change`). The string value should follow SQL syntax: comma separated
+   * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category

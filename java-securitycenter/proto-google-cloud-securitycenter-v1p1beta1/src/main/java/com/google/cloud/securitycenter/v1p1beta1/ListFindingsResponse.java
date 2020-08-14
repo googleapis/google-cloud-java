@@ -230,7 +230,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the resource field is set.
@@ -244,7 +244,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The resource.
@@ -259,7 +259,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
@@ -2270,7 +2270,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the resource field is set.
@@ -2287,7 +2287,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The resource.
@@ -2309,7 +2309,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+     * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3047,7 +3047,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the resource field is set.
@@ -3063,7 +3063,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The resource.
@@ -3088,7 +3088,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setResource(
@@ -3114,7 +3114,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setResource(
@@ -3138,7 +3138,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder mergeResource(
@@ -3169,7 +3169,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearResource() {
@@ -3191,7 +3191,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
@@ -3209,7 +3209,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult
@@ -3232,7 +3232,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * </pre>
        *
        * <code>
-       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
+       * .google.cloud.securitycenter.v1p1beta1.ListFindingsResponse.ListFindingsResult.Resource resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

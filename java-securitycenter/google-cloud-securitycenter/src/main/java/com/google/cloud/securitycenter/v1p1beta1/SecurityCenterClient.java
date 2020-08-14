@@ -301,9 +301,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
-   * @param findingId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be alphanumeric and less than or equal to 32 characters and greater than 0 characters
-   *     in length.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope.
    * @param finding Required. The Finding being created. The name and security_marks will be ignored
    *     as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -335,9 +333,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
-   * @param findingId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be alphanumeric and less than or equal to 32 characters and greater than 0 characters
-   *     in length.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope.
    * @param finding Required. The Finding being created. The name and security_marks will be ignored
    *     as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

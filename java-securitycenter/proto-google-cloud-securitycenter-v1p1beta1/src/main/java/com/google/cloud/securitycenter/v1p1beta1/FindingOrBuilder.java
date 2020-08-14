@@ -397,4 +397,29 @@ public interface FindingOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Finding.Severity severity = 13;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  int getSeverityValue();
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Finding.Severity severity = 13;</code>
+   *
+   * @return The severity.
+   */
+  com.google.cloud.securitycenter.v1p1beta1.Finding.Severity getSeverity();
 }

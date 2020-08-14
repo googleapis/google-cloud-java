@@ -198,8 +198,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Unique identifier provided by the client within the parent scope.
-   * It must be alphanumeric and less than or equal to 32 characters and
-   * greater than 0 characters in length.
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -223,8 +221,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Unique identifier provided by the client within the parent scope.
-   * It must be alphanumeric and less than or equal to 32 characters and
-   * greater than 0 characters in length.
    * </pre>
    *
    * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -250,8 +246,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -268,8 +264,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -288,8 +284,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -794,8 +790,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Unique identifier provided by the client within the parent scope.
-     * It must be alphanumeric and less than or equal to 32 characters and
-     * greater than 0 characters in length.
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -818,8 +812,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Unique identifier provided by the client within the parent scope.
-     * It must be alphanumeric and less than or equal to 32 characters and
-     * greater than 0 characters in length.
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -842,8 +834,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Unique identifier provided by the client within the parent scope.
-     * It must be alphanumeric and less than or equal to 32 characters and
-     * greater than 0 characters in length.
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -865,8 +855,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Unique identifier provided by the client within the parent scope.
-     * It must be alphanumeric and less than or equal to 32 characters and
-     * greater than 0 characters in length.
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -884,8 +872,6 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Unique identifier provided by the client within the parent scope.
-     * It must be alphanumeric and less than or equal to 32 characters and
-     * greater than 0 characters in length.
      * </pre>
      *
      * <code>string finding_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -914,8 +900,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -931,8 +917,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -954,8 +940,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -979,8 +965,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1002,8 +988,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1031,8 +1017,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1054,8 +1040,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1071,8 +1057,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1092,8 +1078,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
