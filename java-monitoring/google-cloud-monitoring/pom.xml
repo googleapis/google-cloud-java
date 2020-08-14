@@ -75,11 +75,10 @@
       <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
-      <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
