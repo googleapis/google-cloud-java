@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
 </dependency>
 
 ```
@@ -94,7 +94,11 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Alert Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/AlertSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/AlertSample.java) |
+| Delete Notification Channel | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/DeleteNotificationChannel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/DeleteNotificationChannel.java) |
+| Uptime Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/UptimeSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/UptimeSample.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) |
+| Snippets | [source code](https://github.com/googleapis/java-monitoring/blob/master/samples/snippets/src/main/java/com/example/monitoring/Snippets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/Snippets.java) |
 
 
 
