@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-monitoring/compare/v2.0.0...v2.0.1) (2020-08-14)
+
+
+### Dependencies
+
+* fix scope for google-auth-library-oauth2-http ([#230](https://www.github.com/googleapis/java-monitoring/issues/230)) ([f055231](https://www.github.com/googleapis/java-monitoring/commit/f055231a31e7c9ea5814571052ba900a57d236f0))
+
 ## [2.0.0](https://www.github.com/googleapis/java-monitoring/compare/v1.100.1...v2.0.0) (2020-08-10)
 
 
