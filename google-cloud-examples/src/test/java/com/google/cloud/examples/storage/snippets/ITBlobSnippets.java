@@ -26,6 +26,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.examples.storage.objects.ChangeObjectCSEKtoKMS;
 import com.google.cloud.examples.storage.objects.ChangeObjectStorageClass;
+import com.google.cloud.examples.storage.objects.ComposeObject;
 import com.google.cloud.examples.storage.objects.CopyObject;
 import com.google.cloud.examples.storage.objects.CopyOldVersionOfObject;
 import com.google.cloud.examples.storage.objects.DeleteObject;
@@ -386,5 +387,20 @@ public class ITBlobSnippets {
         storage.create(BlobInfo.newBuilder(BUCKET, aclBlob).build()).getAcl(Acl.User.ofAllUsers()));
     MakeObjectPublic.makeObjectPublic(PROJECT_ID, BUCKET, aclBlob);
     assertNotNull(storage.get(BUCKET, aclBlob).getAcl(Acl.User.ofAllUsers()));
+  }
+
+  @Test
+  public void testComposeObject() {
+    String firstObject = "firstObject";
+    String secondObject = "secondObject";
+    String targetObject = "targetObject";
+    storage.create(BlobInfo.newBuilder(BUCKET, firstObject).build(), firstObject.getBytes(UTF_8));
+    storage.create(BlobInfo.newBuilder(BUCKET, secondObject).build(), secondObject.getBytes(UTF_8));
+
+    ComposeObject.composeObject(BUCKET, firstObject, secondObject, targetObject, PROJECT_ID);
+
+    System.out.println(new String(storage.get(BUCKET, targetObject).getContent()));
+    assertArrayEquals(
+        "firstObjectsecondObject".getBytes(UTF_8), storage.get(BUCKET, targetObject).getContent());
   }
 }
