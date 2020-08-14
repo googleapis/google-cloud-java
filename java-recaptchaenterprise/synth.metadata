@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recaptchaenterprise.git",
-        "sha": "8052bb8a261536e505ca192b51e5aba9dad80245"
+        "sha": "317ba4d7ce633fc07910e58a2cda6993c6f0831d"
       }
     },
     {
