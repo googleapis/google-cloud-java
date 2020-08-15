@@ -28,14 +28,14 @@ public class SpeechSmokeTest {
 
   @Test
   public void run() {
+    // Skip smoke tests if running in VPCSC because our V1 integration tests
+    // cover VPC-SC.
+    Assume.assumeTrue(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") == null);
     main(null);
   }
 
   public static void main(String args[]) {
     Logger.getLogger("").setLevel(Level.WARNING);
-    // Skip smoke tests if running in VPCSC because our V1 integration tests
-    // cover VPC-SC.
-    Assume.assumeTrue(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") == null);
     try {
       executeNoCatch();
       System.out.println("OK");

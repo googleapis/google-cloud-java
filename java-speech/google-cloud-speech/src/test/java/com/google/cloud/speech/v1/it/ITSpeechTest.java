@@ -52,7 +52,7 @@ public class ITSpeechTest {
 
   @Test
   public void syncRecognize() {
-    RecognizeResponse response = speechClient.recognize(config(), audio());
+    RecognizeResponse response = speechClient.recognize(config(2), audio());
 
     Truth.assertThat(response.getResultsCount()).isGreaterThan(0);
     Truth.assertThat(response.getResults(0).getAlternativesCount()).isGreaterThan(0);
@@ -63,7 +63,7 @@ public class ITSpeechTest {
   @Test
   public void longrunningRecognize() throws Exception {
     LongRunningRecognizeResponse response =
-        speechClient.longRunningRecognizeAsync(config(), audio()).get();
+        speechClient.longRunningRecognizeAsync(config(2), audio()).get();
 
     Truth.assertThat(response.getResultsCount()).isGreaterThan(0);
     Truth.assertThat(response.getResults(0).getAlternativesCount()).isGreaterThan(0);
@@ -78,7 +78,7 @@ public class ITSpeechTest {
             .toByteArray();
 
     StreamingRecognitionConfig streamingConfig =
-        StreamingRecognitionConfig.newBuilder().setConfig(config()).build();
+        StreamingRecognitionConfig.newBuilder().setConfig(config(1)).build();
 
     ResponseApiStreamingObserver<StreamingRecognizeResponse> responseObserver =
         new ResponseApiStreamingObserver<>();
@@ -133,7 +133,7 @@ public class ITSpeechTest {
     }
   }
 
-  private RecognitionConfig config() {
+  private RecognitionConfig config(int channels) {
     String languageCode = "en-US";
     int sampleRateHertz = 44100;
     RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
@@ -142,6 +142,7 @@ public class ITSpeechTest {
             .setLanguageCode(languageCode)
             .setSampleRateHertz(sampleRateHertz)
             .setEncoding(encoding)
+            .setAudioChannelCount(channels)
             .build();
     return config;
   }
@@ -151,6 +152,8 @@ public class ITSpeechTest {
     if (audio_gcs_uri != null) {
       return RecognitionAudio.newBuilder().setUri(audio_gcs_uri).build();
     }
-    return RecognitionAudio.newBuilder().setUri("gs://gapic-toolkit/hello.flac").build();
+    return RecognitionAudio.newBuilder()
+        .setUri("gs://cloud-samples-data/speech/hello.flac")
+        .build();
   }
 }
