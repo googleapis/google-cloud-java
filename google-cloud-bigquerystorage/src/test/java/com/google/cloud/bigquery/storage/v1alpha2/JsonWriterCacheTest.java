@@ -44,8 +44,8 @@ import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
 
 @RunWith(JUnit4.class)
-public class WriterCacheTest {
-  private static final Logger LOG = Logger.getLogger(WriterCacheTest.class.getName());
+public class JsonWriterCacheTest {
+  private static final Logger LOG = Logger.getLogger(JsonWriterCacheTest.class.getName());
 
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
@@ -62,6 +62,15 @@ public class WriterCacheTest {
   @Mock private static SchemaCompatibility mockSchemaCheck;
   private BigQueryWriteClient client;
   private LocalChannelProvider channelProvider;
+
+  private final Table.TableFieldSchema FOO =
+      Table.TableFieldSchema.newBuilder()
+          .setType(Table.TableFieldSchema.Type.STRING)
+          .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+          .setName("foo")
+          .build();
+  private final Table.TableSchema TABLE_SCHEMA =
+      Table.TableSchema.newBuilder().addFields(0, FOO).build();
 
   @BeforeClass
   public static void startStaticServer() {
@@ -94,7 +103,10 @@ public class WriterCacheTest {
   void WriterCreationResponseMock(String testStreamName) {
     // Response from CreateWriteStream
     Stream.WriteStream expectedResponse =
-        Stream.WriteStream.newBuilder().setName(testStreamName).build();
+        Stream.WriteStream.newBuilder()
+            .setName(testStreamName)
+            .setTableSchema(TABLE_SCHEMA)
+            .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
     // Response from GetWriteStream
@@ -117,9 +129,9 @@ public class WriterCacheTest {
 
   @Test
   public void testRejectBadTableName() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 10, mockSchemaCheck);
+    JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 10);
     try {
-      cache.getTableWriter("abc", FooType.getDescriptor());
+      cache.getTableWriter("abc");
       fail();
     } catch (IllegalArgumentException expected) {
       assertEquals(expected.getMessage(), "Invalid table name: abc");
@@ -128,10 +140,9 @@ public class WriterCacheTest {
 
   @Test
   public void testCreateNewWriter() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 10, mockSchemaCheck);
+    JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 10);
     WriterCreationResponseMock(TEST_STREAM);
-    StreamWriter writer = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, FooType.getDescriptor());
+    JsonStreamWriter writer = cache.getTableWriter(TEST_TABLE);
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
     assertEquals(2, actualRequests.size());
     assertEquals(
@@ -141,15 +152,14 @@ public class WriterCacheTest {
         ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getWriteStream().getType());
     assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
 
-    assertEquals(TEST_TABLE, writer.getTableNameString());
-    assertEquals(TEST_STREAM, writer.getStreamNameString());
+    assertEquals(TEST_STREAM, writer.getStreamName());
     assertEquals(1, cache.cachedTableCount());
     cache.clear();
   }
 
   @Test
   public void testWriterExpired() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 10, mockSchemaCheck);
+    JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 10);
     // Response from CreateWriteStream
     Stream.WriteStream expectedResponse =
         Stream.WriteStream.newBuilder().setName(TEST_STREAM).build();
@@ -168,7 +178,7 @@ public class WriterCacheTest {
     mockBigQueryWrite.addResponse(expectedResponse2);
 
     try {
-      StreamWriter writer = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
+      JsonStreamWriter writer = cache.getTableWriter(TEST_TABLE);
       fail("Should fail");
     } catch (IllegalStateException e) {
       assertEquals(
@@ -179,58 +189,12 @@ public class WriterCacheTest {
   }
 
   @Test
-  public void testWriterWithNewSchema() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 10, mockSchemaCheck);
-    WriterCreationResponseMock(TEST_STREAM);
-    WriterCreationResponseMock(TEST_STREAM_2);
-    StreamWriter writer1 = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, FooType.getDescriptor());
-
-    StreamWriter writer2 = cache.getTableWriter(TEST_TABLE, AllSupportedTypes.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, AllSupportedTypes.getDescriptor());
-
-    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    assertEquals(4, actualRequests.size());
-    assertEquals(
-        TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
-    assertEquals(
-        TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(2)).getParent());
-    assertEquals(TEST_STREAM_2, ((Storage.GetWriteStreamRequest) actualRequests.get(3)).getName());
-    assertEquals(TEST_STREAM, writer1.getStreamNameString());
-    assertEquals(TEST_STREAM_2, writer2.getStreamNameString());
-    assertEquals(1, cache.cachedTableCount());
-
-    // Still able to get the FooType writer.
-    StreamWriter writer3 = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, FooType.getDescriptor());
-    assertEquals(TEST_STREAM, writer3.getStreamNameString());
-
-    // Create a writer with a even new schema.
-    WriterCreationResponseMock(TEST_STREAM_3);
-    WriterCreationResponseMock(TEST_STREAM_4);
-    StreamWriter writer4 = cache.getTableWriter(TEST_TABLE, NestedType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, NestedType.getDescriptor());
-
-    LOG.info("blah");
-    // This would cause a new stream to be created since the old entry is evicted.
-    StreamWriter writer5 = cache.getTableWriter(TEST_TABLE, AllSupportedTypes.getDescriptor());
-    verify(mockSchemaCheck, times(2)).check(TEST_TABLE, AllSupportedTypes.getDescriptor());
-    assertEquals(TEST_STREAM_3, writer4.getStreamNameString());
-    assertEquals(TEST_STREAM_4, writer5.getStreamNameString());
-    assertEquals(1, cache.cachedTableCount());
-    cache.clear();
-  }
-
-  @Test
   public void testWriterWithDifferentTable() throws Exception {
-    WriterCache cache = WriterCache.getTestInstance(client, 2, mockSchemaCheck);
+    JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 2);
     WriterCreationResponseMock(TEST_STREAM);
     WriterCreationResponseMock(TEST_STREAM_21);
-    StreamWriter writer1 = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
-    StreamWriter writer2 = cache.getTableWriter(TEST_TABLE_2, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE_2, FooType.getDescriptor());
+    JsonStreamWriter writer1 = cache.getTableWriter(TEST_TABLE);
+    JsonStreamWriter writer2 = cache.getTableWriter(TEST_TABLE_2);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
     assertEquals(4, actualRequests.size());
@@ -241,34 +205,29 @@ public class WriterCacheTest {
         TEST_TABLE_2, ((Storage.CreateWriteStreamRequest) actualRequests.get(2)).getParent());
     Assert.assertEquals(
         TEST_STREAM_21, ((Storage.GetWriteStreamRequest) actualRequests.get(3)).getName());
-    assertEquals(TEST_STREAM, writer1.getStreamNameString());
-    assertEquals(TEST_STREAM_21, writer2.getStreamNameString());
+    assertEquals(TEST_STREAM, writer1.getStreamName());
+    assertEquals(TEST_STREAM_21, writer2.getStreamName());
     assertEquals(2, cache.cachedTableCount());
 
     // Still able to get the FooType writer.
-    StreamWriter writer3 = cache.getTableWriter(TEST_TABLE_2, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE_2, FooType.getDescriptor());
-    Assert.assertEquals(TEST_STREAM_21, writer3.getStreamNameString());
+    JsonStreamWriter writer3 = cache.getTableWriter(TEST_TABLE_2);
+    Assert.assertEquals(TEST_STREAM_21, writer3.getStreamName());
 
     // Create a writer with a even new schema.
     WriterCreationResponseMock(TEST_STREAM_31);
     WriterCreationResponseMock(TEST_STREAM);
-    StreamWriter writer4 = cache.getTableWriter(TEST_TABLE_3, NestedType.getDescriptor());
-    verify(mockSchemaCheck, times(1)).check(TEST_TABLE_3, NestedType.getDescriptor());
-
+    JsonStreamWriter writer4 = cache.getTableWriter(TEST_TABLE_3);
     // This would cause a new stream to be created since the old entry is evicted.
-    StreamWriter writer5 = cache.getTableWriter(TEST_TABLE, FooType.getDescriptor());
-    verify(mockSchemaCheck, times(2)).check(TEST_TABLE, FooType.getDescriptor());
-
-    assertEquals(TEST_STREAM_31, writer4.getStreamNameString());
-    assertEquals(TEST_STREAM, writer5.getStreamNameString());
+    JsonStreamWriter writer5 = cache.getTableWriter(TEST_TABLE);
+    assertEquals(TEST_STREAM_31, writer4.getStreamName());
+    assertEquals(TEST_STREAM, writer5.getStreamName());
     assertEquals(2, cache.cachedTableCount());
     cache.clear();
   }
 
   @Test
   public void testConcurrentAccess() throws Exception {
-    final WriterCache cache = WriterCache.getTestInstance(client, 2, mockSchemaCheck);
+    final JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 2);
     // Make sure getting the same table writer in multiple thread only cause create to be called
     // once.
     WriterCreationResponseMock(TEST_STREAM);
@@ -279,7 +238,7 @@ public class WriterCacheTest {
             @Override
             public void run() {
               try {
-                assertTrue(cache.getTableWriter(TEST_TABLE, FooType.getDescriptor()) != null);
+                assertTrue(cache.getTableWriter(TEST_TABLE) != null);
               } catch (Exception e) {
                 fail(e.getMessage());
               }

@@ -33,11 +33,13 @@ import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
+import org.json.JSONArray;
 
 /**
  * Writer that can help user to write data to BigQuery. This is a simplified version of the Write
  * API. For users writing with COMMITTED stream and don't care about row deduplication, it is
- * recommended to use this Writer.
+ * recommended to use this Writer. The DirectWriter can be used to write both JSON and protobuf
+ * data.
  *
  * <pre>{@code
  * DataProto data;
@@ -50,7 +52,9 @@ import java.util.logging.Logger;
 public class DirectWriter {
   private static final Logger LOG = Logger.getLogger(DirectWriter.class.getName());
   private static WriterCache cache = null;
+  private static JsonWriterCache jsonCache = null;
   private static Lock cacheLock = new ReentrantLock();
+  private static Lock jsonCacheLock = new ReentrantLock();
 
   /**
    * Append rows to the given table.
@@ -103,10 +107,53 @@ public class DirectWriter {
         MoreExecutors.directExecutor());
   }
 
+  /**
+   * Append rows to the given table.
+   *
+   * @param tableName table name in the form of "projects/{pName}/datasets/{dName}/tables/{tName}"
+   * @param json A JSONArray
+   * @return A future that contains the offset at which the append happened. Only when the future
+   *     returns with valid offset, then the append actually happened.
+   * @throws IOException, InterruptedException, InvalidArgumentException,
+   *     Descriptors.DescriptorValidationException
+   */
+  public static ApiFuture<Long> append(String tableName, JSONArray json)
+      throws IOException, InterruptedException, InvalidArgumentException,
+          Descriptors.DescriptorValidationException {
+    Preconditions.checkNotNull(tableName, "TableName is null.");
+    Preconditions.checkNotNull(json, "JSONArray is null.");
+
+    if (json.length() == 0) {
+      throw new InvalidArgumentException(
+          new Exception("Empty JSONArrays are not allowed"),
+          GrpcStatusCode.of(Status.Code.INVALID_ARGUMENT),
+          false);
+    }
+    try {
+      jsonCacheLock.lock();
+      if (jsonCache == null) {
+        jsonCache = JsonWriterCache.getInstance();
+      }
+    } finally {
+      jsonCacheLock.unlock();
+    }
+    JsonStreamWriter writer = jsonCache.getTableWriter(tableName);
+    return ApiFutures.<Storage.AppendRowsResponse, Long>transform(
+        writer.append(json, /* offset = */ -1, /*allowUnknownFields = */ false),
+        new ApiFunction<Storage.AppendRowsResponse, Long>() {
+          @Override
+          public Long apply(Storage.AppendRowsResponse appendRowsResponse) {
+            return Long.valueOf(appendRowsResponse.getOffset());
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
   @VisibleForTesting
   public static void testSetStub(
       BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility schemaCheck) {
     cache = WriterCache.getTestInstance(stub, maxTableEntry, schemaCheck);
+    jsonCache = JsonWriterCache.getTestInstance(stub, maxTableEntry);
   }
 
   /** Clears the underlying cache and all the transport connections. */

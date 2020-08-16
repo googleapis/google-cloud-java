@@ -260,6 +260,11 @@ public class JsonStreamWriter implements AutoCloseable {
     this.streamWriter.close();
   }
 
+  /** Returns if a stream has expired. */
+  public Boolean expired() {
+    return this.streamWriter.expired();
+  }
+
   private class JsonStreamWriterOnSchemaUpdateRunnable extends OnSchemaUpdateRunnable {
     private JsonStreamWriter jsonStreamWriter;
     /**

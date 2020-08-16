@@ -581,7 +581,9 @@ public class ITBigQueryWriteManualClientTest {
   }
 
   @Test
-  public void testDirectWrite() throws IOException, InterruptedException, ExecutionException {
+  public void testDirectWrite()
+      throws IOException, InterruptedException, ExecutionException,
+          Descriptors.DescriptorValidationException {
     final FooType fa = FooType.newBuilder().setFoo("aaa").build();
     final FooType fb = FooType.newBuilder().setFoo("bbb").build();
     Set<Long> expectedOffset = new HashSet<>();
@@ -605,12 +607,45 @@ public class ITBigQueryWriteManualClientTest {
       assertTrue(expectedOffset.remove(response.get()));
     }
     assertTrue(expectedOffset.isEmpty());
+
+    JSONObject a_json = new JSONObject();
+    a_json.put("foo", "aaa");
+    JSONObject b_json = new JSONObject();
+    b_json.put("foo", "bbb");
+    final JSONArray jsonArr = new JSONArray();
+    jsonArr.put(a_json);
+    jsonArr.put(b_json);
+
+    expectedOffset = new HashSet<>();
+    for (int i = 0; i < 10; i++) {
+      expectedOffset.add(Long.valueOf(i * 2));
+    }
+    executor = Executors.newFixedThreadPool(10);
+    responses = new ArrayList<>();
+    callable =
+        new Callable<Long>() {
+          @Override
+          public Long call()
+              throws IOException, InterruptedException, ExecutionException,
+                  Descriptors.DescriptorValidationException {
+            ApiFuture<Long> result = DirectWriter.append(tableId, jsonArr);
+            return result.get();
+          }
+        };
+    for (int i = 0; i < 10; i++) {
+      responses.add(executor.submit(callable));
+    }
+    for (Future<Long> response : responses) {
+      assertTrue(expectedOffset.remove(response.get()));
+    }
+    assertTrue(expectedOffset.isEmpty());
     executor.shutdown();
     try {
       executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
     } catch (InterruptedException e) {
       LOG.info(e.toString());
     }
+
     DirectWriter.clearCache();
   }
 
