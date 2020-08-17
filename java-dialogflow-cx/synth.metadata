@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
+        "sha": "3c04e9efa0aad6db63fd02cf402018bc9ecedba9"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "457ae33da792c0a799f72c5f494443ebe26186f0",
+        "internalRef": "327031420"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "d3049e66447b44dc10579e461d5e08e0e3838edd"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "dialogflow-cx",
+        "apiVersion": "v3beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
