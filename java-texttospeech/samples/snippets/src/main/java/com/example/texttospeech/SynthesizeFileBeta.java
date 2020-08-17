@@ -17,25 +17,30 @@
 package com.example.texttospeech;
 
 // Imports the Google Cloud client library
-import com.google.cloud.texttospeech.v1.AudioConfig;
-import com.google.cloud.texttospeech.v1.AudioEncoding;
-import com.google.cloud.texttospeech.v1.SsmlVoiceGender;
-import com.google.cloud.texttospeech.v1.SynthesisInput;
-import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
-import com.google.cloud.texttospeech.v1.TextToSpeechClient;
-import com.google.cloud.texttospeech.v1.VoiceSelectionParams;
+import com.google.cloud.texttospeech.v1beta1.AudioConfig;
+import com.google.cloud.texttospeech.v1beta1.AudioEncoding;
+import com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender;
+import com.google.cloud.texttospeech.v1beta1.SynthesisInput;
+import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
+import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
+import com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import net.sourceforge.argparse4j.ArgumentParsers;
+import net.sourceforge.argparse4j.inf.ArgumentParser;
+import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
+import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
  * Google Cloud TextToSpeech API sample application. Example usage: mvn package exec:java
  * -Dexec.mainClass='com.example.texttospeech.SynthesizeFile' -Dexec.args='--text
  * resources/hello.txt'
  */
-public class SynthesizeFile {
+public class SynthesizeFileBeta {
 
   // [START tts_synthesize_text_file]
   /**
@@ -44,7 +49,7 @@ public class SynthesizeFile {
    * @param textFile the text file to be synthesized. (e.g., hello.txt)
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static ByteString synthesizeTextFile(String textFile) throws Exception {
+  public static void synthesizeTextFile(String textFile) throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Read the file's contents
@@ -76,7 +81,6 @@ public class SynthesizeFile {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
-        return audioContents;
       }
     }
   }
@@ -89,7 +93,7 @@ public class SynthesizeFile {
    * @param ssmlFile the ssml document to be synthesized. (e.g., hello.ssml)
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static ByteString synthesizeSsmlFile(String ssmlFile) throws Exception {
+  public static void synthesizeSsmlFile(String ssmlFile) throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Read the file's contents
@@ -121,9 +125,31 @@ public class SynthesizeFile {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
-        return audioContents;
       }
     }
   }
   // [END tts_synthesize_ssml_file]
+
+  public static void main(String... args) throws Exception {
+    ArgumentParser parser =
+        ArgumentParsers.newFor("SynthesizeFile")
+            .build()
+            .defaultHelp(true)
+            .description("Synthesize a text file or ssml file.");
+    MutuallyExclusiveGroup group = parser.addMutuallyExclusiveGroup().required(true);
+    group.addArgument("--text").help("The text file from which to synthesize speech.");
+    group.addArgument("--ssml").help("The ssml file from which to synthesize speech.");
+
+    try {
+      Namespace namespace = parser.parseArgs(args);
+
+      if (namespace.get("text") != null) {
+        synthesizeTextFile(namespace.getString("text"));
+      } else {
+        synthesizeSsmlFile(namespace.getString("ssml"));
+      }
+    } catch (ArgumentParserException e) {
+      parser.handleError(e);
+    }
+  }
 }

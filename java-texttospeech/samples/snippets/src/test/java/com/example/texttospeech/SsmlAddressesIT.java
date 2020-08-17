@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google Inc.
+ * Copyright 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,24 @@ package com.example.texttospeech;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
-import org.junit.After;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for SynthesizeFile sample. */
+/** Tests for SsmlAddresses sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class SynthesizeFileIT {
+public class SsmlAddressesIT {
 
   private static String OUTPUT = "output.mp3";
-  private static String TEXT_FILE = "resources/hello.txt";
-  private static String SSML_FILE = "resources/hello.ssml";
+  private static String TEXT_FILE = "resources/example.txt";
+  private static String SSML_FILE = "resources/example.ssml";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -48,34 +48,29 @@ public class SynthesizeFileIT {
     System.setOut(out);
   }
 
-  @After
-  public void tearDown() {
+  @Test
+  public void testTextToSsml() throws Exception {
+    // Act
+    String ssml = SsmlAddresses.textToSsml(TEXT_FILE);
+    String expectedSsml = new String(Files.readAllBytes(Paths.get(SSML_FILE)));
+
+    // Assert
+    assertThat(ssml).contains(expectedSsml);
+  }
+
+  @Test
+  public void testSsmlToAudio() throws Exception {
+    // Act
+    String ssml = new String(Files.readAllBytes(Paths.get(SSML_FILE)));
+    SsmlAddresses.ssmlToAudio(ssml, OUTPUT);
+
+    // Assert
+    outputFile = new File(OUTPUT);
+    assertThat(outputFile.isFile()).isTrue();
+    String got = bout.toString();
+    assertThat(got).contains("Audio content written to file output.mp3");
+
+    // After
     outputFile.delete();
-  }
-
-  @Test
-  public void testSynthesizeText() throws Exception {
-    // Act
-    ByteString audioContents = SynthesizeFile.synthesizeTextFile(TEXT_FILE);
-
-    // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
-    outputFile = new File(OUTPUT);
-    assertThat(outputFile.isFile()).isTrue();
-    String got = bout.toString();
-    assertThat(got).contains("Audio content written to file \"output.mp3\"");
-  }
-
-  @Test
-  public void testSynthesizeSsml() throws Exception {
-    // Act
-    ByteString audioContents = SynthesizeFile.synthesizeSsmlFile(SSML_FILE);
-
-    // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
-    outputFile = new File(OUTPUT);
-    assertThat(outputFile.isFile()).isTrue();
-    String got = bout.toString();
-    assertThat(got).contains("Audio content written to file \"output.mp3\"");
   }
 }

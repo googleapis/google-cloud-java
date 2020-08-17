@@ -17,18 +17,18 @@
 package com.example.texttospeech;
 
 // Imports the Google Cloud client library
-import com.google.cloud.texttospeech.v1.ListVoicesRequest;
-import com.google.cloud.texttospeech.v1.ListVoicesResponse;
-import com.google.cloud.texttospeech.v1.TextToSpeechClient;
-import com.google.cloud.texttospeech.v1.Voice;
+import com.google.cloud.texttospeech.v1beta1.ListVoicesRequest;
+import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
+import com.google.cloud.texttospeech.v1beta1.Voice;
 import com.google.protobuf.ByteString;
 import java.util.List;
 
 /**
  * Google Cloud TextToSpeech API sample application. Example usage: mvn package exec:java
- * -Dexec.mainClass='com.example.texttospeech.ListAllSupportedVoices'
+ * -Dexec.mainClass='com.example.texttospeech.ListAllSupportedVoicesBeta'
  */
-public class ListAllSupportedVoices {
+public class ListAllSupportedVoicesBeta {
 
   // [START tts_list_voices]
   /**
@@ -36,7 +36,7 @@ public class ListAllSupportedVoices {
    *
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static List<Voice> listAllSupportedVoices() throws Exception {
+  public static void listAllSupportedVoices() throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Builds the text to speech list voices request
@@ -62,8 +62,11 @@ public class ListAllSupportedVoices {
         // Display the natural sample rate hertz for this voice. Example: 24000
         System.out.format("Natural Sample Rate Hertz: %s\n\n", voice.getNaturalSampleRateHertz());
       }
-      return voices;
     }
   }
   // [END tts_list_voices]
+
+  public static void main(String[] args) throws Exception {
+    listAllSupportedVoices();
+  }
 }

@@ -18,7 +18,6 @@ package com.example.texttospeech;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
@@ -28,14 +27,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for SynthesizeFile sample. */
+/** Tests for SynthesizeTextBeta sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class SynthesizeFileIT {
+public class SynthesizeTextBetaIT {
 
   private static String OUTPUT = "output.mp3";
-  private static String TEXT_FILE = "resources/hello.txt";
-  private static String SSML_FILE = "resources/hello.ssml";
+  private static String TEXT = "Hello there.";
+  private static String SSML = "<speak>Hello there.</speak>";
+  private static String EFFECTSPROFILE = "telephony-class-application";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -56,10 +56,9 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeText() throws Exception {
     // Act
-    ByteString audioContents = SynthesizeFile.synthesizeTextFile(TEXT_FILE);
+    SynthesizeTextBeta.synthesizeText(TEXT);
 
     // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();
@@ -69,10 +68,21 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeSsml() throws Exception {
     // Act
-    ByteString audioContents = SynthesizeFile.synthesizeSsmlFile(SSML_FILE);
+    SynthesizeTextBeta.synthesizeSsml(SSML);
 
     // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
+    outputFile = new File(OUTPUT);
+    assertThat(outputFile.isFile()).isTrue();
+    String got = bout.toString();
+    assertThat(got).contains("Audio content written to file \"output.mp3\"");
+  }
+
+  @Test
+  public void testSynthesizeTextWithAudioProfile() throws Exception {
+    // Act
+    SynthesizeTextBeta.synthesizeTextWithAudioProfile(TEXT, EFFECTSPROFILE);
+
+    // Assert
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();

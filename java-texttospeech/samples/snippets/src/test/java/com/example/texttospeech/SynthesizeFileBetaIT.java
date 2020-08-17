@@ -18,7 +18,6 @@ package com.example.texttospeech;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
@@ -28,10 +27,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for SynthesizeFile sample. */
+/** Tests for SynthesizeFileBeta sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class SynthesizeFileIT {
+public class SynthesizeFileBetaIT {
 
   private static String OUTPUT = "output.mp3";
   private static String TEXT_FILE = "resources/hello.txt";
@@ -56,10 +55,9 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeText() throws Exception {
     // Act
-    ByteString audioContents = SynthesizeFile.synthesizeTextFile(TEXT_FILE);
+    SynthesizeFileBeta.synthesizeTextFile(TEXT_FILE);
 
     // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();
@@ -69,10 +67,9 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeSsml() throws Exception {
     // Act
-    ByteString audioContents = SynthesizeFile.synthesizeSsmlFile(SSML_FILE);
+    SynthesizeFileBeta.synthesizeSsmlFile(SSML_FILE);
 
     // Assert
-    assertThat(audioContents.isEmpty()).isFalse();
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();

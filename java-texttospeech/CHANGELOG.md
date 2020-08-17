@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.1.0...v1.2.0) (2020-08-10)
+
+
+### Features
+
+* Support MULAW audio encoding feat: Support MP3_64_KBPS audio encoding feat: Support timepointing via SSML <mark> tag ([#198](https://www.github.com/googleapis/java-texttospeech/issues/198)) ([4c17321](https://www.github.com/googleapis/java-texttospeech/commit/4c1732132690363e5a1aece52f06c01defd1f615))
+
+
+### Documentation
+
+* escape `*` characters in comments ([#205](https://www.github.com/googleapis/java-texttospeech/issues/205)) ([a785744](https://www.github.com/googleapis/java-texttospeech/commit/a78574490bc3fbd3c709d8edc0781a7d335029bf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#192](https://www.github.com/googleapis/java-texttospeech/issues/192)) ([f9b0ea2](https://www.github.com/googleapis/java-texttospeech/commit/f9b0ea2e87baaf0b7cbb1941c712ecec26a70189))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#195](https://www.github.com/googleapis/java-texttospeech/issues/195)) ([b4bcfe7](https://www.github.com/googleapis/java-texttospeech/commit/b4bcfe77744ae3c5471ca0db0c3dd0c8c5b3981d))
+
 ## [1.1.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.0.2...v1.1.0) (2020-06-22)
 
 

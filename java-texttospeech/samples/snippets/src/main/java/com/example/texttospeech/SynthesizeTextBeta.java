@@ -17,22 +17,27 @@
 package com.example.texttospeech;
 
 // Imports the Google Cloud client library
-import com.google.cloud.texttospeech.v1.AudioConfig;
-import com.google.cloud.texttospeech.v1.AudioEncoding;
-import com.google.cloud.texttospeech.v1.SsmlVoiceGender;
-import com.google.cloud.texttospeech.v1.SynthesisInput;
-import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
-import com.google.cloud.texttospeech.v1.TextToSpeechClient;
-import com.google.cloud.texttospeech.v1.VoiceSelectionParams;
+import com.google.cloud.texttospeech.v1beta1.AudioConfig;
+import com.google.cloud.texttospeech.v1beta1.AudioEncoding;
+import com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender;
+import com.google.cloud.texttospeech.v1beta1.SynthesisInput;
+import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
+import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
+import com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import net.sourceforge.argparse4j.ArgumentParsers;
+import net.sourceforge.argparse4j.inf.ArgumentParser;
+import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import net.sourceforge.argparse4j.inf.MutuallyExclusiveGroup;
+import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
- * Google Cloud TextToSpeech API sample application. Example usage: mvn package exec:java
- * -Dexec.mainClass='com.example.texttospeech.SynthesizeText' -Dexec.args='--text "hello"'
+ * Google Cloud TextToSpeech API sample application. Example usage: mvn package
+ * exec:java-Dexec.mainClass='com.example.texttospeech.SynthesizeTextBeta' -Dexec.args='--text "hello"'
  */
-public class SynthesizeText {
+public class SynthesizeTextBeta {
 
   // [START tts_synthesize_text]
   /**
@@ -41,7 +46,7 @@ public class SynthesizeText {
    * @param text the raw text to be synthesized. (e.g., "Hello there!")
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static ByteString synthesizeText(String text) throws Exception {
+  public static void synthesizeText(String text) throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Set the text input to be synthesized
@@ -71,13 +76,12 @@ public class SynthesizeText {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
-        return audioContents;
       }
     }
   }
   // [END tts_synthesize_text]
 
-  // [START tts_synthesize_text_audio_profile]
+  // [START tts_synthesize_text_audio_profile_beta]
   /**
    * Demonstrates using the Text to Speech client with audio profiles to synthesize text or ssml
    *
@@ -86,7 +90,7 @@ public class SynthesizeText {
    *     "telephony-class-application")
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static ByteString synthesizeTextWithAudioProfile(String text, String effectsProfile)
+  public static void synthesizeTextWithAudioProfile(String text, String effectsProfile)
       throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
@@ -118,11 +122,10 @@ public class SynthesizeText {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
-        return audioContents;
       }
     }
   }
-  // [END tts_synthesize_text_audio_profile]
+  // [END tts_synthesize_text_audio_profile_beta]
 
   // [START tts_synthesize_ssml]
   /**
@@ -134,7 +137,7 @@ public class SynthesizeText {
    * @param ssml the ssml document to be synthesized. (e.g., "<?xml...")
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static ByteString synthesizeSsml(String ssml) throws Exception {
+  public static void synthesizeSsml(String ssml) throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Set the ssml input to be synthesized
@@ -164,9 +167,45 @@ public class SynthesizeText {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
-        return audioContents;
       }
     }
   }
   // [END tts_synthesize_ssml]
+
+  public static void main(String... args) throws Exception {
+
+    ArgumentParser parser =
+        ArgumentParsers.newFor("SynthesizeText")
+            .build()
+            .defaultHelp(true)
+            .description("Synthesize a text, text with audio effect profiles, or ssml.");
+
+    MutuallyExclusiveGroup group = parser.addMutuallyExclusiveGroup().required(true);
+    group
+        .addArgument("--text")
+        .help("The text file from which to synthesize speech.")
+        .nargs("+")
+        .metavar("TEXT", "EFFECTSPROFILE(optional)");
+    group.addArgument("--ssml").help("The ssml file from which to synthesize speech.");
+
+    try {
+      Namespace namespace = parser.parseArgs(args);
+
+      if ((namespace.get("text") != null)) {
+        if (namespace.getList("text").size() == 2) {
+          synthesizeTextWithAudioProfile(
+              namespace.getList("text").get(0).toString(),
+              namespace.getList("text").get(1).toString());
+
+        } else {
+          synthesizeText(namespace.getString("text"));
+        }
+
+      } else {
+        synthesizeSsml(namespace.getString("ssml"));
+      }
+    } catch (ArgumentParserException e) {
+      parser.handleError(e);
+    }
+  }
 }

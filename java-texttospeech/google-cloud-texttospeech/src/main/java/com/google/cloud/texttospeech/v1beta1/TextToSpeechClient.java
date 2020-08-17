@@ -159,10 +159,10 @@ public class TextToSpeechClient implements BackgroundResource {
    * @param languageCode Optional. Recommended.
    *     [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If specified, the
    *     ListVoices call will only return voices that can be used to synthesize this language_code.
-   *     E.g. when specifying "en-NZ", you will get supported "en-&#42;" voices; when specifying
-   *     "no", you will get supported "no-&#42;" (Norwegian) and "nb-&#42;" (Norwegian Bokmal)
-   *     voices; specifying "zh" will also get supported "cmn-&#42;" voices; specifying "zh-hk" will
-   *     also get supported "yue-&#42;" voices.
+   *     E.g. when specifying "en-NZ", you will get supported "en-\&#42;" voices; when specifying
+   *     "no", you will get supported "no-\&#42;" (Norwegian) and "nb-\&#42;" (Norwegian Bokmal)
+   *     voices; specifying "zh" will also get supported "cmn-\&#42;" voices; specifying "zh-hk"
+   *     will also get supported "yue-\&#42;" voices.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVoicesResponse listVoices(String languageCode) {
