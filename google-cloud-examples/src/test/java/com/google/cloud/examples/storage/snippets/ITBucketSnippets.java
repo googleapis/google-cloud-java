@@ -54,6 +54,7 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Cors;
 import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
@@ -191,7 +192,8 @@ public class ITBucketSnippets {
   @Test
   public void testGetBucketStorageClassAndLocation() {
     String newBucket = RemoteStorageHelper.generateBucketName();
-    GetBucketStorageClassAndLocation.getBucketStorageClassAndLocation(PROJECT_ID, newBucket);
+    GetBucketStorageClassAndLocation.getBucketStorageClassAndLocation(
+        PROJECT_ID, newBucket, StorageClass.COLDLINE, "ASIA");
     try {
       Bucket remoteBucket = storage.get(newBucket);
       assertNotNull(remoteBucket);

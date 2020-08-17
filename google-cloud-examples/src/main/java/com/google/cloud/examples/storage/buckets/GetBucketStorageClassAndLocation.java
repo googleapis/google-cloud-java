@@ -22,15 +22,13 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageOptions;
 
+// Sample to get the bucket storage class and location
 public class GetBucketStorageClassAndLocation {
-  public static void getBucketStorageClassAndLocation(String projectId, String bucketName) {
-    // The ID of your GCP project
-    // String projectId = "your-project-id";
 
-    // The ID to give your GCS bucket
-    // String bucketName = "your-unique-bucket-name";
-
-    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+  public static void main(String[] args) {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "your-project-id";
+    String bucketName = "your-unique-bucket-name";
 
     // See the StorageClass documentation for other valid storage classes:
     // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html
@@ -39,6 +37,15 @@ public class GetBucketStorageClassAndLocation {
     // See this documentation for other valid locations:
     // http://g.co/cloud/storage/docs/bucket-locations#location-mr
     String location = "ASIA";
+
+    getBucketStorageClassAndLocation(projectId, bucketName, storageClass, location);
+  }
+
+  public static void getBucketStorageClassAndLocation(
+      String projectId, String bucketName, StorageClass storageClass, String location) {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests.
+    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
 
     storage.create(
         BucketInfo.newBuilder(bucketName)
