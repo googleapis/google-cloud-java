@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datastore.git",
-        "sha": "21c4f6c95dc8281c26f0d410e3fe52c0600bd2c2"
+        "sha": "44095b3c76f0913e0c39af5723eedbc6d18b60e8"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f8823dec98277a9516f2fb6fae9f58b3a59a23e1"
+        "sha": "c3caf0704f25a0c365f1c315e804a30b87c62a75"
       }
     }
   ],
@@ -43,6 +43,7 @@
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
