@@ -52,7 +52,7 @@ import org.junit.rules.Timeout;
  */
 public abstract class BaseSystemTest {
 
-  @Rule public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(600);
 
   /**
    * Returns the Logging service used to issue requests. This service can be such that it interacts
