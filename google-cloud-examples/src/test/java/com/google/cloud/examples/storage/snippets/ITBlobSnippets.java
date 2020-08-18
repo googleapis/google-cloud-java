@@ -37,6 +37,7 @@ import com.google.cloud.examples.storage.objects.DownloadPublicObject;
 import com.google.cloud.examples.storage.objects.GenerateEncryptionKey;
 import com.google.cloud.examples.storage.objects.GenerateV4GetObjectSignedUrl;
 import com.google.cloud.examples.storage.objects.GenerateV4PutObjectSignedUrl;
+import com.google.cloud.examples.storage.objects.GetObjectKMSkey;
 import com.google.cloud.examples.storage.objects.GetObjectMetadata;
 import com.google.cloud.examples.storage.objects.ListObjects;
 import com.google.cloud.examples.storage.objects.ListObjectsWithOldVersions;
@@ -402,5 +403,18 @@ public class ITBlobSnippets {
     System.out.println(new String(storage.get(BUCKET, targetObject).getContent()));
     assertArrayEquals(
         "firstObjectsecondObject".getBytes(UTF_8), storage.get(BUCKET, targetObject).getContent());
+  }
+
+  @Test
+  public void testGetObjectKMSkey() {
+    String objectName = "kms-key-test-blob";
+    String kmsKeyName =
+        "projects/gcloud-devel/locations/global/keyRings/gcs_kms_key_ring/cryptoKeys/key";
+    storage.create(
+        BlobInfo.newBuilder(BUCKET, objectName).build(),
+        Storage.BlobTargetOption.kmsKeyName(kmsKeyName));
+    GetObjectKMSkey.getObjectKMSkey(PROJECT_ID, BUCKET, objectName);
+    Blob remoteObject = storage.get(BUCKET, objectName);
+    assertEquals(kmsKeyName, remoteObject.getKmsKeyName());
   }
 }
