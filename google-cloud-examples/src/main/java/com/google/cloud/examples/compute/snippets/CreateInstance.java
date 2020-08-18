@@ -16,36 +16,52 @@
 
 package com.google.cloud.examples.compute.snippets;
 
-import com.google.cloud.compute.deprecated.AttachedDisk;
-import com.google.cloud.compute.deprecated.Compute;
-import com.google.cloud.compute.deprecated.ComputeOptions;
-import com.google.cloud.compute.deprecated.ImageId;
-import com.google.cloud.compute.deprecated.Instance;
-import com.google.cloud.compute.deprecated.InstanceId;
-import com.google.cloud.compute.deprecated.InstanceInfo;
-import com.google.cloud.compute.deprecated.MachineTypeId;
-import com.google.cloud.compute.deprecated.NetworkId;
-import com.google.cloud.compute.deprecated.NetworkInterface;
-import com.google.cloud.compute.deprecated.Operation;
-import java.util.concurrent.TimeoutException;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.NetworkInterface;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
+import com.google.cloud.compute.v1.ProjectZoneName;
+import java.io.IOException;
 
 /** A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance. */
 public class CreateInstance {
+  private static final String ZONE = "us-central1-a";
+  private static final String DEFAULT_IMAGE =
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
+  private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
 
-  public static void main(String... args) throws InterruptedException, TimeoutException {
-    Compute compute = ComputeOptions.getDefaultInstance().getService();
-    ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
-    NetworkId networkId = NetworkId.of("default");
-    AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
-    NetworkInterface networkInterface = NetworkInterface.of(networkId);
-    InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
-    MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
-    Operation operation =
-        compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-    operation = operation.waitFor();
-    if (operation.getErrors() == null) {
-      // use instance
-      Instance instance = compute.getInstance(instanceId);
+  public static void main(String... args) throws IOException {
+    try (InstanceClient instanceClient = InstanceClient.create()) {
+      ProjectZoneName zone = ProjectZoneName.of(DEFAULT_PROJECT, ZONE);
+      String machineType =
+          ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+      AttachedDisk disk =
+          AttachedDisk.newBuilder()
+              .setBoot(true)
+              .setAutoDelete(true)
+              .setType("PERSISTENT")
+              .setInitializeParams(
+                  AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
+              .build();
+      NetworkInterface networkInterface = NetworkInterface.newBuilder().setName("default").build();
+      Instance instanceResource =
+          Instance.newBuilder()
+              .setName("instance-name")
+              .setMachineType(machineType)
+              .addDisks(disk)
+              .addNetworkInterfaces(networkInterface)
+              .build();
+      Operation response = instanceClient.insertInstance(zone.toString(), instanceResource);
+      if (response.getError() == null) {
+        System.out.println("Instance was created successfully");
+      } else {
+        // inspect operation.getErrors()
+        throw new RuntimeException("Instance creation failed");
+      }
     }
   }
 }
