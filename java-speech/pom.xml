@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+  <version>1.24.1</version><!-- {x-version-update:google-cloud-speech:current} -->
   <name>Google Cloud speech Parent</name>
   <url>https://github.com/googleapis/java-speech</url>
   <description>
@@ -158,32 +158,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
+        <version>1.24.1</version><!-- {x-version-update:proto-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
-        <version>0.77.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1beta1:current} -->
+        <version>0.77.1</version><!-- {x-version-update:proto-google-cloud-speech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.77.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
+        <version>0.77.1</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>1.24.1</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-        <version>0.77.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
+        <version>0.77.1</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.77.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
+        <version>0.77.1</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
 
       <dependency>

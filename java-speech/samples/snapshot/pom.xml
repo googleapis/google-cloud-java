@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
-      <version>1.24.1-SNAPSHOT</version>
+      <version>1.24.1</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>

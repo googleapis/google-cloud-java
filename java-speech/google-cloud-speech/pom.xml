@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+  <version>1.24.1</version><!-- {x-version-update:google-cloud-speech:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Speech</name>
   <url>https://github.com/googleapis/java-speech</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech-parent</artifactId>
-    <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+    <version>1.24.1</version><!-- {x-version-update:google-cloud-speech:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-speech</site.installationModule>
