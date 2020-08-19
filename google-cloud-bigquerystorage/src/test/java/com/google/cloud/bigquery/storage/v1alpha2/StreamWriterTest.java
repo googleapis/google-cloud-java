@@ -834,4 +834,67 @@ public class StreamWriterTest {
     client.shutdown();
     client.awaitTermination(1, TimeUnit.MINUTES);
   }
+
+  @Test
+  public void testFlushAll() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(100000))
+                    .build())
+            .build();
+
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2).build());
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(3).build());
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
+
+    assertFalse(appendFuture3.isDone());
+    writer.flushAll(100000);
+
+    assertTrue(appendFuture3.isDone());
+
+    writer.close();
+  }
+
+  @Test
+  public void testFlushAllFailed() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(100000))
+                    .build())
+            .build();
+
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
+
+    assertFalse(appendFuture3.isDone());
+    try {
+      writer.flushAll(100000);
+      fail("Should have thrown an Exception");
+    } catch (Exception expected) {
+      if (expected.getCause() instanceof com.google.api.gax.rpc.DataLossException) {
+        LOG.info("got: " + expected.toString());
+      } else {
+        fail("Unexpected exception:" + expected.toString());
+      }
+    }
+
+    assertTrue(appendFuture3.isDone());
+
+    writer.close();
+  }
 }
