@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-asset/compare/v1.5.2...v1.6.0) (2020-08-19)
+
+
+### Features
+
+* **v1:** added support OutputResult in ExportAssetsResponse ([#290](https://www.github.com/googleapis/java-asset/issues/290)) ([2346730](https://www.github.com/googleapis/java-asset/commit/2346730a806870ed5a8e7b8c43637cb527acbf17))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v1 ([#280](https://www.github.com/googleapis/java-asset/issues/280)) ([99e950b](https://www.github.com/googleapis/java-asset/commit/99e950ba38f5b366e36b80980b9a45bde7517ac8))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1 ([#295](https://www.github.com/googleapis/java-asset/issues/295)) ([5f76b0c](https://www.github.com/googleapis/java-asset/commit/5f76b0cc9a30ed8177ec380fcc87894cfc2ecdbb))
+
 ### [1.5.2](https://www.github.com/googleapis/java-asset/compare/v1.5.1...v1.5.2) (2020-08-10)
 
 
