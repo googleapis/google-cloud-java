@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-asset</artifactId>
-      <version>1.5.1</version>
+      <version>1.5.2</version>
     </dependency>
     <!-- [END cloudasset_install_without_bom] -->
 
