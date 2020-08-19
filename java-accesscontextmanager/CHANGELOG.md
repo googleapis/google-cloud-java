@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-accesscontextmanager/compare/v0.2.1...v1.0.0) (2020-08-19)
+
+
+### Features
+
+* promote to 1.0.0 ([#36](https://www.github.com/googleapis/java-accesscontextmanager/issues/36)) ([0d266f4](https://www.github.com/googleapis/java-accesscontextmanager/commit/0d266f4a37149058c7c991a72c048516cd7d242a))
+
 ### [0.2.1](https://www.github.com/googleapis/java-accesscontextmanager/compare/v0.2.0...v0.2.1) (2020-08-07)
 
 
