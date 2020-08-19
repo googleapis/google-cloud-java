@@ -20,15 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -83,18 +78,7 @@ public class TableInsertRowsWithoutRowIdsIT {
 
   @Test
   public void testTableInsertRowsWithoutRowIds() {
-    // Create rows to insert
-    Map<String, Object> rowContent1 = new HashMap<>();
-    rowContent1.put("stringField", "Phred Phlyntstone");
-    rowContent1.put("numericField", 32);
-    Map<String, Object> rowContent2 = new HashMap<>();
-    rowContent2.put("stringField", "Wylma Phlyntstone");
-    rowContent2.put("numericField", 29);
-    List<InsertAllRequest.RowToInsert> rowContent = new ArrayList<>();
-    rowContent.add(InsertAllRequest.RowToInsert.of(rowContent1));
-    rowContent.add(InsertAllRequest.RowToInsert.of(rowContent2));
-    TableInsertRowsWithoutRowIds.tableInsertRowsWithoutRowIds(
-        BIGQUERY_DATASET_NAME, tableName, rowContent);
+    TableInsertRowsWithoutRowIds.tableInsertRowsWithoutRowIds(BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString()).contains("Rows successfully inserted into table without row ids");
   }
 }

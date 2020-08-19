@@ -57,9 +57,8 @@ public class AuthorizedViewTutorial {
       // [START bigquery_authorized_view_tutorial]
       // [START bigquery_avt_create_source_dataset]
       // Create a source dataset to store your table.
-      Dataset sourceDataset = bigquery.create(DatasetInfo.of(sourceDatasetId));
+      final Dataset sourceDataset = bigquery.create(DatasetInfo.of(sourceDatasetId));
       // [END bigquery_avt_create_source_dataset]
-
       // [START bigquery_avt_create_source_table]
       // Populate a source table
       String tableQuery =
@@ -72,32 +71,27 @@ public class AuthorizedViewTutorial {
               .build();
       bigquery.query(queryConfig);
       // [END bigquery_avt_create_source_table]
-
       // [START bigquery_avt_create_shared_dataset]
       // Create a separate dataset to store your view
       Dataset sharedDataset = bigquery.create(DatasetInfo.of(sharedDatasetId));
       // [END bigquery_avt_create_shared_dataset]
-
       // [START bigquery_avt_create_view]
       // Create the view in the new dataset
       String viewQuery =
           String.format(
-              "SELECT commit, author.name as author, committer.name as committer, repo_name FROM %s.%s.%s",
+              "SELECT commit, author.name as author, "
+                  + "committer.name as committer, repo_name FROM %s.%s.%s",
               projectId, sourceDatasetId, sourceTableId);
-
       ViewDefinition viewDefinition = ViewDefinition.of(viewQuery);
-
       Table view =
           bigquery.create(TableInfo.of(TableId.of(sharedDatasetId, sharedViewId), viewDefinition));
       // [END bigquery_avt_create_view]
-
       // [START bigquery_avt_shared_dataset_access]
       // Assign access controls to the dataset containing the view
       List<Acl> viewAcl = new ArrayList<>(sharedDataset.getAcl());
       viewAcl.add(Acl.of(new Acl.Group("example-analyst-group@google.com"), Acl.Role.READER));
       sharedDataset.toBuilder().setAcl(viewAcl).build().update();
       // [END bigquery_avt_shared_dataset_access]
-
       // [START bigquery_avt_source_dataset_access]
       // Authorize the view to access the source dataset
       List<Acl> srcAcl = new ArrayList<>(sourceDataset.getAcl());

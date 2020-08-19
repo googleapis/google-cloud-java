@@ -19,7 +19,11 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
@@ -27,9 +31,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateModelIT {
+public class UpdateTableDmlIT {
 
-  private String modelName;
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -50,7 +54,22 @@ public class CreateModelIT {
 
   @Before
   public void setUp() {
-    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
+    // Create a test table
+    tableName = "UserSessions_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    Schema schema =
+        Schema.of(
+            Field.of("id", LegacySQLTypeName.STRING),
+            Field.of("user_id", LegacySQLTypeName.STRING),
+            Field.of("login_time", LegacySQLTypeName.STRING),
+            Field.of("logout_time", LegacySQLTypeName.STRING),
+            Field.of("ip_address", LegacySQLTypeName.STRING));
+
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -59,29 +78,13 @@ public class CreateModelIT {
   @After
   public void tearDown() {
     // Clean up
-    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
     System.setOut(null);
   }
 
   @Test
-  public void testCreateModel() {
-    String sql =
-        "CREATE MODEL `"
-            + BIGQUERY_DATASET_NAME
-            + "."
-            + modelName
-            + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    CreateModel.createModel(sql);
-    assertThat(bout.toString()).contains("Model created successfully");
+  public void testUpdateTableDml() throws IOException, InterruptedException {
+    UpdateTableDml.updateTableDml(BIGQUERY_DATASET_NAME, tableName);
+    assertThat(bout.toString()).contains("Table updated successfully using DML");
   }
 }

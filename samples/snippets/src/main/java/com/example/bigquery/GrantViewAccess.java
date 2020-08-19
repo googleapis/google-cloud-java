@@ -47,21 +47,17 @@ public class GrantViewAccess {
       Dataset srcDataset = bigquery.getDataset(DatasetId.of(srcDatasetId));
       Dataset viewDataset = bigquery.getDataset(DatasetId.of(viewDatasetId));
       Table view = viewDataset.get(viewId);
-
       // First, we'll add a group to the ACL for the dataset containing the view. This will allow
       // users within that group to query the view, but they must have direct access to any tables
       // referenced by the view.
-      List<Acl> viewAcl = new ArrayList<>();
-      viewAcl.addAll(viewDataset.getAcl());
+      List<Acl> viewAcl = new ArrayList<>(viewDataset.getAcl());
       viewAcl.add(Acl.of(new Acl.Group("example-analyst-group@google.com"), Acl.Role.READER));
       viewDataset.toBuilder().setAcl(viewAcl).build().update();
-
       // Now, we'll authorize a specific view against a source dataset, delegating access
       // enforcement. Once this has been completed, members of the group previously added to the
       // view dataset's ACL no longer require access to the source dataset to successfully query the
       // view
-      List<Acl> srcAcl = new ArrayList<>();
-      srcAcl.addAll(srcDataset.getAcl());
+      List<Acl> srcAcl = new ArrayList<>(srcDataset.getAcl());
       srcAcl.add(Acl.of(new Acl.View(view.getTableId())));
       srcDataset.toBuilder().setAcl(srcAcl).build().update();
       System.out.println("Grant view access successfully");

@@ -19,6 +19,10 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.EncryptionConfiguration;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -27,13 +31,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateModelIT {
+public class QueryDestinationTableCmekIT {
 
-  private String modelName;
+  private String tableName;
+  private EncryptionConfiguration encryption;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
+  private static final String BIGQUERY_KMS_KEY_NAME = requireEnvVar("BIGQUERY_KMS_KEY_NAME");
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -46,11 +52,24 @@ public class CreateModelIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("BIGQUERY_DATASET_NAME");
+    requireEnvVar("BIGQUERY_KMS_KEY_NAME");
   }
 
   @Before
   public void setUp() {
-    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
+    // create a test table with encryption key
+    tableName = "MY_TABLE_CMEK_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    Schema schema =
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL));
+    encryption = EncryptionConfiguration.newBuilder().setKmsKeyName(BIGQUERY_KMS_KEY_NAME).build();
+    CreateTableCmek.createTableCmek(BIGQUERY_DATASET_NAME, tableName, schema, encryption);
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -59,29 +78,16 @@ public class CreateModelIT {
   @After
   public void tearDown() {
     // Clean up
-    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
     System.setOut(null);
   }
 
   @Test
-  public void testCreateModel() {
-    String sql =
-        "CREATE MODEL `"
-            + BIGQUERY_DATASET_NAME
-            + "."
-            + modelName
-            + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    CreateModel.createModel(sql);
-    assertThat(bout.toString()).contains("Model created successfully");
+  public void testQueryDestinationTableCmek() {
+    String query =
+        String.format(
+            "SELECT stringField, booleanField FROM %s.%s", BIGQUERY_DATASET_NAME, tableName);
+    QueryDestinationTableCmek.queryDestinationTableCmek(query, encryption);
+    assertThat(bout.toString()).contains("Query performed successfully with encryption key.");
   }
 }

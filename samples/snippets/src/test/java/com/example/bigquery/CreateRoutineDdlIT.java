@@ -27,12 +27,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateModelIT {
+public class CreateRoutineDdlIT {
 
-  private String modelName;
+  private String routineName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
   private static String requireEnvVar(String varName) {
@@ -45,12 +46,13 @@ public class CreateModelIT {
 
   @BeforeClass
   public static void checkRequirements() {
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
     requireEnvVar("BIGQUERY_DATASET_NAME");
   }
 
   @Before
   public void setUp() {
-    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    routineName = "MY_ROUTINE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -59,29 +61,24 @@ public class CreateModelIT {
   @After
   public void tearDown() {
     // Clean up
-    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
+    DeleteRoutine.deleteRoutine(BIGQUERY_DATASET_NAME, routineName);
     System.setOut(null);
   }
 
   @Test
-  public void testCreateModel() {
+  public void testCreateRoutineDdl() {
     String sql =
-        "CREATE MODEL `"
+        "CREATE FUNCTION "
+            + "`"
+            + PROJECT_ID
+            + "."
             + BIGQUERY_DATASET_NAME
             + "."
-            + modelName
+            + routineName
             + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    CreateModel.createModel(sql);
-    assertThat(bout.toString()).contains("Model created successfully");
+            + "( arr ARRAY<STRUCT<name STRING, val INT64>>) AS "
+            + "( (SELECT SUM(IF(elem.name = \"foo\",elem.val,null)) FROM UNNEST(arr) AS elem))";
+    CreateRoutineDdl.createRoutineDdl(sql);
+    assertThat(bout.toString()).contains("Routine created successfully");
   }
 }

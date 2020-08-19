@@ -41,55 +41,55 @@ public class InsertingDataTypes {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-
-    // Inserting data types
-    Field name = Field.of("name", StandardSQLTypeName.STRING);
-    Field age = Field.of("age", StandardSQLTypeName.INT64);
-    Field school =
-        Field.newBuilder("school", StandardSQLTypeName.BYTES).setMode(Field.Mode.REPEATED).build();
-    Field location = Field.of("location", StandardSQLTypeName.GEOGRAPHY);
-    Field measurements =
-        Field.newBuilder("measurements", StandardSQLTypeName.FLOAT64)
-            .setMode(Field.Mode.REPEATED)
-            .build();
-    Field day = Field.of("day", StandardSQLTypeName.DATE);
-    Field firstTime = Field.of("firstTime", StandardSQLTypeName.DATETIME);
-    Field secondTime = Field.of("secondTime", StandardSQLTypeName.TIME);
-    Field thirdTime = Field.of("thirdTime", StandardSQLTypeName.TIMESTAMP);
-    Field datesTime =
-        Field.of("datesTime", StandardSQLTypeName.STRUCT, day, firstTime, secondTime, thirdTime);
-    Schema schema = Schema.of(name, age, school, location, measurements, datesTime);
-
-    // Inserting Sample data
-    Map<String, Object> datesTimeContent = new HashMap<>();
-    datesTimeContent.put("day", "2019-1-12");
-    datesTimeContent.put("firstTime", "2019-02-17 11:24:00.000");
-    datesTimeContent.put("secondTime", "14:00:00");
-    datesTimeContent.put("thirdTime", "2020-04-27T18:07:25.356Z");
-
-    Map<String, Object> rowContent = new HashMap<>();
-    rowContent.put("name", "Tom");
-    rowContent.put("age", 30);
-    rowContent.put("school", "Test University".getBytes());
-    rowContent.put("location", "POINT(1 2)");
-    rowContent.put("measurements", new Float[] {50.05f, 100.5f});
-    rowContent.put("datesTime", datesTimeContent);
-
-    insertingDataTypes(datasetName, tableName, schema, rowContent);
+    insertingDataTypes(datasetName, tableName);
   }
 
-  public static void insertingDataTypes(
-      String datasetName, String tableName, Schema schema, Map<String, Object> rowContent) {
+  public static void insertingDataTypes(String datasetName, String tableName) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+
+      // Inserting data types
+      Field name = Field.of("name", StandardSQLTypeName.STRING);
+      Field age = Field.of("age", StandardSQLTypeName.INT64);
+      Field school =
+          Field.newBuilder("school", StandardSQLTypeName.BYTES)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      Field location = Field.of("location", StandardSQLTypeName.GEOGRAPHY);
+      Field measurements =
+          Field.newBuilder("measurements", StandardSQLTypeName.FLOAT64)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      Field day = Field.of("day", StandardSQLTypeName.DATE);
+      Field firstTime = Field.of("firstTime", StandardSQLTypeName.DATETIME);
+      Field secondTime = Field.of("secondTime", StandardSQLTypeName.TIME);
+      Field thirdTime = Field.of("thirdTime", StandardSQLTypeName.TIMESTAMP);
+      Field datesTime =
+          Field.of("datesTime", StandardSQLTypeName.STRUCT, day, firstTime, secondTime, thirdTime);
+      Schema schema = Schema.of(name, age, school, location, measurements, datesTime);
 
       TableId tableId = TableId.of(datasetName, tableName);
       TableDefinition tableDefinition = StandardTableDefinition.of(schema);
       TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
 
       bigquery.create(tableInfo);
+
+      // Inserting Sample data
+      Map<String, Object> datesTimeContent = new HashMap<>();
+      datesTimeContent.put("day", "2019-1-12");
+      datesTimeContent.put("firstTime", "2019-02-17 11:24:00.000");
+      datesTimeContent.put("secondTime", "14:00:00");
+      datesTimeContent.put("thirdTime", "2020-04-27T18:07:25.356Z");
+
+      Map<String, Object> rowContent = new HashMap<>();
+      rowContent.put("name", "Tom");
+      rowContent.put("age", 30);
+      rowContent.put("school", "Test University".getBytes());
+      rowContent.put("location", "POINT(1 2)");
+      rowContent.put("measurements", new Float[] {50.05f, 100.5f});
+      rowContent.put("datesTime", datesTimeContent);
 
       InsertAllResponse response =
           bigquery.insertAll(InsertAllRequest.newBuilder(tableId).addRow(rowContent).build());

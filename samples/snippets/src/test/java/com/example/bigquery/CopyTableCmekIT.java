@@ -19,6 +19,10 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.EncryptionConfiguration;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
@@ -27,13 +31,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DeleteModelIT {
+public class CopyTableCmekIT {
 
-  private String modelName;
+  private String sourceTableName;
+  private String destinationTableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
+  private static final String BIGQUERY_KMS_KEY_NAME = requireEnvVar("BIGQUERY_KMS_KEY_NAME");
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -46,6 +52,7 @@ public class DeleteModelIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("BIGQUERY_DATASET_NAME");
+    requireEnvVar("BIGQUERY_KMS_KEY_NAME");
   }
 
   @Before
@@ -54,25 +61,16 @@ public class DeleteModelIT {
     out = new PrintStream(bout);
     System.setOut(out);
 
-    // Create a new model to be deleted
-    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
-    String sql =
-        "CREATE MODEL `"
-            + BIGQUERY_DATASET_NAME
-            + "."
-            + modelName
-            + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    CreateModel.createModel(sql);
+    sourceTableName = "MY_SOURCE_TABLE_CMEK_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    destinationTableName =
+        "MY_DESTINATION_TABLE_CMEK_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    Schema schema =
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL));
+    EncryptionConfiguration configuration =
+        EncryptionConfiguration.newBuilder().setKmsKeyName(BIGQUERY_KMS_KEY_NAME).build();
+    CreateTableCmek.createTableCmek(BIGQUERY_DATASET_NAME, sourceTableName, schema, configuration);
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
@@ -81,13 +79,22 @@ public class DeleteModelIT {
 
   @After
   public void tearDown() {
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, sourceTableName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, destinationTableName);
     System.setOut(null);
   }
 
   @Test
-  public void testDeleteModel() {
-    // Delete the model that was just created
-    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
-    assertThat(bout.toString()).contains("Model deleted successfully");
+  public void testCopyTableCmek() {
+    EncryptionConfiguration configuration =
+        EncryptionConfiguration.newBuilder().setKmsKeyName(BIGQUERY_KMS_KEY_NAME).build();
+    CopyTableCmek.copyTableCmek(
+        BIGQUERY_DATASET_NAME,
+        sourceTableName,
+        BIGQUERY_DATASET_NAME,
+        destinationTableName,
+        configuration);
+    assertThat(bout.toString()).contains("Table cmek copied successfully.");
   }
 }

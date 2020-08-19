@@ -68,7 +68,7 @@ public class GetModelIT {
             + "learn_rate=0.4, "
             + "learn_rate_strategy='constant' "
             + ") AS ( "
-            + "	SELECT 'a' AS f1, 2.0 AS label "
+            + "SELECT 'a' AS f1, 2.0 AS label "
             + "UNION ALL "
             + "SELECT 'b' AS f1, 3.8 AS label "
             + ")";

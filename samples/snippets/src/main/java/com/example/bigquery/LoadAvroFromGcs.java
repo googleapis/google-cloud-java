@@ -16,59 +16,51 @@
 
 package com.example.bigquery;
 
-// [START bigquery_create_model]
+// [START bigquery_load_table_gcs_avro]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
-import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.LoadJobConfiguration;
+import com.google.cloud.bigquery.TableId;
 
-// Sample to create a model
-public class CreateModel {
+// Sample to load Avro data from Cloud Storage into a new BigQuery table
+public class LoadAvroFromGcs {
 
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
-    String modelName = "MY_MODEL_NAME";
-    String sql =
-        "CREATE MODEL `"
-            + datasetName
-            + "."
-            + modelName
-            + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    createModel(sql);
+    String tableName = "MY_TABLE_NAME";
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.avro";
+    loadAvroFromGcs(datasetName, tableName, sourceUri);
   }
 
-  public static void createModel(String sql) {
+  public static void loadAvroFromGcs(String datasetName, String tableName, String sourceUri) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
+      TableId tableId = TableId.of(datasetName, tableName);
+      LoadJobConfiguration loadConfig =
+          LoadJobConfiguration.of(tableId, sourceUri, FormatOptions.avro());
 
-      // create a model using query and it will wait to complete job.
-      Job job = bigquery.create(JobInfo.of(config));
+      // Load data from a GCS Avro file into the table
+      Job job = bigquery.create(JobInfo.of(loadConfig));
+      // Blocks until this load table job completes its execution, either failing or succeeding.
       job = job.waitFor();
       if (job.isDone()) {
-        System.out.println("Model created successfully");
+        System.out.println("Avro from GCS successfully loaded in a table");
       } else {
-        System.out.println("Model was not created");
+        System.out.println(
+            "BigQuery was unable to load into the table due to an error:"
+                + job.getStatus().getError());
       }
     } catch (BigQueryException | InterruptedException e) {
-      System.out.println("Model was not created. \n" + e.toString());
+      System.out.println("Column not added during load append \n" + e.toString());
     }
   }
 }
-// [END bigquery_create_model]
+// [END bigquery_load_table_gcs_avro]

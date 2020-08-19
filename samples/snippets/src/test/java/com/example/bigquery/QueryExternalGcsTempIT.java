@@ -17,40 +17,24 @@
 package com.example.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class InsertingDataTypesIT {
+public class QueryExternalGcsTempIT {
 
-  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
-
-  private static String requireEnvVar(String varName) {
-    String value = System.getenv(varName);
-    assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
-    return value;
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("BIGQUERY_DATASET_NAME");
-  }
-
   @Before
   public void setUp() {
-    tableName = "MY_TABLE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -58,14 +42,21 @@ public class InsertingDataTypesIT {
 
   @After
   public void tearDown() {
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
     System.setOut(null);
   }
 
   @Test
-  public void testInsertingDataTypes() {
-    InsertingDataTypes.insertingDataTypes(BIGQUERY_DATASET_NAME, tableName);
-    assertThat(bout.toString()).contains("Rows successfully inserted into table");
+  public void testQueryExternalGcsTemp() {
+    String tableName =
+        "EXTERNAL_CSV_TEMP_TABLE_FROM_GCS_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
+    Schema schema =
+        Schema.of(
+            Field.of("name", StandardSQLTypeName.STRING),
+            Field.of("post_abbr", StandardSQLTypeName.STRING));
+    String query = String.format("SELECT * FROM %s WHERE name LIKE 'W%%'", tableName);
+    QueryExternalGcsTemp.queryExternalGcsTemp(tableName, sourceUri, schema, query);
+    assertThat(bout.toString())
+        .contains("Query on external temporary table performed successfully.");
   }
 }

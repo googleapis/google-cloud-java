@@ -24,7 +24,7 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.TableId;
-import java.util.ArrayList;
+import com.google.common.collect.ImmutableList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,33 +36,29 @@ public class TableInsertRowsWithoutRowIds {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    // Create rows to insert
-    Map<String, Object> rowContent1 = new HashMap<>();
-    rowContent1.put("stringField", "Phred Phlyntstone");
-    rowContent1.put("numericField", 32);
-    Map<String, Object> rowContent2 = new HashMap<>();
-    rowContent2.put("stringField", "Wylma Phlyntstone");
-    rowContent2.put("numericField", 29);
-    List<InsertAllRequest.RowToInsert> rowContent = new ArrayList<>();
-    // insertId is null if not specified
-    rowContent.add(InsertAllRequest.RowToInsert.of(rowContent1));
-    rowContent.add(InsertAllRequest.RowToInsert.of(rowContent2));
-    tableInsertRowsWithoutRowIds(datasetName, tableName, rowContent);
+    tableInsertRowsWithoutRowIds(datasetName, tableName);
   }
 
-  public static void tableInsertRowsWithoutRowIds(
-      String datasetName, String tableName, Iterable<InsertAllRequest.RowToInsert> rows) {
+  public static void tableInsertRowsWithoutRowIds(String datasetName, String tableName) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
-      BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-
-      // Get table
-      TableId tableId = TableId.of(datasetName, tableName);
-
-      // Inserts rowContent into datasetName:tableId.
+      final BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+      // Create rows to insert
+      Map<String, Object> rowContent1 = new HashMap<>();
+      rowContent1.put("stringField", "Phred Phlyntstone");
+      rowContent1.put("numericField", 32);
+      Map<String, Object> rowContent2 = new HashMap<>();
+      rowContent2.put("stringField", "Wylma Phlyntstone");
+      rowContent2.put("numericField", 29);
       InsertAllResponse response =
-          bigquery.insertAll(InsertAllRequest.newBuilder(tableId).setRows(rows).build());
+          bigquery.insertAll(
+              InsertAllRequest.newBuilder(TableId.of(datasetName, tableName))
+                  .setRows(
+                      ImmutableList.of(
+                          InsertAllRequest.RowToInsert.of(rowContent1),
+                          InsertAllRequest.RowToInsert.of(rowContent2)))
+                  .build());
 
       if (response.hasErrors()) {
         // If any of the insertions failed, this lets you inspect the errors

@@ -16,7 +16,7 @@
 
 package com.example.bigquery;
 
-// [START bigquery_create_model]
+// [START bigquery_create_routine_ddl]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -24,33 +24,29 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 
-// Sample to create a model
-public class CreateModel {
+// Sample to create a routine using DDL
+public class CreateRoutineDdl {
 
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
-    String datasetName = "MY_DATASET_NAME";
-    String modelName = "MY_MODEL_NAME";
+    String projectId = "MY_PROJECT_ID";
+    String datasetId = "MY_DATASET_ID";
+    String routineId = "MY_ROUTINE_ID";
     String sql =
-        "CREATE MODEL `"
-            + datasetName
-            + "."
-            + modelName
+        "CREATE FUNCTION "
             + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    createModel(sql);
+            + projectId
+            + "."
+            + datasetId
+            + "."
+            + routineId
+            + "`"
+            + "( arr ARRAY<STRUCT<name STRING, val INT64>>) AS "
+            + "( (SELECT SUM(IF(elem.name = \"foo\",elem.val,null)) FROM UNNEST(arr) AS elem))";
+    createRoutineDdl(sql);
   }
 
-  public static void createModel(String sql) {
+  public static void createRoutineDdl(String sql) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -58,17 +54,17 @@ public class CreateModel {
 
       QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
 
-      // create a model using query and it will wait to complete job.
+      // create a routine using query and it will wait to complete job.
       Job job = bigquery.create(JobInfo.of(config));
       job = job.waitFor();
       if (job.isDone()) {
-        System.out.println("Model created successfully");
+        System.out.println("Routine created successfully");
       } else {
-        System.out.println("Model was not created");
+        System.out.println("Routine was not created");
       }
     } catch (BigQueryException | InterruptedException e) {
-      System.out.println("Model was not created. \n" + e.toString());
+      System.out.println("Routine was not created. \n" + e.toString());
     }
   }
 }
-// [END bigquery_create_model]
+// [END bigquery_create_routine_ddl]

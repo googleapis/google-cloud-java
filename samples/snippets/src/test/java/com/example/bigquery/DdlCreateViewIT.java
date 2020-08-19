@@ -27,12 +27,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CreateModelIT {
+public class DdlCreateViewIT {
 
-  private String modelName;
+  private String viewName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
   private static String requireEnvVar(String varName) {
@@ -45,12 +46,13 @@ public class CreateModelIT {
 
   @BeforeClass
   public static void checkRequirements() {
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
     requireEnvVar("BIGQUERY_DATASET_NAME");
   }
 
   @Before
   public void setUp() {
-    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().replace('-', '_');
+    viewName = "MY_VIEW_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -59,29 +61,32 @@ public class CreateModelIT {
   @After
   public void tearDown() {
     // Clean up
-    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, viewName);
     System.setOut(null);
   }
 
   @Test
-  public void testCreateModel() {
+  public void testDdlCreateView() {
     String sql =
-        "CREATE MODEL `"
+        "CREATE VIEW "
+            + "`"
+            + PROJECT_ID
+            + "."
             + BIGQUERY_DATASET_NAME
             + "."
-            + modelName
+            + viewName
             + "`"
-            + "OPTIONS ( "
-            + "model_type='linear_reg', "
-            + "max_iteration=1, "
-            + "learn_rate=0.4, "
-            + "learn_rate_strategy='constant' "
-            + ") AS ( "
-            + "SELECT 'a' AS f1, 2.0 AS label "
-            + "UNION ALL "
-            + "SELECT 'b' AS f1, 3.8 AS label "
-            + ")";
-    CreateModel.createModel(sql);
-    assertThat(bout.toString()).contains("Model created successfully");
+            + " OPTIONS("
+            + " expiration_timestamp=TIMESTAMP_ADD("
+            + " CURRENT_TIMESTAMP(), INTERVAL 48 HOUR),"
+            + " friendly_name=\"new_view\","
+            + " description=\"a view that expires in 2 days\","
+            + " labels=[(\"org_unit\", \"development\")]"
+            + " )"
+            + " AS SELECT name, state, year, number"
+            + " FROM `bigquery-public-data.usa_names.usa_1910_current`"
+            + " WHERE state LIKE 'W%'";
+    DdlCreateView.ddlCreateView(sql);
+    assertThat(bout.toString()).contains("View created successfully");
   }
 }
