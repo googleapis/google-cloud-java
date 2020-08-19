@@ -6,7 +6,7 @@
   <version>0.2.2-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Document AI</name>
-  <url>https://github.com/googleapis/java-documentai</url>
+  <url>https://github.com/googleapis/java-document-ai</url>
   <description>Java idiomatic client for Google Cloud Document AI</description>
   <parent>
     <groupId>com.google.cloud</groupId>
