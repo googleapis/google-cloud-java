@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.4.1...v1.5.0) (2020-08-19)
+
+
+### Features
+
+* Add a flushAll() method that will flush all the inflight request and make sure all responses returned ([#492](https://www.github.com/googleapis/java-bigquerystorage/issues/492)) ([6134818](https://www.github.com/googleapis/java-bigquerystorage/commit/6134818f7bc5ada324a78d5c048bb2eeb83f8ca8))
+* add JsonWriterCache.java and added JsonWriterCache in DirectWriter to allow JsonWrites ([#489](https://www.github.com/googleapis/java-bigquerystorage/issues/489)) ([34193b8](https://www.github.com/googleapis/java-bigquerystorage/commit/34193b88bcf64b97dbcde2183e7587fa44923d4b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.10 ([#483](https://www.github.com/googleapis/java-bigquerystorage/issues/483)) ([285b6f8](https://www.github.com/googleapis/java-bigquerystorage/commit/285b6f846753f387800d2787746ddb43de67a4b7))
+
 ### [1.4.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.4.0...v1.4.1) (2020-08-10)
 
 
