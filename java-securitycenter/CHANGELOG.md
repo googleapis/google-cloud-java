@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.2.0...v1.3.0) (2020-08-19)
+
+
+### Features
+
+* added field severity to findings ([#216](https://www.github.com/googleapis/java-securitycenter/issues/216)) ([03213c8](https://www.github.com/googleapis/java-securitycenter/commit/03213c8db94335cb0c7db325b02757103e1c4fdd))
+
+
+### Documentation
+
+* clarified that event_time can also be considered as the "update time" for a Finding ([#224](https://www.github.com/googleapis/java-securitycenter/issues/224)) ([a3721cb](https://www.github.com/googleapis/java-securitycenter/commit/a3721cbf9d204597938c4887b432f568676b44f0))
+
 ## [1.2.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.1.0...v1.2.0) (2020-08-10)
 
 
