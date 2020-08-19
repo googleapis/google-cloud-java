@@ -33,8 +33,8 @@ public interface ResourceSearchResultOrBuilder
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `name`:
-   * * use a field query. Example: `name : "instance1"`
-   * * use a free text query. Example: `"instance1"`
+   * * use a field query. Example: `name:instance1`
+   * * use a free text query. Example: `instance1`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,8 +52,8 @@ public interface ResourceSearchResultOrBuilder
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `name`:
-   * * use a field query. Example: `name : "instance1"`
-   * * use a free text query. Example: `"instance1"`
+   * * use a field query. Example: `name:instance1`
+   * * use a free text query. Example: `instance1`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -128,7 +128,7 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The display name of this resource.
    * To search against the `display_name`:
-   * * use a field query. Example: `displayName : "My Instance"`
+   * * use a field query. Example: `displayName:"My Instance"`
    * * use a free text query. Example: `"My Instance"`
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The display name of this resource.
    * To search against the `display_name`:
-   * * use a field query. Example: `displayName : "My Instance"`
+   * * use a field query. Example: `displayName:"My Instance"`
    * * use a free text query. Example: `"My Instance"`
    * </pre>
    *
@@ -160,7 +160,7 @@ public interface ResourceSearchResultOrBuilder
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes.
    * To search against the `description`:
-   * * use a field query. Example: `description : "*important instance*"`
+   * * use a field query. Example: `description:"*important instance*"`
    * * use a free text query. Example: `"*important instance*"`
    * </pre>
    *
@@ -176,7 +176,7 @@ public interface ResourceSearchResultOrBuilder
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes.
    * To search against the `description`:
-   * * use a field query. Example: `description : "*important instance*"`
+   * * use a field query. Example: `description:"*important instance*"`
    * * use a free text query. Example: `"*important instance*"`
    * </pre>
    *
@@ -193,8 +193,8 @@ public interface ResourceSearchResultOrBuilder
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`.
    * To search against the `location`:
-   * * use a field query. Example: `location : "us-west*"`
-   * * use a free text query. Example: `"us-west*"`
+   * * use a field query. Example: `location:us-west*`
+   * * use a free text query. Example: `us-west*`
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -209,8 +209,8 @@ public interface ResourceSearchResultOrBuilder
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`.
    * To search against the `location`:
-   * * use a field query. Example: `location : "us-west*"`
-   * * use a free text query. Example: `"us-west*"`
+   * * use a field query. Example: `location:us-west*`
+   * * use a free text query. Example: `us-west*`
    * </pre>
    *
    * <code>string location = 6;</code>
@@ -227,11 +227,11 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `labels`:
-   * * use a field query, as following:
-   *     - query on any label's key or value. Example: `labels : "prod"`
-   *     - query by a given label. Example: `labels.env : "prod"`
-   *     - query by a given label'sexistence. Example: `labels.env : *`
-   * * use a free text query. Example: `"prod"`
+   * * use a field query:
+   *     - query on any label's key or value. Example: `labels:prod`
+   *     - query by a given label. Example: `labels.env:prod`
+   *     - query by a given label's existence. Example: `labels.env:*`
+   * * use a free text query. Example: `prod`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -245,11 +245,11 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `labels`:
-   * * use a field query, as following:
-   *     - query on any label's key or value. Example: `labels : "prod"`
-   *     - query by a given label. Example: `labels.env : "prod"`
-   *     - query by a given label'sexistence. Example: `labels.env : *`
-   * * use a free text query. Example: `"prod"`
+   * * use a field query:
+   *     - query on any label's key or value. Example: `labels:prod`
+   *     - query by a given label. Example: `labels.env:prod`
+   *     - query by a given label's existence. Example: `labels.env:*`
+   * * use a free text query. Example: `prod`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -266,11 +266,11 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `labels`:
-   * * use a field query, as following:
-   *     - query on any label's key or value. Example: `labels : "prod"`
-   *     - query by a given label. Example: `labels.env : "prod"`
-   *     - query by a given label'sexistence. Example: `labels.env : *`
-   * * use a free text query. Example: `"prod"`
+   * * use a field query:
+   *     - query on any label's key or value. Example: `labels:prod`
+   *     - query by a given label. Example: `labels.env:prod`
+   *     - query by a given label's existence. Example: `labels.env:*`
+   * * use a free text query. Example: `prod`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -284,11 +284,11 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `labels`:
-   * * use a field query, as following:
-   *     - query on any label's key or value. Example: `labels : "prod"`
-   *     - query by a given label. Example: `labels.env : "prod"`
-   *     - query by a given label'sexistence. Example: `labels.env : *`
-   * * use a free text query. Example: `"prod"`
+   * * use a field query:
+   *     - query on any label's key or value. Example: `labels:prod`
+   *     - query by a given label. Example: `labels.env:prod`
+   *     - query by a given label's existence. Example: `labels.env:*`
+   * * use a free text query. Example: `prod`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -302,11 +302,11 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `labels`:
-   * * use a field query, as following:
-   *     - query on any label's key or value. Example: `labels : "prod"`
-   *     - query by a given label. Example: `labels.env : "prod"`
-   *     - query by a given label'sexistence. Example: `labels.env : *`
-   * * use a free text query. Example: `"prod"`
+   * * use a field query:
+   *     - query on any label's key or value. Example: `labels:prod`
+   *     - query by a given label. Example: `labels.env:prod`
+   *     - query by a given label's existence. Example: `labels.env:*`
+   * * use a free text query. Example: `prod`
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -322,8 +322,8 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `network_tags`:
-   * * use a field query. Example: `networkTags : "internal"`
-   * * use a free text query. Example: `"internal"`
+   * * use a field query. Example: `networkTags:internal`
+   * * use a free text query. Example: `internal`
    * </pre>
    *
    * <code>repeated string network_tags = 8;</code>
@@ -340,8 +340,8 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `network_tags`:
-   * * use a field query. Example: `networkTags : "internal"`
-   * * use a free text query. Example: `"internal"`
+   * * use a field query. Example: `networkTags:internal`
+   * * use a free text query. Example: `internal`
    * </pre>
    *
    * <code>repeated string network_tags = 8;</code>
@@ -358,8 +358,8 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `network_tags`:
-   * * use a field query. Example: `networkTags : "internal"`
-   * * use a free text query. Example: `"internal"`
+   * * use a field query. Example: `networkTags:internal`
+   * * use a free text query. Example: `internal`
    * </pre>
    *
    * <code>repeated string network_tags = 8;</code>
@@ -377,8 +377,8 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * To search against the `network_tags`:
-   * * use a field query. Example: `networkTags : "internal"`
-   * * use a free text query. Example: `"internal"`
+   * * use a field query. Example: `networkTags:internal`
+   * * use a free text query. Example: `internal`
    * </pre>
    *
    * <code>repeated string network_tags = 8;</code>
@@ -392,13 +392,22 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
-   * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: `projectId` for Project,
-   * `dnsName` for DNS ManagedZone.
+   * The additional searchable attributes of this resource. The attributes may
+   * vary from one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
+   * metadata fields that are returned by the List or Get APIs provided by the
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * for more information.
+   * You can search values of these fields through free text search. However,
+   * you should not consume the field programically as the field names and
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
-   *   `"foobar"`.
+   *   `foobar`.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional_attributes = 9;</code>
@@ -410,13 +419,22 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
-   * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: `projectId` for Project,
-   * `dnsName` for DNS ManagedZone.
+   * The additional searchable attributes of this resource. The attributes may
+   * vary from one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
+   * metadata fields that are returned by the List or Get APIs provided by the
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * for more information.
+   * You can search values of these fields through free text search. However,
+   * you should not consume the field programically as the field names and
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
-   *   `"foobar"`.
+   *   `foobar`.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional_attributes = 9;</code>
@@ -428,13 +446,22 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
-   * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: `projectId` for Project,
-   * `dnsName` for DNS ManagedZone.
+   * The additional searchable attributes of this resource. The attributes may
+   * vary from one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
+   * metadata fields that are returned by the List or Get APIs provided by the
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * for more information.
+   * You can search values of these fields through free text search. However,
+   * you should not consume the field programically as the field names and
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
-   *   `"foobar"`.
+   *   `foobar`.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional_attributes = 9;</code>

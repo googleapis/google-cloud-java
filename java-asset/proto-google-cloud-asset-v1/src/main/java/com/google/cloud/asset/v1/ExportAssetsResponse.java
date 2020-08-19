@@ -23,10 +23,8 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * The export asset response. This message is returned by the
- * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
- * method in the returned
- * [google.longrunning.Operation.response][google.longrunning.Operation.response]
- * field.
+ * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ExportAssetsResponse}
@@ -99,6 +97,22 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
               if (subBuilder != null) {
                 subBuilder.mergeFrom(outputConfig_);
                 outputConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.asset.v1.OutputResult.Builder subBuilder = null;
+              if (outputResult_ != null) {
+                subBuilder = outputResult_.toBuilder();
+              }
+              outputResult_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1.OutputResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputResult_);
+                outputResult_ = subBuilder.buildPartial();
               }
 
               break;
@@ -231,6 +245,66 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     return getOutputConfig();
   }
 
+  public static final int OUTPUT_RESULT_FIELD_NUMBER = 3;
+  private com.google.cloud.asset.v1.OutputResult outputResult_;
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   *
+   * @return Whether the outputResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputResult() {
+    return outputResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   *
+   * @return The outputResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.OutputResult getOutputResult() {
+    return outputResult_ == null
+        ? com.google.cloud.asset.v1.OutputResult.getDefaultInstance()
+        : outputResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.OutputResultOrBuilder getOutputResultOrBuilder() {
+    return getOutputResult();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -251,6 +325,9 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     if (outputConfig_ != null) {
       output.writeMessage(2, getOutputConfig());
     }
+    if (outputResult_ != null) {
+      output.writeMessage(3, getOutputResult());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +342,9 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     }
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOutputConfig());
+    }
+    if (outputResult_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOutputResult());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +370,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     if (hasOutputConfig()) {
       if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
+    if (hasOutputResult() != other.hasOutputResult()) return false;
+    if (hasOutputResult()) {
+      if (!getOutputResult().equals(other.getOutputResult())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -308,6 +392,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     if (hasOutputConfig()) {
       hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputConfig().hashCode();
+    }
+    if (hasOutputResult()) {
+      hash = (37 * hash) + OUTPUT_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputResult().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -414,10 +502,8 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The export asset response. This message is returned by the
-   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
-   * method in the returned
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
-   * field.
+   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ExportAssetsResponse}
@@ -470,6 +556,12 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         outputConfig_ = null;
         outputConfigBuilder_ = null;
       }
+      if (outputResultBuilder_ == null) {
+        outputResult_ = null;
+      } else {
+        outputResult_ = null;
+        outputResultBuilder_ = null;
+      }
       return this;
     }
 
@@ -506,6 +598,11 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         result.outputConfig_ = outputConfig_;
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
+      }
+      if (outputResultBuilder_ == null) {
+        result.outputResult_ = outputResult_;
+      } else {
+        result.outputResult_ = outputResultBuilder_.build();
       }
       onBuilt();
       return result;
@@ -561,6 +658,9 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       if (other.hasOutputConfig()) {
         mergeOutputConfig(other.getOutputConfig());
+      }
+      if (other.hasOutputResult()) {
+        mergeOutputResult(other.getOutputResult());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -953,6 +1053,227 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         outputConfig_ = null;
       }
       return outputConfigBuilder_;
+    }
+
+    private com.google.cloud.asset.v1.OutputResult outputResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.OutputResult,
+            com.google.cloud.asset.v1.OutputResult.Builder,
+            com.google.cloud.asset.v1.OutputResultOrBuilder>
+        outputResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     *
+     * @return Whether the outputResult field is set.
+     */
+    public boolean hasOutputResult() {
+      return outputResultBuilder_ != null || outputResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     *
+     * @return The outputResult.
+     */
+    public com.google.cloud.asset.v1.OutputResult getOutputResult() {
+      if (outputResultBuilder_ == null) {
+        return outputResult_ == null
+            ? com.google.cloud.asset.v1.OutputResult.getDefaultInstance()
+            : outputResult_;
+      } else {
+        return outputResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public Builder setOutputResult(com.google.cloud.asset.v1.OutputResult value) {
+      if (outputResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputResult_ = value;
+        onChanged();
+      } else {
+        outputResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public Builder setOutputResult(com.google.cloud.asset.v1.OutputResult.Builder builderForValue) {
+      if (outputResultBuilder_ == null) {
+        outputResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public Builder mergeOutputResult(com.google.cloud.asset.v1.OutputResult value) {
+      if (outputResultBuilder_ == null) {
+        if (outputResult_ != null) {
+          outputResult_ =
+              com.google.cloud.asset.v1.OutputResult.newBuilder(outputResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputResult_ = value;
+        }
+        onChanged();
+      } else {
+        outputResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public Builder clearOutputResult() {
+      if (outputResultBuilder_ == null) {
+        outputResult_ = null;
+        onChanged();
+      } else {
+        outputResult_ = null;
+        outputResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public com.google.cloud.asset.v1.OutputResult.Builder getOutputResultBuilder() {
+
+      onChanged();
+      return getOutputResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    public com.google.cloud.asset.v1.OutputResultOrBuilder getOutputResultOrBuilder() {
+      if (outputResultBuilder_ != null) {
+        return outputResultBuilder_.getMessageOrBuilder();
+      } else {
+        return outputResult_ == null
+            ? com.google.cloud.asset.v1.OutputResult.getDefaultInstance()
+            : outputResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the assets were exported to. For example, a
+     * set of actual Google Cloud Storage object uris where the assets are
+     * exported to. The uris can be different from what [output_config] has
+     * specified, as the service will split the output object into multiple ones
+     * once it exceeds a single Google Cloud Storage object limit.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.OutputResult,
+            com.google.cloud.asset.v1.OutputResult.Builder,
+            com.google.cloud.asset.v1.OutputResultOrBuilder>
+        getOutputResultFieldBuilder() {
+      if (outputResultBuilder_ == null) {
+        outputResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1.OutputResult,
+                com.google.cloud.asset.v1.OutputResult.Builder,
+                com.google.cloud.asset.v1.OutputResultOrBuilder>(
+                getOutputResult(), getParentForChildren(), isClean());
+        outputResult_ = null;
+      }
+      return outputResultBuilder_;
     }
 
     @java.lang.Override

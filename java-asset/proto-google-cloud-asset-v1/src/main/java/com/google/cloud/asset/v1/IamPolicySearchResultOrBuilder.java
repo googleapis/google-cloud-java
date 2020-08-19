@@ -34,7 +34,7 @@ public interface IamPolicySearchResultOrBuilder
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `resource`:
-   * * use a field query. Example: `resource : "organizations/123"`
+   * * use a field query. Example: `resource:organizations/123`
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -53,7 +53,7 @@ public interface IamPolicySearchResultOrBuilder
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `resource`:
-   * * use a field query. Example: `resource : "organizations/123"`
+   * * use a field query. Example: `resource:organizations/123`
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -108,13 +108,13 @@ public interface IamPolicySearchResultOrBuilder
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
    * To search against the `policy` bindings:
-   * * use a field query, as following:
+   * * use a field query:
    *     - query by the policy contained members. Example:
-   *       `policy : "amy&#64;gmail.com"`
+   *       `policy:amy&#64;gmail.com`
    *     - query by the policy contained roles. Example:
-   *       `policy : "roles/compute.admin"`
-   *     - query by the policy contained roles' implied permissions. Example:
-   *       `policy.role.permissions : "compute.instances.create"`
+   *       `policy:roles/compute.admin`
+   *     - query by the policy contained roles' included permissions. Example:
+   *       `policy.role.permissions:compute.instances.create`
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 3;</code>
@@ -131,13 +131,13 @@ public interface IamPolicySearchResultOrBuilder
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
    * To search against the `policy` bindings:
-   * * use a field query, as following:
+   * * use a field query:
    *     - query by the policy contained members. Example:
-   *       `policy : "amy&#64;gmail.com"`
+   *       `policy:amy&#64;gmail.com`
    *     - query by the policy contained roles. Example:
-   *       `policy : "roles/compute.admin"`
-   *     - query by the policy contained roles' implied permissions. Example:
-   *       `policy.role.permissions : "compute.instances.create"`
+   *       `policy:roles/compute.admin`
+   *     - query by the policy contained roles' included permissions. Example:
+   *       `policy.role.permissions:compute.instances.create`
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 3;</code>
@@ -154,13 +154,13 @@ public interface IamPolicySearchResultOrBuilder
    * that match the given query. For queries that don't contain a constrain on
    * policies (e.g., an empty query), this contains all the bindings.
    * To search against the `policy` bindings:
-   * * use a field query, as following:
+   * * use a field query:
    *     - query by the policy contained members. Example:
-   *       `policy : "amy&#64;gmail.com"`
+   *       `policy:amy&#64;gmail.com`
    *     - query by the policy contained roles. Example:
-   *       `policy : "roles/compute.admin"`
-   *     - query by the policy contained roles' implied permissions. Example:
-   *       `policy.role.permissions : "compute.instances.create"`
+   *       `policy:roles/compute.admin`
+   *     - query by the policy contained roles' included permissions. Example:
+   *       `policy.role.permissions:compute.instances.create`
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 3;</code>

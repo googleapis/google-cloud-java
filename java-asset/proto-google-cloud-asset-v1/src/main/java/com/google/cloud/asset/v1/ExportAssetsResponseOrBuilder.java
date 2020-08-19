@@ -92,4 +92,51 @@ public interface ExportAssetsResponseOrBuilder
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
    */
   com.google.cloud.asset.v1.OutputConfigOrBuilder getOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   *
+   * @return Whether the outputResult field is set.
+   */
+  boolean hasOutputResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   *
+   * @return The outputResult.
+   */
+  com.google.cloud.asset.v1.OutputResult getOutputResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the assets were exported to. For example, a
+   * set of actual Google Cloud Storage object uris where the assets are
+   * exported to. The uris can be different from what [output_config] has
+   * specified, as the service will split the output object into multiple ones
+   * once it exceeds a single Google Cloud Storage object limit.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
+   */
+  com.google.cloud.asset.v1.OutputResultOrBuilder getOutputResultOrBuilder();
 }

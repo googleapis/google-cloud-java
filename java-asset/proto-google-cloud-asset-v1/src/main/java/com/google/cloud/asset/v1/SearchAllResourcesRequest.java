@@ -161,13 +161,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder or an organization. The search
-   * is limited to the resources within the `scope`.
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
+   * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   * permission on the desired scope.
    * The allowed values are:
-   * * projects/{PROJECT_ID}
-   * * projects/{PROJECT_NUMBER}
-   * * folders/{FOLDER_NUMBER}
-   * * organizations/{ORGANIZATION_NUMBER}
+   * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -190,13 +192,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder or an organization. The search
-   * is limited to the resources within the `scope`.
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
+   * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   * permission on the desired scope.
    * The allowed values are:
-   * * projects/{PROJECT_ID}
-   * * projects/{PROJECT_NUMBER}
-   * * folders/{FOLDER_NUMBER}
-   * * organizations/{ORGANIZATION_NUMBER}
+   * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -222,35 +226,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The query statement. An empty query can be specified to search
-   * all the resources of certain `asset_types` within the given `scope`.
+   * Optional. The query statement. See [how to construct a
+   * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   * for more information. If not specified or empty, it will search all the
+   * resources within the specified `scope`. Note that the query string is
+   * compared against each Cloud IAM policy binding, including its members,
+   * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+   * contain the bindings that match your query. To learn more about the IAM
+   * policy structure, see [IAM policy
+   * doc](https://cloud.google.com/iam/docs/policies#structure).
    * Examples:
-   * * `name : "Important"` to find Cloud resources whose name contains
+   * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
-   * * `displayName : "Impor*"` to find Cloud resources whose display name
-   *   contains "Impor" as a word prefix.
-   * * `description : "*por*"` to find Cloud resources whose description
+   * * `displayName:Impor*` to find Cloud resources whose display name
+   *   contains "Impor" as a prefix.
+   * * `description:*por*` to find Cloud resources whose description
    *   contains "por" as a substring.
-   * * `location : "us-west*"` to find Cloud resources whose location is
+   * * `location:us-west*` to find Cloud resources whose location is
    *   prefixed with "us-west".
-   * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+   * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
-   * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+   * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
-   * * `labels.env : *` to find Cloud resources which have a label "env".
-   * * `"Important"` to find Cloud resources which contain "Important" as a word
+   * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
    *   in any of the searchable fields.
-   * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+   * * `*por*` to find Cloud resources that contain "por" as a substring in
    *   any of the searchable fields.
-   * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-   *   resources which contain "Important" as a word in any of the searchable
+   * * `Important location:(us-west1 OR global)` to find Cloud
+   *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
    *   location.
-   * See [how to construct a
-   * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-   * for more details.
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -273,35 +281,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The query statement. An empty query can be specified to search
-   * all the resources of certain `asset_types` within the given `scope`.
+   * Optional. The query statement. See [how to construct a
+   * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   * for more information. If not specified or empty, it will search all the
+   * resources within the specified `scope`. Note that the query string is
+   * compared against each Cloud IAM policy binding, including its members,
+   * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+   * contain the bindings that match your query. To learn more about the IAM
+   * policy structure, see [IAM policy
+   * doc](https://cloud.google.com/iam/docs/policies#structure).
    * Examples:
-   * * `name : "Important"` to find Cloud resources whose name contains
+   * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
-   * * `displayName : "Impor*"` to find Cloud resources whose display name
-   *   contains "Impor" as a word prefix.
-   * * `description : "*por*"` to find Cloud resources whose description
+   * * `displayName:Impor*` to find Cloud resources whose display name
+   *   contains "Impor" as a prefix.
+   * * `description:*por*` to find Cloud resources whose description
    *   contains "por" as a substring.
-   * * `location : "us-west*"` to find Cloud resources whose location is
+   * * `location:us-west*` to find Cloud resources whose location is
    *   prefixed with "us-west".
-   * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+   * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
-   * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+   * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
-   * * `labels.env : *` to find Cloud resources which have a label "env".
-   * * `"Important"` to find Cloud resources which contain "Important" as a word
+   * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
    *   in any of the searchable fields.
-   * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+   * * `*por*` to find Cloud resources that contain "por" as a substring in
    *   any of the searchable fields.
-   * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-   *   resources which contain "Important" as a word in any of the searchable
+   * * `Important location:(us-west1 OR global)` to find Cloud
+   *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
    *   location.
-   * See [how to construct a
-   * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-   * for more details.
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -327,8 +339,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * </pre>
    *
@@ -343,8 +355,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * </pre>
    *
@@ -359,8 +371,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * </pre>
    *
@@ -376,8 +388,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * </pre>
    *
@@ -396,11 +408,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -418,10 +429,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -444,10 +455,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -473,12 +484,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
-   * Example: "location DESC, name". See [supported resource metadata
-   * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-   * for more details.
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
+   * Example: "location DESC, name". Only string fields in the response are
+   * sortable, including `name`, `displayName`, `description`, `location`. All
+   * the other fields such as repeated fields (e.g., `networkTags`), map
+   * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+   * are not supported.
    * </pre>
    *
    * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -501,12 +514,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
-   * Example: "location DESC, name". See [supported resource metadata
-   * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-   * for more details.
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
+   * Example: "location DESC, name". Only string fields in the response are
+   * sortable, including `name`, `displayName`, `description`, `location`. All
+   * the other fields such as repeated fields (e.g., `networkTags`), map
+   * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+   * are not supported.
    * </pre>
    *
    * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -948,13 +963,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder or an organization. The search
-     * is limited to the resources within the `scope`.
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
+     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * permission on the desired scope.
      * The allowed values are:
-     * * projects/{PROJECT_ID}
-     * * projects/{PROJECT_NUMBER}
-     * * folders/{FOLDER_NUMBER}
-     * * organizations/{ORGANIZATION_NUMBER}
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+     * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -976,13 +993,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder or an organization. The search
-     * is limited to the resources within the `scope`.
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
+     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * permission on the desired scope.
      * The allowed values are:
-     * * projects/{PROJECT_ID}
-     * * projects/{PROJECT_NUMBER}
-     * * folders/{FOLDER_NUMBER}
-     * * organizations/{ORGANIZATION_NUMBER}
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+     * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1004,13 +1023,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder or an organization. The search
-     * is limited to the resources within the `scope`.
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
+     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * permission on the desired scope.
      * The allowed values are:
-     * * projects/{PROJECT_ID}
-     * * projects/{PROJECT_NUMBER}
-     * * folders/{FOLDER_NUMBER}
-     * * organizations/{ORGANIZATION_NUMBER}
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+     * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1031,13 +1052,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder or an organization. The search
-     * is limited to the resources within the `scope`.
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
+     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * permission on the desired scope.
      * The allowed values are:
-     * * projects/{PROJECT_ID}
-     * * projects/{PROJECT_NUMBER}
-     * * folders/{FOLDER_NUMBER}
-     * * organizations/{ORGANIZATION_NUMBER}
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+     * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1054,13 +1077,15 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder or an organization. The search
-     * is limited to the resources within the `scope`.
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
+     * [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+     * permission on the desired scope.
      * The allowed values are:
-     * * projects/{PROJECT_ID}
-     * * projects/{PROJECT_NUMBER}
-     * * folders/{FOLDER_NUMBER}
-     * * organizations/{ORGANIZATION_NUMBER}
+     * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+     * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+     * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+     * * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1084,35 +1109,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The query statement. An empty query can be specified to search
-     * all the resources of certain `asset_types` within the given `scope`.
+     * Optional. The query statement. See [how to construct a
+     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * for more information. If not specified or empty, it will search all the
+     * resources within the specified `scope`. Note that the query string is
+     * compared against each Cloud IAM policy binding, including its members,
+     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+     * contain the bindings that match your query. To learn more about the IAM
+     * policy structure, see [IAM policy
+     * doc](https://cloud.google.com/iam/docs/policies#structure).
      * Examples:
-     * * `name : "Important"` to find Cloud resources whose name contains
+     * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
-     * * `displayName : "Impor*"` to find Cloud resources whose display name
-     *   contains "Impor" as a word prefix.
-     * * `description : "*por*"` to find Cloud resources whose description
+     * * `displayName:Impor*` to find Cloud resources whose display name
+     *   contains "Impor" as a prefix.
+     * * `description:*por*` to find Cloud resources whose description
      *   contains "por" as a substring.
-     * * `location : "us-west*"` to find Cloud resources whose location is
+     * * `location:us-west*` to find Cloud resources whose location is
      *   prefixed with "us-west".
-     * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+     * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
-     * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+     * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
-     * * `labels.env : *` to find Cloud resources which have a label "env".
-     * * `"Important"` to find Cloud resources which contain "Important" as a word
+     * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
      *   in any of the searchable fields.
-     * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+     * * `*por*` to find Cloud resources that contain "por" as a substring in
      *   any of the searchable fields.
-     * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-     *   resources which contain "Important" as a word in any of the searchable
+     * * `Important location:(us-west1 OR global)` to find Cloud
+     *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
      *   location.
-     * See [how to construct a
-     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-     * for more details.
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1134,35 +1163,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The query statement. An empty query can be specified to search
-     * all the resources of certain `asset_types` within the given `scope`.
+     * Optional. The query statement. See [how to construct a
+     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * for more information. If not specified or empty, it will search all the
+     * resources within the specified `scope`. Note that the query string is
+     * compared against each Cloud IAM policy binding, including its members,
+     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+     * contain the bindings that match your query. To learn more about the IAM
+     * policy structure, see [IAM policy
+     * doc](https://cloud.google.com/iam/docs/policies#structure).
      * Examples:
-     * * `name : "Important"` to find Cloud resources whose name contains
+     * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
-     * * `displayName : "Impor*"` to find Cloud resources whose display name
-     *   contains "Impor" as a word prefix.
-     * * `description : "*por*"` to find Cloud resources whose description
+     * * `displayName:Impor*` to find Cloud resources whose display name
+     *   contains "Impor" as a prefix.
+     * * `description:*por*` to find Cloud resources whose description
      *   contains "por" as a substring.
-     * * `location : "us-west*"` to find Cloud resources whose location is
+     * * `location:us-west*` to find Cloud resources whose location is
      *   prefixed with "us-west".
-     * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+     * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
-     * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+     * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
-     * * `labels.env : *` to find Cloud resources which have a label "env".
-     * * `"Important"` to find Cloud resources which contain "Important" as a word
+     * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
      *   in any of the searchable fields.
-     * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+     * * `*por*` to find Cloud resources that contain "por" as a substring in
      *   any of the searchable fields.
-     * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-     *   resources which contain "Important" as a word in any of the searchable
+     * * `Important location:(us-west1 OR global)` to find Cloud
+     *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
      *   location.
-     * See [how to construct a
-     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-     * for more details.
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1184,35 +1217,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The query statement. An empty query can be specified to search
-     * all the resources of certain `asset_types` within the given `scope`.
+     * Optional. The query statement. See [how to construct a
+     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * for more information. If not specified or empty, it will search all the
+     * resources within the specified `scope`. Note that the query string is
+     * compared against each Cloud IAM policy binding, including its members,
+     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+     * contain the bindings that match your query. To learn more about the IAM
+     * policy structure, see [IAM policy
+     * doc](https://cloud.google.com/iam/docs/policies#structure).
      * Examples:
-     * * `name : "Important"` to find Cloud resources whose name contains
+     * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
-     * * `displayName : "Impor*"` to find Cloud resources whose display name
-     *   contains "Impor" as a word prefix.
-     * * `description : "*por*"` to find Cloud resources whose description
+     * * `displayName:Impor*` to find Cloud resources whose display name
+     *   contains "Impor" as a prefix.
+     * * `description:*por*` to find Cloud resources whose description
      *   contains "por" as a substring.
-     * * `location : "us-west*"` to find Cloud resources whose location is
+     * * `location:us-west*` to find Cloud resources whose location is
      *   prefixed with "us-west".
-     * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+     * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
-     * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+     * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
-     * * `labels.env : *` to find Cloud resources which have a label "env".
-     * * `"Important"` to find Cloud resources which contain "Important" as a word
+     * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
      *   in any of the searchable fields.
-     * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+     * * `*por*` to find Cloud resources that contain "por" as a substring in
      *   any of the searchable fields.
-     * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-     *   resources which contain "Important" as a word in any of the searchable
+     * * `Important location:(us-west1 OR global)` to find Cloud
+     *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
      *   location.
-     * See [how to construct a
-     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-     * for more details.
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1233,35 +1270,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The query statement. An empty query can be specified to search
-     * all the resources of certain `asset_types` within the given `scope`.
+     * Optional. The query statement. See [how to construct a
+     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * for more information. If not specified or empty, it will search all the
+     * resources within the specified `scope`. Note that the query string is
+     * compared against each Cloud IAM policy binding, including its members,
+     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+     * contain the bindings that match your query. To learn more about the IAM
+     * policy structure, see [IAM policy
+     * doc](https://cloud.google.com/iam/docs/policies#structure).
      * Examples:
-     * * `name : "Important"` to find Cloud resources whose name contains
+     * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
-     * * `displayName : "Impor*"` to find Cloud resources whose display name
-     *   contains "Impor" as a word prefix.
-     * * `description : "*por*"` to find Cloud resources whose description
+     * * `displayName:Impor*` to find Cloud resources whose display name
+     *   contains "Impor" as a prefix.
+     * * `description:*por*` to find Cloud resources whose description
      *   contains "por" as a substring.
-     * * `location : "us-west*"` to find Cloud resources whose location is
+     * * `location:us-west*` to find Cloud resources whose location is
      *   prefixed with "us-west".
-     * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+     * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
-     * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+     * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
-     * * `labels.env : *` to find Cloud resources which have a label "env".
-     * * `"Important"` to find Cloud resources which contain "Important" as a word
+     * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
      *   in any of the searchable fields.
-     * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+     * * `*por*` to find Cloud resources that contain "por" as a substring in
      *   any of the searchable fields.
-     * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-     *   resources which contain "Important" as a word in any of the searchable
+     * * `Important location:(us-west1 OR global)` to find Cloud
+     *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
      *   location.
-     * See [how to construct a
-     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-     * for more details.
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1278,35 +1319,39 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The query statement. An empty query can be specified to search
-     * all the resources of certain `asset_types` within the given `scope`.
+     * Optional. The query statement. See [how to construct a
+     * query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+     * for more information. If not specified or empty, it will search all the
+     * resources within the specified `scope`. Note that the query string is
+     * compared against each Cloud IAM policy binding, including its members,
+     * roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+     * contain the bindings that match your query. To learn more about the IAM
+     * policy structure, see [IAM policy
+     * doc](https://cloud.google.com/iam/docs/policies#structure).
      * Examples:
-     * * `name : "Important"` to find Cloud resources whose name contains
+     * * `name:Important` to find Cloud resources whose name contains
      *   "Important" as a word.
-     * * `displayName : "Impor*"` to find Cloud resources whose display name
-     *   contains "Impor" as a word prefix.
-     * * `description : "*por*"` to find Cloud resources whose description
+     * * `displayName:Impor*` to find Cloud resources whose display name
+     *   contains "Impor" as a prefix.
+     * * `description:*por*` to find Cloud resources whose description
      *   contains "por" as a substring.
-     * * `location : "us-west*"` to find Cloud resources whose location is
+     * * `location:us-west*` to find Cloud resources whose location is
      *   prefixed with "us-west".
-     * * `labels : "prod"` to find Cloud resources whose labels contain "prod" as
+     * * `labels:prod` to find Cloud resources whose labels contain "prod" as
      *   a key or value.
-     * * `labels.env : "prod"` to find Cloud resources which have a label "env"
+     * * `labels.env:prod` to find Cloud resources that have a label "env"
      *   and its value is "prod".
-     * * `labels.env : *` to find Cloud resources which have a label "env".
-     * * `"Important"` to find Cloud resources which contain "Important" as a word
+     * * `labels.env:*` to find Cloud resources that have a label "env".
+     * * `Important` to find Cloud resources that contain "Important" as a word
      *   in any of the searchable fields.
-     * * `"Impor*"` to find Cloud resources which contain "Impor" as a word prefix
+     * * `Impor*` to find Cloud resources that contain "Impor" as a prefix
      *   in any of the searchable fields.
-     * * `"*por*"` to find Cloud resources which contain "por" as a substring in
+     * * `*por*` to find Cloud resources that contain "por" as a substring in
      *   any of the searchable fields.
-     * * `("Important" AND location : ("us-west1" OR "global"))` to find Cloud
-     *   resources which contain "Important" as a word in any of the searchable
+     * * `Important location:(us-west1 OR global)` to find Cloud
+     *   resources that contain "Important" as a word in any of the searchable
      *   fields and are also located in the "us-west1" region or the "global"
      *   location.
-     * See [how to construct a
-     * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-     * for more details.
      * </pre>
      *
      * <code>string query = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1338,8 +1383,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1354,8 +1399,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1370,8 +1415,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1387,8 +1432,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1404,8 +1449,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1428,8 +1473,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1451,8 +1496,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1471,8 +1516,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1490,8 +1535,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * </pre>
      *
@@ -1516,11 +1561,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1535,11 +1579,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1557,11 +1600,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1580,10 +1622,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1605,10 +1647,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1630,10 +1672,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1654,10 +1696,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1674,10 +1716,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1701,12 +1743,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". See [supported resource metadata
-     * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-     * for more details.
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
+     * Example: "location DESC, name". Only string fields in the response are
+     * sortable, including `name`, `displayName`, `description`, `location`. All
+     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+     * are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1728,12 +1772,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". See [supported resource metadata
-     * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-     * for more details.
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
+     * Example: "location DESC, name". Only string fields in the response are
+     * sortable, including `name`, `displayName`, `description`, `location`. All
+     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+     * are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1755,12 +1801,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". See [supported resource metadata
-     * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-     * for more details.
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
+     * Example: "location DESC, name". Only string fields in the response are
+     * sortable, including `name`, `displayName`, `description`, `location`. All
+     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+     * are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1781,12 +1829,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". See [supported resource metadata
-     * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-     * for more details.
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
+     * Example: "location DESC, name". Only string fields in the response are
+     * sortable, including `name`, `displayName`, `description`, `location`. All
+     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+     * are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1803,12 +1853,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * Example: "location DESC, name". See [supported resource metadata
-     * fields](https://cloud.google.com/asset-inventory/docs/searching-resources#query_on_resource_metadata_fields)
-     * for more details.
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
+     * Example: "location DESC, name". Only string fields in the response are
+     * sortable, including `name`, `displayName`, `description`, `location`. All
+     * the other fields such as repeated fields (e.g., `networkTags`), map
+     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
+     * are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

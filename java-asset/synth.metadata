@@ -11,48 +11,48 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "4d8706453bf6016ebf1bb241d78b4dc58c92064d",
-        "internalRef": "320022685"
+        "sha": "3a54e988edcbdef1e47c6ac19d3074a87214f667",
+        "internalRef": "326582222"
       }
     },
     {
@@ -271,6 +271,8 @@
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/FeedOutputConfigOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GcsDestination.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GcsDestinationOrBuilder.java",
+    "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GcsOutputResult.java",
+    "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GcsOutputResultOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GetFeedRequest.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/GetFeedRequestOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/IamPolicySearchResult.java",
@@ -281,6 +283,8 @@
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ListFeedsResponseOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/OutputConfig.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/OutputConfigOrBuilder.java",
+    "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/OutputResult.java",
+    "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/OutputResultOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/PubsubDestination.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/PubsubDestinationOrBuilder.java",
     "proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/Resource.java",

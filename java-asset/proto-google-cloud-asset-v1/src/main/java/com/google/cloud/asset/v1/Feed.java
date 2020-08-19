@@ -521,8 +521,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * When set, `expression` field in the `Expr` must be a valid [CEL expression]
    * (https://github.com/google/cel-spec) on a TemporalAsset with name
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   * See our [user
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * for detailed instructions.
    * </pre>
    *
    * <code>.google.type.Expr condition = 6;</code>
@@ -543,8 +546,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * When set, `expression` field in the `Expr` must be a valid [CEL expression]
    * (https://github.com/google/cel-spec) on a TemporalAsset with name
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   * See our [user
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * for detailed instructions.
    * </pre>
    *
    * <code>.google.type.Expr condition = 6;</code>
@@ -565,8 +571,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * When set, `expression` field in the `Expr` must be a valid [CEL expression]
    * (https://github.com/google/cel-spec) on a TemporalAsset with name
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   * See our [user
+   * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+   * for detailed instructions.
    * </pre>
    *
    * <code>.google.type.Expr condition = 6;</code>
@@ -1941,8 +1950,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -1962,8 +1974,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -1987,8 +2002,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2016,8 +2034,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2042,8 +2063,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2072,8 +2096,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2099,8 +2126,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2120,8 +2150,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>
@@ -2143,8 +2176,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * When set, `expression` field in the `Expr` must be a valid [CEL expression]
      * (https://github.com/google/cel-spec) on a TemporalAsset with name
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
-     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     * See our [user
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * for detailed instructions.
      * </pre>
      *
      * <code>.google.type.Expr condition = 6;</code>

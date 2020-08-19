@@ -483,14 +483,13 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
-     * format; for BigQuery table destinations, the output table stores the fields
-     * in asset proto as columns. This API implements the
-     * [google.longrunning.Operation][google.longrunning.Operation] API , which
-     * allows you to keep track of the export. We recommend intervals of at least
-     * 2 seconds with exponential retry to poll the export operation result. For
-     * regular-size resource parent, the export operation usually finishes within
-     * 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
+     * destinations, the output table stores the fields in asset proto as columns.
+     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
+     * , which allows you to keep track of the export. We recommend intervals of
+     * at least 2 seconds with exponential retry to poll the export operation
+     * result. For regular-size resource parent, the export operation usually
+     * finishes within 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -589,9 +588,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * Searches all Cloud resources within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -606,9 +605,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * Searches all IAM policies within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -708,14 +707,13 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
-     * format; for BigQuery table destinations, the output table stores the fields
-     * in asset proto as columns. This API implements the
-     * [google.longrunning.Operation][google.longrunning.Operation] API , which
-     * allows you to keep track of the export. We recommend intervals of at least
-     * 2 seconds with exponential retry to poll the export operation result. For
-     * regular-size resource parent, the export operation usually finishes within
-     * 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
+     * destinations, the output table stores the fields in asset proto as columns.
+     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
+     * , which allows you to keep track of the export. We recommend intervals of
+     * at least 2 seconds with exponential retry to poll the export operation
+     * result. For regular-size resource parent, the export operation usually
+     * finishes within 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -825,9 +823,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * Searches all Cloud resources within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -845,9 +843,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * Searches all IAM policies within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -888,14 +886,13 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
-     * format; for BigQuery table destinations, the output table stores the fields
-     * in asset proto as columns. This API implements the
-     * [google.longrunning.Operation][google.longrunning.Operation] API , which
-     * allows you to keep track of the export. We recommend intervals of at least
-     * 2 seconds with exponential retry to poll the export operation result. For
-     * regular-size resource parent, the export operation usually finishes within
-     * 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
+     * destinations, the output table stores the fields in asset proto as columns.
+     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
+     * , which allows you to keep track of the export. We recommend intervals of
+     * at least 2 seconds with exponential retry to poll the export operation
+     * result. For regular-size resource parent, the export operation usually
+     * finishes within 5 minutes.
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
@@ -987,9 +984,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * Searches all Cloud resources within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -1003,9 +1000,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * Searches all IAM policies within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -1042,14 +1039,13 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
-     * format; for BigQuery table destinations, the output table stores the fields
-     * in asset proto as columns. This API implements the
-     * [google.longrunning.Operation][google.longrunning.Operation] API , which
-     * allows you to keep track of the export. We recommend intervals of at least
-     * 2 seconds with exponential retry to poll the export operation result. For
-     * regular-size resource parent, the export operation usually finishes within
-     * 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
+     * destinations, the output table stores the fields in asset proto as columns.
+     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
+     * , which allows you to keep track of the export. We recommend intervals of
+     * at least 2 seconds with exponential retry to poll the export operation
+     * result. For regular-size resource parent, the export operation usually
+     * finishes within 5 minutes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1147,9 +1143,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * Searches all Cloud resources within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */
@@ -1164,9 +1160,9 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies within the given accessible scope (e.g., a
-     * project, a folder or an organization). Callers should have
-     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * Searches all IAM policies within the specified scope, such as a project,
+     * folder, or organization. The caller must be granted the
+     * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
      */

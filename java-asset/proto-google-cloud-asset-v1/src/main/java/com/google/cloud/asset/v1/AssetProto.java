@@ -77,17 +77,17 @@ public final class AssetProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/asset/v1/assets.proto\022\025go"
-          + "ogle.cloud.asset.v1\032\034google/api/annotati"
-          + "ons.proto\032\031google/api/resource.proto\032)go"
-          + "ogle/cloud/orgpolicy/v1/orgpolicy.proto\032"
-          + "\032google/iam/v1/policy.proto\032:google/iden"
-          + "tity/accesscontextmanager/v1/access_leve"
-          + "l.proto\032;google/identity/accesscontextma"
-          + "nager/v1/access_policy.proto\032?google/ide"
-          + "ntity/accesscontextmanager/v1/service_pe"
-          + "rimeter.proto\032\031google/protobuf/any.proto"
-          + "\032\034google/protobuf/struct.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\025google/rpc/code"
+          + "ogle.cloud.asset.v1\032\031google/api/resource"
+          + ".proto\032)google/cloud/orgpolicy/v1/orgpol"
+          + "icy.proto\032\032google/iam/v1/policy.proto\032:g"
+          + "oogle/identity/accesscontextmanager/v1/a"
+          + "ccess_level.proto\032;google/identity/acces"
+          + "scontextmanager/v1/access_policy.proto\032?"
+          + "google/identity/accesscontextmanager/v1/"
+          + "service_perimeter.proto\032\031google/protobuf"
+          + "/any.proto\032\034google/protobuf/struct.proto"
+          + "\032\037google/protobuf/timestamp.proto\032\025googl"
+          + "e/rpc/code.proto\032\034google/api/annotations"
           + ".proto\"\365\002\n\rTemporalAsset\0221\n\006window\030\001 \001(\013"
           + "2!.google.cloud.asset.v1.TimeWindow\022\017\n\007d"
           + "eleted\030\002 \001(\010\022+\n\005asset\030\003 \001(\0132\034.google.clo"
@@ -149,7 +149,6 @@ public final class AssetProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.orgpolicy.v1.OrgPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
@@ -160,6 +159,7 @@ public final class AssetProto {
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.CodeProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_asset_v1_TemporalAsset_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -278,7 +278,6 @@ public final class AssetProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.orgpolicy.v1.OrgPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
@@ -289,6 +288,7 @@ public final class AssetProto {
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.CodeProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

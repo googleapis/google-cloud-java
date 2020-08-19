@@ -727,9 +727,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
-   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
+   * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -744,32 +744,37 @@ public class AssetServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param scope Required. A scope can be a project, a folder or an organization. The search is
-   *     limited to the resources within the `scope`.
+   * @param scope Required. A scope can be a project, a folder, or an organization. The search is
+   *     limited to the resources within the `scope`. The caller must be granted the
+   *     [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   *     permission on the desired scope.
    *     <p>The allowed values are:
-   *     <p>&#42; projects/{PROJECT_ID} &#42; projects/{PROJECT_NUMBER} &#42;
-   *     folders/{FOLDER_NUMBER} &#42; organizations/{ORGANIZATION_NUMBER}
-   * @param query Optional. The query statement. An empty query can be specified to search all the
-   *     resources of certain `asset_types` within the given `scope`.
+   *     <p>&#42; projects/{PROJECT_ID} (e.g., "projects/foo-bar") &#42; projects/{PROJECT_NUMBER}
+   *     (e.g., "projects/12345678") &#42; folders/{FOLDER_NUMBER} (e.g., "folders/1234567") &#42;
+   *     organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   * @param query Optional. The query statement. See [how to construct a
+   *     query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   *     for more information. If not specified or empty, it will search all the resources within
+   *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
+   *     binding, including its members, roles, and Cloud IAM conditions. The returned Cloud IAM
+   *     policies will only contain the bindings that match your query. To learn more about the IAM
+   *     policy structure, see [IAM policy
+   *     doc](https://cloud.google.com/iam/docs/policies#structure).
    *     <p>Examples:
-   *     <p>&#42; `name : "Important"` to find Cloud resources whose name contains "Important" as a
-   *     word. &#42; `displayName : "Impor&#42;"` to find Cloud resources whose display name
-   *     contains "Impor" as a word prefix. &#42; `description : "&#42;por&#42;"` to find Cloud
-   *     resources whose description contains "por" as a substring. &#42; `location :
-   *     "us-west&#42;"` to find Cloud resources whose location is prefixed with "us-west". &#42;
-   *     `labels : "prod"` to find Cloud resources whose labels contain "prod" as a key or value.
-   *     &#42; `labels.env : "prod"` to find Cloud resources which have a label "env" and its value
-   *     is "prod". &#42; `labels.env : &#42;` to find Cloud resources which have a label "env".
-   *     &#42; `"Important"` to find Cloud resources which contain "Important" as a word in any of
-   *     the searchable fields. &#42; `"Impor&#42;"` to find Cloud resources which contain "Impor"
-   *     as a word prefix in any of the searchable fields. &#42; `"&#42;por&#42;"` to find Cloud
-   *     resources which contain "por" as a substring in any of the searchable fields. &#42;
-   *     `("Important" AND location : ("us-west1" OR "global"))` to find Cloud resources which
-   *     contain "Important" as a word in any of the searchable fields and are also located in the
-   *     "us-west1" region or the "global" location.
-   *     <p>See [how to construct a
-   *     query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
-   *     for more details.
+   *     <p>&#42; `name:Important` to find Cloud resources whose name contains "Important" as a
+   *     word. &#42; `displayName:Impor&#42;` to find Cloud resources whose display name contains
+   *     "Impor" as a prefix. &#42; `description:&#42;por&#42;` to find Cloud resources whose
+   *     description contains "por" as a substring. &#42; `location:us-west&#42;` to find Cloud
+   *     resources whose location is prefixed with "us-west". &#42; `labels:prod` to find Cloud
+   *     resources whose labels contain "prod" as a key or value. &#42; `labels.env:prod` to find
+   *     Cloud resources that have a label "env" and its value is "prod". &#42; `labels.env:&#42;`
+   *     to find Cloud resources that have a label "env". &#42; `Important` to find Cloud resources
+   *     that contain "Important" as a word in any of the searchable fields. &#42; `Impor&#42;` to
+   *     find Cloud resources that contain "Impor" as a prefix in any of the searchable fields.
+   *     &#42; `&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
+   *     the searchable fields. &#42; `Important location:(us-west1 OR global)` to find Cloud
+   *     resources that contain "Important" as a word in any of the searchable fields and are also
+   *     located in the "us-west1" region or the "global" location.
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the [searchable asset
    *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
@@ -788,9 +793,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
-   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
+   * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -816,9 +821,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
-   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
+   * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -843,9 +848,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
-   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
+   * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -877,9 +882,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
-   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -893,26 +898,32 @@ public class AssetServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param scope Required. A scope can be a project, a folder or an organization. The search is
-   *     limited to the IAM policies within the `scope`.
+   * @param scope Required. A scope can be a project, a folder, or an organization. The search is
+   *     limited to the IAM policies within the `scope`. The caller must be granted the
+   *     [`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
+   *     permission on the desired scope.
    *     <p>The allowed values are:
-   *     <p>&#42; projects/{PROJECT_ID} &#42; projects/{PROJECT_NUMBER} &#42;
-   *     folders/{FOLDER_NUMBER} &#42; organizations/{ORGANIZATION_NUMBER}
-   * @param query Optional. The query statement. An empty query can be specified to search all the
-   *     IAM policies within the given `scope`.
-   *     <p>Examples:
-   *     <p>&#42; `policy : "amy{@literal @}gmail.com"` to find Cloud IAM policy bindings that
-   *     specify user "amy{@literal @}gmail.com". &#42; `policy : "roles/compute.admin"` to find
-   *     Cloud IAM policy bindings that specify the Compute Admin role. &#42;
-   *     `policy.role.permissions : "storage.buckets.update"` to find Cloud IAM policy bindings that
-   *     specify a role containing "storage.buckets.update" permission. &#42; `resource :
-   *     "organizations/123"` to find Cloud IAM policy bindings that are set on "organizations/123".
-   *     &#42; `(resource : ("organizations/123" OR "folders/1234") AND policy : "amy")` to find
-   *     Cloud IAM policy bindings that are set on "organizations/123" or "folders/1234", and also
-   *     specify user "amy".
-   *     <p>See [how to construct a
+   *     <p>&#42; projects/{PROJECT_ID} (e.g., "projects/foo-bar") &#42; projects/{PROJECT_NUMBER}
+   *     (e.g., "projects/12345678") &#42; folders/{FOLDER_NUMBER} (e.g., "folders/1234567") &#42;
+   *     organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   * @param query Optional. The query statement. See [how to construct a
    *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
-   *     for more details.
+   *     for more information. If not specified or empty, it will search all the IAM policies within
+   *     the specified `scope`.
+   *     <p>Examples:
+   *     <p>&#42; `policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
+   *     "amy{@literal @}gmail.com". &#42; `policy:roles/compute.admin` to find IAM policy bindings
+   *     that specify the Compute Admin role. &#42; `policy.role.permissions:storage.buckets.update`
+   *     to find IAM policy bindings that specify a role containing "storage.buckets.update"
+   *     permission. Note that if callers don't have `iam.roles.get` access to a role's included
+   *     permissions, policy bindings that specify this role will be dropped from the search
+   *     results. &#42; `resource:organizations/123456` to find IAM policy bindings that are set on
+   *     "organizations/123456". &#42; `Important` to find IAM policy bindings that contain
+   *     "Important" as a word in any of the searchable fields (except for the included
+   *     permissions). &#42; `&#42;por&#42;` to find IAM policy bindings that contain "por" as a
+   *     substring in any of the searchable fields (except for the included permissions). &#42;
+   *     `resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are set on
+   *     resources "instance1" or "instance2" and also specify user "amy".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAllIamPoliciesPagedResponse searchAllIamPolicies(String scope, String query) {
@@ -923,9 +934,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
-   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -951,9 +962,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
-   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -978,9 +989,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
-   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
-   * requested scope, otherwise the request will be rejected.
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
