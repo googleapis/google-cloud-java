@@ -46,12 +46,12 @@ public final class FindingOuterClass {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/securitycenter/v1beta1/fi"
           + "nding.proto\022#google.cloud.securitycenter"
-          + ".v1beta1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\0328google/clo"
-          + "ud/securitycenter/v1beta1/security_marks"
-          + ".proto\032\034google/protobuf/struct.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\032\034google/ap"
-          + "i/annotations.proto\"\270\005\n\007Finding\022\014\n\004name\030"
+          + ".v1beta1\032\034google/api/annotations.proto\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\0328google/cloud/securit"
+          + "ycenter/v1beta1/security_marks.proto\032\034go"
+          + "ogle/protobuf/struct.proto\032\037google/proto"
+          + "buf/timestamp.proto\"\270\005\n\007Finding\022\014\n\004name\030"
           + "\001 \001(\t\022\023\n\006parent\030\002 \001(\tB\003\340A\005\022\025\n\rresource_n"
           + "ame\030\003 \001(\t\022A\n\005state\030\004 \001(\01622.google.cloud."
           + "securitycenter.v1beta1.Finding.State\022\020\n\010"
@@ -78,12 +78,12 @@ public final class FindingOuterClass {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1beta1_Finding_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -118,12 +118,12 @@ public final class FindingOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

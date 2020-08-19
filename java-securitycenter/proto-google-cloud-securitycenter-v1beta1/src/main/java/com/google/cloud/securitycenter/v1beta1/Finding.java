@@ -452,7 +452,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the source the finding belongs to. See:
+   * Immutable. The relative resource name of the source the finding belongs to.
+   * See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * This field is immutable after creation time.
    * For example:
@@ -479,7 +480,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the source the finding belongs to. See:
+   * Immutable. The relative resource name of the source the finding belongs to.
+   * See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
    * This field is immutable after creation time.
    * For example:
@@ -891,9 +893,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the detector believes
-   * the firewall became open. The accuracy is determined by the detector.
+   * The time at which the event took place, or when an update to the finding
+   * occurred. For example, if the finding represents an open firewall it would
+   * capture the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding were to be resolved
+   * afterward, this time would reflect when the finding was resolved.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -908,9 +912,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the detector believes
-   * the firewall became open. The accuracy is determined by the detector.
+   * The time at which the event took place, or when an update to the finding
+   * occurred. For example, if the finding represents an open firewall it would
+   * capture the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding were to be resolved
+   * afterward, this time would reflect when the finding was resolved.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -925,9 +931,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the event took place. For example, if the finding
-   * represents an open firewall it would capture the time the detector believes
-   * the firewall became open. The accuracy is determined by the detector.
+   * The time at which the event took place, or when an update to the finding
+   * occurred. For example, if the finding represents an open firewall it would
+   * capture the time the detector believes the firewall became open. The
+   * accuracy is determined by the detector. If the finding were to be resolved
+   * afterward, this time would reflect when the finding was resolved.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -1639,7 +1647,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to.
+     * See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
@@ -1665,7 +1674,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to.
+     * See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
@@ -1691,7 +1701,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to.
+     * See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
@@ -1716,7 +1727,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to.
+     * See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
@@ -1737,7 +1749,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the source the finding belongs to. See:
+     * Immutable. The relative resource name of the source the finding belongs to.
+     * See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
      * This field is immutable after creation time.
      * For example:
@@ -2635,9 +2648,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2651,9 +2666,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2671,9 +2688,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2695,9 +2714,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2716,9 +2737,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2742,9 +2765,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2764,9 +2789,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2780,9 +2807,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
@@ -2798,9 +2827,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the event took place. For example, if the finding
-     * represents an open firewall it would capture the time the detector believes
-     * the firewall became open. The accuracy is determined by the detector.
+     * The time at which the event took place, or when an update to the finding
+     * occurred. For example, if the finding represents an open firewall it would
+     * capture the time the detector believes the firewall became open. The
+     * accuracy is determined by the detector. If the finding were to be resolved
+     * afterward, this time would reflect when the finding was resolved.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 9;</code>
