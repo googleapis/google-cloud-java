@@ -12,13 +12,3 @@ jobs:
       - name: Run checkstyle
         run: mvn -P lint --quiet --batch-mode checkstyle:check
         working-directory: samples/snippets
-  static:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: 8
-      - name: Run PMD & Spotbugs
-        run: mvn -P lint --quiet --batch-mode compile pmd:cpd-check spotbugs:check
-        working-directory: samples/snippets
