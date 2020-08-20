@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-document-ai/compare/v0.2.1...v0.2.2) (2020-08-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.111.2 ([#128](https://www.github.com/googleapis/java-document-ai/issues/128)) ([a15a878](https://www.github.com/googleapis/java-document-ai/commit/a15a8780003b9f48d30f8585e5ac3fd9c8b1adb7))
+
 ### [0.2.1](https://www.github.com/googleapis/java-document-ai/compare/v0.2.0...v0.2.1) (2020-08-07)
 
 
