@@ -17,7 +17,9 @@
 from synthtool.languages import java
 
 java.common_templates(excludes=[
-  "README.md",
-  "samples/*",
-  "renovate.json",
+  'README.md',
+  'samples/*',
+  'renovate.json',
+  # excluding samples ci jobs since there are no samples in this repo
+  '.github/workflows/samples.yaml'
 ])
