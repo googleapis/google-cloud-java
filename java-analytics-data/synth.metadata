@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
+        "sha": "3c04e9efa0aad6db63fd02cf402018bc9ecedba9"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "9602086c6c5b05db77950c7f7495a2a3868f3537"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "analytics-data",
+        "apiVersion": "v1alpha",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
