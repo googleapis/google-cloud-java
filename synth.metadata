@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "68fbc649fc4c2f76304fd6b7ab36c18da3270f28"
+        "sha": "271fff1c006a8979b6c6bdb81ac1fd673eb2d94e"
       }
     },
     {
@@ -50,7 +50,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f8823dec98277a9516f2fb6fae9f58b3a59a23e1"
+        "sha": "9602086c6c5b05db77950c7f7495a2a3868f3537"
       }
     }
   ],
@@ -101,6 +101,7 @@
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/samples.yaml",
     ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
