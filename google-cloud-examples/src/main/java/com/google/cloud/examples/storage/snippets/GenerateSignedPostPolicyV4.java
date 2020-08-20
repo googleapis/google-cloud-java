@@ -68,7 +68,7 @@ public class GenerateSignedPostPolicyV4 {
               + "' type='hidden' />\n");
     }
     htmlForm.append("  <input type='file' name='file'/><br />\n");
-    htmlForm.append("  <input type='submit' value='Upload File' name='x-ignore-submit'/><br />\n");
+    htmlForm.append("  <input type='submit' value='Upload File'/><br />\n");
     htmlForm.append("</form>\n");
 
     System.out.println(
