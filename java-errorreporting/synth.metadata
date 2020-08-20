@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-errorreporting.git",
-        "sha": "eb2af63754790a8c3ecaa9d4c55412428c6716df"
+        "sha": "da64e84f721d0c3ed648dc6e4a4294a83e398fed"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f8823dec98277a9516f2fb6fae9f58b3a59a23e1"
+        "sha": "9602086c6c5b05db77950c7f7495a2a3868f3537"
       }
     }
   ],
@@ -43,6 +43,7 @@
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
