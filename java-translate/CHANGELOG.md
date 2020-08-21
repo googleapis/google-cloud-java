@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.95.2](https://www.github.com/googleapis/java-translate/compare/v1.95.1...v1.95.2) (2020-08-21)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-translate to v2-rev20170525-1.30.10 ([#245](https://www.github.com/googleapis/java-translate/issues/245)) ([ac1d2fd](https://www.github.com/googleapis/java-translate/commit/ac1d2fdb1be8d4a04ba00bab3389e067c9e3061d))
+
 ### [1.95.1](https://www.github.com/googleapis/java-translate/compare/v1.95.0...v1.95.1) (2020-08-10)
 
 
