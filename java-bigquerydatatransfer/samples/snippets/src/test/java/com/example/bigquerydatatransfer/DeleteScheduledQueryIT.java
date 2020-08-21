@@ -16,25 +16,24 @@
 
 package com.example.bigquerydatatransfer;
 
+import static com.google.common.truth.Truth.assertThat;
+import static junit.framework.TestCase.assertNotNull;
+
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
-import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertNotNull;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class DeleteScheduledQueryIT {
 
@@ -74,7 +73,8 @@ public class DeleteScheduledQueryIT {
 
     // create a scheduled query
     String query =
-        "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, @run_date as intended_run_date, 17 as some_integer";
+        "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
+            + "@run_date as intended_run_date, 17 as some_integer";
     String destinationTableName =
         "MY_DESTINATION_TABLE_" + UUID.randomUUID().toString().substring(0, 8) + "_{run_date}";
     Map<String, Value> params = new HashMap<>();

@@ -24,7 +24,6 @@ import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,10 +33,11 @@ public class CreateScheduledQuery {
 
   public static void runCreateScheduledQuery() {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "MY_PROJECT_ID";
-    String datasetId = "MY_DATASET_ID";
-    String query =
-        "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, @run_date as intended_run_date, 17 as some_integer";
+    final String projectId = "MY_PROJECT_ID";
+    final String datasetId = "MY_DATASET_ID";
+    final String query =
+        "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
+            + "@run_date as intended_run_date, 17 as some_integer";
     Map<String, Value> params = new HashMap<>();
     params.put("query", Value.newBuilder().setStringValue(query).build());
     params.put(

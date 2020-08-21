@@ -20,7 +20,6 @@ package com.example.bigquerydatatransfer;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
-
 import java.io.IOException;
 
 // Sample to delete a scheduled query

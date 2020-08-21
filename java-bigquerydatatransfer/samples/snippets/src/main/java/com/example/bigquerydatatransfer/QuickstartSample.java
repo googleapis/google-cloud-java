@@ -25,9 +25,7 @@ import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListD
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 
 public class QuickstartSample {
-  /**
-   * List available data sources for the BigQuery Data Transfer service.
-   */
+  /** List available data sources for the BigQuery Data Transfer service. */
   public static void main(String... args) throws Exception {
     // Sets your Google Cloud Platform project ID.
     // String projectId = "YOUR_PROJECT_ID";
@@ -40,9 +38,7 @@ public class QuickstartSample {
       // Request the list of available data sources.
       String parent = String.format("projects/%s", projectId);
       ListDataSourcesRequest request =
-          ListDataSourcesRequest.newBuilder()
-              .setParent(parent)
-              .build();
+          ListDataSourcesRequest.newBuilder().setParent(parent).build();
       ListDataSourcesPagedResponse response = client.listDataSources(request);
 
       // Print the results.
