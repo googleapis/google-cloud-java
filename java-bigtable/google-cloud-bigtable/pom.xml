@@ -340,7 +340,7 @@
     </profile>
 
     <profile>
-      <id>bigtable-directpath-ipv4-it</id>
+      <id>bigtable-directpath-ipv4only-it</id>
       <build>
         <plugins>
           <plugin>
@@ -359,16 +359,16 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4-it</bigtable.grpc-log-dir>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.attempt-directpath>true</bigtable.attempt-directpath>
-                    <bigtable.directpath-ipv4>true</bigtable.directpath-ipv4>
+                    <bigtable.directpath-ipv4only>true</bigtable.directpath-ipv4only>
                   </systemPropertyVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                     <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
                   </includes>
-                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-ipv4-it.xml</summaryFile>
-                  <reportsDirectory>${project.build.directory}/failsafe-reports/directpath-ipv4-it</reportsDirectory>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-ipv4only-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/directpath-ipv4only-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>

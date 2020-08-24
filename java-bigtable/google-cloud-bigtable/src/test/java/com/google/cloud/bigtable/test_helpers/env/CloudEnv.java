@@ -222,7 +222,8 @@ class CloudEnv extends AbstractTestEnv {
                                   + " to the test environment's requirement for DirectPath."
                                   + " Expected test to access DirectPath via %s,"
                                   + " but RPC was destined for %s",
-                              isDirectPathIpv4() ? "ipv4" : "ipv6", remoteAddr.toString()));
+                              isDirectPathIpv4Only() ? "ipv4 only" : "ipv4 or ipv6",
+                              remoteAddr.toString()));
                     }
                     super.onHeaders(headers);
                   }
@@ -238,10 +239,11 @@ class CloudEnv extends AbstractTestEnv {
     if (remoteAddr instanceof InetSocketAddress) {
       InetAddress inetAddress = ((InetSocketAddress) remoteAddr).getAddress();
       String addr = inetAddress.getHostAddress();
-      if (isDirectPathIpv4()) {
+      if (isDirectPathIpv4Only()) {
         return addr.startsWith(DP_IPV4_PREFIX);
       } else {
-        return addr.startsWith(DP_IPV6_PREFIX);
+        // For an ipv6-enabled VM, client could connect to either ipv4 or ipv6 balancer addresses.
+        return addr.startsWith(DP_IPV6_PREFIX) || addr.startsWith(DP_IPV4_PREFIX);
       }
     }
     return true;
