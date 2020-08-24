@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/googleapis/java-asset/compare/v1.6.0...v1.7.0) (2020-08-24)
+
+
+### Features
+
+* **v1:** add AnalyzeIamPolicy and ExportIamPolicyAnalysis RPCs ([#301](https://www.github.com/googleapis/java-asset/issues/301)) ([ac94faf](https://www.github.com/googleapis/java-asset/commit/ac94faf9e17feb082d60ce8e835f04c3d648fe7c))
+
 ## [1.6.0](https://www.github.com/googleapis/java-asset/compare/v1.5.2...v1.6.0) (2020-08-19)
 
 
