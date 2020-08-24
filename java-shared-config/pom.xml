@@ -228,7 +228,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>flatten-maven-plugin</artifactId>
-          <version>1.2.4</version>
+          <version>1.2.5</version>
           <executions>
             <!-- enable flattening -->
             <execution>
