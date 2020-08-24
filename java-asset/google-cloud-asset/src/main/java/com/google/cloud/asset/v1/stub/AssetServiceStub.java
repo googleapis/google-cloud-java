@@ -22,12 +22,16 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
 import com.google.cloud.asset.v1.DeleteFeedRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
+import com.google.cloud.asset.v1.ExportIamPolicyAnalysisRequest;
+import com.google.cloud.asset.v1.ExportIamPolicyAnalysisResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
 import com.google.cloud.asset.v1.ListFeedsRequest;
@@ -110,6 +114,26 @@ public abstract class AssetServiceStub implements BackgroundResource {
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchAllIamPoliciesCallable()");
+  }
+
+  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeIamPolicyCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          ExportIamPolicyAnalysisRequest,
+          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportIamPolicyAnalysisOperationCallable()");
+  }
+
+  public UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
+      exportIamPolicyAnalysisCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportIamPolicyAnalysisCallable()");
   }
 
   @Override

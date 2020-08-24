@@ -1021,6 +1021,155 @@ public class AssetServiceClient implements BackgroundResource {
     return stub.searchAllIamPoliciesCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes IAM policies to answer which identities have what accesses on which resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .build();
+   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeIamPolicyResponse analyzeIamPolicy(AnalyzeIamPolicyRequest request) {
+    return analyzeIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes IAM policies to answer which identities have what accesses on which resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .build();
+   *   ApiFuture&lt;AnalyzeIamPolicyResponse&gt; future = assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   AnalyzeIamPolicyResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    return stub.analyzeIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports the answers of which identities have what accesses on which resources to a Google Cloud
+   * Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON
+   * format that represents a
+   * [google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+   * This method implements the [google.longrunning.Operation][google.longrunning.Operation], which
+   * allows you to track the export status. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. The metadata contains the request to
+   * help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
+   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ExportIamPolicyAnalysisResponse response = assetServiceClient.exportIamPolicyAnalysisAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request) {
+    return exportIamPolicyAnalysisOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports the answers of which identities have what accesses on which resources to a Google Cloud
+   * Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON
+   * format that represents a
+   * [google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+   * This method implements the [google.longrunning.Operation][google.longrunning.Operation], which
+   * allows you to track the export status. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. The metadata contains the request to
+   * help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
+   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt; future = assetServiceClient.exportIamPolicyAnalysisOperationCallable().futureCall(request);
+   *   // Do something
+   *   ExportIamPolicyAnalysisResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          ExportIamPolicyAnalysisRequest,
+          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisOperationCallable() {
+    return stub.exportIamPolicyAnalysisOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports the answers of which identities have what accesses on which resources to a Google Cloud
+   * Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON
+   * format that represents a
+   * [google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+   * This method implements the [google.longrunning.Operation][google.longrunning.Operation], which
+   * allows you to track the export status. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. The metadata contains the request to
+   * help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
+   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
+   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
+   *     .setAnalysisQuery(analysisQuery)
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportIamPolicyAnalysisCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
+      exportIamPolicyAnalysisCallable() {
+    return stub.exportIamPolicyAnalysisCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
