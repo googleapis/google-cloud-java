@@ -17,6 +17,9 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallClient;
+import com.google.cloud.compute.v1.FirewallSettings;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkClient;
 import com.google.cloud.compute.v1.NetworkSettings;
@@ -33,11 +36,18 @@ import org.junit.Test;
 public class ITNetworkTest extends BaseTest {
   private static final String NETWORK = TestHelper.getTestUniqueName("network");;
 
+  private static FirewallClient firewallClient;
   private static NetworkClient networkClient;
   private static ListMultimap<String, String> resourcesToCleanUp = ArrayListMultimap.create();
 
   @BeforeClass
   public static void setUp() throws IOException {
+    cleanUpNetworks();
+
+    FirewallSettings firewallSettings =
+        FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+    firewallClient = FirewallClient.create(firewallSettings);
+
     NetworkSettings networkSettings =
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     networkClient = NetworkClient.create(networkSettings);
@@ -51,9 +61,20 @@ public class ITNetworkTest extends BaseTest {
 
   @AfterClass
   public static void tearDown() {
-    for (String network : resourcesToCleanUp.get("network")) {
-      waitForOperation(networkClient.deleteNetwork(network));
+    List<Firewall> firewalls =
+        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+    for (String networkLink : resourcesToCleanUp.get("network")) {
+      Network network = networkClient.getNetwork(networkLink);
+      for (Firewall firewall : firewalls) {
+        if (firewall.getName().startsWith(network.getName())) {
+          System.out.println("deleting firewall:" + firewall.getSelfLink());
+          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
+        }
+      }
+      waitForOperation(networkClient.deleteNetwork(networkLink));
     }
+
+    firewallClient.close();
     networkClient.close();
   }
 
@@ -61,8 +82,14 @@ public class ITNetworkTest extends BaseTest {
   public void listNetworkTest() {
     List<Network> networks =
         Lists.newArrayList(networkClient.listNetworks(PROJECT_NAME).iterateAll());
-    assertThat(networks).isNotNull();
-    assertThat(networks.size()).isGreaterThan(0);
-    assertThat(networks.contains(null)).isFalse();
+
+    boolean found = false;
+    for (Network network : networks) {
+      if (NETWORK.equals(network.getName())) {
+        found = true;
+        assertThat(network.getAutoCreateSubnetworks()).isFalse();
+      }
+    }
+    assertThat(found).isTrue();
   }
 }

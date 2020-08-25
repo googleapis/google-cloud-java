@@ -57,6 +57,8 @@ public class ITFirewallTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
+    cleanUpNetworks();
+
     FirewallSettings firewallSettings =
         FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     firewallClient = FirewallClient.create(firewallSettings);
@@ -86,13 +88,21 @@ public class ITFirewallTest extends BaseTest {
 
   @AfterClass
   public static void tearDown() {
-    for (String firewall : resourcesToCleanUp.get("firewall")) {
-      waitForOperation(firewallClient.deleteFirewall(firewall));
+    List<Firewall> firewalls =
+        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+    for (String firewallTargetLink : resourcesToCleanUp.get("firewall")) {
+      for (Firewall firewall : firewalls) {
+        if (firewall.getSelfLink().startsWith(firewallTargetLink)) {
+          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
+        }
+      }
     }
     for (String network : resourcesToCleanUp.get("firewall-network")) {
       waitForOperation(networkClient.deleteNetwork(network));
     }
+
     firewallClient.close();
+    networkClient.close();
   }
 
   @Test
@@ -110,8 +120,11 @@ public class ITFirewallTest extends BaseTest {
   public void listFirewallsTest() {
     List<Firewall> firewalls =
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+
+    boolean found = false;
     for (Firewall firewall : firewalls) {
       if (FIREWALL_NAME.equals(firewall.getName())) {
+        found = true;
         assertThat(firewall.getAllowedList()).isEqualTo(ALLOWEDS);
         assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
         assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
@@ -120,5 +133,6 @@ public class ITFirewallTest extends BaseTest {
         assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
       }
     }
+    assertThat(found).isTrue();
   }
 }

@@ -22,9 +22,16 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.Timestamp;
 import com.google.cloud.compute.v1.DiskTypeSettings;
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallClient;
+import com.google.cloud.compute.v1.FirewallSettings;
 import com.google.cloud.compute.v1.GlobalOperationClient;
 import com.google.cloud.compute.v1.GlobalOperationSettings;
+import com.google.cloud.compute.v1.Network;
+import com.google.cloud.compute.v1.NetworkClient;
+import com.google.cloud.compute.v1.NetworkSettings;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectGlobalOperationName;
 import com.google.cloud.compute.v1.ProjectName;
@@ -36,7 +43,10 @@ import com.google.cloud.compute.v1.RegionOperationClient;
 import com.google.cloud.compute.v1.RegionOperationSettings;
 import com.google.cloud.compute.v1.ZoneOperationClient;
 import com.google.cloud.compute.v1.ZoneOperationSettings;
+import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
@@ -108,5 +118,46 @@ public class BaseTest {
       fail("Operation failed: " + completedOperation.getError().toString());
     }
     return completedOperation;
+  }
+
+  static void cleanUpNetworks() throws IOException {
+    FirewallSettings firewallSettings =
+        FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+    FirewallClient firewallClient = FirewallClient.create(firewallSettings);
+
+    NetworkSettings networkSettings =
+        NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+    NetworkClient networkClient = NetworkClient.create(networkSettings);
+
+    // clean up resources older than 1 hour
+    Calendar calendar = Calendar.getInstance();
+    calendar.add(Calendar.HOUR_OF_DAY, -1);
+    Timestamp cutoff = Timestamp.of(calendar.getTime());
+
+    // clean up old firewalls which are used by networks
+    List<Firewall> firewalls =
+        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+    for (Firewall firewall : firewalls) {
+      if (firewall.getName().startsWith("test-")) {
+        Timestamp createdAt = Timestamp.parseTimestamp(firewall.getCreationTimestamp());
+        if (createdAt.compareTo(cutoff) < 0) {
+          System.out.println("deleting old firewall: " + firewall.getSelfLink());
+          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
+        }
+      }
+    }
+
+    // clean up old networks
+    List<Network> networks =
+        Lists.newArrayList(networkClient.listNetworks("gcloud-devel").iterateAll());
+    for (Network network : networks) {
+      if (network.getName().startsWith("test-")) {
+        Timestamp createdAt = Timestamp.parseTimestamp(network.getCreationTimestamp());
+        if (createdAt.compareTo(cutoff) < 0) {
+          System.out.println("deleting old network: " + network.getSelfLink());
+          waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
+        }
+      }
+    }
   }
 }
