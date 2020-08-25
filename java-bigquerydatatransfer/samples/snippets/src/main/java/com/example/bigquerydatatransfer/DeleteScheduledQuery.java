@@ -25,7 +25,7 @@ import java.io.IOException;
 // Sample to delete a scheduled query
 public class DeleteScheduledQuery {
 
-  public static void runDeleteScheduledQuery() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     // i.e projects/{project_id}/transferConfigs/{config_id}` or
     // `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`

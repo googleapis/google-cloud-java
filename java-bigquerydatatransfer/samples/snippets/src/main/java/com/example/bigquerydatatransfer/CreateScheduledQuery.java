@@ -31,7 +31,7 @@ import java.util.Map;
 // Sample to create a scheduled query
 public class CreateScheduledQuery {
 
-  public static void runCreateScheduledQuery() {
+  public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     final String datasetId = "MY_DATASET_ID";
