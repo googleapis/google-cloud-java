@@ -94,6 +94,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
 
+    private static final long serialVersionUID = -4551722608999107711L;
+
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
       return DefaultBigQueryFactory.INSTANCE;

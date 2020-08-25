@@ -40,6 +40,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.cloud.Policy;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
@@ -484,6 +485,15 @@ public class BigQueryImplTest {
           .setFormatOptions(FormatOptions.json())
           .setIgnoreUnknownValues(true)
           .setMaxBadRecords(10)
+          .build();
+
+  private static final Policy SAMPLE_IAM_POLICY =
+      Policy.newBuilder()
+          .addIdentity(
+              com.google.cloud.Role.of("roles/bigquery.dataViewer"),
+              com.google.cloud.Identity.allUsers())
+          .setEtag(ETAG)
+          .setVersion(1)
           .build();
 
   private BigQueryOptions options;
@@ -2226,5 +2236,49 @@ public class BigQueryImplTest {
                 .setConfiguration(LOAD_CONFIGURATION.toPb()));
     verify(bigqueryRpcMock)
         .write(eq(UPLOAD_ID), capturedBuffer.capture(), eq(0), eq(0L), eq(0), eq(true));
+  }
+
+  @Test
+  public void testGetIamPolicy() {
+    final String resourceId =
+        String.format("projects/%s/datasets/%s/tables/%s", PROJECT, DATASET, TABLE);
+    final com.google.api.services.bigquery.model.Policy apiPolicy =
+        PolicyHelper.convertToApiPolicy(SAMPLE_IAM_POLICY);
+    when(bigqueryRpcMock.getIamPolicy(resourceId, EMPTY_RPC_OPTIONS)).thenReturn(apiPolicy);
+    bigquery = options.getService();
+    Policy policy = bigquery.getIamPolicy(TABLE_ID);
+    assertEquals(policy, SAMPLE_IAM_POLICY);
+    verify(bigqueryRpcMock).getIamPolicy(resourceId, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testSetIamPolicy() {
+    final String resourceId =
+        String.format("projects/%s/datasets/%s/tables/%s", PROJECT, DATASET, TABLE);
+    final com.google.api.services.bigquery.model.Policy apiPolicy =
+        PolicyHelper.convertToApiPolicy(SAMPLE_IAM_POLICY);
+    when(bigqueryRpcMock.setIamPolicy(resourceId, apiPolicy, EMPTY_RPC_OPTIONS))
+        .thenReturn(apiPolicy);
+    bigquery = options.getService();
+    Policy returnedPolicy = bigquery.setIamPolicy(TABLE_ID, SAMPLE_IAM_POLICY);
+    assertEquals(returnedPolicy, SAMPLE_IAM_POLICY);
+    verify(bigqueryRpcMock).setIamPolicy(resourceId, apiPolicy, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testTestIamPermissions() {
+    final String resourceId =
+        String.format("projects/%s/datasets/%s/tables/%s", PROJECT, DATASET, TABLE);
+    final List<String> checkedPermissions = ImmutableList.<String>of("foo", "bar", "baz");
+    final List<String> grantedPermissions = ImmutableList.<String>of("foo", "bar");
+    final com.google.api.services.bigquery.model.TestIamPermissionsResponse response =
+        new com.google.api.services.bigquery.model.TestIamPermissionsResponse()
+            .setPermissions(grantedPermissions);
+    when(bigqueryRpcMock.testIamPermissions(resourceId, checkedPermissions, EMPTY_RPC_OPTIONS))
+        .thenReturn(response);
+    bigquery = options.getService();
+    List<String> perms = bigquery.testIamPermissions(TABLE_ID, checkedPermissions);
+    assertEquals(perms, grantedPermissions);
+    verify(bigqueryRpcMock).testIamPermissions(resourceId, checkedPermissions, EMPTY_RPC_OPTIONS);
   }
 }

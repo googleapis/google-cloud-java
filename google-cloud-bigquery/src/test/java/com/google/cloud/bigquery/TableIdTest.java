@@ -24,6 +24,8 @@ public class TableIdTest {
 
   private static final TableId TABLE = TableId.of("dataset", "table");
   private static final TableId TABLE_COMPLETE = TableId.of("project", "dataset", "table");
+  private static final String TABLE_IAM_RESOURCE_NAME =
+      "projects/project/datasets/dataset/tables/table";
 
   @Test
   public void testOf() {
@@ -33,6 +35,7 @@ public class TableIdTest {
     assertEquals("project", TABLE_COMPLETE.getProject());
     assertEquals("dataset", TABLE_COMPLETE.getDataset());
     assertEquals("table", TABLE_COMPLETE.getTable());
+    assertEquals(TABLE_IAM_RESOURCE_NAME, TABLE_COMPLETE.getIAMResourceName());
   }
 
   @Test

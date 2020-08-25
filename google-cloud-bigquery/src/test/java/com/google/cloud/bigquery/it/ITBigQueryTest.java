@@ -22,6 +22,7 @@ import static java.lang.System.currentTimeMillis;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -31,7 +32,10 @@ import com.google.api.gax.paging.Page;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Date;
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
 import com.google.cloud.RetryOption;
+import com.google.cloud.Role;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
@@ -739,6 +743,36 @@ public class ITBigQueryTest {
     assertTrue(remoteTable.getDefinition() instanceof MaterializedViewDefinition);
     assertEquals(VIEW_SCHEMA, remoteTable.getDefinition().getSchema());
     assertTrue(remoteTable.delete());
+  }
+
+  @Test
+  public void testTableIAM() {
+    String tableName = "test_iam_table";
+    TableId tableId = TableId.of(DATASET, tableName);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder().setSchema(TABLE_SCHEMA).build();
+
+    bigquery.create(TableInfo.of(tableId, tableDefinition));
+
+    // Check we have some of the expected default permissions as we created the table.
+    List<String> checkedPerms =
+        ImmutableList.<String>of(
+            "bigquery.tables.get", "bigquery.tables.getData", "bigquery.tables.update");
+    List<String> grantedPerms = bigquery.testIamPermissions(tableId, checkedPerms);
+    assertEquals(checkedPerms, grantedPerms);
+
+    // get and modify policy
+    Policy policy = bigquery.getIamPolicy(tableId);
+    Policy editedPolicy =
+        policy
+            .toBuilder()
+            .addIdentity(Role.of("roles/bigquery.dataViewer"), Identity.allUsers())
+            .build();
+    Policy updatedPolicy = bigquery.setIamPolicy(tableId, editedPolicy);
+    // We should have a different etag, so the policies aren't strictly equal
+    assertNotEquals(updatedPolicy, editedPolicy);
+    // However, the bindings should be.
+    assertEquals(updatedPolicy.getBindingsList(), editedPolicy.getBindingsList());
   }
 
   @Test

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <!--TODO: To be removed-->
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/BigQuery</className>
+        <method>com.google.cloud.Policy getIamPolicy(com.google.cloud.bigquery.TableId, com.google.cloud.bigquery.BigQuery$IAMOption[])</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/BigQuery</className>
+        <method>com.google.cloud.Policy setIamPolicy(com.google.cloud.bigquery.TableId, com.google.cloud.Policy, com.google.cloud.bigquery.BigQuery$IAMOption[])</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/BigQuery</className>
+        <method>java.util.List testIamPermissions(com.google.cloud.bigquery.TableId, java.util.List, com.google.cloud.bigquery.BigQuery$IAMOption[])</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+        <method>com.google.api.services.bigquery.model.Policy getIamPolicy(java.lang.String, java.util.Map)</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+        <method>com.google.api.services.bigquery.model.Policy setIamPolicy(java.lang.String, com.google.api.services.bigquery.model.Policy, java.util.Map)</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+        <method>com.google.api.services.bigquery.model.TestIamPermissionsResponse testIamPermissions(java.lang.String, java.util.List, java.util.Map)</method>
+    </difference>
+</differences>

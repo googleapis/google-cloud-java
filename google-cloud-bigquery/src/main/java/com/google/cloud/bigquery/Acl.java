@@ -393,6 +393,7 @@ public final class Acl implements Serializable {
    */
   public static final class IamMember extends Entity {
 
+    private static final long serialVersionUID = 3562909264454016939L;
     private final String iamMember;
 
     /** Creates a iamMember entity given the iamMember. */

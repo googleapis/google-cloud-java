@@ -21,14 +21,17 @@ import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Model;
+import com.google.api.services.bigquery.model.Policy;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
+import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
+import java.util.List;
 import java.util.Map;
 
 @InternalExtensionOnly
@@ -48,7 +51,8 @@ public interface BigQueryRpc extends ServiceRpc {
     PARENT_JOB_ID("parentJobId"),
     START_INDEX("startIndex"),
     STATE_FILTER("stateFilter"),
-    TIMEOUT("timeoutMs");
+    TIMEOUT("timeoutMs"),
+    REQUESTED_POLICY_VERSION("requestedPolicyVersion");
 
     private final String value;
 
@@ -300,4 +304,27 @@ public interface BigQueryRpc extends ServiceRpc {
       long destOffset,
       int length,
       boolean last);
+
+  /**
+   * Returns the IAM Policy for the specified resource, using Policy V1.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Policy getIamPolicy(String resourceId, Map<Option, ?> options);
+
+  /**
+   * Updates the IAM policy for the specified resource.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Policy setIamPolicy(String resourceId, Policy policy, Map<Option, ?> options);
+
+  /**
+   * Tests whether the caller holds the provided permissions for the specified resource. Returns the
+   * subset of permissions the caller actually holds.
+   *
+   * @throws BigQueryException upon failure
+   */
+  TestIamPermissionsResponse testIamPermissions(
+      String resourceId, List<String> permissions, Map<Option, ?> options);
 }

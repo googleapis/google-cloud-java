@@ -37,6 +37,8 @@ import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
+import com.google.api.services.bigquery.model.GetIamPolicyRequest;
+import com.google.api.services.bigquery.model.GetPolicyOptions;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobList;
@@ -45,14 +47,18 @@ import com.google.api.services.bigquery.model.ListModelsResponse;
 import com.google.api.services.bigquery.model.ListRoutinesResponse;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
+import com.google.api.services.bigquery.model.Policy;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.RoutineReference;
+import com.google.api.services.bigquery.model.SetIamPolicyRequest;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableList;
 import com.google.api.services.bigquery.model.TableReference;
+import com.google.api.services.bigquery.model.TestIamPermissionsRequest;
+import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -71,7 +77,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public static final String DEFAULT_PROJECTION = "full";
   private static final String BASE_RESUMABLE_URI =
       "https://www.googleapis.com/upload/bigquery/v2/projects/";
-  // see: https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
+  // see:
+  // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
   private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
@@ -653,6 +660,45 @@ public class HttpBigQueryRpc implements BigQueryRpc {
         throw new BigQueryException(code, message);
       }
       return last && response != null ? response.parseAs(Job.class) : null;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Policy getIamPolicy(String resourceId, Map<Option, ?> options) {
+    try {
+      GetIamPolicyRequest policyRequest = new GetIamPolicyRequest();
+      if (null != Option.REQUESTED_POLICY_VERSION.getLong(options)) {
+        policyRequest =
+            policyRequest.setOptions(
+                new GetPolicyOptions()
+                    .setRequestedPolicyVersion(
+                        Option.REQUESTED_POLICY_VERSION.getLong(options).intValue()));
+      }
+      return bigquery.tables().getIamPolicy(resourceId, policyRequest).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Policy setIamPolicy(String resourceId, Policy policy, Map<Option, ?> options) {
+    try {
+      SetIamPolicyRequest policyRequest = new SetIamPolicyRequest().setPolicy(policy);
+      return bigquery.tables().setIamPolicy(resourceId, policyRequest).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public TestIamPermissionsResponse testIamPermissions(
+      String resourceId, List<String> permissions, Map<Option, ?> options) {
+    try {
+      TestIamPermissionsRequest permissionsRequest =
+          new TestIamPermissionsRequest().setPermissions(permissions);
+      return bigquery.tables().testIamPermissions(resourceId, permissionsRequest).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

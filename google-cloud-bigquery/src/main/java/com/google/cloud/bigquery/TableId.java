@@ -63,6 +63,12 @@ public final class TableId implements Serializable {
     return table;
   }
 
+  /** Returns the IAM resource name for the table. * */
+  public String getIAMResourceName() {
+    return String.format(
+        "projects/%s/datasets/%s/tables/%s", getProject(), getDataset(), getTable());
+  }
+
   private TableId(String project, String dataset, String table) {
     checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");

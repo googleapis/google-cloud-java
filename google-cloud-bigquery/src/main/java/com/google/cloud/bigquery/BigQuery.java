@@ -22,6 +22,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
+import com.google.cloud.Policy;
 import com.google.cloud.RetryOption;
 import com.google.cloud.Service;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
@@ -42,7 +43,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Fields of a BigQuery Dataset resource.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
+   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
    *     Resource</a>
    */
   enum DatasetField implements FieldSelector {
@@ -77,7 +78,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Fields of a BigQuery Table resource.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
+   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
    *     Resource</a>
    */
   enum TableField implements FieldSelector {
@@ -121,7 +122,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Fields of a BigQuery Model resource.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
+   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
    *     Resource</a>
    */
   enum ModelField implements FieldSelector {
@@ -156,7 +157,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Fields of a BigQuery Routine resource.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/routines#resource">Routine
+   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/routines#resource">Routine
    *     Resource</a>
    */
   enum RoutineField implements FieldSelector {
@@ -189,7 +190,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Fields of a BigQuery Job resource.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
+   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
    *     </a>
    */
   enum JobField implements FieldSelector {
@@ -370,6 +371,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
     public static TableOption fields(TableField... fields) {
       return new TableOption(
           BigQueryRpc.Option.FIELDS, Helper.selector(TableField.REQUIRED_FIELDS, fields));
+    }
+  }
+
+  /*  Class for specifying IAM options. */
+  class IAMOption extends Option {
+
+    private static final long serialVersionUID = 8607992885371024269L;
+
+    private IAMOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    public static IAMOption requestedPolicyVersion(long version) {
+      return new IAMOption(BigQueryRpc.Option.REQUESTED_POLICY_VERSION, version);
     }
   }
 
@@ -643,17 +658,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of creating a dataset.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * Dataset dataset = null;
-   * DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
-   * try {
-   *   // the dataset was created
-   *   dataset = bigquery.create(datasetInfo);
-   * } catch (BigQueryException e) {
-   *   // the dataset was not created
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   Dataset dataset = null;
+   *   DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
+   *   try {
+   *     // the dataset was created
+   *     dataset = bigquery.create(datasetInfo);
+   *   } catch (BigQueryException e) {
+   *     // the dataset was not created
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -664,19 +682,22 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of creating a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * String fieldName = "string_field";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * // Table field definition
-   * Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
-   * // Table schema definition
-   * Schema schema = Schema.of(field);
-   * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
-   * TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
-   * Table table = bigquery.create(tableInfo);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   String fieldName = "string_field";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   // Table field definition
+   *   Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
+   *   // Table schema definition
+   *   Schema schema = Schema.of(field);
+   *   TableDefinition tableDefinition = StandardTableDefinition.of(schema);
+   *   TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+   *   Table table = bigquery.create(tableInfo);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -694,46 +715,46 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of loading a newline-delimited-json file with textual fields from GCS to a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * // Table field definition
-   * Field[] fields =
-   *     new Field[] {
-   *       Field.of("name", LegacySQLTypeName.STRING),
-   *       Field.of("post_abbr", LegacySQLTypeName.STRING)
-   *     };
-   * // Table schema definition
-   * Schema schema = Schema.of(fields);
-   * LoadJobConfiguration configuration =
-   *     LoadJobConfiguration.builder(tableId, sourceUri)
-   *         .setFormatOptions(FormatOptions.json())
-   *         .setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
-   *         .setSchema(schema)
-   *         .build();
-   * // Load the table
-   * Job loadJob = bigquery.create(JobInfo.of(configuration));
-   * loadJob = loadJob.waitFor();
-   * // Check the table
-   * System.out.println("State: " + loadJob.getStatus().getState());
-   * return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   // Table field definition
+   *   Field[] fields = new Field[] { Field.of("name", LegacySQLTypeName.STRING),
+   *       Field.of("post_abbr", LegacySQLTypeName.STRING) };
+   *   // Table schema definition
+   *   Schema schema = Schema.of(fields);
+   *   LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+   *       .setFormatOptions(FormatOptions.json()).setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+   *       .setSchema(schema).build();
+   *   // Load the table
+   *   Job loadJob = bigquery.create(JobInfo.of(configuration));
+   *   loadJob = loadJob.waitFor();
+   *   // Check the table
+   *   System.out.println("State: " + loadJob.getStatus().getState());
+   *   return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+   * }
+   * </pre>
    *
    * <p>Example of creating a query job.
    *
-   * <pre>{@code
-   * String query = "SELECT field FROM my_dataset_name.my_table_name";
-   * Job job = null;
-   * JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
-   * JobInfo jobInfo = JobInfo.of(jobConfiguration);
-   * try {
-   *   job = bigquery.create(jobInfo);
-   * } catch (BigQueryException e) {
-   *   // the job was not created
+   * <pre>
+   * {
+   *   &#64;code
+   *   String query = "SELECT field FROM my_dataset_name.my_table_name";
+   *   Job job = null;
+   *   JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
+   *   JobInfo jobInfo = JobInfo.of(jobConfiguration);
+   *   try {
+   *     job = bigquery.create(jobInfo);
+   *   } catch (BigQueryException e) {
+   *     // the job was not created
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -744,10 +765,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a dataset.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset";
-   * Dataset dataset = bigquery.getDataset(datasetName);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset";
+   *   Dataset dataset = bigquery.getDataset(datasetName);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -758,12 +782,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a dataset.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * DatasetId datasetId = DatasetId.of(projectId, datasetName);
-   * Dataset dataset = bigquery.getDataset(datasetId);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   *   Dataset dataset = bigquery.getDataset(datasetId);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -777,13 +804,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing datasets, specifying the page size.
    *
-   * <pre>{@code
-   * // List datasets in the default project
-   * Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
-   * for (Dataset dataset : datasets.iterateAll()) {
-   *   // do something with the dataset
+   * <pre>
+   * {
+   *   &#64;code
+   *   // List datasets in the default project
+   *   Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
+   *   for (Dataset dataset : datasets.iterateAll()) {
+   *     // do something with the dataset
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -797,14 +827,17 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing datasets in a project, specifying the page size.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * // List datasets in a specified project
-   * Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
-   * for (Dataset dataset : datasets.iterateAll()) {
-   *   // do something with the dataset
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   // List datasets in a specified project
+   *   Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
+   *   for (Dataset dataset : datasets.iterateAll()) {
+   *     // do something with the dataset
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -815,15 +848,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of deleting a dataset from its id, even if non-empty.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
-   * if (deleted) {
-   *   // the dataset was deleted
-   * } else {
-   *   // the dataset was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
+   *   if (deleted) {
+   *     // the dataset was deleted
+   *   } else {
+   *     // the dataset was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
@@ -835,17 +871,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of deleting a dataset, even if non-empty.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * DatasetId datasetId = DatasetId.of(projectId, datasetName);
-   * boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
-   * if (deleted) {
-   *   // the dataset was deleted
-   * } else {
-   *   // the dataset was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   *   boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
+   *   if (deleted) {
+   *     // the dataset was deleted
+   *   } else {
+   *     // the dataset was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
@@ -869,18 +908,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of deleting a table.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * TableId tableId = TableId.of(projectId, datasetName, tableName);
-   * boolean deleted = bigquery.delete(tableId);
-   * if (deleted) {
-   *   // the table was deleted
-   * } else {
-   *   // the table was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   TableId tableId = TableId.of(projectId, datasetName, tableName);
+   *   boolean deleted = bigquery.delete(tableId);
+   *   if (deleted) {
+   *     // the table was deleted
+   *   } else {
+   *     // the table was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
@@ -892,18 +934,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of deleting a model.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_model_name";
-   * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
-   * boolean deleted = bigquery.delete(modelId);
-   * if (deleted) {
-   *   // the model was deleted
-   * } else {
-   *   // the model was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_model_name";
+   *   ModelId modelId = ModelId.of(projectId, datasetName, modelName);
+   *   boolean deleted = bigquery.delete(modelId);
+   *   if (deleted) {
+   *     // the model was deleted
+   *   } else {
+   *     // the model was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if model was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
@@ -913,9 +958,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested routine.
    *
-   * <p>Example of deleting a routine.
+   * <p>
+   * Example of deleting a routine.
    *
-   * <pre>{@code
+   * <pre>
+   * {@code
    * String projectId = "my_project_id";
    * String datasetId = "my_dataset_id";
    * String routineId = "my_routine_id";
@@ -928,7 +975,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }
    * </pre>
    *
-   * @return {@code true} if routine was deleted, {@code false} if it was not found
+   * @return {@code true} if routine was deleted, {@code false} if it was not
+   * found
+   *
    * @throws BigQueryException upon failure
    */
   boolean delete(RoutineId routineId);
@@ -937,20 +986,22 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
-   * <!--SNIPPET bigquery_update_table_description-->
+   * <!--SNIPPET
+   * bigquery_update_table_description-->
    *
-   * <pre>{@code
-   * // String datasetName = "my_dataset_name";
-   * // String tableName = "my_table_name";
-   * // String newDescription = "new_description";
+   * <pre>
+   * {
+   *   &#64;code
+   *   // String datasetName = "my_dataset_name";
+   *   // String tableName = "my_table_name";
+   *   // String newDescription = "new_description";
    *
-   * Table beforeTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = beforeTable.toBuilder()
-   *     .setDescription(newDescription)
-   *     .build();
-   * Table afterTable = bigquery.update(tableInfo);
+   *   Table beforeTable = bigquery.getTable(datasetName, tableName);
+   *   TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
+   *   Table afterTable = bigquery.update(tableInfo);
    *
-   * }</pre>
+   * }
+   * </pre>
    *
    * <!--SNIPPET bigquery_update_table_description-->
    *
@@ -963,31 +1014,33 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of updating a table by changing its description.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * String newDescription = "new_description";
-   * Table beforeTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = beforeTable.toBuilder()
-   *     .setDescription(newDescription)
-   *     .build();
-   * Table afterTable = bigquery.update(tableInfo);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   String newDescription = "new_description";
+   *   Table beforeTable = bigquery.getTable(datasetName, tableName);
+   *   TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
+   *   Table afterTable = bigquery.update(tableInfo);
+   * }
+   * </pre>
    *
    * <p>Example of updating a table by changing its expiration.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * Table beforeTable = bigquery.getTable(datasetName, tableName);
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   Table beforeTable = bigquery.getTable(datasetName, tableName);
    *
-   * // Set table to expire 5 days from now.
-   * long expirationMillis = DateTime.now().plusDays(5).getMillis();
-   * TableInfo tableInfo = beforeTable.toBuilder()
-   *         .setExpirationTime(expirationMillis)
-   *         .build();
-   * Table afterTable = bigquery.update(tableInfo);
-   * }</pre>
+   *   // Set table to expire 5 days from now.
+   *   long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   *   TableInfo tableInfo = beforeTable.toBuilder().setExpirationTime(expirationMillis).build();
+   *   Table afterTable = bigquery.update(tableInfo);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -998,31 +1051,33 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of updating a model by changing its description.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String modelName = "my_model_name";
-   * String newDescription = "new_description";
-   * Model beforeModel = bigquery.getModel(datasetName, modelName);
-   * ModelInfo modelInfo = beforeModel.toBuilder()
-   *     .setDescription(newDescription)
-   *     .build();
-   * Model afterModel = bigquery.update(modelInfo);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String modelName = "my_model_name";
+   *   String newDescription = "new_description";
+   *   Model beforeModel = bigquery.getModel(datasetName, modelName);
+   *   ModelInfo modelInfo = beforeModel.toBuilder().setDescription(newDescription).build();
+   *   Model afterModel = bigquery.update(modelInfo);
+   * }
+   * </pre>
    *
    * <p>Example of updating a model by changing its expiration.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String modelName = "my_model_name";
-   * Model beforeModel = bigquery.getModel(datasetName, modelName);
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String modelName = "my_model_name";
+   *   Model beforeModel = bigquery.getModel(datasetName, modelName);
    *
-   * // Set model to expire 5 days from now.
-   * long expirationMillis = DateTime.now().plusDays(5).getMillis();
-   * ModelInfo modelInfo = beforeModel.toBuilder()
-   *         .setExpirationTime(expirationMillis)
-   *         .build();
-   * Model afterModel = bigquery.update(modelInfo);
-   * }</pre>
+   *   // Set model to expire 5 days from now.
+   *   long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   *   ModelInfo modelInfo = beforeModel.toBuilder().setExpirationTime(expirationMillis).build();
+   *   Model afterModel = bigquery.update(modelInfo);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1040,11 +1095,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * Table table = bigquery.getTable(datasetName, tableName);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   Table table = bigquery.getTable(datasetName, tableName);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1055,13 +1113,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a table.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * TableId tableId = TableId.of(projectId, datasetName, tableName);
-   * Table table = bigquery.getTable(tableId);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   TableId tableId = TableId.of(projectId, datasetName, tableName);
+   *   Table table = bigquery.getTable(tableId);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1079,13 +1140,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a model.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * String modelName = "my_model_name";
-   * ModelId modelId = ModelId.of(projectId, datasetName, tableName);
-   * Model model = bigquery.getModel(modelId);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   String modelName = "my_model_name";
+   *   ModelId modelId = ModelId.of(projectId, datasetName, tableName);
+   *   Model model = bigquery.getModel(modelId);
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1112,42 +1176,54 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Routine> listRoutines(DatasetId datasetId, RoutineListOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table: ({@link
-   * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
-   * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
-   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
+   * Lists the tables in the dataset. This method returns partial information on
+   * each table: ({@link Table#getTableId()}, {@link Table#getFriendlyName()},
+   * {@link Table#getGeneratedId()} and type, which is part of
+   * {@link Table#getDefinition()}). To get complete information use either
+   * {@link #getTable(TableId, TableOption...)} or
+   * {@link #getTable(String, String, TableOption...)}.
    *
-   * <p>Example of listing the tables in a dataset, specifying the page size.
+   * <p>
+   * Example of listing the tables in a dataset, specifying the page size.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
-   * for (Table table : tables.iterateAll()) {
-   *   // do something with the table
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
+   *   for (Table table : tables.iterateAll()) {
+   *     // do something with the table
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
   Page<Table> listTables(String datasetId, TableListOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table: ({@link
-   * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
-   * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
-   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
+   * Lists the tables in the dataset. This method returns partial information on
+   * each table: ({@link Table#getTableId()}, {@link Table#getFriendlyName()},
+   * {@link Table#getGeneratedId()} and type, which is part of
+   * {@link Table#getDefinition()}). To get complete information use either
+   * {@link #getTable(TableId, TableOption...)} or
+   * {@link #getTable(String, String, TableOption...)}.
    *
-   * <p>Example of listing the tables in a dataset.
+   * <p>
+   * Example of listing the tables in a dataset.
    *
-   * <pre>{@code
-   * String projectId = "my_project_id";
-   * String datasetName = "my_dataset_name";
-   * DatasetId datasetId = DatasetId.of(projectId, datasetName);
-   * Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
-   * for (Table table : tables.iterateAll()) {
-   *   // do something with the table
+   * <pre>
+   * {
+   *   &#64;code
+   *   String projectId = "my_project_id";
+   *   String datasetName = "my_dataset_name";
+   *   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   *   Page<Table> tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
+   *   for (Table table : tables.iterateAll()) {
+   *     // do something with the table
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1170,32 +1246,33 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of inserting rows into a table without running a load job.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * // Values of the row to insert
-   * Map<String, Object> rowContent = new HashMap<>();
-   * rowContent.put("booleanField", true);
-   * // Bytes are passed in base64
-   * rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
-   * // Records are passed as a map
-   * Map<String, Object> recordsContent = new HashMap<>();
-   * recordsContent.put("stringField", "Hello, World!");
-   * rowContent.put("recordField", recordsContent);
-   * InsertAllResponse response =
-   *     bigquery.insertAll(
-   *         InsertAllRequest.newBuilder(tableId)
-   *             .addRow("rowId", rowContent)
-   *             // More rows can be added in the same RPC by invoking .addRow() on the builder
-   *             .build());
-   * if (response.hasErrors()) {
-   *   // If any of the insertions failed, this lets you inspect the errors
-   *   for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
-   *     // inspect row error
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   // Values of the row to insert
+   *   Map<String, Object> rowContent = new HashMap<>();
+   *   rowContent.put("booleanField", true);
+   *   // Bytes are passed in base64
+   *   rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
+   *   // Records are passed as a map
+   *   Map<String, Object> recordsContent = new HashMap<>();
+   *   recordsContent.put("stringField", "Hello, World!");
+   *   rowContent.put("recordField", recordsContent);
+   *   InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId).addRow("rowId", rowContent)
+   *       // More rows can be added in the same RPC by invoking .addRow() on the
+   *       // builder
+   *       .build());
+   *   if (response.hasErrors()) {
+   *     // If any of the insertions failed, this lets you inspect the errors
+   *     for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
+   *       // inspect row error
+   *     }
    *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1206,17 +1283,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing table rows, specifying the page size.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
-   * // simply omit the option.
-   * TableResult tableData =
-   *     bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
-   * for (FieldValueList row : tableData.iterateAll()) {
-   *   // do something with the row
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   // This example reads the result 100 rows per RPC call. If there's no need
+   *   // to limit the number,
+   *   // simply omit the option.
+   *   TableResult tableData = bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
+   *   for (FieldValueList row : tableData.iterateAll()) {
+   *     // do something with the row
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1227,18 +1307,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing table rows, specifying the page size.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * TableId tableIdObject = TableId.of(datasetName, tableName);
-   * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
-   * // simply omit the option.
-   * TableResult tableData =
-   *     bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
-   * for (FieldValueList row : tableData.iterateAll()) {
-   *   // do something with the row
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   TableId tableIdObject = TableId.of(datasetName, tableName);
+   *   // This example reads the result 100 rows per RPC call. If there's no need
+   *   // to limit the number,
+   *   // simply omit the option.
+   *   TableResult tableData = bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
+   *   for (FieldValueList row : tableData.iterateAll()) {
+   *     // do something with the row
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1272,19 +1355,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing table rows with schema.
    *
-   * <pre>{@code
-   * Schema schema =
-   *     Schema.of(
-   *         Field.of("word", LegacySQLTypeName.STRING),
-   *         Field.of("word_count", LegacySQLTypeName.STRING),
-   *         Field.of("corpus", LegacySQLTypeName.STRING),
-   *         Field.of("corpus_date", LegacySQLTypeName.STRING));
-   * TableResult tableData =
-   *     bigquery.listTableData(
-   *         TableId.of("bigquery-public-data", "samples", "shakespeare"), schema);
-   * FieldValueList row = tableData.getValues().iterator().next();
-   * System.out.println(row.get("word").getStringValue());
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   Schema schema = Schema.of(Field.of("word", LegacySQLTypeName.STRING),
+   *       Field.of("word_count", LegacySQLTypeName.STRING), Field.of("corpus", LegacySQLTypeName.STRING),
+   *       Field.of("corpus_date", LegacySQLTypeName.STRING));
+   *   TableResult tableData = bigquery.listTableData(TableId.of("bigquery-public-data", "samples", "shakespeare"),
+   *       schema);
+   *   FieldValueList row = tableData.getValues().iterator().next();
+   *   System.out.println(row.get("word").getStringValue());
+   * }
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1296,13 +1378,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a job.
    *
-   * <pre>{@code
-   * String jobName = "my_job_name";
-   * Job job = bigquery.getJob(jobName);
-   * if (job == null) {
-   *   // job was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String jobName = "my_job_name";
+   *   Job job = bigquery.getJob(jobName);
+   *   if (job == null) {
+   *     // job was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1314,14 +1399,17 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of getting a job.
    *
-   * <pre>{@code
-   * String jobName = "my_job_name";
-   * JobId jobIdObject = JobId.of(jobName);
-   * Job job = bigquery.getJob(jobIdObject);
-   * if (job == null) {
-   *   // job was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String jobName = "my_job_name";
+   *   JobId jobIdObject = JobId.of(jobName);
+   *   Job job = bigquery.getJob(jobIdObject);
+   *   if (job == null) {
+   *     // job was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1332,12 +1420,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of listing jobs, specifying the page size.
    *
-   * <pre>{@code
-   * Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
-   * for (Job job : jobs.iterateAll()) {
-   *   // do something with the job
+   * <pre>
+   * {
+   *   &#64;code
+   *   Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
+   *   for (Job job : jobs.iterateAll()) {
+   *     // do something with the job
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1352,15 +1443,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of cancelling a job.
    *
-   * <pre>{@code
-   * String jobName = "my_job_name";
-   * boolean success = bigquery.cancel(jobName);
-   * if (success) {
-   *   // job was cancelled
-   * } else {
-   *   // job was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String jobName = "my_job_name";
+   *   boolean success = bigquery.cancel(jobName);
+   *   if (success) {
+   *     // job was cancelled
+   *   } else {
+   *     // job was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if cancel was requested successfully, {@code false} if the job was not
    *     found
@@ -1378,16 +1472,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of cancelling a job.
    *
-   * <pre>{@code
-   * String jobName = "my_job_name";
-   * JobId jobId = JobId.of(jobName);
-   * boolean success = bigquery.cancel(jobId);
-   * if (success) {
-   *   // job was cancelled
-   * } else {
-   *   // job was not found
+   * <pre>
+   * {
+   *   &#64;code
+   *   String jobName = "my_job_name";
+   *   JobId jobId = JobId.of(jobName);
+   *   boolean success = bigquery.cancel(jobId);
+   *   if (success) {
+   *     // job was cancelled
+   *   } else {
+   *     // job was not found
+   *   }
    * }
-   * }</pre>
+   * </pre>
    *
    * @return {@code true} if cancel was requested successfully, {@code false} if the job was not
    *     found
@@ -1406,19 +1503,22 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of running a query.
    *
-   * <pre>{@code
-   * // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-   * String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-   * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
+   * <pre>
+   * {
+   *   &#64;code
+   *   // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+   *   String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   *   QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
    *
-   * // Print the results.
-   * for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
-   *   for (FieldValue val : row) {
-   *     System.out.printf("%s,", val.toString());
+   *   // Print the results.
+   *   for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+   *     for (FieldValue val : row) {
+   *       System.out.printf("%s,", val.toString());
+   *     }
+   *     System.out.printf("\n");
    *   }
-   *   System.out.printf("\n");
    * }
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
@@ -1463,50 +1563,56 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of creating a channel with which to write to a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * String csvData = "StringValue1\nStringValue2\n";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
-   * // Write data to writer
-   * try {
-   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   * } finally {
-   *   writer.close();
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   String csvData = "StringValue1\nStringValue2\n";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+   *       .setFormatOptions(FormatOptions.csv()).build();
+   *   TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   *   // Write data to writer
+   *   try {
+   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   *   } finally {
+   *     writer.close();
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
    * }
-   * // Get load job
-   * Job job = writer.getJob();
-   * job = job.waitFor();
-   * LoadStatistics stats = job.getStatistics();
-   * return stats.getOutputRows();
-   * }</pre>
+   * </pre>
    *
    * <p>Example of writing a local file to a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
-   * String location = "us";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-   * // The location must be specified; other fields can be auto-detected.
-   * JobId jobId = JobId.newBuilder().setLocation(location).build();
-   * TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
-   * // Write data to writer
-   * try (OutputStream stream = Channels.newOutputStream(writer)) {
-   *   Files.copy(csvPath, stream);
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
+   *   String location = "us";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+   *       .setFormatOptions(FormatOptions.csv()).build();
+   *   // The location must be specified; other fields can be auto-detected.
+   *   JobId jobId = JobId.newBuilder().setLocation(location).build();
+   *   TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+   *   // Write data to writer
+   *   try (OutputStream stream = Channels.newOutputStream(writer)) {
+   *     Files.copy(csvPath, stream);
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
    * }
-   * // Get load job
-   * Job job = writer.getJob();
-   * job = job.waitFor();
-   * LoadStatistics stats = job.getStatistics();
-   * return stats.getOutputRows();
-   * }</pre>
+   * </pre>
    *
    * @throws BigQueryException upon failure
    */
@@ -1519,29 +1625,44 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of creating a channel with which to write to a table.
    *
-   * <pre>{@code
-   * String datasetName = "my_dataset_name";
-   * String tableName = "my_table_name";
-   * String csvData = "StringValue1\nStringValue2\n";
-   * String location = "us";
-   * TableId tableId = TableId.of(datasetName, tableName);
-   * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(FormatOptions.csv()).build();
-   * // The location must be specified; other fields can be auto-detected.
-   * JobId jobId = JobId.newBuilder().setLocation(location).build();
-   * TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
-   * // Write data to writer
-   * try {
-   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   * } finally {
-   *   writer.close();
+   * <pre>
+   * {
+   *   &#64;code
+   *   String datasetName = "my_dataset_name";
+   *   String tableName = "my_table_name";
+   *   String csvData = "StringValue1\nStringValue2\n";
+   *   String location = "us";
+   *   TableId tableId = TableId.of(datasetName, tableName);
+   *   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+   *       .setFormatOptions(FormatOptions.csv()).build();
+   *   // The location must be specified; other fields can be auto-detected.
+   *   JobId jobId = JobId.newBuilder().setLocation(location).build();
+   *   TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+   *   // Write data to writer
+   *   try {
+   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   *   } finally {
+   *     writer.close();
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
    * }
-   * // Get load job
-   * Job job = writer.getJob();
-   * job = job.waitFor();
-   * LoadStatistics stats = job.getStatistics();
-   * return stats.getOutputRows();
-   * }</pre>
+   * </pre>
    */
   TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration);
+
+  /** Gets the IAM policy for a specified table. */
+  Policy getIamPolicy(TableId tableId, IAMOption... options);
+
+  /** Sets the IAM policy for a specified table. */
+  Policy setIamPolicy(TableId tableId, Policy policy, IAMOption... options);
+
+  /**
+   * Tests whether the caller holds specific permissions on a BigQuery table. The returned list
+   * represents the subset of granted permissions.
+   */
+  List<String> testIamPermissions(TableId table, List<String> permissions, IAMOption... options);
 }
