@@ -215,5 +215,11 @@
         <module>samples</module>
       </modules>
     </profile>
+    <profile>
+      <id>benchmark</id>
+      <modules>
+        <module>benchmark</module>
+      </modules>
+    </profile>
   </profiles>
 </project>
