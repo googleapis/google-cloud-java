@@ -324,10 +324,12 @@ public class ResourcePolicyClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectRegionResourcePolicyResourceName resource =
         ProjectRegionResourcePolicyResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyResourcePolicy(resource);
+    Policy actualResponse =
+        client.getIamPolicyResourcePolicy(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -354,10 +356,11 @@ public class ResourcePolicyClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectRegionResourcePolicyResourceName resource =
           ProjectRegionResourcePolicyResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-      client.getIamPolicyResourcePolicy(resource);
+      client.getIamPolicyResourcePolicy(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -17,13 +17,7 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.compute.v1.License;
-import com.google.cloud.compute.v1.LicenseClient;
-import com.google.cloud.compute.v1.LicenseSettings;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.Policy;
-import com.google.cloud.compute.v1.ProjectGlobalLicenseName;
-import com.google.cloud.compute.v1.ProjectGlobalLicenseResourceName;
+import com.google.cloud.compute.v1.*;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
@@ -91,7 +85,11 @@ public class ITLicenseTest extends BaseTest {
   public void getIamPolicyLicenseTest() {
     ProjectGlobalLicenseResourceName licenseResourceName =
         ProjectGlobalLicenseResourceName.of(DEFAULT_PROJECT, LICENSE);
-    Policy policy = licenseClient.getIamPolicyLicense(licenseResourceName);
+    Policy policy =
+        licenseClient.getIamPolicyLicense(
+            GetIamPolicyLicenseHttpRequest.newBuilder()
+                .setResource(licenseResourceName.toString())
+                .build());
     assertThat(policy).isNotNull();
     assertThat(policy.getEtag()).isEqualTo("ACAB");
   }

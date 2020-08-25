@@ -358,18 +358,22 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = licenseClient.getIamPolicyLicense(resource);
+   *   Policy response = licenseClient.getIamPolicyLicense(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyLicense(ProjectGlobalLicenseResourceName resource) {
+  public final Policy getIamPolicyLicense(
+      Integer optionsRequestedPolicyVersion, ProjectGlobalLicenseResourceName resource) {
     GetIamPolicyLicenseHttpRequest request =
         GetIamPolicyLicenseHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyLicense(request);
@@ -385,18 +389,23 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = licenseClient.getIamPolicyLicense(resource.toString());
+   *   Policy response = licenseClient.getIamPolicyLicense(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyLicense(String resource) {
+  public final Policy getIamPolicyLicense(Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyLicenseHttpRequest request =
-        GetIamPolicyLicenseHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyLicenseHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyLicense(request);
   }
 
@@ -410,8 +419,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = licenseClient.getIamPolicyLicense(request);
@@ -436,8 +447,10 @@ public class LicenseClient implements BackgroundResource {
    *
    * <pre><code>
    * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalLicenseResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = licenseClient.getIamPolicyLicenseCallable().futureCall(request);

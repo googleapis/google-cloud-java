@@ -30,6 +30,7 @@ public final class NetworkInterface implements ApiMessage {
   private final List<AccessConfig> accessConfigs;
   private final List<AliasIpRange> aliasIpRanges;
   private final String fingerprint;
+  private final String ipv6Address;
   private final String kind;
   private final String name;
   private final String network;
@@ -40,6 +41,7 @@ public final class NetworkInterface implements ApiMessage {
     this.accessConfigs = null;
     this.aliasIpRanges = null;
     this.fingerprint = null;
+    this.ipv6Address = null;
     this.kind = null;
     this.name = null;
     this.network = null;
@@ -51,6 +53,7 @@ public final class NetworkInterface implements ApiMessage {
       List<AccessConfig> accessConfigs,
       List<AliasIpRange> aliasIpRanges,
       String fingerprint,
+      String ipv6Address,
       String kind,
       String name,
       String network,
@@ -59,6 +62,7 @@ public final class NetworkInterface implements ApiMessage {
     this.accessConfigs = accessConfigs;
     this.aliasIpRanges = aliasIpRanges;
     this.fingerprint = fingerprint;
+    this.ipv6Address = ipv6Address;
     this.kind = kind;
     this.name = name;
     this.network = network;
@@ -76,6 +80,9 @@ public final class NetworkInterface implements ApiMessage {
     }
     if ("fingerprint".equals(fieldName)) {
       return fingerprint;
+    }
+    if ("ipv6Address".equals(fieldName)) {
+      return ipv6Address;
     }
     if ("kind".equals(fieldName)) {
       return kind;
@@ -138,6 +145,11 @@ public final class NetworkInterface implements ApiMessage {
    */
   public String getFingerprint() {
     return fingerprint;
+  }
+
+  /** [Output Only] An IPv6 internal network address for this network interface. */
+  public String getIpv6Address() {
+    return ipv6Address;
   }
 
   /** [Output Only] Type of the resource. Always compute#networkInterface for network interfaces. */
@@ -214,6 +226,7 @@ public final class NetworkInterface implements ApiMessage {
     private List<AccessConfig> accessConfigs;
     private List<AliasIpRange> aliasIpRanges;
     private String fingerprint;
+    private String ipv6Address;
     private String kind;
     private String name;
     private String network;
@@ -232,6 +245,9 @@ public final class NetworkInterface implements ApiMessage {
       }
       if (other.getFingerprint() != null) {
         this.fingerprint = other.fingerprint;
+      }
+      if (other.getIpv6Address() != null) {
+        this.ipv6Address = other.ipv6Address;
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
@@ -255,6 +271,7 @@ public final class NetworkInterface implements ApiMessage {
       this.accessConfigs = source.accessConfigs;
       this.aliasIpRanges = source.aliasIpRanges;
       this.fingerprint = source.fingerprint;
+      this.ipv6Address = source.ipv6Address;
       this.kind = source.kind;
       this.name = source.name;
       this.network = source.network;
@@ -347,6 +364,17 @@ public final class NetworkInterface implements ApiMessage {
      */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
+      return this;
+    }
+
+    /** [Output Only] An IPv6 internal network address for this network interface. */
+    public String getIpv6Address() {
+      return ipv6Address;
+    }
+
+    /** [Output Only] An IPv6 internal network address for this network interface. */
+    public Builder setIpv6Address(String ipv6Address) {
+      this.ipv6Address = ipv6Address;
       return this;
     }
 
@@ -458,7 +486,15 @@ public final class NetworkInterface implements ApiMessage {
     public NetworkInterface build() {
 
       return new NetworkInterface(
-          accessConfigs, aliasIpRanges, fingerprint, kind, name, network, networkIP, subnetwork);
+          accessConfigs,
+          aliasIpRanges,
+          fingerprint,
+          ipv6Address,
+          kind,
+          name,
+          network,
+          networkIP,
+          subnetwork);
     }
 
     public Builder clone() {
@@ -466,6 +502,7 @@ public final class NetworkInterface implements ApiMessage {
       newBuilder.addAllAccessConfigs(this.accessConfigs);
       newBuilder.addAllAliasIpRanges(this.aliasIpRanges);
       newBuilder.setFingerprint(this.fingerprint);
+      newBuilder.setIpv6Address(this.ipv6Address);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
@@ -486,6 +523,9 @@ public final class NetworkInterface implements ApiMessage {
         + ", "
         + "fingerprint="
         + fingerprint
+        + ", "
+        + "ipv6Address="
+        + ipv6Address
         + ", "
         + "kind="
         + kind
@@ -514,6 +554,7 @@ public final class NetworkInterface implements ApiMessage {
       return Objects.equals(this.accessConfigs, that.getAccessConfigsList())
           && Objects.equals(this.aliasIpRanges, that.getAliasIpRangesList())
           && Objects.equals(this.fingerprint, that.getFingerprint())
+          && Objects.equals(this.ipv6Address, that.getIpv6Address())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
@@ -526,6 +567,14 @@ public final class NetworkInterface implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        accessConfigs, aliasIpRanges, fingerprint, kind, name, network, networkIP, subnetwork);
+        accessConfigs,
+        aliasIpRanges,
+        fingerprint,
+        ipv6Address,
+        kind,
+        name,
+        network,
+        networkIP,
+        subnetwork);
   }
 }

@@ -516,18 +516,22 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneReservationResourceName resource = ProjectZoneReservationResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = reservationClient.getIamPolicyReservation(resource);
+   *   Policy response = reservationClient.getIamPolicyReservation(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyReservation(ProjectZoneReservationResourceName resource) {
+  public final Policy getIamPolicyReservation(
+      Integer optionsRequestedPolicyVersion, ProjectZoneReservationResourceName resource) {
     GetIamPolicyReservationHttpRequest request =
         GetIamPolicyReservationHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyReservation(request);
@@ -542,18 +546,24 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneReservationResourceName resource = ProjectZoneReservationResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = reservationClient.getIamPolicyReservation(resource.toString());
+   *   Policy response = reservationClient.getIamPolicyReservation(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyReservation(String resource) {
+  public final Policy getIamPolicyReservation(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyReservationHttpRequest request =
-        GetIamPolicyReservationHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyReservationHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyReservation(request);
   }
 
@@ -566,8 +576,10 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneReservationResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyReservationHttpRequest request = GetIamPolicyReservationHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = reservationClient.getIamPolicyReservation(request);
@@ -591,8 +603,10 @@ public class ReservationClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationClient reservationClient = ReservationClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneReservationResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyReservationHttpRequest request = GetIamPolicyReservationHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = reservationClient.getIamPolicyReservationCallable().futureCall(request);

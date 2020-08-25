@@ -27,9 +27,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionBackendServices.update. Updates the specified regional
- * BackendService resource with the data included in the request. There are several Understanding
- * backend services to keep in mind when updating a backend service. Read Understanding backend
- * services for more information.
+ * BackendService resource with the data included in the request. For more information, see Backend
+ * services overview.
  */
 public final class UpdateRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
@@ -147,15 +146,18 @@ public final class UpdateRegionBackendServiceHttpRequest implements ApiMessage {
   /**
    * Represents a Backend Service resource.
    *
-   * <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   * services.
+   * <p>A backend service defines how Google Cloud load balancers distribute traffic. The backend
+   * service configuration contains a set of values, such as the protocol used to connect to
+   * backends, various distribution and session settings, health checks, and timeouts. These
+   * settings provide fine-grained control over how your load balancer behaves. Most of the settings
+   * have default values that allow for easy configuration if you need to get started quickly.
    *
    * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *
    * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
    *
-   * <p>For more information, read Backend Services.
+   * <p>For more information, see Backend Services.
    *
    * <p>(== resource_for {$api_version}.backendService ==)
    */
@@ -348,15 +350,19 @@ public final class UpdateRegionBackendServiceHttpRequest implements ApiMessage {
     /**
      * Represents a Backend Service resource.
      *
-     * <p>A backend service contains configuration values for Google Cloud Platform load balancing
-     * services.
+     * <p>A backend service defines how Google Cloud load balancers distribute traffic. The backend
+     * service configuration contains a set of values, such as the protocol used to connect to
+     * backends, various distribution and session settings, health checks, and timeouts. These
+     * settings provide fine-grained control over how your load balancer behaves. Most of the
+     * settings have default values that allow for easy configuration if you need to get started
+     * quickly.
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
      * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
      * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
-     * <p>For more information, read Backend Services.
+     * <p>For more information, see Backend Services.
      *
      * <p>(== resource_for {$api_version}.backendService ==)
      */
@@ -367,15 +373,19 @@ public final class UpdateRegionBackendServiceHttpRequest implements ApiMessage {
     /**
      * Represents a Backend Service resource.
      *
-     * <p>A backend service contains configuration values for Google Cloud Platform load balancing
-     * services.
+     * <p>A backend service defines how Google Cloud load balancers distribute traffic. The backend
+     * service configuration contains a set of values, such as the protocol used to connect to
+     * backends, various distribution and session settings, health checks, and timeouts. These
+     * settings provide fine-grained control over how your load balancer behaves. Most of the
+     * settings have default values that allow for easy configuration if you need to get started
+     * quickly.
      *
      * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
      *
      * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
      * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
      *
-     * <p>For more information, read Backend Services.
+     * <p>For more information, see Backend Services.
      *
      * <p>(== resource_for {$api_version}.backendService ==)
      */

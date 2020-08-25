@@ -98,8 +98,9 @@ public final class SerialPortOutput implements ApiMessage {
   }
 
   /**
-   * [Output Only] The position of the next byte of content from the serial console output. Use this
-   * value in the next request as the start parameter.
+   * [Output Only] The position of the next byte of content, regardless of whether the content
+   * exists, following the output returned in the `contents` property. Use this value in the next
+   * request as the start parameter.
    */
   public String getNext() {
     return next;
@@ -112,8 +113,10 @@ public final class SerialPortOutput implements ApiMessage {
 
   /**
    * The starting byte position of the output that was returned. This should match the start
-   * parameter sent with the request. If the serial console output exceeds the size of the buffer,
-   * older output will be overwritten by newer content and the start values will be mismatched.
+   * parameter sent with the request. If the serial console output exceeds the size of the buffer (1
+   * MB), older output is overwritten by newer content. The output start value will indicate the
+   * byte position of the output that was returned, which might be different than the `start` value
+   * that was specified in the request.
    */
   public String getStart() {
     return start;
@@ -205,16 +208,18 @@ public final class SerialPortOutput implements ApiMessage {
     }
 
     /**
-     * [Output Only] The position of the next byte of content from the serial console output. Use
-     * this value in the next request as the start parameter.
+     * [Output Only] The position of the next byte of content, regardless of whether the content
+     * exists, following the output returned in the `contents` property. Use this value in the next
+     * request as the start parameter.
      */
     public String getNext() {
       return next;
     }
 
     /**
-     * [Output Only] The position of the next byte of content from the serial console output. Use
-     * this value in the next request as the start parameter.
+     * [Output Only] The position of the next byte of content, regardless of whether the content
+     * exists, following the output returned in the `contents` property. Use this value in the next
+     * request as the start parameter.
      */
     public Builder setNext(String next) {
       this.next = next;
@@ -234,8 +239,10 @@ public final class SerialPortOutput implements ApiMessage {
 
     /**
      * The starting byte position of the output that was returned. This should match the start
-     * parameter sent with the request. If the serial console output exceeds the size of the buffer,
-     * older output will be overwritten by newer content and the start values will be mismatched.
+     * parameter sent with the request. If the serial console output exceeds the size of the buffer
+     * (1 MB), older output is overwritten by newer content. The output start value will indicate
+     * the byte position of the output that was returned, which might be different than the `start`
+     * value that was specified in the request.
      */
     public String getStart() {
       return start;
@@ -243,8 +250,10 @@ public final class SerialPortOutput implements ApiMessage {
 
     /**
      * The starting byte position of the output that was returned. This should match the start
-     * parameter sent with the request. If the serial console output exceeds the size of the buffer,
-     * older output will be overwritten by newer content and the start values will be mismatched.
+     * parameter sent with the request. If the serial console output exceeds the size of the buffer
+     * (1 MB), older output is overwritten by newer content. The output start value will indicate
+     * the byte position of the output that was returned, which might be different than the `start`
+     * value that was specified in the request.
      */
     public Builder setStart(String start) {
       this.start = start;

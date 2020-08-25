@@ -152,8 +152,12 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
   /**
    * Represents a collection of network endpoints.
    *
-   * <p>For more information read Network endpoint groups overview. (== resource_for
-   * {$api_version}.networkEndpointGroups ==) Next ID: 21
+   * <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+   * they are reachable, and where they are located. For more information about using NEGs, see
+   * Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+   * resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+   * {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+   * {$api_version}.regionNetworkEndpointGroups ==)
    */
   public NetworkEndpointGroup getNetworkEndpointGroupResource() {
     return networkEndpointGroupResource;
@@ -334,8 +338,12 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
     /**
      * Represents a collection of network endpoints.
      *
-     * <p>For more information read Network endpoint groups overview. (== resource_for
-     * {$api_version}.networkEndpointGroups ==) Next ID: 21
+     * <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+     * they are reachable, and where they are located. For more information about using NEGs, see
+     * Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+     * resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+     * {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+     * {$api_version}.regionNetworkEndpointGroups ==)
      */
     public NetworkEndpointGroup getNetworkEndpointGroupResource() {
       return networkEndpointGroupResource;
@@ -344,8 +352,12 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
     /**
      * Represents a collection of network endpoints.
      *
-     * <p>For more information read Network endpoint groups overview. (== resource_for
-     * {$api_version}.networkEndpointGroups ==) Next ID: 21
+     * <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+     * they are reachable, and where they are located. For more information about using NEGs, see
+     * Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+     * resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+     * {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+     * {$api_version}.regionNetworkEndpointGroups ==)
      */
     public Builder setNetworkEndpointGroupResource(
         NetworkEndpointGroup networkEndpointGroupResource) {

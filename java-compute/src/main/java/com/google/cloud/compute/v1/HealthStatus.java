@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
@@ -25,19 +26,27 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class HealthStatus implements ApiMessage {
+  private final Map<String, String> annotations;
   private final String healthState;
   private final String instance;
   private final String ipAddress;
   private final Integer port;
 
   private HealthStatus() {
+    this.annotations = null;
     this.healthState = null;
     this.instance = null;
     this.ipAddress = null;
     this.port = null;
   }
 
-  private HealthStatus(String healthState, String instance, String ipAddress, Integer port) {
+  private HealthStatus(
+      Map<String, String> annotations,
+      String healthState,
+      String instance,
+      String ipAddress,
+      Integer port) {
+    this.annotations = annotations;
     this.healthState = healthState;
     this.instance = instance;
     this.ipAddress = ipAddress;
@@ -46,6 +55,9 @@ public final class HealthStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("annotations".equals(fieldName)) {
+      return annotations;
+    }
     if ("healthState".equals(fieldName)) {
       return healthState;
     }
@@ -77,6 +89,11 @@ public final class HealthStatus implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Metadata defined as annotations for network endpoint. */
+  public Map<String, String> getAnnotationsMap() {
+    return annotations;
   }
 
   /** Health state of the instance. */
@@ -122,6 +139,7 @@ public final class HealthStatus implements ApiMessage {
   }
 
   public static class Builder {
+    private Map<String, String> annotations;
     private String healthState;
     private String instance;
     private String ipAddress;
@@ -131,6 +149,9 @@ public final class HealthStatus implements ApiMessage {
 
     public Builder mergeFrom(HealthStatus other) {
       if (other == HealthStatus.getDefaultInstance()) return this;
+      if (other.getAnnotationsMap() != null) {
+        this.annotations = other.annotations;
+      }
       if (other.getHealthState() != null) {
         this.healthState = other.healthState;
       }
@@ -147,10 +168,22 @@ public final class HealthStatus implements ApiMessage {
     }
 
     Builder(HealthStatus source) {
+      this.annotations = source.annotations;
       this.healthState = source.healthState;
       this.instance = source.instance;
       this.ipAddress = source.ipAddress;
       this.port = source.port;
+    }
+
+    /** Metadata defined as annotations for network endpoint. */
+    public Map<String, String> getAnnotationsMap() {
+      return annotations;
+    }
+
+    /** Metadata defined as annotations for network endpoint. */
+    public Builder putAllAnnotations(Map<String, String> annotations) {
+      this.annotations = annotations;
+      return this;
     }
 
     /** Health state of the instance. */
@@ -199,11 +232,12 @@ public final class HealthStatus implements ApiMessage {
 
     public HealthStatus build() {
 
-      return new HealthStatus(healthState, instance, ipAddress, port);
+      return new HealthStatus(annotations, healthState, instance, ipAddress, port);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.putAllAnnotations(this.annotations);
       newBuilder.setHealthState(this.healthState);
       newBuilder.setInstance(this.instance);
       newBuilder.setIpAddress(this.ipAddress);
@@ -215,6 +249,9 @@ public final class HealthStatus implements ApiMessage {
   @Override
   public String toString() {
     return "HealthStatus{"
+        + "annotations="
+        + annotations
+        + ", "
         + "healthState="
         + healthState
         + ", "
@@ -236,7 +273,8 @@ public final class HealthStatus implements ApiMessage {
     }
     if (o instanceof HealthStatus) {
       HealthStatus that = (HealthStatus) o;
-      return Objects.equals(this.healthState, that.getHealthState())
+      return Objects.equals(this.annotations, that.getAnnotationsMap())
+          && Objects.equals(this.healthState, that.getHealthState())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.ipAddress, that.getIpAddress())
           && Objects.equals(this.port, that.getPort());
@@ -246,6 +284,6 @@ public final class HealthStatus implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(healthState, instance, ipAddress, port);
+    return Objects.hash(annotations, healthState, instance, ipAddress, port);
   }
 }

@@ -25,18 +25,20 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Properties of the SKU instances being reserved. */
+/** Properties of the SKU instances being reserved. Next ID: 9 */
 public final class AllocationSpecificSKUAllocationReservedInstanceProperties implements ApiMessage {
   private final List<AcceleratorConfig> guestAccelerators;
   private final List<AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk>
       localSsds;
   private final String machineType;
+  private final String maintenanceInterval;
   private final String minCpuPlatform;
 
   private AllocationSpecificSKUAllocationReservedInstanceProperties() {
     this.guestAccelerators = null;
     this.localSsds = null;
     this.machineType = null;
+    this.maintenanceInterval = null;
     this.minCpuPlatform = null;
   }
 
@@ -44,10 +46,12 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       List<AcceleratorConfig> guestAccelerators,
       List<AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk> localSsds,
       String machineType,
+      String maintenanceInterval,
       String minCpuPlatform) {
     this.guestAccelerators = guestAccelerators;
     this.localSsds = localSsds;
     this.machineType = machineType;
+    this.maintenanceInterval = maintenanceInterval;
     this.minCpuPlatform = minCpuPlatform;
   }
 
@@ -61,6 +65,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
     }
     if ("machineType".equals(fieldName)) {
       return machineType;
+    }
+    if ("maintenanceInterval".equals(fieldName)) {
+      return maintenanceInterval;
     }
     if ("minCpuPlatform".equals(fieldName)) {
       return minCpuPlatform;
@@ -106,6 +113,16 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
     return machineType;
   }
 
+  /**
+   * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates this
+   * VM as a Stable Fleet VM.
+   *
+   * <p>See go/stable-fleet-ug for more details.
+   */
+  public String getMaintenanceInterval() {
+    return maintenanceInterval;
+  }
+
   /** Minimum cpu platform the reservation. */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
@@ -138,6 +155,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
     private List<AcceleratorConfig> guestAccelerators;
     private List<AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk> localSsds;
     private String machineType;
+    private String maintenanceInterval;
     private String minCpuPlatform;
 
     Builder() {}
@@ -154,6 +172,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       if (other.getMachineType() != null) {
         this.machineType = other.machineType;
       }
+      if (other.getMaintenanceInterval() != null) {
+        this.maintenanceInterval = other.maintenanceInterval;
+      }
       if (other.getMinCpuPlatform() != null) {
         this.minCpuPlatform = other.minCpuPlatform;
       }
@@ -164,6 +185,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       this.guestAccelerators = source.guestAccelerators;
       this.localSsds = source.localSsds;
       this.machineType = source.machineType;
+      this.maintenanceInterval = source.maintenanceInterval;
       this.minCpuPlatform = source.minCpuPlatform;
     }
 
@@ -241,6 +263,27 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       return this;
     }
 
+    /**
+     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates
+     * this VM as a Stable Fleet VM.
+     *
+     * <p>See go/stable-fleet-ug for more details.
+     */
+    public String getMaintenanceInterval() {
+      return maintenanceInterval;
+    }
+
+    /**
+     * Specifies whether this VM may be a stable fleet VM. Setting this to "Periodic" designates
+     * this VM as a Stable Fleet VM.
+     *
+     * <p>See go/stable-fleet-ug for more details.
+     */
+    public Builder setMaintenanceInterval(String maintenanceInterval) {
+      this.maintenanceInterval = maintenanceInterval;
+      return this;
+    }
+
     /** Minimum cpu platform the reservation. */
     public String getMinCpuPlatform() {
       return minCpuPlatform;
@@ -255,7 +298,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
     public AllocationSpecificSKUAllocationReservedInstanceProperties build() {
 
       return new AllocationSpecificSKUAllocationReservedInstanceProperties(
-          guestAccelerators, localSsds, machineType, minCpuPlatform);
+          guestAccelerators, localSsds, machineType, maintenanceInterval, minCpuPlatform);
     }
 
     public Builder clone() {
@@ -263,6 +306,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       newBuilder.addAllGuestAccelerators(this.guestAccelerators);
       newBuilder.addAllLocalSsds(this.localSsds);
       newBuilder.setMachineType(this.machineType);
+      newBuilder.setMaintenanceInterval(this.maintenanceInterval);
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       return newBuilder;
     }
@@ -280,6 +324,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
         + "machineType="
         + machineType
         + ", "
+        + "maintenanceInterval="
+        + maintenanceInterval
+        + ", "
         + "minCpuPlatform="
         + minCpuPlatform
         + "}";
@@ -296,6 +343,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
       return Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList())
           && Objects.equals(this.localSsds, that.getLocalSsdsList())
           && Objects.equals(this.machineType, that.getMachineType())
+          && Objects.equals(this.maintenanceInterval, that.getMaintenanceInterval())
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform());
     }
     return false;
@@ -303,6 +351,7 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties imp
 
   @Override
   public int hashCode() {
-    return Objects.hash(guestAccelerators, localSsds, machineType, minCpuPlatform);
+    return Objects.hash(
+        guestAccelerators, localSsds, machineType, maintenanceInterval, minCpuPlatform);
   }
 }

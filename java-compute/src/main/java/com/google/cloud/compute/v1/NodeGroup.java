@@ -203,7 +203,7 @@ public final class NodeGroup implements ApiMessage {
     return name;
   }
 
-  /** The URL of the node template to which this node group belongs. */
+  /** URL of the node template to create the node group from. */
   public String getNodeTemplate() {
     return nodeTemplate;
   }
@@ -436,12 +436,12 @@ public final class NodeGroup implements ApiMessage {
       return this;
     }
 
-    /** The URL of the node template to which this node group belongs. */
+    /** URL of the node template to create the node group from. */
     public String getNodeTemplate() {
       return nodeTemplate;
     }
 
-    /** The URL of the node template to which this node group belongs. */
+    /** URL of the node template to create the node group from. */
     public Builder setNodeTemplate(String nodeTemplate) {
       this.nodeTemplate = nodeTemplate;
       return this;

@@ -521,18 +521,22 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(resource);
+   *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyNodeTemplate(ProjectRegionNodeTemplateResourceName resource) {
+  public final Policy getIamPolicyNodeTemplate(
+      Integer optionsRequestedPolicyVersion, ProjectRegionNodeTemplateResourceName resource) {
     GetIamPolicyNodeTemplateHttpRequest request =
         GetIamPolicyNodeTemplateHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyNodeTemplate(request);
@@ -547,18 +551,24 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionNodeTemplateResourceName resource = ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(resource.toString());
+   *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyNodeTemplate(String resource) {
+  public final Policy getIamPolicyNodeTemplate(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyNodeTemplateHttpRequest request =
-        GetIamPolicyNodeTemplateHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyNodeTemplateHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyNodeTemplate(request);
   }
 
@@ -571,8 +581,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyNodeTemplateHttpRequest request = GetIamPolicyNodeTemplateHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = nodeTemplateClient.getIamPolicyNodeTemplate(request);
@@ -596,8 +608,10 @@ public class NodeTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplateClient nodeTemplateClient = NodeTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionNodeTemplateResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyNodeTemplateHttpRequest request = GetIamPolicyNodeTemplateHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeTemplateClient.getIamPolicyNodeTemplateCallable().futureCall(request);
@@ -631,7 +645,7 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
    *     information, read Creating node groups and instances. (== resource_for
-   *     {$api_version}.nodeTemplates ==) (== NextID: 19 ==)
+   *     {$api_version}.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -664,7 +678,7 @@ public class NodeTemplateClient implements BackgroundResource {
    * @param nodeTemplateResource Represent a sole-tenant Node Template resource.
    *     <p>You can use a template to define properties for nodes in a node group. For more
    *     information, read Creating node groups and instances. (== resource_for
-   *     {$api_version}.nodeTemplates ==) (== NextID: 19 ==)
+   *     {$api_version}.nodeTemplates ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

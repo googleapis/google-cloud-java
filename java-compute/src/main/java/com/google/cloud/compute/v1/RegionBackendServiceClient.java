@@ -465,8 +465,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
-   * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Understanding backend services for more information.
+   * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -480,12 +479,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -503,8 +506,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
-   * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Understanding backend services for more information.
+   * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -518,12 +520,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -541,8 +547,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
-   * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Understanding backend services for more information.
+   * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -569,8 +574,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
-   * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Understanding backend services for more information.
+   * the request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -742,9 +746,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information. This method supports PATCH
-   * semantics and uses the JSON merge patch format and processing rules.
+   * For more information, see Understanding backend services This method supports PATCH semantics
+   * and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -759,12 +762,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
@@ -789,9 +796,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information. This method supports PATCH
-   * semantics and uses the JSON merge patch format and processing rules.
+   * For more information, see Understanding backend services This method supports PATCH semantics
+   * and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -806,12 +812,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
@@ -834,9 +844,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information. This method supports PATCH
-   * semantics and uses the JSON merge patch format and processing rules.
+   * For more information, see Understanding backend services This method supports PATCH semantics
+   * and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -865,9 +874,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information. This method supports PATCH
-   * semantics and uses the JSON merge patch format and processing rules.
+   * For more information, see Understanding backend services This method supports PATCH semantics
+   * and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -896,8 +904,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information.
+   * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -912,12 +919,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
@@ -942,8 +953,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information.
+   * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -958,12 +968,16 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
-   *     services.
+   *     <p>A backend service defines how Google Cloud load balancers distribute traffic. The
+   *     backend service configuration contains a set of values, such as the protocol used to
+   *     connect to backends, various distribution and session settings, health checks, and
+   *     timeouts. These settings provide fine-grained control over how your load balancer behaves.
+   *     Most of the settings have default values that allow for easy configuration if you need to
+   *     get started quickly.
    *     <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
-   *     <p>For more information, read Backend Services.
+   *     <p>For more information, see Backend Services.
    *     <p>(== resource_for {$api_version}.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
@@ -986,8 +1000,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information.
+   * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -1016,8 +1029,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * There are several Understanding backend services to keep in mind when updating a backend
-   * service. Read Understanding backend services for more information.
+   * For more information, see Backend services overview.
    *
    * <p>Sample code:
    *

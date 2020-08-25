@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 /**
  * Represents a Cloud Router resource.
  *
- * <p>For more information about Cloud Router, read the the Cloud Router overview.
+ * <p>For more information about Cloud Router, read the Cloud Router overview.
  */
 public final class Router implements ApiMessage {
   private final RouterBgp bgp;

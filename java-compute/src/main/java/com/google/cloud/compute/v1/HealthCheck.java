@@ -32,9 +32,10 @@ import javax.annotation.Nullable;
  * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
  * [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
  *
- * <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
- * balancers and managed instance group auto-healing use global health checks. For more information,
- * read Health Check Concepts.
+ * <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+ * balancers can use either regional or global health checks. All other types of GCP load balancers
+ * and managed instance group auto-healing must use global health checks. For more information, read
+ * Health Check Concepts.
  *
  * <p>To perform health checks on network load balancers, you must use either httpHealthChecks or
  * httpsHealthChecks.
@@ -43,6 +44,7 @@ public final class HealthCheck implements ApiMessage {
   private final Integer checkIntervalSec;
   private final String creationTimestamp;
   private final String description;
+  private final GRPCHealthCheck grpcHealthCheck;
   private final Integer healthyThreshold;
   private final Http2HealthCheck http2HealthCheck;
   private final HttpHealthCheck httpHealthCheck;
@@ -62,6 +64,7 @@ public final class HealthCheck implements ApiMessage {
     this.checkIntervalSec = null;
     this.creationTimestamp = null;
     this.description = null;
+    this.grpcHealthCheck = null;
     this.healthyThreshold = null;
     this.http2HealthCheck = null;
     this.httpHealthCheck = null;
@@ -82,6 +85,7 @@ public final class HealthCheck implements ApiMessage {
       Integer checkIntervalSec,
       String creationTimestamp,
       String description,
+      GRPCHealthCheck grpcHealthCheck,
       Integer healthyThreshold,
       Http2HealthCheck http2HealthCheck,
       HttpHealthCheck httpHealthCheck,
@@ -99,6 +103,7 @@ public final class HealthCheck implements ApiMessage {
     this.checkIntervalSec = checkIntervalSec;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
+    this.grpcHealthCheck = grpcHealthCheck;
     this.healthyThreshold = healthyThreshold;
     this.http2HealthCheck = http2HealthCheck;
     this.httpHealthCheck = httpHealthCheck;
@@ -125,6 +130,9 @@ public final class HealthCheck implements ApiMessage {
     }
     if ("description".equals(fieldName)) {
       return description;
+    }
+    if ("grpcHealthCheck".equals(fieldName)) {
+      return grpcHealthCheck;
     }
     if ("healthyThreshold".equals(fieldName)) {
       return healthyThreshold;
@@ -204,6 +212,10 @@ public final class HealthCheck implements ApiMessage {
    */
   public String getDescription() {
     return description;
+  }
+
+  public GRPCHealthCheck getGrpcHealthCheck() {
+    return grpcHealthCheck;
   }
 
   /**
@@ -320,6 +332,7 @@ public final class HealthCheck implements ApiMessage {
     private Integer checkIntervalSec;
     private String creationTimestamp;
     private String description;
+    private GRPCHealthCheck grpcHealthCheck;
     private Integer healthyThreshold;
     private Http2HealthCheck http2HealthCheck;
     private HttpHealthCheck httpHealthCheck;
@@ -347,6 +360,9 @@ public final class HealthCheck implements ApiMessage {
       }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getGrpcHealthCheck() != null) {
+        this.grpcHealthCheck = other.grpcHealthCheck;
       }
       if (other.getHealthyThreshold() != null) {
         this.healthyThreshold = other.healthyThreshold;
@@ -397,6 +413,7 @@ public final class HealthCheck implements ApiMessage {
       this.checkIntervalSec = source.checkIntervalSec;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
+      this.grpcHealthCheck = source.grpcHealthCheck;
       this.healthyThreshold = source.healthyThreshold;
       this.http2HealthCheck = source.http2HealthCheck;
       this.httpHealthCheck = source.httpHealthCheck;
@@ -447,6 +464,15 @@ public final class HealthCheck implements ApiMessage {
      */
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    public GRPCHealthCheck getGrpcHealthCheck() {
+      return grpcHealthCheck;
+    }
+
+    public Builder setGrpcHealthCheck(GRPCHealthCheck grpcHealthCheck) {
+      this.grpcHealthCheck = grpcHealthCheck;
       return this;
     }
 
@@ -648,6 +674,7 @@ public final class HealthCheck implements ApiMessage {
           checkIntervalSec,
           creationTimestamp,
           description,
+          grpcHealthCheck,
           healthyThreshold,
           http2HealthCheck,
           httpHealthCheck,
@@ -669,6 +696,7 @@ public final class HealthCheck implements ApiMessage {
       newBuilder.setCheckIntervalSec(this.checkIntervalSec);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
+      newBuilder.setGrpcHealthCheck(this.grpcHealthCheck);
       newBuilder.setHealthyThreshold(this.healthyThreshold);
       newBuilder.setHttp2HealthCheck(this.http2HealthCheck);
       newBuilder.setHttpHealthCheck(this.httpHealthCheck);
@@ -698,6 +726,9 @@ public final class HealthCheck implements ApiMessage {
         + ", "
         + "description="
         + description
+        + ", "
+        + "grpcHealthCheck="
+        + grpcHealthCheck
         + ", "
         + "healthyThreshold="
         + healthyThreshold
@@ -753,6 +784,7 @@ public final class HealthCheck implements ApiMessage {
       return Objects.equals(this.checkIntervalSec, that.getCheckIntervalSec())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.grpcHealthCheck, that.getGrpcHealthCheck())
           && Objects.equals(this.healthyThreshold, that.getHealthyThreshold())
           && Objects.equals(this.http2HealthCheck, that.getHttp2HealthCheck())
           && Objects.equals(this.httpHealthCheck, that.getHttpHealthCheck())
@@ -777,6 +809,7 @@ public final class HealthCheck implements ApiMessage {
         checkIntervalSec,
         creationTimestamp,
         description,
+        grpcHealthCheck,
         healthyThreshold,
         http2HealthCheck,
         httpHealthCheck,

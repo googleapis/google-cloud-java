@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListErrorsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListManagedInstancesRegionInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagerClient.ListRegionInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -119,6 +120,16 @@ public class RegionInstanceGroupManagerSettings
         .deleteInstancesRegionInstanceGroupManagerSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * deletePerInstanceConfigsRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .deletePerInstanceConfigsRegionInstanceGroupManagerSettings();
+  }
+
   /** Returns the object with the settings used for calls to getRegionInstanceGroupManager. */
   public UnaryCallSettings<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager>
       getRegionInstanceGroupManagerSettings() {
@@ -168,11 +179,34 @@ public class RegionInstanceGroupManagerSettings
         .listManagedInstancesRegionInstanceGroupManagersSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listPerInstanceConfigsRegionInstanceGroupManagers.
+   */
+  public PagedCallSettings<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstanceConfigsResp,
+          ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsRegionInstanceGroupManagersSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .listPerInstanceConfigsRegionInstanceGroupManagersSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchRegionInstanceGroupManager. */
   public UnaryCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
       patchRegionInstanceGroupManagerSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
         .patchRegionInstanceGroupManagerSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * patchPerInstanceConfigsRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .patchPerInstanceConfigsRegionInstanceGroupManagerSettings();
   }
 
   /**
@@ -210,6 +244,16 @@ public class RegionInstanceGroupManagerSettings
       setTargetPoolsRegionInstanceGroupManagerSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
         .setTargetPoolsRegionInstanceGroupManagerSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * updatePerInstanceConfigsRegionInstanceGroupManager.
+   */
+  public UnaryCallSettings<UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .updatePerInstanceConfigsRegionInstanceGroupManagerSettings();
   }
 
   public static final RegionInstanceGroupManagerSettings create(
@@ -361,6 +405,16 @@ public class RegionInstanceGroupManagerSettings
       return getStubSettingsBuilder().deleteInstancesRegionInstanceGroupManagerSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * deletePerInstanceConfigsRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+        deletePerInstanceConfigsRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().deletePerInstanceConfigsRegionInstanceGroupManagerSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getRegionInstanceGroupManager. */
     public UnaryCallSettings.Builder<GetRegionInstanceGroupManagerHttpRequest, InstanceGroupManager>
         getRegionInstanceGroupManagerSettings() {
@@ -405,10 +459,32 @@ public class RegionInstanceGroupManagerSettings
       return getStubSettingsBuilder().listManagedInstancesRegionInstanceGroupManagersSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * listPerInstanceConfigsRegionInstanceGroupManagers.
+     */
+    public PagedCallSettings.Builder<
+            ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagersListInstanceConfigsResp,
+            ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse>
+        listPerInstanceConfigsRegionInstanceGroupManagersSettings() {
+      return getStubSettingsBuilder().listPerInstanceConfigsRegionInstanceGroupManagersSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patchRegionInstanceGroupManager. */
     public UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerHttpRequest, Operation>
         patchRegionInstanceGroupManagerSettings() {
       return getStubSettingsBuilder().patchRegionInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * patchPerInstanceConfigsRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+        patchPerInstanceConfigsRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchPerInstanceConfigsRegionInstanceGroupManagerSettings();
     }
 
     /**
@@ -444,6 +520,16 @@ public class RegionInstanceGroupManagerSettings
     public UnaryCallSettings.Builder<SetTargetPoolsRegionInstanceGroupManagerHttpRequest, Operation>
         setTargetPoolsRegionInstanceGroupManagerSettings() {
       return getStubSettingsBuilder().setTargetPoolsRegionInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updatePerInstanceConfigsRegionInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+        updatePerInstanceConfigsRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().updatePerInstanceConfigsRegionInstanceGroupManagerSettings();
     }
 
     @Override

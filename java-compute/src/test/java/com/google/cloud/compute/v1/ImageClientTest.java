@@ -447,10 +447,11 @@ public class ImageClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectGlobalImageResourceName resource =
         ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyImage(resource);
+    Policy actualResponse = client.getIamPolicyImage(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -477,10 +478,11 @@ public class ImageClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectGlobalImageResourceName resource =
           ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
 
-      client.getIamPolicyImage(resource);
+      client.getIamPolicyImage(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

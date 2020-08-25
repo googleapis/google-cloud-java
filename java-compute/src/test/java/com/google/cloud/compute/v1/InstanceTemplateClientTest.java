@@ -250,10 +250,12 @@ public class InstanceTemplateClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectGlobalInstanceTemplateResourceName resource =
         ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyInstanceTemplate(resource);
+    Policy actualResponse =
+        client.getIamPolicyInstanceTemplate(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -280,10 +282,11 @@ public class InstanceTemplateClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectGlobalInstanceTemplateResourceName resource =
           ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
 
-      client.getIamPolicyInstanceTemplate(resource);
+      client.getIamPolicyInstanceTemplate(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

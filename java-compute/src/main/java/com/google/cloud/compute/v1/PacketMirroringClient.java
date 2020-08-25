@@ -529,7 +529,12 @@ public class PacketMirroringClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param packetMirroringResource Represents a PacketMirroring resource.
+   * @param packetMirroringResource Represents a Packet Mirroring resource.
+   *     <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+   *     (VPC) network and forwards it to a collector destination, such as an instance group of an
+   *     internal TCP/UDP load balancer, for analysis or examination. For more information about
+   *     setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+   *     {$api_version}.packetMirrorings ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -559,7 +564,12 @@ public class PacketMirroringClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param packetMirroringResource Represents a PacketMirroring resource.
+   * @param packetMirroringResource Represents a Packet Mirroring resource.
+   *     <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+   *     (VPC) network and forwards it to a collector destination, such as an instance group of an
+   *     internal TCP/UDP load balancer, for analysis or examination. For more information about
+   *     setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+   *     {$api_version}.packetMirrorings ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -782,7 +792,12 @@ public class PacketMirroringClient implements BackgroundResource {
    * </code></pre>
    *
    * @param packetMirroring Name of the PacketMirroring resource to patch.
-   * @param packetMirroringResource Represents a PacketMirroring resource.
+   * @param packetMirroringResource Represents a Packet Mirroring resource.
+   *     <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+   *     (VPC) network and forwards it to a collector destination, such as an instance group of an
+   *     internal TCP/UDP load balancer, for analysis or examination. For more information about
+   *     setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+   *     {$api_version}.packetMirrorings ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -820,7 +835,12 @@ public class PacketMirroringClient implements BackgroundResource {
    * </code></pre>
    *
    * @param packetMirroring Name of the PacketMirroring resource to patch.
-   * @param packetMirroringResource Represents a PacketMirroring resource.
+   * @param packetMirroringResource Represents a Packet Mirroring resource.
+   *     <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+   *     (VPC) network and forwards it to a collector destination, such as an instance group of an
+   *     internal TCP/UDP load balancer, for analysis or examination. For more information about
+   *     setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+   *     {$api_version}.packetMirrorings ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

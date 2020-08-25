@@ -138,7 +138,7 @@ public final class CorsPolicy implements ApiMessage {
   /**
    * Specifies the regualar expression patterns that match allowed origins. For regular expression
    * grammar please see en.cppreference.com/w/cpp/regex/ecmascript An origin is allowed if it
-   * matches either allow_origins or allow_origin_regex.
+   * matches either an item in allowOrigins or an item in allowOriginRegexes.
    */
   public List<String> getAllowOriginRegexesList() {
     return allowOriginRegexes;
@@ -146,7 +146,7 @@ public final class CorsPolicy implements ApiMessage {
 
   /**
    * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed if
-   * it matches either allow_origins or allow_origin_regex.
+   * it matches either an item in allowOrigins or an item in allowOriginRegexes.
    */
   public List<String> getAllowOriginsList() {
     return allowOrigins;
@@ -315,7 +315,7 @@ public final class CorsPolicy implements ApiMessage {
     /**
      * Specifies the regualar expression patterns that match allowed origins. For regular expression
      * grammar please see en.cppreference.com/w/cpp/regex/ecmascript An origin is allowed if it
-     * matches either allow_origins or allow_origin_regex.
+     * matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public List<String> getAllowOriginRegexesList() {
       return allowOriginRegexes;
@@ -324,7 +324,7 @@ public final class CorsPolicy implements ApiMessage {
     /**
      * Specifies the regualar expression patterns that match allowed origins. For regular expression
      * grammar please see en.cppreference.com/w/cpp/regex/ecmascript An origin is allowed if it
-     * matches either allow_origins or allow_origin_regex.
+     * matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public Builder addAllAllowOriginRegexes(List<String> allowOriginRegexes) {
       if (this.allowOriginRegexes == null) {
@@ -337,7 +337,7 @@ public final class CorsPolicy implements ApiMessage {
     /**
      * Specifies the regualar expression patterns that match allowed origins. For regular expression
      * grammar please see en.cppreference.com/w/cpp/regex/ecmascript An origin is allowed if it
-     * matches either allow_origins or allow_origin_regex.
+     * matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public Builder addAllowOriginRegexes(String allowOriginRegexes) {
       if (this.allowOriginRegexes == null) {
@@ -349,7 +349,7 @@ public final class CorsPolicy implements ApiMessage {
 
     /**
      * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed
-     * if it matches either allow_origins or allow_origin_regex.
+     * if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public List<String> getAllowOriginsList() {
       return allowOrigins;
@@ -357,7 +357,7 @@ public final class CorsPolicy implements ApiMessage {
 
     /**
      * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed
-     * if it matches either allow_origins or allow_origin_regex.
+     * if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public Builder addAllAllowOrigins(List<String> allowOrigins) {
       if (this.allowOrigins == null) {
@@ -369,7 +369,7 @@ public final class CorsPolicy implements ApiMessage {
 
     /**
      * Specifies the list of origins that will be allowed to do CORS requests. An origin is allowed
-     * if it matches either allow_origins or allow_origin_regex.
+     * if it matches either an item in allowOrigins or an item in allowOriginRegexes.
      */
     public Builder addAllowOrigins(String allowOrigins) {
       if (this.allowOrigins == null) {

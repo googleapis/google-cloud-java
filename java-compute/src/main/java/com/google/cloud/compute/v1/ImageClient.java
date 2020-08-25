@@ -557,18 +557,22 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = imageClient.getIamPolicyImage(resource);
+   *   Policy response = imageClient.getIamPolicyImage(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyImage(ProjectGlobalImageResourceName resource) {
+  public final Policy getIamPolicyImage(
+      Integer optionsRequestedPolicyVersion, ProjectGlobalImageResourceName resource) {
     GetIamPolicyImageHttpRequest request =
         GetIamPolicyImageHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyImage(request);
@@ -583,18 +587,23 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = imageClient.getIamPolicyImage(resource.toString());
+   *   Policy response = imageClient.getIamPolicyImage(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyImage(String resource) {
+  public final Policy getIamPolicyImage(Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyImageHttpRequest request =
-        GetIamPolicyImageHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyImageHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyImage(request);
   }
 
@@ -607,8 +616,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = imageClient.getIamPolicyImage(request);
@@ -632,8 +643,10 @@ public class ImageClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageClient imageClient = ImageClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalImageResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = imageClient.getIamPolicyImageCallable().futureCall(request);

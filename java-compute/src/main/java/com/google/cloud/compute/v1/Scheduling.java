@@ -25,15 +25,17 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Sets the scheduling options for an Instance. NextID: 10 */
+/** Sets the scheduling options for an Instance. NextID: 12 */
 public final class Scheduling implements ApiMessage {
   private final Boolean automaticRestart;
+  private final Integer minNodeCpus;
   private final List<SchedulingNodeAffinity> nodeAffinities;
   private final String onHostMaintenance;
   private final Boolean preemptible;
 
   private Scheduling() {
     this.automaticRestart = null;
+    this.minNodeCpus = null;
     this.nodeAffinities = null;
     this.onHostMaintenance = null;
     this.preemptible = null;
@@ -41,10 +43,12 @@ public final class Scheduling implements ApiMessage {
 
   private Scheduling(
       Boolean automaticRestart,
+      Integer minNodeCpus,
       List<SchedulingNodeAffinity> nodeAffinities,
       String onHostMaintenance,
       Boolean preemptible) {
     this.automaticRestart = automaticRestart;
+    this.minNodeCpus = minNodeCpus;
     this.nodeAffinities = nodeAffinities;
     this.onHostMaintenance = onHostMaintenance;
     this.preemptible = preemptible;
@@ -54,6 +58,9 @@ public final class Scheduling implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("automaticRestart".equals(fieldName)) {
       return automaticRestart;
+    }
+    if ("minNodeCpus".equals(fieldName)) {
+      return minNodeCpus;
     }
     if ("nodeAffinities".equals(fieldName)) {
       return nodeAffinities;
@@ -98,6 +105,14 @@ public final class Scheduling implements ApiMessage {
   }
 
   /**
+   * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant
+   * node.
+   */
+  public Integer getMinNodeCpus() {
+    return minNodeCpus;
+  }
+
+  /**
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for
    * more information. Overrides reservationAffinity.
    */
@@ -115,8 +130,9 @@ public final class Scheduling implements ApiMessage {
   }
 
   /**
-   * Defines whether the instance is preemptible. This can only be set during instance creation, it
-   * cannot be set or changed after the instance has been created.
+   * Defines whether the instance is preemptible. This can only be set during instance creation or
+   * while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle
+   * for more information on the possible instance states.
    */
   public Boolean getPreemptible() {
     return preemptible;
@@ -146,6 +162,7 @@ public final class Scheduling implements ApiMessage {
 
   public static class Builder {
     private Boolean automaticRestart;
+    private Integer minNodeCpus;
     private List<SchedulingNodeAffinity> nodeAffinities;
     private String onHostMaintenance;
     private Boolean preemptible;
@@ -156,6 +173,9 @@ public final class Scheduling implements ApiMessage {
       if (other == Scheduling.getDefaultInstance()) return this;
       if (other.getAutomaticRestart() != null) {
         this.automaticRestart = other.automaticRestart;
+      }
+      if (other.getMinNodeCpus() != null) {
+        this.minNodeCpus = other.minNodeCpus;
       }
       if (other.getNodeAffinitiesList() != null) {
         this.nodeAffinities = other.nodeAffinities;
@@ -171,6 +191,7 @@ public final class Scheduling implements ApiMessage {
 
     Builder(Scheduling source) {
       this.automaticRestart = source.automaticRestart;
+      this.minNodeCpus = source.minNodeCpus;
       this.nodeAffinities = source.nodeAffinities;
       this.onHostMaintenance = source.onHostMaintenance;
       this.preemptible = source.preemptible;
@@ -198,6 +219,23 @@ public final class Scheduling implements ApiMessage {
      */
     public Builder setAutomaticRestart(Boolean automaticRestart) {
       this.automaticRestart = automaticRestart;
+      return this;
+    }
+
+    /**
+     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant
+     * node.
+     */
+    public Integer getMinNodeCpus() {
+      return minNodeCpus;
+    }
+
+    /**
+     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant
+     * node.
+     */
+    public Builder setMinNodeCpus(Integer minNodeCpus) {
+      this.minNodeCpus = minNodeCpus;
       return this;
     }
 
@@ -253,16 +291,18 @@ public final class Scheduling implements ApiMessage {
     }
 
     /**
-     * Defines whether the instance is preemptible. This can only be set during instance creation,
-     * it cannot be set or changed after the instance has been created.
+     * Defines whether the instance is preemptible. This can only be set during instance creation or
+     * while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle
+     * for more information on the possible instance states.
      */
     public Boolean getPreemptible() {
       return preemptible;
     }
 
     /**
-     * Defines whether the instance is preemptible. This can only be set during instance creation,
-     * it cannot be set or changed after the instance has been created.
+     * Defines whether the instance is preemptible. This can only be set during instance creation or
+     * while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle
+     * for more information on the possible instance states.
      */
     public Builder setPreemptible(Boolean preemptible) {
       this.preemptible = preemptible;
@@ -271,12 +311,14 @@ public final class Scheduling implements ApiMessage {
 
     public Scheduling build() {
 
-      return new Scheduling(automaticRestart, nodeAffinities, onHostMaintenance, preemptible);
+      return new Scheduling(
+          automaticRestart, minNodeCpus, nodeAffinities, onHostMaintenance, preemptible);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutomaticRestart(this.automaticRestart);
+      newBuilder.setMinNodeCpus(this.minNodeCpus);
       newBuilder.addAllNodeAffinities(this.nodeAffinities);
       newBuilder.setOnHostMaintenance(this.onHostMaintenance);
       newBuilder.setPreemptible(this.preemptible);
@@ -289,6 +331,9 @@ public final class Scheduling implements ApiMessage {
     return "Scheduling{"
         + "automaticRestart="
         + automaticRestart
+        + ", "
+        + "minNodeCpus="
+        + minNodeCpus
         + ", "
         + "nodeAffinities="
         + nodeAffinities
@@ -309,6 +354,7 @@ public final class Scheduling implements ApiMessage {
     if (o instanceof Scheduling) {
       Scheduling that = (Scheduling) o;
       return Objects.equals(this.automaticRestart, that.getAutomaticRestart())
+          && Objects.equals(this.minNodeCpus, that.getMinNodeCpus())
           && Objects.equals(this.nodeAffinities, that.getNodeAffinitiesList())
           && Objects.equals(this.onHostMaintenance, that.getOnHostMaintenance())
           && Objects.equals(this.preemptible, that.getPreemptible());
@@ -318,6 +364,7 @@ public final class Scheduling implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(automaticRestart, nodeAffinities, onHostMaintenance, preemptible);
+    return Objects.hash(
+        automaticRestart, minNodeCpus, nodeAffinities, onHostMaintenance, preemptible);
   }
 }

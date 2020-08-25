@@ -53,6 +53,7 @@ public final class InstanceGroupManager implements ApiMessage {
   private final List<NamedPort> namedPorts;
   private final String region;
   private final String selfLink;
+  private final StatefulPolicy statefulPolicy;
   private final InstanceGroupManagerStatus status;
   private final List<String> targetPools;
   private final Integer targetSize;
@@ -76,6 +77,7 @@ public final class InstanceGroupManager implements ApiMessage {
     this.namedPorts = null;
     this.region = null;
     this.selfLink = null;
+    this.statefulPolicy = null;
     this.status = null;
     this.targetPools = null;
     this.targetSize = null;
@@ -100,6 +102,7 @@ public final class InstanceGroupManager implements ApiMessage {
       List<NamedPort> namedPorts,
       String region,
       String selfLink,
+      StatefulPolicy statefulPolicy,
       InstanceGroupManagerStatus status,
       List<String> targetPools,
       Integer targetSize,
@@ -121,6 +124,7 @@ public final class InstanceGroupManager implements ApiMessage {
     this.namedPorts = namedPorts;
     this.region = region;
     this.selfLink = selfLink;
+    this.statefulPolicy = statefulPolicy;
     this.status = status;
     this.targetPools = targetPools;
     this.targetSize = targetSize;
@@ -175,6 +179,9 @@ public final class InstanceGroupManager implements ApiMessage {
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("statefulPolicy".equals(fieldName)) {
+      return statefulPolicy;
     }
     if ("status".equals(fieldName)) {
       return status;
@@ -324,6 +331,11 @@ public final class InstanceGroupManager implements ApiMessage {
     return selfLink;
   }
 
+  /** Stateful configuration for this Instanced Group Manager */
+  public StatefulPolicy getStatefulPolicy() {
+    return statefulPolicy;
+  }
+
   /** [Output Only] The status of this managed instance group. */
   public InstanceGroupManagerStatus getStatus() {
     return status;
@@ -410,6 +422,7 @@ public final class InstanceGroupManager implements ApiMessage {
     private List<NamedPort> namedPorts;
     private String region;
     private String selfLink;
+    private StatefulPolicy statefulPolicy;
     private InstanceGroupManagerStatus status;
     private List<String> targetPools;
     private Integer targetSize;
@@ -466,6 +479,9 @@ public final class InstanceGroupManager implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getStatefulPolicy() != null) {
+        this.statefulPolicy = other.statefulPolicy;
+      }
       if (other.getStatus() != null) {
         this.status = other.status;
       }
@@ -503,6 +519,7 @@ public final class InstanceGroupManager implements ApiMessage {
       this.namedPorts = source.namedPorts;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.statefulPolicy = source.statefulPolicy;
       this.status = source.status;
       this.targetPools = source.targetPools;
       this.targetSize = source.targetSize;
@@ -774,6 +791,17 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /** Stateful configuration for this Instanced Group Manager */
+    public StatefulPolicy getStatefulPolicy() {
+      return statefulPolicy;
+    }
+
+    /** Stateful configuration for this Instanced Group Manager */
+    public Builder setStatefulPolicy(StatefulPolicy statefulPolicy) {
+      this.statefulPolicy = statefulPolicy;
+      return this;
+    }
+
     /** [Output Only] The status of this managed instance group. */
     public InstanceGroupManagerStatus getStatus() {
       return status;
@@ -932,6 +960,7 @@ public final class InstanceGroupManager implements ApiMessage {
           namedPorts,
           region,
           selfLink,
+          statefulPolicy,
           status,
           targetPools,
           targetSize,
@@ -957,6 +986,7 @@ public final class InstanceGroupManager implements ApiMessage {
       newBuilder.addAllNamedPorts(this.namedPorts);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setStatefulPolicy(this.statefulPolicy);
       newBuilder.setStatus(this.status);
       newBuilder.addAllTargetPools(this.targetPools);
       newBuilder.setTargetSize(this.targetSize);
@@ -1015,6 +1045,9 @@ public final class InstanceGroupManager implements ApiMessage {
         + "selfLink="
         + selfLink
         + ", "
+        + "statefulPolicy="
+        + statefulPolicy
+        + ", "
         + "status="
         + status
         + ", "
@@ -1057,6 +1090,7 @@ public final class InstanceGroupManager implements ApiMessage {
           && Objects.equals(this.namedPorts, that.getNamedPortsList())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.statefulPolicy, that.getStatefulPolicy())
           && Objects.equals(this.status, that.getStatus())
           && Objects.equals(this.targetPools, that.getTargetPoolsList())
           && Objects.equals(this.targetSize, that.getTargetSize())
@@ -1085,6 +1119,7 @@ public final class InstanceGroupManager implements ApiMessage {
         namedPorts,
         region,
         selfLink,
+        statefulPolicy,
         status,
         targetPools,
         targetSize,

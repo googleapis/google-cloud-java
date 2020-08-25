@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionInstanceGroups.listInstances. Lists the instances in the
  * specified instance group and displays information about the named ports. Depending on the
- * specified options, this method can list all instances or only the instances that are running.
+ * specified options, this method can list all instances or only the instances that are running. The
+ * orderBy query parameter is not supported.
  */
 public final class ListInstancesRegionInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -329,10 +329,11 @@ public class ReservationClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectZoneReservationResourceName resource =
         ProjectZoneReservationResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyReservation(resource);
+    Policy actualResponse = client.getIamPolicyReservation(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -359,10 +360,11 @@ public class ReservationClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectZoneReservationResourceName resource =
           ProjectZoneReservationResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-      client.getIamPolicyReservation(resource);
+      client.getIamPolicyReservation(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

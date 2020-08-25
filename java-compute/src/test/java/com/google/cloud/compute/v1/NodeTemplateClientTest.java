@@ -251,6 +251,7 @@ public class NodeTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNodeTemplateTest() {
+    String cpuOvercommitType = "cpuOvercommitType247727959";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String id = "id3355";
@@ -264,6 +265,7 @@ public class NodeTemplateClientTest {
     String statusMessage = "statusMessage-239442758";
     NodeTemplate expectedResponse =
         NodeTemplate.newBuilder()
+            .setCpuOvercommitType(cpuOvercommitType)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setId(id)
@@ -327,10 +329,12 @@ public class NodeTemplateClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectRegionNodeTemplateResourceName resource =
         ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyNodeTemplate(resource);
+    Policy actualResponse =
+        client.getIamPolicyNodeTemplate(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -357,10 +361,11 @@ public class NodeTemplateClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectRegionNodeTemplateResourceName resource =
           ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-      client.getIamPolicyNodeTemplate(resource);
+      client.getIamPolicyNodeTemplate(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

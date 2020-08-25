@@ -628,8 +628,12 @@ public class GlobalNetworkEndpointGroupClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Network endpoint groups overview. (== resource_for
-   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+   *     they are reachable, and where they are located. For more information about using NEGs, see
+   *     Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+   *     resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+   *     {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+   *     {$api_version}.regionNetworkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -660,8 +664,12 @@ public class GlobalNetworkEndpointGroupClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Network endpoint groups overview. (== resource_for
-   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+   *     they are reachable, and where they are located. For more information about using NEGs, see
+   *     Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+   *     resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+   *     {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+   *     {$api_version}.regionNetworkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

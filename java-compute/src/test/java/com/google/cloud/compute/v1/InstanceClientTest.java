@@ -801,6 +801,7 @@ public class InstanceClientTest {
         ProjectZoneMachineTypeName.of("[PROJECT]", "[ZONE]", "[MACHINE_TYPE]");
     String minCpuPlatform = "minCpuPlatform-1367699977";
     String name = "name3373707";
+    String privateIpv6GoogleAccess = "privateIpv6GoogleAccess1122018830";
     String selfLink = "selfLink-1691268851";
     Boolean startRestricted = true;
     String status = "status-892481550";
@@ -821,6 +822,7 @@ public class InstanceClientTest {
             .setMachineType(machineType.toString())
             .setMinCpuPlatform(minCpuPlatform)
             .setName(name)
+            .setPrivateIpv6GoogleAccess(privateIpv6GoogleAccess)
             .setSelfLink(selfLink)
             .setStartRestricted(startRestricted)
             .setStatus(status)
@@ -942,10 +944,11 @@ public class InstanceClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectZoneInstanceResourceName resource =
         ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyInstance(resource);
+    Policy actualResponse = client.getIamPolicyInstance(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -972,10 +975,11 @@ public class InstanceClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectZoneInstanceResourceName resource =
           ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-      client.getIamPolicyInstance(resource);
+      client.getIamPolicyInstance(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

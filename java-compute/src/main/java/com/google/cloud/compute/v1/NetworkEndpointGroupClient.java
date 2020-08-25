@@ -797,8 +797,12 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Network endpoint groups overview. (== resource_for
-   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+   *     they are reachable, and where they are located. For more information about using NEGs, see
+   *     Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+   *     resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+   *     {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+   *     {$api_version}.regionNetworkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -830,8 +834,12 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
-   *     <p>For more information read Network endpoint groups overview. (== resource_for
-   *     {$api_version}.networkEndpointGroups ==) Next ID: 21
+   *     <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether
+   *     they are reachable, and where they are located. For more information about using NEGs, see
+   *     Setting up internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (==
+   *     resource_for {$api_version}.networkEndpointGroups ==) (== resource_for
+   *     {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+   *     {$api_version}.regionNetworkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

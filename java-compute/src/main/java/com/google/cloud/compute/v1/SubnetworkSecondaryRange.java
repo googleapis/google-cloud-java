@@ -71,7 +71,8 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
   /**
    * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
    * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and
-   * secondary IP ranges within a network. Only IPv4 is supported.
+   * secondary IP ranges within a network. Only IPv4 is supported. This may be a RFC 1918 IP range,
+   * or a privately, non-RFC 1918 IP range, not belonging to Google.
    */
   public String getIpCidrRange() {
     return ipCidrRange;
@@ -133,7 +134,8 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     /**
      * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
      * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary
-     * and secondary IP ranges within a network. Only IPv4 is supported.
+     * and secondary IP ranges within a network. Only IPv4 is supported. This may be a RFC 1918 IP
+     * range, or a privately, non-RFC 1918 IP range, not belonging to Google.
      */
     public String getIpCidrRange() {
       return ipCidrRange;
@@ -142,7 +144,8 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     /**
      * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
      * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary
-     * and secondary IP ranges within a network. Only IPv4 is supported.
+     * and secondary IP ranges within a network. Only IPv4 is supported. This may be a RFC 1918 IP
+     * range, or a privately, non-RFC 1918 IP range, not belonging to Google.
      */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;

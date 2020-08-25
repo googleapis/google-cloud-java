@@ -102,7 +102,8 @@ public final class PathRule implements ApiMessage {
    * rewrites, header transformations, etc. prior to forwarding the request to the selected backend.
    * If routeAction specifies any weightedBackendServices, service must not be set. Conversely if
    * service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction
-   * or urlRedirect must be set.
+   * or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the
+   * urlRewrite action within a pathRule's routeAction.
    */
   public HttpRouteAction getRouteAction() {
     return routeAction;
@@ -222,7 +223,8 @@ public final class PathRule implements ApiMessage {
      * rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
-     * one of routeAction or urlRedirect must be set.
+     * one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers
+     * support only the urlRewrite action within a pathRule's routeAction.
      */
     public HttpRouteAction getRouteAction() {
       return routeAction;
@@ -233,7 +235,8 @@ public final class PathRule implements ApiMessage {
      * rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
-     * one of routeAction or urlRedirect must be set.
+     * one of routeAction or urlRedirect must be set. UrlMaps for external HTTP(S) load balancers
+     * support only the urlRewrite action within a pathRule's routeAction.
      */
     public Builder setRouteAction(HttpRouteAction routeAction) {
       this.routeAction = routeAction;

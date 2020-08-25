@@ -533,10 +533,11 @@ public class NodeGroupClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectZoneNodeGroupResourceName resource =
         ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyNodeGroup(resource);
+    Policy actualResponse = client.getIamPolicyNodeGroup(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -563,10 +564,11 @@ public class NodeGroupClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectZoneNodeGroupResourceName resource =
           ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-      client.getIamPolicyNodeGroup(resource);
+      client.getIamPolicyNodeGroup(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

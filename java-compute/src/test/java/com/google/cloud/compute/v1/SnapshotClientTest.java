@@ -262,10 +262,11 @@ public class SnapshotClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectGlobalSnapshotResourceName resource =
         ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicySnapshot(resource);
+    Policy actualResponse = client.getIamPolicySnapshot(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -292,10 +293,11 @@ public class SnapshotClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectGlobalSnapshotResourceName resource =
           ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
 
-      client.getIamPolicySnapshot(resource);
+      client.getIamPolicySnapshot(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

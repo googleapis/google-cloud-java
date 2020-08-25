@@ -62,7 +62,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
     return null;
   }
 
-  /** CIDR IP address range. */
+  /** CIDR IP address range. Maximum number of src_ip_ranges allowed is 10. */
   public List<String> getSrcIpRangesList() {
     return srcIpRanges;
   }
@@ -106,12 +106,12 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       this.srcIpRanges = source.srcIpRanges;
     }
 
-    /** CIDR IP address range. */
+    /** CIDR IP address range. Maximum number of src_ip_ranges allowed is 10. */
     public List<String> getSrcIpRangesList() {
       return srcIpRanges;
     }
 
-    /** CIDR IP address range. */
+    /** CIDR IP address range. Maximum number of src_ip_ranges allowed is 10. */
     public Builder addAllSrcIpRanges(List<String> srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();
@@ -120,7 +120,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       return this;
     }
 
-    /** CIDR IP address range. */
+    /** CIDR IP address range. Maximum number of src_ip_ranges allowed is 10. */
     public Builder addSrcIpRanges(String srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();

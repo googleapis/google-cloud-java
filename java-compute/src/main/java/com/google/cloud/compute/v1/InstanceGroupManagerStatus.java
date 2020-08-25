@@ -27,18 +27,24 @@ import javax.annotation.Nullable;
 public final class InstanceGroupManagerStatus implements ApiMessage {
   private final String autoscaler;
   private final Boolean isStable;
+  private final InstanceGroupManagerStatusStateful stateful;
   private final InstanceGroupManagerStatusVersionTarget versionTarget;
 
   private InstanceGroupManagerStatus() {
     this.autoscaler = null;
     this.isStable = null;
+    this.stateful = null;
     this.versionTarget = null;
   }
 
   private InstanceGroupManagerStatus(
-      String autoscaler, Boolean isStable, InstanceGroupManagerStatusVersionTarget versionTarget) {
+      String autoscaler,
+      Boolean isStable,
+      InstanceGroupManagerStatusStateful stateful,
+      InstanceGroupManagerStatusVersionTarget versionTarget) {
     this.autoscaler = autoscaler;
     this.isStable = isStable;
+    this.stateful = stateful;
     this.versionTarget = versionTarget;
   }
 
@@ -49,6 +55,9 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     }
     if ("isStable".equals(fieldName)) {
       return isStable;
+    }
+    if ("stateful".equals(fieldName)) {
+      return stateful;
     }
     if ("versionTarget".equals(fieldName)) {
       return versionTarget;
@@ -90,6 +99,11 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     return isStable;
   }
 
+  /** [Output Only] Stateful status of the given Instance Group Manager. */
+  public InstanceGroupManagerStatusStateful getStateful() {
+    return stateful;
+  }
+
   /**
    * [Output Only] A status of consistency of Instances' versions with their target version
    * specified by version field on Instance Group Manager.
@@ -123,6 +137,7 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
   public static class Builder {
     private String autoscaler;
     private Boolean isStable;
+    private InstanceGroupManagerStatusStateful stateful;
     private InstanceGroupManagerStatusVersionTarget versionTarget;
 
     Builder() {}
@@ -135,6 +150,9 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
       if (other.getIsStable() != null) {
         this.isStable = other.isStable;
       }
+      if (other.getStateful() != null) {
+        this.stateful = other.stateful;
+      }
       if (other.getVersionTarget() != null) {
         this.versionTarget = other.versionTarget;
       }
@@ -144,6 +162,7 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     Builder(InstanceGroupManagerStatus source) {
       this.autoscaler = source.autoscaler;
       this.isStable = source.isStable;
+      this.stateful = source.stateful;
       this.versionTarget = source.versionTarget;
     }
 
@@ -181,6 +200,17 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Stateful status of the given Instance Group Manager. */
+    public InstanceGroupManagerStatusStateful getStateful() {
+      return stateful;
+    }
+
+    /** [Output Only] Stateful status of the given Instance Group Manager. */
+    public Builder setStateful(InstanceGroupManagerStatusStateful stateful) {
+      this.stateful = stateful;
+      return this;
+    }
+
     /**
      * [Output Only] A status of consistency of Instances' versions with their target version
      * specified by version field on Instance Group Manager.
@@ -200,13 +230,14 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
 
     public InstanceGroupManagerStatus build() {
 
-      return new InstanceGroupManagerStatus(autoscaler, isStable, versionTarget);
+      return new InstanceGroupManagerStatus(autoscaler, isStable, stateful, versionTarget);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutoscaler(this.autoscaler);
       newBuilder.setIsStable(this.isStable);
+      newBuilder.setStateful(this.stateful);
       newBuilder.setVersionTarget(this.versionTarget);
       return newBuilder;
     }
@@ -220,6 +251,9 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
         + ", "
         + "isStable="
         + isStable
+        + ", "
+        + "stateful="
+        + stateful
         + ", "
         + "versionTarget="
         + versionTarget
@@ -235,6 +269,7 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
       InstanceGroupManagerStatus that = (InstanceGroupManagerStatus) o;
       return Objects.equals(this.autoscaler, that.getAutoscaler())
           && Objects.equals(this.isStable, that.getIsStable())
+          && Objects.equals(this.stateful, that.getStateful())
           && Objects.equals(this.versionTarget, that.getVersionTarget());
     }
     return false;
@@ -242,6 +277,6 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoscaler, isStable, versionTarget);
+    return Objects.hash(autoscaler, isStable, stateful, versionTarget);
   }
 }

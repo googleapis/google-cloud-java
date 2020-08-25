@@ -66,6 +66,8 @@ public final class Disk implements ApiMessage {
   private final List<String> resourcePolicies;
   private final String selfLink;
   private final String sizeGb;
+  private final String sourceDisk;
+  private final String sourceDiskId;
   private final String sourceImage;
   private final CustomerEncryptionKey sourceImageEncryptionKey;
   private final String sourceImageId;
@@ -98,6 +100,8 @@ public final class Disk implements ApiMessage {
     this.resourcePolicies = null;
     this.selfLink = null;
     this.sizeGb = null;
+    this.sourceDisk = null;
+    this.sourceDiskId = null;
     this.sourceImage = null;
     this.sourceImageEncryptionKey = null;
     this.sourceImageId = null;
@@ -131,6 +135,8 @@ public final class Disk implements ApiMessage {
       List<String> resourcePolicies,
       String selfLink,
       String sizeGb,
+      String sourceDisk,
+      String sourceDiskId,
       String sourceImage,
       CustomerEncryptionKey sourceImageEncryptionKey,
       String sourceImageId,
@@ -161,6 +167,8 @@ public final class Disk implements ApiMessage {
     this.resourcePolicies = resourcePolicies;
     this.selfLink = selfLink;
     this.sizeGb = sizeGb;
+    this.sourceDisk = sourceDisk;
+    this.sourceDiskId = sourceDiskId;
     this.sourceImage = sourceImage;
     this.sourceImageEncryptionKey = sourceImageEncryptionKey;
     this.sourceImageId = sourceImageId;
@@ -234,6 +242,12 @@ public final class Disk implements ApiMessage {
     }
     if ("sizeGb".equals(fieldName)) {
       return sizeGb;
+    }
+    if ("sourceDisk".equals(fieldName)) {
+      return sourceDisk;
+    }
+    if ("sourceDiskId".equals(fieldName)) {
+      return sourceDiskId;
     }
     if ("sourceImage".equals(fieldName)) {
       return sourceImage;
@@ -391,9 +405,9 @@ public final class Disk implements ApiMessage {
 
   /**
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default
-   * value is used. Currently supported sizes are 4096 and 16384, other sizes may be added in the
-   * future. If an unsupported value is requested, the error message will list the supported values
-   * for the caller's project.
+   * value is used. The currently supported size is 4096, other sizes may be added in the future. If
+   * an unsupported value is requested, the error message will list the supported values for the
+   * caller's project.
    */
   public String getPhysicalBlockSizeBytes() {
     return physicalBlockSizeBytes;
@@ -427,16 +441,35 @@ public final class Disk implements ApiMessage {
   }
 
   /**
-   * Size of the persistent disk, specified in GB. You can specify this field when creating a
-   * persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to
-   * create an empty persistent disk.
+   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk
+   * using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create
+   * an empty persistent disk.
    *
-   * <p>If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb must
-   * not be less than the size of the sourceImage or the size of the snapshot. Acceptable values are
-   * 1 to 65536, inclusive.
+   * <p>If you specify this field along with a source, the value of sizeGb must not be less than the
+   * size of the source. Acceptable values are 1 to 65536, inclusive.
    */
   public String getSizeGb() {
     return sizeGb;
+  }
+
+  /**
+   * The source disk used to create this disk. You can provide this as a partial or full URL to the
+   * resource. For example, the following are valid values: -
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+   * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+   */
+  public String getSourceDisk() {
+    return sourceDisk;
+  }
+
+  /**
+   * [Output Only] The unique ID of the disk used to create this disk. This value identifies the
+   * exact disk that was used to create this persistent disk. For example, if you created the
+   * persistent disk from a disk that was later deleted and recreated under the same name, the
+   * source disk ID would identify the exact version of the disk that was used.
+   */
+  public String getSourceDiskId() {
+    return sourceDiskId;
   }
 
   /**
@@ -584,6 +617,8 @@ public final class Disk implements ApiMessage {
     private List<String> resourcePolicies;
     private String selfLink;
     private String sizeGb;
+    private String sourceDisk;
+    private String sourceDiskId;
     private String sourceImage;
     private CustomerEncryptionKey sourceImageEncryptionKey;
     private String sourceImageId;
@@ -659,6 +694,12 @@ public final class Disk implements ApiMessage {
       if (other.getSizeGb() != null) {
         this.sizeGb = other.sizeGb;
       }
+      if (other.getSourceDisk() != null) {
+        this.sourceDisk = other.sourceDisk;
+      }
+      if (other.getSourceDiskId() != null) {
+        this.sourceDiskId = other.sourceDiskId;
+      }
       if (other.getSourceImage() != null) {
         this.sourceImage = other.sourceImage;
       }
@@ -713,6 +754,8 @@ public final class Disk implements ApiMessage {
       this.resourcePolicies = source.resourcePolicies;
       this.selfLink = source.selfLink;
       this.sizeGb = source.sizeGb;
+      this.sourceDisk = source.sourceDisk;
+      this.sourceDiskId = source.sourceDiskId;
       this.sourceImage = source.sourceImage;
       this.sourceImageEncryptionKey = source.sourceImageEncryptionKey;
       this.sourceImageId = source.sourceImageId;
@@ -988,9 +1031,9 @@ public final class Disk implements ApiMessage {
 
     /**
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default
-     * value is used. Currently supported sizes are 4096 and 16384, other sizes may be added in the
-     * future. If an unsupported value is requested, the error message will list the supported
-     * values for the caller's project.
+     * value is used. The currently supported size is 4096, other sizes may be added in the future.
+     * If an unsupported value is requested, the error message will list the supported values for
+     * the caller's project.
      */
     public String getPhysicalBlockSizeBytes() {
       return physicalBlockSizeBytes;
@@ -998,9 +1041,9 @@ public final class Disk implements ApiMessage {
 
     /**
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default
-     * value is used. Currently supported sizes are 4096 and 16384, other sizes may be added in the
-     * future. If an unsupported value is requested, the error message will list the supported
-     * values for the caller's project.
+     * value is used. The currently supported size is 4096, other sizes may be added in the future.
+     * If an unsupported value is requested, the error message will list the supported values for
+     * the caller's project.
      */
     public Builder setPhysicalBlockSizeBytes(String physicalBlockSizeBytes) {
       this.physicalBlockSizeBytes = physicalBlockSizeBytes;
@@ -1093,29 +1136,69 @@ public final class Disk implements ApiMessage {
     }
 
     /**
-     * Size of the persistent disk, specified in GB. You can specify this field when creating a
-     * persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent
+     * disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to
      * create an empty persistent disk.
      *
-     * <p>If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb
-     * must not be less than the size of the sourceImage or the size of the snapshot. Acceptable
-     * values are 1 to 65536, inclusive.
+     * <p>If you specify this field along with a source, the value of sizeGb must not be less than
+     * the size of the source. Acceptable values are 1 to 65536, inclusive.
      */
     public String getSizeGb() {
       return sizeGb;
     }
 
     /**
-     * Size of the persistent disk, specified in GB. You can specify this field when creating a
-     * persistent disk using the sourceImage or sourceSnapshot parameter, or specify it alone to
+     * Size, in GB, of the persistent disk. You can specify this field when creating a persistent
+     * disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to
      * create an empty persistent disk.
      *
-     * <p>If you specify this field along with sourceImage or sourceSnapshot, the value of sizeGb
-     * must not be less than the size of the sourceImage or the size of the snapshot. Acceptable
-     * values are 1 to 65536, inclusive.
+     * <p>If you specify this field along with a source, the value of sizeGb must not be less than
+     * the size of the source. Acceptable values are 1 to 65536, inclusive.
      */
     public Builder setSizeGb(String sizeGb) {
       this.sizeGb = sizeGb;
+      return this;
+    }
+
+    /**
+     * The source disk used to create this disk. You can provide this as a partial or full URL to
+     * the resource. For example, the following are valid values: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+     * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+     */
+    public String getSourceDisk() {
+      return sourceDisk;
+    }
+
+    /**
+     * The source disk used to create this disk. You can provide this as a partial or full URL to
+     * the resource. For example, the following are valid values: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+     * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+     */
+    public Builder setSourceDisk(String sourceDisk) {
+      this.sourceDisk = sourceDisk;
+      return this;
+    }
+
+    /**
+     * [Output Only] The unique ID of the disk used to create this disk. This value identifies the
+     * exact disk that was used to create this persistent disk. For example, if you created the
+     * persistent disk from a disk that was later deleted and recreated under the same name, the
+     * source disk ID would identify the exact version of the disk that was used.
+     */
+    public String getSourceDiskId() {
+      return sourceDiskId;
+    }
+
+    /**
+     * [Output Only] The unique ID of the disk used to create this disk. This value identifies the
+     * exact disk that was used to create this persistent disk. For example, if you created the
+     * persistent disk from a disk that was later deleted and recreated under the same name, the
+     * source disk ID would identify the exact version of the disk that was used.
+     */
+    public Builder setSourceDiskId(String sourceDiskId) {
+      this.sourceDiskId = sourceDiskId;
       return this;
     }
 
@@ -1372,6 +1455,8 @@ public final class Disk implements ApiMessage {
           resourcePolicies,
           selfLink,
           sizeGb,
+          sourceDisk,
+          sourceDiskId,
           sourceImage,
           sourceImageEncryptionKey,
           sourceImageId,
@@ -1406,6 +1491,8 @@ public final class Disk implements ApiMessage {
       newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSizeGb(this.sizeGb);
+      newBuilder.setSourceDisk(this.sourceDisk);
+      newBuilder.setSourceDiskId(this.sourceDiskId);
       newBuilder.setSourceImage(this.sourceImage);
       newBuilder.setSourceImageEncryptionKey(this.sourceImageEncryptionKey);
       newBuilder.setSourceImageId(this.sourceImageId);
@@ -1483,6 +1570,12 @@ public final class Disk implements ApiMessage {
         + "sizeGb="
         + sizeGb
         + ", "
+        + "sourceDisk="
+        + sourceDisk
+        + ", "
+        + "sourceDiskId="
+        + sourceDiskId
+        + ", "
         + "sourceImage="
         + sourceImage
         + ", "
@@ -1542,6 +1635,8 @@ public final class Disk implements ApiMessage {
           && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sizeGb, that.getSizeGb())
+          && Objects.equals(this.sourceDisk, that.getSourceDisk())
+          && Objects.equals(this.sourceDiskId, that.getSourceDiskId())
           && Objects.equals(this.sourceImage, that.getSourceImage())
           && Objects.equals(this.sourceImageEncryptionKey, that.getSourceImageEncryptionKey())
           && Objects.equals(this.sourceImageId, that.getSourceImageId())
@@ -1579,6 +1674,8 @@ public final class Disk implements ApiMessage {
         resourcePolicies,
         selfLink,
         sizeGb,
+        sourceDisk,
+        sourceDiskId,
         sourceImage,
         sourceImageEncryptionKey,
         sourceImageId,

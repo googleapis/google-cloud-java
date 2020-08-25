@@ -428,9 +428,10 @@ public final class Image implements ApiMessage {
   }
 
   /**
-   * URL of the source image used to create this image. This can be a full or valid partial URL. You
-   * must provide exactly one of: - this property, or - the rawDisk.source property, or - the
-   * sourceDisk property in order to create an image.
+   * URL of the source image used to create this image.
+   *
+   * <p>In order to create an image, you must provide the full or partial URL of one of the
+   * following: - The selfLink URL - This property - The rawDisk.source URL - The sourceDisk URL
    */
   public String getSourceImage() {
     return sourceImage;
@@ -454,9 +455,11 @@ public final class Image implements ApiMessage {
   }
 
   /**
-   * URL of the source snapshot used to create this image. This can be a full or valid partial URL.
-   * You must provide exactly one of: - this property, or - the sourceImage property, or - the
-   * rawDisk.source property, or - the sourceDisk property in order to create an image.
+   * URL of the source snapshot used to create this image.
+   *
+   * <p>In order to create an image, you must provide the full or partial URL of one of the
+   * following: - The selfLink URL - This property - The sourceImage URL - The rawDisk.source URL -
+   * The sourceDisk URL
    */
   public String getSourceSnapshot() {
     return sourceSnapshot;
@@ -1054,18 +1057,20 @@ public final class Image implements ApiMessage {
     }
 
     /**
-     * URL of the source image used to create this image. This can be a full or valid partial URL.
-     * You must provide exactly one of: - this property, or - the rawDisk.source property, or - the
-     * sourceDisk property in order to create an image.
+     * URL of the source image used to create this image.
+     *
+     * <p>In order to create an image, you must provide the full or partial URL of one of the
+     * following: - The selfLink URL - This property - The rawDisk.source URL - The sourceDisk URL
      */
     public String getSourceImage() {
       return sourceImage;
     }
 
     /**
-     * URL of the source image used to create this image. This can be a full or valid partial URL.
-     * You must provide exactly one of: - this property, or - the rawDisk.source property, or - the
-     * sourceDisk property in order to create an image.
+     * URL of the source image used to create this image.
+     *
+     * <p>In order to create an image, you must provide the full or partial URL of one of the
+     * following: - The selfLink URL - This property - The rawDisk.source URL - The sourceDisk URL
      */
     public Builder setSourceImage(String sourceImage) {
       this.sourceImage = sourceImage;
@@ -1109,18 +1114,22 @@ public final class Image implements ApiMessage {
     }
 
     /**
-     * URL of the source snapshot used to create this image. This can be a full or valid partial
-     * URL. You must provide exactly one of: - this property, or - the sourceImage property, or -
-     * the rawDisk.source property, or - the sourceDisk property in order to create an image.
+     * URL of the source snapshot used to create this image.
+     *
+     * <p>In order to create an image, you must provide the full or partial URL of one of the
+     * following: - The selfLink URL - This property - The sourceImage URL - The rawDisk.source URL
+     * - The sourceDisk URL
      */
     public String getSourceSnapshot() {
       return sourceSnapshot;
     }
 
     /**
-     * URL of the source snapshot used to create this image. This can be a full or valid partial
-     * URL. You must provide exactly one of: - this property, or - the sourceImage property, or -
-     * the rawDisk.source property, or - the sourceDisk property in order to create an image.
+     * URL of the source snapshot used to create this image.
+     *
+     * <p>In order to create an image, you must provide the full or partial URL of one of the
+     * following: - The selfLink URL - This property - The sourceImage URL - The rawDisk.source URL
+     * - The sourceDisk URL
      */
     public Builder setSourceSnapshot(String sourceSnapshot) {
       this.sourceSnapshot = sourceSnapshot;

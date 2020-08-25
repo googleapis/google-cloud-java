@@ -90,6 +90,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
     return ((RegionDiskStubSettings) getStubSettings()).getRegionDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyRegionDisk. */
+  public UnaryCallSettings<GetIamPolicyRegionDiskHttpRequest, Policy>
+      getIamPolicyRegionDiskSettings() {
+    return ((RegionDiskStubSettings) getStubSettings()).getIamPolicyRegionDiskSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertRegionDisk. */
   public UnaryCallSettings<InsertRegionDiskHttpRequest, Operation> insertRegionDiskSettings() {
     return ((RegionDiskStubSettings) getStubSettings()).insertRegionDiskSettings();
@@ -110,6 +116,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
   /** Returns the object with the settings used for calls to resizeRegionDisk. */
   public UnaryCallSettings<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskSettings() {
     return ((RegionDiskStubSettings) getStubSettings()).resizeRegionDiskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyRegionDisk. */
+  public UnaryCallSettings<SetIamPolicyRegionDiskHttpRequest, Policy>
+      setIamPolicyRegionDiskSettings() {
+    return ((RegionDiskStubSettings) getStubSettings()).setIamPolicyRegionDiskSettings();
   }
 
   /** Returns the object with the settings used for calls to setLabelsRegionDisk. */
@@ -248,6 +260,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
       return getStubSettingsBuilder().getRegionDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyRegionDisk. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionDiskHttpRequest, Policy>
+        getIamPolicyRegionDiskSettings() {
+      return getStubSettingsBuilder().getIamPolicyRegionDiskSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertRegionDisk. */
     public UnaryCallSettings.Builder<InsertRegionDiskHttpRequest, Operation>
         insertRegionDiskSettings() {
@@ -271,6 +289,12 @@ public class RegionDiskSettings extends ClientSettings<RegionDiskSettings> {
     public UnaryCallSettings.Builder<ResizeRegionDiskHttpRequest, Operation>
         resizeRegionDiskSettings() {
       return getStubSettingsBuilder().resizeRegionDiskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyRegionDisk. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionDiskHttpRequest, Policy>
+        setIamPolicyRegionDiskSettings() {
+      return getStubSettingsBuilder().setIamPolicyRegionDiskSettings();
     }
 
     /** Returns the builder for the settings used for calls to setLabelsRegionDisk. */

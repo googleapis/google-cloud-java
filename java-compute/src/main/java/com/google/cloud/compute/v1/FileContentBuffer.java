@@ -72,6 +72,7 @@ public final class FileContentBuffer implements ApiMessage {
     return content;
   }
 
+  /** The file type of source file. */
   public String getFileType() {
     return fileType;
   }
@@ -131,10 +132,12 @@ public final class FileContentBuffer implements ApiMessage {
       return this;
     }
 
+    /** The file type of source file. */
     public String getFileType() {
       return fileType;
     }
 
+    /** The file type of source file. */
     public Builder setFileType(String fileType) {
       this.fileType = fileType;
       return this;

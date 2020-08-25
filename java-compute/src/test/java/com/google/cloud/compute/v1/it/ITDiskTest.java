@@ -17,21 +17,7 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.compute.v1.CreateSnapshotDiskHttpRequest;
-import com.google.cloud.compute.v1.Disk;
-import com.google.cloud.compute.v1.DiskClient;
-import com.google.cloud.compute.v1.DiskSettings;
-import com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest;
-import com.google.cloud.compute.v1.DisksRemoveResourcePoliciesRequest;
-import com.google.cloud.compute.v1.DisksResizeRequest;
-import com.google.cloud.compute.v1.DisksScopedList;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.Policy;
-import com.google.cloud.compute.v1.ProjectZoneDiskName;
-import com.google.cloud.compute.v1.ProjectZoneDiskResourceName;
-import com.google.cloud.compute.v1.RegionDiskClient;
-import com.google.cloud.compute.v1.RegionDiskSettings;
-import com.google.cloud.compute.v1.Snapshot;
+import com.google.cloud.compute.v1.*;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
@@ -158,7 +144,11 @@ public class ITDiskTest extends BaseTest {
 
   @Test
   public void getIamPolicyDiskTest() {
-    Policy policy = diskClient.getIamPolicyDisk(PROJECT_ZONE_DISK_RESOURCE_NAME);
+    Policy policy =
+        diskClient.getIamPolicyDisk(
+            GetIamPolicyDiskHttpRequest.newBuilder()
+                .setResource(PROJECT_ZONE_DISK_RESOURCE_NAME.toString())
+                .build());
     assertThat(policy).isNotNull();
     assertThat(policy.getEtag()).isEqualTo("ACAB");
   }

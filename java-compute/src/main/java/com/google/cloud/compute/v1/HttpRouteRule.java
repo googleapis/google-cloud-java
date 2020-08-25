@@ -122,11 +122,19 @@ public final class HttpRouteRule implements ApiMessage {
    * backendService. The headerAction specified here are applied before the matching
    * pathMatchers[].headerAction and after
    * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
+   * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme
+   * set to EXTERNAL.
    */
   public HttpHeaderAction getHeaderAction() {
     return headerAction;
   }
 
+  /**
+   * The list of criteria for matching attributes of a request to this routeRule. This list has OR
+   * semantics: the request matches this routeRule when any of the matchRules are satisfied. However
+   * predicates within a given matchRule have AND semantics. All predicates within a matchRule must
+   * match for the request to match the rule.
+   */
   public List<HttpRouteRuleMatch> getMatchRulesList() {
     return matchRules;
   }
@@ -151,7 +159,8 @@ public final class HttpRouteRule implements ApiMessage {
    * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
    * backend. If routeAction specifies any weightedBackendServices, service must not be set.
    * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one
-   * of urlRedirect, service or routeAction.weightedBackendService must be set.
+   * of urlRedirect, service or routeAction.weightedBackendService must be set. UrlMaps for external
+   * HTTP(S) load balancers support only the urlRewrite action within a routeRule's routeAction.
    */
   public HttpRouteAction getRouteAction() {
     return routeAction;
@@ -268,6 +277,8 @@ public final class HttpRouteRule implements ApiMessage {
      * backendService. The headerAction specified here are applied before the matching
      * pathMatchers[].headerAction and after
      * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
+     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme
+     * set to EXTERNAL.
      */
     public HttpHeaderAction getHeaderAction() {
       return headerAction;
@@ -278,16 +289,30 @@ public final class HttpRouteRule implements ApiMessage {
      * backendService. The headerAction specified here are applied before the matching
      * pathMatchers[].headerAction and after
      * pathMatchers[].routeRules[].routeAction.weightedBackendService.backendServiceWeightAction[].headerAction
+     * Note that headerAction is not supported for Loadbalancers that have their loadBalancingScheme
+     * set to EXTERNAL.
      */
     public Builder setHeaderAction(HttpHeaderAction headerAction) {
       this.headerAction = headerAction;
       return this;
     }
 
+    /**
+     * The list of criteria for matching attributes of a request to this routeRule. This list has OR
+     * semantics: the request matches this routeRule when any of the matchRules are satisfied.
+     * However predicates within a given matchRule have AND semantics. All predicates within a
+     * matchRule must match for the request to match the rule.
+     */
     public List<HttpRouteRuleMatch> getMatchRulesList() {
       return matchRules;
     }
 
+    /**
+     * The list of criteria for matching attributes of a request to this routeRule. This list has OR
+     * semantics: the request matches this routeRule when any of the matchRules are satisfied.
+     * However predicates within a given matchRule have AND semantics. All predicates within a
+     * matchRule must match for the request to match the rule.
+     */
     public Builder addAllMatchRules(List<HttpRouteRuleMatch> matchRules) {
       if (this.matchRules == null) {
         this.matchRules = new LinkedList<>();
@@ -296,6 +321,12 @@ public final class HttpRouteRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of criteria for matching attributes of a request to this routeRule. This list has OR
+     * semantics: the request matches this routeRule when any of the matchRules are satisfied.
+     * However predicates within a given matchRule have AND semantics. All predicates within a
+     * matchRule must match for the request to match the rule.
+     */
     public Builder addMatchRules(HttpRouteRuleMatch matchRules) {
       if (this.matchRules == null) {
         this.matchRules = new LinkedList<>();
@@ -340,7 +371,9 @@ public final class HttpRouteRule implements ApiMessage {
      * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
-     * one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * one of urlRedirect, service or routeAction.weightedBackendService must be set. UrlMaps for
+     * external HTTP(S) load balancers support only the urlRewrite action within a routeRule's
+     * routeAction.
      */
     public HttpRouteAction getRouteAction() {
       return routeAction;
@@ -351,7 +384,9 @@ public final class HttpRouteRule implements ApiMessage {
      * URL rewrites, header transformations, etc. prior to forwarding the request to the selected
      * backend. If routeAction specifies any weightedBackendServices, service must not be set.
      * Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only
-     * one of urlRedirect, service or routeAction.weightedBackendService must be set.
+     * one of urlRedirect, service or routeAction.weightedBackendService must be set. UrlMaps for
+     * external HTTP(S) load balancers support only the urlRewrite action within a routeRule's
+     * routeAction.
      */
     public Builder setRouteAction(HttpRouteAction routeAction) {
       this.routeAction = routeAction;

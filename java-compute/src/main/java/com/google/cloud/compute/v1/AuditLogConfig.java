@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * Provides the configuration for logging a type of permissions. Example:
  *
  * <p>{ "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [
- * "user:jose{@literal @}example.com" ] }, { "log_type": "DATA_WRITE", } ] }
+ * "user:jose{@literal @}example.com" ] }, { "log_type": "DATA_WRITE" } ] }
  *
  * <p>This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose{@literal @}example.com
  * from DATA_READ logging.

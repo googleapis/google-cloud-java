@@ -847,6 +847,129 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes selected per-instance configs for the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.deletePerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagerDeleteInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerDeleteInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.deletePerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deletePerInstanceConfigsRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagerDeleteInstanceConfigReq
+          regionInstanceGroupManagerDeleteInstanceConfigReqResource) {
+    DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
+                regionInstanceGroupManagerDeleteInstanceConfigReqResource)
+            .build();
+    return deletePerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes selected per-instance configs for the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.deletePerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagerDeleteInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerDeleteInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.deletePerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deletePerInstanceConfigsRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagerDeleteInstanceConfigReq
+          regionInstanceGroupManagerDeleteInstanceConfigReqResource) {
+    DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
+                regionInstanceGroupManagerDeleteInstanceConfigReqResource)
+            .build();
+    return deletePerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes selected per-instance configs for the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
+   *   DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.deletePerInstanceConfigsRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation deletePerInstanceConfigsRegionInstanceGroupManager(
+      DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request) {
+    return deletePerInstanceConfigsRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes selected per-instance configs for the managed instance group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
+   *   DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.deletePerInstanceConfigsRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          DeletePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsRegionInstanceGroupManagerCallable() {
+    return stub.deletePerInstanceConfigsRegionInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
@@ -1238,6 +1361,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
@@ -1270,6 +1394,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
@@ -1300,6 +1425,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
@@ -1328,6 +1454,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
@@ -1356,6 +1483,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists all errors thrown by actions on instances for a given regional managed instance group.
+   * The filter and orderBy query parameters are not supported.
    *
    * <p>Sample code:
    *
@@ -1392,6 +1520,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
+   * The orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
@@ -1423,6 +1552,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
+   * The orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
@@ -1452,6 +1582,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
+   * The orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
@@ -1481,6 +1612,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
+   * The orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
@@ -1510,6 +1642,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
+   * The orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
@@ -1540,6 +1673,162 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersCallable() {
     return stub.listManagedInstancesRegionInstanceGroupManagersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
+   * parameter is not supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   for (PerInstanceConfig element : regionInstanceGroupManagerClient.listPerInstanceConfigsRegionInstanceGroupManagers(instanceGroupManager).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse
+      listPerInstanceConfigsRegionInstanceGroupManagers(
+          ProjectRegionInstanceGroupManagerName instanceGroupManager) {
+    ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request =
+        ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .build();
+    return listPerInstanceConfigsRegionInstanceGroupManagers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
+   * parameter is not supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   for (PerInstanceConfig element : regionInstanceGroupManagerClient.listPerInstanceConfigsRegionInstanceGroupManagers(instanceGroupManager.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse
+      listPerInstanceConfigsRegionInstanceGroupManagers(String instanceGroupManager) {
+    ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request =
+        ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .build();
+    return listPerInstanceConfigsRegionInstanceGroupManagers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
+   * parameter is not supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   for (PerInstanceConfig element : regionInstanceGroupManagerClient.listPerInstanceConfigsRegionInstanceGroupManagers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse
+      listPerInstanceConfigsRegionInstanceGroupManagers(
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request) {
+    return listPerInstanceConfigsRegionInstanceGroupManagersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
+   * parameter is not supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   ApiFuture&lt;ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse&gt; future = regionInstanceGroupManagerClient.listPerInstanceConfigsRegionInstanceGroupManagersPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (PerInstanceConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsRegionInstanceGroupManagersPagedCallable() {
+    return stub.listPerInstanceConfigsRegionInstanceGroupManagersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
+   * parameter is not supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest request = ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .build();
+   *   while (true) {
+   *     RegionInstanceGroupManagersListInstanceConfigsResp response = regionInstanceGroupManagerClient.listPerInstanceConfigsRegionInstanceGroupManagersCallable().call(request);
+   *     for (PerInstanceConfig element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstanceConfigsResp>
+      listPerInstanceConfigsRegionInstanceGroupManagersCallable() {
+    return stub.listPerInstanceConfigsRegionInstanceGroupManagersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1700,6 +1989,137 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   public final UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
       patchRegionInstanceGroupManagerCallable() {
     return stub.patchRegionInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
+   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
+   * or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.patchPerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagerPatchInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerPatchInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.patchPerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchPerInstanceConfigsRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagerPatchInstanceConfigReq
+          regionInstanceGroupManagerPatchInstanceConfigReqResource) {
+    PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
+                regionInstanceGroupManagerPatchInstanceConfigReqResource)
+            .build();
+    return patchPerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
+   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
+   * or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.patchPerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagerPatchInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerPatchInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.patchPerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchPerInstanceConfigsRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagerPatchInstanceConfigReq
+          regionInstanceGroupManagerPatchInstanceConfigReqResource) {
+    PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
+                regionInstanceGroupManagerPatchInstanceConfigReqResource)
+            .build();
+    return patchPerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
+   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
+   * or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
+   *   PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.patchPerInstanceConfigsRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchPerInstanceConfigsRegionInstanceGroupManager(
+      PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest request) {
+    return patchPerInstanceConfigsRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
+   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
+   * or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
+   *   PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.patchPerInstanceConfigsRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          PatchPerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsRegionInstanceGroupManagerCallable() {
+    return stub.patchPerInstanceConfigsRegionInstanceGroupManagerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2256,6 +2676,137 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     return stub.setTargetPoolsRegionInstanceGroupManagerCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or update (for the ones that already exist) per-instance configs for the managed
+   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
+   * perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.updatePerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager, regionInstanceGroupManagerUpdateInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerUpdateInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.updatePerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePerInstanceConfigsRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      RegionInstanceGroupManagerUpdateInstanceConfigReq
+          regionInstanceGroupManagerUpdateInstanceConfigReqResource) {
+    UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(
+                regionInstanceGroupManagerUpdateInstanceConfigReqResource)
+            .build();
+    return updatePerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or update (for the ones that already exist) per-instance configs for the managed
+   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
+   * perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
+   *   Operation response = regionInstanceGroupManagerClient.updatePerInstanceConfigsRegionInstanceGroupManager(instanceGroupManager.toString(), regionInstanceGroupManagerUpdateInstanceConfigReqResource);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the managed instance group. It should conform to
+   *     RFC1035.
+   * @param regionInstanceGroupManagerUpdateInstanceConfigReqResource
+   *     RegionInstanceGroupManagers.updatePerInstanceConfigs
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePerInstanceConfigsRegionInstanceGroupManager(
+      String instanceGroupManager,
+      RegionInstanceGroupManagerUpdateInstanceConfigReq
+          regionInstanceGroupManagerUpdateInstanceConfigReqResource) {
+    UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request =
+        UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(
+                regionInstanceGroupManagerUpdateInstanceConfigReqResource)
+            .build();
+    return updatePerInstanceConfigsRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or update (for the ones that already exist) per-instance configs for the managed
+   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
+   * perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
+   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.updatePerInstanceConfigsRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePerInstanceConfigsRegionInstanceGroupManager(
+      UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request) {
+    return updatePerInstanceConfigsRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Insert or update (for the ones that already exist) per-instance configs for the managed
+   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
+   * perform insert or patch.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   String formattedInstanceGroupManager = ProjectRegionInstanceGroupManagerName.format("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
+   *   UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(formattedInstanceGroupManager)
+   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.updatePerInstanceConfigsRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          UpdatePerInstanceConfigsRegionInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsRegionInstanceGroupManagerCallable() {
+    return stub.updatePerInstanceConfigsRegionInstanceGroupManagerCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2605,6 +3156,118 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     protected ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection createCollection(
         List<ListManagedInstancesRegionInstanceGroupManagersPage> pages, int collectionSize) {
       return new ListManagedInstancesRegionInstanceGroupManagersFixedSizeCollection(
+          pages, collectionSize);
+    }
+  }
+
+  public static class ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse
+      extends AbstractPagedListResponse<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstanceConfigsResp,
+          PerInstanceConfig,
+          ListPerInstanceConfigsRegionInstanceGroupManagersPage,
+          ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection> {
+
+    public static ApiFuture<ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse>
+        createAsync(
+            PageContext<
+                    ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+                    RegionInstanceGroupManagersListInstanceConfigsResp,
+                    PerInstanceConfig>
+                context,
+            ApiFuture<RegionInstanceGroupManagersListInstanceConfigsResp> futureResponse) {
+      ApiFuture<ListPerInstanceConfigsRegionInstanceGroupManagersPage> futurePage =
+          ListPerInstanceConfigsRegionInstanceGroupManagersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<
+              ListPerInstanceConfigsRegionInstanceGroupManagersPage,
+              ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse apply(
+                ListPerInstanceConfigsRegionInstanceGroupManagersPage input) {
+              return new ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPerInstanceConfigsRegionInstanceGroupManagersPagedResponse(
+        ListPerInstanceConfigsRegionInstanceGroupManagersPage page) {
+      super(
+          page,
+          ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection
+              .createEmptyCollection());
+    }
+  }
+
+  public static class ListPerInstanceConfigsRegionInstanceGroupManagersPage
+      extends AbstractPage<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstanceConfigsResp,
+          PerInstanceConfig,
+          ListPerInstanceConfigsRegionInstanceGroupManagersPage> {
+
+    private ListPerInstanceConfigsRegionInstanceGroupManagersPage(
+        PageContext<
+                ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstanceConfigsResp,
+                PerInstanceConfig>
+            context,
+        RegionInstanceGroupManagersListInstanceConfigsResp response) {
+      super(context, response);
+    }
+
+    private static ListPerInstanceConfigsRegionInstanceGroupManagersPage createEmptyPage() {
+      return new ListPerInstanceConfigsRegionInstanceGroupManagersPage(null, null);
+    }
+
+    @Override
+    protected ListPerInstanceConfigsRegionInstanceGroupManagersPage createPage(
+        PageContext<
+                ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstanceConfigsResp,
+                PerInstanceConfig>
+            context,
+        RegionInstanceGroupManagersListInstanceConfigsResp response) {
+      return new ListPerInstanceConfigsRegionInstanceGroupManagersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPerInstanceConfigsRegionInstanceGroupManagersPage> createPageAsync(
+        PageContext<
+                ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+                RegionInstanceGroupManagersListInstanceConfigsResp,
+                PerInstanceConfig>
+            context,
+        ApiFuture<RegionInstanceGroupManagersListInstanceConfigsResp> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPerInstanceConfigsRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagersListInstanceConfigsResp,
+          PerInstanceConfig,
+          ListPerInstanceConfigsRegionInstanceGroupManagersPage,
+          ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection> {
+
+    private ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection(
+        List<ListPerInstanceConfigsRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection
+        createEmptyCollection() {
+      return new ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection createCollection(
+        List<ListPerInstanceConfigsRegionInstanceGroupManagersPage> pages, int collectionSize) {
+      return new ListPerInstanceConfigsRegionInstanceGroupManagersFixedSizeCollection(
           pages, collectionSize);
     }
   }

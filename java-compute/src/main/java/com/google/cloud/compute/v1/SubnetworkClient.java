@@ -630,18 +630,22 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = subnetworkClient.getIamPolicySubnetwork(resource);
+   *   Policy response = subnetworkClient.getIamPolicySubnetwork(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicySubnetwork(ProjectRegionSubnetworkResourceName resource) {
+  public final Policy getIamPolicySubnetwork(
+      Integer optionsRequestedPolicyVersion, ProjectRegionSubnetworkResourceName resource) {
     GetIamPolicySubnetworkHttpRequest request =
         GetIamPolicySubnetworkHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicySubnetwork(request);
@@ -656,18 +660,24 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = subnetworkClient.getIamPolicySubnetwork(resource.toString());
+   *   Policy response = subnetworkClient.getIamPolicySubnetwork(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicySubnetwork(String resource) {
+  public final Policy getIamPolicySubnetwork(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicySubnetworkHttpRequest request =
-        GetIamPolicySubnetworkHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicySubnetworkHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicySubnetwork(request);
   }
 
@@ -680,8 +690,10 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionSubnetworkResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicySubnetworkHttpRequest request = GetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = subnetworkClient.getIamPolicySubnetwork(request);
@@ -705,8 +717,10 @@ public class SubnetworkClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionSubnetworkResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicySubnetworkHttpRequest request = GetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = subnetworkClient.getIamPolicySubnetworkCallable().futureCall(request);
@@ -974,9 +988,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
-   * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
@@ -1003,9 +1015,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
-   * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
@@ -1030,9 +1040,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
-   * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
@@ -1059,9 +1067,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
-   * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *
@@ -1087,9 +1093,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
-   * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * Retrieves an aggregated list of all usable subnetworks in the project.
    *
    * <p>Sample code:
    *

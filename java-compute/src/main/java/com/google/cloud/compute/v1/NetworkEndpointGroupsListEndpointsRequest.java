@@ -63,7 +63,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest implements ApiMessa
 
   /**
    * Optional query parameter for showing the health status of each network endpoint. Valid options
-   * are SKIP or SHOW. If you don't specifiy this parameter, the health status of network endpoints
+   * are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints
    * will not be provided.
    */
   public String getHealthStatus() {
@@ -111,7 +111,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest implements ApiMessa
 
     /**
      * Optional query parameter for showing the health status of each network endpoint. Valid
-     * options are SKIP or SHOW. If you don't specifiy this parameter, the health status of network
+     * options are SKIP or SHOW. If you don't specify this parameter, the health status of network
      * endpoints will not be provided.
      */
     public String getHealthStatus() {
@@ -120,7 +120,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest implements ApiMessa
 
     /**
      * Optional query parameter for showing the health status of each network endpoint. Valid
-     * options are SKIP or SHOW. If you don't specifiy this parameter, the health status of network
+     * options are SKIP or SHOW. If you don't specify this parameter, the health status of network
      * endpoints will not be provided.
      */
     public Builder setHealthStatus(String healthStatus) {

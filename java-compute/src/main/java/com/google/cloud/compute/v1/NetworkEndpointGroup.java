@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
@@ -27,10 +28,18 @@ import javax.annotation.Nullable;
 /**
  * Represents a collection of network endpoints.
  *
- * <p>For more information read Network endpoint groups overview. (== resource_for
- * {$api_version}.networkEndpointGroups ==) Next ID: 21
+ * <p>A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they
+ * are reachable, and where they are located. For more information about using NEGs, see Setting up
+ * internet NEGs, Setting up zonal NEGs, or Setting up serverless NEGs. (== resource_for
+ * {$api_version}.networkEndpointGroups ==) (== resource_for
+ * {$api_version}.globalNetworkEndpointGroups ==) (== resource_for
+ * {$api_version}.regionNetworkEndpointGroups ==)
  */
 public final class NetworkEndpointGroup implements ApiMessage {
+  private final Map<String, String> annotations;
+  private final NetworkEndpointGroupAppEngine appEngine;
+  private final NetworkEndpointGroupCloudFunction cloudFunction;
+  private final NetworkEndpointGroupCloudRun cloudRun;
   private final String creationTimestamp;
   private final Integer defaultPort;
   private final String description;
@@ -39,12 +48,17 @@ public final class NetworkEndpointGroup implements ApiMessage {
   private final String name;
   private final String network;
   private final String networkEndpointType;
+  private final String region;
   private final String selfLink;
   private final Integer size;
   private final String subnetwork;
   private final String zone;
 
   private NetworkEndpointGroup() {
+    this.annotations = null;
+    this.appEngine = null;
+    this.cloudFunction = null;
+    this.cloudRun = null;
     this.creationTimestamp = null;
     this.defaultPort = null;
     this.description = null;
@@ -53,6 +67,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
     this.name = null;
     this.network = null;
     this.networkEndpointType = null;
+    this.region = null;
     this.selfLink = null;
     this.size = null;
     this.subnetwork = null;
@@ -60,6 +75,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
   }
 
   private NetworkEndpointGroup(
+      Map<String, String> annotations,
+      NetworkEndpointGroupAppEngine appEngine,
+      NetworkEndpointGroupCloudFunction cloudFunction,
+      NetworkEndpointGroupCloudRun cloudRun,
       String creationTimestamp,
       Integer defaultPort,
       String description,
@@ -68,10 +87,15 @@ public final class NetworkEndpointGroup implements ApiMessage {
       String name,
       String network,
       String networkEndpointType,
+      String region,
       String selfLink,
       Integer size,
       String subnetwork,
       String zone) {
+    this.annotations = annotations;
+    this.appEngine = appEngine;
+    this.cloudFunction = cloudFunction;
+    this.cloudRun = cloudRun;
     this.creationTimestamp = creationTimestamp;
     this.defaultPort = defaultPort;
     this.description = description;
@@ -80,6 +104,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
     this.name = name;
     this.network = network;
     this.networkEndpointType = networkEndpointType;
+    this.region = region;
     this.selfLink = selfLink;
     this.size = size;
     this.subnetwork = subnetwork;
@@ -88,6 +113,18 @@ public final class NetworkEndpointGroup implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("annotations".equals(fieldName)) {
+      return annotations;
+    }
+    if ("appEngine".equals(fieldName)) {
+      return appEngine;
+    }
+    if ("cloudFunction".equals(fieldName)) {
+      return cloudFunction;
+    }
+    if ("cloudRun".equals(fieldName)) {
+      return cloudRun;
+    }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
@@ -111,6 +148,9 @@ public final class NetworkEndpointGroup implements ApiMessage {
     }
     if ("networkEndpointType".equals(fieldName)) {
       return networkEndpointType;
+    }
+    if ("region".equals(fieldName)) {
+      return region;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -143,6 +183,35 @@ public final class NetworkEndpointGroup implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Metadata defined as annotations on the network endpoint group. */
+  public Map<String, String> getAnnotationsMap() {
+    return annotations;
+  }
+
+  /**
+   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+   * cloudFunction may be set.
+   */
+  public NetworkEndpointGroupAppEngine getAppEngine() {
+    return appEngine;
+  }
+
+  /**
+   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+   * cloudFunction may be set.
+   */
+  public NetworkEndpointGroupCloudFunction getCloudFunction() {
+    return cloudFunction;
+  }
+
+  /**
+   * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+   * cloudFunction may be set.
+   */
+  public NetworkEndpointGroupCloudRun getCloudRun() {
+    return cloudRun;
   }
 
   /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -196,9 +265,17 @@ public final class NetworkEndpointGroup implements ApiMessage {
     return network;
   }
 
-  /** Type of network endpoints in this network endpoint group. */
+  /**
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT,
+   * NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   */
   public String getNetworkEndpointType() {
     return networkEndpointType;
+  }
+
+  /** [Output Only] The URL of the region where the network endpoint group is located. */
+  public String getRegion() {
+    return region;
   }
 
   /** [Output Only] Server-defined URL for the resource. */
@@ -244,6 +321,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
   }
 
   public static class Builder {
+    private Map<String, String> annotations;
+    private NetworkEndpointGroupAppEngine appEngine;
+    private NetworkEndpointGroupCloudFunction cloudFunction;
+    private NetworkEndpointGroupCloudRun cloudRun;
     private String creationTimestamp;
     private Integer defaultPort;
     private String description;
@@ -252,6 +333,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
     private String name;
     private String network;
     private String networkEndpointType;
+    private String region;
     private String selfLink;
     private Integer size;
     private String subnetwork;
@@ -261,6 +343,18 @@ public final class NetworkEndpointGroup implements ApiMessage {
 
     public Builder mergeFrom(NetworkEndpointGroup other) {
       if (other == NetworkEndpointGroup.getDefaultInstance()) return this;
+      if (other.getAnnotationsMap() != null) {
+        this.annotations = other.annotations;
+      }
+      if (other.getAppEngine() != null) {
+        this.appEngine = other.appEngine;
+      }
+      if (other.getCloudFunction() != null) {
+        this.cloudFunction = other.cloudFunction;
+      }
+      if (other.getCloudRun() != null) {
+        this.cloudRun = other.cloudRun;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
@@ -285,6 +379,9 @@ public final class NetworkEndpointGroup implements ApiMessage {
       if (other.getNetworkEndpointType() != null) {
         this.networkEndpointType = other.networkEndpointType;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -301,6 +398,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
     }
 
     Builder(NetworkEndpointGroup source) {
+      this.annotations = source.annotations;
+      this.appEngine = source.appEngine;
+      this.cloudFunction = source.cloudFunction;
+      this.cloudRun = source.cloudRun;
       this.creationTimestamp = source.creationTimestamp;
       this.defaultPort = source.defaultPort;
       this.description = source.description;
@@ -309,10 +410,73 @@ public final class NetworkEndpointGroup implements ApiMessage {
       this.name = source.name;
       this.network = source.network;
       this.networkEndpointType = source.networkEndpointType;
+      this.region = source.region;
       this.selfLink = source.selfLink;
       this.size = source.size;
       this.subnetwork = source.subnetwork;
       this.zone = source.zone;
+    }
+
+    /** Metadata defined as annotations on the network endpoint group. */
+    public Map<String, String> getAnnotationsMap() {
+      return annotations;
+    }
+
+    /** Metadata defined as annotations on the network endpoint group. */
+    public Builder putAllAnnotations(Map<String, String> annotations) {
+      this.annotations = annotations;
+      return this;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public NetworkEndpointGroupAppEngine getAppEngine() {
+      return appEngine;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public Builder setAppEngine(NetworkEndpointGroupAppEngine appEngine) {
+      this.appEngine = appEngine;
+      return this;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public NetworkEndpointGroupCloudFunction getCloudFunction() {
+      return cloudFunction;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public Builder setCloudFunction(NetworkEndpointGroupCloudFunction cloudFunction) {
+      this.cloudFunction = cloudFunction;
+      return this;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public NetworkEndpointGroupCloudRun getCloudRun() {
+      return cloudRun;
+    }
+
+    /**
+     * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or
+     * cloudFunction may be set.
+     */
+    public Builder setCloudRun(NetworkEndpointGroupCloudRun cloudRun) {
+      this.cloudRun = cloudRun;
+      return this;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -426,14 +590,31 @@ public final class NetworkEndpointGroup implements ApiMessage {
       return this;
     }
 
-    /** Type of network endpoints in this network endpoint group. */
+    /**
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT,
+     * NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     */
     public String getNetworkEndpointType() {
       return networkEndpointType;
     }
 
-    /** Type of network endpoints in this network endpoint group. */
+    /**
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT,
+     * NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     */
     public Builder setNetworkEndpointType(String networkEndpointType) {
       this.networkEndpointType = networkEndpointType;
+      return this;
+    }
+
+    /** [Output Only] The URL of the region where the network endpoint group is located. */
+    public String getRegion() {
+      return region;
+    }
+
+    /** [Output Only] The URL of the region where the network endpoint group is located. */
+    public Builder setRegion(String region) {
+      this.region = region;
       return this;
     }
 
@@ -484,6 +665,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
     public NetworkEndpointGroup build() {
 
       return new NetworkEndpointGroup(
+          annotations,
+          appEngine,
+          cloudFunction,
+          cloudRun,
           creationTimestamp,
           defaultPort,
           description,
@@ -492,6 +677,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
           name,
           network,
           networkEndpointType,
+          region,
           selfLink,
           size,
           subnetwork,
@@ -500,6 +686,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.putAllAnnotations(this.annotations);
+      newBuilder.setAppEngine(this.appEngine);
+      newBuilder.setCloudFunction(this.cloudFunction);
+      newBuilder.setCloudRun(this.cloudRun);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDefaultPort(this.defaultPort);
       newBuilder.setDescription(this.description);
@@ -508,6 +698,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setNetworkEndpointType(this.networkEndpointType);
+      newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSize(this.size);
       newBuilder.setSubnetwork(this.subnetwork);
@@ -519,6 +710,18 @@ public final class NetworkEndpointGroup implements ApiMessage {
   @Override
   public String toString() {
     return "NetworkEndpointGroup{"
+        + "annotations="
+        + annotations
+        + ", "
+        + "appEngine="
+        + appEngine
+        + ", "
+        + "cloudFunction="
+        + cloudFunction
+        + ", "
+        + "cloudRun="
+        + cloudRun
+        + ", "
         + "creationTimestamp="
         + creationTimestamp
         + ", "
@@ -543,6 +746,9 @@ public final class NetworkEndpointGroup implements ApiMessage {
         + "networkEndpointType="
         + networkEndpointType
         + ", "
+        + "region="
+        + region
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -564,7 +770,11 @@ public final class NetworkEndpointGroup implements ApiMessage {
     }
     if (o instanceof NetworkEndpointGroup) {
       NetworkEndpointGroup that = (NetworkEndpointGroup) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+      return Objects.equals(this.annotations, that.getAnnotationsMap())
+          && Objects.equals(this.appEngine, that.getAppEngine())
+          && Objects.equals(this.cloudFunction, that.getCloudFunction())
+          && Objects.equals(this.cloudRun, that.getCloudRun())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.defaultPort, that.getDefaultPort())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.id, that.getId())
@@ -572,6 +782,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.networkEndpointType, that.getNetworkEndpointType())
+          && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.size, that.getSize())
           && Objects.equals(this.subnetwork, that.getSubnetwork())
@@ -583,6 +794,10 @@ public final class NetworkEndpointGroup implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        annotations,
+        appEngine,
+        cloudFunction,
+        cloudRun,
         creationTimestamp,
         defaultPort,
         description,
@@ -591,6 +806,7 @@ public final class NetworkEndpointGroup implements ApiMessage {
         name,
         network,
         networkEndpointType,
+        region,
         selfLink,
         size,
         subnetwork,

@@ -76,9 +76,16 @@ public final class Binding implements ApiMessage {
   }
 
   /**
-   * The condition that is associated with this binding. NOTE: An unsatisfied condition will not
-   * allow user access via current binding. Different bindings, including their conditions, are
-   * examined independently.
+   * The condition that is associated with this binding.
+   *
+   * <p>If the condition evaluates to `true`, then this binding applies to the current request.
+   *
+   * <p>If the condition evaluates to `false`, then this binding does not apply to the current
+   * request. However, a different role binding might grant the same role to one or more of the
+   * members in this binding.
+   *
+   * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+   * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    */
   public Expr getCondition() {
     return condition;
@@ -184,18 +191,32 @@ public final class Binding implements ApiMessage {
     }
 
     /**
-     * The condition that is associated with this binding. NOTE: An unsatisfied condition will not
-     * allow user access via current binding. Different bindings, including their conditions, are
-     * examined independently.
+     * The condition that is associated with this binding.
+     *
+     * <p>If the condition evaluates to `true`, then this binding applies to the current request.
+     *
+     * <p>If the condition evaluates to `false`, then this binding does not apply to the current
+     * request. However, a different role binding might grant the same role to one or more of the
+     * members in this binding.
+     *
+     * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      */
     public Expr getCondition() {
       return condition;
     }
 
     /**
-     * The condition that is associated with this binding. NOTE: An unsatisfied condition will not
-     * allow user access via current binding. Different bindings, including their conditions, are
-     * examined independently.
+     * The condition that is associated with this binding.
+     *
+     * <p>If the condition evaluates to `true`, then this binding applies to the current request.
+     *
+     * <p>If the condition evaluates to `false`, then this binding does not apply to the current
+     * request. However, a different role binding might grant the same role to one or more of the
+     * members in this binding.
+     *
+     * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      */
     public Builder setCondition(Expr condition) {
       this.condition = condition;

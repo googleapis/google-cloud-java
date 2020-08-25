@@ -25,12 +25,15 @@ import com.google.cloud.compute.v1.CreateSnapshotRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
 import com.google.cloud.compute.v1.DiskList;
+import com.google.cloud.compute.v1.GetIamPolicyRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.GetRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ListRegionDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
@@ -70,6 +73,11 @@ public abstract class RegionDiskStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyRegionDiskHttpRequest, Policy> getIamPolicyRegionDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyRegionDiskCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertRegionDiskHttpRequest, Operation> insertRegionDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: insertRegionDiskCallable()");
   }
@@ -95,6 +103,11 @@ public abstract class RegionDiskStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: resizeRegionDiskCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyRegionDiskHttpRequest, Policy> setIamPolicyRegionDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyRegionDiskCallable()");
   }
 
   @BetaApi

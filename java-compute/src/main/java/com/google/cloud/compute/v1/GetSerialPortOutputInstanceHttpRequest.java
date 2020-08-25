@@ -145,7 +145,7 @@ public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage 
   }
 
   /**
-   * Name of the instance scoping this request. It must have the format
+   * Name of the instance for this request. It must have the format
    * `{project}/zones/{zone}/instances/{instance}/serialPort`. \`{instance}\` must start with a
    * letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
    * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
@@ -177,10 +177,18 @@ public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage 
   }
 
   /**
-   * Returns output starting from a specific byte position. Use this to page through output when the
-   * output is too large to return in a single request. For the initial request, leave this field
-   * unspecified. For subsequent calls, this field should be set to the next value returned in the
-   * previous call.
+   * Specifies the starting byte position of the output to return. To start with the first byte of
+   * output to the specified port, omit this field or set it to `0`.
+   *
+   * <p>If the output for that byte position is available, this field matches the `start` parameter
+   * sent with the request. If the amount of serial console output exceeds the size of the buffer (1
+   * MB), the oldest output is discarded and is no longer available. If the requested start position
+   * refers to discarded output, the start position is adjusted to the oldest output still
+   * available, and the adjusted start position is returned as the `start` property value.
+   *
+   * <p>You can also provide a negative start position, which translates to the most recent number
+   * of bytes written to the serial port. For example, -3 is interpreted as the most recent 3 bytes
+   * written to the serial console.
    */
   public String getStart() {
     return start;
@@ -309,7 +317,7 @@ public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage 
     }
 
     /**
-     * Name of the instance scoping this request. It must have the format
+     * Name of the instance for this request. It must have the format
      * `{project}/zones/{zone}/instances/{instance}/serialPort`. \`{instance}\` must start with a
      * letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
      * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
@@ -321,7 +329,7 @@ public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage 
     }
 
     /**
-     * Name of the instance scoping this request. It must have the format
+     * Name of the instance for this request. It must have the format
      * `{project}/zones/{zone}/instances/{instance}/serialPort`. \`{instance}\` must start with a
      * letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
      * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
@@ -378,20 +386,38 @@ public final class GetSerialPortOutputInstanceHttpRequest implements ApiMessage 
     }
 
     /**
-     * Returns output starting from a specific byte position. Use this to page through output when
-     * the output is too large to return in a single request. For the initial request, leave this
-     * field unspecified. For subsequent calls, this field should be set to the next value returned
-     * in the previous call.
+     * Specifies the starting byte position of the output to return. To start with the first byte of
+     * output to the specified port, omit this field or set it to `0`.
+     *
+     * <p>If the output for that byte position is available, this field matches the `start`
+     * parameter sent with the request. If the amount of serial console output exceeds the size of
+     * the buffer (1 MB), the oldest output is discarded and is no longer available. If the
+     * requested start position refers to discarded output, the start position is adjusted to the
+     * oldest output still available, and the adjusted start position is returned as the `start`
+     * property value.
+     *
+     * <p>You can also provide a negative start position, which translates to the most recent number
+     * of bytes written to the serial port. For example, -3 is interpreted as the most recent 3
+     * bytes written to the serial console.
      */
     public String getStart() {
       return start;
     }
 
     /**
-     * Returns output starting from a specific byte position. Use this to page through output when
-     * the output is too large to return in a single request. For the initial request, leave this
-     * field unspecified. For subsequent calls, this field should be set to the next value returned
-     * in the previous call.
+     * Specifies the starting byte position of the output to return. To start with the first byte of
+     * output to the specified port, omit this field or set it to `0`.
+     *
+     * <p>If the output for that byte position is available, this field matches the `start`
+     * parameter sent with the request. If the amount of serial console output exceeds the size of
+     * the buffer (1 MB), the oldest output is discarded and is no longer available. If the
+     * requested start position refers to discarded output, the start position is adjusted to the
+     * oldest output still available, and the adjusted start position is returned as the `start`
+     * property value.
+     *
+     * <p>You can also provide a negative start position, which translates to the most recent number
+     * of bytes written to the serial port. For example, -3 is interpreted as the most recent 3
+     * bytes written to the serial console.
      */
     public Builder setStart(String start) {
       this.start = start;

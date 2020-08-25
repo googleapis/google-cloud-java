@@ -36,6 +36,7 @@ public final class InstanceProperties implements ApiMessage {
   private final Metadata metadata;
   private final String minCpuPlatform;
   private final List<NetworkInterface> networkInterfaces;
+  private final String privateIpv6GoogleAccess;
   private final ReservationAffinity reservationAffinity;
   private final List<String> resourcePolicies;
   private final Scheduling scheduling;
@@ -53,6 +54,7 @@ public final class InstanceProperties implements ApiMessage {
     this.metadata = null;
     this.minCpuPlatform = null;
     this.networkInterfaces = null;
+    this.privateIpv6GoogleAccess = null;
     this.reservationAffinity = null;
     this.resourcePolicies = null;
     this.scheduling = null;
@@ -71,6 +73,7 @@ public final class InstanceProperties implements ApiMessage {
       Metadata metadata,
       String minCpuPlatform,
       List<NetworkInterface> networkInterfaces,
+      String privateIpv6GoogleAccess,
       ReservationAffinity reservationAffinity,
       List<String> resourcePolicies,
       Scheduling scheduling,
@@ -86,6 +89,7 @@ public final class InstanceProperties implements ApiMessage {
     this.metadata = metadata;
     this.minCpuPlatform = minCpuPlatform;
     this.networkInterfaces = networkInterfaces;
+    this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
     this.reservationAffinity = reservationAffinity;
     this.resourcePolicies = resourcePolicies;
     this.scheduling = scheduling;
@@ -122,6 +126,9 @@ public final class InstanceProperties implements ApiMessage {
     }
     if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
+    }
+    if ("privateIpv6GoogleAccess".equals(fieldName)) {
+      return privateIpv6GoogleAccess;
     }
     if ("reservationAffinity".equals(fieldName)) {
       return reservationAffinity;
@@ -163,62 +170,61 @@ public final class InstanceProperties implements ApiMessage {
   }
 
   /**
-   * Enables instances created based on this template to send packets with source IP addresses other
-   * than their own and receive packets with destination IP addresses other than their own. If these
-   * instances will be used as an IP gateway or it will be set as the next-hop in a Route resource,
-   * specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation
-   * for more information.
+   * Enables instances created based on these properties to send packets with source IP addresses
+   * other than their own and receive packets with destination IP addresses other than their own. If
+   * these instances will be used as an IP gateway or it will be set as the next-hop in a Route
+   * resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding
+   * documentation for more information.
    */
   public Boolean getCanIpForward() {
     return canIpForward;
   }
 
-  /**
-   * An optional text description for the instances that are created from this instance template.
-   */
+  /** An optional text description for the instances that are created from these properties. */
   public String getDescription() {
     return description;
   }
 
   /**
-   * An array of disks that are associated with the instances that are created from this template.
+   * An array of disks that are associated with the instances that are created from these
+   * properties.
    */
   public List<AttachedDisk> getDisksList() {
     return disks;
   }
 
   /**
-   * A list of guest accelerator cards' type and count to use for instances created from the
-   * instance template.
+   * A list of guest accelerator cards' type and count to use for instances created from these
+   * properties.
    */
   public List<AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators;
   }
 
-  /** Labels to apply to instances that are created from this template. */
+  /** Labels to apply to instances that are created from these properties. */
   public Map<String, String> getLabelsMap() {
     return labels;
   }
 
-  /** The machine type to use for instances that are created from this template. */
+  /** The machine type to use for instances that are created from these properties. */
   public String getMachineType() {
     return machineType;
   }
 
   /**
-   * The metadata key/value pairs to assign to instances that are created from this template. These
-   * pairs can consist of custom metadata or predefined keys. See Project and instance metadata for
-   * more information.
+   * The metadata key/value pairs to assign to instances that are created from these properties.
+   * These pairs can consist of custom metadata or predefined keys. See Project and instance
+   * metadata for more information.
    */
   public Metadata getMetadata() {
     return metadata;
   }
 
   /**
-   * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
-   * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
-   * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
-   * information, read Specifying a Minimum CPU Platform.
+   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or
+   * newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information,
+   * read Specifying a Minimum CPU Platform.
    */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
@@ -229,25 +235,33 @@ public final class InstanceProperties implements ApiMessage {
     return networkInterfaces;
   }
 
-  /** Specifies the reservations that this instance can consume from. */
+  /**
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as
+   * default.
+   */
+  public String getPrivateIpv6GoogleAccess() {
+    return privateIpv6GoogleAccess;
+  }
+
+  /** Specifies the reservations that instances can consume from. */
   public ReservationAffinity getReservationAffinity() {
     return reservationAffinity;
   }
 
-  /** Resource policies (names, not ULRs) applied to instances created from this template. */
+  /** Resource policies (names, not ULRs) applied to instances created from these properties. */
   public List<String> getResourcePoliciesList() {
     return resourcePolicies;
   }
 
-  /** Specifies the scheduling options for the instances that are created from this template. */
+  /** Specifies the scheduling options for the instances that are created from these properties. */
   public Scheduling getScheduling() {
     return scheduling;
   }
 
   /**
    * A list of service accounts with specified scopes. Access tokens for these service accounts are
-   * available to the instances that are created from this template. Use metadata queries to obtain
-   * the access tokens for these instances.
+   * available to the instances that are created from these properties. Use metadata queries to
+   * obtain the access tokens for these instances.
    */
   public List<ServiceAccount> getServiceAccountsList() {
     return serviceAccounts;
@@ -258,9 +272,9 @@ public final class InstanceProperties implements ApiMessage {
   }
 
   /**
-   * A list of tags to apply to the instances that are created from this template. The tags identify
-   * valid sources or targets for network firewalls. The setTags method can modify this list of
-   * tags. Each tag within the list must comply with RFC1035.
+   * A list of tags to apply to the instances that are created from these properties. The tags
+   * identify valid sources or targets for network firewalls. The setTags method can modify this
+   * list of tags. Each tag within the list must comply with RFC1035.
    */
   public Tags getTags() {
     return tags;
@@ -298,6 +312,7 @@ public final class InstanceProperties implements ApiMessage {
     private Metadata metadata;
     private String minCpuPlatform;
     private List<NetworkInterface> networkInterfaces;
+    private String privateIpv6GoogleAccess;
     private ReservationAffinity reservationAffinity;
     private List<String> resourcePolicies;
     private Scheduling scheduling;
@@ -336,6 +351,9 @@ public final class InstanceProperties implements ApiMessage {
       if (other.getNetworkInterfacesList() != null) {
         this.networkInterfaces = other.networkInterfaces;
       }
+      if (other.getPrivateIpv6GoogleAccess() != null) {
+        this.privateIpv6GoogleAccess = other.privateIpv6GoogleAccess;
+      }
       if (other.getReservationAffinity() != null) {
         this.reservationAffinity = other.reservationAffinity;
       }
@@ -367,6 +385,7 @@ public final class InstanceProperties implements ApiMessage {
       this.metadata = source.metadata;
       this.minCpuPlatform = source.minCpuPlatform;
       this.networkInterfaces = source.networkInterfaces;
+      this.privateIpv6GoogleAccess = source.privateIpv6GoogleAccess;
       this.reservationAffinity = source.reservationAffinity;
       this.resourcePolicies = source.resourcePolicies;
       this.scheduling = source.scheduling;
@@ -376,7 +395,7 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * Enables instances created based on this template to send packets with source IP addresses
+     * Enables instances created based on these properties to send packets with source IP addresses
      * other than their own and receive packets with destination IP addresses other than their own.
      * If these instances will be used as an IP gateway or it will be set as the next-hop in a Route
      * resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding
@@ -387,7 +406,7 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * Enables instances created based on this template to send packets with source IP addresses
+     * Enables instances created based on these properties to send packets with source IP addresses
      * other than their own and receive packets with destination IP addresses other than their own.
      * If these instances will be used as an IP gateway or it will be set as the next-hop in a Route
      * resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding
@@ -398,30 +417,28 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-    /**
-     * An optional text description for the instances that are created from this instance template.
-     */
+    /** An optional text description for the instances that are created from these properties. */
     public String getDescription() {
       return description;
     }
 
-    /**
-     * An optional text description for the instances that are created from this instance template.
-     */
+    /** An optional text description for the instances that are created from these properties. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
     /**
-     * An array of disks that are associated with the instances that are created from this template.
+     * An array of disks that are associated with the instances that are created from these
+     * properties.
      */
     public List<AttachedDisk> getDisksList() {
       return disks;
     }
 
     /**
-     * An array of disks that are associated with the instances that are created from this template.
+     * An array of disks that are associated with the instances that are created from these
+     * properties.
      */
     public Builder addAllDisks(List<AttachedDisk> disks) {
       if (this.disks == null) {
@@ -432,7 +449,8 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * An array of disks that are associated with the instances that are created from this template.
+     * An array of disks that are associated with the instances that are created from these
+     * properties.
      */
     public Builder addDisks(AttachedDisk disks) {
       if (this.disks == null) {
@@ -443,16 +461,16 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * A list of guest accelerator cards' type and count to use for instances created from the
-     * instance template.
+     * A list of guest accelerator cards' type and count to use for instances created from these
+     * properties.
      */
     public List<AcceleratorConfig> getGuestAcceleratorsList() {
       return guestAccelerators;
     }
 
     /**
-     * A list of guest accelerator cards' type and count to use for instances created from the
-     * instance template.
+     * A list of guest accelerator cards' type and count to use for instances created from these
+     * properties.
      */
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
@@ -463,8 +481,8 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * A list of guest accelerator cards' type and count to use for instances created from the
-     * instance template.
+     * A list of guest accelerator cards' type and count to use for instances created from these
+     * properties.
      */
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
       if (this.guestAccelerators == null) {
@@ -474,30 +492,30 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-    /** Labels to apply to instances that are created from this template. */
+    /** Labels to apply to instances that are created from these properties. */
     public Map<String, String> getLabelsMap() {
       return labels;
     }
 
-    /** Labels to apply to instances that are created from this template. */
+    /** Labels to apply to instances that are created from these properties. */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
       return this;
     }
 
-    /** The machine type to use for instances that are created from this template. */
+    /** The machine type to use for instances that are created from these properties. */
     public String getMachineType() {
       return machineType;
     }
 
-    /** The machine type to use for instances that are created from this template. */
+    /** The machine type to use for instances that are created from these properties. */
     public Builder setMachineType(String machineType) {
       this.machineType = machineType;
       return this;
     }
 
     /**
-     * The metadata key/value pairs to assign to instances that are created from this template.
+     * The metadata key/value pairs to assign to instances that are created from these properties.
      * These pairs can consist of custom metadata or predefined keys. See Project and instance
      * metadata for more information.
      */
@@ -506,7 +524,7 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * The metadata key/value pairs to assign to instances that are created from this template.
+     * The metadata key/value pairs to assign to instances that are created from these properties.
      * These pairs can consist of custom metadata or predefined keys. See Project and instance
      * metadata for more information.
      */
@@ -516,9 +534,9 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
-     * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
-     * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
+     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified
+     * or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
      * information, read Specifying a Minimum CPU Platform.
      */
     public String getMinCpuPlatform() {
@@ -526,9 +544,9 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
-     * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
-     * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
+     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified
+     * or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
      * information, read Specifying a Minimum CPU Platform.
      */
     public Builder setMinCpuPlatform(String minCpuPlatform) {
@@ -559,23 +577,40 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-    /** Specifies the reservations that this instance can consume from. */
+    /**
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as
+     * default.
+     */
+    public String getPrivateIpv6GoogleAccess() {
+      return privateIpv6GoogleAccess;
+    }
+
+    /**
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as
+     * default.
+     */
+    public Builder setPrivateIpv6GoogleAccess(String privateIpv6GoogleAccess) {
+      this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
+      return this;
+    }
+
+    /** Specifies the reservations that instances can consume from. */
     public ReservationAffinity getReservationAffinity() {
       return reservationAffinity;
     }
 
-    /** Specifies the reservations that this instance can consume from. */
+    /** Specifies the reservations that instances can consume from. */
     public Builder setReservationAffinity(ReservationAffinity reservationAffinity) {
       this.reservationAffinity = reservationAffinity;
       return this;
     }
 
-    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    /** Resource policies (names, not ULRs) applied to instances created from these properties. */
     public List<String> getResourcePoliciesList() {
       return resourcePolicies;
     }
 
-    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    /** Resource policies (names, not ULRs) applied to instances created from these properties. */
     public Builder addAllResourcePolicies(List<String> resourcePolicies) {
       if (this.resourcePolicies == null) {
         this.resourcePolicies = new LinkedList<>();
@@ -584,7 +619,7 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-    /** Resource policies (names, not ULRs) applied to instances created from this template. */
+    /** Resource policies (names, not ULRs) applied to instances created from these properties. */
     public Builder addResourcePolicies(String resourcePolicies) {
       if (this.resourcePolicies == null) {
         this.resourcePolicies = new LinkedList<>();
@@ -593,12 +628,16 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
-    /** Specifies the scheduling options for the instances that are created from this template. */
+    /**
+     * Specifies the scheduling options for the instances that are created from these properties.
+     */
     public Scheduling getScheduling() {
       return scheduling;
     }
 
-    /** Specifies the scheduling options for the instances that are created from this template. */
+    /**
+     * Specifies the scheduling options for the instances that are created from these properties.
+     */
     public Builder setScheduling(Scheduling scheduling) {
       this.scheduling = scheduling;
       return this;
@@ -606,8 +645,8 @@ public final class InstanceProperties implements ApiMessage {
 
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts
-     * are available to the instances that are created from this template. Use metadata queries to
-     * obtain the access tokens for these instances.
+     * are available to the instances that are created from these properties. Use metadata queries
+     * to obtain the access tokens for these instances.
      */
     public List<ServiceAccount> getServiceAccountsList() {
       return serviceAccounts;
@@ -615,8 +654,8 @@ public final class InstanceProperties implements ApiMessage {
 
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts
-     * are available to the instances that are created from this template. Use metadata queries to
-     * obtain the access tokens for these instances.
+     * are available to the instances that are created from these properties. Use metadata queries
+     * to obtain the access tokens for these instances.
      */
     public Builder addAllServiceAccounts(List<ServiceAccount> serviceAccounts) {
       if (this.serviceAccounts == null) {
@@ -628,8 +667,8 @@ public final class InstanceProperties implements ApiMessage {
 
     /**
      * A list of service accounts with specified scopes. Access tokens for these service accounts
-     * are available to the instances that are created from this template. Use metadata queries to
-     * obtain the access tokens for these instances.
+     * are available to the instances that are created from these properties. Use metadata queries
+     * to obtain the access tokens for these instances.
      */
     public Builder addServiceAccounts(ServiceAccount serviceAccounts) {
       if (this.serviceAccounts == null) {
@@ -649,7 +688,7 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * A list of tags to apply to the instances that are created from this template. The tags
+     * A list of tags to apply to the instances that are created from these properties. The tags
      * identify valid sources or targets for network firewalls. The setTags method can modify this
      * list of tags. Each tag within the list must comply with RFC1035.
      */
@@ -658,7 +697,7 @@ public final class InstanceProperties implements ApiMessage {
     }
 
     /**
-     * A list of tags to apply to the instances that are created from this template. The tags
+     * A list of tags to apply to the instances that are created from these properties. The tags
      * identify valid sources or targets for network firewalls. The setTags method can modify this
      * list of tags. Each tag within the list must comply with RFC1035.
      */
@@ -679,6 +718,7 @@ public final class InstanceProperties implements ApiMessage {
           metadata,
           minCpuPlatform,
           networkInterfaces,
+          privateIpv6GoogleAccess,
           reservationAffinity,
           resourcePolicies,
           scheduling,
@@ -698,6 +738,7 @@ public final class InstanceProperties implements ApiMessage {
       newBuilder.setMetadata(this.metadata);
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
+      newBuilder.setPrivateIpv6GoogleAccess(this.privateIpv6GoogleAccess);
       newBuilder.setReservationAffinity(this.reservationAffinity);
       newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setScheduling(this.scheduling);
@@ -738,6 +779,9 @@ public final class InstanceProperties implements ApiMessage {
         + "networkInterfaces="
         + networkInterfaces
         + ", "
+        + "privateIpv6GoogleAccess="
+        + privateIpv6GoogleAccess
+        + ", "
         + "reservationAffinity="
         + reservationAffinity
         + ", "
@@ -774,6 +818,7 @@ public final class InstanceProperties implements ApiMessage {
           && Objects.equals(this.metadata, that.getMetadata())
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.privateIpv6GoogleAccess, that.getPrivateIpv6GoogleAccess())
           && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
           && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.scheduling, that.getScheduling())
@@ -796,6 +841,7 @@ public final class InstanceProperties implements ApiMessage {
         metadata,
         minCpuPlatform,
         networkInterfaces,
+        privateIpv6GoogleAccess,
         reservationAffinity,
         resourcePolicies,
         scheduling,

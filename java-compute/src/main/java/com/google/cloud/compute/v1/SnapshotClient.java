@@ -374,18 +374,22 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = snapshotClient.getIamPolicySnapshot(resource);
+   *   Policy response = snapshotClient.getIamPolicySnapshot(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicySnapshot(ProjectGlobalSnapshotResourceName resource) {
+  public final Policy getIamPolicySnapshot(
+      Integer optionsRequestedPolicyVersion, ProjectGlobalSnapshotResourceName resource) {
     GetIamPolicySnapshotHttpRequest request =
         GetIamPolicySnapshotHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicySnapshot(request);
@@ -400,18 +404,23 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = snapshotClient.getIamPolicySnapshot(resource.toString());
+   *   Policy response = snapshotClient.getIamPolicySnapshot(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicySnapshot(String resource) {
+  public final Policy getIamPolicySnapshot(Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicySnapshotHttpRequest request =
-        GetIamPolicySnapshotHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicySnapshotHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicySnapshot(request);
   }
 
@@ -424,8 +433,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = snapshotClient.getIamPolicySnapshot(request);
@@ -449,8 +460,10 @@ public class SnapshotClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalSnapshotResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = snapshotClient.getIamPolicySnapshotCallable().futureCall(request);

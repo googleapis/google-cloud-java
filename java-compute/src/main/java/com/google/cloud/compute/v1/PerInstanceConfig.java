@@ -27,15 +27,22 @@ import javax.annotation.Nullable;
 public final class PerInstanceConfig implements ApiMessage {
   private final String fingerprint;
   private final String name;
+  private final PreservedState preservedState;
+  private final String status;
 
   private PerInstanceConfig() {
     this.fingerprint = null;
     this.name = null;
+    this.preservedState = null;
+    this.status = null;
   }
 
-  private PerInstanceConfig(String fingerprint, String name) {
+  private PerInstanceConfig(
+      String fingerprint, String name, PreservedState preservedState, String status) {
     this.fingerprint = fingerprint;
     this.name = name;
+    this.preservedState = preservedState;
+    this.status = status;
   }
 
   @Override
@@ -45,6 +52,12 @@ public final class PerInstanceConfig implements ApiMessage {
     }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("preservedState".equals(fieldName)) {
+      return preservedState;
+    }
+    if ("status".equals(fieldName)) {
+      return status;
     }
     return null;
   }
@@ -87,6 +100,19 @@ public final class PerInstanceConfig implements ApiMessage {
     return name;
   }
 
+  /**
+   * The intended preserved state for the given instance. Does not contain preserved state generated
+   * from a stateful policy.
+   */
+  public PreservedState getPreservedState() {
+    return preservedState;
+  }
+
+  /** The status of applying this per-instance config on the corresponding managed instance. */
+  public String getStatus() {
+    return status;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -112,6 +138,8 @@ public final class PerInstanceConfig implements ApiMessage {
   public static class Builder {
     private String fingerprint;
     private String name;
+    private PreservedState preservedState;
+    private String status;
 
     Builder() {}
 
@@ -123,12 +151,20 @@ public final class PerInstanceConfig implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getPreservedState() != null) {
+        this.preservedState = other.preservedState;
+      }
+      if (other.getStatus() != null) {
+        this.status = other.status;
+      }
       return this;
     }
 
     Builder(PerInstanceConfig source) {
       this.fingerprint = source.fingerprint;
       this.name = source.name;
+      this.preservedState = source.preservedState;
+      this.status = source.status;
     }
 
     /**
@@ -173,22 +209,64 @@ public final class PerInstanceConfig implements ApiMessage {
       return this;
     }
 
+    /**
+     * The intended preserved state for the given instance. Does not contain preserved state
+     * generated from a stateful policy.
+     */
+    public PreservedState getPreservedState() {
+      return preservedState;
+    }
+
+    /**
+     * The intended preserved state for the given instance. Does not contain preserved state
+     * generated from a stateful policy.
+     */
+    public Builder setPreservedState(PreservedState preservedState) {
+      this.preservedState = preservedState;
+      return this;
+    }
+
+    /** The status of applying this per-instance config on the corresponding managed instance. */
+    public String getStatus() {
+      return status;
+    }
+
+    /** The status of applying this per-instance config on the corresponding managed instance. */
+    public Builder setStatus(String status) {
+      this.status = status;
+      return this;
+    }
+
     public PerInstanceConfig build() {
 
-      return new PerInstanceConfig(fingerprint, name);
+      return new PerInstanceConfig(fingerprint, name, preservedState, status);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setFingerprint(this.fingerprint);
       newBuilder.setName(this.name);
+      newBuilder.setPreservedState(this.preservedState);
+      newBuilder.setStatus(this.status);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "PerInstanceConfig{" + "fingerprint=" + fingerprint + ", " + "name=" + name + "}";
+    return "PerInstanceConfig{"
+        + "fingerprint="
+        + fingerprint
+        + ", "
+        + "name="
+        + name
+        + ", "
+        + "preservedState="
+        + preservedState
+        + ", "
+        + "status="
+        + status
+        + "}";
   }
 
   @Override
@@ -199,13 +277,15 @@ public final class PerInstanceConfig implements ApiMessage {
     if (o instanceof PerInstanceConfig) {
       PerInstanceConfig that = (PerInstanceConfig) o;
       return Objects.equals(this.fingerprint, that.getFingerprint())
-          && Objects.equals(this.name, that.getName());
+          && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.preservedState, that.getPreservedState())
+          && Objects.equals(this.status, that.getStatus());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fingerprint, name);
+    return Objects.hash(fingerprint, name, preservedState, status);
   }
 }

@@ -122,7 +122,8 @@ public final class PathMatcher implements ApiMessage {
    * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
    * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
    * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-   * or defaultUrlRedirect must be set.
+   * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the
+   * urlRewrite action within a pathMatcher's defaultRouteAction.
    */
   public HttpRouteAction getDefaultRouteAction() {
     return defaultRouteAction;
@@ -166,7 +167,8 @@ public final class PathMatcher implements ApiMessage {
   /**
    * Specifies changes to request and response headers that need to take effect for the selected
    * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
-   * HeaderAction and before the HeaderAction in the UrlMap
+   * HeaderAction and before the HeaderAction in the UrlMap Note that headerAction is not supported
+   * for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
    */
   public HttpHeaderAction getHeaderAction() {
     return headerAction;
@@ -277,7 +279,8 @@ public final class PathMatcher implements ApiMessage {
      * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
      * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
      * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-     * or defaultUrlRedirect must be set.
+     * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only
+     * the urlRewrite action within a pathMatcher's defaultRouteAction.
      */
     public HttpRouteAction getDefaultRouteAction() {
       return defaultRouteAction;
@@ -289,7 +292,8 @@ public final class PathMatcher implements ApiMessage {
      * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
      * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
      * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-     * or defaultUrlRedirect must be set.
+     * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only
+     * the urlRewrite action within a pathMatcher's defaultRouteAction.
      */
     public Builder setDefaultRouteAction(HttpRouteAction defaultRouteAction) {
       this.defaultRouteAction = defaultRouteAction;
@@ -372,7 +376,8 @@ public final class PathMatcher implements ApiMessage {
     /**
      * Specifies changes to request and response headers that need to take effect for the selected
      * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
-     * HeaderAction and before the HeaderAction in the UrlMap
+     * HeaderAction and before the HeaderAction in the UrlMap Note that headerAction is not
+     * supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
      */
     public HttpHeaderAction getHeaderAction() {
       return headerAction;
@@ -381,7 +386,8 @@ public final class PathMatcher implements ApiMessage {
     /**
      * Specifies changes to request and response headers that need to take effect for the selected
      * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
-     * HeaderAction and before the HeaderAction in the UrlMap
+     * HeaderAction and before the HeaderAction in the UrlMap Note that headerAction is not
+     * supported for Loadbalancers that have their loadBalancingScheme set to EXTERNAL.
      */
     public Builder setHeaderAction(HttpHeaderAction headerAction) {
       this.headerAction = headerAction;

@@ -34,16 +34,18 @@ import javax.annotation.Nullable;
  * Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a
  * user-created custom role.
  *
- * <p>Optionally, a `binding` can specify a `condition`, which is a logical expression that allows
- * access to a resource only if the expression evaluates to `true`. A condition can add constraints
- * based on attributes of the request, the resource, or both.
+ * <p>For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is
+ * a logical expression that allows access to a resource only if the expression evaluates to `true`.
+ * A condition can add constraints based on attributes of the request, the resource, or both. To
+ * learn which resources support conditions in their IAM policies, see the [IAM
+ * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
  *
  * <p>&#42;&#42;JSON example:&#42;&#42;
  *
  * <p>{ "bindings": [ { "role": "roles/resourcemanager.organizationAdmin", "members": [
  * "user:mike{@literal @}example.com", "group:admins{@literal @}example.com", "domain:google.com",
  * "serviceAccount:my-project-id{@literal @}appspot.gserviceaccount.com" ] }, { "role":
- * "roles/resourcemanager.organizationViewer", "members": ["user:eve{@literal @}example.com"],
+ * "roles/resourcemanager.organizationViewer", "members": [ "user:eve{@literal @}example.com" ],
  * "condition": { "title": "expirable access", "description": "Does not grant access after Sep
  * 2020", "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')", } } ], "etag":
  * "BwWWja0YfJA=", "version": 3 }
@@ -198,6 +200,9 @@ public final class Policy implements ApiMessage {
    *
    * <p>If a policy does not include any conditions, operations on that policy may specify any valid
    * version or leave the field unset.
+   *
+   * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+   * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    */
   public Integer getVersion() {
     return version;
@@ -432,6 +437,9 @@ public final class Policy implements ApiMessage {
      *
      * <p>If a policy does not include any conditions, operations on that policy may specify any
      * valid version or leave the field unset.
+     *
+     * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      */
     public Integer getVersion() {
       return version;
@@ -456,6 +464,9 @@ public final class Policy implements ApiMessage {
      *
      * <p>If a policy does not include any conditions, operations on that policy may specify any
      * valid version or leave the field unset.
+     *
+     * <p>To learn which resources support conditions in their IAM policies, see the [IAM
+     * documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      */
     public Builder setVersion(Integer version) {
       this.version = version;

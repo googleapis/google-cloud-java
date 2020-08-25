@@ -579,8 +579,8 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance The instance name for this request.
-   * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance.
+   * @param forceAttach Whether to force attach the regional disk even if it's currently attached to
+   *     another instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -614,8 +614,8 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance The instance name for this request.
-   * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance.
+   * @param forceAttach Whether to force attach the regional disk even if it's currently attached to
+   *     another instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1249,18 +1249,22 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = instanceClient.getIamPolicyInstance(resource);
+   *   Policy response = instanceClient.getIamPolicyInstance(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyInstance(ProjectZoneInstanceResourceName resource) {
+  public final Policy getIamPolicyInstance(
+      Integer optionsRequestedPolicyVersion, ProjectZoneInstanceResourceName resource) {
     GetIamPolicyInstanceHttpRequest request =
         GetIamPolicyInstanceHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyInstance(request);
@@ -1275,18 +1279,23 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = instanceClient.getIamPolicyInstance(resource.toString());
+   *   Policy response = instanceClient.getIamPolicyInstance(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyInstance(String resource) {
+  public final Policy getIamPolicyInstance(Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyInstanceHttpRequest request =
-        GetIamPolicyInstanceHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyInstanceHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyInstance(request);
   }
 
@@ -1299,8 +1308,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = instanceClient.getIamPolicyInstance(request);
@@ -1324,8 +1335,10 @@ public class InstanceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneInstanceResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceClient.getIamPolicyInstanceCallable().futureCall(request);
@@ -1355,12 +1368,19 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Name of the instance scoping this request.
+   * @param instance Name of the instance for this request.
    * @param port Specifies which COM or serial port to retrieve data from.
-   * @param start Returns output starting from a specific byte position. Use this to page through
-   *     output when the output is too large to return in a single request. For the initial request,
-   *     leave this field unspecified. For subsequent calls, this field should be set to the next
-   *     value returned in the previous call.
+   * @param start Specifies the starting byte position of the output to return. To start with the
+   *     first byte of output to the specified port, omit this field or set it to `0`.
+   *     <p>If the output for that byte position is available, this field matches the `start`
+   *     parameter sent with the request. If the amount of serial console output exceeds the size of
+   *     the buffer (1 MB), the oldest output is discarded and is no longer available. If the
+   *     requested start position refers to discarded output, the start position is adjusted to the
+   *     oldest output still available, and the adjusted start position is returned as the `start`
+   *     property value.
+   *     <p>You can also provide a negative start position, which translates to the most recent
+   *     number of bytes written to the serial port. For example, -3 is interpreted as the most
+   *     recent 3 bytes written to the serial console.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1390,12 +1410,19 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Name of the instance scoping this request.
+   * @param instance Name of the instance for this request.
    * @param port Specifies which COM or serial port to retrieve data from.
-   * @param start Returns output starting from a specific byte position. Use this to page through
-   *     output when the output is too large to return in a single request. For the initial request,
-   *     leave this field unspecified. For subsequent calls, this field should be set to the next
-   *     value returned in the previous call.
+   * @param start Specifies the starting byte position of the output to return. To start with the
+   *     first byte of output to the specified port, omit this field or set it to `0`.
+   *     <p>If the output for that byte position is available, this field matches the `start`
+   *     parameter sent with the request. If the amount of serial console output exceeds the size of
+   *     the buffer (1 MB), the oldest output is discarded and is no longer available. If the
+   *     requested start position refers to discarded output, the start position is adjusted to the
+   *     oldest output still available, and the adjusted start position is returned as the `start`
+   *     property value.
+   *     <p>You can also provide a negative start position, which translates to the most recent
+   *     number of bytes written to the serial port. For example, -3 is interpreted as the most
+   *     recent 3 bytes written to the serial console.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1814,8 +1841,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances.
+   * Retrieves a list of resources that refer to the VM instance specified in the request. For
+   * example, if the VM instance is part of a managed instance group, the referrers list includes
+   * the managed instance group. For more information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1844,8 +1872,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances.
+   * Retrieves a list of resources that refer to the VM instance specified in the request. For
+   * example, if the VM instance is part of a managed instance group, the referrers list includes
+   * the managed instance group. For more information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1871,8 +1900,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances.
+   * Retrieves a list of resources that refer to the VM instance specified in the request. For
+   * example, if the VM instance is part of a managed instance group, the referrers list includes
+   * the managed instance group. For more information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1899,8 +1929,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances.
+   * Retrieves a list of resources that refer to the VM instance specified in the request. For
+   * example, if the VM instance is part of a managed instance group, the referrers list includes
+   * the managed instance group. For more information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1926,8 +1957,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone. For more
-   * information, read Viewing Referrers to VM Instances.
+   * Retrieves a list of resources that refer to the VM instance specified in the request. For
+   * example, if the VM instance is part of a managed instance group, the referrers list includes
+   * the managed instance group. For more information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -3086,7 +3118,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options.
+   * Sets an instance's scheduling options. You can only call this method on a stopped instance,
+   * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
+   * information on the possible instance states.
    *
    * <p>Sample code:
    *
@@ -3099,7 +3133,7 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance Instance name for this request.
-   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 10
+   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 12
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3115,7 +3149,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options.
+   * Sets an instance's scheduling options. You can only call this method on a stopped instance,
+   * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
+   * information on the possible instance states.
    *
    * <p>Sample code:
    *
@@ -3128,7 +3164,7 @@ public class InstanceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param instance Instance name for this request.
-   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 10
+   * @param schedulingResource Sets the scheduling options for an Instance. NextID: 12
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3143,7 +3179,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options.
+   * Sets an instance's scheduling options. You can only call this method on a stopped instance,
+   * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
+   * information on the possible instance states.
    *
    * <p>Sample code:
    *
@@ -3169,7 +3207,9 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets an instance's scheduling options.
+   * Sets an instance's scheduling options. You can only call this method on a stopped instance,
+   * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
+   * information on the possible instance states.
    *
    * <p>Sample code:
    *

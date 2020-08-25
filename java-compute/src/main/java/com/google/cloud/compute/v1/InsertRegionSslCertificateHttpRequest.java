@@ -202,9 +202,9 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
    * <p>Optionally, certificate file contents that you upload can contain a set of up to five
    * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data.
    * You can use SSL keys and certificates to secure connections to a load balancer. For more
-   * information, read Creating and using SSL certificates and SSL certificates quotas and limits.
-   * (== resource_for {$api_version}.sslCertificates ==) (== resource_for
-   * {$api_version}.regionSslCertificates ==)
+   * information, read Creating and using SSL certificates, SSL certificates quotas and limits, and
+   * Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates ==) (==
+   * resource_for {$api_version}.regionSslCertificates ==)
    */
   public SslCertificate getSslCertificateResource() {
     return sslCertificateResource;
@@ -439,9 +439,9 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
      * <p>Optionally, certificate file contents that you upload can contain a set of up to five
      * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this
      * data. You can use SSL keys and certificates to secure connections to a load balancer. For
-     * more information, read Creating and using SSL certificates and SSL certificates quotas and
-     * limits. (== resource_for {$api_version}.sslCertificates ==) (== resource_for
-     * {$api_version}.regionSslCertificates ==)
+     * more information, read Creating and using SSL certificates, SSL certificates quotas and
+     * limits, and Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates
+     * ==) (== resource_for {$api_version}.regionSslCertificates ==)
      */
     public SslCertificate getSslCertificateResource() {
       return sslCertificateResource;
@@ -463,9 +463,9 @@ public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
      * <p>Optionally, certificate file contents that you upload can contain a set of up to five
      * PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this
      * data. You can use SSL keys and certificates to secure connections to a load balancer. For
-     * more information, read Creating and using SSL certificates and SSL certificates quotas and
-     * limits. (== resource_for {$api_version}.sslCertificates ==) (== resource_for
-     * {$api_version}.regionSslCertificates ==)
+     * more information, read Creating and using SSL certificates, SSL certificates quotas and
+     * limits, and Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates
+     * ==) (== resource_for {$api_version}.regionSslCertificates ==)
      */
     public Builder setSslCertificateResource(SslCertificate sslCertificateResource) {
       this.sslCertificateResource = sslCertificateResource;

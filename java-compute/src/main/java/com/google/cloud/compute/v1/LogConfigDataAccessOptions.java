@@ -62,12 +62,6 @@ public final class LogConfigDataAccessOptions implements ApiMessage {
     return null;
   }
 
-  /**
-   * Whether Gin logging should happen in a fail-closed manner at the caller. This is currently
-   * supported in the LocalIAM implementation, Stubby C++, and Stubby Java. For Apps Framework, see
-   * go/af-audit-logging#failclosed. TODO(b/77591626): Add support for Stubby Go. TODO(b/129671387):
-   * Add support for Scaffolding.
-   */
   public String getLogMode() {
     return logMode;
   }
@@ -111,22 +105,10 @@ public final class LogConfigDataAccessOptions implements ApiMessage {
       this.logMode = source.logMode;
     }
 
-    /**
-     * Whether Gin logging should happen in a fail-closed manner at the caller. This is currently
-     * supported in the LocalIAM implementation, Stubby C++, and Stubby Java. For Apps Framework,
-     * see go/af-audit-logging#failclosed. TODO(b/77591626): Add support for Stubby Go.
-     * TODO(b/129671387): Add support for Scaffolding.
-     */
     public String getLogMode() {
       return logMode;
     }
 
-    /**
-     * Whether Gin logging should happen in a fail-closed manner at the caller. This is currently
-     * supported in the LocalIAM implementation, Stubby C++, and Stubby Java. For Apps Framework,
-     * see go/af-audit-logging#failclosed. TODO(b/77591626): Add support for Stubby Go.
-     * TODO(b/129671387): Add support for Scaffolding.
-     */
     public Builder setLogMode(String logMode) {
       this.logMode = logMode;
       return this;

@@ -149,7 +149,15 @@ public final class InsertPacketMirroringHttpRequest implements ApiMessage {
     return key;
   }
 
-  /** Represents a PacketMirroring resource. */
+  /**
+   * Represents a Packet Mirroring resource.
+   *
+   * <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+   * (VPC) network and forwards it to a collector destination, such as an instance group of an
+   * internal TCP/UDP load balancer, for analysis or examination. For more information about setting
+   * up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+   * {$api_version}.packetMirrorings ==)
+   */
   public PacketMirroring getPacketMirroringResource() {
     return packetMirroringResource;
   }
@@ -325,12 +333,28 @@ public final class InsertPacketMirroringHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Represents a PacketMirroring resource. */
+    /**
+     * Represents a Packet Mirroring resource.
+     *
+     * <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+     * (VPC) network and forwards it to a collector destination, such as an instance group of an
+     * internal TCP/UDP load balancer, for analysis or examination. For more information about
+     * setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+     * {$api_version}.packetMirrorings ==)
+     */
     public PacketMirroring getPacketMirroringResource() {
       return packetMirroringResource;
     }
 
-    /** Represents a PacketMirroring resource. */
+    /**
+     * Represents a Packet Mirroring resource.
+     *
+     * <p>Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud
+     * (VPC) network and forwards it to a collector destination, such as an instance group of an
+     * internal TCP/UDP load balancer, for analysis or examination. For more information about
+     * setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for
+     * {$api_version}.packetMirrorings ==)
+     */
     public Builder setPacketMirroringResource(PacketMirroring packetMirroringResource) {
       this.packetMirroringResource = packetMirroringResource;
       return this;

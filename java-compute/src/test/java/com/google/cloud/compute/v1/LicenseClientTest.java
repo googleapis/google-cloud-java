@@ -251,10 +251,11 @@ public class LicenseClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectGlobalLicenseResourceName resource =
         ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyLicense(resource);
+    Policy actualResponse = client.getIamPolicyLicense(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -281,10 +282,11 @@ public class LicenseClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectGlobalLicenseResourceName resource =
           ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
 
-      client.getIamPolicyLicense(resource);
+      client.getIamPolicyLicense(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

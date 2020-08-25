@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Describes a single physical circuit between the Customer and Google. CircuitInfo objects are
- * created by Google, so all fields are output only. Next id: 4
+ * created by Google, so all fields are output only.
  */
 public final class InterconnectCircuitInfo implements ApiMessage {
   private final String customerDemarcId;

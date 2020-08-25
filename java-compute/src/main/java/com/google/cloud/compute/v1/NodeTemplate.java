@@ -29,10 +29,10 @@ import javax.annotation.Nullable;
  * Represent a sole-tenant Node Template resource.
  *
  * <p>You can use a template to define properties for nodes in a node group. For more information,
- * read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==) (==
- * NextID: 19 ==)
+ * read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==)
  */
 public final class NodeTemplate implements ApiMessage {
+  private final String cpuOvercommitType;
   private final String creationTimestamp;
   private final String description;
   private final String id;
@@ -48,6 +48,7 @@ public final class NodeTemplate implements ApiMessage {
   private final String statusMessage;
 
   private NodeTemplate() {
+    this.cpuOvercommitType = null;
     this.creationTimestamp = null;
     this.description = null;
     this.id = null;
@@ -64,6 +65,7 @@ public final class NodeTemplate implements ApiMessage {
   }
 
   private NodeTemplate(
+      String cpuOvercommitType,
       String creationTimestamp,
       String description,
       String id,
@@ -77,6 +79,7 @@ public final class NodeTemplate implements ApiMessage {
       ServerBinding serverBinding,
       String status,
       String statusMessage) {
+    this.cpuOvercommitType = cpuOvercommitType;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.id = id;
@@ -94,6 +97,9 @@ public final class NodeTemplate implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("cpuOvercommitType".equals(fieldName)) {
+      return cpuOvercommitType;
+    }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
@@ -152,6 +158,11 @@ public final class NodeTemplate implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** CPU overcommit. */
+  public String getCpuOvercommitType() {
+    return cpuOvercommitType;
   }
 
   /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -267,6 +278,7 @@ public final class NodeTemplate implements ApiMessage {
   }
 
   public static class Builder {
+    private String cpuOvercommitType;
     private String creationTimestamp;
     private String description;
     private String id;
@@ -285,6 +297,9 @@ public final class NodeTemplate implements ApiMessage {
 
     public Builder mergeFrom(NodeTemplate other) {
       if (other == NodeTemplate.getDefaultInstance()) return this;
+      if (other.getCpuOvercommitType() != null) {
+        this.cpuOvercommitType = other.cpuOvercommitType;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
@@ -328,6 +343,7 @@ public final class NodeTemplate implements ApiMessage {
     }
 
     Builder(NodeTemplate source) {
+      this.cpuOvercommitType = source.cpuOvercommitType;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.id = source.id;
@@ -341,6 +357,17 @@ public final class NodeTemplate implements ApiMessage {
       this.serverBinding = source.serverBinding;
       this.status = source.status;
       this.statusMessage = source.statusMessage;
+    }
+
+    /** CPU overcommit. */
+    public String getCpuOvercommitType() {
+      return cpuOvercommitType;
+    }
+
+    /** CPU overcommit. */
+    public Builder setCpuOvercommitType(String cpuOvercommitType) {
+      this.cpuOvercommitType = cpuOvercommitType;
+      return this;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -547,6 +574,7 @@ public final class NodeTemplate implements ApiMessage {
     public NodeTemplate build() {
 
       return new NodeTemplate(
+          cpuOvercommitType,
           creationTimestamp,
           description,
           id,
@@ -564,6 +592,7 @@ public final class NodeTemplate implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setCpuOvercommitType(this.cpuOvercommitType);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setId(this.id);
@@ -584,6 +613,9 @@ public final class NodeTemplate implements ApiMessage {
   @Override
   public String toString() {
     return "NodeTemplate{"
+        + "cpuOvercommitType="
+        + cpuOvercommitType
+        + ", "
         + "creationTimestamp="
         + creationTimestamp
         + ", "
@@ -632,7 +664,8 @@ public final class NodeTemplate implements ApiMessage {
     }
     if (o instanceof NodeTemplate) {
       NodeTemplate that = (NodeTemplate) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+      return Objects.equals(this.cpuOvercommitType, that.getCpuOvercommitType())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
@@ -652,6 +685,7 @@ public final class NodeTemplate implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        cpuOvercommitType,
         creationTimestamp,
         description,
         id,

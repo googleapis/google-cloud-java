@@ -36,10 +36,10 @@ import javax.annotation.Nullable;
  *
  * <p>Example Policy with multiple AuditConfigs:
  *
- * <p>{ "audit_configs": [ { "service": "allServices" "audit_log_configs": [ { "log_type":
+ * <p>{ "audit_configs": [ { "service": "allServices", "audit_log_configs": [ { "log_type":
  * "DATA_READ", "exempted_members": [ "user:jose{@literal @}example.com" ] }, { "log_type":
- * "DATA_WRITE", }, { "log_type": "ADMIN_READ", } ] }, { "service": "sampleservice.googleapis.com"
- * "audit_log_configs": [ { "log_type": "DATA_READ", }, { "log_type": "DATA_WRITE",
+ * "DATA_WRITE" }, { "log_type": "ADMIN_READ" } ] }, { "service": "sampleservice.googleapis.com",
+ * "audit_log_configs": [ { "log_type": "DATA_READ" }, { "log_type": "DATA_WRITE",
  * "exempted_members": [ "user:aliya{@literal @}example.com" ] } ] } ] }
  *
  * <p>For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also

@@ -746,18 +746,22 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(resource);
+   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyNodeGroup(ProjectZoneNodeGroupResourceName resource) {
+  public final Policy getIamPolicyNodeGroup(
+      Integer optionsRequestedPolicyVersion, ProjectZoneNodeGroupResourceName resource) {
     GetIamPolicyNodeGroupHttpRequest request =
         GetIamPolicyNodeGroupHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyNodeGroup(request);
@@ -772,18 +776,24 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(resource.toString());
+   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyNodeGroup(String resource) {
+  public final Policy getIamPolicyNodeGroup(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyNodeGroupHttpRequest request =
-        GetIamPolicyNodeGroupHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyNodeGroupHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyNodeGroup(request);
   }
 
@@ -796,8 +806,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(request);
@@ -821,8 +833,10 @@ public class NodeGroupClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneNodeGroupResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeGroupClient.getIamPolicyNodeGroupCallable().futureCall(request);

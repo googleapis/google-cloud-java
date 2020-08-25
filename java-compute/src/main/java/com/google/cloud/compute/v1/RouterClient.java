@@ -762,7 +762,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param region Name of the region for this request.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -792,7 +792,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param region Name of the region for this request.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1011,7 +1011,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1048,7 +1048,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to patch.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1140,7 +1140,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to query.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1171,7 +1171,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to query.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1257,7 +1257,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1295,7 +1295,7 @@ public class RouterClient implements BackgroundResource {
    *
    * @param router Name of the Router resource to update.
    * @param routerResource Represents a Cloud Router resource.
-   *     <p>For more information about Cloud Router, read the the Cloud Router overview.
+   *     <p>For more information about Cloud Router, read the Cloud Router overview.
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does

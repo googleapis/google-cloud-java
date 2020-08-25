@@ -34,6 +34,7 @@ public final class AutoscalingPolicy implements ApiMessage {
   private final Integer maxNumReplicas;
   private final Integer minNumReplicas;
   private final String mode;
+  private final AutoscalingPolicyScaleInControl scaleInControl;
 
   private AutoscalingPolicy() {
     this.coolDownPeriodSec = null;
@@ -43,6 +44,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     this.maxNumReplicas = null;
     this.minNumReplicas = null;
     this.mode = null;
+    this.scaleInControl = null;
   }
 
   private AutoscalingPolicy(
@@ -52,7 +54,8 @@ public final class AutoscalingPolicy implements ApiMessage {
       AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization,
       Integer maxNumReplicas,
       Integer minNumReplicas,
-      String mode) {
+      String mode,
+      AutoscalingPolicyScaleInControl scaleInControl) {
     this.coolDownPeriodSec = coolDownPeriodSec;
     this.cpuUtilization = cpuUtilization;
     this.customMetricUtilizations = customMetricUtilizations;
@@ -60,6 +63,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     this.maxNumReplicas = maxNumReplicas;
     this.minNumReplicas = minNumReplicas;
     this.mode = mode;
+    this.scaleInControl = scaleInControl;
   }
 
   @Override
@@ -84,6 +88,9 @@ public final class AutoscalingPolicy implements ApiMessage {
     }
     if ("mode".equals(fieldName)) {
       return mode;
+    }
+    if ("scaleInControl".equals(fieldName)) {
+      return scaleInControl;
     }
     return null;
   }
@@ -161,6 +168,10 @@ public final class AutoscalingPolicy implements ApiMessage {
     return mode;
   }
 
+  public AutoscalingPolicyScaleInControl getScaleInControl() {
+    return scaleInControl;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -191,6 +202,7 @@ public final class AutoscalingPolicy implements ApiMessage {
     private Integer maxNumReplicas;
     private Integer minNumReplicas;
     private String mode;
+    private AutoscalingPolicyScaleInControl scaleInControl;
 
     Builder() {}
 
@@ -217,6 +229,9 @@ public final class AutoscalingPolicy implements ApiMessage {
       if (other.getMode() != null) {
         this.mode = other.mode;
       }
+      if (other.getScaleInControl() != null) {
+        this.scaleInControl = other.scaleInControl;
+      }
       return this;
     }
 
@@ -228,6 +243,7 @@ public final class AutoscalingPolicy implements ApiMessage {
       this.maxNumReplicas = source.maxNumReplicas;
       this.minNumReplicas = source.minNumReplicas;
       this.mode = source.mode;
+      this.scaleInControl = source.scaleInControl;
     }
 
     /**
@@ -362,6 +378,15 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
+    public AutoscalingPolicyScaleInControl getScaleInControl() {
+      return scaleInControl;
+    }
+
+    public Builder setScaleInControl(AutoscalingPolicyScaleInControl scaleInControl) {
+      this.scaleInControl = scaleInControl;
+      return this;
+    }
+
     public AutoscalingPolicy build() {
 
       return new AutoscalingPolicy(
@@ -371,7 +396,8 @@ public final class AutoscalingPolicy implements ApiMessage {
           loadBalancingUtilization,
           maxNumReplicas,
           minNumReplicas,
-          mode);
+          mode,
+          scaleInControl);
     }
 
     public Builder clone() {
@@ -383,6 +409,7 @@ public final class AutoscalingPolicy implements ApiMessage {
       newBuilder.setMaxNumReplicas(this.maxNumReplicas);
       newBuilder.setMinNumReplicas(this.minNumReplicas);
       newBuilder.setMode(this.mode);
+      newBuilder.setScaleInControl(this.scaleInControl);
       return newBuilder;
     }
   }
@@ -410,6 +437,9 @@ public final class AutoscalingPolicy implements ApiMessage {
         + ", "
         + "mode="
         + mode
+        + ", "
+        + "scaleInControl="
+        + scaleInControl
         + "}";
   }
 
@@ -426,7 +456,8 @@ public final class AutoscalingPolicy implements ApiMessage {
           && Objects.equals(this.loadBalancingUtilization, that.getLoadBalancingUtilization())
           && Objects.equals(this.maxNumReplicas, that.getMaxNumReplicas())
           && Objects.equals(this.minNumReplicas, that.getMinNumReplicas())
-          && Objects.equals(this.mode, that.getMode());
+          && Objects.equals(this.mode, that.getMode())
+          && Objects.equals(this.scaleInControl, that.getScaleInControl());
     }
     return false;
   }
@@ -440,6 +471,7 @@ public final class AutoscalingPolicy implements ApiMessage {
         loadBalancingUtilization,
         maxNumReplicas,
         minNumReplicas,
-        mode);
+        mode,
+        scaleInControl);
   }
 }

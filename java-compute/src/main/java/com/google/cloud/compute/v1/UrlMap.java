@@ -192,7 +192,8 @@ public final class UrlMap implements ApiMessage {
    * the request to the selected backend. If defaultRouteAction specifies any
    * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
    * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-   * or defaultUrlRedirect must be set.
+   * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only the
+   * urlRewrite action within defaultRouteAction.
    */
   public HttpRouteAction getDefaultRouteAction() {
     return defaultRouteAction;
@@ -429,7 +430,8 @@ public final class UrlMap implements ApiMessage {
      * the request to the selected backend. If defaultRouteAction specifies any
      * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
      * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-     * or defaultUrlRedirect must be set.
+     * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only
+     * the urlRewrite action within defaultRouteAction.
      */
     public HttpRouteAction getDefaultRouteAction() {
       return defaultRouteAction;
@@ -441,7 +443,8 @@ public final class UrlMap implements ApiMessage {
      * the request to the selected backend. If defaultRouteAction specifies any
      * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
      * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
-     * or defaultUrlRedirect must be set.
+     * or defaultUrlRedirect must be set. UrlMaps for external HTTP(S) load balancers support only
+     * the urlRewrite action within defaultRouteAction.
      */
     public Builder setDefaultRouteAction(HttpRouteAction defaultRouteAction) {
       this.defaultRouteAction = defaultRouteAction;

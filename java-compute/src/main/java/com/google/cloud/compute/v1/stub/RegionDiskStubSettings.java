@@ -44,12 +44,15 @@ import com.google.cloud.compute.v1.CreateSnapshotRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.Disk;
 import com.google.cloud.compute.v1.DiskList;
+import com.google.cloud.compute.v1.GetIamPolicyRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.GetRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ListRegionDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
@@ -114,6 +117,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
       createSnapshotRegionDiskSettings;
   private final UnaryCallSettings<DeleteRegionDiskHttpRequest, Operation> deleteRegionDiskSettings;
   private final UnaryCallSettings<GetRegionDiskHttpRequest, Disk> getRegionDiskSettings;
+  private final UnaryCallSettings<GetIamPolicyRegionDiskHttpRequest, Policy>
+      getIamPolicyRegionDiskSettings;
   private final UnaryCallSettings<InsertRegionDiskHttpRequest, Operation> insertRegionDiskSettings;
   private final PagedCallSettings<
           ListRegionDisksHttpRequest, DiskList, ListRegionDisksPagedResponse>
@@ -121,6 +126,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   private final UnaryCallSettings<RemoveResourcePoliciesRegionDiskHttpRequest, Operation>
       removeResourcePoliciesRegionDiskSettings;
   private final UnaryCallSettings<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskSettings;
+  private final UnaryCallSettings<SetIamPolicyRegionDiskHttpRequest, Policy>
+      setIamPolicyRegionDiskSettings;
   private final UnaryCallSettings<SetLabelsRegionDiskHttpRequest, Operation>
       setLabelsRegionDiskSettings;
   private final UnaryCallSettings<TestIamPermissionsRegionDiskHttpRequest, TestPermissionsResponse>
@@ -148,6 +155,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     return getRegionDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyRegionDisk. */
+  public UnaryCallSettings<GetIamPolicyRegionDiskHttpRequest, Policy>
+      getIamPolicyRegionDiskSettings() {
+    return getIamPolicyRegionDiskSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertRegionDisk. */
   public UnaryCallSettings<InsertRegionDiskHttpRequest, Operation> insertRegionDiskSettings() {
     return insertRegionDiskSettings;
@@ -168,6 +181,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
   /** Returns the object with the settings used for calls to resizeRegionDisk. */
   public UnaryCallSettings<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskSettings() {
     return resizeRegionDiskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyRegionDisk. */
+  public UnaryCallSettings<SetIamPolicyRegionDiskHttpRequest, Policy>
+      setIamPolicyRegionDiskSettings() {
+    return setIamPolicyRegionDiskSettings;
   }
 
   /** Returns the object with the settings used for calls to setLabelsRegionDisk. */
@@ -262,11 +281,13 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     createSnapshotRegionDiskSettings = settingsBuilder.createSnapshotRegionDiskSettings().build();
     deleteRegionDiskSettings = settingsBuilder.deleteRegionDiskSettings().build();
     getRegionDiskSettings = settingsBuilder.getRegionDiskSettings().build();
+    getIamPolicyRegionDiskSettings = settingsBuilder.getIamPolicyRegionDiskSettings().build();
     insertRegionDiskSettings = settingsBuilder.insertRegionDiskSettings().build();
     listRegionDisksSettings = settingsBuilder.listRegionDisksSettings().build();
     removeResourcePoliciesRegionDiskSettings =
         settingsBuilder.removeResourcePoliciesRegionDiskSettings().build();
     resizeRegionDiskSettings = settingsBuilder.resizeRegionDiskSettings().build();
+    setIamPolicyRegionDiskSettings = settingsBuilder.setIamPolicyRegionDiskSettings().build();
     setLabelsRegionDiskSettings = settingsBuilder.setLabelsRegionDiskSettings().build();
     testIamPermissionsRegionDiskSettings =
         settingsBuilder.testIamPermissionsRegionDiskSettings().build();
@@ -338,6 +359,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     private final UnaryCallSettings.Builder<DeleteRegionDiskHttpRequest, Operation>
         deleteRegionDiskSettings;
     private final UnaryCallSettings.Builder<GetRegionDiskHttpRequest, Disk> getRegionDiskSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRegionDiskHttpRequest, Policy>
+        getIamPolicyRegionDiskSettings;
     private final UnaryCallSettings.Builder<InsertRegionDiskHttpRequest, Operation>
         insertRegionDiskSettings;
     private final PagedCallSettings.Builder<
@@ -347,6 +370,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
         removeResourcePoliciesRegionDiskSettings;
     private final UnaryCallSettings.Builder<ResizeRegionDiskHttpRequest, Operation>
         resizeRegionDiskSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRegionDiskHttpRequest, Policy>
+        setIamPolicyRegionDiskSettings;
     private final UnaryCallSettings.Builder<SetLabelsRegionDiskHttpRequest, Operation>
         setLabelsRegionDiskSettings;
     private final UnaryCallSettings.Builder<
@@ -402,6 +427,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
       getRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listRegionDisksSettings = PagedCallSettings.newBuilder(LIST_REGION_DISKS_PAGE_STR_FACT);
@@ -409,6 +436,8 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
       removeResourcePoliciesRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       resizeRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setIamPolicyRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setLabelsRegionDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -420,10 +449,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
               createSnapshotRegionDiskSettings,
               deleteRegionDiskSettings,
               getRegionDiskSettings,
+              getIamPolicyRegionDiskSettings,
               insertRegionDiskSettings,
               listRegionDisksSettings,
               removeResourcePoliciesRegionDiskSettings,
               resizeRegionDiskSettings,
+              setIamPolicyRegionDiskSettings,
               setLabelsRegionDiskSettings,
               testIamPermissionsRegionDiskSettings);
 
@@ -462,6 +493,11 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyRegionDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertRegionDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -478,6 +514,11 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
       builder
           .resizeRegionDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicyRegionDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -502,11 +543,13 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
       createSnapshotRegionDiskSettings = settings.createSnapshotRegionDiskSettings.toBuilder();
       deleteRegionDiskSettings = settings.deleteRegionDiskSettings.toBuilder();
       getRegionDiskSettings = settings.getRegionDiskSettings.toBuilder();
+      getIamPolicyRegionDiskSettings = settings.getIamPolicyRegionDiskSettings.toBuilder();
       insertRegionDiskSettings = settings.insertRegionDiskSettings.toBuilder();
       listRegionDisksSettings = settings.listRegionDisksSettings.toBuilder();
       removeResourcePoliciesRegionDiskSettings =
           settings.removeResourcePoliciesRegionDiskSettings.toBuilder();
       resizeRegionDiskSettings = settings.resizeRegionDiskSettings.toBuilder();
+      setIamPolicyRegionDiskSettings = settings.setIamPolicyRegionDiskSettings.toBuilder();
       setLabelsRegionDiskSettings = settings.setLabelsRegionDiskSettings.toBuilder();
       testIamPermissionsRegionDiskSettings =
           settings.testIamPermissionsRegionDiskSettings.toBuilder();
@@ -517,10 +560,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
               createSnapshotRegionDiskSettings,
               deleteRegionDiskSettings,
               getRegionDiskSettings,
+              getIamPolicyRegionDiskSettings,
               insertRegionDiskSettings,
               listRegionDisksSettings,
               removeResourcePoliciesRegionDiskSettings,
               resizeRegionDiskSettings,
+              setIamPolicyRegionDiskSettings,
               setLabelsRegionDiskSettings,
               testIamPermissionsRegionDiskSettings);
     }
@@ -564,6 +609,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
       return getRegionDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyRegionDisk. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionDiskHttpRequest, Policy>
+        getIamPolicyRegionDiskSettings() {
+      return getIamPolicyRegionDiskSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertRegionDisk. */
     public UnaryCallSettings.Builder<InsertRegionDiskHttpRequest, Operation>
         insertRegionDiskSettings() {
@@ -587,6 +638,12 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
     public UnaryCallSettings.Builder<ResizeRegionDiskHttpRequest, Operation>
         resizeRegionDiskSettings() {
       return resizeRegionDiskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyRegionDisk. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionDiskHttpRequest, Policy>
+        setIamPolicyRegionDiskSettings() {
+      return setIamPolicyRegionDiskSettings;
     }
 
     /** Returns the builder for the settings used for calls to setLabelsRegionDisk. */

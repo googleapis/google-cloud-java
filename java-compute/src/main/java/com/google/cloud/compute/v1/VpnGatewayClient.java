@@ -624,7 +624,11 @@ public class VpnGatewayClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param vpnGatewayResource Represents a VPN gateway resource. Next ID: 13
+   * @param vpnGatewayResource Represents a HA VPN gateway.
+   *     <p>HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect
+   *     your on-premises network to your Google Cloud Virtual Private Cloud network through an
+   *     IPsec VPN connection in a single region. For more information about Cloud HA VPN solutions,
+   *     see Cloud VPN topologies . (== resource_for {$api_version}.vpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -653,7 +657,11 @@ public class VpnGatewayClient implements BackgroundResource {
    * </code></pre>
    *
    * @param region Name of the region for this request.
-   * @param vpnGatewayResource Represents a VPN gateway resource. Next ID: 13
+   * @param vpnGatewayResource Represents a HA VPN gateway.
+   *     <p>HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect
+   *     your on-premises network to your Google Cloud Virtual Private Cloud network through an
+   *     IPsec VPN connection in a single region. For more information about Cloud HA VPN solutions,
+   *     see Cloud VPN topologies . (== resource_for {$api_version}.vpnGateways ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

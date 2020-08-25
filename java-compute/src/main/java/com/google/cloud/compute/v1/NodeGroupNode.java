@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class NodeGroupNode implements ApiMessage {
+  private final String cpuOvercommitType;
   private final List<String> instances;
   private final String name;
   private final String nodeType;
@@ -34,6 +35,7 @@ public final class NodeGroupNode implements ApiMessage {
   private final String status;
 
   private NodeGroupNode() {
+    this.cpuOvercommitType = null;
     this.instances = null;
     this.name = null;
     this.nodeType = null;
@@ -43,12 +45,14 @@ public final class NodeGroupNode implements ApiMessage {
   }
 
   private NodeGroupNode(
+      String cpuOvercommitType,
       List<String> instances,
       String name,
       String nodeType,
       ServerBinding serverBinding,
       String serverId,
       String status) {
+    this.cpuOvercommitType = cpuOvercommitType;
     this.instances = instances;
     this.name = name;
     this.nodeType = nodeType;
@@ -59,6 +63,9 @@ public final class NodeGroupNode implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("cpuOvercommitType".equals(fieldName)) {
+      return cpuOvercommitType;
+    }
     if ("instances".equals(fieldName)) {
       return instances;
     }
@@ -96,6 +103,11 @@ public final class NodeGroupNode implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** CPU overcommit. */
+  public String getCpuOvercommitType() {
+    return cpuOvercommitType;
   }
 
   /** Instances scheduled on this node. */
@@ -150,6 +162,7 @@ public final class NodeGroupNode implements ApiMessage {
   }
 
   public static class Builder {
+    private String cpuOvercommitType;
     private List<String> instances;
     private String name;
     private String nodeType;
@@ -161,6 +174,9 @@ public final class NodeGroupNode implements ApiMessage {
 
     public Builder mergeFrom(NodeGroupNode other) {
       if (other == NodeGroupNode.getDefaultInstance()) return this;
+      if (other.getCpuOvercommitType() != null) {
+        this.cpuOvercommitType = other.cpuOvercommitType;
+      }
       if (other.getInstancesList() != null) {
         this.instances = other.instances;
       }
@@ -183,12 +199,24 @@ public final class NodeGroupNode implements ApiMessage {
     }
 
     Builder(NodeGroupNode source) {
+      this.cpuOvercommitType = source.cpuOvercommitType;
       this.instances = source.instances;
       this.name = source.name;
       this.nodeType = source.nodeType;
       this.serverBinding = source.serverBinding;
       this.serverId = source.serverId;
       this.status = source.status;
+    }
+
+    /** CPU overcommit. */
+    public String getCpuOvercommitType() {
+      return cpuOvercommitType;
+    }
+
+    /** CPU overcommit. */
+    public Builder setCpuOvercommitType(String cpuOvercommitType) {
+      this.cpuOvercommitType = cpuOvercommitType;
+      return this;
     }
 
     /** Instances scheduled on this node. */
@@ -269,11 +297,13 @@ public final class NodeGroupNode implements ApiMessage {
 
     public NodeGroupNode build() {
 
-      return new NodeGroupNode(instances, name, nodeType, serverBinding, serverId, status);
+      return new NodeGroupNode(
+          cpuOvercommitType, instances, name, nodeType, serverBinding, serverId, status);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setCpuOvercommitType(this.cpuOvercommitType);
       newBuilder.addAllInstances(this.instances);
       newBuilder.setName(this.name);
       newBuilder.setNodeType(this.nodeType);
@@ -287,6 +317,9 @@ public final class NodeGroupNode implements ApiMessage {
   @Override
   public String toString() {
     return "NodeGroupNode{"
+        + "cpuOvercommitType="
+        + cpuOvercommitType
+        + ", "
         + "instances="
         + instances
         + ", "
@@ -314,7 +347,8 @@ public final class NodeGroupNode implements ApiMessage {
     }
     if (o instanceof NodeGroupNode) {
       NodeGroupNode that = (NodeGroupNode) o;
-      return Objects.equals(this.instances, that.getInstancesList())
+      return Objects.equals(this.cpuOvercommitType, that.getCpuOvercommitType())
+          && Objects.equals(this.instances, that.getInstancesList())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.nodeType, that.getNodeType())
           && Objects.equals(this.serverBinding, that.getServerBinding())
@@ -326,6 +360,7 @@ public final class NodeGroupNode implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(instances, name, nodeType, serverBinding, serverId, status);
+    return Objects.hash(
+        cpuOvercommitType, instances, name, nodeType, serverBinding, serverId, status);
   }
 }

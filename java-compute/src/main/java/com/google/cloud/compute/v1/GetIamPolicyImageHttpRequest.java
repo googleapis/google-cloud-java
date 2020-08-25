@@ -33,6 +33,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
   private final String callback;
   private final String fields;
   private final String key;
+  private final Integer optionsRequestedPolicyVersion;
   private final String prettyPrint;
   private final String quotaUser;
   private final String resource;
@@ -43,6 +44,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
     this.callback = null;
     this.fields = null;
     this.key = null;
+    this.optionsRequestedPolicyVersion = null;
     this.prettyPrint = null;
     this.quotaUser = null;
     this.resource = null;
@@ -54,6 +56,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
       String callback,
       String fields,
       String key,
+      Integer optionsRequestedPolicyVersion,
       String prettyPrint,
       String quotaUser,
       String resource,
@@ -62,6 +65,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
     this.callback = callback;
     this.fields = fields;
     this.key = key;
+    this.optionsRequestedPolicyVersion = optionsRequestedPolicyVersion;
     this.prettyPrint = prettyPrint;
     this.quotaUser = quotaUser;
     this.resource = resource;
@@ -81,6 +85,9 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
     }
     if ("key".equals(fieldName)) {
       return key;
+    }
+    if ("optionsRequestedPolicyVersion".equals(fieldName)) {
+      return optionsRequestedPolicyVersion;
     }
     if ("prettyPrint".equals(fieldName)) {
       return prettyPrint;
@@ -133,6 +140,11 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
   /** API key. Required unless you provide an OAuth 2.0 token. */
   public String getKey() {
     return key;
+  }
+
+  /** Requested IAM Policy version. */
+  public Integer getOptionsRequestedPolicyVersion() {
+    return optionsRequestedPolicyVersion;
   }
 
   /** Returns response with indentations and line breaks. */
@@ -188,6 +200,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
     private String callback;
     private String fields;
     private String key;
+    private Integer optionsRequestedPolicyVersion;
     private String prettyPrint;
     private String quotaUser;
     private String resource;
@@ -209,6 +222,9 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
       if (other.getKey() != null) {
         this.key = other.key;
       }
+      if (other.getOptionsRequestedPolicyVersion() != null) {
+        this.optionsRequestedPolicyVersion = other.optionsRequestedPolicyVersion;
+      }
       if (other.getPrettyPrint() != null) {
         this.prettyPrint = other.prettyPrint;
       }
@@ -229,6 +245,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
       this.callback = source.callback;
       this.fields = source.fields;
       this.key = source.key;
+      this.optionsRequestedPolicyVersion = source.optionsRequestedPolicyVersion;
       this.prettyPrint = source.prettyPrint;
       this.quotaUser = source.quotaUser;
       this.resource = source.resource;
@@ -276,6 +293,17 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
     /** API key. Required unless you provide an OAuth 2.0 token. */
     public Builder setKey(String key) {
       this.key = key;
+      return this;
+    }
+
+    /** Requested IAM Policy version. */
+    public Integer getOptionsRequestedPolicyVersion() {
+      return optionsRequestedPolicyVersion;
+    }
+
+    /** Requested IAM Policy version. */
+    public Builder setOptionsRequestedPolicyVersion(Integer optionsRequestedPolicyVersion) {
+      this.optionsRequestedPolicyVersion = optionsRequestedPolicyVersion;
       return this;
     }
 
@@ -348,7 +376,15 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
         throw new IllegalStateException("Missing required properties:" + missing);
       }
       return new GetIamPolicyImageHttpRequest(
-          access_token, callback, fields, key, prettyPrint, quotaUser, resource, userIp);
+          access_token,
+          callback,
+          fields,
+          key,
+          optionsRequestedPolicyVersion,
+          prettyPrint,
+          quotaUser,
+          resource,
+          userIp);
     }
 
     public Builder clone() {
@@ -357,6 +393,7 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
       newBuilder.setCallback(this.callback);
       newBuilder.setFields(this.fields);
       newBuilder.setKey(this.key);
+      newBuilder.setOptionsRequestedPolicyVersion(this.optionsRequestedPolicyVersion);
       newBuilder.setPrettyPrint(this.prettyPrint);
       newBuilder.setQuotaUser(this.quotaUser);
       newBuilder.setResource(this.resource);
@@ -379,6 +416,9 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
         + ", "
         + "key="
         + key
+        + ", "
+        + "optionsRequestedPolicyVersion="
+        + optionsRequestedPolicyVersion
         + ", "
         + "prettyPrint="
         + prettyPrint
@@ -405,6 +445,8 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
           && Objects.equals(this.callback, that.getCallback())
           && Objects.equals(this.fields, that.getFields())
           && Objects.equals(this.key, that.getKey())
+          && Objects.equals(
+              this.optionsRequestedPolicyVersion, that.getOptionsRequestedPolicyVersion())
           && Objects.equals(this.prettyPrint, that.getPrettyPrint())
           && Objects.equals(this.quotaUser, that.getQuotaUser())
           && Objects.equals(this.resource, that.getResource())
@@ -416,6 +458,14 @@ public final class GetIamPolicyImageHttpRequest implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        access_token, callback, fields, key, prettyPrint, quotaUser, resource, userIp);
+        access_token,
+        callback,
+        fields,
+        key,
+        optionsRequestedPolicyVersion,
+        prettyPrint,
+        quotaUser,
+        resource,
+        userIp);
   }
 }

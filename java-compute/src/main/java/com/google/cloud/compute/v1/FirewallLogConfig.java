@@ -27,19 +27,25 @@ import javax.annotation.Nullable;
 /** The available logging options for a firewall rule. */
 public final class FirewallLogConfig implements ApiMessage {
   private final Boolean enable;
+  private final String metadata;
 
   private FirewallLogConfig() {
     this.enable = null;
+    this.metadata = null;
   }
 
-  private FirewallLogConfig(Boolean enable) {
+  private FirewallLogConfig(Boolean enable, String metadata) {
     this.enable = enable;
+    this.metadata = metadata;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
     if ("enable".equals(fieldName)) {
       return enable;
+    }
+    if ("metadata".equals(fieldName)) {
+      return metadata;
     }
     return null;
   }
@@ -67,6 +73,14 @@ public final class FirewallLogConfig implements ApiMessage {
     return enable;
   }
 
+  /**
+   * This field can only be specified for a particular firewall rule if logging is enabled for that
+   * rule. This field denotes whether to include or exclude metadata for firewall logs.
+   */
+  public String getMetadata() {
+    return metadata;
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -91,6 +105,7 @@ public final class FirewallLogConfig implements ApiMessage {
 
   public static class Builder {
     private Boolean enable;
+    private String metadata;
 
     Builder() {}
 
@@ -99,11 +114,15 @@ public final class FirewallLogConfig implements ApiMessage {
       if (other.getEnable() != null) {
         this.enable = other.enable;
       }
+      if (other.getMetadata() != null) {
+        this.metadata = other.metadata;
+      }
       return this;
     }
 
     Builder(FirewallLogConfig source) {
       this.enable = source.enable;
+      this.metadata = source.metadata;
     }
 
     /** This field denotes whether to enable logging for a particular firewall rule. */
@@ -117,20 +136,39 @@ public final class FirewallLogConfig implements ApiMessage {
       return this;
     }
 
+    /**
+     * This field can only be specified for a particular firewall rule if logging is enabled for
+     * that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     */
+    public String getMetadata() {
+      return metadata;
+    }
+
+    /**
+     * This field can only be specified for a particular firewall rule if logging is enabled for
+     * that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     */
+    public Builder setMetadata(String metadata) {
+      this.metadata = metadata;
+      return this;
+    }
+
     public FirewallLogConfig build() {
-      return new FirewallLogConfig(enable);
+
+      return new FirewallLogConfig(enable, metadata);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setEnable(this.enable);
+      newBuilder.setMetadata(this.metadata);
       return newBuilder;
     }
   }
 
   @Override
   public String toString() {
-    return "FirewallLogConfig{" + "enable=" + enable + "}";
+    return "FirewallLogConfig{" + "enable=" + enable + ", " + "metadata=" + metadata + "}";
   }
 
   @Override
@@ -140,13 +178,14 @@ public final class FirewallLogConfig implements ApiMessage {
     }
     if (o instanceof FirewallLogConfig) {
       FirewallLogConfig that = (FirewallLogConfig) o;
-      return Objects.equals(this.enable, that.getEnable());
+      return Objects.equals(this.enable, that.getEnable())
+          && Objects.equals(this.metadata, that.getMetadata());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enable);
+    return Objects.hash(enable, metadata);
   }
 }

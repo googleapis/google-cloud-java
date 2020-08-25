@@ -28,12 +28,14 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
   private final BackendServiceReference backendService;
   private final ForwardingRuleReference forwardingRule;
   private final HealthCheckReference healthCheck;
+  private final HealthCheckServiceReference healthCheckService;
   private final String healthState;
 
   private HealthStatusForNetworkEndpoint() {
     this.backendService = null;
     this.forwardingRule = null;
     this.healthCheck = null;
+    this.healthCheckService = null;
     this.healthState = null;
   }
 
@@ -41,10 +43,12 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       BackendServiceReference backendService,
       ForwardingRuleReference forwardingRule,
       HealthCheckReference healthCheck,
+      HealthCheckServiceReference healthCheckService,
       String healthState) {
     this.backendService = backendService;
     this.forwardingRule = forwardingRule;
     this.healthCheck = healthCheck;
+    this.healthCheckService = healthCheckService;
     this.healthState = healthState;
   }
 
@@ -58,6 +62,9 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
     }
     if ("healthCheck".equals(fieldName)) {
       return healthCheck;
+    }
+    if ("healthCheckService".equals(fieldName)) {
+      return healthCheckService;
     }
     if ("healthState".equals(fieldName)) {
       return healthState;
@@ -98,6 +105,11 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
     return healthCheck;
   }
 
+  /** URL of the health check service associated with the health state of the network endpoint. */
+  public HealthCheckServiceReference getHealthCheckService() {
+    return healthCheckService;
+  }
+
   /** Health state of the network endpoint determined based on the health checks configured. */
   public String getHealthState() {
     return healthState;
@@ -129,6 +141,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
     private BackendServiceReference backendService;
     private ForwardingRuleReference forwardingRule;
     private HealthCheckReference healthCheck;
+    private HealthCheckServiceReference healthCheckService;
     private String healthState;
 
     Builder() {}
@@ -144,6 +157,9 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       if (other.getHealthCheck() != null) {
         this.healthCheck = other.healthCheck;
       }
+      if (other.getHealthCheckService() != null) {
+        this.healthCheckService = other.healthCheckService;
+      }
       if (other.getHealthState() != null) {
         this.healthState = other.healthState;
       }
@@ -154,6 +170,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       this.backendService = source.backendService;
       this.forwardingRule = source.forwardingRule;
       this.healthCheck = source.healthCheck;
+      this.healthCheckService = source.healthCheckService;
       this.healthState = source.healthState;
     }
 
@@ -190,6 +207,17 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       return this;
     }
 
+    /** URL of the health check service associated with the health state of the network endpoint. */
+    public HealthCheckServiceReference getHealthCheckService() {
+      return healthCheckService;
+    }
+
+    /** URL of the health check service associated with the health state of the network endpoint. */
+    public Builder setHealthCheckService(HealthCheckServiceReference healthCheckService) {
+      this.healthCheckService = healthCheckService;
+      return this;
+    }
+
     /** Health state of the network endpoint determined based on the health checks configured. */
     public String getHealthState() {
       return healthState;
@@ -204,7 +232,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
     public HealthStatusForNetworkEndpoint build() {
 
       return new HealthStatusForNetworkEndpoint(
-          backendService, forwardingRule, healthCheck, healthState);
+          backendService, forwardingRule, healthCheck, healthCheckService, healthState);
     }
 
     public Builder clone() {
@@ -212,6 +240,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       newBuilder.setBackendService(this.backendService);
       newBuilder.setForwardingRule(this.forwardingRule);
       newBuilder.setHealthCheck(this.healthCheck);
+      newBuilder.setHealthCheckService(this.healthCheckService);
       newBuilder.setHealthState(this.healthState);
       return newBuilder;
     }
@@ -229,6 +258,9 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
         + "healthCheck="
         + healthCheck
         + ", "
+        + "healthCheckService="
+        + healthCheckService
+        + ", "
         + "healthState="
         + healthState
         + "}";
@@ -244,6 +276,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
       return Objects.equals(this.backendService, that.getBackendService())
           && Objects.equals(this.forwardingRule, that.getForwardingRule())
           && Objects.equals(this.healthCheck, that.getHealthCheck())
+          && Objects.equals(this.healthCheckService, that.getHealthCheckService())
           && Objects.equals(this.healthState, that.getHealthState());
     }
     return false;
@@ -251,6 +284,7 @@ public final class HealthStatusForNetworkEndpoint implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backendService, forwardingRule, healthCheck, healthState);
+    return Objects.hash(
+        backendService, forwardingRule, healthCheck, healthCheckService, healthState);
   }
 }

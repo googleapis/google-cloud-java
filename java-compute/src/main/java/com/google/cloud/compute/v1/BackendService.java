@@ -28,15 +28,18 @@ import javax.annotation.Nullable;
 /**
  * Represents a Backend Service resource.
  *
- * <p>A backend service contains configuration values for Google Cloud Platform load balancing
- * services.
+ * <p>A backend service defines how Google Cloud load balancers distribute traffic. The backend
+ * service configuration contains a set of values, such as the protocol used to connect to backends,
+ * various distribution and session settings, health checks, and timeouts. These settings provide
+ * fine-grained control over how your load balancer behaves. Most of the settings have default
+ * values that allow for easy configuration if you need to get started quickly.
  *
  * <p>Backend services in Google Compute Engine can be either regionally or globally scoped.
  *
  * <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/backendServices) &#42;
  * [Regional](/compute/docs/reference/rest/{$api_version}/regionBackendServices)
  *
- * <p>For more information, read Backend Services.
+ * <p>For more information, see Backend Services.
  *
  * <p>(== resource_for {$api_version}.backendService ==)
  */
@@ -379,14 +382,16 @@ public final class BackendService implements ApiMessage {
   /**
    * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy)
    * resource for health checking this backend service. Not all backend services support legacy
-   * health checks. See Load balancer guide. Currently at most one health check can be specified.
-   * Backend services with instance group or zonal NEG backends must have a health check. Backend
-   * services with internet NEG backends must not have a health check. A health check must
+   * health checks. See Load balancer guide. Currently, at most one health check can be specified
+   * for each backend service. Backend services with instance group or zonal NEG backends must have
+   * a health check. Backend services with internet or serverless NEG backends must not have a
+   * health check.
    */
   public List<String> getHealthChecksList() {
     return healthChecks;
   }
 
+  /** The configurations for Identity-Aware Proxy on this resource. */
   public BackendServiceIAP getIap() {
     return iap;
   }
@@ -426,7 +431,7 @@ public final class BackendService implements ApiMessage {
    * address as the destination address of the incoming connection before the connection was
    * redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load
    * balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host
-   * selection times. For more information about Maglev, refer to
+   * selection times. For more information about Maglev, see
    * https://ai.google/research/pubs/pub44824
    *
    * <p>This field is applicable to either: - A regional backend service with the service_protocol
@@ -496,7 +501,7 @@ public final class BackendService implements ApiMessage {
    * INTERNAL_SELF_MANAGED and the backends are instance groups. The named port must be defined on
    * each backend instance group. This parameter has no meaning if the backends are NEGs.
    *
-   * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Blaancing).
+   * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load Balancing).
    */
   public String getPortName() {
     return portName;
@@ -505,7 +510,7 @@ public final class BackendService implements ApiMessage {
   /**
    * The protocol this BackendService uses to communicate with backends.
    *
-   * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
+   * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load
    * balancer or Traffic Director configuration. Refer to the documentation for the load balancer or
    * for Traffic Director for more information.
    */
@@ -553,7 +558,7 @@ public final class BackendService implements ApiMessage {
 
   /**
    * The backend service timeout has a different meaning depending on the type of load balancer. For
-   * more information read, Backend service settings The default is 30 seconds.
+   * more information see, Backend service settings The default is 30 seconds.
    */
   public Integer getTimeoutSec() {
     return timeoutSec;
@@ -972,10 +977,10 @@ public final class BackendService implements ApiMessage {
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
      * (legacy) resource for health checking this backend service. Not all backend services support
-     * legacy health checks. See Load balancer guide. Currently at most one health check can be
-     * specified. Backend services with instance group or zonal NEG backends must have a health
-     * check. Backend services with internet NEG backends must not have a health check. A health
-     * check must
+     * legacy health checks. See Load balancer guide. Currently, at most one health check can be
+     * specified for each backend service. Backend services with instance group or zonal NEG
+     * backends must have a health check. Backend services with internet or serverless NEG backends
+     * must not have a health check.
      */
     public List<String> getHealthChecksList() {
       return healthChecks;
@@ -984,10 +989,10 @@ public final class BackendService implements ApiMessage {
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
      * (legacy) resource for health checking this backend service. Not all backend services support
-     * legacy health checks. See Load balancer guide. Currently at most one health check can be
-     * specified. Backend services with instance group or zonal NEG backends must have a health
-     * check. Backend services with internet NEG backends must not have a health check. A health
-     * check must
+     * legacy health checks. See Load balancer guide. Currently, at most one health check can be
+     * specified for each backend service. Backend services with instance group or zonal NEG
+     * backends must have a health check. Backend services with internet or serverless NEG backends
+     * must not have a health check.
      */
     public Builder addAllHealthChecks(List<String> healthChecks) {
       if (this.healthChecks == null) {
@@ -1000,10 +1005,10 @@ public final class BackendService implements ApiMessage {
     /**
      * The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks
      * (legacy) resource for health checking this backend service. Not all backend services support
-     * legacy health checks. See Load balancer guide. Currently at most one health check can be
-     * specified. Backend services with instance group or zonal NEG backends must have a health
-     * check. Backend services with internet NEG backends must not have a health check. A health
-     * check must
+     * legacy health checks. See Load balancer guide. Currently, at most one health check can be
+     * specified for each backend service. Backend services with instance group or zonal NEG
+     * backends must have a health check. Backend services with internet or serverless NEG backends
+     * must not have a health check.
      */
     public Builder addHealthChecks(String healthChecks) {
       if (this.healthChecks == null) {
@@ -1013,10 +1018,12 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /** The configurations for Identity-Aware Proxy on this resource. */
     public BackendServiceIAP getIap() {
       return iap;
     }
 
+    /** The configurations for Identity-Aware Proxy on this resource. */
     public Builder setIap(BackendServiceIAP iap) {
       this.iap = iap;
       return this;
@@ -1086,7 +1093,7 @@ public final class BackendService implements ApiMessage {
      * connection before the connection was redirected to the load balancer. - MAGLEV: used as a
      * drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but
      * has faster table lookup build times and host selection times. For more information about
-     * Maglev, refer to https://ai.google/research/pubs/pub44824
+     * Maglev, see https://ai.google/research/pubs/pub44824
      *
      * <p>This field is applicable to either: - A regional backend service with the service_protocol
      * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
@@ -1112,7 +1119,7 @@ public final class BackendService implements ApiMessage {
      * connection before the connection was redirected to the load balancer. - MAGLEV: used as a
      * drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but
      * has faster table lookup build times and host selection times. For more information about
-     * Maglev, refer to https://ai.google/research/pubs/pub44824
+     * Maglev, see https://ai.google/research/pubs/pub44824
      *
      * <p>This field is applicable to either: - A regional backend service with the service_protocol
      * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
@@ -1239,7 +1246,7 @@ public final class BackendService implements ApiMessage {
      * backends are NEGs.
      *
      * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
-     * Blaancing).
+     * Balancing).
      */
     public String getPortName() {
       return portName;
@@ -1253,7 +1260,7 @@ public final class BackendService implements ApiMessage {
      * backends are NEGs.
      *
      * <p>Must be omitted when the loadBalancingScheme is INTERNAL (Internal TCP/UDP Load
-     * Blaancing).
+     * Balancing).
      */
     public Builder setPortName(String portName) {
       this.portName = portName;
@@ -1263,9 +1270,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
-     * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
-     * or for Traffic Director for more information.
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen
+     * load balancer or Traffic Director configuration. Refer to the documentation for the load
+     * balancer or for Traffic Director for more information.
      */
     public String getProtocol() {
       return protocol;
@@ -1274,9 +1281,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP. depending on the chosen load
-     * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
-     * or for Traffic Director for more information.
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen
+     * load balancer or Traffic Director configuration. Refer to the documentation for the load
+     * balancer or for Traffic Director for more information.
      */
     public Builder setProtocol(String protocol) {
       this.protocol = protocol;
@@ -1365,7 +1372,7 @@ public final class BackendService implements ApiMessage {
 
     /**
      * The backend service timeout has a different meaning depending on the type of load balancer.
-     * For more information read, Backend service settings The default is 30 seconds.
+     * For more information see, Backend service settings The default is 30 seconds.
      */
     public Integer getTimeoutSec() {
       return timeoutSec;
@@ -1373,7 +1380,7 @@ public final class BackendService implements ApiMessage {
 
     /**
      * The backend service timeout has a different meaning depending on the type of load balancer.
-     * For more information read, Backend service settings The default is 30 seconds.
+     * For more information see, Backend service settings The default is 30 seconds.
      */
     public Builder setTimeoutSec(Integer timeoutSec) {
       this.timeoutSec = timeoutSec;

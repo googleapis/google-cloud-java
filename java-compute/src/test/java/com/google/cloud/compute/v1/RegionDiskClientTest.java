@@ -19,11 +19,13 @@ import static com.google.cloud.compute.v1.RegionDiskClient.ListRegionDisksPagedR
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.addResourcePoliciesRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.createSnapshotRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.deleteRegionDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.getIamPolicyRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.getRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.insertRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.listRegionDisksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.removeResourcePoliciesRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.resizeRegionDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.setIamPolicyRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.setLabelsRegionDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRegionDiskStub.testIamPermissionsRegionDiskMethodDescriptor;
 
@@ -59,10 +61,12 @@ public class RegionDiskClientTest {
               createSnapshotRegionDiskMethodDescriptor,
               deleteRegionDiskMethodDescriptor,
               getRegionDiskMethodDescriptor,
+              getIamPolicyRegionDiskMethodDescriptor,
               insertRegionDiskMethodDescriptor,
               listRegionDisksMethodDescriptor,
               removeResourcePoliciesRegionDiskMethodDescriptor,
               resizeRegionDiskMethodDescriptor,
+              setIamPolicyRegionDiskMethodDescriptor,
               setLabelsRegionDiskMethodDescriptor,
               testIamPermissionsRegionDiskMethodDescriptor));
   private static final MockHttpService mockService =
@@ -381,6 +385,8 @@ public class RegionDiskClientTest {
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String sizeGb = "sizeGb2105542105";
+    String sourceDisk = "sourceDisk-85117119";
+    String sourceDiskId = "sourceDiskId-1693292839";
     String sourceImage = "sourceImage1661056055";
     String sourceImageId = "sourceImageId-2092155357";
     String sourceSnapshot = "sourceSnapshot-947679896";
@@ -403,6 +409,8 @@ public class RegionDiskClientTest {
             .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setSizeGb(sizeGb)
+            .setSourceDisk(sourceDisk)
+            .setSourceDiskId(sourceDiskId)
             .setSourceImage(sourceImage)
             .setSourceImageId(sourceImageId)
             .setSourceSnapshot(sourceSnapshot)
@@ -445,6 +453,58 @@ public class RegionDiskClientTest {
       ProjectRegionDiskName disk = ProjectRegionDiskName.of("[PROJECT]", "[REGION]", "[DISK]");
 
       client.getRegionDisk(disk);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyRegionDiskTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    Integer optionsRequestedPolicyVersion = 574521795;
+    ProjectRegionDiskResourceName resource =
+        ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyRegionDisk(optionsRequestedPolicyVersion, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyRegionDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Integer optionsRequestedPolicyVersion = 574521795;
+      ProjectRegionDiskResourceName resource =
+          ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+      client.getIamPolicyRegionDisk(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -782,6 +842,60 @@ public class RegionDiskClientTest {
           RegionDisksResizeRequest.newBuilder().build();
 
       client.resizeRegionDisk(disk, regionDisksResizeRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyRegionDiskTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionDiskResourceName resource =
+        ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    RegionSetPolicyRequest regionSetPolicyRequestResource =
+        RegionSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyRegionDisk(resource, regionSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyRegionDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionDiskResourceName resource =
+          ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      RegionSetPolicyRequest regionSetPolicyRequestResource =
+          RegionSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyRegionDisk(resource, regionSetPolicyRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

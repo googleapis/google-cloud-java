@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionInstanceGroupManagers.listErrors. Lists all errors thrown
- * by actions on instances for a given regional managed instance group.
+ * by actions on instances for a given regional managed instance group. The filter and orderBy query
+ * parameters are not supported.
  */
 public final class ListErrorsRegionInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;

@@ -150,7 +150,7 @@ public class HttpJsonImageStub extends ImageStub {
                   ApiMessageHttpRequestFormatter.<GetIamPolicyImageHttpRequest>newBuilder()
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/images/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectGlobalImageResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

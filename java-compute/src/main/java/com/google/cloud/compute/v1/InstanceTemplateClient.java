@@ -371,19 +371,22 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(resource);
+   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
   public final Policy getIamPolicyInstanceTemplate(
-      ProjectGlobalInstanceTemplateResourceName resource) {
+      Integer optionsRequestedPolicyVersion, ProjectGlobalInstanceTemplateResourceName resource) {
     GetIamPolicyInstanceTemplateHttpRequest request =
         GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyInstanceTemplate(request);
@@ -398,18 +401,24 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
-   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(resource.toString());
+   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyInstanceTemplate(String resource) {
+  public final Policy getIamPolicyInstanceTemplate(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyInstanceTemplateHttpRequest request =
-        GetIamPolicyInstanceTemplateHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyInstanceTemplate(request);
   }
 
@@ -422,8 +431,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(request);
@@ -448,8 +459,10 @@ public class InstanceTemplateClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectGlobalInstanceTemplateResourceName.format("[PROJECT]", "[RESOURCE]");
    *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceTemplateClient.getIamPolicyInstanceTemplateCallable().futureCall(request);

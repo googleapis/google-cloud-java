@@ -363,10 +363,12 @@ public class SubnetworkClientTest {
     String gatewayAddress = "gatewayAddress-77003527";
     String id = "id3355";
     String ipCidrRange = "ipCidrRange-2049366326";
+    String ipv6CidrRange = "ipv6CidrRange-1874342390";
     String kind = "kind3292052";
     String name = "name3373707";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Boolean privateIpGoogleAccess = true;
+    String privateIpv6GoogleAccess = "privateIpv6GoogleAccess1122018830";
     String purpose = "purpose-220463842";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String role = "role3506294";
@@ -381,10 +383,12 @@ public class SubnetworkClientTest {
             .setGatewayAddress(gatewayAddress)
             .setId(id)
             .setIpCidrRange(ipCidrRange)
+            .setIpv6CidrRange(ipv6CidrRange)
             .setKind(kind)
             .setName(name)
             .setNetwork(network.toString())
             .setPrivateIpGoogleAccess(privateIpGoogleAccess)
+            .setPrivateIpv6GoogleAccess(privateIpv6GoogleAccess)
             .setPurpose(purpose)
             .setRegion(region.toString())
             .setRole(role)
@@ -443,10 +447,11 @@ public class SubnetworkClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectRegionSubnetworkResourceName resource =
         ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicySubnetwork(resource);
+    Policy actualResponse = client.getIamPolicySubnetwork(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -473,10 +478,11 @@ public class SubnetworkClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectRegionSubnetworkResourceName resource =
           ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
 
-      client.getIamPolicySubnetwork(resource);
+      client.getIamPolicySubnetwork(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

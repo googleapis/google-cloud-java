@@ -19,6 +19,7 @@ import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedL
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListPerInstanceConfigsInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -48,6 +49,7 @@ import com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerHt
 import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.DeletePerInstanceConfigsInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
@@ -55,18 +57,23 @@ import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
 import com.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse;
+import com.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp;
 import com.google.cloud.compute.v1.InstanceGroupManagersScopedList;
 import com.google.cloud.compute.v1.InstanceManagedByIgmError;
 import com.google.cloud.compute.v1.ListErrorsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ManagedInstance;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.PatchPerInstanceConfigsInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.PerInstanceConfig;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -138,6 +145,9 @@ public class InstanceGroupManagerStubSettings
       deleteInstanceGroupManagerSettings;
   private final UnaryCallSettings<DeleteInstancesInstanceGroupManagerHttpRequest, Operation>
       deleteInstancesInstanceGroupManagerSettings;
+  private final UnaryCallSettings<
+          DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsInstanceGroupManagerSettings;
   private final UnaryCallSettings<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
       getInstanceGroupManagerSettings;
   private final UnaryCallSettings<InsertInstanceGroupManagerHttpRequest, Operation>
@@ -157,8 +167,15 @@ public class InstanceGroupManagerStubSettings
           InstanceGroupManagersListManagedInstancesResponse,
           ListManagedInstancesInstanceGroupManagersPagedResponse>
       listManagedInstancesInstanceGroupManagersSettings;
+  private final PagedCallSettings<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsInstanceGroupManagersSettings;
   private final UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerSettings;
+  private final UnaryCallSettings<PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsInstanceGroupManagerSettings;
   private final UnaryCallSettings<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesInstanceGroupManagerSettings;
   private final UnaryCallSettings<ResizeInstanceGroupManagerHttpRequest, Operation>
@@ -167,6 +184,9 @@ public class InstanceGroupManagerStubSettings
       setInstanceTemplateInstanceGroupManagerSettings;
   private final UnaryCallSettings<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
       setTargetPoolsInstanceGroupManagerSettings;
+  private final UnaryCallSettings<
+          UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsInstanceGroupManagerSettings;
 
   /**
    * Returns the object with the settings used for calls to abandonInstancesInstanceGroupManager.
@@ -212,6 +232,15 @@ public class InstanceGroupManagerStubSettings
     return deleteInstancesInstanceGroupManagerSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * deletePerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsInstanceGroupManagerSettings() {
+    return deletePerInstanceConfigsInstanceGroupManagerSettings;
+  }
+
   /** Returns the object with the settings used for calls to getInstanceGroupManager. */
   public UnaryCallSettings<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
       getInstanceGroupManagerSettings() {
@@ -254,10 +283,31 @@ public class InstanceGroupManagerStubSettings
     return listManagedInstancesInstanceGroupManagersSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listPerInstanceConfigsInstanceGroupManagers.
+   */
+  public PagedCallSettings<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsInstanceGroupManagersSettings() {
+    return listPerInstanceConfigsInstanceGroupManagersSettings;
+  }
+
   /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
   public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerSettings() {
     return patchInstanceGroupManagerSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * patchPerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsInstanceGroupManagerSettings() {
+    return patchPerInstanceConfigsInstanceGroupManagerSettings;
   }
 
   /**
@@ -286,6 +336,15 @@ public class InstanceGroupManagerStubSettings
   public UnaryCallSettings<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
       setTargetPoolsInstanceGroupManagerSettings() {
     return setTargetPoolsInstanceGroupManagerSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * updatePerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsInstanceGroupManagerSettings() {
+    return updatePerInstanceConfigsInstanceGroupManagerSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -375,6 +434,8 @@ public class InstanceGroupManagerStubSettings
         settingsBuilder.deleteInstanceGroupManagerSettings().build();
     deleteInstancesInstanceGroupManagerSettings =
         settingsBuilder.deleteInstancesInstanceGroupManagerSettings().build();
+    deletePerInstanceConfigsInstanceGroupManagerSettings =
+        settingsBuilder.deletePerInstanceConfigsInstanceGroupManagerSettings().build();
     getInstanceGroupManagerSettings = settingsBuilder.getInstanceGroupManagerSettings().build();
     insertInstanceGroupManagerSettings =
         settingsBuilder.insertInstanceGroupManagerSettings().build();
@@ -383,7 +444,11 @@ public class InstanceGroupManagerStubSettings
         settingsBuilder.listErrorsInstanceGroupManagersSettings().build();
     listManagedInstancesInstanceGroupManagersSettings =
         settingsBuilder.listManagedInstancesInstanceGroupManagersSettings().build();
+    listPerInstanceConfigsInstanceGroupManagersSettings =
+        settingsBuilder.listPerInstanceConfigsInstanceGroupManagersSettings().build();
     patchInstanceGroupManagerSettings = settingsBuilder.patchInstanceGroupManagerSettings().build();
+    patchPerInstanceConfigsInstanceGroupManagerSettings =
+        settingsBuilder.patchPerInstanceConfigsInstanceGroupManagerSettings().build();
     recreateInstancesInstanceGroupManagerSettings =
         settingsBuilder.recreateInstancesInstanceGroupManagerSettings().build();
     resizeInstanceGroupManagerSettings =
@@ -392,6 +457,8 @@ public class InstanceGroupManagerStubSettings
         settingsBuilder.setInstanceTemplateInstanceGroupManagerSettings().build();
     setTargetPoolsInstanceGroupManagerSettings =
         settingsBuilder.setTargetPoolsInstanceGroupManagerSettings().build();
+    updatePerInstanceConfigsInstanceGroupManagerSettings =
+        settingsBuilder.updatePerInstanceConfigsInstanceGroupManagerSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -590,6 +657,57 @@ public class InstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          PerInstanceConfig>
+      LIST_PER_INSTANCE_CONFIGS_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+              InstanceGroupManagersListPerInstanceConfigsResp,
+              PerInstanceConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPerInstanceConfigsInstanceGroupManagersHttpRequest injectToken(
+                ListPerInstanceConfigsInstanceGroupManagersHttpRequest payload, String token) {
+              return ListPerInstanceConfigsInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListPerInstanceConfigsInstanceGroupManagersHttpRequest injectPageSize(
+                ListPerInstanceConfigsInstanceGroupManagersHttpRequest payload, int pageSize) {
+              return ListPerInstanceConfigsInstanceGroupManagersHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListPerInstanceConfigsInstanceGroupManagersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(
+                InstanceGroupManagersListPerInstanceConfigsResp payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PerInstanceConfig> extractResources(
+                InstanceGroupManagersListPerInstanceConfigsResp payload) {
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<PerInstanceConfig>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           AggregatedListInstanceGroupManagersHttpRequest,
           InstanceGroupManagerAggregatedList,
@@ -719,6 +837,40 @@ public class InstanceGroupManagerStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+      LIST_PER_INSTANCE_CONFIGS_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+              InstanceGroupManagersListPerInstanceConfigsResp,
+              ListPerInstanceConfigsInstanceGroupManagersPagedResponse>() {
+            @Override
+            public ApiFuture<ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+                            InstanceGroupManagersListPerInstanceConfigsResp>
+                        callable,
+                    ListPerInstanceConfigsInstanceGroupManagersHttpRequest request,
+                    ApiCallContext context,
+                    ApiFuture<InstanceGroupManagersListPerInstanceConfigsResp> futureResponse) {
+              PageContext<
+                      ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+                      InstanceGroupManagersListPerInstanceConfigsResp,
+                      PerInstanceConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_PER_INSTANCE_CONFIGS_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListPerInstanceConfigsInstanceGroupManagersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Builder for InstanceGroupManagerStubSettings. */
   public static class Builder
       extends StubSettings.Builder<InstanceGroupManagerStubSettings, Builder> {
@@ -744,6 +896,9 @@ public class InstanceGroupManagerStubSettings
             DeleteInstancesInstanceGroupManagerHttpRequest, Operation>
         deleteInstancesInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
+            DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        deletePerInstanceConfigsInstanceGroupManagerSettings;
+    private final UnaryCallSettings.Builder<
             GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
         getInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<InsertInstanceGroupManagerHttpRequest, Operation>
@@ -763,8 +918,16 @@ public class InstanceGroupManagerStubSettings
             InstanceGroupManagersListManagedInstancesResponse,
             ListManagedInstancesInstanceGroupManagersPagedResponse>
         listManagedInstancesInstanceGroupManagersSettings;
+    private final PagedCallSettings.Builder<
+            ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+            InstanceGroupManagersListPerInstanceConfigsResp,
+            ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+        listPerInstanceConfigsInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
         patchInstanceGroupManagerSettings;
+    private final UnaryCallSettings.Builder<
+            PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        patchPerInstanceConfigsInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
             RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesInstanceGroupManagerSettings;
@@ -776,6 +939,9 @@ public class InstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<
             SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
         setTargetPoolsInstanceGroupManagerSettings;
+    private final UnaryCallSettings.Builder<
+            UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        updatePerInstanceConfigsInstanceGroupManagerSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -833,6 +999,9 @@ public class InstanceGroupManagerStubSettings
 
       deleteInstancesInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      deletePerInstanceConfigsInstanceGroupManagerSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       insertInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -847,7 +1016,14 @@ public class InstanceGroupManagerStubSettings
           PagedCallSettings.newBuilder(
               LIST_MANAGED_INSTANCES_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
 
+      listPerInstanceConfigsInstanceGroupManagersSettings =
+          PagedCallSettings.newBuilder(
+              LIST_PER_INSTANCE_CONFIGS_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT);
+
       patchInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      patchPerInstanceConfigsInstanceGroupManagerSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       recreateInstancesInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -859,6 +1035,9 @@ public class InstanceGroupManagerStubSettings
 
       setTargetPoolsInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updatePerInstanceConfigsInstanceGroupManagerSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               abandonInstancesInstanceGroupManagerSettings,
@@ -867,16 +1046,20 @@ public class InstanceGroupManagerStubSettings
               createInstancesInstanceGroupManagerSettings,
               deleteInstanceGroupManagerSettings,
               deleteInstancesInstanceGroupManagerSettings,
+              deletePerInstanceConfigsInstanceGroupManagerSettings,
               getInstanceGroupManagerSettings,
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listErrorsInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              listPerInstanceConfigsInstanceGroupManagersSettings,
               patchInstanceGroupManagerSettings,
+              patchPerInstanceConfigsInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
-              setTargetPoolsInstanceGroupManagerSettings);
+              setTargetPoolsInstanceGroupManagerSettings,
+              updatePerInstanceConfigsInstanceGroupManagerSettings);
 
       initDefaults(this);
     }
@@ -923,6 +1106,11 @@ public class InstanceGroupManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .deletePerInstanceConfigsInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -948,7 +1136,17 @@ public class InstanceGroupManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listPerInstanceConfigsInstanceGroupManagersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .patchInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .patchPerInstanceConfigsInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -972,6 +1170,11 @@ public class InstanceGroupManagerStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updatePerInstanceConfigsInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -989,6 +1192,8 @@ public class InstanceGroupManagerStubSettings
       deleteInstanceGroupManagerSettings = settings.deleteInstanceGroupManagerSettings.toBuilder();
       deleteInstancesInstanceGroupManagerSettings =
           settings.deleteInstancesInstanceGroupManagerSettings.toBuilder();
+      deletePerInstanceConfigsInstanceGroupManagerSettings =
+          settings.deletePerInstanceConfigsInstanceGroupManagerSettings.toBuilder();
       getInstanceGroupManagerSettings = settings.getInstanceGroupManagerSettings.toBuilder();
       insertInstanceGroupManagerSettings = settings.insertInstanceGroupManagerSettings.toBuilder();
       listInstanceGroupManagersSettings = settings.listInstanceGroupManagersSettings.toBuilder();
@@ -996,7 +1201,11 @@ public class InstanceGroupManagerStubSettings
           settings.listErrorsInstanceGroupManagersSettings.toBuilder();
       listManagedInstancesInstanceGroupManagersSettings =
           settings.listManagedInstancesInstanceGroupManagersSettings.toBuilder();
+      listPerInstanceConfigsInstanceGroupManagersSettings =
+          settings.listPerInstanceConfigsInstanceGroupManagersSettings.toBuilder();
       patchInstanceGroupManagerSettings = settings.patchInstanceGroupManagerSettings.toBuilder();
+      patchPerInstanceConfigsInstanceGroupManagerSettings =
+          settings.patchPerInstanceConfigsInstanceGroupManagerSettings.toBuilder();
       recreateInstancesInstanceGroupManagerSettings =
           settings.recreateInstancesInstanceGroupManagerSettings.toBuilder();
       resizeInstanceGroupManagerSettings = settings.resizeInstanceGroupManagerSettings.toBuilder();
@@ -1004,6 +1213,8 @@ public class InstanceGroupManagerStubSettings
           settings.setInstanceTemplateInstanceGroupManagerSettings.toBuilder();
       setTargetPoolsInstanceGroupManagerSettings =
           settings.setTargetPoolsInstanceGroupManagerSettings.toBuilder();
+      updatePerInstanceConfigsInstanceGroupManagerSettings =
+          settings.updatePerInstanceConfigsInstanceGroupManagerSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1013,16 +1224,20 @@ public class InstanceGroupManagerStubSettings
               createInstancesInstanceGroupManagerSettings,
               deleteInstanceGroupManagerSettings,
               deleteInstancesInstanceGroupManagerSettings,
+              deletePerInstanceConfigsInstanceGroupManagerSettings,
               getInstanceGroupManagerSettings,
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listErrorsInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              listPerInstanceConfigsInstanceGroupManagersSettings,
               patchInstanceGroupManagerSettings,
+              patchPerInstanceConfigsInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
-              setTargetPoolsInstanceGroupManagerSettings);
+              setTargetPoolsInstanceGroupManagerSettings,
+              updatePerInstanceConfigsInstanceGroupManagerSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1092,6 +1307,16 @@ public class InstanceGroupManagerStubSettings
       return deleteInstancesInstanceGroupManagerSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * deletePerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        deletePerInstanceConfigsInstanceGroupManagerSettings() {
+      return deletePerInstanceConfigsInstanceGroupManagerSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getInstanceGroupManager. */
     public UnaryCallSettings.Builder<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
         getInstanceGroupManagerSettings() {
@@ -1134,10 +1359,32 @@ public class InstanceGroupManagerStubSettings
       return listManagedInstancesInstanceGroupManagersSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * listPerInstanceConfigsInstanceGroupManagers.
+     */
+    public PagedCallSettings.Builder<
+            ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+            InstanceGroupManagersListPerInstanceConfigsResp,
+            ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+        listPerInstanceConfigsInstanceGroupManagersSettings() {
+      return listPerInstanceConfigsInstanceGroupManagersSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
     public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
         patchInstanceGroupManagerSettings() {
       return patchInstanceGroupManagerSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * patchPerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        patchPerInstanceConfigsInstanceGroupManagerSettings() {
+      return patchPerInstanceConfigsInstanceGroupManagerSettings;
     }
 
     /**
@@ -1169,6 +1416,16 @@ public class InstanceGroupManagerStubSettings
     public UnaryCallSettings.Builder<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
         setTargetPoolsInstanceGroupManagerSettings() {
       return setTargetPoolsInstanceGroupManagerSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updatePerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        updatePerInstanceConfigsInstanceGroupManagerSettings() {
+      return updatePerInstanceConfigsInstanceGroupManagerSettings;
     }
 
     @Override

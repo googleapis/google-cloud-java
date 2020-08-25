@@ -454,16 +454,16 @@ public final class ForwardingRule implements ApiMessage {
    * specify a port_range. Use with a forwarding rule that points to a target proxy or a target
    * pool. Do not use with a forwarding rule that points to a backend service. This field is used
    * along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy,
-   * TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+   * TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
    *
    * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the
    * specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
    * IPProtocol] pair must have disjoint port ranges.
    *
    * <p>Some types of forwarding target have constraints on the acceptable ports: - TargetHttpProxy:
-   * 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700,
-   * 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993,
-   * 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+   * 80, 8080 - TargetHttpsProxy: 443 - TargetGrpcProxy: Any ports - TargetTcpProxy: 25, 43, 110,
+   * 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143,
+   * 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
    */
   public String getPortRange() {
     return portRange;
@@ -542,7 +542,7 @@ public final class ForwardingRule implements ApiMessage {
    * this target must live in the same region as the forwarding rule. For global forwarding rules,
    * this target must be a global load balancing resource. The forwarded traffic must be of a type
    * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
-   * targetHttpProxy is valid, not targetHttpsProxy.
+   * targetHttpProxy and targetGrpcProxy are valid, not targetHttpsProxy.
    */
   public String getTarget() {
     return target;
@@ -1145,16 +1145,17 @@ public final class ForwardingRule implements ApiMessage {
      * can specify a port_range. Use with a forwarding rule that points to a target proxy or a
      * target pool. Do not use with a forwarding rule that points to a backend service. This field
      * is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy,
-     * TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     * TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
      *
      * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
      * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
      * IPProtocol] pair must have disjoint port ranges.
      *
      * <p>Some types of forwarding target have constraints on the acceptable ports: -
-     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
-     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
-     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetGrpcProxy: Any ports -
+     * TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 -
+     * TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 -
+     * TargetVpnGateway: 500, 4500
      */
     public String getPortRange() {
       return portRange;
@@ -1165,16 +1166,17 @@ public final class ForwardingRule implements ApiMessage {
      * can specify a port_range. Use with a forwarding rule that points to a target proxy or a
      * target pool. Do not use with a forwarding rule that points to a backend service. This field
      * is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy,
-     * TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     * TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
      *
      * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
      * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
      * IPProtocol] pair must have disjoint port ranges.
      *
      * <p>Some types of forwarding target have constraints on the acceptable ports: -
-     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
-     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
-     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetGrpcProxy: Any ports -
+     * TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 -
+     * TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 -
+     * TargetVpnGateway: 500, 4500
      */
     public Builder setPortRange(String portRange) {
       this.portRange = portRange;
@@ -1354,7 +1356,7 @@ public final class ForwardingRule implements ApiMessage {
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
      * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
-     * targetHttpProxy is valid, not targetHttpsProxy.
+     * targetHttpProxy and targetGrpcProxy are valid, not targetHttpsProxy.
      */
     public String getTarget() {
       return target;
@@ -1365,7 +1367,7 @@ public final class ForwardingRule implements ApiMessage {
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
      * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only
-     * targetHttpProxy is valid, not targetHttpsProxy.
+     * targetHttpProxy and targetGrpcProxy are valid, not targetHttpsProxy.
      */
     public Builder setTarget(String target) {
       this.target = target;

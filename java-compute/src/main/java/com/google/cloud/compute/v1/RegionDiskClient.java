@@ -583,6 +583,120 @@ public class RegionDiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
+   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   Policy response = regionDiskClient.getIamPolicyRegionDisk(optionsRequestedPolicyVersion, resource);
+   * }
+   * </code></pre>
+   *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyRegionDisk(
+      Integer optionsRequestedPolicyVersion, ProjectRegionDiskResourceName resource) {
+    GetIamPolicyRegionDiskHttpRequest request =
+        GetIamPolicyRegionDiskHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyRegionDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
+   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   Policy response = regionDiskClient.getIamPolicyRegionDisk(optionsRequestedPolicyVersion, resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyRegionDisk(
+      Integer optionsRequestedPolicyVersion, String resource) {
+    GetIamPolicyRegionDiskHttpRequest request =
+        GetIamPolicyRegionDiskHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
+    return getIamPolicyRegionDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   GetIamPolicyRegionDiskHttpRequest request = GetIamPolicyRegionDiskHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+   *     .setResource(formattedResource)
+   *     .build();
+   *   Policy response = regionDiskClient.getIamPolicyRegionDisk(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyRegionDisk(GetIamPolicyRegionDiskHttpRequest request) {
+    return getIamPolicyRegionDiskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   GetIamPolicyRegionDiskHttpRequest request = GetIamPolicyRegionDiskHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+   *     .setResource(formattedResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = regionDiskClient.getIamPolicyRegionDiskCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyRegionDiskHttpRequest, Policy>
+      getIamPolicyRegionDiskCallable() {
+    return stub.getIamPolicyRegionDiskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a persistent regional disk in the specified project using the data included in the
    * request.
    *
@@ -1072,6 +1186,117 @@ public class RegionDiskClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<ResizeRegionDiskHttpRequest, Operation> resizeRegionDiskCallable() {
     return stub.resizeRegionDiskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response = regionDiskClient.setIamPolicyRegionDisk(resource, regionSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyRegionDisk(
+      ProjectRegionDiskResourceName resource,
+      RegionSetPolicyRequest regionSetPolicyRequestResource) {
+    SetIamPolicyRegionDiskHttpRequest request =
+        SetIamPolicyRegionDiskHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicyRegionDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   ProjectRegionDiskResourceName resource = ProjectRegionDiskResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response = regionDiskClient.setIamPolicyRegionDisk(resource.toString(), regionSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyRegionDisk(
+      String resource, RegionSetPolicyRequest regionSetPolicyRequestResource) {
+    SetIamPolicyRegionDiskHttpRequest request =
+        SetIamPolicyRegionDiskHttpRequest.newBuilder()
+            .setResource(resource)
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicyRegionDisk(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyRegionDiskHttpRequest request = SetIamPolicyRegionDiskHttpRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = regionDiskClient.setIamPolicyRegionDisk(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyRegionDisk(SetIamPolicyRegionDiskHttpRequest request) {
+    return setIamPolicyRegionDiskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionDiskClient regionDiskClient = RegionDiskClient.create()) {
+   *   String formattedResource = ProjectRegionDiskResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyRegionDiskHttpRequest request = SetIamPolicyRegionDiskHttpRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = regionDiskClient.setIamPolicyRegionDiskCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyRegionDiskHttpRequest, Policy>
+      setIamPolicyRegionDiskCallable() {
+    return stub.setIamPolicyRegionDiskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

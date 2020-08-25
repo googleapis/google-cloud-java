@@ -113,7 +113,7 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/global/instanceTemplates/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(
                           ProjectGlobalInstanceTemplateResourceName.newFactory())
                       .setResourceNameField("resource")

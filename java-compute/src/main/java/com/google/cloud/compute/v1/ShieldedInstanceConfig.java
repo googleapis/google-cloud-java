@@ -75,17 +75,17 @@ public final class ShieldedInstanceConfig implements ApiMessage {
     return null;
   }
 
-  /** Defines whether the instance has integrity monitoring enabled. */
+  /** Defines whether the instance has integrity monitoring enabled. Enabled by default. */
   public Boolean getEnableIntegrityMonitoring() {
     return enableIntegrityMonitoring;
   }
 
-  /** Defines whether the instance has Secure Boot enabled. */
+  /** Defines whether the instance has Secure Boot enabled. Disabled by default. */
   public Boolean getEnableSecureBoot() {
     return enableSecureBoot;
   }
 
-  /** Defines whether the instance has the vTPM enabled. */
+  /** Defines whether the instance has the vTPM enabled. Enabled by default. */
   public Boolean getEnableVtpm() {
     return enableVtpm;
   }
@@ -139,34 +139,34 @@ public final class ShieldedInstanceConfig implements ApiMessage {
       this.enableVtpm = source.enableVtpm;
     }
 
-    /** Defines whether the instance has integrity monitoring enabled. */
+    /** Defines whether the instance has integrity monitoring enabled. Enabled by default. */
     public Boolean getEnableIntegrityMonitoring() {
       return enableIntegrityMonitoring;
     }
 
-    /** Defines whether the instance has integrity monitoring enabled. */
+    /** Defines whether the instance has integrity monitoring enabled. Enabled by default. */
     public Builder setEnableIntegrityMonitoring(Boolean enableIntegrityMonitoring) {
       this.enableIntegrityMonitoring = enableIntegrityMonitoring;
       return this;
     }
 
-    /** Defines whether the instance has Secure Boot enabled. */
+    /** Defines whether the instance has Secure Boot enabled. Disabled by default. */
     public Boolean getEnableSecureBoot() {
       return enableSecureBoot;
     }
 
-    /** Defines whether the instance has Secure Boot enabled. */
+    /** Defines whether the instance has Secure Boot enabled. Disabled by default. */
     public Builder setEnableSecureBoot(Boolean enableSecureBoot) {
       this.enableSecureBoot = enableSecureBoot;
       return this;
     }
 
-    /** Defines whether the instance has the vTPM enabled. */
+    /** Defines whether the instance has the vTPM enabled. Enabled by default. */
     public Boolean getEnableVtpm() {
       return enableVtpm;
     }
 
-    /** Defines whether the instance has the vTPM enabled. */
+    /** Defines whether the instance has the vTPM enabled. Enabled by default. */
     public Builder setEnableVtpm(Boolean enableVtpm) {
       this.enableVtpm = enableVtpm;
       return this;

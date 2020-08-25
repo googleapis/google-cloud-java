@@ -167,7 +167,7 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/subnetworks/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectRegionSubnetworkResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

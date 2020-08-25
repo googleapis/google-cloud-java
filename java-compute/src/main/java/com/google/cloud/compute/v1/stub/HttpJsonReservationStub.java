@@ -138,7 +138,7 @@ public class HttpJsonReservationStub extends ReservationStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/reservations/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectZoneReservationResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

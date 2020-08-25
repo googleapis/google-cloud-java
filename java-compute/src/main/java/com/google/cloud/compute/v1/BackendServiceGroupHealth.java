@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
@@ -26,21 +27,28 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class BackendServiceGroupHealth implements ApiMessage {
+  private final Map<String, String> annotations;
   private final List<HealthStatus> healthStatus;
   private final String kind;
 
   private BackendServiceGroupHealth() {
+    this.annotations = null;
     this.healthStatus = null;
     this.kind = null;
   }
 
-  private BackendServiceGroupHealth(List<HealthStatus> healthStatus, String kind) {
+  private BackendServiceGroupHealth(
+      Map<String, String> annotations, List<HealthStatus> healthStatus, String kind) {
+    this.annotations = annotations;
     this.healthStatus = healthStatus;
     this.kind = kind;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("annotations".equals(fieldName)) {
+      return annotations;
+    }
     if ("healthStatus".equals(fieldName)) {
       return healthStatus;
     }
@@ -66,6 +74,11 @@ public final class BackendServiceGroupHealth implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Metadata defined as annotations on the network endpoint group. */
+  public Map<String, String> getAnnotationsMap() {
+    return annotations;
   }
 
   /**
@@ -107,6 +120,7 @@ public final class BackendServiceGroupHealth implements ApiMessage {
   }
 
   public static class Builder {
+    private Map<String, String> annotations;
     private List<HealthStatus> healthStatus;
     private String kind;
 
@@ -114,6 +128,9 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
     public Builder mergeFrom(BackendServiceGroupHealth other) {
       if (other == BackendServiceGroupHealth.getDefaultInstance()) return this;
+      if (other.getAnnotationsMap() != null) {
+        this.annotations = other.annotations;
+      }
       if (other.getHealthStatusList() != null) {
         this.healthStatus = other.healthStatus;
       }
@@ -124,8 +141,20 @@ public final class BackendServiceGroupHealth implements ApiMessage {
     }
 
     Builder(BackendServiceGroupHealth source) {
+      this.annotations = source.annotations;
       this.healthStatus = source.healthStatus;
       this.kind = source.kind;
+    }
+
+    /** Metadata defined as annotations on the network endpoint group. */
+    public Map<String, String> getAnnotationsMap() {
+      return annotations;
+    }
+
+    /** Metadata defined as annotations on the network endpoint group. */
+    public Builder putAllAnnotations(Map<String, String> annotations) {
+      this.annotations = annotations;
+      return this;
     }
 
     /**
@@ -179,11 +208,12 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
     public BackendServiceGroupHealth build() {
 
-      return new BackendServiceGroupHealth(healthStatus, kind);
+      return new BackendServiceGroupHealth(annotations, healthStatus, kind);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.putAllAnnotations(this.annotations);
       newBuilder.addAllHealthStatus(this.healthStatus);
       newBuilder.setKind(this.kind);
       return newBuilder;
@@ -193,6 +223,9 @@ public final class BackendServiceGroupHealth implements ApiMessage {
   @Override
   public String toString() {
     return "BackendServiceGroupHealth{"
+        + "annotations="
+        + annotations
+        + ", "
         + "healthStatus="
         + healthStatus
         + ", "
@@ -208,7 +241,8 @@ public final class BackendServiceGroupHealth implements ApiMessage {
     }
     if (o instanceof BackendServiceGroupHealth) {
       BackendServiceGroupHealth that = (BackendServiceGroupHealth) o;
-      return Objects.equals(this.healthStatus, that.getHealthStatusList())
+      return Objects.equals(this.annotations, that.getAnnotationsMap())
+          && Objects.equals(this.healthStatus, that.getHealthStatusList())
           && Objects.equals(this.kind, that.getKind());
     }
     return false;
@@ -216,6 +250,6 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(healthStatus, kind);
+    return Objects.hash(annotations, healthStatus, kind);
   }
 }

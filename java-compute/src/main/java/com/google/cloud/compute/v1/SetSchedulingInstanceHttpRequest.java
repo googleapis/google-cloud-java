@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setScheduling. Sets an instance's scheduling options.
+ * You can only call this method on a stopped instance, that is, a VM instance that is in a
+ * `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
  */
 public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   private final String access_token;
@@ -187,7 +189,7 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
     return requestId;
   }
 
-  /** Sets the scheduling options for an Instance. NextID: 10 */
+  /** Sets the scheduling options for an Instance. NextID: 12 */
   public Scheduling getSchedulingResource() {
     return schedulingResource;
   }
@@ -407,12 +409,12 @@ public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Sets the scheduling options for an Instance. NextID: 10 */
+    /** Sets the scheduling options for an Instance. NextID: 12 */
     public Scheduling getSchedulingResource() {
       return schedulingResource;
     }
 
-    /** Sets the scheduling options for an Instance. NextID: 10 */
+    /** Sets the scheduling options for an Instance. NextID: 12 */
     public Builder setSchedulingResource(Scheduling schedulingResource) {
       this.schedulingResource = schedulingResource;
       return this;

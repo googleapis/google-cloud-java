@@ -178,7 +178,7 @@ public class HttpJsonDiskStub extends DiskStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/disks/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectZoneDiskResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

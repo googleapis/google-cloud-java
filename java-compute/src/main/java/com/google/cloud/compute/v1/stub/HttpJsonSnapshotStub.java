@@ -107,7 +107,7 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                   ApiMessageHttpRequestFormatter.<GetIamPolicySnapshotHttpRequest>newBuilder()
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/snapshots/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectGlobalSnapshotResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

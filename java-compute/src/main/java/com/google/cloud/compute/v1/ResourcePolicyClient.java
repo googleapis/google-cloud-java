@@ -520,18 +520,22 @@ public class ResourcePolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ResourcePolicyClient resourcePolicyClient = ResourcePolicyClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionResourcePolicyResourceName resource = ProjectRegionResourcePolicyResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = resourcePolicyClient.getIamPolicyResourcePolicy(resource);
+   *   Policy response = resourcePolicyClient.getIamPolicyResourcePolicy(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyResourcePolicy(ProjectRegionResourcePolicyResourceName resource) {
+  public final Policy getIamPolicyResourcePolicy(
+      Integer optionsRequestedPolicyVersion, ProjectRegionResourcePolicyResourceName resource) {
     GetIamPolicyResourcePolicyHttpRequest request =
         GetIamPolicyResourcePolicyHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyResourcePolicy(request);
@@ -546,18 +550,24 @@ public class ResourcePolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ResourcePolicyClient resourcePolicyClient = ResourcePolicyClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectRegionResourcePolicyResourceName resource = ProjectRegionResourcePolicyResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
-   *   Policy response = resourcePolicyClient.getIamPolicyResourcePolicy(resource.toString());
+   *   Policy response = resourcePolicyClient.getIamPolicyResourcePolicy(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyResourcePolicy(String resource) {
+  public final Policy getIamPolicyResourcePolicy(
+      Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyResourcePolicyHttpRequest request =
-        GetIamPolicyResourcePolicyHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyResourcePolicyHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyResourcePolicy(request);
   }
 
@@ -570,8 +580,10 @@ public class ResourcePolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ResourcePolicyClient resourcePolicyClient = ResourcePolicyClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionResourcePolicyResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyResourcePolicyHttpRequest request = GetIamPolicyResourcePolicyHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = resourcePolicyClient.getIamPolicyResourcePolicy(request);
@@ -595,8 +607,10 @@ public class ResourcePolicyClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ResourcePolicyClient resourcePolicyClient = ResourcePolicyClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectRegionResourcePolicyResourceName.format("[PROJECT]", "[REGION]", "[RESOURCE]");
    *   GetIamPolicyResourcePolicyHttpRequest request = GetIamPolicyResourcePolicyHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = resourcePolicyClient.getIamPolicyResourcePolicyCallable().futureCall(request);

@@ -152,7 +152,8 @@ public final class HttpRouteAction implements ApiMessage {
 
   /**
    * The spec to modify the URL of the request, prior to forwarding the request to the matched
-   * service.
+   * service. urlRewrite is the only action supported in UrlMaps for external HTTP(S) load
+   * balancers.
    */
   public UrlRewrite getUrlRewrite() {
     return urlRewrite;
@@ -336,7 +337,8 @@ public final class HttpRouteAction implements ApiMessage {
 
     /**
      * The spec to modify the URL of the request, prior to forwarding the request to the matched
-     * service.
+     * service. urlRewrite is the only action supported in UrlMaps for external HTTP(S) load
+     * balancers.
      */
     public UrlRewrite getUrlRewrite() {
       return urlRewrite;
@@ -344,7 +346,8 @@ public final class HttpRouteAction implements ApiMessage {
 
     /**
      * The spec to modify the URL of the request, prior to forwarding the request to the matched
-     * service.
+     * service. urlRewrite is the only action supported in UrlMaps for external HTTP(S) load
+     * balancers.
      */
     public Builder setUrlRewrite(UrlRewrite urlRewrite) {
       this.urlRewrite = urlRewrite;

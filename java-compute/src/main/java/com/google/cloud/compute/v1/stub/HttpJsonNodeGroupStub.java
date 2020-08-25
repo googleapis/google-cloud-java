@@ -186,7 +186,7 @@ public class HttpJsonNodeGroupStub extends NodeGroupStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/zones/{zone}/nodeGroups/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectZoneNodeGroupResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

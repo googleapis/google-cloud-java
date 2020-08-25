@@ -40,11 +40,13 @@ public final class Subnetwork implements ApiMessage {
   private final String gatewayAddress;
   private final String id;
   private final String ipCidrRange;
+  private final String ipv6CidrRange;
   private final String kind;
   private final SubnetworkLogConfig logConfig;
   private final String name;
   private final String network;
   private final Boolean privateIpGoogleAccess;
+  private final String privateIpv6GoogleAccess;
   private final String purpose;
   private final String region;
   private final String role;
@@ -60,11 +62,13 @@ public final class Subnetwork implements ApiMessage {
     this.gatewayAddress = null;
     this.id = null;
     this.ipCidrRange = null;
+    this.ipv6CidrRange = null;
     this.kind = null;
     this.logConfig = null;
     this.name = null;
     this.network = null;
     this.privateIpGoogleAccess = null;
+    this.privateIpv6GoogleAccess = null;
     this.purpose = null;
     this.region = null;
     this.role = null;
@@ -81,11 +85,13 @@ public final class Subnetwork implements ApiMessage {
       String gatewayAddress,
       String id,
       String ipCidrRange,
+      String ipv6CidrRange,
       String kind,
       SubnetworkLogConfig logConfig,
       String name,
       String network,
       Boolean privateIpGoogleAccess,
+      String privateIpv6GoogleAccess,
       String purpose,
       String region,
       String role,
@@ -99,11 +105,13 @@ public final class Subnetwork implements ApiMessage {
     this.gatewayAddress = gatewayAddress;
     this.id = id;
     this.ipCidrRange = ipCidrRange;
+    this.ipv6CidrRange = ipv6CidrRange;
     this.kind = kind;
     this.logConfig = logConfig;
     this.name = name;
     this.network = network;
     this.privateIpGoogleAccess = privateIpGoogleAccess;
+    this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
     this.purpose = purpose;
     this.region = region;
     this.role = role;
@@ -135,6 +143,9 @@ public final class Subnetwork implements ApiMessage {
     if ("ipCidrRange".equals(fieldName)) {
       return ipCidrRange;
     }
+    if ("ipv6CidrRange".equals(fieldName)) {
+      return ipv6CidrRange;
+    }
     if ("kind".equals(fieldName)) {
       return kind;
     }
@@ -149,6 +160,9 @@ public final class Subnetwork implements ApiMessage {
     }
     if ("privateIpGoogleAccess".equals(fieldName)) {
       return privateIpGoogleAccess;
+    }
+    if ("privateIpv6GoogleAccess".equals(fieldName)) {
+      return privateIpv6GoogleAccess;
     }
     if ("purpose".equals(fieldName)) {
       return purpose;
@@ -205,6 +219,7 @@ public final class Subnetwork implements ApiMessage {
   /**
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
    * will not appear in get listings. If not set the default behavior is to disable flow logging.
+   * This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    */
   public Boolean getEnableFlowLogs() {
     return enableFlowLogs;
@@ -239,12 +254,18 @@ public final class Subnetwork implements ApiMessage {
 
   /**
    * The range of internal addresses that are owned by this subnetwork. Provide this property when
-   * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and
-   * non-overlapping within a network. Only IPv4 is supported. This field can be set only at
-   * resource creation time.
+   * you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and
+   * non-overlapping within a network. Only IPv4 is supported. This field is set at resource
+   * creation time. This may be a RFC 1918 IP range, or a privately routed, non-RFC 1918 IP range,
+   * not belonging to Google. The range can be expanded after creation using expandIpCidrRange.
    */
   public String getIpCidrRange() {
     return ipCidrRange;
+  }
+
+  /** [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. */
+  public String getIpv6CidrRange() {
+    return ipv6CidrRange;
   }
 
   /** [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources. */
@@ -254,7 +275,7 @@ public final class Subnetwork implements ApiMessage {
 
   /**
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
-   * logs are exported to Stackdriver.
+   * logs are exported to Cloud Logging.
    */
   public SubnetworkLogConfig getLogConfig() {
     return logConfig;
@@ -290,10 +311,21 @@ public final class Subnetwork implements ApiMessage {
   }
 
   /**
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of
+   * enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
+   *
+   * <p>This field can be both set at resource creation time and updated using patch.
+   */
+  public String getPrivateIpv6GoogleAccess() {
+    return privateIpv6GoogleAccess;
+  }
+
+  /**
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
    * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is
    * a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified,
-   * the purpose defaults to PRIVATE_RFC_1918.
+   * the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the
+   * purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    */
   public String getPurpose() {
     return purpose;
@@ -374,11 +406,13 @@ public final class Subnetwork implements ApiMessage {
     private String gatewayAddress;
     private String id;
     private String ipCidrRange;
+    private String ipv6CidrRange;
     private String kind;
     private SubnetworkLogConfig logConfig;
     private String name;
     private String network;
     private Boolean privateIpGoogleAccess;
+    private String privateIpv6GoogleAccess;
     private String purpose;
     private String region;
     private String role;
@@ -411,6 +445,9 @@ public final class Subnetwork implements ApiMessage {
       if (other.getIpCidrRange() != null) {
         this.ipCidrRange = other.ipCidrRange;
       }
+      if (other.getIpv6CidrRange() != null) {
+        this.ipv6CidrRange = other.ipv6CidrRange;
+      }
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
@@ -425,6 +462,9 @@ public final class Subnetwork implements ApiMessage {
       }
       if (other.getPrivateIpGoogleAccess() != null) {
         this.privateIpGoogleAccess = other.privateIpGoogleAccess;
+      }
+      if (other.getPrivateIpv6GoogleAccess() != null) {
+        this.privateIpv6GoogleAccess = other.privateIpv6GoogleAccess;
       }
       if (other.getPurpose() != null) {
         this.purpose = other.purpose;
@@ -455,11 +495,13 @@ public final class Subnetwork implements ApiMessage {
       this.gatewayAddress = source.gatewayAddress;
       this.id = source.id;
       this.ipCidrRange = source.ipCidrRange;
+      this.ipv6CidrRange = source.ipv6CidrRange;
       this.kind = source.kind;
       this.logConfig = source.logConfig;
       this.name = source.name;
       this.network = source.network;
       this.privateIpGoogleAccess = source.privateIpGoogleAccess;
+      this.privateIpv6GoogleAccess = source.privateIpv6GoogleAccess;
       this.purpose = source.purpose;
       this.region = source.region;
       this.role = source.role;
@@ -499,6 +541,7 @@ public final class Subnetwork implements ApiMessage {
     /**
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
      * will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      */
     public Boolean getEnableFlowLogs() {
       return enableFlowLogs;
@@ -507,6 +550,7 @@ public final class Subnetwork implements ApiMessage {
     /**
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
      * will not appear in get listings. If not set the default behavior is to disable flow logging.
+     * This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      */
     public Builder setEnableFlowLogs(Boolean enableFlowLogs) {
       this.enableFlowLogs = enableFlowLogs;
@@ -574,9 +618,10 @@ public final class Subnetwork implements ApiMessage {
 
     /**
      * The range of internal addresses that are owned by this subnetwork. Provide this property when
-     * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique
-     * and non-overlapping within a network. Only IPv4 is supported. This field can be set only at
-     * resource creation time.
+     * you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique
+     * and non-overlapping within a network. Only IPv4 is supported. This field is set at resource
+     * creation time. This may be a RFC 1918 IP range, or a privately routed, non-RFC 1918 IP range,
+     * not belonging to Google. The range can be expanded after creation using expandIpCidrRange.
      */
     public String getIpCidrRange() {
       return ipCidrRange;
@@ -584,12 +629,24 @@ public final class Subnetwork implements ApiMessage {
 
     /**
      * The range of internal addresses that are owned by this subnetwork. Provide this property when
-     * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique
-     * and non-overlapping within a network. Only IPv4 is supported. This field can be set only at
-     * resource creation time.
+     * you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique
+     * and non-overlapping within a network. Only IPv4 is supported. This field is set at resource
+     * creation time. This may be a RFC 1918 IP range, or a privately routed, non-RFC 1918 IP range,
+     * not belonging to Google. The range can be expanded after creation using expandIpCidrRange.
      */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
+      return this;
+    }
+
+    /** [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. */
+    public String getIpv6CidrRange() {
+      return ipv6CidrRange;
+    }
+
+    /** [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. */
+    public Builder setIpv6CidrRange(String ipv6CidrRange) {
+      this.ipv6CidrRange = ipv6CidrRange;
       return this;
     }
 
@@ -606,7 +663,7 @@ public final class Subnetwork implements ApiMessage {
 
     /**
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
-     * logs are exported to Stackdriver.
+     * logs are exported to Cloud Logging.
      */
     public SubnetworkLogConfig getLogConfig() {
       return logConfig;
@@ -614,7 +671,7 @@ public final class Subnetwork implements ApiMessage {
 
     /**
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
-     * logs are exported to Stackdriver.
+     * logs are exported to Cloud Logging.
      */
     public Builder setLogConfig(SubnetworkLogConfig logConfig) {
       this.logConfig = logConfig;
@@ -683,10 +740,32 @@ public final class Subnetwork implements ApiMessage {
     }
 
     /**
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of
+     * enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
+     *
+     * <p>This field can be both set at resource creation time and updated using patch.
+     */
+    public String getPrivateIpv6GoogleAccess() {
+      return privateIpv6GoogleAccess;
+    }
+
+    /**
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of
+     * enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
+     *
+     * <p>This field can be both set at resource creation time and updated using patch.
+     */
+    public Builder setPrivateIpv6GoogleAccess(String privateIpv6GoogleAccess) {
+      this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
+      return this;
+    }
+
+    /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
      * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER
      * is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If
-     * unspecified, the purpose defaults to PRIVATE_RFC_1918.
+     * unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't
+     * supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      */
     public String getPurpose() {
       return purpose;
@@ -696,7 +775,8 @@ public final class Subnetwork implements ApiMessage {
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
      * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER
      * is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If
-     * unspecified, the purpose defaults to PRIVATE_RFC_1918.
+     * unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't
+     * supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      */
     public Builder setPurpose(String purpose) {
       this.purpose = purpose;
@@ -825,11 +905,13 @@ public final class Subnetwork implements ApiMessage {
           gatewayAddress,
           id,
           ipCidrRange,
+          ipv6CidrRange,
           kind,
           logConfig,
           name,
           network,
           privateIpGoogleAccess,
+          privateIpv6GoogleAccess,
           purpose,
           region,
           role,
@@ -847,11 +929,13 @@ public final class Subnetwork implements ApiMessage {
       newBuilder.setGatewayAddress(this.gatewayAddress);
       newBuilder.setId(this.id);
       newBuilder.setIpCidrRange(this.ipCidrRange);
+      newBuilder.setIpv6CidrRange(this.ipv6CidrRange);
       newBuilder.setKind(this.kind);
       newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setPrivateIpGoogleAccess(this.privateIpGoogleAccess);
+      newBuilder.setPrivateIpv6GoogleAccess(this.privateIpv6GoogleAccess);
       newBuilder.setPurpose(this.purpose);
       newBuilder.setRegion(this.region);
       newBuilder.setRole(this.role);
@@ -886,6 +970,9 @@ public final class Subnetwork implements ApiMessage {
         + "ipCidrRange="
         + ipCidrRange
         + ", "
+        + "ipv6CidrRange="
+        + ipv6CidrRange
+        + ", "
         + "kind="
         + kind
         + ", "
@@ -900,6 +987,9 @@ public final class Subnetwork implements ApiMessage {
         + ", "
         + "privateIpGoogleAccess="
         + privateIpGoogleAccess
+        + ", "
+        + "privateIpv6GoogleAccess="
+        + privateIpv6GoogleAccess
         + ", "
         + "purpose="
         + purpose
@@ -935,11 +1025,13 @@ public final class Subnetwork implements ApiMessage {
           && Objects.equals(this.gatewayAddress, that.getGatewayAddress())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.ipCidrRange, that.getIpCidrRange())
+          && Objects.equals(this.ipv6CidrRange, that.getIpv6CidrRange())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess())
+          && Objects.equals(this.privateIpv6GoogleAccess, that.getPrivateIpv6GoogleAccess())
           && Objects.equals(this.purpose, that.getPurpose())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.role, that.getRole())
@@ -960,11 +1052,13 @@ public final class Subnetwork implements ApiMessage {
         gatewayAddress,
         id,
         ipCidrRange,
+        ipv6CidrRange,
         kind,
         logConfig,
         name,
         network,
         privateIpGoogleAccess,
+        privateIpv6GoogleAccess,
         purpose,
         region,
         role,

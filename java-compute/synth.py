@@ -33,9 +33,8 @@ for version in versions:
       discogapic = True,
   )
 
-  library = library / f'google-cloud-{service}-{version}-java'
-
-  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src')
+  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
+  s.copy(library / f'google-cloud-{service}-{version}-java/gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
 
   java.format_code('./src')
 

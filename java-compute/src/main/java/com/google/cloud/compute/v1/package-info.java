@@ -632,6 +632,21 @@
  * </code>
  * </pre>
  *
+ * ============================== RegionHealthCheckServiceClient ==============================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for RegionHealthCheckServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionHealthCheckServiceClient regionHealthCheckServiceClient = RegionHealthCheckServiceClient.create()) {
+ *   ProjectRegionHealthCheckServiceName healthCheckService = ProjectRegionHealthCheckServiceName.of("[PROJECT]", "[REGION]", "[HEALTH_CHECK_SERVICE]");
+ *   Operation response = regionHealthCheckServiceClient.deleteRegionHealthCheckService(healthCheckService);
+ * }
+ * </code>
+ * </pre>
+ *
  * ======================= RegionHealthCheckClient =======================
  *
  * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
@@ -675,6 +690,38 @@
  * try (RegionInstanceGroupClient regionInstanceGroupClient = RegionInstanceGroupClient.create()) {
  *   ProjectRegionInstanceGroupName instanceGroup = ProjectRegionInstanceGroupName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP]");
  *   InstanceGroup response = regionInstanceGroupClient.getRegionInstanceGroup(instanceGroup);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================================ RegionNetworkEndpointGroupClient
+ * ================================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for RegionNetworkEndpointGroupClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionNetworkEndpointGroupClient regionNetworkEndpointGroupClient = RegionNetworkEndpointGroupClient.create()) {
+ *   ProjectRegionNetworkEndpointGroupName networkEndpointGroup = ProjectRegionNetworkEndpointGroupName.of("[PROJECT]", "[REGION]", "[NETWORK_ENDPOINT_GROUP]");
+ *   Operation response = regionNetworkEndpointGroupClient.deleteRegionNetworkEndpointGroup(networkEndpointGroup);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================================ RegionNotificationEndpointClient
+ * ================================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for RegionNotificationEndpointClient:
+ *
+ * <pre>
+ * <code>
+ * try (RegionNotificationEndpointClient regionNotificationEndpointClient = RegionNotificationEndpointClient.create()) {
+ *   ProjectRegionNotificationEndpointName notificationEndpoint = ProjectRegionNotificationEndpointName.of("[PROJECT]", "[REGION]", "[NOTIFICATION_ENDPOINT]");
+ *   Operation response = regionNotificationEndpointClient.deleteRegionNotificationEndpoint(notificationEndpoint);
  * }
  * </code>
  * </pre>
@@ -902,6 +949,21 @@
  * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
  *   ProjectRegionSubnetworkName subnetwork = ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
  *   Operation response = subnetworkClient.deleteSubnetwork(subnetwork);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ===================== TargetGrpcProxyClient =====================
+ *
+ * <p>Service Description: Creates and runs virtual machines on Google Cloud Platform.
+ *
+ * <p>Sample for TargetGrpcProxyClient:
+ *
+ * <pre>
+ * <code>
+ * try (TargetGrpcProxyClient targetGrpcProxyClient = TargetGrpcProxyClient.create()) {
+ *   ProjectGlobalTargetGrpcProxyName targetGrpcProxy = ProjectGlobalTargetGrpcProxyName.of("[PROJECT]", "[TARGET_GRPC_PROXY]");
+ *   Operation response = targetGrpcProxyClient.deleteTargetGrpcProxy(targetGrpcProxy);
  * }
  * </code>
  * </pre>

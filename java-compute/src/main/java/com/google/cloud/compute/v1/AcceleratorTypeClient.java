@@ -418,7 +418,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project.
+   * Retrieves a list of accelerator types that are available to the specified project.
    *
    * <p>Sample code:
    *
@@ -445,7 +445,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project.
+   * Retrieves a list of accelerator types that are available to the specified project.
    *
    * <p>Sample code:
    *
@@ -470,7 +470,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project.
+   * Retrieves a list of accelerator types that are available to the specified project.
    *
    * <p>Sample code:
    *
@@ -497,7 +497,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project.
+   * Retrieves a list of accelerator types that are available to the specified project.
    *
    * <p>Sample code:
    *
@@ -523,7 +523,7 @@ public class AcceleratorTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of accelerator types available to the specified project.
+   * Retrieves a list of accelerator types that are available to the specified project.
    *
    * <p>Sample code:
    *

@@ -912,7 +912,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. The orderBy query parameter is not
+   * supported.
    *
    * <p>Sample code:
    *
@@ -946,7 +947,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. The orderBy query parameter is not
+   * supported.
    *
    * <p>Sample code:
    *
@@ -980,7 +982,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. The orderBy query parameter is not
+   * supported.
    *
    * <p>Sample code:
    *
@@ -1009,7 +1012,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. The orderBy query parameter is not
+   * supported.
    *
    * <p>Sample code:
    *
@@ -1038,7 +1042,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. The orderBy query parameter is not
+   * supported.
    *
    * <p>Sample code:
    *

@@ -52,6 +52,7 @@ public final class Instance implements ApiMessage {
   private final String minCpuPlatform;
   private final String name;
   private final List<NetworkInterface> networkInterfaces;
+  private final String privateIpv6GoogleAccess;
   private final ReservationAffinity reservationAffinity;
   private final List<String> resourcePolicies;
   private final Scheduling scheduling;
@@ -85,6 +86,7 @@ public final class Instance implements ApiMessage {
     this.minCpuPlatform = null;
     this.name = null;
     this.networkInterfaces = null;
+    this.privateIpv6GoogleAccess = null;
     this.reservationAffinity = null;
     this.resourcePolicies = null;
     this.scheduling = null;
@@ -119,6 +121,7 @@ public final class Instance implements ApiMessage {
       String minCpuPlatform,
       String name,
       List<NetworkInterface> networkInterfaces,
+      String privateIpv6GoogleAccess,
       ReservationAffinity reservationAffinity,
       List<String> resourcePolicies,
       Scheduling scheduling,
@@ -150,6 +153,7 @@ public final class Instance implements ApiMessage {
     this.minCpuPlatform = minCpuPlatform;
     this.name = name;
     this.networkInterfaces = networkInterfaces;
+    this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
     this.reservationAffinity = reservationAffinity;
     this.resourcePolicies = resourcePolicies;
     this.scheduling = scheduling;
@@ -222,6 +226,9 @@ public final class Instance implements ApiMessage {
     }
     if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
+    }
+    if ("privateIpv6GoogleAccess".equals(fieldName)) {
+      return privateIpv6GoogleAccess;
     }
     if ("reservationAffinity".equals(fieldName)) {
       return reservationAffinity;
@@ -435,6 +442,14 @@ public final class Instance implements ApiMessage {
     return networkInterfaces;
   }
 
+  /**
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK
+   * as default.
+   */
+  public String getPrivateIpv6GoogleAccess() {
+    return privateIpv6GoogleAccess;
+  }
+
   /** Specifies the reservations that this instance can consume from. */
   public ReservationAffinity getReservationAffinity() {
     return reservationAffinity;
@@ -484,7 +499,7 @@ public final class Instance implements ApiMessage {
 
   /**
    * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
-   * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+   * RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
    */
   public String getStatus() {
     return status;
@@ -555,6 +570,7 @@ public final class Instance implements ApiMessage {
     private String minCpuPlatform;
     private String name;
     private List<NetworkInterface> networkInterfaces;
+    private String privateIpv6GoogleAccess;
     private ReservationAffinity reservationAffinity;
     private List<String> resourcePolicies;
     private Scheduling scheduling;
@@ -629,6 +645,9 @@ public final class Instance implements ApiMessage {
       if (other.getNetworkInterfacesList() != null) {
         this.networkInterfaces = other.networkInterfaces;
       }
+      if (other.getPrivateIpv6GoogleAccess() != null) {
+        this.privateIpv6GoogleAccess = other.privateIpv6GoogleAccess;
+      }
       if (other.getReservationAffinity() != null) {
         this.reservationAffinity = other.reservationAffinity;
       }
@@ -688,6 +707,7 @@ public final class Instance implements ApiMessage {
       this.minCpuPlatform = source.minCpuPlatform;
       this.name = source.name;
       this.networkInterfaces = source.networkInterfaces;
+      this.privateIpv6GoogleAccess = source.privateIpv6GoogleAccess;
       this.reservationAffinity = source.reservationAffinity;
       this.resourcePolicies = source.resourcePolicies;
       this.scheduling = source.scheduling;
@@ -1080,6 +1100,23 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /**
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK
+     * as default.
+     */
+    public String getPrivateIpv6GoogleAccess() {
+      return privateIpv6GoogleAccess;
+    }
+
+    /**
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK
+     * as default.
+     */
+    public Builder setPrivateIpv6GoogleAccess(String privateIpv6GoogleAccess) {
+      this.privateIpv6GoogleAccess = privateIpv6GoogleAccess;
+      return this;
+    }
+
     /** Specifies the reservations that this instance can consume from. */
     public ReservationAffinity getReservationAffinity() {
       return reservationAffinity;
@@ -1218,7 +1255,7 @@ public final class Instance implements ApiMessage {
 
     /**
      * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
-     * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+     * RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      */
     public String getStatus() {
       return status;
@@ -1226,7 +1263,7 @@ public final class Instance implements ApiMessage {
 
     /**
      * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
-     * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+     * RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED.
      */
     public Builder setStatus(String status) {
       this.status = status;
@@ -1304,6 +1341,7 @@ public final class Instance implements ApiMessage {
           minCpuPlatform,
           name,
           networkInterfaces,
+          privateIpv6GoogleAccess,
           reservationAffinity,
           resourcePolicies,
           scheduling,
@@ -1339,6 +1377,7 @@ public final class Instance implements ApiMessage {
       newBuilder.setMinCpuPlatform(this.minCpuPlatform);
       newBuilder.setName(this.name);
       newBuilder.addAllNetworkInterfaces(this.networkInterfaces);
+      newBuilder.setPrivateIpv6GoogleAccess(this.privateIpv6GoogleAccess);
       newBuilder.setReservationAffinity(this.reservationAffinity);
       newBuilder.addAllResourcePolicies(this.resourcePolicies);
       newBuilder.setScheduling(this.scheduling);
@@ -1415,6 +1454,9 @@ public final class Instance implements ApiMessage {
         + "networkInterfaces="
         + networkInterfaces
         + ", "
+        + "privateIpv6GoogleAccess="
+        + privateIpv6GoogleAccess
+        + ", "
         + "reservationAffinity="
         + reservationAffinity
         + ", "
@@ -1479,6 +1521,7 @@ public final class Instance implements ApiMessage {
           && Objects.equals(this.minCpuPlatform, that.getMinCpuPlatform())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.networkInterfaces, that.getNetworkInterfacesList())
+          && Objects.equals(this.privateIpv6GoogleAccess, that.getPrivateIpv6GoogleAccess())
           && Objects.equals(this.reservationAffinity, that.getReservationAffinity())
           && Objects.equals(this.resourcePolicies, that.getResourcePoliciesList())
           && Objects.equals(this.scheduling, that.getScheduling())
@@ -1518,6 +1561,7 @@ public final class Instance implements ApiMessage {
         minCpuPlatform,
         name,
         networkInterfaces,
+        privateIpv6GoogleAccess,
         reservationAffinity,
         resourcePolicies,
         scheduling,

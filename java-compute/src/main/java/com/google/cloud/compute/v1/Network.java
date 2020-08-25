@@ -151,11 +151,15 @@ public final class Network implements ApiMessage {
   }
 
   /**
-   * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC network
-   * is created in "custom" mode.
+   * Must be set to create a VPC network. If not set, a legacy network is created.
+   *
+   * <p>When set to true, the VPC network is created in auto mode. When set to false, the VPC
+   * network is created in custom mode.
    *
    * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined
    * range as described in Auto mode VPC network IP ranges.
+   *
+   * <p>For custom mode VPC networks, you can add subnets using the subnetworks insert method.
    */
   public Boolean getAutoCreateSubnetworks() {
     return autoCreateSubnetworks;
@@ -326,22 +330,30 @@ public final class Network implements ApiMessage {
     }
 
     /**
-     * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC
-     * network is created in "custom" mode.
+     * Must be set to create a VPC network. If not set, a legacy network is created.
+     *
+     * <p>When set to true, the VPC network is created in auto mode. When set to false, the VPC
+     * network is created in custom mode.
      *
      * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a
      * predetermined range as described in Auto mode VPC network IP ranges.
+     *
+     * <p>For custom mode VPC networks, you can add subnets using the subnetworks insert method.
      */
     public Boolean getAutoCreateSubnetworks() {
       return autoCreateSubnetworks;
     }
 
     /**
-     * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC
-     * network is created in "custom" mode.
+     * Must be set to create a VPC network. If not set, a legacy network is created.
+     *
+     * <p>When set to true, the VPC network is created in auto mode. When set to false, the VPC
+     * network is created in custom mode.
      *
      * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a
      * predetermined range as described in Auto mode VPC network IP ranges.
+     *
+     * <p>For custom mode VPC networks, you can add subnets using the subnetworks insert method.
      */
     public Builder setAutoCreateSubnetworks(Boolean autoCreateSubnetworks) {
       this.autoCreateSubnetworks = autoCreateSubnetworks;

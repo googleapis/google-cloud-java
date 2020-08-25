@@ -389,6 +389,7 @@ public class GlobalNetworkEndpointGroupClientTest {
     String name = "name3373707";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String networkEndpointType = "networkEndpointType118301523";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     Integer size = 3530753;
     ProjectRegionSubnetworkName subnetwork =
@@ -404,6 +405,7 @@ public class GlobalNetworkEndpointGroupClientTest {
             .setName(name)
             .setNetwork(network.toString())
             .setNetworkEndpointType(networkEndpointType)
+            .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setSize(size)
             .setSubnetwork(subnetwork.toString())

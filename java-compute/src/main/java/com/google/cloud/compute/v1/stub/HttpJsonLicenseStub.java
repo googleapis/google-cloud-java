@@ -107,7 +107,7 @@ public class HttpJsonLicenseStub extends LicenseStub {
                   ApiMessageHttpRequestFormatter.<GetIamPolicyLicenseHttpRequest>newBuilder()
                       .setPathTemplate(
                           PathTemplate.create("{project}/global/licenses/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectGlobalLicenseResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

@@ -192,7 +192,14 @@ public final class InsertVpnGatewayHttpRequest implements ApiMessage {
     return userIp;
   }
 
-  /** Represents a VPN gateway resource. Next ID: 13 */
+  /**
+   * Represents a HA VPN gateway.
+   *
+   * <p>HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your
+   * on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN
+   * connection in a single region. For more information about Cloud HA VPN solutions, see Cloud VPN
+   * topologies . (== resource_for {$api_version}.vpnGateways ==)
+   */
   public VpnGateway getVpnGatewayResource() {
     return vpnGatewayResource;
   }
@@ -416,12 +423,26 @@ public final class InsertVpnGatewayHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Represents a VPN gateway resource. Next ID: 13 */
+    /**
+     * Represents a HA VPN gateway.
+     *
+     * <p>HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your
+     * on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN
+     * connection in a single region. For more information about Cloud HA VPN solutions, see Cloud
+     * VPN topologies . (== resource_for {$api_version}.vpnGateways ==)
+     */
     public VpnGateway getVpnGatewayResource() {
       return vpnGatewayResource;
     }
 
-    /** Represents a VPN gateway resource. Next ID: 13 */
+    /**
+     * Represents a HA VPN gateway.
+     *
+     * <p>HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your
+     * on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN
+     * connection in a single region. For more information about Cloud HA VPN solutions, see Cloud
+     * VPN topologies . (== resource_for {$api_version}.vpnGateways ==)
+     */
     public Builder setVpnGatewayResource(VpnGateway vpnGatewayResource) {
       this.vpnGatewayResource = vpnGatewayResource;
       return this;

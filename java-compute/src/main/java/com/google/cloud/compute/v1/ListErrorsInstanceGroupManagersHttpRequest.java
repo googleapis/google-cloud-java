@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroupManagers.listErrors. Lists all errors thrown by
- * actions on instances for a given managed instance group.
+ * actions on instances for a given managed instance group. The filter and orderBy query parameters
+ * are not supported.
  */
 public final class ListErrorsInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;

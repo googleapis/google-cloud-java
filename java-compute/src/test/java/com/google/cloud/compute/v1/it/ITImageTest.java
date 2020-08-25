@@ -17,18 +17,7 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.compute.v1.DeprecationStatus;
-import com.google.cloud.compute.v1.Disk;
-import com.google.cloud.compute.v1.DiskClient;
-import com.google.cloud.compute.v1.DiskSettings;
-import com.google.cloud.compute.v1.Image;
-import com.google.cloud.compute.v1.ImageClient;
-import com.google.cloud.compute.v1.ImageSettings;
-import com.google.cloud.compute.v1.InsertImageHttpRequest;
-import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.Policy;
-import com.google.cloud.compute.v1.ProjectGlobalImageName;
-import com.google.cloud.compute.v1.ProjectGlobalImageResourceName;
+import com.google.cloud.compute.v1.*;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
@@ -117,7 +106,11 @@ public class ITImageTest extends BaseTest {
 
   @Test
   public void getIamPolicyImageTest() {
-    Policy policy = imageClient.getIamPolicyImage(IMAGE_RESOURCE_NAME);
+    Policy policy =
+        imageClient.getIamPolicyImage(
+            GetIamPolicyImageHttpRequest.newBuilder()
+                .setResource(IMAGE_RESOURCE_NAME.toString())
+                .build());
     assertThat(policy).isNotNull();
     assertThat(policy.getEtag()).isEqualTo("ACAB");
   }

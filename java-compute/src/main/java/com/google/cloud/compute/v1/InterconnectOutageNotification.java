@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Description of a planned outage on this Interconnect. Next id: 9 */
+/** Description of a planned outage on this Interconnect. */
 public final class InterconnectOutageNotification implements ApiMessage {
   private final List<String> affectedCircuits;
   private final String description;

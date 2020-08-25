@@ -19,6 +19,7 @@ import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedL
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListPerInstanceConfigsInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -121,6 +122,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
         .deleteInstancesInstanceGroupManagerSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * deletePerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .deletePerInstanceConfigsInstanceGroupManagerSettings();
+  }
+
   /** Returns the object with the settings used for calls to getInstanceGroupManager. */
   public UnaryCallSettings<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
       getInstanceGroupManagerSettings() {
@@ -167,11 +178,34 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
         .listManagedInstancesInstanceGroupManagersSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listPerInstanceConfigsInstanceGroupManagers.
+   */
+  public PagedCallSettings<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp,
+          ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsInstanceGroupManagersSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .listPerInstanceConfigsInstanceGroupManagersSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
   public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
         .patchInstanceGroupManagerSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * patchPerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .patchPerInstanceConfigsInstanceGroupManagerSettings();
   }
 
   /**
@@ -204,6 +238,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
       setTargetPoolsInstanceGroupManagerSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
         .setTargetPoolsInstanceGroupManagerSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * updatePerInstanceConfigsInstanceGroupManager.
+   */
+  public UnaryCallSettings<UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .updatePerInstanceConfigsInstanceGroupManagerSettings();
   }
 
   public static final InstanceGroupManagerSettings create(InstanceGroupManagerStubSettings stub)
@@ -360,6 +404,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
       return getStubSettingsBuilder().deleteInstancesInstanceGroupManagerSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * deletePerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        deletePerInstanceConfigsInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().deletePerInstanceConfigsInstanceGroupManagerSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getInstanceGroupManager. */
     public UnaryCallSettings.Builder<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
         getInstanceGroupManagerSettings() {
@@ -402,10 +456,32 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
       return getStubSettingsBuilder().listManagedInstancesInstanceGroupManagersSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * listPerInstanceConfigsInstanceGroupManagers.
+     */
+    public PagedCallSettings.Builder<
+            ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+            InstanceGroupManagersListPerInstanceConfigsResp,
+            ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+        listPerInstanceConfigsInstanceGroupManagersSettings() {
+      return getStubSettingsBuilder().listPerInstanceConfigsInstanceGroupManagersSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
     public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
         patchInstanceGroupManagerSettings() {
       return getStubSettingsBuilder().patchInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * patchPerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        patchPerInstanceConfigsInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchPerInstanceConfigsInstanceGroupManagerSettings();
     }
 
     /**
@@ -437,6 +513,16 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
     public UnaryCallSettings.Builder<SetTargetPoolsInstanceGroupManagerHttpRequest, Operation>
         setTargetPoolsInstanceGroupManagerSettings() {
       return getStubSettingsBuilder().setTargetPoolsInstanceGroupManagerSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updatePerInstanceConfigsInstanceGroupManager.
+     */
+    public UnaryCallSettings.Builder<
+            UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+        updatePerInstanceConfigsInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().updatePerInstanceConfigsInstanceGroupManagerSettings();
     }
 
     @Override

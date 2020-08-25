@@ -457,6 +457,8 @@ public class DiskClientTest {
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String sizeGb = "sizeGb2105542105";
+    String sourceDisk = "sourceDisk-85117119";
+    String sourceDiskId = "sourceDiskId-1693292839";
     String sourceImage = "sourceImage1661056055";
     String sourceImageId = "sourceImageId-2092155357";
     String sourceSnapshot = "sourceSnapshot-947679896";
@@ -479,6 +481,8 @@ public class DiskClientTest {
             .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setSizeGb(sizeGb)
+            .setSourceDisk(sourceDisk)
+            .setSourceDiskId(sourceDiskId)
             .setSourceImage(sourceImage)
             .setSourceImageId(sourceImageId)
             .setSourceSnapshot(sourceSnapshot)
@@ -537,10 +541,11 @@ public class DiskClientTest {
         Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
     mockService.addResponse(expectedResponse);
 
+    Integer optionsRequestedPolicyVersion = 574521795;
     ProjectZoneDiskResourceName resource =
         ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-    Policy actualResponse = client.getIamPolicyDisk(resource);
+    Policy actualResponse = client.getIamPolicyDisk(optionsRequestedPolicyVersion, resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -567,10 +572,11 @@ public class DiskClientTest {
     mockService.addException(exception);
 
     try {
+      Integer optionsRequestedPolicyVersion = 574521795;
       ProjectZoneDiskResourceName resource =
           ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
 
-      client.getIamPolicyDisk(resource);
+      client.getIamPolicyDisk(optionsRequestedPolicyVersion, resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

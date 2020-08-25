@@ -84,14 +84,24 @@ public final class BackendServiceIAP implements ApiMessage {
     return null;
   }
 
+  /**
+   * Whether the serving infrastructure will authenticate and authorize all incoming requests. If
+   * true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+   */
   public Boolean getEnabled() {
     return enabled;
   }
 
+  /** OAuth2 client ID to use for the authentication flow. */
   public String getOauth2ClientId() {
     return oauth2ClientId;
   }
 
+  /**
+   * OAuth2 client secret to use for the authentication flow. For security reasons, this value
+   * cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the
+   * oauth2ClientSecretSha256 field.
+   */
   public String getOauth2ClientSecret() {
     return oauth2ClientSecret;
   }
@@ -155,28 +165,48 @@ public final class BackendServiceIAP implements ApiMessage {
       this.oauth2ClientSecretSha256 = source.oauth2ClientSecretSha256;
     }
 
+    /**
+     * Whether the serving infrastructure will authenticate and authorize all incoming requests. If
+     * true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+     */
     public Boolean getEnabled() {
       return enabled;
     }
 
+    /**
+     * Whether the serving infrastructure will authenticate and authorize all incoming requests. If
+     * true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+     */
     public Builder setEnabled(Boolean enabled) {
       this.enabled = enabled;
       return this;
     }
 
+    /** OAuth2 client ID to use for the authentication flow. */
     public String getOauth2ClientId() {
       return oauth2ClientId;
     }
 
+    /** OAuth2 client ID to use for the authentication flow. */
     public Builder setOauth2ClientId(String oauth2ClientId) {
       this.oauth2ClientId = oauth2ClientId;
       return this;
     }
 
+    /**
+     * OAuth2 client secret to use for the authentication flow. For security reasons, this value
+     * cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     */
     public String getOauth2ClientSecret() {
       return oauth2ClientSecret;
     }
 
+    /**
+     * OAuth2 client secret to use for the authentication flow. For security reasons, this value
+     * cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     */
     public Builder setOauth2ClientSecret(String oauth2ClientSecret) {
       this.oauth2ClientSecret = oauth2ClientSecret;
       return this;

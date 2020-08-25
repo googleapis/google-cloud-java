@@ -33,6 +33,8 @@ public final class ManagedInstance implements ApiMessage {
   private final List<ManagedInstanceInstanceHealth> instanceHealth;
   private final String instanceStatus;
   private final ManagedInstanceLastAttempt lastAttempt;
+  private final PreservedState preservedStateFromConfig;
+  private final PreservedState preservedStateFromPolicy;
   private final ManagedInstanceVersion version;
 
   private ManagedInstance() {
@@ -42,6 +44,8 @@ public final class ManagedInstance implements ApiMessage {
     this.instanceHealth = null;
     this.instanceStatus = null;
     this.lastAttempt = null;
+    this.preservedStateFromConfig = null;
+    this.preservedStateFromPolicy = null;
     this.version = null;
   }
 
@@ -52,6 +56,8 @@ public final class ManagedInstance implements ApiMessage {
       List<ManagedInstanceInstanceHealth> instanceHealth,
       String instanceStatus,
       ManagedInstanceLastAttempt lastAttempt,
+      PreservedState preservedStateFromConfig,
+      PreservedState preservedStateFromPolicy,
       ManagedInstanceVersion version) {
     this.currentAction = currentAction;
     this.id = id;
@@ -59,6 +65,8 @@ public final class ManagedInstance implements ApiMessage {
     this.instanceHealth = instanceHealth;
     this.instanceStatus = instanceStatus;
     this.lastAttempt = lastAttempt;
+    this.preservedStateFromConfig = preservedStateFromConfig;
+    this.preservedStateFromPolicy = preservedStateFromPolicy;
     this.version = version;
   }
 
@@ -81,6 +89,12 @@ public final class ManagedInstance implements ApiMessage {
     }
     if ("lastAttempt".equals(fieldName)) {
       return lastAttempt;
+    }
+    if ("preservedStateFromConfig".equals(fieldName)) {
+      return preservedStateFromConfig;
+    }
+    if ("preservedStateFromPolicy".equals(fieldName)) {
+      return preservedStateFromPolicy;
     }
     if ("version".equals(fieldName)) {
       return version;
@@ -160,6 +174,16 @@ public final class ManagedInstance implements ApiMessage {
     return lastAttempt;
   }
 
+  /** [Output Only] Preserved state applied from per-instance config for this instance. */
+  public PreservedState getPreservedStateFromConfig() {
+    return preservedStateFromConfig;
+  }
+
+  /** [Output Only] Preserved state generated based on stateful policy for this instance. */
+  public PreservedState getPreservedStateFromPolicy() {
+    return preservedStateFromPolicy;
+  }
+
   /** [Output Only] Intended version of this instance. */
   public ManagedInstanceVersion getVersion() {
     return version;
@@ -194,6 +218,8 @@ public final class ManagedInstance implements ApiMessage {
     private List<ManagedInstanceInstanceHealth> instanceHealth;
     private String instanceStatus;
     private ManagedInstanceLastAttempt lastAttempt;
+    private PreservedState preservedStateFromConfig;
+    private PreservedState preservedStateFromPolicy;
     private ManagedInstanceVersion version;
 
     Builder() {}
@@ -218,6 +244,12 @@ public final class ManagedInstance implements ApiMessage {
       if (other.getLastAttempt() != null) {
         this.lastAttempt = other.lastAttempt;
       }
+      if (other.getPreservedStateFromConfig() != null) {
+        this.preservedStateFromConfig = other.preservedStateFromConfig;
+      }
+      if (other.getPreservedStateFromPolicy() != null) {
+        this.preservedStateFromPolicy = other.preservedStateFromPolicy;
+      }
       if (other.getVersion() != null) {
         this.version = other.version;
       }
@@ -231,6 +263,8 @@ public final class ManagedInstance implements ApiMessage {
       this.instanceHealth = source.instanceHealth;
       this.instanceStatus = source.instanceStatus;
       this.lastAttempt = source.lastAttempt;
+      this.preservedStateFromConfig = source.preservedStateFromConfig;
+      this.preservedStateFromPolicy = source.preservedStateFromPolicy;
       this.version = source.version;
     }
 
@@ -362,6 +396,28 @@ public final class ManagedInstance implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Preserved state applied from per-instance config for this instance. */
+    public PreservedState getPreservedStateFromConfig() {
+      return preservedStateFromConfig;
+    }
+
+    /** [Output Only] Preserved state applied from per-instance config for this instance. */
+    public Builder setPreservedStateFromConfig(PreservedState preservedStateFromConfig) {
+      this.preservedStateFromConfig = preservedStateFromConfig;
+      return this;
+    }
+
+    /** [Output Only] Preserved state generated based on stateful policy for this instance. */
+    public PreservedState getPreservedStateFromPolicy() {
+      return preservedStateFromPolicy;
+    }
+
+    /** [Output Only] Preserved state generated based on stateful policy for this instance. */
+    public Builder setPreservedStateFromPolicy(PreservedState preservedStateFromPolicy) {
+      this.preservedStateFromPolicy = preservedStateFromPolicy;
+      return this;
+    }
+
     /** [Output Only] Intended version of this instance. */
     public ManagedInstanceVersion getVersion() {
       return version;
@@ -376,7 +432,15 @@ public final class ManagedInstance implements ApiMessage {
     public ManagedInstance build() {
 
       return new ManagedInstance(
-          currentAction, id, instance, instanceHealth, instanceStatus, lastAttempt, version);
+          currentAction,
+          id,
+          instance,
+          instanceHealth,
+          instanceStatus,
+          lastAttempt,
+          preservedStateFromConfig,
+          preservedStateFromPolicy,
+          version);
     }
 
     public Builder clone() {
@@ -387,6 +451,8 @@ public final class ManagedInstance implements ApiMessage {
       newBuilder.addAllInstanceHealth(this.instanceHealth);
       newBuilder.setInstanceStatus(this.instanceStatus);
       newBuilder.setLastAttempt(this.lastAttempt);
+      newBuilder.setPreservedStateFromConfig(this.preservedStateFromConfig);
+      newBuilder.setPreservedStateFromPolicy(this.preservedStateFromPolicy);
       newBuilder.setVersion(this.version);
       return newBuilder;
     }
@@ -413,6 +479,12 @@ public final class ManagedInstance implements ApiMessage {
         + "lastAttempt="
         + lastAttempt
         + ", "
+        + "preservedStateFromConfig="
+        + preservedStateFromConfig
+        + ", "
+        + "preservedStateFromPolicy="
+        + preservedStateFromPolicy
+        + ", "
         + "version="
         + version
         + "}";
@@ -431,6 +503,8 @@ public final class ManagedInstance implements ApiMessage {
           && Objects.equals(this.instanceHealth, that.getInstanceHealthList())
           && Objects.equals(this.instanceStatus, that.getInstanceStatus())
           && Objects.equals(this.lastAttempt, that.getLastAttempt())
+          && Objects.equals(this.preservedStateFromConfig, that.getPreservedStateFromConfig())
+          && Objects.equals(this.preservedStateFromPolicy, that.getPreservedStateFromPolicy())
           && Objects.equals(this.version, that.getVersion());
     }
     return false;
@@ -439,6 +513,14 @@ public final class ManagedInstance implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        currentAction, id, instance, instanceHealth, instanceStatus, lastAttempt, version);
+        currentAction,
+        id,
+        instance,
+        instanceHealth,
+        instanceStatus,
+        lastAttempt,
+        preservedStateFromConfig,
+        preservedStateFromPolicy,
+        version);
   }
 }

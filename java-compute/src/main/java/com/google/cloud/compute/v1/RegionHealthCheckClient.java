@@ -369,8 +369,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
@@ -406,8 +407,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
@@ -635,8 +637,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
@@ -681,8 +684,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
@@ -782,8 +786,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.
@@ -827,8 +832,9 @@ public class RegionHealthCheckClient implements BackgroundResource {
    *     <p>Google Compute Engine has two Health Check resources:
    *     <p>&#42; [Global](/compute/docs/reference/rest/{$api_version}/healthChecks) &#42;
    *     [Regional](/compute/docs/reference/rest/{$api_version}/regionHealthChecks)
-   *     <p>Internal HTTP(S) load balancers use regional health checks. All other types of GCP load
-   *     balancers and managed instance group auto-healing use global health checks. For more
+   *     <p>Internal HTTP(S) load balancers must use regional health checks. Internal TCP/UDP load
+   *     balancers can use either regional or global health checks. All other types of GCP load
+   *     balancers and managed instance group auto-healing must use global health checks. For more
    *     information, read Health Check Concepts.
    *     <p>To perform health checks on network load balancers, you must use either httpHealthChecks
    *     or httpsHealthChecks.

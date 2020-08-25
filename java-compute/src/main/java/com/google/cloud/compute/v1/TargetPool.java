@@ -197,8 +197,8 @@ public final class TargetPool implements ApiMessage {
   /**
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy
    * if and only if the health checks pass. An empty list means all member instances will be
-   * considered healthy at all times. Only HttpHealthChecks are supported. Only one health check may
-   * be specified.
+   * considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health
+   * check may be specified.
    */
   public List<String> getHealthChecksList() {
     return healthChecks;
@@ -451,8 +451,8 @@ public final class TargetPool implements ApiMessage {
     /**
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy
      * if and only if the health checks pass. An empty list means all member instances will be
-     * considered healthy at all times. Only HttpHealthChecks are supported. Only one health check
-     * may be specified.
+     * considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health
+     * check may be specified.
      */
     public List<String> getHealthChecksList() {
       return healthChecks;
@@ -461,8 +461,8 @@ public final class TargetPool implements ApiMessage {
     /**
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy
      * if and only if the health checks pass. An empty list means all member instances will be
-     * considered healthy at all times. Only HttpHealthChecks are supported. Only one health check
-     * may be specified.
+     * considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health
+     * check may be specified.
      */
     public Builder addAllHealthChecks(List<String> healthChecks) {
       if (this.healthChecks == null) {
@@ -475,8 +475,8 @@ public final class TargetPool implements ApiMessage {
     /**
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy
      * if and only if the health checks pass. An empty list means all member instances will be
-     * considered healthy at all times. Only HttpHealthChecks are supported. Only one health check
-     * may be specified.
+     * considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health
+     * check may be specified.
      */
     public Builder addHealthChecks(String healthChecks) {
       if (this.healthChecks == null) {

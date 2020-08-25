@@ -34,11 +34,13 @@ import javax.annotation.Nullable;
  * resource_for {$api_version}.regionCommitments ==)
  */
 public final class Commitment implements ApiMessage {
+  private final String category;
   private final String creationTimestamp;
   private final String description;
   private final String endTimestamp;
   private final String id;
   private final String kind;
+  private final LicenseResourceCommitment licenseResource;
   private final String name;
   private final String plan;
   private final String region;
@@ -50,11 +52,13 @@ public final class Commitment implements ApiMessage {
   private final String statusMessage;
 
   private Commitment() {
+    this.category = null;
     this.creationTimestamp = null;
     this.description = null;
     this.endTimestamp = null;
     this.id = null;
     this.kind = null;
+    this.licenseResource = null;
     this.name = null;
     this.plan = null;
     this.region = null;
@@ -67,11 +71,13 @@ public final class Commitment implements ApiMessage {
   }
 
   private Commitment(
+      String category,
       String creationTimestamp,
       String description,
       String endTimestamp,
       String id,
       String kind,
+      LicenseResourceCommitment licenseResource,
       String name,
       String plan,
       String region,
@@ -81,11 +87,13 @@ public final class Commitment implements ApiMessage {
       String startTimestamp,
       String status,
       String statusMessage) {
+    this.category = category;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.endTimestamp = endTimestamp;
     this.id = id;
     this.kind = kind;
+    this.licenseResource = licenseResource;
     this.name = name;
     this.plan = plan;
     this.region = region;
@@ -99,6 +107,9 @@ public final class Commitment implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("category".equals(fieldName)) {
+      return category;
+    }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
@@ -113,6 +124,9 @@ public final class Commitment implements ApiMessage {
     }
     if ("kind".equals(fieldName)) {
       return kind;
+    }
+    if ("licenseResource".equals(fieldName)) {
+      return licenseResource;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -162,6 +176,16 @@ public final class Commitment implements ApiMessage {
     return null;
   }
 
+  /**
+   * The category of the commitment. Category MACHINE specifies commitments composed of machine
+   * resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments
+   * composed of software licenses, listed in licenseResources. Note that only MACHINE commitments
+   * should have a Type specified.
+   */
+  public String getCategory() {
+    return category;
+  }
+
   /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
@@ -189,6 +213,11 @@ public final class Commitment implements ApiMessage {
   /** [Output Only] Type of the resource. Always compute#commitment for commitments. */
   public String getKind() {
     return kind;
+  }
+
+  /** The license specification required as part of a license commitment. */
+  public LicenseResourceCommitment getLicenseResource() {
+    return licenseResource;
   }
 
   /**
@@ -274,11 +303,13 @@ public final class Commitment implements ApiMessage {
   }
 
   public static class Builder {
+    private String category;
     private String creationTimestamp;
     private String description;
     private String endTimestamp;
     private String id;
     private String kind;
+    private LicenseResourceCommitment licenseResource;
     private String name;
     private String plan;
     private String region;
@@ -293,6 +324,9 @@ public final class Commitment implements ApiMessage {
 
     public Builder mergeFrom(Commitment other) {
       if (other == Commitment.getDefaultInstance()) return this;
+      if (other.getCategory() != null) {
+        this.category = other.category;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
@@ -307,6 +341,9 @@ public final class Commitment implements ApiMessage {
       }
       if (other.getKind() != null) {
         this.kind = other.kind;
+      }
+      if (other.getLicenseResource() != null) {
+        this.licenseResource = other.licenseResource;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -339,11 +376,13 @@ public final class Commitment implements ApiMessage {
     }
 
     Builder(Commitment source) {
+      this.category = source.category;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.endTimestamp = source.endTimestamp;
       this.id = source.id;
       this.kind = source.kind;
+      this.licenseResource = source.licenseResource;
       this.name = source.name;
       this.plan = source.plan;
       this.region = source.region;
@@ -353,6 +392,27 @@ public final class Commitment implements ApiMessage {
       this.startTimestamp = source.startTimestamp;
       this.status = source.status;
       this.statusMessage = source.statusMessage;
+    }
+
+    /**
+     * The category of the commitment. Category MACHINE specifies commitments composed of machine
+     * resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments
+     * composed of software licenses, listed in licenseResources. Note that only MACHINE commitments
+     * should have a Type specified.
+     */
+    public String getCategory() {
+      return category;
+    }
+
+    /**
+     * The category of the commitment. Category MACHINE specifies commitments composed of machine
+     * resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments
+     * composed of software licenses, listed in licenseResources. Note that only MACHINE commitments
+     * should have a Type specified.
+     */
+    public Builder setCategory(String category) {
+      this.category = category;
+      return this;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -417,6 +477,17 @@ public final class Commitment implements ApiMessage {
     /** [Output Only] Type of the resource. Always compute#commitment for commitments. */
     public Builder setKind(String kind) {
       this.kind = kind;
+      return this;
+    }
+
+    /** The license specification required as part of a license commitment. */
+    public LicenseResourceCommitment getLicenseResource() {
+      return licenseResource;
+    }
+
+    /** The license specification required as part of a license commitment. */
+    public Builder setLicenseResource(LicenseResourceCommitment licenseResource) {
+      this.licenseResource = licenseResource;
       return this;
     }
 
@@ -579,11 +650,13 @@ public final class Commitment implements ApiMessage {
     public Commitment build() {
 
       return new Commitment(
+          category,
           creationTimestamp,
           description,
           endTimestamp,
           id,
           kind,
+          licenseResource,
           name,
           plan,
           region,
@@ -597,11 +670,13 @@ public final class Commitment implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setCategory(this.category);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setEndTimestamp(this.endTimestamp);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setLicenseResource(this.licenseResource);
       newBuilder.setName(this.name);
       newBuilder.setPlan(this.plan);
       newBuilder.setRegion(this.region);
@@ -618,6 +693,9 @@ public final class Commitment implements ApiMessage {
   @Override
   public String toString() {
     return "Commitment{"
+        + "category="
+        + category
+        + ", "
         + "creationTimestamp="
         + creationTimestamp
         + ", "
@@ -632,6 +710,9 @@ public final class Commitment implements ApiMessage {
         + ", "
         + "kind="
         + kind
+        + ", "
+        + "licenseResource="
+        + licenseResource
         + ", "
         + "name="
         + name
@@ -669,11 +750,13 @@ public final class Commitment implements ApiMessage {
     }
     if (o instanceof Commitment) {
       Commitment that = (Commitment) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+      return Objects.equals(this.category, that.getCategory())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.endTimestamp, that.getEndTimestamp())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.licenseResource, that.getLicenseResource())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.plan, that.getPlan())
           && Objects.equals(this.region, that.getRegion())
@@ -690,11 +773,13 @@ public final class Commitment implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        category,
         creationTimestamp,
         description,
         endTimestamp,
         id,
         kind,
+        licenseResource,
         name,
         plan,
         region,

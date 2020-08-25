@@ -764,18 +764,22 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = diskClient.getIamPolicyDisk(resource);
+   *   Policy response = diskClient.getIamPolicyDisk(optionsRequestedPolicyVersion, resource);
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyDisk(ProjectZoneDiskResourceName resource) {
+  public final Policy getIamPolicyDisk(
+      Integer optionsRequestedPolicyVersion, ProjectZoneDiskResourceName resource) {
     GetIamPolicyDiskHttpRequest request =
         GetIamPolicyDiskHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
             .setResource(resource == null ? null : resource.toString())
             .build();
     return getIamPolicyDisk(request);
@@ -790,18 +794,23 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   ProjectZoneDiskResourceName resource = ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
-   *   Policy response = diskClient.getIamPolicyDisk(resource.toString());
+   *   Policy response = diskClient.getIamPolicyDisk(optionsRequestedPolicyVersion, resource.toString());
    * }
    * </code></pre>
    *
+   * @param optionsRequestedPolicyVersion Requested IAM Policy version.
    * @param resource Name or id of the resource for this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
-  public final Policy getIamPolicyDisk(String resource) {
+  public final Policy getIamPolicyDisk(Integer optionsRequestedPolicyVersion, String resource) {
     GetIamPolicyDiskHttpRequest request =
-        GetIamPolicyDiskHttpRequest.newBuilder().setResource(resource).build();
+        GetIamPolicyDiskHttpRequest.newBuilder()
+            .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
+            .setResource(resource)
+            .build();
     return getIamPolicyDisk(request);
   }
 
@@ -814,8 +823,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyDiskHttpRequest request = GetIamPolicyDiskHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   Policy response = diskClient.getIamPolicyDisk(request);
@@ -839,8 +850,10 @@ public class DiskClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DiskClient diskClient = DiskClient.create()) {
+   *   Integer optionsRequestedPolicyVersion = 0;
    *   String formattedResource = ProjectZoneDiskResourceName.format("[PROJECT]", "[ZONE]", "[RESOURCE]");
    *   GetIamPolicyDiskHttpRequest request = GetIamPolicyDiskHttpRequest.newBuilder()
+   *     .setOptionsRequestedPolicyVersion(optionsRequestedPolicyVersion)
    *     .setResource(formattedResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = diskClient.getIamPolicyDiskCallable().futureCall(request);
@@ -857,9 +870,9 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
-   * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * GB data disk by omitting all properties. You can also create a disk that is larger than the
+   * default size by specifying the sizeGb property.
    *
    * <p>Sample code:
    *
@@ -899,9 +912,9 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
-   * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * GB data disk by omitting all properties. You can also create a disk that is larger than the
+   * default size by specifying the sizeGb property.
    *
    * <p>Sample code:
    *
@@ -938,9 +951,9 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
-   * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * GB data disk by omitting all properties. You can also create a disk that is larger than the
+   * default size by specifying the sizeGb property.
    *
    * <p>Sample code:
    *
@@ -967,9 +980,9 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
-   * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * GB data disk by omitting all properties. You can also create a disk that is larger than the
+   * default size by specifying the sizeGb property.
    *
    * <p>Sample code:
    *

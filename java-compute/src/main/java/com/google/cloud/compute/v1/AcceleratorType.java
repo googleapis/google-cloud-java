@@ -154,7 +154,7 @@ public final class AcceleratorType implements ApiMessage {
     return kind;
   }
 
-  /** [Output Only] Maximum accelerator cards allowed per instance. */
+  /** [Output Only] Maximum number of accelerator cards allowed per instance. */
   public Integer getMaximumCardsPerInstance() {
     return maximumCardsPerInstance;
   }
@@ -164,7 +164,7 @@ public final class AcceleratorType implements ApiMessage {
     return name;
   }
 
-  /** [Output Only] Server-defined fully-qualified URL for this resource. */
+  /** [Output Only] Server-defined, fully qualified URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -322,12 +322,12 @@ public final class AcceleratorType implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Maximum accelerator cards allowed per instance. */
+    /** [Output Only] Maximum number of accelerator cards allowed per instance. */
     public Integer getMaximumCardsPerInstance() {
       return maximumCardsPerInstance;
     }
 
-    /** [Output Only] Maximum accelerator cards allowed per instance. */
+    /** [Output Only] Maximum number of accelerator cards allowed per instance. */
     public Builder setMaximumCardsPerInstance(Integer maximumCardsPerInstance) {
       this.maximumCardsPerInstance = maximumCardsPerInstance;
       return this;
@@ -344,12 +344,12 @@ public final class AcceleratorType implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Server-defined fully-qualified URL for this resource. */
+    /** [Output Only] Server-defined, fully qualified URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
-    /** [Output Only] Server-defined fully-qualified URL for this resource. */
+    /** [Output Only] Server-defined, fully qualified URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;

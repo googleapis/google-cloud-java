@@ -158,7 +158,9 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
     return fields;
   }
 
-  /** Whether to force attach the disk even if it's currently attached to another instance. */
+  /**
+   * Whether to force attach the regional disk even if it's currently attached to another instance.
+   */
   public Boolean getForceAttach() {
     return forceAttach;
   }
@@ -345,12 +347,18 @@ public final class AttachDiskInstanceHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Whether to force attach the disk even if it's currently attached to another instance. */
+    /**
+     * Whether to force attach the regional disk even if it's currently attached to another
+     * instance.
+     */
     public Boolean getForceAttach() {
       return forceAttach;
     }
 
-    /** Whether to force attach the disk even if it's currently attached to another instance. */
+    /**
+     * Whether to force attach the regional disk even if it's currently attached to another
+     * instance.
+     */
     public Builder setForceAttach(Boolean forceAttach) {
       this.forceAttach = forceAttach;
       return this;

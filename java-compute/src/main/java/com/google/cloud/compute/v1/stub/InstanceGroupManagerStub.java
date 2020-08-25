@@ -19,6 +19,7 @@ import static com.google.cloud.compute.v1.InstanceGroupManagerClient.AggregatedL
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListErrorsInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListManagedInstancesInstanceGroupManagersPagedResponse;
+import static com.google.cloud.compute.v1.InstanceGroupManagerClient.ListPerInstanceConfigsInstanceGroupManagersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,7 @@ import com.google.cloud.compute.v1.ApplyUpdatesToInstancesInstanceGroupManagerHt
 import com.google.cloud.compute.v1.CreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.DeletePerInstanceConfigsInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.InstanceGroupManager;
@@ -36,15 +38,19 @@ import com.google.cloud.compute.v1.InstanceGroupManagerAggregatedList;
 import com.google.cloud.compute.v1.InstanceGroupManagerList;
 import com.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse;
 import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse;
+import com.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp;
 import com.google.cloud.compute.v1.ListErrorsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
+import com.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.PatchPerInstanceConfigsInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerHttpRequest;
+import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -110,6 +116,13 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<DeletePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      deletePerInstanceConfigsInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deletePerInstanceConfigsInstanceGroupManagerCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<GetInstanceGroupManagerHttpRequest, InstanceGroupManager>
       getInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstanceGroupManagerCallable()");
@@ -170,9 +183,34 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          ListPerInstanceConfigsInstanceGroupManagersPagedResponse>
+      listPerInstanceConfigsInstanceGroupManagersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPerInstanceConfigsInstanceGroupManagersPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          ListPerInstanceConfigsInstanceGroupManagersHttpRequest,
+          InstanceGroupManagersListPerInstanceConfigsResp>
+      listPerInstanceConfigsInstanceGroupManagersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listPerInstanceConfigsInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
       patchInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException("Not implemented: patchInstanceGroupManagerCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchPerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      patchPerInstanceConfigsInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: patchPerInstanceConfigsInstanceGroupManagerCallable()");
   }
 
   @BetaApi
@@ -201,6 +239,13 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
       setTargetPoolsInstanceGroupManagerCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: setTargetPoolsInstanceGroupManagerCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdatePerInstanceConfigsInstanceGroupManagerHttpRequest, Operation>
+      updatePerInstanceConfigsInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updatePerInstanceConfigsInstanceGroupManagerCallable()");
   }
 
   @Override

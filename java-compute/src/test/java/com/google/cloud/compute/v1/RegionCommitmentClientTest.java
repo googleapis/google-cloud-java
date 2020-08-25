@@ -153,6 +153,7 @@ public class RegionCommitmentClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRegionCommitmentTest() {
+    String category = "category50511102";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String endTimestamp = "endTimestamp1004967602";
@@ -167,6 +168,7 @@ public class RegionCommitmentClientTest {
     String statusMessage = "statusMessage-239442758";
     Commitment expectedResponse =
         Commitment.newBuilder()
+            .setCategory(category)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setEndTimestamp(endTimestamp)

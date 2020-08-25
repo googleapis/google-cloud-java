@@ -33,6 +33,7 @@ import javax.annotation.Nullable;
  * {$api_version}.machineTypes ==)
  */
 public final class MachineType implements ApiMessage {
+  private final List<Accelerators> accelerators;
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;
   private final String description;
@@ -50,6 +51,7 @@ public final class MachineType implements ApiMessage {
   private final String zone;
 
   private MachineType() {
+    this.accelerators = null;
     this.creationTimestamp = null;
     this.deprecated = null;
     this.description = null;
@@ -68,6 +70,7 @@ public final class MachineType implements ApiMessage {
   }
 
   private MachineType(
+      List<Accelerators> accelerators,
       String creationTimestamp,
       DeprecationStatus deprecated,
       String description,
@@ -83,6 +86,7 @@ public final class MachineType implements ApiMessage {
       List<ScratchDisks> scratchDisks,
       String selfLink,
       String zone) {
+    this.accelerators = accelerators;
     this.creationTimestamp = creationTimestamp;
     this.deprecated = deprecated;
     this.description = description;
@@ -102,6 +106,9 @@ public final class MachineType implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("accelerators".equals(fieldName)) {
+      return accelerators;
+    }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
@@ -166,6 +173,11 @@ public final class MachineType implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** [Output Only] A list of accelerator configurations assigned to this machine type. */
+  public List<Accelerators> getAcceleratorsList() {
+    return accelerators;
   }
 
   /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -273,6 +285,7 @@ public final class MachineType implements ApiMessage {
   }
 
   public static class Builder {
+    private List<Accelerators> accelerators;
     private String creationTimestamp;
     private DeprecationStatus deprecated;
     private String description;
@@ -293,6 +306,9 @@ public final class MachineType implements ApiMessage {
 
     public Builder mergeFrom(MachineType other) {
       if (other == MachineType.getDefaultInstance()) return this;
+      if (other.getAcceleratorsList() != null) {
+        this.accelerators = other.accelerators;
+      }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
       }
@@ -342,6 +358,7 @@ public final class MachineType implements ApiMessage {
     }
 
     Builder(MachineType source) {
+      this.accelerators = source.accelerators;
       this.creationTimestamp = source.creationTimestamp;
       this.deprecated = source.deprecated;
       this.description = source.description;
@@ -357,6 +374,29 @@ public final class MachineType implements ApiMessage {
       this.scratchDisks = source.scratchDisks;
       this.selfLink = source.selfLink;
       this.zone = source.zone;
+    }
+
+    /** [Output Only] A list of accelerator configurations assigned to this machine type. */
+    public List<Accelerators> getAcceleratorsList() {
+      return accelerators;
+    }
+
+    /** [Output Only] A list of accelerator configurations assigned to this machine type. */
+    public Builder addAllAccelerators(List<Accelerators> accelerators) {
+      if (this.accelerators == null) {
+        this.accelerators = new LinkedList<>();
+      }
+      this.accelerators.addAll(accelerators);
+      return this;
+    }
+
+    /** [Output Only] A list of accelerator configurations assigned to this machine type. */
+    public Builder addAccelerators(Accelerators accelerators) {
+      if (this.accelerators == null) {
+        this.accelerators = new LinkedList<>();
+      }
+      this.accelerators.add(accelerators);
+      return this;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -557,6 +597,7 @@ public final class MachineType implements ApiMessage {
     public MachineType build() {
 
       return new MachineType(
+          accelerators,
           creationTimestamp,
           deprecated,
           description,
@@ -576,6 +617,7 @@ public final class MachineType implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.addAllAccelerators(this.accelerators);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDeprecated(this.deprecated);
       newBuilder.setDescription(this.description);
@@ -598,6 +640,9 @@ public final class MachineType implements ApiMessage {
   @Override
   public String toString() {
     return "MachineType{"
+        + "accelerators="
+        + accelerators
+        + ", "
         + "creationTimestamp="
         + creationTimestamp
         + ", "
@@ -652,7 +697,8 @@ public final class MachineType implements ApiMessage {
     }
     if (o instanceof MachineType) {
       MachineType that = (MachineType) o;
-      return Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
+      return Objects.equals(this.accelerators, that.getAcceleratorsList())
+          && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.deprecated, that.getDeprecated())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.guestCpus, that.getGuestCpus())
@@ -675,6 +721,7 @@ public final class MachineType implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        accelerators,
         creationTimestamp,
         deprecated,
         description,

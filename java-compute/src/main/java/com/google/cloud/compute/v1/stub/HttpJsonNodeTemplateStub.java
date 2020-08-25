@@ -140,7 +140,7 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
                       .setPathTemplate(
                           PathTemplate.create(
                               "{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy"))
-                      .setQueryParams(Sets.<String>newHashSet())
+                      .setQueryParams(Sets.<String>newHashSet("optionsRequestedPolicyVersion"))
                       .setResourceNameFactory(ProjectRegionNodeTemplateResourceName.newFactory())
                       .setResourceNameField("resource")
                       .build())

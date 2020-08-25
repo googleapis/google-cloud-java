@@ -262,7 +262,7 @@ public final class Firewall implements ApiMessage {
 
   /**
    * This field denotes the logging options for a particular firewall rule. If logging is enabled,
-   * logs will be exported to Stackdriver.
+   * logs will be exported to Cloud Logging.
    */
   public FirewallLogConfig getLogConfig() {
     return logConfig;
@@ -690,7 +690,7 @@ public final class Firewall implements ApiMessage {
 
     /**
      * This field denotes the logging options for a particular firewall rule. If logging is enabled,
-     * logs will be exported to Stackdriver.
+     * logs will be exported to Cloud Logging.
      */
     public FirewallLogConfig getLogConfig() {
       return logConfig;
@@ -698,7 +698,7 @@ public final class Firewall implements ApiMessage {
 
     /**
      * This field denotes the logging options for a particular firewall rule. If logging is enabled,
-     * logs will be exported to Stackdriver.
+     * logs will be exported to Cloud Logging.
      */
     public Builder setLogConfig(FirewallLogConfig logConfig) {
       this.logConfig = logConfig;

@@ -18,27 +18,36 @@ package com.google.cloud.compute.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** The network endpoint. Next ID: 7 */
+/** The network endpoint. */
 public final class NetworkEndpoint implements ApiMessage {
+  private final Map<String, String> annotations;
   private final String fqdn;
   private final String instance;
   private final String ipAddress;
   private final Integer port;
 
   private NetworkEndpoint() {
+    this.annotations = null;
     this.fqdn = null;
     this.instance = null;
     this.ipAddress = null;
     this.port = null;
   }
 
-  private NetworkEndpoint(String fqdn, String instance, String ipAddress, Integer port) {
+  private NetworkEndpoint(
+      Map<String, String> annotations,
+      String fqdn,
+      String instance,
+      String ipAddress,
+      Integer port) {
+    this.annotations = annotations;
     this.fqdn = fqdn;
     this.instance = instance;
     this.ipAddress = ipAddress;
@@ -47,6 +56,9 @@ public final class NetworkEndpoint implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("annotations".equals(fieldName)) {
+      return annotations;
+    }
     if ("fqdn".equals(fieldName)) {
       return fqdn;
     }
@@ -78,6 +90,11 @@ public final class NetworkEndpoint implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Metadata defined as annotations on the network endpoint. */
+  public Map<String, String> getAnnotationsMap() {
+    return annotations;
   }
 
   /**
@@ -141,6 +158,7 @@ public final class NetworkEndpoint implements ApiMessage {
   }
 
   public static class Builder {
+    private Map<String, String> annotations;
     private String fqdn;
     private String instance;
     private String ipAddress;
@@ -150,6 +168,9 @@ public final class NetworkEndpoint implements ApiMessage {
 
     public Builder mergeFrom(NetworkEndpoint other) {
       if (other == NetworkEndpoint.getDefaultInstance()) return this;
+      if (other.getAnnotationsMap() != null) {
+        this.annotations = other.annotations;
+      }
       if (other.getFqdn() != null) {
         this.fqdn = other.fqdn;
       }
@@ -166,10 +187,22 @@ public final class NetworkEndpoint implements ApiMessage {
     }
 
     Builder(NetworkEndpoint source) {
+      this.annotations = source.annotations;
       this.fqdn = source.fqdn;
       this.instance = source.instance;
       this.ipAddress = source.ipAddress;
       this.port = source.port;
+    }
+
+    /** Metadata defined as annotations on the network endpoint. */
+    public Map<String, String> getAnnotationsMap() {
+      return annotations;
+    }
+
+    /** Metadata defined as annotations on the network endpoint. */
+    public Builder putAllAnnotations(Map<String, String> annotations) {
+      this.annotations = annotations;
+      return this;
     }
 
     /**
@@ -254,11 +287,12 @@ public final class NetworkEndpoint implements ApiMessage {
 
     public NetworkEndpoint build() {
 
-      return new NetworkEndpoint(fqdn, instance, ipAddress, port);
+      return new NetworkEndpoint(annotations, fqdn, instance, ipAddress, port);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.putAllAnnotations(this.annotations);
       newBuilder.setFqdn(this.fqdn);
       newBuilder.setInstance(this.instance);
       newBuilder.setIpAddress(this.ipAddress);
@@ -270,6 +304,9 @@ public final class NetworkEndpoint implements ApiMessage {
   @Override
   public String toString() {
     return "NetworkEndpoint{"
+        + "annotations="
+        + annotations
+        + ", "
         + "fqdn="
         + fqdn
         + ", "
@@ -291,7 +328,8 @@ public final class NetworkEndpoint implements ApiMessage {
     }
     if (o instanceof NetworkEndpoint) {
       NetworkEndpoint that = (NetworkEndpoint) o;
-      return Objects.equals(this.fqdn, that.getFqdn())
+      return Objects.equals(this.annotations, that.getAnnotationsMap())
+          && Objects.equals(this.fqdn, that.getFqdn())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.ipAddress, that.getIpAddress())
           && Objects.equals(this.port, that.getPort());
@@ -301,6 +339,6 @@ public final class NetworkEndpoint implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fqdn, instance, ipAddress, port);
+    return Objects.hash(annotations, fqdn, instance, ipAddress, port);
   }
 }
