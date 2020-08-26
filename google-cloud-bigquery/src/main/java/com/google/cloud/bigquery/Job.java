@@ -308,7 +308,10 @@ public class Job extends JobInfo {
       return new EmptyTableResult(response.getSchema());
     }
 
-    TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
+    TableId table =
+        ((QueryJobConfiguration) getConfiguration()).getDestinationTable() == null
+            ? ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable()
+            : ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
     return bigquery.listTableData(
         table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
   }
