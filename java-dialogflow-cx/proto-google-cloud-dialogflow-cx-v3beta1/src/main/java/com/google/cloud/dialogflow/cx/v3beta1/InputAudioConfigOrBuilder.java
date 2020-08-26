@@ -73,10 +73,12 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. If `true`, Dialogflow returns [SpeechWordInfo][google.cloud.dialogflow.cx.v3beta1.SpeechWordInfo] in
-   * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult] with information about the recognized speech
-   * words, e.g. start and end time offsets. If false or unspecified, Speech
-   * doesn't return any word-level information.
+   * Optional. If `true`, Dialogflow returns
+   * [SpeechWordInfo][google.cloud.dialogflow.cx.v3beta1.SpeechWordInfo] in
+   * [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult]
+   * with information about the recognized speech words, e.g. start and end time
+   * offsets. If false or unspecified, Speech doesn't return any word-level
+   * information.
    * </pre>
    *
    * <code>bool enable_word_info = 13;</code>
@@ -201,7 +203,8 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] to use.
+   * Optional. Which variant of the [Speech
+   * model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] to use.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SpeechModelVariant model_variant = 10;</code>
@@ -213,7 +216,8 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Which variant of the [Speech model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] to use.
+   * Optional. Which variant of the [Speech
+   * model][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.model] to use.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SpeechModelVariant model_variant = 10;</code>

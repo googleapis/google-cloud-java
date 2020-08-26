@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
+ * The request message for
+ * [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest}
@@ -75,6 +76,11 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 16:
+            {
+              force_ = input.readBool();
               break;
             }
           default:
@@ -168,6 +174,32 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * This field has no effect for webhook not being used.
+   * For webhooks that are used by pages/flows/transition route groups:
+   * *  If `force` is set to false, an error will be returned with message
+   *    indicating the referenced resources.
+   * *  If `force` is set to true, Dialogflow will remove the webhook, as well
+   *    as any references to the webhook (i.e.
+   *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
+   *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
+   *    that point to this webhook will be removed).
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +217,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -196,6 +231,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,6 +252,7 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
         (com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +266,8 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -332,7 +373,8 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
+   * The request message for
+   * [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest}
@@ -375,6 +417,8 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -403,6 +447,7 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
       com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -456,6 +501,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -609,6 +657,82 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for webhook not being used.
+     * For webhooks that are used by pages/flows/transition route groups:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referenced resources.
+     * *  If `force` is set to true, Dialogflow will remove the webhook, as well
+     *    as any references to the webhook (i.e.
+     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
+     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
+     *    that point to this webhook will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for webhook not being used.
+     * For webhooks that are used by pages/flows/transition route groups:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referenced resources.
+     * *  If `force` is set to true, Dialogflow will remove the webhook, as well
+     *    as any references to the webhook (i.e.
+     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
+     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
+     *    that point to this webhook will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for webhook not being used.
+     * For webhooks that are used by pages/flows/transition route groups:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referenced resources.
+     * *  If `force` is set to true, Dialogflow will remove the webhook, as well
+     *    as any references to the webhook (i.e.
+     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
+     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
+     *    that point to this webhook will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.DeleteSessionEntityType].
+ * The request message for
+ * [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.DeleteSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteSessionEntityTypeRequest}
@@ -120,7 +121,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The name of the session entity type to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -147,7 +152,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The name of the session entity type to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -334,7 +343,8 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.DeleteSessionEntityType].
+   * The request message for
+   * [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.DeleteSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteSessionEntityTypeRequest}
@@ -503,7 +513,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the session entity type to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -529,7 +543,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the session entity type to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -555,7 +573,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the session entity type to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -580,7 +602,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the session entity type to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -601,7 +627,11 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The name of the session entity type to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>

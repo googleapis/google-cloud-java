@@ -170,7 +170,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The name of the session this query is sent to.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * It's up to the API caller to choose an appropriate `Session ID`. It can be
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
@@ -200,7 +203,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The name of the session this query is sent to.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * It's up to the API caller to choose an appropriate `Session ID`. It can be
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
@@ -786,7 +792,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the session this query is sent to.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
@@ -815,7 +824,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the session this query is sent to.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
@@ -844,7 +856,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the session this query is sent to.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
@@ -872,7 +887,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the session this query is sent to.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
@@ -896,7 +914,10 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the session this query is sent to.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.

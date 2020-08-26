@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Flows.TrainFlow][google.cloud.dialogflow.cx.v3beta1.Flows.TrainFlow].
+ * The request message for
+ * [Flows.TrainFlow][google.cloud.dialogflow.cx.v3beta1.Flows.TrainFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest}
@@ -332,7 +333,8 @@ public final class TrainFlowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request message for [Flows.TrainFlow][google.cloud.dialogflow.cx.v3beta1.Flows.TrainFlow].
+   * The request message for
+   * [Flows.TrainFlow][google.cloud.dialogflow.cx.v3beta1.Flows.TrainFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest}

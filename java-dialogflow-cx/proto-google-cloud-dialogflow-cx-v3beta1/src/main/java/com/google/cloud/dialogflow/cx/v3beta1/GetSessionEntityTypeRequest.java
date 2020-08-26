@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.GetSessionEntityType].
+ * The request message for
+ * [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.GetSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetSessionEntityTypeRequest}
@@ -119,7 +120,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The name of the session entity type.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -146,7 +151,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The name of the session entity type.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -333,7 +342,8 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.GetSessionEntityType].
+   * The request message for
+   * [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.GetSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetSessionEntityTypeRequest}
@@ -502,7 +512,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the session entity type.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -528,7 +542,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the session entity type.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -554,7 +572,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the session entity type.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -579,7 +601,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the session entity type.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -600,7 +626,11 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The name of the session entity type.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+     * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>

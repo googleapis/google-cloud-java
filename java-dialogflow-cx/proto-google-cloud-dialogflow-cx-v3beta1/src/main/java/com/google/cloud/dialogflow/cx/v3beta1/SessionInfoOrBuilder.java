@@ -27,10 +27,14 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * The unique identifier of the [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session]. This
-   * field can be used by the webhook to identify a user.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Always present for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Ignored for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * unique identifier of the
+   * [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session].
+   * This field can be used by the webhook to identify a user. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
@@ -43,10 +47,14 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * The unique identifier of the [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session]. This
-   * field can be used by the webhook to identify a user.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Always present for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Ignored for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * unique identifier of the
+   * [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session].
+   * This field can be used by the webhook to identify a user. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/sessions/&lt;Session ID&gt;`.
    * </pre>
    *
@@ -60,12 +68,16 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Optional for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -75,12 +87,16 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Optional for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -93,12 +109,16 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Optional for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -108,12 +128,16 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Optional for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>
@@ -124,12 +148,16 @@ public interface SessionInfoOrBuilder
    *
    *
    * <pre>
-   * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Optional for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
-   * All parameters collected from forms and intents during the session.
-   * Parameters can be created, updated, or removed by the webhook. To remove a
-   * parameter from the session, the webhook should explicitly set the parameter
-   * value to null in [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The map is keyed by parameters'
-   * display names.
+   * Optional for
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest].
+   * Optional for
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. All
+   * parameters collected from forms and intents during the session. Parameters
+   * can be created, updated, or removed by the webhook. To remove a parameter
+   * from the session, the webhook should explicitly set the parameter value to
+   * null in
+   * [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse]. The
+   * map is keyed by parameters' display names.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; parameters = 2;</code>

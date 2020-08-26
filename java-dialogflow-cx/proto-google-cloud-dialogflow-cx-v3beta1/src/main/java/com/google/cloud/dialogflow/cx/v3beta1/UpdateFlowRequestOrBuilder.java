@@ -68,8 +68,8 @@ public interface UpdateFlowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * Required. The mask to control which fields get updated. If `update_mask` is
+   * not specified, an error will be returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -82,8 +82,8 @@ public interface UpdateFlowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * Required. The mask to control which fields get updated. If `update_mask` is
+   * not specified, an error will be returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -96,8 +96,8 @@ public interface UpdateFlowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * Required. The mask to control which fields get updated. If `update_mask` is
+   * not specified, an error will be returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

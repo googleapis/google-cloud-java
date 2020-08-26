@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.CreateSessionEntityType].
+ * The request message for
+ * [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.CreateSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateSessionEntityTypeRequest}
@@ -137,7 +138,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The session to create a session entity type for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -164,7 +168,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The session to create a session entity type for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -420,7 +427,8 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.CreateSessionEntityType].
+   * The request message for
+   * [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.CreateSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateSessionEntityTypeRequest}
@@ -603,7 +611,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -629,7 +640,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -655,7 +669,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -680,7 +697,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -701,7 +721,10 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>

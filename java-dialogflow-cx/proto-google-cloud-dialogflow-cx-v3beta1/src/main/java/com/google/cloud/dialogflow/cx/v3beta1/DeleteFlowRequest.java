@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3beta1.Flows.DeleteFlow].
+ * The request message for
+ * [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3beta1.Flows.DeleteFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest}
@@ -184,7 +185,10 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the flow, as well as
-   *    any transitions to the flow.
+   *    any transitions to the flow (i.e. [Target
+   *    flow][EventHandler.target_flow] in event handlers or [Target
+   *    flow][TransitionRoute.target_flow] in transition routes that point to
+   *    this flow will be cleared).
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -369,7 +373,8 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3beta1.Flows.DeleteFlow].
+   * The request message for
+   * [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3beta1.Flows.DeleteFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest}
@@ -666,7 +671,10 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as
-     *    any transitions to the flow.
+     *    any transitions to the flow (i.e. [Target
+     *    flow][EventHandler.target_flow] in event handlers or [Target
+     *    flow][TransitionRoute.target_flow] in transition routes that point to
+     *    this flow will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -686,7 +694,10 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as
-     *    any transitions to the flow.
+     *    any transitions to the flow (i.e. [Target
+     *    flow][EventHandler.target_flow] in event handlers or [Target
+     *    flow][TransitionRoute.target_flow] in transition routes that point to
+     *    this flow will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -709,7 +720,10 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as
-     *    any transitions to the flow.
+     *    any transitions to the flow (i.e. [Target
+     *    flow][EventHandler.target_flow] in event handlers or [Target
+     *    flow][TransitionRoute.target_flow] in transition routes that point to
+     *    this flow will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>

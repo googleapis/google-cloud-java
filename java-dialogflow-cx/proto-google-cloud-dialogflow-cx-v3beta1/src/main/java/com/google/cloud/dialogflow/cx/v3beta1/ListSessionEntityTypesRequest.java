@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.ListSessionEntityTypes].
+ * The request message for
+ * [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.ListSessionEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListSessionEntityTypesRequest}
@@ -132,7 +133,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The session to list all session entity types from.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -159,7 +163,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The session to list all session entity types from.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -432,7 +439,8 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.ListSessionEntityTypes].
+   * The request message for
+   * [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.ListSessionEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListSessionEntityTypesRequest}
@@ -614,7 +622,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The session to list all session entity types from.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -640,7 +651,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The session to list all session entity types from.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -666,7 +680,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The session to list all session entity types from.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -691,7 +708,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The session to list all session entity types from.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>
@@ -712,7 +732,10 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The session to list all session entity types from.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * If `Environment ID` is not specified, we assume default 'draft'
+     * environment.
      * </pre>
      *
      * <code>

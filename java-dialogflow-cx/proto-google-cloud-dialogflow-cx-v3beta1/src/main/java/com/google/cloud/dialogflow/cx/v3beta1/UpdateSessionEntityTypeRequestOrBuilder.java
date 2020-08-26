@@ -29,7 +29,11 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * <pre>
    * Required. The session entity type to update.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -45,7 +49,11 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * <pre>
    * Required. The session entity type to update.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>
@@ -61,7 +69,11 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * <pre>
    * Required. The session entity type to update.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
+ * The request message for
+ * [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest}
@@ -75,6 +76,11 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 16:
+            {
+              force_ = input.readBool();
               break;
             }
           default:
@@ -168,6 +174,34 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * This field has no effect for entity type not being used.
+   * For entity types that are used by intents or pages:
+   * *  If `force` is set to false, an error will be returned with message
+   *    indicating the referencing resources.
+   * *  If `force` is set to true, Dialogflow will remove the entity type, as
+   *    well as any references to the entity type (i.e. Page
+   *    [parameter][google.cloud.dialogflow.cx.v3beta1.Form.Parameter] of the
+   *    entity type will be changed to
+   *    '&#64;sys.any' and intent
+   *    [parameter][google.cloud.dialogflow.cx.v3beta1.Intent.Parameter] of the
+   *    entity type will be removed).
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +219,9 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -196,6 +233,9 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,6 +254,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
         (com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +268,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -332,7 +375,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
+   * The request message for
+   * [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest}
@@ -375,6 +419,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -404,6 +450,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest result =
           new com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -458,6 +505,9 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -612,6 +662,88 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for entity type not being used.
+     * For entity types that are used by intents or pages:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referencing resources.
+     * *  If `force` is set to true, Dialogflow will remove the entity type, as
+     *    well as any references to the entity type (i.e. Page
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Form.Parameter] of the
+     *    entity type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Intent.Parameter] of the
+     *    entity type will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for entity type not being used.
+     * For entity types that are used by intents or pages:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referencing resources.
+     * *  If `force` is set to true, Dialogflow will remove the entity type, as
+     *    well as any references to the entity type (i.e. Page
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Form.Parameter] of the
+     *    entity type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Intent.Parameter] of the
+     *    entity type will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has no effect for entity type not being used.
+     * For entity types that are used by intents or pages:
+     * *  If `force` is set to false, an error will be returned with message
+     *    indicating the referencing resources.
+     * *  If `force` is set to true, Dialogflow will remove the entity type, as
+     *    well as any references to the entity type (i.e. Page
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Form.Parameter] of the
+     *    entity type will be changed to
+     *    '&#64;sys.any' and intent
+     *    [parameter][google.cloud.dialogflow.cx.v3beta1.Intent.Parameter] of the
+     *    entity type will be removed).
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

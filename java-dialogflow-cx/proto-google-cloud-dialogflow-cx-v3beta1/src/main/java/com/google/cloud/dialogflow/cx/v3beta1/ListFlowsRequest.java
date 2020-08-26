@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Flows.ListFlows][google.cloud.dialogflow.cx.v3beta1.Flows.ListFlows].
+ * The request message for
+ * [Flows.ListFlows][google.cloud.dialogflow.cx.v3beta1.Flows.ListFlows].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest}
@@ -511,7 +512,8 @@ public final class ListFlowsRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request message for [Flows.ListFlows][google.cloud.dialogflow.cx.v3beta1.Flows.ListFlows].
+   * The request message for
+   * [Flows.ListFlows][google.cloud.dialogflow.cx.v3beta1.Flows.ListFlows].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest}

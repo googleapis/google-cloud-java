@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
+ * The request message for
+ * [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeletePageRequest}
@@ -184,7 +185,10 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the page, as well as
-   *    any transitions to the page.
+   *    any transitions to the page (i.e. [Target
+   *    page][EventHandler.target_page] in event handlers or [Target
+   *    page][TransitionRoute.target_page] in transition routes that point to
+   *    this page will be cleared).
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -369,7 +373,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
+   * The request message for
+   * [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeletePageRequest}
@@ -666,7 +671,10 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the page, as well as
-     *    any transitions to the page.
+     *    any transitions to the page (i.e. [Target
+     *    page][EventHandler.target_page] in event handlers or [Target
+     *    page][TransitionRoute.target_page] in transition routes that point to
+     *    this page will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -686,7 +694,10 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the page, as well as
-     *    any transitions to the page.
+     *    any transitions to the page (i.e. [Target
+     *    page][EventHandler.target_page] in event handlers or [Target
+     *    page][TransitionRoute.target_page] in transition routes that point to
+     *    this page will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -709,7 +720,10 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the page, as well as
-     *    any transitions to the page.
+     *    any transitions to the page (i.e. [Target
+     *    page][EventHandler.target_page] in event handlers or [Target
+     *    page][TransitionRoute.target_page] in transition routes that point to
+     *    this page will be cleared).
      * </pre>
      *
      * <code>bool force = 2;</code>

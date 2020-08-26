@@ -115,30 +115,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               messageCase_ = 2;
               break;
             }
-          case 50:
-            {
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder
-                  subBuilder = null;
-              if (messageCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-                            message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-                        message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 6;
-              break;
-            }
           case 66:
             {
               com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.OutputAudioText.Builder
@@ -371,12 +347,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
-     * <code>bool allow_playback_interruption = 2;</code>
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The allowPlaybackInterruption.
      */
@@ -554,12 +531,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
-     * <code>bool allow_playback_interruption = 2;</code>
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The allowPlaybackInterruption.
      */
@@ -1103,12 +1081,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
-       * <code>bool allow_playback_interruption = 2;</code>
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The allowPlaybackInterruption.
        */
@@ -1120,12 +1099,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
-       * <code>bool allow_playback_interruption = 2;</code>
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @param value The allowPlaybackInterruption to set.
        * @return This builder for chaining.
@@ -1140,12 +1120,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
-       * <code>bool allow_playback_interruption = 2;</code>
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1209,816 +1190,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  @java.lang.Deprecated
-  public interface HumanAgentHandoffOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     *
-     * @return Whether the metadata field is set.
-     */
-    boolean hasMetadata();
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     *
-     * @return The metadata.
-     */
-    com.google.protobuf.Struct getMetadata();
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     */
-    com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that the conversation should be handed off to a human agent.
-   * Dialogflow only uses this to determine which conversations were handed off
-   * to a human agent for measurement purposes. What else to do with this signal
-   * is up to you and your handoff procedures.
-   * You may set this, for example:
-   * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
-   *   entering the page indicates something went extremely wrong in the
-   *   conversation.
-   * * In a webhook response when you determine that the customer issue can only
-   *   be handled by a human.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff}
-   */
-  @java.lang.Deprecated
-  public static final class HumanAgentHandoff extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-      HumanAgentHandoffOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use HumanAgentHandoff.newBuilder() to construct.
-    private HumanAgentHandoff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private HumanAgentHandoff() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new HumanAgentHandoff();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private HumanAgentHandoff(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Struct.Builder subBuilder = null;
-                if (metadata_ != null) {
-                  subBuilder = metadata_.toBuilder();
-                }
-                metadata_ =
-                    input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(metadata_);
-                  metadata_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_HumanAgentHandoff_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_HumanAgentHandoff_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.class,
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder
-                  .class);
-    }
-
-    public static final int METADATA_FIELD_NUMBER = 1;
-    private com.google.protobuf.Struct metadata_;
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     *
-     * @return Whether the metadata field is set.
-     */
-    @java.lang.Override
-    public boolean hasMetadata() {
-      return metadata_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     *
-     * @return The metadata.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Struct getMetadata() {
-      return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-     * any structure on this.
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct metadata = 1;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
-      return getMetadata();
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (metadata_ != null) {
-        output.writeMessage(1, getMetadata());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (metadata_ != null) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMetadata());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff other =
-          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) obj;
-
-      if (hasMetadata() != other.hasMetadata()) return false;
-      if (hasMetadata()) {
-        if (!getMetadata().equals(other.getMetadata())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasMetadata()) {
-        hash = (37 * hash) + METADATA_FIELD_NUMBER;
-        hash = (53 * hash) + getMetadata().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that the conversation should be handed off to a human agent.
-     * Dialogflow only uses this to determine which conversations were handed off
-     * to a human agent for measurement purposes. What else to do with this signal
-     * is up to you and your handoff procedures.
-     * You may set this, for example:
-     * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
-     *   entering the page indicates something went extremely wrong in the
-     *   conversation.
-     * * In a webhook response when you determine that the customer issue can only
-     *   be handled by a human.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_HumanAgentHandoff_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_HumanAgentHandoff_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.class,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder
-                    .class);
-      }
-
-      // Construct using
-      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-        } else {
-          metadata_ = null;
-          metadataBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_HumanAgentHandoff_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-          getDefaultInstanceForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff build() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-          buildPartial() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff result =
-            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff(this);
-        if (metadataBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = metadataBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) {
-          return mergeFrom(
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff other) {
-        if (other
-            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-                .getDefaultInstance()) return this;
-        if (other.hasMetadata()) {
-          mergeMetadata(other.getMetadata());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff parsedMessage =
-            null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.Struct metadata_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Struct,
-              com.google.protobuf.Struct.Builder,
-              com.google.protobuf.StructOrBuilder>
-          metadataBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       *
-       * @return Whether the metadata field is set.
-       */
-      public boolean hasMetadata() {
-        return metadataBuilder_ != null || metadata_ != null;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       *
-       * @return The metadata.
-       */
-      public com.google.protobuf.Struct getMetadata() {
-        if (metadataBuilder_ == null) {
-          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
-        } else {
-          return metadataBuilder_.getMessage();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public Builder setMetadata(com.google.protobuf.Struct value) {
-        if (metadataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          metadata_ = value;
-          onChanged();
-        } else {
-          metadataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
-        if (metadataBuilder_ == null) {
-          metadata_ = builderForValue.build();
-          onChanged();
-        } else {
-          metadataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public Builder mergeMetadata(com.google.protobuf.Struct value) {
-        if (metadataBuilder_ == null) {
-          if (metadata_ != null) {
-            metadata_ =
-                com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
-          } else {
-            metadata_ = value;
-          }
-          onChanged();
-        } else {
-          metadataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public Builder clearMetadata() {
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-          onChanged();
-        } else {
-          metadata_ = null;
-          metadataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public com.google.protobuf.Struct.Builder getMetadataBuilder() {
-
-        onChanged();
-        return getMetadataFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
-        if (metadataBuilder_ != null) {
-          return metadataBuilder_.getMessageOrBuilder();
-        } else {
-          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Custom metadata for your handoff procedure. Dialogflow doesn't impose
-       * any structure on this.
-       * </pre>
-       *
-       * <code>.google.protobuf.Struct metadata = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Struct,
-              com.google.protobuf.Struct.Builder,
-              com.google.protobuf.StructOrBuilder>
-          getMetadataFieldBuilder() {
-        if (metadataBuilder_ == null) {
-          metadataBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Struct,
-                  com.google.protobuf.Struct.Builder,
-                  com.google.protobuf.StructOrBuilder>(
-                  getMetadata(), getParentForChildren(), isClean());
-          metadata_ = null;
-        }
-        return metadataBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff();
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<HumanAgentHandoff> PARSER =
-        new com.google.protobuf.AbstractParser<HumanAgentHandoff>() {
-          @java.lang.Override
-          public HumanAgentHandoff parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new HumanAgentHandoff(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<HumanAgentHandoff> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<HumanAgentHandoff> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   public interface LiveAgentHandoffOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.LiveAgentHandoff)
@@ -2071,7 +1242,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * to a human agent for measurement purposes. What else to do with this signal
    * is up to you and your handoff procedures.
    * You may set this, for example:
-   * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+   * * In the
+   * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+   * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
    *   entering the page indicates something went extremely wrong in the
    *   conversation.
    * * In a webhook response when you determine that the customer issue can only
@@ -2397,7 +1570,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * to a human agent for measurement purposes. What else to do with this signal
      * is up to you and your handoff procedures.
      * You may set this, for example:
-     * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+     * * In the
+     * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+     * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
      *   entering the page indicates something went extremely wrong in the
      *   conversation.
      * * In a webhook response when you determine that the customer issue can only
@@ -2874,7 +2049,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * conversation end page as successful even if they don't return
    * [ConversationSuccess][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess].
    * You may set this, for example:
-   * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+   * * In the
+   * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+   * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
    *   entering the page indicates that the conversation succeeded.
    * * In a webhook response when you determine that you handled the customer
    *   issue.
@@ -3204,7 +2381,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * conversation end page as successful even if they don't return
      * [ConversationSuccess][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess].
      * You may set this, for example:
-     * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+     * * In the
+     * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+     * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
      *   entering the page indicates that the conversation succeeded.
      * * In a webhook response when you determine that you handled the customer
      *   issue.
@@ -3614,793 +2793,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public interface PlayAudioOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The audioUri.
-     */
-    java.lang.String getAudioUri();
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for audioUri.
-     */
-    com.google.protobuf.ByteString getAudioUriBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
-     * request.
-     * </pre>
-     *
-     * <code>bool allow_playback_interruption = 2;</code>
-     *
-     * @return The allowPlaybackInterruption.
-     */
-    boolean getAllowPlaybackInterruption();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies an audio clip to be played by the client as part of the response.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
-   */
-  public static final class PlayAudio extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-      PlayAudioOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use PlayAudio.newBuilder() to construct.
-    private PlayAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private PlayAudio() {
-      audioUri_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new PlayAudio();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private PlayAudio(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                audioUri_ = s;
-                break;
-              }
-            case 16:
-              {
-                allowPlaybackInterruption_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
-    }
-
-    public static final int AUDIO_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object audioUri_;
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The audioUri.
-     */
-    @java.lang.Override
-    public java.lang.String getAudioUri() {
-      java.lang.Object ref = audioUri_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        audioUri_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for audioUri.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAudioUriBytes() {
-      java.lang.Object ref = audioUri_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        audioUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER = 2;
-    private boolean allowPlaybackInterruption_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
-     * request.
-     * </pre>
-     *
-     * <code>bool allow_playback_interruption = 2;</code>
-     *
-     * @return The allowPlaybackInterruption.
-     */
-    @java.lang.Override
-    public boolean getAllowPlaybackInterruption() {
-      return allowPlaybackInterruption_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAudioUriBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
-      }
-      if (allowPlaybackInterruption_ != false) {
-        output.writeBool(2, allowPlaybackInterruption_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getAudioUriBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
-      }
-      if (allowPlaybackInterruption_ != false) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowPlaybackInterruption_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other =
-          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) obj;
-
-      if (!getAudioUri().equals(other.getAudioUri())) return false;
-      if (getAllowPlaybackInterruption() != other.getAllowPlaybackInterruption()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getAudioUri().hashCode();
-      hash = (37 * hash) + ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowPlaybackInterruption());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies an audio clip to be played by the client as part of the response.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudioOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        audioUri_ = "";
-
-        allowPlaybackInterruption_ = false;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-          getDefaultInstanceForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio build() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio buildPartial() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result =
-            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio(this);
-        result.audioUri_ = audioUri_;
-        result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) {
-          return mergeFrom(
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other) {
-        if (other
-            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-                .getDefaultInstance()) return this;
-        if (!other.getAudioUri().isEmpty()) {
-          audioUri_ = other.audioUri_;
-          onChanged();
-        }
-        if (other.getAllowPlaybackInterruption() != false) {
-          setAllowPlaybackInterruption(other.getAllowPlaybackInterruption());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object audioUri_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The audioUri.
-       */
-      public java.lang.String getAudioUri() {
-        java.lang.Object ref = audioUri_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          audioUri_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The bytes for audioUri.
-       */
-      public com.google.protobuf.ByteString getAudioUriBytes() {
-        java.lang.Object ref = audioUri_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          audioUri_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The audioUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioUri(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        audioUri_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearAudioUri() {
-
-        audioUri_ = getDefaultInstance().getAudioUri();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The bytes for audioUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioUriBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        audioUri_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean allowPlaybackInterruption_;
-      /**
-       *
-       *
-       * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2;</code>
-       *
-       * @return The allowPlaybackInterruption.
-       */
-      @java.lang.Override
-      public boolean getAllowPlaybackInterruption() {
-        return allowPlaybackInterruption_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2;</code>
-       *
-       * @param value The allowPlaybackInterruption to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowPlaybackInterruption(boolean value) {
-
-        allowPlaybackInterruption_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearAllowPlaybackInterruption() {
-
-        allowPlaybackInterruption_ = false;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio();
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PlayAudio> PARSER =
-        new com.google.protobuf.AbstractParser<PlayAudio>() {
-          @java.lang.Override
-          public PlayAudio parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PlayAudio(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<PlayAudio> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PlayAudio> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6123,12 +4515,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the playback of this segment can be interrupted by the end
-       * user's speech and the client should then start the next Dialogflow
-       * request.
+       * Output only. Whether the playback of this segment can be interrupted by
+       * the end user's speech and the client should then start the next
+       * Dialogflow request.
        * </pre>
        *
-       * <code>bool allow_playback_interruption = 3;</code>
+       * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The allowPlaybackInterruption.
        */
@@ -6373,12 +4766,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the playback of this segment can be interrupted by the end
-       * user's speech and the client should then start the next Dialogflow
-       * request.
+       * Output only. Whether the playback of this segment can be interrupted by
+       * the end user's speech and the client should then start the next
+       * Dialogflow request.
        * </pre>
        *
-       * <code>bool allow_playback_interruption = 3;</code>
+       * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The allowPlaybackInterruption.
        */
@@ -7001,12 +5395,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
-         * <code>bool allow_playback_interruption = 3;</code>
+         * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
          *
          * @return The allowPlaybackInterruption.
          */
@@ -7018,12 +5413,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
-         * <code>bool allow_playback_interruption = 3;</code>
+         * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
          *
          * @param value The allowPlaybackInterruption to set.
          * @return This builder for chaining.
@@ -7038,12 +5434,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
-         * <code>bool allow_playback_interruption = 3;</code>
+         * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
          *
          * @return This builder for chaining.
          */
@@ -8050,6 +6447,798 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface PlayAudioOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The audioUri.
+     */
+    java.lang.String getAudioUri();
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for audioUri.
+     */
+    com.google.protobuf.ByteString getAudioUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
+     * request.
+     * </pre>
+     *
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The allowPlaybackInterruption.
+     */
+    boolean getAllowPlaybackInterruption();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies an audio clip to be played by the client as part of the response.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
+   */
+  public static final class PlayAudio extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+      PlayAudioOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PlayAudio.newBuilder() to construct.
+    private PlayAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PlayAudio() {
+      audioUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PlayAudio();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PlayAudio(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                audioUri_ = s;
+                break;
+              }
+            case 16:
+              {
+                allowPlaybackInterruption_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
+    }
+
+    public static final int AUDIO_URI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object audioUri_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The audioUri.
+     */
+    @java.lang.Override
+    public java.lang.String getAudioUri() {
+      java.lang.Object ref = audioUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        audioUri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for audioUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAudioUriBytes() {
+      java.lang.Object ref = audioUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        audioUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER = 2;
+    private boolean allowPlaybackInterruption_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
+     * request.
+     * </pre>
+     *
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The allowPlaybackInterruption.
+     */
+    @java.lang.Override
+    public boolean getAllowPlaybackInterruption() {
+      return allowPlaybackInterruption_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getAudioUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
+      }
+      if (allowPlaybackInterruption_ != false) {
+        output.writeBool(2, allowPlaybackInterruption_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAudioUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
+      }
+      if (allowPlaybackInterruption_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowPlaybackInterruption_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other =
+          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) obj;
+
+      if (!getAudioUri().equals(other.getAudioUri())) return false;
+      if (getAllowPlaybackInterruption() != other.getAllowPlaybackInterruption()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioUri().hashCode();
+      hash = (37 * hash) + ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowPlaybackInterruption());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an audio clip to be played by the client as part of the response.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudioOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        audioUri_ = "";
+
+        allowPlaybackInterruption_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio build() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result =
+            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio(this);
+        result.audioUri_ = audioUri_;
+        result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+                .getDefaultInstance()) return this;
+        if (!other.getAudioUri().isEmpty()) {
+          audioUri_ = other.audioUri_;
+          onChanged();
+        }
+        if (other.getAllowPlaybackInterruption() != false) {
+          setAllowPlaybackInterruption(other.getAllowPlaybackInterruption());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object audioUri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The audioUri.
+       */
+      public java.lang.String getAudioUri() {
+        java.lang.Object ref = audioUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          audioUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for audioUri.
+       */
+      public com.google.protobuf.ByteString getAudioUriBytes() {
+        java.lang.Object ref = audioUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          audioUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The audioUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        audioUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioUri() {
+
+        audioUri_ = getDefaultInstance().getAudioUri();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for audioUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        audioUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean allowPlaybackInterruption_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The allowPlaybackInterruption.
+       */
+      @java.lang.Override
+      public boolean getAllowPlaybackInterruption() {
+        return allowPlaybackInterruption_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The allowPlaybackInterruption to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowPlaybackInterruption(boolean value) {
+
+        allowPlaybackInterruption_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowPlaybackInterruption() {
+
+        allowPlaybackInterruption_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PlayAudio> PARSER =
+        new com.google.protobuf.AbstractParser<PlayAudio>() {
+          @java.lang.Override
+          public PlayAudio parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PlayAudio(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PlayAudio> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayAudio> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int messageCase_ = 0;
   private java.lang.Object message_;
 
@@ -8059,8 +7248,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
     PAYLOAD(2),
-    @java.lang.Deprecated
-    HUMAN_AGENT_HANDOFF(6),
     CONVERSATION_SUCCESS(9),
     OUTPUT_AUDIO_TEXT(8),
     LIVE_AGENT_HANDOFF(10),
@@ -8089,8 +7276,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           return TEXT;
         case 2:
           return PAYLOAD;
-        case 6:
-          return HUMAN_AGENT_HANDOFF;
         case 9:
           return CONVERSATION_SUCCESS;
         case 8:
@@ -8219,70 +7404,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return (com.google.protobuf.Struct) message_;
     }
     return com.google.protobuf.Struct.getDefaultInstance();
-  }
-
-  public static final int HUMAN_AGENT_HANDOFF_FIELD_NUMBER = 6;
-  /**
-   *
-   *
-   * <pre>
-   * Hands off conversation to a human agent.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-   * </code>
-   *
-   * @return Whether the humanAgentHandoff field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean hasHumanAgentHandoff() {
-    return messageCase_ == 6;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Hands off conversation to a human agent.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-   * </code>
-   *
-   * @return The humanAgentHandoff.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-      getHumanAgentHandoff() {
-    if (messageCase_ == 6) {
-      return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) message_;
-    }
-    return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        .getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Hands off conversation to a human agent.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder
-      getHumanAgentHandoffOrBuilder() {
-    if (messageCase_ == 6) {
-      return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) message_;
-    }
-    return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        .getDefaultInstance();
   }
 
   public static final int CONVERSATION_SUCCESS_FIELD_NUMBER = 9;
@@ -8476,12 +7597,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
-   * It's guaranteed that there is at most one such message in each response.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+   * to be defined by the user. It's guaranteed that there is at most one such
+   * message in each response.
    * </pre>
    *
    * <code>
@@ -8498,12 +7618,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
-   * It's guaranteed that there is at most one such message in each response.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+   * to be defined by the user. It's guaranteed that there is at most one such
+   * message in each response.
    * </pre>
    *
    * <code>
@@ -8524,12 +7643,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
-   * It's guaranteed that there is at most one such message in each response.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+   * to be defined by the user. It's guaranteed that there is at most one such
+   * message in each response.
    * </pre>
    *
    * <code>
@@ -8553,8 +7671,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8571,8 +7690,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8592,8 +7712,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8612,8 +7733,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8633,8 +7754,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8657,8 +7778,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8697,10 +7818,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
     if (messageCase_ == 2) {
       output.writeMessage(2, (com.google.protobuf.Struct) message_);
-    }
-    if (messageCase_ == 6) {
-      output.writeMessage(
-          6, (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) message_);
     }
     if (messageCase_ == 8) {
       output.writeMessage(
@@ -8744,12 +7861,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.protobuf.Struct) message_);
-    }
-    if (messageCase_ == 6) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              6,
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) message_);
     }
     if (messageCase_ == 8) {
       size +=
@@ -8808,9 +7919,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 2:
         if (!getPayload().equals(other.getPayload())) return false;
         break;
-      case 6:
-        if (!getHumanAgentHandoff().equals(other.getHumanAgentHandoff())) return false;
-        break;
       case 9:
         if (!getConversationSuccess().equals(other.getConversationSuccess())) return false;
         break;
@@ -8851,10 +7959,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 2:
         hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getPayload().hashCode();
-        break;
-      case 6:
-        hash = (37 * hash) + HUMAN_AGENT_HANDOFF_FIELD_NUMBER;
-        hash = (53 * hash) + getHumanAgentHandoff().hashCode();
         break;
       case 9:
         hash = (37 * hash) + CONVERSATION_SUCCESS_FIELD_NUMBER;
@@ -9085,13 +8189,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           result.message_ = payloadBuilder_.build();
         }
       }
-      if (messageCase_ == 6) {
-        if (humanAgentHandoffBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = humanAgentHandoffBuilder_.build();
-        }
-      }
       if (messageCase_ == 9) {
         if (conversationSuccessBuilder_ == null) {
           result.message_ = message_;
@@ -9194,11 +8291,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case PAYLOAD:
           {
             mergePayload(other.getPayload());
-            break;
-          }
-        case HUMAN_AGENT_HANDOFF:
-          {
-            mergeHumanAgentHandoff(other.getHumanAgentHandoff());
             break;
           }
         case CONVERSATION_SUCCESS:
@@ -9694,257 +8786,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return payloadBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff,
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder>
-        humanAgentHandoffBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     *
-     * @return Whether the humanAgentHandoff field is set.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public boolean hasHumanAgentHandoff() {
-      return messageCase_ == 6;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     *
-     * @return The humanAgentHandoff.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-        getHumanAgentHandoff() {
-      if (humanAgentHandoffBuilder_ == null) {
-        if (messageCase_ == 6) {
-          return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-              message_;
-        }
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-            .getDefaultInstance();
-      } else {
-        if (messageCase_ == 6) {
-          return humanAgentHandoffBuilder_.getMessage();
-        }
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-            .getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setHumanAgentHandoff(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff value) {
-      if (humanAgentHandoffBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        message_ = value;
-        onChanged();
-      } else {
-        humanAgentHandoffBuilder_.setMessage(value);
-      }
-      messageCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setHumanAgentHandoff(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder
-            builderForValue) {
-      if (humanAgentHandoffBuilder_ == null) {
-        message_ = builderForValue.build();
-        onChanged();
-      } else {
-        humanAgentHandoffBuilder_.setMessage(builderForValue.build());
-      }
-      messageCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder mergeHumanAgentHandoff(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff value) {
-      if (humanAgentHandoffBuilder_ == null) {
-        if (messageCase_ == 6
-            && message_
-                != com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-                    .getDefaultInstance()) {
-          message_ =
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.newBuilder(
-                      (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-                          message_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          message_ = value;
-        }
-        onChanged();
-      } else {
-        if (messageCase_ == 6) {
-          humanAgentHandoffBuilder_.mergeFrom(value);
-        }
-        humanAgentHandoffBuilder_.setMessage(value);
-      }
-      messageCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder clearHumanAgentHandoff() {
-      if (humanAgentHandoffBuilder_ == null) {
-        if (messageCase_ == 6) {
-          messageCase_ = 0;
-          message_ = null;
-          onChanged();
-        }
-      } else {
-        if (messageCase_ == 6) {
-          messageCase_ = 0;
-          message_ = null;
-        }
-        humanAgentHandoffBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder
-        getHumanAgentHandoffBuilder() {
-      return getHumanAgentHandoffFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder
-        getHumanAgentHandoffOrBuilder() {
-      if ((messageCase_ == 6) && (humanAgentHandoffBuilder_ != null)) {
-        return humanAgentHandoffBuilder_.getMessageOrBuilder();
-      } else {
-        if (messageCase_ == 6) {
-          return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff)
-              message_;
-        }
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-            .getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Hands off conversation to a human agent.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff human_agent_handoff = 6 [deprecated = true];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff,
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder,
-            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder>
-        getHumanAgentHandoffFieldBuilder() {
-      if (humanAgentHandoffBuilder_ == null) {
-        if (!(messageCase_ == 6)) {
-          message_ =
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff
-                  .getDefaultInstance();
-        }
-        humanAgentHandoffBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff.Builder,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoffOrBuilder>(
-                (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.HumanAgentHandoff) message_,
-                getParentForChildren(),
-                isClean());
-        message_ = null;
-      }
-      messageCase_ = 6;
-      onChanged();
-      ;
-      return humanAgentHandoffBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -10692,12 +9533,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10714,12 +9554,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10749,12 +9588,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10779,12 +9617,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10807,12 +9644,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10849,12 +9685,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10881,12 +9716,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10901,12 +9735,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10930,12 +9763,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
-     * It's guaranteed that there is at most one such message in each response.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` or `END_PAGE` page. It is not supposed
+     * to be defined by the user. It's guaranteed that there is at most one such
+     * message in each response.
      * </pre>
      *
      * <code>
@@ -10980,8 +9812,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10998,8 +9831,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11028,8 +9862,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11054,8 +9889,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11077,8 +9913,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11114,8 +9951,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11142,8 +9980,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11158,8 +9997,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11183,8 +10023,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -11224,8 +10065,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11245,8 +10086,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11278,8 +10119,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11307,8 +10148,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11333,8 +10174,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11373,8 +10214,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11404,8 +10245,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11423,8 +10264,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11451,8 +10292,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.

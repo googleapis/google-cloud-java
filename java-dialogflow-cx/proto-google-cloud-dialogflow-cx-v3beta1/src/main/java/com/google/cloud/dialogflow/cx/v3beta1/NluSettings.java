@@ -163,16 +163,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use custom NLU model.
-     * </pre>
-     *
-     * <code>MODEL_TYPE_CUSTOM = 2;</code>
-     */
-    MODEL_TYPE_CUSTOM(2),
-    /**
-     *
-     *
-     * <pre>
      * Use advanced NLU model.
      * </pre>
      *
@@ -202,16 +192,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TYPE_STANDARD = 1;</code>
      */
     public static final int MODEL_TYPE_STANDARD_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Use custom NLU model.
-     * </pre>
-     *
-     * <code>MODEL_TYPE_CUSTOM = 2;</code>
-     */
-    public static final int MODEL_TYPE_CUSTOM_VALUE = 2;
     /**
      *
      *
@@ -251,8 +231,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
           return MODEL_TYPE_UNSPECIFIED;
         case 1:
           return MODEL_TYPE_STANDARD;
-        case 2:
-          return MODEL_TYPE_CUSTOM;
         case 3:
           return MODEL_TYPE_ADVANCED;
         default:

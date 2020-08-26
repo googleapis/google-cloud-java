@@ -30,7 +30,10 @@ public interface SessionEntityTypeOrBuilder
    * Required. The unique identifier of the session entity type.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * ID&gt;`.
+   * ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,7 +48,10 @@ public interface SessionEntityTypeOrBuilder
    * Required. The unique identifier of the session entity type.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/agents/&lt;Agent ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
-   * ID&gt;`.
+   * ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity
+   * Type ID&gt;`. If `Environment ID` is not specified, we assume default 'draft'
+   * environment.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -58,8 +64,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -73,8 +79,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -90,8 +96,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -103,8 +109,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -116,8 +122,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -129,8 +135,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -143,8 +149,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>

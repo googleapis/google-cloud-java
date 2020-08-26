@@ -52,8 +52,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3beta1.Intent].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * The unique identifier of an
+   * [Intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * Indicates that the transition can only happen when the given intent is
    * matched.
@@ -71,8 +72,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3beta1.Intent].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * The unique identifier of an
+   * [Intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.
    * Indicates that the transition can only happen when the given intent is
    * matched.
@@ -91,8 +93,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The condition to evaluate against [form parameters][google.cloud.dialogflow.cx.v3beta1.Form.parameters] or
-   * [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * The condition to evaluate against [form
+   * parameters][google.cloud.dialogflow.cx.v3beta1.Form.parameters] or [session
+   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -109,8 +112,9 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
-   * The condition to evaluate against [form parameters][google.cloud.dialogflow.cx.v3beta1.Form.parameters] or
-   * [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * The condition to evaluate against [form
+   * parameters][google.cloud.dialogflow.cx.v3beta1.Form.parameters] or [session
+   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
