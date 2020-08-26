@@ -17,6 +17,7 @@ package com.google.cloud.osconfig.v1.it;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceOptions;
@@ -166,6 +167,42 @@ public class ITSystemTest {
     }
 
     // CancelPatchJob
+    PatchJobs.CancelPatchJobRequest cancelPatchJobRequest =
+        PatchJobs.CancelPatchJobRequest.newBuilder().setName(response.getName()).build();
+    PatchJobs.PatchJob cancelPatchJob = client.cancelPatchJob(cancelPatchJobRequest);
+    assertEquals(PatchJobs.PatchJob.State.CANCELED, cancelPatchJob.getState());
+  }
+
+  @Test
+  public void listPatchJobInstanceDetailsTest() throws ExecutionException, InterruptedException {
+    String patchJobDisplayName = "patch-job-" + ID;
+    PatchJobs.ExecutePatchJobRequest request =
+        PatchJobs.ExecutePatchJobRequest.newBuilder()
+            .setDisplayName(patchJobDisplayName)
+            .setParent(PARENT.toString())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().setRebootConfigValue(1).build())
+            .setInstanceFilter(PATCH_INSTANCE_FILTER)
+            .build();
+    ApiFuture<PatchJobs.PatchJob> future = client.executePatchJobCallable().futureCall(request);
+    PatchJobs.PatchJob response = future.get();
+    assertNotNull(response);
+    assertNotNull(response.getCreateTime());
+    assertNotNull(response.getUpdateTime());
+    assertEquals(PatchJobs.PatchJob.State.STARTED, response.getState());
+    assertEquals(PATCH_INSTANCE_FILTER, response.getInstanceFilter());
+    assertEquals(patchJobDisplayName, response.getDisplayName());
+
+    // List PatchJob Instance Details
+    PatchJobs.ListPatchJobInstanceDetailsRequest listPatchJobInstanceDetailsRequest =
+        PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+            .setParent(response.getName())
+            .build();
+    List<PatchJobs.PatchJobInstanceDetails> patchJobsDetails =
+        Lists.newArrayList(
+            client.listPatchJobInstanceDetails(listPatchJobInstanceDetailsRequest).iterateAll());
+    assertTrue(patchJobsDetails.size() >= 0);
+
+    // Cancel PatchJob
     PatchJobs.CancelPatchJobRequest cancelPatchJobRequest =
         PatchJobs.CancelPatchJobRequest.newBuilder().setName(response.getName()).build();
     PatchJobs.PatchJob cancelPatchJob = client.cancelPatchJob(cancelPatchJobRequest);
