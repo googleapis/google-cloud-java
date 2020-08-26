@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START dialogflow-cx_install_without_bom] -->
+    <!-- [START dialogflow_cx_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow-cx</artifactId>
-      <version>0.0.0</version>
+      <version>0.1.0</version>
     </dependency>
-    <!-- [END dialogflow-cx_install_without_bom] -->
+    <!-- [END dialogflow_cx_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
