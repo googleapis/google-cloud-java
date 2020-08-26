@@ -85,7 +85,7 @@ public class BatchTranslateText {
           client.batchTranslateTextAsync(request);
 
       System.out.println("Waiting for operation to complete...");
-      BatchTranslateResponse response = future.get(180, TimeUnit.SECONDS);
+      BatchTranslateResponse response = future.get(300, TimeUnit.SECONDS);
       System.out.printf("Total Characters: %s\n", response.getTotalCharacters());
       System.out.printf("Translated Characters: %s\n", response.getTranslatedCharacters());
     }
