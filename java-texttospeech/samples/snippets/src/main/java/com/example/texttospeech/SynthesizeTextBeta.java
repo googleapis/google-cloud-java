@@ -35,7 +35,8 @@ import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
  * Google Cloud TextToSpeech API sample application. Example usage: mvn package
- * exec:java-Dexec.mainClass='com.example.texttospeech.SynthesizeTextBeta' -Dexec.args='--text "hello"'
+ * exec:java-Dexec.mainClass='com.example.texttospeech.SynthesizeTextBeta' -Dexec.args='--text
+ * "hello"'
  */
 public class SynthesizeTextBeta {
 
