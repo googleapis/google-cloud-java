@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.40.0](https://www.github.com/googleapis/java-kms/compare/v1.39.1...v1.40.0) (2020-08-27)
+
+
+### Features
+
+* add client integrity verification fields to the KMS protos ([#234](https://www.github.com/googleapis/java-kms/issues/234)) ([f4e58f2](https://www.github.com/googleapis/java-kms/commit/f4e58f23d7ec440b129ce0090bcbc5301d2e1ed8))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.13.0 ([#241](https://www.github.com/googleapis/java-kms/issues/241)) ([b2d7a4f](https://www.github.com/googleapis/java-kms/commit/b2d7a4f6f8289b0a110fd4f56452ad717ec1c7ae))
+
 ### [1.39.1](https://www.github.com/googleapis/java-kms/compare/v1.39.0...v1.39.1) (2020-08-10)
 
 
