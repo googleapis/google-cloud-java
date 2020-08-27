@@ -32,7 +32,8 @@ public class ParseWithModelBeta {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String location = "your-project-location"; // Format is "us" or "eu".
-    // AutoML model name formatted as: "projects/[PROJECT_ID]/locations/[LOCATION]/models/[MODEL_ID]"
+    // AutoML model name formatted as:
+    //   "projects/[PROJECT_ID]/locations/[LOCATION]/models/[MODEL_ID]"
     String autoMlModel = "your-full-resource-model-name";
     String gcsUri = "gs://your-gcs-bucket/path/to/input/file.json";
     parseWithModel(projectId, location, autoMlModel, gcsUri);
