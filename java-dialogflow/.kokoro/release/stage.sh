@@ -16,9 +16,8 @@
 set -eo pipefail
 
 # Start the releasetool reporter
-# Disable reporting due to issue observed with Kokoro blocking releases
-# python3 -m pip install gcp-releasetool
-# python3 -m releasetool publish-reporter-script > /tmp/publisher-script; source /tmp/publisher-script
+python3 -m pip install gcp-releasetool
+python3 -m releasetool publish-reporter-script > /tmp/publisher-script; source /tmp/publisher-script
 
 source $(dirname "$0")/common.sh
 MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../../)/settings.xml
