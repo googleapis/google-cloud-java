@@ -71,10 +71,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());
-    mostRecentQueryPb = runQueryResponsePb.getQuery();
-    if (mostRecentQueryPb == null) {
-      mostRecentQueryPb = requestPb.getQuery();
-    }
+    mostRecentQueryPb = requestPb.getQuery();
     moreResults = runQueryResponsePb.getBatch().getMoreResults();
     lastBatch = moreResults != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = runQueryResponsePb.getBatch().getEntityResultsList().iterator();

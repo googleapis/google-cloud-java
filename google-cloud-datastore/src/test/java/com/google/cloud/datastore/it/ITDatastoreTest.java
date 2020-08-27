@@ -28,6 +28,7 @@ import static org.junit.Assert.fail;
 import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.BooleanValue;
+import com.google.cloud.datastore.Cursor;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -897,5 +898,26 @@ public class ITDatastoreTest {
     assertTrue(results.hasNext());
     assertEquals(ENTITY1, results.next());
     assertFalse(results.hasNext());
+  }
+
+  @Test
+  public void testQueryWithStartCursor() {
+    Entity entity1 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-01").build()).build();
+    Entity entity2 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-02").build()).build();
+    Entity entity3 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-03").build()).build();
+    DATASTORE.put(entity1, entity2, entity3);
+    QueryResults<Entity> run1 = DATASTORE.run(Query.newEntityQueryBuilder().setKind(KIND1).build());
+    run1.next();
+    Cursor cursor1 = run1.getCursorAfter();
+    assertNotNull(cursor1);
+    QueryResults<Entity> run2 =
+        DATASTORE.run(Query.newEntityQueryBuilder().setKind(KIND1).setStartCursor(cursor1).build());
+    Cursor cursor2 = run2.getCursorAfter();
+    assertNotNull(cursor2);
+    assertEquals(cursor2, cursor1);
+    DATASTORE.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
   }
 }

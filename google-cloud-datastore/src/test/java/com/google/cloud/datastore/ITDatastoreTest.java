@@ -1242,4 +1242,25 @@ public class ITDatastoreTest {
     }
     assertEquals(1, count);
   }
+
+  @Test
+  public void testQueryWithStartCursor() {
+    Entity entity1 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-01").build()).build();
+    Entity entity2 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-02").build()).build();
+    Entity entity3 =
+        Entity.newBuilder(Key.newBuilder(PROJECT_ID, KIND1, "name-03").build()).build();
+    datastore.put(entity1, entity2, entity3);
+    QueryResults<Entity> run1 = datastore.run(Query.newEntityQueryBuilder().setKind(KIND1).build());
+    run1.next();
+    Cursor cursor1 = run1.getCursorAfter();
+    assertNotNull(cursor1);
+    QueryResults<Entity> run2 =
+        datastore.run(Query.newEntityQueryBuilder().setKind(KIND1).setStartCursor(cursor1).build());
+    Cursor cursor2 = run2.getCursorAfter();
+    assertNotNull(cursor2);
+    assertEquals(cursor2, cursor1);
+    datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+  }
 }
