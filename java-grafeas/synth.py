@@ -95,4 +95,5 @@ java.format_code('./src')
 java.common_templates(excludes=[
     'README.md',
     'samples/*',
+    '.github/workflows/samples.yaml',
 ])
