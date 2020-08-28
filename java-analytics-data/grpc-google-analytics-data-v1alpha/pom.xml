@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analytics-data:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <dependencies>
     <dependency>

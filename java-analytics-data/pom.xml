@@ -4,7 +4,7 @@
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analytics-data:current} -->
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   <name>Google Analytics Data Parent</name>
   <url>https://github.com/googleapis/java-analytics-data</url>
   <description>
@@ -62,7 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-analytics-data-parent</site.installationModule>
+    <site.installationModule>google-analytics-data-parent</site.installationModule>
   </properties>
 
   <dependencyManagement>
