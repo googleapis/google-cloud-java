@@ -1,0 +1,64 @@
+on:
+  pull_request:
+name: auto-release
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/github-script@v3.0.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          // only approve PRs from release-please[bot]
+          if (context.payload.sender.login != "release-please[bot]") {
+            return;
+          }
+
+          // only approve PRs like "chore: release <release version>"
+          if (!context.payload.pull_request.title.startsWith("chore: release")) {
+            return;
+          }
+
+          // trigger auto-release when
+          // 1) there are dependency updates only
+          // 2) there are no open dependency update PRs in this repo (to avoid multiple releases)
+          if (
+            context.payload.pull_request.body.contains("Fix") ||
+            context.payload.pull_request.body.contains("Build") ||
+            context.payload.pull_request.body.contains("BREAKING CHANGES") ||
+            context.payload.pull_request.body.contains("Features")
+          ) {
+            return;
+          }
+
+          // list all open pull requests
+          const result = github.pulls.list({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open'
+          });
+          const pulls = await github.paginate(result);
+
+          // return if there are open depedency update PRs
+          for (const pull of pulls) {
+            if (pull.title.startWith("deps: update dependency ")) {
+              return;
+            }
+          }
+
+          // approve release PR
+          await github.pulls.createReview({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Rubber stamped release!',
+            pull_number: context.payload.pull_request.number,
+            event: 'APPROVE'
+          });
+
+          // attach kokoro:force-run and automerge labels
+          await github.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.payload.pull_request.number,
+            labels: ["kokoro:force-run", "automerge"]
+          });
