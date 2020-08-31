@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.117.1](https://www.github.com/googleapis/java-bigquery/compare/v1.117.0...v1.117.1) (2020-08-28)
+
+
+### Bug Fixes
+
+* npe for destination table ([#699](https://www.github.com/googleapis/java-bigquery/issues/699)) ([863c9e1](https://www.github.com/googleapis/java-bigquery/commit/863c9e1d7da8a63154677fb32954e2048dd48e9e))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200818-1.30.10 ([#705](https://www.github.com/googleapis/java-bigquery/issues/705)) ([127414c](https://www.github.com/googleapis/java-bigquery/commit/127414c4f2cb7ea50dfc0f5cbfcb7f581cf67e63))
+* update dependency com.google.cloud:google-cloud-storage to v1.112.0 ([#708](https://www.github.com/googleapis/java-bigquery/issues/708)) ([0be6a2b](https://www.github.com/googleapis/java-bigquery/commit/0be6a2b8ba47a912d8af7326ebc910d02393f6f5))
+* update jmh.version to v1.25.1 ([#698](https://www.github.com/googleapis/java-bigquery/issues/698)) ([e3a021b](https://www.github.com/googleapis/java-bigquery/commit/e3a021b24cbcdfe23617da1662f438fb2d8699fb))
+
 ## [1.117.0](https://www.github.com/googleapis/java-bigquery/compare/v1.116.10...v1.117.0) (2020-08-25)
 
 
