@@ -16,32 +16,34 @@
 
 package com.example.bigquerydatatransfer;
 
-// [START bigquerydatatransfer_delete_scheduled_query]
+// [START bigquerydatatransfer_list_configs]
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
+import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
+import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
 import java.io.IOException;
 
-// Sample to delete a scheduled query
-public class DeleteScheduledQuery {
+// Sample to get list of transfer config
+public class ListTransferConfigs {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    // i.e projects/{project_id}/transferConfigs/{config_id}` or
-    // `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
-    String name = "MY_CONFIG_ID";
-    deleteScheduledQuery(name);
+    final String projectId = "MY_PROJECT_ID";
+    listTransferConfigs(projectId);
   }
 
-  public static void deleteScheduledQuery(String name) throws IOException {
+  public static void listTransferConfigs(String projectId) throws IOException {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      DeleteTransferConfigRequest request =
-          DeleteTransferConfigRequest.newBuilder().setName(name).build();
-      dataTransferServiceClient.deleteTransferConfig(request);
-      System.out.print("Scheduled query deleted successfully.\n");
+      ProjectName parent = ProjectName.of(projectId);
+      ListTransferConfigsRequest request =
+          ListTransferConfigsRequest.newBuilder().setParent(parent.toString()).build();
+      dataTransferServiceClient
+          .listTransferConfigs(request)
+          .iterateAll()
+          .forEach(config -> System.out.print("Success! Config ID :" + config.getName() + "\n"));
     } catch (ApiException ex) {
-      System.out.print("Scheduled query was not deleted." + ex.toString());
+      System.out.println("Config list not found due to error." + ex.toString());
     }
   }
 }
-// [END bigquerydatatransfer_delete_scheduled_query]
+// [END bigquerydatatransfer_list_configs]

@@ -39,7 +39,7 @@ public class GetTransferConfigInfo {
       GetTransferConfigRequest request =
           GetTransferConfigRequest.newBuilder().setName(configId).build();
       TransferConfig info = dataTransferServiceClient.getTransferConfig(request);
-      System.out.printf("\nConfig info retrieved successfully.name : %s \n", info.getName());
+      System.out.print("Config info retrieved successfully." + info.getName() + "\n");
     } catch (ApiException ex) {
       System.out.print("config not found." + ex.toString());
     }

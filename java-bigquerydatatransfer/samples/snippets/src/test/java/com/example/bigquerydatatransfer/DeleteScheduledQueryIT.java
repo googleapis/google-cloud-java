@@ -22,14 +22,20 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
+import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
+import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -37,12 +43,14 @@ import org.junit.Test;
 
 public class DeleteScheduledQueryIT {
 
+  private static final Logger LOG = Logger.getLogger(DeleteScheduledQueryIT.class.getName());
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;
   private String displayName;
   private String datasetName;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -60,9 +68,10 @@ public class DeleteScheduledQueryIT {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     displayName = "MY_SCHEDULE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
@@ -92,24 +101,30 @@ public class DeleteScheduledQueryIT {
             .setParams(Struct.newBuilder().putAllFields(params).build())
             .setSchedule("every 24 hours")
             .build();
-    CreateScheduledQuery.createScheduledQuery(PROJECT_ID, transferConfig);
-    String result = bout.toString();
-    name = result.substring(result.indexOf(".") + 1);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+      ProjectName parent = ProjectName.of(PROJECT_ID);
+      CreateTransferConfigRequest request =
+          CreateTransferConfigRequest.newBuilder()
+              .setParent(parent.toString())
+              .setTransferConfig(transferConfig)
+              .build();
+      name = dataTransferServiceClient.createTransferConfig(request).getName();
+      System.out.println("\nScheduled query created successfully :" + name);
+    }
   }
 
   @After
   public void tearDown() {
     // delete a temporary dataset
     bigquery.delete(datasetName, BigQuery.DatasetDeleteOption.deleteContents());
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    LOG.log(Level.INFO, bout.toString());
   }
 
   @Test
-  public void testDeleteScheduledQuery() {
+  public void testDeleteScheduledQuery() throws IOException {
     // delete scheduled query that was just created
     DeleteScheduledQuery.deleteScheduledQuery(name);
     assertThat(bout.toString()).contains("Scheduled query deleted successfully.");

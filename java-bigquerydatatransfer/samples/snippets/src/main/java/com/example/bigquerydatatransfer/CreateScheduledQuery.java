@@ -31,7 +31,7 @@ import java.util.Map;
 // Sample to create a scheduled query
 public class CreateScheduledQuery {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     final String datasetId = "MY_DATASET_ID";
@@ -56,7 +56,8 @@ public class CreateScheduledQuery {
     createScheduledQuery(projectId, transferConfig);
   }
 
-  public static void createScheduledQuery(String projectId, TransferConfig transferConfig) {
+  public static void createScheduledQuery(String projectId, TransferConfig transferConfig)
+      throws IOException {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
       CreateTransferConfigRequest request =
@@ -65,9 +66,9 @@ public class CreateScheduledQuery {
               .setTransferConfig(transferConfig)
               .build();
       TransferConfig config = dataTransferServiceClient.createTransferConfig(request);
-      System.out.print("Scheduled query created successfully." + config.getName());
-    } catch (IOException | ApiException ex) {
-      System.out.print("Scheduled query was not created." + ex.toString());
+      System.out.println("\nScheduled query created successfully :" + config.getName());
+    } catch (ApiException ex) {
+      System.out.print("\nScheduled query was not created." + ex.toString());
     }
   }
 }

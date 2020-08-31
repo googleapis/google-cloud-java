@@ -41,9 +41,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class GetTransferConfigInfoIT {
+public class ListTransferConfigsIT {
 
-  private static final Logger LOG = Logger.getLogger(GetTransferConfigInfoIT.class.getName());
+  private static final Logger LOG = Logger.getLogger(ListTransferConfigsIT.class.getName());
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;
@@ -79,6 +79,7 @@ public class GetTransferConfigInfoIT {
     // create a temporary dataset
     bigquery = BigQueryOptions.getDefaultInstance().getService();
     bigquery.create(DatasetInfo.of(datasetName));
+
     // create a scheduled query
     String query =
         "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
@@ -126,8 +127,8 @@ public class GetTransferConfigInfoIT {
   }
 
   @Test
-  public void testGetTransferConfigInfo() throws IOException {
-    GetTransferConfigInfo.getTransferConfigInfo(name);
-    assertThat(bout.toString()).contains("Config info retrieved successfully.");
+  public void testListTransferConfigs() throws IOException {
+    ListTransferConfigs.listTransferConfigs(PROJECT_ID);
+    assertThat(bout.toString()).contains("Success! Config ID ");
   }
 }
