@@ -1,5 +1,25 @@
 # Changelog
 
+### [1.0.8](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.7...v1.0.8) (2020-08-31)
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#302](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/302)) ([2b6c77d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2b6c77d5418fb3f2c2b6ce35f67caa402cfa6fd1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.10 ([#284](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/284)) ([6d21b7d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6d21b7da3dd8e8847f18b5ce7ffe90fab19be860))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.117.0 ([#303](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/303)) ([fc2b1d8](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/fc2b1d86c5c1e3a1ebccd3c5aa191fd2b69f8289))
+
+
+### Documentation
+
+* **samples:** add get transferconfig info ([#300](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/300)) ([529e86d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/529e86d7cf16219a64af8118c8e0ea724e00107b))
+* **samples:** add list configs ([#308](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/308)) ([bc5da96](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/bc5da9650fdcb94a69c098bcbad5e70cf243853a))
+* **samples:** fix checkstyle errors ([#297](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/297)) ([3e7ba7f](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/3e7ba7f41bd56f2123c93c64ba6abdfc27d0fa0b))
+
 ### [1.0.7](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.6...v1.0.7) (2020-08-10)
 
 
