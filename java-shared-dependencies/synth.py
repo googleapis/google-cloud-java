@@ -21,5 +21,6 @@ java.common_templates(excludes=[
   'samples/*',
   'renovate.json',
   # excluding samples ci jobs since there are no samples in this repo
-  '.github/workflows/samples.yaml'
+  '.github/workflows/samples.yaml',
+  '.github/release-please.yml',
 ])
