@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.4](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.3...v0.3.4) (2020-08-27)
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#132](https://www.github.com/googleapis/java-bigqueryreservation/issues/132)) ([6c103ab](https://www.github.com/googleapis/java-bigqueryreservation/commit/6c103ab88a665a8a4fe6c8226bed5df5ceff2fec))
+
 ### [0.3.3](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.2...v0.3.3) (2020-08-07)
 
 
