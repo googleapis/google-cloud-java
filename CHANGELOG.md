@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.5.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.0...v1.5.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#506](https://www.github.com/googleapis/java-bigquerystorage/issues/506)) ([042cb41](https://www.github.com/googleapis/java-bigquerystorage/commit/042cb414ab29cc4143a728e211f95fa5c0cfa1a0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.117.0 ([#508](https://www.github.com/googleapis/java-bigquerystorage/issues/508)) ([15dea1b](https://www.github.com/googleapis/java-bigquerystorage/commit/15dea1b31a57bef6ebc2d7c306b06f186026c10a))
+
 ## [1.5.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.4.1...v1.5.0) (2020-08-19)
 
 
