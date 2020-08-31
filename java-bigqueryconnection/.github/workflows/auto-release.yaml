@@ -23,10 +23,10 @@ jobs:
           // 1) there are dependency updates only
           // 2) there are no open dependency update PRs in this repo (to avoid multiple releases)
           if (
-            context.payload.pull_request.body.contains("Fix") ||
-            context.payload.pull_request.body.contains("Build") ||
-            context.payload.pull_request.body.contains("BREAKING CHANGES") ||
-            context.payload.pull_request.body.contains("Features")
+            context.payload.pull_request.body.includes("Fix") ||
+            context.payload.pull_request.body.includes("Build") ||
+            context.payload.pull_request.body.includes("BREAKING CHANGES") ||
+            context.payload.pull_request.body.includes("Features")
           ) {
             return;
           }
