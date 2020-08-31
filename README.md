@@ -19,7 +19,7 @@ See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>9.1.0</version>
+      <version>10.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -40,7 +40,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.117.0</version>
+  <version>1.117.1</version>
 </dependency>
 
 ```

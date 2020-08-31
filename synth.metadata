@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "863c9e1d7da8a63154677fb32954e2048dd48e9e"
+        "sha": "5d9c5431ef1c6fb69eae29eb4cbd6f530e1c9d77"
       }
     },
     {
@@ -73,7 +73,6 @@
     "CONTRIBUTING.md",
     "LICENSE",
     "README.md",
-    "codecov.yaml",
     "java.header",
     "license-checks.xml",
     "renovate.json",
