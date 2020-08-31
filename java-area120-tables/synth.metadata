@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": "."
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "80f46100c047bc47efe0025ee537dc8ee413ad04"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "area120-tables",
+        "apiVersion": "v1alpha1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
