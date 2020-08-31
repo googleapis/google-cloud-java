@@ -37,10 +37,17 @@
 
   <dependencies>
     <!-- TODO: use libraries-bom when google-cloud-game-servers is included -->
+    <!-- [START game_servers_install_with_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
       <version>0.21.0</version>
+    </dependency>
+    <!-- [END game_servers_install_with_bom] -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.6</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

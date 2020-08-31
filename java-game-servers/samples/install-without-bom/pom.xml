@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>game-servers-install-without-bom</artifactId>
+  <artifactId>gameservices-install-without-bom</artifactId>
   <packaging>jar</packaging>
-  <name>Google Cloud Gaming Install Without Bom</name>
-  <url>https://github.com/googleapis/java-game-servers</url>
+  <name>Google Cloud Game Services Install Without BOM Sample</name>
+  <url>https://github.com/googleapis/java-gameservices</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -23,7 +23,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
+  <!-- {x-version-update-start:google-cloud-game-servers:released} -->
   <dependencies>
     <!-- [START game_servers_install_without_bom] -->
     <dependency>
@@ -32,6 +32,11 @@
       <version>0.21.0</version>
     </dependency>
     <!-- [END game_servers_install_without_bom] -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.6</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
@@ -46,6 +51,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
