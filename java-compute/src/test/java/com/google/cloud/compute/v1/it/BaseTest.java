@@ -149,7 +149,7 @@ public class BaseTest {
 
     // clean up old networks
     List<Network> networks =
-        Lists.newArrayList(networkClient.listNetworks("gcloud-devel").iterateAll());
+        Lists.newArrayList(networkClient.listNetworks(DEFAULT_PROJECT).iterateAll());
     for (Network network : networks) {
       if (network.getName().startsWith("test-")) {
         Timestamp createdAt = Timestamp.parseTimestamp(network.getCreationTimestamp());
