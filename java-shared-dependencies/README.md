@@ -14,7 +14,7 @@ If you are using Maven, use this artifact as your project's parent.
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-shared-dependencies</artifactId>
-      <version>0.8.6</version>
+      <version>0.9.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

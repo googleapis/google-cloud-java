@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.9.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.8.6...v0.9.0) (2020-08-31)
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#129](https://www.github.com/googleapis/java-shared-dependencies/issues/129)) ([7fff6f2](https://www.github.com/googleapis/java-shared-dependencies/commit/7fff6f2c94a19ba998d8cd47e8be5a6333808df8))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-bom to v3.13.0 ([#126](https://www.github.com/googleapis/java-shared-dependencies/issues/126)) ([908063f](https://www.github.com/googleapis/java-shared-dependencies/commit/908063f9b820dd3195b15537189e45be0d4acbbb))
+* update dependency io.grpc:grpc-bom to v1.31.1 ([#124](https://www.github.com/googleapis/java-shared-dependencies/issues/124)) ([553a339](https://www.github.com/googleapis/java-shared-dependencies/commit/553a3393f5bede0e90e16e2d0d87daa2b936ab32))
+* update google.common-protos.version to v1.18.1 ([#119](https://www.github.com/googleapis/java-shared-dependencies/issues/119)) ([05ad27e](https://www.github.com/googleapis/java-shared-dependencies/commit/05ad27e35fe082e148d377315b10943b187b5670))
+* update google.core.version to v1.93.8 ([f72cef3](https://www.github.com/googleapis/java-shared-dependencies/commit/f72cef3d78a036e2b2434bf08b0a75d57b2fa139))
+* update iam.version to v0.15.0 ([#118](https://www.github.com/googleapis/java-shared-dependencies/issues/118)) ([1409a16](https://www.github.com/googleapis/java-shared-dependencies/commit/1409a16826d3fd4a5d9cbcbe46ea4b4af8687a5c))
+* update iam.version to v1 (major) ([#120](https://www.github.com/googleapis/java-shared-dependencies/issues/120)) ([a6243a0](https://www.github.com/googleapis/java-shared-dependencies/commit/a6243a02129e42fec804b5769fb8e3f334ba84ce))
+
 ### [0.8.6](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.5...v0.8.6) (2020-08-07)
 
 
