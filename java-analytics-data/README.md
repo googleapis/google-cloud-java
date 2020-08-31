@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.0.0</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 
