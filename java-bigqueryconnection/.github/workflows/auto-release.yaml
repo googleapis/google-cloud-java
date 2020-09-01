@@ -8,42 +8,43 @@ jobs:
     - uses: actions/github-script@v3.0.0
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
+        debug: true
         script: |
           // only approve PRs from release-please[bot]
-          if (context.payload.sender.login != "release-please[bot]") {
+          if (context.payload.pull_request.user.login !== "release-please[bot]") {
             return;
           }
 
           // only approve PRs like "chore: release <release version>"
-          if (!context.payload.pull_request.title.startsWith("chore: release")) {
+          if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
             return;
           }
 
           // trigger auto-release when
-          // 1) there are dependency updates only
-          // 2) there are no open dependency update PRs in this repo (to avoid multiple releases)
+          // 1) it is a SNAPSHOT release (auto-generated post regular release)
+          // 2) there are dependency updates only
+          // 3) there are no open dependency update PRs in this repo (to avoid multiple releases)
           if (
             context.payload.pull_request.body.includes("Fix") ||
             context.payload.pull_request.body.includes("Build") ||
             context.payload.pull_request.body.includes("BREAKING CHANGES") ||
             context.payload.pull_request.body.includes("Features")
           ) {
+            console.log( "Not auto-releasing since it is not a dependency-update-only release." );
             return;
           }
 
-          // list all open pull requests
-          const result = github.pulls.list({
+          const promise = github.pulls.list.endpoint({
             owner: context.repo.owner,
             repo: context.repo.repo,
             state: 'open'
           });
+          const open_pulls = await github.paginate(promise)
 
-          const pulls = await github.paginate(result);
-
-          // return if there are open depedency update PRs
-          if ( pulls !== 'undefined' ) {
-            for (const pull of pulls) {
-              if (pull.title.startsWith("deps: update dependency ")) {
+          if ( open_pulls.length > 1 && !context.payload.pull_request.title.includes("SNAPSHOT") ) {
+            for ( const pull of open_pulls ) {
+              if ( pull.title.startsWith("deps: update dependency") ) {
+                console.log( "Not auto-releasing yet since there are dependency update PRs open in this repo." );
                 return;
               }
             }
@@ -63,5 +64,5 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.payload.pull_request.number,
-            labels: ["kokoro:force-run", "automerge"]
+            labels: ['kokoro:force-run', 'automerge']
           });
