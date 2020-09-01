@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.4](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.3.3...v0.3.4) (2020-09-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependen… ([#127](https://www.github.com/googleapis/java-bigqueryconnection/issues/127)) ([752a655](https://www.github.com/googleapis/java-bigqueryconnection/commit/752a655a3e2840fd0217797465137f2611c08303))
+
 ### [0.3.3](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.3.2...v0.3.3) (2020-08-31)
 
 
