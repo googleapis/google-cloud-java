@@ -170,11 +170,17 @@ public class AdminIT {
     assertThat(bout.toString()).contains("permissions: \"pubsub.subscriptions.update\"");
 
     bout.reset();
+    // Test subscription detachment.
+    DetachSubscriptionExample.detachSubscriptionExample(projectId, pullSubscriptionId);
+    assertThat(bout.toString()).contains("Subscription is detached.");
+
+    bout.reset();
     // Test create a subscription with ordering
     CreateSubscriptionWithOrdering.createSubscriptionWithOrderingExample(
         projectId, topicId, orderedSubscriptionId);
     assertThat(bout.toString()).contains("Created a subscription with ordering");
     assertThat(bout.toString()).contains("enable_message_ordering=true");
+
 
     bout.reset();
     // Test delete subscription. Run twice to delete both pull and push subscriptions.

@@ -46,9 +46,6 @@ public class RemoveDeadLetterPolicyExample {
           ProjectSubscriptionName.of(projectId, subscriptionId);
       TopicName topicName = TopicName.of(projectId, topicId);
 
-      System.out.println(
-          "Before: " + subscriptionAdminClient.getSubscription(subscriptionName).getAllFields());
-
       // Construct the subscription you expect to have after the request. Here,
       // values in the required fields (name, topic) help identify the subscription.
       // No dead letter policy is supplied.
@@ -61,9 +58,7 @@ public class RemoveDeadLetterPolicyExample {
       // Construct a field mask to indicate which field to update in the subscription.
       FieldMask updateMask =
           FieldMask.newBuilder()
-              .addPaths("dead_letter_policy.dead_letter_topic")
-              // A default of 5 is applied upon successful update.
-              .addPaths("dead_letter_policy.max_delivery_attempts")
+              .addPaths("dead_letter_policy")
               .build();
 
       UpdateSubscriptionRequest request =

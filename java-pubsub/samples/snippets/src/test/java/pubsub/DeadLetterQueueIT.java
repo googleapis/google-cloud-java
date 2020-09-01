@@ -138,7 +138,6 @@ public class DeadLetterQueueIT {
     bout.reset();
     // Remove dead letter policy.
     RemoveDeadLetterPolicyExample.removeDeadLetterPolicyExample(projectId, subscriptionId, topicId);
-    assertThat(bout.toString())
-        .contains("google.pubsub.v1.Subscription.dead_letter_policy=max_delivery_attempts: 5");
+    assertThat(bout.toString()).doesNotContain("dead_letter_policy");
   }
 }
