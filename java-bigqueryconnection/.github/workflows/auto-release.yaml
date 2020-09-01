@@ -28,6 +28,7 @@ jobs:
             context.payload.pull_request.body.includes("BREAKING CHANGES") ||
             context.payload.pull_request.body.includes("Features")
           ) {
+            console.log( "Not autoreleasing (not a dependency-update-only release). " );
             return;
           }
 
@@ -37,11 +38,18 @@ jobs:
             repo: context.repo.repo,
             state: 'open'
           });
+
+          if (result === null || result === 'undefined' || result.length === 0) {
+            console.log( "No open pull requests in this repo" );
+            return;
+          }
+
           const pulls = await github.paginate(result);
 
           // return if there are open depedency update PRs
           for (const pull of pulls) {
-            if (pull.title.startWith("deps: update dependency ")) {
+            if (pull.title.startsWith("deps: update dependency ")) {
+              console.log( "No open dependency update pull requests in this repo" );
               return;
             }
           }
