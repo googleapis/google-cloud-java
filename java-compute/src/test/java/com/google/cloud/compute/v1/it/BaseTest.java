@@ -120,11 +120,28 @@ public class BaseTest {
     return completedOperation;
   }
 
-  static void cleanUpNetworks() throws IOException {
+  static void cleanUpNetwork(Network network) throws IOException {
     FirewallSettings firewallSettings =
         FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     FirewallClient firewallClient = FirewallClient.create(firewallSettings);
 
+    // TODO: switch to firewall list filter
+    List<Firewall> firewalls =
+        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+    for (Firewall firewall : firewalls) {
+      if (firewall.getNetwork().equals(network.getSelfLink())) {
+        waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
+      }
+    }
+
+    NetworkSettings networkSettings =
+        NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+    NetworkClient networkClient = NetworkClient.create(networkSettings);
+
+    waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
+  }
+
+  static void cleanUpNetworks() throws IOException {
     NetworkSettings networkSettings =
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     NetworkClient networkClient = NetworkClient.create(networkSettings);
@@ -134,19 +151,6 @@ public class BaseTest {
     calendar.add(Calendar.HOUR_OF_DAY, -1);
     Timestamp cutoff = Timestamp.of(calendar.getTime());
 
-    // clean up old firewalls which are used by networks
-    List<Firewall> firewalls =
-        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
-    for (Firewall firewall : firewalls) {
-      if (firewall.getName().startsWith("test-")) {
-        Timestamp createdAt = Timestamp.parseTimestamp(firewall.getCreationTimestamp());
-        if (createdAt.compareTo(cutoff) < 0) {
-          System.out.println("deleting old firewall: " + firewall.getSelfLink());
-          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
-        }
-      }
-    }
-
     // clean up old networks
     List<Network> networks =
         Lists.newArrayList(networkClient.listNetworks(DEFAULT_PROJECT).iterateAll());
@@ -154,8 +158,7 @@ public class BaseTest {
       if (network.getName().startsWith("test-")) {
         Timestamp createdAt = Timestamp.parseTimestamp(network.getCreationTimestamp());
         if (createdAt.compareTo(cutoff) < 0) {
-          System.out.println("deleting old network: " + network.getSelfLink());
-          waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
+          cleanUpNetwork(network);
         }
       }
     }

@@ -87,18 +87,11 @@ public class ITFirewallTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
-    List<Firewall> firewalls =
-        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
-    for (String firewallTargetLink : resourcesToCleanUp.get("firewall")) {
-      for (Firewall firewall : firewalls) {
-        if (firewall.getSelfLink().startsWith(firewallTargetLink)) {
-          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
-        }
-      }
-    }
+  public static void tearDown() throws IOException {
+    // Note: firewalls will be cleaned up by the cleanUpNetwork helper
     for (String network : resourcesToCleanUp.get("firewall-network")) {
-      waitForOperation(networkClient.deleteNetwork(network));
+      Network firewallNetwork = networkClient.getNetwork(network);
+      cleanUpNetwork(firewallNetwork);
     }
 
     firewallClient.close();

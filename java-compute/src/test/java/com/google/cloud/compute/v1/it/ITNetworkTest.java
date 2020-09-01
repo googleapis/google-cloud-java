@@ -17,9 +17,6 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.compute.v1.Firewall;
-import com.google.cloud.compute.v1.FirewallClient;
-import com.google.cloud.compute.v1.FirewallSettings;
 import com.google.cloud.compute.v1.Network;
 import com.google.cloud.compute.v1.NetworkClient;
 import com.google.cloud.compute.v1.NetworkSettings;
@@ -36,17 +33,12 @@ import org.junit.Test;
 public class ITNetworkTest extends BaseTest {
   private static final String NETWORK = TestHelper.getTestUniqueName("network");;
 
-  private static FirewallClient firewallClient;
   private static NetworkClient networkClient;
   private static ListMultimap<String, String> resourcesToCleanUp = ArrayListMultimap.create();
 
   @BeforeClass
   public static void setUp() throws IOException {
     cleanUpNetworks();
-
-    FirewallSettings firewallSettings =
-        FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
-    firewallClient = FirewallClient.create(firewallSettings);
 
     NetworkSettings networkSettings =
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
@@ -60,21 +52,13 @@ public class ITNetworkTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
-    List<Firewall> firewalls =
-        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
-    for (String networkLink : resourcesToCleanUp.get("network")) {
-      Network network = networkClient.getNetwork(networkLink);
-      for (Firewall firewall : firewalls) {
-        if (firewall.getName().startsWith(network.getName())) {
-          System.out.println("deleting firewall:" + firewall.getSelfLink());
-          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
-        }
-      }
-      waitForOperation(networkClient.deleteNetwork(networkLink));
+  public static void tearDown() throws IOException {
+    // Note: firewalls will be cleaned up by the cleanUpNetwork helper
+    for (String network : resourcesToCleanUp.get("network")) {
+      Network firewallNetwork = networkClient.getNetwork(network);
+      cleanUpNetwork(firewallNetwork);
     }
 
-    firewallClient.close();
     networkClient.close();
   }
 
