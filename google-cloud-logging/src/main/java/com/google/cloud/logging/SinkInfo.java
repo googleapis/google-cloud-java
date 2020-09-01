@@ -62,7 +62,10 @@ public class SinkInfo implements Serializable {
       DATASET,
 
       /** Specifies a Google Cloud Pub/Sub topic as destination for the sink. */
-      TOPIC;
+      TOPIC,
+
+      /** Specifies a Logging bucket as destination for the sink. */
+      LOGGING_BUCKET;
     }
 
     /** Class for specifying a Google Cloud Storage bucket as destination for the sink. */
@@ -225,6 +228,106 @@ public class SinkInfo implements Serializable {
       }
     }
 
+    public static final class LoggingBucketDestination extends Destination {
+
+      private static final long serialVersionUID = 4894431968778789038L;
+      private static final String BASE_NAME = "logging.googleapis.com/";
+      private static final String REGEX =
+          BASE_NAME + "projects/([^/]+)/locations/([^/]+)/buckets/([^/]+)";
+      private static final Pattern PATTERN = Pattern.compile(REGEX);
+
+      private final String project;
+      private final String location;
+      private final String bucket;
+
+      LoggingBucketDestination(String project, String location, String bucket) {
+        super(Type.LOGGING_BUCKET);
+        this.project = project;
+        this.location = checkNotNull(location);
+        this.bucket = checkNotNull(bucket);
+      }
+
+      /**
+       * Returns the name of the project where the Google Cloud BigQuery dataset resides. If {@code
+       * null}, the default project is used.
+       */
+      public String getProject() {
+        return project;
+      }
+
+      /** Returns the name of the bucket location this destination represents. */
+      public String getLocation() {
+        return location;
+      }
+
+      /** Returns the name of the logging bucket this destination represents. */
+      public String getBucket() {
+        return bucket;
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (obj == null || !(obj instanceof LoggingBucketDestination)) {
+          return false;
+        }
+        LoggingBucketDestination other = (LoggingBucketDestination) obj;
+        return baseEquals(other)
+            && Objects.equals(project, other.project)
+            && Objects.equals(location, other.location);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(baseHashCode(), project, location, bucket);
+      }
+
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this)
+            .add("project", project)
+            .add("location", location)
+            .add("bucket", bucket)
+            .toString();
+      }
+
+      @Override
+      String toPb(String projectId) {
+        String project = this.project == null ? projectId : this.project;
+        return BASE_NAME + "projects/" + project + "/locations/" + location + "/buckets/" + bucket;
+      }
+
+      /**
+       * Creates a {@code DatasetDestination} object given the name of the project and dataset to be
+       * used as sink destination.
+       */
+      public static LoggingBucketDestination of(String project, String location, String bucket) {
+        return new LoggingBucketDestination(project, location, bucket);
+      }
+
+      /**
+       * Creates a {@code DatasetDestination} object given the name of the dataset to be used as
+       * sink destination. Dataset is assumed to reside in the default project.
+       */
+      public static LoggingBucketDestination of(String location, String bucket) {
+        return new LoggingBucketDestination(null, location, bucket);
+      }
+
+      static boolean matchesDestination(String destinationPb) {
+        return PATTERN.matcher(destinationPb).matches();
+      }
+
+      static LoggingBucketDestination fromPb(String destinationPb) {
+        Matcher matcher = PATTERN.matcher(destinationPb);
+        if (!matcher.matches()) {
+          throw new IllegalArgumentException(destinationPb + " is not a valid sink destination");
+        }
+        return new LoggingBucketDestination(matcher.group(1), matcher.group(2), matcher.group(3));
+      }
+    }
+
     /** Class for specifying a Google Cloud BigQuery dataset as destination for the sink. */
     public static final class TopicDestination extends Destination {
 
@@ -344,6 +447,8 @@ public class SinkInfo implements Serializable {
         return (T) DatasetDestination.fromPb(destinationPb);
       } else if (TopicDestination.matchesDestination(destinationPb)) {
         return (T) TopicDestination.fromPb(destinationPb);
+      } else if (LoggingBucketDestination.matchesDestination(destinationPb)) {
+        return (T) LoggingBucketDestination.fromPb(destinationPb);
       }
       throw new IllegalArgumentException(destinationPb + " is not a valid sink destination");
     }

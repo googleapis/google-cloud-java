@@ -23,6 +23,7 @@ import static org.junit.Assert.fail;
 import com.google.cloud.logging.SinkInfo.Destination;
 import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
+import com.google.cloud.logging.SinkInfo.Destination.LoggingBucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.TopicDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
 import org.junit.Test;
@@ -37,6 +38,8 @@ public class SinkInfoTest {
   private static final DatasetDestination DATASET_DESTINATION =
       DatasetDestination.of("project", "dataset");
   private static final TopicDestination TOPIC_DESTINATION = TopicDestination.of("project", "topic");
+  private static final LoggingBucketDestination LOGGING_BUCKET_DESTINATION =
+      LoggingBucketDestination.of("project", "location", "bucket");
   private static final SinkInfo BUCKET_SINK_INFO =
       SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
           .setFilter(FILTER)
@@ -80,6 +83,19 @@ public class SinkInfoTest {
   }
 
   @Test
+  public void testOfLoggingBucketDestination() {
+    assertEquals(Destination.Type.LOGGING_BUCKET, LOGGING_BUCKET_DESTINATION.getType());
+    assertEquals("project", LOGGING_BUCKET_DESTINATION.getProject());
+    assertEquals("location", LOGGING_BUCKET_DESTINATION.getLocation());
+    assertEquals("bucket", LOGGING_BUCKET_DESTINATION.getBucket());
+    LoggingBucketDestination loggingBucketDestination =
+        LoggingBucketDestination.of("location", "bucket");
+    assertNull(loggingBucketDestination.getProject());
+    assertEquals("location", loggingBucketDestination.getLocation());
+    assertEquals("bucket", loggingBucketDestination.getBucket());
+  }
+
+  @Test
   public void testToAndFromPbDestination() {
     BucketDestination bucketDestination = Destination.fromPb(BUCKET_DESTINATION.toPb("other"));
     assertEquals(Destination.Type.BUCKET, bucketDestination.getType());
@@ -95,6 +111,13 @@ public class SinkInfoTest {
     assertEquals("project", topicDestination.getProject());
     assertEquals("topic", topicDestination.getTopic());
     compareTopicDestination(TOPIC_DESTINATION, topicDestination);
+    LoggingBucketDestination loggingBucketDestination =
+        Destination.fromPb(LOGGING_BUCKET_DESTINATION.toPb("other"));
+    assertEquals(Destination.Type.LOGGING_BUCKET, loggingBucketDestination.getType());
+    assertEquals("project", loggingBucketDestination.getProject());
+    assertEquals("location", loggingBucketDestination.getLocation());
+    assertEquals("bucket", loggingBucketDestination.getBucket());
+    compareLoggingBucketDestination(LOGGING_BUCKET_DESTINATION, loggingBucketDestination);
     try {
       Destination.fromPb("wrongDestination");
       fail();
@@ -113,6 +136,11 @@ public class SinkInfoTest {
         TopicDestination.fromPb(TopicDestination.of("topic").toPb("project"));
     assertEquals("project", topicDestination.getProject());
     compareTopicDestination(TOPIC_DESTINATION, topicDestination);
+    LoggingBucketDestination loggingBucketDestination =
+        LoggingBucketDestination.fromPb(
+            LoggingBucketDestination.of("location", "bucket").toPb("project"));
+    assertEquals("project", loggingBucketDestination.getProject());
+    compareLoggingBucketDestination(LOGGING_BUCKET_DESTINATION, loggingBucketDestination);
   }
 
   @Test
@@ -205,6 +233,16 @@ public class SinkInfoTest {
     assertEquals(expected, value);
     assertEquals(expected.getProject(), value.getProject());
     assertEquals(expected.getTopic(), value.getTopic());
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
+  }
+
+  private void compareLoggingBucketDestination(
+      LoggingBucketDestination expected, LoggingBucketDestination value) {
+    assertEquals(expected, value);
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getLocation(), value.getLocation());
+    assertEquals(expected.getBucket(), value.getBucket());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
