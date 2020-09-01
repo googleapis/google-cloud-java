@@ -231,10 +231,10 @@ public class InspectTests extends TestBase {
   @Test
   public void testInspectStringMultipleRulesPatientRule() throws Exception {
     InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
-        "patient: Jane Doe");
+        "patient name: Jane Doe");
 
     String output = bout.toString();
-    assertThat(output).contains("VERY_LIKELY");
+    assertThat(output).contains("LIKELY");
   }
 
   @Test
