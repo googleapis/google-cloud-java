@@ -67,7 +67,8 @@ public interface LogSinkOrBuilder
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
    * entries are not exported. For more information, see
-   * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   * [Exporting Logs with
+   * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>
@@ -88,7 +89,8 @@ public interface LogSinkOrBuilder
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
    * entries are not exported. For more information, see
-   * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   * [Exporting Logs with
+   * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>
@@ -103,9 +105,10 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-   * exported log entries are those that are in the resource owning the sink and
-   * that match the filter. For example:
+   * Optional. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+   * only exported log entries are those that are in the resource owning the
+   * sink and that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -118,9 +121,10 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-   * exported log entries are those that are in the resource owning the sink and
-   * that match the filter. For example:
+   * Optional. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+   * only exported log entries are those that are in the resource owning the
+   * sink and that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -175,8 +179,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The log entry format to use for this sink's exported log
-   * entries. The v2 format is used by default and cannot be changed.
+   * Deprecated. This field is unused.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -190,8 +193,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. The log entry format to use for this sink's exported log
-   * entries. The v2 format is used by default and cannot be changed.
+   * Deprecated. This field is unused.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];

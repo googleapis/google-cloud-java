@@ -24,8 +24,9 @@ package com.google.logging.v2;
  * <pre>
  * The parameters to
  * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
- * See [Enabling CMEK for Logs Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
- * for more information.
+ * See [Enabling CMEK for Logs
+ * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
+ * more information.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.GetCmekSettingsRequest}
@@ -348,8 +349,9 @@ public final class GetCmekSettingsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The parameters to
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
-   * See [Enabling CMEK for Logs Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
-   * for more information.
+   * See [Enabling CMEK for Logs
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for
+   * more information.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.GetCmekSettingsRequest}

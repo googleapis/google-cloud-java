@@ -902,7 +902,8 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public void getCmekSettings(
@@ -925,7 +926,8 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public void updateCmekSettings(
@@ -1272,7 +1274,8 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public void getCmekSettings(
@@ -1298,7 +1301,8 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public void updateCmekSettings(
@@ -1509,7 +1513,8 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public com.google.logging.v2.CmekSettings getCmekSettings(
@@ -1531,7 +1536,8 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public com.google.logging.v2.CmekSettings updateCmekSettings(
@@ -1754,7 +1760,8 @@ public final class ConfigServiceV2Grpc {
      * organizations. Once configured, it applies to all projects and folders in
      * the GCP organization.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>
@@ -1777,7 +1784,8 @@ public final class ConfigServiceV2Grpc {
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
      * 3) access to the key is disabled.
      * See [Enabling CMEK for Logs
-     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.CmekSettings>

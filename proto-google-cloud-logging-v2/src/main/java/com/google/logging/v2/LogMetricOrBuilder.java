@@ -99,9 +99,9 @@ public interface LogMetricOrBuilder
    *
    *
    * <pre>
-   * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced_filters) which is
-   * used to match log entries.
-   * Example:
+   * Required. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced_filters) which
+   * is used to match log entries. Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>
@@ -115,9 +115,9 @@ public interface LogMetricOrBuilder
    *
    *
    * <pre>
-   * Required. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced_filters) which is
-   * used to match log entries.
-   * Example:
+   * Required. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced_filters) which
+   * is used to match log entries. Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>

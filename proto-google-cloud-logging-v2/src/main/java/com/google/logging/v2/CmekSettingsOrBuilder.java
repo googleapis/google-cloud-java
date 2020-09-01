@@ -67,7 +67,8 @@ public interface CmekSettingsOrBuilder
    * time of encryption unless access to that key has been revoked.
    * To disable CMEK for the Logs Router, set this field to an empty string.
    * See [Enabling CMEK for Logs
-   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+   * for more information.
    * </pre>
    *
    * <code>string kms_key_name = 2;</code>
@@ -94,7 +95,8 @@ public interface CmekSettingsOrBuilder
    * time of encryption unless access to that key has been revoked.
    * To disable CMEK for the Logs Router, set this field to an empty string.
    * See [Enabling CMEK for Logs
-   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+   * for more information.
    * </pre>
    *
    * <code>string kms_key_name = 2;</code>
@@ -115,7 +117,8 @@ public interface CmekSettingsOrBuilder
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
    * obtain the service account ID.
    * See [Enabling CMEK for Logs
-   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+   * for more information.
    * </pre>
    *
    * <code>string service_account_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -135,7 +138,8 @@ public interface CmekSettingsOrBuilder
    * [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings] to
    * obtain the service account ID.
    * See [Enabling CMEK for Logs
-   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.
+   * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+   * for more information.
    * </pre>
    *
    * <code>string service_account_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

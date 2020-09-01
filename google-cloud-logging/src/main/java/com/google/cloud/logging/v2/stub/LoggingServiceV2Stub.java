@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Stackdriver Logging API.
+ * Base stub class for Cloud Logging API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

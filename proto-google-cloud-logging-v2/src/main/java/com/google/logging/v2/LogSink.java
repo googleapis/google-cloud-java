@@ -214,9 +214,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Available log entry formats. Log entries can be written to
-   * Logging in either format and can be exported in either format.
-   * Version 2 is the preferred format.
+   * Deprecated. This is unused.
    * </pre>
    *
    * Protobuf enum {@code google.logging.v2.LogSink.VersionFormat}
@@ -483,7 +481,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
    * entries are not exported. For more information, see
-   * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   * [Exporting Logs with
+   * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>
@@ -515,7 +514,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
    * entries are not exported. For more information, see
-   * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   * [Exporting Logs with
+   * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>
@@ -543,9 +543,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-   * exported log entries are those that are in the resource owning the sink and
-   * that match the filter. For example:
+   * Optional. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+   * only exported log entries are those that are in the resource owning the
+   * sink and that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -569,9 +570,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-   * exported log entries are those that are in the resource owning the sink and
-   * that match the filter. For example:
+   * Optional. An [advanced logs
+   * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+   * only exported log entries are those that are in the resource owning the
+   * sink and that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -668,8 +670,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. The log entry format to use for this sink's exported log
-   * entries. The v2 format is used by default and cannot be changed.
+   * Deprecated. This field is unused.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -686,8 +687,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. The log entry format to use for this sink's exported log
-   * entries. The v2 format is used by default and cannot be changed.
+   * Deprecated. This field is unused.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1643,7 +1643,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
      * entries are not exported. For more information, see
-     * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     * [Exporting Logs with
+     * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>
@@ -1674,7 +1675,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
      * entries are not exported. For more information, see
-     * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     * [Exporting Logs with
+     * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>
@@ -1705,7 +1707,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
      * entries are not exported. For more information, see
-     * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     * [Exporting Logs with
+     * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>
@@ -1735,7 +1738,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
      * entries are not exported. For more information, see
-     * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     * [Exporting Logs with
+     * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>
@@ -1761,7 +1765,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
      * entries are not exported. For more information, see
-     * [Exporting Logs with Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+     * [Exporting Logs with
+     * Sinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>
@@ -1787,9 +1792,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-     * exported log entries are those that are in the resource owning the sink and
-     * that match the filter. For example:
+     * Optional. An [advanced logs
+     * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+     * only exported log entries are those that are in the resource owning the
+     * sink and that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1812,9 +1818,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-     * exported log entries are those that are in the resource owning the sink and
-     * that match the filter. For example:
+     * Optional. An [advanced logs
+     * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+     * only exported log entries are those that are in the resource owning the
+     * sink and that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1837,9 +1844,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-     * exported log entries are those that are in the resource owning the sink and
-     * that match the filter. For example:
+     * Optional. An [advanced logs
+     * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+     * only exported log entries are those that are in the resource owning the
+     * sink and that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1861,9 +1869,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-     * exported log entries are those that are in the resource owning the sink and
-     * that match the filter. For example:
+     * Optional. An [advanced logs
+     * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+     * only exported log entries are those that are in the resource owning the
+     * sink and that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1881,9 +1890,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An [advanced logs filter](https://cloud.google.com/logging/docs/view/advanced-queries). The only
-     * exported log entries are those that are in the resource owning the sink and
-     * that match the filter. For example:
+     * Optional. An [advanced logs
+     * filter](https://cloud.google.com/logging/docs/view/advanced-queries). The
+     * only exported log entries are those that are in the resource owning the
+     * sink and that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -2074,8 +2084,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. The log entry format to use for this sink's exported log
-     * entries. The v2 format is used by default and cannot be changed.
+     * Deprecated. This field is unused.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -2092,8 +2101,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. The log entry format to use for this sink's exported log
-     * entries. The v2 format is used by default and cannot be changed.
+     * Deprecated. This field is unused.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -2113,8 +2121,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. The log entry format to use for this sink's exported log
-     * entries. The v2 format is used by default and cannot be changed.
+     * Deprecated. This field is unused.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -2134,8 +2141,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. The log entry format to use for this sink's exported log
-     * entries. The v2 format is used by default and cannot be changed.
+     * Deprecated. This field is unused.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -2158,8 +2164,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. The log entry format to use for this sink's exported log
-     * entries. The v2 format is used by default and cannot be changed.
+     * Deprecated. This field is unused.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];

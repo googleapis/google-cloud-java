@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Stackdriver Logging API.
+ * A client to Cloud Logging API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

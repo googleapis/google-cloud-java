@@ -111,12 +111,12 @@ public interface ListLogEntriesRequestOrBuilder
    *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Queries](https://cloud.google.com/logging/docs/view/advanced-queries).  Only log entries that
-   * match the filter are returned.  An empty filter matches all log entries in
-   * the resources listed in `resource_names`. Referencing a parent resource
-   * that is not listed in `resource_names` will cause the filter to return no
-   * results.
-   * The maximum length of the filter is 20000 characters.
+   * Logs Queries](https://cloud.google.com/logging/docs/view/advanced-queries).
+   * Only log entries that match the filter are returned.  An empty filter
+   * matches all log entries in the resources listed in `resource_names`.
+   * Referencing a parent resource that is not listed in `resource_names` will
+   * cause the filter to return no results. The maximum length of the filter is
+   * 20000 characters.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -129,12 +129,12 @@ public interface ListLogEntriesRequestOrBuilder
    *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
-   * Logs Queries](https://cloud.google.com/logging/docs/view/advanced-queries).  Only log entries that
-   * match the filter are returned.  An empty filter matches all log entries in
-   * the resources listed in `resource_names`. Referencing a parent resource
-   * that is not listed in `resource_names` will cause the filter to return no
-   * results.
-   * The maximum length of the filter is 20000 characters.
+   * Logs Queries](https://cloud.google.com/logging/docs/view/advanced-queries).
+   * Only log entries that match the filter are returned.  An empty filter
+   * matches all log entries in the resources listed in `resource_names`.
+   * Referencing a parent resource that is not listed in `resource_names` will
+   * cause the filter to return no results. The maximum length of the filter is
+   * 20000 characters.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,7 +183,8 @@ public interface ListLogEntriesRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of results to return from this request.
-   * Non-positive values are ignored.  The presence of `next_page_token` in the
+   * Default is 50. If the value is negative or exceeds 1000,
+   * the request is rejected. The presence of `next_page_token` in the
    * response indicates that more results might be available.
    * </pre>
    *
