@@ -120,14 +120,11 @@ public class MetricsTracerTest {
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
             .build();
-    EnhancedBigtableStubSettings stubSettings = settings.getStubSettings();
+    EnhancedBigtableStubSettings stubSettings =
+        EnhancedBigtableStub.finalizeSettings(
+            settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
 
-    stub =
-        new EnhancedBigtableStub(
-            stubSettings,
-            ClientContext.create(stubSettings),
-            Tags.getTagger(),
-            localStats.getStatsRecorder());
+    stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
   }
 
   @After

@@ -20,10 +20,12 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcRawCallableFactory;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
@@ -38,6 +40,7 @@ import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.api.gax.tracing.TracedUnaryCallable;
+import com.google.auth.Credentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
@@ -120,65 +123,93 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
-    ClientContext clientContext = ClientContext.create(settings);
+    settings = finalizeSettings(settings, Tags.getTagger(), Stats.getStatsRecorder());
 
-    return new EnhancedBigtableStub(
-        settings, clientContext, Tags.getTagger(), Stats.getStatsRecorder());
+    return new EnhancedBigtableStub(settings, ClientContext.create(settings));
   }
 
-  @InternalApi("Visible for testing")
-  public EnhancedBigtableStub(
-      EnhancedBigtableStubSettings settings,
-      ClientContext clientContext,
-      Tagger tagger,
-      StatsRecorder statsRecorder) {
-    this.settings = settings;
+  public static EnhancedBigtableStubSettings finalizeSettings(
+      EnhancedBigtableStubSettings settings, Tagger tagger, StatsRecorder stats)
+      throws IOException {
+    EnhancedBigtableStubSettings.Builder builder = settings.toBuilder();
 
-    this.clientContext =
-        clientContext
-            .toBuilder()
-            .setTracerFactory(
-                new CompositeTracerFactory(
-                    ImmutableList.of(
-                        // Add OpenCensus Tracing
-                        new OpencensusTracerFactory(
-                            ImmutableMap.<String, String>builder()
-                                // Annotate traces with the same tags as metrics
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(),
-                                    settings.getProjectId())
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(),
-                                    settings.getInstanceId())
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(),
-                                    settings.getAppProfileId())
-                                // Also annotate traces with library versions
-                                .put("gax", GaxGrpcProperties.getGaxGrpcVersion())
-                                .put("grpc", GaxGrpcProperties.getGrpcVersion())
-                                .put(
-                                    "gapic",
-                                    GaxProperties.getLibraryVersion(
-                                        EnhancedBigtableStubSettings.class))
-                                .build()),
-                        // Add OpenCensus Metrics
-                        MetricsTracerFactory.create(
-                            tagger,
-                            statsRecorder,
-                            ImmutableMap.<TagKey, TagValue>builder()
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_PROJECT_ID,
-                                    TagValue.create(settings.getProjectId()))
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
-                                    TagValue.create(settings.getInstanceId()))
-                                .put(
-                                    RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
-                                    TagValue.create(settings.getAppProfileId()))
-                                .build()),
-                        // Add user configured tracer
-                        clientContext.getTracerFactory())))
-            .build();
+    // TODO: this implementation is on the cusp of unwieldy, if we end up adding more features
+    // consider splitting it up by feature.
+
+    // Inject channel priming
+    if (settings.isRefreshingChannel()) {
+      // Fix the credentials so that they can be shared
+      Credentials credentials = null;
+      if (settings.getCredentialsProvider() != null) {
+        credentials = settings.getCredentialsProvider().getCredentials();
+      }
+      builder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
+
+      // Inject the primer
+      InstantiatingGrpcChannelProvider transportProvider =
+          (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
+
+      builder.setTransportChannelProvider(
+          transportProvider
+              .toBuilder()
+              .setChannelPrimer(
+                  BigtableChannelPrimer.create(
+                      credentials,
+                      settings.getProjectId(),
+                      settings.getInstanceId(),
+                      settings.getAppProfileId(),
+                      settings.getPrimedTableIds()))
+              .build());
+    }
+
+    // Inject Opencensus instrumentation
+    builder.setTracerFactory(
+        new CompositeTracerFactory(
+            ImmutableList.of(
+                // Add OpenCensus Tracing
+                new OpencensusTracerFactory(
+                    ImmutableMap.<String, String>builder()
+                        // Annotate traces with the same tags as metrics
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(),
+                            settings.getProjectId())
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(),
+                            settings.getInstanceId())
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(),
+                            settings.getAppProfileId())
+                        // Also annotate traces with library versions
+                        .put("gax", GaxGrpcProperties.getGaxGrpcVersion())
+                        .put("grpc", GaxGrpcProperties.getGrpcVersion())
+                        .put(
+                            "gapic",
+                            GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))
+                        .build()),
+                // Add OpenCensus Metrics
+                MetricsTracerFactory.create(
+                    tagger,
+                    stats,
+                    ImmutableMap.<TagKey, TagValue>builder()
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_PROJECT_ID,
+                            TagValue.create(settings.getProjectId()))
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
+                            TagValue.create(settings.getInstanceId()))
+                        .put(
+                            RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
+                            TagValue.create(settings.getAppProfileId()))
+                        .build()),
+                // Add user configured tracer
+                settings.getTracerFactory())));
+
+    return builder.build();
+  }
+
+  public EnhancedBigtableStub(EnhancedBigtableStubSettings settings, ClientContext clientContext) {
+    this.settings = settings;
+    this.clientContext = clientContext;
     this.requestContext =
         RequestContext.create(
             settings.getProjectId(), settings.getInstanceId(), settings.getAppProfileId());

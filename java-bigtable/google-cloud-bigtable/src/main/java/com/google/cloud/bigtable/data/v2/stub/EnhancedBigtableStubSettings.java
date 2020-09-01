@@ -28,7 +28,6 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.bigtable.data.v2.internal.RefreshChannel;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -150,6 +149,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final String instanceId;
   private final String appProfileId;
   private final boolean isRefreshingChannel;
+  private ImmutableList<String> primedTableIds;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
   private final UnaryCallSettings<Query, Row> readRowSettings;
@@ -188,6 +188,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     instanceId = builder.instanceId;
     appProfileId = builder.appProfileId;
     isRefreshingChannel = builder.isRefreshingChannel;
+    primedTableIds = builder.primedTableIds;
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
@@ -224,6 +225,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   @BetaApi("This API depends on experimental gRPC APIs")
   public boolean isRefreshingChannel() {
     return isRefreshingChannel;
+  }
+
+  /** Gets the tables that will be primed during a channel refresh. */
+  @BetaApi("Channel priming is not currently stable and might change in the future")
+  public List<String> getPrimedTableIds() {
+    return primedTableIds;
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
@@ -483,6 +490,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String instanceId;
     private String appProfileId;
     private boolean isRefreshingChannel;
+    private ImmutableList<String> primedTableIds;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
@@ -505,6 +513,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private Builder() {
       this.appProfileId = SERVER_DEFAULT_APP_PROFILE_ID;
       this.isRefreshingChannel = false;
+      primedTableIds = ImmutableList.of();
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
 
       // Defaults provider
@@ -610,6 +619,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       instanceId = settings.instanceId;
       appProfileId = settings.appProfileId;
       isRefreshingChannel = settings.isRefreshingChannel;
+      primedTableIds = settings.primedTableIds;
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
@@ -699,7 +709,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     }
 
     /**
-     * Sets if channels will gracefully refresh connections to Cloud Bigtable service
+     * Sets if channels will gracefully refresh connections to Cloud Bigtable service.
+     *
+     * <p>When enabled, this will wait for the connection to complete the SSL handshake. The effect
+     * can be enhanced by configuring table ids that can be used warm serverside caches using {@link
+     * #setPrimedTableIds(String...)}.
      *
      * @see com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder#setRefreshingChannel
      */
@@ -709,10 +723,23 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return this;
     }
 
+    /** Configures which tables will be primed when a connection is created. */
+    @BetaApi("Channel priming is not currently stable and might change in the future")
+    public Builder setPrimedTableIds(String... tableIds) {
+      this.primedTableIds = ImmutableList.copyOf(tableIds);
+      return this;
+    }
+
     /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
     @BetaApi("This API depends on experimental gRPC APIs")
     public boolean isRefreshingChannel() {
       return isRefreshingChannel;
+    }
+
+    /** Gets the tables that will be primed during a channel refresh. */
+    @BetaApi("Channel priming is not currently stable and might change in the future")
+    public List<String> getPrimedTableIds() {
+      return primedTableIds;
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
@@ -760,17 +787,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       Preconditions.checkState(projectId != null, "Project id must be set");
       Preconditions.checkState(instanceId != null, "Instance id must be set");
 
-      // Set ChannelPrimer on TransportChannelProvider so channels will gracefully refresh
-      // connections to Cloud Bigtable service
       if (isRefreshingChannel) {
         Preconditions.checkArgument(
             getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider,
             "refreshingChannel only works with InstantiatingGrpcChannelProviders");
-        InstantiatingGrpcChannelProvider.Builder channelBuilder =
-            ((InstantiatingGrpcChannelProvider) getTransportChannelProvider())
-                .toBuilder()
-                .setChannelPrimer(new RefreshChannel());
-        setTransportChannelProvider(channelBuilder.build());
       }
       return new EnhancedBigtableStubSettings(this);
     }

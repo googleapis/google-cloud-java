@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Strings;
 import io.grpc.ManagedChannelBuilder;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
@@ -185,9 +186,18 @@ public final class BigtableDataSettings {
   }
 
   /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
-  @BetaApi("This API depends on experimental gRPC APIs")
+  @BetaApi("Channel priming is not currently stable and may change in the future")
   public boolean isRefreshingChannel() {
     return stubSettings.isRefreshingChannel();
+  }
+
+  /**
+   * Gets the table ids that will be used to send warmup requests when {@link
+   * #isRefreshingChannel()} is enabled.
+   */
+  @BetaApi("Channel priming is not currently stable and may change in the future")
+  public List<String> getPrimingTableIds() {
+    return stubSettings.getPrimedTableIds();
   }
 
   /** Returns the underlying RPC settings. */
@@ -307,16 +317,38 @@ public final class BigtableDataSettings {
      * connections, which causes the client to renegotiate the gRPC connection in the request path,
      * which causes periodic spikes in latency
      */
-    @BetaApi("This API depends on experimental gRPC APIs")
+    @BetaApi("Channel priming is not currently stable and may change in the future")
     public Builder setRefreshingChannel(boolean isRefreshingChannel) {
       stubSettings.setRefreshingChannel(isRefreshingChannel);
       return this;
     }
 
     /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
-    @BetaApi("This API depends on experimental gRPC APIs")
+    @BetaApi("Channel priming is not currently stable and may change in the future")
     public boolean isRefreshingChannel() {
       return stubSettings.isRefreshingChannel();
+    }
+
+    /**
+     * Configure the tables that can be used to prime a channel during a refresh.
+     *
+     * <p>These tables work in conjunction with {@link #setRefreshingChannel(boolean)}. When a
+     * channel is refreshed, it will send a request to each table to warm up the serverside caches
+     * before admitting the new channel into the channel pool.
+     */
+    @BetaApi("Channel priming is not currently stable and may change in the future")
+    public Builder setPrimingTableIds(String... tableIds) {
+      stubSettings.setPrimedTableIds(tableIds);
+      return this;
+    }
+
+    /**
+     * Gets the table ids that will be used to send warmup requests when {@link
+     * #setRefreshingChannel(boolean)} is enabled.
+     */
+    @BetaApi("Channel priming is not currently stable and may change in the future")
+    public List<String> getPrimingTableIds() {
+      return stubSettings.getPrimedTableIds();
     }
 
     /**

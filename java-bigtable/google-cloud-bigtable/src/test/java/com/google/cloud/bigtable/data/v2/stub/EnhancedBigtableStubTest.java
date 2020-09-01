@@ -18,14 +18,13 @@ package com.google.cloud.bigtable.data.v2.stub;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.testing.InProcessServer;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -34,8 +33,11 @@ import com.google.common.collect.Queues;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -49,37 +51,40 @@ public class EnhancedBigtableStubTest {
 
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
-  private static final String FAKE_HOST_NAME = "fake-stub-host:123";
   private static final String TABLE_NAME =
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table");
   private static final String APP_PROFILE_ID = "app-profile-id";
 
-  private InProcessServer<?> server;
+  private Server server;
   private FakeDataService fakeDataService;
+  private EnhancedBigtableStubSettings defaultSettings;
   private EnhancedBigtableStub enhancedBigtableStub;
 
   @Before
   public void setUp() throws IOException, IllegalAccessException, InstantiationException {
+    int port;
+    try (ServerSocket ss = new ServerSocket(0)) {
+      port = ss.getLocalPort();
+    }
     fakeDataService = new FakeDataService();
-    server = new InProcessServer<>(fakeDataService, FAKE_HOST_NAME);
+    server = ServerBuilder.forPort(port).addService(fakeDataService).build();
     server.start();
 
-    EnhancedBigtableStubSettings enhancedBigtableStubSettings =
-        EnhancedBigtableStubSettings.newBuilder()
+    defaultSettings =
+        BigtableDataSettings.newBuilderForEmulator(port)
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
-            .setEndpoint(FAKE_HOST_NAME)
-            .setTransportChannelProvider(LocalChannelProvider.create(FAKE_HOST_NAME))
-            .build();
+            .build()
+            .getStubSettings();
 
-    enhancedBigtableStub = EnhancedBigtableStub.create(enhancedBigtableStubSettings);
+    enhancedBigtableStub = EnhancedBigtableStub.create(defaultSettings);
   }
 
   @After
   public void tearDown() {
-    server.stop();
+    server.shutdown();
   }
 
   @Test
@@ -115,6 +120,21 @@ public class EnhancedBigtableStubTest {
             .build();
     callable.call(expectedRequest2).iterator().next();
     assertThat(fakeDataService.popLastRequest()).isEqualTo(expectedRequest2);
+  }
+
+  @Test
+  public void testChannelPrimerConfigured() throws IOException {
+    EnhancedBigtableStubSettings settings =
+        defaultSettings
+            .toBuilder()
+            .setRefreshingChannel(true)
+            .setPrimedTableIds("table1", "table2")
+            .build();
+
+    try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
+      // priming will issue a request per table on startup
+      assertThat(fakeDataService.requests).hasSize(2);
+    }
   }
 
   private static class FakeDataService extends BigtableGrpc.BigtableImplBase {
