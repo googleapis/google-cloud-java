@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.15.0](https://www.github.com/googleapis/java-bigtable/compare/v1.14.0...v1.15.0) (2020-09-01)
+
+
+### Features
+
+* extend channel priming logic to also send fake requests ([#398](https://www.github.com/googleapis/java-bigtable/issues/398)) ([6f1ead2](https://www.github.com/googleapis/java-bigtable/commit/6f1ead2097150a87cb9712bcf35c6eaa9d57440c))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#350](https://www.github.com/googleapis/java-bigtable/issues/350)) ([2298596](https://www.github.com/googleapis/java-bigtable/commit/2298596dab8a1ef87c0f48d3abe8bc3955417eb1))
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#395](https://www.github.com/googleapis/java-bigtable/issues/395)) ([a56a0f8](https://www.github.com/googleapis/java-bigtable/commit/a56a0f8c9caf675b68d02587b042e1feeb261ccb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#377](https://www.github.com/googleapis/java-bigtable/issues/377)) ([bdae336](https://www.github.com/googleapis/java-bigtable/commit/bdae336074d80815dcaaf8c71befafc0ed66c079))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#402](https://www.github.com/googleapis/java-bigtable/issues/402)) ([08f7d84](https://www.github.com/googleapis/java-bigtable/commit/08f7d84333c6a74bf03e0a57707b878a29400dd4))
+
 ## [1.14.0](https://www.github.com/googleapis/java-bigtable/compare/v1.13.1...v1.14.0) (2020-07-20)
 
 
