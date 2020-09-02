@@ -47,6 +47,8 @@ public class PublishWithOrderingKeys {
     // Create a publisher and set message ordering to true.
     Publisher publisher =
         Publisher.newBuilder(topicName)
+            // Sending messages to the same region ensures they are received in order
+            // even when multiple publishers are used.
             .setEndpoint("us-east1-pubsub.googleapis.com:443")
             .setEnableMessageOrdering(true)
             .build();
