@@ -25,14 +25,20 @@ import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UpdateDatasetAccessIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
 
@@ -51,26 +57,28 @@ public class UpdateDatasetAccessIT {
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+    tableName = RemoteBigQueryHelper.generateDatasetName();
+    // Create a dataset in order to modify its ACL
+    CreateDataset.createDataset(tableName);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void updateDatasetAccess() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
-    // Create a dataset in order to modify its ACL
-    CreateDataset.createDataset(generatedDatasetName);
-
     Acl newEntry = Acl.of(new User("sample.bigquery.dev@gmail.com"), Role.READER);
     // Modify dataset's ACL
-    UpdateDatasetAccess.updateDatasetAccess(generatedDatasetName, newEntry);
+    UpdateDatasetAccess.updateDatasetAccess(tableName, newEntry);
     assertThat(bout.toString()).contains("Dataset Access Control updated successfully");
-
-    // Clean up
-    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, generatedDatasetName);
   }
 }

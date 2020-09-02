@@ -23,14 +23,20 @@ import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UpdateDatasetExpirationIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
 
@@ -49,26 +55,28 @@ public class UpdateDatasetExpirationIT {
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+    tableName = RemoteBigQueryHelper.generateDatasetName();
+    // Create a dataset in order to modify its expiration
+    CreateDataset.createDataset(tableName);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void updateDatasetExpiration() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
-    // Create a dataset in order to modify its expiration
-    CreateDataset.createDataset(generatedDatasetName);
-
     Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
     // Modify dataset's expiration
-    UpdateDatasetExpiration.updateDatasetExpiration(generatedDatasetName, newExpiration);
+    UpdateDatasetExpiration.updateDatasetExpiration(tableName, newExpiration);
     assertThat(bout.toString()).contains("Dataset description updated successfully");
-
-    // Clean up
-    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, generatedDatasetName);
   }
 }

@@ -26,6 +26,8 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -33,10 +35,12 @@ import org.junit.Test;
 
 public class QueryDestinationTableCmekIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String tableName;
   private EncryptionConfiguration encryption;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
   private static final String BIGQUERY_KMS_KEY_NAME = requireEnvVar("BIGQUERY_KMS_KEY_NAME");
@@ -59,6 +63,7 @@ public class QueryDestinationTableCmekIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     // create a test table with encryption key
@@ -69,17 +74,16 @@ public class QueryDestinationTableCmekIT {
             Field.of("booleanField", StandardSQLTypeName.BOOL));
     encryption = EncryptionConfiguration.newBuilder().setKmsKeyName(BIGQUERY_KMS_KEY_NAME).build();
     CreateTableCmek.createTableCmek(BIGQUERY_DATASET_NAME, tableName, schema, encryption);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

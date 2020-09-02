@@ -22,18 +22,22 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CopyMultipleTablesIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
-  private static final String BIGQUERY_TABLE1 = System.getenv("BIGQUERY_TABLE1");
-  private static final String BIGQUERY_TABLE2 = System.getenv("BIGQUERY_TABLE2");
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -44,33 +48,32 @@ public class CopyMultipleTablesIT {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("BIGQUERY_DATASET_NAME");
-    requireEnvVar("BIGQUERY_TABLE1");
-    requireEnvVar("BIGQUERY_TABLE2");
   }
 
   @Before
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+    // Create a new destination table for each test since existing table cannot be overwritten
+    tableName = "COPY_MULTIPLE_TABLE_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, null);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void testCopyMultipleTables() {
-    // Create a new destination table for each test since existing table cannot be overwritten
-    String generatedTableName =
-        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedTableName, null);
-
-    CopyMultipleTables.copyMultipleTables(BIGQUERY_DATASET_NAME, generatedTableName);
+    CopyMultipleTables.copyMultipleTables(BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString()).contains("Table copied successfully.");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, generatedTableName);
   }
 }

@@ -25,14 +25,20 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CreateTableIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
@@ -51,26 +57,28 @@ public class CreateTableIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+    tableName = "MY_TABLE_NAME_" + UUID.randomUUID().toString().replace("-", "_");
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void testCreateTable() {
-    String tableName = "MY_TABLE_NAME_" + UUID.randomUUID().toString().replace("-", "_");
     Schema schema =
         Schema.of(
             Field.of("stringField", StandardSQLTypeName.STRING),
             Field.of("booleanField", StandardSQLTypeName.BOOL));
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
-
     assertThat(bout.toString()).contains("Table created successfully");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }

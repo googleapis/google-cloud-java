@@ -25,14 +25,21 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CopyTableIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String sourceTable;
+  private String destinationTable;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
@@ -51,41 +58,37 @@ public class CopyTableIT {
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-  }
-
-  @Test
-  public void testCopyTable() {
     // Create a new destination and source table for each test since existing table cannot be
     // overwritten
-    String generatedDestTableName =
-        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
-    String generatedSourceTableName =
-        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
-
+    sourceTable = "SOURCE_TABLE_TEST" + UUID.randomUUID().toString().substring(0, 8);
+    destinationTable = "DESTINATION_TABLE_TEST" + UUID.randomUUID().toString().substring(0, 8);
     // Adding an arbitrary table schema so we aren't copying nothing.
     Schema schema =
         Schema.of(
             Field.of("stringField", StandardSQLTypeName.STRING),
             Field.of("booleanField", StandardSQLTypeName.BOOL));
 
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedDestTableName, schema);
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedSourceTableName, schema);
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, destinationTable, schema);
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, sourceTable, schema);
+  }
 
-    CopyTable.copyTable(
-        BIGQUERY_DATASET_NAME,
-        generatedSourceTableName,
-        BIGQUERY_DATASET_NAME,
-        generatedDestTableName);
-    assertThat(bout.toString()).contains("Table copied successfully.");
-
+  @After
+  public void tearDown() {
     // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, generatedDestTableName);
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, generatedSourceTableName);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, destinationTable);
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, sourceTable);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
+  }
+
+  @Test
+  public void testCopyTable() {
+    CopyTable.copyTable(
+        BIGQUERY_DATASET_NAME, sourceTable, BIGQUERY_DATASET_NAME, destinationTable);
+    assertThat(bout.toString()).contains("Table copied successfully.");
   }
 }

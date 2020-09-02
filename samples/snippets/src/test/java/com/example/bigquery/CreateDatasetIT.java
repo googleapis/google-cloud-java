@@ -22,14 +22,20 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CreateDatasetIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String datasetName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
 
@@ -46,23 +52,26 @@ public class CreateDatasetIT {
 
   @Before
   public void setUp() {
+    datasetName = RemoteBigQueryHelper.generateDatasetName();
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, datasetName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void testCreateDataset() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
-    CreateDataset.createDataset(generatedDatasetName);
-    assertThat(bout.toString()).contains(generatedDatasetName + " created successfully");
-
-    // Clean up
-    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, generatedDatasetName);
+    CreateDataset.createDataset(datasetName);
+    assertThat(bout.toString()).contains(datasetName + " created successfully");
   }
 }

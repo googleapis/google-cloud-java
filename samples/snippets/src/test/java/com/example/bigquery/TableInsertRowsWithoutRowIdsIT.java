@@ -25,6 +25,8 @@ import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,9 +34,11 @@ import org.junit.Test;
 
 public class TableInsertRowsWithoutRowIdsIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
@@ -53,6 +57,7 @@ public class TableInsertRowsWithoutRowIdsIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     tableName = "INSERT_ROW_WITHOUT_ROW_ID_TEST" + UUID.randomUUID().toString().substring(0, 8);
@@ -63,17 +68,16 @@ public class TableInsertRowsWithoutRowIdsIT {
 
     // Create table in dataset for testing
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

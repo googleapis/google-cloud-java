@@ -26,6 +26,8 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -33,10 +35,12 @@ import org.junit.Test;
 
 public class CopyTableCmekIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String sourceTableName;
   private String destinationTableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
   private static final String BIGQUERY_KMS_KEY_NAME = requireEnvVar("BIGQUERY_KMS_KEY_NAME");
@@ -59,6 +63,7 @@ public class CopyTableCmekIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     sourceTableName = "MY_SOURCE_TABLE_CMEK_TEST" + UUID.randomUUID().toString().substring(0, 8);
@@ -71,10 +76,6 @@ public class CopyTableCmekIT {
     EncryptionConfiguration configuration =
         EncryptionConfiguration.newBuilder().setKmsKeyName(BIGQUERY_KMS_KEY_NAME).build();
     CreateTableCmek.createTableCmek(BIGQUERY_DATASET_NAME, sourceTableName, schema, configuration);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
@@ -82,7 +83,10 @@ public class CopyTableCmekIT {
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, sourceTableName);
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, destinationTableName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

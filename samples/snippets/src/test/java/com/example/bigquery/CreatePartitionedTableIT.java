@@ -25,6 +25,8 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,9 +34,11 @@ import org.junit.Test;
 
 public class CreatePartitionedTableIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
@@ -54,6 +58,7 @@ public class CreatePartitionedTableIT {
     tableName = "MY_PARTITIONED_TABLE_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -61,7 +66,10 @@ public class CreatePartitionedTableIT {
   public void tearDown() {
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

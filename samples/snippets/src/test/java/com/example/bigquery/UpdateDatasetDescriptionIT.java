@@ -22,14 +22,20 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UpdateDatasetDescriptionIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
 
@@ -48,27 +54,29 @@ public class UpdateDatasetDescriptionIT {
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+    tableName = RemoteBigQueryHelper.generateDatasetName();
+    // Create a dataset in order to modify its description
+    CreateDataset.createDataset(tableName);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // Clean up
+    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
   public void updateDatasetDescription() {
-    String generatedDatasetName = RemoteBigQueryHelper.generateDatasetName();
     String newDescription = "new description!";
-    // Create a dataset in order to modify its description
-    CreateDataset.createDataset(generatedDatasetName);
-
     // Modify dataset's description
-    UpdateDatasetDescription.updateDatasetDescription(generatedDatasetName, newDescription);
+    UpdateDatasetDescription.updateDatasetDescription(tableName, newDescription);
     assertThat(bout.toString())
         .contains("Dataset description updated successfully to " + newDescription);
-
-    // Clean up
-    DeleteDataset.deleteDataset(GOOGLE_CLOUD_PROJECT, generatedDatasetName);
   }
 }

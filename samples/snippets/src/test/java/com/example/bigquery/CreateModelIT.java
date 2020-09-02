@@ -22,6 +22,8 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,9 +31,11 @@ import org.junit.Test;
 
 public class CreateModelIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String modelName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
@@ -53,6 +57,7 @@ public class CreateModelIT {
     modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().replace('-', '_');
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -60,7 +65,10 @@ public class CreateModelIT {
   public void tearDown() {
     // Clean up
     DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

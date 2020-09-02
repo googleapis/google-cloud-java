@@ -25,14 +25,20 @@ import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class RelaxTableQueryIT {
+
+  private final Logger log = Logger.getLogger(this.getClass().getName());
+  private String tableName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_PROJECT_ID = System.getenv("BIGQUERY_PROJECT_ID");
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
@@ -53,17 +59,9 @@ public class RelaxTableQueryIT {
   public void setUp() throws Exception {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-  }
-
-  @Test
-  public void testRelaxTableQuery() throws Exception {
-    String tableName = "RELAX_TABLE_QUERY_TEST" + UUID.randomUUID().toString().replace('-', '_');
+    tableName = "RELAX_TABLE_QUERY_TEST" + UUID.randomUUID().toString().substring(0, 8);
     Schema originalSchema =
         Schema.of(
             Field.newBuilder("word", LegacySQLTypeName.STRING).setMode(Field.Mode.REQUIRED).build(),
@@ -76,14 +74,23 @@ public class RelaxTableQueryIT {
             Field.newBuilder("corpus_date", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.REQUIRED)
                 .build());
-
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, originalSchema);
+  }
 
+  @After
+  public void tearDown() {
+    // Clean up
+    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
+  }
+
+  @Test
+  public void testRelaxTableQuery() throws Exception {
     RelaxTableQuery.relaxTableQuery(BIGQUERY_PROJECT_ID, BIGQUERY_DATASET_NAME, tableName);
     assertThat(bout.toString())
         .contains("Successfully relaxed all columns in destination table during query job");
-
-    // Clean up
-    DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
   }
 }

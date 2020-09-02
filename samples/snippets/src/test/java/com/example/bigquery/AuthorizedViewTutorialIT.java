@@ -22,6 +22,8 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,12 +31,14 @@ import org.junit.Test;
 
 public class AuthorizedViewTutorialIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String sourceDatasetId;
   private String sourceTableId;
   private String sharedDatasetId;
   private String sharedViewId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -60,6 +64,7 @@ public class AuthorizedViewTutorialIT {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -68,7 +73,10 @@ public class AuthorizedViewTutorialIT {
     // Clean up
     DeleteDataset.deleteDataset(PROJECT_ID, sourceDatasetId);
     DeleteDataset.deleteDataset(PROJECT_ID, sharedDatasetId);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test

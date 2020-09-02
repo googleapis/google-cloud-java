@@ -22,6 +22,8 @@ import com.google.common.truth.Truth;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,9 +31,11 @@ import org.junit.Test;
 
 public class ListModelsIT {
 
+  private final Logger log = Logger.getLogger(this.getClass().getName());
   private String modelName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
@@ -52,6 +56,7 @@ public class ListModelsIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     // Create a new model to be deleted
@@ -73,17 +78,16 @@ public class ListModelsIT {
             + "SELECT 'b' AS f1, 3.8 AS label "
             + ")";
     CreateModel.createModel(sql);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // Clean up
     DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    log.log(Level.INFO, "\n" + bout.toString());
   }
 
   @Test
