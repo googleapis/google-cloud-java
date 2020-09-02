@@ -85,6 +85,7 @@ import com.google.cloud.bigquery.RoutineId;
 import com.google.cloud.bigquery.RoutineInfo;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLDataType;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDataWriteChannel;
@@ -1547,13 +1548,67 @@ public class ITBigQueryTest {
     for (FieldValueList values : result.iterateAll()) {
       for (FieldValue value : values) {
         for (FieldValue record : value.getRecordValue()) {
-          assertEquals(FieldValue.Attribute.RECORD, record.getAttribute());
-          assertEquals(true, record.getRecordValue().get(0).getBooleanValue());
-          assertEquals(10, record.getRecordValue().get(1).getLongValue());
-          assertEquals("test-stringField", record.getRecordValue().get(2).getStringValue());
+          assertsFieldValue(record);
         }
       }
     }
+  }
+
+  @Test
+  public void testStructQuery() throws InterruptedException {
+    String tableName = "test_record_table_" + UUID.randomUUID().toString().substring(0, 8);
+    TableId tableId = TableId.of(DATASET, tableName);
+    try {
+      // create a table
+      Field booleanField = Field.of("booleanField", StandardSQLTypeName.BOOL);
+      Field integerField = Field.of("integerField", StandardSQLTypeName.INT64);
+      Field stringField = Field.of("stringField", StandardSQLTypeName.STRING);
+      Field recordField =
+          Field.newBuilder(
+                  "recordField",
+                  StandardSQLTypeName.STRUCT,
+                  booleanField,
+                  integerField,
+                  stringField)
+              .setMode(Field.Mode.NULLABLE)
+              .build();
+      Schema schema = Schema.of(recordField);
+      StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+      assertNotNull(bigquery.create(TableInfo.of(tableId, tableDefinition)));
+      // inserting data
+      Map<String, Object> content = new HashMap<>();
+      content.put("booleanField", true);
+      content.put("integerField", 10);
+      content.put("stringField", "test-stringField");
+      Map<String, Object> recordContent = new HashMap<>();
+      recordContent.put("recordField", content);
+      InsertAllResponse response =
+          bigquery.insertAll(InsertAllRequest.newBuilder(tableId).addRow(recordContent).build());
+      assertFalse(response.hasErrors());
+      // query into a table
+      String query = String.format("SELECT * FROM %s.%s", DATASET, tableName);
+      QueryJobConfiguration config =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DATASET)
+              .setUseLegacySql(false)
+              .build();
+      TableResult result = bigquery.query(config);
+      assertEquals(1, Iterables.size(result.getValues()));
+      for (FieldValueList values : result.iterateAll()) {
+        for (FieldValue record : values) {
+          assertsFieldValue(record);
+        }
+      }
+    } finally {
+      assertTrue(bigquery.delete(tableId));
+    }
+  }
+
+  private static void assertsFieldValue(FieldValue record) {
+    assertEquals(FieldValue.Attribute.RECORD, record.getAttribute());
+    assertEquals(true, record.getRecordValue().get("booleanField").getBooleanValue());
+    assertEquals(10, record.getRecordValue().get("integerField").getLongValue());
+    assertEquals("test-stringField", record.getRecordValue().get("stringField").getStringValue());
   }
 
   @Test

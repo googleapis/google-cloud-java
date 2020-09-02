@@ -177,9 +177,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private final Map<BigQueryRpc.Option, ?> requestOptions;
     private final BigQueryOptions serviceOptions;
     private final TableId table;
+    private final Schema schema;
 
     TableDataPageFetcher(
         TableId table,
+        Schema schema,
         BigQueryOptions serviceOptions,
         String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
@@ -187,11 +189,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
       this.table = table;
+      this.schema = schema;
     }
 
     @Override
     public Page<FieldValueList> getNextPage() {
-      return listTableData(table, serviceOptions, requestOptions).x();
+      return listTableData(table, schema, serviceOptions, requestOptions).x();
     }
   }
 
@@ -1014,12 +1017,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public TableResult listTableData(TableId tableId, Schema schema, TableDataListOption... options) {
     Tuple<? extends Page<FieldValueList>, Long> data =
-        listTableData(tableId, getOptions(), optionMap(options));
+        listTableData(tableId, schema, getOptions(), optionMap(options));
     return new TableResult(schema, data.y(), data.x());
   }
 
   private static Tuple<? extends Page<FieldValueList>, Long> listTableData(
       final TableId tableId,
+      final Schema schema,
       final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
@@ -1048,23 +1052,26 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       String cursor = result.getPageToken();
       return Tuple.of(
           new PageImpl<>(
-              new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
+              new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, optionsMap),
               cursor,
-              transformTableData(result.getRows())),
+              transformTableData(result.getRows(), schema)),
           result.getTotalRows());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
-  private static Iterable<FieldValueList> transformTableData(Iterable<TableRow> tableDataPb) {
+  private static Iterable<FieldValueList> transformTableData(
+      Iterable<TableRow> tableDataPb, final Schema schema) {
     return ImmutableList.copyOf(
         Iterables.transform(
             tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
             new Function<TableRow, FieldValueList>() {
+              FieldList fields = schema != null ? schema.getFields() : null;
+
               @Override
               public FieldValueList apply(TableRow rowPb) {
-                return FieldValueList.fromPb(rowPb.getF(), null);
+                return FieldValueList.fromPb(rowPb.getF(), fields);
               }
             }));
   }
