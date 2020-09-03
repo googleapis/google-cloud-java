@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>9.1.0</version>
+      <version>10.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.8</version>
 </dependency>
 
 ```
@@ -96,6 +96,7 @@ has instructions for running the samples.
 | Create Scheduled Query | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQuery.java) |
 | Delete Scheduled Query | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteScheduledQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteScheduledQuery.java) |
 | Get Transfer Config Info | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) |
+| List Transfer Configs | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) |
 
 
