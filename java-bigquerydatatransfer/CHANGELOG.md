@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.10](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.9...v1.0.10) (2020-09-03)
+
+
+### Documentation
+
+* **samples:** add create scheduled query with service account ([#322](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/322)) ([35552a6](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/35552a60e2036a7767ed4caa39d71aa808f565d1))
+
 ### [1.0.9](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.8...v1.0.9) (2020-09-01)
 
 
