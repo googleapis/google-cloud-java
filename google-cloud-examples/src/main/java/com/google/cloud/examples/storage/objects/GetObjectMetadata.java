@@ -50,6 +50,7 @@ public class GetObjectMetadata {
     System.out.println("ContentEncoding: " + blob.getContentEncoding());
     System.out.println("ContentLanguage: " + blob.getContentLanguage());
     System.out.println("ContentType: " + blob.getContentType());
+    System.out.println("CustomTime: " + blob.getCustomTime());
     System.out.println("Crc32c: " + blob.getCrc32c());
     System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
     System.out.println("ETag: " + blob.getEtag());

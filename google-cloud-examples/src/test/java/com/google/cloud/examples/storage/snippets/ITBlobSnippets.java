@@ -196,6 +196,7 @@ public class ITBlobSnippets {
     assertTrue(snippetOutput.contains("ContentEncoding: " + remoteBlob.getContentEncoding()));
     assertTrue(snippetOutput.contains("ContentLanguage: " + remoteBlob.getContentLanguage()));
     assertTrue(snippetOutput.contains("ContentType: " + remoteBlob.getContentType()));
+    assertTrue(snippetOutput.contains("CustomTime: " + remoteBlob.getCustomerEncryption()));
     assertTrue(snippetOutput.contains("Crc32c: " + remoteBlob.getCrc32c()));
     assertTrue(snippetOutput.contains("Crc32cHexString: " + remoteBlob.getCrc32cToHexString()));
     assertTrue(snippetOutput.contains("ETag: " + remoteBlob.getEtag()));
