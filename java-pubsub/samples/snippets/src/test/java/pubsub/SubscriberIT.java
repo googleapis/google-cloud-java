@@ -165,19 +165,19 @@ public class SubscriberIT {
       assertThat(bout.toString()).contains("Data: Hello " + i);
     }
 
-    publishSomeMessages(10);
+    publishSomeMessages(3);
     bout.reset();
     // Test subscribe synchronously.
     SubscribeSyncExample.subscribeSyncExample(projectId, subscriptionId, 10);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 3; i++) {
       assertThat(bout.toString()).contains("Hello " + i);
     }
 
-    publishSomeMessages(10);
+    publishSomeMessages(3);
     bout.reset();
     // Test subscribe synchronously with lease management.
     SubscribeSyncWithLeaseExample.subscribeSyncWithLeaseExample(projectId, subscriptionId, 10);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 3; i++) {
       assertThat(bout.toString()).contains("Hello " + i);
     }
   }
