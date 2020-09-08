@@ -27,6 +27,7 @@ jobs:
           if (
             context.payload.pull_request.body.includes("Fix") ||
             context.payload.pull_request.body.includes("Build") ||
+            context.payload.pull_request.body.includes("Documentation") ||
             context.payload.pull_request.body.includes("BREAKING CHANGES") ||
             context.payload.pull_request.body.includes("Features")
           ) {
