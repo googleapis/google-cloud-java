@@ -28,7 +28,7 @@
   </properties>
 
   <modules>
-    <module>install-with-bom</module>
+    <module>snapshot</module>
     <module>install-without-bom</module>
     <module>snippets</module>
   </modules>

@@ -35,7 +35,8 @@ public class ListLogs {
 
     try (Logging logging = options.getService()) {
 
-      String logFilter = "logName=projects/" + options.getProjectId() + "/logs/" + logName;
+      String logFilter = "logName=projects/" + options.getProjectId() + "/logs/" + logName +
+          " AND timestamp>=\"2020-09-01T00:00:00.000Z\"";
 
       // List all log entries
       Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(logFilter));
