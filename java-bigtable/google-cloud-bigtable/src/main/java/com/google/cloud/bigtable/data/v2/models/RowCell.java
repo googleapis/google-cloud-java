@@ -20,6 +20,7 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.common.collect.ComparisonChain;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
 import java.util.Comparator;
@@ -62,7 +63,13 @@ public abstract class RowCell implements Serializable {
       long timestamp,
       @Nonnull List<String> labels,
       @Nonnull ByteString value) {
-    return new AutoValue_RowCell(family, qualifier, timestamp, value, labels);
+    // Ensure that the list is serializable and optimize for the common case
+    if (labels.isEmpty()) {
+      labels = ImmutableList.of();
+    } else {
+      labels = ImmutableList.copyOf(labels);
+    }
+    return new AutoValue_RowCell(family, qualifier, timestamp, value, ImmutableList.copyOf(labels));
   }
 
   /** The cell's family */

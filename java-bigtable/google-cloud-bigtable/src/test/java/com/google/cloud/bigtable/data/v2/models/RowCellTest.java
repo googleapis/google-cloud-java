@@ -19,6 +19,14 @@ import static com.google.common.truth.Truth.*;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.LazyStringArrayList;
+import com.google.protobuf.UnmodifiableLazyStringList;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import org.junit.Test;
@@ -97,5 +105,47 @@ public class RowCellTest {
                 RowCell.create("family1", col1, timestamp1, labels1, value1),
                 RowCell.create("family1", col1, timestamp2, labels1, value1)))
         .isEqualTo(1);
+  }
+
+  @Test
+  public void testSerialization() throws IOException, ClassNotFoundException {
+    LazyStringArrayList lazyList = new LazyStringArrayList();
+    lazyList.add("lazy");
+    lazyList.add("very lazy");
+    List[] labelLists = {
+      Arrays.asList("str1", "str2", "str3"),
+      ImmutableList.of("string1", "string2"),
+      new UnmodifiableLazyStringList(lazyList),
+      new UnmodifiableLazyStringList(LazyStringArrayList.EMPTY)
+    };
+
+    for (int i = 0; i < labelLists.length; i++) {
+      String family = "family_" + i;
+      ByteString col = ByteString.copyFromUtf8("col_" + i);
+      long timestamp = 1000L * (i + 1);
+      List<String> labels = labelLists[i];
+      ByteString value = ByteString.copyFromUtf8("value_" + i);
+      RowCell cell = RowCell.create(family, col, timestamp, labels, value);
+      RowCell deserialized = (RowCell) serializeDeserialize(cell);
+
+      assertThat(cell.getFamily()).isEqualTo(deserialized.getFamily());
+      assertThat(cell.getQualifier()).isEqualTo(deserialized.getQualifier());
+      assertThat(cell.getTimestamp()).isEqualTo(deserialized.getTimestamp());
+      assertThat(cell.getLabels()).isEqualTo(deserialized.getLabels());
+      assertThat(cell.getValue()).isEqualTo(deserialized.getValue());
+    }
+  }
+
+  private static Object serializeDeserialize(Object obj)
+      throws IOException, ClassNotFoundException {
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    try (ObjectOutputStream outStream = new ObjectOutputStream(bos)) {
+      outStream.writeObject(obj);
+    }
+
+    ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+    try (ObjectInputStream inStream = new ObjectInputStream(bis)) {
+      return inStream.readObject();
+    }
   }
 }
