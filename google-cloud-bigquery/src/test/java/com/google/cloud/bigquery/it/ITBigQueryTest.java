@@ -860,7 +860,7 @@ public class ITBigQueryTest {
 
   @Test
   public void testListPartitions() throws InterruptedException {
-    String tableName = "test_table_partitions";
+    String tableName = "test_table_partitions_" + UUID.randomUUID().toString().substring(0, 8);
     Date date = Date.fromJavaUtilDate(new java.util.Date());
     String partitionDate = date.toString().replaceAll("-", "");
     TableId tableId = TableId.of(DATASET, tableName + "$" + partitionDate);
@@ -873,18 +873,15 @@ public class ITBigQueryTest {
     Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(query).build()));
     job.waitFor();
     assertTrue(job.isDone());
-    try {
-      Map<String, Object> row = new HashMap<String, Object>();
-      row.put("StringField", "StringValue");
-      InsertAllRequest request = InsertAllRequest.newBuilder(tableId).addRow(row).build();
-      InsertAllResponse response = bigquery.insertAll(request);
-      assertFalse(response.hasErrors());
-      assertEquals(0, response.getInsertErrors().size());
-      List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
-      assertEquals(1, partitions.size());
-    } finally {
-      bigquery.delete(tableId);
-    }
+    Map<String, Object> row = new HashMap<>();
+    row.put("StringField", "StringValue");
+    InsertAllRequest request = InsertAllRequest.newBuilder(tableId).addRow(row).build();
+    InsertAllResponse response = bigquery.insertAll(request);
+    assertFalse(response.hasErrors());
+    assertEquals(0, response.getInsertErrors().size());
+    List<String> partitions = bigquery.listPartitions(TableId.of(DATASET, tableName));
+    assertEquals(1, partitions.size());
+    bigquery.delete(tableId);
   }
 
   @Test
