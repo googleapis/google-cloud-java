@@ -587,7 +587,7 @@ public class SchemaCompatibilityTest {
                 .build()));
     SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
-        new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), SFixed64Type.getDescriptor()));
+        new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), StringType.getDescriptor()));
 
     for (Descriptors.Descriptor descriptor : type_descriptors) {
       if (compatible.contains(descriptor)) {
@@ -649,7 +649,7 @@ public class SchemaCompatibilityTest {
                 .build()));
     SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
-        new HashSet<>(Arrays.asList(BytesType.getDescriptor()));
+        new HashSet<>(Arrays.asList(StringType.getDescriptor()));
 
     for (Descriptors.Descriptor descriptor : type_descriptors) {
       if (compatible.contains(descriptor)) {
@@ -730,6 +730,7 @@ public class SchemaCompatibilityTest {
                 SFixed32Type.getDescriptor(),
                 SFixed64Type.getDescriptor(),
                 BytesType.getDescriptor(),
+                StringType.getDescriptor(),
                 FloatType.getDescriptor(),
                 DoubleType.getDescriptor()));
 
@@ -879,7 +880,7 @@ public class SchemaCompatibilityTest {
                 .build()));
     SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
-        new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), SFixed64Type.getDescriptor()));
+        new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), StringType.getDescriptor()));
 
     for (Descriptors.Descriptor descriptor : type_descriptors) {
       if (compatible.contains(descriptor)) {

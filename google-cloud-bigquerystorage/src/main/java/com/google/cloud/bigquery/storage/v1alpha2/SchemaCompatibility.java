@@ -156,8 +156,8 @@ public class SchemaCompatibility {
   }
 
   private static boolean isCompatibleWithBQDatetime(Descriptors.FieldDescriptor.Type field) {
-    if (field == Descriptors.FieldDescriptor.Type.INT64
-        || field == Descriptors.FieldDescriptor.Type.SFIXED64) {
+    if (field == Descriptors.FieldDescriptor.Type.STRING
+        || field == Descriptors.FieldDescriptor.Type.INT64) {
       return true;
     }
     return false;
@@ -174,7 +174,7 @@ public class SchemaCompatibility {
   }
 
   private static boolean isCompatibleWithBQGeography(Descriptors.FieldDescriptor.Type field) {
-    if (field == Descriptors.FieldDescriptor.Type.BYTES) {
+    if (field == Descriptors.FieldDescriptor.Type.STRING) {
       return true;
     }
     return false;
@@ -201,15 +201,10 @@ public class SchemaCompatibility {
         || field == Descriptors.FieldDescriptor.Type.FIXED32
         || field == Descriptors.FieldDescriptor.Type.FIXED64
         || field == Descriptors.FieldDescriptor.Type.SFIXED32
-        || field == Descriptors.FieldDescriptor.Type.SFIXED64) {
-      return true;
-    }
-
-    if (field == Descriptors.FieldDescriptor.Type.BYTES) {
-      return true;
-    }
-
-    if (field == Descriptors.FieldDescriptor.Type.FLOAT
+        || field == Descriptors.FieldDescriptor.Type.SFIXED64
+        || field == Descriptors.FieldDescriptor.Type.STRING
+        || field == Descriptors.FieldDescriptor.Type.BYTES
+        || field == Descriptors.FieldDescriptor.Type.FLOAT
         || field == Descriptors.FieldDescriptor.Type.DOUBLE) {
       return true;
     }
@@ -235,7 +230,7 @@ public class SchemaCompatibility {
 
   private static boolean isCompatibleWithBQTime(Descriptors.FieldDescriptor.Type field) {
     if (field == Descriptors.FieldDescriptor.Type.INT64
-        || field == Descriptors.FieldDescriptor.Type.SFIXED64) {
+        || field == Descriptors.FieldDescriptor.Type.STRING) {
 
       return true;
     }
