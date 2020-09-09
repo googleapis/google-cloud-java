@@ -215,8 +215,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Parent resource name.
-   * - Format:projects/[PROJECT-ID]
-   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * The format of this value varies depending on whether you have [specified a
+   * processing location](/dlp/docs/specifying-location):
+   * + Projects scope, location specified:&lt;br/&gt;
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   * The following example `parent` string specifies a parent project with the
+   * identifier `example-project`, and specifies the `europe-west3` location
+   * for processing data:
+   *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
    * <code>
@@ -242,8 +250,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Parent resource name.
-   * - Format:projects/[PROJECT-ID]
-   * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * The format of this value varies depending on whether you have [specified a
+   * processing location](/dlp/docs/specifying-location):
+   * + Projects scope, location specified:&lt;br/&gt;
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   * The following example `parent` string specifies a parent project with the
+   * identifier `example-project`, and specifies the `europe-west3` location
+   * for processing data:
+   *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
    * <code>
@@ -913,8 +929,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Parent resource name.
-     * - Format:projects/[PROJECT-ID]
-     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * The format of this value varies depending on whether you have [specified a
+     * processing location](/dlp/docs/specifying-location):
+     * + Projects scope, location specified:&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * The following example `parent` string specifies a parent project with the
+     * identifier `example-project`, and specifies the `europe-west3` location
+     * for processing data:
+     *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
      * <code>
@@ -939,8 +963,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Parent resource name.
-     * - Format:projects/[PROJECT-ID]
-     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * The format of this value varies depending on whether you have [specified a
+     * processing location](/dlp/docs/specifying-location):
+     * + Projects scope, location specified:&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * The following example `parent` string specifies a parent project with the
+     * identifier `example-project`, and specifies the `europe-west3` location
+     * for processing data:
+     *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
      * <code>
@@ -965,8 +997,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Parent resource name.
-     * - Format:projects/[PROJECT-ID]
-     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * The format of this value varies depending on whether you have [specified a
+     * processing location](/dlp/docs/specifying-location):
+     * + Projects scope, location specified:&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * The following example `parent` string specifies a parent project with the
+     * identifier `example-project`, and specifies the `europe-west3` location
+     * for processing data:
+     *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
      * <code>
@@ -990,8 +1030,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Parent resource name.
-     * - Format:projects/[PROJECT-ID]
-     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * The format of this value varies depending on whether you have [specified a
+     * processing location](/dlp/docs/specifying-location):
+     * + Projects scope, location specified:&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * The following example `parent` string specifies a parent project with the
+     * identifier `example-project`, and specifies the `europe-west3` location
+     * for processing data:
+     *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
      * <code>
@@ -1011,8 +1059,16 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Parent resource name.
-     * - Format:projects/[PROJECT-ID]
-     * - Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+     * The format of this value varies depending on whether you have [specified a
+     * processing location](/dlp/docs/specifying-location):
+     * + Projects scope, location specified:&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+     * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+     *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     * The following example `parent` string specifies a parent project with the
+     * identifier `example-project`, and specifies the `europe-west3` location
+     * for processing data:
+     *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
      * <code>

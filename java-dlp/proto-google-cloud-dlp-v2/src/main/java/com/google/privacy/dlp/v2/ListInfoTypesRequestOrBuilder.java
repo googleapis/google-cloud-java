@@ -28,7 +28,8 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * <pre>
    * The parent resource name.
-   * - Format:locations/[LOCATION-ID]
+   * The format of this value is as follows:
+   *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * </pre>
    *
    * <code>string parent = 4;</code>
@@ -41,7 +42,8 @@ public interface ListInfoTypesRequestOrBuilder
    *
    * <pre>
    * The parent resource name.
-   * - Format:locations/[LOCATION-ID]
+   * The format of this value is as follows:
+   *     locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * </pre>
    *
    * <code>string parent = 4;</code>

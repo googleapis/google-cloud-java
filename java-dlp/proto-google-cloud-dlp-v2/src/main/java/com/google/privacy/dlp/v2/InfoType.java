@@ -120,8 +120,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-   * a built-in type. InfoType names should conform to the pattern
-   * `[a-zA-Z0-9_]{1,64}`.
+   * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+   * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -147,8 +147,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-   * a built-in type. InfoType names should conform to the pattern
-   * `[a-zA-Z0-9_]{1,64}`.
+   * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+   * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -489,8 +489,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type. InfoType names should conform to the pattern
-     * `[a-zA-Z0-9_]{1,64}`.
+     * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+     * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -515,8 +515,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type. InfoType names should conform to the pattern
-     * `[a-zA-Z0-9_]{1,64}`.
+     * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+     * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -541,8 +541,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type. InfoType names should conform to the pattern
-     * `[a-zA-Z0-9_]{1,64}`.
+     * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+     * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -566,8 +566,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type. InfoType names should conform to the pattern
-     * `[a-zA-Z0-9_]{1,64}`.
+     * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+     * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -587,8 +587,8 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type. InfoType names should conform to the pattern
-     * `[a-zA-Z0-9_]{1,64}`.
+     * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
+     * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
      * </pre>
      *
      * <code>string name = 1;</code>

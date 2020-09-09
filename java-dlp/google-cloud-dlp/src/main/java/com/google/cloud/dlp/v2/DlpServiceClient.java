@@ -443,7 +443,9 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The parent resource name. - Format:locations/[LOCATION-ID]
+   * @param parent The parent resource name.
+   *     <p>The format of this value is as follows:
+   *     <p>locations/&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInfoTypesResponse listInfoTypes(String parent) {
@@ -507,10 +509,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -539,10 +552,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -571,10 +595,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -603,10 +638,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -635,10 +681,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectTemplate Required. The InspectTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -935,10 +992,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(
@@ -965,10 +1033,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(ProjectName parent) {
@@ -994,10 +1073,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(OrganizationName parent) {
@@ -1023,10 +1113,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(LocationName parent) {
@@ -1052,10 +1153,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInspectTemplatesPagedResponse listInspectTemplates(String parent) {
@@ -1262,10 +1374,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1295,10 +1418,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1328,10 +1462,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1361,10 +1506,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1394,10 +1550,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param deidentifyTemplate Required. The DeidentifyTemplate to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1699,10 +1866,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
@@ -1730,10 +1908,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(ProjectName parent) {
@@ -1760,10 +1949,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(
@@ -1791,10 +1991,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(LocationName parent) {
@@ -1821,10 +2032,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeidentifyTemplatesPagedResponse listDeidentifyTemplates(String parent) {
@@ -2034,8 +2256,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2063,8 +2293,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2092,8 +2330,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param jobTrigger Required. The JobTrigger to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2479,8 +2725,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobTriggersPagedResponse listJobTriggers(ProjectName parent) {
@@ -2506,8 +2760,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobTriggersPagedResponse listJobTriggers(LocationName parent) {
@@ -2533,8 +2795,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobTriggersPagedResponse listJobTriggers(String parent) {
@@ -2738,8 +3008,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectJob Set to control what and how to inspect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2772,8 +3050,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectJob Set to control what and how to inspect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2806,8 +3092,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param inspectJob Set to control what and how to inspect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2837,8 +3131,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param riskJob Set to choose what metric to calculate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2871,8 +3173,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param riskJob Set to choose what metric to calculate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2905,8 +3215,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param riskJob Set to choose what metric to calculate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2990,8 +3308,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDlpJobsPagedResponse listDlpJobs(ProjectName parent) {
@@ -3019,8 +3345,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDlpJobsPagedResponse listDlpJobs(LocationName parent) {
@@ -3048,8 +3382,16 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDlpJobsPagedResponse listDlpJobs(String parent) {
@@ -3406,10 +3748,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3438,10 +3791,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3470,10 +3834,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3502,10 +3877,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3534,10 +3920,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @param config Required. Configuration of the storedInfoType to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3835,10 +4232,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
@@ -3866,10 +4274,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(ProjectName parent) {
@@ -3896,10 +4315,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(OrganizationName parent) {
@@ -3926,10 +4356,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(LocationName parent) {
@@ -3956,10 +4397,21 @@ public class DlpServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. Parent resource name. - Format:projects/[PROJECT-ID] -
-   *     Format:organizations/[ORGANIZATION-ID] -
-   *     Format:projects/[PROJECT-ID]/locations/[LOCATION-ID] -
-   *     Format:organizations/[ORGANIZATION-ID]/locations/[LOCATION-ID]
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value varies depending on the scope of the request (project or
+   *     organization) and whether you have [specified a processing
+   *     location](/dlp/docs/specifying-location):
+   *     <p>+ Projects scope, location specified:&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
+   *     specified:&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
+   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(String parent) {

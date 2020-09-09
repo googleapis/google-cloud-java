@@ -172,7 +172,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * How to sample rows if not all rows are scanned. Meaningful only when used
    * in conjunction with either rows_limit or rows_limit_percent. If not
-   * specified, scanning would start from the top.
+   * specified, rows are scanned in the order BigQuery reads them.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.BigQueryOptions.SampleMethod}
@@ -184,7 +184,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Scan from the top (default).
+     * Scan groups of rows in the order BigQuery provides (default). Multiple
+     * groups of rows may be scanned in parallel, so results may not appear in
+     * the same order the rows are read.
      * </pre>
      *
      * <code>TOP = 1;</code>
@@ -194,7 +196,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * Randomly pick groups of rows to scan.
      * </pre>
      *
      * <code>RANDOM_START = 2;</code>
@@ -209,7 +211,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Scan from the top (default).
+     * Scan groups of rows in the order BigQuery provides (default). Multiple
+     * groups of rows may be scanned in parallel, so results may not appear in
+     * the same order the rows are read.
      * </pre>
      *
      * <code>TOP = 1;</code>
@@ -219,7 +223,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Randomly pick the row to start scanning. The scanned rows are contiguous.
+     * Randomly pick groups of rows to scan.
      * </pre>
      *
      * <code>RANDOM_START = 2;</code>
