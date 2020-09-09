@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
 </dependency>
 
 ```
@@ -99,6 +99,7 @@ has instructions for running the samples.
 | Get Transfer Config Info | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) |
 | List Transfer Configs | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) |
+| Run Notification | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/master/samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunNotification.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunNotification.java) |
 
 
 
