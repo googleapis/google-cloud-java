@@ -118,7 +118,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
   }
 
   public static Builder newBuilder() {
-    return new Builder();
+    return new Builder().setHost(com.google.api.services.dns.Dns.DEFAULT_BASE_URL);
   }
 
   /**
