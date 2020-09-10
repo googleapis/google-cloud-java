@@ -99,6 +99,7 @@ public class ITBlobSnippets {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
+    storage.create(BlobInfo.newBuilder(BUCKET, BLOB).build(), CONTENT);
   }
 
   @AfterClass
@@ -153,7 +154,7 @@ public class ITBlobSnippets {
   public void testDownloadObject() throws IOException {
     File tempFile = File.createTempFile("file", ".txt");
     try {
-      DownloadObject.downloadObject(PROJECT_ID, BUCKET, BLOB, tempFile.toPath());
+      DownloadObject.downloadObject(PROJECT_ID, BUCKET, BLOB, tempFile.getPath());
       assertEquals("Hello, World!", new String(Files.readAllBytes(tempFile.toPath())));
     } finally {
       tempFile.delete();
