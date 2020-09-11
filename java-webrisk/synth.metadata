@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-webrisk.git",
-        "sha": "15bec677fa6d53bae7840c0c24acd8f8ae86eed3"
+        "sha": "998863e2c19d1e0a92f7f07c71792d4e9b869dc8"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "968465a1cad496e1292ef4584a054a35f756ff94"
+        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
       }
     }
   ],
