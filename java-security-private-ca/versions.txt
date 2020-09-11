@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-security-privateca:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-security-privateca-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-security-privateca-v1beta1:0.0.0:0.0.1-SNAPSHOT

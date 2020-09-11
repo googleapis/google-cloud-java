@@ -1,0 +1,15 @@
+{
+  "name": "security-privateca",
+  "name_pretty": "Certificate Authority Service",
+  "product_documentation": "https://cloud.google.com/certificate-authority-service",
+  "api_description": "simplifies the deployment and management of private CAs without managing infrastructure.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-security-privateca/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-security-privateca",
+  "repo_short": "java-security-privateca",
+  "distribution_name": "com.google.cloud:google-cloud-security-privateca",
+  "api_id": "security-privateca.googleapis.com",
+  "requires_billing": true
+}

@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": "."
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "7a906c83566d0d429b23da434a4dc2b4de7b117a",
+        "internalRef": "331220195"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b15c0c042cdea746fc19856527d8baf947c3c220"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "security-privateca",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
