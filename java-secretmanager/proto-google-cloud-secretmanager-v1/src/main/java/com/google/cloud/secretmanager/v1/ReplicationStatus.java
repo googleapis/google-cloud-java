@@ -22,27 +22,27 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * A policy that defines the replication and encryption configuration of data.
+ * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
  * </pre>
  *
- * Protobuf type {@code google.cloud.secretmanager.v1.Replication}
+ * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus}
  */
-public final class Replication extends com.google.protobuf.GeneratedMessageV3
+public final class ReplicationStatus extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication)
-    ReplicationOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.ReplicationStatus)
+    ReplicationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Replication.newBuilder() to construct.
-  private Replication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ReplicationStatus.newBuilder() to construct.
+  private ReplicationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Replication() {}
+  private ReplicationStatus() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Replication();
+    return new ReplicationStatus();
   }
 
   @java.lang.Override
@@ -50,7 +50,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Replication(
+  private ReplicationStatus(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,42 +70,49 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              com.google.cloud.secretmanager.v1.Replication.Automatic.Builder subBuilder = null;
-              if (replicationCase_ == 1) {
+              com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder
+                  subBuilder = null;
+              if (replicationStatusCase_ == 1) {
                 subBuilder =
-                    ((com.google.cloud.secretmanager.v1.Replication.Automatic) replication_)
+                    ((com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                            replicationStatus_)
                         .toBuilder();
               }
-              replication_ =
+              replicationStatus_ =
                   input.readMessage(
-                      com.google.cloud.secretmanager.v1.Replication.Automatic.parser(),
+                      com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.parser(),
                       extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(
-                    (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_);
-                replication_ = subBuilder.buildPartial();
+                    (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                        replicationStatus_);
+                replicationStatus_ = subBuilder.buildPartial();
               }
-              replicationCase_ = 1;
+              replicationStatusCase_ = 1;
               break;
             }
           case 18:
             {
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder subBuilder = null;
-              if (replicationCase_ == 2) {
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder
+                  subBuilder = null;
+              if (replicationStatusCase_ == 2) {
                 subBuilder =
-                    ((com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_)
+                    ((com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                            replicationStatus_)
                         .toBuilder();
               }
-              replication_ =
+              replicationStatus_ =
                   input.readMessage(
-                      com.google.cloud.secretmanager.v1.Replication.UserManaged.parser(),
+                      com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                          .parser(),
                       extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(
-                    (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_);
-                replication_ = subBuilder.buildPartial();
+                    (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                        replicationStatus_);
+                replicationStatus_ = subBuilder.buildPartial();
               }
-              replicationCase_ = 2;
+              replicationStatusCase_ = 2;
               break;
             }
           default:
@@ -129,37 +136,34 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ResourcesProto
-        .internal_static_google_cloud_secretmanager_v1_Replication_descriptor;
+        .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.secretmanager.v1.ResourcesProto
-        .internal_static_google_cloud_secretmanager_v1_Replication_fieldAccessorTable
+        .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.secretmanager.v1.Replication.class,
-            com.google.cloud.secretmanager.v1.Replication.Builder.class);
+            com.google.cloud.secretmanager.v1.ReplicationStatus.class,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.Builder.class);
   }
 
-  public interface AutomaticOrBuilder
+  public interface AutomaticStatusOrBuilder
       extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.Replication.Automatic)
+      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the customerManagedEncryption field is set.
@@ -169,64 +173,60 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The customerManagedEncryption.
      */
-    com.google.cloud.secretmanager.v1.CustomerManagedEncryption getCustomerManagedEncryption();
+    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+        getCustomerManagedEncryption();
     /**
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
         getCustomerManagedEncryptionOrBuilder();
   }
   /**
    *
    *
    * <pre>
-   * A replication policy that replicates the [Secret][google.cloud.secretmanager.v1.Secret] payload without any
-   * restrictions.
+   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using automatic replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+   * policy.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.secretmanager.v1.Replication.Automatic}
+   * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus}
    */
-  public static final class Automatic extends com.google.protobuf.GeneratedMessageV3
+  public static final class AutomaticStatus extends com.google.protobuf.GeneratedMessageV3
       implements
-      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.Automatic)
-      AutomaticOrBuilder {
+      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+      AutomaticStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-    // Use Automatic.newBuilder() to construct.
-    private Automatic(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AutomaticStatus.newBuilder() to construct.
+    private AutomaticStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
 
-    private Automatic() {}
+    private AutomaticStatus() {}
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Automatic();
+      return new AutomaticStatus();
     }
 
     @java.lang.Override
@@ -234,7 +234,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Automatic(
+    private AutomaticStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -254,14 +254,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
               break;
             case 10:
               {
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder subBuilder =
-                    null;
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
+                    subBuilder = null;
                 if (customerManagedEncryption_ != null) {
                   subBuilder = customerManagedEncryption_.toBuilder();
                 }
                 customerManagedEncryption_ =
                     input.readMessage(
-                        com.google.cloud.secretmanager.v1.CustomerManagedEncryption.parser(),
+                        com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.parser(),
                         extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(customerManagedEncryption_);
@@ -291,34 +291,32 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_descriptor;
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_AutomaticStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_fieldAccessorTable
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_AutomaticStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.secretmanager.v1.Replication.Automatic.class,
-              com.google.cloud.secretmanager.v1.Replication.Automatic.Builder.class);
+              com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.class,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder.class);
     }
 
     public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 1;
-    private com.google.cloud.secretmanager.v1.CustomerManagedEncryption customerManagedEncryption_;
+    private com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+        customerManagedEncryption_;
     /**
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the customerManagedEncryption field is set.
@@ -331,43 +329,37 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The customerManagedEncryption.
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+    public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
         getCustomerManagedEncryption() {
       return customerManagedEncryption_ == null
-          ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+          ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.getDefaultInstance()
           : customerManagedEncryption_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-     * configuration is provided, Google-managed default encryption is used.
-     * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-     * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-     * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * populated if customer-managed encryption is used.
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+    public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
         getCustomerManagedEncryptionOrBuilder() {
       return getCustomerManagedEncryption();
     }
@@ -413,11 +405,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       if (obj == this) {
         return true;
       }
-      if (!(obj instanceof com.google.cloud.secretmanager.v1.Replication.Automatic)) {
+      if (!(obj instanceof com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)) {
         return super.equals(obj);
       }
-      com.google.cloud.secretmanager.v1.Replication.Automatic other =
-          (com.google.cloud.secretmanager.v1.Replication.Automatic) obj;
+      com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus other =
+          (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus) obj;
 
       if (hasCustomerManagedEncryption() != other.hasCustomerManagedEncryption()) return false;
       if (hasCustomerManagedEncryption()) {
@@ -444,71 +436,72 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return hash;
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -526,7 +519,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static Builder newBuilder(
-        com.google.cloud.secretmanager.v1.Replication.Automatic prototype) {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -545,33 +538,35 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A replication policy that replicates the [Secret][google.cloud.secretmanager.v1.Secret] payload without any
-     * restrictions.
+     * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.secretmanager.v1.Replication.Automatic}
+     * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus}
      */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.Replication.Automatic)
-        com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_descriptor;
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_AutomaticStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_fieldAccessorTable
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_AutomaticStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.secretmanager.v1.Replication.Automatic.class,
-                com.google.cloud.secretmanager.v1.Replication.Automatic.Builder.class);
+                com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.class,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder.class);
       }
 
-      // Construct using com.google.cloud.secretmanager.v1.Replication.Automatic.newBuilder()
+      // Construct using
+      // com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -600,17 +595,19 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_Automatic_descriptor;
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_AutomaticStatus_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.Automatic getDefaultInstanceForType() {
-        return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+            .getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.Automatic build() {
-        com.google.cloud.secretmanager.v1.Replication.Automatic result = buildPartial();
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus build() {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -618,9 +615,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.Automatic buildPartial() {
-        com.google.cloud.secretmanager.v1.Replication.Automatic result =
-            new com.google.cloud.secretmanager.v1.Replication.Automatic(this);
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus buildPartial() {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus result =
+            new com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus(this);
         if (customerManagedEncryptionBuilder_ == null) {
           result.customerManagedEncryption_ = customerManagedEncryption_;
         } else {
@@ -667,17 +664,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.secretmanager.v1.Replication.Automatic) {
-          return mergeFrom((com.google.cloud.secretmanager.v1.Replication.Automatic) other);
+        if (other instanceof com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus) {
+          return mergeFrom(
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.secretmanager.v1.Replication.Automatic other) {
-        if (other == com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance())
-          return this;
+      public Builder mergeFrom(
+          com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus other) {
+        if (other
+            == com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+                .getDefaultInstance()) return this;
         if (other.hasCustomerManagedEncryption()) {
           mergeCustomerManagedEncryption(other.getCustomerManagedEncryption());
         }
@@ -696,12 +696,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.secretmanager.v1.Replication.Automatic parsedMessage = null;
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage =
-              (com.google.cloud.secretmanager.v1.Replication.Automatic) e.getUnfinishedMessage();
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -711,26 +712,23 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+      private com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
           customerManagedEncryption_;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>
           customerManagedEncryptionBuilder_;
       /**
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the customerManagedEncryption field is set.
@@ -742,24 +740,22 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The customerManagedEncryption.
        */
-      public com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
           getCustomerManagedEncryption() {
         if (customerManagedEncryptionBuilder_ == null) {
           return customerManagedEncryption_ == null
-              ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+              ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+                  .getDefaultInstance()
               : customerManagedEncryption_;
         } else {
           return customerManagedEncryptionBuilder_.getMessage();
@@ -769,19 +765,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setCustomerManagedEncryption(
-          com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
+          com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus value) {
         if (customerManagedEncryptionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -798,19 +791,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setCustomerManagedEncryption(
-          com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder builderForValue) {
+          com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
+              builderForValue) {
         if (customerManagedEncryptionBuilder_ == null) {
           customerManagedEncryption_ = builderForValue.build();
           onChanged();
@@ -824,23 +815,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder mergeCustomerManagedEncryption(
-          com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
+          com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus value) {
         if (customerManagedEncryptionBuilder_ == null) {
           if (customerManagedEncryption_ != null) {
             customerManagedEncryption_ =
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption.newBuilder(
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.newBuilder(
                         customerManagedEncryption_)
                     .mergeFrom(value)
                     .buildPartial();
@@ -858,15 +846,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearCustomerManagedEncryption() {
@@ -884,18 +869,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder
+      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
           getCustomerManagedEncryptionBuilder() {
 
         onChanged();
@@ -905,24 +887,22 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
           getCustomerManagedEncryptionOrBuilder() {
         if (customerManagedEncryptionBuilder_ != null) {
           return customerManagedEncryptionBuilder_.getMessageOrBuilder();
         } else {
           return customerManagedEncryption_ == null
-              ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+              ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+                  .getDefaultInstance()
               : customerManagedEncryption_;
         }
       }
@@ -930,28 +910,25 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [Secret][google.cloud.secretmanager.v1.Secret]. If no
-       * configuration is provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+              com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>
           getCustomerManagedEncryptionFieldBuilder() {
         if (customerManagedEncryptionBuilder_ == null) {
           customerManagedEncryptionBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>(
+                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>(
                   getCustomerManagedEncryption(), getParentForChildren(), isClean());
           customerManagedEncryption_ = null;
         }
@@ -970,88 +947,90 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return super.mergeUnknownFields(unknownFields);
       }
 
-      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Replication.Automatic)
+      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
     }
 
-    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.Replication.Automatic)
-    private static final com.google.cloud.secretmanager.v1.Replication.Automatic DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+    private static final com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+        DEFAULT_INSTANCE;
 
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.Replication.Automatic();
+      DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus();
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.Automatic getDefaultInstance() {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Automatic> PARSER =
-        new com.google.protobuf.AbstractParser<Automatic>() {
+    private static final com.google.protobuf.Parser<AutomaticStatus> PARSER =
+        new com.google.protobuf.AbstractParser<AutomaticStatus>() {
           @java.lang.Override
-          public Automatic parsePartialFrom(
+          public AutomaticStatus parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Automatic(input, extensionRegistry);
+            return new AutomaticStatus(input, extensionRegistry);
           }
         };
 
-    public static com.google.protobuf.Parser<Automatic> parser() {
+    public static com.google.protobuf.Parser<AutomaticStatus> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Automatic> getParserForType() {
+    public com.google.protobuf.Parser<AutomaticStatus> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.Automatic getDefaultInstanceForType() {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
 
-  public interface UserManagedOrBuilder
+  public interface UserManagedStatusOrBuilder
       extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.Replication.UserManaged)
+      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+    java.util.List<
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus>
         getReplicasList();
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica getReplicas(int index);
+    com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus getReplicas(
+        int index);
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     int getReplicasCount();
@@ -1059,60 +1038,62 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     java.util.List<
-            ? extends com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
+            ? extends
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                    .ReplicaStatusOrBuilder>
         getReplicasOrBuilderList();
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder getReplicasOrBuilder(
-        int index);
+    com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatusOrBuilder
+        getReplicasOrBuilder(int index);
   }
   /**
    *
    *
    * <pre>
-   * A replication policy that replicates the [Secret][google.cloud.secretmanager.v1.Secret] payload into the
-   * locations specified in [Secret.replication.user_managed.replicas][]
+   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using user-managed
+   * replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+   * policy.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged}
+   * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus}
    */
-  public static final class UserManaged extends com.google.protobuf.GeneratedMessageV3
+  public static final class UserManagedStatus extends com.google.protobuf.GeneratedMessageV3
       implements
-      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.UserManaged)
-      UserManagedOrBuilder {
+      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+      UserManagedStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-    // Use UserManaged.newBuilder() to construct.
-    private UserManaged(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserManagedStatus.newBuilder() to construct.
+    private UserManagedStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
 
-    private UserManaged() {
+    private UserManagedStatus() {
       replicas_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new UserManaged();
+      return new UserManagedStatus();
     }
 
     @java.lang.Override
@@ -1120,7 +1101,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private UserManaged(
+    private UserManagedStatus(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1144,12 +1125,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   replicas_ =
                       new java.util.ArrayList<
-                          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>();
+                          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                              .ReplicaStatus>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 replicas_.add(
                     input.readMessage(
-                        com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.parser(),
+                        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                            .ReplicaStatus.parser(),
                         extensionRegistry));
                 break;
               }
@@ -1177,33 +1160,33 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_descriptor;
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_fieldAccessorTable
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.class,
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder.class);
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.class,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder.class);
     }
 
-    public interface ReplicaOrBuilder
+    public interface ReplicaStatusOrBuilder
         extends
-        // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
+        // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
         com.google.protobuf.MessageOrBuilder {
 
       /**
        *
        *
        * <pre>
-       * The canonical IDs of the location to replicate data.
+       * Output only. The canonical ID of the replica location.
        * For example: `"us-east1"`.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The location.
        */
@@ -1212,11 +1195,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The canonical IDs of the location to replicate data.
+       * Output only. The canonical ID of the replica location.
        * For example: `"us-east1"`.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for location.
        */
@@ -1226,16 +1209,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the customerManagedEncryption field is set.
@@ -1245,67 +1224,61 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The customerManagedEncryption.
        */
-      com.google.cloud.secretmanager.v1.CustomerManagedEncryption getCustomerManagedEncryption();
+      com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+          getCustomerManagedEncryption();
       /**
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+      com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
           getCustomerManagedEncryptionOrBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Represents a Replica for this [Secret][google.cloud.secretmanager.v1.Secret].
+     * Describes the status of a user-managed replica for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
-     * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged.Replica}
+     * Protobuf type {@code
+     * google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus}
      */
-    public static final class Replica extends com.google.protobuf.GeneratedMessageV3
+    public static final class ReplicaStatus extends com.google.protobuf.GeneratedMessageV3
         implements
-        // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
-        ReplicaOrBuilder {
+        // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
+        ReplicaStatusOrBuilder {
       private static final long serialVersionUID = 0L;
-      // Use Replica.newBuilder() to construct.
-      private Replica(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use ReplicaStatus.newBuilder() to construct.
+      private ReplicaStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
 
-      private Replica() {
+      private ReplicaStatus() {
         location_ = "";
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new Replica();
+        return new ReplicaStatus();
       }
 
       @java.lang.Override
@@ -1313,7 +1286,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private Replica(
+      private ReplicaStatus(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1340,14 +1313,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 }
               case 18:
                 {
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder subBuilder =
-                      null;
+                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
+                      subBuilder = null;
                   if (customerManagedEncryption_ != null) {
                     subBuilder = customerManagedEncryption_.toBuilder();
                   }
                   customerManagedEncryption_ =
                       input.readMessage(
-                          com.google.cloud.secretmanager.v1.CustomerManagedEncryption.parser(),
+                          com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+                              .parser(),
                           extensionRegistry);
                   if (subBuilder != null) {
                     subBuilder.mergeFrom(customerManagedEncryption_);
@@ -1378,17 +1352,19 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_Replica_descriptor;
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_ReplicaStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_Replica_fieldAccessorTable
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_ReplicaStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.class,
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder.class);
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                    .class,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                    .Builder.class);
       }
 
       public static final int LOCATION_FIELD_NUMBER = 1;
@@ -1397,11 +1373,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The canonical IDs of the location to replicate data.
+       * Output only. The canonical ID of the replica location.
        * For example: `"us-east1"`.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The location.
        */
@@ -1421,11 +1397,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The canonical IDs of the location to replicate data.
+       * Output only. The canonical ID of the replica location.
        * For example: `"us-east1"`.
        * </pre>
        *
-       * <code>string location = 1;</code>
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for location.
        */
@@ -1443,22 +1419,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 2;
-      private com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+      private com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
           customerManagedEncryption_;
       /**
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the customerManagedEncryption field is set.
@@ -1471,45 +1443,37 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The customerManagedEncryption.
        */
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
           getCustomerManagedEncryption() {
         return customerManagedEncryption_ == null
-            ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+            ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.getDefaultInstance()
             : customerManagedEncryption_;
       }
       /**
        *
        *
        * <pre>
-       * Optional. The customer-managed encryption configuration of the [User-Managed
-       * Replica][Replication.UserManaged.Replica]. If no configuration is
-       * provided, Google-managed default encryption is used.
-       * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-       * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-       * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * populated if customer-managed encryption is used.
        * </pre>
        *
        * <code>
-       * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+      public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
           getCustomerManagedEncryptionOrBuilder() {
         return getCustomerManagedEncryption();
       }
@@ -1561,11 +1525,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         if (obj == this) {
           return true;
         }
-        if (!(obj instanceof com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica)) {
+        if (!(obj
+            instanceof
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)) {
           return super.equals(obj);
         }
-        com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica other =
-            (com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica) obj;
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus other =
+            (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
+                obj;
 
         if (!getLocation().equals(other.getLocation())) return false;
         if (hasCustomerManagedEncryption() != other.hasCustomerManagedEncryption()) return false;
@@ -1595,59 +1562,74 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return hash;
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          java.io.InputStream input) throws java.io.IOException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
           parseDelimitedFrom(
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1656,15 +1638,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             PARSER, input, extensionRegistry);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
@@ -1679,7 +1664,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static Builder newBuilder(
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica prototype) {
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
 
@@ -1698,33 +1684,37 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents a Replica for this [Secret][google.cloud.secretmanager.v1.Secret].
+       * Describes the status of a user-managed replica for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
-       * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged.Replica}
+       * Protobuf type {@code
+       * google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus}
        */
       public static final class Builder
           extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
           implements
-          // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder {
+          // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatusOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.secretmanager.v1.ResourcesProto
-              .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_Replica_descriptor;
+              .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_ReplicaStatus_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.secretmanager.v1.ResourcesProto
-              .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_Replica_fieldAccessorTable
+              .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_ReplicaStatus_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.class,
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder.class);
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus.class,
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus.Builder.class);
         }
 
         // Construct using
-        // com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.newBuilder()
+        // com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -1755,19 +1745,21 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
           return com.google.cloud.secretmanager.v1.ResourcesProto
-              .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_Replica_descriptor;
+              .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_ReplicaStatus_descriptor;
         }
 
         @java.lang.Override
-        public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+        public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
             getDefaultInstanceForType() {
-          return com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+          return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
               .getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica build() {
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica result = buildPartial();
+        public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+            build() {
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1775,9 +1767,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
 
         @java.lang.Override
-        public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica buildPartial() {
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica result =
-              new com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica(this);
+        public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+            buildPartial() {
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              result =
+                  new com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus(this);
           result.location_ = location_;
           if (customerManagedEncryptionBuilder_ == null) {
             result.customerManagedEncryption_ = customerManagedEncryption_;
@@ -1825,9 +1820,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica) {
+          if (other
+              instanceof
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus) {
             return mergeFrom(
-                (com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica) other);
+                (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                        .ReplicaStatus)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
@@ -1835,9 +1834,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
 
         public Builder mergeFrom(
-            com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica other) {
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                other) {
           if (other
-              == com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+              == com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
                   .getDefaultInstance()) return this;
           if (!other.getLocation().isEmpty()) {
             location_ = other.location_;
@@ -1861,12 +1861,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica parsedMessage = null;
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage =
-                (com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
+                (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                        .ReplicaStatus)
                     e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -1882,11 +1884,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The canonical IDs of the location to replicate data.
+         * Output only. The canonical ID of the replica location.
          * For example: `"us-east1"`.
          * </pre>
          *
-         * <code>string location = 1;</code>
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The location.
          */
@@ -1905,11 +1907,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The canonical IDs of the location to replicate data.
+         * Output only. The canonical ID of the replica location.
          * For example: `"us-east1"`.
          * </pre>
          *
-         * <code>string location = 1;</code>
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for location.
          */
@@ -1928,11 +1930,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The canonical IDs of the location to replicate data.
+         * Output only. The canonical ID of the replica location.
          * For example: `"us-east1"`.
          * </pre>
          *
-         * <code>string location = 1;</code>
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The location to set.
          * @return This builder for chaining.
@@ -1950,11 +1952,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The canonical IDs of the location to replicate data.
+         * Output only. The canonical ID of the replica location.
          * For example: `"us-east1"`.
          * </pre>
          *
-         * <code>string location = 1;</code>
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -1968,11 +1970,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The canonical IDs of the location to replicate data.
+         * Output only. The canonical ID of the replica location.
          * For example: `"us-east1"`.
          * </pre>
          *
-         * <code>string location = 1;</code>
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for location to set.
          * @return This builder for chaining.
@@ -1988,27 +1990,23 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+        private com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
             customerManagedEncryption_;
         private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>
             customerManagedEncryptionBuilder_;
         /**
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return Whether the customerManagedEncryption field is set.
@@ -2020,25 +2018,22 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The customerManagedEncryption.
          */
-        public com.google.cloud.secretmanager.v1.CustomerManagedEncryption
+        public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
             getCustomerManagedEncryption() {
           if (customerManagedEncryptionBuilder_ == null) {
             return customerManagedEncryption_ == null
-                ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+                ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+                    .getDefaultInstance()
                 : customerManagedEncryption_;
           } else {
             return customerManagedEncryptionBuilder_.getMessage();
@@ -2048,20 +2043,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder setCustomerManagedEncryption(
-            com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
+            com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus value) {
           if (customerManagedEncryptionBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -2078,20 +2069,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder setCustomerManagedEncryption(
-            com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder builderForValue) {
+            com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
+                builderForValue) {
           if (customerManagedEncryptionBuilder_ == null) {
             customerManagedEncryption_ = builderForValue.build();
             onChanged();
@@ -2105,24 +2093,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder mergeCustomerManagedEncryption(
-            com.google.cloud.secretmanager.v1.CustomerManagedEncryption value) {
+            com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus value) {
           if (customerManagedEncryptionBuilder_ == null) {
             if (customerManagedEncryption_ != null) {
               customerManagedEncryption_ =
-                  com.google.cloud.secretmanager.v1.CustomerManagedEncryption.newBuilder(
+                  com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.newBuilder(
                           customerManagedEncryption_)
                       .mergeFrom(value)
                       .buildPartial();
@@ -2140,16 +2124,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder clearCustomerManagedEncryption() {
@@ -2167,19 +2147,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
-        public com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder
+        public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder
             getCustomerManagedEncryptionBuilder() {
 
           onChanged();
@@ -2189,25 +2165,22 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
-        public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder
+        public com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder
             getCustomerManagedEncryptionOrBuilder() {
           if (customerManagedEncryptionBuilder_ != null) {
             return customerManagedEncryptionBuilder_.getMessageOrBuilder();
           } else {
             return customerManagedEncryption_ == null
-                ? com.google.cloud.secretmanager.v1.CustomerManagedEncryption.getDefaultInstance()
+                ? com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus
+                    .getDefaultInstance()
                 : customerManagedEncryption_;
           }
         }
@@ -2215,29 +2188,25 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The customer-managed encryption configuration of the [User-Managed
-         * Replica][Replication.UserManaged.Replica]. If no configuration is
-         * provided, Google-managed default encryption is used.
-         * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption configuration only apply to
-         * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] added afterwards. They do not apply
-         * retroactively to existing [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * populated if customer-managed encryption is used.
          * </pre>
          *
          * <code>
-         * .google.cloud.secretmanager.v1.CustomerManagedEncryption customer_managed_encryption = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * .google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus customer_managed_encryption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+                com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>
             getCustomerManagedEncryptionFieldBuilder() {
           if (customerManagedEncryptionBuilder_ == null) {
             customerManagedEncryptionBuilder_ =
                 new com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.cloud.secretmanager.v1.CustomerManagedEncryption,
-                    com.google.cloud.secretmanager.v1.CustomerManagedEncryption.Builder,
-                    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionOrBuilder>(
+                    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus,
+                    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatus.Builder,
+                    com.google.cloud.secretmanager.v1.CustomerManagedEncryptionStatusOrBuilder>(
                     getCustomerManagedEncryption(), getParentForChildren(), isClean());
             customerManagedEncryption_ = null;
           }
@@ -2256,66 +2225,71 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return super.mergeUnknownFields(unknownFields);
         }
 
-        // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
+        // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
       }
 
-      // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.Replication.UserManaged.Replica)
-      private static final com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+      // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus)
+      private static final com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
           DEFAULT_INSTANCE;
 
       static {
-        DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica();
+        DEFAULT_INSTANCE =
+            new com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                .ReplicaStatus();
       }
 
-      public static com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+      public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatus
           getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Replica> PARSER =
-          new com.google.protobuf.AbstractParser<Replica>() {
+      private static final com.google.protobuf.Parser<ReplicaStatus> PARSER =
+          new com.google.protobuf.AbstractParser<ReplicaStatus>() {
             @java.lang.Override
-            public Replica parsePartialFrom(
+            public ReplicaStatus parsePartialFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Replica(input, extensionRegistry);
+              return new ReplicaStatus(input, extensionRegistry);
             }
           };
 
-      public static com.google.protobuf.Parser<Replica> parser() {
+      public static com.google.protobuf.Parser<ReplicaStatus> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<Replica> getParserForType() {
+      public com.google.protobuf.Parser<ReplicaStatus> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
     }
 
     public static final int REPLICAS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+    private java.util.List<
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus>
         replicas_;
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
-    public java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+    public java.util.List<
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus>
         getReplicasList() {
       return replicas_;
     }
@@ -2323,17 +2297,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
     public java.util.List<
-            ? extends com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
+            ? extends
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                    .ReplicaStatusOrBuilder>
         getReplicasOrBuilderList() {
       return replicas_;
     }
@@ -2341,12 +2316,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -2357,33 +2331,32 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica getReplicas(
-        int index) {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+        getReplicas(int index) {
       return replicas_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-     * Cannot be empty.
+     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+            .ReplicaStatusOrBuilder
         getReplicasOrBuilder(int index) {
       return replicas_.get(index);
     }
@@ -2427,11 +2400,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       if (obj == this) {
         return true;
       }
-      if (!(obj instanceof com.google.cloud.secretmanager.v1.Replication.UserManaged)) {
+      if (!(obj instanceof com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)) {
         return super.equals(obj);
       }
-      com.google.cloud.secretmanager.v1.Replication.UserManaged other =
-          (com.google.cloud.secretmanager.v1.Replication.UserManaged) obj;
+      com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus other =
+          (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus) obj;
 
       if (!getReplicasList().equals(other.getReplicasList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2454,71 +2427,72 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return hash;
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         com.google.protobuf.CodedInputStream input) throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged parseFrom(
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2536,7 +2510,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static Builder newBuilder(
-        com.google.cloud.secretmanager.v1.Replication.UserManaged prototype) {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -2555,33 +2529,37 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A replication policy that replicates the [Secret][google.cloud.secretmanager.v1.Secret] payload into the
-     * locations specified in [Secret.replication.user_managed.replicas][]
+     * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using user-managed
+     * replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged}
+     * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus}
      */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.Replication.UserManaged)
-        com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder {
+        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_descriptor;
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_fieldAccessorTable
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.class,
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder.class);
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.class,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.secretmanager.v1.Replication.UserManaged.newBuilder()
+      // Construct using
+      // com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2612,17 +2590,20 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.google.cloud.secretmanager.v1.ResourcesProto
-            .internal_static_google_cloud_secretmanager_v1_Replication_UserManaged_descriptor;
+            .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_UserManagedStatus_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged getDefaultInstanceForType() {
-        return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+            .getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged build() {
-        com.google.cloud.secretmanager.v1.Replication.UserManaged result = buildPartial();
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus build() {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2630,9 +2611,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged buildPartial() {
-        com.google.cloud.secretmanager.v1.Replication.UserManaged result =
-            new com.google.cloud.secretmanager.v1.Replication.UserManaged(this);
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus buildPartial() {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus result =
+            new com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus(this);
         int from_bitField0_ = bitField0_;
         if (replicasBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -2684,17 +2665,21 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.secretmanager.v1.Replication.UserManaged) {
-          return mergeFrom((com.google.cloud.secretmanager.v1.Replication.UserManaged) other);
+        if (other
+            instanceof com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus) {
+          return mergeFrom(
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.secretmanager.v1.Replication.UserManaged other) {
-        if (other == com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance())
-          return this;
+      public Builder mergeFrom(
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus other) {
+        if (other
+            == com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                .getDefaultInstance()) return this;
         if (replicasBuilder_ == null) {
           if (!other.replicas_.isEmpty()) {
             if (replicas_.isEmpty()) {
@@ -2737,12 +2722,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.secretmanager.v1.Replication.UserManaged parsedMessage = null;
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage =
-              (com.google.cloud.secretmanager.v1.Replication.UserManaged) e.getUnfinishedMessage();
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2754,37 +2740,41 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+      private java.util.List<
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus>
           replicas_ = java.util.Collections.emptyList();
 
       private void ensureReplicasIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
           replicas_ =
               new java.util.ArrayList<
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>(replicas_);
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus>(replicas_);
           bitField0_ |= 0x00000001;
         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica,
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder,
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                  .ReplicaStatusOrBuilder>
           replicasBuilder_;
 
       /**
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public java.util.List<com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+      public java.util.List<
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus>
           getReplicasList() {
         if (replicasBuilder_ == null) {
           return java.util.Collections.unmodifiableList(replicas_);
@@ -2796,12 +2786,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public int getReplicasCount() {
@@ -2815,16 +2804,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica getReplicas(
-          int index) {
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+          getReplicas(int index) {
         if (replicasBuilder_ == null) {
           return replicas_.get(index);
         } else {
@@ -2835,16 +2823,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setReplicas(
-          int index, com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica value) {
+          int index,
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              value) {
         if (replicasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2861,17 +2850,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setReplicas(
           int index,
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder
               builderForValue) {
         if (replicasBuilder_ == null) {
           ensureReplicasIsMutable();
@@ -2886,16 +2875,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addReplicas(
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica value) {
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              value) {
         if (replicasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2912,16 +2901,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addReplicas(
-          int index, com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica value) {
+          int index,
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              value) {
         if (replicasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2938,16 +2928,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addReplicas(
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder
               builderForValue) {
         if (replicasBuilder_ == null) {
           ensureReplicasIsMutable();
@@ -2962,17 +2952,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addReplicas(
           int index,
-          com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+          com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder
               builderForValue) {
         if (replicasBuilder_ == null) {
           ensureReplicasIsMutable();
@@ -2987,17 +2977,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addAllReplicas(
           java.lang.Iterable<
-                  ? extends com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica>
+                  ? extends
+                      com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                          .ReplicaStatus>
               values) {
         if (replicasBuilder_ == null) {
           ensureReplicasIsMutable();
@@ -3012,12 +3003,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearReplicas() {
@@ -3034,12 +3024,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder removeReplicas(int index) {
@@ -3056,15 +3045,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              .Builder
           getReplicasBuilder(int index) {
         return getReplicasFieldBuilder().getBuilder(index);
       }
@@ -3072,15 +3061,15 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+              .ReplicaStatusOrBuilder
           getReplicasOrBuilder(int index) {
         if (replicasBuilder_ == null) {
           return replicas_.get(index);
@@ -3092,16 +3081,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public java.util.List<
-              ? extends com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
+              ? extends
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatusOrBuilder>
           getReplicasOrBuilderList() {
         if (replicasBuilder_ != null) {
           return replicasBuilder_.getMessageOrBuilderList();
@@ -3113,70 +3103,75 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              .Builder
           addReplicasBuilder() {
         return getReplicasFieldBuilder()
             .addBuilder(
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
                     .getDefaultInstance());
       }
       /**
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
-      public com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder
+      public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+              .Builder
           addReplicasBuilder(int index) {
         return getReplicasFieldBuilder()
             .addBuilder(
                 index,
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
                     .getDefaultInstance());
       }
       /**
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secretmanager.v1.Secret].
-       * Cannot be empty.
+       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.secretmanager.v1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
+       * repeated .google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus replicas = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public java.util.List<
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder>
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder>
           getReplicasBuilderList() {
         return getReplicasFieldBuilder().getBuilderList();
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica,
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder,
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.ReplicaStatus
+                  .Builder,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                  .ReplicaStatusOrBuilder>
           getReplicasFieldBuilder() {
         if (replicasBuilder_ == null) {
           replicasBuilder_ =
               new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica,
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.Replica.Builder,
-                  com.google.cloud.secretmanager.v1.Replication.UserManaged.ReplicaOrBuilder>(
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus,
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatus.Builder,
+                  com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                      .ReplicaStatusOrBuilder>(
                   replicas_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           replicas_ = null;
         }
@@ -3195,59 +3190,63 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return super.mergeUnknownFields(unknownFields);
       }
 
-      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Replication.UserManaged)
+      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
     }
 
-    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.Replication.UserManaged)
-    private static final com.google.cloud.secretmanager.v1.Replication.UserManaged DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+    private static final com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        DEFAULT_INSTANCE;
 
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.Replication.UserManaged();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus();
     }
 
-    public static com.google.cloud.secretmanager.v1.Replication.UserManaged getDefaultInstance() {
+    public static com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UserManaged> PARSER =
-        new com.google.protobuf.AbstractParser<UserManaged>() {
+    private static final com.google.protobuf.Parser<UserManagedStatus> PARSER =
+        new com.google.protobuf.AbstractParser<UserManagedStatus>() {
           @java.lang.Override
-          public UserManaged parsePartialFrom(
+          public UserManagedStatus parsePartialFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new UserManaged(input, extensionRegistry);
+            return new UserManagedStatus(input, extensionRegistry);
           }
         };
 
-    public static com.google.protobuf.Parser<UserManaged> parser() {
+    public static com.google.protobuf.Parser<UserManagedStatus> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UserManaged> getParserForType() {
+    public com.google.protobuf.Parser<UserManagedStatus> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.UserManaged getDefaultInstanceForType() {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
 
-  private int replicationCase_ = 0;
-  private java.lang.Object replication_;
+  private int replicationStatusCase_ = 0;
+  private java.lang.Object replicationStatus_;
 
-  public enum ReplicationCase
+  public enum ReplicationStatusCase
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AUTOMATIC(1),
     USER_MANAGED(2),
-    REPLICATION_NOT_SET(0);
+    REPLICATIONSTATUS_NOT_SET(0);
     private final int value;
 
-    private ReplicationCase(int value) {
+    private ReplicationStatusCase(int value) {
       this.value = value;
     }
     /**
@@ -3256,18 +3255,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static ReplicationCase valueOf(int value) {
+    public static ReplicationStatusCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static ReplicationCase forNumber(int value) {
+    public static ReplicationStatusCase forNumber(int value) {
       switch (value) {
         case 1:
           return AUTOMATIC;
         case 2:
           return USER_MANAGED;
         case 0:
-          return REPLICATION_NOT_SET;
+          return REPLICATIONSTATUS_NOT_SET;
         default:
           return null;
       }
@@ -3278,8 +3277,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
   };
 
-  public ReplicationCase getReplicationCase() {
-    return ReplicationCase.forNumber(replicationCase_);
+  public ReplicationStatusCase getReplicationStatusCase() {
+    return ReplicationStatusCase.forNumber(replicationStatusCase_);
   }
 
   public static final int AUTOMATIC_FIELD_NUMBER = 1;
@@ -3287,50 +3286,62 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * automatic replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
    *
    * @return Whether the automatic field is set.
    */
   @java.lang.Override
   public boolean hasAutomatic() {
-    return replicationCase_ == 1;
+    return replicationStatusCase_ == 1;
   }
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * automatic replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
    *
    * @return The automatic.
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.Replication.Automatic getAutomatic() {
-    if (replicationCase_ == 1) {
-      return (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_;
+  public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus getAutomatic() {
+    if (replicationStatusCase_ == 1) {
+      return (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+          replicationStatus_;
     }
-    return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * automatic replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder getAutomaticOrBuilder() {
-    if (replicationCase_ == 1) {
-      return (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_;
+  public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder
+      getAutomaticOrBuilder() {
+    if (replicationStatusCase_ == 1) {
+      return (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+          replicationStatus_;
     }
-    return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.getDefaultInstance();
   }
 
   public static final int USER_MANAGED_FIELD_NUMBER = 2;
@@ -3338,51 +3349,67 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * user-managed replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+   * </code>
    *
    * @return Whether the userManaged field is set.
    */
   @java.lang.Override
   public boolean hasUserManaged() {
-    return replicationCase_ == 2;
+    return replicationStatusCase_ == 2;
   }
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * user-managed replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+   * </code>
    *
    * @return The userManaged.
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.Replication.UserManaged getUserManaged() {
-    if (replicationCase_ == 2) {
-      return (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_;
+  public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus getUserManaged() {
+    if (replicationStatusCase_ == 2) {
+      return (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+          replicationStatus_;
     }
-    return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        .getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * user-managed replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+   * policy.
    * </pre>
    *
-   * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+   * </code>
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder
+  public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder
       getUserManagedOrBuilder() {
-    if (replicationCase_ == 2) {
-      return (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_;
+    if (replicationStatusCase_ == 2) {
+      return (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+          replicationStatus_;
     }
-    return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+        .getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3399,13 +3426,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (replicationCase_ == 1) {
+    if (replicationStatusCase_ == 1) {
       output.writeMessage(
-          1, (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_);
+          1,
+          (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus) replicationStatus_);
     }
-    if (replicationCase_ == 2) {
+    if (replicationStatusCase_ == 2) {
       output.writeMessage(
-          2, (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_);
+          2,
+          (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+              replicationStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -3416,15 +3446,19 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (replicationCase_ == 1) {
+    if (replicationStatusCase_ == 1) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              1, (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_);
+              1,
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                  replicationStatus_);
     }
-    if (replicationCase_ == 2) {
+    if (replicationStatusCase_ == 2) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2, (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_);
+              2,
+              (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                  replicationStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3436,14 +3470,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.secretmanager.v1.Replication)) {
+    if (!(obj instanceof com.google.cloud.secretmanager.v1.ReplicationStatus)) {
       return super.equals(obj);
     }
-    com.google.cloud.secretmanager.v1.Replication other =
-        (com.google.cloud.secretmanager.v1.Replication) obj;
+    com.google.cloud.secretmanager.v1.ReplicationStatus other =
+        (com.google.cloud.secretmanager.v1.ReplicationStatus) obj;
 
-    if (!getReplicationCase().equals(other.getReplicationCase())) return false;
-    switch (replicationCase_) {
+    if (!getReplicationStatusCase().equals(other.getReplicationStatusCase())) return false;
+    switch (replicationStatusCase_) {
       case 1:
         if (!getAutomatic().equals(other.getAutomatic())) return false;
         break;
@@ -3464,7 +3498,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    switch (replicationCase_) {
+    switch (replicationStatusCase_) {
       case 1:
         hash = (37 * hash) + AUTOMATIC_FIELD_NUMBER;
         hash = (53 * hash) + getAutomatic().hashCode();
@@ -3481,71 +3515,71 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(byte[] data)
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseDelimitedFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseDelimitedFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication parseFrom(
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -3562,7 +3596,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.secretmanager.v1.Replication prototype) {
+  public static Builder newBuilder(com.google.cloud.secretmanager.v1.ReplicationStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -3580,31 +3614,31 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A policy that defines the replication and encryption configuration of data.
+   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.secretmanager.v1.Replication}
+   * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.Replication)
-      com.google.cloud.secretmanager.v1.ReplicationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.ReplicationStatus)
+      com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_descriptor;
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_fieldAccessorTable
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.secretmanager.v1.Replication.class,
-              com.google.cloud.secretmanager.v1.Replication.Builder.class);
+              com.google.cloud.secretmanager.v1.ReplicationStatus.class,
+              com.google.cloud.secretmanager.v1.ReplicationStatus.Builder.class);
     }
 
-    // Construct using com.google.cloud.secretmanager.v1.Replication.newBuilder()
+    // Construct using com.google.cloud.secretmanager.v1.ReplicationStatus.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -3621,25 +3655,25 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      replicationCase_ = 0;
-      replication_ = null;
+      replicationStatusCase_ = 0;
+      replicationStatus_ = null;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.secretmanager.v1.ResourcesProto
-          .internal_static_google_cloud_secretmanager_v1_Replication_descriptor;
+          .internal_static_google_cloud_secretmanager_v1_ReplicationStatus_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication getDefaultInstanceForType() {
-      return com.google.cloud.secretmanager.v1.Replication.getDefaultInstance();
+    public com.google.cloud.secretmanager.v1.ReplicationStatus getDefaultInstanceForType() {
+      return com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication build() {
-      com.google.cloud.secretmanager.v1.Replication result = buildPartial();
+    public com.google.cloud.secretmanager.v1.ReplicationStatus build() {
+      com.google.cloud.secretmanager.v1.ReplicationStatus result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -3647,24 +3681,24 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication buildPartial() {
-      com.google.cloud.secretmanager.v1.Replication result =
-          new com.google.cloud.secretmanager.v1.Replication(this);
-      if (replicationCase_ == 1) {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus buildPartial() {
+      com.google.cloud.secretmanager.v1.ReplicationStatus result =
+          new com.google.cloud.secretmanager.v1.ReplicationStatus(this);
+      if (replicationStatusCase_ == 1) {
         if (automaticBuilder_ == null) {
-          result.replication_ = replication_;
+          result.replicationStatus_ = replicationStatus_;
         } else {
-          result.replication_ = automaticBuilder_.build();
+          result.replicationStatus_ = automaticBuilder_.build();
         }
       }
-      if (replicationCase_ == 2) {
+      if (replicationStatusCase_ == 2) {
         if (userManagedBuilder_ == null) {
-          result.replication_ = replication_;
+          result.replicationStatus_ = replicationStatus_;
         } else {
-          result.replication_ = userManagedBuilder_.build();
+          result.replicationStatus_ = userManagedBuilder_.build();
         }
       }
-      result.replicationCase_ = replicationCase_;
+      result.replicationStatusCase_ = replicationStatusCase_;
       onBuilt();
       return result;
     }
@@ -3704,17 +3738,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.secretmanager.v1.Replication) {
-        return mergeFrom((com.google.cloud.secretmanager.v1.Replication) other);
+      if (other instanceof com.google.cloud.secretmanager.v1.ReplicationStatus) {
+        return mergeFrom((com.google.cloud.secretmanager.v1.ReplicationStatus) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.secretmanager.v1.Replication other) {
-      if (other == com.google.cloud.secretmanager.v1.Replication.getDefaultInstance()) return this;
-      switch (other.getReplicationCase()) {
+    public Builder mergeFrom(com.google.cloud.secretmanager.v1.ReplicationStatus other) {
+      if (other == com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance())
+        return this;
+      switch (other.getReplicationStatusCase()) {
         case AUTOMATIC:
           {
             mergeAutomatic(other.getAutomatic());
@@ -3725,7 +3760,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             mergeUserManaged(other.getUserManaged());
             break;
           }
-        case REPLICATION_NOT_SET:
+        case REPLICATIONSTATUS_NOT_SET:
           {
             break;
           }
@@ -3745,11 +3780,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.secretmanager.v1.Replication parsedMessage = null;
+      com.google.cloud.secretmanager.v1.ReplicationStatus parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.secretmanager.v1.Replication) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.secretmanager.v1.ReplicationStatus) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -3759,159 +3795,185 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int replicationCase_ = 0;
-    private java.lang.Object replication_;
+    private int replicationStatusCase_ = 0;
+    private java.lang.Object replicationStatus_;
 
-    public ReplicationCase getReplicationCase() {
-      return ReplicationCase.forNumber(replicationCase_);
+    public ReplicationStatusCase getReplicationStatusCase() {
+      return ReplicationStatusCase.forNumber(replicationStatusCase_);
     }
 
-    public Builder clearReplication() {
-      replicationCase_ = 0;
-      replication_ = null;
+    public Builder clearReplicationStatus() {
+      replicationStatusCase_ = 0;
+      replicationStatus_ = null;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.secretmanager.v1.Replication.Automatic,
-            com.google.cloud.secretmanager.v1.Replication.Automatic.Builder,
-            com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder>
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder>
         automaticBuilder_;
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      *
      * @return Whether the automatic field is set.
      */
     @java.lang.Override
     public boolean hasAutomatic() {
-      return replicationCase_ == 1;
+      return replicationStatusCase_ == 1;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      *
      * @return The automatic.
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.Automatic getAutomatic() {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus getAutomatic() {
       if (automaticBuilder_ == null) {
-        if (replicationCase_ == 1) {
-          return (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_;
+        if (replicationStatusCase_ == 1) {
+          return (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+              replicationStatus_;
         }
-        return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+            .getDefaultInstance();
       } else {
-        if (replicationCase_ == 1) {
+        if (replicationStatusCase_ == 1) {
           return automaticBuilder_.getMessage();
         }
-        return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
-    public Builder setAutomatic(com.google.cloud.secretmanager.v1.Replication.Automatic value) {
+    public Builder setAutomatic(
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus value) {
       if (automaticBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        replication_ = value;
+        replicationStatus_ = value;
         onChanged();
       } else {
         automaticBuilder_.setMessage(value);
       }
-      replicationCase_ = 1;
+      replicationStatusCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
     public Builder setAutomatic(
-        com.google.cloud.secretmanager.v1.Replication.Automatic.Builder builderForValue) {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder
+            builderForValue) {
       if (automaticBuilder_ == null) {
-        replication_ = builderForValue.build();
+        replicationStatus_ = builderForValue.build();
         onChanged();
       } else {
         automaticBuilder_.setMessage(builderForValue.build());
       }
-      replicationCase_ = 1;
+      replicationStatusCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
-    public Builder mergeAutomatic(com.google.cloud.secretmanager.v1.Replication.Automatic value) {
+    public Builder mergeAutomatic(
+        com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus value) {
       if (automaticBuilder_ == null) {
-        if (replicationCase_ == 1
-            && replication_
-                != com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance()) {
-          replication_ =
-              com.google.cloud.secretmanager.v1.Replication.Automatic.newBuilder(
-                      (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_)
+        if (replicationStatusCase_ == 1
+            && replicationStatus_
+                != com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+                    .getDefaultInstance()) {
+          replicationStatus_ =
+              com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.newBuilder(
+                      (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                          replicationStatus_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          replication_ = value;
+          replicationStatus_ = value;
         }
         onChanged();
       } else {
-        if (replicationCase_ == 1) {
+        if (replicationStatusCase_ == 1) {
           automaticBuilder_.mergeFrom(value);
         }
         automaticBuilder_.setMessage(value);
       }
-      replicationCase_ = 1;
+      replicationStatusCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
     public Builder clearAutomatic() {
       if (automaticBuilder_ == null) {
-        if (replicationCase_ == 1) {
-          replicationCase_ = 0;
-          replication_ = null;
+        if (replicationStatusCase_ == 1) {
+          replicationStatusCase_ = 0;
+          replicationStatus_ = null;
           onChanged();
         }
       } else {
-        if (replicationCase_ == 1) {
-          replicationCase_ = 0;
-          replication_ = null;
+        if (replicationStatusCase_ == 1) {
+          replicationStatusCase_ = 0;
+          replicationStatus_ = null;
         }
         automaticBuilder_.clear();
       }
@@ -3921,210 +3983,255 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
-    public com.google.cloud.secretmanager.v1.Replication.Automatic.Builder getAutomaticBuilder() {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder
+        getAutomaticBuilder() {
       return getAutomaticFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder
         getAutomaticOrBuilder() {
-      if ((replicationCase_ == 1) && (automaticBuilder_ != null)) {
+      if ((replicationStatusCase_ == 1) && (automaticBuilder_ != null)) {
         return automaticBuilder_.getMessageOrBuilder();
       } else {
-        if (replicationCase_ == 1) {
-          return (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_;
+        if (replicationStatusCase_ == 1) {
+          return (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+              replicationStatus_;
         }
-        return com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.secretmanager.v1.Replication.Automatic,
-            com.google.cloud.secretmanager.v1.Replication.Automatic.Builder,
-            com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder>
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder>
         getAutomaticFieldBuilder() {
       if (automaticBuilder_ == null) {
-        if (!(replicationCase_ == 1)) {
-          replication_ =
-              com.google.cloud.secretmanager.v1.Replication.Automatic.getDefaultInstance();
+        if (!(replicationStatusCase_ == 1)) {
+          replicationStatus_ =
+              com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus
+                  .getDefaultInstance();
         }
         automaticBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.secretmanager.v1.Replication.Automatic,
-                com.google.cloud.secretmanager.v1.Replication.Automatic.Builder,
-                com.google.cloud.secretmanager.v1.Replication.AutomaticOrBuilder>(
-                (com.google.cloud.secretmanager.v1.Replication.Automatic) replication_,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus.Builder,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatusOrBuilder>(
+                (com.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus)
+                    replicationStatus_,
                 getParentForChildren(),
                 isClean());
-        replication_ = null;
+        replicationStatus_ = null;
       }
-      replicationCase_ = 1;
+      replicationStatusCase_ = 1;
       onChanged();
       ;
       return automaticBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.secretmanager.v1.Replication.UserManaged,
-            com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder,
-            com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder>
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder>
         userManagedBuilder_;
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      *
      * @return Whether the userManaged field is set.
      */
     @java.lang.Override
     public boolean hasUserManaged() {
-      return replicationCase_ == 2;
+      return replicationStatusCase_ == 2;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      *
      * @return The userManaged.
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.UserManaged getUserManaged() {
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus getUserManaged() {
       if (userManagedBuilder_ == null) {
-        if (replicationCase_ == 2) {
-          return (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_;
+        if (replicationStatusCase_ == 2) {
+          return (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+              replicationStatus_;
         }
-        return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+            .getDefaultInstance();
       } else {
-        if (replicationCase_ == 2) {
+        if (replicationStatusCase_ == 2) {
           return userManagedBuilder_.getMessage();
         }
-        return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
-    public Builder setUserManaged(com.google.cloud.secretmanager.v1.Replication.UserManaged value) {
+    public Builder setUserManaged(
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus value) {
       if (userManagedBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        replication_ = value;
+        replicationStatus_ = value;
         onChanged();
       } else {
         userManagedBuilder_.setMessage(value);
       }
-      replicationCase_ = 2;
+      replicationStatusCase_ = 2;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
     public Builder setUserManaged(
-        com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder builderForValue) {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder
+            builderForValue) {
       if (userManagedBuilder_ == null) {
-        replication_ = builderForValue.build();
+        replicationStatus_ = builderForValue.build();
         onChanged();
       } else {
         userManagedBuilder_.setMessage(builderForValue.build());
       }
-      replicationCase_ = 2;
+      replicationStatusCase_ = 2;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
     public Builder mergeUserManaged(
-        com.google.cloud.secretmanager.v1.Replication.UserManaged value) {
+        com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus value) {
       if (userManagedBuilder_ == null) {
-        if (replicationCase_ == 2
-            && replication_
-                != com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance()) {
-          replication_ =
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.newBuilder(
-                      (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_)
+        if (replicationStatusCase_ == 2
+            && replicationStatus_
+                != com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                    .getDefaultInstance()) {
+          replicationStatus_ =
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.newBuilder(
+                      (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                          replicationStatus_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          replication_ = value;
+          replicationStatus_ = value;
         }
         onChanged();
       } else {
-        if (replicationCase_ == 2) {
+        if (replicationStatusCase_ == 2) {
           userManagedBuilder_.mergeFrom(value);
         }
         userManagedBuilder_.setMessage(value);
       }
-      replicationCase_ = 2;
+      replicationStatusCase_ = 2;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
     public Builder clearUserManaged() {
       if (userManagedBuilder_ == null) {
-        if (replicationCase_ == 2) {
-          replicationCase_ = 0;
-          replication_ = null;
+        if (replicationStatusCase_ == 2) {
+          replicationStatusCase_ = 0;
+          replicationStatus_ = null;
           onChanged();
         }
       } else {
-        if (replicationCase_ == 2) {
-          replicationCase_ = 0;
-          replication_ = null;
+        if (replicationStatusCase_ == 2) {
+          replicationStatusCase_ = 0;
+          replicationStatus_ = null;
         }
         userManagedBuilder_.clear();
       }
@@ -4134,12 +4241,16 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
-    public com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder
         getUserManagedBuilder() {
       return getUserManagedFieldBuilder().getBuilder();
     }
@@ -4147,53 +4258,65 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder
         getUserManagedOrBuilder() {
-      if ((replicationCase_ == 2) && (userManagedBuilder_ != null)) {
+      if ((replicationStatusCase_ == 2) && (userManagedBuilder_ != null)) {
         return userManagedBuilder_.getMessageOrBuilder();
       } else {
-        if (replicationCase_ == 2) {
-          return (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_;
+        if (replicationStatusCase_ == 2) {
+          return (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+              replicationStatus_;
         }
-        return com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+            .getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
+     * policy.
      * </pre>
      *
-     * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.secretmanager.v1.Replication.UserManaged,
-            com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder,
-            com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder>
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder>
         getUserManagedFieldBuilder() {
       if (userManagedBuilder_ == null) {
-        if (!(replicationCase_ == 2)) {
-          replication_ =
-              com.google.cloud.secretmanager.v1.Replication.UserManaged.getDefaultInstance();
+        if (!(replicationStatusCase_ == 2)) {
+          replicationStatus_ =
+              com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus
+                  .getDefaultInstance();
         }
         userManagedBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.secretmanager.v1.Replication.UserManaged,
-                com.google.cloud.secretmanager.v1.Replication.UserManaged.Builder,
-                com.google.cloud.secretmanager.v1.Replication.UserManagedOrBuilder>(
-                (com.google.cloud.secretmanager.v1.Replication.UserManaged) replication_,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus.Builder,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatusOrBuilder>(
+                (com.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus)
+                    replicationStatus_,
                 getParentForChildren(),
                 isClean());
-        replication_ = null;
+        replicationStatus_ = null;
       }
-      replicationCase_ = 2;
+      replicationStatusCase_ = 2;
       onChanged();
       ;
       return userManagedBuilder_;
@@ -4210,42 +4333,42 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Replication)
+    // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.ReplicationStatus)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.Replication)
-  private static final com.google.cloud.secretmanager.v1.Replication DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.ReplicationStatus)
+  private static final com.google.cloud.secretmanager.v1.ReplicationStatus DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.Replication();
+    DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.ReplicationStatus();
   }
 
-  public static com.google.cloud.secretmanager.v1.Replication getDefaultInstance() {
+  public static com.google.cloud.secretmanager.v1.ReplicationStatus getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Replication> PARSER =
-      new com.google.protobuf.AbstractParser<Replication>() {
+  private static final com.google.protobuf.Parser<ReplicationStatus> PARSER =
+      new com.google.protobuf.AbstractParser<ReplicationStatus>() {
         @java.lang.Override
-        public Replication parsePartialFrom(
+        public ReplicationStatus parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Replication(input, extensionRegistry);
+          return new ReplicationStatus(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<Replication> parser() {
+  public static com.google.protobuf.Parser<ReplicationStatus> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Replication> getParserForType() {
+  public com.google.protobuf.Parser<ReplicationStatus> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.Replication getDefaultInstanceForType() {
+  public com.google.cloud.secretmanager.v1.ReplicationStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

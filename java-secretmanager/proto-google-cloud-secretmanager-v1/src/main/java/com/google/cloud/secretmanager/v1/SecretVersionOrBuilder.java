@@ -164,4 +164,39 @@ public interface SecretVersionOrBuilder
    * @return The state.
    */
   com.google.cloud.secretmanager.v1.SecretVersion.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   *
+   * @return Whether the replicationStatus field is set.
+   */
+  boolean hasReplicationStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   *
+   * @return The replicationStatus.
+   */
+  com.google.cloud.secretmanager.v1.ReplicationStatus getReplicationStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   */
+  com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder getReplicationStatusOrBuilder();
 }

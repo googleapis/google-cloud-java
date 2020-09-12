@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "ca6817d28a7e70d50bab918956699ae48340893b"
+        "sha": "23dc9cdec39c8d64edd0d47c442af680aaf28eb4"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a8c73212a73d460b1edcd0830c4c3e31de33bdc5",
-        "internalRef": "329973402"
+        "sha": "f17ea338b502b967101ca71e4ff0f11d8d1e4518",
+        "internalRef": "330793532"
       }
     },
     {
@@ -134,6 +134,10 @@
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/AddSecretVersionRequestOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CreateSecretRequest.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CreateSecretRequestOrBuilder.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CustomerManagedEncryption.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CustomerManagedEncryptionOrBuilder.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CustomerManagedEncryptionStatus.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/CustomerManagedEncryptionStatusOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/DeleteSecretRequest.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/DeleteSecretRequestOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/DestroySecretVersionRequest.java",
@@ -157,6 +161,8 @@
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ProjectName.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/Replication.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ReplicationOrBuilder.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ReplicationStatus.java",
+    "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ReplicationStatusOrBuilder.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/ResourcesProto.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/Secret.java",
     "proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/SecretName.java",

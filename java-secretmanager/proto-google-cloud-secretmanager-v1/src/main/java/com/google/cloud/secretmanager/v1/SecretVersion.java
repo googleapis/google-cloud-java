@@ -115,6 +115,23 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
               state_ = rawValue;
               break;
             }
+          case 42:
+            {
+              com.google.cloud.secretmanager.v1.ReplicationStatus.Builder subBuilder = null;
+              if (replicationStatus_ != null) {
+                subBuilder = replicationStatus_.toBuilder();
+              }
+              replicationStatus_ =
+                  input.readMessage(
+                      com.google.cloud.secretmanager.v1.ReplicationStatus.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(replicationStatus_);
+                replicationStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -535,6 +552,55 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int REPLICATION_STATUS_FIELD_NUMBER = 5;
+  private com.google.cloud.secretmanager.v1.ReplicationStatus replicationStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   *
+   * @return Whether the replicationStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasReplicationStatus() {
+    return replicationStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   *
+   * @return The replicationStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.ReplicationStatus getReplicationStatus() {
+    return replicationStatus_ == null
+        ? com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()
+        : replicationStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder
+      getReplicationStatusOrBuilder() {
+    return getReplicationStatus();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -562,6 +628,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.secretmanager.v1.SecretVersion.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, state_);
     }
+    if (replicationStatus_ != null) {
+      output.writeMessage(5, getReplicationStatus());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -583,6 +652,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     if (state_
         != com.google.cloud.secretmanager.v1.SecretVersion.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
+    }
+    if (replicationStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReplicationStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -610,6 +682,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (!getDestroyTime().equals(other.getDestroyTime())) return false;
     }
     if (state_ != other.state_) return false;
+    if (hasReplicationStatus() != other.hasReplicationStatus()) return false;
+    if (hasReplicationStatus()) {
+      if (!getReplicationStatus().equals(other.getReplicationStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -633,6 +709,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasReplicationStatus()) {
+      hash = (37 * hash) + REPLICATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicationStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -794,6 +874,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       state_ = 0;
 
+      if (replicationStatusBuilder_ == null) {
+        replicationStatus_ = null;
+      } else {
+        replicationStatus_ = null;
+        replicationStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -833,6 +919,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         result.destroyTime_ = destroyTimeBuilder_.build();
       }
       result.state_ = state_;
+      if (replicationStatusBuilder_ == null) {
+        result.replicationStatus_ = replicationStatus_;
+      } else {
+        result.replicationStatus_ = replicationStatusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -895,6 +986,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasReplicationStatus()) {
+        mergeReplicationStatus(other.getReplicationStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1569,6 +1663,195 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.secretmanager.v1.ReplicationStatus replicationStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.secretmanager.v1.ReplicationStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder>
+        replicationStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     *
+     * @return Whether the replicationStatus field is set.
+     */
+    public boolean hasReplicationStatus() {
+      return replicationStatusBuilder_ != null || replicationStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     *
+     * @return The replicationStatus.
+     */
+    public com.google.cloud.secretmanager.v1.ReplicationStatus getReplicationStatus() {
+      if (replicationStatusBuilder_ == null) {
+        return replicationStatus_ == null
+            ? com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()
+            : replicationStatus_;
+      } else {
+        return replicationStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public Builder setReplicationStatus(com.google.cloud.secretmanager.v1.ReplicationStatus value) {
+      if (replicationStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        replicationStatus_ = value;
+        onChanged();
+      } else {
+        replicationStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public Builder setReplicationStatus(
+        com.google.cloud.secretmanager.v1.ReplicationStatus.Builder builderForValue) {
+      if (replicationStatusBuilder_ == null) {
+        replicationStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        replicationStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public Builder mergeReplicationStatus(
+        com.google.cloud.secretmanager.v1.ReplicationStatus value) {
+      if (replicationStatusBuilder_ == null) {
+        if (replicationStatus_ != null) {
+          replicationStatus_ =
+              com.google.cloud.secretmanager.v1.ReplicationStatus.newBuilder(replicationStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          replicationStatus_ = value;
+        }
+        onChanged();
+      } else {
+        replicationStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public Builder clearReplicationStatus() {
+      if (replicationStatusBuilder_ == null) {
+        replicationStatus_ = null;
+        onChanged();
+      } else {
+        replicationStatus_ = null;
+        replicationStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public com.google.cloud.secretmanager.v1.ReplicationStatus.Builder
+        getReplicationStatusBuilder() {
+
+      onChanged();
+      return getReplicationStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    public com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder
+        getReplicationStatusOrBuilder() {
+      if (replicationStatusBuilder_ != null) {
+        return replicationStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return replicationStatus_ == null
+            ? com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()
+            : replicationStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.secretmanager.v1.ReplicationStatus,
+            com.google.cloud.secretmanager.v1.ReplicationStatus.Builder,
+            com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder>
+        getReplicationStatusFieldBuilder() {
+      if (replicationStatusBuilder_ == null) {
+        replicationStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.secretmanager.v1.ReplicationStatus,
+                com.google.cloud.secretmanager.v1.ReplicationStatus.Builder,
+                com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder>(
+                getReplicationStatus(), getParentForChildren(), isClean());
+        replicationStatus_ = null;
+      }
+      return replicationStatusBuilder_;
     }
 
     @java.lang.Override
