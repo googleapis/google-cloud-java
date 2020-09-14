@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.38.0](https://www.github.com/googleapis/java-talent/compare/v0.37.0...v0.38.0) (2020-09-14)
+
+
+### Features
+
+* **v4:** add v4 client ([#230](https://www.github.com/googleapis/java-talent/issues/230)) ([9319d35](https://www.github.com/googleapis/java-talent/commit/9319d350c6c57e32307eb021fddf5985fdfffeb1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#225](https://www.github.com/googleapis/java-talent/issues/225)) ([9c77265](https://www.github.com/googleapis/java-talent/commit/9c7726524ceef3f1a777dcacccb9d3f5c9070986))
+
 ## [0.37.0](https://www.github.com/googleapis/java-talent/compare/v0.36.1...v0.37.0) (2020-08-10)
 
 
