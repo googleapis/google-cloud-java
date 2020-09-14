@@ -1,0 +1,133 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": "."
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "ba5a928ab823d97dc6b7042ff32130d19b002f75",
+        "internalRef": "331550506"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "fdd03c161003ab97657cc0218f25c82c89ddf4b6"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "workflows",
+        "apiVersion": "v1beta",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ],
+  "generatedFiles": [
+    ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".github/ISSUE_TEMPLATE/support_request.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/release-please.yml",
+    ".github/trusted-contribution.yml",
+    ".github/workflows/ci.yaml",
+    ".github/workflows/samples.yaml",
+    ".kokoro/build.bat",
+    ".kokoro/build.sh",
+    ".kokoro/coerce_logs.sh",
+    ".kokoro/common.cfg",
+    ".kokoro/common.sh",
+    ".kokoro/continuous/common.cfg",
+    ".kokoro/continuous/java8.cfg",
+    ".kokoro/dependencies.sh",
+    ".kokoro/linkage-monitor.sh",
+    ".kokoro/nightly/common.cfg",
+    ".kokoro/nightly/integration.cfg",
+    ".kokoro/nightly/java11.cfg",
+    ".kokoro/nightly/java7.cfg",
+    ".kokoro/nightly/java8-osx.cfg",
+    ".kokoro/nightly/java8-win.cfg",
+    ".kokoro/nightly/java8.cfg",
+    ".kokoro/nightly/samples.cfg",
+    ".kokoro/populate-secrets.sh",
+    ".kokoro/presubmit/clirr.cfg",
+    ".kokoro/presubmit/common.cfg",
+    ".kokoro/presubmit/dependencies.cfg",
+    ".kokoro/presubmit/integration.cfg",
+    ".kokoro/presubmit/java11.cfg",
+    ".kokoro/presubmit/java7.cfg",
+    ".kokoro/presubmit/java8-osx.cfg",
+    ".kokoro/presubmit/java8-win.cfg",
+    ".kokoro/presubmit/java8.cfg",
+    ".kokoro/presubmit/linkage-monitor.cfg",
+    ".kokoro/presubmit/lint.cfg",
+    ".kokoro/presubmit/samples.cfg",
+    ".kokoro/release/bump_snapshot.cfg",
+    ".kokoro/release/common.cfg",
+    ".kokoro/release/common.sh",
+    ".kokoro/release/drop.cfg",
+    ".kokoro/release/drop.sh",
+    ".kokoro/release/promote.cfg",
+    ".kokoro/release/promote.sh",
+    ".kokoro/release/publish_javadoc.cfg",
+    ".kokoro/release/publish_javadoc.sh",
+    ".kokoro/release/snapshot.cfg",
+    ".kokoro/release/snapshot.sh",
+    ".kokoro/release/stage.cfg",
+    ".kokoro/release/stage.sh",
+    ".kokoro/trampoline.sh",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md",
+    "codecov.yaml",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/WorkflowsClient.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/WorkflowsSettings.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/package-info.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/stub/GrpcWorkflowsCallableFactory.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/stub/GrpcWorkflowsStub.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/stub/WorkflowsStub.java",
+    "google-cloud-workflows/src/main/java/com/google/cloud/workflows/v1beta/stub/WorkflowsStubSettings.java",
+    "google-cloud-workflows/src/test/java/com/google/cloud/workflows/v1beta/MockWorkflows.java",
+    "google-cloud-workflows/src/test/java/com/google/cloud/workflows/v1beta/MockWorkflowsImpl.java",
+    "google-cloud-workflows/src/test/java/com/google/cloud/workflows/v1beta/WorkflowsClientTest.java",
+    "grpc-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/WorkflowsGrpc.java",
+    "java.header",
+    "license-checks.xml",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/CreateWorkflowRequest.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/CreateWorkflowRequestOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/DeleteWorkflowRequest.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/DeleteWorkflowRequestOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/GetWorkflowRequest.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/GetWorkflowRequestOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/ListWorkflowsRequest.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/ListWorkflowsRequestOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/ListWorkflowsResponse.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/ListWorkflowsResponseOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/LocationName.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/OperationMetadata.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/OperationMetadataOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/UpdateWorkflowRequest.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/UpdateWorkflowRequestOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/Workflow.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/WorkflowName.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/WorkflowOrBuilder.java",
+    "proto-google-cloud-workflows-v1beta/src/main/java/com/google/cloud/workflows/v1beta/WorkflowsProto.java",
+    "proto-google-cloud-workflows-v1beta/src/main/proto/google/cloud/workflows/v1beta/workflows.proto",
+    "renovate.json",
+    "samples/install-without-bom/pom.xml",
+    "samples/pom.xml",
+    "samples/snapshot/pom.xml",
+    "samples/snippets/pom.xml"
+  ]
+}
