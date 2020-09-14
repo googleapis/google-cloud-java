@@ -11,6 +11,7 @@
   "repo": "googleapis/java-pubsub",
   "repo_short": "java-pubsub",
   "distribution_name": "com.google.cloud:google-cloud-pubsub",
+  "codeowner_team": "@googleapis/api-pubsub",
   "api_id": "pubsub.googleapis.com",
   "requires_billing": true
 }
