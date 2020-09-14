@@ -10,6 +10,7 @@
   "repo": "googleapis/java-bigquerydatatransfer",
   "repo_short": "java-bigquerydatatransfer",
   "distribution_name": "com.google.cloud:google-cloud-bigquerydatatransfer",
+  "codeowner_team": "@googleapis/api-bigquery",
   "api_id": "bigquerydatatransfer.googleapis.com",
   "transport": "grpc",
   "requires_billing": true
