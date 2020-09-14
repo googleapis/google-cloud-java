@@ -10,6 +10,7 @@
   "repo": "googleapis/java-bigqueryreservation",
   "repo_short": "java-bigqueryreservation",
   "distribution_name": "com.google.cloud:google-cloud-bigqueryreservation",
+  "codeowner_team": "@googleapis/api-bigquery",
   "api_id": "bigqueryreservation.googleapis.com",
   "requires_billing": true
 }
