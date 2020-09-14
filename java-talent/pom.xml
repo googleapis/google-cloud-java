@@ -74,8 +74,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-talent-v4</artifactId>
+        <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-talent-v4:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
         <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-talent-v4</artifactId>
+        <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -124,7 +134,9 @@
 
   <modules>
     <module>proto-google-cloud-talent-v4beta1</module>
+    <module>proto-google-cloud-talent-v4</module>
     <module>grpc-google-cloud-talent-v4beta1</module>
+    <module>grpc-google-cloud-talent-v4</module>
     <module>google-cloud-talent</module>
     <module>google-cloud-talent-bom</module>
   </modules>

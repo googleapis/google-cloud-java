@@ -60,7 +60,11 @@
 
   <dependencyManagement>
     <dependencies>
-
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-talent-v4</artifactId>
+        <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-talent-v4:current} -->
+      </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
@@ -70,6 +74,11 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent</artifactId>
         <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-talent-v4</artifactId>
+        <version>0.37.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

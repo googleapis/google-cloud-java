@@ -18,7 +18,7 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-versions = ['v4beta1']
+versions = ['v4beta1', 'v4']
 service = 'talent'
 
 for version in versions:
