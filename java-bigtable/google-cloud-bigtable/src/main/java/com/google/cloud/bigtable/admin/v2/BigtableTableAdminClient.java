@@ -76,7 +76,7 @@ import javax.annotation.Nonnull;
  * // One instance per application.
  * BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]");
  *
- * CreateTable request =
+ * CreateTableRequest request =
  *   CreateTableRequest.of("my-table")
  *     .addFamily("cf1")
  *     .addFamily("cf2", GCRULES.maxVersions(10))
