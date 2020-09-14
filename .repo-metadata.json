@@ -10,6 +10,7 @@
   "repo": "googleapis/java-bigquerystorage",
   "repo_short": "java-bigquerystorage",
   "distribution_name": "com.google.cloud:google-cloud-bigquerystorage",
+  "codeowner_team": "@googleapis/api-bigquery",
   "api_id": "bigquerystorage.googleapis.com",
   "transport": "grpc",
   "requires_billing": true
