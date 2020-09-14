@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-dns/compare/v1.0.0...v1.0.1) (2020-09-10)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20200806-1.30.10 ([#130](https://www.github.com/googleapis/java-dns/issues/130)) ([6c62976](https://www.github.com/googleapis/java-dns/commit/6c62976f10338f4ccaabbc2f4b061cdd6066d6e2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#178](https://www.github.com/googleapis/java-dns/issues/178)) ([cadb76d](https://www.github.com/googleapis/java-dns/commit/cadb76d2f21a4cc9144715e6bb6cf8090ee65030))
+* update dependency com.google.errorprone:error_prone_annotations to v2.4.0 ([#148](https://www.github.com/googleapis/java-dns/issues/148)) ([5bcbcf3](https://www.github.com/googleapis/java-dns/commit/5bcbcf3aea80bec630bf2d02e6e1c907bd6e2897))
+
 ## [1.0.0](https://www.github.com/googleapis/java-dns/compare/v0.118.0...v1.0.0) (2020-08-12)
 
 
