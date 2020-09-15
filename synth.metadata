@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "b3f59b1e1215d93a3b7048149c88318f2a074f79"
+        "sha": "2c679675645c4314df71481c02752cc49e80f81a"
       }
     },
     {
