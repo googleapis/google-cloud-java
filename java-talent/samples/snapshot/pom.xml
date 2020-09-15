@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-talent</artifactId>
-      <version>0.37.0</version>
+      <version>0.38.0</version>
     </dependency>
 
     <dependency>
