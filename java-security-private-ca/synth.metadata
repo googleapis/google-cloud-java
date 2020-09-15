@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-security-private-ca.git",
-        "sha": "b89529457e672666b9575bdb664cf54c42050eb5"
+        "remote": "https://github.com/googleapis/java-security-private-ca.git",
+        "sha": "7f158cc2f53e2d21bb523c038afd90b323868f13"
       }
     },
     {
@@ -27,7 +27,7 @@
     {
       "client": {
         "source": "googleapis",
-        "apiName": "security-private-ca",
+        "apiName": "security-privateca",
         "apiVersion": "v1beta1",
         "language": "java",
         "generator": "bazel"

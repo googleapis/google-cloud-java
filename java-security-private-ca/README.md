@@ -138,6 +138,6 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [code-of-conduct]: https://github.com/googleapis/java-security-private-ca/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-security-private-ca/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=security-private-ca.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=security-privateca.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
