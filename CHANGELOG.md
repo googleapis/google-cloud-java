@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.117.2](https://www.github.com/googleapis/java-bigquery/compare/v1.117.1...v1.117.2) (2020-09-15)
+
+
+### Bug Fixes
+
+* get recordvalue by field name ([#718](https://www.github.com/googleapis/java-bigquery/issues/718)) ([b3f59b1](https://www.github.com/googleapis/java-bigquery/commit/b3f59b1e1215d93a3b7048149c88318f2a074f79))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200827-1.30.10 ([#722](https://www.github.com/googleapis/java-bigquery/issues/722)) ([dcb8671](https://www.github.com/googleapis/java-bigquery/commit/dcb86719f11fe2b75113974ada13bae20150aa49))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#715](https://www.github.com/googleapis/java-bigquery/issues/715)) ([b75b95b](https://www.github.com/googleapis/java-bigquery/commit/b75b95b7ca338da0900c53856c280c9acc140cd5))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.0 ([#723](https://www.github.com/googleapis/java-bigquery/issues/723)) ([fb6d543](https://www.github.com/googleapis/java-bigquery/commit/fb6d5430b9f6e1285e7fa0102c78d9c4dd07c599))
+* update jmh.version to v1.25.2 ([#720](https://www.github.com/googleapis/java-bigquery/issues/720)) ([9afba31](https://www.github.com/googleapis/java-bigquery/commit/9afba319a62f54ee766d2476f5bd2ee91b3ba762))
+
 ### [1.117.1](https://www.github.com/googleapis/java-bigquery/compare/v1.117.0...v1.117.1) (2020-08-28)
 
 
