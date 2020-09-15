@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-security-privateca-parent</artifactId>
+  <artifactId>google-cloud-security-private-ca-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-privateca:current} -->
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   <name>Google Certificate Authority Service Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -62,31 +62,31 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-security-privateca-parent</site.installationModule>
+    <site.installationModule>google-cloud-security-private-ca-parent</site.installationModule>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-security-privateca</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-privateca:current} -->
+        <artifactId>google-cloud-security-private-ca</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-security-privateca-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-security-privateca-v1beta1:current} -->
+        <artifactId>proto-google-cloud-security-private-ca-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-security-private-ca-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-security-privateca-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-privateca-v1beta1:current} -->
+        <artifactId>grpc-google-cloud-security-private-ca-v1beta1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>0.8.6</version>
+        <version>0.9.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -111,10 +111,10 @@
   </build>
 
   <modules>
-    <module>google-cloud-security-privateca</module>
-    <module>proto-google-cloud-security-privateca-v1beta1</module>
-    <module>grpc-google-cloud-security-privateca-v1beta1</module>
-    <module>google-cloud-security-privateca-bom</module>
+    <module>google-cloud-security-private-ca</module>
+    <module>proto-google-cloud-security-private-ca-v1beta1</module>
+    <module>grpc-google-cloud-security-private-ca-v1beta1</module>
+    <module>google-cloud-security-private-ca-bom</module>
   </modules>
 
   <reporting>
@@ -122,7 +122,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
         <reportSets>
           <reportSet>
             <reports>

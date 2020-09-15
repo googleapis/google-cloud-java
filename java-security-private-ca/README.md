@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-security-privateca</artifactId>
+  <artifactId>google-cloud-security-private-ca</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
 
-[//]: # ({x-version-update-start:google-cloud-security-privateca:released})
+[//]: # ({x-version-update-start:google-cloud-security-private-ca:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-security-privateca:0.0.0'
+compile 'com.google.cloud:google-cloud-security-private-ca:0.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-security-privateca" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "0.0.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -52,8 +52,8 @@ You will need to [enable billing][enable-billing] to use Google Certificate Auth
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-security-privateca` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-security-privateca` as a dependency in your code.
+You'll need to obtain the `google-cloud-security-private-ca` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-security-private-ca` as a dependency in your code.
 
 ## About Certificate Authority Service
 
@@ -115,29 +115,29 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com/certificate-authority-service
-[javadocs]: https://googleapis.dev/java/google-cloud-security-privateca/latest/index.html
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-privateca/java11.html
+[javadocs]: https://googleapis.dev/java/google-cloud-security-private-ca/latest/index.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-security-private-ca/java11.html
 [stability-image]: https://img.shields.io/badge/stability-beta-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-security-privateca.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-security-privateca&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-security-private-ca.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-security-private-ca&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-security-privateca/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-security-privateca/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-security-privateca/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-security-private-ca/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-security-private-ca/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-security-private-ca/blob/master/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=security-privateca.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=security-private-ca.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

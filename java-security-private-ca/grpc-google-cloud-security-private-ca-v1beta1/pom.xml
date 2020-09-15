@@ -3,14 +3,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
-  <artifactId>grpc-google-cloud-security-privateca-v1beta1</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-privateca-v1beta1:current} -->
-  <name>grpc-google-cloud-security-privateca-v1beta1</name>
-  <description>GRPC library for google-cloud-security-privateca</description>
+  <artifactId>grpc-google-cloud-security-private-ca-v1beta1</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1beta1:current} -->
+  <name>grpc-google-cloud-security-private-ca-v1beta1</name>
+  <description>GRPC library for google-cloud-security-private-ca</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-security-privateca-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-privateca:current} -->
+    <artifactId>google-cloud-security-private-ca-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -31,11 +31,15 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-security-privateca-v1beta1</artifactId>
+      <artifactId>proto-google-cloud-security-private-ca-v1beta1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
     </dependency>
   </dependencies>
 

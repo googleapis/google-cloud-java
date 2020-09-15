@@ -27,6 +27,7 @@ for version in versions:
       version=version,
       proto_path=f'google/cloud/security/privateca/{version}',
       bazel_target=f'//google/cloud/security/privateca/{version}:google-cloud-{service}-{version}-java',
+      destination_name='security-private-ca',
   )
 
 java.common_templates()

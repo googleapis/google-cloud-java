@@ -56,7 +56,7 @@
     },
     {
       "packagePatterns": [
-        "^com.google.cloud:google-cloud-security-privateca",
+        "^com.google.cloud:google-cloud-security-private-ca",
         "^com.google.cloud:libraries-bom",
         "^com.google.cloud.samples:shared-configuration"
       ],
