@@ -55,30 +55,12 @@ public class ITSystemTest {
           + "/zones/us-central1-a/clusters/"
           + CLUSTER_NAME;
   private static final String NODE_POOL_SEL_LINK = SELF_LINK + "/nodePools/" + NODE_POOL_NAME;
-  private static final String LOGGING_SERVICE = "logging.googleapis.com";
-  private static final String MONITORING_SERVICE = "monitoring.googleapis.com";
   private static final String NETWORK = "default";
   private static final int INITIAL_NODE_COUNT = 1;
 
   @BeforeClass
   public static void beforeClass() throws Exception {
     client = ClusterManagerClient.create();
-
-    /** create cluster */
-    Cluster cluster =
-        Cluster.newBuilder()
-            .setName(CLUSTER_NAME)
-            .setLocation("us-central1")
-            .setDescription(DETAIL)
-            .setSelfLink(SELF_LINK)
-            .setInitialNodeCount(INITIAL_NODE_COUNT)
-            .setLoggingService(LOGGING_SERVICE)
-            .setMonitoringService(MONITORING_SERVICE)
-            .setStatusMessage(STATUS_MESSAGE)
-            .setNetwork(NETWORK)
-            .build();
-    operation = client.createCluster(PROJECT_ID, ZONE, cluster);
-    LOG.info(String.format("%s cluster created successfully.", CLUSTER_NAME));
 
     /** create node pool* */
     NodePool nodePool =
@@ -88,8 +70,20 @@ public class ITSystemTest {
             .setSelfLink(NODE_POOL_SEL_LINK)
             .setStatusMessage(STATUS_MESSAGE)
             .build();
-    Thread.sleep(TimeUnit.MINUTES.toMillis(5));
-    client.createNodePool(PROJECT_ID, ZONE, CLUSTER_NAME, nodePool);
+
+    /** create cluster */
+    Cluster cluster =
+        Cluster.newBuilder()
+            .setName(CLUSTER_NAME)
+            .setLocation("us-central1")
+            .setDescription(DETAIL)
+            .setSelfLink(SELF_LINK)
+            .addNodePools(nodePool)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setNetwork(NETWORK)
+            .build();
+    operation = client.createCluster(PROJECT_ID, ZONE, cluster);
+    LOG.info(String.format("%s cluster created successfully.", CLUSTER_NAME));
     LOG.info(String.format("%s node pool created successfully.", NODE_POOL_NAME));
   }
 
@@ -98,37 +92,34 @@ public class ITSystemTest {
     Thread.sleep(TimeUnit.MINUTES.toMillis(5));
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
-
     client.close();
   }
 
   @Test
   public void getClusterTest() {
     Cluster cluster = client.getCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
+    NodePool nodePool = client.getNodePool(PROJECT_ID, ZONE, CLUSTER_NAME, NODE_POOL_NAME);
     assertEquals(CLUSTER_NAME, cluster.getName());
     assertEquals(DETAIL, cluster.getDescription());
-    assertEquals(ZONE, cluster.getZone());
+    assertEquals(ZONE, cluster.getLocation());
     assertEquals(SELF_LINK, cluster.getSelfLink());
     assertEquals(NETWORK, cluster.getNetwork());
-    assertEquals(INITIAL_NODE_COUNT, cluster.getInitialNodeCount());
-    assertEquals(LOGGING_SERVICE, cluster.getLoggingService());
-    assertEquals(LOGGING_SERVICE, cluster.getLoggingService());
+    assertEquals(INITIAL_NODE_COUNT, nodePool.getInitialNodeCount());
   }
 
   @Test
   public void listClusterTest() {
     ListClustersResponse clustersResponse = client.listClusters(PROJECT_ID, ZONE);
     List<Cluster> clusters = clustersResponse.getClustersList();
+    NodePool nodePool = client.getNodePool(PROJECT_ID, ZONE, CLUSTER_NAME, NODE_POOL_NAME);
     for (Cluster cluster : clusters) {
       if (CLUSTER_NAME.equals(cluster.getName())) {
         assertEquals(CLUSTER_NAME, cluster.getName());
         assertEquals(DETAIL, cluster.getDescription());
-        assertEquals(ZONE, cluster.getZone());
+        assertEquals(ZONE, cluster.getLocation());
         assertEquals(SELF_LINK, cluster.getSelfLink());
         assertEquals(NETWORK, cluster.getNetwork());
-        assertEquals(INITIAL_NODE_COUNT, cluster.getInitialNodeCount());
-        assertEquals(LOGGING_SERVICE, cluster.getLoggingService());
-        assertEquals(LOGGING_SERVICE, cluster.getLoggingService());
+        assertEquals(INITIAL_NODE_COUNT, nodePool.getInitialNodeCount());
       }
     }
   }
