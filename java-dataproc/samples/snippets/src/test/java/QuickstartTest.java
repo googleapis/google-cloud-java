@@ -92,7 +92,6 @@ public class QuickstartTest {
     String output = bout.toString();
 
     assertThat(output, CoreMatchers.containsString("Cluster created successfully"));
-    assertThat(output, CoreMatchers.containsString("Submitting job"));
     assertThat(output, CoreMatchers.containsString("Job finished successfully:"));
     assertThat(output, CoreMatchers.containsString("successfully deleted"));
   }

@@ -55,27 +55,6 @@ import java.util.regex.Pattern;
 
 public class Quickstart {
 
-  public static Job waitForJobCompletion(
-      JobControllerClient jobControllerClient, String projectId, String region, String jobId) {
-    while (true) {
-      // Poll the service periodically until the Job is in a finished state.
-      Job jobInfo = jobControllerClient.getJob(projectId, region, jobId);
-      switch (jobInfo.getStatus().getState()) {
-        case DONE:
-        case CANCELLED:
-        case ERROR:
-          return jobInfo;
-        default:
-          try {
-            // Wait a second in between polling attempts.
-            TimeUnit.SECONDS.sleep(1);
-          } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-          }
-      }
-    }
-  }
-
   public static void quickstart(
       String projectId, String region, String clusterName, String jobFilePath)
       throws IOException, InterruptedException {
@@ -130,16 +109,8 @@ public class Quickstart {
       Job job = Job.newBuilder().setPlacement(jobPlacement).setPysparkJob(pySparkJob).build();
 
       // Submit an asynchronous request to execute the job.
-      Job request = jobControllerClient.submitJob(projectId, region, job);
-      String jobId = request.getReference().getJobId();
-      System.out.println(String.format("Submitting job \"%s\"", jobId));
-
-      // Wait for the job to finish.
-      System.out.println(String.format("Job %s finished successfully.", jobId));
-
       OperationFuture<Job, JobMetadata> submitJobAsOperationAsyncRequest =
           jobControllerClient.submitJobAsOperationAsync(projectId, region, job);
-
       Job jobResponse = submitJobAsOperationAsyncRequest.get();
 
       // Print output from Google Cloud Storage.

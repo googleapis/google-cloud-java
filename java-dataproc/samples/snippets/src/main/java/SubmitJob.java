@@ -17,7 +17,6 @@
 // [START dataproc_submit_job]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.dataproc.v1.HadoopJob;
 import com.google.cloud.dataproc.v1.Job;
 import com.google.cloud.dataproc.v1.JobControllerClient;
 import com.google.cloud.dataproc.v1.JobControllerSettings;
@@ -28,8 +27,6 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
