@@ -38,6 +38,7 @@ import com.google.cloud.dataproc.v1.InstanceGroupConfig;
 import com.google.cloud.dataproc.v1.Job;
 import com.google.cloud.dataproc.v1.JobControllerClient;
 import com.google.cloud.dataproc.v1.JobControllerSettings;
+import com.google.cloud.dataproc.v1.JobMetadata;
 import com.google.cloud.dataproc.v1.JobPlacement;
 import com.google.cloud.dataproc.v1.PySparkJob;
 import com.google.cloud.storage.Blob;
@@ -49,6 +50,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Quickstart {
 
@@ -117,9 +120,9 @@ public class Quickstart {
       // Create the Cloud Dataproc cluster.
       OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsyncRequest =
           clusterControllerClient.createClusterAsync(projectId, region, cluster);
-      Cluster response = createClusterAsyncRequest.get();
+      Cluster clusterResponse = createClusterAsyncRequest.get();
       System.out.println(
-          String.format("Cluster created successfully: %s", response.getClusterName()));
+          String.format("Cluster created successfully: %s", clusterResponse.getClusterName()));
 
       // Configure the settings for our job.
       JobPlacement jobPlacement = JobPlacement.newBuilder().setClusterName(clusterName).build();
@@ -129,34 +132,26 @@ public class Quickstart {
       // Submit an asynchronous request to execute the job.
       Job request = jobControllerClient.submitJob(projectId, region, job);
       String jobId = request.getReference().getJobId();
-      System.out.println(String.format("Submitted job \"%s\"", jobId));
+      System.out.println(String.format("Submitting job \"%s\"", jobId));
 
       // Wait for the job to finish.
-      CompletableFuture<Job> finishedJobFuture =
-          CompletableFuture.supplyAsync(
-              () -> waitForJobCompletion(jobControllerClient, projectId, region, jobId));
-      int timeout = 10;
-      try {
-        Job jobInfo = finishedJobFuture.get(timeout, TimeUnit.MINUTES);
-        System.out.println(String.format("Job %s finished successfully.", jobId));
+      System.out.println(String.format("Job %s finished successfully.", jobId));
 
-        // Cloud Dataproc job output gets saved to a GCS bucket allocated to it.
-        Cluster clusterInfo = clusterControllerClient.getCluster(projectId, region, clusterName);
-        Storage storage = StorageOptions.getDefaultInstance().getService();
-        Blob blob =
-            storage.get(
-                clusterInfo.getConfig().getConfigBucket(),
-                String.format(
-                    "google-cloud-dataproc-metainfo/%s/jobs/%s/driveroutput.000000000",
-                    clusterInfo.getClusterUuid(), jobId));
-        System.out.println(
-            String.format(
-                "Job \"%s\" finished with state %s:\n%s",
-                jobId, jobInfo.getStatus().getState(), new String(blob.getContent())));
-      } catch (TimeoutException e) {
-        System.err.println(
-            String.format("Job timed out after %d minutes: %s", timeout, e.getMessage()));
-      }
+      OperationFuture<Job, JobMetadata> submitJobAsOperationAsyncRequest =
+          jobControllerClient.submitJobAsOperationAsync(projectId, region, job);
+
+      Job jobResponse = submitJobAsOperationAsyncRequest.get();
+
+      // Print output from Google Cloud Storage.
+      Matcher matches =
+          Pattern.compile("gs://(.*?)/(.*)").matcher(jobResponse.getDriverOutputResourceUri());
+      matches.matches();
+
+      Storage storage = StorageOptions.getDefaultInstance().getService();
+      Blob blob = storage.get(matches.group(1), String.format("%s.000000000", matches.group(2)));
+
+      System.out.println(
+          String.format("Job finished successfully: %s", new String(blob.getContent())));
 
       // Delete the cluster.
       OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsyncRequest =
@@ -165,7 +160,7 @@ public class Quickstart {
       System.out.println(String.format("Cluster \"%s\" successfully deleted.", clusterName));
 
     } catch (ExecutionException e) {
-      System.err.println(String.format("Error executing quickstart: %s ", e.getMessage()));
+      System.err.println(String.format("quickstart: %s ", e.getMessage()));
     }
   }
 
