@@ -48,11 +48,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:1.101.2'
+compile 'com.google.cloud:google-cloud-logging:1.102.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.101.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.102.0"
 ```
 [//]: # ({x-version-update-end})
 
