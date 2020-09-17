@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.105.0](https://www.github.com/googleapis/java-datastore/compare/v1.104.0...v1.105.0) (2020-09-01)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#174](https://www.github.com/googleapis/java-datastore/issues/174)) ([8618c18](https://www.github.com/googleapis/java-datastore/commit/8618c1848e71424fa164fee9d8b7b53641b6b823))
+
+
+### Bug Fixes
+
+* query result start with startCursor if specified ([#207](https://www.github.com/googleapis/java-datastore/issues/207)) ([023229a](https://www.github.com/googleapis/java-datastore/commit/023229a15edbbe773bd03410ed0784aba248ad6e))
+
+
+### Dependencies
+
+* remove direct declaration of google-auth-library-oauth2-http ([#184](https://www.github.com/googleapis/java-datastore/issues/184)) ([4fa4df4](https://www.github.com/googleapis/java-datastore/commit/4fa4df40d63d7fbce023d6231830dcc296c29dd1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#187](https://www.github.com/googleapis/java-datastore/issues/187)) ([941bea0](https://www.github.com/googleapis/java-datastore/commit/941bea016f1ce4e1c1fd027b1671f950e9c52160))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#191](https://www.github.com/googleapis/java-datastore/issues/191)) ([a89eb08](https://www.github.com/googleapis/java-datastore/commit/a89eb08be1cd9689d38b8b67c472cc928e3549c1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.4 ([#196](https://www.github.com/googleapis/java-datastore/issues/196)) ([7214e0a](https://www.github.com/googleapis/java-datastore/commit/7214e0ae224633e2effc023d10494e0164a8f9dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#199](https://www.github.com/googleapis/java-datastore/issues/199)) ([6a959d3](https://www.github.com/googleapis/java-datastore/commit/6a959d3f7ca75ba5da1d1c4cb509593d3be39e98))
+* update dependency com.google.oauth-client:google-oauth-client to v1.31.0 ([#186](https://www.github.com/googleapis/java-datastore/issues/186)) ([16bfb9a](https://www.github.com/googleapis/java-datastore/commit/16bfb9a0127f4969a796ad95cc11cf2b8b92d0f3))
+
+
+### Documentation
+
+* libraries-bom 8.1.0 ([#200](https://www.github.com/googleapis/java-datastore/issues/200)) ([9425972](https://www.github.com/googleapis/java-datastore/commit/9425972905d1e370192eeb3bbfe837f5a7fb25cf))
+* update libraries-bom ([#211](https://www.github.com/googleapis/java-datastore/issues/211)) ([9407c4a](https://www.github.com/googleapis/java-datastore/commit/9407c4afec3de6e18c96c24872269e61c8ad40fb))
+
 ## [1.104.0](https://www.github.com/googleapis/java-datastore/compare/v1.103.0...v1.104.0) (2020-06-17)
 
 
