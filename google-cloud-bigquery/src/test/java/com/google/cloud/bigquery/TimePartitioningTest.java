@@ -29,6 +29,8 @@ public class TimePartitioningTest {
 
   private static final Type TYPE_DAY = Type.DAY;
   private static final Type TYPE_HOUR = Type.HOUR;
+  private static final Type TYPE_MONTH = Type.MONTH;
+  private static final Type TYPE_YEAR = Type.YEAR;
   private static final long EXPIRATION_MS = 42;
   private static final boolean REQUIRE_PARTITION_FILTER = false;
   private static final String FIELD = "field";
@@ -44,11 +46,25 @@ public class TimePartitioningTest {
           .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .setField(FIELD)
           .build();
+  private static final TimePartitioning TIME_PARTITIONING_MONTH =
+      TimePartitioning.newBuilder(TYPE_MONTH)
+          .setExpirationMs(EXPIRATION_MS)
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
+          .setField(FIELD)
+          .build();
+  private static final TimePartitioning TIME_PARTITIONING_YEAR =
+      TimePartitioning.newBuilder(TYPE_YEAR)
+          .setExpirationMs(EXPIRATION_MS)
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
+          .setField(FIELD)
+          .build();
 
   @Test
   public void testOf() {
     assertEquals(TYPE_DAY, TIME_PARTITIONING_DAY.getType());
     assertEquals(TYPE_HOUR, TIME_PARTITIONING_HOUR.getType());
+    assertEquals(TYPE_MONTH, TIME_PARTITIONING_MONTH.getType());
+    assertEquals(TYPE_YEAR, TIME_PARTITIONING_YEAR.getType());
     assertEquals(EXPIRATION_MS, TIME_PARTITIONING_DAY.getExpirationMs().longValue());
     assertEquals(REQUIRE_PARTITION_FILTER, TIME_PARTITIONING_DAY.getRequirePartitionFilter());
     assertEquals(FIELD, TIME_PARTITIONING_DAY.getField());
