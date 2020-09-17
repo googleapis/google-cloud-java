@@ -21,9 +21,11 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
@@ -36,6 +38,7 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatus.State;
 import com.google.common.collect.ImmutableList;
 import java.util.Collections;
 import org.junit.Assert;
@@ -434,6 +437,24 @@ public class JobTest {
     Job updatedJob = job.reload();
     compareJob(expectedJob, updatedJob);
     verify(bigquery).getJob(JOB_INFO.getJobId());
+  }
+
+  @Test
+  public void testReloadJobException() {
+    JobInfo updatedInfo = JOB_INFO.toBuilder().setEtag("etag").build();
+    Job expectedJob = new Job(bigquery, new JobInfo.BuilderImpl(updatedInfo));
+    BigQueryError bigQueryError = new BigQueryError("invalidQuery", "US", "invalidQuery");
+    expectedJob =
+        expectedJob.toBuilder().setStatus(new JobStatus(State.DONE, bigQueryError, null)).build();
+    ImmutableList<BigQueryError> bigQueryErrorList = ImmutableList.of(bigQueryError);
+    JobException jobException = new JobException(expectedJob.getJobId(), bigQueryErrorList);
+    when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(expectedJob).thenThrow(jobException);
+    try {
+      job.reload();
+      fail("JobException expected");
+    } catch (JobException e) {
+      assertNotNull(e.getErrors());
+    }
   }
 
   @Test

@@ -401,7 +401,16 @@ public class Job extends JobInfo {
    */
   public Job reload(JobOption... options) {
     checkNotDryRun("reload");
-    return bigquery.getJob(getJobId(), options);
+    Job job = bigquery.getJob(getJobId(), options);
+    if (job != null && job.getStatus().getError() != null) {
+      // TODO(pmakani): change to BigQueryException when fast query path change is merged
+      throw new JobException(
+          getJobId(),
+          job.getStatus().getExecutionErrors() == null
+              ? ImmutableList.of(job.getStatus().getError())
+              : ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
+    }
+    return job;
   }
 
   /**
