@@ -44,7 +44,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.118.0</version>
+      <version>1.118.1-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
