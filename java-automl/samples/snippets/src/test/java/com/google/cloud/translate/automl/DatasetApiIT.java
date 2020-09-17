@@ -39,6 +39,7 @@ public class DatasetApiIT {
   private static final String COMPUTE_REGION = "us-central1";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private DatasetApi app;
   private String datasetId;
   private String getdatasetId = "TRL3946265060617537378";
@@ -47,12 +48,15 @@ public class DatasetApiIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

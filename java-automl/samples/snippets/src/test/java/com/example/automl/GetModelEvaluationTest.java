@@ -36,6 +36,7 @@ public class GetModelEvaluationTest {
   private String modelEvaluationId;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -54,6 +55,7 @@ public class GetModelEvaluationTest {
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     // Get a model evaluation ID from the List request first to be used in the Get call
@@ -64,12 +66,15 @@ public class GetModelEvaluationTest {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

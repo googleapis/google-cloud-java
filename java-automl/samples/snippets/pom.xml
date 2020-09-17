@@ -42,6 +42,14 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-automl</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquery</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
     <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>net.sourceforge.argparse4j</groupId>

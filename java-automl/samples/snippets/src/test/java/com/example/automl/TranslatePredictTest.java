@@ -38,6 +38,7 @@ public class TranslatePredictTest {
   private static final String filePath = "./resources/input.txt";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -56,12 +57,15 @@ public class TranslatePredictTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

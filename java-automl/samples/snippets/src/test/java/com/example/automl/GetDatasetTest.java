@@ -37,6 +37,7 @@ public class GetDatasetTest {
   private static final String DATASET_ID = System.getenv("ENTITY_EXTRACTION_DATASET_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -55,12 +56,15 @@ public class GetDatasetTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

@@ -38,6 +38,7 @@ public class LanguageEntityExtractionCreateDatasetTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String datasetId;
 
   private static void requireEnvVar(String varName) {
@@ -56,6 +57,7 @@ public class LanguageEntityExtractionCreateDatasetTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -63,7 +65,7 @@ public class LanguageEntityExtractionCreateDatasetTest {
   public void tearDown() throws InterruptedException, ExecutionException, IOException {
     // Delete the created dataset
     DeleteDataset.deleteDataset(PROJECT_ID, datasetId);
-    System.setOut(null);
+    System.setOut(originalPrintStream);
   }
 
   @Test

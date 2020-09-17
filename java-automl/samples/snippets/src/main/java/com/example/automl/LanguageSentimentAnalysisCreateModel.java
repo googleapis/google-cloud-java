@@ -46,6 +46,7 @@ class LanguageSentimentAnalysisCreateModel {
       // A resource that represents Google Cloud Platform location.
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
       // Set model metadata.
+      System.out.println(datasetId);
       TextSentimentModelMetadata metadata = TextSentimentModelMetadata.newBuilder().build();
       Model model =
           Model.newBuilder()

@@ -25,6 +25,7 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -34,6 +35,7 @@ public class ListModelsTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -51,15 +53,21 @@ public class ListModelsTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
+  // Skipping this test until backend is cleaned up.
+  // https://github.com/googleapis/java-automl/issues/291
   @Test
+  @Ignore
   public void testListModels() throws IOException {
     ListModels.listModels(PROJECT_ID);
     String got = bout.toString();

@@ -34,6 +34,7 @@ public class ModelApiIT {
   private static final String COMPUTE_REGION = "us-central1";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private ModelApi app;
   private String modelId;
   private String modelEvaluationId;
@@ -43,12 +44,15 @@ public class ModelApiIT {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

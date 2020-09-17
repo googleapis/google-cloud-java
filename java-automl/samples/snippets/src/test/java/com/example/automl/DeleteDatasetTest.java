@@ -38,6 +38,7 @@ public class DeleteDatasetTest {
   private static final String PROJECT_ID = System.getenv("AUTOML_PROJECT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private String datasetId;
 
   private static void requireEnvVar(String varName) {
@@ -56,6 +57,7 @@ public class DeleteDatasetTest {
   public void setUp() throws InterruptedException, ExecutionException, IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     // Create a fake dataset to be deleted
@@ -70,12 +72,15 @@ public class DeleteDatasetTest {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
