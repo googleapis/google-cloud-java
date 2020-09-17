@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.118.0](https://www.github.com/googleapis/java-bigquery/compare/v1.117.2...v1.118.0) (2020-09-17)
+
+
+### Features
+
+* **bigquery:** explicitly ask for dense responses from HTTP backend ([#739](https://www.github.com/googleapis/java-bigquery/issues/739)) ([8c92c99](https://www.github.com/googleapis/java-bigquery/commit/8c92c9919b278bdb128be963391fc1870e69e343))
+
+
+### Bug Fixes
+
+* throw jobexception for invalid multiple statements query ([#732](https://www.github.com/googleapis/java-bigquery/issues/732)) ([2a0d86d](https://www.github.com/googleapis/java-bigquery/commit/2a0d86d2d07dd706fb7d943da6ebd5c9ac98dfca))
+
 ### [1.117.2](https://www.github.com/googleapis/java-bigquery/compare/v1.117.1...v1.117.2) (2020-09-15)
 
 
