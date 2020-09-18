@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 
 // Sample to update transfer config.
@@ -40,7 +41,7 @@ public class UpdateTransferConfig {
               .setName(configId)
               .setDisplayName("UPDATED_DISPLAY_NAME")
               .build();
-      FieldMask updateMask = FieldMask.newBuilder().addPaths("display_name").build();
+      FieldMask updateMask = FieldMaskUtil.fromString("display_name");
       UpdateTransferConfigRequest request =
           UpdateTransferConfigRequest.newBuilder()
               .setTransferConfig(transferConfig)

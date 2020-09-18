@@ -44,6 +44,11 @@
     </dependency>
     <!-- [END bigquerydatatransfer_install_with_bom] -->
 
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
