@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.0.11](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.10...v1.0.11) (2020-09-18)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.117.2 ([#340](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/340)) ([108ad96](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/108ad965d7012308a6aa773a9560d5e64954cc0f))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.118.0 ([#342](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/342)) ([4b3e2eb](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/4b3e2ebec4682c1e69cd5e3b27d9903e007eb174))
+
+
+### Documentation
+
+* **samples:** add protobuf.util dependency to enable FieldMaskUtil ([#349](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/349)) ([ad32b5f](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ad32b5f50bede5c56bdaf6c8c79508ab44130c70))
+* **samples:** add run details ([#334](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/334)) ([8824cc5](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/8824cc55cb3f5cb2ca88f2505e6c580e58cf575a))
+* **samples:** add run history ([#333](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/333)) ([ddf567a](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ddf567acbf57e61c83fe2af6a49520a54cd324eb))
+* **samples:** add run notification ([#328](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/328)) ([2670cb1](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2670cb1080c879fc8eb23d86b5d5e42b23a4aa37))
+* **samples:** add update transfer config ([#347](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/347)) ([ac78f78](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ac78f78e3bc865309c158f8a6e8d7f34c18086e7))
+* changes without context ([#332](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/332)) ([5a09efb](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/5a09efbdb7b4481e9fb9ac0d80f130dbcee3e418))
+* changes without context ([#337](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/337)) ([a370ccd](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/a370ccde96208062e424bd896e743a919ae7a9da))
+
 ### [1.0.10](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.9...v1.0.10) (2020-09-03)
 
 
