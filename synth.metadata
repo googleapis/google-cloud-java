@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging-logback.git",
-        "sha": "72492066641c5e0ecc4be20854cca80f86c6cc46"
+        "sha": "0f09c02597f6f93b54c61224f831b7b8d8676371"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
+        "sha": "538a68019eb4a36a0cdfa4021f324dd01b784395"
       }
     }
   ],
@@ -23,6 +23,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
