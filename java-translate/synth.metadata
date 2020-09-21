@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-translate.git",
-        "sha": "81170cddef7b6ad31bf6ae743ffcd464b2941254"
+        "sha": "7d5453d00574bf4f4cc82bac85378abd14be6b47"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "9602086c6c5b05db77950c7f7495a2a3868f3537"
+        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
       }
     }
   ],
@@ -59,6 +59,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
