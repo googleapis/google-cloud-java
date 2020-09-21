@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.119.0](https://www.github.com/googleapis/java-bigquery/compare/v1.118.0...v1.119.0) (2020-09-17)
+
+
+### Features
+
+* add additional time partitioning intervals ([#737](https://www.github.com/googleapis/java-bigquery/issues/737)) ([a57dbdf](https://www.github.com/googleapis/java-bigquery/commit/a57dbdf96440bc7e51443efb99b007ac42cd481b))
+
 ## [1.118.0](https://www.github.com/googleapis/java-bigquery/compare/v1.117.2...v1.118.0) (2020-09-17)
 
 
