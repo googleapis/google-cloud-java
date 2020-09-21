@@ -1,6 +1,9 @@
 # Code owners file.
 # This file controls who is tagged for review for any given pull request.
 
+# Default owner
+* @googleapis/yoshi-java
+
 # Owners per module.
 google-cloud-clients/google-cloud-bigquery/src/*                                                @tswast
 google-cloud-clients/google-cloud-bigtable/src/*                                                @igorbernstein2
