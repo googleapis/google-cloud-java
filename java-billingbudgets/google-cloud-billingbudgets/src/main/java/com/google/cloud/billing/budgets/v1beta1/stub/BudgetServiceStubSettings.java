@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
 public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-billing")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<CreateBudgetRequest, Budget> createBudgetSettings;
   private final UnaryCallSettings<UpdateBudgetRequest, Budget> updateBudgetSettings;

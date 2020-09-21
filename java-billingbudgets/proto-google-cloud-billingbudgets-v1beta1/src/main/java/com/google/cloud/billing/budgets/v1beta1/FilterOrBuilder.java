@@ -196,10 +196,10 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the reseller account,
-   * usage from the reseller account will be included. If omitted, the report
-   * will include usage from the reseller account and all subaccounts, if they
-   * exist.
+   * in the budget. If a subaccount is set to the name of the parent account,
+   * usage from the parent account will be included. If omitted, the
+   * report will include usage from the parent account and all
+   * subaccounts, if they exist.
    * </pre>
    *
    * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -213,10 +213,10 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the reseller account,
-   * usage from the reseller account will be included. If omitted, the report
-   * will include usage from the reseller account and all subaccounts, if they
-   * exist.
+   * in the budget. If a subaccount is set to the name of the parent account,
+   * usage from the parent account will be included. If omitted, the
+   * report will include usage from the parent account and all
+   * subaccounts, if they exist.
    * </pre>
    *
    * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -230,10 +230,10 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the reseller account,
-   * usage from the reseller account will be included. If omitted, the report
-   * will include usage from the reseller account and all subaccounts, if they
-   * exist.
+   * in the budget. If a subaccount is set to the name of the parent account,
+   * usage from the parent account will be included. If omitted, the
+   * report will include usage from the parent account and all
+   * subaccounts, if they exist.
    * </pre>
    *
    * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -248,10 +248,10 @@ public interface FilterOrBuilder
    * <pre>
    * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
    * specifying that usage from only this set of subaccounts should be included
-   * in the budget. If a subaccount is set to the name of the reseller account,
-   * usage from the reseller account will be included. If omitted, the report
-   * will include usage from the reseller account and all subaccounts, if they
-   * exist.
+   * in the budget. If a subaccount is set to the name of the parent account,
+   * usage from the parent account will be included. If omitted, the
+   * report will include usage from the parent account and all
+   * subaccounts, if they exist.
    * </pre>
    *
    * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

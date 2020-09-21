@@ -27,8 +27,8 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages
-   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Optional. The name of the Pub/Sub topic where budget related messages will
+   * be published, in the form `projects/{project_id}/topics/{topic_id}`.
    * Updates are sent at regular intervals to the topic. The topic needs to be
    * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
@@ -36,11 +36,11 @@ public interface AllUpdatesRuleOrBuilder
    * Caller is expected to have
    * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
    * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
-   * https://cloud.google.com/pubsub/docs/access-control for more details on
-   * Pub/Sub roles and permissions.
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
+   * for more details on Pub/Sub roles and permissions.
    * </pre>
    *
-   * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pubsubTopic.
    */
@@ -49,8 +49,8 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Cloud Pub/Sub topic where budget related messages
-   * will be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Optional. The name of the Pub/Sub topic where budget related messages will
+   * be published, in the form `projects/{project_id}/topics/{topic_id}`.
    * Updates are sent at regular intervals to the topic. The topic needs to be
    * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
@@ -58,11 +58,11 @@ public interface AllUpdatesRuleOrBuilder
    * Caller is expected to have
    * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
    * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
-   * https://cloud.google.com/pubsub/docs/access-control for more details on
-   * Pub/Sub roles and permissions.
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
+   * for more details on Pub/Sub roles and permissions.
    * </pre>
    *
-   * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string pubsub_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pubsubTopic.
    */
@@ -72,12 +72,12 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The schema version of the notification sent to `pubsub_topic`.
+   * Optional. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
-   * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
    * </pre>
    *
-   * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The schemaVersion.
    */
@@ -86,12 +86,12 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Required. The schema version of the notification sent to `pubsub_topic`.
+   * Optional. The schema version of the notification sent to `pubsub_topic`.
    * Only "1.0" is accepted. It represents the JSON schema as defined in
-   * https://cloud.google.com/billing/docs/how-to/budgets#notification_format
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
    * </pre>
    *
-   * <code>string schema_version = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for schemaVersion.
    */
@@ -102,11 +102,13 @@ public interface AllUpdatesRuleOrBuilder
    *
    * <pre>
    * Optional. Targets to send notifications to when a threshold is exceeded.
-   * This is in addition to default recipients who have billing account roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
-   * channels are allowed.
+   * channels are allowed. See
+   * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
+   * for more details.
    * </pre>
    *
    * <code>
@@ -121,11 +123,13 @@ public interface AllUpdatesRuleOrBuilder
    *
    * <pre>
    * Optional. Targets to send notifications to when a threshold is exceeded.
-   * This is in addition to default recipients who have billing account roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
-   * channels are allowed.
+   * channels are allowed. See
+   * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
+   * for more details.
    * </pre>
    *
    * <code>
@@ -140,11 +144,13 @@ public interface AllUpdatesRuleOrBuilder
    *
    * <pre>
    * Optional. Targets to send notifications to when a threshold is exceeded.
-   * This is in addition to default recipients who have billing account roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
-   * channels are allowed.
+   * channels are allowed. See
+   * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
+   * for more details.
    * </pre>
    *
    * <code>
@@ -160,11 +166,13 @@ public interface AllUpdatesRuleOrBuilder
    *
    * <pre>
    * Optional. Targets to send notifications to when a threshold is exceeded.
-   * This is in addition to default recipients who have billing account roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
-   * channels are allowed.
+   * channels are allowed. See
+   * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
+   * for more details.
    * </pre>
    *
    * <code>
@@ -175,4 +183,19 @@ public interface AllUpdatesRuleOrBuilder
    * @return The bytes of the monitoringNotificationChannels at the given index.
    */
   com.google.protobuf.ByteString getMonitoringNotificationChannelsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, disables default notifications sent when a
+   * threshold is exceeded. Recipients are those with Billing Account
+   * Administrators and Billing Account Users IAM roles for the target account.
+   * </pre>
+   *
+   * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableDefaultIamRecipients.
+   */
+  boolean getDisableDefaultIamRecipients();
 }

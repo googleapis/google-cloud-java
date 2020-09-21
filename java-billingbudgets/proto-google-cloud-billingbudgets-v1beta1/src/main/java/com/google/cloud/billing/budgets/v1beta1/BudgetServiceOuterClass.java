@@ -85,7 +85,7 @@ public final class BudgetServiceOuterClass {
           + " \003(\0132,.google.cloud.billing.budgets.v1be"
           + "ta1.Budget\022\027\n\017next_page_token\030\002 \001(\t\"Q\n\023D"
           + "eleteBudgetRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&"
-          + "\n$billingbudgets.googleapis.com/Budget2\311"
+          + "\n$billingbudgets.googleapis.com/Budget2\367"
           + "\007\n\rBudgetService\022\257\001\n\014CreateBudget\0229.goog"
           + "le.cloud.billing.budgets.v1beta1.CreateB"
           + "udgetRequest\032,.google.cloud.billing.budg"
@@ -108,12 +108,13 @@ public final class BudgetServiceOuterClass {
           + ".cloud.billing.budgets.v1beta1.DeleteBud"
           + "getRequest\032\026.google.protobuf.Empty\"3\202\323\344\223"
           + "\002-*+/v1beta1/{name=billingAccounts/*/bud"
-          + "gets/*}\032Q\312A\035billingbudgets.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBy\n(com.google.cloud.billing.b"
-          + "udgets.v1beta1P\001ZKgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/billing/budgets/v1"
-          + "beta1;budgetsb\006proto3"
+          + "gets/*}\032\177\312A\035billingbudgets.googleapis.co"
+          + "m\322A\\https://www.googleapis.com/auth/clou"
+          + "d-billing,https://www.googleapis.com/aut"
+          + "h/cloud-platformBy\n(com.google.cloud.bil"
+          + "ling.budgets.v1beta1P\001ZKgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/billing/budg"
+          + "ets/v1beta1;budgetsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
