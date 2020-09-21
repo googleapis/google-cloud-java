@@ -29,7 +29,8 @@ public interface CreateDlpJobRequestOrBuilder
    * <pre>
    * Required. Parent resource name.
    * The format of this value varies depending on whether you have [specified a
-   * processing location](/dlp/docs/specifying-location):
+   * processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location):
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -53,7 +54,8 @@ public interface CreateDlpJobRequestOrBuilder
    * <pre>
    * Required. Parent resource name.
    * The format of this value varies depending on whether you have [specified a
-   * processing location](/dlp/docs/specifying-location):
+   * processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location):
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -148,7 +150,7 @@ public interface CreateDlpJobRequestOrBuilder
    * <pre>
    * The job id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *
@@ -163,7 +165,7 @@ public interface CreateDlpJobRequestOrBuilder
    * <pre>
    * The job id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
-   * expression: `[a-zA-Z&#92;&#92;d-_]+`. The maximum length is 100
+   * expression: `[a-zA-Z&#92;d-_]+`. The maximum length is 100
    * characters. Can be empty to allow the system to generate one.
    * </pre>
    *

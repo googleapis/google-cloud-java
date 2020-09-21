@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "9a10739284127974c669bd3580ebe29a8f8316a4"
+        "sha": "042340a89b8666385c0990d53d640eb780ffab78"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1ee015d872d003637eb47b890930bf3d0d410c61",
-        "internalRef": "329758805"
+        "sha": "f0d92d22e675c93125f8a7abd10dc01b891c3bcf",
+        "internalRef": "332061108"
       }
     },
     {

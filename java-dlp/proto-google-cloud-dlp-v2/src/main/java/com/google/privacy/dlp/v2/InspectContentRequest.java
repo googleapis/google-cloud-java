@@ -167,7 +167,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Parent resource name.
    * The format of this value varies depending on whether you have [specified a
-   * processing location](/dlp/docs/specifying-location):
+   * processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location):
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -200,7 +201,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Parent resource name.
    * The format of this value varies depending on whether you have [specified a
-   * processing location](/dlp/docs/specifying-location):
+   * processing
+   * location](https://cloud.google.com/dlp/docs/specifying-location):
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -843,7 +845,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Parent resource name.
      * The format of this value varies depending on whether you have [specified a
-     * processing location](/dlp/docs/specifying-location):
+     * processing
+     * location](https://cloud.google.com/dlp/docs/specifying-location):
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -875,7 +878,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Parent resource name.
      * The format of this value varies depending on whether you have [specified a
-     * processing location](/dlp/docs/specifying-location):
+     * processing
+     * location](https://cloud.google.com/dlp/docs/specifying-location):
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -907,7 +911,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Parent resource name.
      * The format of this value varies depending on whether you have [specified a
-     * processing location](/dlp/docs/specifying-location):
+     * processing
+     * location](https://cloud.google.com/dlp/docs/specifying-location):
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -938,7 +943,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Parent resource name.
      * The format of this value varies depending on whether you have [specified a
-     * processing location](/dlp/docs/specifying-location):
+     * processing
+     * location](https://cloud.google.com/dlp/docs/specifying-location):
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -965,7 +971,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Parent resource name.
      * The format of this value varies depending on whether you have [specified a
-     * processing location](/dlp/docs/specifying-location):
+     * processing
+     * location](https://cloud.google.com/dlp/docs/specifying-location):
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;

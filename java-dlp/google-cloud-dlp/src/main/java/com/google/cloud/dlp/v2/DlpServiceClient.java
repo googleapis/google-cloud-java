@@ -512,7 +512,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -555,7 +555,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -598,7 +598,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -641,7 +641,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -684,7 +684,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -995,7 +995,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1036,7 +1036,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1076,7 +1076,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1116,7 +1116,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1156,7 +1156,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1377,7 +1377,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1421,7 +1421,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1465,7 +1465,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1509,7 +1509,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1553,7 +1553,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1869,7 +1869,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1911,7 +1911,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1952,7 +1952,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1994,7 +1994,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2035,7 +2035,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2258,7 +2258,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2295,7 +2295,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2332,7 +2332,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2727,7 +2727,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2762,7 +2762,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2797,7 +2797,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3010,7 +3010,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3052,7 +3052,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3094,7 +3094,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3133,7 +3133,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3175,7 +3175,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3217,7 +3217,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3310,7 +3310,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3347,7 +3347,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3384,7 +3384,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3751,7 +3751,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3794,7 +3794,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3837,7 +3837,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3880,7 +3880,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3923,7 +3923,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4235,7 +4235,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4277,7 +4277,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4318,7 +4318,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4359,7 +4359,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4400,7 +4400,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/dlp/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
