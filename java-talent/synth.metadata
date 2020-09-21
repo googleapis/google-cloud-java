@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-talent.git",
-        "sha": "2c75d45c3c57930d3abba86bb3b082187fa22e64"
+        "remote": "https://github.com/googleapis/java-talent.git",
+        "sha": "8b2f631b5fde1252dda494b2e3be9bbd387b4370"
       }
     },
     {
