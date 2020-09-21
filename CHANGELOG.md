@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.5.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.1...v1.5.2) (2020-09-21)
+
+
+### Bug Fixes
+
+* geo type accepted change from bytes to string ([#523](https://www.github.com/googleapis/java-bigquerystorage/issues/523)) ([94e6394](https://www.github.com/googleapis/java-bigquerystorage/commit/94e63941e305c64d50829b520594a7e411b15e82))
+* update schema compat check with backend type changes ([#522](https://www.github.com/googleapis/java-bigquerystorage/issues/522)) ([2fcae4f](https://www.github.com/googleapis/java-bigquerystorage/commit/2fcae4fda0bb899efa84aba377073da556ec59d0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.117.1 ([#514](https://www.github.com/googleapis/java-bigquerystorage/issues/514)) ([2689689](https://www.github.com/googleapis/java-bigquerystorage/commit/26896896fc3b3342363e191a2e7ffcca6ee291c1))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.117.2 ([#529](https://www.github.com/googleapis/java-bigquerystorage/issues/529)) ([74c1854](https://www.github.com/googleapis/java-bigquerystorage/commit/74c1854fbc5e7fea164b7945cb5770c2063032da))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.118.0 ([#530](https://www.github.com/googleapis/java-bigquerystorage/issues/530)) ([ffdbf2a](https://www.github.com/googleapis/java-bigquerystorage/commit/ffdbf2a4f763fe0cb9c47dcaafa44a497426bc11))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.119.0 ([#532](https://www.github.com/googleapis/java-bigquerystorage/issues/532)) ([f005d93](https://www.github.com/googleapis/java-bigquerystorage/commit/f005d93a14df16afff6b0ee6797d2b23da21ebcb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#517](https://www.github.com/googleapis/java-bigquerystorage/issues/517)) ([91899a9](https://www.github.com/googleapis/java-bigquerystorage/commit/91899a94617628a27437c72ce702aff91e101ecc))
+
 ### [1.5.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.0...v1.5.1) (2020-08-31)
 
 
