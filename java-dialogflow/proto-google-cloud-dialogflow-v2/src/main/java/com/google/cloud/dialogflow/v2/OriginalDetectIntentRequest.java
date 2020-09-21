@@ -252,9 +252,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Note: The caller ID field (`caller_id`) will be redacted for Trial
    * Edition agents and populated with the caller ID in [E.164
-   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+   * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -279,9 +279,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Note: The caller ID field (`caller_id`) will be redacted for Trial
    * Edition agents and populated with the caller ID in [E.164
-   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+   * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -306,9 +306,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *    "caller_id": "+18558363987"
    *  }
    * }&lt;/pre&gt;
-   * Note: The caller ID field (`caller_id`) will be redacted for Standard
+   * Note: The caller ID field (`caller_id`) will be redacted for Trial
    * Edition agents and populated with the caller ID in [E.164
-   * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+   * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
@@ -924,9 +924,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -950,9 +950,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -980,9 +980,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1014,9 +1014,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1045,9 +1045,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1081,9 +1081,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1113,9 +1113,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1139,9 +1139,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
@@ -1167,9 +1167,9 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
      *    "caller_id": "+18558363987"
      *  }
      * }&lt;/pre&gt;
-     * Note: The caller ID field (`caller_id`) will be redacted for Standard
+     * Note: The caller ID field (`caller_id`) will be redacted for Trial
      * Edition agents and populated with the caller ID in [E.164
-     * format](https://en.wikipedia.org/wiki/E.164) for Enterprise Edition agents.
+     * format](https://en.wikipedia.org/wiki/E.164) for Essentials Edition agents.
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 3;</code>
