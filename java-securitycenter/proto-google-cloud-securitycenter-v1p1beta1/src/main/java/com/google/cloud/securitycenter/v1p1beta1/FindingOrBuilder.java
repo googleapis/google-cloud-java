@@ -408,7 +408,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The severity of the finding.
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Finding.Severity severity = 13;</code>
@@ -420,7 +421,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The severity of the finding.
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Finding.Severity severity = 13;</code>

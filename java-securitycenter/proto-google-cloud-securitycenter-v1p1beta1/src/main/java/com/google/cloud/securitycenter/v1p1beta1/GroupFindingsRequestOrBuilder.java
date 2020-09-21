@@ -87,6 +87,7 @@ public interface GroupFindingsRequestOrBuilder
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -134,6 +135,7 @@ public interface GroupFindingsRequestOrBuilder
    * * category: `=`, `:`
    * * external_uri: `=`, `:`
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -165,6 +167,7 @@ public interface GroupFindingsRequestOrBuilder
    * * category
    * * state
    * * parent
+   * * severity
    * The following fields are supported when compare_duration is set:
    * * state_change
    * </pre>
@@ -186,6 +189,7 @@ public interface GroupFindingsRequestOrBuilder
    * * category
    * * state
    * * parent
+   * * severity
    * The following fields are supported when compare_duration is set:
    * * state_change
    * </pre>

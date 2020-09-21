@@ -58,8 +58,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be between 1 and 128 characters, and contains alphanumeric
    * characters, underscores or hyphens only.
    * </pre>
@@ -73,8 +72,7 @@ public interface CreateNotificationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * Unique identifier provided by the client within the parent scope.
+   * Required. Unique identifier provided by the client within the parent scope.
    * It must be between 1 and 128 characters, and contains alphanumeric
    * characters, underscores or hyphens only.
    * </pre>

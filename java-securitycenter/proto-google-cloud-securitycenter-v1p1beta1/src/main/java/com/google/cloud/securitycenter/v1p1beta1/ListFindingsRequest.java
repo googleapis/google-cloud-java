@@ -268,13 +268,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name: `=`
-   * parent: `=`, `:`
-   * resource_name: `=`, `:`
-   * state: `=`, `:`
-   * category: `=`, `:`
-   * external_uri: `=`, `:`
-   * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * parent: `=`, `:`
+   * * resource_name: `=`, `:`
+   * * state: `=`, `:`
+   * * category: `=`, `:`
+   * * external_uri: `=`, `:`
+   * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -326,13 +327,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
    * The following field and operator combinations are supported:
-   * name: `=`
-   * parent: `=`, `:`
-   * resource_name: `=`, `:`
-   * state: `=`, `:`
-   * category: `=`, `:`
-   * external_uri: `=`, `:`
-   * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * name: `=`
+   * * parent: `=`, `:`
+   * * resource_name: `=`, `:`
+   * * state: `=`, `:`
+   * * category: `=`, `:`
+   * * external_uri: `=`, `:`
+   * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   * * severity: `=`, `:`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -1366,13 +1368,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following field and operator combinations are supported:
-     * name: `=`
-     * parent: `=`, `:`
-     * resource_name: `=`, `:`
-     * state: `=`, `:`
-     * category: `=`, `:`
-     * external_uri: `=`, `:`
-     * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * parent: `=`, `:`
+     * * resource_name: `=`, `:`
+     * * state: `=`, `:`
+     * * category: `=`, `:`
+     * * external_uri: `=`, `:`
+     * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * severity: `=`, `:`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -1423,13 +1426,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following field and operator combinations are supported:
-     * name: `=`
-     * parent: `=`, `:`
-     * resource_name: `=`, `:`
-     * state: `=`, `:`
-     * category: `=`, `:`
-     * external_uri: `=`, `:`
-     * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * parent: `=`, `:`
+     * * resource_name: `=`, `:`
+     * * state: `=`, `:`
+     * * category: `=`, `:`
+     * * external_uri: `=`, `:`
+     * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * severity: `=`, `:`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -1480,13 +1484,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following field and operator combinations are supported:
-     * name: `=`
-     * parent: `=`, `:`
-     * resource_name: `=`, `:`
-     * state: `=`, `:`
-     * category: `=`, `:`
-     * external_uri: `=`, `:`
-     * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * parent: `=`, `:`
+     * * resource_name: `=`, `:`
+     * * state: `=`, `:`
+     * * category: `=`, `:`
+     * * external_uri: `=`, `:`
+     * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * severity: `=`, `:`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -1536,13 +1541,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following field and operator combinations are supported:
-     * name: `=`
-     * parent: `=`, `:`
-     * resource_name: `=`, `:`
-     * state: `=`, `:`
-     * category: `=`, `:`
-     * external_uri: `=`, `:`
-     * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * parent: `=`, `:`
+     * * resource_name: `=`, `:`
+     * * state: `=`, `:`
+     * * category: `=`, `:`
+     * * external_uri: `=`, `:`
+     * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * severity: `=`, `:`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
@@ -1588,13 +1594,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
      * The following field and operator combinations are supported:
-     * name: `=`
-     * parent: `=`, `:`
-     * resource_name: `=`, `:`
-     * state: `=`, `:`
-     * category: `=`, `:`
-     * external_uri: `=`, `:`
-     * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * name: `=`
+     * * parent: `=`, `:`
+     * * resource_name: `=`, `:`
+     * * state: `=`, `:`
+     * * category: `=`, `:`
+     * * external_uri: `=`, `:`
+     * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+     * * severity: `=`, `:`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
      *     `event_time = "2019-06-10T16:07:18-07:00"`
