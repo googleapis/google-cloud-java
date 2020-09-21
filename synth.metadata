@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "2c679675645c4314df71481c02752cc49e80f81a"
+        "sha": "4c29f7a92933d3e03247802a6e967ce7fac5fa3d"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
+        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
       }
     }
   ],
@@ -23,6 +23,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
