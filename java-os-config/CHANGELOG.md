@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-os-config/compare/v1.0.0...v1.0.1) (2020-09-21)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#94](https://www.github.com/googleapis/java-os-config/issues/94)) ([9325215](https://www.github.com/googleapis/java-os-config/commit/93252159497622e1faee5ca2d497ec7209af3e85))
+
 ## [1.0.0](https://www.github.com/googleapis/java-os-config/compare/v0.2.0...v1.0.0) (2020-08-07)
 
 
