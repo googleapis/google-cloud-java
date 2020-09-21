@@ -5,6 +5,7 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/api-bigtable is the default owner for changes in this repo
+*                       @googleapis/yoshi-java @googleapis/api-bigtable
 **/*.java               @googleapis/api-bigtable
 
 # The java-samples-reviewers team is the default owner for samples changes
