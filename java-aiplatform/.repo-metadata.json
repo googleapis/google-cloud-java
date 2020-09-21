@@ -1,0 +1,15 @@
+{
+  "name": "aiplatform",
+  "name_pretty": "AI Platform",
+  "product_documentation": "https://cloud.google.com/ai-platform-unified/docs",
+  "api_description": "brings AutoML and AI Platform (Legacy) together into a unified API, client library, and user interface.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-aiplatform/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-aiplatform",
+  "repo_short": "java-aiplatform",
+  "distribution_name": "com.google.cloud:google-cloud-aiplatform",
+  "api_id": "aiplatform.googleapis.com",
+  "requires_billing": true
+}
