@@ -13,35 +13,14 @@ Java idiomatic client for [AI Platform Notebooks][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>9.1.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
 
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-notebooks</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notebooks</artifactId>
-  <version>0.0.0</version>
+  <version>0.1.0</version>
 </dependency>
 
 ```
