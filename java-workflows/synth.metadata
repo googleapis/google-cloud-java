@@ -2,7 +2,9 @@
   "sources": [
     {
       "git": {
-        "name": "."
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-workflows.git",
+        "sha": "42ce0b46e60a653032e45642a6e96c5cbcd0b269"
       }
     },
     {
@@ -17,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "fdd03c161003ab97657cc0218f25c82c89ddf4b6"
+        "sha": "538a68019eb4a36a0cdfa4021f324dd01b784395"
       }
     }
   ],
@@ -40,6 +42,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
