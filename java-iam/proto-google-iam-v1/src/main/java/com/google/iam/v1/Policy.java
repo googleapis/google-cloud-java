@@ -198,6 +198,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public int getVersion() {
     return version_;
   }
@@ -215,6 +216,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.iam.v1.Binding> getBindingsList() {
     return bindings_;
   }
@@ -229,6 +231,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.iam.v1.BindingOrBuilder> getBindingsOrBuilderList() {
     return bindings_;
   }
@@ -243,6 +246,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
+  @java.lang.Override
   public int getBindingsCount() {
     return bindings_.size();
   }
@@ -257,6 +261,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.Binding getBindings(int index) {
     return bindings_.get(index);
   }
@@ -271,6 +276,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
     return bindings_.get(index);
   }
@@ -298,6 +304,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtag() {
     return etag_;
   }
@@ -754,6 +761,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The version.
      */
+    @java.lang.Override
     public int getVersion() {
       return version_;
     }
@@ -1213,6 +1221,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The etag.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEtag() {
       return etag_;
     }

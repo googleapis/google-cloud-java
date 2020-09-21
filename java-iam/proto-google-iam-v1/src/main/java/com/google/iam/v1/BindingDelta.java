@@ -261,6 +261,10 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -307,6 +311,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for action.
    */
+  @java.lang.Override
   public int getActionValue() {
     return action_;
   }
@@ -322,6 +327,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The action.
    */
+  @java.lang.Override
   public com.google.iam.v1.BindingDelta.Action getAction() {
     @SuppressWarnings("deprecation")
     com.google.iam.v1.BindingDelta.Action result =
@@ -344,6 +350,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The role.
    */
+  @java.lang.Override
   public java.lang.String getRole() {
     java.lang.Object ref = role_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +375,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for role.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRoleBytes() {
     java.lang.Object ref = role_;
     if (ref instanceof java.lang.String) {
@@ -395,6 +403,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The member.
    */
+  @java.lang.Override
   public java.lang.String getMember() {
     java.lang.Object ref = member_;
     if (ref instanceof java.lang.String) {
@@ -419,6 +428,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for member.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMemberBytes() {
     java.lang.Object ref = member_;
     if (ref instanceof java.lang.String) {
@@ -444,6 +454,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the condition field is set.
    */
+  @java.lang.Override
   public boolean hasCondition() {
     return condition_ != null;
   }
@@ -458,6 +469,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The condition.
    */
+  @java.lang.Override
   public com.google.type.Expr getCondition() {
     return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
@@ -470,6 +482,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Expr condition = 4;</code>
    */
+  @java.lang.Override
   public com.google.type.ExprOrBuilder getConditionOrBuilder() {
     return getCondition();
   }
@@ -857,6 +870,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for action.
      */
+    @java.lang.Override
     public int getActionValue() {
       return action_;
     }
@@ -874,6 +888,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
+
       action_ = value;
       onChanged();
       return this;
@@ -890,6 +905,7 @@ public final class BindingDelta extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The action.
      */
+    @java.lang.Override
     public com.google.iam.v1.BindingDelta.Action getAction() {
       @SuppressWarnings("deprecation")
       com.google.iam.v1.BindingDelta.Action result =

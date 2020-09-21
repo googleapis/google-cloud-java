@@ -256,6 +256,10 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -302,6 +306,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for action.
    */
+  @java.lang.Override
   public int getActionValue() {
     return action_;
   }
@@ -317,6 +322,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The action.
    */
+  @java.lang.Override
   public com.google.iam.v1.AuditConfigDelta.Action getAction() {
     @SuppressWarnings("deprecation")
     com.google.iam.v1.AuditConfigDelta.Action result =
@@ -340,6 +346,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The service.
    */
+  @java.lang.Override
   public java.lang.String getService() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -365,6 +372,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for service.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -392,6 +400,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The exemptedMember.
    */
+  @java.lang.Override
   public java.lang.String getExemptedMember() {
     java.lang.Object ref = exemptedMember_;
     if (ref instanceof java.lang.String) {
@@ -416,6 +425,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for exemptedMember.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExemptedMemberBytes() {
     java.lang.Object ref = exemptedMember_;
     if (ref instanceof java.lang.String) {
@@ -443,6 +453,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The logType.
    */
+  @java.lang.Override
   public java.lang.String getLogType() {
     java.lang.Object ref = logType_;
     if (ref instanceof java.lang.String) {
@@ -467,6 +478,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for logType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLogTypeBytes() {
     java.lang.Object ref = logType_;
     if (ref instanceof java.lang.String) {
@@ -853,6 +865,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for action.
      */
+    @java.lang.Override
     public int getActionValue() {
       return action_;
     }
@@ -870,6 +883,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
+
       action_ = value;
       onChanged();
       return this;
@@ -886,6 +900,7 @@ public final class AuditConfigDelta extends com.google.protobuf.GeneratedMessage
      *
      * @return The action.
      */
+    @java.lang.Override
     public com.google.iam.v1.AuditConfigDelta.Action getAction() {
       @SuppressWarnings("deprecation")
       com.google.iam.v1.AuditConfigDelta.Action result =

@@ -151,6 +151,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The role.
    */
+  @java.lang.Override
   public java.lang.String getRole() {
     java.lang.Object ref = role_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for role.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRoleBytes() {
     java.lang.Object ref = role_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +317,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the condition field is set.
    */
+  @java.lang.Override
   public boolean hasCondition() {
     return condition_ != null;
   }
@@ -332,6 +335,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The condition.
    */
+  @java.lang.Override
   public com.google.type.Expr getCondition() {
     return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
@@ -347,6 +351,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Expr condition = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.ExprOrBuilder getConditionOrBuilder() {
     return getCondition();
   }

@@ -142,6 +142,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The resource.
    */
+  @java.lang.Override
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for resource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the options field is set.
    */
+  @java.lang.Override
   public boolean hasOptions() {
     return options_ != null;
   }
@@ -208,6 +211,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The options.
    */
+  @java.lang.Override
   public com.google.iam.v1.GetPolicyOptions getOptions() {
     return options_ == null ? com.google.iam.v1.GetPolicyOptions.getDefaultInstance() : options_;
   }
@@ -221,6 +225,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.GetPolicyOptionsOrBuilder getOptionsOrBuilder() {
     return getOptions();
   }

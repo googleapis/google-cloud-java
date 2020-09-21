@@ -141,6 +141,7 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The resource.
    */
+  @java.lang.Override
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for resource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the policy field is set.
    */
+  @java.lang.Override
   public boolean hasPolicy() {
     return policy_ != null;
   }
@@ -211,6 +214,7 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The policy.
    */
+  @java.lang.Override
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
@@ -226,6 +230,7 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
   }

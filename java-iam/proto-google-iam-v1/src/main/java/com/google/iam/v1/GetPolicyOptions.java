@@ -124,6 +124,7 @@ public final class GetPolicyOptions extends com.google.protobuf.GeneratedMessage
    *
    * @return The requestedPolicyVersion.
    */
+  @java.lang.Override
   public int getRequestedPolicyVersion() {
     return requestedPolicyVersion_;
   }
@@ -457,6 +458,7 @@ public final class GetPolicyOptions extends com.google.protobuf.GeneratedMessage
      *
      * @return The requestedPolicyVersion.
      */
+    @java.lang.Override
     public int getRequestedPolicyVersion() {
       return requestedPolicyVersion_;
     }

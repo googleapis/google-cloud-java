@@ -142,6 +142,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.iam.v1.BindingDelta> getBindingDeltasList() {
     return bindingDeltas_;
   }
@@ -154,6 +155,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.iam.v1.BindingDeltaOrBuilder>
       getBindingDeltasOrBuilderList() {
     return bindingDeltas_;
@@ -167,6 +169,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
+  @java.lang.Override
   public int getBindingDeltasCount() {
     return bindingDeltas_.size();
   }
@@ -179,6 +182,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.BindingDelta getBindingDeltas(int index) {
     return bindingDeltas_.get(index);
   }
@@ -191,6 +195,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.BindingDeltaOrBuilder getBindingDeltasOrBuilder(int index) {
     return bindingDeltas_.get(index);
   }
@@ -206,6 +211,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.iam.v1.AuditConfigDelta> getAuditConfigDeltasList() {
     return auditConfigDeltas_;
   }
@@ -218,6 +224,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.iam.v1.AuditConfigDeltaOrBuilder>
       getAuditConfigDeltasOrBuilderList() {
     return auditConfigDeltas_;
@@ -231,6 +238,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
    */
+  @java.lang.Override
   public int getAuditConfigDeltasCount() {
     return auditConfigDeltas_.size();
   }
@@ -243,6 +251,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.AuditConfigDelta getAuditConfigDeltas(int index) {
     return auditConfigDeltas_.get(index);
   }
@@ -255,6 +264,7 @@ public final class PolicyDelta extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.AuditConfigDeltaOrBuilder getAuditConfigDeltasOrBuilder(int index) {
     return auditConfigDeltas_.get(index);
   }

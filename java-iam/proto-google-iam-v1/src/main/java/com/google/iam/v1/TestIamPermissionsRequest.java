@@ -142,6 +142,7 @@ public final class TestIamPermissionsRequest extends com.google.protobuf.Generat
    *
    * @return The resource.
    */
+  @java.lang.Override
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class TestIamPermissionsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for resource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {

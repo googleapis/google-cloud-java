@@ -132,6 +132,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the policyDelta field is set.
    */
+  @java.lang.Override
   public boolean hasPolicyDelta() {
     return policyDelta_ != null;
   }
@@ -146,6 +147,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The policyDelta.
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyDelta getPolicyDelta() {
     return policyDelta_ == null ? com.google.iam.v1.PolicyDelta.getDefaultInstance() : policyDelta_;
   }
@@ -158,6 +160,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.iam.v1.PolicyDelta policy_delta = 2;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyDeltaOrBuilder getPolicyDeltaOrBuilder() {
     return getPolicyDelta();
   }
