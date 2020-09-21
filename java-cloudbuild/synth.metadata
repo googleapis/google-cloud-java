@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-cloudbuild.git",
-        "sha": "235579777caf17baced4f7db5bbd536676efb942"
+        "sha": "63887301239ffe2a8a7f602fa838c0ab631aec70"
       }
     },
     {
@@ -26,7 +26,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
+        "sha": "538a68019eb4a36a0cdfa4021f324dd01b784395"
       }
     }
   ],
@@ -49,6 +49,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
