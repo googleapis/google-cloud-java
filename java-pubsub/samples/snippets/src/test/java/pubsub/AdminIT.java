@@ -82,14 +82,16 @@ public class AdminIT {
         subscriptionAdminClient.deleteSubscription(pullSubscriptionName);
         subscriptionAdminClient.deleteSubscription(pushSubscriptionName);
         subscriptionAdminClient.deleteSubscription(orderedSubscriptionName);
-      } catch (NotFoundException e) {
+      } catch (NotFoundException ignored) {
+        // ignore this as resources may not have been created
       }
     }
 
     // Delete the topic if it has not been cleaned.
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.deleteTopic(topicName.toString());
-    } catch (NotFoundException e) {
+    } catch (NotFoundException ignored) {
+      // ignore this as resources may not have been created
     }
     System.setOut(null);
   }
