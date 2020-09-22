@@ -249,16 +249,18 @@ public class ITBlobSnippets {
   @Test
   public void testMoveObject() {
     String blob = "movethisblob";
+    String newBlob = "movedthisblob";
+
     storage.create(BlobInfo.newBuilder(BlobId.of(BUCKET, blob)).build());
     assertNotNull(storage.get(BUCKET, blob));
     String newBucket = RemoteStorageHelper.generateBucketName();
     storage.create(BucketInfo.newBuilder(newBucket).build());
     try {
-      MoveObject.moveObject(PROJECT_ID, BUCKET, blob, newBucket);
-      assertNotNull(storage.get(newBucket, blob));
+      MoveObject.moveObject(PROJECT_ID, BUCKET, blob, newBucket, newBlob);
+      assertNotNull(storage.get(newBucket, newBlob));
       assertNull(storage.get(BUCKET, blob));
     } finally {
-      storage.delete(newBucket, blob);
+      storage.delete(newBucket, newBlob);
       storage.delete(newBucket);
     }
   }
