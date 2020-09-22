@@ -66667,7 +66667,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -66693,7 +66695,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The unique identifier of this intent.
    * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -66924,7 +66928,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+   * Formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -66940,7 +66947,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+   * Formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -66956,7 +66966,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+   * Formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -66973,7 +66986,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+   * Formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
    * </pre>
    *
    * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68685,7 +68701,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68710,7 +68728,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68735,7 +68755,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68759,7 +68781,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68779,7 +68803,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The unique identifier of this intent.
      * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69351,7 +69377,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69368,7 +69397,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69385,7 +69417,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69403,7 +69438,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69421,7 +69459,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69446,7 +69487,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69470,7 +69514,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69491,7 +69538,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -69511,7 +69561,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The list of context names required for this intent to be
      * triggered.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
+     * Formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`
      * </pre>
      *
      * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];

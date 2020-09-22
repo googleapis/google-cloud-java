@@ -28,7 +28,9 @@ public interface GetIntentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the intent.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>
@@ -43,7 +45,9 @@ public interface GetIntentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the intent.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>

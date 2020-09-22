@@ -150,7 +150,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The agent to create a intent for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -176,7 +178,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The agent to create a intent for.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -731,7 +735,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The agent to create a intent for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -756,7 +762,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The agent to create a intent for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -781,7 +789,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The agent to create a intent for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -805,7 +815,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The agent to create a intent for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -825,7 +837,9 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The agent to create a intent for.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>

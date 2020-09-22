@@ -116,6 +116,23 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
               confidence_ = input.readFloat();
               break;
             }
+          case 42:
+            {
+              com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder subBuilder = null;
+              if (dtmfDigits_ != null) {
+                subBuilder = dtmfDigits_.toBuilder();
+              }
+              dtmfDigits_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dtmfDigits_);
+                dtmfDigits_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 53:
             {
               stability_ = input.readFloat();
@@ -650,6 +667,54 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     return getSpeechEndOffset();
   }
 
+  public static final int DTMF_DIGITS_FIELD_NUMBER = 5;
+  private com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmfDigits_;
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   *
+   * @return Whether the dtmfDigits field is set.
+   */
+  @java.lang.Override
+  public boolean hasDtmfDigits() {
+    return dtmfDigits_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   *
+   * @return The dtmfDigits.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmfDigits() {
+    return dtmfDigits_ == null
+        ? com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance()
+        : dtmfDigits_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfDigitsOrBuilder() {
+    return getDtmfDigits();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -678,6 +743,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
     if (confidence_ != 0F) {
       output.writeFloat(4, confidence_);
+    }
+    if (dtmfDigits_ != null) {
+      output.writeMessage(5, getDtmfDigits());
     }
     if (stability_ != 0F) {
       output.writeFloat(6, stability_);
@@ -711,6 +779,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
+    }
+    if (dtmfDigits_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDtmfDigits());
     }
     if (stability_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, stability_);
@@ -749,6 +820,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (hasSpeechEndOffset()) {
       if (!getSpeechEndOffset().equals(other.getSpeechEndOffset())) return false;
     }
+    if (hasDtmfDigits() != other.hasDtmfDigits()) return false;
+    if (hasDtmfDigits()) {
+      if (!getDtmfDigits().equals(other.getDtmfDigits())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -777,6 +852,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (hasSpeechEndOffset()) {
       hash = (37 * hash) + SPEECH_END_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechEndOffset().hashCode();
+    }
+    if (hasDtmfDigits()) {
+      hash = (37 * hash) + DTMF_DIGITS_FIELD_NUMBER;
+      hash = (53 * hash) + getDtmfDigits().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -967,6 +1046,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         speechEndOffset_ = null;
         speechEndOffsetBuilder_ = null;
       }
+      if (dtmfDigitsBuilder_ == null) {
+        dtmfDigits_ = null;
+      } else {
+        dtmfDigits_ = null;
+        dtmfDigitsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1014,6 +1099,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         result.speechEndOffset_ = speechEndOffset_;
       } else {
         result.speechEndOffset_ = speechEndOffsetBuilder_.build();
+      }
+      if (dtmfDigitsBuilder_ == null) {
+        result.dtmfDigits_ = dtmfDigits_;
+      } else {
+        result.dtmfDigits_ = dtmfDigitsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1111,6 +1201,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (other.hasSpeechEndOffset()) {
         mergeSpeechEndOffset(other.getSpeechEndOffset());
+      }
+      if (other.hasDtmfDigits()) {
+        mergeDtmfDigits(other.getDtmfDigits());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2150,6 +2243,193 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         speechEndOffset_ = null;
       }
       return speechEndOffsetBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmfDigits_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
+        dtmfDigitsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     *
+     * @return Whether the dtmfDigits field is set.
+     */
+    public boolean hasDtmfDigits() {
+      return dtmfDigitsBuilder_ != null || dtmfDigits_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     *
+     * @return The dtmfDigits.
+     */
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmfDigits() {
+      if (dtmfDigitsBuilder_ == null) {
+        return dtmfDigits_ == null
+            ? com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance()
+            : dtmfDigits_;
+      } else {
+        return dtmfDigitsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public Builder setDtmfDigits(com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents value) {
+      if (dtmfDigitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dtmfDigits_ = value;
+        onChanged();
+      } else {
+        dtmfDigitsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public Builder setDtmfDigits(
+        com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder builderForValue) {
+      if (dtmfDigitsBuilder_ == null) {
+        dtmfDigits_ = builderForValue.build();
+        onChanged();
+      } else {
+        dtmfDigitsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public Builder mergeDtmfDigits(com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents value) {
+      if (dtmfDigitsBuilder_ == null) {
+        if (dtmfDigits_ != null) {
+          dtmfDigits_ =
+              com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.newBuilder(dtmfDigits_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dtmfDigits_ = value;
+        }
+        onChanged();
+      } else {
+        dtmfDigitsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public Builder clearDtmfDigits() {
+      if (dtmfDigitsBuilder_ == null) {
+        dtmfDigits_ = null;
+        onChanged();
+      } else {
+        dtmfDigits_ = null;
+        dtmfDigitsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder getDtmfDigitsBuilder() {
+
+      onChanged();
+      return getDtmfDigitsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder
+        getDtmfDigitsOrBuilder() {
+      if (dtmfDigitsBuilder_ != null) {
+        return dtmfDigitsBuilder_.getMessageOrBuilder();
+      } else {
+        return dtmfDigits_ == null
+            ? com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance()
+            : dtmfDigits_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
+        getDtmfDigitsFieldBuilder() {
+      if (dtmfDigitsBuilder_ == null) {
+        dtmfDigitsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>(
+                getDtmfDigits(), getParentForChildren(), isClean());
+        dtmfDigits_ = null;
+      }
+      return dtmfDigitsBuilder_;
     }
 
     @java.lang.Override

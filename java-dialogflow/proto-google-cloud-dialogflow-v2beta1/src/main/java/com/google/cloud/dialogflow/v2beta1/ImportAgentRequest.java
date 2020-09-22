@@ -178,7 +178,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The project that the agent to import is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -204,7 +205,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The project that the agent to import is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -707,7 +709,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to import is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -732,7 +735,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to import is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -757,7 +761,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to import is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -781,7 +786,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to import is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -801,7 +807,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to import is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>

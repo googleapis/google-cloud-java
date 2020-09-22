@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b100ad424293ce5d5378e9067d9d83c4973a115a",
-        "internalRef": "331189912"
+        "sha": "791be5a40033c18034afed50232daad6bdc8cf3e",
+        "internalRef": "331627223"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b100ad424293ce5d5378e9067d9d83c4973a115a",
-        "internalRef": "331189912"
+        "sha": "791be5a40033c18034afed50232daad6bdc8cf3e",
+        "internalRef": "331627223"
       }
     },
     {
@@ -665,6 +665,9 @@
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/SubAgentOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/SynthesizeSpeechConfig.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/SynthesizeSpeechConfigOrBuilder.java",
+    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TelephonyDtmf.java",
+    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TelephonyDtmfEvents.java",
+    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TelephonyDtmfEventsOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TextInput.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TextInputOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/TrainAgentRequest.java",

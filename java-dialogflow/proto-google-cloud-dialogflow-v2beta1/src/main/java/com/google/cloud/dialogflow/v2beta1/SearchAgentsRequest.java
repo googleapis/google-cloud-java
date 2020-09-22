@@ -131,7 +131,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The project to list agents from.
-   * Format: `projects/&lt;Project ID or '-'&gt;`.
+   * Format: `projects/&lt;Project ID or '-'&gt;` or
+   *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -157,7 +158,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The project to list agents from.
-   * Format: `projects/&lt;Project ID or '-'&gt;`.
+   * Format: `projects/&lt;Project ID or '-'&gt;` or
+   *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -603,7 +605,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project to list agents from.
-     * Format: `projects/&lt;Project ID or '-'&gt;`.
+     * Format: `projects/&lt;Project ID or '-'&gt;` or
+     *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -628,7 +631,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project to list agents from.
-     * Format: `projects/&lt;Project ID or '-'&gt;`.
+     * Format: `projects/&lt;Project ID or '-'&gt;` or
+     *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -653,7 +657,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project to list agents from.
-     * Format: `projects/&lt;Project ID or '-'&gt;`.
+     * Format: `projects/&lt;Project ID or '-'&gt;` or
+     *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -677,7 +682,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project to list agents from.
-     * Format: `projects/&lt;Project ID or '-'&gt;`.
+     * Format: `projects/&lt;Project ID or '-'&gt;` or
+     *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -697,7 +703,8 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The project to list agents from.
-     * Format: `projects/&lt;Project ID or '-'&gt;`.
+     * Format: `projects/&lt;Project ID or '-'&gt;` or
+     *         `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>

@@ -168,11 +168,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to list all contexts from. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The session to list all contexts from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListContextsPagedResponse listContexts(SessionName parent) {
@@ -198,11 +203,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to list all contexts from. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The session to list all contexts from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListContextsPagedResponse listContexts(String parent) {
@@ -304,12 +314,17 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the context. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
+   * @param name Required. The name of the context. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context getContext(ContextName name) {
@@ -331,12 +346,17 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the context. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
+   * @param name Required. The name of the context. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/contexts/&lt;Context ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Context getContext(String name) {
@@ -405,11 +425,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to create a context for. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The session to create a context for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @param context Required. The context to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -438,11 +463,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to create a context for. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The session to create a context for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @param context Required. The context to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -608,12 +638,17 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   * @param name Required. The name of the context to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context
+   *     ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/environments/&lt;Environment
+   *     ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteContext(ContextName name) {
@@ -635,12 +670,17 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the context to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;` or
+   * @param name Required. The name of the context to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context
+   *     ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`. If `Environment ID` is not
-   *     specified, we assume default 'draft' environment. If `User ID` is not specified, we assume
-   *     default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/environments/&lt;Environment
+   *     ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteContext(String name) {
@@ -706,11 +746,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the session to delete all contexts from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The name of the session to delete all contexts from. Supported formats:
+   *     - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAllContexts(SessionName parent) {
@@ -734,11 +779,16 @@ public class ContextsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the session to delete all contexts from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
+   * @param parent Required. The name of the session to delete all contexts from. Supported formats:
+   *     - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   *     ID&gt;`. If `Environment ID` is not specified we assume default 'draft' environment. If
-   *     `User ID` is not specified, we assume default '-' user.
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAllContexts(String parent) {

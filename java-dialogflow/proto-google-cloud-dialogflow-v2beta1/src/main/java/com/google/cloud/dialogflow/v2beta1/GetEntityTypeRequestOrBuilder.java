@@ -28,7 +28,10 @@ public interface GetEntityTypeRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entity type.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>
@@ -43,7 +46,10 @@ public interface GetEntityTypeRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entity type.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>

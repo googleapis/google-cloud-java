@@ -379,8 +379,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(IntentName name) {
@@ -402,8 +403,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Intent getIntent(String name) {
@@ -425,8 +427,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -456,8 +459,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the intent. Format: `projects/&lt;Project
-   *     ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * @param name Required. The name of the intent. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -529,8 +533,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a intent for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -557,8 +562,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a intent for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intent Required. The intent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -583,8 +589,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a intent for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intent Required. The intent to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -617,8 +624,9 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a intent for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a intent for. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intent Required. The intent to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -850,7 +858,9 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param name Required. The name of the intent to delete. If this intent has direct or indirect
    *     followup intents, we also delete them.
-   *     <p>Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   *     <p>Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(IntentName name) {
@@ -874,7 +884,9 @@ public class IntentsClient implements BackgroundResource {
    *
    * @param name Required. The name of the intent to delete. If this intent has direct or indirect
    *     followup intents, we also delete them.
-   *     <p>Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   *     <p>Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIntent(String name) {
@@ -1024,8 +1036,10 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param parent Required. The name of the agent to delete all entities types for. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1058,8 +1072,10 @@ public class IntentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param parent Required. The name of the agent to delete all entities types for. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
    * @param intents Required. The collection of intents to delete. Only intent `name` must be filled
    *     in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

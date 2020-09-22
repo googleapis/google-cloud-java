@@ -175,11 +175,16 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to list all session entity types from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
-   *     sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume default
-   *     'draft' environment. If `User ID` is not specified, we assume default '-' user.
+   * @param parent Required. The session to list all session entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(SessionName parent) {
@@ -208,11 +213,16 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to list all session entity types from. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
-   *     sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume default
-   *     'draft' environment. If `User ID` is not specified, we assume default '-' user.
+   * @param parent Required. The session to list all session entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(String parent) {
@@ -329,12 +339,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   * @param name Required. The name of the session entity type. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
+   *     Display Name&gt;` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
+   *     &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
@@ -361,12 +377,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   * @param name Required. The name of the session entity type. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
+   *     Display Name&gt;` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
+   *     &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType getSessionEntityType(String name) {
@@ -446,11 +468,16 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to create a session entity type for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
-   *     sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume default
-   *     'draft' environment. If `User ID` is not specified, we assume default '-' user.
+   * @param parent Required. The session to create a session entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -483,11 +510,16 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The session to create a session entity type for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
-   *     sessions/&lt;Session ID&gt;`. If `Environment ID` is not specified, we assume default
-   *     'draft' environment. If `User ID` is not specified, we assume default '-' user.
+   * @param parent Required. The session to create a session entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session ID&gt;`, -
+   *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *     ID&gt;/sessions/&lt;Session ID&gt;`, - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;`,
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -685,12 +717,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   * @param name Required. The name of the entity type to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
+   *     Display Name&gt;` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
+   *     &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSessionEntityType(SessionEntityTypeName name) {
@@ -717,12 +755,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
+   * @param name Required. The name of the entity type to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
+   *     Display Name&gt;` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`. If
-   *     `Environment ID` is not specified, we assume default 'draft' environment. If `User ID` is
-   *     not specified, we assume default '-' user.
+   *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/environments/
+   *     &lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *     ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;`
+   *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
+   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
+   *     assume default '-' user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSessionEntityType(String name) {

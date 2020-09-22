@@ -117,11 +117,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-   * environment. If `User ID` is not specified, we assume default '-' user.
+   * Required. The name of the session to delete all contexts from. Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *   ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *   ID&gt;/sessions/&lt;Session ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *   ID&gt;`,
+   * If `Location ID` is not specified we assume default 'us' location. If
+   * `Environment ID` is not specified we assume default 'draft' environment. If
+   * `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
    * <code>
@@ -146,11 +153,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Format:
-   * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-   * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-   * environment. If `User ID` is not specified, we assume default '-' user.
+   * Required. The name of the session to delete all contexts from. Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *   ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *   ID&gt;/sessions/&lt;Session ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *   ID&gt;`,
+   * If `Location ID` is not specified we assume default 'us' location. If
+   * `Environment ID` is not specified we assume default 'draft' environment. If
+   * `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
    * <code>
@@ -498,11 +512,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Format:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-     * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-     * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-     * environment. If `User ID` is not specified, we assume default '-' user.
+     * Required. The name of the session to delete all contexts from. Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
+     * If `Location ID` is not specified we assume default 'us' location. If
+     * `Environment ID` is not specified we assume default 'draft' environment. If
+     * `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>
@@ -526,11 +547,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Format:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-     * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-     * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-     * environment. If `User ID` is not specified, we assume default '-' user.
+     * Required. The name of the session to delete all contexts from. Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
+     * If `Location ID` is not specified we assume default 'us' location. If
+     * `Environment ID` is not specified we assume default 'draft' environment. If
+     * `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>
@@ -554,11 +582,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Format:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-     * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-     * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-     * environment. If `User ID` is not specified, we assume default '-' user.
+     * Required. The name of the session to delete all contexts from. Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
+     * If `Location ID` is not specified we assume default 'us' location. If
+     * `Environment ID` is not specified we assume default 'draft' environment. If
+     * `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>
@@ -581,11 +616,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Format:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-     * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-     * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-     * environment. If `User ID` is not specified, we assume default '-' user.
+     * Required. The name of the session to delete all contexts from. Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
+     * If `Location ID` is not specified we assume default 'us' location. If
+     * `Environment ID` is not specified we assume default 'draft' environment. If
+     * `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>
@@ -604,11 +646,18 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Format:
-     * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
-     * ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
-     * ID&gt;`. If `Environment ID` is not specified we assume default 'draft'
-     * environment. If `User ID` is not specified, we assume default '-' user.
+     * Required. The name of the session to delete all contexts from. Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
+     * If `Location ID` is not specified we assume default 'us' location. If
+     * `Environment ID` is not specified we assume default 'draft' environment. If
+     * `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
      * <code>

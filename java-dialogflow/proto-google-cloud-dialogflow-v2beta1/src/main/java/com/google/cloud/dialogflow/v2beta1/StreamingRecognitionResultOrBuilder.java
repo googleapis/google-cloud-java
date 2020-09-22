@@ -229,4 +229,39 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
    */
   com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   *
+   * @return Whether the dtmfDigits field is set.
+   */
+  boolean hasDtmfDigits();
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   *
+   * @return The dtmfDigits.
+   */
+  com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmfDigits();
+  /**
+   *
+   *
+   * <pre>
+   * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfDigitsOrBuilder();
 }

@@ -30,7 +30,10 @@ public interface EntityTypeOrBuilder
    * The unique identifier of the entity type.
    * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
    * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -45,7 +48,10 @@ public interface EntityTypeOrBuilder
    * The unique identifier of the entity type.
    * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType] and
    * [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes] methods.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>string name = 1;</code>

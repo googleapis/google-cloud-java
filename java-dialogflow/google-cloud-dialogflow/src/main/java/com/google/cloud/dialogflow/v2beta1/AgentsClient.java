@@ -184,7 +184,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(ProjectName parent) {
@@ -207,7 +208,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(LocationName parent) {
@@ -230,7 +232,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to fetch is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(String parent) {
@@ -363,7 +366,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to delete is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(ProjectName parent) {
@@ -388,7 +392,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to delete is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(LocationName parent) {
@@ -413,7 +418,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to delete is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(String parent) {
@@ -485,7 +491,7 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project to list agents from. Format: `projects/&lt;Project ID or
-   *     '-'&gt;`.
+   *     '-'&gt;` or `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAgentsPagedResponse searchAgents(ProjectName parent) {
@@ -515,7 +521,7 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project to list agents from. Format: `projects/&lt;Project ID or
-   *     '-'&gt;`.
+   *     '-'&gt;` or `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAgentsPagedResponse searchAgents(LocationName parent) {
@@ -545,7 +551,7 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project to list agents from. Format: `projects/&lt;Project ID or
-   *     '-'&gt;`.
+   *     '-'&gt;` or `projects/&lt;Project ID or '-'&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAgentsPagedResponse searchAgents(String parent) {
@@ -659,7 +665,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to train is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -686,7 +693,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to train is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -713,7 +721,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to train is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -816,7 +825,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to export is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -846,7 +856,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to export is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -876,7 +887,8 @@ public class AgentsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The project that the agent to export is associated with. Format:
-   *     `projects/&lt;Project ID&gt;`.
+   *     `projects/&lt;Project ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

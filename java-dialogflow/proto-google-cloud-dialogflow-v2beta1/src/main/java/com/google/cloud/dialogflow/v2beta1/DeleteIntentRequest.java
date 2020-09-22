@@ -119,7 +119,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The name of the intent to delete. If this intent has direct or
    * indirect followup intents, we also delete them.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>
@@ -146,7 +148,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The name of the intent to delete. If this intent has direct or
    * indirect followup intents, we also delete them.
-   * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
    *
    * <code>
@@ -494,7 +498,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the intent to delete. If this intent has direct or
      * indirect followup intents, we also delete them.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>
@@ -520,7 +526,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the intent to delete. If this intent has direct or
      * indirect followup intents, we also delete them.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>
@@ -546,7 +554,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the intent to delete. If this intent has direct or
      * indirect followup intents, we also delete them.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>
@@ -571,7 +581,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the intent to delete. If this intent has direct or
      * indirect followup intents, we also delete them.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>
@@ -592,7 +604,9 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The name of the intent to delete. If this intent has direct or
      * indirect followup intents, we also delete them.
-     * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
      * </pre>
      *
      * <code>

@@ -28,7 +28,8 @@ public interface GetAgentRequestOrBuilder
    *
    * <pre>
    * Required. The project that the agent to fetch is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface GetAgentRequestOrBuilder
    *
    * <pre>
    * Required. The project that the agent to fetch is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>

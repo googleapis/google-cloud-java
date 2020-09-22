@@ -28,7 +28,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the agent to update or create intents in.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -43,7 +45,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the agent to update or create intents in.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>

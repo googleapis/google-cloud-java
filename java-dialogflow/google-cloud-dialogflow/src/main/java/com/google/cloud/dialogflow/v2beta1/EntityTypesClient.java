@@ -188,8 +188,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
@@ -215,8 +216,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntityTypesPagedResponse listEntityTypes(String parent) {
@@ -240,8 +242,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -273,8 +276,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to list all entity types from. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to list all entity types from. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -382,8 +386,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(EntityTypeName name) {
@@ -405,8 +410,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType getEntityType(String name) {
@@ -428,8 +434,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -459,8 +466,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type. Supported formats: - `projects/&lt;Project
+   *     ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
    *     intent and entity
@@ -532,8 +540,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -560,8 +569,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -586,8 +596,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -621,8 +632,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
-   *     ID&gt;/agent`.
+   * @param parent Required. The agent to create a entity type for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
    * @param entityType Required. The entity type to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -834,8 +846,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(EntityTypeName name) {
@@ -857,8 +871,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
-   *     ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * @param name Required. The name of the entity type to delete. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEntityType(String name) {
@@ -1003,8 +1019,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param parent Required. The name of the agent to delete all entities types for. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent`, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`.
    * @param entityTypeNames Required. The names entity types to delete. All names must point to the
    *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1036,8 +1053,9 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the agent to delete all entities types for. Format:
-   *     `projects/&lt;Project ID&gt;/agent`.
+   * @param parent Required. The name of the agent to delete all entities types for. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent`, - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`.
    * @param entityTypeNames Required. The names entity types to delete. All names must point to the
    *     same agent as `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1152,8 +1170,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to create entities in. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1185,8 +1205,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to create entities in. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1216,8 +1238,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to create entities in. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -1255,8 +1279,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to create entities in. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -1378,8 +1404,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update or create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to update or create entities in. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1412,8 +1440,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update or create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to update or create entities in. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1444,8 +1474,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update or create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to update or create entities in. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -1484,8 +1516,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to update or create entities in. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to update or create entities in. Supported
+   *     formats: - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entities Required. The entities to update or create.
    * @param languageCode Optional. The language used to access language-specific data. If not
    *     specified, the agent's default language is used. For more information, see [Multilingual
@@ -1609,8 +1643,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to delete entries for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1643,8 +1679,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to delete entries for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1678,8 +1716,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to delete entries for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language used to access language-specific data. If not
@@ -1718,8 +1758,10 @@ public class EntityTypesClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The name of the entity type to delete entries for. Format:
-   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * @param parent Required. The name of the entity type to delete entries for. Supported formats: -
+   *     `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;` -
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *     Type ID&gt;`
    * @param entityValues Required. The reference `values` of the entities to delete. Note that these
    *     are not fully-qualified names, i.e. they don't start with `projects/&lt;Project ID&gt;`.
    * @param languageCode Optional. The language used to access language-specific data. If not

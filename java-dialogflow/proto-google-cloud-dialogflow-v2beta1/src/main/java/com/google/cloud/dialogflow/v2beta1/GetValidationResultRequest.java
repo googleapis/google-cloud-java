@@ -126,7 +126,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project that the agent is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -152,7 +153,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project that the agent is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -575,7 +577,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project that the agent is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -600,7 +603,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project that the agent is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -625,7 +629,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project that the agent is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -649,7 +654,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project that the agent is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -669,7 +675,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project that the agent is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>

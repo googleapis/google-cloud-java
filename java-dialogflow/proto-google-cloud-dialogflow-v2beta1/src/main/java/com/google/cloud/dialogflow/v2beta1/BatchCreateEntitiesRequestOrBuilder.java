@@ -27,8 +27,11 @@ public interface BatchCreateEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entity type to create entities in. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Required. The name of the entity type to create entities in.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>
@@ -42,8 +45,11 @@ public interface BatchCreateEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entity type to create entities in. Format:
-   * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
+   * Required. The name of the entity type to create entities in.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>

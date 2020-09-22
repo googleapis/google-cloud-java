@@ -28,10 +28,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format:
+   * Supported formats:
    * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -44,10 +44,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format:
+   * Supported formats:
    * - `projects/&lt;Project Number / ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -88,7 +88,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Optional. The agent version loaded into this environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *   ID&gt;`
    * </pre>
    *
    * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -101,7 +104,10 @@ public interface EnvironmentOrBuilder
    *
    * <pre>
    * Optional. The agent version loaded into this environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *   ID&gt;`
    * </pre>
    *
    * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

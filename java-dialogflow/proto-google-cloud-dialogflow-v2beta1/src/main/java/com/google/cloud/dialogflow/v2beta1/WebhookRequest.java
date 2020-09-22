@@ -178,9 +178,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *   ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *   ID&gt;/sessions/&lt;Session ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *   ID&gt;`,
    * </pre>
    *
    * <code>string session = 4;</code>
@@ -205,9 +211,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
-   * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-   * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+   *   ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+   *   ID&gt;/sessions/&lt;Session ID&gt;`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+   *   ID&gt;`,
    * </pre>
    *
    * <code>string session = 4;</code>
@@ -927,9 +939,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -953,9 +971,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -979,9 +1003,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -1004,9 +1034,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
      * </pre>
      *
      * <code>string session = 4;</code>
@@ -1025,9 +1061,15 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique identifier of detectIntent request session.
      * Can be used to identify end-user inside webhook implementation.
-     * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or
-     * `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
-     * ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
+     *   ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
+     *   ID&gt;/sessions/&lt;Session ID&gt;`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
+     *   ID&gt;`,
      * </pre>
      *
      * <code>string session = 4;</code>

@@ -30,8 +30,7 @@ public interface ListEnvironmentsRequestOrBuilder
    * Required. The agent to list all environments from.
    * Format:
    * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   * ID&gt;/agent
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -48,8 +47,7 @@ public interface ListEnvironmentsRequestOrBuilder
    * Required. The agent to list all environments from.
    * Format:
    * - `projects/&lt;Project Number / ID&gt;/agent`
-   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location
-   * ID&gt;/agent
+   * - `projects/&lt;Project Number / ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>

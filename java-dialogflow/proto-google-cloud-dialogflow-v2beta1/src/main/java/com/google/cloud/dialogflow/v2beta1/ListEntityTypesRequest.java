@@ -139,7 +139,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The agent to list all entity types from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -165,7 +167,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The agent to list all entity types from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -684,7 +688,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The agent to list all entity types from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -709,7 +715,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The agent to list all entity types from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -734,7 +742,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The agent to list all entity types from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -758,7 +768,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The agent to list all entity types from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -778,7 +790,9 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The agent to list all entity types from.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>

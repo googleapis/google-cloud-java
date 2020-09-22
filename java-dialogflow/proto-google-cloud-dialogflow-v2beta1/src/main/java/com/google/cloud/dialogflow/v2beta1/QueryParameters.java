@@ -670,7 +670,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
-   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * Note: Sentiment Analysis is only currently available for Essentials Edition
    * agents.
    * </pre>
    *
@@ -690,7 +690,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
-   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * Note: Sentiment Analysis is only currently available for Essentials Edition
    * agents.
    * </pre>
    *
@@ -713,7 +713,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
-   * Note: Sentiment Analysis is only currently available for Enterprise Edition
+   * Note: Sentiment Analysis is only currently available for Essentials Edition
    * agents.
    * </pre>
    *
@@ -3154,7 +3154,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3174,7 +3174,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3201,7 +3201,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3229,7 +3229,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3255,7 +3255,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3288,7 +3288,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3313,7 +3313,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3333,7 +3333,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *
@@ -3358,7 +3358,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
-     * Note: Sentiment Analysis is only currently available for Enterprise Edition
+     * Note: Sentiment Analysis is only currently available for Essentials Edition
      * agents.
      * </pre>
      *

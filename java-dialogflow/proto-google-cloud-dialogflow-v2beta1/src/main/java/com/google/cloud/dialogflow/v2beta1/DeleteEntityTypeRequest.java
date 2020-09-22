@@ -118,7 +118,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the entity type to delete.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>
@@ -144,7 +147,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the entity type to delete.
-   * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+   *   Type ID&gt;`
    * </pre>
    *
    * <code>
@@ -491,7 +497,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the entity type to delete.
-     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+     *   Type ID&gt;`
      * </pre>
      *
      * <code>
@@ -516,7 +525,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the entity type to delete.
-     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+     *   Type ID&gt;`
      * </pre>
      *
      * <code>
@@ -541,7 +553,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the entity type to delete.
-     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+     *   Type ID&gt;`
      * </pre>
      *
      * <code>
@@ -565,7 +580,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the entity type to delete.
-     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+     *   Type ID&gt;`
      * </pre>
      *
      * <code>
@@ -585,7 +603,10 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the entity type to delete.
-     * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/entityTypes/&lt;Entity
+     *   Type ID&gt;`
      * </pre>
      *
      * <code>

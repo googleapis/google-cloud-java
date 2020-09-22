@@ -132,8 +132,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the agent to delete all entities types for. Format:
-   * `projects/&lt;Project ID&gt;/agent`.
+   * Required. The name of the agent to delete all entities types for.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
    * </pre>
    *
    * <code>
@@ -158,8 +160,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the agent to delete all entities types for. Format:
-   * `projects/&lt;Project ID&gt;/agent`.
+   * Required. The name of the agent to delete all entities types for.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`,
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
    * </pre>
    *
    * <code>
@@ -612,8 +616,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the agent to delete all entities types for. Format:
-     * `projects/&lt;Project ID&gt;/agent`.
+     * Required. The name of the agent to delete all entities types for.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
      * </pre>
      *
      * <code>
@@ -637,8 +643,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the agent to delete all entities types for. Format:
-     * `projects/&lt;Project ID&gt;/agent`.
+     * Required. The name of the agent to delete all entities types for.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
      * </pre>
      *
      * <code>
@@ -662,8 +670,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the agent to delete all entities types for. Format:
-     * `projects/&lt;Project ID&gt;/agent`.
+     * Required. The name of the agent to delete all entities types for.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
      * </pre>
      *
      * <code>
@@ -686,8 +696,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the agent to delete all entities types for. Format:
-     * `projects/&lt;Project ID&gt;/agent`.
+     * Required. The name of the agent to delete all entities types for.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
      * </pre>
      *
      * <code>
@@ -706,8 +718,10 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the agent to delete all entities types for. Format:
-     * `projects/&lt;Project ID&gt;/agent`.
+     * Required. The name of the agent to delete all entities types for.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`,
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`.
      * </pre>
      *
      * <code>

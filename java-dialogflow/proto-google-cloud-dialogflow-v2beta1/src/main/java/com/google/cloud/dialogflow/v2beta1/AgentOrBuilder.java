@@ -28,7 +28,8 @@ public interface AgentOrBuilder
    *
    * <pre>
    * Required. The project of this agent.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -41,7 +42,8 @@ public interface AgentOrBuilder
    *
    * <pre>
    * Required. The project of this agent.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>string parent = 1;</code>

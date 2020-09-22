@@ -215,7 +215,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -241,7 +243,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>
@@ -941,7 +945,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -966,7 +972,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -991,7 +999,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -1015,7 +1025,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>
@@ -1035,7 +1047,9 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
-     * Format: `projects/&lt;Project ID&gt;/agent`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
      * </pre>
      *
      * <code>

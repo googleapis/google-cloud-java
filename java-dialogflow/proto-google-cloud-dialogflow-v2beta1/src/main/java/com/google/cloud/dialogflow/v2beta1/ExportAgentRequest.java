@@ -126,7 +126,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The project that the agent to export is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -152,7 +153,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The project that the agent to export is associated with.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;` or
+   *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -572,7 +574,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to export is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -597,7 +600,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to export is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -622,7 +626,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to export is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -646,7 +651,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to export is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -666,7 +672,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The project that the agent to export is associated with.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;` or
+     *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
