@@ -181,7 +181,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
    * in the knowledge base are also deleted.
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -657,7 +657,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
      * in the knowledge base are also deleted.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -673,7 +673,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
      * in the knowledge base are also deleted.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -692,7 +692,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
      * in the knowledge base are also deleted.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

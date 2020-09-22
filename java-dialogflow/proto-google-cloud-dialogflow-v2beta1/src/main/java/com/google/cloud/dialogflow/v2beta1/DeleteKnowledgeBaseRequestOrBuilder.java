@@ -62,7 +62,7 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    * in the knowledge base are also deleted.
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
