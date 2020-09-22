@@ -191,34 +191,4 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
-
-  @Override
-  public void analyzeIamPolicy(
-      AnalyzeIamPolicyRequest request, StreamObserver<AnalyzeIamPolicyResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof AnalyzeIamPolicyResponse) {
-      requests.add(request);
-      responseObserver.onNext((AnalyzeIamPolicyResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void exportIamPolicyAnalysis(
-      ExportIamPolicyAnalysisRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
 }

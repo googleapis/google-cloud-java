@@ -44,16 +44,12 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
-import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
 import com.google.cloud.asset.v1.DeleteFeedRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
-import com.google.cloud.asset.v1.ExportIamPolicyAnalysisRequest;
-import com.google.cloud.asset.v1.ExportIamPolicyAnalysisResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
 import com.google.cloud.asset.v1.IamPolicySearchResult;
@@ -133,15 +129,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings;
-  private final UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings;
-  private final UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
-      exportIamPolicyAnalysisSettings;
-  private final OperationCallSettings<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
-          ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisOperationSettings;
 
   /** Returns the object with the settings used for calls to exportAssets. */
   public UnaryCallSettings<ExportAssetsRequest, Operation> exportAssetsSettings() {
@@ -200,28 +187,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings() {
     return searchAllIamPoliciesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
-  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings() {
-    return analyzeIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
-  public UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
-      exportIamPolicyAnalysisSettings() {
-    return exportIamPolicyAnalysisSettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
-          ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisOperationSettings() {
-    return exportIamPolicyAnalysisOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -303,10 +268,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     deleteFeedSettings = settingsBuilder.deleteFeedSettings().build();
     searchAllResourcesSettings = settingsBuilder.searchAllResourcesSettings().build();
     searchAllIamPoliciesSettings = settingsBuilder.searchAllIamPoliciesSettings().build();
-    analyzeIamPolicySettings = settingsBuilder.analyzeIamPolicySettings().build();
-    exportIamPolicyAnalysisSettings = settingsBuilder.exportIamPolicyAnalysisSettings().build();
-    exportIamPolicyAnalysisOperationSettings =
-        settingsBuilder.exportIamPolicyAnalysisOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -463,15 +424,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             SearchAllIamPoliciesResponse,
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings;
-    private final UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings;
-    private final UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
-        exportIamPolicyAnalysisSettings;
-    private final OperationCallSettings.Builder<
-            ExportIamPolicyAnalysisRequest,
-            ExportIamPolicyAnalysisResponse,
-            ExportIamPolicyAnalysisRequest>
-        exportIamPolicyAnalysisOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -577,12 +529,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       searchAllIamPoliciesSettings =
           PagedCallSettings.newBuilder(SEARCH_ALL_IAM_POLICIES_PAGE_STR_FACT);
 
-      analyzeIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      exportIamPolicyAnalysisSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      exportIamPolicyAnalysisOperationSettings = OperationCallSettings.newBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               exportAssetsSettings,
@@ -593,9 +539,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               updateFeedSettings,
               deleteFeedSettings,
               searchAllResourcesSettings,
-              searchAllIamPoliciesSettings,
-              analyzeIamPolicySettings,
-              exportIamPolicyAnalysisSettings);
+              searchAllIamPoliciesSettings);
 
       initDefaults(this);
     }
@@ -655,16 +599,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           .searchAllIamPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .analyzeIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .exportIamPolicyAnalysisSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
       builder
           .exportAssetsOperationSettings()
           .setInitialCallSettings(
@@ -677,31 +611,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               ProtoOperationTransformers.ResponseTransformer.create(ExportAssetsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(ExportAssetsRequest.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .exportIamPolicyAnalysisOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<ExportIamPolicyAnalysisRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  ExportIamPolicyAnalysisResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  ExportIamPolicyAnalysisRequest.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -730,10 +639,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       deleteFeedSettings = settings.deleteFeedSettings.toBuilder();
       searchAllResourcesSettings = settings.searchAllResourcesSettings.toBuilder();
       searchAllIamPoliciesSettings = settings.searchAllIamPoliciesSettings.toBuilder();
-      analyzeIamPolicySettings = settings.analyzeIamPolicySettings.toBuilder();
-      exportIamPolicyAnalysisSettings = settings.exportIamPolicyAnalysisSettings.toBuilder();
-      exportIamPolicyAnalysisOperationSettings =
-          settings.exportIamPolicyAnalysisOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -745,9 +650,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               updateFeedSettings,
               deleteFeedSettings,
               searchAllResourcesSettings,
-              searchAllIamPoliciesSettings,
-              analyzeIamPolicySettings,
-              exportIamPolicyAnalysisSettings);
+              searchAllIamPoliciesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -825,29 +728,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings() {
       return searchAllIamPoliciesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
-    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings() {
-      return analyzeIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
-    public UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
-        exportIamPolicyAnalysisSettings() {
-      return exportIamPolicyAnalysisSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ExportIamPolicyAnalysisRequest,
-            ExportIamPolicyAnalysisResponse,
-            ExportIamPolicyAnalysisRequest>
-        exportIamPolicyAnalysisOperationSettings() {
-      return exportIamPolicyAnalysisOperationSettings;
     }
 
     @Override

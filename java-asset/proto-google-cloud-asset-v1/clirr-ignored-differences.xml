@@ -16,4 +16,18 @@
     <className>com/google/cloud/asset/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 2.0.0 released -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1/IamPolicyAnalysis*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1/ExportIamPolicyAnalysis*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/asset/v1/AnalyzeIamPolicy*</className>
+  </difference>
 </differences>

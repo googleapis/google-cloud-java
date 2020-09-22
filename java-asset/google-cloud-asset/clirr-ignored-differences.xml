@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
+  <!-- TODO: remove after 2.0.0 is released -->
   <difference>
     <differenceType>7002</differenceType>
-    <className>com/google/cloud/asset/v1p2beta1/AssetServiceClient</className>
-    <method>java.lang.String *FeedName(*)</method>
+    <className>com/google/cloud/asset/v1/AssetServiceClient</className>
+    <method>* *IamPolicy*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1/AssetServiceSettings*</className>
+    <method>* *IamPolicy*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1/stub/*AssetServiceStub*</className>
+    <method>* *IamPolicy*(*)</method>
   </difference>
 </differences>

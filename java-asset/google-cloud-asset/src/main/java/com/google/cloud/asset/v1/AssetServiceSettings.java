@@ -131,30 +131,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     return ((AssetServiceStubSettings) getStubSettings()).searchAllIamPoliciesSettings();
   }
 
-  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
-  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicySettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).analyzeIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
-  public UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
-      exportIamPolicyAnalysisSettings() {
-    return ((AssetServiceStubSettings) getStubSettings()).exportIamPolicyAnalysisSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
-          ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisOperationSettings() {
-    return ((AssetServiceStubSettings) getStubSettings())
-        .exportIamPolicyAnalysisOperationSettings();
-  }
-
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
       throws IOException {
     return new AssetServiceSettings.Builder(stub.toBuilder()).build();
@@ -311,29 +287,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings() {
       return getStubSettingsBuilder().searchAllIamPoliciesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
-    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-        analyzeIamPolicySettings() {
-      return getStubSettingsBuilder().analyzeIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
-    public UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
-        exportIamPolicyAnalysisSettings() {
-      return getStubSettingsBuilder().exportIamPolicyAnalysisSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportIamPolicyAnalysis. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ExportIamPolicyAnalysisRequest,
-            ExportIamPolicyAnalysisResponse,
-            ExportIamPolicyAnalysisRequest>
-        exportIamPolicyAnalysisOperationSettings() {
-      return getStubSettingsBuilder().exportIamPolicyAnalysisOperationSettings();
     }
 
     @Override

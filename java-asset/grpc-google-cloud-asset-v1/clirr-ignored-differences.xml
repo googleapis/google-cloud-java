@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
+  <!-- TODO: remove after 2.0.0 released -->
   <difference>
-    <!-- TODO: remove after 1.1.1 released -->
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/asset/v1/*Grpc</className>
-    <field>METHOD_*</field>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1/AssetServiceGrpc</className>
+    <method>* *IamPolicy*Method()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1/AssetServiceGrpc*</className>
+    <method>* exportIamPolicyAnalysis(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/asset/v1/AssetServiceGrpc*</className>
+    <method>* analyzeIamPolicy(*)</method>
   </difference>
 </differences>

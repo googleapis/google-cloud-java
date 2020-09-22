@@ -90,6 +90,27 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
               force_ = input.readBool();
               break;
             }
+          case 34:
+            {
+              com.google.cloud.asset.v1.PartitionSpec.Builder subBuilder = null;
+              if (partitionSpec_ != null) {
+                subBuilder = partitionSpec_.toBuilder();
+              }
+              partitionSpec_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1.PartitionSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(partitionSpec_);
+                partitionSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 40:
+            {
+              separateTablesPerAssetType_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -253,6 +274,137 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     return force_;
   }
 
+  public static final int PARTITION_SPEC_FIELD_NUMBER = 4;
+  private com.google.cloud.asset.v1.PartitionSpec partitionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * [partition_spec] determines whether to export to partitioned table(s) and
+   * how to partition the data.
+   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+   * non-partitioned table(s). [force] will decide whether to overwrite existing
+   * table(s).
+   * If [partition_spec] is specified. First, the snapshot results will be
+   * written to partitioned table(s) with two additional timestamp columns,
+   * readTime and requestTime, one of which will be the partition key. Secondly,
+   * in the case when any destination table already exists, it will first try to
+   * update existing table's schema as necessary by appending additional
+   * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+   * overwritten by the snapshot results (data in different partitions will
+   * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+   * error will be returned if the schema update or data appension fails.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+   *
+   * @return Whether the partitionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartitionSpec() {
+    return partitionSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [partition_spec] determines whether to export to partitioned table(s) and
+   * how to partition the data.
+   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+   * non-partitioned table(s). [force] will decide whether to overwrite existing
+   * table(s).
+   * If [partition_spec] is specified. First, the snapshot results will be
+   * written to partitioned table(s) with two additional timestamp columns,
+   * readTime and requestTime, one of which will be the partition key. Secondly,
+   * in the case when any destination table already exists, it will first try to
+   * update existing table's schema as necessary by appending additional
+   * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+   * overwritten by the snapshot results (data in different partitions will
+   * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+   * error will be returned if the schema update or data appension fails.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+   *
+   * @return The partitionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.PartitionSpec getPartitionSpec() {
+    return partitionSpec_ == null
+        ? com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()
+        : partitionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [partition_spec] determines whether to export to partitioned table(s) and
+   * how to partition the data.
+   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+   * non-partitioned table(s). [force] will decide whether to overwrite existing
+   * table(s).
+   * If [partition_spec] is specified. First, the snapshot results will be
+   * written to partitioned table(s) with two additional timestamp columns,
+   * readTime and requestTime, one of which will be the partition key. Secondly,
+   * in the case when any destination table already exists, it will first try to
+   * update existing table's schema as necessary by appending additional
+   * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+   * overwritten by the snapshot results (data in different partitions will
+   * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+   * error will be returned if the schema update or data appension fails.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.PartitionSpecOrBuilder getPartitionSpecOrBuilder() {
+    return getPartitionSpec();
+  }
+
+  public static final int SEPARATE_TABLES_PER_ASSET_TYPE_FIELD_NUMBER = 5;
+  private boolean separateTablesPerAssetType_;
+  /**
+   *
+   *
+   * <pre>
+   * If this flag is `TRUE`, the snapshot results will be written to one or
+   * multiple tables, each of which contains results of one asset type. The
+   * [force] and [partition_spec] fields will apply to each of them.
+   * Field [table] will be concatenated with "_" and the asset type names (see
+   * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
+   * supported asset types) to construct per-asset-type table names, in which
+   * all non-alphanumeric characters like "." and "/" will be substituted by
+   * "_". Example: if field [table] is "mytable" and snapshot results
+   * contain "storage.googleapis.com/Bucket" assets, the corresponding table
+   * name will be "mytable_storage_googleapis_com_Bucket". If any of these
+   * tables does not exist, a new table with the concatenated name will be
+   * created.
+   * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
+   * each table will include RECORD-type columns mapped to the nested fields in
+   * the Asset.resource.data field of that asset type (up to the 15 nested level
+   * BigQuery supports
+   * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
+   * fields in &gt;15 nested levels will be stored in JSON format string as a child
+   * column of its parent RECORD column.
+   * If error occurs when exporting to any table, the whole export call will
+   * return an error but the export results that already succeed will persist.
+   * Example: if exporting to table_type_A succeeds when exporting to
+   * table_type_B fails during one export call, the results in table_type_A will
+   * persist and there will not be partial results persisting in a table.
+   * </pre>
+   *
+   * <code>bool separate_tables_per_asset_type = 5;</code>
+   *
+   * @return The separateTablesPerAssetType.
+   */
+  @java.lang.Override
+  public boolean getSeparateTablesPerAssetType() {
+    return separateTablesPerAssetType_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -276,6 +428,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (force_ != false) {
       output.writeBool(3, force_);
     }
+    if (partitionSpec_ != null) {
+      output.writeMessage(4, getPartitionSpec());
+    }
+    if (separateTablesPerAssetType_ != false) {
+      output.writeBool(5, separateTablesPerAssetType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -293,6 +451,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
     if (force_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, force_);
+    }
+    if (partitionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPartitionSpec());
+    }
+    if (separateTablesPerAssetType_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, separateTablesPerAssetType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -313,6 +477,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (!getDataset().equals(other.getDataset())) return false;
     if (!getTable().equals(other.getTable())) return false;
     if (getForce() != other.getForce()) return false;
+    if (hasPartitionSpec() != other.hasPartitionSpec()) return false;
+    if (hasPartitionSpec()) {
+      if (!getPartitionSpec().equals(other.getPartitionSpec())) return false;
+    }
+    if (getSeparateTablesPerAssetType() != other.getSeparateTablesPerAssetType()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -330,6 +499,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getTable().hashCode();
     hash = (37 * hash) + FORCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
+    if (hasPartitionSpec()) {
+      hash = (37 * hash) + PARTITION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getPartitionSpec().hashCode();
+    }
+    hash = (37 * hash) + SEPARATE_TABLES_PER_ASSET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSeparateTablesPerAssetType());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -481,6 +656,14 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
 
       force_ = false;
 
+      if (partitionSpecBuilder_ == null) {
+        partitionSpec_ = null;
+      } else {
+        partitionSpec_ = null;
+        partitionSpecBuilder_ = null;
+      }
+      separateTablesPerAssetType_ = false;
+
       return this;
     }
 
@@ -511,6 +694,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       result.dataset_ = dataset_;
       result.table_ = table_;
       result.force_ = force_;
+      if (partitionSpecBuilder_ == null) {
+        result.partitionSpec_ = partitionSpec_;
+      } else {
+        result.partitionSpec_ = partitionSpecBuilder_.build();
+      }
+      result.separateTablesPerAssetType_ = separateTablesPerAssetType_;
       onBuilt();
       return result;
     }
@@ -570,6 +759,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       }
       if (other.getForce() != false) {
         setForce(other.getForce());
+      }
+      if (other.hasPartitionSpec()) {
+        mergePartitionSpec(other.getPartitionSpec());
+      }
+      if (other.getSeparateTablesPerAssetType() != false) {
+        setSeparateTablesPerAssetType(other.getSeparateTablesPerAssetType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -894,6 +1089,439 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public Builder clearForce() {
 
       force_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.asset.v1.PartitionSpec partitionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.PartitionSpec,
+            com.google.cloud.asset.v1.PartitionSpec.Builder,
+            com.google.cloud.asset.v1.PartitionSpecOrBuilder>
+        partitionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     *
+     * @return Whether the partitionSpec field is set.
+     */
+    public boolean hasPartitionSpec() {
+      return partitionSpecBuilder_ != null || partitionSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     *
+     * @return The partitionSpec.
+     */
+    public com.google.cloud.asset.v1.PartitionSpec getPartitionSpec() {
+      if (partitionSpecBuilder_ == null) {
+        return partitionSpec_ == null
+            ? com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()
+            : partitionSpec_;
+      } else {
+        return partitionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public Builder setPartitionSpec(com.google.cloud.asset.v1.PartitionSpec value) {
+      if (partitionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partitionSpec_ = value;
+        onChanged();
+      } else {
+        partitionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public Builder setPartitionSpec(
+        com.google.cloud.asset.v1.PartitionSpec.Builder builderForValue) {
+      if (partitionSpecBuilder_ == null) {
+        partitionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        partitionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public Builder mergePartitionSpec(com.google.cloud.asset.v1.PartitionSpec value) {
+      if (partitionSpecBuilder_ == null) {
+        if (partitionSpec_ != null) {
+          partitionSpec_ =
+              com.google.cloud.asset.v1.PartitionSpec.newBuilder(partitionSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          partitionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        partitionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public Builder clearPartitionSpec() {
+      if (partitionSpecBuilder_ == null) {
+        partitionSpec_ = null;
+        onChanged();
+      } else {
+        partitionSpec_ = null;
+        partitionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public com.google.cloud.asset.v1.PartitionSpec.Builder getPartitionSpecBuilder() {
+
+      onChanged();
+      return getPartitionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    public com.google.cloud.asset.v1.PartitionSpecOrBuilder getPartitionSpecOrBuilder() {
+      if (partitionSpecBuilder_ != null) {
+        return partitionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return partitionSpec_ == null
+            ? com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()
+            : partitionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [partition_spec] determines whether to export to partitioned table(s) and
+     * how to partition the data.
+     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
+     * non-partitioned table(s). [force] will decide whether to overwrite existing
+     * table(s).
+     * If [partition_spec] is specified. First, the snapshot results will be
+     * written to partitioned table(s) with two additional timestamp columns,
+     * readTime and requestTime, one of which will be the partition key. Secondly,
+     * in the case when any destination table already exists, it will first try to
+     * update existing table's schema as necessary by appending additional
+     * columns. Then, if [force] is `TRUE`, the corresponding partition will be
+     * overwritten by the snapshot results (data in different partitions will
+     * remain intact); if [force] is unset or `FALSE`, it will append the data. An
+     * error will be returned if the schema update or data appension fails.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.PartitionSpec,
+            com.google.cloud.asset.v1.PartitionSpec.Builder,
+            com.google.cloud.asset.v1.PartitionSpecOrBuilder>
+        getPartitionSpecFieldBuilder() {
+      if (partitionSpecBuilder_ == null) {
+        partitionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1.PartitionSpec,
+                com.google.cloud.asset.v1.PartitionSpec.Builder,
+                com.google.cloud.asset.v1.PartitionSpecOrBuilder>(
+                getPartitionSpec(), getParentForChildren(), isClean());
+        partitionSpec_ = null;
+      }
+      return partitionSpecBuilder_;
+    }
+
+    private boolean separateTablesPerAssetType_;
+    /**
+     *
+     *
+     * <pre>
+     * If this flag is `TRUE`, the snapshot results will be written to one or
+     * multiple tables, each of which contains results of one asset type. The
+     * [force] and [partition_spec] fields will apply to each of them.
+     * Field [table] will be concatenated with "_" and the asset type names (see
+     * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
+     * supported asset types) to construct per-asset-type table names, in which
+     * all non-alphanumeric characters like "." and "/" will be substituted by
+     * "_". Example: if field [table] is "mytable" and snapshot results
+     * contain "storage.googleapis.com/Bucket" assets, the corresponding table
+     * name will be "mytable_storage_googleapis_com_Bucket". If any of these
+     * tables does not exist, a new table with the concatenated name will be
+     * created.
+     * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
+     * each table will include RECORD-type columns mapped to the nested fields in
+     * the Asset.resource.data field of that asset type (up to the 15 nested level
+     * BigQuery supports
+     * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
+     * fields in &gt;15 nested levels will be stored in JSON format string as a child
+     * column of its parent RECORD column.
+     * If error occurs when exporting to any table, the whole export call will
+     * return an error but the export results that already succeed will persist.
+     * Example: if exporting to table_type_A succeeds when exporting to
+     * table_type_B fails during one export call, the results in table_type_A will
+     * persist and there will not be partial results persisting in a table.
+     * </pre>
+     *
+     * <code>bool separate_tables_per_asset_type = 5;</code>
+     *
+     * @return The separateTablesPerAssetType.
+     */
+    @java.lang.Override
+    public boolean getSeparateTablesPerAssetType() {
+      return separateTablesPerAssetType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this flag is `TRUE`, the snapshot results will be written to one or
+     * multiple tables, each of which contains results of one asset type. The
+     * [force] and [partition_spec] fields will apply to each of them.
+     * Field [table] will be concatenated with "_" and the asset type names (see
+     * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
+     * supported asset types) to construct per-asset-type table names, in which
+     * all non-alphanumeric characters like "." and "/" will be substituted by
+     * "_". Example: if field [table] is "mytable" and snapshot results
+     * contain "storage.googleapis.com/Bucket" assets, the corresponding table
+     * name will be "mytable_storage_googleapis_com_Bucket". If any of these
+     * tables does not exist, a new table with the concatenated name will be
+     * created.
+     * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
+     * each table will include RECORD-type columns mapped to the nested fields in
+     * the Asset.resource.data field of that asset type (up to the 15 nested level
+     * BigQuery supports
+     * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
+     * fields in &gt;15 nested levels will be stored in JSON format string as a child
+     * column of its parent RECORD column.
+     * If error occurs when exporting to any table, the whole export call will
+     * return an error but the export results that already succeed will persist.
+     * Example: if exporting to table_type_A succeeds when exporting to
+     * table_type_B fails during one export call, the results in table_type_A will
+     * persist and there will not be partial results persisting in a table.
+     * </pre>
+     *
+     * <code>bool separate_tables_per_asset_type = 5;</code>
+     *
+     * @param value The separateTablesPerAssetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeparateTablesPerAssetType(boolean value) {
+
+      separateTablesPerAssetType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this flag is `TRUE`, the snapshot results will be written to one or
+     * multiple tables, each of which contains results of one asset type. The
+     * [force] and [partition_spec] fields will apply to each of them.
+     * Field [table] will be concatenated with "_" and the asset type names (see
+     * https://cloud.google.com/asset-inventory/docs/supported-asset-types for
+     * supported asset types) to construct per-asset-type table names, in which
+     * all non-alphanumeric characters like "." and "/" will be substituted by
+     * "_". Example: if field [table] is "mytable" and snapshot results
+     * contain "storage.googleapis.com/Bucket" assets, the corresponding table
+     * name will be "mytable_storage_googleapis_com_Bucket". If any of these
+     * tables does not exist, a new table with the concatenated name will be
+     * created.
+     * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
+     * each table will include RECORD-type columns mapped to the nested fields in
+     * the Asset.resource.data field of that asset type (up to the 15 nested level
+     * BigQuery supports
+     * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
+     * fields in &gt;15 nested levels will be stored in JSON format string as a child
+     * column of its parent RECORD column.
+     * If error occurs when exporting to any table, the whole export call will
+     * return an error but the export results that already succeed will persist.
+     * Example: if exporting to table_type_A succeeds when exporting to
+     * table_type_B fails during one export call, the results in table_type_A will
+     * persist and there will not be partial results persisting in a table.
+     * </pre>
+     *
+     * <code>bool separate_tables_per_asset_type = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeparateTablesPerAssetType() {
+
+      separateTablesPerAssetType_ = false;
       onChanged();
       return this;
     }
