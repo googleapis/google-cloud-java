@@ -32,4 +32,9 @@
         <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
         <method>com.google.api.services.bigquery.model.TestIamPermissionsResponse testIamPermissions(java.lang.String, java.util.List, java.util.Map)</method>
     </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+        <method>com.google.api.services.bigquery.model.QueryResponse queryRpc(java.lang.String, com.google.api.services.bigquery.model.QueryRequest)</method>
+        <differenceType>7012</differenceType>
+    </difference>
 </differences>

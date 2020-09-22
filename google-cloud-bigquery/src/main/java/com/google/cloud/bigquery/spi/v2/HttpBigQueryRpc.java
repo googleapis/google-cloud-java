@@ -48,6 +48,8 @@ import com.google.api.services.bigquery.model.ListRoutinesResponse;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
 import com.google.api.services.bigquery.model.Policy;
+import com.google.api.services.bigquery.model.QueryRequest;
+import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.api.services.bigquery.model.SetIamPolicyRequest;
@@ -619,6 +621,15 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                   : null)
           .setTimeoutMs(Option.TIMEOUT.getLong(options))
           .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public QueryResponse queryRpc(String projectId, QueryRequest content) {
+    try {
+      return bigquery.jobs().query(projectId, content).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

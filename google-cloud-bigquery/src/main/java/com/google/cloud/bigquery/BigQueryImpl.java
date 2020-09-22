@@ -26,6 +26,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
+import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -48,6 +49,7 @@ import com.google.common.base.Supplier;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,6 +196,43 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     @Override
     public Page<FieldValueList> getNextPage() {
+      return listTableData(table, schema, serviceOptions, requestOptions).x();
+    }
+  }
+
+  private class QueryPageFetcher extends Thread implements NextPageFetcher<FieldValueList> {
+
+    private static final long serialVersionUID = -8501991114794410114L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
+    private Job job;
+    private final TableId table;
+    private final Schema schema;
+
+    QueryPageFetcher(
+        JobId jobId,
+        Schema schema,
+        BigQueryOptions serviceOptions,
+        String cursor,
+        Map<BigQueryRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.job = getJob(jobId);
+      this.table = ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
+      this.schema = schema;
+    }
+
+    @Override
+    public Page<FieldValueList> getNextPage() {
+      while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
+        try {
+          sleep(5000);
+        } catch (InterruptedException ex) {
+          throw new RuntimeException(ex.getMessage());
+        }
+        job = job.reload();
+      }
       return listTableData(table, schema, serviceOptions, requestOptions).x();
     }
   }
@@ -1184,7 +1223,77 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public TableResult query(QueryJobConfiguration configuration, JobOption... options)
       throws InterruptedException, JobException {
     Job.checkNotDryRun(configuration, "query");
+
+    // If all parameters passed in configuration are supported by the query() method on the backend,
+    // put on fast path
+    QueryRequestInfo requestInfo = new QueryRequestInfo(configuration);
+    if (requestInfo.isFastQuerySupported()) {
+      String projectId = getOptions().getProjectId();
+      QueryRequest content = requestInfo.toPb();
+      return queryRpc(projectId, content, options);
+    }
+    // Otherwise, fall back to the existing create query job logic
     return create(JobInfo.of(configuration), options).getQueryResults();
+  }
+
+  private TableResult queryRpc(
+      final String projectId, final QueryRequest content, JobOption... options) {
+    com.google.api.services.bigquery.model.QueryResponse results;
+    try {
+      results =
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
+                @Override
+                public com.google.api.services.bigquery.model.QueryResponse call() {
+                  return bigQueryRpc.queryRpc(projectId, content);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock());
+    } catch (RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+
+    if (results.getErrors() != null) {
+      List<BigQueryError> bigQueryErrors =
+          Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION);
+      // Throwing BigQueryException since there may be no JobId and we want to stay consistent
+      // with the case where there there is a HTTP error
+      throw new BigQueryException(bigQueryErrors);
+    }
+
+    Schema schema = results.getSchema() == null ? null : Schema.fromPb(results.getSchema());
+    Long numRows;
+    if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
+      numRows = 0L;
+    } else if (results.getNumDmlAffectedRows() != null) {
+      numRows = results.getNumDmlAffectedRows();
+    } else {
+      numRows = results.getTotalRows().longValue();
+    }
+
+    if (results.getPageToken() != null) {
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      String cursor = results.getPageToken();
+      return new TableResult(
+          schema,
+          numRows,
+          new PageImpl<>(
+              // fetch next pages of results
+              new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
+              cursor,
+              // cache first page of result
+              transformTableData(results.getRows(), schema)));
+    }
+    // only 1 page of result
+    return new TableResult(
+        schema,
+        numRows,
+        new PageImpl<>(
+            new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+            null,
+            transformTableData(results.getRows(), schema)));
   }
 
   @Override

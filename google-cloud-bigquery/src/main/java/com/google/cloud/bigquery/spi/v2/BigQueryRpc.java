@@ -17,11 +17,14 @@
 package com.google.cloud.bigquery.spi.v2;
 
 import com.google.api.core.InternalExtensionOnly;
+import com.google.api.services.bigquery.Bigquery.Jobs.Query;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.Policy;
+import com.google.api.services.bigquery.model.QueryRequest;
+import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
@@ -274,6 +277,21 @@ public interface BigQueryRpc extends ServiceRpc {
    */
   GetQueryResultsResponse getQueryResults(
       String projectId, String jobId, String location, Map<Option, ?> options);
+
+  /**
+   * Runs a BigQuery SQL query synchronously and returns query results if the query completes within
+   * a specified timeout.
+   *
+   * <p>Create a request for the method "jobs.query".
+   *
+   * <p>This request holds the parameters needed by the bigquery server. After setting any optional
+   * parameters, call the {@link Query#execute()} method to invoke the remote operation.
+   *
+   * @param projectId Project ID of the project billed for the query
+   * @param content the {@link com.google.api.services.bigquery.model.QueryRequest}
+   * @return the request
+   */
+  QueryResponse queryRpc(String projectId, QueryRequest content);
 
   /**
    * Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.

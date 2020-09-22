@@ -21,6 +21,8 @@ import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.http.BaseHttpServiceException;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -39,7 +41,7 @@ public final class BigQueryException extends BaseHttpServiceException {
           new Error(500, null), new Error(502, null), new Error(503, null), new Error(504, null));
   private static final long serialVersionUID = -5006625989225438209L;
 
-  private final BigQueryError error;
+  private final List<BigQueryError> errors;
 
   public BigQueryException(int code, String message) {
     this(code, message, (Throwable) null);
@@ -47,21 +49,28 @@ public final class BigQueryException extends BaseHttpServiceException {
 
   public BigQueryException(int code, String message, Throwable cause) {
     super(code, message, null, true, RETRYABLE_ERRORS, cause);
-    this.error = null;
+    this.errors = null;
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
     super(code, message, error != null ? error.getReason() : null, true, RETRYABLE_ERRORS);
-    this.error = error;
+    this.errors = Arrays.asList(error);
+  }
+
+  public BigQueryException(List<BigQueryError> errors) {
+    super(0, null, null, false, RETRYABLE_ERRORS, null);
+    this.errors = errors;
   }
 
   public BigQueryException(IOException exception) {
     super(exception, true, RETRYABLE_ERRORS);
-    BigQueryError error = null;
+    List<BigQueryError> errors = null;
     if (getReason() != null) {
-      error = new BigQueryError(getReason(), getLocation(), getMessage(), getDebugInfo());
+      errors =
+          Arrays.asList(
+              new BigQueryError(getReason(), getLocation(), getMessage(), getDebugInfo()));
     }
-    this.error = error;
+    this.errors = errors;
   }
 
   /**
@@ -69,7 +78,15 @@ public final class BigQueryException extends BaseHttpServiceException {
    * exists.
    */
   public BigQueryError getError() {
-    return error;
+    return errors == null || errors.isEmpty() || errors.size() == 0 ? null : errors.get(0);
+  }
+
+  /**
+   * Returns a list of {@link BigQueryError}s that caused this exception. Returns {@code null} if
+   * none exists.
+   */
+  public List<BigQueryError> getErrors() {
+    return errors;
   }
 
   @Override
@@ -81,12 +98,12 @@ public final class BigQueryException extends BaseHttpServiceException {
       return false;
     }
     BigQueryException other = (BigQueryException) obj;
-    return super.equals(other) && Objects.equals(error, other.error);
+    return super.equals(other) && Objects.equals(errors, other.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), error);
+    return Objects.hash(super.hashCode(), errors);
   }
 
   /**

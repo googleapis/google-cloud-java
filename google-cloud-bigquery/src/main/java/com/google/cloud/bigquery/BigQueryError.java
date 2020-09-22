@@ -84,7 +84,7 @@ public final class BigQueryError implements Serializable {
     return location;
   }
 
-  String getDebugInfo() {
+  public String getDebugInfo() {
     return debugInfo;
   }
 
