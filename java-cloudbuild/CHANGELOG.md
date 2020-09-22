@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.0.2...v2.1.0) (2020-09-22)
+
+
+### Features
+
+* add dynamic_substitutions to BuildOptions, STACKDRIVER_ONLY/CLOUD_LOGGING_ONLY to LoggingMode, name/service_account to Build ([#246](https://www.github.com/googleapis/java-cloudbuild/issues/246)) ([455c410](https://www.github.com/googleapis/java-cloudbuild/commit/455c4101bc08461f1ab9944908e8ba642974dd15))
+
 ### [2.0.2](https://www.github.com/googleapis/java-cloudbuild/compare/v2.0.1...v2.0.2) (2020-09-21)
 
 
