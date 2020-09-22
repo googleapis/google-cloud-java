@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.2.0...v2.3.0) (2020-09-22)
+
+
+### Features
+
+* added Telephony Gateway DTMF events ([#279](https://www.github.com/googleapis/java-dialogflow/issues/279)) ([b7b33b7](https://www.github.com/googleapis/java-dialogflow/commit/b7b33b7f3c43291e88297cd3cb7882f3be9d8cc2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#271](https://www.github.com/googleapis/java-dialogflow/issues/271)) ([c1b2f42](https://www.github.com/googleapis/java-dialogflow/commit/c1b2f42c30731149190f680b0184378a855b5784))
+
+
+### Documentation
+
+* wording updates for tiers. ([#277](https://www.github.com/googleapis/java-dialogflow/issues/277)) ([a8f64ab](https://www.github.com/googleapis/java-dialogflow/commit/a8f64abd553dc8adceac9243931ef5f7cb72f35e))
+
 ## [2.2.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.1.0...v2.2.0) (2020-08-10)
 
 
