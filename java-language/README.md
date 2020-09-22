@@ -47,11 +47,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:1.101.0'
+compile 'com.google.cloud:google-cloud-language:1.101.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.101.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.101.1"
 ```
 [//]: # ({x-version-update-end})
 
