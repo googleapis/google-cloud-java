@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.5.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.2...v1.5.3) (2020-09-22)
+
+
+### Documentation
+
+* changes without context ([#538](https://www.github.com/googleapis/java-bigquerystorage/issues/538)) ([50bb618](https://www.github.com/googleapis/java-bigquerystorage/commit/50bb618ca736a7a9a1262bbf2d2ad75b70d3cd53))
+
+
+### Dependencies
+
+* update arrow-vector to v1 ([#551](https://www.github.com/googleapis/java-bigquerystorage/issues/551)) ([5cdf42c](https://www.github.com/googleapis/java-bigquerystorage/commit/5cdf42cf8cad0a6d30b7072142a7698fafafa8d9))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.120.0 ([#549](https://www.github.com/googleapis/java-bigquerystorage/issues/549)) ([e8dea03](https://www.github.com/googleapis/java-bigquerystorage/commit/e8dea0362de56698a9c3072837e75b31026dd82c))
+
 ### [1.5.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.1...v1.5.2) (2020-09-21)
 
 
