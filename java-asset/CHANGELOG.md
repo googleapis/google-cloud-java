@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-asset/compare/v1.7.0...v2.0.0) (2020-09-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* These RPCs do not currently work on the backend, so they should not be added to the client libraries.
+
+* feat!(v1): add support for per type and partition export, remove AnalyzeIamPolicy/ExportIamPolicyAnalysis (#325) ([28859a7](https://www.github.com/googleapis/java-asset/commit/28859a7bd9ecb68a9a3ffeebd14b6a8b8254f131)), closes [#325](https://www.github.com/googleapis/java-asset/issues/325)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v1.0.1 ([#322](https://www.github.com/googleapis/java-asset/issues/322)) ([0812eed](https://www.github.com/googleapis/java-asset/commit/0812eed8a6f1d3f23e15520947bee87bc5406ffd))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.0.1 ([#323](https://www.github.com/googleapis/java-asset/issues/323)) ([a97fdfb](https://www.github.com/googleapis/java-asset/commit/a97fdfbdfd1278de4c66789928437963d4930643))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#314](https://www.github.com/googleapis/java-asset/issues/314)) ([ca75ed5](https://www.github.com/googleapis/java-asset/commit/ca75ed535aac7ee7723ee7648c84bae9216b715b))
+
 ## [1.7.0](https://www.github.com/googleapis/java-asset/compare/v1.6.0...v1.7.0) (2020-08-24)
 
 
