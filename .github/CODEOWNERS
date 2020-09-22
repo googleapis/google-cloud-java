@@ -5,6 +5,7 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/firestore-dpe is the default owner for changes in this repo
+*                       @googleapis/yoshi-java @googleapis/firestore-dpe
 **/*.java               @googleapis/firestore-dpe
 
 # The java-samples-reviewers team is the default owner for samples changes
