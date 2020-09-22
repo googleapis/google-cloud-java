@@ -460,9 +460,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The filter clause of dimensions. Requests are validated that all
-   * field_names in the dimension_filter are dimensions and are defined in
-   * Dimensions.
+   * The filter clause of dimensions. Dimensions must be requested to be used in
+   * this filter. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -477,9 +476,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The filter clause of dimensions. Requests are validated that all
-   * field_names in the dimension_filter are dimensions and are defined in
-   * Dimensions.
+   * The filter clause of dimensions. Dimensions must be requested to be used in
+   * this filter. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -496,9 +494,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The filter clause of dimensions. Requests are validated that all
-   * field_names in the dimension_filter are dimensions and are defined in
-   * Dimensions.
+   * The filter clause of dimensions. Dimensions must be requested to be used in
+   * this filter. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -515,8 +512,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Requests are validated that all field_names in the
-   * metric_filter are metrics and are defined in Metrics.
+   * SQL having-clause. Metrics must be requested to be used in this filter.
+   * Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -532,8 +529,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Requests are validated that all field_names in the
-   * metric_filter are metrics and are defined in Metrics.
+   * SQL having-clause. Metrics must be requested to be used in this filter.
+   * Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -551,8 +548,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Requests are validated that all field_names in the
-   * metric_filter are metrics and are defined in Metrics.
+   * SQL having-clause. Metrics must be requested to be used in this filter.
+   * Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -656,7 +653,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ranges are specified, event data from each date range is used in the
    * report. A special dimension with field name "dateRange" can be included in
    * a Pivot's field names; if included, the report compares between date
-   * ranges. This dateRanges field is not used in cohorts reports.
+   * ranges. In a cohort request, this `dateRanges` must be unspecified.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -673,7 +670,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ranges are specified, event data from each date range is used in the
    * report. A special dimension with field name "dateRange" can be included in
    * a Pivot's field names; if included, the report compares between date
-   * ranges. This dateRanges field is not used in cohorts reports.
+   * ranges. In a cohort request, this `dateRanges` must be unspecified.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -691,7 +688,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ranges are specified, event data from each date range is used in the
    * report. A special dimension with field name "dateRange" can be included in
    * a Pivot's field names; if included, the report compares between date
-   * ranges. This dateRanges field is not used in cohorts reports.
+   * ranges. In a cohort request, this `dateRanges` must be unspecified.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -708,7 +705,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ranges are specified, event data from each date range is used in the
    * report. A special dimension with field name "dateRange" can be included in
    * a Pivot's field names; if included, the report compares between date
-   * ranges. This dateRanges field is not used in cohorts reports.
+   * ranges. In a cohort request, this `dateRanges` must be unspecified.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -725,7 +722,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ranges are specified, event data from each date range is used in the
    * report. A special dimension with field name "dateRange" can be included in
    * a Pivot's field names; if included, the report compares between date
-   * ranges. This dateRanges field is not used in cohorts reports.
+   * ranges. In a cohort request, this `dateRanges` must be unspecified.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -843,7 +840,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If false, rows with metrics being 0 will not be returned.
+   * If false or unspecified, each row with all metrics equal to 0 will not be
+   * returned. If true, these rows will be returned if they are not separately
+   * removed by a filter.
    * </pre>
    *
    * <code>bool keep_empty_rows = 10;</code>
@@ -2513,9 +2512,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2529,9 +2527,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2551,9 +2548,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2575,9 +2571,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2597,9 +2592,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2625,9 +2619,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2647,9 +2640,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2663,9 +2655,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2684,9 +2675,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The filter clause of dimensions. Requests are validated that all
-     * field_names in the dimension_filter are dimensions and are defined in
-     * Dimensions.
+     * The filter clause of dimensions. Dimensions must be requested to be used in
+     * this filter. Metrics cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 4;</code>
@@ -2719,8 +2709,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2735,8 +2725,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2757,8 +2747,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2781,8 +2771,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2803,8 +2793,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2831,8 +2821,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2853,8 +2843,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2869,8 +2859,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -2889,8 +2879,8 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Requests are validated that all field_names in the
-     * metric_filter are metrics and are defined in Metrics.
+     * SQL having-clause. Metrics must be requested to be used in this filter.
+     * Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.FilterExpression metric_filter = 5;</code>
@@ -3339,7 +3329,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3359,7 +3349,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3379,7 +3369,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3399,7 +3389,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3425,7 +3415,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3449,7 +3439,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3475,7 +3465,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3501,7 +3491,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3525,7 +3515,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3549,7 +3539,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3573,7 +3563,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3596,7 +3586,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3619,7 +3609,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3635,7 +3625,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3655,7 +3645,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3676,7 +3666,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3693,7 +3683,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -3710,7 +3700,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ranges are specified, event data from each date range is used in the
      * report. A special dimension with field name "dateRange" can be included in
      * a Pivot's field names; if included, the report compares between date
-     * ranges. This dateRanges field is not used in cohorts reports.
+     * ranges. In a cohort request, this `dateRanges` must be unspecified.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 7;</code>
@@ -4048,7 +4038,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If false, rows with metrics being 0 will not be returned.
+     * If false or unspecified, each row with all metrics equal to 0 will not be
+     * returned. If true, these rows will be returned if they are not separately
+     * removed by a filter.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -4063,7 +4055,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If false, rows with metrics being 0 will not be returned.
+     * If false or unspecified, each row with all metrics equal to 0 will not be
+     * returned. If true, these rows will be returned if they are not separately
+     * removed by a filter.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -4081,7 +4075,9 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If false, rows with metrics being 0 will not be returned.
+     * If false or unspecified, each row with all metrics equal to 0 will not be
+     * returned. If true, these rows will be returned if they are not separately
+     * removed by a filter.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>

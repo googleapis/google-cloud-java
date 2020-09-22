@@ -91,9 +91,10 @@ public interface PivotOrBuilder
    *
    * <pre>
    * Specifies how dimensions are ordered in the pivot. In the first Pivot, the
-   * OrderBys determine Row and DimensionHeader ordering; in subsequent Pivots,
-   * the OrderBys determine only DimensionHeader ordering. Dimensions specified
-   * in these OrderBys must be a subset of Pivot.field_names.
+   * OrderBys determine Row and PivotDimensionHeader ordering; in subsequent
+   * Pivots, the OrderBys determine only PivotDimensionHeader ordering.
+   * Dimensions specified in these OrderBys must be a subset of
+   * Pivot.field_names.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.OrderBy order_bys = 2;</code>
@@ -104,9 +105,10 @@ public interface PivotOrBuilder
    *
    * <pre>
    * Specifies how dimensions are ordered in the pivot. In the first Pivot, the
-   * OrderBys determine Row and DimensionHeader ordering; in subsequent Pivots,
-   * the OrderBys determine only DimensionHeader ordering. Dimensions specified
-   * in these OrderBys must be a subset of Pivot.field_names.
+   * OrderBys determine Row and PivotDimensionHeader ordering; in subsequent
+   * Pivots, the OrderBys determine only PivotDimensionHeader ordering.
+   * Dimensions specified in these OrderBys must be a subset of
+   * Pivot.field_names.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.OrderBy order_bys = 2;</code>
@@ -117,9 +119,10 @@ public interface PivotOrBuilder
    *
    * <pre>
    * Specifies how dimensions are ordered in the pivot. In the first Pivot, the
-   * OrderBys determine Row and DimensionHeader ordering; in subsequent Pivots,
-   * the OrderBys determine only DimensionHeader ordering. Dimensions specified
-   * in these OrderBys must be a subset of Pivot.field_names.
+   * OrderBys determine Row and PivotDimensionHeader ordering; in subsequent
+   * Pivots, the OrderBys determine only PivotDimensionHeader ordering.
+   * Dimensions specified in these OrderBys must be a subset of
+   * Pivot.field_names.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.OrderBy order_bys = 2;</code>
@@ -130,9 +133,10 @@ public interface PivotOrBuilder
    *
    * <pre>
    * Specifies how dimensions are ordered in the pivot. In the first Pivot, the
-   * OrderBys determine Row and DimensionHeader ordering; in subsequent Pivots,
-   * the OrderBys determine only DimensionHeader ordering. Dimensions specified
-   * in these OrderBys must be a subset of Pivot.field_names.
+   * OrderBys determine Row and PivotDimensionHeader ordering; in subsequent
+   * Pivots, the OrderBys determine only PivotDimensionHeader ordering.
+   * Dimensions specified in these OrderBys must be a subset of
+   * Pivot.field_names.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.OrderBy order_bys = 2;</code>
@@ -144,9 +148,10 @@ public interface PivotOrBuilder
    *
    * <pre>
    * Specifies how dimensions are ordered in the pivot. In the first Pivot, the
-   * OrderBys determine Row and DimensionHeader ordering; in subsequent Pivots,
-   * the OrderBys determine only DimensionHeader ordering. Dimensions specified
-   * in these OrderBys must be a subset of Pivot.field_names.
+   * OrderBys determine Row and PivotDimensionHeader ordering; in subsequent
+   * Pivots, the OrderBys determine only PivotDimensionHeader ordering.
+   * Dimensions specified in these OrderBys must be a subset of
+   * Pivot.field_names.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.OrderBy order_bys = 2;</code>
@@ -170,8 +175,8 @@ public interface PivotOrBuilder
    *
    *
    * <pre>
-   * The number of rows to return in this pivot.
-   * If zero or unspecified, all rows are returned.
+   * The number of rows to return in this pivot. If unspecified, 10 rows are
+   * returned. If -1, all rows are returned.
    * </pre>
    *
    * <code>int64 limit = 4;</code>

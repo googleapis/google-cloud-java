@@ -19,6 +19,8 @@ import com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1alpha.BatchRunReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunReportsResponse;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
+import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
@@ -29,10 +31,13 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -85,6 +90,13 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunPivotReportsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetMetadataRequest, Metadata> getMetadataMethodDescriptor =
+      MethodDescriptor.<GetMetadataRequest, Metadata>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/GetMetadata")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetMetadataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Metadata.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -94,6 +106,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       batchRunReportsCallable;
   private final UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable;
+  private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -155,6 +168,19 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             GrpcCallSettings.<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunPivotReportsMethodDescriptor)
                 .build();
+    GrpcCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
+        GrpcCallSettings.<GetMetadataRequest, Metadata>newBuilder()
+            .setMethodDescriptor(getMetadataMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetMetadataRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetMetadataRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.runReportCallable =
         callableFactory.createUnaryCallable(
@@ -170,6 +196,9 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             batchRunPivotReportsTransportSettings,
             settings.batchRunPivotReportsSettings(),
             clientContext);
+    this.getMetadataCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataTransportSettings, settings.getMetadataSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -189,6 +218,10 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable() {
     return batchRunPivotReportsCallable;
+  }
+
+  public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return getMetadataCallable;
   }
 
   @Override

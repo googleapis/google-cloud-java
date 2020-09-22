@@ -34,8 +34,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
- *   RunReportRequest request = RunReportRequest.newBuilder().build();
- *   RunReportResponse response = alphaAnalyticsDataClient.runReport(request);
+ *   MetadataName name = MetadataName.ofMetadataName();
+ *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
  * }
  * </code>
  * </pre>
@@ -317,6 +317,106 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable() {
     return stub.batchRunPivotReportsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
+   * deletions may occur.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.ofMetadataName();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the metadata to retrieve. Either has the form 'metadata' or
+   *     'properties/{property}/metadata'. This name field is specified in the URL path and not URL
+   *     parameters. Property is a numeric Google Analytics App + Web Property Id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(MetadataName name) {
+    GetMetadataRequest request =
+        GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
+   * deletions may occur.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.ofMetadataName();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the metadata to retrieve. Either has the form 'metadata' or
+   *     'properties/{property}/metadata'. This name field is specified in the URL path and not URL
+   *     parameters. Property is a numeric Google Analytics App + Web Property Id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(String name) {
+    GetMetadataRequest request = GetMetadataRequest.newBuilder().setName(name).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
+   * deletions may occur.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.ofMetadataName();
+   *   GetMetadataRequest request = GetMetadataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(GetMetadataRequest request) {
+    return getMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
+   * deletions may occur.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.ofMetadataName();
+   *   GetMetadataRequest request = GetMetadataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Metadata&gt; future = alphaAnalyticsDataClient.getMetadataCallable().futureCall(request);
+   *   // Do something
+   *   Metadata response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return stub.getMetadataCallable();
   }
 
   @Override

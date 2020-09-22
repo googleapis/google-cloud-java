@@ -27,51 +27,24 @@ public interface DimensionHeaderOrBuilder
    *
    *
    * <pre>
-   * Values of multiple dimensions in a pivot.
+   * The dimension's name.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
+   * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
-  java.util.List<com.google.analytics.data.v1alpha.DimensionValue> getDimensionValuesList();
+  java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Values of multiple dimensions in a pivot.
+   * The dimension's name.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
+   * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
-  com.google.analytics.data.v1alpha.DimensionValue getDimensionValues(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Values of multiple dimensions in a pivot.
-   * </pre>
-   *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
-   */
-  int getDimensionValuesCount();
-  /**
-   *
-   *
-   * <pre>
-   * Values of multiple dimensions in a pivot.
-   * </pre>
-   *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
-   */
-  java.util.List<? extends com.google.analytics.data.v1alpha.DimensionValueOrBuilder>
-      getDimensionValuesOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Values of multiple dimensions in a pivot.
-   * </pre>
-   *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
-   */
-  com.google.analytics.data.v1alpha.DimensionValueOrBuilder getDimensionValuesOrBuilder(int index);
+  com.google.protobuf.ByteString getNameBytes();
 }

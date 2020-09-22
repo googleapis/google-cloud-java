@@ -22,7 +22,7 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Type of a metric value.
+ * A metric's value type.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.data.v1alpha.MetricType}
@@ -58,6 +58,26 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_FLOAT = 2;</code>
    */
   TYPE_FLOAT(2),
+  /**
+   *
+   *
+   * <pre>
+   * A duration of seconds; a special floating point type.
+   * </pre>
+   *
+   * <code>TYPE_SECONDS = 4;</code>
+   */
+  TYPE_SECONDS(4),
+  /**
+   *
+   *
+   * <pre>
+   * An amount of money; a special floating point type.
+   * </pre>
+   *
+   * <code>TYPE_CURRENCY = 9;</code>
+   */
+  TYPE_CURRENCY(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +111,26 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TYPE_FLOAT = 2;</code>
    */
   public static final int TYPE_FLOAT_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * A duration of seconds; a special floating point type.
+   * </pre>
+   *
+   * <code>TYPE_SECONDS = 4;</code>
+   */
+  public static final int TYPE_SECONDS_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * An amount of money; a special floating point type.
+   * </pre>
+   *
+   * <code>TYPE_CURRENCY = 9;</code>
+   */
+  public static final int TYPE_CURRENCY_VALUE = 9;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,6 +162,10 @@ public enum MetricType implements com.google.protobuf.ProtocolMessageEnum {
         return TYPE_INTEGER;
       case 2:
         return TYPE_FLOAT;
+      case 4:
+        return TYPE_SECONDS;
+      case 9:
+        return TYPE_CURRENCY;
       default:
         return null;
     }

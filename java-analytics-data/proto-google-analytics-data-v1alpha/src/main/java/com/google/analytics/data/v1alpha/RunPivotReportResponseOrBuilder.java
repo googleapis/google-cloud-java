@@ -239,7 +239,66 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> getDimensionHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  int getDimensionHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
+      getDimensionHeadersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder getDimensionHeadersOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -249,7 +308,8 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -259,7 +319,8 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -269,7 +330,8 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -280,7 +342,8 @@ public interface RunPivotReportResponseOrBuilder
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>

@@ -22,7 +22,7 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Dimensions' values in a pivot.
+ * Dimensions' values in a single pivot.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.PivotHeader}
@@ -38,7 +38,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
   }
 
   private PivotHeader() {
-    dimensionHeaders_ = java.util.Collections.emptyList();
+    pivotDimensionHeaders_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,13 +74,14 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensionHeaders_ =
-                    new java.util.ArrayList<com.google.analytics.data.v1alpha.DimensionHeader>();
+                pivotDimensionHeaders_ =
+                    new java.util.ArrayList<
+                        com.google.analytics.data.v1alpha.PivotDimensionHeader>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              dimensionHeaders_.add(
+              pivotDimensionHeaders_.add(
                   input.readMessage(
-                      com.google.analytics.data.v1alpha.DimensionHeader.parser(),
+                      com.google.analytics.data.v1alpha.PivotDimensionHeader.parser(),
                       extensionRegistry));
               break;
             }
@@ -104,7 +105,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
+        pivotDimensionHeaders_ = java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -126,8 +127,9 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.data.v1alpha.PivotHeader.Builder.class);
   }
 
-  public static final int DIMENSION_HEADERS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_;
+  public static final int PIVOT_DIMENSION_HEADERS_FIELD_NUMBER = 1;
+  private java.util.List<com.google.analytics.data.v1alpha.PivotDimensionHeader>
+      pivotDimensionHeaders_;
   /**
    *
    *
@@ -136,12 +138,13 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
    * combinations.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+   * <code>repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+   * </code>
    */
   @java.lang.Override
-  public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader>
-      getDimensionHeadersList() {
-    return dimensionHeaders_;
+  public java.util.List<com.google.analytics.data.v1alpha.PivotDimensionHeader>
+      getPivotDimensionHeadersList() {
+    return pivotDimensionHeaders_;
   }
   /**
    *
@@ -151,12 +154,13 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
    * combinations.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+   * <code>repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+   * </code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
-      getDimensionHeadersOrBuilderList() {
-    return dimensionHeaders_;
+  public java.util.List<? extends com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder>
+      getPivotDimensionHeadersOrBuilderList() {
+    return pivotDimensionHeaders_;
   }
   /**
    *
@@ -166,11 +170,12 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
    * combinations.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+   * <code>repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+   * </code>
    */
   @java.lang.Override
-  public int getDimensionHeadersCount() {
-    return dimensionHeaders_.size();
+  public int getPivotDimensionHeadersCount() {
+    return pivotDimensionHeaders_.size();
   }
   /**
    *
@@ -180,26 +185,29 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
    * combinations.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+   * <code>repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+   * </code>
    */
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index) {
-    return dimensionHeaders_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The size is the same as the cardinality of the corresponding dimension
-   * combinations.
-   * </pre>
-   *
-   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
-   */
-  @java.lang.Override
-  public com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder getDimensionHeadersOrBuilder(
+  public com.google.analytics.data.v1alpha.PivotDimensionHeader getPivotDimensionHeaders(
       int index) {
-    return dimensionHeaders_.get(index);
+    return pivotDimensionHeaders_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The size is the same as the cardinality of the corresponding dimension
+   * combinations.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder
+      getPivotDimensionHeadersOrBuilder(int index) {
+    return pivotDimensionHeaders_.get(index);
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
@@ -234,8 +242,8 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < dimensionHeaders_.size(); i++) {
-      output.writeMessage(1, dimensionHeaders_.get(i));
+    for (int i = 0; i < pivotDimensionHeaders_.size(); i++) {
+      output.writeMessage(1, pivotDimensionHeaders_.get(i));
     }
     if (rowCount_ != 0) {
       output.writeInt32(2, rowCount_);
@@ -249,8 +257,10 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < dimensionHeaders_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, dimensionHeaders_.get(i));
+    for (int i = 0; i < pivotDimensionHeaders_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, pivotDimensionHeaders_.get(i));
     }
     if (rowCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rowCount_);
@@ -271,7 +281,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     com.google.analytics.data.v1alpha.PivotHeader other =
         (com.google.analytics.data.v1alpha.PivotHeader) obj;
 
-    if (!getDimensionHeadersList().equals(other.getDimensionHeadersList())) return false;
+    if (!getPivotDimensionHeadersList().equals(other.getPivotDimensionHeadersList())) return false;
     if (getRowCount() != other.getRowCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -284,9 +294,9 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getDimensionHeadersCount() > 0) {
-      hash = (37 * hash) + DIMENSION_HEADERS_FIELD_NUMBER;
-      hash = (53 * hash) + getDimensionHeadersList().hashCode();
+    if (getPivotDimensionHeadersCount() > 0) {
+      hash = (37 * hash) + PIVOT_DIMENSION_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getPivotDimensionHeadersList().hashCode();
     }
     hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRowCount();
@@ -394,7 +404,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Dimensions' values in a pivot.
+   * Dimensions' values in a single pivot.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.PivotHeader}
@@ -430,18 +440,18 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDimensionHeadersFieldBuilder();
+        getPivotDimensionHeadersFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dimensionHeadersBuilder_ == null) {
-        dimensionHeaders_ = java.util.Collections.emptyList();
+      if (pivotDimensionHeadersBuilder_ == null) {
+        pivotDimensionHeaders_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        dimensionHeadersBuilder_.clear();
+        pivotDimensionHeadersBuilder_.clear();
       }
       rowCount_ = 0;
 
@@ -473,14 +483,14 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       com.google.analytics.data.v1alpha.PivotHeader result =
           new com.google.analytics.data.v1alpha.PivotHeader(this);
       int from_bitField0_ = bitField0_;
-      if (dimensionHeadersBuilder_ == null) {
+      if (pivotDimensionHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
+          pivotDimensionHeaders_ = java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.dimensionHeaders_ = dimensionHeaders_;
+        result.pivotDimensionHeaders_ = pivotDimensionHeaders_;
       } else {
-        result.dimensionHeaders_ = dimensionHeadersBuilder_.build();
+        result.pivotDimensionHeaders_ = pivotDimensionHeadersBuilder_.build();
       }
       result.rowCount_ = rowCount_;
       onBuilt();
@@ -532,30 +542,30 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.analytics.data.v1alpha.PivotHeader other) {
       if (other == com.google.analytics.data.v1alpha.PivotHeader.getDefaultInstance()) return this;
-      if (dimensionHeadersBuilder_ == null) {
-        if (!other.dimensionHeaders_.isEmpty()) {
-          if (dimensionHeaders_.isEmpty()) {
-            dimensionHeaders_ = other.dimensionHeaders_;
+      if (pivotDimensionHeadersBuilder_ == null) {
+        if (!other.pivotDimensionHeaders_.isEmpty()) {
+          if (pivotDimensionHeaders_.isEmpty()) {
+            pivotDimensionHeaders_ = other.pivotDimensionHeaders_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureDimensionHeadersIsMutable();
-            dimensionHeaders_.addAll(other.dimensionHeaders_);
+            ensurePivotDimensionHeadersIsMutable();
+            pivotDimensionHeaders_.addAll(other.pivotDimensionHeaders_);
           }
           onChanged();
         }
       } else {
-        if (!other.dimensionHeaders_.isEmpty()) {
-          if (dimensionHeadersBuilder_.isEmpty()) {
-            dimensionHeadersBuilder_.dispose();
-            dimensionHeadersBuilder_ = null;
-            dimensionHeaders_ = other.dimensionHeaders_;
+        if (!other.pivotDimensionHeaders_.isEmpty()) {
+          if (pivotDimensionHeadersBuilder_.isEmpty()) {
+            pivotDimensionHeadersBuilder_.dispose();
+            pivotDimensionHeadersBuilder_ = null;
+            pivotDimensionHeaders_ = other.pivotDimensionHeaders_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            dimensionHeadersBuilder_ =
+            pivotDimensionHeadersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getDimensionHeadersFieldBuilder()
+                    ? getPivotDimensionHeadersFieldBuilder()
                     : null;
           } else {
-            dimensionHeadersBuilder_.addAllMessages(other.dimensionHeaders_);
+            pivotDimensionHeadersBuilder_.addAllMessages(other.pivotDimensionHeaders_);
           }
         }
       }
@@ -593,23 +603,23 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_ =
-        java.util.Collections.emptyList();
+    private java.util.List<com.google.analytics.data.v1alpha.PivotDimensionHeader>
+        pivotDimensionHeaders_ = java.util.Collections.emptyList();
 
-    private void ensureDimensionHeadersIsMutable() {
+    private void ensurePivotDimensionHeadersIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        dimensionHeaders_ =
-            new java.util.ArrayList<com.google.analytics.data.v1alpha.DimensionHeader>(
-                dimensionHeaders_);
+        pivotDimensionHeaders_ =
+            new java.util.ArrayList<com.google.analytics.data.v1alpha.PivotDimensionHeader>(
+                pivotDimensionHeaders_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.analytics.data.v1alpha.DimensionHeader,
-            com.google.analytics.data.v1alpha.DimensionHeader.Builder,
-            com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
-        dimensionHeadersBuilder_;
+            com.google.analytics.data.v1alpha.PivotDimensionHeader,
+            com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder,
+            com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder>
+        pivotDimensionHeadersBuilder_;
 
     /**
      *
@@ -619,14 +629,16 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader>
-        getDimensionHeadersList() {
-      if (dimensionHeadersBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(dimensionHeaders_);
+    public java.util.List<com.google.analytics.data.v1alpha.PivotDimensionHeader>
+        getPivotDimensionHeadersList() {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
       } else {
-        return dimensionHeadersBuilder_.getMessageList();
+        return pivotDimensionHeadersBuilder_.getMessageList();
       }
     }
     /**
@@ -637,13 +649,15 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public int getDimensionHeadersCount() {
-      if (dimensionHeadersBuilder_ == null) {
-        return dimensionHeaders_.size();
+    public int getPivotDimensionHeadersCount() {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        return pivotDimensionHeaders_.size();
       } else {
-        return dimensionHeadersBuilder_.getCount();
+        return pivotDimensionHeadersBuilder_.getCount();
       }
     }
     /**
@@ -654,13 +668,16 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index) {
-      if (dimensionHeadersBuilder_ == null) {
-        return dimensionHeaders_.get(index);
+    public com.google.analytics.data.v1alpha.PivotDimensionHeader getPivotDimensionHeaders(
+        int index) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        return pivotDimensionHeaders_.get(index);
       } else {
-        return dimensionHeadersBuilder_.getMessage(index);
+        return pivotDimensionHeadersBuilder_.getMessage(index);
       }
     }
     /**
@@ -671,19 +688,21 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder setDimensionHeaders(
-        int index, com.google.analytics.data.v1alpha.DimensionHeader value) {
-      if (dimensionHeadersBuilder_ == null) {
+    public Builder setPivotDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.PivotDimensionHeader value) {
+      if (pivotDimensionHeadersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.set(index, value);
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.set(index, value);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.setMessage(index, value);
+        pivotDimensionHeadersBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -695,16 +714,18 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder setDimensionHeaders(
-        int index, com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
-      if (dimensionHeadersBuilder_ == null) {
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.set(index, builderForValue.build());
+    public Builder setPivotDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder builderForValue) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.set(index, builderForValue.build());
         onChanged();
       } else {
-        dimensionHeadersBuilder_.setMessage(index, builderForValue.build());
+        pivotDimensionHeadersBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -716,18 +737,21 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder addDimensionHeaders(com.google.analytics.data.v1alpha.DimensionHeader value) {
-      if (dimensionHeadersBuilder_ == null) {
+    public Builder addPivotDimensionHeaders(
+        com.google.analytics.data.v1alpha.PivotDimensionHeader value) {
+      if (pivotDimensionHeadersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.add(value);
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.add(value);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.addMessage(value);
+        pivotDimensionHeadersBuilder_.addMessage(value);
       }
       return this;
     }
@@ -739,19 +763,21 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder addDimensionHeaders(
-        int index, com.google.analytics.data.v1alpha.DimensionHeader value) {
-      if (dimensionHeadersBuilder_ == null) {
+    public Builder addPivotDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.PivotDimensionHeader value) {
+      if (pivotDimensionHeadersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.add(index, value);
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.add(index, value);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.addMessage(index, value);
+        pivotDimensionHeadersBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -763,16 +789,18 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder addDimensionHeaders(
-        com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
-      if (dimensionHeadersBuilder_ == null) {
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.add(builderForValue.build());
+    public Builder addPivotDimensionHeaders(
+        com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder builderForValue) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.add(builderForValue.build());
         onChanged();
       } else {
-        dimensionHeadersBuilder_.addMessage(builderForValue.build());
+        pivotDimensionHeadersBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -784,16 +812,18 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder addDimensionHeaders(
-        int index, com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
-      if (dimensionHeadersBuilder_ == null) {
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.add(index, builderForValue.build());
+    public Builder addPivotDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder builderForValue) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.add(index, builderForValue.build());
         onChanged();
       } else {
-        dimensionHeadersBuilder_.addMessage(index, builderForValue.build());
+        pivotDimensionHeadersBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -805,16 +835,19 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder addAllDimensionHeaders(
-        java.lang.Iterable<? extends com.google.analytics.data.v1alpha.DimensionHeader> values) {
-      if (dimensionHeadersBuilder_ == null) {
-        ensureDimensionHeadersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensionHeaders_);
+    public Builder addAllPivotDimensionHeaders(
+        java.lang.Iterable<? extends com.google.analytics.data.v1alpha.PivotDimensionHeader>
+            values) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        ensurePivotDimensionHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pivotDimensionHeaders_);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.addAllMessages(values);
+        pivotDimensionHeadersBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -826,15 +859,17 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder clearDimensionHeaders() {
-      if (dimensionHeadersBuilder_ == null) {
-        dimensionHeaders_ = java.util.Collections.emptyList();
+    public Builder clearPivotDimensionHeaders() {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        pivotDimensionHeaders_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.clear();
+        pivotDimensionHeadersBuilder_.clear();
       }
       return this;
     }
@@ -846,15 +881,17 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public Builder removeDimensionHeaders(int index) {
-      if (dimensionHeadersBuilder_ == null) {
-        ensureDimensionHeadersIsMutable();
-        dimensionHeaders_.remove(index);
+    public Builder removePivotDimensionHeaders(int index) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        ensurePivotDimensionHeadersIsMutable();
+        pivotDimensionHeaders_.remove(index);
         onChanged();
       } else {
-        dimensionHeadersBuilder_.remove(index);
+        pivotDimensionHeadersBuilder_.remove(index);
       }
       return this;
     }
@@ -866,11 +903,13 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public com.google.analytics.data.v1alpha.DimensionHeader.Builder getDimensionHeadersBuilder(
-        int index) {
-      return getDimensionHeadersFieldBuilder().getBuilder(index);
+    public com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder
+        getPivotDimensionHeadersBuilder(int index) {
+      return getPivotDimensionHeadersFieldBuilder().getBuilder(index);
     }
     /**
      *
@@ -880,14 +919,16 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder getDimensionHeadersOrBuilder(
-        int index) {
-      if (dimensionHeadersBuilder_ == null) {
-        return dimensionHeaders_.get(index);
+    public com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder
+        getPivotDimensionHeadersOrBuilder(int index) {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        return pivotDimensionHeaders_.get(index);
       } else {
-        return dimensionHeadersBuilder_.getMessageOrBuilder(index);
+        return pivotDimensionHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
@@ -898,14 +939,16 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
-        getDimensionHeadersOrBuilderList() {
-      if (dimensionHeadersBuilder_ != null) {
-        return dimensionHeadersBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder>
+        getPivotDimensionHeadersOrBuilderList() {
+      if (pivotDimensionHeadersBuilder_ != null) {
+        return pivotDimensionHeadersBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(dimensionHeaders_);
+        return java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
       }
     }
     /**
@@ -916,11 +959,14 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public com.google.analytics.data.v1alpha.DimensionHeader.Builder addDimensionHeadersBuilder() {
-      return getDimensionHeadersFieldBuilder()
-          .addBuilder(com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
+    public com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder
+        addPivotDimensionHeadersBuilder() {
+      return getPivotDimensionHeadersFieldBuilder()
+          .addBuilder(com.google.analytics.data.v1alpha.PivotDimensionHeader.getDefaultInstance());
     }
     /**
      *
@@ -930,13 +976,15 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public com.google.analytics.data.v1alpha.DimensionHeader.Builder addDimensionHeadersBuilder(
-        int index) {
-      return getDimensionHeadersFieldBuilder()
+    public com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder
+        addPivotDimensionHeadersBuilder(int index) {
+      return getPivotDimensionHeadersFieldBuilder()
           .addBuilder(
-              index, com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
+              index, com.google.analytics.data.v1alpha.PivotDimensionHeader.getDefaultInstance());
     }
     /**
      *
@@ -946,31 +994,33 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
      * combinations.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.PivotDimensionHeader pivot_dimension_headers = 1;
+     * </code>
      */
-    public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader.Builder>
-        getDimensionHeadersBuilderList() {
-      return getDimensionHeadersFieldBuilder().getBuilderList();
+    public java.util.List<com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder>
+        getPivotDimensionHeadersBuilderList() {
+      return getPivotDimensionHeadersFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.analytics.data.v1alpha.DimensionHeader,
-            com.google.analytics.data.v1alpha.DimensionHeader.Builder,
-            com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
-        getDimensionHeadersFieldBuilder() {
-      if (dimensionHeadersBuilder_ == null) {
-        dimensionHeadersBuilder_ =
+            com.google.analytics.data.v1alpha.PivotDimensionHeader,
+            com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder,
+            com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder>
+        getPivotDimensionHeadersFieldBuilder() {
+      if (pivotDimensionHeadersBuilder_ == null) {
+        pivotDimensionHeadersBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.analytics.data.v1alpha.DimensionHeader,
-                com.google.analytics.data.v1alpha.DimensionHeader.Builder,
-                com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>(
-                dimensionHeaders_,
+                com.google.analytics.data.v1alpha.PivotDimensionHeader,
+                com.google.analytics.data.v1alpha.PivotDimensionHeader.Builder,
+                com.google.analytics.data.v1alpha.PivotDimensionHeaderOrBuilder>(
+                pivotDimensionHeaders_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        dimensionHeaders_ = null;
+        pivotDimensionHeaders_ = null;
       }
-      return dimensionHeadersBuilder_;
+      return pivotDimensionHeadersBuilder_;
     }
 
     private int rowCount_;

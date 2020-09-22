@@ -73,16 +73,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
               accumulate_ = input.readBool();
               break;
             }
-          case 16:
-            {
-              pivotOnUserEvent_ = input.readBool();
-              break;
-            }
-          case 32:
-            {
-              missingValueAsZero_ = input.readBool();
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -123,7 +113,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If true, accumulates the result from first visit day to the end day.
+   * If true, accumulates the result from first visit day to the end day. Not
+   * supported in `RunReportRequest`.
    * </pre>
    *
    * <code>bool accumulate = 1;</code>
@@ -133,45 +124,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean getAccumulate() {
     return accumulate_;
-  }
-
-  public static final int PIVOT_ON_USER_EVENT_FIELD_NUMBER = 2;
-  private boolean pivotOnUserEvent_;
-  /**
-   *
-   *
-   * <pre>
-   * If true, the report is for lifetime value report and should pivot on user
-   * event.
-   * </pre>
-   *
-   * <code>bool pivot_on_user_event = 2;</code>
-   *
-   * @return The pivotOnUserEvent.
-   */
-  @java.lang.Override
-  public boolean getPivotOnUserEvent() {
-    return pivotOnUserEvent_;
-  }
-
-  public static final int MISSING_VALUE_AS_ZERO_FIELD_NUMBER = 4;
-  private boolean missingValueAsZero_;
-  /**
-   *
-   *
-   * <pre>
-   * If some values are missing while computing ratios, we want to compute the
-   * ratios only based on non-missing values.
-   * This field should be set to true only for a totals request.
-   * </pre>
-   *
-   * <code>bool missing_value_as_zero = 4;</code>
-   *
-   * @return The missingValueAsZero.
-   */
-  @java.lang.Override
-  public boolean getMissingValueAsZero() {
-    return missingValueAsZero_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -191,12 +143,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     if (accumulate_ != false) {
       output.writeBool(1, accumulate_);
     }
-    if (pivotOnUserEvent_ != false) {
-      output.writeBool(2, pivotOnUserEvent_);
-    }
-    if (missingValueAsZero_ != false) {
-      output.writeBool(4, missingValueAsZero_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -208,12 +154,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     size = 0;
     if (accumulate_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, accumulate_);
-    }
-    if (pivotOnUserEvent_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, pivotOnUserEvent_);
-    }
-    if (missingValueAsZero_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, missingValueAsZero_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,8 +172,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
         (com.google.analytics.data.v1alpha.CohortReportSettings) obj;
 
     if (getAccumulate() != other.getAccumulate()) return false;
-    if (getPivotOnUserEvent() != other.getPivotOnUserEvent()) return false;
-    if (getMissingValueAsZero() != other.getMissingValueAsZero()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,10 +185,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ACCUMULATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAccumulate());
-    hash = (37 * hash) + PIVOT_ON_USER_EVENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPivotOnUserEvent());
-    hash = (37 * hash) + MISSING_VALUE_AS_ZERO_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMissingValueAsZero());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -399,10 +333,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
       super.clear();
       accumulate_ = false;
 
-      pivotOnUserEvent_ = false;
-
-      missingValueAsZero_ = false;
-
       return this;
     }
 
@@ -431,8 +361,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
       com.google.analytics.data.v1alpha.CohortReportSettings result =
           new com.google.analytics.data.v1alpha.CohortReportSettings(this);
       result.accumulate_ = accumulate_;
-      result.pivotOnUserEvent_ = pivotOnUserEvent_;
-      result.missingValueAsZero_ = missingValueAsZero_;
       onBuilt();
       return result;
     }
@@ -486,12 +414,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
       if (other.getAccumulate() != false) {
         setAccumulate(other.getAccumulate());
       }
-      if (other.getPivotOnUserEvent() != false) {
-        setPivotOnUserEvent(other.getPivotOnUserEvent());
-      }
-      if (other.getMissingValueAsZero() != false) {
-        setMissingValueAsZero(other.getMissingValueAsZero());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -527,7 +449,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day.
+     * If true, accumulates the result from first visit day to the end day. Not
+     * supported in `RunReportRequest`.
      * </pre>
      *
      * <code>bool accumulate = 1;</code>
@@ -542,7 +465,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day.
+     * If true, accumulates the result from first visit day to the end day. Not
+     * supported in `RunReportRequest`.
      * </pre>
      *
      * <code>bool accumulate = 1;</code>
@@ -560,7 +484,8 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day.
+     * If true, accumulates the result from first visit day to the end day. Not
+     * supported in `RunReportRequest`.
      * </pre>
      *
      * <code>bool accumulate = 1;</code>
@@ -570,119 +495,6 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
     public Builder clearAccumulate() {
 
       accumulate_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean pivotOnUserEvent_;
-    /**
-     *
-     *
-     * <pre>
-     * If true, the report is for lifetime value report and should pivot on user
-     * event.
-     * </pre>
-     *
-     * <code>bool pivot_on_user_event = 2;</code>
-     *
-     * @return The pivotOnUserEvent.
-     */
-    @java.lang.Override
-    public boolean getPivotOnUserEvent() {
-      return pivotOnUserEvent_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If true, the report is for lifetime value report and should pivot on user
-     * event.
-     * </pre>
-     *
-     * <code>bool pivot_on_user_event = 2;</code>
-     *
-     * @param value The pivotOnUserEvent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPivotOnUserEvent(boolean value) {
-
-      pivotOnUserEvent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If true, the report is for lifetime value report and should pivot on user
-     * event.
-     * </pre>
-     *
-     * <code>bool pivot_on_user_event = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPivotOnUserEvent() {
-
-      pivotOnUserEvent_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean missingValueAsZero_;
-    /**
-     *
-     *
-     * <pre>
-     * If some values are missing while computing ratios, we want to compute the
-     * ratios only based on non-missing values.
-     * This field should be set to true only for a totals request.
-     * </pre>
-     *
-     * <code>bool missing_value_as_zero = 4;</code>
-     *
-     * @return The missingValueAsZero.
-     */
-    @java.lang.Override
-    public boolean getMissingValueAsZero() {
-      return missingValueAsZero_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If some values are missing while computing ratios, we want to compute the
-     * ratios only based on non-missing values.
-     * This field should be set to true only for a totals request.
-     * </pre>
-     *
-     * <code>bool missing_value_as_zero = 4;</code>
-     *
-     * @param value The missingValueAsZero to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMissingValueAsZero(boolean value) {
-
-      missingValueAsZero_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If some values are missing while computing ratios, we want to compute the
-     * ratios only based on non-missing values.
-     * This field should be set to true only for a totals request.
-     * </pre>
-     *
-     * <code>bool missing_value_as_zero = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearMissingValueAsZero() {
-
-      missingValueAsZero_ = false;
       onChanged();
       return this;
     }

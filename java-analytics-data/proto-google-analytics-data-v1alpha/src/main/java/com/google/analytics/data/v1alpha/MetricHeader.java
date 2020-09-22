@@ -22,7 +22,10 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Describes the metric column in the report.
+ * Describes a metric column in the report. Visible metrics requested in a
+ * report produce column entries within rows and MetricHeaders. However,
+ * metrics used exclusively within filters or expressions do not produce columns
+ * in a report; correspondingly, those metrics do not produce headers.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.MetricHeader}
@@ -125,7 +128,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metric name.
+   * The metric's name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -148,7 +151,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metric name.
+   * The metric's name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -174,7 +177,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metric data type.
+   * The metric's data type.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -189,7 +192,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metric data type.
+   * The metric's data type.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -376,7 +379,10 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes the metric column in the report.
+   * Describes a metric column in the report. Visible metrics requested in a
+   * report produce column entries within rows and MetricHeaders. However,
+   * metrics used exclusively within filters or expressions do not produce columns
+   * in a report; correspondingly, those metrics do not produce headers.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.MetricHeader}
@@ -540,7 +546,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric name.
+     * The metric's name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -562,7 +568,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric name.
+     * The metric's name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -584,7 +590,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric name.
+     * The metric's name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -605,7 +611,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric name.
+     * The metric's name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -622,7 +628,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric name.
+     * The metric's name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -646,7 +652,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric data type.
+     * The metric's data type.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -661,7 +667,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric data type.
+     * The metric's data type.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -679,7 +685,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric data type.
+     * The metric's data type.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -697,7 +703,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric data type.
+     * The metric's data type.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -718,7 +724,7 @@ public final class MetricHeader extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metric data type.
+     * The metric's data type.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>

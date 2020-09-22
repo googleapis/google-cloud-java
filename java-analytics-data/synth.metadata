@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "35c1332eac14e759b6c9015831ae8a27b05f891d",
-        "internalRef": "328889909"
+        "sha": "32cd28cc67e8f644856471573821bf930b7ee513",
+        "internalRef": "329352783"
       }
     },
     {
@@ -131,6 +131,8 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionExpressionOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionHeader.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionHeaderOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionMetadata.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionMetadataOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionValue.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/DimensionValueOrBuilder.java",
@@ -142,10 +144,17 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterExpressionListOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterExpressionOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequest.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequestOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Metadata.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataName.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Metric.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricAggregation.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricHeader.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricHeaderOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricMetadata.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricMetadataOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricType.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricValue.java",
@@ -155,6 +164,8 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/OrderBy.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/OrderByOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Pivot.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/PivotDimensionHeader.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/PivotDimensionHeaderOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/PivotHeader.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/PivotHeaderOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/PivotOrBuilder.java",

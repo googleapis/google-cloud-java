@@ -27,7 +27,7 @@ public interface MetricHeaderOrBuilder
    *
    *
    * <pre>
-   * Metric name.
+   * The metric's name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface MetricHeaderOrBuilder
    *
    *
    * <pre>
-   * Metric name.
+   * The metric's name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,7 +52,7 @@ public interface MetricHeaderOrBuilder
    *
    *
    * <pre>
-   * Metric data type.
+   * The metric's data type.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>
@@ -64,7 +64,7 @@ public interface MetricHeaderOrBuilder
    *
    *
    * <pre>
-   * Metric data type.
+   * The metric's data type.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.MetricType type = 2;</code>

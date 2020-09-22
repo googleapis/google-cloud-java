@@ -222,4 +222,43 @@ public class AlphaAnalyticsDataClientTest {
       // Expected exception
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getMetadataTest() {
+    MetadataName name2 = MetadataName.ofMetadataName();
+    Metadata expectedResponse = Metadata.newBuilder().setName(name2.toString()).build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    MetadataName name = MetadataName.ofMetadataName();
+
+    Metadata actualResponse = client.getMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataRequest actualRequest = (GetMetadataRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, MetadataName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      MetadataName name = MetadataName.ofMetadataName();
+
+      client.getMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

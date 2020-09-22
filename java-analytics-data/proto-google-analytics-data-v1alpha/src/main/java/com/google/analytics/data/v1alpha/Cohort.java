@@ -144,7 +144,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Assigns a name to this cohort. The dimension `cohort` is valued to this
-   * name in a report response. If not set, a cohort is named the empty string.
+   * name in a report response. If set, cannot begin with `cohort_` or
+   * `RESERVED_`. If not set, cohorts are named by their zero based index
+   * `cohort_0`, `cohort_1`, etc.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -168,7 +170,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Assigns a name to this cohort. The dimension `cohort` is valued to this
-   * name in a report response. If not set, a cohort is named the empty string.
+   * name in a report response. If set, cannot begin with `cohort_` or
+   * `RESERVED_`. If not set, cohorts are named by their zero based index
+   * `cohort_0`, `cohort_1`, etc.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -246,12 +250,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The cohort selects users whose first visit date is between start date
-   * and end date defined in the date_range. The date range should be aligned
-   * with the cohort's granularity.
-   * If CohortsRange uses daily granularity, the date range can be aligned to
-   * any day.
-   * If CohortsRange uses weekly granularity, the date range should be aligned
-   * to the week boundary, starting at Sunday and ending Saturday. If
+   * and end date defined in the `dateRange`. In a cohort request, this
+   * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+   * `RunPivotReportRequest` must be unspecified.
+   * The date range should be aligned with the cohort's granularity. If
+   * CohortsRange uses daily granularity, the date range can be aligned to any
+   * day. If CohortsRange uses weekly granularity, the date range should be
+   * aligned to the week boundary, starting at Sunday and ending Saturday. If
    * CohortsRange uses monthly granularity, the date range should be aligned to
    * the month, starting at the first and ending on the last day of the month.
    * </pre>
@@ -269,12 +274,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The cohort selects users whose first visit date is between start date
-   * and end date defined in the date_range. The date range should be aligned
-   * with the cohort's granularity.
-   * If CohortsRange uses daily granularity, the date range can be aligned to
-   * any day.
-   * If CohortsRange uses weekly granularity, the date range should be aligned
-   * to the week boundary, starting at Sunday and ending Saturday. If
+   * and end date defined in the `dateRange`. In a cohort request, this
+   * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+   * `RunPivotReportRequest` must be unspecified.
+   * The date range should be aligned with the cohort's granularity. If
+   * CohortsRange uses daily granularity, the date range can be aligned to any
+   * day. If CohortsRange uses weekly granularity, the date range should be
+   * aligned to the week boundary, starting at Sunday and ending Saturday. If
    * CohortsRange uses monthly granularity, the date range should be aligned to
    * the month, starting at the first and ending on the last day of the month.
    * </pre>
@@ -294,12 +300,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The cohort selects users whose first visit date is between start date
-   * and end date defined in the date_range. The date range should be aligned
-   * with the cohort's granularity.
-   * If CohortsRange uses daily granularity, the date range can be aligned to
-   * any day.
-   * If CohortsRange uses weekly granularity, the date range should be aligned
-   * to the week boundary, starting at Sunday and ending Saturday. If
+   * and end date defined in the `dateRange`. In a cohort request, this
+   * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+   * `RunPivotReportRequest` must be unspecified.
+   * The date range should be aligned with the cohort's granularity. If
+   * CohortsRange uses daily granularity, the date range can be aligned to any
+   * day. If CohortsRange uses weekly granularity, the date range should be
+   * aligned to the week boundary, starting at Sunday and ending Saturday. If
    * CohortsRange uses monthly granularity, the date range should be aligned to
    * the month, starting at the first and ending on the last day of the month.
    * </pre>
@@ -678,7 +685,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Assigns a name to this cohort. The dimension `cohort` is valued to this
-     * name in a report response. If not set, a cohort is named the empty string.
+     * name in a report response. If set, cannot begin with `cohort_` or
+     * `RESERVED_`. If not set, cohorts are named by their zero based index
+     * `cohort_0`, `cohort_1`, etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -701,7 +710,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Assigns a name to this cohort. The dimension `cohort` is valued to this
-     * name in a report response. If not set, a cohort is named the empty string.
+     * name in a report response. If set, cannot begin with `cohort_` or
+     * `RESERVED_`. If not set, cohorts are named by their zero based index
+     * `cohort_0`, `cohort_1`, etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -724,7 +735,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Assigns a name to this cohort. The dimension `cohort` is valued to this
-     * name in a report response. If not set, a cohort is named the empty string.
+     * name in a report response. If set, cannot begin with `cohort_` or
+     * `RESERVED_`. If not set, cohorts are named by their zero based index
+     * `cohort_0`, `cohort_1`, etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -746,7 +759,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Assigns a name to this cohort. The dimension `cohort` is valued to this
-     * name in a report response. If not set, a cohort is named the empty string.
+     * name in a report response. If set, cannot begin with `cohort_` or
+     * `RESERVED_`. If not set, cohorts are named by their zero based index
+     * `cohort_0`, `cohort_1`, etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -764,7 +779,9 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Assigns a name to this cohort. The dimension `cohort` is valued to this
-     * name in a report response. If not set, a cohort is named the empty string.
+     * name in a report response. If set, cannot begin with `cohort_` or
+     * `RESERVED_`. If not set, cohorts are named by their zero based index
+     * `cohort_0`, `cohort_1`, etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -905,12 +922,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -927,12 +945,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -955,12 +974,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -985,12 +1005,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -1013,12 +1034,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -1047,12 +1069,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -1075,12 +1098,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -1097,12 +1121,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>
@@ -1123,12 +1148,13 @@ public final class Cohort extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cohort selects users whose first visit date is between start date
-     * and end date defined in the date_range. The date range should be aligned
-     * with the cohort's granularity.
-     * If CohortsRange uses daily granularity, the date range can be aligned to
-     * any day.
-     * If CohortsRange uses weekly granularity, the date range should be aligned
-     * to the week boundary, starting at Sunday and ending Saturday. If
+     * and end date defined in the `dateRange`. In a cohort request, this
+     * `dateRange` is required and the `dateRanges` in the `RunReportRequest` or
+     * `RunPivotReportRequest` must be unspecified.
+     * The date range should be aligned with the cohort's granularity. If
+     * CohortsRange uses daily granularity, the date range can be aligned to any
+     * day. If CohortsRange uses weekly granularity, the date range should be
+     * aligned to the week boundary, starting at Sunday and ending Saturday. If
      * CohortsRange uses monthly granularity, the date range should be aligned to
      * the month, starting at the first and ending on the last day of the month.
      * </pre>

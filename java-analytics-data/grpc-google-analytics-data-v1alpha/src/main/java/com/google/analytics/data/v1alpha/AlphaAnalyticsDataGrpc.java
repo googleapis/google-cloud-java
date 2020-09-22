@@ -230,6 +230,52 @@ public final class AlphaAnalyticsDataGrpc {
     return getBatchRunPivotReportsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetMetadataRequest,
+          com.google.analytics.data.v1alpha.Metadata>
+      getGetMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetadata",
+      requestType = com.google.analytics.data.v1alpha.GetMetadataRequest.class,
+      responseType = com.google.analytics.data.v1alpha.Metadata.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetMetadataRequest,
+          com.google.analytics.data.v1alpha.Metadata>
+      getGetMetadataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetMetadataRequest,
+            com.google.analytics.data.v1alpha.Metadata>
+        getGetMetadataMethod;
+    if ((getGetMetadataMethod = AlphaAnalyticsDataGrpc.getGetMetadataMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetMetadataMethod = AlphaAnalyticsDataGrpc.getGetMetadataMethod) == null) {
+          AlphaAnalyticsDataGrpc.getGetMetadataMethod =
+              getGetMetadataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetMetadataRequest,
+                          com.google.analytics.data.v1alpha.Metadata>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetadata"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetMetadataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.Metadata.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("GetMetadata"))
+                      .build();
+        }
+      }
+    }
+    return getGetMetadataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlphaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataStub> factory =
@@ -348,6 +394,21 @@ public final class AlphaAnalyticsDataGrpc {
       asyncUnimplementedUnaryCall(getBatchRunPivotReportsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. Dimensions and metrics will be
+     * mostly added over time, but renames and deletions may occur.
+     * </pre>
+     */
+    public void getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMetadataMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -379,6 +440,12 @@ public final class AlphaAnalyticsDataGrpc {
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest,
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse>(
                       this, METHODID_BATCH_RUN_PIVOT_REPORTS)))
+          .addMethod(
+              getGetMetadataMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.data.v1alpha.GetMetadataRequest,
+                      com.google.analytics.data.v1alpha.Metadata>(this, METHODID_GET_METADATA)))
           .build();
     }
   }
@@ -479,6 +546,24 @@ public final class AlphaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. Dimensions and metrics will be
+     * mostly added over time, but renames and deletions may occur.
+     * </pre>
+     */
+    public void getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetMetadataMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -560,6 +645,20 @@ public final class AlphaAnalyticsDataGrpc {
         com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchRunPivotReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. Dimensions and metrics will be
+     * mostly added over time, but renames and deletions may occur.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.Metadata getMetadata(
+        com.google.analytics.data.v1alpha.GetMetadataRequest request) {
+      return blockingUnaryCall(getChannel(), getGetMetadataMethod(), getCallOptions(), request);
     }
   }
 
@@ -649,12 +748,29 @@ public final class AlphaAnalyticsDataGrpc {
       return futureUnaryCall(
           getChannel().newCall(getBatchRunPivotReportsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. Dimensions and metrics will be
+     * mostly added over time, but renames and deletions may occur.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.Metadata>
+        getMetadata(com.google.analytics.data.v1alpha.GetMetadataRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetMetadataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_REPORT = 0;
   private static final int METHODID_RUN_PIVOT_REPORT = 1;
   private static final int METHODID_BATCH_RUN_REPORTS = 2;
   private static final int METHODID_BATCH_RUN_PIVOT_REPORTS = 3;
+  private static final int METHODID_GET_METADATA = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -698,6 +814,12 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_METADATA:
+          serviceImpl.getMetadata(
+              (com.google.analytics.data.v1alpha.GetMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata>)
                   responseObserver);
           break;
         default:
@@ -768,6 +890,7 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getRunPivotReportMethod())
                       .addMethod(getBatchRunReportsMethod())
                       .addMethod(getBatchRunPivotReportsMethod())
+                      .addMethod(getGetMetadataMethod())
                       .build();
         }
       }

@@ -27,7 +27,8 @@ public interface CohortReportSettingsOrBuilder
    *
    *
    * <pre>
-   * If true, accumulates the result from first visit day to the end day.
+   * If true, accumulates the result from first visit day to the end day. Not
+   * supported in `RunReportRequest`.
    * </pre>
    *
    * <code>bool accumulate = 1;</code>
@@ -35,33 +36,4 @@ public interface CohortReportSettingsOrBuilder
    * @return The accumulate.
    */
   boolean getAccumulate();
-
-  /**
-   *
-   *
-   * <pre>
-   * If true, the report is for lifetime value report and should pivot on user
-   * event.
-   * </pre>
-   *
-   * <code>bool pivot_on_user_event = 2;</code>
-   *
-   * @return The pivotOnUserEvent.
-   */
-  boolean getPivotOnUserEvent();
-
-  /**
-   *
-   *
-   * <pre>
-   * If some values are missing while computing ratios, we want to compute the
-   * ratios only based on non-missing values.
-   * This field should be set to true only for a totals request.
-   * </pre>
-   *
-   * <code>bool missing_value_as_zero = 4;</code>
-   *
-   * @return The missingValueAsZero.
-   */
-  boolean getMissingValueAsZero();
 }

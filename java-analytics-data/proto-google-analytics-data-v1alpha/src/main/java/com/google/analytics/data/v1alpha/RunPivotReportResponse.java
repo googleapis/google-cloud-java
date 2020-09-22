@@ -39,6 +39,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
 
   private RunPivotReportResponse() {
     pivotHeaders_ = java.util.Collections.emptyList();
+    dimensionHeaders_ = java.util.Collections.emptyList();
     metricHeaders_ = java.util.Collections.emptyList();
     rows_ = java.util.Collections.emptyList();
     aggregates_ = java.util.Collections.emptyList();
@@ -88,10 +89,10 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 metricHeaders_ =
                     new java.util.ArrayList<com.google.analytics.data.v1alpha.MetricHeader>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               metricHeaders_.add(
                   input.readMessage(
@@ -100,9 +101,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 rows_ = new java.util.ArrayList<com.google.analytics.data.v1alpha.Row>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               rows_.add(
                   input.readMessage(
@@ -111,9 +112,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 aggregates_ = new java.util.ArrayList<com.google.analytics.data.v1alpha.Row>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               aggregates_.add(
                   input.readMessage(
@@ -153,6 +154,19 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
 
               break;
             }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dimensionHeaders_ =
+                    new java.util.ArrayList<com.google.analytics.data.v1alpha.DimensionHeader>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dimensionHeaders_.add(
+                  input.readMessage(
+                      com.google.analytics.data.v1alpha.DimensionHeader.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -170,14 +184,17 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         pivotHeaders_ = java.util.Collections.unmodifiableList(pivotHeaders_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         metricHeaders_ = java.util.Collections.unmodifiableList(metricHeaders_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         rows_ = java.util.Collections.unmodifiableList(rows_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         aggregates_ = java.util.Collections.unmodifiableList(aggregates_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -429,13 +446,90 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     return pivotHeaders_.get(index);
   }
 
+  public static final int DIMENSION_HEADERS_FIELD_NUMBER = 7;
+  private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_;
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader>
+      getDimensionHeadersList() {
+    return dimensionHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
+      getDimensionHeadersOrBuilderList() {
+    return dimensionHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  @java.lang.Override
+  public int getDimensionHeadersCount() {
+    return dimensionHeaders_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index) {
+    return dimensionHeaders_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes dimension columns. The number of DimensionHeaders and ordering of
+   * DimensionHeaders matches the dimensions present in rows.
+   * </pre>
+   *
+   * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder getDimensionHeadersOrBuilder(
+      int index) {
+    return dimensionHeaders_.get(index);
+  }
+
   public static final int METRIC_HEADERS_FIELD_NUMBER = 2;
   private java.util.List<com.google.analytics.data.v1alpha.MetricHeader> metricHeaders_;
   /**
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -448,7 +542,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -462,7 +557,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -475,7 +571,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -488,7 +585,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Describes metric columns.
+   * Describes metric columns. The number of MetricHeaders and ordering of
+   * MetricHeaders matches the metrics present in rows.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -780,6 +878,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (propertyQuota_ != null) {
       output.writeMessage(6, getPropertyQuota());
     }
+    for (int i = 0; i < dimensionHeaders_.size(); i++) {
+      output.writeMessage(7, dimensionHeaders_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -807,6 +908,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (propertyQuota_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPropertyQuota());
     }
+    for (int i = 0; i < dimensionHeaders_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, dimensionHeaders_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -824,6 +928,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         (com.google.analytics.data.v1alpha.RunPivotReportResponse) obj;
 
     if (!getPivotHeadersList().equals(other.getPivotHeadersList())) return false;
+    if (!getDimensionHeadersList().equals(other.getDimensionHeadersList())) return false;
     if (!getMetricHeadersList().equals(other.getMetricHeadersList())) return false;
     if (!getRowsList().equals(other.getRowsList())) return false;
     if (!getAggregatesList().equals(other.getAggregatesList())) return false;
@@ -849,6 +954,10 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     if (getPivotHeadersCount() > 0) {
       hash = (37 * hash) + PIVOT_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getPivotHeadersList().hashCode();
+    }
+    if (getDimensionHeadersCount() > 0) {
+      hash = (37 * hash) + DIMENSION_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getDimensionHeadersList().hashCode();
     }
     if (getMetricHeadersCount() > 0) {
       hash = (37 * hash) + METRIC_HEADERS_FIELD_NUMBER;
@@ -1012,6 +1121,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPivotHeadersFieldBuilder();
+        getDimensionHeadersFieldBuilder();
         getMetricHeadersFieldBuilder();
         getRowsFieldBuilder();
         getAggregatesFieldBuilder();
@@ -1027,21 +1137,27 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       } else {
         pivotHeadersBuilder_.clear();
       }
+      if (dimensionHeadersBuilder_ == null) {
+        dimensionHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        dimensionHeadersBuilder_.clear();
+      }
       if (metricHeadersBuilder_ == null) {
         metricHeaders_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         metricHeadersBuilder_.clear();
       }
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         rowsBuilder_.clear();
       }
       if (aggregatesBuilder_ == null) {
         aggregates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         aggregatesBuilder_.clear();
       }
@@ -1094,28 +1210,37 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       } else {
         result.pivotHeaders_ = pivotHeadersBuilder_.build();
       }
-      if (metricHeadersBuilder_ == null) {
+      if (dimensionHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
-          metricHeaders_ = java.util.Collections.unmodifiableList(metricHeaders_);
+          dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
           bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.dimensionHeaders_ = dimensionHeaders_;
+      } else {
+        result.dimensionHeaders_ = dimensionHeadersBuilder_.build();
+      }
+      if (metricHeadersBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          metricHeaders_ = java.util.Collections.unmodifiableList(metricHeaders_);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.metricHeaders_ = metricHeaders_;
       } else {
         result.metricHeaders_ = metricHeadersBuilder_.build();
       }
       if (rowsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           rows_ = java.util.Collections.unmodifiableList(rows_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.rows_ = rows_;
       } else {
         result.rows_ = rowsBuilder_.build();
       }
       if (aggregatesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           aggregates_ = java.util.Collections.unmodifiableList(aggregates_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.aggregates_ = aggregates_;
       } else {
@@ -1208,11 +1333,38 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
           }
         }
       }
+      if (dimensionHeadersBuilder_ == null) {
+        if (!other.dimensionHeaders_.isEmpty()) {
+          if (dimensionHeaders_.isEmpty()) {
+            dimensionHeaders_ = other.dimensionHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDimensionHeadersIsMutable();
+            dimensionHeaders_.addAll(other.dimensionHeaders_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dimensionHeaders_.isEmpty()) {
+          if (dimensionHeadersBuilder_.isEmpty()) {
+            dimensionHeadersBuilder_.dispose();
+            dimensionHeadersBuilder_ = null;
+            dimensionHeaders_ = other.dimensionHeaders_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            dimensionHeadersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDimensionHeadersFieldBuilder()
+                    : null;
+          } else {
+            dimensionHeadersBuilder_.addAllMessages(other.dimensionHeaders_);
+          }
+        }
+      }
       if (metricHeadersBuilder_ == null) {
         if (!other.metricHeaders_.isEmpty()) {
           if (metricHeaders_.isEmpty()) {
             metricHeaders_ = other.metricHeaders_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMetricHeadersIsMutable();
             metricHeaders_.addAll(other.metricHeaders_);
@@ -1225,7 +1377,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             metricHeadersBuilder_.dispose();
             metricHeadersBuilder_ = null;
             metricHeaders_ = other.metricHeaders_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             metricHeadersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricHeadersFieldBuilder()
@@ -1239,7 +1391,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         if (!other.rows_.isEmpty()) {
           if (rows_.isEmpty()) {
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRowsIsMutable();
             rows_.addAll(other.rows_);
@@ -1252,7 +1404,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             rowsBuilder_.dispose();
             rowsBuilder_ = null;
             rows_ = other.rows_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             rowsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRowsFieldBuilder()
@@ -1266,7 +1418,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         if (!other.aggregates_.isEmpty()) {
           if (aggregates_.isEmpty()) {
             aggregates_ = other.aggregates_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAggregatesIsMutable();
             aggregates_.addAll(other.aggregates_);
@@ -1279,7 +1431,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             aggregatesBuilder_.dispose();
             aggregatesBuilder_ = null;
             aggregates_ = other.aggregates_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             aggregatesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAggregatesFieldBuilder()
@@ -2255,14 +2407,394 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       return pivotHeadersBuilder_;
     }
 
+    private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDimensionHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        dimensionHeaders_ =
+            new java.util.ArrayList<com.google.analytics.data.v1alpha.DimensionHeader>(
+                dimensionHeaders_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1alpha.DimensionHeader,
+            com.google.analytics.data.v1alpha.DimensionHeader.Builder,
+            com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
+        dimensionHeadersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader>
+        getDimensionHeadersList() {
+      if (dimensionHeadersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dimensionHeaders_);
+      } else {
+        return dimensionHeadersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public int getDimensionHeadersCount() {
+      if (dimensionHeadersBuilder_ == null) {
+        return dimensionHeaders_.size();
+      } else {
+        return dimensionHeadersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index) {
+      if (dimensionHeadersBuilder_ == null) {
+        return dimensionHeaders_.get(index);
+      } else {
+        return dimensionHeadersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder setDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.DimensionHeader value) {
+      if (dimensionHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.set(index, value);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder setDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
+      if (dimensionHeadersBuilder_ == null) {
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder addDimensionHeaders(com.google.analytics.data.v1alpha.DimensionHeader value) {
+      if (dimensionHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.add(value);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder addDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.DimensionHeader value) {
+      if (dimensionHeadersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.add(index, value);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder addDimensionHeaders(
+        com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
+      if (dimensionHeadersBuilder_ == null) {
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder addDimensionHeaders(
+        int index, com.google.analytics.data.v1alpha.DimensionHeader.Builder builderForValue) {
+      if (dimensionHeadersBuilder_ == null) {
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder addAllDimensionHeaders(
+        java.lang.Iterable<? extends com.google.analytics.data.v1alpha.DimensionHeader> values) {
+      if (dimensionHeadersBuilder_ == null) {
+        ensureDimensionHeadersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensionHeaders_);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder clearDimensionHeaders() {
+      if (dimensionHeadersBuilder_ == null) {
+        dimensionHeaders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public Builder removeDimensionHeaders(int index) {
+      if (dimensionHeadersBuilder_ == null) {
+        ensureDimensionHeadersIsMutable();
+        dimensionHeaders_.remove(index);
+        onChanged();
+      } else {
+        dimensionHeadersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public com.google.analytics.data.v1alpha.DimensionHeader.Builder getDimensionHeadersBuilder(
+        int index) {
+      return getDimensionHeadersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder getDimensionHeadersOrBuilder(
+        int index) {
+      if (dimensionHeadersBuilder_ == null) {
+        return dimensionHeaders_.get(index);
+      } else {
+        return dimensionHeadersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
+        getDimensionHeadersOrBuilderList() {
+      if (dimensionHeadersBuilder_ != null) {
+        return dimensionHeadersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dimensionHeaders_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public com.google.analytics.data.v1alpha.DimensionHeader.Builder addDimensionHeadersBuilder() {
+      return getDimensionHeadersFieldBuilder()
+          .addBuilder(com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public com.google.analytics.data.v1alpha.DimensionHeader.Builder addDimensionHeadersBuilder(
+        int index) {
+      return getDimensionHeadersFieldBuilder()
+          .addBuilder(
+              index, com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes dimension columns. The number of DimensionHeaders and ordering of
+     * DimensionHeaders matches the dimensions present in rows.
+     * </pre>
+     *
+     * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 7;</code>
+     */
+    public java.util.List<com.google.analytics.data.v1alpha.DimensionHeader.Builder>
+        getDimensionHeadersBuilderList() {
+      return getDimensionHeadersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.analytics.data.v1alpha.DimensionHeader,
+            com.google.analytics.data.v1alpha.DimensionHeader.Builder,
+            com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
+        getDimensionHeadersFieldBuilder() {
+      if (dimensionHeadersBuilder_ == null) {
+        dimensionHeadersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.analytics.data.v1alpha.DimensionHeader,
+                com.google.analytics.data.v1alpha.DimensionHeader.Builder,
+                com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>(
+                dimensionHeaders_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        dimensionHeaders_ = null;
+      }
+      return dimensionHeadersBuilder_;
+    }
+
     private java.util.List<com.google.analytics.data.v1alpha.MetricHeader> metricHeaders_ =
         java.util.Collections.emptyList();
 
     private void ensureMetricHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         metricHeaders_ =
             new java.util.ArrayList<com.google.analytics.data.v1alpha.MetricHeader>(metricHeaders_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2276,7 +2808,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2292,7 +2825,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2308,7 +2842,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2324,7 +2859,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2347,7 +2883,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2367,7 +2904,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2389,7 +2927,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2412,7 +2951,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2432,7 +2972,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2452,7 +2993,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2472,7 +3014,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2480,7 +3023,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     public Builder clearMetricHeaders() {
       if (metricHeadersBuilder_ == null) {
         metricHeaders_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         metricHeadersBuilder_.clear();
@@ -2491,7 +3034,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2510,7 +3054,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2523,7 +3068,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2540,7 +3086,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2557,7 +3104,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2570,7 +3118,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2584,7 +3133,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Describes metric columns.
+     * Describes metric columns. The number of MetricHeaders and ordering of
+     * MetricHeaders matches the metrics present in rows.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
@@ -2606,7 +3156,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
                 com.google.analytics.data.v1alpha.MetricHeader.Builder,
                 com.google.analytics.data.v1alpha.MetricHeaderOrBuilder>(
                 metricHeaders_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         metricHeaders_ = null;
@@ -2618,9 +3168,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         rows_ = new java.util.ArrayList<com.google.analytics.data.v1alpha.Row>(rows_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2835,7 +3385,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     public Builder clearRows() {
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         rowsBuilder_.clear();
@@ -2956,7 +3506,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
                 com.google.analytics.data.v1alpha.Row,
                 com.google.analytics.data.v1alpha.Row.Builder,
                 com.google.analytics.data.v1alpha.RowOrBuilder>(
-                rows_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                rows_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
       return rowsBuilder_;
@@ -2966,9 +3516,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureAggregatesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         aggregates_ = new java.util.ArrayList<com.google.analytics.data.v1alpha.Row>(aggregates_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3216,7 +3766,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     public Builder clearAggregates() {
       if (aggregatesBuilder_ == null) {
         aggregates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         aggregatesBuilder_.clear();
@@ -3359,7 +3909,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
                 com.google.analytics.data.v1alpha.Row,
                 com.google.analytics.data.v1alpha.Row.Builder,
                 com.google.analytics.data.v1alpha.RowOrBuilder>(
-                aggregates_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                aggregates_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         aggregates_ = null;
       }
       return aggregatesBuilder_;
