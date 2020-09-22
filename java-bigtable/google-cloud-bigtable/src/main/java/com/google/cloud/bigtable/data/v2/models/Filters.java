@@ -25,6 +25,9 @@ import com.google.cloud.bigtable.data.v2.models.Range.AbstractByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Range.AbstractTimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
 
@@ -200,7 +203,19 @@ public final class Filters {
   // Implementations of target specific filters.
   /** DSL for adding filters to a chain. */
   public static final class ChainFilter implements Filter {
-    private RowFilter.Chain.Builder builder;
+    private static final long serialVersionUID = -6756759448656768478L;
+    private transient RowFilter.Chain.Builder builder;
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+      s.defaultWriteObject();
+      s.writeObject(builder.build());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+      s.defaultReadObject();
+      RowFilter.Chain chain = (RowFilter.Chain) s.readObject();
+      this.builder = chain.toBuilder();
+    }
 
     private ChainFilter() {
       this.builder = RowFilter.Chain.newBuilder();
@@ -241,7 +256,19 @@ public final class Filters {
 
   /** DSL for adding filters to the interleave list. */
   public static final class InterleaveFilter implements Filter {
-    private RowFilter.Interleave.Builder builder;
+    private static final long serialVersionUID = -6356151037337889421L;
+    private transient RowFilter.Interleave.Builder builder;
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+      s.defaultWriteObject();
+      s.writeObject(builder.build());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+      s.defaultReadObject();
+      RowFilter.Interleave interleave = (RowFilter.Interleave) s.readObject();
+      this.builder = interleave.toBuilder();
+    }
 
     private InterleaveFilter() {
       builder = RowFilter.Interleave.newBuilder();
@@ -281,7 +308,19 @@ public final class Filters {
 
   /** DSL for configuring a conditional filter. */
   public static final class ConditionFilter implements Filter {
-    private RowFilter.Condition.Builder builder;
+    private static final long serialVersionUID = -2720899822014446776L;
+    private transient RowFilter.Condition.Builder builder;
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+      s.defaultWriteObject();
+      s.writeObject(builder.build());
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+      s.defaultReadObject();
+      RowFilter.Condition condition = (RowFilter.Condition) s.readObject();
+      this.builder = condition.toBuilder();
+    }
 
     private ConditionFilter(@Nonnull Filter predicate) {
       Preconditions.checkNotNull(predicate);
@@ -323,7 +362,9 @@ public final class Filters {
     }
   }
 
-  public static final class KeyFilter {
+  public static final class KeyFilter implements Serializable {
+    private static final long serialVersionUID = 5137765114285539458L;
+
     private KeyFilter() {}
 
     /**
@@ -383,7 +424,9 @@ public final class Filters {
     }
   }
 
-  public static final class FamilyFilter {
+  public static final class FamilyFilter implements Serializable {
+    private static final long serialVersionUID = -4470936841191831553L;
+
     private FamilyFilter() {}
 
     /**
@@ -405,7 +448,9 @@ public final class Filters {
     }
   }
 
-  public static final class QualifierFilter {
+  public static final class QualifierFilter implements Serializable {
+    private static final long serialVersionUID = -1274850022909506559L;
+
     private QualifierFilter() {}
 
     /**
@@ -459,7 +504,8 @@ public final class Filters {
 
   /** Matches only cells from columns within the given range. */
   public static final class QualifierRangeFilter
-      extends AbstractByteStringRange<QualifierRangeFilter> implements Filter, Serializable {
+      extends AbstractByteStringRange<QualifierRangeFilter> implements Filter {
+    private static final long serialVersionUID = -1909319911147913630L;
     private final String family;
 
     private QualifierRangeFilter(String family) {
@@ -505,7 +551,9 @@ public final class Filters {
     }
   }
 
-  public static final class TimestampFilter {
+  public static final class TimestampFilter implements Serializable {
+    private static final long serialVersionUID = 5284219722591464991L;
+
     private TimestampFilter() {}
 
     /**
@@ -529,7 +577,9 @@ public final class Filters {
 
   /** Matches only cells with microsecond timestamps within the given range. */
   public static final class TimestampRangeFilter
-      extends AbstractTimestampRange<TimestampRangeFilter> implements Filter, Serializable {
+      extends AbstractTimestampRange<TimestampRangeFilter> implements Filter {
+    private static final long serialVersionUID = 8410980338603335276L;
+
     private TimestampRangeFilter() {}
 
     @InternalApi
@@ -571,7 +621,9 @@ public final class Filters {
     }
   }
 
-  public static final class ValueFilter {
+  public static final class ValueFilter implements Serializable {
+    private static final long serialVersionUID = 6722715229238811179L;
+
     private ValueFilter() {}
 
     /**
@@ -628,7 +680,9 @@ public final class Filters {
 
   /** Matches only cells with values that fall within the given value range. */
   public static final class ValueRangeFilter extends AbstractByteStringRange<ValueRangeFilter>
-      implements Filter, Serializable {
+      implements Filter {
+    private static final long serialVersionUID = -2452360677825047088L;
+
     private ValueRangeFilter() {}
 
     @InternalApi
@@ -668,7 +722,9 @@ public final class Filters {
     }
   }
 
-  public static final class OffsetFilter {
+  public static final class OffsetFilter implements Serializable {
+    private static final long serialVersionUID = 3228791236971884041L;
+
     private OffsetFilter() {}
 
     /**
@@ -681,7 +737,9 @@ public final class Filters {
     }
   }
 
-  public static final class LimitFilter {
+  public static final class LimitFilter implements Serializable {
+    private static final long serialVersionUID = -794915549003008940L;
+
     private LimitFilter() {}
 
     /**
@@ -705,6 +763,7 @@ public final class Filters {
   }
 
   private static final class SimpleFilter implements Filter {
+    private static final long serialVersionUID = 3595911451325189833L;
     private final RowFilter proto;
 
     private SimpleFilter(@Nonnull RowFilter proto) {
@@ -729,7 +788,7 @@ public final class Filters {
   }
 
   @InternalExtensionOnly
-  public interface Filter extends Cloneable {
+  public interface Filter extends Cloneable, Serializable {
     @InternalApi
     RowFilter toProto();
   }
