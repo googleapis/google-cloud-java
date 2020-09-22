@@ -23,7 +23,11 @@ import com.google.cloud.storage.StorageOptions;
 
 public class MoveObject {
   public static void moveObject(
-      String projectId, String sourceBucketName, String sourceObjectName, String targetBucketName, String targetObjectName) {
+      String projectId,
+      String sourceBucketName,
+      String sourceObjectName,
+      String targetBucketName,
+      String targetObjectName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -35,10 +39,9 @@ public class MoveObject {
 
     // The ID of the bucket to move the object objectName to
     // String targetBucketName = "target-object-bucket"
-    
+
     // The ID of your GCS object
     // String targetObjectName = "your-new-object-name";
-
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Blob blob = storage.get(sourceBucketName, sourceObjectName);
