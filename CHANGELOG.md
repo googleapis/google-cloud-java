@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.0](https://www.github.com/googleapis/java-bigquery/compare/v1.119.0...v1.120.0) (2020-09-22)
+
+
+### Features
+
+* sql fast path impl ([#509](https://www.github.com/googleapis/java-bigquery/issues/509)) ([64a7d65](https://www.github.com/googleapis/java-bigquery/commit/64a7d65ff97152c49194f507562266c1ba6f0f3b)), closes [google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/BigQueryException.java#L69-L71](https://www.github.com/google-cloud-bigquery/src/main/java/com/google/cloud/bigquery/BigQueryException.java/issues/L69-L71) [#L69](https://www.github.com/googleapis/java-bigquery/issues/L69)
+
 ## [1.119.0](https://www.github.com/googleapis/java-bigquery/compare/v1.118.0...v1.119.0) (2020-09-17)
 
 
