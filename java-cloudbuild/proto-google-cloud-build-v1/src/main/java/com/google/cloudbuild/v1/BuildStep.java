@@ -947,7 +947,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * builder image only.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the pullTiming field is set.
    */
@@ -963,7 +965,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * builder image only.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The pullTiming.
    */
@@ -981,7 +985,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * builder image only.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPullTimingOrBuilder() {
@@ -1051,7 +1057,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * as the build progresses.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for status.
    */
@@ -1068,7 +1076,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * as the build progresses.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The status.
    */
@@ -3690,7 +3700,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the pullTiming field is set.
      */
@@ -3705,7 +3717,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The pullTiming.
      */
@@ -3726,7 +3740,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPullTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pullTimingBuilder_ == null) {
@@ -3749,7 +3765,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPullTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
       if (pullTimingBuilder_ == null) {
@@ -3769,7 +3787,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergePullTiming(com.google.cloudbuild.v1.TimeSpan value) {
       if (pullTimingBuilder_ == null) {
@@ -3796,7 +3816,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearPullTiming() {
       if (pullTimingBuilder_ == null) {
@@ -3817,7 +3839,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpan.Builder getPullTimingBuilder() {
 
@@ -3832,7 +3856,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getPullTimingOrBuilder() {
       if (pullTimingBuilder_ != null) {
@@ -3851,7 +3877,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * builder image only.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.TimeSpan,
@@ -4077,7 +4105,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * as the build progresses.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for status.
      */
@@ -4094,7 +4124,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * as the build progresses.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
@@ -4114,7 +4146,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * as the build progresses.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The status.
      */
@@ -4134,7 +4168,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * as the build progresses.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
@@ -4157,7 +4193,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * as the build progresses.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build.Status status = 12;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build.Status status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

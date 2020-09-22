@@ -27,6 +27,33 @@ public interface GetBuildRequestOrBuilder
    *
    *
    * <pre>
+   * The name of the `Build` to retrieve.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Build` to retrieve.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project.
    * </pre>
    *

@@ -27,7 +27,9 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloudbuild.v1.Build;
+import com.google.cloudbuild.v1.BuildName;
 import com.google.cloudbuild.v1.BuildTrigger;
+import com.google.cloudbuild.v1.BuildTriggerName;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
@@ -46,6 +48,7 @@ import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RepoSource;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
+import com.google.cloudbuild.v1.ServiceAccountName;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
 import com.google.cloudbuild.v1.WorkerPool;
@@ -200,20 +203,24 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void createBuildTest() throws Exception {
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
     String id = "id3355";
     String projectId2 = "projectId2939242356";
     String statusDetail = "statusDetail2089931070";
     String logsBucket = "logsBucket1565363834";
     String buildTriggerId = "buildTriggerId1105559411";
     String logUrl = "logUrl342054388";
+    ServiceAccountName serviceAccount = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     Build expectedResponse =
         Build.newBuilder()
+            .setName(name.toString())
             .setId(id)
             .setProjectId(projectId2)
             .setStatusDetail(statusDetail)
             .setLogsBucket(logsBucket)
             .setBuildTriggerId(buildTriggerId)
             .setLogUrl(logUrl)
+            .setServiceAccount(serviceAccount.toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -263,20 +270,24 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void getBuildTest() {
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
     String id2 = "id23227150";
     String projectId2 = "projectId2939242356";
     String statusDetail = "statusDetail2089931070";
     String logsBucket = "logsBucket1565363834";
     String buildTriggerId = "buildTriggerId1105559411";
     String logUrl = "logUrl342054388";
+    ServiceAccountName serviceAccount = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     Build expectedResponse =
         Build.newBuilder()
+            .setName(name.toString())
             .setId(id2)
             .setProjectId(projectId2)
             .setStatusDetail(statusDetail)
             .setLogsBucket(logsBucket)
             .setBuildTriggerId(buildTriggerId)
             .setLogUrl(logUrl)
+            .setServiceAccount(serviceAccount.toString())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -318,20 +329,24 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void cancelBuildTest() {
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
     String id2 = "id23227150";
     String projectId2 = "projectId2939242356";
     String statusDetail = "statusDetail2089931070";
     String logsBucket = "logsBucket1565363834";
     String buildTriggerId = "buildTriggerId1105559411";
     String logUrl = "logUrl342054388";
+    ServiceAccountName serviceAccount = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     Build expectedResponse =
         Build.newBuilder()
+            .setName(name.toString())
             .setId(id2)
             .setProjectId(projectId2)
             .setStatusDetail(statusDetail)
             .setLogsBucket(logsBucket)
             .setBuildTriggerId(buildTriggerId)
             .setLogUrl(logUrl)
+            .setServiceAccount(serviceAccount.toString())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -373,20 +388,24 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void retryBuildTest() throws Exception {
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
     String id2 = "id23227150";
     String projectId2 = "projectId2939242356";
     String statusDetail = "statusDetail2089931070";
     String logsBucket = "logsBucket1565363834";
     String buildTriggerId = "buildTriggerId1105559411";
     String logUrl = "logUrl342054388";
+    ServiceAccountName serviceAccount = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     Build expectedResponse =
         Build.newBuilder()
+            .setName(name.toString())
             .setId(id2)
             .setProjectId(projectId2)
             .setStatusDetail(statusDetail)
             .setLogsBucket(logsBucket)
             .setBuildTriggerId(buildTriggerId)
             .setLogUrl(logUrl)
+            .setServiceAccount(serviceAccount.toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -438,14 +457,14 @@ public class CloudBuildClientTest {
   public void createBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
-    String name = "name3373707";
+    BuildTriggerName name = BuildTriggerName.of("[PROJECT]", "[TRIGGER]");
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
-            .setName(name)
+            .setName(name.toString())
             .setFilename(filename)
             .setDisabled(disabled)
             .build();
@@ -491,14 +510,14 @@ public class CloudBuildClientTest {
   public void getBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
-    String name = "name3373707";
+    BuildTriggerName name = BuildTriggerName.of("[PROJECT]", "[TRIGGER]");
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
-            .setName(name)
+            .setName(name.toString())
             .setFilename(filename)
             .setDisabled(disabled)
             .build();
@@ -592,14 +611,14 @@ public class CloudBuildClientTest {
   public void updateBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
-    String name = "name3373707";
+    BuildTriggerName name = BuildTriggerName.of("[PROJECT]", "[TRIGGER]");
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
-            .setName(name)
+            .setName(name.toString())
             .setFilename(filename)
             .setDisabled(disabled)
             .build();
@@ -646,20 +665,24 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void runBuildTriggerTest() throws Exception {
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
     String id = "id3355";
     String projectId2 = "projectId2939242356";
     String statusDetail = "statusDetail2089931070";
     String logsBucket = "logsBucket1565363834";
     String buildTriggerId = "buildTriggerId1105559411";
     String logUrl = "logUrl342054388";
+    ServiceAccountName serviceAccount = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     Build expectedResponse =
         Build.newBuilder()
+            .setName(name.toString())
             .setId(id)
             .setProjectId(projectId2)
             .setStatusDetail(statusDetail)
             .setLogsBucket(logsBucket)
             .setBuildTriggerId(buildTriggerId)
             .setLogUrl(logUrl)
+            .setServiceAccount(serviceAccount.toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

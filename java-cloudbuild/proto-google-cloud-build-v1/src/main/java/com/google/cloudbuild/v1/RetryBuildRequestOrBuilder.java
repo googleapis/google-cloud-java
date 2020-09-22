@@ -27,6 +27,33 @@ public interface RetryBuildRequestOrBuilder
    *
    *
    * <pre>
+   * The name of the `Build` to retry.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Build` to retry.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project.
    * </pre>
    *

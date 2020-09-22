@@ -289,6 +289,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   public Map<String, String> extract(ListBuildsRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -306,6 +307,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   public Map<String, String> extract(CreateBuildRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -313,14 +315,41 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     GrpcCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         GrpcCallSettings.<GetBuildRequest, Build>newBuilder()
             .setMethodDescriptor(getBuildMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetBuildRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetBuildRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         GrpcCallSettings.<CancelBuildRequest, Build>newBuilder()
             .setMethodDescriptor(cancelBuildMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CancelBuildRequest>() {
+                  @Override
+                  public Map<String, String> extract(CancelBuildRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         GrpcCallSettings.<RetryBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(retryBuildMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RetryBuildRequest>() {
+                  @Override
+                  public Map<String, String> extract(RetryBuildRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerTransportSettings =
         GrpcCallSettings.<CreateBuildTriggerRequest, BuildTrigger>newBuilder()

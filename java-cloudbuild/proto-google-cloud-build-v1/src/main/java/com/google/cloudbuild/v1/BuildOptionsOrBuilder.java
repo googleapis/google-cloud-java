@@ -162,6 +162,8 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
+   * be overridden in the build configuration file.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
@@ -176,6 +178,8 @@ public interface BuildOptionsOrBuilder
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
+   * be overridden in the build configuration file.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption substitution_option = 4;
@@ -184,6 +188,22 @@ public interface BuildOptionsOrBuilder
    * @return The substitutionOption.
    */
   com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify whether or not to apply bash style string
+   * operations to the substitutions.
+   * NOTE: this is always enabled for triggered builds and cannot be
+   * overridden in the build configuration file.
+   * </pre>
+   *
+   * <code>bool dynamic_substitutions = 17;</code>
+   *
+   * @return The dynamicSubstitutions.
+   */
+  boolean getDynamicSubstitutions();
 
   /**
    *
@@ -247,8 +267,8 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to specify the logging mode, which determines where the logs are
-   * stored.
+   * Option to specify the logging mode, which determines if and where build
+   * logs are stored.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>
@@ -260,8 +280,8 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to specify the logging mode, which determines where the logs are
-   * stored.
+   * Option to specify the logging mode, which determines if and where build
+   * logs are stored.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions.LoggingMode logging = 11;</code>

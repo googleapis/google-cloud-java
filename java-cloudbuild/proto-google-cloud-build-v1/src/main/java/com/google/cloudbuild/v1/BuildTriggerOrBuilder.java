@@ -349,7 +349,7 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * If true, the trigger will never result in a build.
+   * If true, the trigger will never automatically execute a build.
    * </pre>
    *
    * <code>bool disabled = 9;</code>
@@ -363,8 +363,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Substitutions for Build resource. The keys must match the following
-   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-   * keys in bindings.
+   * regular expression: `^_[A-Z0-9_]+$`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -375,8 +374,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Substitutions for Build resource. The keys must match the following
-   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-   * keys in bindings.
+   * regular expression: `^_[A-Z0-9_]+$`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -390,8 +388,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Substitutions for Build resource. The keys must match the following
-   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-   * keys in bindings.
+   * regular expression: `^_[A-Z0-9_]+$`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -402,8 +399,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Substitutions for Build resource. The keys must match the following
-   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-   * keys in bindings.
+   * regular expression: `^_[A-Z0-9_]+$`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
@@ -414,8 +410,7 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Substitutions for Build resource. The keys must match the following
-   * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
-   * keys in bindings.
+   * regular expression: `^_[A-Z0-9_]+$`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>

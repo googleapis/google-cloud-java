@@ -232,7 +232,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the timing field is set.
      */
@@ -244,7 +246,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The timing.
      */
@@ -256,7 +260,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder();
   }
@@ -512,7 +518,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the timing field is set.
      */
@@ -527,7 +535,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The timing.
      */
@@ -542,7 +552,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * Output only. Stores timing information for pushing all artifact objects.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
@@ -1243,7 +1255,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return Whether the timing field is set.
        */
@@ -1257,7 +1271,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The timing.
        */
@@ -1275,7 +1291,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setTiming(com.google.cloudbuild.v1.TimeSpan value) {
         if (timingBuilder_ == null) {
@@ -1297,7 +1315,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
         if (timingBuilder_ == null) {
@@ -1316,7 +1336,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder mergeTiming(com.google.cloudbuild.v1.TimeSpan value) {
         if (timingBuilder_ == null) {
@@ -1342,7 +1364,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder clearTiming() {
         if (timingBuilder_ == null) {
@@ -1362,7 +1386,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloudbuild.v1.TimeSpan.Builder getTimingBuilder() {
 
@@ -1376,7 +1402,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
         if (timingBuilder_ != null) {
@@ -1392,7 +1420,9 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * Output only. Stores timing information for pushing all artifact objects.
        * </pre>
        *
-       * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
+       * <code>
+       * .google.devtools.cloudbuild.v1.TimeSpan timing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloudbuild.v1.TimeSpan,

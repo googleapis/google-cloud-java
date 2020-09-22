@@ -38,6 +38,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private CreateBuildRequest() {
+    parent_ = "";
     projectId_ = "";
   }
 
@@ -92,6 +93,13 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -124,6 +132,57 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.CreateBuildRequest.class,
             com.google.cloudbuild.v1.CreateBuildRequest.Builder.class);
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object parent_;
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource where this build will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource where this build will be created.
+   * Format: `projects/{project}/locations/{location}`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -244,6 +303,9 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     if (build_ != null) {
       output.writeMessage(2, getBuild());
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -258,6 +320,9 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     if (build_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBuild());
+    }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -275,6 +340,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloudbuild.v1.CreateBuildRequest other =
         (com.google.cloudbuild.v1.CreateBuildRequest) obj;
 
+    if (!getParent().equals(other.getParent())) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (hasBuild() != other.hasBuild()) return false;
     if (hasBuild()) {
@@ -291,6 +357,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     if (hasBuild()) {
@@ -442,6 +510,8 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      parent_ = "";
+
       projectId_ = "";
 
       if (buildBuilder_ == null) {
@@ -477,6 +547,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.CreateBuildRequest buildPartial() {
       com.google.cloudbuild.v1.CreateBuildRequest result =
           new com.google.cloudbuild.v1.CreateBuildRequest(this);
+      result.parent_ = parent_;
       result.projectId_ = projectId_;
       if (buildBuilder_ == null) {
         result.build_ = build_;
@@ -532,6 +603,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloudbuild.v1.CreateBuildRequest other) {
       if (other == com.google.cloudbuild.v1.CreateBuildRequest.getDefaultInstance()) return this;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -565,6 +640,117 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource where this build will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource where this build will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource where this build will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource where this build will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource where this build will be created.
+     * Format: `projects/{project}/locations/{location}`
+     * </pre>
+     *
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parent_ = value;
+      onChanged();
       return this;
     }
 

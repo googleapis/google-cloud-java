@@ -38,6 +38,7 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private ListBuildsRequest() {
+    parent_ = "";
     projectId_ = "";
     pageToken_ = "";
     filter_ = "";
@@ -98,6 +99,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
               filter_ = s;
               break;
             }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +138,57 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.ListBuildsRequest.class,
             com.google.cloudbuild.v1.ListBuildsRequest.Builder.class);
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 9;
+  private volatile java.lang.Object parent_;
+  /**
+   *
+   *
+   * <pre>
+   * The parent of the collection of `Builds`.
+   * Format: `projects/{project}/locations/location`
+   * </pre>
+   *
+   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The parent of the collection of `Builds`.
+   * Format: `projects/{project}/locations/location`
+   * </pre>
+   *
+   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -323,6 +382,9 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     if (!getFilterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filter_);
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -344,6 +406,9 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filter_);
     }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -360,6 +425,7 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     com.google.cloudbuild.v1.ListBuildsRequest other =
         (com.google.cloudbuild.v1.ListBuildsRequest) obj;
 
+    if (!getParent().equals(other.getParent())) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
@@ -375,6 +441,8 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
@@ -528,6 +596,8 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      parent_ = "";
+
       projectId_ = "";
 
       pageSize_ = 0;
@@ -563,6 +633,7 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloudbuild.v1.ListBuildsRequest buildPartial() {
       com.google.cloudbuild.v1.ListBuildsRequest result =
           new com.google.cloudbuild.v1.ListBuildsRequest(this);
+      result.parent_ = parent_;
       result.projectId_ = projectId_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
@@ -616,6 +687,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.cloudbuild.v1.ListBuildsRequest other) {
       if (other == com.google.cloudbuild.v1.ListBuildsRequest.getDefaultInstance()) return this;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -657,6 +732,117 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The parent of the collection of `Builds`.
+     * Format: `projects/{project}/locations/location`
+     * </pre>
+     *
+     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent of the collection of `Builds`.
+     * Format: `projects/{project}/locations/location`
+     * </pre>
+     *
+     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent of the collection of `Builds`.
+     * Format: `projects/{project}/locations/location`
+     * </pre>
+     *
+     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent of the collection of `Builds`.
+     * Format: `projects/{project}/locations/location`
+     * </pre>
+     *
+     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent of the collection of `Builds`.
+     * Format: `projects/{project}/locations/location`
+     * </pre>
+     *
+     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parent_ = value;
+      onChanged();
       return this;
     }
 

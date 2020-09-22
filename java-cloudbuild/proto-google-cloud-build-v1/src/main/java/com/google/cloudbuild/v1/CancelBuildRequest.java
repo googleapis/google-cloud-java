@@ -38,6 +38,7 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private CancelBuildRequest() {
+    name_ = "";
     projectId_ = "";
     id_ = "";
   }
@@ -85,6 +86,13 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
               id_ = s;
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +125,57 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.CancelBuildRequest.class,
             com.google.cloudbuild.v1.CancelBuildRequest.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Build` to retrieve.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Build` to retrieve.
+   * Format: `projects/{project}/locations/{location}/builds/{build}`
+   * </pre>
+   *
+   * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
@@ -237,6 +296,9 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -251,6 +313,9 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,6 +333,7 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloudbuild.v1.CancelBuildRequest other =
         (com.google.cloudbuild.v1.CancelBuildRequest) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getId().equals(other.getId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -281,6 +347,8 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -430,6 +498,8 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       projectId_ = "";
 
       id_ = "";
@@ -461,6 +531,7 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloudbuild.v1.CancelBuildRequest buildPartial() {
       com.google.cloudbuild.v1.CancelBuildRequest result =
           new com.google.cloudbuild.v1.CancelBuildRequest(this);
+      result.name_ = name_;
       result.projectId_ = projectId_;
       result.id_ = id_;
       onBuilt();
@@ -512,6 +583,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloudbuild.v1.CancelBuildRequest other) {
       if (other == com.google.cloudbuild.v1.CancelBuildRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -546,6 +621,117 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Build` to retrieve.
+     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Build` to retrieve.
+     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Build` to retrieve.
+     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Build` to retrieve.
+     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the `Build` to retrieve.
+     * Format: `projects/{project}/locations/{location}/builds/{build}`
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
       return this;
     }
 

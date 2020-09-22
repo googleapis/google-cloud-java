@@ -371,8 +371,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository admin or
-   * collaborator.
+   * Configure builds to run whether a repository owner or collaborator need to
+   * comment `/gcbrun`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -388,8 +388,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether to block builds on a "/gcbrun" comment from a repository admin or
-   * collaborator.
+   * Configure builds to run whether a repository owner or collaborator need to
+   * comment `/gcbrun`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -949,8 +949,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository admin or
-     * collaborator.
+     * Configure builds to run whether a repository owner or collaborator need to
+     * comment `/gcbrun`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -966,8 +966,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository admin or
-     * collaborator.
+     * Configure builds to run whether a repository owner or collaborator need to
+     * comment `/gcbrun`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -986,8 +986,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository admin or
-     * collaborator.
+     * Configure builds to run whether a repository owner or collaborator need to
+     * comment `/gcbrun`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -1008,8 +1008,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository admin or
-     * collaborator.
+     * Configure builds to run whether a repository owner or collaborator need to
+     * comment `/gcbrun`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -1032,8 +1032,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether to block builds on a "/gcbrun" comment from a repository admin or
-     * collaborator.
+     * Configure builds to run whether a repository owner or collaborator need to
+     * comment `/gcbrun`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;

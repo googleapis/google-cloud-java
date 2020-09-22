@@ -27,6 +27,33 @@ public interface ListBuildsRequestOrBuilder
    *
    *
    * <pre>
+   * The parent of the collection of `Builds`.
+   * Format: `projects/{project}/locations/location`
+   * </pre>
+   *
+   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * The parent of the collection of `Builds`.
+   * Format: `projects/{project}/locations/location`
+   * </pre>
+   *
+   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. ID of the project.
    * </pre>
    *
