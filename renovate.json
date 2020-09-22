@@ -74,6 +74,9 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
+    },
+    {
+      "excludePackageNames": ["org.apache.commons"]
     }
   ],
   "semanticCommits": true,

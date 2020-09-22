@@ -36,5 +36,5 @@ for version in versions:
   )
 
 java.common_templates(excludes=[
-    '.kokoro/build.bat' # TODO: remove this when we switch to actions
+    'renovate.json' # excluding due to common-lang3 dep added to renovate.json
 ])
