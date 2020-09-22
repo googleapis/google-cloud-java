@@ -14,7 +14,7 @@
   </parent>
 
   <properties>
-    <appengine.maven.plugin>2.3.0</appengine.maven.plugin>
+    <appengine.maven.plugin>2.4.0</appengine.maven.plugin>
     <jetty.maven.plugin>9.4.28.v20200408</jetty.maven.plugin>
     <java.source.version>1.7</java.source.version>
   </properties>
