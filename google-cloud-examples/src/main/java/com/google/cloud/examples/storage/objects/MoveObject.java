@@ -56,7 +56,7 @@ public class MoveObject {
             + sourceBucketName
             + " to "
             + targetObjectName
-            + " to bucket "
+            + " in bucket "
             + copiedBlob.getBucket());
   }
 }
