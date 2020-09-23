@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
-      <version>0.31.0</version>
+      <version>1.0.0</version>
     </dependency>
     <!-- [END recaptcha-enterprise_install_without_bom] -->
 
