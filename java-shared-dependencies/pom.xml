@@ -72,6 +72,7 @@
     <iam.version>1.0.1</iam.version>
     <opencensus.version>0.24.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
+    <errorprone.version>2.4.0</errorprone.version>
   </properties>
 
   <dependencyManagement>
@@ -177,6 +178,11 @@
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
         <version>${findbugs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>${errorprone.version}</version>
       </dependency>
 
       <!-- TODO: replace with opencensus-bom when available -->
