@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-recommender:1.2.2:1.2.2
-grpc-google-cloud-recommender-v1:1.2.2:1.2.2
-grpc-google-cloud-recommender-v1beta1:0.7.2:0.7.2
-proto-google-cloud-recommender-v1:1.2.2:1.2.2
-proto-google-cloud-recommender-v1beta1:0.7.2:0.7.2
+google-cloud-recommender:1.2.2:1.2.3-SNAPSHOT
+grpc-google-cloud-recommender-v1:1.2.2:1.2.3-SNAPSHOT
+grpc-google-cloud-recommender-v1beta1:0.7.2:0.7.3-SNAPSHOT
+proto-google-cloud-recommender-v1:1.2.2:1.2.3-SNAPSHOT
+proto-google-cloud-recommender-v1beta1:0.7.2:0.7.3-SNAPSHOT
