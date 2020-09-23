@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-analytics-admin/compare/v0.1.2...v0.1.3) (2020-09-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#53](https://www.github.com/googleapis/java-analytics-admin/issues/53)) ([8268d33](https://www.github.com/googleapis/java-analytics-admin/commit/8268d33dd99ee0a220053a9dc2f0a4bea77f8f28))
+
 ### [0.1.2](https://www.github.com/googleapis/java-analytics-admin/compare/v0.1.1...v0.1.2) (2020-09-21)
 
 
