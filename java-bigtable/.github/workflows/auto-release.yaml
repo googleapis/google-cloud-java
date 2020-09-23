@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/github-script@v3.0.0
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
         debug: true
         script: |
           // only approve PRs from release-please[bot]
