@@ -1,5 +1,45 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-redis/compare/v1.0.0...v1.1.0) (2020-09-23)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#163](https://www.github.com/googleapis/java-redis/issues/163)) ([8063d1d](https://www.github.com/googleapis/java-redis/commit/8063d1d780737e0fae9a98740a510945f6ff3d59))
+* enable REDIS_5_0 as and option for redis_version, add --stream-node-max-entries, --stream-node-max-bytes ([#98](https://www.github.com/googleapis/java-redis/issues/98)) ([2947244](https://www.github.com/googleapis/java-redis/commit/29472441162380ba1f5fcf2799e56726ecb85c81)), closes [#453](https://www.github.com/googleapis/java-redis/issues/453) [#453](https://www.github.com/googleapis/java-redis/issues/453) [#452](https://www.github.com/googleapis/java-redis/issues/452) [#452](https://www.github.com/googleapis/java-redis/issues/452) [#457](https://www.github.com/googleapis/java-redis/issues/457) [#457](https://www.github.com/googleapis/java-redis/issues/457)
+
+
+### Bug Fixes
+
+* migrate redis/v1 to grpc_service_config ([#152](https://www.github.com/googleapis/java-redis/issues/152)) ([14a0c0f](https://www.github.com/googleapis/java-redis/commit/14a0c0fceedd46331a1e05620316b51289c429a2))
+* migrate redis/v1beta1 to grpc_service_config ([#161](https://www.github.com/googleapis/java-redis/issues/161)) ([43ae8e9](https://www.github.com/googleapis/java-redis/commit/43ae8e97272d216a1f4a87c0ac28d05269b1d5ad))
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links ([#143](https://www.github.com/googleapis/java-redis/issues/143)) ([e83e0c0](https://www.github.com/googleapis/java-redis/commit/e83e0c0b60137d272b80c20bb16fae5e140d5032))
+
+
+### Dependencies
+
+* update core dependencies ([#81](https://www.github.com/googleapis/java-redis/issues/81)) ([1235903](https://www.github.com/googleapis/java-redis/commit/1235903062275cc0b3ac6a6da1ff6ef23af7b20a))
+* update dependency com.google.api:api-common to v1.9.0 ([#97](https://www.github.com/googleapis/java-redis/issues/97)) ([fe62f6f](https://www.github.com/googleapis/java-redis/commit/fe62f6ff3e33a103378a5db33b84a49b195061c7))
+* update dependency com.google.api:api-common to v1.9.1 ([#136](https://www.github.com/googleapis/java-redis/issues/136)) ([c089592](https://www.github.com/googleapis/java-redis/commit/c0895927dd204cda98c5cb1257349a2f8d116593))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#127](https://www.github.com/googleapis/java-redis/issues/127)) ([03f7ccb](https://www.github.com/googleapis/java-redis/commit/03f7ccb5490cc5552fd44b055e07cc4a64bdb0fe))
+* update dependency com.google.cloud:google-cloud-core to v1.93.1 ([#80](https://www.github.com/googleapis/java-redis/issues/80)) ([899393d](https://www.github.com/googleapis/java-redis/commit/899393ddb7f5450c389d85e11fd11e9e584c58d4))
+* update dependency com.google.cloud:google-cloud-core to v1.93.4 ([#103](https://www.github.com/googleapis/java-redis/issues/103)) ([be57170](https://www.github.com/googleapis/java-redis/commit/be571708240e62dbda2df9c6c4be8699fbc96593))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#137](https://www.github.com/googleapis/java-redis/issues/137)) ([9a4ea1e](https://www.github.com/googleapis/java-redis/commit/9a4ea1eb73107ffbdd8b36a2feaa717bd2d6e0a9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.2 ([#172](https://www.github.com/googleapis/java-redis/issues/172)) ([ce530e8](https://www.github.com/googleapis/java-redis/commit/ce530e8988e210073a142c81242224d6008d911d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.3 ([#175](https://www.github.com/googleapis/java-redis/issues/175)) ([9fc6e2a](https://www.github.com/googleapis/java-redis/commit/9fc6e2a3de27443c09adee8506b2a67bececd987))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#180](https://www.github.com/googleapis/java-redis/issues/180)) ([6cc7a02](https://www.github.com/googleapis/java-redis/commit/6cc7a020456524df486d972a62214d5f1e15290e))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.13 ([#96](https://www.github.com/googleapis/java-redis/issues/96)) ([17740a7](https://www.github.com/googleapis/java-redis/commit/17740a7bea9a41a02368dea02d350257ebb27417))
+* update dependency com.google.guava:guava-bom to v29 ([#109](https://www.github.com/googleapis/java-redis/issues/109)) ([58d00a8](https://www.github.com/googleapis/java-redis/commit/58d00a849a8ad36f279504af2b0f9ffda68e8588))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.0 ([#132](https://www.github.com/googleapis/java-redis/issues/132)) ([9c1312f](https://www.github.com/googleapis/java-redis/commit/9c1312feacf369a8b3cec934c3c686884f5d6b19))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#134](https://www.github.com/googleapis/java-redis/issues/134)) ([fd6d8f1](https://www.github.com/googleapis/java-redis/commit/fd6d8f1069286aa7bb1b0a8a188e3afa9c2a4b83))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#123](https://www.github.com/googleapis/java-redis/issues/123)) ([e942bb1](https://www.github.com/googleapis/java-redis/commit/e942bb17e8665f8035528a93ebb52f4103f67686))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#91](https://www.github.com/googleapis/java-redis/issues/91)) ([ccdf82f](https://www.github.com/googleapis/java-redis/commit/ccdf82ffc2a5f14196005ba934868949f8321689))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#125](https://www.github.com/googleapis/java-redis/issues/125)) ([46482aa](https://www.github.com/googleapis/java-redis/commit/46482aa4a1f078257a382169e375c4d2f3da89df))
+
 ## [1.0.0](https://www.github.com/googleapis/java-redis/compare/v0.119.0...v1.0.0) (2020-02-29)
 
 
