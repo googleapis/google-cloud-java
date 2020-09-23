@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-shared-dependencies.git",
-        "sha": "7fff6f2c94a19ba998d8cd47e8be5a6333808df8"
+        "sha": "cde0463dd15c2a510085a3d5e3ac7b418c2fc3d4"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
+        "sha": "538a68019eb4a36a0cdfa4021f324dd01b784395"
       }
     }
   ],
@@ -21,8 +21,8 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
-    ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
