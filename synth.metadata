@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "41358bc6a7e8aaf3e4a2ba6e517d4364380ded5c"
+        "sha": "c61142c7333b36e443da5f80771be9a68c225799"
       }
     },
     {
@@ -103,6 +103,7 @@
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
+    ".kokoro/build.bat",
     ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
@@ -300,7 +301,6 @@
     "proto-google-cloud-bigquerystorage-v1beta2/src/main/proto/google/cloud/bigquery/storage/v1beta2/avro.proto",
     "proto-google-cloud-bigquerystorage-v1beta2/src/main/proto/google/cloud/bigquery/storage/v1beta2/storage.proto",
     "proto-google-cloud-bigquerystorage-v1beta2/src/main/proto/google/cloud/bigquery/storage/v1beta2/stream.proto",
-    "renovate.json",
     "samples/install-without-bom/pom.xml",
     "samples/pom.xml",
     "samples/snapshot/pom.xml",
