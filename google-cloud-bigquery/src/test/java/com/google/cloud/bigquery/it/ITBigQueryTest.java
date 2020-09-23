@@ -65,7 +65,6 @@ import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.JobException;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
@@ -1493,12 +1492,11 @@ public class ITBigQueryTest {
     try {
       bigquery.create(JobInfo.of(QueryJobConfiguration.of(invalidQuery))).waitFor();
       fail("JobException was expected");
-    } catch (JobException e) {
-      for (BigQueryError error : e.getErrors()) {
-        assertNotNull(error);
-        assertEquals("invalidQuery", error.getReason());
-        assertNotNull(error.getMessage());
-      }
+    } catch (BigQueryException e) {
+      BigQueryError error = e.getError();
+      assertNotNull(error);
+      assertEquals("invalidQuery", error.getReason());
+      assertNotNull(error.getMessage());
     }
   }
 

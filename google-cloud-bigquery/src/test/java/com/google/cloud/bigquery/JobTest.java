@@ -447,12 +447,12 @@ public class JobTest {
     expectedJob =
         expectedJob.toBuilder().setStatus(new JobStatus(State.DONE, bigQueryError, null)).build();
     ImmutableList<BigQueryError> bigQueryErrorList = ImmutableList.of(bigQueryError);
-    JobException jobException = new JobException(expectedJob.getJobId(), bigQueryErrorList);
-    when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(expectedJob).thenThrow(jobException);
+    BigQueryException bigQueryException = new BigQueryException(bigQueryErrorList);
+    when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(expectedJob).thenThrow(bigQueryException);
     try {
       job.reload();
       fail("JobException expected");
-    } catch (JobException e) {
+    } catch (BigQueryException e) {
       assertNotNull(e.getErrors());
     }
   }

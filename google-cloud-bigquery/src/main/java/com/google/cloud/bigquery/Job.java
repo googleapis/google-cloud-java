@@ -403,9 +403,7 @@ public class Job extends JobInfo {
     checkNotDryRun("reload");
     Job job = bigquery.getJob(getJobId(), options);
     if (job != null && job.getStatus().getError() != null) {
-      // TODO(pmakani): change to BigQueryException when fast query path change is merged
-      throw new JobException(
-          getJobId(),
+      throw new BigQueryException(
           job.getStatus().getExecutionErrors() == null
               ? ImmutableList.of(job.getStatus().getError())
               : ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
