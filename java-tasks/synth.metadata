@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "c59a13d1d96c66082fb0f088c6d75f8a9261186e"
+        "sha": "55d2bca864a85f4df8c65d25eec282cb9d654dc1"
       }
     },
     {
