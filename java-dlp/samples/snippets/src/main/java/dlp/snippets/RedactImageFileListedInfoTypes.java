@@ -63,15 +63,13 @@ class RedactImageFileListedInfoTypes {
           new String[] {"US_SOCIAL_SECURITY_NUMBER", "EMAIL_ADDRESS", "PHONE_NUMBER"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
-      InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .build();
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
 
       // Prepare redaction configs.
-      List<ImageRedactionConfig> imageRedactionConfigs = infoTypes.stream()
-          .map(infoType -> ImageRedactionConfig.newBuilder().setInfoType(infoType).build())
-          .collect(Collectors.toList());
+      List<ImageRedactionConfig> imageRedactionConfigs =
+          infoTypes.stream()
+              .map(infoType -> ImageRedactionConfig.newBuilder().setInfoType(infoType).build())
+              .collect(Collectors.toList());
 
       // Construct the Redact request to be sent by the client.
       RedactImageRequest request =
@@ -90,7 +88,6 @@ class RedactImageFileListedInfoTypes {
       redacted.write(response.getRedactedImage().toByteArray());
       redacted.close();
       System.out.println("Redacted image written to " + outputPath);
-
     }
   }
 }

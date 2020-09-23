@@ -67,9 +67,7 @@ public class InspectGcsFile {
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
       // Specify the GCS file to be inspected.
       CloudStorageOptions cloudStorageOptions =
-          CloudStorageOptions.newBuilder()
-              .setFileSet(FileSet.newBuilder().setUrl(gcsUri))
-              .build();
+          CloudStorageOptions.newBuilder().setFileSet(FileSet.newBuilder().setUrl(gcsUri)).build();
 
       StorageConfig storageConfig =
           StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
@@ -83,10 +81,7 @@ public class InspectGcsFile {
 
       // Specify how the content should be inspected.
       InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .setIncludeQuote(true)
-              .build();
+          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
 
       // Specify the action that is triggered when the job completes.
       String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);

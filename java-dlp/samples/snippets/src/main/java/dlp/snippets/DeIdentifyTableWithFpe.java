@@ -29,10 +29,6 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.FieldTransformation;
-import com.google.privacy.dlp.v2.InfoType;
-import com.google.privacy.dlp.v2.InfoTypeTransformations;
-import com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation;
-import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.KmsWrappedCryptoKey;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrimitiveTransformation;
@@ -42,7 +38,6 @@ import com.google.privacy.dlp.v2.Table.Row;
 import com.google.privacy.dlp.v2.Value;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DeIdentifyTableWithFpe {
 
@@ -55,26 +50,30 @@ public class DeIdentifyTableWithFpe {
             + "keyRings/YOUR_KEYRING_NAME/"
             + "cryptoKeys/YOUR_KEY_NAME";
     String wrappedAesKey = "YOUR_ENCRYPTED_AES_256_KEY";
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
-        .addHeaders(FieldId.newBuilder().setName("Date").build())
-        .addHeaders(FieldId.newBuilder().setName("Compensation").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("11111").build())
-            .addValues(Value.newBuilder().setStringValue("2015").build())
-            .addValues(Value.newBuilder().setStringValue("$10").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("11111").build())
-            .addValues(Value.newBuilder().setStringValue("2016").build())
-            .addValues(Value.newBuilder().setStringValue("$20").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22222").build())
-            .addValues(Value.newBuilder().setStringValue("2016").build())
-            .addValues(Value.newBuilder().setStringValue("$15").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+            .addHeaders(FieldId.newBuilder().setName("Date").build())
+            .addHeaders(FieldId.newBuilder().setName("Compensation").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("11111").build())
+                    .addValues(Value.newBuilder().setStringValue("2015").build())
+                    .addValues(Value.newBuilder().setStringValue("$10").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("11111").build())
+                    .addValues(Value.newBuilder().setStringValue("2016").build())
+                    .addValues(Value.newBuilder().setStringValue("$20").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22222").build())
+                    .addValues(Value.newBuilder().setStringValue("2016").build())
+                    .addValues(Value.newBuilder().setStringValue("$15").build())
+                    .build())
+            .build();
     deIdentifyTableWithFpe(projectId, tableToDeIdentify, kmsKeyName, wrappedAesKey);
   }
 

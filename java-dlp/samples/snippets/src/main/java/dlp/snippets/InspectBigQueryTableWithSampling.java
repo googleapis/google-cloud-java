@@ -88,10 +88,7 @@ public class InspectBigQueryTableWithSampling {
 
       // Specify how the content should be inspected.
       InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addInfoTypes(infoType)
-              .setIncludeQuote(true)
-              .build();
+          InspectConfig.newBuilder().addInfoTypes(infoType).setIncludeQuote(true).build();
 
       // Specify the action that is triggered when the job completes.
       String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);

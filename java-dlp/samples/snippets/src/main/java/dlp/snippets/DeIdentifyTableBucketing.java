@@ -39,26 +39,30 @@ public class DeIdentifyTableBucketing {
   public static void deIdentifyTableBucketing() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
 
     deIdentifyTableBucketing(projectId, tableToDeIdentify);
   }
@@ -111,8 +115,7 @@ public class DeIdentifyTableBucketing {
       DeidentifyContentResponse response = dlp.deidentifyContent(request);
 
       // Print the results.
-      System.out.println(
-          "Table after de-identification: " + response.getItem().getTable());
+      System.out.println("Table after de-identification: " + response.getItem().getTable());
 
       return response.getItem().getTable();
     }

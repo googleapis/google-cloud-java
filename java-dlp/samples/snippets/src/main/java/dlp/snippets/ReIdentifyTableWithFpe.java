@@ -24,15 +24,9 @@ import com.google.privacy.dlp.v2.ContentItem;
 import com.google.privacy.dlp.v2.CryptoKey;
 import com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig;
 import com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet;
-import com.google.privacy.dlp.v2.CustomInfoType;
-import com.google.privacy.dlp.v2.CustomInfoType.SurrogateType;
 import com.google.privacy.dlp.v2.DeidentifyConfig;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.FieldTransformation;
-import com.google.privacy.dlp.v2.InfoType;
-import com.google.privacy.dlp.v2.InfoTypeTransformations;
-import com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation;
-import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.KmsWrappedCryptoKey;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrimitiveTransformation;
@@ -56,13 +50,14 @@ public class ReIdentifyTableWithFpe {
             + "keyRings/YOUR_KEYRING_NAME/"
             + "cryptoKeys/YOUR_KEY_NAME";
     String wrappedAesKey = "YOUR_ENCRYPTED_AES_256_KEY";
-    Table tableToReIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
-        .addRows(
-            Row.newBuilder().addValues(
-                Value.newBuilder().setStringValue("28777").build())
-                .build())
-        .build();
+    Table tableToReIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("28777").build())
+                    .build())
+            .build();
     reIdentifyTableWithFpe(projectId, tableToReIdentify, kmsKeyName, wrappedAesKey);
   }
 

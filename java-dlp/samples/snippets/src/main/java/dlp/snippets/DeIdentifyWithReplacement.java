@@ -29,7 +29,6 @@ import com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrimitiveTransformation;
-import com.google.privacy.dlp.v2.RedactConfig;
 import com.google.privacy.dlp.v2.ReplaceValueConfig;
 import com.google.privacy.dlp.v2.Value;
 
@@ -50,31 +49,32 @@ public class DeIdentifyWithReplacement {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
       // Specify the content to be inspected.
-      ContentItem item = ContentItem.newBuilder()
-          .setValue(textToRedact).build();
+      ContentItem item = ContentItem.newBuilder().setValue(textToRedact).build();
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
       InfoType infoType = InfoType.newBuilder().setName("EMAIL_ADDRESS").build();
       InspectConfig inspectConfig = InspectConfig.newBuilder().addInfoTypes(infoType).build();
       // Specify replacement string to be used for the finding.
-      ReplaceValueConfig replaceValueConfig = ReplaceValueConfig.newBuilder()
-          .setNewValue(Value.newBuilder().setStringValue("[email-address]").build())
-          .build();
+      ReplaceValueConfig replaceValueConfig =
+          ReplaceValueConfig.newBuilder()
+              .setNewValue(Value.newBuilder().setStringValue("[email-address]").build())
+              .build();
       // Define type of deidentification as replacement.
-      PrimitiveTransformation primitiveTransformation = PrimitiveTransformation.newBuilder()
-          .setReplaceConfig(replaceValueConfig)
-          .build();
+      PrimitiveTransformation primitiveTransformation =
+          PrimitiveTransformation.newBuilder().setReplaceConfig(replaceValueConfig).build();
       // Associate deidentification type with info type.
-      InfoTypeTransformation transformation = InfoTypeTransformation.newBuilder()
-          .addInfoTypes(infoType)
-          .setPrimitiveTransformation(primitiveTransformation)
-          .build();
+      InfoTypeTransformation transformation =
+          InfoTypeTransformation.newBuilder()
+              .addInfoTypes(infoType)
+              .setPrimitiveTransformation(primitiveTransformation)
+              .build();
       // Construct the configuration for the Redact request and list all desired transformations.
-      DeidentifyConfig redactConfig = DeidentifyConfig.newBuilder()
-          .setInfoTypeTransformations(InfoTypeTransformations.newBuilder()
-              .addTransformations(transformation))
-          .build();
+      DeidentifyConfig redactConfig =
+          DeidentifyConfig.newBuilder()
+              .setInfoTypeTransformations(
+                  InfoTypeTransformations.newBuilder().addTransformations(transformation))
+              .build();
 
       // Construct the Redact request to be sent by the client.
       DeidentifyContentRequest request =

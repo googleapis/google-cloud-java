@@ -49,13 +49,17 @@ public class InspectStringCustomExcludingSubstring {
     String textToInspect = "Name: Doe, John. Name: Example, Jimmy";
     String customDetectorPattern = "[A-Z][a-z]{1,15}, [A-Z][a-z]{1,15}";
     List<String> excludedSubstringList = Arrays.asList("Jimmy");
-    inspectStringCustomExcludingSubstring(projectId, textToInspect, customDetectorPattern,
-        excludedSubstringList);
+    inspectStringCustomExcludingSubstring(
+        projectId, textToInspect, customDetectorPattern, excludedSubstringList);
   }
 
   // Inspects the provided text, avoiding matches specified in the exclusion list.
-  public static void inspectStringCustomExcludingSubstring(String projectId, String textToInspect,
-      String customDetectorPattern, List<String> excludedSubstringList) throws IOException {
+  public static void inspectStringCustomExcludingSubstring(
+      String projectId,
+      String textToInspect,
+      String customDetectorPattern,
+      List<String> excludedSubstringList)
+      throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -72,15 +76,17 @@ public class InspectStringCustomExcludingSubstring {
       InfoType infoType = InfoType.newBuilder().setName("CUSTOM_NAME_DETECTOR").build();
       CustomInfoType customInfoType =
           CustomInfoType.newBuilder()
-              .setInfoType(infoType).setRegex(Regex.newBuilder().setPattern(customDetectorPattern))
+              .setInfoType(infoType)
+              .setRegex(Regex.newBuilder().setPattern(customDetectorPattern))
               .build();
 
       // Exclude partial matches from the specified excludedSubstringList.
       ExclusionRule exclusionRule =
           ExclusionRule.newBuilder()
               .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-              .setDictionary(Dictionary.newBuilder()
-                  .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
+              .setDictionary(
+                  Dictionary.newBuilder()
+                      .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
               .build();
 
       // Construct a ruleset that applies the exclusion rule to the EMAIL_ADDRESSES infotype.

@@ -19,8 +19,6 @@ package dlp.snippets;
 // [START dlp_inspect_table]
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
-import com.google.privacy.dlp.v2.ByteContentItem;
-import com.google.privacy.dlp.v2.ByteContentItem.BytesType;
 import com.google.privacy.dlp.v2.ContentItem;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.Finding;
@@ -28,28 +26,25 @@ import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
-import com.google.privacy.dlp.v2.Likelihood;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.Table;
 import com.google.privacy.dlp.v2.Table.Row;
 import com.google.privacy.dlp.v2.Value;
-import com.google.protobuf.ByteString;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class InspectTable {
 
   public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    Table tableToInspect = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("name").build())
-        .addHeaders(FieldId.newBuilder().setName("phone").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("John Doe").build())
-            .addValues(Value.newBuilder().setStringValue("(206) 555-0123").build()))
-        .build();
+    Table tableToInspect =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("name").build())
+            .addHeaders(FieldId.newBuilder().setName("phone").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("John Doe").build())
+                    .addValues(Value.newBuilder().setStringValue("(206) 555-0123").build()))
+            .build();
 
     inspectTable(projectId, tableToInspect);
   }
@@ -69,10 +64,7 @@ public class InspectTable {
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =
-          InspectConfig.newBuilder()
-              .addInfoTypes(infoType)
-              .setIncludeQuote(true)
-              .build();
+          InspectConfig.newBuilder().addInfoTypes(infoType).setIncludeQuote(true).build();
 
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =

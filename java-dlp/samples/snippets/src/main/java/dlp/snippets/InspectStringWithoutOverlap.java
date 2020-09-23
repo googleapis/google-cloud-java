@@ -67,7 +67,7 @@ public class InspectStringWithoutOverlap {
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types.
       List<InfoType> infoTypes = new ArrayList<>();
-      for (String typeName : new String[]{"DOMAIN_NAME", "EMAIL_ADDRESS"}) {
+      for (String typeName : new String[] {"DOMAIN_NAME", "EMAIL_ADDRESS"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
 
@@ -81,8 +81,9 @@ public class InspectStringWithoutOverlap {
       // Exclude EMAIL_ADDRESS matches
       ExclusionRule exclusionRule =
           ExclusionRule.newBuilder()
-              .setExcludeInfoTypes(ExcludeInfoTypes.newBuilder()
-                  .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS")))
+              .setExcludeInfoTypes(
+                  ExcludeInfoTypes.newBuilder()
+                      .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS")))
               .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
               .build();
 

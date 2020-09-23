@@ -36,18 +36,21 @@ import org.junit.runners.JUnit4;
 public class RiskAnalysisTests extends TestBase {
 
   private UUID testRunUuid = UUID.randomUUID();
-  private TopicName topicName = TopicName.of(
-      PROJECT_ID,
-      String.format("%s-%s", TOPIC_ID, testRunUuid.toString()));
-  private ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
-      PROJECT_ID,
-      String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
+  private TopicName topicName =
+      TopicName.of(PROJECT_ID, String.format("%s-%s", TOPIC_ID, testRunUuid.toString()));
+  private ProjectSubscriptionName subscriptionName =
+      ProjectSubscriptionName.of(
+          PROJECT_ID, String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
 
   @Override
   protected ImmutableList<String> requiredEnvVars() {
-    return ImmutableList
-        .of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "PUB_SUB_TOPIC",
-            "PUB_SUB_SUBSCRIPTION", "BIGQUERY_DATASET", "BIGQUERY_TABLE");
+    return ImmutableList.of(
+        "GOOGLE_APPLICATION_CREDENTIALS",
+        "GOOGLE_CLOUD_PROJECT",
+        "PUB_SUB_TOPIC",
+        "PUB_SUB_SUBSCRIPTION",
+        "BIGQUERY_DATASET",
+        "BIGQUERY_TABLE");
   }
 
   @Before
@@ -58,8 +61,8 @@ public class RiskAnalysisTests extends TestBase {
     }
     // Create a new subscription
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      subscriptionAdminClient
-          .createSubscription(subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
+      subscriptionAdminClient.createSubscription(
+          subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
     }
   }
 
@@ -69,8 +72,7 @@ public class RiskAnalysisTests extends TestBase {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.deleteTopic(topicName);
     } catch (ApiException e) {
-      System.err.println(String.format("Error deleting topic %s: %s",
-          topicName.getTopic(), e));
+      System.err.println(String.format("Error deleting topic %s: %s", topicName.getTopic(), e));
       // Keep trying to clean up
     }
 
@@ -78,8 +80,9 @@ public class RiskAnalysisTests extends TestBase {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.deleteSubscription(subscriptionName);
     } catch (ApiException e) {
-      System.err.println(String.format("Error deleting subscription %s: %s",
-          subscriptionName.getSubscription(), e));
+      System.err.println(
+          String.format(
+              "Error deleting subscription %s: %s", subscriptionName.getSubscription(), e));
       // Keep trying to clean up
     }
   }

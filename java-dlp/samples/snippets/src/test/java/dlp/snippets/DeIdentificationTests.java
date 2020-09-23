@@ -37,9 +37,11 @@ public class DeIdentificationTests extends TestBase {
 
   @Override
   protected ImmutableList<String> requiredEnvVars() {
-    return ImmutableList
-        .of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "DLP_DEID_WRAPPED_KEY",
-            "DLP_DEID_KEY_NAME");
+    return ImmutableList.of(
+        "GOOGLE_APPLICATION_CREDENTIALS",
+        "GOOGLE_CLOUD_PROJECT",
+        "DLP_DEID_WRAPPED_KEY",
+        "DLP_DEID_KEY_NAME");
   }
 
   @Test
@@ -79,10 +81,7 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testReIdentifyTextWithFpe() throws IOException {
     ReIdentifyTextWithFpe.reIdentifyTextWithFpe(
-        PROJECT_ID,
-        "My phone number is PHONE_TOKEN(10):9617256398",
-        kmsKeyName,
-        wrappedKey);
+        PROJECT_ID, "My phone number is PHONE_TOKEN(10):9617256398", kmsKeyName, wrappedKey);
 
     String output = bout.toString();
     assertThat(output).contains("Text after re-identification: ");
@@ -90,26 +89,30 @@ public class DeIdentificationTests extends TestBase {
 
   @Test
   public void testDeIdentifyTableWithFpe() throws IOException {
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
-        .addHeaders(FieldId.newBuilder().setName("Date").build())
-        .addHeaders(FieldId.newBuilder().setName("Compensation").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("11111").build())
-            .addValues(Value.newBuilder().setStringValue("2015").build())
-            .addValues(Value.newBuilder().setStringValue("$10").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("11111").build())
-            .addValues(Value.newBuilder().setStringValue("2016").build())
-            .addValues(Value.newBuilder().setStringValue("$20").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22222").build())
-            .addValues(Value.newBuilder().setStringValue("2016").build())
-            .addValues(Value.newBuilder().setStringValue("$15").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+            .addHeaders(FieldId.newBuilder().setName("Date").build())
+            .addHeaders(FieldId.newBuilder().setName("Compensation").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("11111").build())
+                    .addValues(Value.newBuilder().setStringValue("2015").build())
+                    .addValues(Value.newBuilder().setStringValue("$10").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("11111").build())
+                    .addValues(Value.newBuilder().setStringValue("2016").build())
+                    .addValues(Value.newBuilder().setStringValue("$20").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22222").build())
+                    .addValues(Value.newBuilder().setStringValue("2016").build())
+                    .addValues(Value.newBuilder().setStringValue("$15").build())
+                    .build())
+            .build();
 
     DeIdentifyTableWithFpe.deIdentifyTableWithFpe(
         PROJECT_ID, tableToDeIdentify, kmsKeyName, wrappedKey);
@@ -120,11 +123,14 @@ public class DeIdentificationTests extends TestBase {
 
   @Test
   public void testReIdentifyTableWithFpe() throws IOException {
-    Table tableToReIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("28777").build()).build())
-        .build();
+    Table tableToReIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("28777").build())
+                    .build())
+            .build();
 
     ReIdentifyTableWithFpe.reIdentifyTableWithFpe(
         PROJECT_ID, tableToReIdentify, kmsKeyName, wrappedKey);
@@ -136,46 +142,54 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyTableBucketing() throws IOException {
     // Transform a column based on the value of another column
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
-    Table expectedTable = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("90:100").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("20:30").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("70:80").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
+    Table expectedTable =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("90:100").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("20:30").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("70:80").build())
+                    .build())
+            .build();
 
     Table table = DeIdentifyTableBucketing.deIdentifyTableBucketing(PROJECT_ID, tableToDeIdentify);
 
@@ -187,49 +201,58 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyTableConditionMasking() throws IOException {
     // Transform a column based on the value of another column
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
-    Table expectedTable = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("**").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
+    Table expectedTable =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("**").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
 
-    Table table = DeIdentifyTableConditionMasking.deIdentifyTableConditionMasking(
-        PROJECT_ID, tableToDeIdentify);
+    Table table =
+        DeIdentifyTableConditionMasking.deIdentifyTableConditionMasking(
+            PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
     assertThat(output).contains("Table after de-identification:");
@@ -239,58 +262,77 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyTableInfoTypes() throws IOException {
     // Transform findings found in column
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "Charles Dickens name was a curse, possibly invented by Shakespeare.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "There are 14 kisses in Jane Austen's novels.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
-            .build())
-        .build();
-    Table expectedTable = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "[PERSON_NAME] name was a curse, possibly invented by Shakespeare.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "There are 14 kisses in [PERSON_NAME] novels.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .addValues(Value.newBuilder().setStringValue("[PERSON_NAME] loved cats.").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue(
+                                "Charles Dickens name was a curse invented by Shakespeare.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue("There are 14 kisses in Jane Austen's novels.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
+                    .build())
+            .build();
+    Table expectedTable =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue(
+                                "[PERSON_NAME] name was a curse invented by Shakespeare.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue("There are 14 kisses in [PERSON_NAME] novels.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .addValues(
+                        Value.newBuilder().setStringValue("[PERSON_NAME] loved cats.").build())
+                    .build())
+            .build();
 
     Table table = DeIdentifyTableInfoTypes.deIdentifyTableInfoTypes(PROJECT_ID, tableToDeIdentify);
 
@@ -302,44 +344,51 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyTableRowSuppress() throws IOException {
     // Suppress a row based on the content of a column
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
-    Table expectedTable = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
+    Table expectedTable =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
 
-    Table table = DeIdentifyTableRowSuppress.deIdentifyTableRowSuppress(
-        PROJECT_ID, tableToDeIdentify);
+    Table table =
+        DeIdentifyTableRowSuppress.deIdentifyTableRowSuppress(PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
     assertThat(output).contains("Table after de-identification:");
@@ -349,61 +398,80 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyTableConditionsInfoTypes() throws IOException {
     // Transform findings only when specific conditions are met on another field
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "Charles Dickens name was a curse, possibly invented by Shakespeare.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "There are 14 kisses in Jane Austen's novels.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
-            .build())
-        .build();
-    Table expectedTable = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "[PERSON_NAME] name was a curse, possibly invented by Shakespeare.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "There are 14 kisses in Jane Austen's novels.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue(
+                                "Charles Dickens name was a curse invented by Shakespeare.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue("There are 14 kisses in Jane Austen's novels.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
+                    .build())
+            .build();
+    Table expectedTable =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("[PERSON_NAME]").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue(
+                                "[PERSON_NAME] name was a curse invented by Shakespeare.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue("There are 14 kisses in Jane Austen's novels.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
+                    .build())
+            .build();
 
-    Table table = DeIdentifyTableConditionInfoTypes.deIdentifyTableConditionInfoTypes(
-        PROJECT_ID, tableToDeIdentify);
+    Table table =
+        DeIdentifyTableConditionInfoTypes.deIdentifyTableConditionInfoTypes(
+            PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
     assertThat(output).contains("Table after de-identification:");
@@ -428,34 +496,32 @@ public class DeIdentificationTests extends TestBase {
   @Test
   public void testDeIdentifyWithRedaction() throws IOException {
     DeIdentifyWithRedaction.deIdentifyWithRedaction(
-        PROJECT_ID,
-        "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
+        PROJECT_ID, "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
 
     String output = bout.toString();
-    assertThat(output).contains("Text after redaction: "
-        + "My name is Alicia Abernathy, and my email address is .");
+    assertThat(output)
+        .contains(
+            "Text after redaction: " + "My name is Alicia Abernathy, and my email address is .");
   }
 
   @Test
   public void testDeIdentifyWithReplacement() throws IOException {
     DeIdentifyWithReplacement.deIdentifyWithReplacement(
-        PROJECT_ID,
-        "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
+        PROJECT_ID, "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
 
     String output = bout.toString();
-    assertThat(output).contains("Text after redaction: "
-        + "My name is Alicia Abernathy, and my email address is [email-address].");
+    assertThat(output)
+        .contains(
+            "Text after redaction: "
+                + "My name is Alicia Abernathy, and my email address is [email-address].");
   }
 
   @Test
   public void testDeIdentifyWithInfoType() throws IOException {
-    DeIdentifyWithInfoType.deIdentifyWithInfoType(
-        PROJECT_ID,
-        "My email is test@example.com");
+    DeIdentifyWithInfoType.deIdentifyWithInfoType(PROJECT_ID, "My email is test@example.com");
 
     String output = bout.toString();
-    assertThat(output).contains("Text after redaction: "
-        + "My email is [EMAIL_ADDRESS]");
+    assertThat(output).contains("Text after redaction: " + "My email is [EMAIL_ADDRESS]");
   }
 
   @Test

@@ -48,27 +48,29 @@ public class DeIdentifyWithRedaction {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
       // Specify the content to be inspected.
-      ContentItem item = ContentItem.newBuilder()
-          .setValue(textToRedact).build();
+      ContentItem item = ContentItem.newBuilder().setValue(textToRedact).build();
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
       InfoType infoType = InfoType.newBuilder().setName("EMAIL_ADDRESS").build();
       InspectConfig inspectConfig = InspectConfig.newBuilder().addInfoTypes(infoType).build();
       // Define type of deidentification.
-      PrimitiveTransformation primitiveTransformation = PrimitiveTransformation.newBuilder()
-          .setRedactConfig(RedactConfig.getDefaultInstance())
-          .build();
+      PrimitiveTransformation primitiveTransformation =
+          PrimitiveTransformation.newBuilder()
+              .setRedactConfig(RedactConfig.getDefaultInstance())
+              .build();
       // Associate deidentification type with info type.
-      InfoTypeTransformation transformation = InfoTypeTransformation.newBuilder()
-          .addInfoTypes(infoType)
-          .setPrimitiveTransformation(primitiveTransformation)
-          .build();
+      InfoTypeTransformation transformation =
+          InfoTypeTransformation.newBuilder()
+              .addInfoTypes(infoType)
+              .setPrimitiveTransformation(primitiveTransformation)
+              .build();
       // Construct the configuration for the Redact request and list all desired transformations.
-      DeidentifyConfig redactConfig = DeidentifyConfig.newBuilder()
-          .setInfoTypeTransformations(InfoTypeTransformations.newBuilder()
-              .addTransformations(transformation))
-          .build();
+      DeidentifyConfig redactConfig =
+          DeidentifyConfig.newBuilder()
+              .setInfoTypeTransformations(
+                  InfoTypeTransformations.newBuilder().addTransformations(transformation))
+              .build();
 
       // Construct the Redact request to be sent by the client.
       DeidentifyContentRequest request =

@@ -83,7 +83,6 @@ class RedactImageFile {
       redacted.write(response.getRedactedImage().toByteArray());
       redacted.close();
       System.out.println("Redacted image written to " + outputPath);
-
     }
   }
 }

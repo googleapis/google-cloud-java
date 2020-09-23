@@ -51,8 +51,8 @@ public class InspectStringWithExclusionDict {
   }
 
   // Inspects the provided text, avoiding matches specified in the exclusion list.
-  public static void inspectStringWithExclusionDict(String projectId, String textToInspect,
-      List<String> excludedMatchList) throws IOException {
+  public static void inspectStringWithExclusionDict(
+      String projectId, String textToInspect, List<String> excludedMatchList) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -68,7 +68,7 @@ public class InspectStringWithExclusionDict {
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types.
       List<InfoType> infoTypes = new ArrayList<>();
-      for (String typeName : new String[]{"PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER"}) {
+      for (String typeName : new String[] {"PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
 
@@ -76,8 +76,9 @@ public class InspectStringWithExclusionDict {
       ExclusionRule exclusionRule =
           ExclusionRule.newBuilder()
               .setMatchingType(MatchingType.MATCHING_TYPE_FULL_MATCH)
-              .setDictionary(Dictionary.newBuilder()
-                  .setWordList(WordList.newBuilder().addAllWords(excludedMatchList)))
+              .setDictionary(
+                  Dictionary.newBuilder()
+                      .setWordList(WordList.newBuilder().addAllWords(excludedMatchList)))
               .build();
 
       // Construct a ruleset that applies the exclusion rule to the EMAIL_ADDRESSES infotype.

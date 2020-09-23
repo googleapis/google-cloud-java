@@ -65,10 +65,7 @@ public class InspectWithCustomRegex {
       // Construct the custom regex detector.
       InfoType infoType = InfoType.newBuilder().setName("C_MRN").build();
       CustomInfoType customInfoType =
-          CustomInfoType.newBuilder()
-              .setInfoType(infoType)
-              .setRegex(regex)
-              .build();
+          CustomInfoType.newBuilder().setInfoType(infoType).setRegex(regex).build();
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =
@@ -81,7 +78,8 @@ public class InspectWithCustomRegex {
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
-              .setParent(LocationName.of(projectId, "global").toString()).setItem(item)
+              .setParent(LocationName.of(projectId, "global").toString())
+              .setItem(item)
               .setInspectConfig(config)
               .build();
 

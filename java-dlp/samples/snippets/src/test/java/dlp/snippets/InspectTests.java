@@ -46,18 +46,22 @@ public class InspectTests extends TestBase {
   private static final String DOCUMENT_INPUT_FILE = "src/test/resources/sensitive-data-image.jpg";
 
   private UUID testRunUuid = UUID.randomUUID();
-  private TopicName topicName = TopicName.of(
-      PROJECT_ID,
-      String.format("%s-%s", TOPIC_ID, testRunUuid.toString()));
-  private ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
-      PROJECT_ID,
-      String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
+  private TopicName topicName =
+      TopicName.of(PROJECT_ID, String.format("%s-%s", TOPIC_ID, testRunUuid.toString()));
+  private ProjectSubscriptionName subscriptionName =
+      ProjectSubscriptionName.of(
+          PROJECT_ID, String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
 
   @Override
   protected ImmutableList<String> requiredEnvVars() {
-    return ImmutableList
-        .of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "GCS_PATH", "PUB_SUB_TOPIC",
-            "PUB_SUB_SUBSCRIPTION", "BIGQUERY_DATASET", "BIGQUERY_TABLE");
+    return ImmutableList.of(
+        "GOOGLE_APPLICATION_CREDENTIALS",
+        "GOOGLE_CLOUD_PROJECT",
+        "GCS_PATH",
+        "PUB_SUB_TOPIC",
+        "PUB_SUB_SUBSCRIPTION",
+        "BIGQUERY_DATASET",
+        "BIGQUERY_TABLE");
   }
 
   @Before
@@ -69,11 +73,10 @@ public class InspectTests extends TestBase {
 
     // Create a new subscription
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      subscriptionAdminClient
-          .createSubscription(subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
+      subscriptionAdminClient.createSubscription(
+          subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
     }
   }
-
 
   @After
   public void after() throws Exception {
@@ -81,8 +84,7 @@ public class InspectTests extends TestBase {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.deleteTopic(topicName);
     } catch (ApiException e) {
-      System.err.println(String.format("Error deleting topic %s: %s",
-          topicName.getTopic(), e));
+      System.err.println(String.format("Error deleting topic %s: %s", topicName.getTopic(), e));
       // Keep trying to clean up
     }
 
@@ -90,8 +92,9 @@ public class InspectTests extends TestBase {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
       subscriptionAdminClient.deleteSubscription(subscriptionName);
     } catch (ApiException e) {
-      System.err.println(String.format("Error deleting subscription %s: %s",
-          subscriptionName.getSubscription(), e));
+      System.err.println(
+          String.format(
+              "Error deleting subscription %s: %s", subscriptionName.getSubscription(), e));
       // Keep trying to clean up
     }
   }
@@ -123,7 +126,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringWithExclusionDict() throws Exception {
-    InspectStringWithExclusionDict.inspectStringWithExclusionDict(PROJECT_ID,
+    InspectStringWithExclusionDict.inspectStringWithExclusionDict(
+        PROJECT_ID,
         "Some email addresses: gary@example.com, example@example.com",
         Arrays.asList("example@example.com"));
 
@@ -134,7 +138,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringWithExclusionDictSubstring() throws Exception {
-    InspectStringWithExclusionDictSubstring.inspectStringWithExclusionDictSubstring(PROJECT_ID,
+    InspectStringWithExclusionDictSubstring.inspectStringWithExclusionDictSubstring(
+        PROJECT_ID,
         "Some email addresses: gary@example.com, TEST@example.com",
         Arrays.asList("TEST"));
 
@@ -145,9 +150,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringWithExclusionRegex() throws Exception {
-    InspectStringWithExclusionRegex.inspectStringWithExclusionRegex(PROJECT_ID,
-        "Some email addresses: gary@example.com, bob@example.org",
-        ".+@example.com");
+    InspectStringWithExclusionRegex.inspectStringWithExclusionRegex(
+        PROJECT_ID, "Some email addresses: gary@example.com, bob@example.org", ".+@example.com");
 
     String output = bout.toString();
     assertThat(output).contains("bob@example.org");
@@ -156,7 +160,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringCustomExcludingSubstring() throws Exception {
-    InspectStringCustomExcludingSubstring.inspectStringCustomExcludingSubstring(PROJECT_ID,
+    InspectStringCustomExcludingSubstring.inspectStringCustomExcludingSubstring(
+        PROJECT_ID,
         "Name: Doe, John. Name: Example, Jimmy",
         "[A-Z][a-z]{1,15}, [A-Z][a-z]{1,15}",
         Arrays.asList("Jimmy"));
@@ -168,8 +173,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringCustomOmitOverlap() throws Exception {
-    InspectStringCustomOmitOverlap.inspectStringCustomOmitOverlap(PROJECT_ID,
-        "Name: Jane Doe. Name: Larry Page.");
+    InspectStringCustomOmitOverlap.inspectStringCustomOmitOverlap(
+        PROJECT_ID, "Name: Jane Doe. Name: Larry Page.");
 
     String output = bout.toString();
     assertThat(output).contains("Jane Doe");
@@ -187,8 +192,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringWithoutOverlap() throws Exception {
-    InspectStringWithoutOverlap.inspectStringWithoutOverlap(PROJECT_ID,
-        "example.com is a domain, james@example.org is an email.");
+    InspectStringWithoutOverlap.inspectStringWithoutOverlap(
+        PROJECT_ID, "example.com is a domain, james@example.org is an email.");
 
     String output = bout.toString();
     assertThat(output).contains("example.com");
@@ -197,13 +202,15 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectTable() {
-    Table tableToInspect = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("name").build())
-        .addHeaders(FieldId.newBuilder().setName("phone").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("John Doe").build())
-            .addValues(Value.newBuilder().setStringValue("(206) 555-0123").build()))
-        .build();
+    Table tableToInspect =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("name").build())
+            .addHeaders(FieldId.newBuilder().setName("phone").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("John Doe").build())
+                    .addValues(Value.newBuilder().setStringValue("(206) 555-0123").build()))
+            .build();
     InspectTable.inspectTable(PROJECT_ID, tableToInspect);
 
     String output = bout.toString();
@@ -212,8 +219,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringCustomHotword() throws Exception {
-    InspectStringCustomHotword.inspectStringCustomHotword(PROJECT_ID,
-        "patient name: John Doe", "patient");
+    InspectStringCustomHotword.inspectStringCustomHotword(
+        PROJECT_ID, "patient name: John Doe", "patient");
 
     String output = bout.toString();
     assertThat(output).contains("John Doe");
@@ -221,8 +228,7 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringCustomHotwordNegativeExample() throws Exception {
-    InspectStringCustomHotword.inspectStringCustomHotword(PROJECT_ID,
-        "name: John Doe", "patient");
+    InspectStringCustomHotword.inspectStringCustomHotword(PROJECT_ID, "name: John Doe", "patient");
 
     String output = bout.toString();
     assertThat(output).doesNotContain("John Doe");
@@ -230,8 +236,7 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringMultipleRulesPatientRule() throws Exception {
-    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
-        "patient name: Jane Doe");
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID, "patient name: Jane Doe");
 
     String output = bout.toString();
     assertThat(output).contains("LIKELY");
@@ -239,8 +244,7 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringMultipleRulesDoctorRule() throws Exception {
-    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
-        "doctor: Jane Doe");
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID, "doctor: Jane Doe");
 
     String output = bout.toString();
     assertThat(output).contains("Findings: 0");
@@ -248,8 +252,7 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringMultipleRulesQuasimodoRule() throws Exception {
-    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
-        "patient: Quasimodo");
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID, "patient: Quasimodo");
 
     String output = bout.toString();
     assertThat(output).contains("Findings: 0");
@@ -257,8 +260,7 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectStringMultipleRulesRedactedRule() throws Exception {
-    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
-        "name of patient: REDACTED");
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID, "name of patient: REDACTED");
 
     String output = bout.toString();
     assertThat(output).contains("Findings: 0");
@@ -304,9 +306,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectGcsFile() throws Exception {
-    InspectGcsFile
-        .inspectGcsFile(PROJECT_ID, GCS_PATH, topicName.getTopic(),
-            subscriptionName.getSubscription());
+    InspectGcsFile.inspectGcsFile(
+        PROJECT_ID, GCS_PATH, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
     assertThat(output).contains("Job status: DONE");
@@ -314,9 +315,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectGcsFileWithSampling() throws Exception {
-    InspectGcsFileWithSampling
-        .inspectGcsFileWithSampling(PROJECT_ID, GCS_PATH, topicName.getTopic(),
-            subscriptionName.getSubscription());
+    InspectGcsFileWithSampling.inspectGcsFileWithSampling(
+        PROJECT_ID, GCS_PATH, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
     assertThat(output).contains("Job status: DONE");
@@ -324,9 +324,12 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectDatastoreEntity() throws Exception {
-    InspectDatastoreEntity
-        .insepctDatastoreEntity(PROJECT_ID, datastoreNamespace, datastoreKind, topicName.getTopic(),
-            subscriptionName.getSubscription());
+    InspectDatastoreEntity.insepctDatastoreEntity(
+        PROJECT_ID,
+        datastoreNamespace,
+        datastoreKind,
+        topicName.getTopic(),
+        subscriptionName.getSubscription());
 
     String output = bout.toString();
     assertThat(output).contains("Job status: DONE");
@@ -334,9 +337,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectBigQueryTable() throws Exception {
-    InspectBigQueryTable
-        .inspectBigQueryTable(PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(),
-            subscriptionName.getSubscription());
+    InspectBigQueryTable.inspectBigQueryTable(
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
     assertThat(output).contains("Job status: DONE");
@@ -344,9 +346,8 @@ public class InspectTests extends TestBase {
 
   @Test
   public void testInspectBigQueryTableWithSampling() throws Exception {
-    InspectBigQueryTableWithSampling
-        .inspectBigQueryTableWithSampling(PROJECT_ID, topicName.getTopic(),
-            subscriptionName.getSubscription());
+    InspectBigQueryTableWithSampling.inspectBigQueryTableWithSampling(
+        PROJECT_ID, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
     assertThat(output).contains("Job status: DONE");

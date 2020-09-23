@@ -20,6 +20,7 @@ package dlp.snippets;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.cloud.dlp.v2.DlpServiceSettings;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
@@ -49,6 +50,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
+import org.threeten.bp.Duration;
 
 class RiskAnalysisLDiversity {
 
@@ -69,7 +71,18 @@ class RiskAnalysisLDiversity {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+    DlpServiceSettings.Builder dlpServiceSettingsBuilder = DlpServiceSettings.newBuilder();
+    dlpServiceSettingsBuilder
+        .getDlpJobSettings()
+        .setRetrySettings(
+            dlpServiceSettingsBuilder
+                .getDlpJobSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setTotalTimeout(Duration.ofSeconds(600))
+                .build());
+    try (DlpServiceClient dlpServiceClient =
+        DlpServiceClient.create(dlpServiceSettingsBuilder.build())) {
       // Specify the BigQuery table to analyze
       BigQueryTable bigQueryTable =
           BigQueryTable.newBuilder()

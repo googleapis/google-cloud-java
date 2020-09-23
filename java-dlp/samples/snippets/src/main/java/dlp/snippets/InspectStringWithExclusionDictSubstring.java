@@ -51,8 +51,9 @@ public class InspectStringWithExclusionDictSubstring {
   }
 
   // Inspects the provided text, avoiding matches specified in the exclusion list.
-  public static void inspectStringWithExclusionDictSubstring(String projectId, String textToInspect,
-      List<String> excludedSubstringList) throws IOException {
+  public static void inspectStringWithExclusionDictSubstring(
+      String projectId, String textToInspect, List<String> excludedSubstringList)
+      throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -68,8 +69,8 @@ public class InspectStringWithExclusionDictSubstring {
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types.
       List<InfoType> infoTypes = new ArrayList<>();
-      for (String typeName : new String[]{"EMAIL_ADDRESS", "DOMAIN_NAME", "PHONE_NUMBER",
-          "PERSON_NAME"}) {
+      for (String typeName :
+          new String[] {"EMAIL_ADDRESS", "DOMAIN_NAME", "PHONE_NUMBER", "PERSON_NAME"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
 
@@ -77,8 +78,9 @@ public class InspectStringWithExclusionDictSubstring {
       ExclusionRule exclusionRule =
           ExclusionRule.newBuilder()
               .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-              .setDictionary(Dictionary.newBuilder()
-                  .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
+              .setDictionary(
+                  Dictionary.newBuilder()
+                      .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
               .build();
 
       // Construct a ruleset that applies the exclusion rule to the EMAIL_ADDRESSES infotype.

@@ -45,32 +45,41 @@ public class DeIdentifyTableInfoTypes {
   public static void deIdentifyTableInfoTypes() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "Charles Dickens name was a curse, possibly invented by Shakespeare.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .addValues(Value.newBuilder().setStringValue(
-                "There are 14 kisses in Jane Austen's novels.").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addHeaders(FieldId.newBuilder().setName("FACTOID").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue(
+                                "Charles Dickens name was a curse invented by Shakespeare.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .addValues(
+                        Value.newBuilder()
+                            .setStringValue("There are 14 kisses in Jane Austen's novels.")
+                            .build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain loved cats.").build())
+                    .build())
+            .build();
 
     deIdentifyTableInfoTypes(projectId, tableToDeIdentify);
   }
@@ -90,8 +99,10 @@ public class DeIdentifyTableInfoTypes {
       // Specify that findings should be replaced with corresponding info type name.
       ReplaceWithInfoTypeConfig replaceWithInfoTypeConfig =
           ReplaceWithInfoTypeConfig.getDefaultInstance();
-      PrimitiveTransformation primitiveTransformation = PrimitiveTransformation.newBuilder()
-          .setReplaceWithInfoTypeConfig(replaceWithInfoTypeConfig).build();
+      PrimitiveTransformation primitiveTransformation =
+          PrimitiveTransformation.newBuilder()
+              .setReplaceWithInfoTypeConfig(replaceWithInfoTypeConfig)
+              .build();
       // Associate info type with the replacement strategy
       InfoTypeTransformation infoTypeTransformation =
           InfoTypeTransformation.newBuilder()
@@ -99,14 +110,13 @@ public class DeIdentifyTableInfoTypes {
               .setPrimitiveTransformation(primitiveTransformation)
               .build();
       InfoTypeTransformations infoTypeTransformations =
-          InfoTypeTransformations.newBuilder()
-              .addTransformations(infoTypeTransformation)
-              .build();
+          InfoTypeTransformations.newBuilder().addTransformations(infoTypeTransformation).build();
 
       // Specify fields to be de-identified.
-      List<FieldId> fieldIds = Stream.of("PATIENT", "FACTOID")
-          .map(id -> FieldId.newBuilder().setName(id).build())
-          .collect(Collectors.toList());
+      List<FieldId> fieldIds =
+          Stream.of("PATIENT", "FACTOID")
+              .map(id -> FieldId.newBuilder().setName(id).build())
+              .collect(Collectors.toList());
 
       // Associate the de-identification and conditions with the specified field.
       FieldTransformation fieldTransformation =
@@ -132,8 +142,7 @@ public class DeIdentifyTableInfoTypes {
       DeidentifyContentResponse response = dlp.deidentifyContent(request);
 
       // Print the results.
-      System.out.println(
-          "Table after de-identification: " + response.getItem().getTable());
+      System.out.println("Table after de-identification: " + response.getItem().getTable());
 
       return response.getItem().getTable();
     }

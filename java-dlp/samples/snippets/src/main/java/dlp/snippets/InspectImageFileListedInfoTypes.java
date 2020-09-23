@@ -63,10 +63,7 @@ class InspectImageFileListedInfoTypes {
       }
 
       // Construct the configuration for the Inspect request.
-      InspectConfig inspectConfig =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .build();
+      InspectConfig inspectConfig = InspectConfig.newBuilder().addAllInfoTypes(infoTypes).build();
 
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =

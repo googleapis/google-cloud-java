@@ -58,16 +58,13 @@ public class InspectImageFile {
       // Specify the type of info the inspection will look for.
       List<InfoType> infoTypes = new ArrayList<>();
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
-      for (String typeName : new String[]{"PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER"}) {
+      for (String typeName : new String[] {"PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =
-          InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
-              .setIncludeQuote(true)
-              .build();
+          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
 
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =

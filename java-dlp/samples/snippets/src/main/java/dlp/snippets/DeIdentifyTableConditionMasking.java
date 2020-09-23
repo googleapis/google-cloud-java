@@ -44,26 +44,30 @@ public class DeIdentifyTableConditionMasking {
   public static void deIdentifyTableConditionMasking() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    Table tableToDeIdentify = Table.newBuilder()
-        .addHeaders(FieldId.newBuilder().setName("AGE").build())
-        .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
-        .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("101").build())
-            .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
-            .addValues(Value.newBuilder().setStringValue("95").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("22").build())
-            .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
-            .addValues(Value.newBuilder().setStringValue("21").build())
-            .build())
-        .addRows(Row.newBuilder()
-            .addValues(Value.newBuilder().setStringValue("55").build())
-            .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
-            .addValues(Value.newBuilder().setStringValue("75").build())
-            .build())
-        .build();
+    Table tableToDeIdentify =
+        Table.newBuilder()
+            .addHeaders(FieldId.newBuilder().setName("AGE").build())
+            .addHeaders(FieldId.newBuilder().setName("PATIENT").build())
+            .addHeaders(FieldId.newBuilder().setName("HAPPINESS SCORE").build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("101").build())
+                    .addValues(Value.newBuilder().setStringValue("Charles Dickens").build())
+                    .addValues(Value.newBuilder().setStringValue("95").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("22").build())
+                    .addValues(Value.newBuilder().setStringValue("Jane Austen").build())
+                    .addValues(Value.newBuilder().setStringValue("21").build())
+                    .build())
+            .addRows(
+                Row.newBuilder()
+                    .addValues(Value.newBuilder().setStringValue("55").build())
+                    .addValues(Value.newBuilder().setStringValue("Mark Twain").build())
+                    .addValues(Value.newBuilder().setStringValue("75").build())
+                    .build())
+            .build();
 
     deIdentifyTableConditionMasking(projectId, tableToDeIdentify);
   }
@@ -79,31 +83,28 @@ public class DeIdentifyTableConditionMasking {
 
       // Specify how the content should be de-identified.
       CharacterMaskConfig characterMaskConfig =
-          CharacterMaskConfig.newBuilder()
-              .setMaskingCharacter("*")
-              .build();
+          CharacterMaskConfig.newBuilder().setMaskingCharacter("*").build();
       PrimitiveTransformation primitiveTransformation =
-          PrimitiveTransformation.newBuilder()
-              .setCharacterMaskConfig(characterMaskConfig)
-              .build();
+          PrimitiveTransformation.newBuilder().setCharacterMaskConfig(characterMaskConfig).build();
 
       // Specify field to be de-identified.
       FieldId fieldId = FieldId.newBuilder().setName("HAPPINESS SCORE").build();
 
       // Specify when the above field should be de-identified.
-      Condition condition = Condition.newBuilder()
-          .setField(FieldId.newBuilder().setName("AGE").build())
-          .setOperator(RelationalOperator.GREATER_THAN)
-          .setValue(Value.newBuilder().setIntegerValue(89).build())
-          .build();
+      Condition condition =
+          Condition.newBuilder()
+              .setField(FieldId.newBuilder().setName("AGE").build())
+              .setOperator(RelationalOperator.GREATER_THAN)
+              .setValue(Value.newBuilder().setIntegerValue(89).build())
+              .build();
       // Apply the condition to records
-      RecordCondition recordCondition = RecordCondition.newBuilder()
-          .setExpressions(Expressions.newBuilder()
-              .setConditions(Conditions.newBuilder()
-                  .addConditions(condition)
-                  .build())
-              .build())
-          .build();
+      RecordCondition recordCondition =
+          RecordCondition.newBuilder()
+              .setExpressions(
+                  Expressions.newBuilder()
+                      .setConditions(Conditions.newBuilder().addConditions(condition).build())
+                      .build())
+              .build();
 
       // Associate the de-identification and conditions with the specified field.
       FieldTransformation fieldTransformation =
@@ -130,8 +131,7 @@ public class DeIdentifyTableConditionMasking {
       DeidentifyContentResponse response = dlp.deidentifyContent(request);
 
       // Print the results.
-      System.out.println(
-          "Table after de-identification: " + response.getItem().getTable());
+      System.out.println("Table after de-identification: " + response.getItem().getTable());
 
       return response.getItem().getTable();
     }

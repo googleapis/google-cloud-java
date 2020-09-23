@@ -45,9 +45,7 @@ public class InspectPhoneNumber {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
       // Specify the type and content to be inspected.
-      ContentItem item = ContentItem.newBuilder()
-          .setValue(textToInspect)
-          .build();
+      ContentItem item = ContentItem.newBuilder().setValue(textToInspect).build();
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types

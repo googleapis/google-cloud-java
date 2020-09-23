@@ -59,18 +59,21 @@ class RedactImageFileColoredInfoTypes {
 
       // Define types of info to redact associate each one with a different color.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
-      ImageRedactionConfig ssnRedactionConfig = ImageRedactionConfig.newBuilder()
-          .setInfoType(InfoType.newBuilder().setName("US_SOCIAL_SECURITY_NUMBER").build())
-          .setRedactionColor(Color.newBuilder().setRed(.3f).setGreen(.1f).setBlue(.6f).build())
-          .build();
-      ImageRedactionConfig emailRedactionConfig = ImageRedactionConfig.newBuilder()
-          .setInfoType(InfoType.newBuilder().setName("EMAIL_ADDRESS").build())
-          .setRedactionColor(Color.newBuilder().setRed(.5f).setGreen(.5f).setBlue(1).build())
-          .build();
-      ImageRedactionConfig phoneRedactionConfig = ImageRedactionConfig.newBuilder()
-          .setInfoType(InfoType.newBuilder().setName("PHONE_NUMBER").build())
-          .setRedactionColor(Color.newBuilder().setRed(1).setGreen(0).setBlue(.6f).build())
-          .build();
+      ImageRedactionConfig ssnRedactionConfig =
+          ImageRedactionConfig.newBuilder()
+              .setInfoType(InfoType.newBuilder().setName("US_SOCIAL_SECURITY_NUMBER").build())
+              .setRedactionColor(Color.newBuilder().setRed(.3f).setGreen(.1f).setBlue(.6f).build())
+              .build();
+      ImageRedactionConfig emailRedactionConfig =
+          ImageRedactionConfig.newBuilder()
+              .setInfoType(InfoType.newBuilder().setName("EMAIL_ADDRESS").build())
+              .setRedactionColor(Color.newBuilder().setRed(.5f).setGreen(.5f).setBlue(1).build())
+              .build();
+      ImageRedactionConfig phoneRedactionConfig =
+          ImageRedactionConfig.newBuilder()
+              .setInfoType(InfoType.newBuilder().setName("PHONE_NUMBER").build())
+              .setRedactionColor(Color.newBuilder().setRed(1).setGreen(0).setBlue(.6f).build())
+              .build();
 
       // Create collection of all redact configurations.
       List<ImageRedactionConfig> imageRedactionConfigs =
@@ -79,9 +82,10 @@ class RedactImageFileColoredInfoTypes {
       // List types of info to search for.
       InspectConfig config =
           InspectConfig.newBuilder()
-              .addAllInfoTypes(imageRedactionConfigs.stream()
-                  .map(ImageRedactionConfig::getInfoType)
-                  .collect(Collectors.toList()))
+              .addAllInfoTypes(
+                  imageRedactionConfigs.stream()
+                      .map(ImageRedactionConfig::getInfoType)
+                      .collect(Collectors.toList()))
               .build();
 
       // Construct the Redact request to be sent by the client.
@@ -101,7 +105,6 @@ class RedactImageFileColoredInfoTypes {
       redacted.write(response.getRedactedImage().toByteArray());
       redacted.close();
       System.out.println("Redacted image written to " + outputPath);
-
     }
   }
 }

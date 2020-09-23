@@ -24,9 +24,7 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 
-/**
- * Common base class for DLP snippet tests
- */
+/** Common base class for DLP snippet tests */
 abstract class TestBase {
 
   protected static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
@@ -45,8 +43,9 @@ abstract class TestBase {
 
   private static void requireEnvVar(String varName) {
     assertWithMessage(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName))
-        .that(System.getenv(varName)).isNotEmpty();
+            String.format("Environment variable '%s' must be set to perform these tests.", varName))
+        .that(System.getenv(varName))
+        .isNotEmpty();
   }
 
   @Before

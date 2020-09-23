@@ -32,10 +32,8 @@ public class RedactTests extends TestBase {
 
   private static final String SIMPLE_INPUT_FILE = "src/test/resources/test.png";
   private static final String SIMPLE_OUTPUT_FILE = "redacted.png";
-  private static final String DOCUMENT_INPUT_FILE =
-      "src/test/resources/sensitive-data-image.jpg";
-  private static final String DOCUMENT_OUTPUT_FILE =
-      "sensitive-data-image-redacted.jpg";
+  private static final String DOCUMENT_INPUT_FILE = "src/test/resources/sensitive-data-image.jpg";
+  private static final String DOCUMENT_OUTPUT_FILE = "sensitive-data-image-redacted.jpg";
 
   @Override
   protected ImmutableList<String> requiredEnvVars() {
@@ -58,8 +56,8 @@ public class RedactTests extends TestBase {
 
   @Test
   public void testRedactImageAllInfoTypes() throws Exception {
-    RedactImageFileAllInfoTypes.redactImageFileAllInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
-        DOCUMENT_OUTPUT_FILE);
+    RedactImageFileAllInfoTypes.redactImageFileAllInfoTypes(
+        PROJECT_ID, DOCUMENT_INPUT_FILE, DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output).contains("Redacted image written");
@@ -67,8 +65,8 @@ public class RedactTests extends TestBase {
 
   @Test
   public void testRedactImageListedInfoTypes() throws Exception {
-    RedactImageFileListedInfoTypes.redactImageFileListedInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
-        DOCUMENT_OUTPUT_FILE);
+    RedactImageFileListedInfoTypes.redactImageFileListedInfoTypes(
+        PROJECT_ID, DOCUMENT_INPUT_FILE, DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output).contains("Redacted image written");
@@ -76,8 +74,8 @@ public class RedactTests extends TestBase {
 
   @Test
   public void testRedactImageColoredInfoTypes() throws Exception {
-    RedactImageFileColoredInfoTypes.redactImageFileColoredInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
-        DOCUMENT_OUTPUT_FILE);
+    RedactImageFileColoredInfoTypes.redactImageFileColoredInfoTypes(
+        PROJECT_ID, DOCUMENT_INPUT_FILE, DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output).contains("Redacted image written");
@@ -85,8 +83,8 @@ public class RedactTests extends TestBase {
 
   @Test
   public void testRedactImageAllText() throws Exception {
-    RedactImageFileAllText.redactImageFileAllText(PROJECT_ID, DOCUMENT_INPUT_FILE,
-        DOCUMENT_OUTPUT_FILE);
+    RedactImageFileAllText.redactImageFileAllText(
+        PROJECT_ID, DOCUMENT_INPUT_FILE, DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output).contains("Redacted image written");

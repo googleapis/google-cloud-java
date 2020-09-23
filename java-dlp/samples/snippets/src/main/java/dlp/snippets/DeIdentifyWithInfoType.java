@@ -37,8 +37,7 @@ public class DeIdentifyWithInfoType {
   public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    String textToInspect =
-        "My email is test@example.com";
+    String textToInspect = "My email is test@example.com";
     deIdentifyWithInfoType(projectId, textToInspect);
   }
 
@@ -49,8 +48,7 @@ public class DeIdentifyWithInfoType {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
       // Specify the content to be inspected.
-      ContentItem item = ContentItem.newBuilder()
-          .setValue(textToRedact).build();
+      ContentItem item = ContentItem.newBuilder().setValue(textToRedact).build();
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
@@ -60,19 +58,22 @@ public class DeIdentifyWithInfoType {
       ReplaceWithInfoTypeConfig replaceWithInfoTypeConfig =
           ReplaceWithInfoTypeConfig.newBuilder().build();
       // Define type of deidentification as replacement with info type.
-      PrimitiveTransformation primitiveTransformation = PrimitiveTransformation.newBuilder()
-          .setReplaceWithInfoTypeConfig(replaceWithInfoTypeConfig)
-          .build();
+      PrimitiveTransformation primitiveTransformation =
+          PrimitiveTransformation.newBuilder()
+              .setReplaceWithInfoTypeConfig(replaceWithInfoTypeConfig)
+              .build();
       // Associate deidentification type with info type.
-      InfoTypeTransformation transformation = InfoTypeTransformation.newBuilder()
-          .addInfoTypes(infoType)
-          .setPrimitiveTransformation(primitiveTransformation)
-          .build();
+      InfoTypeTransformation transformation =
+          InfoTypeTransformation.newBuilder()
+              .addInfoTypes(infoType)
+              .setPrimitiveTransformation(primitiveTransformation)
+              .build();
       // Construct the configuration for the Redact request and list all desired transformations.
-      DeidentifyConfig redactConfig = DeidentifyConfig.newBuilder()
-          .setInfoTypeTransformations(InfoTypeTransformations.newBuilder()
-              .addTransformations(transformation))
-          .build();
+      DeidentifyConfig redactConfig =
+          DeidentifyConfig.newBuilder()
+              .setInfoTypeTransformations(
+                  InfoTypeTransformations.newBuilder().addTransformations(transformation))
+              .build();
 
       // Construct the Redact request to be sent by the client.
       DeidentifyContentRequest request =
