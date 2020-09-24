@@ -23,7 +23,7 @@ There may be multiple sources for classpath conflicts:
 - Your runtime classpath has different versions of dependencies than what you specified in the build
 
 For example, if you have a direct or a transitive dependency on Guava version 19.0, 
-and `google-cloud-java` uses Guava version 28.1, 
+and `google-cloud-java` uses Guava version 29.0, 
 then `google-cloud-java` could be using Guava methods that don't exist in Guava 19.0,
 and cause `NoSuchMethodError`.
 
@@ -65,7 +65,7 @@ in your pom.xml:
           <dependency>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>linkage-checker-enforcer-rules</artifactId>
-            <version>1.5.1</version>
+            <version>1.5.3</version>
           </dependency>
         </dependencies>
         <executions>
@@ -99,7 +99,7 @@ There are different strategies to resolve conflicts, but you must understand the
   least hackish approach but it is a lot of work that can require multiple releases
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
-  `com.google.cloud:libraries-bom:10.1.0` (or a more recent version) and use that to
+  `com.google.cloud:libraries-bom:11.0.0` (or a more recent version) and use that to
   select consistent dependency versions. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
@@ -111,7 +111,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>10.1.0</version>
+        <version>11.0.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
