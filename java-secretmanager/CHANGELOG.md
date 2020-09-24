@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.1.2...v1.2.0) (2020-09-23)
+
+
+### Features
+
+* add CustomerManagedEncryptionKey support, ReplicationStatus to SecretVersion ([#217](https://www.github.com/googleapis/java-secretmanager/issues/217)) ([0d306e8](https://www.github.com/googleapis/java-secretmanager/commit/0d306e8e6eee7bdf96fb6d80d7a67c4181d87f4c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#232](https://www.github.com/googleapis/java-secretmanager/issues/232)) ([26aa078](https://www.github.com/googleapis/java-secretmanager/commit/26aa078e8343cd9de52bb22e2413d5a05bf406a3))
+
 ### [1.1.2](https://www.github.com/googleapis/java-secretmanager/compare/v1.1.1...v1.1.2) (2020-09-11)
 
 
