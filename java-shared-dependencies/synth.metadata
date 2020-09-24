@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-shared-dependencies.git",
-        "sha": "a2c0d2ffdb5b99783fd420f31321659e88920d3a"
+        "sha": "3252f47271e04e3fcd520ac15ffdfa06cb2dda03"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
+        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
       }
     }
   ],
