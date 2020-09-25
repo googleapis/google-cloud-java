@@ -35,12 +35,12 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.paging.Pages;
 import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatus.State;
 import com.google.common.collect.ImmutableList;
-import java.util.Collections;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -304,39 +304,11 @@ public class JobTest {
             .setStatus(JOB_STATUS)
             .build();
 
-    JobStatus status = mock(JobStatus.class);
     when(bigquery.getOptions()).thenReturn(mockOptions);
     when(mockOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     Job completedJob =
         expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
-    // TODO(pongad): remove when we bump gax to 1.15.
-    Page<FieldValueList> singlePage =
-        new Page<FieldValueList>() {
-          @Override
-          public boolean hasNextPage() {
-            return false;
-          }
-
-          @Override
-          public String getNextPageToken() {
-            return "";
-          }
-
-          @Override
-          public Page<FieldValueList> getNextPage() {
-            return null;
-          }
-
-          @Override
-          public Iterable<FieldValueList> iterateAll() {
-            return Collections.emptyList();
-          }
-
-          @Override
-          public Iterable<FieldValueList> getValues() {
-            return Collections.emptyList();
-          }
-        };
+    Page<FieldValueList> singlePage = Pages.empty();
     TableResult result = new TableResult(Schema.of(), 1, singlePage);
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
