@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-functions.git",
-        "sha": "d3e8c6fb846e581b55810f7819251d2cad2a399e"
+        "sha": "177a0bca43f0f0f09c4d8b174fef3440cc9ed340"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
+        "sha": "95dbe1bee3c7f7e52ddb24a54c37080620e0d1a2"
       }
     }
   ],
