@@ -4,6 +4,7 @@ name: auto-release
 jobs:
   approve:
     runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release-v')
     steps:
     - uses: actions/github-script@v3.0.0
       with:
