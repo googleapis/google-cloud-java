@@ -50,7 +50,6 @@ public class TablesGetModelTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("AUTOML_PROJECT_ID");
-    requireEnvVar("TABLE_MODEL_ID");
   }
 
   @Before

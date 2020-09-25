@@ -30,17 +30,18 @@
       <artifactId>google-cloud-automl</artifactId>
       <version>1.2.4-SNAPSHOT</version>
     </dependency>
+    <!-- {x-version-update-end} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.2.4-SNAPSHOT</version>
+      <version>1.120.0</version>
     </dependency>
     <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storage</artifactId>
-      <version>1.2.4-SNAPSHOT</version>
+      <version>1.113.1</version>
     </dependency>
-    <!-- {x-version-update-end} -->
+
     <dependency>
       <groupId>net.sourceforge.argparse4j</groupId>
       <artifactId>argparse4j</artifactId>
