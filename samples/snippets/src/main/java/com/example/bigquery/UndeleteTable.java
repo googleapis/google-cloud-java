@@ -23,7 +23,9 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
+import org.threeten.bp.Instant;
 
 // Sample to undeleting a table
 public class UndeleteTable {
@@ -42,15 +44,25 @@ public class UndeleteTable {
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
+      // Record the current time.  We'll use this as the snapshot time
+      // for recovering the table.
+      long snapshotEpoch = Instant.now().toEpochMilli();
+
+      // [START_EXCLUDE]
+      // Due to very short lifecycle of the table, ensure we're not picking a time
+      // prior to the table creation due to time drift between backend and client.
+      Table table = bigquery.getTable(TableId.of(datasetName, tableName));
+      Long createdEpoch = table.getCreationTime();
+      if (createdEpoch > snapshotEpoch) {
+        snapshotEpoch = createdEpoch;
+      }
+      // [END_EXCLUDE]
+
       // "Accidentally" delete the table.
       bigquery.delete(TableId.of(datasetName, tableName));
 
-      // Record the current time.  We'll use this as the snapshot time
-      // for recovering the table.
-      long snapTime = System.currentTimeMillis();
-
       // Construct the restore-from tableID using a snapshot decorator.
-      String snapshotTableId = String.format("%s@%d", tableName, snapTime);
+      String snapshotTableId = String.format("%s@%d", tableName, snapshotEpoch);
 
       // Construct and run a copy job.
       CopyJobConfiguration configuration =
