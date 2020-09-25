@@ -19,6 +19,9 @@ package com.example.bigquerydatatransfer;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.util.FieldMaskUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -69,7 +72,13 @@ public class UpdateTransferConfigIT {
 
   @Test
   public void testUpdateTransferConfig() throws IOException {
-    UpdateTransferConfig.updateTransferConfig(CONFIG_NAME);
+    TransferConfig transferConfig =
+        TransferConfig.newBuilder()
+            .setName(CONFIG_NAME)
+            .setDisplayName("UPDATED_DISPLAY_NAME")
+            .build();
+    FieldMask updateMask = FieldMaskUtil.fromString("display_name");
+    UpdateTransferConfig.updateTransferConfig(transferConfig, updateMask);
     assertThat(bout.toString()).contains("Transfer config updated successfully");
   }
 }

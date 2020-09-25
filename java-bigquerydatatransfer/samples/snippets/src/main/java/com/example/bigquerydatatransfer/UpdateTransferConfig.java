@@ -31,17 +31,18 @@ public class UpdateTransferConfig {
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String configId = "MY_CONFIG_ID";
-    updateTransferConfig(configId);
+    TransferConfig transferConfig =
+        TransferConfig.newBuilder()
+            .setName(configId)
+            .setDisplayName("UPDATED_DISPLAY_NAME")
+            .build();
+    FieldMask updateMask = FieldMaskUtil.fromString("display_name");
+    updateTransferConfig(transferConfig, updateMask);
   }
 
-  public static void updateTransferConfig(String configId) throws IOException {
+  public static void updateTransferConfig(TransferConfig transferConfig, FieldMask updateMask)
+      throws IOException {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      TransferConfig transferConfig =
-          TransferConfig.newBuilder()
-              .setName(configId)
-              .setDisplayName("UPDATED_DISPLAY_NAME")
-              .build();
-      FieldMask updateMask = FieldMaskUtil.fromString("display_name");
       UpdateTransferConfigRequest request =
           UpdateTransferConfigRequest.newBuilder()
               .setTransferConfig(transferConfig)
