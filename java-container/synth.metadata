@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-container.git",
-        "sha": "3f133e5f02a215cbb927a6bac07725d30c18f714"
+        "sha": "f30bbbc904eee437320cfca05bafb8d83427e81e"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "95dbe1bee3c7f7e52ddb24a54c37080620e0d1a2"
+        "sha": "da29da32b3a988457b49ae290112b74f14b713cc"
       }
     }
   ],

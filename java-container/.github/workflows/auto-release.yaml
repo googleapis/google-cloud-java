@@ -21,6 +21,24 @@ jobs:
             return;
           }
 
+          // only approve PRs with pom.xml and versions.txt changes
+          const filesPromise = github.pulls.listFiles.endpoint({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number,
+          });
+          const changed_files = await github.paginate(filesPromise)
+
+          if ( changed_files.length < 1 ) {
+            console.log( "Not proceeding since PR is empty!" )
+            return;
+          }
+
+          if ( !changed_files.some(v => v.filename.includes("pom")) || !changed_files.some(v => v.filename.includes("versions.txt")) ) {
+            console.log( "PR file changes do not have pom.xml or versions.txt -- something is wrong. PTAL!" )
+            return;
+          }
+
           // trigger auto-release when
           // 1) it is a SNAPSHOT release (auto-generated post regular release)
           // 2) there are dependency updates only
