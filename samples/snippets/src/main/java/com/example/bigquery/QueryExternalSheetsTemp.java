@@ -54,6 +54,7 @@ public class QueryExternalSheetsTemp {
 
       // Create credentials with Drive & BigQuery API scopes.
       // Both APIs must be enabled for your project before running this code.
+      // [START bigquery_auth_drive_scope]
       GoogleCredentials credentials =
           ServiceAccountCredentials.getApplicationDefault()
               .createScoped(
@@ -65,6 +66,7 @@ public class QueryExternalSheetsTemp {
       // once, and can be reused for multiple requests.
       BigQuery bigquery =
           BigQueryOptions.newBuilder().setCredentials(credentials).build().getService();
+      // [END bigquery_auth_drive_scope]
 
       // Skip header row in the file.
       GoogleSheetsOptions sheetsOptions =
