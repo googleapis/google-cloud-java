@@ -17,6 +17,7 @@
 package pubsub;
 
 // [START pubsub_quickstart_publisher]
+// [START pubsub_publish]
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.v1.Publisher;
@@ -63,3 +64,4 @@ public class PublisherExample {
   }
 }
 // [END pubsub_quickstart_publisher]
+// [END pubsub_publish]
