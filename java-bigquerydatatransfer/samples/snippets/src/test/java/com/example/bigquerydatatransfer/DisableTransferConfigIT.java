@@ -32,9 +32,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UpdateTransferConfigIT {
+public class DisableTransferConfigIT {
 
-  private static final Logger LOG = Logger.getLogger(UpdateTransferConfigIT.class.getName());
+  private static final Logger LOG = Logger.getLogger(DisableTransferConfigIT.class.getName());
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -71,14 +71,11 @@ public class UpdateTransferConfigIT {
   }
 
   @Test
-  public void testUpdateTransferConfig() throws IOException {
+  public void testDisableTransferConfig() throws IOException {
     TransferConfig transferConfig =
-        TransferConfig.newBuilder()
-            .setName(CONFIG_NAME)
-            .setDisplayName("UPDATED_DISPLAY_NAME")
-            .build();
-    FieldMask updateMask = FieldMaskUtil.fromString("display_name");
-    UpdateTransferConfig.updateTransferConfig(transferConfig, updateMask);
-    assertThat(bout.toString()).contains("Transfer config updated successfully");
+        TransferConfig.newBuilder().setName(CONFIG_NAME).setDisabled(true).build();
+    FieldMask updateMask = FieldMaskUtil.fromString("disabled");
+    DisableTransferConfig.disableTransferConfig(transferConfig, updateMask);
+    assertThat(bout.toString()).contains("Transfer config disabled successfully");
   }
 }
