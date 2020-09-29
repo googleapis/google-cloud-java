@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerydatatransfer.git",
-        "sha": "5eba40e70b7b583412da8d0998636ba4752a0154"
+        "sha": "7d61025046c6172dbe8f1f52bd90324f9a5357c4"
       }
     },
     {
