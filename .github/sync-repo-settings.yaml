@@ -43,7 +43,7 @@ permissionRules:
 # Team slug to add to repository permissions
 - team: api-bigquery
   # Access level required, one of push|pull|admin|maintain|triage
-  permission: maintain
+  permission: admin
 - team: yoshi-java
   permission: push
 - team: yoshi-admins
