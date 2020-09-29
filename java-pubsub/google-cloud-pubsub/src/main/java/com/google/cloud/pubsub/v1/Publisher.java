@@ -256,7 +256,7 @@ public class Publisher implements PublisherInterface {
     List<OutstandingBatch> batchesToSend;
     messagesBatchLock.lock();
     try {
-      if (sequentialExecutor.keyHasError(orderingKey)) {
+      if (!orderingKey.isEmpty() && sequentialExecutor.keyHasError(orderingKey)) {
         outstandingPublish.publishResult.setException(
             SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION);
         return outstandingPublish.publishResult;
