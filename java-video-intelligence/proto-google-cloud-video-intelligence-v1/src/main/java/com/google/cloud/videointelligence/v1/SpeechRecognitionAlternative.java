@@ -211,8 +211,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is true, you will see all the words
-   * from the beginning of the audio.
+   * Note: When `enable_speaker_diarization` is set to true, you will see all
+   * the words from the beginning of the audio.
    * </pre>
    *
    * <code>
@@ -228,8 +228,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is true, you will see all the words
-   * from the beginning of the audio.
+   * Note: When `enable_speaker_diarization` is set to true, you will see all
+   * the words from the beginning of the audio.
    * </pre>
    *
    * <code>
@@ -246,8 +246,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is true, you will see all the words
-   * from the beginning of the audio.
+   * Note: When `enable_speaker_diarization` is set to true, you will see all
+   * the words from the beginning of the audio.
    * </pre>
    *
    * <code>
@@ -263,8 +263,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is true, you will see all the words
-   * from the beginning of the audio.
+   * Note: When `enable_speaker_diarization` is set to true, you will see all
+   * the words from the beginning of the audio.
    * </pre>
    *
    * <code>
@@ -280,8 +280,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is true, you will see all the words
-   * from the beginning of the audio.
+   * Note: When `enable_speaker_diarization` is set to true, you will see all
+   * the words from the beginning of the audio.
    * </pre>
    *
    * <code>
@@ -888,8 +888,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -908,8 +908,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -928,8 +928,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -948,8 +948,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -974,8 +974,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -998,8 +998,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1024,8 +1024,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1050,8 +1050,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1074,8 +1074,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1098,8 +1098,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1122,8 +1122,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1145,8 +1145,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1168,8 +1168,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1184,8 +1184,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1204,8 +1204,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1225,8 +1225,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1242,8 +1242,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>
@@ -1259,8 +1259,8 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
-     * Note: When `enable_speaker_diarization` is true, you will see all the words
-     * from the beginning of the audio.
+     * Note: When `enable_speaker_diarization` is set to true, you will see all
+     * the words from the beginning of the audio.
      * </pre>
      *
      * <code>

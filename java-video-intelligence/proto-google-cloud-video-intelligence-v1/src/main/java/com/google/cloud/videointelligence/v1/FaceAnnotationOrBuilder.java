@@ -18,6 +18,7 @@
 
 package com.google.cloud.videointelligence.v1;
 
+@java.lang.Deprecated
 public interface FaceAnnotationOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.FaceAnnotation)

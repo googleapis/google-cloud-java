@@ -56,7 +56,7 @@ public interface FaceDetectionConfigOrBuilder
    *
    *
    * <pre>
-   * Whether bounding boxes be included in the face annotation output.
+   * Whether bounding boxes are included in the face annotation output.
    * </pre>
    *
    * <code>bool include_bounding_boxes = 2;</code>
@@ -64,4 +64,18 @@ public interface FaceDetectionConfigOrBuilder
    * @return The includeBoundingBoxes.
    */
   boolean getIncludeBoundingBoxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to enable face attributes detection, such as glasses, dark_glasses,
+   * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
+   * </pre>
+   *
+   * <code>bool include_attributes = 5;</code>
+   *
+   * @return The includeAttributes.
+   */
+  boolean getIncludeAttributes();
 }

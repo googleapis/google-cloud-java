@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "fe80193375dae657b5d801e58e9387eaaf4ee8e9"
+        "sha": "8eb40c3d6eaa0302ed722889619ccac5107d649b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "251d9358730b5cec7625d9f42879444a7d5369d5",
-        "internalRef": "316978059"
+        "sha": "e7375a91e7942c562c61495a908f4f6d50b4ea3f",
+        "internalRef": "334093713"
       }
     },
     {
@@ -128,7 +128,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSettings.java",
@@ -221,6 +220,8 @@
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ExplicitContentFrameOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotation.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceAnnotationOrBuilder.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionAnnotation.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionAnnotationOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfig.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceDetectionConfigOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/FaceFrame.java",
@@ -252,6 +253,10 @@
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingConfigOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrame.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ObjectTrackingFrameOrBuilder.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/PersonDetectionAnnotation.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/PersonDetectionAnnotationOrBuilder.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/PersonDetectionConfig.java",
+    "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/PersonDetectionConfigOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfig.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/ShotChangeDetectionConfigOrBuilder.java",
     "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/SpeechContext.java",

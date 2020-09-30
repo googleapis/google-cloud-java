@@ -56,7 +56,7 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * Textual description, e.g. `Fixed-gear bicycle`.
+   * Textual description, e.g., `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -68,7 +68,7 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * Textual description, e.g. `Fixed-gear bicycle`.
+   * Textual description, e.g., `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 2;</code>

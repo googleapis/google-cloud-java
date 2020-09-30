@@ -39,6 +39,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
   private ObjectTrackingAnnotation() {
     frames_ = java.util.Collections.emptyList();
+    version_ = "";
   }
 
   @java.lang.Override
@@ -129,6 +130,13 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             {
               trackInfoCase_ = 5;
               trackInfo_ = input.readInt64();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
           default:
@@ -446,6 +454,55 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     return frames_.get(index);
   }
 
+  public static final int VERSION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object version_;
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -475,6 +532,9 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     if (trackInfoCase_ == 5) {
       output.writeInt64(5, (long) ((java.lang.Long) trackInfo_));
     }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -503,6 +563,9 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               5, (long) ((java.lang.Long) trackInfo_));
     }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -526,6 +589,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     if (java.lang.Float.floatToIntBits(getConfidence())
         != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
     if (!getFramesList().equals(other.getFramesList())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (!getTrackInfoCase().equals(other.getTrackInfoCase())) return false;
     switch (trackInfoCase_) {
       case 3:
@@ -558,6 +622,8 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       hash = (37 * hash) + FRAMES_FIELD_NUMBER;
       hash = (53 * hash) + getFramesList().hashCode();
     }
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     switch (trackInfoCase_) {
       case 3:
         hash = (37 * hash) + SEGMENT_FIELD_NUMBER;
@@ -732,6 +798,8 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       } else {
         framesBuilder_.clear();
       }
+      version_ = "";
+
       trackInfoCase_ = 0;
       trackInfo_ = null;
       return this;
@@ -788,6 +856,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.version_ = version_;
       result.trackInfoCase_ = trackInfoCase_;
       onBuilt();
       return result;
@@ -872,6 +941,10 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             framesBuilder_.addAllMessages(other.frames_);
           }
         }
+      }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        onChanged();
       }
       switch (other.getTrackInfoCase()) {
         case SEGMENT:
@@ -1879,6 +1952,112 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         frames_ = null;
       }
       return framesBuilder_;
+    }
+
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      version_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

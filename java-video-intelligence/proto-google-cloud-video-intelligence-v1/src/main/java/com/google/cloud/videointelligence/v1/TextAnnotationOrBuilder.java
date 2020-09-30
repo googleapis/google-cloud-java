@@ -99,4 +99,29 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.TextSegment segments = 2;</code>
    */
   com.google.cloud.videointelligence.v1.TextSegmentOrBuilder getSegmentsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 3;</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 3;</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
 }

@@ -22,11 +22,12 @@ package com.google.cloud.videointelligence.v1;
  *
  *
  * <pre>
- * Video frame level annotation results for face detection.
+ * Deprecated. No effect.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1.FaceFrame}
  */
+@java.lang.Deprecated
 public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.FaceFrame)
@@ -462,7 +463,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Video frame level annotation results for face detection.
+   * Deprecated. No effect.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1.FaceFrame}

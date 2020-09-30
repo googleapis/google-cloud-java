@@ -18,62 +18,62 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface ExplicitContentAnnotationOrBuilder
+public interface PersonDetectionAnnotationOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
+    // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList();
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
-  com.google.cloud.videointelligence.v1.ExplicitContentFrame getFrames(int index);
+  com.google.cloud.videointelligence.v1.Track getTracks(int index);
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
-  int getFramesCount();
+  int getTracksCount();
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
-      getFramesOrBuilderList();
+  java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+      getTracksOrBuilderList();
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
-  com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder getFramesOrBuilder(int index);
+  com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index);
 
   /**
    *

@@ -327,6 +327,45 @@ public interface VideoContextOrBuilder
    *
    *
    * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   *
+   * @return Whether the personDetectionConfig field is set.
+   */
+  boolean hasPersonDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   *
+   * @return The personDetectionConfig.
+   */
+  com.google.cloud.videointelligence.v1.PersonDetectionConfig getPersonDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for PERSON_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.PersonDetectionConfig person_detection_config = 11;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.PersonDetectionConfigOrBuilder
+      getPersonDetectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Config for OBJECT_TRACKING.
    * </pre>
    *

@@ -31,7 +31,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service that implements Google Cloud Video Intelligence API.
+ * Service Description: Service that implements the Video Intelligence API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -185,15 +185,15 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param inputUri Input video location. Currently, only [Google Cloud
-   *     Storage](https://cloud.google.com/storage/) URIs are supported, which must be specified in
+   * @param inputUri Input video location. Currently, only [Cloud
+   *     Storage](https://cloud.google.com/storage/) URIs are supported. URIs must be specified in
    *     the following format: `gs://bucket-id/object-id` (other URI formats return
    *     [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more
-   *     information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints). A
-   *     video URI may include wildcards in `object-id`, and thus identify multiple videos.
+   *     information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+   *     To identify multiple videos, a video URI may include wildcards in the `object-id`.
    *     Supported wildcards: '&#42;' to match 0 or more characters; '?' to match 1 character. If
    *     unset, the input video should be embedded in the request as `input_content`. If set,
-   *     `input_content` should be unset.
+   *     `input_content` must be unset.
    * @param features Required. Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

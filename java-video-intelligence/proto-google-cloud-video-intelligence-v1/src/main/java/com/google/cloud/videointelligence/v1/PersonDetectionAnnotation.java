@@ -22,32 +22,30 @@ package com.google.cloud.videointelligence.v1;
  *
  *
  * <pre>
- * Explicit content annotation (based on per-frame visual signals only).
- * If no explicit content has been detected in a frame, no annotations are
- * present for that frame.
+ * Person detection annotation per video.
  * </pre>
  *
- * Protobuf type {@code google.cloud.videointelligence.v1.ExplicitContentAnnotation}
+ * Protobuf type {@code google.cloud.videointelligence.v1.PersonDetectionAnnotation}
  */
-public final class ExplicitContentAnnotation extends com.google.protobuf.GeneratedMessageV3
+public final class PersonDetectionAnnotation extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
-    ExplicitContentAnnotationOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
+    PersonDetectionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ExplicitContentAnnotation.newBuilder() to construct.
-  private ExplicitContentAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PersonDetectionAnnotation.newBuilder() to construct.
+  private PersonDetectionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ExplicitContentAnnotation() {
-    frames_ = java.util.Collections.emptyList();
+  private PersonDetectionAnnotation() {
+    tracks_ = java.util.Collections.emptyList();
     version_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ExplicitContentAnnotation();
+    return new PersonDetectionAnnotation();
   }
 
   @java.lang.Override
@@ -55,7 +53,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private ExplicitContentAnnotation(
+  private PersonDetectionAnnotation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -77,15 +75,12 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                frames_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1.ExplicitContentFrame>();
+                tracks_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.Track>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              frames_.add(
+              tracks_.add(
                   input.readMessage(
-                      com.google.cloud.videointelligence.v1.ExplicitContentFrame.parser(),
-                      extensionRegistry));
+                      com.google.cloud.videointelligence.v1.Track.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -110,7 +105,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        frames_ = java.util.Collections.unmodifiableList(frames_);
+        tracks_ = java.util.Collections.unmodifiableList(tracks_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -119,89 +114,86 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1_ExplicitContentAnnotation_descriptor;
+        .internal_static_google_cloud_videointelligence_v1_PersonDetectionAnnotation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1_ExplicitContentAnnotation_fieldAccessorTable
+        .internal_static_google_cloud_videointelligence_v1_PersonDetectionAnnotation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.class,
-            com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.Builder.class);
+            com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.class,
+            com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.Builder.class);
   }
 
-  public static final int FRAMES_FIELD_NUMBER = 1;
-  private java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> frames_;
+  public static final int TRACKS_FIELD_NUMBER = 1;
+  private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_;
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame>
-      getFramesList() {
-    return frames_;
+  public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
+    return tracks_;
   }
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<
-          ? extends com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
-      getFramesOrBuilderList() {
-    return frames_;
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+      getTracksOrBuilderList() {
+    return tracks_;
   }
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   @java.lang.Override
-  public int getFramesCount() {
-    return frames_.size();
+  public int getTracksCount() {
+    return tracks_.size();
   }
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1.ExplicitContentFrame getFrames(int index) {
-    return frames_.get(index);
+  public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
+    return tracks_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * All video frames where explicit content was detected.
+   * The detected tracks of a person.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder getFramesOrBuilder(
-      int index) {
-    return frames_.get(index);
+  public com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index) {
+    return tracks_.get(index);
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
@@ -267,8 +259,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < frames_.size(); i++) {
-      output.writeMessage(1, frames_.get(i));
+    for (int i = 0; i < tracks_.size(); i++) {
+      output.writeMessage(1, tracks_.get(i));
     }
     if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
@@ -282,8 +274,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < frames_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, frames_.get(i));
+    for (int i = 0; i < tracks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, tracks_.get(i));
     }
     if (!getVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
@@ -298,13 +290,13 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.videointelligence.v1.ExplicitContentAnnotation)) {
+    if (!(obj instanceof com.google.cloud.videointelligence.v1.PersonDetectionAnnotation)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1.ExplicitContentAnnotation other =
-        (com.google.cloud.videointelligence.v1.ExplicitContentAnnotation) obj;
+    com.google.cloud.videointelligence.v1.PersonDetectionAnnotation other =
+        (com.google.cloud.videointelligence.v1.PersonDetectionAnnotation) obj;
 
-    if (!getFramesList().equals(other.getFramesList())) return false;
+    if (!getTracksList().equals(other.getTracksList())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -317,9 +309,9 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getFramesCount() > 0) {
-      hash = (37 * hash) + FRAMES_FIELD_NUMBER;
-      hash = (53 * hash) + getFramesList().hashCode();
+    if (getTracksCount() > 0) {
+      hash = (37 * hash) + TRACKS_FIELD_NUMBER;
+      hash = (53 * hash) + getTracksList().hashCode();
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
@@ -328,71 +320,71 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     return hash;
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseDelimitedFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseDelimitedFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parseFrom(
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -410,7 +402,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
   }
 
   public static Builder newBuilder(
-      com.google.cloud.videointelligence.v1.ExplicitContentAnnotation prototype) {
+      com.google.cloud.videointelligence.v1.PersonDetectionAnnotation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -428,33 +420,31 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Explicit content annotation (based on per-frame visual signals only).
-   * If no explicit content has been detected in a frame, no annotations are
-   * present for that frame.
+   * Person detection annotation per video.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.videointelligence.v1.ExplicitContentAnnotation}
+   * Protobuf type {@code google.cloud.videointelligence.v1.PersonDetectionAnnotation}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
-      com.google.cloud.videointelligence.v1.ExplicitContentAnnotationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
+      com.google.cloud.videointelligence.v1.PersonDetectionAnnotationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_ExplicitContentAnnotation_descriptor;
+          .internal_static_google_cloud_videointelligence_v1_PersonDetectionAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_ExplicitContentAnnotation_fieldAccessorTable
+          .internal_static_google_cloud_videointelligence_v1_PersonDetectionAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.class,
-              com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.Builder.class);
+              com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.class,
+              com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.Builder.class);
     }
 
-    // Construct using com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.newBuilder()
+    // Construct using com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -466,18 +456,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFramesFieldBuilder();
+        getTracksFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (framesBuilder_ == null) {
-        frames_ = java.util.Collections.emptyList();
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        framesBuilder_.clear();
+        tracksBuilder_.clear();
       }
       version_ = "";
 
@@ -487,18 +477,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_ExplicitContentAnnotation_descriptor;
+          .internal_static_google_cloud_videointelligence_v1_PersonDetectionAnnotation_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.ExplicitContentAnnotation
+    public com.google.cloud.videointelligence.v1.PersonDetectionAnnotation
         getDefaultInstanceForType() {
-      return com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.getDefaultInstance();
+      return com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.ExplicitContentAnnotation build() {
-      com.google.cloud.videointelligence.v1.ExplicitContentAnnotation result = buildPartial();
+    public com.google.cloud.videointelligence.v1.PersonDetectionAnnotation build() {
+      com.google.cloud.videointelligence.v1.PersonDetectionAnnotation result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -506,18 +496,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.ExplicitContentAnnotation buildPartial() {
-      com.google.cloud.videointelligence.v1.ExplicitContentAnnotation result =
-          new com.google.cloud.videointelligence.v1.ExplicitContentAnnotation(this);
+    public com.google.cloud.videointelligence.v1.PersonDetectionAnnotation buildPartial() {
+      com.google.cloud.videointelligence.v1.PersonDetectionAnnotation result =
+          new com.google.cloud.videointelligence.v1.PersonDetectionAnnotation(this);
       int from_bitField0_ = bitField0_;
-      if (framesBuilder_ == null) {
+      if (tracksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          frames_ = java.util.Collections.unmodifiableList(frames_);
+          tracks_ = java.util.Collections.unmodifiableList(tracks_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.frames_ = frames_;
+        result.tracks_ = tracks_;
       } else {
-        result.frames_ = framesBuilder_.build();
+        result.tracks_ = tracksBuilder_.build();
       }
       result.version_ = version_;
       onBuilt();
@@ -559,8 +549,8 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.videointelligence.v1.ExplicitContentAnnotation) {
-        return mergeFrom((com.google.cloud.videointelligence.v1.ExplicitContentAnnotation) other);
+      if (other instanceof com.google.cloud.videointelligence.v1.PersonDetectionAnnotation) {
+        return mergeFrom((com.google.cloud.videointelligence.v1.PersonDetectionAnnotation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -568,34 +558,34 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
     }
 
     public Builder mergeFrom(
-        com.google.cloud.videointelligence.v1.ExplicitContentAnnotation other) {
+        com.google.cloud.videointelligence.v1.PersonDetectionAnnotation other) {
       if (other
-          == com.google.cloud.videointelligence.v1.ExplicitContentAnnotation.getDefaultInstance())
+          == com.google.cloud.videointelligence.v1.PersonDetectionAnnotation.getDefaultInstance())
         return this;
-      if (framesBuilder_ == null) {
-        if (!other.frames_.isEmpty()) {
-          if (frames_.isEmpty()) {
-            frames_ = other.frames_;
+      if (tracksBuilder_ == null) {
+        if (!other.tracks_.isEmpty()) {
+          if (tracks_.isEmpty()) {
+            tracks_ = other.tracks_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureFramesIsMutable();
-            frames_.addAll(other.frames_);
+            ensureTracksIsMutable();
+            tracks_.addAll(other.tracks_);
           }
           onChanged();
         }
       } else {
-        if (!other.frames_.isEmpty()) {
-          if (framesBuilder_.isEmpty()) {
-            framesBuilder_.dispose();
-            framesBuilder_ = null;
-            frames_ = other.frames_;
+        if (!other.tracks_.isEmpty()) {
+          if (tracksBuilder_.isEmpty()) {
+            tracksBuilder_.dispose();
+            tracksBuilder_ = null;
+            tracks_ = other.tracks_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            framesBuilder_ =
+            tracksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getFramesFieldBuilder()
+                    ? getTracksFieldBuilder()
                     : null;
           } else {
-            framesBuilder_.addAllMessages(other.frames_);
+            tracksBuilder_.addAllMessages(other.tracks_);
           }
         }
       }
@@ -618,12 +608,12 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1.ExplicitContentAnnotation parsedMessage = null;
+      com.google.cloud.videointelligence.v1.PersonDetectionAnnotation parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.videointelligence.v1.ExplicitContentAnnotation)
+            (com.google.cloud.videointelligence.v1.PersonDetectionAnnotation)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -636,93 +626,89 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> frames_ =
+    private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_ =
         java.util.Collections.emptyList();
 
-    private void ensureFramesIsMutable() {
+    private void ensureTracksIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        frames_ =
-            new java.util.ArrayList<com.google.cloud.videointelligence.v1.ExplicitContentFrame>(
-                frames_);
+        tracks_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.Track>(tracks_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.ExplicitContentFrame,
-            com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder,
-            com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
-        framesBuilder_;
+            com.google.cloud.videointelligence.v1.Track,
+            com.google.cloud.videointelligence.v1.Track.Builder,
+            com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        tracksBuilder_;
 
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame>
-        getFramesList() {
-      if (framesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(frames_);
+    public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
+      if (tracksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tracks_);
       } else {
-        return framesBuilder_.getMessageList();
+        return tracksBuilder_.getMessageList();
       }
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public int getFramesCount() {
-      if (framesBuilder_ == null) {
-        return frames_.size();
+    public int getTracksCount() {
+      if (tracksBuilder_ == null) {
+        return tracks_.size();
       } else {
-        return framesBuilder_.getCount();
+        return tracksBuilder_.getCount();
       }
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentFrame getFrames(int index) {
-      if (framesBuilder_ == null) {
-        return frames_.get(index);
+    public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);
       } else {
-        return framesBuilder_.getMessage(index);
+        return tracksBuilder_.getMessage(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder setFrames(
-        int index, com.google.cloud.videointelligence.v1.ExplicitContentFrame value) {
-      if (framesBuilder_ == null) {
+    public Builder setTracks(int index, com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFramesIsMutable();
-        frames_.set(index, value);
+        ensureTracksIsMutable();
+        tracks_.set(index, value);
         onChanged();
       } else {
-        framesBuilder_.setMessage(index, value);
+        tracksBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -730,20 +716,19 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder setFrames(
-        int index,
-        com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder builderForValue) {
-      if (framesBuilder_ == null) {
-        ensureFramesIsMutable();
-        frames_.set(index, builderForValue.build());
+    public Builder setTracks(
+        int index, com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.set(index, builderForValue.build());
         onChanged();
       } else {
-        framesBuilder_.setMessage(index, builderForValue.build());
+        tracksBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -751,21 +736,21 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder addFrames(com.google.cloud.videointelligence.v1.ExplicitContentFrame value) {
-      if (framesBuilder_ == null) {
+    public Builder addTracks(com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFramesIsMutable();
-        frames_.add(value);
+        ensureTracksIsMutable();
+        tracks_.add(value);
         onChanged();
       } else {
-        framesBuilder_.addMessage(value);
+        tracksBuilder_.addMessage(value);
       }
       return this;
     }
@@ -773,22 +758,21 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder addFrames(
-        int index, com.google.cloud.videointelligence.v1.ExplicitContentFrame value) {
-      if (framesBuilder_ == null) {
+    public Builder addTracks(int index, com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFramesIsMutable();
-        frames_.add(index, value);
+        ensureTracksIsMutable();
+        tracks_.add(index, value);
         onChanged();
       } else {
-        framesBuilder_.addMessage(index, value);
+        tracksBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -796,19 +780,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder addFrames(
-        com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder builderForValue) {
-      if (framesBuilder_ == null) {
-        ensureFramesIsMutable();
-        frames_.add(builderForValue.build());
+    public Builder addTracks(com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(builderForValue.build());
         onChanged();
       } else {
-        framesBuilder_.addMessage(builderForValue.build());
+        tracksBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -816,20 +799,19 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder addFrames(
-        int index,
-        com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder builderForValue) {
-      if (framesBuilder_ == null) {
-        ensureFramesIsMutable();
-        frames_.add(index, builderForValue.build());
+    public Builder addTracks(
+        int index, com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(index, builderForValue.build());
         onChanged();
       } else {
-        framesBuilder_.addMessage(index, builderForValue.build());
+        tracksBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -837,20 +819,19 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder addAllFrames(
-        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.ExplicitContentFrame>
-            values) {
-      if (framesBuilder_ == null) {
-        ensureFramesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, frames_);
+    public Builder addAllTracks(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.Track> values) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tracks_);
         onChanged();
       } else {
-        framesBuilder_.addAllMessages(values);
+        tracksBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -858,18 +839,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder clearFrames() {
-      if (framesBuilder_ == null) {
-        frames_ = java.util.Collections.emptyList();
+    public Builder clearTracks() {
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        framesBuilder_.clear();
+        tracksBuilder_.clear();
       }
       return this;
     }
@@ -877,18 +858,18 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public Builder removeFrames(int index) {
-      if (framesBuilder_ == null) {
-        ensureFramesIsMutable();
-        frames_.remove(index);
+    public Builder removeTracks(int index) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.remove(index);
         onChanged();
       } else {
-        framesBuilder_.remove(index);
+        tracksBuilder_.remove(index);
       }
       return this;
     }
@@ -896,109 +877,102 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder getFramesBuilder(
-        int index) {
-      return getFramesFieldBuilder().getBuilder(index);
+    public com.google.cloud.videointelligence.v1.Track.Builder getTracksBuilder(int index) {
+      return getTracksFieldBuilder().getBuilder(index);
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder getFramesOrBuilder(
-        int index) {
-      if (framesBuilder_ == null) {
-        return frames_.get(index);
+    public com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);
       } else {
-        return framesBuilder_.getMessageOrBuilder(index);
+        return tracksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public java.util.List<
-            ? extends com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
-        getFramesOrBuilderList() {
-      if (framesBuilder_ != null) {
-        return framesBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        getTracksOrBuilderList() {
+      if (tracksBuilder_ != null) {
+        return tracksBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(frames_);
+        return java.util.Collections.unmodifiableList(tracks_);
       }
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder addFramesBuilder() {
-      return getFramesFieldBuilder()
-          .addBuilder(
-              com.google.cloud.videointelligence.v1.ExplicitContentFrame.getDefaultInstance());
+    public com.google.cloud.videointelligence.v1.Track.Builder addTracksBuilder() {
+      return getTracksFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder addFramesBuilder(
-        int index) {
-      return getFramesFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.videointelligence.v1.ExplicitContentFrame.getDefaultInstance());
+    public com.google.cloud.videointelligence.v1.Track.Builder addTracksBuilder(int index) {
+      return getTracksFieldBuilder()
+          .addBuilder(index, com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * All video frames where explicit content was detected.
+     * The detected tracks of a person.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder>
-        getFramesBuilderList() {
-      return getFramesFieldBuilder().getBuilderList();
+    public java.util.List<com.google.cloud.videointelligence.v1.Track.Builder>
+        getTracksBuilderList() {
+      return getTracksFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.ExplicitContentFrame,
-            com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder,
-            com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
-        getFramesFieldBuilder() {
-      if (framesBuilder_ == null) {
-        framesBuilder_ =
+            com.google.cloud.videointelligence.v1.Track,
+            com.google.cloud.videointelligence.v1.Track.Builder,
+            com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        getTracksFieldBuilder() {
+      if (tracksBuilder_ == null) {
+        tracksBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.videointelligence.v1.ExplicitContentFrame,
-                com.google.cloud.videointelligence.v1.ExplicitContentFrame.Builder,
-                com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>(
-                frames_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
-        frames_ = null;
+                com.google.cloud.videointelligence.v1.Track,
+                com.google.cloud.videointelligence.v1.Track.Builder,
+                com.google.cloud.videointelligence.v1.TrackOrBuilder>(
+                tracks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        tracks_ = null;
       }
-      return framesBuilder_;
+      return tracksBuilder_;
     }
 
     private java.lang.Object version_ = "";
@@ -1118,44 +1092,44 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
+    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
-  private static final com.google.cloud.videointelligence.v1.ExplicitContentAnnotation
+  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
+  private static final com.google.cloud.videointelligence.v1.PersonDetectionAnnotation
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.ExplicitContentAnnotation();
+    DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.PersonDetectionAnnotation();
   }
 
-  public static com.google.cloud.videointelligence.v1.ExplicitContentAnnotation
+  public static com.google.cloud.videointelligence.v1.PersonDetectionAnnotation
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ExplicitContentAnnotation> PARSER =
-      new com.google.protobuf.AbstractParser<ExplicitContentAnnotation>() {
+  private static final com.google.protobuf.Parser<PersonDetectionAnnotation> PARSER =
+      new com.google.protobuf.AbstractParser<PersonDetectionAnnotation>() {
         @java.lang.Override
-        public ExplicitContentAnnotation parsePartialFrom(
+        public PersonDetectionAnnotation parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ExplicitContentAnnotation(input, extensionRegistry);
+          return new PersonDetectionAnnotation(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ExplicitContentAnnotation> parser() {
+  public static com.google.protobuf.Parser<PersonDetectionAnnotation> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ExplicitContentAnnotation> getParserForType() {
+  public com.google.protobuf.Parser<PersonDetectionAnnotation> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1.ExplicitContentAnnotation
+  public com.google.cloud.videointelligence.v1.PersonDetectionAnnotation
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

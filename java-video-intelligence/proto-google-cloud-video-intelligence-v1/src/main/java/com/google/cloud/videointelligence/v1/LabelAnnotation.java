@@ -41,6 +41,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     categoryEntities_ = java.util.Collections.emptyList();
     segments_ = java.util.Collections.emptyList();
     frames_ = java.util.Collections.emptyList();
+    version_ = "";
   }
 
   @java.lang.Override
@@ -125,6 +126,13 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
                   input.readMessage(
                       com.google.cloud.videointelligence.v1.LabelFrame.parser(),
                       extensionRegistry));
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
               break;
             }
           default:
@@ -225,9 +233,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -241,9 +249,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -258,9 +266,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -274,9 +282,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -290,9 +298,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -442,6 +450,55 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     return frames_.get(index);
   }
 
+  public static final int VERSION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object version_;
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 5;</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 5;</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -468,6 +525,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < frames_.size(); i++) {
       output.writeMessage(4, frames_.get(i));
     }
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -488,6 +548,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < frames_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, frames_.get(i));
+    }
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -512,6 +575,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
     if (!getCategoryEntitiesList().equals(other.getCategoryEntitiesList())) return false;
     if (!getSegmentsList().equals(other.getSegmentsList())) return false;
     if (!getFramesList().equals(other.getFramesList())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +603,8 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + FRAMES_FIELD_NUMBER;
       hash = (53 * hash) + getFramesList().hashCode();
     }
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -713,6 +779,8 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       } else {
         framesBuilder_.clear();
       }
+      version_ = "";
+
       return this;
     }
 
@@ -773,6 +841,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
       } else {
         result.frames_ = framesBuilder_.build();
       }
+      result.version_ = version_;
       onBuilt();
       return result;
     }
@@ -906,6 +975,10 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
             framesBuilder_.addAllMessages(other.frames_);
           }
         }
+      }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1147,9 +1220,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1166,9 +1239,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1185,9 +1258,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1204,9 +1277,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1230,9 +1303,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1253,9 +1326,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1278,9 +1351,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1304,9 +1377,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1327,9 +1400,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1350,9 +1423,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1373,9 +1446,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1395,9 +1468,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1417,9 +1490,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1433,9 +1506,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1453,9 +1526,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1473,9 +1546,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1489,9 +1562,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -1506,9 +1579,9 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Common categories for the detected entity.
-     * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-     * cases there might be more than one categories e.g. `Terrier` could also be
-     * a `pet`.
+     * For example, when the label is `Terrier`, the category is likely `dog`. And
+     * in some cases there might be more than one categories e.g., `Terrier` could
+     * also be a `pet`.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
@@ -2244,6 +2317,112 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
         frames_ = null;
       }
       return framesBuilder_;
+    }
+
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feature version.
+     * </pre>
+     *
+     * <code>string version = 5;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      version_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

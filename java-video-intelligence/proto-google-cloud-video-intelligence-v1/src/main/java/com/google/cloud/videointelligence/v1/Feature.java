@@ -72,7 +72,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Human face detection and tracking.
+   * Human face detection.
    * </pre>
    *
    * <code>FACE_DETECTION = 4;</code>
@@ -118,6 +118,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOGO_RECOGNITION = 12;</code>
    */
   LOGO_RECOGNITION(12),
+  /**
+   *
+   *
+   * <pre>
+   * Person detection.
+   * </pre>
+   *
+   * <code>PERSON_DETECTION = 14;</code>
+   */
+  PERSON_DETECTION(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -165,7 +175,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Human face detection and tracking.
+   * Human face detection.
    * </pre>
    *
    * <code>FACE_DETECTION = 4;</code>
@@ -211,6 +221,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOGO_RECOGNITION = 12;</code>
    */
   public static final int LOGO_RECOGNITION_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Person detection.
+   * </pre>
+   *
+   * <code>PERSON_DETECTION = 14;</code>
+   */
+  public static final int PERSON_DETECTION_VALUE = 14;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -254,6 +274,8 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return OBJECT_TRACKING;
       case 12:
         return LOGO_RECOGNITION;
+      case 14:
+        return PERSON_DETECTION;
       default:
         return null;
     }

@@ -107,9 +107,9 @@ public interface SpeechTranscriptionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
-   * the language in this result. This language code was detected to have the
-   * most likelihood of being spoken in the audio.
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag of the language in this result. This language code was
+   * detected to have the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -121,9 +121,9 @@ public interface SpeechTranscriptionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
-   * the language in this result. This language code was detected to have the
-   * most likelihood of being spoken in the audio.
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag of the language in this result. This language code was
+   * detected to have the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

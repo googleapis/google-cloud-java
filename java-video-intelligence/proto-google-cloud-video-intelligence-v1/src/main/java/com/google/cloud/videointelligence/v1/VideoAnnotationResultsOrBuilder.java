@@ -28,7 +28,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -41,7 +41,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -89,7 +89,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -103,7 +103,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -116,7 +116,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -129,7 +129,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -158,7 +158,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -176,7 +176,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -194,7 +194,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -211,7 +211,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -229,7 +229,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -460,54 +460,134 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Face annotations. There is exactly one element for each unique face.
+   * Deprecated. Please use `face_detection_annotations` instead.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.videointelligence.v1.FaceAnnotation> getFaceAnnotationsList();
   /**
    *
    *
    * <pre>
-   * Face annotations. There is exactly one element for each unique face.
+   * Deprecated. Please use `face_detection_annotations` instead.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.videointelligence.v1.FaceAnnotation getFaceAnnotations(int index);
   /**
    *
    *
    * <pre>
-   * Face annotations. There is exactly one element for each unique face.
+   * Deprecated. Please use `face_detection_annotations` instead.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getFaceAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Face annotations. There is exactly one element for each unique face.
+   * Deprecated. Please use `face_detection_annotations` instead.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Face annotations. There is exactly one element for each unique face.
+   * Deprecated. Please use `face_detection_annotations` instead.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceAnnotation face_annotations = 5 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.videointelligence.v1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.FaceDetectionAnnotation>
+      getFaceDetectionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.FaceDetectionAnnotation getFaceDetectionAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  int getFaceDetectionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.FaceDetectionAnnotationOrBuilder>
+      getFaceDetectionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Face detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.FaceDetectionAnnotation face_detection_annotations = 13;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.FaceDetectionAnnotationOrBuilder
+      getFaceDetectionAnnotationsOrBuilder(int index);
 
   /**
    *
@@ -856,6 +936,71 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1.LogoRecognitionAnnotationOrBuilder
       getLogoRecognitionAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.PersonDetectionAnnotation>
+      getPersonDetectionAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.PersonDetectionAnnotation getPersonDetectionAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  int getPersonDetectionAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.PersonDetectionAnnotationOrBuilder>
+      getPersonDetectionAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Person detection annotations.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.PersonDetectionAnnotation person_detection_annotations = 20;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.PersonDetectionAnnotationOrBuilder
+      getPersonDetectionAnnotationsOrBuilder(int index);
 
   /**
    *

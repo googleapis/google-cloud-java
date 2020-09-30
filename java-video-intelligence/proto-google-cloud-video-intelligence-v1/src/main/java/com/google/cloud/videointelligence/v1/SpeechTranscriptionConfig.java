@@ -452,7 +452,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * Note: When this is true, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive responses.
+   * audio for the top alternative in every consecutive response.
    * This is done in order to improve our speaker tags as our models learn to
    * identify the speakers in the conversation over time.
    * </pre>
@@ -472,9 +472,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If set, specifies the estimated number of speakers in the conversation.
-   * If not set, defaults to '2'.
-   * Ignored unless enable_speaker_diarization is set to true.
+   * Optional. If set, specifies the estimated number of speakers in the
+   * conversation. If not set, defaults to '2'. Ignored unless
+   * enable_speaker_diarization is set to true.
    * </pre>
    *
    * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1878,7 +1878,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>
@@ -1899,7 +1899,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>
@@ -1923,7 +1923,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>
@@ -1944,9 +1944,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1961,9 +1961,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1981,9 +1981,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
      * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -182,9 +182,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Whether the video has been shot from a stationary (i.e. non-moving) camera.
-   * When set to true, might improve detection accuracy for moving objects.
-   * Should be used with `SHOT_AND_FRAME_MODE` enabled.
+   * Whether the video has been shot from a stationary (i.e., non-moving)
+   * camera. When set to true, might improve detection accuracy for moving
+   * objects. Should be used with `SHOT_AND_FRAME_MODE` enabled.
    * </pre>
    *
    * <code>bool stationary_camera = 2;</code>
@@ -259,7 +259,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    * frame-level detection. If not set, it is set to 0.4 by default. The valid
    * range for this threshold is [0.1, 0.9]. Any value set outside of this
    * range will be clipped.
-   * Note: for best results please follow the default threshold. We will update
+   * Note: For best results, follow the default threshold. We will update
    * the default threshold everytime when we release a new model.
    * </pre>
    *
@@ -279,10 +279,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The confidence threshold we perform filtering on the labels from
-   * video-level and shot-level detections. If not set, it is set to 0.3 by
+   * video-level and shot-level detections. If not set, it's set to 0.3 by
    * default. The valid range for this threshold is [0.1, 0.9]. Any value set
    * outside of this range will be clipped.
-   * Note: for best results please follow the default threshold. We will update
+   * Note: For best results, follow the default threshold. We will update
    * the default threshold everytime when we release a new model.
    * </pre>
    *
@@ -789,9 +789,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Whether the video has been shot from a stationary (i.e. non-moving) camera.
-     * When set to true, might improve detection accuracy for moving objects.
-     * Should be used with `SHOT_AND_FRAME_MODE` enabled.
+     * Whether the video has been shot from a stationary (i.e., non-moving)
+     * camera. When set to true, might improve detection accuracy for moving
+     * objects. Should be used with `SHOT_AND_FRAME_MODE` enabled.
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
@@ -806,9 +806,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Whether the video has been shot from a stationary (i.e. non-moving) camera.
-     * When set to true, might improve detection accuracy for moving objects.
-     * Should be used with `SHOT_AND_FRAME_MODE` enabled.
+     * Whether the video has been shot from a stationary (i.e., non-moving)
+     * camera. When set to true, might improve detection accuracy for moving
+     * objects. Should be used with `SHOT_AND_FRAME_MODE` enabled.
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
@@ -826,9 +826,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Whether the video has been shot from a stationary (i.e. non-moving) camera.
-     * When set to true, might improve detection accuracy for moving objects.
-     * Should be used with `SHOT_AND_FRAME_MODE` enabled.
+     * Whether the video has been shot from a stationary (i.e., non-moving)
+     * camera. When set to true, might improve detection accuracy for moving
+     * objects. Should be used with `SHOT_AND_FRAME_MODE` enabled.
      * </pre>
      *
      * <code>bool stationary_camera = 2;</code>
@@ -967,7 +967,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * frame-level detection. If not set, it is set to 0.4 by default. The valid
      * range for this threshold is [0.1, 0.9]. Any value set outside of this
      * range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *
@@ -987,7 +987,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * frame-level detection. If not set, it is set to 0.4 by default. The valid
      * range for this threshold is [0.1, 0.9]. Any value set outside of this
      * range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *
@@ -1010,7 +1010,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * frame-level detection. If not set, it is set to 0.4 by default. The valid
      * range for this threshold is [0.1, 0.9]. Any value set outside of this
      * range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *
@@ -1031,10 +1031,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The confidence threshold we perform filtering on the labels from
-     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * video-level and shot-level detections. If not set, it's set to 0.3 by
      * default. The valid range for this threshold is [0.1, 0.9]. Any value set
      * outside of this range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *
@@ -1051,10 +1051,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The confidence threshold we perform filtering on the labels from
-     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * video-level and shot-level detections. If not set, it's set to 0.3 by
      * default. The valid range for this threshold is [0.1, 0.9]. Any value set
      * outside of this range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *
@@ -1074,10 +1074,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The confidence threshold we perform filtering on the labels from
-     * video-level and shot-level detections. If not set, it is set to 0.3 by
+     * video-level and shot-level detections. If not set, it's set to 0.3 by
      * default. The valid range for this threshold is [0.1, 0.9]. Any value set
      * outside of this range will be clipped.
-     * Note: for best results please follow the default threshold. We will update
+     * Note: For best results, follow the default threshold. We will update
      * the default threshold everytime when we release a new model.
      * </pre>
      *

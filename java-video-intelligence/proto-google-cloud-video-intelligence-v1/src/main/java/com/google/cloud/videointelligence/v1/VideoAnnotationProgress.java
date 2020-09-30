@@ -178,7 +178,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -202,7 +202,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -340,7 +340,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies which feature is being tracked if the request contains more than
-   * one features.
+   * one feature.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -356,7 +356,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies which feature is being tracked if the request contains more than
-   * one features.
+   * one feature.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -378,7 +378,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies which segment is being tracked if the request contains more than
-   * one segments.
+   * one segment.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -394,7 +394,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies which segment is being tracked if the request contains more than
-   * one segments.
+   * one segment.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -412,7 +412,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies which segment is being tracked if the request contains more than
-   * one segments.
+   * one segment.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -864,7 +864,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -887,7 +887,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -910,7 +910,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -932,7 +932,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -950,7 +950,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -1392,7 +1392,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which feature is being tracked if the request contains more than
-     * one features.
+     * one feature.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -1408,7 +1408,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which feature is being tracked if the request contains more than
-     * one features.
+     * one feature.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -1427,7 +1427,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which feature is being tracked if the request contains more than
-     * one features.
+     * one feature.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -1446,7 +1446,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which feature is being tracked if the request contains more than
-     * one features.
+     * one feature.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -1468,7 +1468,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which feature is being tracked if the request contains more than
-     * one features.
+     * one feature.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.Feature feature = 5;</code>
@@ -1493,7 +1493,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1508,7 +1508,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1529,7 +1529,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1552,7 +1552,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1573,7 +1573,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1600,7 +1600,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1621,7 +1621,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1636,7 +1636,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>
@@ -1655,7 +1655,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies which segment is being tracked if the request contains more than
-     * one segments.
+     * one segment.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1.VideoSegment segment = 6;</code>

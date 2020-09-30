@@ -22,29 +22,29 @@ package com.google.cloud.videointelligence.v1;
  *
  *
  * <pre>
- * Config for FACE_DETECTION.
+ * Face detection annotation.
  * </pre>
  *
- * Protobuf type {@code google.cloud.videointelligence.v1.FaceDetectionConfig}
+ * Protobuf type {@code google.cloud.videointelligence.v1.FaceDetectionAnnotation}
  */
-public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMessageV3
+public final class FaceDetectionAnnotation extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.FaceDetectionConfig)
-    FaceDetectionConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.FaceDetectionAnnotation)
+    FaceDetectionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use FaceDetectionConfig.newBuilder() to construct.
-  private FaceDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FaceDetectionAnnotation.newBuilder() to construct.
+  private FaceDetectionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private FaceDetectionConfig() {
-    model_ = "";
+  private FaceDetectionAnnotation() {
+    version_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new FaceDetectionConfig();
+    return new FaceDetectionAnnotation();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private FaceDetectionConfig(
+  private FaceDetectionAnnotation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,21 +70,11 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case 10:
+          case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              model_ = s;
-              break;
-            }
-          case 16:
-            {
-              includeBoundingBoxes_ = input.readBool();
-              break;
-            }
-          case 40:
-            {
-              includeAttributes_ = input.readBool();
+              version_ = s;
               break;
             }
           default:
@@ -108,43 +98,41 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1_FaceDetectionConfig_descriptor;
+        .internal_static_google_cloud_videointelligence_v1_FaceDetectionAnnotation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1_FaceDetectionConfig_fieldAccessorTable
+        .internal_static_google_cloud_videointelligence_v1_FaceDetectionAnnotation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.class,
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder.class);
+            com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.class,
+            com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.Builder.class);
   }
 
-  public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+  public static final int VERSION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object version_;
   /**
    *
    *
    * <pre>
-   * Model to use for face detection.
-   * Supported values: "builtin/stable" (the default if unset) and
-   * "builtin/latest".
+   * Feature version.
    * </pre>
    *
-   * <code>string model = 1;</code>
+   * <code>string version = 5;</code>
    *
-   * @return The model.
+   * @return The version.
    */
   @java.lang.Override
-  public java.lang.String getModel() {
-    java.lang.Object ref = model_;
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      model_ = s;
+      version_ = s;
       return s;
     }
   }
@@ -152,63 +140,24 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Model to use for face detection.
-   * Supported values: "builtin/stable" (the default if unset) and
-   * "builtin/latest".
+   * Feature version.
    * </pre>
    *
-   * <code>string model = 1;</code>
+   * <code>string version = 5;</code>
    *
-   * @return The bytes for model.
+   * @return The bytes for version.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getModelBytes() {
-    java.lang.Object ref = model_;
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      model_ = b;
+      version_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int INCLUDE_BOUNDING_BOXES_FIELD_NUMBER = 2;
-  private boolean includeBoundingBoxes_;
-  /**
-   *
-   *
-   * <pre>
-   * Whether bounding boxes are included in the face annotation output.
-   * </pre>
-   *
-   * <code>bool include_bounding_boxes = 2;</code>
-   *
-   * @return The includeBoundingBoxes.
-   */
-  @java.lang.Override
-  public boolean getIncludeBoundingBoxes() {
-    return includeBoundingBoxes_;
-  }
-
-  public static final int INCLUDE_ATTRIBUTES_FIELD_NUMBER = 5;
-  private boolean includeAttributes_;
-  /**
-   *
-   *
-   * <pre>
-   * Whether to enable face attributes detection, such as glasses, dark_glasses,
-   * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-   * </pre>
-   *
-   * <code>bool include_attributes = 5;</code>
-   *
-   * @return The includeAttributes.
-   */
-  @java.lang.Override
-  public boolean getIncludeAttributes() {
-    return includeAttributes_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -225,14 +174,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getModelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
-    }
-    if (includeBoundingBoxes_ != false) {
-      output.writeBool(2, includeBoundingBoxes_);
-    }
-    if (includeAttributes_ != false) {
-      output.writeBool(5, includeAttributes_);
+    if (!getVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
     }
     unknownFields.writeTo(output);
   }
@@ -243,14 +186,8 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!getModelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
-    }
-    if (includeBoundingBoxes_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, includeBoundingBoxes_);
-    }
-    if (includeAttributes_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, includeAttributes_);
+    if (!getVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -262,15 +199,13 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.videointelligence.v1.FaceDetectionConfig)) {
+    if (!(obj instanceof com.google.cloud.videointelligence.v1.FaceDetectionAnnotation)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1.FaceDetectionConfig other =
-        (com.google.cloud.videointelligence.v1.FaceDetectionConfig) obj;
+    com.google.cloud.videointelligence.v1.FaceDetectionAnnotation other =
+        (com.google.cloud.videointelligence.v1.FaceDetectionAnnotation) obj;
 
-    if (!getModel().equals(other.getModel())) return false;
-    if (getIncludeBoundingBoxes() != other.getIncludeBoundingBoxes()) return false;
-    if (getIncludeAttributes() != other.getIncludeAttributes()) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -282,82 +217,78 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MODEL_FIELD_NUMBER;
-    hash = (53 * hash) + getModel().hashCode();
-    hash = (37 * hash) + INCLUDE_BOUNDING_BOXES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeBoundingBoxes());
-    hash = (37 * hash) + INCLUDE_ATTRIBUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAttributes());
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(byte[] data)
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseDelimitedFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseDelimitedFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig parseFrom(
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -375,7 +306,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static Builder newBuilder(
-      com.google.cloud.videointelligence.v1.FaceDetectionConfig prototype) {
+      com.google.cloud.videointelligence.v1.FaceDetectionAnnotation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -393,31 +324,31 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Config for FACE_DETECTION.
+   * Face detection annotation.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.videointelligence.v1.FaceDetectionConfig}
+   * Protobuf type {@code google.cloud.videointelligence.v1.FaceDetectionAnnotation}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.FaceDetectionConfig)
-      com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.FaceDetectionAnnotation)
+      com.google.cloud.videointelligence.v1.FaceDetectionAnnotationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_FaceDetectionConfig_descriptor;
+          .internal_static_google_cloud_videointelligence_v1_FaceDetectionAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_FaceDetectionConfig_fieldAccessorTable
+          .internal_static_google_cloud_videointelligence_v1_FaceDetectionAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1.FaceDetectionConfig.class,
-              com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder.class);
+              com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.class,
+              com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.Builder.class);
     }
 
-    // Construct using com.google.cloud.videointelligence.v1.FaceDetectionConfig.newBuilder()
+    // Construct using com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -434,11 +365,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      model_ = "";
-
-      includeBoundingBoxes_ = false;
-
-      includeAttributes_ = false;
+      version_ = "";
 
       return this;
     }
@@ -446,17 +373,18 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1_FaceDetectionConfig_descriptor;
+          .internal_static_google_cloud_videointelligence_v1_FaceDetectionAnnotation_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig getDefaultInstanceForType() {
-      return com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance();
+    public com.google.cloud.videointelligence.v1.FaceDetectionAnnotation
+        getDefaultInstanceForType() {
+      return com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig build() {
-      com.google.cloud.videointelligence.v1.FaceDetectionConfig result = buildPartial();
+    public com.google.cloud.videointelligence.v1.FaceDetectionAnnotation build() {
+      com.google.cloud.videointelligence.v1.FaceDetectionAnnotation result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -464,12 +392,10 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig buildPartial() {
-      com.google.cloud.videointelligence.v1.FaceDetectionConfig result =
-          new com.google.cloud.videointelligence.v1.FaceDetectionConfig(this);
-      result.model_ = model_;
-      result.includeBoundingBoxes_ = includeBoundingBoxes_;
-      result.includeAttributes_ = includeAttributes_;
+    public com.google.cloud.videointelligence.v1.FaceDetectionAnnotation buildPartial() {
+      com.google.cloud.videointelligence.v1.FaceDetectionAnnotation result =
+          new com.google.cloud.videointelligence.v1.FaceDetectionAnnotation(this);
+      result.version_ = version_;
       onBuilt();
       return result;
     }
@@ -509,26 +435,21 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.videointelligence.v1.FaceDetectionConfig) {
-        return mergeFrom((com.google.cloud.videointelligence.v1.FaceDetectionConfig) other);
+      if (other instanceof com.google.cloud.videointelligence.v1.FaceDetectionAnnotation) {
+        return mergeFrom((com.google.cloud.videointelligence.v1.FaceDetectionAnnotation) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1.FaceDetectionConfig other) {
-      if (other == com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.videointelligence.v1.FaceDetectionAnnotation other) {
+      if (other
+          == com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.getDefaultInstance())
         return this;
-      if (!other.getModel().isEmpty()) {
-        model_ = other.model_;
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
         onChanged();
-      }
-      if (other.getIncludeBoundingBoxes() != false) {
-        setIncludeBoundingBoxes(other.getIncludeBoundingBoxes());
-      }
-      if (other.getIncludeAttributes() != false) {
-        setIncludeAttributes(other.getIncludeAttributes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -545,12 +466,13 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1.FaceDetectionConfig parsedMessage = null;
+      com.google.cloud.videointelligence.v1.FaceDetectionAnnotation parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.videointelligence.v1.FaceDetectionConfig) e.getUnfinishedMessage();
+            (com.google.cloud.videointelligence.v1.FaceDetectionAnnotation)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -560,26 +482,24 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private java.lang.Object model_ = "";
+    private java.lang.Object version_ = "";
     /**
      *
      *
      * <pre>
-     * Model to use for face detection.
-     * Supported values: "builtin/stable" (the default if unset) and
-     * "builtin/latest".
+     * Feature version.
      * </pre>
      *
-     * <code>string model = 1;</code>
+     * <code>string version = 5;</code>
      *
-     * @return The model.
+     * @return The version.
      */
-    public java.lang.String getModel() {
-      java.lang.Object ref = model_;
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        model_ = s;
+        version_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -589,21 +509,19 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Model to use for face detection.
-     * Supported values: "builtin/stable" (the default if unset) and
-     * "builtin/latest".
+     * Feature version.
      * </pre>
      *
-     * <code>string model = 1;</code>
+     * <code>string version = 5;</code>
      *
-     * @return The bytes for model.
+     * @return The bytes for version.
      */
-    public com.google.protobuf.ByteString getModelBytes() {
-      java.lang.Object ref = model_;
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        model_ = b;
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -613,22 +531,20 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Model to use for face detection.
-     * Supported values: "builtin/stable" (the default if unset) and
-     * "builtin/latest".
+     * Feature version.
      * </pre>
      *
-     * <code>string model = 1;</code>
+     * <code>string version = 5;</code>
      *
-     * @param value The model to set.
+     * @param value The version to set.
      * @return This builder for chaining.
      */
-    public Builder setModel(java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      model_ = value;
+      version_ = value;
       onChanged();
       return this;
     }
@@ -636,18 +552,16 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Model to use for face detection.
-     * Supported values: "builtin/stable" (the default if unset) and
-     * "builtin/latest".
+     * Feature version.
      * </pre>
      *
-     * <code>string model = 1;</code>
+     * <code>string version = 5;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearModel() {
+    public Builder clearVersion() {
 
-      model_ = getDefaultInstance().getModel();
+      version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
@@ -655,130 +569,21 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Model to use for face detection.
-     * Supported values: "builtin/stable" (the default if unset) and
-     * "builtin/latest".
+     * Feature version.
      * </pre>
      *
-     * <code>string model = 1;</code>
+     * <code>string version = 5;</code>
      *
-     * @param value The bytes for model to set.
+     * @param value The bytes for version to set.
      * @return This builder for chaining.
      */
-    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      model_ = value;
-      onChanged();
-      return this;
-    }
-
-    private boolean includeBoundingBoxes_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether bounding boxes are included in the face annotation output.
-     * </pre>
-     *
-     * <code>bool include_bounding_boxes = 2;</code>
-     *
-     * @return The includeBoundingBoxes.
-     */
-    @java.lang.Override
-    public boolean getIncludeBoundingBoxes() {
-      return includeBoundingBoxes_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether bounding boxes are included in the face annotation output.
-     * </pre>
-     *
-     * <code>bool include_bounding_boxes = 2;</code>
-     *
-     * @param value The includeBoundingBoxes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIncludeBoundingBoxes(boolean value) {
-
-      includeBoundingBoxes_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether bounding boxes are included in the face annotation output.
-     * </pre>
-     *
-     * <code>bool include_bounding_boxes = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIncludeBoundingBoxes() {
-
-      includeBoundingBoxes_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean includeAttributes_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether to enable face attributes detection, such as glasses, dark_glasses,
-     * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-     * </pre>
-     *
-     * <code>bool include_attributes = 5;</code>
-     *
-     * @return The includeAttributes.
-     */
-    @java.lang.Override
-    public boolean getIncludeAttributes() {
-      return includeAttributes_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether to enable face attributes detection, such as glasses, dark_glasses,
-     * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-     * </pre>
-     *
-     * <code>bool include_attributes = 5;</code>
-     *
-     * @param value The includeAttributes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIncludeAttributes(boolean value) {
-
-      includeAttributes_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether to enable face attributes detection, such as glasses, dark_glasses,
-     * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-     * </pre>
-     *
-     * <code>bool include_attributes = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIncludeAttributes() {
-
-      includeAttributes_ = false;
+      version_ = value;
       onChanged();
       return this;
     }
@@ -794,42 +599,43 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.FaceDetectionConfig)
+    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.FaceDetectionAnnotation)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.FaceDetectionConfig)
-  private static final com.google.cloud.videointelligence.v1.FaceDetectionConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.FaceDetectionAnnotation)
+  private static final com.google.cloud.videointelligence.v1.FaceDetectionAnnotation
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.FaceDetectionConfig();
+    DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.FaceDetectionAnnotation();
   }
 
-  public static com.google.cloud.videointelligence.v1.FaceDetectionConfig getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1.FaceDetectionAnnotation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FaceDetectionConfig> PARSER =
-      new com.google.protobuf.AbstractParser<FaceDetectionConfig>() {
+  private static final com.google.protobuf.Parser<FaceDetectionAnnotation> PARSER =
+      new com.google.protobuf.AbstractParser<FaceDetectionAnnotation>() {
         @java.lang.Override
-        public FaceDetectionConfig parsePartialFrom(
+        public FaceDetectionAnnotation parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FaceDetectionConfig(input, extensionRegistry);
+          return new FaceDetectionAnnotation(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<FaceDetectionConfig> parser() {
+  public static com.google.protobuf.Parser<FaceDetectionAnnotation> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FaceDetectionConfig> getParserForType() {
+  public com.google.protobuf.Parser<FaceDetectionAnnotation> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1.FaceDetectionConfig getDefaultInstanceForType() {
+  public com.google.cloud.videointelligence.v1.FaceDetectionAnnotation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

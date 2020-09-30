@@ -22,11 +22,12 @@ package com.google.cloud.videointelligence.v1;
  *
  *
  * <pre>
- * Face annotation.
+ * Deprecated. No effect.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1.FaceAnnotation}
  */
+@java.lang.Deprecated
 public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.FaceAnnotation)
@@ -485,7 +486,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Face annotation.
+   * Deprecated. No effect.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1.FaceAnnotation}

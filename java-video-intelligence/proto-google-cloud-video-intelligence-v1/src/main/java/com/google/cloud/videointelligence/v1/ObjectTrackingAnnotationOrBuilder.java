@@ -194,6 +194,31 @@ public interface ObjectTrackingAnnotationOrBuilder
    */
   com.google.cloud.videointelligence.v1.ObjectTrackingFrameOrBuilder getFramesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Feature version.
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
+
   public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.TrackInfoCase
       getTrackInfoCase();
 }
