@@ -16,4 +16,4 @@
 
 from synthtool.languages import java
 
-java.custom_templates(['java_library/README.md'])
+java.custom_templates(["java_library/README.md"])

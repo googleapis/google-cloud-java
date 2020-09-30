@@ -20,9 +20,6 @@ cd ${KOKORO_ARTIFACTS_DIR}/github/java-security-private-ca
 # Disable buffering, so that the logs stream through.
 export PYTHONUNBUFFERED=1
 
-# Add github to known hosts.
-#ssh-keyscan github.com >> ~/.ssh/known_hosts
-
 # Kokoro exposes this as a file, but the scripts expect just a plain variable.
 export GITHUB_TOKEN=$(cat ${KOKORO_KEYSTORE_DIR}/73713_yoshi-automation-github-key)
 
@@ -30,9 +27,9 @@ export GITHUB_TOKEN=$(cat ${KOKORO_KEYSTORE_DIR}/73713_yoshi-automation-github-k
 echo "https://${GITHUB_TOKEN}:@github.com" >> ~/.git-credentials
 git config --global credential.helper 'store --file ~/.git-credentials'
 
-python3.6 -m pip install git+https://github.com/chingor13/synthtool.git@java-readme#egg=gcp-synthtool
+python3.6 -m pip install git+https://github.com/googleapis/synthtool.git#egg=gcp-synthtool
 python3.6 -m autosynth.synth \
-    --repository=chingor13/java-security-private-ca \
+    --repository=googleapis/java-security-private-ca \
     --synth-file-name=.github/readme/synth.py \
     --metadata-path=.github/readme/synth.metadata \
     --pr-title="chore: regenerate README" \
