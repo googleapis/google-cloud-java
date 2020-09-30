@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "4caac542109afd2ef88ad9f799284a36ba857a4e"
+        "sha": "9320c895e03db7626f7754607311fe6d9bdf629f"
       }
     },
     {
@@ -51,7 +51,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "916c10e8581804df2b48a0f0457d848f3faa582e"
+        "sha": "e6168630be3e31eede633ba2c6f1cd64248dec1c"
       }
     }
   ],
@@ -108,6 +108,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
@@ -120,6 +121,7 @@
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
+    ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
@@ -143,6 +145,7 @@
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
     ".kokoro/presubmit/samples.cfg",
+    ".kokoro/readme.sh",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
     ".kokoro/release/common.sh",
@@ -160,7 +163,6 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorSettings.java",
