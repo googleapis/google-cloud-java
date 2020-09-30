@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "80003a3de2d8a75f5b47cb2e77e018f7f0f776cc"
+        "sha": "e6168630be3e31eede633ba2c6f1cd64248dec1c"
       }
     }
   ],
@@ -76,6 +76,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
@@ -88,6 +89,7 @@
     ".kokoro/common.sh",
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
+    ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
     ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
@@ -111,6 +113,7 @@
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
     ".kokoro/presubmit/samples.cfg",
+    ".kokoro/readme.sh",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
     ".kokoro/release/common.sh",
