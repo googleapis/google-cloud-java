@@ -42,6 +42,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     verb_ = "";
     statusMessage_ = "";
     apiVersion_ = "";
+    endpoint_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
 
               apiVersion_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              endpoint_ = s;
               break;
             }
           default:
@@ -479,6 +487,55 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ENDPOINT_FIELD_NUMBER = 8;
+  private volatile java.lang.Object endpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * API endpoint name of this operation.
+   * </pre>
+   *
+   * <code>string endpoint = 8;</code>
+   *
+   * @return The endpoint.
+   */
+  @java.lang.Override
+  public java.lang.String getEndpoint() {
+    java.lang.Object ref = endpoint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endpoint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * API endpoint name of this operation.
+   * </pre>
+   *
+   * <code>string endpoint = 8;</code>
+   *
+   * @return The bytes for endpoint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEndpointBytes() {
+    java.lang.Object ref = endpoint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      endpoint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -514,6 +571,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getApiVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiVersion_);
     }
+    if (!getEndpointBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endpoint_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -544,6 +604,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getApiVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersion_);
     }
+    if (!getEndpointBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endpoint_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -573,6 +636,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getStatusMessage().equals(other.getStatusMessage())) return false;
     if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getApiVersion().equals(other.getApiVersion())) return false;
+    if (!getEndpoint().equals(other.getEndpoint())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -602,6 +666,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
     hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getApiVersion().hashCode();
+    hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
+    hash = (53 * hash) + getEndpoint().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -769,6 +835,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       apiVersion_ = "";
 
+      endpoint_ = "";
+
       return this;
     }
 
@@ -811,6 +879,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       result.statusMessage_ = statusMessage_;
       result.requestedCancellation_ = requestedCancellation_;
       result.apiVersion_ = apiVersion_;
+      result.endpoint_ = endpoint_;
       onBuilt();
       return result;
     }
@@ -884,6 +953,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getApiVersion().isEmpty()) {
         apiVersion_ = other.apiVersion_;
+        onChanged();
+      }
+      if (!other.getEndpoint().isEmpty()) {
+        endpoint_ = other.endpoint_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1759,6 +1832,112 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       apiVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object endpoint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * API endpoint name of this operation.
+     * </pre>
+     *
+     * <code>string endpoint = 8;</code>
+     *
+     * @return The endpoint.
+     */
+    public java.lang.String getEndpoint() {
+      java.lang.Object ref = endpoint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpoint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * API endpoint name of this operation.
+     * </pre>
+     *
+     * <code>string endpoint = 8;</code>
+     *
+     * @return The bytes for endpoint.
+     */
+    public com.google.protobuf.ByteString getEndpointBytes() {
+      java.lang.Object ref = endpoint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * API endpoint name of this operation.
+     * </pre>
+     *
+     * <code>string endpoint = 8;</code>
+     *
+     * @param value The endpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpoint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      endpoint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * API endpoint name of this operation.
+     * </pre>
+     *
+     * <code>string endpoint = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpoint() {
+
+      endpoint_ = getDefaultInstance().getEndpoint();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * API endpoint name of this operation.
+     * </pre>
+     *
+     * <code>string endpoint = 8;</code>
+     *
+     * @param value The bytes for endpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      endpoint_ = value;
       onChanged();
       return this;
     }

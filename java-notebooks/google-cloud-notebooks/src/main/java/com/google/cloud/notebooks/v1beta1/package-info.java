@@ -21,7 +21,7 @@
  *
  * <p>===================== NotebookServiceClient =====================
  *
- * <p>Service Description: API service for Cloud AI Platform Notebooks.
+ * <p>Service Description: API v1beta1 service for Cloud AI Platform Notebooks.
  *
  * <p>Sample for NotebookServiceClient:
  *

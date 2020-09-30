@@ -62,4 +62,29 @@ public interface IsInstanceUpgradeableResponseOrBuilder
    * @return The bytes for upgradeVersion.
    */
   com.google.protobuf.ByteString getUpgradeVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about upgrade.
+   * </pre>
+   *
+   * <code>string upgrade_info = 3;</code>
+   *
+   * @return The upgradeInfo.
+   */
+  java.lang.String getUpgradeInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Additional information about upgrade.
+   * </pre>
+   *
+   * <code>string upgrade_info = 3;</code>
+   *
+   * @return The bytes for upgradeInfo.
+   */
+  com.google.protobuf.ByteString getUpgradeInfoBytes();
 }

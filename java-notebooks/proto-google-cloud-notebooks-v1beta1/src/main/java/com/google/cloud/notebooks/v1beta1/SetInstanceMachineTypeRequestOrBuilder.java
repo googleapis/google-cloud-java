@@ -54,7 +54,8 @@ public interface SetInstanceMachineTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types).
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types).
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -66,7 +67,8 @@ public interface SetInstanceMachineTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types).
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types).
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = REQUIRED];</code>

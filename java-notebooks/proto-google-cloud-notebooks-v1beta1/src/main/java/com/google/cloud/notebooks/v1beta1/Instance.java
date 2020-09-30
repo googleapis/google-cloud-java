@@ -794,6 +794,36 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 6;</code>
      */
     DELETED(6),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is upgrading.
+     * </pre>
+     *
+     * <code>UPGRADING = 7;</code>
+     */
+    UPGRADING(7),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being created.
+     * </pre>
+     *
+     * <code>INITIALIZING = 8;</code>
+     */
+    INITIALIZING(8),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is getting registered.
+     * </pre>
+     *
+     * <code>REGISTERING = 9;</code>
+     */
+    REGISTERING(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -868,6 +898,36 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 6;</code>
      */
     public static final int DELETED_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is upgrading.
+     * </pre>
+     *
+     * <code>UPGRADING = 7;</code>
+     */
+    public static final int UPGRADING_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being created.
+     * </pre>
+     *
+     * <code>INITIALIZING = 8;</code>
+     */
+    public static final int INITIALIZING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is getting registered.
+     * </pre>
+     *
+     * <code>REGISTERING = 9;</code>
+     */
+    public static final int REGISTERING_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -907,6 +967,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return STOPPED;
         case 6:
           return DELETED;
+        case 7:
+          return UPGRADING;
+        case 8:
+          return INITIALIZING;
+        case 9:
+          return REGISTERING;
         default:
           return null;
       }
@@ -1000,6 +1066,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PD_SSD = 2;</code>
      */
     PD_SSD(2),
+    /**
+     *
+     *
+     * <pre>
+     * Balanced persistent disk type.
+     * </pre>
+     *
+     * <code>PD_BALANCED = 3;</code>
+     */
+    PD_BALANCED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -1033,6 +1109,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PD_SSD = 2;</code>
      */
     public static final int PD_SSD_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Balanced persistent disk type.
+     * </pre>
+     *
+     * <code>PD_BALANCED = 3;</code>
+     */
+    public static final int PD_BALANCED_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1064,6 +1150,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return PD_STANDARD;
         case 2:
           return PD_SSD;
+        case 3:
+          return PD_BALANCED;
         default:
           return null;
       }

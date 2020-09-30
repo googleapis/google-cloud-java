@@ -208,4 +208,29 @@ public interface OperationMetadataOrBuilder
    * @return The bytes for apiVersion.
    */
   com.google.protobuf.ByteString getApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * API endpoint name of this operation.
+   * </pre>
+   *
+   * <code>string endpoint = 8;</code>
+   *
+   * @return The endpoint.
+   */
+  java.lang.String getEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * API endpoint name of this operation.
+   * </pre>
+   *
+   * <code>string endpoint = 8;</code>
+   *
+   * @return The bytes for endpoint.
+   */
+  com.google.protobuf.ByteString getEndpointBytes();
 }

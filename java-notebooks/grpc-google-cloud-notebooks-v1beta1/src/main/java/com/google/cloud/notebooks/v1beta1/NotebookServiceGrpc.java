@@ -26,7 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * API service for Cloud AI Platform Notebooks.
+ * API v1beta1 service for Cloud AI Platform Notebooks.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -969,7 +969,7 @@ public final class NotebookServiceGrpc {
    *
    *
    * <pre>
-   * API service for Cloud AI Platform Notebooks.
+   * API v1beta1 service for Cloud AI Platform Notebooks.
    * </pre>
    */
   public abstract static class NotebookServiceImplBase implements io.grpc.BindableService {
@@ -1362,7 +1362,7 @@ public final class NotebookServiceGrpc {
    *
    *
    * <pre>
-   * API service for Cloud AI Platform Notebooks.
+   * API v1beta1 service for Cloud AI Platform Notebooks.
    * </pre>
    */
   public static final class NotebookServiceStub
@@ -1697,7 +1697,7 @@ public final class NotebookServiceGrpc {
    *
    *
    * <pre>
-   * API service for Cloud AI Platform Notebooks.
+   * API v1beta1 service for Cloud AI Platform Notebooks.
    * </pre>
    */
   public static final class NotebookServiceBlockingStub
@@ -1962,7 +1962,7 @@ public final class NotebookServiceGrpc {
    *
    *
    * <pre>
-   * API service for Cloud AI Platform Notebooks.
+   * API v1beta1 service for Cloud AI Platform Notebooks.
    * </pre>
    */
   public static final class NotebookServiceFutureStub

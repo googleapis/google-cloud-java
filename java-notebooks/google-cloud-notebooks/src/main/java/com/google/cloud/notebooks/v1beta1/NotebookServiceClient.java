@@ -40,7 +40,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: API service for Cloud AI Platform Notebooks.
+ * Service Description: API v1beta1 service for Cloud AI Platform Notebooks.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

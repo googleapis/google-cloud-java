@@ -1034,10 +1034,12 @@ public class NotebookServiceClientTest {
   public void isInstanceUpgradeableTest() {
     boolean upgradeable = true;
     String upgradeVersion = "upgradeVersion1040155061";
+    String upgradeInfo = "upgradeInfo-1337232143";
     IsInstanceUpgradeableResponse expectedResponse =
         IsInstanceUpgradeableResponse.newBuilder()
             .setUpgradeable(upgradeable)
             .setUpgradeVersion(upgradeVersion)
+            .setUpgradeInfo(upgradeInfo)
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
