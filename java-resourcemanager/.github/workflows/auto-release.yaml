@@ -4,10 +4,11 @@ name: auto-release
 jobs:
   approve:
     runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'release-v')
     steps:
     - uses: actions/github-script@v3.0.0
       with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        github-token: ${{secrets.YOSHI_APPROVER_TOKEN}}
         debug: true
         script: |
           // only approve PRs from release-please[bot]
@@ -17,6 +18,24 @@ jobs:
 
           // only approve PRs like "chore: release <release version>"
           if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
+            return;
+          }
+
+          // only approve PRs with pom.xml and versions.txt changes
+          const filesPromise = github.pulls.listFiles.endpoint({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number,
+          });
+          const changed_files = await github.paginate(filesPromise)
+
+          if ( changed_files.length < 1 ) {
+            console.log( "Not proceeding since PR is empty!" )
+            return;
+          }
+
+          if ( !changed_files.some(v => v.filename.includes("pom")) || !changed_files.some(v => v.filename.includes("versions.txt")) ) {
+            console.log( "PR file changes do not have pom.xml or versions.txt -- something is wrong. PTAL!" )
             return;
           }
 
