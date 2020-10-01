@@ -26,6 +26,7 @@ import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class ITDiskTest extends BaseTest {
 
@@ -45,9 +46,18 @@ public class ITDiskTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
-    DiskSettings diskSettings =
-        DiskSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
-    diskClient = DiskClient.create(diskSettings);
+    DiskSettings.Builder diskSettings = DiskSettings.newBuilder();
+    diskSettings
+        .getDiskSettings()
+        .setRetrySettings(
+            diskSettings
+                .getDiskSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setTotalTimeout(Duration.ofSeconds(900))
+                .build());
+    diskClient =
+        DiskClient.create(diskSettings.setCredentialsProvider(credentialsProvider).build());
     Disk diskResource =
         Disk.newBuilder().setName(DISK_NAME).setRegion(REGION_LINK).setSizeGb(DISK_SIZE).build();
     Operation completedOperation =
@@ -113,7 +123,7 @@ public class ITDiskTest extends BaseTest {
     }
   }
 
-  @Test
+  @Test(timeout = 360000)
   public void createSnapshotDiskTest() {
     String snapshotName = TestHelper.getTestUniqueName("snapshot");
     Snapshot snapshotResource =
