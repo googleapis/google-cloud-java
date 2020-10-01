@@ -157,7 +157,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
 
     /**
      * Set the clustering configuration for the table. If not set, the table is not clustered.
-     * Clustering is only available for partitioned tables.
+     * BigQuery supports clustering for both partitioned and non-partitioned tables.
      */
     public abstract Builder setClustering(Clustering clustering);
 

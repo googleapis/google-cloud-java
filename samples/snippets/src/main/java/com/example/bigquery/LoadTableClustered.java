@@ -65,7 +65,7 @@ public class LoadTableClustered {
 
       TimePartitioning partitioning = TimePartitioning.of(TimePartitioning.Type.DAY);
       // Clustering fields will be consisted of fields mentioned in the schema.
-      // As of now, another condition is that the table should be partitioned.
+      // BigQuery supports clustering for both partitioned and non-partitioned tables.
       Clustering clustering = Clustering.newBuilder().setFields(clusteringFields).build();
 
       LoadJobConfiguration loadJobConfig =
