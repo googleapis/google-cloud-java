@@ -60,8 +60,7 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -74,8 +73,7 @@ public interface TenantOrBuilder
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *

@@ -45,10 +45,10 @@ public final class CompanyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/talent/v4/company.proto\022\026"
-          + "google.cloud.talent.v4\032\034google/api/annot"
-          + "ations.proto\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\032#google"
-          + "/cloud/talent/v4/common.proto\"\304\004\n\007Compan"
+          + "google.cloud.talent.v4\032\037google/api/field"
+          + "_behavior.proto\032\031google/api/resource.pro"
+          + "to\032#google/cloud/talent/v4/common.proto\032"
+          + "\034google/api/annotations.proto\"\304\004\n\007Compan"
           + "y\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB\003\340"
           + "A\002\022\030\n\013external_id\030\003 \001(\tB\003\340A\002\0221\n\004size\030\004 \001"
           + "(\0162#.google.cloud.talent.v4.CompanySize\022"
@@ -72,10 +72,10 @@ public final class CompanyProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4.CommonProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_Company_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -111,10 +111,10 @@ public final class CompanyProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4.CommonProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

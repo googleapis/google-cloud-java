@@ -57,11 +57,11 @@ public final class JobProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/cloud/talent/v4/job.proto\022\026goog"
-          + "le.cloud.talent.v4\032\034google/api/annotatio"
-          + "ns.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032#google/clo"
-          + "ud/talent/v4/common.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\365\016\n\003Job\022\014\n\004name\030\001 \001(\t"
+          + "le.cloud.talent.v4\032\037google/api/field_beh"
+          + "avior.proto\032\031google/api/resource.proto\032#"
+          + "google/cloud/talent/v4/common.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\034google/api"
+          + "/annotations.proto\"\365\016\n\003Job\022\014\n\004name\030\001 \001(\t"
           + "\0224\n\007company\030\002 \001(\tB#\340A\002\372A\035\n\033jobs.googleap"
           + "is.com/Company\022\033\n\016requisition_id\030\003 \001(\tB\003"
           + "\340A\002\022\022\n\005title\030\004 \001(\tB\003\340A\002\022\030\n\013description\030\005"
@@ -118,11 +118,11 @@ public final class JobProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_Job_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -200,11 +200,11 @@ public final class JobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

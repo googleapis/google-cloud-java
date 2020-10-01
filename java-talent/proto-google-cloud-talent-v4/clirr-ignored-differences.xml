@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/talent/v4/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/talent/v4/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/talent/v4/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!--TODO: To be removed after 0.39.0-->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/talent/v4/CommuteMethod</className>
+    <field>CYCLING</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/talent/v4/CommuteMethod</className>
+    <field>CYCLING_VALUE</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/talent/v4/CommuteMethod</className>
+    <field>WALKING</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/talent/v4/CommuteMethod</className>
+    <field>WALKING_VALUE</field>
+  </difference>
+</differences>

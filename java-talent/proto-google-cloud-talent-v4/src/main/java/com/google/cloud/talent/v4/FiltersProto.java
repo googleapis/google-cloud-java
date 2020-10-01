@@ -53,12 +53,12 @@ public final class FiltersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/talent/v4/filters.proto\022\026"
-          + "google.cloud.talent.v4\032\034google/api/annot"
-          + "ations.proto\032\037google/api/field_behavior."
-          + "proto\032#google/cloud/talent/v4/common.pro"
-          + "to\032\036google/protobuf/duration.proto\032\030goog"
-          + "le/type/latlng.proto\032\033google/type/timeof"
-          + "day.proto\"\342\004\n\010JobQuery\022\r\n\005query\030\001 \001(\t\022\033\n"
+          + "google.cloud.talent.v4\032\037google/api/field"
+          + "_behavior.proto\032#google/cloud/talent/v4/"
+          + "common.proto\032\036google/protobuf/duration.p"
+          + "roto\032\030google/type/latlng.proto\032\033google/t"
+          + "ype/timeofday.proto\032\034google/api/annotati"
+          + "ons.proto\"\342\004\n\010JobQuery\022\r\n\005query\030\001 \001(\t\022\033\n"
           + "\023query_language_code\030\016 \001(\t\022\021\n\tcompanies\030"
           + "\002 \003(\t\022@\n\020location_filters\030\003 \003(\0132&.google"
           + ".cloud.talent.v4.LocationFilter\022;\n\016job_c"
@@ -113,12 +113,12 @@ public final class FiltersProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.talent.v4.CommonProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
               com.google.type.TimeOfDayProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_JobQuery_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -176,12 +176,12 @@ public final class FiltersProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.talent.v4.CommonProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.type.TimeOfDayProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

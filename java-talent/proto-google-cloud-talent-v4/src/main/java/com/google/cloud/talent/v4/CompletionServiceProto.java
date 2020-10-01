@@ -50,10 +50,10 @@ public final class CompletionServiceProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/talent/v4/completion_serv"
           + "ice.proto\022\026google.cloud.talent.v4\032\034googl"
-          + "e/api/annotations.proto\032\027google/api/clie"
-          + "nt.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032#google/clo"
-          + "ud/talent/v4/common.proto\"\210\004\n\024CompleteQu"
+          + "e/api/annotations.proto\032\037google/api/fiel"
+          + "d_behavior.proto\032\031google/api/resource.pr"
+          + "oto\032#google/cloud/talent/v4/common.proto"
+          + "\032\027google/api/client.proto\"\210\004\n\024CompleteQu"
           + "eryRequest\0222\n\006tenant\030\001 \001(\tB\"\340A\002\372A\034\n\032jobs"
           + ".googleapis.com/Tenant\022\022\n\005query\030\002 \001(\tB\003\340"
           + "A\002\022\026\n\016language_codes\030\003 \003(\t\022\026\n\tpage_size\030"
@@ -92,10 +92,10 @@ public final class CompletionServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.talent.v4.CommonProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_CompleteQueryRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -133,10 +133,10 @@ public final class CompletionServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.talent.v4.CommonProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

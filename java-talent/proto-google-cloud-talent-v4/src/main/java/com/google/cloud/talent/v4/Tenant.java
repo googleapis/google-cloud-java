@@ -185,8 +185,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -210,8 +209,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the
-   * tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -695,8 +693,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -719,8 +716,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -743,8 +739,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -766,8 +761,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -785,8 +779,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the
-     * tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *

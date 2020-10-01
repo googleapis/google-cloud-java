@@ -199,8 +199,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -212,8 +211,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The scope of the completion. The defaults is
-   * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -226,8 +224,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -239,8 +236,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The completion topic. The default is
-   * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>

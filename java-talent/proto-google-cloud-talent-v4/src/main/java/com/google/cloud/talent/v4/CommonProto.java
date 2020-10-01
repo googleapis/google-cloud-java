@@ -81,12 +81,12 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/talent/v4/common.proto\022\026g"
-          + "oogle.cloud.talent.v4\032\034google/api/annota"
-          + "tions.proto\032\037google/api/field_behavior.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\036g"
-          + "oogle/protobuf/wrappers.proto\032\030google/ty"
-          + "pe/latlng.proto\032\027google/type/money.proto"
-          + "\032 google/type/postal_address.proto\"n\n\016Ti"
+          + "oogle.cloud.talent.v4\032\037google/api/field_"
+          + "behavior.proto\032\037google/protobuf/timestam"
+          + "p.proto\032\036google/protobuf/wrappers.proto\032"
+          + "\030google/type/latlng.proto\032\027google/type/m"
+          + "oney.proto\032 google/type/postal_address.p"
+          + "roto\032\034google/api/annotations.proto\"n\n\016Ti"
           + "mestampRange\022.\n\nstart_time\030\001 \001(\0132\032.googl"
           + "e.protobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032"
           + ".google.protobuf.Timestamp\"\262\003\n\010Location\022"
@@ -209,24 +209,24 @@ public final class CommonProto {
           + "_PUBLIC\020\003\032\002\030\001*q\n\020HtmlSanitization\022!\n\035HTM"
           + "L_SANITIZATION_UNSPECIFIED\020\000\022\036\n\032HTML_SAN"
           + "ITIZATION_DISABLED\020\001\022\032\n\026SIMPLE_FORMATTIN"
-          + "G_ONLY\020\002*c\n\rCommuteMethod\022\036\n\032COMMUTE_MET"
+          + "G_ONLY\020\002*I\n\rCommuteMethod\022\036\n\032COMMUTE_MET"
           + "HOD_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007TRANSI"
-          + "T\020\002\022\013\n\007WALKING\020\003\022\013\n\007CYCLING\020\004Bo\n\032com.goo"
-          + "gle.cloud.talent.v4B\013CommonProtoP\001Z<goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "talent/v4;talent\242\002\003CTSb\006proto3"
+          + "T\020\002Bo\n\032com.google.cloud.talent.v4B\013Commo"
+          + "nProtoP\001Z<google.golang.org/genproto/goo"
+          + "gleapis/cloud/talent/v4;talent\242\002\003CTSb\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
               com.google.type.PostalAddressProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_TimestampRange_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -334,13 +334,13 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
     com.google.type.PostalAddressProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

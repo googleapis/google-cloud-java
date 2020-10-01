@@ -60,8 +60,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -75,8 +75,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -90,8 +90,8 @@ public interface CreateClientEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>

@@ -370,8 +370,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-   * example, "en-US". This field helps to better interpret the query.
+   * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+   * better interpret the query.
    * If a value isn't specified, the query language code is automatically
    * detected, which may not be accurate.
    * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -399,8 +399,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-   * example, "en-US". This field helps to better interpret the query.
+   * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+   * better interpret the query.
    * If a value isn't specified, the query language code is automatically
    * detected, which may not be accurate.
    * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -525,14 +525,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The location filter specifies geo-regions containing the jobs to
-   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-   * for more information.
+   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
-   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-   * parameter, the maximum provided distance is used for all locations.
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+   * distance is used for all locations.
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -547,14 +546,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The location filter specifies geo-regions containing the jobs to
-   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-   * for more information.
+   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
-   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-   * parameter, the maximum provided distance is used for all locations.
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+   * distance is used for all locations.
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -570,14 +568,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The location filter specifies geo-regions containing the jobs to
-   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-   * for more information.
+   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
-   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-   * parameter, the maximum provided distance is used for all locations.
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+   * distance is used for all locations.
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -592,14 +589,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The location filter specifies geo-regions containing the jobs to
-   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-   * for more information.
+   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
-   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-   * parameter, the maximum provided distance is used for all locations.
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+   * distance is used for all locations.
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -614,14 +610,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The location filter specifies geo-regions containing the jobs to
-   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-   * for more information.
+   * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
    * If a location value isn't specified, jobs fitting the other search
    * criteria are retrieved regardless of where they're located.
    * If multiple values are specified, jobs are retrieved from any of the
    * specified locations. If different values are specified for the
-   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-   * parameter, the maximum provided distance is used for all locations.
+   * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+   * distance is used for all locations.
    * At most 5 location filters are allowed.
    * </pre>
    *
@@ -756,10 +751,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
-   * Note: This only works when you specify a
-   * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-   * ignored.
+   * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -777,10 +770,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
-   * Note: This only works when you specify a
-   * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-   * ignored.
+   * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -800,10 +791,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows filtering jobs by commute time with different travel methods (for
    *  example, driving or public transit).
-   * Note: This only works when you specify a
-   * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-   * ignored.
+   * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+   * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
    *  Currently we don't support sorting by commute time.
    * </pre>
    *
@@ -820,9 +809,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company
-   * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-   * jobs to search against.
+   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against.
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -841,9 +829,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company
-   * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-   * jobs to search against.
+   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against.
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -862,9 +849,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company
-   * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-   * jobs to search against.
+   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against.
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -884,9 +870,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company
-   * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-   * jobs to search against.
+   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+   * of the jobs to search against.
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -910,10 +895,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This search filter is applied only to
-   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-   * example, if the filter is specified as "Hourly job with per-hour
-   * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-   * filter isn't defined, all open jobs are searched.
+   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+   * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+   * these criteria are searched. If a filter isn't defined, all open jobs
+   * are searched.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -929,10 +914,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This search filter is applied only to
-   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-   * example, if the filter is specified as "Hourly job with per-hour
-   * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-   * filter isn't defined, all open jobs are searched.
+   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+   * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+   * these criteria are searched. If a filter isn't defined, all open jobs
+   * are searched.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -950,10 +935,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This search filter is applied only to
-   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-   * example, if the filter is specified as "Hourly job with per-hour
-   * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-   * filter isn't defined, all open jobs are searched.
+   * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+   * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+   * these criteria are searched. If a filter isn't defined, all open jobs
+   * are searched.
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -970,8 +955,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-   * marked as `filterable`.
+   * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
    * The syntax for this expression is a subset of SQL syntax.
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
    * left of the operator is a custom field key and the right of the operator
@@ -1010,8 +994,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-   * marked as `filterable`.
+   * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
    * The syntax for this expression is a subset of SQL syntax.
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
    * left of the operator is a custom field key and the right of the operator
@@ -1088,8 +1071,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The employment type filter specifies the employment type of jobs to
-   * search against, such as
-   * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+   * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
    * If multiple values are specified, jobs in the search results include
@@ -1111,8 +1093,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The employment type filter specifies the employment type of jobs to
-   * search against, such as
-   * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+   * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
    * If multiple values are specified, jobs in the search results include
@@ -1132,8 +1113,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The employment type filter specifies the employment type of jobs to
-   * search against, such as
-   * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+   * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
    * If multiple values are specified, jobs in the search results include
@@ -1154,8 +1134,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The employment type filter specifies the employment type of jobs to
-   * search against, such as
-   * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+   * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
    * If multiple values are specified, jobs in the search results include
@@ -1175,8 +1154,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The employment type filter specifies the employment type of jobs to
-   * search against, such as
-   * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+   * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
    * If a value isn't specified, jobs in the search results includes any
    * employment type.
    * If multiple values are specified, jobs in the search results include
@@ -2240,8 +2218,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-     * example, "en-US". This field helps to better interpret the query.
+     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+     * better interpret the query.
      * If a value isn't specified, the query language code is automatically
      * detected, which may not be accurate.
      * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -2268,8 +2246,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-     * example, "en-US". This field helps to better interpret the query.
+     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+     * better interpret the query.
      * If a value isn't specified, the query language code is automatically
      * detected, which may not be accurate.
      * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -2296,8 +2274,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-     * example, "en-US". This field helps to better interpret the query.
+     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+     * better interpret the query.
      * If a value isn't specified, the query language code is automatically
      * detected, which may not be accurate.
      * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -2323,8 +2301,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-     * example, "en-US". This field helps to better interpret the query.
+     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+     * better interpret the query.
      * If a value isn't specified, the query language code is automatically
      * detected, which may not be accurate.
      * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -2346,8 +2324,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For
-     * example, "en-US". This field helps to better interpret the query.
+     * The language code of [query][google.cloud.talent.v4.JobQuery.query]. For example, "en-US". This field helps to
+     * better interpret the query.
      * If a value isn't specified, the query language code is automatically
      * detected, which may not be accurate.
      * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
@@ -2633,14 +2611,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2658,14 +2635,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2683,14 +2659,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2708,14 +2683,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2739,14 +2713,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2768,14 +2741,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2799,14 +2771,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2830,14 +2801,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2859,14 +2829,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2888,14 +2857,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2917,14 +2885,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2945,14 +2912,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2973,14 +2939,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -2994,14 +2959,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -3020,14 +2984,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -3046,14 +3009,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -3068,14 +3030,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -3090,14 +3051,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The location filter specifies geo-regions containing the jobs to
-     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter]
-     * for more information.
+     * search against. See [LocationFilter][google.cloud.talent.v4.LocationFilter] for more information.
      * If a location value isn't specified, jobs fitting the other search
      * criteria are retrieved regardless of where they're located.
      * If multiple values are specified, jobs are retrieved from any of the
      * specified locations. If different values are specified for the
-     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles]
-     * parameter, the maximum provided distance is used for all locations.
+     * [LocationFilter.distance_in_miles][google.cloud.talent.v4.LocationFilter.distance_in_miles] parameter, the maximum provided
+     * distance is used for all locations.
      * At most 5 location filters are allowed.
      * </pre>
      *
@@ -3409,10 +3369,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3429,10 +3387,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3455,10 +3411,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3483,10 +3437,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3509,10 +3461,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3541,10 +3491,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3567,10 +3515,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3587,10 +3533,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3611,10 +3555,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows filtering jobs by commute time with different travel methods (for
      *  example, driving or public transit).
-     * Note: This only works when you specify a
-     * [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
-     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is
-     * ignored.
+     * Note: This only works when you specify a [CommuteMethod][google.cloud.talent.v4.CommuteMethod]. In this case,
+     * [location_filters][google.cloud.talent.v4.JobQuery.location_filters] is ignored.
      *  Currently we don't support sorting by commute time.
      * </pre>
      *
@@ -3650,9 +3592,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3671,9 +3612,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3692,9 +3632,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3714,9 +3653,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3736,9 +3674,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3765,9 +3702,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3793,9 +3729,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3818,9 +3753,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3842,9 +3776,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company
-     * [Company.display_name][google.cloud.talent.v4.Company.display_name] of the
-     * jobs to search against.
+     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4.Company.display_name]
+     * of the jobs to search against.
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3879,10 +3812,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -3897,10 +3830,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -3921,10 +3854,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -3947,10 +3880,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -3971,10 +3904,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -4001,10 +3934,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -4025,10 +3958,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -4043,10 +3976,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -4065,10 +3998,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This search filter is applied only to
-     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For
-     * example, if the filter is specified as "Hourly job with per-hour
-     * compensation &gt; $15", only jobs meeting these criteria are searched. If a
-     * filter isn't defined, all open jobs are searched.
+     * [Job.compensation_info][google.cloud.talent.v4.Job.compensation_info]. For example, if the filter is specified
+     * as "Hourly job with per-hour compensation &gt; $15", only jobs meeting
+     * these criteria are searched. If a filter isn't defined, all open jobs
+     * are searched.
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationFilter compensation_filter = 7;</code>
@@ -4096,8 +4029,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-     * marked as `filterable`.
+     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
      * The syntax for this expression is a subset of SQL syntax.
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
      * left of the operator is a custom field key and the right of the operator
@@ -4135,8 +4067,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-     * marked as `filterable`.
+     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
      * The syntax for this expression is a subset of SQL syntax.
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
      * left of the operator is a custom field key and the right of the operator
@@ -4174,8 +4105,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-     * marked as `filterable`.
+     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
      * The syntax for this expression is a subset of SQL syntax.
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
      * left of the operator is a custom field key and the right of the operator
@@ -4212,8 +4142,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-     * marked as `filterable`.
+     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
      * The syntax for this expression is a subset of SQL syntax.
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
      * left of the operator is a custom field key and the right of the operator
@@ -4246,8 +4175,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes]
-     * marked as `filterable`.
+     * [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] marked as `filterable`.
      * The syntax for this expression is a subset of SQL syntax.
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the
      * left of the operator is a custom field key and the right of the operator
@@ -4355,8 +4283,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4377,8 +4304,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4397,8 +4323,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4418,8 +4343,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4446,8 +4370,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4473,8 +4396,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4500,8 +4422,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4523,8 +4444,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4543,8 +4463,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4564,8 +4483,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4589,8 +4507,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include
@@ -4613,8 +4530,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The employment type filter specifies the employment type of jobs to
-     * search against, such as
-     * [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
+     * search against, such as [EmploymentType.FULL_TIME][google.cloud.talent.v4.EmploymentType.FULL_TIME].
      * If a value isn't specified, jobs in the search results includes any
      * employment type.
      * If multiple values are specified, jobs in the search results include

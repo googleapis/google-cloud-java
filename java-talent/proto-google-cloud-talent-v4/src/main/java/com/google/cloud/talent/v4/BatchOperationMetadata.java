@@ -23,8 +23,7 @@ package com.google.cloud.talent.v4;
  *
  * <pre>
  * Metadata used for long running operations returned by CTS batch APIs.
- * It's used to replace
- * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+ * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4.BatchOperationMetadata}
@@ -239,8 +238,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -251,9 +249,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called. Any items processed before cancelling are returned in the
-     * response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
+     * processed before cancelling are returned in the response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -318,8 +315,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is in the process of cancelling after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called.
      * </pre>
      *
      * <code>CANCELLING = 5;</code>
@@ -330,9 +326,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The batch operation is done after
-     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation]
-     * is called. Any items processed before cancelling are returned in the
-     * response.
+     * [google.longrunning.Operations.CancelOperation][google.longrunning.Operations.CancelOperation] is called. Any items
+     * processed before cancelling are returned in the response.
      * </pre>
      *
      * <code>CANCELLED = 6;</code>
@@ -626,8 +621,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-   * refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -643,8 +638,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-   * refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -660,8 +655,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation status is updated. The metadata and the
-   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-   * refreshed every minute otherwise cached data is returned.
+   * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+   * returned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -678,8 +673,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -695,8 +689,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -712,8 +705,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch operation is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to `true`.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -967,8 +959,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Metadata used for long running operations returned by CTS batch APIs.
-   * It's used to replace
-   * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
+   * It's used to replace [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4.BatchOperationMetadata}
@@ -1738,8 +1729,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1754,8 +1745,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1776,8 +1767,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1800,8 +1791,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1821,8 +1812,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1847,8 +1838,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1869,8 +1860,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1885,8 +1876,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1905,8 +1896,8 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation status is updated. The metadata and the
-     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
-     * refreshed every minute otherwise cached data is returned.
+     * [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is refreshed every minute otherwise cached data is
+     * returned.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
@@ -1939,8 +1930,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1955,8 +1945,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1975,8 +1964,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -1999,8 +1987,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2020,8 +2007,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2046,8 +2032,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2068,8 +2053,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2084,8 +2068,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
@@ -2102,8 +2085,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch operation is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to `true`.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to `true`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 8;</code>

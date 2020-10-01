@@ -190,8 +190,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -208,8 +208,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -228,8 +228,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application
-   * that uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application that
+   * uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -723,8 +723,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -740,8 +740,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -763,8 +763,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -788,8 +788,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -810,8 +810,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -839,8 +839,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -862,8 +862,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -879,8 +879,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -900,8 +900,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application
-     * that uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application that
+     * uses Cloud Talent Solution.
      * </pre>
      *
      * <code>

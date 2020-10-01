@@ -45,9 +45,9 @@ public final class EventProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/talent/v4/event.proto\022\026go"
-          + "ogle.cloud.talent.v4\032\034google/api/annotat"
-          + "ions.proto\032\037google/api/field_behavior.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\"\303\001\n"
+          + "ogle.cloud.talent.v4\032\037google/api/field_b"
+          + "ehavior.proto\032\037google/protobuf/timestamp"
+          + ".proto\032\034google/api/annotations.proto\"\303\001\n"
           + "\013ClientEvent\022\022\n\nrequest_id\030\001 \001(\t\022\025\n\010even"
           + "t_id\030\002 \001(\tB\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.g"
           + "oogle.protobuf.TimestampB\003\340A\002\0225\n\tjob_eve"
@@ -73,9 +73,9 @@ public final class EventProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4_ClientEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -98,9 +98,9 @@ public final class EventProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

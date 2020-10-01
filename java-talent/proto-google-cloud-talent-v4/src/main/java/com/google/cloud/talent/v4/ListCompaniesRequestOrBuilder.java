@@ -101,9 +101,8 @@ public interface ListCompaniesRequestOrBuilder
    * <pre>
    * Set to true if the companies requested must have open jobs.
    * Defaults to false.
-   * If true, at most
-   * [page_size][google.cloud.talent.v4.ListCompaniesRequest.page_size] of
-   * companies are fetched, among which only those with open jobs are returned.
+   * If true, at most [page_size][google.cloud.talent.v4.ListCompaniesRequest.page_size] of companies are fetched, among which
+   * only those with open jobs are returned.
    * </pre>
    *
    * <code>bool require_open_jobs = 4;</code>
