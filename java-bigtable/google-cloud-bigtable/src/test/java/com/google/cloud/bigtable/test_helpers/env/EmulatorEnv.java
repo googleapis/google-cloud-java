@@ -22,8 +22,12 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.emulator.v2.Emulator;
+import com.google.common.base.Strings;
+import java.nio.file.Paths;
 
 public class EmulatorEnv extends AbstractTestEnv {
+  private static final String EMULATOR_OVERRIDE_PROPERTY_NAME = "bigtable.emulator-path";
+
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "default-table";
@@ -42,7 +46,12 @@ public class EmulatorEnv extends AbstractTestEnv {
 
   @Override
   void start() throws Exception {
-    emulator = Emulator.createBundled();
+    String overridePath = System.getProperty(EMULATOR_OVERRIDE_PROPERTY_NAME);
+    if (!Strings.isNullOrEmpty(overridePath)) {
+      emulator = Emulator.createFromPath(Paths.get(overridePath));
+    } else {
+      emulator = Emulator.createBundled();
+    }
     emulator.start();
 
     dataSettings =

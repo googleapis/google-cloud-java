@@ -42,7 +42,6 @@ import java.util.logging.Logger;
  */
 @BetaApi("Surface for Bigtable emulator is not yet stable")
 public class Emulator {
-
   private static final Logger LOGGER = Logger.getLogger(Emulator.class.getName());
 
   private final Path executable;
@@ -54,6 +53,9 @@ public class Emulator {
   private ManagedChannel dataChannel;
   private ManagedChannel adminChannel;
 
+  public static Emulator createFromPath(Path path) {
+    return new Emulator(path);
+  }
   /**
    * Create a new instance of emulator. The emulator will use the bundled binaries in this jar.
    * Please note that the emulator is created in a stopped state, please use {@link #start()} after

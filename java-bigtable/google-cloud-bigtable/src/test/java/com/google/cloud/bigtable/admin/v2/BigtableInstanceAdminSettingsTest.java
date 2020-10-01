@@ -21,8 +21,11 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.io.IOException;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 
+@RunWith(JUnit4.class)
 public class BigtableInstanceAdminSettingsTest {
   @Test
   public void testProjectName() throws Exception {

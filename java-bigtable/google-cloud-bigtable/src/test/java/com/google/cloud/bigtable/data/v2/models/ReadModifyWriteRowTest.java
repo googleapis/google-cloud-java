@@ -28,7 +28,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class ReadModifyWriteRowTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";

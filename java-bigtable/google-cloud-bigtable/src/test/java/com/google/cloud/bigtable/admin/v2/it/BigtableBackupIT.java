@@ -47,9 +47,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
 
+@RunWith(JUnit4.class)
 public class BigtableBackupIT {
   private static final Logger LOGGER = Logger.getLogger(BigtableBackupIT.class.getName());
 

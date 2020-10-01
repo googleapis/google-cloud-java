@@ -46,8 +46,11 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
 
+@RunWith(JUnit4.class)
 public class BigtableTableAdminClientIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final TestName testNameRule = new TestName();
