@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.39.0](https://www.github.com/googleapis/java-talent/compare/v0.38.1...v0.39.0) (2020-10-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v4:** remove commute enums CYCLING/WALKING from Job Search v4 API (#259)
+
+### Features
+
+* **v4:** remove commute enums CYCLING/WALKING from Job Search v4 API ([#259](https://www.github.com/googleapis/java-talent/issues/259)) ([3bf5f9c](https://www.github.com/googleapis/java-talent/commit/3bf5f9c30f656447da25ac483779c8c222389b34))
+
 ### [0.38.1](https://www.github.com/googleapis/java-talent/compare/v0.38.0...v0.38.1) (2020-09-23)
 
 
