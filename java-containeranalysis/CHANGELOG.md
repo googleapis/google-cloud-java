@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-containeranalysis/compare/v1.1.3...v1.2.0) (2020-10-01)
+
+
+### Features
+
+* add GetVulnerabilityOccurrencesSummary rpc ([#265](https://www.github.com/googleapis/java-containeranalysis/issues/265)) ([e5ab75f](https://www.github.com/googleapis/java-containeranalysis/commit/e5ab75f50532a38e67aafc8ddaf1efbcee561ddb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#253](https://www.github.com/googleapis/java-containeranalysis/issues/253)) ([af18f8a](https://www.github.com/googleapis/java-containeranalysis/commit/af18f8a6344b1740089775cbb9a2fcf4afd1dd07))
+* update dependency io.grafeas:grafeas to v1.0.2 ([#254](https://www.github.com/googleapis/java-containeranalysis/issues/254)) ([c3e09cf](https://www.github.com/googleapis/java-containeranalysis/commit/c3e09cf0c9d8a5f87d557da527d752b685776c0e))
+
 ### [1.1.3](https://www.github.com/googleapis/java-containeranalysis/compare/v1.1.2...v1.1.3) (2020-09-21)
 
 
