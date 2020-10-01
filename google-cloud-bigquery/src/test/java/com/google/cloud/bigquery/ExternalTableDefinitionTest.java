@@ -46,6 +46,7 @@ public class ExternalTableDefinitionTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
+  private static final String CONNECTION_ID = "123456789";
   private static final Boolean AUTODETECT = true;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
@@ -56,6 +57,7 @@ public class ExternalTableDefinitionTest {
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setCompression(COMPRESSION)
+          .setConnectionId(CONNECTION_ID)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
           .setAutodetect(AUTODETECT)
@@ -67,10 +69,19 @@ public class ExternalTableDefinitionTest {
     compareExternalTableDefinition(
         EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_DEFINITION.toBuilder().build());
     ExternalTableDefinition externalTableDefinition =
-        EXTERNAL_TABLE_DEFINITION.toBuilder().setCompression("NONE").build();
+        EXTERNAL_TABLE_DEFINITION
+            .toBuilder()
+            .setCompression("NONE")
+            .setConnectionId("00000")
+            .build();
     assertEquals("NONE", externalTableDefinition.getCompression());
+    assertEquals("00000", externalTableDefinition.getConnectionId());
     externalTableDefinition =
-        externalTableDefinition.toBuilder().setCompression(COMPRESSION).build();
+        externalTableDefinition
+            .toBuilder()
+            .setCompression(COMPRESSION)
+            .setConnectionId(CONNECTION_ID)
+            .build();
     compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION, externalTableDefinition);
   }
 
@@ -94,6 +105,7 @@ public class ExternalTableDefinitionTest {
   public void testBuilder() {
     assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.getType());
     assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.getCompression());
+    assertEquals(CONNECTION_ID, EXTERNAL_TABLE_DEFINITION.getConnectionId());
     assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.getFormatOptions());
     assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
     assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());
@@ -119,6 +131,7 @@ public class ExternalTableDefinitionTest {
       ExternalTableDefinition expected, ExternalTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.getCompression(), value.getCompression());
+    assertEquals(expected.getConnectionId(), value.getConnectionId());
     assertEquals(expected.getFormatOptions(), value.getFormatOptions());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());

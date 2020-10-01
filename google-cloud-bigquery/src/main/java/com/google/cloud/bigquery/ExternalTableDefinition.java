@@ -125,6 +125,12 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     public abstract Builder setCompression(String compression);
 
     /**
+     * [Optional, Trusted Tester] connectionId for external data source. The value may be {@code
+     * null}.
+     */
+    public abstract Builder setConnectionId(String connectionId);
+
+    /**
      * [Experimental] Sets detection of schema and format options automatically. Any option
      * specified explicitly will be honored.
      */
@@ -157,6 +163,16 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    */
   @Nullable
   public abstract String getCompression();
+
+  /**
+   * Returns the connection ID used to connect to external data source.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration">
+   *     ConnectionId</a>
+   */
+  @Nullable
+  public abstract String getConnectionId();
 
   /**
    * Returns whether BigQuery should allow extra values that are not represented in the table
@@ -248,6 +264,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         new com.google.api.services.bigquery.model.ExternalDataConfiguration();
     if (getCompression() != null) {
       externalConfigurationPb.setCompression(getCompression());
+    }
+    if (getConnectionId() != null) {
+      externalConfigurationPb.setConnectionId(getConnectionId());
     }
     if (ignoreUnknownValues() != null) {
       externalConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues());
@@ -415,6 +434,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         builder.setFormatOptions(FormatOptions.of(externalDataConfiguration.getSourceFormat()));
       }
       builder.setCompression(externalDataConfiguration.getCompression());
+      if (externalDataConfiguration.getConnectionId() != null) {
+        builder.setConnectionId(externalDataConfiguration.getConnectionId());
+      }
       builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
       if (externalDataConfiguration.getCsvOptions() != null) {
         builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
@@ -451,6 +473,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     }
     if (externalDataConfiguration.getCompression() != null) {
       builder.setCompression(externalDataConfiguration.getCompression());
+    }
+    if (externalDataConfiguration.getConnectionId() != null) {
+      builder.setConnectionId(externalDataConfiguration.getConnectionId());
     }
     if (externalDataConfiguration.getIgnoreUnknownValues() != null) {
       builder.setIgnoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
