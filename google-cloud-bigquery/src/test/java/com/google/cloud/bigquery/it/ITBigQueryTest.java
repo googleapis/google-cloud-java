@@ -1533,6 +1533,34 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQueryCaseInsensitiveSchemaFieldByGetName() throws InterruptedException {
+    String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+
+    TableResult result = job.getQueryResults();
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    int rowCount = 0;
+    for (FieldValueList row : result.getValues()) {
+      FieldValue timestampCell = row.get(0);
+      assertEquals(timestampCell, row.get("TimestampField"));
+      assertEquals(timestampCell, row.get("timestampfield"));
+      assertEquals(timestampCell, row.get("timeStampfIeld"));
+      FieldValue stringCell = row.get(1);
+      assertEquals(stringCell, row.get("StringField"));
+      assertEquals(stringCell, row.get("stringfield"));
+      assertEquals(stringCell, row.get("sTrinGfield"));
+      FieldValue booleanCell = row.get(2);
+      assertEquals(booleanCell, row.get("BooleanField"));
+      assertEquals(booleanCell, row.get("booleanfield"));
+      assertEquals(booleanCell, row.get("booLeanfielD"));
+      rowCount++;
+    }
+    assertEquals(2, rowCount);
+  }
+
+  @Test
   public void testFastSQLQuery() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID_FASTQUERY.getTable();

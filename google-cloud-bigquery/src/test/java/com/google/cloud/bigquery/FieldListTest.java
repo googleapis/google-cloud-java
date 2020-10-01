@@ -26,6 +26,12 @@ public class FieldListTest {
   private static final String FIELD_NAME1 = "StringField";
   private static final String FIELD_NAME2 = "IntegerField";
   private static final String FIELD_NAME3 = "RecordField";
+  private static final String FIELD_NAME_CASE_INSENSITIVE1 = "stringfield";
+  private static final String FIELD_NAME_CASE_INSENSITIVE2 = "integerfield";
+  private static final String FIELD_NAME_CASE_INSENSITIVE3 = "recordfield";
+  private static final String FIELD_NAME_CASE_INSENSITIVE4 = "stRingfiEld";
+  private static final String FIELD_NAME_CASE_INSENSITIVE5 = "inTeGerField";
+  private static final String FIELD_NAME_CASE_INSENSITIVE6 = "recOrdfieLd";
   private static final String FIELD_NAME4 = "NonExistentField";
   private static final LegacySQLTypeName FIELD_TYPE1 = LegacySQLTypeName.STRING;
   private static final LegacySQLTypeName FIELD_TYPE2 = LegacySQLTypeName.INTEGER;
@@ -61,6 +67,12 @@ public class FieldListTest {
     assertEquals(fieldSchema1, fieldsSchema.get(FIELD_NAME1));
     assertEquals(fieldSchema2, fieldsSchema.get(FIELD_NAME2));
     assertEquals(fieldSchema3, fieldsSchema.get(FIELD_NAME3));
+    assertEquals(fieldSchema1, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE1));
+    assertEquals(fieldSchema2, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE2));
+    assertEquals(fieldSchema3, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE3));
+    assertEquals(fieldSchema1, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE4));
+    assertEquals(fieldSchema2, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE5));
+    assertEquals(fieldSchema3, fieldsSchema.get(FIELD_NAME_CASE_INSENSITIVE6));
 
     assertEquals(3, fieldsSchema.size());
 
@@ -95,8 +107,16 @@ public class FieldListTest {
     assertEquals(2, fieldSchema3.getSubFields().size());
     assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(FIELD_NAME1));
     assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(FIELD_NAME2));
+    assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(FIELD_NAME_CASE_INSENSITIVE1));
+    assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(FIELD_NAME_CASE_INSENSITIVE2));
+    assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(FIELD_NAME_CASE_INSENSITIVE4));
+    assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(FIELD_NAME_CASE_INSENSITIVE5));
     assertEquals(0, fieldSchema3.getSubFields().getIndex(FIELD_NAME1));
     assertEquals(1, fieldSchema3.getSubFields().getIndex(FIELD_NAME2));
+    assertEquals(0, fieldSchema3.getSubFields().getIndex(FIELD_NAME_CASE_INSENSITIVE1));
+    assertEquals(1, fieldSchema3.getSubFields().getIndex(FIELD_NAME_CASE_INSENSITIVE2));
+    assertEquals(0, fieldSchema3.getSubFields().getIndex(FIELD_NAME_CASE_INSENSITIVE4));
+    assertEquals(1, fieldSchema3.getSubFields().getIndex(FIELD_NAME_CASE_INSENSITIVE5));
     assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(0));
     assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(1));
   }

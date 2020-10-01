@@ -18,10 +18,10 @@ package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.AbstractList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,16 +36,28 @@ public final class FieldList extends AbstractList<Field> implements Serializable
   private final List<Field> fields;
   private final Map<String, Integer> nameIndex;
 
+  private static class CaseInsensitiveMap extends HashMap<String, Integer> {
+    @Override
+    public Integer put(String key, Integer value) {
+      return super.put(key.toLowerCase(), value);
+    }
+
+    @Override
+    public Integer get(Object key) {
+      return super.get(key.toString().toLowerCase());
+    }
+  }
+
   private FieldList(Iterable<Field> fields) {
     this.fields = ImmutableList.copyOf(fields);
-    ImmutableMap.Builder<String, Integer> nameIndexBuilder = ImmutableMap.builder();
+    Map<String, Integer> caseInsensitiveMap = new CaseInsensitiveMap();
     int index = 0;
     for (Field field : fields) {
-      nameIndexBuilder.put(field.getName(), index);
+      caseInsensitiveMap.put(field.getName(), index);
       index++;
     }
 
-    this.nameIndex = nameIndexBuilder.build();
+    this.nameIndex = caseInsensitiveMap;
   }
 
   /**
