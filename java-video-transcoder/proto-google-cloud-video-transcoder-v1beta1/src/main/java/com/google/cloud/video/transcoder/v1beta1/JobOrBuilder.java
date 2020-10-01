@@ -403,5 +403,119 @@ public interface JobOrBuilder
   com.google.cloud.video.transcoder.v1beta1.FailureDetailOrBuilder getFailureDetailsOrBuilder(
       int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  boolean hasEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
   public com.google.cloud.video.transcoder.v1beta1.Job.JobConfigCase getJobConfigCase();
 }

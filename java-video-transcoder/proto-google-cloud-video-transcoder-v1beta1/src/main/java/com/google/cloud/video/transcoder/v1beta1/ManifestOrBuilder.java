@@ -27,7 +27,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"master"` with the
+   * The name of the generated file. The default is `"manifest"` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"master"` with the
+   * The name of the generated file. The default is `"manifest"` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *

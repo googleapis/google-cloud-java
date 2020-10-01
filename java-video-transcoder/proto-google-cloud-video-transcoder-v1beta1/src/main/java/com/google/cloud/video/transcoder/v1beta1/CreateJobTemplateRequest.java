@@ -253,8 +253,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The ID to use for the job template, which will become the final component
    * of the job template's resource name.
-   * This value should be 4-63 characters, and valid characters
-   * are `/[a-zA-Z0-9_-_]/`.
+   * This value should be 4-63 characters, and valid characters must match the
+   * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
    * </pre>
    *
    * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -279,8 +279,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. The ID to use for the job template, which will become the final component
    * of the job template's resource name.
-   * This value should be 4-63 characters, and valid characters
-   * are `/[a-zA-Z0-9_-_]/`.
+   * This value should be 4-63 characters, and valid characters must match the
+   * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
    * </pre>
    *
    * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1004,8 +1004,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final component
      * of the job template's resource name.
-     * This value should be 4-63 characters, and valid characters
-     * are `/[a-zA-Z0-9_-_]/`.
+     * This value should be 4-63 characters, and valid characters must match the
+     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
      *
      * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1029,8 +1029,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final component
      * of the job template's resource name.
-     * This value should be 4-63 characters, and valid characters
-     * are `/[a-zA-Z0-9_-_]/`.
+     * This value should be 4-63 characters, and valid characters must match the
+     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
      *
      * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1054,8 +1054,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final component
      * of the job template's resource name.
-     * This value should be 4-63 characters, and valid characters
-     * are `/[a-zA-Z0-9_-_]/`.
+     * This value should be 4-63 characters, and valid characters must match the
+     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
      *
      * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1078,8 +1078,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final component
      * of the job template's resource name.
-     * This value should be 4-63 characters, and valid characters
-     * are `/[a-zA-Z0-9_-_]/`.
+     * This value should be 4-63 characters, and valid characters must match the
+     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
      *
      * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1098,8 +1098,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. The ID to use for the job template, which will become the final component
      * of the job template's resource name.
-     * This value should be 4-63 characters, and valid characters
-     * are `/[a-zA-Z0-9_-_]/`.
+     * This value should be 4-63 characters, and valid characters must match the
+     * regular expression `[a-zA-Z][a-zA-Z0-9_-]*`.
      * </pre>
      *
      * <code>string job_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

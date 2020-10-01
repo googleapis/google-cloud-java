@@ -299,7 +299,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"master"` with the
+   * The name of the generated file. The default is `"manifest"` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -323,7 +323,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `"master"` with the
+   * The name of the generated file. The default is `"manifest"` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -837,7 +837,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"master"` with the
+     * The name of the generated file. The default is `"manifest"` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -860,7 +860,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"master"` with the
+     * The name of the generated file. The default is `"manifest"` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -883,7 +883,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"master"` with the
+     * The name of the generated file. The default is `"manifest"` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -905,7 +905,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"master"` with the
+     * The name of the generated file. The default is `"manifest"` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -923,7 +923,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `"master"` with the
+     * The name of the generated file. The default is `"manifest"` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *

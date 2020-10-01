@@ -143,10 +143,12 @@ public interface VideoStreamOrBuilder
    *
    *
    * <pre>
-   * Required. The height of video in pixels. Must be an even integer.
+   * The height of the video in pixels. Must be an even integer.
+   * When not specified, the height is adjusted to match the specified width and
+   * input aspect ratio. If both are omitted, the input height is used.
    * </pre>
    *
-   * <code>int32 height_pixels = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 height_pixels = 5;</code>
    *
    * @return The heightPixels.
    */
@@ -156,10 +158,12 @@ public interface VideoStreamOrBuilder
    *
    *
    * <pre>
-   * Required. The width of video in pixels. Must be an even integer.
+   * The width of the video in pixels. Must be an even integer.
+   * When not specified, the width is adjusted to match the specified height and
+   * input aspect ratio. If both are omitted, the input width is used.
    * </pre>
    *
-   * <code>int32 width_pixels = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 width_pixels = 6;</code>
    *
    * @return The widthPixels.
    */
@@ -440,9 +444,28 @@ public interface VideoStreamOrBuilder
    *
    *
    * <pre>
-   * Required. The video frame rate in frames per second. Must be less than or equal to
-   * 120. Will default to the input frame rate if larger than the input frame
-   * rate.
+   * Required. The target video frame rate in frames per second (FPS). Must be less than
+   * or equal to 120. Will default to the input frame rate if larger than the
+   * input frame rate. The API will generate an output FPS that is divisible by
+   * the input FPS, and smaller or equal to the target FPS.
+   * The following table shows the computed video FPS given the target FPS (in
+   * parenthesis) and input FPS (in the first column):
+   * |        | (30)   | (60)   | (25) | (50) |
+   * |--------|--------|--------|------|------|
+   * | 240    | Fail   | Fail   | Fail | Fail |
+   * | 120    | 30     | 60     | 20   | 30   |
+   * | 100    | 25     | 50     | 20   | 30   |
+   * | 50     | 25     | 50     | 20   | 30   |
+   * | 60     | 30     | 60     | 20   | 30   |
+   * | 59.94  | 29.97  | 59.94  | 20   | 30   |
+   * | 48     | 24     | 48     | 20   | 30   |
+   * | 30     | 30     | 30     | 20   | 30   |
+   * | 25     | 25     | 25     | 20   | 30   |
+   * | 24     | 24     | 24     | 20   | 30   |
+   * | 23.976 | 23.976 | 23.976 | 20   | 30   |
+   * | 15     | 15     | 15     | 20   | 30   |
+   * | 12     | 12     | 12     | 20   | 30   |
+   * | 10     | 10     | 10     | 20   | 30   |
    * </pre>
    *
    * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>

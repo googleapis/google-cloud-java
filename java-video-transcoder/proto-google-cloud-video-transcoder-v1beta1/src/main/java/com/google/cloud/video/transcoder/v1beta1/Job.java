@@ -190,6 +190,51 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 98:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1939,6 +1984,153 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return failureDetails_.get(index);
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int START_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return startTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getStartTime() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding started.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    return getStartTime();
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 14;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTime() {
+    return endTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the transcoding finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return getEndTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1989,6 +2181,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < failureDetails_.size(); i++) {
       output.writeMessage(11, failureDetails_.get(i));
     }
+    if (createTime_ != null) {
+      output.writeMessage(12, getCreateTime());
+    }
+    if (startTime_ != null) {
+      output.writeMessage(13, getStartTime());
+    }
+    if (endTime_ != null) {
+      output.writeMessage(14, getEndTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2036,6 +2237,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < failureDetails_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, failureDetails_.get(i));
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreateTime());
+    }
+    if (startTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getStartTime());
+    }
+    if (endTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getEndTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2067,6 +2277,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getFailureReason().equals(other.getFailureReason())) return false;
     if (!getFailureDetailsList().equals(other.getFailureDetailsList())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
+    if (hasEndTime() != other.hasEndTime()) return false;
+    if (hasEndTime()) {
+      if (!getEndTime().equals(other.getEndTime())) return false;
+    }
     if (!getJobConfigCase().equals(other.getJobConfigCase())) return false;
     switch (jobConfigCase_) {
       case 4:
@@ -2112,6 +2334,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (getFailureDetailsCount() > 0) {
       hash = (37 * hash) + FAILURE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getFailureDetailsList().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
     }
     switch (jobConfigCase_) {
       case 4:
@@ -2302,6 +2536,24 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         failureDetailsBuilder_.clear();
       }
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
       jobConfigCase_ = 0;
       jobConfig_ = null;
       return this;
@@ -2366,6 +2618,21 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.failureDetails_ = failureDetails_;
       } else {
         result.failureDetails_ = failureDetailsBuilder_.build();
+      }
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (startTimeBuilder_ == null) {
+        result.startTime_ = startTime_;
+      } else {
+        result.startTime_ = startTimeBuilder_.build();
+      }
+      if (endTimeBuilder_ == null) {
+        result.endTime_ = endTime_;
+      } else {
+        result.endTime_ = endTimeBuilder_.build();
       }
       result.jobConfigCase_ = jobConfigCase_;
       onBuilt();
@@ -2471,6 +2738,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             failureDetailsBuilder_.addAllMessages(other.failureDetails_);
           }
         }
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasStartTime()) {
+        mergeStartTime(other.getStartTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
       }
       switch (other.getJobConfigCase()) {
         case TEMPLATE_ID:
@@ -4344,6 +4620,592 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         failureDetails_ = null;
       }
       return failureDetailsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the job was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp startTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return startTimeBuilder_ != null || startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    public com.google.protobuf.Timestamp getStartTime() {
+      if (startTimeBuilder_ == null) {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      } else {
+        return startTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startTime_ = value;
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startTimeBuilder_ == null) {
+        startTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (startTime_ != null) {
+          startTime_ =
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        } else {
+          startTime_ = value;
+        }
+        onChanged();
+      } else {
+        startTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearStartTime() {
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+        onChanged();
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+      onChanged();
+      return getStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      if (startTimeBuilder_ != null) {
+        return startTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding started.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getStartTimeFieldBuilder() {
+      if (startTimeBuilder_ == null) {
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
+        startTime_ = null;
+      }
+      return startTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    public boolean hasEndTime() {
+      return endTimeBuilder_ != null || endTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (endTime_ != null) {
+          endTime_ =
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        } else {
+          endTime_ = value;
+        }
+        onChanged();
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEndTime() {
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+        onChanged();
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the transcoding finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
     }
 
     @java.lang.Override
