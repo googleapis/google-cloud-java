@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.122.0](https://www.github.com/googleapis/java-bigquery/compare/v1.121.0...v1.122.0) (2020-10-01)
+
+
+### Features
+
+* add connectionId support for external data sources ([#776](https://www.github.com/googleapis/java-bigquery/issues/776)) ([dcd7daa](https://www.github.com/googleapis/java-bigquery/commit/dcd7daa15d8f820affc9c155ba6d7a9a4c15066d))
+
 ## [1.121.0](https://www.github.com/googleapis/java-bigquery/compare/v1.120.0...v1.121.0) (2020-10-01)
 
 
