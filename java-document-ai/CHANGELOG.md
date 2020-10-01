@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-document-ai/compare/v0.2.4...v0.3.0) (2020-10-01)
+
+
+### Features
+
+* **v1beta3:** add v1beta3 client ([#191](https://www.github.com/googleapis/java-document-ai/issues/191)) ([7e11d08](https://www.github.com/googleapis/java-document-ai/commit/7e11d08315b73995476bde0a273f2df6cbccc2a4))
+
 ### [0.2.4](https://www.github.com/googleapis/java-document-ai/compare/v0.2.3...v0.2.4) (2020-09-23)
 
 
