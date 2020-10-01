@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.4.3...v1.5.0) (2020-10-01)
+
+
+### Features
+
+* **v1:** add PersonDetection and FaceDetection ([#263](https://www.github.com/googleapis/java-video-intelligence/issues/263)) ([4942fe4](https://www.github.com/googleapis/java-video-intelligence/commit/4942fe4116ffbc654a48be999bae1b54e48798ee))
+
 ### [1.4.3](https://www.github.com/googleapis/java-video-intelligence/compare/v1.4.2...v1.4.3) (2020-09-23)
 
 
