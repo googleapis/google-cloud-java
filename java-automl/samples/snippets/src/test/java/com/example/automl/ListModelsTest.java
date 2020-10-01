@@ -64,10 +64,7 @@ public class ListModelsTest {
     System.setOut(originalPrintStream);
   }
 
-  // Skipping this test until backend is cleaned up.
-  // https://github.com/googleapis/java-automl/issues/291
   @Test
-  @Ignore
   public void testListModels() throws IOException {
     ListModels.listModels(PROJECT_ID);
     String got = bout.toString();
