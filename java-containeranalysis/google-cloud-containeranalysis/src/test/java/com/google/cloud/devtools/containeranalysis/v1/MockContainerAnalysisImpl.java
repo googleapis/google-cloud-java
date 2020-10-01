@@ -17,6 +17,8 @@ package com.google.cloud.devtools.containeranalysis.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.containeranalysis.v1.ContainerAnalysisGrpc.ContainerAnalysisImplBase;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -97,6 +99,22 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getVulnerabilityOccurrencesSummary(
+      GetVulnerabilityOccurrencesSummaryRequest request,
+      StreamObserver<VulnerabilityOccurrencesSummary> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof VulnerabilityOccurrencesSummary) {
+      requests.add(request);
+      responseObserver.onNext((VulnerabilityOccurrencesSummary) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

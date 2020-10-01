@@ -38,7 +38,7 @@
  * <pre>
  * <code>
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   String resource = "";
+ *   ResourceName resource = ProjectName.of("[PROJECT]");
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }

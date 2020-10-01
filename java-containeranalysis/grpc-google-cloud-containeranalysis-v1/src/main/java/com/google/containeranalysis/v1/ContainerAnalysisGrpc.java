@@ -172,6 +172,60 @@ public final class ContainerAnalysisGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+          com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+      getGetVulnerabilityOccurrencesSummaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVulnerabilityOccurrencesSummary",
+      requestType = com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest.class,
+      responseType = com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+          com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+      getGetVulnerabilityOccurrencesSummaryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+            com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+        getGetVulnerabilityOccurrencesSummaryMethod;
+    if ((getGetVulnerabilityOccurrencesSummaryMethod =
+            ContainerAnalysisGrpc.getGetVulnerabilityOccurrencesSummaryMethod)
+        == null) {
+      synchronized (ContainerAnalysisGrpc.class) {
+        if ((getGetVulnerabilityOccurrencesSummaryMethod =
+                ContainerAnalysisGrpc.getGetVulnerabilityOccurrencesSummaryMethod)
+            == null) {
+          ContainerAnalysisGrpc.getGetVulnerabilityOccurrencesSummaryMethod =
+              getGetVulnerabilityOccurrencesSummaryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+                          com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetVulnerabilityOccurrencesSummary"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.containeranalysis.v1
+                                  .GetVulnerabilityOccurrencesSummaryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContainerAnalysisMethodDescriptorSupplier(
+                              "GetVulnerabilityOccurrencesSummary"))
+                      .build();
+        }
+      }
+    }
+    return getGetVulnerabilityOccurrencesSummaryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ContainerAnalysisStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisStub> factory =
@@ -289,6 +343,20 @@ public final class ContainerAnalysisGrpc {
       asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets a summary of the number and severity of occurrences.
+     * </pre>
+     */
+    public void getVulnerabilityOccurrencesSummary(
+        com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetVulnerabilityOccurrencesSummaryMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -311,6 +379,13 @@ public final class ContainerAnalysisGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getGetVulnerabilityOccurrencesSummaryMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+                      com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>(
+                      this, METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY)))
           .build();
     }
   }
@@ -409,6 +484,23 @@ public final class ContainerAnalysisGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a summary of the number and severity of occurrences.
+     * </pre>
+     */
+    public void getVulnerabilityOccurrencesSummary(
+        com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -491,6 +583,20 @@ public final class ContainerAnalysisGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a summary of the number and severity of occurrences.
+     * </pre>
+     */
+    public com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary
+        getVulnerabilityOccurrencesSummary(
+            com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions(), request);
     }
   }
 
@@ -579,11 +685,28 @@ public final class ContainerAnalysisGrpc {
       return futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a summary of the number and severity of occurrences.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummary(
+            com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_SET_IAM_POLICY = 0;
   private static final int METHODID_GET_IAM_POLICY = 1;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 2;
+  private static final int METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -616,6 +739,13 @@ public final class ContainerAnalysisGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY:
+          serviceImpl.getVulnerabilityOccurrencesSummary(
+              (com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>)
                   responseObserver);
           break;
         default:
@@ -685,6 +815,7 @@ public final class ContainerAnalysisGrpc {
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getGetVulnerabilityOccurrencesSummaryMethod())
                       .build();
         }
       }

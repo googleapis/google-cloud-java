@@ -21,6 +21,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStub;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStubSettings;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.ProjectName;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -52,7 +55,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   String resource = "";
+ *   ResourceName resource = ProjectName.of("[PROJECT]");
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }
@@ -185,7 +188,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
    * }
@@ -220,7 +223,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisClient.setIamPolicy(resource.toString(), policy);
    * }
@@ -252,7 +255,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -282,7 +285,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -311,7 +314,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy response = containerAnalysisClient.getIamPolicy(resource);
    * }
    * </code></pre>
@@ -341,7 +344,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy response = containerAnalysisClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
@@ -368,7 +371,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -396,7 +399,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .build();
@@ -422,7 +425,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(resource, permissions);
    * }
@@ -457,7 +460,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(resource.toString(), permissions);
    * }
@@ -492,7 +495,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -521,7 +524,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   String resource = "";
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
@@ -536,6 +539,112 @@ public class ContainerAnalysisClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   VulnerabilityOccurrencesSummary response = containerAnalysisClient.getVulnerabilityOccurrencesSummary(parent, filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the project to get a vulnerability summary for in the form of
+   *     `projects/[PROJECT_ID]`.
+   * @param filter The filter expression.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
+      ProjectName parent, String filter) {
+    GetVulnerabilityOccurrencesSummaryRequest request =
+        GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return getVulnerabilityOccurrencesSummary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "";
+   *   VulnerabilityOccurrencesSummary response = containerAnalysisClient.getVulnerabilityOccurrencesSummary(parent.toString(), filter);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the project to get a vulnerability summary for in the form of
+   *     `projects/[PROJECT_ID]`.
+   * @param filter The filter expression.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
+      String parent, String filter) {
+    GetVulnerabilityOccurrencesSummaryRequest request =
+        GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+            .setParent(parent)
+            .setFilter(filter)
+            .build();
+    return getVulnerabilityOccurrencesSummary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetVulnerabilityOccurrencesSummaryRequest request = GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   VulnerabilityOccurrencesSummary response = containerAnalysisClient.getVulnerabilityOccurrencesSummary(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
+      GetVulnerabilityOccurrencesSummaryRequest request) {
+    return getVulnerabilityOccurrencesSummaryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   GetVulnerabilityOccurrencesSummaryRequest request = GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;VulnerabilityOccurrencesSummary&gt; future = containerAnalysisClient.getVulnerabilityOccurrencesSummaryCallable().futureCall(request);
+   *   // Do something
+   *   VulnerabilityOccurrencesSummary response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable() {
+    return stub.getVulnerabilityOccurrencesSummaryCallable();
   }
 
   @Override

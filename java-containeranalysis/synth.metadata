@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "96ef637adf148d54236ad83fefa30c7f75f29737",
-        "internalRef": "325052820"
+        "sha": "cb7fc620590382a4a2ea6ffdf6f51ae0e77bbbb5",
+        "internalRef": "334682521"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "96ef637adf148d54236ad83fefa30c7f75f29737",
-        "internalRef": "325052820"
+        "sha": "cb7fc620590382a4a2ea6ffdf6f51ae0e77bbbb5",
+        "internalRef": "334682521"
       }
     },
     {
@@ -148,6 +148,11 @@
     "java.header",
     "license-checks.xml",
     "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/Containeranalysis.java",
+    "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/GetVulnerabilityOccurrencesSummaryRequest.java",
+    "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/GetVulnerabilityOccurrencesSummaryRequestOrBuilder.java",
+    "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/ProjectName.java",
+    "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/VulnerabilityOccurrencesSummary.java",
+    "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/VulnerabilityOccurrencesSummaryOrBuilder.java",
     "proto-google-cloud-containeranalysis-v1/src/main/proto/google/devtools/containeranalysis/v1/containeranalysis.proto",
     "proto-google-cloud-containeranalysis-v1beta1/src/main/java/com/google/containeranalysis/v1beta1/Containeranalysis.java",
     "proto-google-cloud-containeranalysis-v1beta1/src/main/java/com/google/containeranalysis/v1beta1/GetScanConfigRequest.java",

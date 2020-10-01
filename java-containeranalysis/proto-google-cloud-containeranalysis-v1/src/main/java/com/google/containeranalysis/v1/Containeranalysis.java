@@ -27,6 +27,19 @@ public final class Containeranalysis {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_FixableTotalByDigest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_FixableTotalByDigest_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -38,35 +51,54 @@ public final class Containeranalysis {
       "\n<google/devtools/containeranalysis/v1/c"
           + "ontaineranalysis.proto\022$google.devtools."
           + "containeranalysis.v1\032\034google/api/annotat"
-          + "ions.proto\032\027google/api/client.proto\032\036goo"
-          + "gle/iam/v1/iam_policy.proto\032\032google/iam/"
-          + "v1/policy.proto\032\037google/protobuf/timesta"
-          + "mp.proto2\221\006\n\021ContainerAnalysis\022\322\001\n\014SetIa"
-          + "mPolicy\022\".google.iam.v1.SetIamPolicyRequ"
-          + "est\032\025.google.iam.v1.Policy\"\206\001\202\323\344\223\002n\"./v1"
-          + "/{resource=projects/*/notes/*}:setIamPol"
-          + "icy:\001*Z9\"4/v1/{resource=projects/*/occur"
-          + "rences/*}:setIamPolicy:\001*\332A\017resource,pol"
-          + "icy\022\312\001\n\014GetIamPolicy\022\".google.iam.v1.Get"
-          + "IamPolicyRequest\032\025.google.iam.v1.Policy\""
-          + "\177\202\323\344\223\002n\"./v1/{resource=projects/*/notes/"
-          + "*}:getIamPolicy:\001*Z9\"4/v1/{resource=proj"
-          + "ects/*/occurrences/*}:getIamPolicy:\001*\332A\010"
-          + "resource\022\203\002\n\022TestIamPermissions\022(.google"
-          + ".iam.v1.TestIamPermissionsRequest\032).goog"
-          + "le.iam.v1.TestIamPermissionsResponse\"\227\001\202"
-          + "\323\344\223\002z\"4/v1/{resource=projects/*/notes/*}"
-          + ":testIamPermissions:\001*Z?\":/v1/{resource="
-          + "projects/*/occurrences/*}:testIamPermiss"
-          + "ions:\001*\332A\024resource,permissions\032T\312A conta"
-          + "ineranalysis.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\324\001\n"
-          + "\037com.google.containeranalysis.v1P\001ZUgoog"
-          + "le.golang.org/genproto/googleapis/devtoo"
-          + "ls/containeranalysis/v1;containeranalysi"
-          + "s\242\002\003GCA\252\002*Google.Cloud.DevTools.Containe"
-          + "rAnalysis.V1\352\002$Google::Cloud::ContainerA"
-          + "nalysis::V1b\006proto3"
+          + "ions.proto\032\027google/api/client.proto\032\037goo"
+          + "gle/api/field_behavior.proto\032\031google/api"
+          + "/resource.proto\032\036google/iam/v1/iam_polic"
+          + "y.proto\032\032google/iam/v1/policy.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\036grafeas/v1"
+          + "/vulnerability.proto\"\200\001\n)GetVulnerabilit"
+          + "yOccurrencesSummaryRequest\022C\n\006parent\030\001 \001"
+          + "(\tB3\372A-\n+cloudresourcemanager.googleapis"
+          + ".com/Project\340A\002\022\016\n\006filter\030\002 \001(\t\"\220\002\n\037Vuln"
+          + "erabilityOccurrencesSummary\022j\n\006counts\030\001 "
+          + "\003(\0132Z.google.devtools.containeranalysis."
+          + "v1.VulnerabilityOccurrencesSummary.Fixab"
+          + "leTotalByDigest\032\200\001\n\024FixableTotalByDigest"
+          + "\022\024\n\014resource_uri\030\001 \001(\t\022&\n\010severity\030\002 \001(\016"
+          + "2\024.grafeas.v1.Severity\022\025\n\rfixable_count\030"
+          + "\003 \001(\003\022\023\n\013total_count\030\004 \001(\0032\242\010\n\021Container"
+          + "Analysis\022\322\001\n\014SetIamPolicy\022\".google.iam.v"
+          + "1.SetIamPolicyRequest\032\025.google.iam.v1.Po"
+          + "licy\"\206\001\202\323\344\223\002n\"./v1/{resource=projects/*/"
+          + "notes/*}:setIamPolicy:\001*Z9\"4/v1/{resourc"
+          + "e=projects/*/occurrences/*}:setIamPolicy"
+          + ":\001*\332A\017resource,policy\022\312\001\n\014GetIamPolicy\022\""
+          + ".google.iam.v1.GetIamPolicyRequest\032\025.goo"
+          + "gle.iam.v1.Policy\"\177\202\323\344\223\002n\"./v1/{resource"
+          + "=projects/*/notes/*}:getIamPolicy:\001*Z9\"4"
+          + "/v1/{resource=projects/*/occurrences/*}:"
+          + "getIamPolicy:\001*\332A\010resource\022\203\002\n\022TestIamPe"
+          + "rmissions\022(.google.iam.v1.TestIamPermiss"
+          + "ionsRequest\032).google.iam.v1.TestIamPermi"
+          + "ssionsResponse\"\227\001\202\323\344\223\002z\"4/v1/{resource=p"
+          + "rojects/*/notes/*}:testIamPermissions:\001*"
+          + "Z?\":/v1/{resource=projects/*/occurrences"
+          + "/*}:testIamPermissions:\001*\332A\024resource,per"
+          + "missions\022\216\002\n\"GetVulnerabilityOccurrences"
+          + "Summary\022O.google.devtools.containeranaly"
+          + "sis.v1.GetVulnerabilityOccurrencesSummar"
+          + "yRequest\032E.google.devtools.containeranal"
+          + "ysis.v1.VulnerabilityOccurrencesSummary\""
+          + "P\202\323\344\223\002:\0228/v1/{parent=projects/*}/occurre"
+          + "nces:vulnerabilitySummary\332A\rparent,filte"
+          + "r\032T\312A containeranalysis.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB\324\001\n\037com.google.containeranalysis"
+          + ".v1P\001ZUgoogle.golang.org/genproto/google"
+          + "apis/devtools/containeranalysis/v1;conta"
+          + "ineranalysis\242\002\003GCA\252\002*Google.Cloud.DevToo"
+          + "ls.ContainerAnalysis.V1\352\002$Google::Cloud:"
+          + ":ContainerAnalysis::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -74,23 +106,57 @@ public final class Containeranalysis {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              io.grafeas.v1.Vulnerability.getDescriptor(),
+            });
+    internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter",
+            });
+    internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor,
+            new java.lang.String[] {
+              "Counts",
+            });
+    internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_FixableTotalByDigest_descriptor =
+        internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_FixableTotalByDigest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_FixableTotalByDigest_descriptor,
+            new java.lang.String[] {
+              "ResourceUri", "Severity", "FixableCount", "TotalCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    io.grafeas.v1.Vulnerability.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

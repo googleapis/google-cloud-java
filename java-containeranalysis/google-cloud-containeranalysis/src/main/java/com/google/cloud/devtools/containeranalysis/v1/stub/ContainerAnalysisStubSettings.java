@@ -34,6 +34,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -87,6 +89,9 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummarySettings;
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
@@ -102,6 +107,13 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getVulnerabilityOccurrencesSummary. */
+  public UnaryCallSettings<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummarySettings() {
+    return getVulnerabilityOccurrencesSummarySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -176,6 +188,8 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    getVulnerabilityOccurrencesSummarySettings =
+        settingsBuilder.getVulnerabilityOccurrencesSummarySettings().build();
   }
 
   /** Builder for ContainerAnalysisStubSettings. */
@@ -186,6 +200,9 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<
+            GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummarySettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -230,9 +247,14 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getVulnerabilityOccurrencesSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              setIamPolicySettings, getIamPolicySettings, testIamPermissionsSettings);
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings,
+              getVulnerabilityOccurrencesSummarySettings);
 
       initDefaults(this);
     }
@@ -263,6 +285,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .getVulnerabilityOccurrencesSummarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -272,10 +299,15 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      getVulnerabilityOccurrencesSummarySettings =
+          settings.getVulnerabilityOccurrencesSummarySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              setIamPolicySettings, getIamPolicySettings, testIamPermissionsSettings);
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings,
+              getVulnerabilityOccurrencesSummarySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -308,6 +340,15 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getVulnerabilityOccurrencesSummary.
+     */
+    public UnaryCallSettings.Builder<
+            GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummarySettings() {
+      return getVulnerabilityOccurrencesSummarySettings;
     }
 
     @Override

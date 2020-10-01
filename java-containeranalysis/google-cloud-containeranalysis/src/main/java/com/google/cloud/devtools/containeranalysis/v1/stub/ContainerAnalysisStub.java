@@ -18,6 +18,8 @@ package com.google.cloud.devtools.containeranalysis.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -46,6 +48,12 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getVulnerabilityOccurrencesSummaryCallable()");
   }
 
   @Override

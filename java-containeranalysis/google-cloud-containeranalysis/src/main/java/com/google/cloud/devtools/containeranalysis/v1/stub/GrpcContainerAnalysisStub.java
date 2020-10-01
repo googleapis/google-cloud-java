@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -71,6 +73,21 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryMethodDescriptor =
+          MethodDescriptor
+              .<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.containeranalysis.v1.ContainerAnalysis/GetVulnerabilityOccurrencesSummary")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetVulnerabilityOccurrencesSummaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VulnerabilityOccurrencesSummary.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -78,6 +95,9 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -160,6 +180,23 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummaryTransportSettings =
+            GrpcCallSettings
+                .<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+                    newBuilder()
+                .setMethodDescriptor(getVulnerabilityOccurrencesSummaryMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetVulnerabilityOccurrencesSummaryRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          GetVulnerabilityOccurrencesSummaryRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -171,6 +208,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.getVulnerabilityOccurrencesSummaryCallable =
+        callableFactory.createUnaryCallable(
+            getVulnerabilityOccurrencesSummaryTransportSettings,
+            settings.getVulnerabilityOccurrencesSummarySettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -187,6 +229,11 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummaryCallable() {
+    return getVulnerabilityOccurrencesSummaryCallable;
   }
 
   @Override

@@ -26,6 +26,8 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStubSettings;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -84,6 +86,14 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((ContainerAnalysisStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getVulnerabilityOccurrencesSummary. */
+  public UnaryCallSettings<
+          GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+      getVulnerabilityOccurrencesSummarySettings() {
+    return ((ContainerAnalysisStubSettings) getStubSettings())
+        .getVulnerabilityOccurrencesSummarySettings();
   }
 
   public static final ContainerAnalysisSettings create(ContainerAnalysisStubSettings stub)
@@ -197,6 +207,15 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getVulnerabilityOccurrencesSummary.
+     */
+    public UnaryCallSettings.Builder<
+            GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
+        getVulnerabilityOccurrencesSummarySettings() {
+      return getStubSettingsBuilder().getVulnerabilityOccurrencesSummarySettings();
     }
 
     @Override

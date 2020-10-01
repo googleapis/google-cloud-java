@@ -22,6 +22,10 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
+import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
+import com.google.containeranalysis.v1.ProjectName;
+import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -90,7 +94,7 @@ public class ContainerAnalysisClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    String resource = "resource-341064690";
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -115,7 +119,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      String resource = "resource-341064690";
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -133,7 +137,7 @@ public class ContainerAnalysisClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    String resource = "resource-341064690";
+    ResourceName resource = ProjectName.of("[PROJECT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -156,7 +160,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      String resource = "resource-341064690";
+      ResourceName resource = ProjectName.of("[PROJECT]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -171,7 +175,7 @@ public class ContainerAnalysisClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    String resource = "resource-341064690";
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -196,10 +200,54 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      String resource = "resource-341064690";
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getVulnerabilityOccurrencesSummaryTest() {
+    VulnerabilityOccurrencesSummary expectedResponse =
+        VulnerabilityOccurrencesSummary.newBuilder().build();
+    mockContainerAnalysis.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String filter = "filter-1274492040";
+
+    VulnerabilityOccurrencesSummary actualResponse =
+        client.getVulnerabilityOccurrencesSummary(parent, filter);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContainerAnalysis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetVulnerabilityOccurrencesSummaryRequest actualRequest =
+        (GetVulnerabilityOccurrencesSummaryRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getVulnerabilityOccurrencesSummaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockContainerAnalysis.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String filter = "filter-1274492040";
+
+      client.getVulnerabilityOccurrencesSummary(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
