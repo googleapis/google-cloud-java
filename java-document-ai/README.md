@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-document-ai</artifactId>
-  <version>0.2.1</version>
+  <version>0.2.4</version>
 </dependency>
 
 ```

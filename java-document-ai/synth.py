@@ -19,7 +19,7 @@ import synthtool.languages.java as java
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'documentai'
-versions = ['v1beta1', 'v1beta2']
+versions = ['v1beta1', 'v1beta2', 'v1beta3']
 
 for version in versions:
     java.bazel_library(
