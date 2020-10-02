@@ -37,6 +37,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.*;
+import com.google.common.base.Strings;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -47,7 +48,6 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -262,9 +262,9 @@ public class StreamWriterTest {
     assertEquals(1L, appendFuture2.get().getOffset());
     assertFalse(appendFuture3.isDone());
 
-    // This message is big enough to trigger send on the pervious message and itself.
+    // This message is big enough to trigger send on the previous message and itself.
     ApiFuture<AppendRowsResponse> appendFuture4 =
-        sendTestMessage(writer, new String[] {StringUtils.repeat('A', 100)});
+        sendTestMessage(writer, new String[] {Strings.repeat("A", 100)});
     assertEquals(2L, appendFuture3.get().getOffset());
     assertEquals(3L, appendFuture4.get().getOffset());
 

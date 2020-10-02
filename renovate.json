@@ -76,7 +76,6 @@
       "groupName": "jackson dependencies"
     }
   ],
-  "ignoreDeps": ["org.apache.commons:commons-lang3"],
   "semanticCommits": true,
   "masterIssue": true
 }
