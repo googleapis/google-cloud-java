@@ -129,6 +129,26 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
               hasCredential_ = input.readBool();
               break;
             }
+          case 66:
+            {
+              com.google.cloud.bigquery.connection.v1.AwsProperties.Builder subBuilder = null;
+              if (propertiesCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.connection.v1.AwsProperties) properties_)
+                        .toBuilder();
+              }
+              properties_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.connection.v1.AwsProperties.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_);
+                properties_ = subBuilder.buildPartial();
+              }
+              propertiesCase_ = 8;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -171,6 +191,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_SQL(4),
+    AWS(8),
     PROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -191,6 +212,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 4:
           return CLOUD_SQL;
+        case 8:
+          return AWS;
         case 0:
           return PROPERTIES_NOT_SET;
         default:
@@ -408,6 +431,57 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.connection.v1.CloudSqlProperties.getDefaultInstance();
   }
 
+  public static final int AWS_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   *
+   * @return Whether the aws field is set.
+   */
+  @java.lang.Override
+  public boolean hasAws() {
+    return propertiesCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   *
+   * @return The aws.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AwsProperties getAws() {
+    if (propertiesCase_ == 8) {
+      return (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder getAwsOrBuilder() {
+    if (propertiesCase_ == 8) {
+      return (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+  }
+
   public static final int CREATION_TIME_FIELD_NUMBER = 5;
   private long creationTime_;
   /**
@@ -498,6 +572,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     if (hasCredential_ != false) {
       output.writeBool(7, hasCredential_);
     }
+    if (propertiesCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -530,6 +607,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     if (hasCredential_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, hasCredential_);
     }
+    if (propertiesCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -556,6 +638,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     switch (propertiesCase_) {
       case 4:
         if (!getCloudSql().equals(other.getCloudSql())) return false;
+        break;
+      case 8:
+        if (!getAws().equals(other.getAws())) return false;
         break;
       case 0:
       default:
@@ -587,6 +672,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + CLOUD_SQL_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSql().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + AWS_FIELD_NUMBER;
+        hash = (53 * hash) + getAws().hashCode();
         break;
       case 0:
       default:
@@ -788,6 +877,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           result.properties_ = cloudSqlBuilder_.build();
         }
       }
+      if (propertiesCase_ == 8) {
+        if (awsBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = awsBuilder_.build();
+        }
+      }
       result.creationTime_ = creationTime_;
       result.lastModifiedTime_ = lastModifiedTime_;
       result.hasCredential_ = hasCredential_;
@@ -867,6 +963,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_SQL:
           {
             mergeCloudSql(other.getCloudSql());
+            break;
+          }
+        case AWS:
+          {
+            mergeAws(other.getAws());
             break;
           }
         case PROPERTIES_NOT_SET:
@@ -1452,6 +1553,216 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return cloudSqlBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.AwsProperties,
+            com.google.cloud.bigquery.connection.v1.AwsProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder>
+        awsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     *
+     * @return Whether the aws field is set.
+     */
+    @java.lang.Override
+    public boolean hasAws() {
+      return propertiesCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     *
+     * @return The aws.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AwsProperties getAws() {
+      if (awsBuilder_ == null) {
+        if (propertiesCase_ == 8) {
+          return (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+      } else {
+        if (propertiesCase_ == 8) {
+          return awsBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    public Builder setAws(com.google.cloud.bigquery.connection.v1.AwsProperties value) {
+      if (awsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        properties_ = value;
+        onChanged();
+      } else {
+        awsBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    public Builder setAws(
+        com.google.cloud.bigquery.connection.v1.AwsProperties.Builder builderForValue) {
+      if (awsBuilder_ == null) {
+        properties_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsBuilder_.setMessage(builderForValue.build());
+      }
+      propertiesCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    public Builder mergeAws(com.google.cloud.bigquery.connection.v1.AwsProperties value) {
+      if (awsBuilder_ == null) {
+        if (propertiesCase_ == 8
+            && properties_
+                != com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance()) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.AwsProperties.newBuilder(
+                      (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          properties_ = value;
+        }
+        onChanged();
+      } else {
+        if (propertiesCase_ == 8) {
+          awsBuilder_.mergeFrom(value);
+        }
+        awsBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    public Builder clearAws() {
+      if (awsBuilder_ == null) {
+        if (propertiesCase_ == 8) {
+          propertiesCase_ = 0;
+          properties_ = null;
+          onChanged();
+        }
+      } else {
+        if (propertiesCase_ == 8) {
+          propertiesCase_ = 0;
+          properties_ = null;
+        }
+        awsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    public com.google.cloud.bigquery.connection.v1.AwsProperties.Builder getAwsBuilder() {
+      return getAwsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder getAwsOrBuilder() {
+      if ((propertiesCase_ == 8) && (awsBuilder_ != null)) {
+        return awsBuilder_.getMessageOrBuilder();
+      } else {
+        if (propertiesCase_ == 8) {
+          return (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Amazon Web Services (AWS) properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.AwsProperties,
+            com.google.cloud.bigquery.connection.v1.AwsProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder>
+        getAwsFieldBuilder() {
+      if (awsBuilder_ == null) {
+        if (!(propertiesCase_ == 8)) {
+          properties_ = com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
+        }
+        awsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.connection.v1.AwsProperties,
+                com.google.cloud.bigquery.connection.v1.AwsProperties.Builder,
+                com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder>(
+                (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_,
+                getParentForChildren(),
+                isClean());
+        properties_ = null;
+      }
+      propertiesCase_ = 8;
+      onChanged();
+      ;
+      return awsBuilder_;
     }
 
     private long creationTime_;

@@ -139,6 +139,41 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   *
+   * @return Whether the aws field is set.
+   */
+  boolean hasAws();
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   *
+   * @return The aws.
+   */
+  com.google.cloud.bigquery.connection.v1.AwsProperties getAws();
+  /**
+   *
+   *
+   * <pre>
+   * Amazon Web Services (AWS) properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AwsProperties aws = 8;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.AwsPropertiesOrBuilder getAwsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The creation timestamp of the connection.
    * </pre>
    *

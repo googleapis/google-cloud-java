@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryconnection.git",
-        "sha": "e832e82d30dde372c6049400328b659371d98f42"
+        "sha": "88fdcc246448f5fc8580ca4128c3a0fc1b5c8865"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c1b9289be1be876ef494f31c9662bc49b4f906e0",
-        "internalRef": "323795963"
+        "sha": "aa72330a8d16d281df131e8d37bb1a4bde53401f",
+        "internalRef": "334870265"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c1b9289be1be876ef494f31c9662bc49b4f906e0",
-        "internalRef": "323795963"
+        "sha": "aa72330a8d16d281df131e8d37bb1a4bde53401f",
+        "internalRef": "334870265"
       }
     },
     {
@@ -137,6 +137,10 @@
     "grpc-google-cloud-bigqueryconnection-v1beta1/src/main/java/com/google/cloud/bigquery/connection/v1beta1/ConnectionServiceGrpc.java",
     "java.header",
     "license-checks.xml",
+    "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/AwsCrossAccountRole.java",
+    "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/AwsCrossAccountRoleOrBuilder.java",
+    "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/AwsProperties.java",
+    "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/AwsPropertiesOrBuilder.java",
     "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/CloudSqlCredential.java",
     "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/CloudSqlCredentialOrBuilder.java",
     "proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/CloudSqlProperties.java",
