@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.3.4...v0.4.0) (2020-10-02)
+
+
+### Features
+
+* add aws connection support ([#148](https://www.github.com/googleapis/java-bigqueryconnection/issues/148)) ([52c0252](https://www.github.com/googleapis/java-bigqueryconnection/commit/52c02520f5ade3e4635173c84cb1a9d4c4c20635))
+
+
+### Documentation
+
+* **samples:** add quick start ([#143](https://www.github.com/googleapis/java-bigqueryconnection/issues/143)) ([78bf38b](https://www.github.com/googleapis/java-bigqueryconnection/commit/78bf38bccc58765dc2dc4efb7864d07218bbd783))
+
 ### [0.3.4](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.3.3...v0.3.4) (2020-09-01)
 
 
