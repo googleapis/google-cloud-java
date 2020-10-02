@@ -32,8 +32,8 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-monitoring-dashboard.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-monitoring-dashboard.git</developerConnection>
+    <connection>scm:git:git@github.com:googleapis/java-monitoring-dashboards.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-monitoring-dashboards.git</developerConnection>
     <url>https://github.com/googleapis/java-monitoring-dashboards</url>
     <tag>HEAD</tag>
   </scm>
