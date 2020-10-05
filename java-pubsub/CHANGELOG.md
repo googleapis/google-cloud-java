@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.108.3](https://www.github.com/googleapis/java-pubsub/compare/v1.108.2...v1.108.3) (2020-10-02)
+
+
+### Bug Fixes
+
+* ensure proper cleanup of publisher in tests ([#310](https://www.github.com/googleapis/java-pubsub/issues/310)) ([b2b2f86](https://www.github.com/googleapis/java-pubsub/commit/b2b2f8694b925aad95e891cbd0d89426989fec59))
+* Ensure that messages that are in pending batches for an ordering key are canceled when a previous publish for the ordering keys fails ([#366](https://www.github.com/googleapis/java-pubsub/issues/366)) ([7cdf8bc](https://www.github.com/googleapis/java-pubsub/commit/7cdf8bcf71a6c141f8b751b41fb2e055a75a4022))
+* make subscriberIT test less flaky ([#340](https://www.github.com/googleapis/java-pubsub/issues/340)) ([5d4f534](https://www.github.com/googleapis/java-pubsub/commit/5d4f5345b13171a47f022d34d39609c2f4329069))
+* Only check keyHasError if ordering key is non-empty ([#367](https://www.github.com/googleapis/java-pubsub/issues/367)) ([8b2d0b7](https://www.github.com/googleapis/java-pubsub/commit/8b2d0b73a46e6b91795ad05a8dd0f626249c4f30))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#357](https://www.github.com/googleapis/java-pubsub/issues/357)) ([3b3616c](https://www.github.com/googleapis/java-pubsub/commit/3b3616c524059fb8a87bf30a66c481000046132a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#337](https://www.github.com/googleapis/java-pubsub/issues/337)) ([8cf77ee](https://www.github.com/googleapis/java-pubsub/commit/8cf77ee3b31356f342942a9ffaa61db2d0686769))
+
 ### [1.108.2](https://www.github.com/googleapis/java-pubsub/compare/v1.108.1...v1.108.2) (2020-08-21)
 
 
