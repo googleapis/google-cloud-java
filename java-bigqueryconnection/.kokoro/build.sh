@@ -71,6 +71,11 @@ integration)
 samples)
     if [[ -f samples/pom.xml ]]
     then
+        if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]
+        then
+            source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
+        fi
+
         pushd samples
         mvn -B \
           -Penable-samples \
