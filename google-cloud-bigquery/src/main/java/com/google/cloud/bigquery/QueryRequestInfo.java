@@ -23,11 +23,9 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 final class QueryRequestInfo {
 
-  private static final String REQUEST_ID = UUID.randomUUID().toString();
   private QueryJobConfiguration config;
   private final List<ConnectionProperty> connectionProperties;
   private final DatasetId defaultDataset;
@@ -39,6 +37,7 @@ final class QueryRequestInfo {
   private final List<QueryParameter> queryParameters;
   private final Boolean useQueryCache;
   private final Boolean useLegacySql;
+  private final String requestId;
 
   QueryRequestInfo(QueryJobConfiguration config) {
     this.config = config;
@@ -52,6 +51,7 @@ final class QueryRequestInfo {
     this.queryParameters = config.toPb().getQuery().getQueryParameters();
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
+    this.requestId = config.getRequestId();
   }
 
   boolean isFastQuerySupported() {
@@ -92,7 +92,7 @@ final class QueryRequestInfo {
       request.setMaxResults(maxResults);
     }
     request.setQuery(query);
-    request.setRequestId(REQUEST_ID);
+    request.setRequestId(requestId);
     if (queryParameters != null) {
       request.setQueryParameters(queryParameters);
     }
@@ -115,7 +115,7 @@ final class QueryRequestInfo {
         .add("maximumBytesBilled", maximumBytesBilled)
         .add("maxResults", maxResults)
         .add("query", query)
-        .add("requestId", REQUEST_ID)
+        .add("requestId", requestId)
         .add("queryParameters", queryParameters)
         .add("useQueryCache", useQueryCache)
         .add("useLegacySql", useLegacySql)
@@ -133,7 +133,7 @@ final class QueryRequestInfo {
         maxResults,
         query,
         queryParameters,
-        REQUEST_ID,
+        requestId,
         useQueryCache,
         useLegacySql);
   }

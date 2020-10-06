@@ -1561,6 +1561,29 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testFastQueryMultipleRuns() throws InterruptedException {
+    String query =
+        "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID_FASTQUERY.getTable();
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableResult result = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result.getSchema());
+    assertEquals(2, result.getTotalRows());
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+
+    QueryJobConfiguration config2 =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableResult result2 = bigquery.query(config2);
+    assertEquals(QUERY_RESULT_SCHEMA, result2.getSchema());
+    assertEquals(2, result2.getTotalRows());
+    assertNull(result2.getNextPage());
+    assertNull(result2.getNextPageToken());
+    assertFalse(result2.hasNextPage());
+  }
+
+  @Test
   public void testFastSQLQuery() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID_FASTQUERY.getTable();
