@@ -32,12 +32,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}. */
+/**
+ * Integration (system) tests for {@link DetectIntentWithSentimentAnalysis}.
+ */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIntentWithSentimentAndTextToSpeechIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String LOCATION_ID = "asia-northeast1";
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS =
@@ -67,6 +70,17 @@ public class DetectIntentWithSentimentAndTextToSpeechIT {
     Map<String, QueryResult> queryResults =
         DetectIntentTexts.detectIntentTexts(PROJECT_ID, TEXTS, SESSION_ID, LANGUAGE_CODE);
     com.google.cloud.dialogflow.v2.QueryResult finalResult =
+        queryResults.get(TEXTS.get(TEXTS.size() - 1));
+    assertTrue(finalResult.getAllRequiredParamsPresent());
+    assertEquals("All set!", finalResult.getFulfillmentText());
+  }
+
+  @Test
+  public void testDetectIntentTextsWithLocation() throws Exception {
+    Map<String, com.google.cloud.dialogflow.v2beta1.QueryResult> queryResults =
+        DetectIntentWithLocation
+            .detectIntentWithLocation(PROJECT_ID, LOCATION_ID, TEXTS, SESSION_ID, LANGUAGE_CODE);
+    com.google.cloud.dialogflow.v2beta1.QueryResult finalResult =
         queryResults.get(TEXTS.get(TEXTS.size() - 1));
     assertTrue(finalResult.getAllRequiredParamsPresent());
     assertEquals("All set!", finalResult.getFulfillmentText());
