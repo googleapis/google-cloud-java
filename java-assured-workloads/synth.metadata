@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-assured-workloads.git",
-        "sha": "c276e949176423aa2b6cc0ab5efa0db0b9f95966"
+        "sha": "8ba17021fea41ecd37cd07f6f31ad39825410f3c"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8a7a3021fe97aa0a3641db642fe2b767f1c8110f"
+        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
       }
     }
   ],
