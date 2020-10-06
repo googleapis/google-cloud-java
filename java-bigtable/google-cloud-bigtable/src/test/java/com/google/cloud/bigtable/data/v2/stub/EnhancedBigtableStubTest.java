@@ -33,8 +33,13 @@ import com.google.common.collect.Queues;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
+import io.grpc.Metadata;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.ServerCall;
+import io.grpc.ServerCall.Listener;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -56,6 +61,7 @@ public class EnhancedBigtableStubTest {
   private static final String APP_PROFILE_ID = "app-profile-id";
 
   private Server server;
+  private MetadataInterceptor metadataInterceptor;
   private FakeDataService fakeDataService;
   private EnhancedBigtableStubSettings defaultSettings;
   private EnhancedBigtableStub enhancedBigtableStub;
@@ -66,8 +72,13 @@ public class EnhancedBigtableStubTest {
     try (ServerSocket ss = new ServerSocket(0)) {
       port = ss.getLocalPort();
     }
+    metadataInterceptor = new MetadataInterceptor();
     fakeDataService = new FakeDataService();
-    server = ServerBuilder.forPort(port).addService(fakeDataService).build();
+    server =
+        ServerBuilder.forPort(port)
+            .intercept(metadataInterceptor)
+            .addService(fakeDataService)
+            .build();
     server.start();
 
     defaultSettings =
@@ -134,6 +145,33 @@ public class EnhancedBigtableStubTest {
     try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
       // priming will issue a request per table on startup
       assertThat(fakeDataService.requests).hasSize(2);
+    }
+  }
+
+  @Test
+  public void testUserAgent() throws InterruptedException {
+    ServerStreamingCallable<Query, Row> streamingCallable =
+        enhancedBigtableStub.createReadRowsCallable(new DefaultRowAdapter());
+
+    Query request = Query.create("table-id").rowKey("row-key");
+    streamingCallable.call(request).iterator().next();
+
+    assertThat(metadataInterceptor.headers).hasSize(1);
+    Metadata metadata = metadataInterceptor.headers.take();
+    assertThat(metadata.get(Metadata.Key.of("user-agent", Metadata.ASCII_STRING_MARSHALLER)))
+        .contains("bigtable-java/");
+  }
+
+  private static class MetadataInterceptor implements ServerInterceptor {
+    final BlockingQueue<Metadata> headers = Queues.newLinkedBlockingDeque();
+
+    @Override
+    public <ReqT, RespT> Listener<ReqT> interceptCall(
+        ServerCall<ReqT, RespT> serverCall,
+        Metadata metadata,
+        ServerCallHandler<ReqT, RespT> serverCallHandler) {
+      headers.add(metadata);
+      return serverCallHandler.startCall(serverCall, metadata);
     }
   }
 

@@ -20,9 +20,11 @@ import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
@@ -38,8 +40,10 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescr
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -530,8 +534,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
-      setInternalHeaderProvider(
-          BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build());
+
+      // Inject the UserAgent in addition to api-client header
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(
+                  BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build().getHeaders())
+              // GrpcHeaderInterceptor treats the `user-agent` as a magic string
+              .put(
+                  "user-agent",
+                  "bigtable-java/"
+                      + GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))
+              .build();
+      setInternalHeaderProvider(FixedHeaderProvider.create(headers));
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
