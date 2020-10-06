@@ -241,6 +241,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
         .setPoolSize(getDefaultChannelPoolSize())
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
+        .setKeepAliveTime(Duration.ofSeconds(10)) // sends ping in this interval
+        .setKeepAliveTimeout(
+            Duration.ofSeconds(10)) // wait this long before considering the connection dead
+        .setKeepAliveWithoutCalls(true) // sends ping without active streams
         // TODO(weiranf): Set this to true by default once DirectPath goes to public beta
         .setAttemptDirectPath(isDirectPathEnabled());
   }

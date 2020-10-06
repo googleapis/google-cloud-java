@@ -179,7 +179,13 @@ public class Emulator {
     }
 
     if (dataChannel == null) {
-      dataChannel = newChannelBuilder(port).maxInboundMessageSize(256 * 1024 * 1024).build();
+      dataChannel =
+          newChannelBuilder(port)
+              .maxInboundMessageSize(256 * 1024 * 1024)
+              .keepAliveTimeout(10, TimeUnit.SECONDS)
+              .keepAliveTime(10, TimeUnit.SECONDS)
+              .keepAliveWithoutCalls(true)
+              .build();
     }
     return dataChannel;
   }
