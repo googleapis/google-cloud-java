@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.16.0](https://www.github.com/googleapis/java-bigtable/compare/v1.15.0...v1.16.0) (2020-10-06)
+
+
+### Features
+
+* add keepalive changes in java client library ([#409](https://www.github.com/googleapis/java-bigtable/issues/409)) ([edbcde1](https://www.github.com/googleapis/java-bigtable/commit/edbcde1a5b22317319803cb57401252aac6d580d))
+* include User agent ([#404](https://www.github.com/googleapis/java-bigtable/issues/404)) ([0cd71b5](https://www.github.com/googleapis/java-bigtable/commit/0cd71b59305cd7a336c223faff68402a8bee4639))
+
+
+### Bug Fixes
+
+* **test:** Clean up tests ([#439](https://www.github.com/googleapis/java-bigtable/issues/439)) ([c5c881b](https://www.github.com/googleapis/java-bigtable/commit/c5c881bb956860a393c2a7f34d0d790a23d270af))
+* Add documentation to bulkReadRows that each batch will process t… ([#410](https://www.github.com/googleapis/java-bigtable/issues/410)) ([71dc8e3](https://www.github.com/googleapis/java-bigtable/commit/71dc8e3419fbb49d48bb7a3fd984d24e24661c81))
+* Filters should be serializable ([#397](https://www.github.com/googleapis/java-bigtable/issues/397)) ([57edfde](https://www.github.com/googleapis/java-bigtable/commit/57edfde5eace28d50ec777e14589c9747616f0a8))
+* RowCells are not actually serializeable ([#407](https://www.github.com/googleapis/java-bigtable/issues/407)) ([39e17cc](https://www.github.com/googleapis/java-bigtable/commit/39e17cc17c438f2d665875f9ff2b2cdf984e37b7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.12 ([#415](https://www.github.com/googleapis/java-bigtable/issues/415)) ([7b3713a](https://www.github.com/googleapis/java-bigtable/commit/7b3713a8935b2f0b1ca57d189e9e0363506b28a1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#428](https://www.github.com/googleapis/java-bigtable/issues/428)) ([373032e](https://www.github.com/googleapis/java-bigtable/commit/373032e93b838cbc0ccab7dc45cd61b3b973542a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.1 ([#443](https://www.github.com/googleapis/java-bigtable/issues/443)) ([939fefa](https://www.github.com/googleapis/java-bigtable/commit/939fefa819d09885489d9faeedadc74ee2b0e1b9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.1 ([#427](https://www.github.com/googleapis/java-bigtable/issues/427)) ([5175e28](https://www.github.com/googleapis/java-bigtable/commit/5175e28f5ce69f6fb3ed14131c1cfd26dbc47bb9))
+
 ## [1.15.0](https://www.github.com/googleapis/java-bigtable/compare/v1.14.0...v1.15.0) (2020-09-01)
 
 

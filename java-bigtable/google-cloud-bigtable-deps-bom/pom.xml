@@ -12,7 +12,7 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-  <version>1.15.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <version>1.16.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
 
   <packaging>pom</packaging>
   <description>
