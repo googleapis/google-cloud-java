@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.122.1](https://www.github.com/googleapis/java-bigquery/compare/v1.122.0...v1.122.1) (2020-10-06)
+
+
+### Bug Fixes
+
+* request id for fast query path ([#781](https://www.github.com/googleapis/java-bigquery/issues/781)) ([15dc9f0](https://www.github.com/googleapis/java-bigquery/commit/15dc9f0a95ebe3d97f8cbc5413f6c740f5f20241))
+
 ## [1.122.0](https://www.github.com/googleapis/java-bigquery/compare/v1.121.0...v1.122.0) (2020-10-01)
 
 
