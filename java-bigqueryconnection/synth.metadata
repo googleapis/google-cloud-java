@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryconnection.git",
-        "sha": "88fdcc246448f5fc8580ca4128c3a0fc1b5c8865"
+        "sha": "39a1f45a97604d90a31d1a31412b6c90eb22069e"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8a7a3021fe97aa0a3641db642fe2b767f1c8110f"
+        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
       }
     }
   ],
@@ -64,7 +64,6 @@
     ".github/workflows/ci.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
-    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
@@ -80,7 +79,6 @@
     ".kokoro/nightly/java8-osx.cfg",
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
-    ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
@@ -93,7 +91,6 @@
     ".kokoro/presubmit/java8.cfg",
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
-    ".kokoro/presubmit/samples.cfg",
     ".kokoro/readme.sh",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
