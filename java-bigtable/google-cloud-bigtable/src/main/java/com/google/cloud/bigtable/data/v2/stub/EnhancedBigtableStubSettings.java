@@ -86,8 +86,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
   // TODO(weiranf): Remove this temporary endpoint once DirectPath goes to public beta
-  private static final String DIRECT_PATH_ENDPOINT =
-      "testdirectpath-bigtable.sandbox.googleapis.com:443";
+  private static final String DIRECT_PATH_ENDPOINT = "test-bigtable.sandbox.googleapis.com:443";
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
