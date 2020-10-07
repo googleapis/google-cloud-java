@@ -75,6 +75,8 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Create Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/master/samples/snippets/src/main/java/com/example/bigqueryconnection/CreateConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/CreateConnection.java) |
+| Delete Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/master/samples/snippets/src/main/java/com/example/bigqueryconnection/DeleteConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/DeleteConnection.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/master/samples/snippets/src/main/java/com/example/bigqueryconnection/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/QuickstartSample.java) |
 
 
