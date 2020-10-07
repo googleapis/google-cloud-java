@@ -32,7 +32,7 @@ jobs:
                 )
               ).map(file => file.filename)
             );
-            if (files.size != 2 || !files.has("README.md") || !files.has("synth.metadata")) {
+            if (files.size != 2 || !files.has("README.md") || !files.has(".github/readme/synth.metadata/synth.metadata")) {
               return;
             }
 
