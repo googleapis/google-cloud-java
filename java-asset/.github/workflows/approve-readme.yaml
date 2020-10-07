@@ -16,7 +16,7 @@ jobs:
             }
 
             // only approve PRs like "chore: release <release version>"
-            if ( !context.payload.pull_request.title === "chore: regenerate README") ) {
+            if (!context.payload.pull_request.title === "chore: regenerate README") {
               return;
             }
 
