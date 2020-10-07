@@ -21,11 +21,17 @@ jobs:
             }
 
             // only approve PRs with README.md and synth.metadata changes
-            const files = new Set((await github.pulls.listFiles.endpoint({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-            })).data.map(file => file.filename));
+            const files = new Set(
+              (
+                await github.paginate(
+                  github.pulls.listFiles.endpoint({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: context.payload.pull_request.number,
+                  })
+                )
+              ).map(file => file.filename)
+            );
             if (files.size != 2 || !files.has("README.md") || !files.has("synth.metadata")) {
               return;
             }
