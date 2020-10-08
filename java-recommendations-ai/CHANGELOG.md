@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.4](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.3.3...v0.3.4) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#160](https://www.github.com/googleapis/java-recommendations-ai/issues/160)) ([25e2841](https://www.github.com/googleapis/java-recommendations-ai/commit/25e28415832de03d64464d1099daf8678fb335ac))
+
 ### [0.3.3](https://www.github.com/googleapis/java-recommendations-ai/compare/v0.3.2...v0.3.3) (2020-09-23)
 
 
