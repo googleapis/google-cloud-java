@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-document-ai.git",
+        "sha": "bb83e84e4db6e0edb92f4af299b3c1babd08674d"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "487eba79f8260e34205d8ceb1ebcc65685085e19"
+      }
+    }
+  ]
+}
