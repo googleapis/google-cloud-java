@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-datacatalog/compare/v1.0.3...v1.0.4) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#298](https://www.github.com/googleapis/java-datacatalog/issues/298)) ([a773dd7](https://www.github.com/googleapis/java-datacatalog/commit/a773dd7d57721460e61e73307dd91b19753b4f78))
+
 ### [1.0.3](https://www.github.com/googleapis/java-datacatalog/compare/v1.0.2...v1.0.3) (2020-09-23)
 
 
