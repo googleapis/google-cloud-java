@@ -1475,9 +1475,10 @@ public class ITBigQueryTest {
     try {
       bigquery.create(JobInfo.of(QueryJobConfiguration.of(invalidQuery))).waitFor();
       fail("BigQueryException was expected");
-    } catch (BigQueryException e) {
-      BigQueryError error = e.getError();
-      assertNotNull(error);
+    } catch (BigQueryException ex) {
+      assertEquals("invalidQuery", ex.getReason());
+      assertNotNull(ex.getMessage());
+      BigQueryError error = ex.getError();
       assertEquals("invalidQuery", error.getReason());
       assertNotNull(error.getMessage());
     }
@@ -1491,10 +1492,11 @@ public class ITBigQueryTest {
             DATASET, TABLE_ID.getTable(), DATASET, TABLE_ID.getTable());
     try {
       bigquery.create(JobInfo.of(QueryJobConfiguration.of(invalidQuery))).waitFor();
-      fail("JobException was expected");
-    } catch (BigQueryException e) {
-      BigQueryError error = e.getError();
-      assertNotNull(error);
+      fail("BigQueryException was expected");
+    } catch (BigQueryException ex) {
+      assertEquals("invalidQuery", ex.getReason());
+      assertNotNull(ex.getMessage());
+      BigQueryError error = ex.getError();
       assertEquals("invalidQuery", error.getReason());
       assertNotNull(error.getMessage());
     }

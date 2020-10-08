@@ -58,7 +58,12 @@ public final class BigQueryException extends BaseHttpServiceException {
   }
 
   public BigQueryException(List<BigQueryError> errors) {
-    super(0, null, null, false, RETRYABLE_ERRORS, null);
+    super(
+        0,
+        errors != null ? errors.get(0).getMessage() : null,
+        errors != null ? errors.get(0).getReason() : null,
+        true,
+        RETRYABLE_ERRORS);
     this.errors = errors;
   }
 
