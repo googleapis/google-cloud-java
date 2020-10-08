@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-assured-workloads.git",
+        "sha": "e96e5c2da5a24c90eab952dc52df70d0da41288f"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b6164c26a111f7f587099d31253abb96b5737bb2"
+      }
+    }
+  ]
+}
