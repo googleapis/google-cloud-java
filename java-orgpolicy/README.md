@@ -1,14 +1,77 @@
 # Google Cloud Organization Policy Client for Java
 
-Java protobuf classes for [Cloud Organization Policy][product-docs].
+Java idiomatic client for [Cloud Organization Policy][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
+- [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
+## Quickstart
+
+
+If you are using Maven, add this to your pom.xml file:
+
+```xml
+<dependency>
+  <groupId>com.google.api.grpc</groupId>
+  <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
+
+[//]: # ({x-version-update-start:proto-google-cloud-orgpolicy-v1:released})
+
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.api.grpc:proto-google-cloud-orgpolicy-v1:1.0.2'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.api.grpc" % "proto-google-cloud-orgpolicy-v1" % "1.0.2"
+```
+[//]: # ({x-version-update-end})
+
+## Authentication
+
+See the [Authentication][authentication] section in the base directory's README.
+
+## Getting Started
+
+### Prerequisites
+
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Organization Policy [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Organization Policy.
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
+[installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
+`gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+
+### Installation and setup
+
+You'll need to obtain the `proto-google-cloud-orgpolicy-v1` library.  See the [Quickstart](#quickstart) section
+to add `proto-google-cloud-orgpolicy-v1` as a dependency in your code.
+
+## About Cloud Organization Policy
+
+
+[Cloud Organization Policy][product-docs] n/a
+
+See the [Cloud Organization Policy client library docs][javadocs] to learn how to
+use this Cloud Organization Policy Client Library.
+
+
+
+
+
+
+## Troubleshooting
+
+To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
+
+## Transport
+
+Cloud Organization Policy uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -16,11 +79,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
+
 This library follows [Semantic Versioning](http://semver.org/).
-
-
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
 
 
 ## Contributing
@@ -48,7 +108,7 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[product-docs]: TODO
+[product-docs]: n/a
 [javadocs]: https://googleapis.dev/java/proto-google-cloud-orgpolicy-v1/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java7.html
@@ -60,7 +120,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-orgpolicy/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-ga-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-cloud-orgpolicy-v1.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-cloud-orgpolicy-v1&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
@@ -74,3 +134,4 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
