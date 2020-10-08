@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-iot.git",
+        "sha": "05322283b98c6da9b13058b5d913c97849d57ddc"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b6164c26a111f7f587099d31253abb96b5737bb2"
+      }
+    }
+  ]
+}
