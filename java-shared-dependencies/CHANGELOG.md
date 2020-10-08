@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.10.2](https://www.github.com/googleapis/java-shared-dependencies/compare/0.10.1...v0.10.2) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency org.threeten:threetenbp to v1.4.5 ([#162](https://www.github.com/googleapis/java-shared-dependencies/issues/162)) ([54eccb5](https://www.github.com/googleapis/java-shared-dependencies/commit/54eccb533353ddfe537a7e069a696a3f0f70f211))
+
 ### [0.10.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.10.0...v0.10.1) (2020-10-06)
 
 
