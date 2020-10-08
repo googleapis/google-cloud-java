@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-cloudbuild.git",
+        "sha": "9ba5314b6b767c8bd29553cfc01fed1bd49c0faf"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b6164c26a111f7f587099d31253abb96b5737bb2"
+      }
+    }
+  ]
+}
