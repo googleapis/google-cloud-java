@@ -28,11 +28,11 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-securitycenter-settings:0.3.3'
+compile 'com.google.cloud:google-cloud-securitycenter-settings:0.3.4'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.3.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.3.4"
 ```
 [//]: # ({x-version-update-end})
 
