@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.4](https://www.github.com/googleapis/java-monitoring/compare/v2.0.3...v2.0.4) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#289](https://www.github.com/googleapis/java-monitoring/issues/289)) ([08edb22](https://www.github.com/googleapis/java-monitoring/commit/08edb220737f83471b3dd9bdf40b6795e30018aa))
+
 ### [2.0.3](https://www.github.com/googleapis/java-monitoring/compare/v2.0.2...v2.0.3) (2020-09-23)
 
 
