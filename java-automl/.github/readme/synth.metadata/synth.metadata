@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-automl.git",
+        "sha": "788345877cc52e7d3b58030ff5c9e5776b516f0e"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b6164c26a111f7f587099d31253abb96b5737bb2"
+      }
+    }
+  ]
+}
