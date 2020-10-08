@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.101.3](https://www.github.com/googleapis/java-language/compare/v1.101.2...v1.101.3) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#248](https://www.github.com/googleapis/java-language/issues/248)) ([93408a1](https://www.github.com/googleapis/java-language/commit/93408a12db405460936f71bf71493d5df7386336))
+
+
+### Documentation
+
+* fix proto comments for language API inorder for docs parsing to work correctly ([#251](https://www.github.com/googleapis/java-language/issues/251)) ([de34d73](https://www.github.com/googleapis/java-language/commit/de34d7324d40cc90d3eea34300105d849f4922a4))
+
 ### [1.101.2](https://www.github.com/googleapis/java-language/compare/v1.101.1...v1.101.2) (2020-09-23)
 
 
