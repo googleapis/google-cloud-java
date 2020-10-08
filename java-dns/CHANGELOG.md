@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-dns/compare/v1.0.2...v1.0.3) (2020-10-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#208](https://www.github.com/googleapis/java-dns/issues/208)) ([0bee992](https://www.github.com/googleapis/java-dns/commit/0bee992b04b6d7ea62e597478d3dc606663e2503))
+
 ### [1.0.2](https://www.github.com/googleapis/java-dns/compare/v1.0.1...v1.0.2) (2020-09-23)
 
 
