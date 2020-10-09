@@ -34,6 +34,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -55,6 +56,7 @@ public class BatchTranslateTextWithGlossaryTests {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final void cleanUpBucket() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -106,6 +108,7 @@ public class BatchTranslateTextWithGlossaryTests {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -115,8 +118,11 @@ public class BatchTranslateTextWithGlossaryTests {
     cleanUpBucket();
     // Delete the created glossary
     DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
+
+  @Rule public Retry retry = new Retry(3);
 
   @Test
   public void testBatchTranslateTextWithGlossary()

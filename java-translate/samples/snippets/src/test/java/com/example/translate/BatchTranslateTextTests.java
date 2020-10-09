@@ -32,6 +32,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -48,6 +49,7 @@ public class BatchTranslateTextTests {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  @Rule public Retry retry = new Retry(3);
 
   private static void cleanUpBucket() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -87,23 +89,28 @@ public class BatchTranslateTextTests {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
+  private PrintStream originalPrintStream;
+
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
     cleanUpBucket();
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
   public void testBatchTranslateText()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
     BatchTranslateText.batchTranslateText(PROJECT_ID, "en", "es", INPUT_URI, OUTPUT_URI);
+
     String got = bout.toString();
     assertThat(got).contains("Total Characters: 13");
   }

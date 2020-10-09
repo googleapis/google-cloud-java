@@ -34,6 +34,7 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -56,6 +57,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  @Rule public Retry retry = new Retry(3);
 
   private static final void cleanUpBucket() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -95,6 +97,8 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
     requireEnvVar("GOOGLE_CLOUD_PROJECT");
   }
 
+  private PrintStream originalPrintStream;
+
   @Before
   public void setUp() throws InterruptedException, ExecutionException, IOException {
     // Create a glossary that can be used in the test
@@ -107,6 +111,7 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -115,7 +120,8 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
     cleanUpBucket();
     // Delete the created glossary
     DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

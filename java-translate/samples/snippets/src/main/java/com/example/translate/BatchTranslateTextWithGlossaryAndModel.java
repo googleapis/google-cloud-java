@@ -31,6 +31,7 @@ import com.google.cloud.translate.v3.TranslateTextGlossaryConfig;
 import com.google.cloud.translate.v3.TranslationServiceClient;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -110,7 +111,11 @@ public class BatchTranslateTextWithGlossaryAndModel {
           client.batchTranslateTextAsync(request);
 
       System.out.println("Waiting for operation to complete...");
-      BatchTranslateResponse response = future.get(450, TimeUnit.SECONDS);
+
+      // random number between 300 - 450 (maximum allowed seconds)
+      long randomNumber = ThreadLocalRandom.current().nextInt(300, 450);
+      BatchTranslateResponse response = future.get(randomNumber, TimeUnit.SECONDS);
+      
       // Display the translation for each input text provided
       System.out.printf("Total Characters: %s\n", response.getTotalCharacters());
       System.out.printf("Translated Characters: %s\n", response.getTranslatedCharacters());
