@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.2...v1.0.3) (2020-10-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#202](https://www.github.com/googleapis/java-accessapproval/issues/202)) ([b2e034a](https://www.github.com/googleapis/java-accessapproval/commit/b2e034acf0264c56510d646f0c5e815f1297e750))
+
 ### [1.0.2](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.1...v1.0.2) (2020-09-24)
 
 
