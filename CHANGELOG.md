@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.5.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.4...v1.5.5) (2020-10-09)
+
+
+### Bug Fixes
+
+* exception tests ([#586](https://www.github.com/googleapis/java-bigquerystorage/issues/586)) ([4e3ad9b](https://www.github.com/googleapis/java-bigquerystorage/commit/4e3ad9bf65190b7e68902e4e62ecfd5c3b80d795))
+* remove apache commons lang ([#585](https://www.github.com/googleapis/java-bigquerystorage/issues/585)) ([1c85e8f](https://www.github.com/googleapis/java-bigquerystorage/commit/1c85e8fbf5b2b4e2073c72a86efd83812cabac37))
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson.core:jackson-core to v2.11.3 ([#580](https://www.github.com/googleapis/java-bigquerystorage/issues/580)) ([8d800fa](https://www.github.com/googleapis/java-bigquerystorage/commit/8d800fac7c7dbf1d44cdfa350779be87970a10da))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.0 ([#579](https://www.github.com/googleapis/java-bigquerystorage/issues/579)) ([0bf5220](https://www.github.com/googleapis/java-bigquerystorage/commit/0bf5220009360ac7ccba6463d32b842bc9158c7b))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.1 ([#588](https://www.github.com/googleapis/java-bigquerystorage/issues/588)) ([496205e](https://www.github.com/googleapis/java-bigquerystorage/commit/496205e43e10b91fadbf958fcc9135210ff98ca4))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.2 ([#593](https://www.github.com/googleapis/java-bigquerystorage/issues/593)) ([abe21f0](https://www.github.com/googleapis/java-bigquerystorage/commit/abe21f02f811391259ebe921fff194a3a0394032))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.1 ([#589](https://www.github.com/googleapis/java-bigquerystorage/issues/589)) ([e89c92b](https://www.github.com/googleapis/java-bigquerystorage/commit/e89c92bf2b88d4020d31fba707ed69d78e9b74bc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#592](https://www.github.com/googleapis/java-bigquerystorage/issues/592)) ([33c460f](https://www.github.com/googleapis/java-bigquerystorage/commit/33c460fa0658307696dbdc7f381ede8df933b0cb))
+
 ### [1.5.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.3...v1.5.4) (2020-09-24)
 
 
