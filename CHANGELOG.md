@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.122.2](https://www.github.com/googleapis/java-bigquery/compare/v1.122.1...v1.122.2) (2020-10-08)
+
+
+### Bug Fixes
+
+* bigquery exception get reason and message ([#788](https://www.github.com/googleapis/java-bigquery/issues/788)) ([d783c3a](https://www.github.com/googleapis/java-bigquery/commit/d783c3a2baf80da2aa48c6be555904bd3c33bb1a))
+
+
+### Documentation
+
+* **samples:** add query external bigtable using permanent table ([#764](https://www.github.com/googleapis/java-bigquery/issues/764)) ([257edfc](https://www.github.com/googleapis/java-bigquery/commit/257edfc14ef09efc4474eb5aba08ccf4d7c199c0))
+* **samples:** add query external bigtable using temp table ([#763](https://www.github.com/googleapis/java-bigquery/issues/763)) ([fed28c7](https://www.github.com/googleapis/java-bigquery/commit/fed28c78ca4b70569d5148e67522b0f39321b306))
+
 ### [1.122.1](https://www.github.com/googleapis/java-bigquery/compare/v1.122.0...v1.122.1) (2020-10-06)
 
 
