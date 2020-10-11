@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.3.8](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.7...v0.3.8) (2020-10-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#183](https://www.github.com/googleapis/java-bigqueryreservation/issues/183)) ([63dbe1b](https://www.github.com/googleapis/java-bigqueryreservation/commit/63dbe1bf6044efcedda9026d14da098cdc8c421c))
+* update dependency junit:junit to v4.13.1 ([#184](https://www.github.com/googleapis/java-bigqueryreservation/issues/184)) ([e4f8dc6](https://www.github.com/googleapis/java-bigqueryreservation/commit/e4f8dc6f734fc352150d59800f5e05a36e360d09))
+
 ### [0.3.7](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.6...v0.3.7) (2020-10-06)
 
 
