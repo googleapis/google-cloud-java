@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigqueryreservation</artifactId>
-  <version>0.3.7</version>
+  <version>0.3.8</version>
 </dependency>
 ```
 
