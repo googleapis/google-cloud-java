@@ -23,10 +23,14 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
+import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -147,6 +151,77 @@ public class ReadIT {
     ApiFuture<Row> actualRowFuture =
         testEnvRule.env().getDataClient().readRowAsync(tableId, expectedRows.get(0).getKey());
     assertThat(actualRowFuture.get()).isEqualTo(expectedRows.get(0));
+  }
+
+  @Test
+  public void rangeQueries() {
+    BigtableDataClient client = testEnvRule.env().getDataClient();
+    String tableId = testEnvRule.env().getTableId();
+    String familyId = testEnvRule.env().getFamilyId();
+    String uniqueKey = prefix + "-range-queries";
+    String keyA = uniqueKey + "-" + "a";
+    String keyZ = uniqueKey + "-" + "z";
+
+    long timestampMicros = System.currentTimeMillis() * 1_000;
+
+    client.bulkMutateRows(
+        BulkMutation.create(tableId)
+            .add(RowMutationEntry.create(keyA).setCell(familyId, "", timestampMicros, "A"))
+            .add(RowMutationEntry.create(keyZ).setCell(familyId, "", timestampMicros, "Z")));
+
+    Row expectedRowA =
+        Row.create(
+            ByteString.copyFromUtf8(keyA),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(""),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("A"))));
+
+    Row expectedRowZ =
+        Row.create(
+            ByteString.copyFromUtf8(keyZ),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(""),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("Z"))));
+
+    // Closed/Open
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startClosed(keyA).endOpen(keyZ)))))
+        .containsExactly(expectedRowA);
+
+    // Closed/Closed
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startClosed(keyA).endClosed(keyZ)))))
+        .containsExactly(expectedRowA, expectedRowZ);
+
+    // Open/Closed
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startOpen(keyA).endClosed(keyZ)))))
+        .containsExactly(expectedRowZ);
+
+    // Open/Open
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startOpen(keyA).endOpen(keyZ)))))
+        .isEmpty();
   }
 
   @Test
