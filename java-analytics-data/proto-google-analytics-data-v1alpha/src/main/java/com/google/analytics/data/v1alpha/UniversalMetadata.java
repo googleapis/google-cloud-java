@@ -25,20 +25,19 @@ package com.google.analytics.data.v1alpha;
  * The dimensions and metrics currently accepted in reporting methods.
  * </pre>
  *
- * Protobuf type {@code google.analytics.data.v1alpha.Metadata}
+ * Protobuf type {@code google.analytics.data.v1alpha.UniversalMetadata}
  */
-public final class Metadata extends com.google.protobuf.GeneratedMessageV3
+public final class UniversalMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.Metadata)
-    MetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UniversalMetadata)
+    UniversalMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Metadata.newBuilder() to construct.
-  private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UniversalMetadata.newBuilder() to construct.
+  private UniversalMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Metadata() {
-    name_ = "";
+  private UniversalMetadata() {
     dimensions_ = java.util.Collections.emptyList();
     metrics_ = java.util.Collections.emptyList();
   }
@@ -46,7 +45,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Metadata();
+    return new UniversalMetadata();
   }
 
   @java.lang.Override
@@ -54,7 +53,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Metadata(
+  private UniversalMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -99,13 +98,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,66 +125,17 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-        .internal_static_google_analytics_data_v1alpha_Metadata_descriptor;
+        .internal_static_google_analytics_data_v1alpha_UniversalMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-        .internal_static_google_analytics_data_v1alpha_Metadata_fieldAccessorTable
+        .internal_static_google_analytics_data_v1alpha_UniversalMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.analytics.data.v1alpha.Metadata.class,
-            com.google.analytics.data.v1alpha.Metadata.Builder.class);
-  }
-
-  public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of this metadata.
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   *
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of this metadata.
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   *
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+            com.google.analytics.data.v1alpha.UniversalMetadata.class,
+            com.google.analytics.data.v1alpha.UniversalMetadata.Builder.class);
   }
 
   public static final int DIMENSIONS_FIELD_NUMBER = 1;
@@ -354,9 +297,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metrics_.size(); i++) {
       output.writeMessage(2, metrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -372,9 +312,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, metrics_.get(i));
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -385,13 +322,12 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.analytics.data.v1alpha.Metadata)) {
+    if (!(obj instanceof com.google.analytics.data.v1alpha.UniversalMetadata)) {
       return super.equals(obj);
     }
-    com.google.analytics.data.v1alpha.Metadata other =
-        (com.google.analytics.data.v1alpha.Metadata) obj;
+    com.google.analytics.data.v1alpha.UniversalMetadata other =
+        (com.google.analytics.data.v1alpha.UniversalMetadata) obj;
 
-    if (!getName().equals(other.getName())) return false;
     if (!getDimensionsList().equals(other.getDimensionsList())) return false;
     if (!getMetricsList().equals(other.getMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -405,8 +341,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (getDimensionsCount() > 0) {
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDimensionsList().hashCode();
@@ -420,71 +354,71 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(byte[] data)
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata parseFrom(
+  public static com.google.analytics.data.v1alpha.UniversalMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -501,7 +435,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.analytics.data.v1alpha.Metadata prototype) {
+  public static Builder newBuilder(com.google.analytics.data.v1alpha.UniversalMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -522,28 +456,28 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    * The dimensions and metrics currently accepted in reporting methods.
    * </pre>
    *
-   * Protobuf type {@code google.analytics.data.v1alpha.Metadata}
+   * Protobuf type {@code google.analytics.data.v1alpha.UniversalMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.Metadata)
-      com.google.analytics.data.v1alpha.MetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.UniversalMetadata)
+      com.google.analytics.data.v1alpha.UniversalMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_Metadata_descriptor;
+          .internal_static_google_analytics_data_v1alpha_UniversalMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_Metadata_fieldAccessorTable
+          .internal_static_google_analytics_data_v1alpha_UniversalMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.analytics.data.v1alpha.Metadata.class,
-              com.google.analytics.data.v1alpha.Metadata.Builder.class);
+              com.google.analytics.data.v1alpha.UniversalMetadata.class,
+              com.google.analytics.data.v1alpha.UniversalMetadata.Builder.class);
     }
 
-    // Construct using com.google.analytics.data.v1alpha.Metadata.newBuilder()
+    // Construct using com.google.analytics.data.v1alpha.UniversalMetadata.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -563,8 +497,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -583,17 +515,17 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_Metadata_descriptor;
+          .internal_static_google_analytics_data_v1alpha_UniversalMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.Metadata getDefaultInstanceForType() {
-      return com.google.analytics.data.v1alpha.Metadata.getDefaultInstance();
+    public com.google.analytics.data.v1alpha.UniversalMetadata getDefaultInstanceForType() {
+      return com.google.analytics.data.v1alpha.UniversalMetadata.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.Metadata build() {
-      com.google.analytics.data.v1alpha.Metadata result = buildPartial();
+    public com.google.analytics.data.v1alpha.UniversalMetadata build() {
+      com.google.analytics.data.v1alpha.UniversalMetadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -601,11 +533,10 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.Metadata buildPartial() {
-      com.google.analytics.data.v1alpha.Metadata result =
-          new com.google.analytics.data.v1alpha.Metadata(this);
+    public com.google.analytics.data.v1alpha.UniversalMetadata buildPartial() {
+      com.google.analytics.data.v1alpha.UniversalMetadata result =
+          new com.google.analytics.data.v1alpha.UniversalMetadata(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
       if (dimensionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
@@ -663,20 +594,17 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.analytics.data.v1alpha.Metadata) {
-        return mergeFrom((com.google.analytics.data.v1alpha.Metadata) other);
+      if (other instanceof com.google.analytics.data.v1alpha.UniversalMetadata) {
+        return mergeFrom((com.google.analytics.data.v1alpha.UniversalMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.analytics.data.v1alpha.Metadata other) {
-      if (other == com.google.analytics.data.v1alpha.Metadata.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
+    public Builder mergeFrom(com.google.analytics.data.v1alpha.UniversalMetadata other) {
+      if (other == com.google.analytics.data.v1alpha.UniversalMetadata.getDefaultInstance())
+        return this;
       if (dimensionsBuilder_ == null) {
         if (!other.dimensions_.isEmpty()) {
           if (dimensions_.isEmpty()) {
@@ -746,11 +674,12 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1alpha.Metadata parsedMessage = null;
+      com.google.analytics.data.v1alpha.UniversalMetadata parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.analytics.data.v1alpha.Metadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.analytics.data.v1alpha.UniversalMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -761,112 +690,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
-
-    private java.lang.Object name_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of this metadata.
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     *
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of this metadata.
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     *
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of this metadata.
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     *
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of this metadata.
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Resource name of this metadata.
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     *
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
 
     private java.util.List<com.google.analytics.data.v1alpha.DimensionMetadata> dimensions_ =
         java.util.Collections.emptyList();
@@ -1589,42 +1412,42 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.Metadata)
+    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.UniversalMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.Metadata)
-  private static final com.google.analytics.data.v1alpha.Metadata DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.UniversalMetadata)
+  private static final com.google.analytics.data.v1alpha.UniversalMetadata DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.Metadata();
+    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.UniversalMetadata();
   }
 
-  public static com.google.analytics.data.v1alpha.Metadata getDefaultInstance() {
+  public static com.google.analytics.data.v1alpha.UniversalMetadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Metadata> PARSER =
-      new com.google.protobuf.AbstractParser<Metadata>() {
+  private static final com.google.protobuf.Parser<UniversalMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<UniversalMetadata>() {
         @java.lang.Override
-        public Metadata parsePartialFrom(
+        public UniversalMetadata parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Metadata(input, extensionRegistry);
+          return new UniversalMetadata(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<Metadata> parser() {
+  public static com.google.protobuf.Parser<UniversalMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Metadata> getParserForType() {
+  public com.google.protobuf.Parser<UniversalMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.Metadata getDefaultInstanceForType() {
+  public com.google.analytics.data.v1alpha.UniversalMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

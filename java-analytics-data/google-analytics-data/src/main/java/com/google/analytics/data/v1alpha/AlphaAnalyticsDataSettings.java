@@ -45,16 +45,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getMetadata to 30 seconds:
+ * <p>For example, to set the total timeout of runReport to 30 seconds:
  *
  * <pre>
  * <code>
  * AlphaAnalyticsDataSettings.Builder alphaAnalyticsDataSettingsBuilder =
  *     AlphaAnalyticsDataSettings.newBuilder();
  * alphaAnalyticsDataSettingsBuilder
- *     .getMetadataSettings()
+ *     .runReportSettings()
  *     .setRetrySettings(
- *         alphaAnalyticsDataSettingsBuilder.getMetadataSettings().getRetrySettings().toBuilder()
+ *         alphaAnalyticsDataSettingsBuilder.runReportSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlphaAnalyticsDataSettings alphaAnalyticsDataSettings = alphaAnalyticsDataSettingsBuilder.build();
@@ -86,9 +86,10 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).batchRunPivotReportsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getMetadata. */
-  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
-    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getMetadataSettings();
+  /** Returns the object with the settings used for calls to getUniversalMetadata. */
+  public UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
+      getUniversalMetadataSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getUniversalMetadataSettings();
   }
 
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
@@ -211,9 +212,10 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
       return getStubSettingsBuilder().batchRunPivotReportsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getMetadata. */
-    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
-      return getStubSettingsBuilder().getMetadataSettings();
+    /** Returns the builder for the settings used for calls to getUniversalMetadata. */
+    public UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
+        getUniversalMetadataSettings() {
+      return getStubSettingsBuilder().getUniversalMetadataSettings();
     }
 
     @Override

@@ -348,6 +348,22 @@ public interface RunReportResponseOrBuilder
    *
    *
    * <pre>
+   * The total number of rows in the query result, regardless of the number of
+   * rows returned in the response. For example if a query returns 175 rows and
+   * includes limit = 50 in the API request, the response will contain row_count
+   * = 175 but only 50 rows.
+   * </pre>
+   *
+   * <code>int32 row_count = 12;</code>
+   *
+   * @return The rowCount.
+   */
+  int getRowCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata for the report.
    * </pre>
    *

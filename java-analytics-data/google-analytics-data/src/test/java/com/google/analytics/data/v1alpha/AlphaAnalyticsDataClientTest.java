@@ -77,7 +77,9 @@ public class AlphaAnalyticsDataClientTest {
   @Test
   @SuppressWarnings("all")
   public void runReportTest() {
-    RunReportResponse expectedResponse = RunReportResponse.newBuilder().build();
+    int rowCount = 1340416618;
+    RunReportResponse expectedResponse =
+        RunReportResponse.newBuilder().setRowCount(rowCount).build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
     RunReportRequest request = RunReportRequest.newBuilder().build();
@@ -225,21 +227,19 @@ public class AlphaAnalyticsDataClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getMetadataTest() {
-    MetadataName name2 = MetadataName.ofMetadataName();
-    Metadata expectedResponse = Metadata.newBuilder().setName(name2.toString()).build();
+  public void getUniversalMetadataTest() {
+    UniversalMetadata expectedResponse = UniversalMetadata.newBuilder().build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
-    MetadataName name = MetadataName.ofMetadataName();
+    GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
 
-    Metadata actualResponse = client.getMetadata(name);
+    UniversalMetadata actualResponse = client.getUniversalMetadata(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetMetadataRequest actualRequest = (GetMetadataRequest) actualRequests.get(0);
+    GetUniversalMetadataRequest actualRequest = (GetUniversalMetadataRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, MetadataName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -248,14 +248,14 @@ public class AlphaAnalyticsDataClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getMetadataExceptionTest() throws Exception {
+  public void getUniversalMetadataExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockAlphaAnalyticsData.addException(exception);
 
     try {
-      MetadataName name = MetadataName.ofMetadataName();
+      GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
 
-      client.getMetadata(name);
+      client.getUniversalMetadata(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

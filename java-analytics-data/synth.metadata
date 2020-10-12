@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "32cd28cc67e8f644856471573821bf930b7ee513",
-        "internalRef": "329352783"
+        "sha": "c3c12961380f5612d41bbda0944454a5e88b63b0",
+        "internalRef": "335470104"
       }
     },
     {
@@ -146,11 +146,8 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterExpressionListOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterExpressionOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterOrBuilder.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequest.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequestOrBuilder.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Metadata.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataName.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetUniversalMetadataRequest.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetUniversalMetadataRequestOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Metric.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricAggregation.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetricHeader.java",
@@ -188,6 +185,8 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportRequestOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportResponse.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportResponseOrBuilder.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/UniversalMetadata.java",
+    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/UniversalMetadataOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/proto/google/analytics/data/v1alpha/analytics_data_api.proto",
     "proto-google-analytics-data-v1alpha/src/main/proto/google/analytics/data/v1alpha/data.proto",
     "renovate.json",

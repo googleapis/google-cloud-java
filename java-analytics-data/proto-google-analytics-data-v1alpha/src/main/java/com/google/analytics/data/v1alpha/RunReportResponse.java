@@ -178,6 +178,11 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
                       extensionRegistry));
               break;
             }
+          case 96:
+            {
+              rowCount_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -657,6 +662,27 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
     return minimums_.get(index);
   }
 
+  public static final int ROW_COUNT_FIELD_NUMBER = 12;
+  private int rowCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The total number of rows in the query result, regardless of the number of
+   * rows returned in the response. For example if a query returns 175 rows and
+   * includes limit = 50 in the API request, the response will contain row_count
+   * = 175 but only 50 rows.
+   * </pre>
+   *
+   * <code>int32 row_count = 12;</code>
+   *
+   * @return The rowCount.
+   */
+  @java.lang.Override
+  public int getRowCount() {
+    return rowCount_;
+  }
+
   public static final int METADATA_FIELD_NUMBER = 6;
   private com.google.analytics.data.v1alpha.ResponseMetaData metadata_;
   /**
@@ -791,6 +817,9 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < dimensionHeaders_.size(); i++) {
       output.writeMessage(11, dimensionHeaders_.get(i));
     }
+    if (rowCount_ != 0) {
+      output.writeInt32(12, rowCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -825,6 +854,9 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, dimensionHeaders_.get(i));
     }
+    if (rowCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, rowCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -847,6 +879,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
     if (!getTotalsList().equals(other.getTotalsList())) return false;
     if (!getMaximumsList().equals(other.getMaximumsList())) return false;
     if (!getMinimumsList().equals(other.getMinimumsList())) return false;
+    if (getRowCount() != other.getRowCount()) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
@@ -890,6 +923,8 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + MINIMUMS_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumsList().hashCode();
     }
+    hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getRowCount();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1086,6 +1121,8 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
       } else {
         minimumsBuilder_.clear();
       }
+      rowCount_ = 0;
+
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -1180,6 +1217,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.minimums_ = minimumsBuilder_.build();
       }
+      result.rowCount_ = rowCount_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -1401,6 +1439,9 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
             minimumsBuilder_.addAllMessages(other.minimums_);
           }
         }
+      }
+      if (other.getRowCount() != 0) {
+        setRowCount(other.getRowCount());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -3587,6 +3628,67 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
         minimums_ = null;
       }
       return minimumsBuilder_;
+    }
+
+    private int rowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The total number of rows in the query result, regardless of the number of
+     * rows returned in the response. For example if a query returns 175 rows and
+     * includes limit = 50 in the API request, the response will contain row_count
+     * = 175 but only 50 rows.
+     * </pre>
+     *
+     * <code>int32 row_count = 12;</code>
+     *
+     * @return The rowCount.
+     */
+    @java.lang.Override
+    public int getRowCount() {
+      return rowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of rows in the query result, regardless of the number of
+     * rows returned in the response. For example if a query returns 175 rows and
+     * includes limit = 50 in the API request, the response will contain row_count
+     * = 175 but only 50 rows.
+     * </pre>
+     *
+     * <code>int32 row_count = 12;</code>
+     *
+     * @param value The rowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRowCount(int value) {
+
+      rowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of rows in the query result, regardless of the number of
+     * rows returned in the response. For example if a query returns 175 rows and
+     * includes limit = 50 in the API request, the response will contain row_count
+     * = 175 but only 50 rows.
+     * </pre>
+     *
+     * <code>int32 row_count = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRowCount() {
+
+      rowCount_ = 0;
+      onChanged();
+      return this;
     }
 
     private com.google.analytics.data.v1alpha.ResponseMetaData metadata_;

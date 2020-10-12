@@ -91,7 +91,9 @@ public interface PivotHeaderOrBuilder
    *
    *
    * <pre>
-   * The cardinality of the pivot as if offset = 0 and limit = -1.
+   * The cardinality of the pivot as if offset = 0 and limit = -1. The total
+   * number of rows for this pivot's fields regardless of how the parameters
+   * offset and limit are specified in the request.
    * </pre>
    *
    * <code>int32 row_count = 2;</code>

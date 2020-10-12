@@ -118,11 +118,12 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   }
 
   @Override
-  public void getMetadata(GetMetadataRequest request, StreamObserver<Metadata> responseObserver) {
+  public void getUniversalMetadata(
+      GetUniversalMetadataRequest request, StreamObserver<UniversalMetadata> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Metadata) {
+    if (response instanceof UniversalMetadata) {
       requests.add(request);
-      responseObserver.onNext((Metadata) response);
+      responseObserver.onNext((UniversalMetadata) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

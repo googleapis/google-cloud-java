@@ -18,35 +18,10 @@
 
 package com.google.analytics.data.v1alpha;
 
-public interface MetadataOrBuilder
+public interface UniversalMetadataOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.Metadata)
+    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.UniversalMetadata)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of this metadata.
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   *
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   *
-   *
-   * <pre>
-   * Resource name of this metadata.
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   *
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString getNameBytes();
 
   /**
    *
