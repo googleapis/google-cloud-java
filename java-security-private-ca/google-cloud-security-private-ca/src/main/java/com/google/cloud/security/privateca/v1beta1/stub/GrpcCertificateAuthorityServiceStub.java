@@ -35,9 +35,6 @@ import com.google.cloud.security.privateca.v1beta1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1beta1.CertificateRevocationList;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest;
-import com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest;
 import com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrRequest;
@@ -62,11 +59,9 @@ import com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuth
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
-import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -244,17 +239,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(UpdateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListMethodDescriptor =
-          MethodDescriptor.<CreateCertificateRevocationListRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.security.privateca.v1beta1.CertificateAuthorityService/CreateCertificateRevocationList")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      CreateCertificateRevocationListRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<
           GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListMethodDescriptor =
@@ -294,26 +278,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       UpdateCertificateRevocationListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CreateReusableConfigRequest, Operation>
-      createReusableConfigMethodDescriptor =
-          MethodDescriptor.<CreateReusableConfigRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.security.privateca.v1beta1.CertificateAuthorityService/CreateReusableConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateReusableConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteReusableConfigRequest, Operation>
-      deleteReusableConfigMethodDescriptor =
-          MethodDescriptor.<DeleteReusableConfigRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.security.privateca.v1beta1.CertificateAuthorityService/DeleteReusableConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteReusableConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<GetReusableConfigRequest, ReusableConfig>
       getReusableConfigMethodDescriptor =
           MethodDescriptor.<GetReusableConfigRequest, ReusableConfig>newBuilder()
@@ -334,16 +298,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ListReusableConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReusableConfigsResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<UpdateReusableConfigRequest, Operation>
-      updateReusableConfigMethodDescriptor =
-          MethodDescriptor.<UpdateReusableConfigRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.security.privateca.v1beta1.CertificateAuthorityService/UpdateReusableConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateReusableConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private final BackgroundResource backgroundResources;
@@ -402,11 +356,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   private final OperationCallable<
           UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       updateCertificateAuthorityOperationCallable;
-  private final UnaryCallable<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListCallable;
-  private final OperationCallable<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationCallable;
   private final UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListCallable;
   private final UnaryCallable<
@@ -420,20 +369,11 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   private final OperationCallable<
           UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
       updateCertificateRevocationListOperationCallable;
-  private final UnaryCallable<CreateReusableConfigRequest, Operation> createReusableConfigCallable;
-  private final OperationCallable<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationCallable;
-  private final UnaryCallable<DeleteReusableConfigRequest, Operation> deleteReusableConfigCallable;
-  private final OperationCallable<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationCallable;
   private final UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable;
   private final UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable;
   private final UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsPagedResponse>
       listReusableConfigsPagedCallable;
-  private final UnaryCallable<UpdateReusableConfigRequest, Operation> updateReusableConfigCallable;
-  private final OperationCallable<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -701,21 +641,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       }
                     })
                 .build();
-    GrpcCallSettings<CreateCertificateRevocationListRequest, Operation>
-        createCertificateRevocationListTransportSettings =
-            GrpcCallSettings.<CreateCertificateRevocationListRequest, Operation>newBuilder()
-                .setMethodDescriptor(createCertificateRevocationListMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CreateCertificateRevocationListRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateCertificateRevocationListRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListTransportSettings =
             GrpcCallSettings
@@ -766,32 +691,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       }
                     })
                 .build();
-    GrpcCallSettings<CreateReusableConfigRequest, Operation> createReusableConfigTransportSettings =
-        GrpcCallSettings.<CreateReusableConfigRequest, Operation>newBuilder()
-            .setMethodDescriptor(createReusableConfigMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateReusableConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateReusableConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteReusableConfigRequest, Operation> deleteReusableConfigTransportSettings =
-        GrpcCallSettings.<DeleteReusableConfigRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteReusableConfigMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteReusableConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteReusableConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetReusableConfigRequest, ReusableConfig> getReusableConfigTransportSettings =
         GrpcCallSettings.<GetReusableConfigRequest, ReusableConfig>newBuilder()
             .setMethodDescriptor(getReusableConfigMethodDescriptor)
@@ -819,21 +718,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       }
                     })
                 .build();
-    GrpcCallSettings<UpdateReusableConfigRequest, Operation> updateReusableConfigTransportSettings =
-        GrpcCallSettings.<UpdateReusableConfigRequest, Operation>newBuilder()
-            .setMethodDescriptor(updateReusableConfigMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateReusableConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateReusableConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "reusable_config.name",
-                        String.valueOf(request.getReusableConfig().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
     this.createCertificateCallable =
         callableFactory.createUnaryCallable(
@@ -956,17 +840,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             settings.updateCertificateAuthorityOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.createCertificateRevocationListCallable =
-        callableFactory.createUnaryCallable(
-            createCertificateRevocationListTransportSettings,
-            settings.createCertificateRevocationListSettings(),
-            clientContext);
-    this.createCertificateRevocationListOperationCallable =
-        callableFactory.createOperationCallable(
-            createCertificateRevocationListTransportSettings,
-            settings.createCertificateRevocationListOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.getCertificateRevocationListCallable =
         callableFactory.createUnaryCallable(
             getCertificateRevocationListTransportSettings,
@@ -993,28 +866,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             settings.updateCertificateRevocationListOperationSettings(),
             clientContext,
             this.operationsStub);
-    this.createReusableConfigCallable =
-        callableFactory.createUnaryCallable(
-            createReusableConfigTransportSettings,
-            settings.createReusableConfigSettings(),
-            clientContext);
-    this.createReusableConfigOperationCallable =
-        callableFactory.createOperationCallable(
-            createReusableConfigTransportSettings,
-            settings.createReusableConfigOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.deleteReusableConfigCallable =
-        callableFactory.createUnaryCallable(
-            deleteReusableConfigTransportSettings,
-            settings.deleteReusableConfigSettings(),
-            clientContext);
-    this.deleteReusableConfigOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteReusableConfigTransportSettings,
-            settings.deleteReusableConfigOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.getReusableConfigCallable =
         callableFactory.createUnaryCallable(
             getReusableConfigTransportSettings,
@@ -1030,17 +881,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             listReusableConfigsTransportSettings,
             settings.listReusableConfigsSettings(),
             clientContext);
-    this.updateReusableConfigCallable =
-        callableFactory.createUnaryCallable(
-            updateReusableConfigTransportSettings,
-            settings.updateReusableConfigSettings(),
-            clientContext);
-    this.updateReusableConfigOperationCallable =
-        callableFactory.createOperationCallable(
-            updateReusableConfigTransportSettings,
-            settings.updateReusableConfigOperationSettings(),
-            clientContext,
-            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -1180,18 +1020,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return updateCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationCallable() {
-    return createCertificateRevocationListOperationCallable;
-  }
-
-  public UnaryCallable<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListCallable() {
-    return createCertificateRevocationListCallable;
-  }
-
   public UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListCallable() {
     return getCertificateRevocationListCallable;
@@ -1221,26 +1049,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return updateCertificateRevocationListCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationCallable() {
-    return createReusableConfigOperationCallable;
-  }
-
-  public UnaryCallable<CreateReusableConfigRequest, Operation> createReusableConfigCallable() {
-    return createReusableConfigCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationCallable() {
-    return deleteReusableConfigOperationCallable;
-  }
-
-  public UnaryCallable<DeleteReusableConfigRequest, Operation> deleteReusableConfigCallable() {
-    return deleteReusableConfigCallable;
-  }
-
   public UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable() {
     return getReusableConfigCallable;
   }
@@ -1253,16 +1061,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable() {
     return listReusableConfigsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationCallable() {
-    return updateReusableConfigOperationCallable;
-  }
-
-  public UnaryCallable<UpdateReusableConfigRequest, Operation> updateReusableConfigCallable() {
-    return updateReusableConfigCallable;
   }
 
   @Override

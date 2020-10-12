@@ -842,60 +842,6 @@ public final class CertificateAuthorityServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest,
-          com.google.longrunning.Operation>
-      getCreateCertificateRevocationListMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateCertificateRevocationList",
-      requestType =
-          com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest,
-          com.google.longrunning.Operation>
-      getCreateCertificateRevocationListMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest,
-            com.google.longrunning.Operation>
-        getCreateCertificateRevocationListMethod;
-    if ((getCreateCertificateRevocationListMethod =
-            CertificateAuthorityServiceGrpc.getCreateCertificateRevocationListMethod)
-        == null) {
-      synchronized (CertificateAuthorityServiceGrpc.class) {
-        if ((getCreateCertificateRevocationListMethod =
-                CertificateAuthorityServiceGrpc.getCreateCertificateRevocationListMethod)
-            == null) {
-          CertificateAuthorityServiceGrpc.getCreateCertificateRevocationListMethod =
-              getCreateCertificateRevocationListMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.security.privateca.v1beta1
-                              .CreateCertificateRevocationListRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateCertificateRevocationList"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.security.privateca.v1beta1
-                                  .CreateCertificateRevocationListRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new CertificateAuthorityServiceMethodDescriptorSupplier(
-                              "CreateCertificateRevocationList"))
-                      .build();
-        }
-      }
-    }
-    return getCreateCertificateRevocationListMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.security.privateca.v1beta1.GetCertificateRevocationListRequest,
           com.google.cloud.security.privateca.v1beta1.CertificateRevocationList>
       getGetCertificateRevocationListMethod;
@@ -1062,110 +1008,6 @@ public final class CertificateAuthorityServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getCreateReusableConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateReusableConfig",
-      requestType = com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getCreateReusableConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest,
-            com.google.longrunning.Operation>
-        getCreateReusableConfigMethod;
-    if ((getCreateReusableConfigMethod =
-            CertificateAuthorityServiceGrpc.getCreateReusableConfigMethod)
-        == null) {
-      synchronized (CertificateAuthorityServiceGrpc.class) {
-        if ((getCreateReusableConfigMethod =
-                CertificateAuthorityServiceGrpc.getCreateReusableConfigMethod)
-            == null) {
-          CertificateAuthorityServiceGrpc.getCreateReusableConfigMethod =
-              getCreateReusableConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateReusableConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.security.privateca.v1beta1
-                                  .CreateReusableConfigRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new CertificateAuthorityServiceMethodDescriptorSupplier(
-                              "CreateReusableConfig"))
-                      .build();
-        }
-      }
-    }
-    return getCreateReusableConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getDeleteReusableConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteReusableConfig",
-      requestType = com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getDeleteReusableConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest,
-            com.google.longrunning.Operation>
-        getDeleteReusableConfigMethod;
-    if ((getDeleteReusableConfigMethod =
-            CertificateAuthorityServiceGrpc.getDeleteReusableConfigMethod)
-        == null) {
-      synchronized (CertificateAuthorityServiceGrpc.class) {
-        if ((getDeleteReusableConfigMethod =
-                CertificateAuthorityServiceGrpc.getDeleteReusableConfigMethod)
-            == null) {
-          CertificateAuthorityServiceGrpc.getDeleteReusableConfigMethod =
-              getDeleteReusableConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteReusableConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.security.privateca.v1beta1
-                                  .DeleteReusableConfigRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new CertificateAuthorityServiceMethodDescriptorSupplier(
-                              "DeleteReusableConfig"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteReusableConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest,
           com.google.cloud.security.privateca.v1beta1.ReusableConfig>
       getGetReusableConfigMethod;
@@ -1267,58 +1109,6 @@ public final class CertificateAuthorityServiceGrpc {
       }
     }
     return getListReusableConfigsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getUpdateReusableConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateReusableConfig",
-      requestType = com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest.class,
-      responseType = com.google.longrunning.Operation.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest,
-          com.google.longrunning.Operation>
-      getUpdateReusableConfigMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest,
-            com.google.longrunning.Operation>
-        getUpdateReusableConfigMethod;
-    if ((getUpdateReusableConfigMethod =
-            CertificateAuthorityServiceGrpc.getUpdateReusableConfigMethod)
-        == null) {
-      synchronized (CertificateAuthorityServiceGrpc.class) {
-        if ((getUpdateReusableConfigMethod =
-                CertificateAuthorityServiceGrpc.getUpdateReusableConfigMethod)
-            == null) {
-          CertificateAuthorityServiceGrpc.getUpdateReusableConfigMethod =
-              getUpdateReusableConfigMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "UpdateReusableConfig"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.security.privateca.v1beta1
-                                  .UpdateReusableConfigRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new CertificateAuthorityServiceMethodDescriptorSupplier(
-                              "UpdateReusableConfig"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateReusableConfigMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -1435,7 +1225,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the only field you can update is the
+     * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
      * </pre>
      */
     public void updateCertificate(
@@ -1597,20 +1388,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList] in a given Project, Location
-     * for a particular [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-     * </pre>
-     */
-    public void createCertificateRevocationList(
-        com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCertificateRevocationListMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
      * </pre>
      */
@@ -1654,32 +1431,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a given Project and Location.
-     * </pre>
-     */
-    public void createReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateReusableConfigMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * DeleteReusableConfig deletes a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public void deleteReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteReusableConfigMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
      * </pre>
      */
@@ -1703,19 +1454,6 @@ public final class CertificateAuthorityServiceGrpc {
                 com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getListReusableConfigsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public void updateReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateReusableConfigMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1834,14 +1572,6 @@ public final class CertificateAuthorityServiceGrpc {
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_CERTIFICATE_AUTHORITY)))
           .addMethod(
-              getCreateCertificateRevocationListMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.security.privateca.v1beta1
-                          .CreateCertificateRevocationListRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CERTIFICATE_REVOCATION_LIST)))
-          .addMethod(
               getGetCertificateRevocationListMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1867,18 +1597,6 @@ public final class CertificateAuthorityServiceGrpc {
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_CERTIFICATE_REVOCATION_LIST)))
           .addMethod(
-              getCreateReusableConfigMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_REUSABLE_CONFIG)))
-          .addMethod(
-              getDeleteReusableConfigMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_REUSABLE_CONFIG)))
-          .addMethod(
               getGetReusableConfigMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1892,12 +1610,6 @@ public final class CertificateAuthorityServiceGrpc {
                       com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest,
                       com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>(
                       this, METHODID_LIST_REUSABLE_CONFIGS)))
-          .addMethod(
-              getUpdateReusableConfigMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_REUSABLE_CONFIG)))
           .build();
     }
   }
@@ -1997,7 +1709,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the only field you can update is the
+     * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
      * </pre>
      */
     public void updateCertificate(
@@ -2192,23 +1905,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList] in a given Project, Location
-     * for a particular [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-     * </pre>
-     */
-    public void createCertificateRevocationList(
-        com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getCreateCertificateRevocationListMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
      * </pre>
      */
@@ -2261,38 +1957,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a given Project and Location.
-     * </pre>
-     */
-    public void createReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getCreateReusableConfigMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * DeleteReusableConfig deletes a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public void deleteReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getDeleteReusableConfigMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
      * </pre>
      */
@@ -2320,22 +1984,6 @@ public final class CertificateAuthorityServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListReusableConfigsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public void updateReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getUpdateReusableConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2418,7 +2066,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the only field you can update is the
+     * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
      * </pre>
      */
     public com.google.cloud.security.privateca.v1beta1.Certificate updateCertificate(
@@ -2576,21 +2225,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList] in a given Project, Location
-     * for a particular [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-     * </pre>
-     */
-    public com.google.longrunning.Operation createCertificateRevocationList(
-        com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest
-            request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateCertificateRevocationListMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
      * </pre>
      */
@@ -2635,32 +2269,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a given Project and Location.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getCreateReusableConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * DeleteReusableConfig deletes a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteReusableConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
      * </pre>
      */
@@ -2682,19 +2290,6 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListReusableConfigsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public com.google.longrunning.Operation updateReusableConfig(
-        com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getUpdateReusableConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -2783,7 +2378,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+     * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the only field you can update is the
+     * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2958,23 +2554,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList] in a given Project, Location
-     * for a particular [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        createCertificateRevocationList(
-            com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest
-                request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCreateCertificateRevocationListMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
      * </pre>
      */
@@ -3024,34 +2603,6 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a given Project and Location.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        createReusableConfig(
-            com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getCreateReusableConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * DeleteReusableConfig deletes a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        deleteReusableConfig(
-            com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDeleteReusableConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
      * </pre>
      */
@@ -3077,20 +2628,6 @@ public final class CertificateAuthorityServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getListReusableConfigsMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        updateReusableConfig(
-            com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getUpdateReusableConfigMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_CERTIFICATE = 0;
@@ -3108,15 +2645,11 @@ public final class CertificateAuthorityServiceGrpc {
   private static final int METHODID_RESTORE_CERTIFICATE_AUTHORITY = 12;
   private static final int METHODID_SCHEDULE_DELETE_CERTIFICATE_AUTHORITY = 13;
   private static final int METHODID_UPDATE_CERTIFICATE_AUTHORITY = 14;
-  private static final int METHODID_CREATE_CERTIFICATE_REVOCATION_LIST = 15;
-  private static final int METHODID_GET_CERTIFICATE_REVOCATION_LIST = 16;
-  private static final int METHODID_LIST_CERTIFICATE_REVOCATION_LISTS = 17;
-  private static final int METHODID_UPDATE_CERTIFICATE_REVOCATION_LIST = 18;
-  private static final int METHODID_CREATE_REUSABLE_CONFIG = 19;
-  private static final int METHODID_DELETE_REUSABLE_CONFIG = 20;
-  private static final int METHODID_GET_REUSABLE_CONFIG = 21;
-  private static final int METHODID_LIST_REUSABLE_CONFIGS = 22;
-  private static final int METHODID_UPDATE_REUSABLE_CONFIG = 23;
+  private static final int METHODID_GET_CERTIFICATE_REVOCATION_LIST = 15;
+  private static final int METHODID_LIST_CERTIFICATE_REVOCATION_LISTS = 16;
+  private static final int METHODID_UPDATE_CERTIFICATE_REVOCATION_LIST = 17;
+  private static final int METHODID_GET_REUSABLE_CONFIG = 18;
+  private static final int METHODID_LIST_REUSABLE_CONFIGS = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3234,12 +2767,6 @@ public final class CertificateAuthorityServiceGrpc {
                   request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_CREATE_CERTIFICATE_REVOCATION_LIST:
-          serviceImpl.createCertificateRevocationList(
-              (com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest)
-                  request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
         case METHODID_GET_CERTIFICATE_REVOCATION_LIST:
           serviceImpl.getCertificateRevocationList(
               (com.google.cloud.security.privateca.v1beta1.GetCertificateRevocationListRequest)
@@ -3263,16 +2790,6 @@ public final class CertificateAuthorityServiceGrpc {
                   request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
-        case METHODID_CREATE_REUSABLE_CONFIG:
-          serviceImpl.createReusableConfig(
-              (com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_DELETE_REUSABLE_CONFIG:
-          serviceImpl.deleteReusableConfig(
-              (com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
         case METHODID_GET_REUSABLE_CONFIG:
           serviceImpl.getReusableConfig(
               (com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest) request,
@@ -3286,11 +2803,6 @@ public final class CertificateAuthorityServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>)
                   responseObserver);
-          break;
-        case METHODID_UPDATE_REUSABLE_CONFIG:
-          serviceImpl.updateReusableConfig(
-              (com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3371,15 +2883,11 @@ public final class CertificateAuthorityServiceGrpc {
                       .addMethod(getRestoreCertificateAuthorityMethod())
                       .addMethod(getScheduleDeleteCertificateAuthorityMethod())
                       .addMethod(getUpdateCertificateAuthorityMethod())
-                      .addMethod(getCreateCertificateRevocationListMethod())
                       .addMethod(getGetCertificateRevocationListMethod())
                       .addMethod(getListCertificateRevocationListsMethod())
                       .addMethod(getUpdateCertificateRevocationListMethod())
-                      .addMethod(getCreateReusableConfigMethod())
-                      .addMethod(getDeleteReusableConfigMethod())
                       .addMethod(getGetReusableConfigMethod())
                       .addMethod(getListReusableConfigsMethod())
-                      .addMethod(getUpdateReusableConfigMethod())
                       .build();
         }
       }

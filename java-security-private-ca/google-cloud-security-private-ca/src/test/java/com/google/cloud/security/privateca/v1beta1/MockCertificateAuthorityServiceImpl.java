@@ -287,21 +287,6 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   }
 
   @Override
-  public void createCertificateRevocationList(
-      CreateCertificateRevocationListRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void getCertificateRevocationList(
       GetCertificateRevocationListRequest request,
       StreamObserver<CertificateRevocationList> responseObserver) {
@@ -349,36 +334,6 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   }
 
   @Override
-  public void createReusableConfig(
-      CreateReusableConfigRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void deleteReusableConfig(
-      DeleteReusableConfigRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void getReusableConfig(
       GetReusableConfigRequest request, StreamObserver<ReusableConfig> responseObserver) {
     Object response = responses.remove();
@@ -401,21 +356,6 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     if (response instanceof ListReusableConfigsResponse) {
       requests.add(request);
       responseObserver.onNext((ListReusableConfigsResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void updateReusableConfig(
-      UpdateReusableConfigRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Operation) {
-      requests.add(request);
-      responseObserver.onNext((Operation) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

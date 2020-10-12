@@ -100,10 +100,6 @@ public final class PrivateCaProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1beta1_UpdateCertificateAuthorityRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_security_privateca_v1beta1_CreateCertificateRevocationListRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_security_privateca_v1beta1_CreateCertificateRevocationListRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_security_privateca_v1beta1_GetCertificateRevocationListRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1beta1_GetCertificateRevocationListRequest_fieldAccessorTable;
@@ -120,14 +116,6 @@ public final class PrivateCaProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1beta1_UpdateCertificateRevocationListRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_security_privateca_v1beta1_CreateReusableConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_security_privateca_v1beta1_CreateReusableConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_security_privateca_v1beta1_DeleteReusableConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_security_privateca_v1beta1_DeleteReusableConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_security_privateca_v1beta1_GetReusableConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1beta1_GetReusableConfigRequest_fieldAccessorTable;
@@ -139,10 +127,6 @@ public final class PrivateCaProto {
       internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_security_privateca_v1beta1_UpdateReusableConfigRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_security_privateca_v1beta1_UpdateReusableConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_security_privateca_v1beta1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -163,320 +147,268 @@ public final class PrivateCaProto {
           + "api/field_behavior.proto\032\031google/api/res"
           + "ource.proto\0327google/cloud/security/priva"
           + "teca/v1beta1/resources.proto\032#google/lon"
-          + "grunning/operations.proto\032 google/protob"
-          + "uf/field_mask.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\347\001\n\030CreateCertificateReques"
-          + "t\022E\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-privateca.goo"
-          + "gleapis.com/CertificateAuthority\022\033\n\016cert"
-          + "ificate_id\030\002 \001(\tB\003\340A\001\022N\n\013certificate\030\003 \001"
-          + "(\01324.google.cloud.security.privateca.v1b"
-          + "eta1.CertificateB\003\340A\002\022\027\n\nrequest_id\030\004 \001("
-          + "\tB\003\340A\001\"S\n\025GetCertificateRequest\022:\n\004name\030"
-          + "\001 \001(\tB,\340A\002\372A&\n$privateca.googleapis.com/"
-          + "Certificate\"\275\001\n\027ListCertificatesRequest\022"
-          + "E\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-privateca.googl"
-          + "eapis.com/CertificateAuthority\022\026\n\tpage_s"
-          + "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022"
-          + "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003"
-          + "\340A\001\"\224\001\n\030ListCertificatesResponse\022J\n\014cert"
-          + "ificates\030\001 \003(\01324.google.cloud.security.p"
-          + "rivateca.v1beta1.Certificate\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\277\001\n\030R"
-          + "evokeCertificateRequest\022:\n\004name\030\001 \001(\tB,\340"
+          + "grunning/operations.proto\032\036google/protob"
+          + "uf/duration.proto\032 google/protobuf/field"
+          + "_mask.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\347\001\n\030CreateCertificateRequest\022E\n\006par"
+          + "ent\030\001 \001(\tB5\340A\002\372A/\n-privateca.googleapis."
+          + "com/CertificateAuthority\022\033\n\016certificate_"
+          + "id\030\002 \001(\tB\003\340A\001\022N\n\013certificate\030\003 \001(\01324.goo"
+          + "gle.cloud.security.privateca.v1beta1.Cer"
+          + "tificateB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"S"
+          + "\n\025GetCertificateRequest\022:\n\004name\030\001 \001(\tB,\340"
           + "A\002\372A&\n$privateca.googleapis.com/Certific"
-          + "ate\022N\n\006reason\030\002 \001(\01629.google.cloud.secur"
-          + "ity.privateca.v1beta1.RevocationReasonB\003"
-          + "\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"\271\001\n\030UpdateC"
-          + "ertificateRequest\022N\n\013certificate\030\001 \001(\01324"
-          + ".google.cloud.security.privateca.v1beta1"
-          + ".CertificateB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032"
-          + ".google.protobuf.FieldMaskB\003\340A\002\022\027\n\nreque"
-          + "st_id\030\003 \001(\tB\003\340A\001\"\201\002\n#ActivateCertificate"
+          + "ate\"\275\001\n\027ListCertificatesRequest\022E\n\006paren"
+          + "t\030\001 \001(\tB5\340A\002\372A/\n-privateca.googleapis.co"
+          + "m/CertificateAuthority\022\026\n\tpage_size\030\002 \001("
+          + "\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filte"
+          + "r\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\224\001\n\030"
+          + "ListCertificatesResponse\022J\n\014certificates"
+          + "\030\001 \003(\01324.google.cloud.security.privateca"
+          + ".v1beta1.Certificate\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\277\001\n\030RevokeCer"
+          + "tificateRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$p"
+          + "rivateca.googleapis.com/Certificate\022N\n\006r"
+          + "eason\030\002 \001(\01629.google.cloud.security.priv"
+          + "ateca.v1beta1.RevocationReasonB\003\340A\002\022\027\n\nr"
+          + "equest_id\030\003 \001(\tB\003\340A\001\"\271\001\n\030UpdateCertifica"
+          + "teRequest\022N\n\013certificate\030\001 \001(\01324.google."
+          + "cloud.security.privateca.v1beta1.Certifi"
+          + "cateB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google."
+          + "protobuf.FieldMaskB\003\340A\002\022\027\n\nrequest_id\030\003 "
+          + "\001(\tB\003\340A\001\"\201\002\n#ActivateCertificateAuthorit"
+          + "yRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-privatec"
+          + "a.googleapis.com/CertificateAuthority\022\037\n"
+          + "\022pem_ca_certificate\030\002 \001(\tB\003\340A\002\022[\n\022subord"
+          + "inate_config\030\003 \001(\0132:.google.cloud.securi"
+          + "ty.privateca.v1beta1.SubordinateConfigB\003"
+          + "\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"\201\002\n!CreateC"
+          + "ertificateAuthorityRequest\0229\n\006parent\030\001 \001"
+          + "(\tB)\340A\002\372A#\n!locations.googleapis.com/Loc"
+          + "ation\022%\n\030certificate_authority_id\030\002 \001(\tB"
+          + "\003\340A\002\022a\n\025certificate_authority\030\003 \001(\0132=.go"
+          + "ogle.cloud.security.privateca.v1beta1.Ce"
+          + "rtificateAuthorityB\003\340A\002\022\027\n\nrequest_id\030\004 "
+          + "\001(\tB\003\340A\001\"\202\001\n\"DisableCertificateAuthority"
+          + "Request\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-privateca"
+          + ".googleapis.com/CertificateAuthority\022\027\n\n"
+          + "request_id\030\002 \001(\tB\003\340A\001\"\201\001\n!EnableCertific"
+          + "ateAuthorityRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A"
+          + "/\n-privateca.googleapis.com/CertificateA"
+          + "uthority\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"j\n#Fet"
+          + "chCertificateAuthorityCsrRequest\022C\n\004name"
+          + "\030\001 \001(\tB5\340A\002\372A/\n-privateca.googleapis.com"
+          + "/CertificateAuthority\"<\n$FetchCertificat"
+          + "eAuthorityCsrResponse\022\024\n\007pem_csr\030\001 \001(\tB\003"
+          + "\340A\003\"e\n\036GetCertificateAuthorityRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\340A\002\372A/\n-privateca.googleapi"
+          + "s.com/CertificateAuthority\"\273\001\n!ListCerti"
+          + "ficateAuthoritiesRequest\0229\n\006parent\030\001 \001(\t"
+          + "B)\340A\002\372A#\n!locations.googleapis.com/Locat"
+          + "ion\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_toke"
+          + "n\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010ord"
+          + "er_by\030\005 \001(\tB\003\340A\001\"\262\001\n\"ListCertificateAuth"
+          + "oritiesResponse\022^\n\027certificate_authoriti"
+          + "es\030\001 \003(\0132=.google.cloud.security.private"
+          + "ca.v1beta1.CertificateAuthority\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\202\001"
+          + "\n\"RestoreCertificateAuthorityRequest\022C\n\004"
+          + "name\030\001 \001(\tB5\340A\002\372A/\n-privateca.googleapis"
+          + ".com/CertificateAuthority\022\027\n\nrequest_id\030"
+          + "\002 \001(\tB\003\340A\001\"\211\001\n)ScheduleDeleteCertificate"
           + "AuthorityRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-"
           + "privateca.googleapis.com/CertificateAuth"
-          + "ority\022\037\n\022pem_ca_certificate\030\002 \001(\tB\003\340A\002\022["
-          + "\n\022subordinate_config\030\003 \001(\0132:.google.clou"
-          + "d.security.privateca.v1beta1.Subordinate"
-          + "ConfigB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"\201\002\n"
-          + "!CreateCertificateAuthorityRequest\0229\n\006pa"
+          + "ority\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\325\001\n!Updat"
+          + "eCertificateAuthorityRequest\022a\n\025certific"
+          + "ate_authority\030\001 \001(\0132=.google.cloud.secur"
+          + "ity.privateca.v1beta1.CertificateAuthori"
+          + "tyB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.pr"
+          + "otobuf.FieldMaskB\003\340A\002\022\027\n\nrequest_id\030\003 \001("
+          + "\tB\003\340A\001\"o\n#GetCertificateRevocationListRe"
+          + "quest\022H\n\004name\030\001 \001(\tB:\340A\002\372A4\n2privateca.g"
+          + "oogleapis.com/CertificateRevocationList\""
+          + "\313\001\n%ListCertificateRevocationListsReques"
+          + "t\022E\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-privateca.goo"
+          + "gleapis.com/CertificateAuthority\022\026\n\tpage"
+          + "_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A"
+          + "\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\t"
+          + "B\003\340A\001\"\300\001\n&ListCertificateRevocationLists"
+          + "Response\022h\n\034certificate_revocation_lists"
+          + "\030\001 \003(\0132B.google.cloud.security.privateca"
+          + ".v1beta1.CertificateRevocationList\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t"
+          + "\"\345\001\n&UpdateCertificateRevocationListRequ"
+          + "est\022l\n\033certificate_revocation_list\030\001 \001(\013"
+          + "2B.google.cloud.security.privateca.v1bet"
+          + "a1.CertificateRevocationListB\003\340A\002\0224\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"Y\n\030GetR"
+          + "eusableConfigRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372"
+          + "A)\n\'privateca.googleapis.com/ReusableCon"
+          + "fig\"\264\001\n\032ListReusableConfigsRequest\0229\n\006pa"
           + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
-          + ".com/Location\022%\n\030certificate_authority_i"
-          + "d\030\002 \001(\tB\003\340A\002\022a\n\025certificate_authority\030\003 "
-          + "\001(\0132=.google.cloud.security.privateca.v1"
-          + "beta1.CertificateAuthorityB\003\340A\002\022\027\n\nreque"
-          + "st_id\030\004 \001(\tB\003\340A\001\"\202\001\n\"DisableCertificateA"
-          + "uthorityRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-p"
-          + "rivateca.googleapis.com/CertificateAutho"
-          + "rity\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\201\001\n!Enable"
-          + "CertificateAuthorityRequest\022C\n\004name\030\001 \001("
-          + "\tB5\340A\002\372A/\n-privateca.googleapis.com/Cert"
-          + "ificateAuthority\022\027\n\nrequest_id\030\002 \001(\tB\003\340A"
-          + "\001\"j\n#FetchCertificateAuthorityCsrRequest"
-          + "\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-privateca.google"
-          + "apis.com/CertificateAuthority\"<\n$FetchCe"
-          + "rtificateAuthorityCsrResponse\022\024\n\007pem_csr"
-          + "\030\001 \001(\tB\003\340A\003\"e\n\036GetCertificateAuthorityRe"
-          + "quest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-privateca.g"
-          + "oogleapis.com/CertificateAuthority\"\273\001\n!L"
-          + "istCertificateAuthoritiesRequest\0229\n\006pare"
-          + "nt\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.c"
-          + "om/Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
-          + "age_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A"
-          + "\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\262\001\n\"ListCertifi"
-          + "cateAuthoritiesResponse\022^\n\027certificate_a"
-          + "uthorities\030\001 \003(\0132=.google.cloud.security"
-          + ".privateca.v1beta1.CertificateAuthority\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030"
-          + "\003 \003(\t\"\202\001\n\"RestoreCertificateAuthorityReq"
-          + "uest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-privateca.go"
-          + "ogleapis.com/CertificateAuthority\022\027\n\nreq"
-          + "uest_id\030\002 \001(\tB\003\340A\001\"\211\001\n)ScheduleDeleteCer"
-          + "tificateAuthorityRequest\022C\n\004name\030\001 \001(\tB5"
-          + "\340A\002\372A/\n-privateca.googleapis.com/Certifi"
-          + "cateAuthority\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\325"
-          + "\001\n!UpdateCertificateAuthorityRequest\022a\n\025"
-          + "certificate_authority\030\001 \001(\0132=.google.clo"
-          + "ud.security.privateca.v1beta1.Certificat"
-          + "eAuthorityB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMaskB\003\340A\002\022\027\n\nrequest"
-          + "_id\030\003 \001(\tB\003\340A\001\"\243\002\n&CreateCertificateRevo"
-          + "cationListRequest\022E\n\006parent\030\001 \001(\tB5\340A\002\372A"
-          + "/\n-privateca.googleapis.com/CertificateA"
-          + "uthority\022+\n\036certificate_revocation_list_"
-          + "id\030\002 \001(\tB\003\340A\002\022l\n\033certificate_revocation_"
-          + "list\030\003 \001(\0132B.google.cloud.security.priva"
-          + "teca.v1beta1.CertificateRevocationListB\003"
-          + "\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"o\n#GetCerti"
-          + "ficateRevocationListRequest\022H\n\004name\030\001 \001("
-          + "\tB:\340A\002\372A4\n2privateca.googleapis.com/Cert"
-          + "ificateRevocationList\"\313\001\n%ListCertificat"
-          + "eRevocationListsRequest\022E\n\006parent\030\001 \001(\tB"
-          + "5\340A\002\372A/\n-privateca.googleapis.com/Certif"
-          + "icateAuthority\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027"
-          + "\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB"
-          + "\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\300\001\n&ListCert"
-          + "ificateRevocationListsResponse\022h\n\034certif"
-          + "icate_revocation_lists\030\001 \003(\0132B.google.cl"
-          + "oud.security.privateca.v1beta1.Certifica"
-          + "teRevocationList\022\027\n\017next_page_token\030\002 \001("
-          + "\t\022\023\n\013unreachable\030\003 \003(\t\"\345\001\n&UpdateCertifi"
-          + "cateRevocationListRequest\022l\n\033certificate"
-          + "_revocation_list\030\001 \001(\0132B.google.cloud.se"
-          + "curity.privateca.v1beta1.CertificateRevo"
-          + "cationListB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMaskB\003\340A\002\022\027\n\nrequest"
-          + "_id\030\003 \001(\tB\003\340A\001\"\351\001\n\033CreateReusableConfigR"
-          + "equest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!location"
-          + "s.googleapis.com/Location\022\037\n\022reusable_co"
-          + "nfig_id\030\002 \001(\tB\003\340A\002\022U\n\017reusable_config\030\003 "
-          + "\001(\01327.google.cloud.security.privateca.v1"
-          + "beta1.ReusableConfigB\003\340A\002\022\027\n\nrequest_id\030"
-          + "\004 \001(\tB\003\340A\001\"u\n\033DeleteReusableConfigReques"
-          + "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'privateca.googl"
-          + "eapis.com/ReusableConfig\022\027\n\nrequest_id\030\002"
-          + " \001(\tB\003\340A\001\"Y\n\030GetReusableConfigRequest\022=\n"
-          + "\004name\030\001 \001(\tB/\340A\002\372A)\n\'privateca.googleapi"
-          + "s.com/ReusableConfig\"\264\001\n\032ListReusableCon"
-          + "figsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loc"
-          + "ations.googleapis.com/Location\022\026\n\tpage_s"
-          + "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022"
-          + "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003"
-          + "\340A\001\"\236\001\n\033ListReusableConfigsResponse\022Q\n\020r"
-          + "eusable_configs\030\001 \003(\01327.google.cloud.sec"
-          + "urity.privateca.v1beta1.ReusableConfig\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
-          + " \003(\t\"\303\001\n\033UpdateReusableConfigRequest\022U\n\017"
-          + "reusable_config\030\001 \001(\01327.google.cloud.sec"
-          + "urity.privateca.v1beta1.ReusableConfigB\003"
-          + "\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protob"
-          + "uf.FieldMaskB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340"
-          + "A\001\"\200\002\n\021OperationMetadata\0224\n\013create_time\030"
-          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221"
-          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004"
-          + " \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#"
-          + "\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013a"
-          + "pi_version\030\007 \001(\tB\003\340A\0032\3056\n\033CertificateAut"
-          + "horityService\022\226\002\n\021CreateCertificate\022A.go"
-          + "ogle.cloud.security.privateca.v1beta1.Cr"
-          + "eateCertificateRequest\0324.google.cloud.se"
-          + "curity.privateca.v1beta1.Certificate\"\207\001\202"
-          + "\323\344\223\002]\"N/v1beta1/{parent=projects/*/locat"
-          + "ions/*/certificateAuthorities/*}/certifi"
-          + "cates:\013certificate\332A!parent,certificate,"
-          + "certificate_id\022\345\001\n\016GetCertificate\022>.goog"
-          + "le.cloud.security.privateca.v1beta1.GetC"
-          + "ertificateRequest\0324.google.cloud.securit"
-          + "y.privateca.v1beta1.Certificate\"]\202\323\344\223\002P\022"
-          + "N/v1beta1/{name=projects/*/locations/*/c"
-          + "ertificateAuthorities/*/certificates/*}\332"
-          + "A\004name\022\370\001\n\020ListCertificates\022@.google.clo"
-          + "ud.security.privateca.v1beta1.ListCertif"
-          + "icatesRequest\032A.google.cloud.security.pr"
-          + "ivateca.v1beta1.ListCertificatesResponse"
-          + "\"_\202\323\344\223\002P\022N/v1beta1/{parent=projects/*/lo"
-          + "cations/*/certificateAuthorities/*}/cert"
-          + "ificates\332A\006parent\022\365\001\n\021RevokeCertificate\022"
-          + "A.google.cloud.security.privateca.v1beta"
-          + "1.RevokeCertificateRequest\0324.google.clou"
-          + "d.security.privateca.v1beta1.Certificate"
-          + "\"g\202\323\344\223\002Z\"U/v1beta1/{name=projects/*/loca"
-          + "tions/*/certificateAuthorities/*/certifi"
-          + "cates/*}:revoke:\001*\332A\004name\022\230\002\n\021UpdateCert"
-          + "ificate\022A.google.cloud.security.privatec"
-          + "a.v1beta1.UpdateCertificateRequest\0324.goo"
-          + "gle.cloud.security.privateca.v1beta1.Cer"
-          + "tificate\"\211\001\202\323\344\223\002i2Z/v1beta1/{certificate"
-          + ".name=projects/*/locations/*/certificate"
-          + "Authorities/*/certificates/*}:\013certifica"
-          + "te\332A\027certificate,update_mask\022\224\002\n\034Activat"
-          + "eCertificateAuthority\022L.google.cloud.sec"
-          + "urity.privateca.v1beta1.ActivateCertific"
-          + "ateAuthorityRequest\032\035.google.longrunning"
-          + ".Operation\"\206\001\202\323\344\223\002M\"H/v1beta1/{name=proj"
-          + "ects/*/locations/*/certificateAuthoritie"
-          + "s/*}:activate:\001*\332A\004name\312A)\n\024CertificateA"
-          + "uthority\022\021OperationMetadata\022\314\002\n\032CreateCe"
-          + "rtificateAuthority\022J.google.cloud.securi"
-          + "ty.privateca.v1beta1.CreateCertificateAu"
-          + "thorityRequest\032\035.google.longrunning.Oper"
-          + "ation\"\302\001\202\323\344\223\002X\"?/v1beta1/{parent=project"
-          + "s/*/locations/*}/certificateAuthorities:"
-          + "\025certificate_authority\332A5parent,certific"
-          + "ate_authority,certificate_authority_id\312A"
-          + ")\n\024CertificateAuthority\022\021OperationMetada"
-          + "ta\022\221\002\n\033DisableCertificateAuthority\022K.goo"
-          + "gle.cloud.security.privateca.v1beta1.Dis"
-          + "ableCertificateAuthorityRequest\032\035.google"
+          + ".com/Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003"
+          + "\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\236\001\n\033ListReusa"
+          + "bleConfigsResponse\022Q\n\020reusable_configs\030\001"
+          + " \003(\01327.google.cloud.security.privateca.v"
+          + "1beta1.ReusableConfig\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\200\002\n\021Operatio"
+          + "nMetadata\0224\n\013create_time\030\001 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006ta"
+          + "rget\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016st"
+          + "atus_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_can"
+          + "cellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001("
+          + "\tB\003\340A\0032\321,\n\033CertificateAuthorityService\022\226"
+          + "\002\n\021CreateCertificate\022A.google.cloud.secu"
+          + "rity.privateca.v1beta1.CreateCertificate"
+          + "Request\0324.google.cloud.security.privatec"
+          + "a.v1beta1.Certificate\"\207\001\202\323\344\223\002]\"N/v1beta1"
+          + "/{parent=projects/*/locations/*/certific"
+          + "ateAuthorities/*}/certificates:\013certific"
+          + "ate\332A!parent,certificate,certificate_id\022"
+          + "\345\001\n\016GetCertificate\022>.google.cloud.securi"
+          + "ty.privateca.v1beta1.GetCertificateReque"
+          + "st\0324.google.cloud.security.privateca.v1b"
+          + "eta1.Certificate\"]\202\323\344\223\002P\022N/v1beta1/{name"
+          + "=projects/*/locations/*/certificateAutho"
+          + "rities/*/certificates/*}\332A\004name\022\370\001\n\020List"
+          + "Certificates\022@.google.cloud.security.pri"
+          + "vateca.v1beta1.ListCertificatesRequest\032A"
+          + ".google.cloud.security.privateca.v1beta1"
+          + ".ListCertificatesResponse\"_\202\323\344\223\002P\022N/v1be"
+          + "ta1/{parent=projects/*/locations/*/certi"
+          + "ficateAuthorities/*}/certificates\332A\006pare"
+          + "nt\022\365\001\n\021RevokeCertificate\022A.google.cloud."
+          + "security.privateca.v1beta1.RevokeCertifi"
+          + "cateRequest\0324.google.cloud.security.priv"
+          + "ateca.v1beta1.Certificate\"g\202\323\344\223\002Z\"U/v1be"
+          + "ta1/{name=projects/*/locations/*/certifi"
+          + "cateAuthorities/*/certificates/*}:revoke"
+          + ":\001*\332A\004name\022\230\002\n\021UpdateCertificate\022A.googl"
+          + "e.cloud.security.privateca.v1beta1.Updat"
+          + "eCertificateRequest\0324.google.cloud.secur"
+          + "ity.privateca.v1beta1.Certificate\"\211\001\202\323\344\223"
+          + "\002i2Z/v1beta1/{certificate.name=projects/"
+          + "*/locations/*/certificateAuthorities/*/c"
+          + "ertificates/*}:\013certificate\332A\027certificat"
+          + "e,update_mask\022\224\002\n\034ActivateCertificateAut"
+          + "hority\022L.google.cloud.security.privateca"
+          + ".v1beta1.ActivateCertificateAuthorityReq"
+          + "uest\032\035.google.longrunning.Operation\"\206\001\202\323"
+          + "\344\223\002M\"H/v1beta1/{name=projects/*/location"
+          + "s/*/certificateAuthorities/*}:activate:\001"
+          + "*\332A\004name\312A)\n\024CertificateAuthority\022\021Opera"
+          + "tionMetadata\022\314\002\n\032CreateCertificateAuthor"
+          + "ity\022J.google.cloud.security.privateca.v1"
+          + "beta1.CreateCertificateAuthorityRequest\032"
+          + "\035.google.longrunning.Operation\"\302\001\202\323\344\223\002X\""
+          + "?/v1beta1/{parent=projects/*/locations/*"
+          + "}/certificateAuthorities:\025certificate_au"
+          + "thority\332A5parent,certificate_authority,c"
+          + "ertificate_authority_id\312A)\n\024CertificateA"
+          + "uthority\022\021OperationMetadata\022\221\002\n\033DisableC"
+          + "ertificateAuthority\022K.google.cloud.secur"
+          + "ity.privateca.v1beta1.DisableCertificate"
+          + "AuthorityRequest\032\035.google.longrunning.Op"
+          + "eration\"\205\001\202\323\344\223\002L\"G/v1beta1/{name=project"
+          + "s/*/locations/*/certificateAuthorities/*"
+          + "}:disable:\001*\332A\004name\312A)\n\024CertificateAutho"
+          + "rity\022\021OperationMetadata\022\216\002\n\032EnableCertif"
+          + "icateAuthority\022J.google.cloud.security.p"
+          + "rivateca.v1beta1.EnableCertificateAuthor"
+          + "ityRequest\032\035.google.longrunning.Operatio"
+          + "n\"\204\001\202\323\344\223\002K\"F/v1beta1/{name=projects/*/lo"
+          + "cations/*/certificateAuthorities/*}:enab"
+          + "le:\001*\332A\004name\312A)\n\024CertificateAuthority\022\021O"
+          + "perationMetadata\022\221\002\n\034FetchCertificateAut"
+          + "horityCsr\022L.google.cloud.security.privat"
+          + "eca.v1beta1.FetchCertificateAuthorityCsr"
+          + "Request\032M.google.cloud.security.privatec"
+          + "a.v1beta1.FetchCertificateAuthorityCsrRe"
+          + "sponse\"T\202\323\344\223\002G\022E/v1beta1/{name=projects/"
+          + "*/locations/*/certificateAuthorities/*}:"
+          + "fetch\332A\004name\022\361\001\n\027GetCertificateAuthority"
+          + "\022G.google.cloud.security.privateca.v1bet"
+          + "a1.GetCertificateAuthorityRequest\032=.goog"
+          + "le.cloud.security.privateca.v1beta1.Cert"
+          + "ificateAuthority\"N\202\323\344\223\002A\022?/v1beta1/{name"
+          + "=projects/*/locations/*/certificateAutho"
+          + "rities/*}\332A\004name\022\207\002\n\032ListCertificateAuth"
+          + "orities\022J.google.cloud.security.privatec"
+          + "a.v1beta1.ListCertificateAuthoritiesRequ"
+          + "est\032K.google.cloud.security.privateca.v1"
+          + "beta1.ListCertificateAuthoritiesResponse"
+          + "\"P\202\323\344\223\002A\022?/v1beta1/{parent=projects/*/lo"
+          + "cations/*}/certificateAuthorities\332A\006pare"
+          + "nt\022\221\002\n\033RestoreCertificateAuthority\022K.goo"
+          + "gle.cloud.security.privateca.v1beta1.Res"
+          + "toreCertificateAuthorityRequest\032\035.google"
           + ".longrunning.Operation\"\205\001\202\323\344\223\002L\"G/v1beta"
           + "1/{name=projects/*/locations/*/certifica"
-          + "teAuthorities/*}:disable:\001*\332A\004name\312A)\n\024C"
-          + "ertificateAuthority\022\021OperationMetadata\022\216"
-          + "\002\n\032EnableCertificateAuthority\022J.google.c"
-          + "loud.security.privateca.v1beta1.EnableCe"
-          + "rtificateAuthorityRequest\032\035.google.longr"
-          + "unning.Operation\"\204\001\202\323\344\223\002K\"F/v1beta1/{nam"
-          + "e=projects/*/locations/*/certificateAuth"
-          + "orities/*}:enable:\001*\332A\004name\312A)\n\024Certific"
-          + "ateAuthority\022\021OperationMetadata\022\221\002\n\034Fetc"
-          + "hCertificateAuthorityCsr\022L.google.cloud."
-          + "security.privateca.v1beta1.FetchCertific"
-          + "ateAuthorityCsrRequest\032M.google.cloud.se"
-          + "curity.privateca.v1beta1.FetchCertificat"
-          + "eAuthorityCsrResponse\"T\202\323\344\223\002G\022E/v1beta1/"
-          + "{name=projects/*/locations/*/certificate"
-          + "Authorities/*}:fetch\332A\004name\022\361\001\n\027GetCerti"
-          + "ficateAuthority\022G.google.cloud.security."
-          + "privateca.v1beta1.GetCertificateAuthorit"
-          + "yRequest\032=.google.cloud.security.private"
-          + "ca.v1beta1.CertificateAuthority\"N\202\323\344\223\002A\022"
-          + "?/v1beta1/{name=projects/*/locations/*/c"
-          + "ertificateAuthorities/*}\332A\004name\022\207\002\n\032List"
-          + "CertificateAuthorities\022J.google.cloud.se"
-          + "curity.privateca.v1beta1.ListCertificate"
-          + "AuthoritiesRequest\032K.google.cloud.securi"
-          + "ty.privateca.v1beta1.ListCertificateAuth"
-          + "oritiesResponse\"P\202\323\344\223\002A\022?/v1beta1/{paren"
-          + "t=projects/*/locations/*}/certificateAut"
-          + "horities\332A\006parent\022\221\002\n\033RestoreCertificate"
-          + "Authority\022K.google.cloud.security.privat"
-          + "eca.v1beta1.RestoreCertificateAuthorityR"
-          + "equest\032\035.google.longrunning.Operation\"\205\001"
-          + "\202\323\344\223\002L\"G/v1beta1/{name=projects/*/locati"
-          + "ons/*/certificateAuthorities/*}:restore:"
-          + "\001*\332A\004name\312A)\n\024CertificateAuthority\022\021Oper"
-          + "ationMetadata\022\246\002\n\"ScheduleDeleteCertific"
-          + "ateAuthority\022R.google.cloud.security.pri"
-          + "vateca.v1beta1.ScheduleDeleteCertificate"
-          + "AuthorityRequest\032\035.google.longrunning.Op"
-          + "eration\"\214\001\202\323\344\223\002S\"N/v1beta1/{name=project"
-          + "s/*/locations/*/certificateAuthorities/*"
-          + "}:scheduleDelete:\001*\332A\004name\312A)\n\024Certifica"
-          + "teAuthority\022\021OperationMetadata\022\316\002\n\032Updat"
-          + "eCertificateAuthority\022J.google.cloud.sec"
-          + "urity.privateca.v1beta1.UpdateCertificat"
-          + "eAuthorityRequest\032\035.google.longrunning.O"
-          + "peration\"\304\001\202\323\344\223\002n2U/v1beta1/{certificate"
-          + "_authority.name=projects/*/locations/*/c"
-          + "ertificateAuthorities/*}:\025certificate_au"
-          + "thority\332A!certificate_authority,update_m"
-          + "ask\312A)\n\024CertificateAuthority\022\021OperationM"
-          + "etadata\022\212\003\n\037CreateCertificateRevocationL"
-          + "ist\022O.google.cloud.security.privateca.v1"
-          + "beta1.CreateCertificateRevocationListReq"
-          + "uest\032\035.google.longrunning.Operation\"\366\001\202\323"
-          + "\344\223\002{\"\\/v1beta1/{parent=projects/*/locati"
-          + "ons/*/certificateAuthorities/*}/certific"
-          + "ateRevocationLists:\033certificate_revocati"
-          + "on_list\332AAparent,certificate_revocation_"
-          + "list,certificate_revocation_list_id\312A.\n\031"
-          + "CertificateRevocationList\022\021OperationMeta"
-          + "data\022\235\002\n\034GetCertificateRevocationList\022L."
+          + "teAuthorities/*}:restore:\001*\332A\004name\312A)\n\024C"
+          + "ertificateAuthority\022\021OperationMetadata\022\246"
+          + "\002\n\"ScheduleDeleteCertificateAuthority\022R."
           + "google.cloud.security.privateca.v1beta1."
-          + "GetCertificateRevocationListRequest\032B.go"
-          + "ogle.cloud.security.privateca.v1beta1.Ce"
-          + "rtificateRevocationList\"k\202\323\344\223\002^\022\\/v1beta"
-          + "1/{name=projects/*/locations/*/certifica"
-          + "teAuthorities/*/certificateRevocationLis"
-          + "ts/*}\332A\004name\022\260\002\n\036ListCertificateRevocati"
-          + "onLists\022N.google.cloud.security.privatec"
-          + "a.v1beta1.ListCertificateRevocationLists"
-          + "Request\032O.google.cloud.security.privatec"
-          + "a.v1beta1.ListCertificateRevocationLists"
-          + "Response\"m\202\323\344\223\002^\022\\/v1beta1/{parent=proje"
-          + "cts/*/locations/*/certificateAuthorities"
-          + "/*}/certificateRevocationLists\332A\006parent\022"
-          + "\215\003\n\037UpdateCertificateRevocationList\022O.go"
-          + "ogle.cloud.security.privateca.v1beta1.Up"
-          + "dateCertificateRevocationListRequest\032\035.g"
-          + "oogle.longrunning.Operation\"\371\001\202\323\344\223\002\227\0012x/"
-          + "v1beta1/{certificate_revocation_list.nam"
-          + "e=projects/*/locations/*/certificateAuth"
-          + "orities/*/certificateRevocationLists/*}:"
-          + "\033certificate_revocation_list\332A\'certifica"
-          + "te_revocation_list,update_mask\312A.\n\031Certi"
-          + "ficateRevocationList\022\021OperationMetadata\022"
-          + "\241\002\n\024CreateReusableConfig\022D.google.cloud."
-          + "security.privateca.v1beta1.CreateReusabl"
-          + "eConfigRequest\032\035.google.longrunning.Oper"
-          + "ation\"\243\001\202\323\344\223\002K\"8/v1beta1/{parent=project"
-          + "s/*/locations/*}/reusableConfigs:\017reusab"
-          + "le_config\332A)parent,reusable_config,reusa"
-          + "ble_config_id\312A#\n\016ReusableConfig\022\021Operat"
-          + "ionMetadata\022\232\002\n\024DeleteReusableConfig\022D.g"
-          + "oogle.cloud.security.privateca.v1beta1.D"
-          + "eleteReusableConfigRequest\032\035.google.long"
-          + "running.Operation\"\234\001\202\323\344\223\002:*8/v1beta1/{na"
-          + "me=projects/*/locations/*/reusableConfig"
-          + "s/*}\332A\004name\312AR\n\025google.protobuf.Empty\0229g"
-          + "oogle.cloud.security.privateca.v1beta1.O"
-          + "perationMetadata\022\330\001\n\021GetReusableConfig\022A"
-          + ".google.cloud.security.privateca.v1beta1"
-          + ".GetReusableConfigRequest\0327.google.cloud"
-          + ".security.privateca.v1beta1.ReusableConf"
-          + "ig\"G\202\323\344\223\002:\0228/v1beta1/{name=projects/*/lo"
-          + "cations/*/reusableConfigs/*}\332A\004name\022\353\001\n\023"
-          + "ListReusableConfigs\022C.google.cloud.secur"
+          + "ScheduleDeleteCertificateAuthorityReques"
+          + "t\032\035.google.longrunning.Operation\"\214\001\202\323\344\223\002"
+          + "S\"N/v1beta1/{name=projects/*/locations/*"
+          + "/certificateAuthorities/*}:scheduleDelet"
+          + "e:\001*\332A\004name\312A)\n\024CertificateAuthority\022\021Op"
+          + "erationMetadata\022\316\002\n\032UpdateCertificateAut"
+          + "hority\022J.google.cloud.security.privateca"
+          + ".v1beta1.UpdateCertificateAuthorityReque"
+          + "st\032\035.google.longrunning.Operation\"\304\001\202\323\344\223"
+          + "\002n2U/v1beta1/{certificate_authority.name"
+          + "=projects/*/locations/*/certificateAutho"
+          + "rities/*}:\025certificate_authority\332A!certi"
+          + "ficate_authority,update_mask\312A)\n\024Certifi"
+          + "cateAuthority\022\021OperationMetadata\022\235\002\n\034Get"
+          + "CertificateRevocationList\022L.google.cloud"
+          + ".security.privateca.v1beta1.GetCertifica"
+          + "teRevocationListRequest\032B.google.cloud.s"
+          + "ecurity.privateca.v1beta1.CertificateRev"
+          + "ocationList\"k\202\323\344\223\002^\022\\/v1beta1/{name=proj"
+          + "ects/*/locations/*/certificateAuthoritie"
+          + "s/*/certificateRevocationLists/*}\332A\004name"
+          + "\022\260\002\n\036ListCertificateRevocationLists\022N.go"
+          + "ogle.cloud.security.privateca.v1beta1.Li"
+          + "stCertificateRevocationListsRequest\032O.go"
+          + "ogle.cloud.security.privateca.v1beta1.Li"
+          + "stCertificateRevocationListsResponse\"m\202\323"
+          + "\344\223\002^\022\\/v1beta1/{parent=projects/*/locati"
+          + "ons/*/certificateAuthorities/*}/certific"
+          + "ateRevocationLists\332A\006parent\022\215\003\n\037UpdateCe"
+          + "rtificateRevocationList\022O.google.cloud.s"
+          + "ecurity.privateca.v1beta1.UpdateCertific"
+          + "ateRevocationListRequest\032\035.google.longru"
+          + "nning.Operation\"\371\001\202\323\344\223\002\227\0012x/v1beta1/{cer"
+          + "tificate_revocation_list.name=projects/*"
+          + "/locations/*/certificateAuthorities/*/ce"
+          + "rtificateRevocationLists/*}:\033certificate"
+          + "_revocation_list\332A\'certificate_revocatio"
+          + "n_list,update_mask\312A.\n\031CertificateRevoca"
+          + "tionList\022\021OperationMetadata\022\330\001\n\021GetReusa"
+          + "bleConfig\022A.google.cloud.security.privat"
+          + "eca.v1beta1.GetReusableConfigRequest\0327.g"
+          + "oogle.cloud.security.privateca.v1beta1.R"
+          + "eusableConfig\"G\202\323\344\223\002:\0228/v1beta1/{name=pr"
+          + "ojects/*/locations/*/reusableConfigs/*}\332"
+          + "A\004name\022\353\001\n\023ListReusableConfigs\022C.google."
+          + "cloud.security.privateca.v1beta1.ListReu"
+          + "sableConfigsRequest\032D.google.cloud.secur"
           + "ity.privateca.v1beta1.ListReusableConfig"
-          + "sRequest\032D.google.cloud.security.private"
-          + "ca.v1beta1.ListReusableConfigsResponse\"I"
-          + "\202\323\344\223\002:\0228/v1beta1/{parent=projects/*/loca"
-          + "tions/*}/reusableConfigs\332A\006parent\022\243\002\n\024Up"
-          + "dateReusableConfig\022D.google.cloud.securi"
-          + "ty.privateca.v1beta1.UpdateReusableConfi"
-          + "gRequest\032\035.google.longrunning.Operation\""
-          + "\245\001\202\323\344\223\002[2H/v1beta1/{reusable_config.name"
-          + "=projects/*/locations/*/reusableConfigs/"
-          + "*}:\017reusable_config\332A\033reusable_config,up"
-          + "date_mask\312A#\n\016ReusableConfig\022\021OperationM"
-          + "etadata\032L\312A\030privateca.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\276\001\n+com.google.cloud.security.priv"
-          + "ateca.v1beta1B\016PrivateCaProtoP\001ZPgoogle."
-          + "golang.org/genproto/googleapis/cloud/sec"
-          + "urity/privateca/v1beta1;privateca\370\001\001\252\002\'G"
-          + "oogle.Cloud.Security.PrivateCA.V1Beta1b\006"
-          + "proto3"
+          + "sResponse\"I\202\323\344\223\002:\0228/v1beta1/{parent=proj"
+          + "ects/*/locations/*}/reusableConfigs\332A\006pa"
+          + "rent\032L\312A\030privateca.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmB\276\001\n+com.google.cloud.security.private"
+          + "ca.v1beta1B\016PrivateCaProtoP\001ZPgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/securi"
+          + "ty/privateca/v1beta1;privateca\370\001\001\252\002\'Goog"
+          + "le.Cloud.Security.PrivateCA.V1Beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -488,6 +420,7 @@ public final class PrivateCaProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -635,16 +568,8 @@ public final class PrivateCaProto {
             new java.lang.String[] {
               "CertificateAuthority", "UpdateMask", "RequestId",
             });
-    internal_static_google_cloud_security_privateca_v1beta1_CreateCertificateRevocationListRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
-    internal_static_google_cloud_security_privateca_v1beta1_CreateCertificateRevocationListRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_security_privateca_v1beta1_CreateCertificateRevocationListRequest_descriptor,
-            new java.lang.String[] {
-              "Parent", "CertificateRevocationListId", "CertificateRevocationList", "RequestId",
-            });
     internal_static_google_cloud_security_privateca_v1beta1_GetCertificateRevocationListRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_security_privateca_v1beta1_GetCertificateRevocationListRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_GetCertificateRevocationListRequest_descriptor,
@@ -652,7 +577,7 @@ public final class PrivateCaProto {
               "Name",
             });
     internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsRequest_descriptor,
@@ -660,7 +585,7 @@ public final class PrivateCaProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_ListCertificateRevocationListsResponse_descriptor,
@@ -668,31 +593,15 @@ public final class PrivateCaProto {
               "CertificateRevocationLists", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_security_privateca_v1beta1_UpdateCertificateRevocationListRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_security_privateca_v1beta1_UpdateCertificateRevocationListRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_UpdateCertificateRevocationListRequest_descriptor,
             new java.lang.String[] {
               "CertificateRevocationList", "UpdateMask", "RequestId",
             });
-    internal_static_google_cloud_security_privateca_v1beta1_CreateReusableConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
-    internal_static_google_cloud_security_privateca_v1beta1_CreateReusableConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_security_privateca_v1beta1_CreateReusableConfigRequest_descriptor,
-            new java.lang.String[] {
-              "Parent", "ReusableConfigId", "ReusableConfig", "RequestId",
-            });
-    internal_static_google_cloud_security_privateca_v1beta1_DeleteReusableConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
-    internal_static_google_cloud_security_privateca_v1beta1_DeleteReusableConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_security_privateca_v1beta1_DeleteReusableConfigRequest_descriptor,
-            new java.lang.String[] {
-              "Name", "RequestId",
-            });
     internal_static_google_cloud_security_privateca_v1beta1_GetReusableConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_security_privateca_v1beta1_GetReusableConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_GetReusableConfigRequest_descriptor,
@@ -700,7 +609,7 @@ public final class PrivateCaProto {
               "Name",
             });
     internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsRequest_descriptor,
@@ -708,23 +617,15 @@ public final class PrivateCaProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_ListReusableConfigsResponse_descriptor,
             new java.lang.String[] {
               "ReusableConfigs", "NextPageToken", "Unreachable",
             });
-    internal_static_google_cloud_security_privateca_v1beta1_UpdateReusableConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
-    internal_static_google_cloud_security_privateca_v1beta1_UpdateReusableConfigRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_security_privateca_v1beta1_UpdateReusableConfigRequest_descriptor,
-            new java.lang.String[] {
-              "ReusableConfig", "UpdateMask", "RequestId",
-            });
     internal_static_google_cloud_security_privateca_v1beta1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_security_privateca_v1beta1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_security_privateca_v1beta1_OperationMetadata_descriptor,
@@ -754,6 +655,7 @@ public final class PrivateCaProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

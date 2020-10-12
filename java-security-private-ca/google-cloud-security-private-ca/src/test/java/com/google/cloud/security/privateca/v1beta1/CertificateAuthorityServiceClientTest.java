@@ -32,7 +32,6 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -864,83 +863,6 @@ public class CertificateAuthorityServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createCertificateRevocationListTest() throws Exception {
-    CertificateRevocationListName name =
-        CertificateRevocationListName.of(
-            "[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]", "[CERTIFICATE_REVOCATION_LIST]");
-    long sequenceNumber = 1309190777L;
-    String pemCrl = "pemCrl-683665866";
-    String accessUrl = "accessUrl-1141680108";
-    CertificateRevocationList expectedResponse =
-        CertificateRevocationList.newBuilder()
-            .setName(name.toString())
-            .setSequenceNumber(sequenceNumber)
-            .setPemCrl(pemCrl)
-            .setAccessUrl(accessUrl)
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("createCertificateRevocationListTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockCertificateAuthorityService.addResponse(resultOperation);
-
-    CertificateAuthorityName parent =
-        CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-    CertificateRevocationList certificateRevocationList =
-        CertificateRevocationList.newBuilder().build();
-    String certificateRevocationListId = "certificateRevocationListId1847074915";
-
-    CertificateRevocationList actualResponse =
-        client
-            .createCertificateRevocationListAsync(
-                parent, certificateRevocationList, certificateRevocationListId)
-            .get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateCertificateRevocationListRequest actualRequest =
-        (CreateCertificateRevocationListRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, CertificateAuthorityName.parse(actualRequest.getParent()));
-    Assert.assertEquals(certificateRevocationList, actualRequest.getCertificateRevocationList());
-    Assert.assertEquals(
-        certificateRevocationListId, actualRequest.getCertificateRevocationListId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createCertificateRevocationListExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCertificateAuthorityService.addException(exception);
-
-    try {
-      CertificateAuthorityName parent =
-          CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-      CertificateRevocationList certificateRevocationList =
-          CertificateRevocationList.newBuilder().build();
-      String certificateRevocationListId = "certificateRevocationListId1847074915";
-
-      client
-          .createCertificateRevocationListAsync(
-              parent, certificateRevocationList, certificateRevocationListId)
-          .get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getCertificateRevocationListTest() {
     CertificateRevocationListName name2 =
         CertificateRevocationListName.of(
@@ -1119,109 +1041,6 @@ public class CertificateAuthorityServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createReusableConfigTest() throws Exception {
-    ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-    String description = "description-1724546052";
-    ReusableConfig expectedResponse =
-        ReusableConfig.newBuilder().setName(name.toString()).setDescription(description).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("createReusableConfigTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockCertificateAuthorityService.addResponse(resultOperation);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-    ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-    String reusableConfigId = "reusableConfigId685940964";
-
-    ReusableConfig actualResponse =
-        client.createReusableConfigAsync(parent, reusableConfig, reusableConfigId).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateReusableConfigRequest actualRequest = (CreateReusableConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(reusableConfig, actualRequest.getReusableConfig());
-    Assert.assertEquals(reusableConfigId, actualRequest.getReusableConfigId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createReusableConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCertificateAuthorityService.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-      String reusableConfigId = "reusableConfigId685940964";
-
-      client.createReusableConfigAsync(parent, reusableConfig, reusableConfigId).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteReusableConfigTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("deleteReusableConfigTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockCertificateAuthorityService.addResponse(resultOperation);
-
-    ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-
-    Empty actualResponse = client.deleteReusableConfigAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteReusableConfigRequest actualRequest = (DeleteReusableConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ReusableConfigName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteReusableConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCertificateAuthorityService.addException(exception);
-
-    try {
-      ReusableConfigName name =
-          ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-
-      client.deleteReusableConfigAsync(name).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getReusableConfigTest() {
     ReusableConfigName name2 =
         ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
@@ -1308,59 +1127,6 @@ public class CertificateAuthorityServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateReusableConfigTest() throws Exception {
-    ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-    String description = "description-1724546052";
-    ReusableConfig expectedResponse =
-        ReusableConfig.newBuilder().setName(name.toString()).setDescription(description).build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("updateReusableConfigTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockCertificateAuthorityService.addResponse(resultOperation);
-
-    ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    ReusableConfig actualResponse =
-        client.updateReusableConfigAsync(reusableConfig, updateMask).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCertificateAuthorityService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateReusableConfigRequest actualRequest = (UpdateReusableConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(reusableConfig, actualRequest.getReusableConfig());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateReusableConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCertificateAuthorityService.addException(exception);
-
-    try {
-      ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateReusableConfigAsync(reusableConfig, updateMask).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

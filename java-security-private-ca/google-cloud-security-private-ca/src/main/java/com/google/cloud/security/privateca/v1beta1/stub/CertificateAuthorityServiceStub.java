@@ -30,9 +30,6 @@ import com.google.cloud.security.privateca.v1beta1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1beta1.CertificateRevocationList;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest;
-import com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest;
 import com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrRequest;
@@ -57,10 +54,8 @@ import com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuth
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
-import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -225,20 +220,6 @@ public abstract class CertificateAuthorityServiceStub implements BackgroundResou
         "Not implemented: updateCertificateAuthorityCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createCertificateRevocationListOperationCallable()");
-  }
-
-  public UnaryCallable<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createCertificateRevocationListCallable()");
-  }
-
   public UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListCallable() {
     throw new UnsupportedOperationException(
@@ -273,28 +254,6 @@ public abstract class CertificateAuthorityServiceStub implements BackgroundResou
         "Not implemented: updateCertificateRevocationListCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createReusableConfigOperationCallable()");
-  }
-
-  public UnaryCallable<CreateReusableConfigRequest, Operation> createReusableConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: createReusableConfigCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteReusableConfigOperationCallable()");
-  }
-
-  public UnaryCallable<DeleteReusableConfigRequest, Operation> deleteReusableConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteReusableConfigCallable()");
-  }
-
   public UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getReusableConfigCallable()");
   }
@@ -307,17 +266,6 @@ public abstract class CertificateAuthorityServiceStub implements BackgroundResou
   public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable() {
     throw new UnsupportedOperationException("Not implemented: listReusableConfigsCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: updateReusableConfigOperationCallable()");
-  }
-
-  public UnaryCallable<UpdateReusableConfigRequest, Operation> updateReusableConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateReusableConfigCallable()");
   }
 
   @Override

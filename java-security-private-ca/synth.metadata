@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-security-private-ca.git",
-        "sha": "704fc9c1a4307d7b0d2cfd93c16169089e96055e"
+        "sha": "d3df7912f54fbce9f6e0189c2b675caf03997e60"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0a11d3c41e8d6587b969c8ffe2e8b6dd1e209fcf",
-        "internalRef": "331779231"
+        "sha": "7ab31c71fd81b85dc4b5a439fe654dbd6578c858",
+        "internalRef": "334847962"
       }
     },
     {
@@ -128,12 +128,6 @@
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateCertificateAuthorityRequestOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateCertificateRequest.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateCertificateRequestOrBuilder.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateCertificateRevocationListRequest.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateCertificateRevocationListRequestOrBuilder.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateReusableConfigRequest.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/CreateReusableConfigRequestOrBuilder.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/DeleteReusableConfigRequest.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/DeleteReusableConfigRequestOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/DisableCertificateAuthorityRequest.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/DisableCertificateAuthorityRequestOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/EnableCertificateAuthorityRequest.java",
@@ -203,8 +197,6 @@
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/UpdateCertificateRequestOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/UpdateCertificateRevocationListRequest.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/UpdateCertificateRevocationListRequestOrBuilder.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/UpdateReusableConfigRequest.java",
-    "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/UpdateReusableConfigRequestOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/X509Extension.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/java/com/google/cloud/security/privateca/v1beta1/X509ExtensionOrBuilder.java",
     "proto-google-cloud-security-private-ca-v1beta1/src/main/proto/google/cloud/security/privateca/v1beta1/resources.proto",

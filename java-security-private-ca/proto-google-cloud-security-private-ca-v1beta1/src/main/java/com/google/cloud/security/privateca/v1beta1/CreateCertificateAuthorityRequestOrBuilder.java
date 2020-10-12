@@ -61,7 +61,7 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    *
    * <pre>
    * Required. It must be unique within a location and match the regular
-   * expression `[a-zA-Z0-9-]{1,63}`
+   * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
    * <code>string certificate_authority_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,7 +74,7 @@ public interface CreateCertificateAuthorityRequestOrBuilder
    *
    * <pre>
    * Required. It must be unique within a location and match the regular
-   * expression `[a-zA-Z0-9-]{1,63}`
+   * expression `[a-zA-Z0-9_-]{1,63}`
    * </pre>
    *
    * <code>string certificate_authority_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

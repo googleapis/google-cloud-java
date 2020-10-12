@@ -23,8 +23,10 @@ package com.google.cloud.security.privateca.v1beta1;
  *
  * <pre>
  * A [RevocationReason][google.cloud.security.privateca.v1beta1.RevocationReason] indicates whether a [Certificate][google.cloud.security.privateca.v1beta1.Certificate] has been revoked,
- * and the reason for revocation. These are standard revocation reasons from RFC
- * 5280.
+ * and the reason for revocation. These correspond to standard revocation
+ * reasons from RFC 5280. Note that the enum labels and values in this
+ * definition are not the same ASN.1 values defined in RFC 5280. These values
+ * will be translated to the correct ASN.1 values when a CRL is created.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.security.privateca.v1beta1.RevocationReason}

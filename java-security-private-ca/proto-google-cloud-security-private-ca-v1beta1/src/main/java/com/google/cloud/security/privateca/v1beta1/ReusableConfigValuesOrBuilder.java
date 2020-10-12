@@ -114,7 +114,7 @@ public interface ReusableConfigValuesOrBuilder
    *
    * <pre>
    * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4rfc5280
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
    * </pre>
    *
    * <code>
@@ -127,7 +127,7 @@ public interface ReusableConfigValuesOrBuilder
    *
    * <pre>
    * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4rfc5280
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
    * </pre>
    *
    * <code>
@@ -140,7 +140,7 @@ public interface ReusableConfigValuesOrBuilder
    *
    * <pre>
    * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4rfc5280
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
    * </pre>
    *
    * <code>
@@ -153,7 +153,7 @@ public interface ReusableConfigValuesOrBuilder
    *
    * <pre>
    * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4rfc5280
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public interface ReusableConfigValuesOrBuilder
    *
    * <pre>
    * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4rfc5280
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
    * </pre>
    *
    * <code>

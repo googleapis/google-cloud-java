@@ -32,7 +32,6 @@ import com.google.cloud.security.privateca.v1beta1.stub.CertificateAuthorityServ
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
-import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -205,7 +204,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [Certificate][google.cloud.security.privateca.v1beta1.Certificate] with initial field
    *     values.
    * @param certificateId Optional. It must be unique within a location and match the regular
-   *     expression `[a-zA-Z0-9-]{1,63}`. This field is required when using a
+   *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] in the
    *     Enterprise
    *     [CertificateAuthority.Tier][google.cloud.security.privateca.v1beta1.CertificateAuthority.Tier],
@@ -248,7 +247,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [Certificate][google.cloud.security.privateca.v1beta1.Certificate] with initial field
    *     values.
    * @param certificateId Optional. It must be unique within a location and match the regular
-   *     expression `[a-zA-Z0-9-]{1,63}`. This field is required when using a
+   *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] in the
    *     Enterprise
    *     [CertificateAuthority.Tier][google.cloud.security.privateca.v1beta1.CertificateAuthority.Tier],
@@ -645,7 +644,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the
+   * only field you can update is the
+   * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
    *
    * <p>Sample code:
    *
@@ -673,7 +674,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the
+   * only field you can update is the
+   * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
    *
    * <p>Sample code:
    *
@@ -698,7 +701,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate].
+   * Update a [Certificate][google.cloud.security.privateca.v1beta1.Certificate]. Currently, the
+   * only field you can update is the
+   * [labels][google.cloud.security.privateca.v1beta1.Certificate.labels] field.
    *
    * <p>Sample code:
    *
@@ -921,7 +926,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] with
    *     initial field values.
    * @param certificateAuthorityId Required. It must be unique within a location and match the
-   *     regular expression `[a-zA-Z0-9-]{1,63}`
+   *     regular expression `[a-zA-Z0-9_-]{1,63}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -964,7 +969,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] with
    *     initial field values.
    * @param certificateAuthorityId Required. It must be unique within a location and match the
-   *     regular expression `[a-zA-Z0-9-]{1,63}`
+   *     regular expression `[a-zA-Z0-9_-]{1,63}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -2091,193 +2096,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a new
-   * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   * in a given Project, Location for a particular
-   * [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   CertificateAuthorityName parent = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-   *   CertificateRevocationList certificateRevocationList = CertificateRevocationList.newBuilder().build();
-   *   String certificateRevocationListId = "";
-   *   CertificateRevocationList response = certificateAuthorityServiceClient.createCertificateRevocationListAsync(parent, certificateRevocationList, certificateRevocationListId).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location and
-   *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority]
-   *     associated with the
-   *     [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList],
-   *     in the format `projects/&#42;/locations/&#42;/certificateAuthorities/&#42;`.
-   * @param certificateRevocationList Required. A
-   *     [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   *     with initial field values.
-   * @param certificateRevocationListId Required. It must be unique within a location and match the
-   *     regular expression `[a-zA-Z0-9-]{1,63}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListAsync(
-          CertificateAuthorityName parent,
-          CertificateRevocationList certificateRevocationList,
-          String certificateRevocationListId) {
-    CreateCertificateRevocationListRequest request =
-        CreateCertificateRevocationListRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setCertificateRevocationList(certificateRevocationList)
-            .setCertificateRevocationListId(certificateRevocationListId)
-            .build();
-    return createCertificateRevocationListAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new
-   * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   * in a given Project, Location for a particular
-   * [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   CertificateAuthorityName parent = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-   *   CertificateRevocationList certificateRevocationList = CertificateRevocationList.newBuilder().build();
-   *   String certificateRevocationListId = "";
-   *   CertificateRevocationList response = certificateAuthorityServiceClient.createCertificateRevocationListAsync(parent.toString(), certificateRevocationList, certificateRevocationListId).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location and
-   *     [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority]
-   *     associated with the
-   *     [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList],
-   *     in the format `projects/&#42;/locations/&#42;/certificateAuthorities/&#42;`.
-   * @param certificateRevocationList Required. A
-   *     [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   *     with initial field values.
-   * @param certificateRevocationListId Required. It must be unique within a location and match the
-   *     regular expression `[a-zA-Z0-9-]{1,63}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListAsync(
-          String parent,
-          CertificateRevocationList certificateRevocationList,
-          String certificateRevocationListId) {
-    CreateCertificateRevocationListRequest request =
-        CreateCertificateRevocationListRequest.newBuilder()
-            .setParent(parent)
-            .setCertificateRevocationList(certificateRevocationList)
-            .setCertificateRevocationListId(certificateRevocationListId)
-            .build();
-    return createCertificateRevocationListAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new
-   * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   * in a given Project, Location for a particular
-   * [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   CertificateAuthorityName parent = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-   *   String certificateRevocationListId = "";
-   *   CertificateRevocationList certificateRevocationList = CertificateRevocationList.newBuilder().build();
-   *   CreateCertificateRevocationListRequest request = CreateCertificateRevocationListRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCertificateRevocationListId(certificateRevocationListId)
-   *     .setCertificateRevocationList(certificateRevocationList)
-   *     .build();
-   *   CertificateRevocationList response = certificateAuthorityServiceClient.createCertificateRevocationListAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListAsync(CreateCertificateRevocationListRequest request) {
-    return createCertificateRevocationListOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new
-   * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   * in a given Project, Location for a particular
-   * [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   CertificateAuthorityName parent = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-   *   String certificateRevocationListId = "";
-   *   CertificateRevocationList certificateRevocationList = CertificateRevocationList.newBuilder().build();
-   *   CreateCertificateRevocationListRequest request = CreateCertificateRevocationListRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCertificateRevocationListId(certificateRevocationListId)
-   *     .setCertificateRevocationList(certificateRevocationList)
-   *     .build();
-   *   OperationFuture&lt;CertificateRevocationList, OperationMetadata&gt; future = certificateAuthorityServiceClient.createCertificateRevocationListOperationCallable().futureCall(request);
-   *   // Do something
-   *   CertificateRevocationList response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationCallable() {
-    return stub.createCertificateRevocationListOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new
-   * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList]
-   * in a given Project, Location for a particular
-   * [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   CertificateAuthorityName parent = CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
-   *   String certificateRevocationListId = "";
-   *   CertificateRevocationList certificateRevocationList = CertificateRevocationList.newBuilder().build();
-   *   CreateCertificateRevocationListRequest request = CreateCertificateRevocationListRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCertificateRevocationListId(certificateRevocationListId)
-   *     .setCertificateRevocationList(certificateRevocationList)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = certificateAuthorityServiceClient.createCertificateRevocationListCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListCallable() {
-    return stub.createCertificateRevocationListCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Returns a
    * [CertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateRevocationList].
    *
@@ -2645,305 +2463,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a
-   * given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   String reusableConfigId = "";
-   *   ReusableConfig response = certificateAuthorityServiceClient.createReusableConfigAsync(parent, reusableConfig, reusableConfigId).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig], in the format
-   *     `projects/&#42;/locations/&#42;`.
-   * @param reusableConfig Required. A
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] with initial field
-   *     values.
-   * @param reusableConfigId Required. It must be unique within a location and match the regular
-   *     expression `[a-zA-Z0-9-]{1,63}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ReusableConfig, OperationMetadata> createReusableConfigAsync(
-      LocationName parent, ReusableConfig reusableConfig, String reusableConfigId) {
-    CreateReusableConfigRequest request =
-        CreateReusableConfigRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setReusableConfig(reusableConfig)
-            .setReusableConfigId(reusableConfigId)
-            .build();
-    return createReusableConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a
-   * given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   String reusableConfigId = "";
-   *   ReusableConfig response = certificateAuthorityServiceClient.createReusableConfigAsync(parent.toString(), reusableConfig, reusableConfigId).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig], in the format
-   *     `projects/&#42;/locations/&#42;`.
-   * @param reusableConfig Required. A
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] with initial field
-   *     values.
-   * @param reusableConfigId Required. It must be unique within a location and match the regular
-   *     expression `[a-zA-Z0-9-]{1,63}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ReusableConfig, OperationMetadata> createReusableConfigAsync(
-      String parent, ReusableConfig reusableConfig, String reusableConfigId) {
-    CreateReusableConfigRequest request =
-        CreateReusableConfigRequest.newBuilder()
-            .setParent(parent)
-            .setReusableConfig(reusableConfig)
-            .setReusableConfigId(reusableConfigId)
-            .build();
-    return createReusableConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a
-   * given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String reusableConfigId = "";
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   CreateReusableConfigRequest request = CreateReusableConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReusableConfigId(reusableConfigId)
-   *     .setReusableConfig(reusableConfig)
-   *     .build();
-   *   ReusableConfig response = certificateAuthorityServiceClient.createReusableConfigAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ReusableConfig, OperationMetadata> createReusableConfigAsync(
-      CreateReusableConfigRequest request) {
-    return createReusableConfigOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a
-   * given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String reusableConfigId = "";
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   CreateReusableConfigRequest request = CreateReusableConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReusableConfigId(reusableConfigId)
-   *     .setReusableConfig(reusableConfig)
-   *     .build();
-   *   OperationFuture&lt;ReusableConfig, OperationMetadata&gt; future = certificateAuthorityServiceClient.createReusableConfigOperationCallable().futureCall(request);
-   *   // Do something
-   *   ReusableConfig response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationCallable() {
-    return stub.createReusableConfigOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in a
-   * given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String reusableConfigId = "";
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   CreateReusableConfigRequest request = CreateReusableConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReusableConfigId(reusableConfigId)
-   *     .setReusableConfig(reusableConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = certificateAuthorityServiceClient.createReusableConfigCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateReusableConfigRequest, Operation>
-      createReusableConfigCallable() {
-    return stub.createReusableConfigCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * DeleteReusableConfig deletes a
-   * [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-   *   certificateAuthorityServiceClient.deleteReusableConfigAsync(name).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name for this
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in the format
-   *     `projects/&#42;/locations/&#42;/reusableConfigs/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteReusableConfigAsync(
-      ReusableConfigName name) {
-    DeleteReusableConfigRequest request =
-        DeleteReusableConfigRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return deleteReusableConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * DeleteReusableConfig deletes a
-   * [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-   *   certificateAuthorityServiceClient.deleteReusableConfigAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name for this
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] in the format
-   *     `projects/&#42;/locations/&#42;/reusableConfigs/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteReusableConfigAsync(String name) {
-    DeleteReusableConfigRequest request =
-        DeleteReusableConfigRequest.newBuilder().setName(name).build();
-    return deleteReusableConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * DeleteReusableConfig deletes a
-   * [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-   *   DeleteReusableConfigRequest request = DeleteReusableConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   certificateAuthorityServiceClient.deleteReusableConfigAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, OperationMetadata> deleteReusableConfigAsync(
-      DeleteReusableConfigRequest request) {
-    return deleteReusableConfigOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * DeleteReusableConfig deletes a
-   * [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-   *   DeleteReusableConfigRequest request = DeleteReusableConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = certificateAuthorityServiceClient.deleteReusableConfigOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationCallable() {
-    return stub.deleteReusableConfigOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * DeleteReusableConfig deletes a
-   * [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfigName name = ReusableConfigName.of("[PROJECT]", "[LOCATION]", "[REUSABLE_CONFIG]");
-   *   DeleteReusableConfigRequest request = DeleteReusableConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = certificateAuthorityServiceClient.deleteReusableConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteReusableConfigRequest, Operation>
-      deleteReusableConfigCallable() {
-    return stub.deleteReusableConfigCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Returns a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
    *
    * <p>Sample code:
@@ -3167,117 +2686,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   public final UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable() {
     return stub.listReusableConfigsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   ReusableConfig response = certificateAuthorityServiceClient.updateReusableConfigAsync(reusableConfig, updateMask).get();
-   * }
-   * </code></pre>
-   *
-   * @param reusableConfig Required.
-   *     [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig] with updated
-   *     values.
-   * @param updateMask Required. A list of fields to be updated in this request.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ReusableConfig, OperationMetadata> updateReusableConfigAsync(
-      ReusableConfig reusableConfig, FieldMask updateMask) {
-    UpdateReusableConfigRequest request =
-        UpdateReusableConfigRequest.newBuilder()
-            .setReusableConfig(reusableConfig)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateReusableConfigAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateReusableConfigRequest request = UpdateReusableConfigRequest.newBuilder()
-   *     .setReusableConfig(reusableConfig)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ReusableConfig response = certificateAuthorityServiceClient.updateReusableConfigAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ReusableConfig, OperationMetadata> updateReusableConfigAsync(
-      UpdateReusableConfigRequest request) {
-    return updateReusableConfigOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateReusableConfigRequest request = UpdateReusableConfigRequest.newBuilder()
-   *     .setReusableConfig(reusableConfig)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   OperationFuture&lt;ReusableConfig, OperationMetadata&gt; future = certificateAuthorityServiceClient.updateReusableConfigOperationCallable().futureCall(request);
-   *   // Do something
-   *   ReusableConfig response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationCallable() {
-    return stub.updateReusableConfigOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Update a [ReusableConfig][google.cloud.security.privateca.v1beta1.ReusableConfig].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.create()) {
-   *   ReusableConfig reusableConfig = ReusableConfig.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateReusableConfigRequest request = UpdateReusableConfigRequest.newBuilder()
-   *     .setReusableConfig(reusableConfig)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = certificateAuthorityServiceClient.updateReusableConfigCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateReusableConfigRequest, Operation>
-      updateReusableConfigCallable() {
-    return stub.updateReusableConfigCallable();
   }
 
   @Override

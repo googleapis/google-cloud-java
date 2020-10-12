@@ -123,13 +123,15 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. The desired lifetime of a certificate. Used to create the
+   * Required. Immutable. The desired lifetime of a certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return Whether the lifetime field is set.
    */
@@ -138,13 +140,15 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. The desired lifetime of a certificate. Used to create the
+   * Required. Immutable. The desired lifetime of a certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The lifetime.
    */
@@ -153,13 +157,15 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. The desired lifetime of a certificate. Used to create the
+   * Required. Immutable. The desired lifetime of a certificate. Used to create the
    * "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
    *
-   * <code>.google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * .google.protobuf.Duration lifetime = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getLifetimeOrBuilder();
 

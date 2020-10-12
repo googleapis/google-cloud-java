@@ -52,9 +52,6 @@ import com.google.cloud.security.privateca.v1beta1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1beta1.CertificateRevocationList;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.CreateReusableConfigRequest;
-import com.google.cloud.security.privateca.v1beta1.DeleteReusableConfigRequest;
 import com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrRequest;
@@ -79,13 +76,11 @@ import com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuth
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest;
-import com.google.cloud.security.privateca.v1beta1.UpdateReusableConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -182,11 +177,6 @@ public class CertificateAuthorityServiceStubSettings
   private final OperationCallSettings<
           UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       updateCertificateAuthorityOperationSettings;
-  private final UnaryCallSettings<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListSettings;
-  private final OperationCallSettings<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationSettings;
   private final UnaryCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListSettings;
   private final PagedCallSettings<
@@ -199,25 +189,11 @@ public class CertificateAuthorityServiceStubSettings
   private final OperationCallSettings<
           UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
       updateCertificateRevocationListOperationSettings;
-  private final UnaryCallSettings<CreateReusableConfigRequest, Operation>
-      createReusableConfigSettings;
-  private final OperationCallSettings<
-          CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationSettings;
-  private final UnaryCallSettings<DeleteReusableConfigRequest, Operation>
-      deleteReusableConfigSettings;
-  private final OperationCallSettings<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationSettings;
   private final UnaryCallSettings<GetReusableConfigRequest, ReusableConfig>
       getReusableConfigSettings;
   private final PagedCallSettings<
           ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
       listReusableConfigsSettings;
-  private final UnaryCallSettings<UpdateReusableConfigRequest, Operation>
-      updateReusableConfigSettings;
-  private final OperationCallSettings<
-          UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationSettings;
 
   /** Returns the object with the settings used for calls to createCertificate. */
   public UnaryCallSettings<CreateCertificateRequest, Certificate> createCertificateSettings() {
@@ -366,20 +342,6 @@ public class CertificateAuthorityServiceStubSettings
     return updateCertificateAuthorityOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to createCertificateRevocationList. */
-  public UnaryCallSettings<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListSettings() {
-    return createCertificateRevocationListSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createCertificateRevocationList. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationSettings() {
-    return createCertificateRevocationListOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to getCertificateRevocationList. */
   public UnaryCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListSettings() {
@@ -409,30 +371,6 @@ public class CertificateAuthorityServiceStubSettings
     return updateCertificateRevocationListOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to createReusableConfig. */
-  public UnaryCallSettings<CreateReusableConfigRequest, Operation> createReusableConfigSettings() {
-    return createReusableConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createReusableConfig. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationSettings() {
-    return createReusableConfigOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteReusableConfig. */
-  public UnaryCallSettings<DeleteReusableConfigRequest, Operation> deleteReusableConfigSettings() {
-    return deleteReusableConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteReusableConfig. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationSettings() {
-    return deleteReusableConfigOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to getReusableConfig. */
   public UnaryCallSettings<GetReusableConfigRequest, ReusableConfig> getReusableConfigSettings() {
     return getReusableConfigSettings;
@@ -443,18 +381,6 @@ public class CertificateAuthorityServiceStubSettings
           ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
       listReusableConfigsSettings() {
     return listReusableConfigsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateReusableConfig. */
-  public UnaryCallSettings<UpdateReusableConfigRequest, Operation> updateReusableConfigSettings() {
-    return updateReusableConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateReusableConfig. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationSettings() {
-    return updateReusableConfigOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -564,10 +490,6 @@ public class CertificateAuthorityServiceStubSettings
         settingsBuilder.updateCertificateAuthoritySettings().build();
     updateCertificateAuthorityOperationSettings =
         settingsBuilder.updateCertificateAuthorityOperationSettings().build();
-    createCertificateRevocationListSettings =
-        settingsBuilder.createCertificateRevocationListSettings().build();
-    createCertificateRevocationListOperationSettings =
-        settingsBuilder.createCertificateRevocationListOperationSettings().build();
     getCertificateRevocationListSettings =
         settingsBuilder.getCertificateRevocationListSettings().build();
     listCertificateRevocationListsSettings =
@@ -576,17 +498,8 @@ public class CertificateAuthorityServiceStubSettings
         settingsBuilder.updateCertificateRevocationListSettings().build();
     updateCertificateRevocationListOperationSettings =
         settingsBuilder.updateCertificateRevocationListOperationSettings().build();
-    createReusableConfigSettings = settingsBuilder.createReusableConfigSettings().build();
-    createReusableConfigOperationSettings =
-        settingsBuilder.createReusableConfigOperationSettings().build();
-    deleteReusableConfigSettings = settingsBuilder.deleteReusableConfigSettings().build();
-    deleteReusableConfigOperationSettings =
-        settingsBuilder.deleteReusableConfigOperationSettings().build();
     getReusableConfigSettings = settingsBuilder.getReusableConfigSettings().build();
     listReusableConfigsSettings = settingsBuilder.listReusableConfigsSettings().build();
-    updateReusableConfigSettings = settingsBuilder.updateReusableConfigSettings().build();
-    updateReusableConfigOperationSettings =
-        settingsBuilder.updateReusableConfigOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -929,11 +842,6 @@ public class CertificateAuthorityServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         updateCertificateAuthorityOperationSettings;
-    private final UnaryCallSettings.Builder<CreateCertificateRevocationListRequest, Operation>
-        createCertificateRevocationListSettings;
-    private final OperationCallSettings.Builder<
-            CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-        createCertificateRevocationListOperationSettings;
     private final UnaryCallSettings.Builder<
             GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListSettings;
@@ -947,16 +855,6 @@ public class CertificateAuthorityServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
         updateCertificateRevocationListOperationSettings;
-    private final UnaryCallSettings.Builder<CreateReusableConfigRequest, Operation>
-        createReusableConfigSettings;
-    private final OperationCallSettings.Builder<
-            CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        createReusableConfigOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteReusableConfigRequest, Operation>
-        deleteReusableConfigSettings;
-    private final OperationCallSettings.Builder<
-            DeleteReusableConfigRequest, Empty, OperationMetadata>
-        deleteReusableConfigOperationSettings;
     private final UnaryCallSettings.Builder<GetReusableConfigRequest, ReusableConfig>
         getReusableConfigSettings;
     private final PagedCallSettings.Builder<
@@ -964,11 +862,6 @@ public class CertificateAuthorityServiceStubSettings
             ListReusableConfigsResponse,
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings;
-    private final UnaryCallSettings.Builder<UpdateReusableConfigRequest, Operation>
-        updateReusableConfigSettings;
-    private final OperationCallSettings.Builder<
-            UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        updateReusableConfigOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -1060,10 +953,6 @@ public class CertificateAuthorityServiceStubSettings
 
       updateCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
 
-      createCertificateRevocationListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createCertificateRevocationListOperationSettings = OperationCallSettings.newBuilder();
-
       getCertificateRevocationListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listCertificateRevocationListsSettings =
@@ -1073,22 +962,10 @@ public class CertificateAuthorityServiceStubSettings
 
       updateCertificateRevocationListOperationSettings = OperationCallSettings.newBuilder();
 
-      createReusableConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createReusableConfigOperationSettings = OperationCallSettings.newBuilder();
-
-      deleteReusableConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteReusableConfigOperationSettings = OperationCallSettings.newBuilder();
-
       getReusableConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listReusableConfigsSettings =
           PagedCallSettings.newBuilder(LIST_REUSABLE_CONFIGS_PAGE_STR_FACT);
-
-      updateReusableConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      updateReusableConfigOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1107,15 +984,11 @@ public class CertificateAuthorityServiceStubSettings
               restoreCertificateAuthoritySettings,
               scheduleDeleteCertificateAuthoritySettings,
               updateCertificateAuthoritySettings,
-              createCertificateRevocationListSettings,
               getCertificateRevocationListSettings,
               listCertificateRevocationListsSettings,
               updateCertificateRevocationListSettings,
-              createReusableConfigSettings,
-              deleteReusableConfigSettings,
               getReusableConfigSettings,
-              listReusableConfigsSettings,
-              updateReusableConfigSettings);
+              listReusableConfigsSettings);
 
       initDefaults(this);
     }
@@ -1207,11 +1080,6 @@ public class CertificateAuthorityServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
-          .createCertificateRevocationListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
           .getCertificateRevocationListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -1227,27 +1095,12 @@ public class CertificateAuthorityServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
-          .createReusableConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteReusableConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
           .getReusableConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listReusableConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateReusableConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
       builder
@@ -1419,31 +1272,6 @@ public class CertificateAuthorityServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
       builder
-          .createCertificateRevocationListOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateCertificateRevocationListRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  CertificateRevocationList.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
           .updateCertificateRevocationListOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1455,75 +1283,6 @@ public class CertificateAuthorityServiceStubSettings
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
                   CertificateRevocationList.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .createReusableConfigOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateReusableConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(ReusableConfig.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteReusableConfigOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteReusableConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateReusableConfigOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateReusableConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(ReusableConfig.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1578,10 +1337,6 @@ public class CertificateAuthorityServiceStubSettings
       updateCertificateAuthoritySettings = settings.updateCertificateAuthoritySettings.toBuilder();
       updateCertificateAuthorityOperationSettings =
           settings.updateCertificateAuthorityOperationSettings.toBuilder();
-      createCertificateRevocationListSettings =
-          settings.createCertificateRevocationListSettings.toBuilder();
-      createCertificateRevocationListOperationSettings =
-          settings.createCertificateRevocationListOperationSettings.toBuilder();
       getCertificateRevocationListSettings =
           settings.getCertificateRevocationListSettings.toBuilder();
       listCertificateRevocationListsSettings =
@@ -1590,17 +1345,8 @@ public class CertificateAuthorityServiceStubSettings
           settings.updateCertificateRevocationListSettings.toBuilder();
       updateCertificateRevocationListOperationSettings =
           settings.updateCertificateRevocationListOperationSettings.toBuilder();
-      createReusableConfigSettings = settings.createReusableConfigSettings.toBuilder();
-      createReusableConfigOperationSettings =
-          settings.createReusableConfigOperationSettings.toBuilder();
-      deleteReusableConfigSettings = settings.deleteReusableConfigSettings.toBuilder();
-      deleteReusableConfigOperationSettings =
-          settings.deleteReusableConfigOperationSettings.toBuilder();
       getReusableConfigSettings = settings.getReusableConfigSettings.toBuilder();
       listReusableConfigsSettings = settings.listReusableConfigsSettings.toBuilder();
-      updateReusableConfigSettings = settings.updateReusableConfigSettings.toBuilder();
-      updateReusableConfigOperationSettings =
-          settings.updateReusableConfigOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1619,15 +1365,11 @@ public class CertificateAuthorityServiceStubSettings
               restoreCertificateAuthoritySettings,
               scheduleDeleteCertificateAuthoritySettings,
               updateCertificateAuthoritySettings,
-              createCertificateRevocationListSettings,
               getCertificateRevocationListSettings,
               listCertificateRevocationListsSettings,
               updateCertificateRevocationListSettings,
-              createReusableConfigSettings,
-              deleteReusableConfigSettings,
               getReusableConfigSettings,
-              listReusableConfigsSettings,
-              updateReusableConfigSettings);
+              listReusableConfigsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1807,21 +1549,6 @@ public class CertificateAuthorityServiceStubSettings
       return updateCertificateAuthorityOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createCertificateRevocationList. */
-    public UnaryCallSettings.Builder<CreateCertificateRevocationListRequest, Operation>
-        createCertificateRevocationListSettings() {
-      return createCertificateRevocationListSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createCertificateRevocationList. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-        createCertificateRevocationListOperationSettings() {
-      return createCertificateRevocationListOperationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getCertificateRevocationList. */
     public UnaryCallSettings.Builder<GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListSettings() {
@@ -1852,35 +1579,6 @@ public class CertificateAuthorityServiceStubSettings
       return updateCertificateRevocationListOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createReusableConfig. */
-    public UnaryCallSettings.Builder<CreateReusableConfigRequest, Operation>
-        createReusableConfigSettings() {
-      return createReusableConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createReusableConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        createReusableConfigOperationSettings() {
-      return createReusableConfigOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReusableConfig. */
-    public UnaryCallSettings.Builder<DeleteReusableConfigRequest, Operation>
-        deleteReusableConfigSettings() {
-      return deleteReusableConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReusableConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteReusableConfigRequest, Empty, OperationMetadata>
-        deleteReusableConfigOperationSettings() {
-      return deleteReusableConfigOperationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getReusableConfig. */
     public UnaryCallSettings.Builder<GetReusableConfigRequest, ReusableConfig>
         getReusableConfigSettings() {
@@ -1894,21 +1592,6 @@ public class CertificateAuthorityServiceStubSettings
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings() {
       return listReusableConfigsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateReusableConfig. */
-    public UnaryCallSettings.Builder<UpdateReusableConfigRequest, Operation>
-        updateReusableConfigSettings() {
-      return updateReusableConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateReusableConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        updateReusableConfigOperationSettings() {
-      return updateReusableConfigOperationSettings;
     }
 
     @Override

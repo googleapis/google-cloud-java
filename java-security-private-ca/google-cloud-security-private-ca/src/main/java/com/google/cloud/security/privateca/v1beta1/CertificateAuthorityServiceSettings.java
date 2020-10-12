@@ -34,7 +34,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.security.privateca.v1beta1.stub.CertificateAuthorityServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -248,23 +247,6 @@ public class CertificateAuthorityServiceSettings
         .updateCertificateAuthorityOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to createCertificateRevocationList. */
-  public UnaryCallSettings<CreateCertificateRevocationListRequest, Operation>
-      createCertificateRevocationListSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .createCertificateRevocationListSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createCertificateRevocationList. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      createCertificateRevocationListOperationSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .createCertificateRevocationListOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to getCertificateRevocationList. */
   public UnaryCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListSettings() {
@@ -299,36 +281,6 @@ public class CertificateAuthorityServiceSettings
         .updateCertificateRevocationListOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to createReusableConfig. */
-  public UnaryCallSettings<CreateReusableConfigRequest, Operation> createReusableConfigSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .createReusableConfigSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createReusableConfig. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      createReusableConfigOperationSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .createReusableConfigOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteReusableConfig. */
-  public UnaryCallSettings<DeleteReusableConfigRequest, Operation> deleteReusableConfigSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .deleteReusableConfigSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteReusableConfig. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteReusableConfigRequest, Empty, OperationMetadata>
-      deleteReusableConfigOperationSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .deleteReusableConfigOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to getReusableConfig. */
   public UnaryCallSettings<GetReusableConfigRequest, ReusableConfig> getReusableConfigSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
@@ -341,21 +293,6 @@ public class CertificateAuthorityServiceSettings
       listReusableConfigsSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
         .listReusableConfigsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateReusableConfig. */
-  public UnaryCallSettings<UpdateReusableConfigRequest, Operation> updateReusableConfigSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .updateReusableConfigSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateReusableConfig. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-      updateReusableConfigOperationSettings() {
-    return ((CertificateAuthorityServiceStubSettings) getStubSettings())
-        .updateReusableConfigOperationSettings();
   }
 
   public static final CertificateAuthorityServiceSettings create(
@@ -617,21 +554,6 @@ public class CertificateAuthorityServiceSettings
       return getStubSettingsBuilder().updateCertificateAuthorityOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createCertificateRevocationList. */
-    public UnaryCallSettings.Builder<CreateCertificateRevocationListRequest, Operation>
-        createCertificateRevocationListSettings() {
-      return getStubSettingsBuilder().createCertificateRevocationListSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createCertificateRevocationList. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            CreateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-        createCertificateRevocationListOperationSettings() {
-      return getStubSettingsBuilder().createCertificateRevocationListOperationSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getCertificateRevocationList. */
     public UnaryCallSettings.Builder<GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListSettings() {
@@ -662,35 +584,6 @@ public class CertificateAuthorityServiceSettings
       return getStubSettingsBuilder().updateCertificateRevocationListOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createReusableConfig. */
-    public UnaryCallSettings.Builder<CreateReusableConfigRequest, Operation>
-        createReusableConfigSettings() {
-      return getStubSettingsBuilder().createReusableConfigSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createReusableConfig. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            CreateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        createReusableConfigOperationSettings() {
-      return getStubSettingsBuilder().createReusableConfigOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReusableConfig. */
-    public UnaryCallSettings.Builder<DeleteReusableConfigRequest, Operation>
-        deleteReusableConfigSettings() {
-      return getStubSettingsBuilder().deleteReusableConfigSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReusableConfig. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteReusableConfigRequest, Empty, OperationMetadata>
-        deleteReusableConfigOperationSettings() {
-      return getStubSettingsBuilder().deleteReusableConfigOperationSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getReusableConfig. */
     public UnaryCallSettings.Builder<GetReusableConfigRequest, ReusableConfig>
         getReusableConfigSettings() {
@@ -704,21 +597,6 @@ public class CertificateAuthorityServiceSettings
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings() {
       return getStubSettingsBuilder().listReusableConfigsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateReusableConfig. */
-    public UnaryCallSettings.Builder<UpdateReusableConfigRequest, Operation>
-        updateReusableConfigSettings() {
-      return getStubSettingsBuilder().updateReusableConfigSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateReusableConfig. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            UpdateReusableConfigRequest, ReusableConfig, OperationMetadata>
-        updateReusableConfigOperationSettings() {
-      return getStubSettingsBuilder().updateReusableConfigOperationSettings();
     }
 
     @Override

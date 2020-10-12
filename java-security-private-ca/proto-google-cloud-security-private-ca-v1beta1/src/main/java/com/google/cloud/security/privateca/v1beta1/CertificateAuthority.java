@@ -911,8 +911,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] with the
    * [CryptoKeyPurpose][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] value
    * `ASYMMETRIC_SIGN`. These values correspond to the
-   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKey.CryptoKeyVersion.CryptoKeyVersionAlgorithm].
-   * values.
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * values. For RSA signing algorithms, the PSS algorithms should be preferred,
+   * use PKCS1 algorithms if required for compatibility. For further
+   * recommandations, see
+   * https://cloud.google.com/kms/docs/algorithms#algorithm_recommendations.
    * </pre>
    *
    * Protobuf enum {@code
@@ -936,9 +939,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_2048_SHA_256 = 1;</code>
+     * <code>RSA_PSS_2048_SHA256 = 1;</code>
      */
-    RSA_PSS_2048_SHA_256(1),
+    RSA_PSS_2048_SHA256(1),
     /**
      *
      *
@@ -946,9 +949,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm. RSA_SIGN_PSS_3072_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_3072_SHA_256 = 2;</code>
+     * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
-    RSA_PSS_3072_SHA_256(2),
+    RSA_PSS_3072_SHA256(2),
     /**
      *
      *
@@ -956,9 +959,39 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_4096_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_4096_SHA_256 = 3;</code>
+     * <code>RSA_PSS_4096_SHA256 = 3;</code>
      */
-    RSA_PSS_4096_SHA_256(3),
+    RSA_PSS_4096_SHA256(3),
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_2048_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_2048_SHA256 = 6;</code>
+     */
+    RSA_PKCS1_2048_SHA256(6),
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_3072_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_3072_SHA256 = 7;</code>
+     */
+    RSA_PKCS1_3072_SHA256(7),
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_4096_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_4096_SHA256 = 8;</code>
+     */
+    RSA_PKCS1_4096_SHA256(8),
     /**
      *
      *
@@ -999,9 +1032,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_2048_SHA_256 = 1;</code>
+     * <code>RSA_PSS_2048_SHA256 = 1;</code>
      */
-    public static final int RSA_PSS_2048_SHA_256_VALUE = 1;
+    public static final int RSA_PSS_2048_SHA256_VALUE = 1;
     /**
      *
      *
@@ -1009,9 +1042,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm. RSA_SIGN_PSS_3072_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_3072_SHA_256 = 2;</code>
+     * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
-    public static final int RSA_PSS_3072_SHA_256_VALUE = 2;
+    public static final int RSA_PSS_3072_SHA256_VALUE = 2;
     /**
      *
      *
@@ -1019,9 +1052,39 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_4096_SHA256
      * </pre>
      *
-     * <code>RSA_PSS_4096_SHA_256 = 3;</code>
+     * <code>RSA_PSS_4096_SHA256 = 3;</code>
      */
-    public static final int RSA_PSS_4096_SHA_256_VALUE = 3;
+    public static final int RSA_PSS_4096_SHA256_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_2048_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_2048_SHA256 = 6;</code>
+     */
+    public static final int RSA_PKCS1_2048_SHA256_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_3072_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_3072_SHA256 = 7;</code>
+     */
+    public static final int RSA_PKCS1_3072_SHA256_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * maps to CryptoKeyVersionAlgorithm.RSA_SIGN_PKCS1_4096_SHA256
+     * </pre>
+     *
+     * <code>RSA_PKCS1_4096_SHA256 = 8;</code>
+     */
+    public static final int RSA_PKCS1_4096_SHA256_VALUE = 8;
     /**
      *
      *
@@ -1070,11 +1133,17 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         case 0:
           return SIGN_HASH_ALGORITHM_UNSPECIFIED;
         case 1:
-          return RSA_PSS_2048_SHA_256;
+          return RSA_PSS_2048_SHA256;
         case 2:
-          return RSA_PSS_3072_SHA_256;
+          return RSA_PSS_3072_SHA256;
         case 3:
-          return RSA_PSS_4096_SHA_256;
+          return RSA_PSS_4096_SHA256;
+        case 6:
+          return RSA_PKCS1_2048_SHA256;
+        case 7:
+          return RSA_PKCS1_3072_SHA256;
+        case 8:
+          return RSA_PKCS1_4096_SHA256;
         case 4:
           return EC_P256_SHA256;
         case 5:
@@ -10885,7 +10954,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-     * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * This option enables full flexibility in the key's capabilities and
      * properties.
      * </pre>
@@ -10900,7 +10970,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-     * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * This option enables full flexibility in the key's capabilities and
      * properties.
      * </pre>
@@ -11102,7 +11173,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-     * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * This option enables full flexibility in the key's capabilities and
      * properties.
      * </pre>
@@ -11132,7 +11204,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-     * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
      * This option enables full flexibility in the key's capabilities and
      * properties.
      * </pre>
@@ -11627,7 +11700,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-       * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
        * This option enables full flexibility in the key's capabilities and
        * properties.
        * </pre>
@@ -11658,7 +11732,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-       * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
        * This option enables full flexibility in the key's capabilities and
        * properties.
        * </pre>
@@ -11689,7 +11764,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-       * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
        * This option enables full flexibility in the key's capabilities and
        * properties.
        * </pre>
@@ -11713,7 +11789,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-       * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
        * This option enables full flexibility in the key's capabilities and
        * properties.
        * </pre>
@@ -11735,7 +11812,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
-       * format`projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
        * This option enables full flexibility in the key's capabilities and
        * properties.
        * </pre>

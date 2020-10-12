@@ -105,7 +105,9 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For details
+   * on supported filters and syntax, see [Certificates Filtering
+   * documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -117,7 +119,9 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only include resources that match the filter in the response.
+   * Optional. Only include resources that match the filter in the response. For details
+   * on supported filters and syntax, see [Certificates Filtering
+   * documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#filtering_support).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -130,7 +134,9 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specify how the results should be sorted.
+   * Optional. Specify how the results should be sorted. For details on supported fields
+   * and syntax, see [Certificates Sorting
+   * documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -142,7 +148,9 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specify how the results should be sorted.
+   * Optional. Specify how the results should be sorted. For details on supported fields
+   * and syntax, see [Certificates Sorting
+   * documentation](https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
