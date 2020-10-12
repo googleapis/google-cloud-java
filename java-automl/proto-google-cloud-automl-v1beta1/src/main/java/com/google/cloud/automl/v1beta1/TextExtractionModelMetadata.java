@@ -37,7 +37,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     super(builder);
   }
 
-  private TextExtractionModelMetadata() {}
+  private TextExtractionModelMetadata() {
+    modelHint_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -68,6 +70,13 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
           case 0:
             done = true;
             break;
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelHint_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -102,6 +111,61 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
             com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.Builder.class);
   }
 
+  public static final int MODEL_HINT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object modelHint_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the scope of model use case.
+   * * `default`: Use to train a general text extraction model. Default value.
+   * * `health_care`: Use to train a text extraction model that is tuned for
+   *   healthcare applications.
+   * </pre>
+   *
+   * <code>string model_hint = 3;</code>
+   *
+   * @return The modelHint.
+   */
+  @java.lang.Override
+  public java.lang.String getModelHint() {
+    java.lang.Object ref = modelHint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelHint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the scope of model use case.
+   * * `default`: Use to train a general text extraction model. Default value.
+   * * `health_care`: Use to train a text extraction model that is tuned for
+   *   healthcare applications.
+   * </pre>
+   *
+   * <code>string model_hint = 3;</code>
+   *
+   * @return The bytes for modelHint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelHintBytes() {
+    java.lang.Object ref = modelHint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelHint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -116,6 +180,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getModelHintBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelHint_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -125,6 +192,9 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
+    if (!getModelHintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelHint_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -141,6 +211,7 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     com.google.cloud.automl.v1beta1.TextExtractionModelMetadata other =
         (com.google.cloud.automl.v1beta1.TextExtractionModelMetadata) obj;
 
+    if (!getModelHint().equals(other.getModelHint())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -152,6 +223,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MODEL_HINT_FIELD_NUMBER;
+    hash = (53 * hash) + getModelHint().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -298,6 +371,8 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      modelHint_ = "";
+
       return this;
     }
 
@@ -325,6 +400,7 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     public com.google.cloud.automl.v1beta1.TextExtractionModelMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.TextExtractionModelMetadata result =
           new com.google.cloud.automl.v1beta1.TextExtractionModelMetadata(this);
+      result.modelHint_ = modelHint_;
       onBuilt();
       return result;
     }
@@ -375,6 +451,10 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.TextExtractionModelMetadata other) {
       if (other == com.google.cloud.automl.v1beta1.TextExtractionModelMetadata.getDefaultInstance())
         return this;
+      if (!other.getModelHint().isEmpty()) {
+        modelHint_ = other.modelHint_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -402,6 +482,127 @@ public final class TextExtractionModelMetadata extends com.google.protobuf.Gener
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object modelHint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the scope of model use case.
+     * * `default`: Use to train a general text extraction model. Default value.
+     * * `health_care`: Use to train a text extraction model that is tuned for
+     *   healthcare applications.
+     * </pre>
+     *
+     * <code>string model_hint = 3;</code>
+     *
+     * @return The modelHint.
+     */
+    public java.lang.String getModelHint() {
+      java.lang.Object ref = modelHint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelHint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the scope of model use case.
+     * * `default`: Use to train a general text extraction model. Default value.
+     * * `health_care`: Use to train a text extraction model that is tuned for
+     *   healthcare applications.
+     * </pre>
+     *
+     * <code>string model_hint = 3;</code>
+     *
+     * @return The bytes for modelHint.
+     */
+    public com.google.protobuf.ByteString getModelHintBytes() {
+      java.lang.Object ref = modelHint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelHint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the scope of model use case.
+     * * `default`: Use to train a general text extraction model. Default value.
+     * * `health_care`: Use to train a text extraction model that is tuned for
+     *   healthcare applications.
+     * </pre>
+     *
+     * <code>string model_hint = 3;</code>
+     *
+     * @param value The modelHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelHint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelHint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the scope of model use case.
+     * * `default`: Use to train a general text extraction model. Default value.
+     * * `health_care`: Use to train a text extraction model that is tuned for
+     *   healthcare applications.
+     * </pre>
+     *
+     * <code>string model_hint = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelHint() {
+
+      modelHint_ = getDefaultInstance().getModelHint();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the scope of model use case.
+     * * `default`: Use to train a general text extraction model. Default value.
+     * * `health_care`: Use to train a text extraction model that is tuned for
+     *   healthcare applications.
+     * </pre>
+     *
+     * <code>string model_hint = 3;</code>
+     *
+     * @param value The bytes for modelHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelHintBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelHint_ = value;
+      onChanged();
       return this;
     }
 

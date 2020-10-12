@@ -70,14 +70,15 @@ public final class TextProto {
           + "cationModelMetadata\022L\n\023classification_ty"
           + "pe\030\003 \001(\0162/.google.cloud.automl.v1beta1.C"
           + "lassificationType\"\037\n\035TextExtractionDatas"
-          + "etMetadata\"\035\n\033TextExtractionModelMetadat"
-          + "a\"5\n\034TextSentimentDatasetMetadata\022\025\n\rsen"
-          + "timent_max\030\001 \001(\005\"\034\n\032TextSentimentModelMe"
-          + "tadataB\260\001\n\037com.google.cloud.automl.v1bet"
-          + "a1B\tTextProtoP\001ZAgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/automl/v1beta1;auto"
-          + "ml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Googl"
-          + "e::Cloud::AutoML::V1beta1b\006proto3"
+          + "etMetadata\"1\n\033TextExtractionModelMetadat"
+          + "a\022\022\n\nmodel_hint\030\003 \001(\t\"5\n\034TextSentimentDa"
+          + "tasetMetadata\022\025\n\rsentiment_max\030\001 \001(\005\"\034\n\032"
+          + "TextSentimentModelMetadataB\260\001\n\037com.googl"
+          + "e.cloud.automl.v1beta1B\tTextProtoP\001ZAgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/automl/v1beta1;automl\312\002\033Google\\Cloud\\Au"
+          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,7 +114,9 @@ public final class TextProto {
     internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextExtractionModelMetadata_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ModelHint",
+            });
     internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_automl_v1beta1_TextSentimentDatasetMetadata_fieldAccessorTable =
