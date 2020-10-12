@@ -226,6 +226,24 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 138:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder subBuilder =
+                  null;
+              if (sentimentAnalysisResult_ != null) {
+                subBuilder = sentimentAnalysisResult_.toBuilder();
+              }
+              sentimentAnalysisResult_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentimentAnalysisResult_);
+                sentimentAnalysisResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -327,8 +345,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-   * was provided as input, this field will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -355,8 +373,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-   * was provided as input, this field will contain a copy of the text.
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -385,9 +403,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-   * provided as input, this field will contain a copy of the intent
-   * identifier.
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
    * </pre>
    *
    * <code>string trigger_intent = 11;</code>
@@ -414,9 +431,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-   * provided as input, this field will contain a copy of the intent
-   * identifier.
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
    * </pre>
    *
    * <code>string trigger_intent = 11;</code>
@@ -445,9 +461,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language speech
-   * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-   * input, this field will contain the trascript for the audio.
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the trascript for the audio.
    * </pre>
    *
    * <code>string transcript = 12;</code>
@@ -474,9 +489,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If [natural language speech
-   * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-   * input, this field will contain the trascript for the audio.
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the trascript for the audio.
    * </pre>
    *
    * <code>string transcript = 12;</code>
@@ -505,8 +519,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-   * as input, this field will contain the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+   * the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -533,8 +547,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-   * as input, this field will contain the name of the event.
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+   * the name of the event.
    * </pre>
    *
    * <code>string trigger_event = 14;</code>
@@ -619,8 +633,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The collected [session
-   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -647,8 +660,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The collected [session
-   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -675,8 +687,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The collected [session
-   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -859,9 +870,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of webhook payload in
-   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-   * in the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+   * the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -875,9 +885,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of webhook payload in
-   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-   * in the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+   * the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -892,9 +901,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of webhook payload in
-   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-   * in the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+   * the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -908,9 +916,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of webhook payload in
-   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-   * in the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+   * the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -924,9 +931,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of webhook payload in
-   * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-   * in the order of call sequence. If some webhook call fails or doesn't return
+   * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+   * the order of call sequence. If some webhook call fails or doesn't return
    * any payload, an empty `Struct` would be used instead.
    * </pre>
    *
@@ -943,9 +949,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -960,9 +965,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -979,9 +983,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-   * fields are filled in this message, including but not limited to `name` and
-   * `display_name`.
+   * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+   * including but not limited to `name` and `display_name`.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -997,12 +1000,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * conversational query. Some, not all fields are filled in this message,
-   * including but not limited to: `name` and `display_name`. This field is
-   * deprecated, please use
-   * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-   * instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+   * are filled in this message, including but not limited to: `name` and
+   * `display_name`.
+   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -1018,12 +1019,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * conversational query. Some, not all fields are filled in this message,
-   * including but not limited to: `name` and `display_name`. This field is
-   * deprecated, please use
-   * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-   * instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+   * are filled in this message, including but not limited to: `name` and
+   * `display_name`.
+   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -1041,12 +1040,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-   * conversational query. Some, not all fields are filled in this message,
-   * including but not limited to: `name` and `display_name`. This field is
-   * deprecated, please use
-   * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-   * instead.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+   * are filled in this message, including but not limited to: `name` and
+   * `display_name`.
+   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -1069,9 +1066,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * help match the best intent within the classification threshold.
    * This value may change for the same end-user expression at any time due to a
    * model retraining or change in implementation.
-   * This field is deprecated, please use
-   * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-   * instead.
+   * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
    * </pre>
    *
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
@@ -1186,6 +1181,68 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return getDiagnosticInfo();
   }
 
+  public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 17;
+  private com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentimentAnalysisResult_;
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analyss result, which depends on
+   * [`analyze_query_text_sentiment`]
+   * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   *
+   * @return Whether the sentimentAnalysisResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analyss result, which depends on
+   * [`analyze_query_text_sentiment`]
+   * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   *
+   * @return The sentimentAnalysisResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+      getSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.getDefaultInstance()
+        : sentimentAnalysisResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analyss result, which depends on
+   * [`analyze_query_text_sentiment`]
+   * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisResultOrBuilder() {
+    return getSentimentAnalysisResult();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1242,6 +1299,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (match_ != null) {
       output.writeMessage(15, getMatch());
     }
+    if (sentimentAnalysisResult_ != null) {
+      output.writeMessage(17, getSentimentAnalysisResult());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1293,6 +1353,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (match_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getMatch());
     }
+    if (sentimentAnalysisResult_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getSentimentAnalysisResult());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1334,6 +1399,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo() != other.hasDiagnosticInfo()) return false;
     if (hasDiagnosticInfo()) {
       if (!getDiagnosticInfo().equals(other.getDiagnosticInfo())) return false;
+    }
+    if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
+    if (hasSentimentAnalysisResult()) {
+      if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
     }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
@@ -1398,6 +1467,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasDiagnosticInfo()) {
       hash = (37 * hash) + DIAGNOSTIC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticInfo().hashCode();
+    }
+    if (hasSentimentAnalysisResult()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
     }
     switch (queryCase_) {
       case 1:
@@ -1620,6 +1693,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         diagnosticInfo_ = null;
         diagnosticInfoBuilder_ = null;
       }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -1715,6 +1794,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         result.diagnosticInfo_ = diagnosticInfo_;
       } else {
         result.diagnosticInfo_ = diagnosticInfoBuilder_.build();
+      }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResult_;
+      } else {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
       }
       result.queryCase_ = queryCase_;
       onBuilt();
@@ -1870,6 +1954,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiagnosticInfo()) {
         mergeDiagnosticInfo(other.getDiagnosticInfo());
       }
+      if (other.hasSentimentAnalysisResult()) {
+        mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
+      }
       switch (other.getQueryCase()) {
         case TEXT:
           {
@@ -1954,8 +2041,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -1983,8 +2070,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -2012,8 +2099,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -2034,8 +2121,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -2054,8 +2141,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -2078,9 +2165,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
      * </pre>
      *
      * <code>string trigger_intent = 11;</code>
@@ -2108,9 +2194,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
      * </pre>
      *
      * <code>string trigger_intent = 11;</code>
@@ -2138,9 +2223,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
      * </pre>
      *
      * <code>string trigger_intent = 11;</code>
@@ -2161,9 +2245,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
      * </pre>
      *
      * <code>string trigger_intent = 11;</code>
@@ -2182,9 +2265,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
      * </pre>
      *
      * <code>string trigger_intent = 11;</code>
@@ -2207,9 +2289,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the trascript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2237,9 +2318,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the trascript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2267,9 +2347,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the trascript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2290,9 +2369,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the trascript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2311,9 +2389,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the trascript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the trascript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2336,8 +2413,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -2365,8 +2442,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -2394,8 +2471,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -2416,8 +2493,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -2436,8 +2513,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      * </pre>
      *
      * <code>string trigger_event = 14;</code>
@@ -2587,8 +2664,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2614,8 +2690,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2645,8 +2720,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2680,8 +2754,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2712,8 +2785,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2749,8 +2821,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2782,8 +2853,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2809,8 +2879,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2838,8 +2907,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -3657,9 +3725,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3676,9 +3743,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3695,9 +3761,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3714,9 +3779,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3739,9 +3803,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3762,9 +3825,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3787,9 +3849,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3812,9 +3873,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3834,9 +3894,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3857,9 +3916,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3880,9 +3938,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3902,9 +3959,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3924,9 +3980,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3939,9 +3994,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3958,9 +4012,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3978,9 +4031,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -3994,9 +4046,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -4010,9 +4061,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      * </pre>
      *
@@ -4052,9 +4102,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4068,9 +4117,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4090,9 +4138,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4114,9 +4161,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4136,9 +4182,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4164,9 +4209,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4186,9 +4230,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4202,9 +4245,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4222,9 +4264,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
@@ -4256,12 +4297,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4276,12 +4315,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4302,12 +4339,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4330,12 +4365,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4356,12 +4389,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4388,12 +4419,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4414,12 +4443,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4434,12 +4461,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4458,12 +4483,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
@@ -4496,9 +4519,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
@@ -4520,9 +4541,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
@@ -4547,9 +4566,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      * </pre>
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
@@ -4950,6 +4967,234 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         diagnosticInfo_ = null;
       }
       return diagnosticInfoBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentimentAnalysisResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder>
+        sentimentAnalysisResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     *
+     * @return Whether the sentimentAnalysisResult field is set.
+     */
+    public boolean hasSentimentAnalysisResult() {
+      return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     *
+     * @return The sentimentAnalysisResult.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+        getSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysisResult_;
+      } else {
+        return sentimentAnalysisResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisResult_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder builderForValue) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder mergeSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (sentimentAnalysisResult_ != null) {
+          sentimentAnalysisResult_ =
+              com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.newBuilder(
+                      sentimentAnalysisResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sentimentAnalysisResult_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public Builder clearSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder
+        getSentimentAnalysisResultBuilder() {
+
+      onChanged();
+      return getSentimentAnalysisResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder
+        getSentimentAnalysisResultOrBuilder() {
+      if (sentimentAnalysisResultBuilder_ != null) {
+        return sentimentAnalysisResultBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.getDefaultInstance()
+            : sentimentAnalysisResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analyss result, which depends on
+     * [`analyze_query_text_sentiment`]
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder>
+        getSentimentAnalysisResultFieldBuilder() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult,
+                com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder>(
+                getSentimentAnalysisResult(), getParentForChildren(), isClean());
+        sentimentAnalysisResult_ = null;
+      }
+      return sentimentAnalysisResultBuilder_;
     }
 
     @java.lang.Override

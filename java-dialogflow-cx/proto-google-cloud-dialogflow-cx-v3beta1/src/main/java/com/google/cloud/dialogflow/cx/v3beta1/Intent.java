@@ -2875,6 +2875,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return The isList.
      */
     boolean getIsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the parameter content is logged in text and audio. If
+     * it is set to true, the parameter content will be replaced to parameter
+     * id in both request and response. The default value is false.
+     * </pre>
+     *
+     * <code>bool redact = 4;</code>
+     *
+     * @return The redact.
+     */
+    boolean getRedact();
   }
   /**
    *
@@ -2946,6 +2961,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 isList_ = input.readBool();
+                break;
+              }
+            case 32:
+              {
+                redact_ = input.readBool();
                 break;
               }
             default:
@@ -3116,6 +3136,26 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       return isList_;
     }
 
+    public static final int REDACT_FIELD_NUMBER = 4;
+    private boolean redact_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the parameter content is logged in text and audio. If
+     * it is set to true, the parameter content will be replaced to parameter
+     * id in both request and response. The default value is false.
+     * </pre>
+     *
+     * <code>bool redact = 4;</code>
+     *
+     * @return The redact.
+     */
+    @java.lang.Override
+    public boolean getRedact() {
+      return redact_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3139,6 +3179,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (isList_ != false) {
         output.writeBool(3, isList_);
       }
+      if (redact_ != false) {
+        output.writeBool(4, redact_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3156,6 +3199,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       if (isList_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isList_);
+      }
+      if (redact_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, redact_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3176,6 +3222,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       if (!getId().equals(other.getId())) return false;
       if (!getEntityType().equals(other.getEntityType())) return false;
       if (getIsList() != other.getIsList()) return false;
+      if (getRedact() != other.getRedact()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3193,6 +3240,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getEntityType().hashCode();
       hash = (37 * hash) + IS_LIST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsList());
+      hash = (37 * hash) + REDACT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRedact());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3347,6 +3396,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         isList_ = false;
 
+        redact_ = false;
+
         return this;
       }
 
@@ -3377,6 +3428,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         result.id_ = id_;
         result.entityType_ = entityType_;
         result.isList_ = isList_;
+        result.redact_ = redact_;
         onBuilt();
         return result;
       }
@@ -3439,6 +3491,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.getIsList() != false) {
           setIsList(other.getIsList());
+        }
+        if (other.getRedact() != false) {
+          setRedact(other.getRedact());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3775,6 +3830,64 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       public Builder clearIsList() {
 
         isList_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean redact_;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * id in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 4;</code>
+       *
+       * @return The redact.
+       */
+      @java.lang.Override
+      public boolean getRedact() {
+        return redact_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * id in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 4;</code>
+       *
+       * @param value The redact to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRedact(boolean value) {
+
+        redact_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * id in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRedact() {
+
+        redact_ = false;
         onChanged();
         return this;
       }

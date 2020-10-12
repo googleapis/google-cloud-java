@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Pages.CreatePage][google.cloud.dialogflow.cx.v3beta1.Pages.CreatePage].
+ * The request message for [Pages.CreatePage][google.cloud.dialogflow.cx.v3beta1.Pages.CreatePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreatePageRequest}
@@ -503,8 +502,7 @@ public final class CreatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for
-   * [Pages.CreatePage][google.cloud.dialogflow.cx.v3beta1.Pages.CreatePage].
+   * The request message for [Pages.CreatePage][google.cloud.dialogflow.cx.v3beta1.Pages.CreatePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreatePageRequest}

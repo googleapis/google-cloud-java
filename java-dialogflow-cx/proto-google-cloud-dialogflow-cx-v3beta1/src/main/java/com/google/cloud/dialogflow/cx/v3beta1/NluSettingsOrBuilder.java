@@ -94,19 +94,4 @@ public interface NluSettingsOrBuilder
    * @return The modelTrainingMode.
    */
   com.google.cloud.dialogflow.cx.v3beta1.NluSettings.ModelTrainingMode getModelTrainingMode();
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates if automatic spell correction is enabled in detect intent
-   * requests.
-   * </pre>
-   *
-   * <code>bool enable_spell_correction = 5 [deprecated = true];</code>
-   *
-   * @return The enableSpellCorrection.
-   */
-  @java.lang.Deprecated
-  boolean getEnableSpellCorrection();
 }

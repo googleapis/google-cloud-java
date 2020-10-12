@@ -275,4 +275,18 @@ public interface QueryParametersOrBuilder
    * <code>.google.protobuf.Struct parameters = 5;</code>
    */
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures whether sentiment analysis should be performed. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>bool analyze_query_text_sentiment = 8;</code>
+   *
+   * @return The analyzeQueryTextSentiment.
+   */
+  boolean getAnalyzeQueryTextSentiment();
 }

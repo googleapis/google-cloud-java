@@ -22,29 +22,29 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Represents the natural language text to be processed.
+ * The result of sentiment analysis. Sentiment analysis inspects user input
+ * and identifies the prevailing subjective opinion, especially to determine a
+ * user's attitude as positive, negative, or neutral.
  * </pre>
  *
- * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TextInput}
+ * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult}
  */
-public final class TextInput extends com.google.protobuf.GeneratedMessageV3
+public final class SentimentAnalysisResult extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.TextInput)
-    TextInputOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
+    SentimentAnalysisResultOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use TextInput.newBuilder() to construct.
-  private TextInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SentimentAnalysisResult.newBuilder() to construct.
+  private SentimentAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private TextInput() {
-    text_ = "";
-  }
+  private SentimentAnalysisResult() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new TextInput();
+    return new SentimentAnalysisResult();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private TextInput(
+  private SentimentAnalysisResult(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,11 +70,14 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 10:
+          case 13:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              text_ = s;
+              score_ = input.readFloat();
+              break;
+            }
+          case 21:
+            {
+              magnitude_ = input.readFloat();
               break;
             }
           default:
@@ -98,68 +101,55 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
-        .internal_static_google_cloud_dialogflow_cx_v3beta1_TextInput_descriptor;
+        .internal_static_google_cloud_dialogflow_cx_v3beta1_SentimentAnalysisResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
-        .internal_static_google_cloud_dialogflow_cx_v3beta1_TextInput_fieldAccessorTable
+        .internal_static_google_cloud_dialogflow_cx_v3beta1_SentimentAnalysisResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.cx.v3beta1.TextInput.class,
-            com.google.cloud.dialogflow.cx.v3beta1.TextInput.Builder.class);
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.class,
+            com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder.class);
   }
 
-  public static final int TEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object text_;
+  public static final int SCORE_FIELD_NUMBER = 1;
+  private float score_;
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+   * sentiment).
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>float score = 1;</code>
    *
-   * @return The text.
+   * @return The score.
    */
   @java.lang.Override
-  public java.lang.String getText() {
-    java.lang.Object ref = text_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      text_ = s;
-      return s;
-    }
+  public float getScore() {
+    return score_;
   }
+
+  public static final int MAGNITUDE_FIELD_NUMBER = 2;
+  private float magnitude_;
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * A non-negative number in the [0, +inf) range, which represents the absolute
+   * magnitude of sentiment, regardless of score (positive or negative).
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>float magnitude = 2;</code>
    *
-   * @return The bytes for text.
+   * @return The magnitude.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getTextBytes() {
-    java.lang.Object ref = text_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      text_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public float getMagnitude() {
+    return magnitude_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -176,8 +166,11 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getTextBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+    if (score_ != 0F) {
+      output.writeFloat(1, score_);
+    }
+    if (magnitude_ != 0F) {
+      output.writeFloat(2, magnitude_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,8 +181,11 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getTextBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+    if (score_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
+    }
+    if (magnitude_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, magnitude_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -201,13 +197,16 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.TextInput)) {
+    if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.cx.v3beta1.TextInput other =
-        (com.google.cloud.dialogflow.cx.v3beta1.TextInput) obj;
+    com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult other =
+        (com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult) obj;
 
-    if (!getText().equals(other.getText())) return false;
+    if (java.lang.Float.floatToIntBits(getScore())
+        != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    if (java.lang.Float.floatToIntBits(getMagnitude())
+        != java.lang.Float.floatToIntBits(other.getMagnitude())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -219,78 +218,80 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TEXT_FIELD_NUMBER;
-    hash = (53 * hash) + getText().hashCode();
+    hash = (37 * hash) + SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+    hash = (37 * hash) + MAGNITUDE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMagnitude());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseDelimitedFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput parseFrom(
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -307,7 +308,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.dialogflow.cx.v3beta1.TextInput prototype) {
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -325,31 +327,33 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents the natural language text to be processed.
+   * The result of sentiment analysis. Sentiment analysis inspects user input
+   * and identifies the prevailing subjective opinion, especially to determine a
+   * user's attitude as positive, negative, or neutral.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TextInput}
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.TextInput)
-      com.google.cloud.dialogflow.cx.v3beta1.TextInputOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
+      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_TextInput_descriptor;
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SentimentAnalysisResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_TextInput_fieldAccessorTable
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SentimentAnalysisResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.cx.v3beta1.TextInput.class,
-              com.google.cloud.dialogflow.cx.v3beta1.TextInput.Builder.class);
+              com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.class,
+              com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.cx.v3beta1.TextInput.newBuilder()
+    // Construct using com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -366,7 +370,9 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      text_ = "";
+      score_ = 0F;
+
+      magnitude_ = 0F;
 
       return this;
     }
@@ -374,17 +380,18 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_TextInput_descriptor;
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SentimentAnalysisResult_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.TextInput getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.cx.v3beta1.TextInput.getDefaultInstance();
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+        getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.TextInput build() {
-      com.google.cloud.dialogflow.cx.v3beta1.TextInput result = buildPartial();
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult build() {
+      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -392,10 +399,11 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.TextInput buildPartial() {
-      com.google.cloud.dialogflow.cx.v3beta1.TextInput result =
-          new com.google.cloud.dialogflow.cx.v3beta1.TextInput(this);
-      result.text_ = text_;
+    public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult buildPartial() {
+      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult result =
+          new com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult(this);
+      result.score_ = score_;
+      result.magnitude_ = magnitude_;
       onBuilt();
       return result;
     }
@@ -435,20 +443,23 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.TextInput) {
-        return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.TextInput) other);
+      if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult) {
+        return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.TextInput other) {
-      if (other == com.google.cloud.dialogflow.cx.v3beta1.TextInput.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult other) {
+      if (other
+          == com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult.getDefaultInstance())
         return this;
-      if (!other.getText().isEmpty()) {
-        text_ = other.text_;
-        onChanged();
+      if (other.getScore() != 0F) {
+        setScore(other.getScore());
+      }
+      if (other.getMagnitude() != 0F) {
+        setMagnitude(other.getMagnitude());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -465,11 +476,13 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.cx.v3beta1.TextInput parsedMessage = null;
+      com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.cx.v3beta1.TextInput) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -479,72 +492,39 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object text_ = "";
+    private float score_;
     /**
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text length must
-     * not exceed 256 characters.
+     * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+     * sentiment).
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float score = 1;</code>
      *
-     * @return The text.
+     * @return The score.
      */
-    public java.lang.String getText() {
-      java.lang.Object ref = text_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        text_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public float getScore() {
+      return score_;
     }
     /**
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text length must
-     * not exceed 256 characters.
+     * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+     * sentiment).
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float score = 1;</code>
      *
-     * @return The bytes for text.
-     */
-    public com.google.protobuf.ByteString getTextBytes() {
-      java.lang.Object ref = text_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        text_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text length must
-     * not exceed 256 characters.
-     * </pre>
-     *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The text to set.
+     * @param value The score to set.
      * @return This builder for chaining.
      */
-    public Builder setText(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setScore(float value) {
 
-      text_ = value;
+      score_ = value;
       onChanged();
       return this;
     }
@@ -552,17 +532,54 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text length must
-     * not exceed 256 characters.
+     * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+     * sentiment).
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float score = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearText() {
+    public Builder clearScore() {
 
-      text_ = getDefaultInstance().getText();
+      score_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float magnitude_;
+    /**
+     *
+     *
+     * <pre>
+     * A non-negative number in the [0, +inf) range, which represents the absolute
+     * magnitude of sentiment, regardless of score (positive or negative).
+     * </pre>
+     *
+     * <code>float magnitude = 2;</code>
+     *
+     * @return The magnitude.
+     */
+    @java.lang.Override
+    public float getMagnitude() {
+      return magnitude_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A non-negative number in the [0, +inf) range, which represents the absolute
+     * magnitude of sentiment, regardless of score (positive or negative).
+     * </pre>
+     *
+     * <code>float magnitude = 2;</code>
+     *
+     * @param value The magnitude to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMagnitude(float value) {
+
+      magnitude_ = value;
       onChanged();
       return this;
     }
@@ -570,22 +587,17 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text length must
-     * not exceed 256 characters.
+     * A non-negative number in the [0, +inf) range, which represents the absolute
+     * magnitude of sentiment, regardless of score (positive or negative).
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float magnitude = 2;</code>
      *
-     * @param value The bytes for text to set.
      * @return This builder for chaining.
      */
-    public Builder setTextBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    public Builder clearMagnitude() {
 
-      text_ = value;
+      magnitude_ = 0F;
       onChanged();
       return this;
     }
@@ -601,42 +613,45 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.TextInput)
+    // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.TextInput)
-  private static final com.google.cloud.dialogflow.cx.v3beta1.TextInput DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
+  private static final com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.TextInput();
+    DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult();
   }
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.TextInput getDefaultInstance() {
+  public static com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TextInput> PARSER =
-      new com.google.protobuf.AbstractParser<TextInput>() {
+  private static final com.google.protobuf.Parser<SentimentAnalysisResult> PARSER =
+      new com.google.protobuf.AbstractParser<SentimentAnalysisResult>() {
         @java.lang.Override
-        public TextInput parsePartialFrom(
+        public SentimentAnalysisResult parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TextInput(input, extensionRegistry);
+          return new SentimentAnalysisResult(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<TextInput> parser() {
+  public static com.google.protobuf.Parser<SentimentAnalysisResult> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TextInput> getParserForType() {
+  public com.google.protobuf.Parser<SentimentAnalysisResult> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.cx.v3beta1.TextInput getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

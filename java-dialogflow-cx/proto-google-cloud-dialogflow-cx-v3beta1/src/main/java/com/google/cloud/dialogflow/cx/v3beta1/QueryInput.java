@@ -132,6 +132,24 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
               inputCase_ = 5;
               break;
             }
+          case 50:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder subBuilder = null;
+              if (inputCase_ == 6) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.EventInput.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 6;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -176,6 +194,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     TEXT(2),
     INTENT(3),
     AUDIO(5),
+    EVENT(6),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -200,6 +219,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           return INTENT;
         case 5:
           return AUDIO;
+        case 6:
+          return EVENT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -369,6 +390,57 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dialogflow.cx.v3beta1.AudioInput.getDefaultInstance();
   }
 
+  public static final int EVENT_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   *
+   * @return Whether the event field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvent() {
+    return inputCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   *
+   * @return The event.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.EventInput getEvent() {
+    if (inputCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder getEventOrBuilder() {
+    if (inputCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+  }
+
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
   private volatile java.lang.Object languageCode_;
   /**
@@ -450,6 +522,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     if (inputCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.dialogflow.cx.v3beta1.AudioInput) input_);
     }
+    if (inputCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -476,6 +551,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.dialogflow.cx.v3beta1.AudioInput) input_);
+    }
+    if (inputCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -505,6 +585,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getAudio().equals(other.getAudio())) return false;
         break;
+      case 6:
+        if (!getEvent().equals(other.getEvent())) return false;
+        break;
       case 0:
       default:
     }
@@ -533,6 +616,10 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + AUDIO_FIELD_NUMBER;
         hash = (53 * hash) + getAudio().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getEvent().hashCode();
         break;
       case 0:
       default:
@@ -736,6 +823,13 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           result.input_ = audioBuilder_.build();
         }
       }
+      if (inputCase_ == 6) {
+        if (eventBuilder_ == null) {
+          result.input_ = input_;
+        } else {
+          result.input_ = eventBuilder_.build();
+        }
+      }
       result.languageCode_ = languageCode_;
       result.inputCase_ = inputCase_;
       onBuilt();
@@ -806,6 +900,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         case AUDIO:
           {
             mergeAudio(other.getAudio());
+            break;
+          }
+        case EVENT:
+          {
+            mergeEvent(other.getEvent());
             break;
           }
         case INPUT_NOT_SET:
@@ -1482,6 +1581,215 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return audioBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.EventInput,
+            com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder>
+        eventBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     *
+     * @return Whether the event field is set.
+     */
+    @java.lang.Override
+    public boolean hasEvent() {
+      return inputCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     *
+     * @return The event.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.EventInput getEvent() {
+      if (eventBuilder_ == null) {
+        if (inputCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 6) {
+          return eventBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    public Builder setEvent(com.google.cloud.dialogflow.cx.v3beta1.EventInput value) {
+      if (eventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        eventBuilder_.setMessage(value);
+      }
+      inputCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    public Builder setEvent(
+        com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder builderForValue) {
+      if (eventBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        eventBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    public Builder mergeEvent(com.google.cloud.dialogflow.cx.v3beta1.EventInput value) {
+      if (eventBuilder_ == null) {
+        if (inputCase_ == 6
+            && input_ != com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.cx.v3beta1.EventInput.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 6) {
+          eventBuilder_.mergeFrom(value);
+        }
+        eventBuilder_.setMessage(value);
+      }
+      inputCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    public Builder clearEvent() {
+      if (eventBuilder_ == null) {
+        if (inputCase_ == 6) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 6) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        eventBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder getEventBuilder() {
+      return getEventFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder getEventOrBuilder() {
+      if ((inputCase_ == 6) && (eventBuilder_ != null)) {
+        return eventBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event to be triggered.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.EventInput,
+            com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder>
+        getEventFieldBuilder() {
+      if (eventBuilder_ == null) {
+        if (!(inputCase_ == 6)) {
+          input_ = com.google.cloud.dialogflow.cx.v3beta1.EventInput.getDefaultInstance();
+        }
+        eventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.EventInput,
+                com.google.cloud.dialogflow.cx.v3beta1.EventInput.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.EventInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 6;
+      onChanged();
+      ;
+      return eventBuilder_;
     }
 
     private java.lang.Object languageCode_ = "";

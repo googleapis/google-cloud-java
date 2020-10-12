@@ -18,35 +18,33 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
-public interface TextInputOrBuilder
+public interface EventInputOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.TextInput)
+    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.EventInput)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * Name of the event.
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string event = 1;</code>
    *
-   * @return The text.
+   * @return The event.
    */
-  java.lang.String getText();
+  java.lang.String getEvent();
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * Name of the event.
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string event = 1;</code>
    *
-   * @return The bytes for text.
+   * @return The bytes for event.
    */
-  com.google.protobuf.ByteString getTextBytes();
+  com.google.protobuf.ByteString getEventBytes();
 }

@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
+ * The request message for [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetWebhookRequest}
@@ -333,8 +332,7 @@ public final class GetWebhookRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for
-   * [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
+   * The request message for [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetWebhookRequest}

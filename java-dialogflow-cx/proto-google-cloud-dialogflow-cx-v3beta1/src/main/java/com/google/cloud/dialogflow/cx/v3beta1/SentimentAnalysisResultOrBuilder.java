@@ -18,35 +18,36 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
-public interface TextInputOrBuilder
+public interface SentimentAnalysisResultOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.TextInput)
+    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+   * sentiment).
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>float score = 1;</code>
    *
-   * @return The text.
+   * @return The score.
    */
-  java.lang.String getText();
+  float getScore();
+
   /**
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text length must
-   * not exceed 256 characters.
+   * A non-negative number in the [0, +inf) range, which represents the absolute
+   * magnitude of sentiment, regardless of score (positive or negative).
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>float magnitude = 2;</code>
    *
-   * @return The bytes for text.
+   * @return The magnitude.
    */
-  com.google.protobuf.ByteString getTextBytes();
+  float getMagnitude();
 }

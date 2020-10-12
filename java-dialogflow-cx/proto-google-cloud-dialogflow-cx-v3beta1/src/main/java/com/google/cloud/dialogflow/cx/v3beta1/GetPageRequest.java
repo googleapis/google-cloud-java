@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Pages.GetPage][google.cloud.dialogflow.cx.v3beta1.Pages.GetPage].
+ * The request message for [Pages.GetPage][google.cloud.dialogflow.cx.v3beta1.Pages.GetPage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetPageRequest}
@@ -423,8 +422,7 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The request message for
-   * [Pages.GetPage][google.cloud.dialogflow.cx.v3beta1.Pages.GetPage].
+   * The request message for [Pages.GetPage][google.cloud.dialogflow.cx.v3beta1.Pages.GetPage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetPageRequest}

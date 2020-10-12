@@ -37,6 +37,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   * For more information, see the [sessions
+   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -58,6 +60,8 @@ public interface StreamingDetectIntentRequestOrBuilder
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   * For more information, see the [sessions
+   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>

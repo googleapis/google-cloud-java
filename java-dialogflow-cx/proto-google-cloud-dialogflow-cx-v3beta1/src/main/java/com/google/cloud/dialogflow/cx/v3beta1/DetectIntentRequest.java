@@ -177,6 +177,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * It's up to the API caller to choose an appropriate `Session ID`. It can be
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
+   * For more information, see the [sessions
+   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    * </pre>
    *
    * <code>
@@ -210,6 +212,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * It's up to the API caller to choose an appropriate `Session ID`. It can be
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
+   * For more information, see the [sessions
+   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    * </pre>
    *
    * <code>
@@ -799,6 +803,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
+     * For more information, see the [sessions
+     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      * </pre>
      *
      * <code>
@@ -831,6 +837,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
+     * For more information, see the [sessions
+     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      * </pre>
      *
      * <code>
@@ -863,6 +871,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
+     * For more information, see the [sessions
+     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      * </pre>
      *
      * <code>
@@ -894,6 +904,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
+     * For more information, see the [sessions
+     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      * </pre>
      *
      * <code>
@@ -921,6 +933,8 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * It's up to the API caller to choose an appropriate `Session ID`. It can be
      * a random number or some type of session identifiers (preferably hashed).
      * The length of the `Session ID` must not exceed 36 characters.
+     * For more information, see the [sessions
+     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      * </pre>
      *
      * <code>

@@ -22,21 +22,16 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * An event handler specifies an
- * [event][google.cloud.dialogflow.cx.v3beta1.EventHandler.event] that can be
- * handled during a session. When the specified event happens, the following
- * actions are taken in order:
+ * An event handler specifies an [event][google.cloud.dialogflow.cx.v3beta1.EventHandler.event] that can be handled
+ * during a session. When the specified event happens, the following actions are
+ * taken in order:
  * *   If there is a
- * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3beta1.EventHandler.trigger_fulfillment]
- * associated with the event, it will be called.
- * *   If there is a
- * [`target_page`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_page]
- * associated with the event, the session will transition into the specified
- * page.
- * *   If there is a
- * [`target_flow`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_flow]
- * associated with the event, the session will transition into the specified
- * flow.
+ * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3beta1.EventHandler.trigger_fulfillment] associated with
+ * the event, it will be called.
+ * *   If there is a [`target_page`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_page] associated
+ * with the event, the session will transition into the specified page.
+ * *   If there is a [`target_flow`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_flow] associated
+ * with the event, the session will transition into the specified flow.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.EventHandler}
@@ -708,21 +703,16 @@ public final class EventHandler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An event handler specifies an
-   * [event][google.cloud.dialogflow.cx.v3beta1.EventHandler.event] that can be
-   * handled during a session. When the specified event happens, the following
-   * actions are taken in order:
+   * An event handler specifies an [event][google.cloud.dialogflow.cx.v3beta1.EventHandler.event] that can be handled
+   * during a session. When the specified event happens, the following actions are
+   * taken in order:
    * *   If there is a
-   * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3beta1.EventHandler.trigger_fulfillment]
-   * associated with the event, it will be called.
-   * *   If there is a
-   * [`target_page`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_page]
-   * associated with the event, the session will transition into the specified
-   * page.
-   * *   If there is a
-   * [`target_flow`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_flow]
-   * associated with the event, the session will transition into the specified
-   * flow.
+   * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3beta1.EventHandler.trigger_fulfillment] associated with
+   * the event, it will be called.
+   * *   If there is a [`target_page`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_page] associated
+   * with the event, the session will transition into the specified page.
+   * *   If there is a [`target_flow`][google.cloud.dialogflow.cx.v3beta1.EventHandler.target_flow] associated
+   * with the event, the session will transition into the specified flow.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.EventHandler}

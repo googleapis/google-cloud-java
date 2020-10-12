@@ -136,6 +136,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 64:
+            {
+              analyzeQueryTextSentiment_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -501,6 +506,25 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return getParameters();
   }
 
+  public static final int ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 8;
+  private boolean analyzeQueryTextSentiment_;
+  /**
+   *
+   *
+   * <pre>
+   * Configures whether sentiment analysis should be performed. If not
+   * provided, sentiment analysis is not performed.
+   * </pre>
+   *
+   * <code>bool analyze_query_text_sentiment = 8;</code>
+   *
+   * @return The analyzeQueryTextSentiment.
+   */
+  @java.lang.Override
+  public boolean getAnalyzeQueryTextSentiment() {
+    return analyzeQueryTextSentiment_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -530,6 +554,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (parameters_ != null) {
       output.writeMessage(5, getParameters());
     }
+    if (analyzeQueryTextSentiment_ != false) {
+      output.writeBool(8, analyzeQueryTextSentiment_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -554,6 +581,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getParameters());
+    }
+    if (analyzeQueryTextSentiment_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, analyzeQueryTextSentiment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -585,6 +615,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (getAnalyzeQueryTextSentiment() != other.getAnalyzeQueryTextSentiment()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -614,6 +645,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    hash = (37 * hash) + ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAnalyzeQueryTextSentiment());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -788,6 +821,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         parameters_ = null;
         parametersBuilder_ = null;
       }
+      analyzeQueryTextSentiment_ = false;
+
       return this;
     }
 
@@ -841,6 +876,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
+      result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
       onBuilt();
       return result;
     }
@@ -930,6 +966,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
+      }
+      if (other.getAnalyzeQueryTextSentiment() != false) {
+        setAnalyzeQueryTextSentiment(other.getAnalyzeQueryTextSentiment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2201,6 +2240,61 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private boolean analyzeQueryTextSentiment_;
+    /**
+     *
+     *
+     * <pre>
+     * Configures whether sentiment analysis should be performed. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>bool analyze_query_text_sentiment = 8;</code>
+     *
+     * @return The analyzeQueryTextSentiment.
+     */
+    @java.lang.Override
+    public boolean getAnalyzeQueryTextSentiment() {
+      return analyzeQueryTextSentiment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures whether sentiment analysis should be performed. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>bool analyze_query_text_sentiment = 8;</code>
+     *
+     * @param value The analyzeQueryTextSentiment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAnalyzeQueryTextSentiment(boolean value) {
+
+      analyzeQueryTextSentiment_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configures whether sentiment analysis should be performed. If not
+     * provided, sentiment analysis is not performed.
+     * </pre>
+     *
+     * <code>bool analyze_query_text_sentiment = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAnalyzeQueryTextSentiment() {
+
+      analyzeQueryTextSentiment_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

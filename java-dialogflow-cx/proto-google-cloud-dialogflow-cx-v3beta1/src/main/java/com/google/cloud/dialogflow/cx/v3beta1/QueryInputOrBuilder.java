@@ -132,6 +132,41 @@ public interface QueryInputOrBuilder
    *
    *
    * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   *
+   * @return Whether the event field is set.
+   */
+  boolean hasEvent();
+  /**
+   *
+   *
+   * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   *
+   * @return The event.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.EventInput getEvent();
+  /**
+   *
+   *
+   * <pre>
+   * The event to be triggered.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.EventInput event = 6;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.EventInputOrBuilder getEventOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The language of the input. See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
    * list of the currently supported language codes. Note that queries in the

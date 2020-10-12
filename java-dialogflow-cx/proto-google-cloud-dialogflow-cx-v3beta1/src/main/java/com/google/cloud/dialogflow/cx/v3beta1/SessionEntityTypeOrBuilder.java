@@ -64,8 +64,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or
-   * supplement the custom entity type definition.
+   * Required. Indicates whether the additional data should override or supplement the
+   * custom entity type definition.
    * </pre>
    *
    * <code>
@@ -79,8 +79,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or
-   * supplement the custom entity type definition.
+   * Required. Indicates whether the additional data should override or supplement the
+   * custom entity type definition.
    * </pre>
    *
    * <code>
@@ -96,8 +96,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom
-   * entity type.
+   * Required. The collection of entities to override or supplement the custom entity
+   * type.
    * </pre>
    *
    * <code>
@@ -109,8 +109,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom
-   * entity type.
+   * Required. The collection of entities to override or supplement the custom entity
+   * type.
    * </pre>
    *
    * <code>
@@ -122,8 +122,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom
-   * entity type.
+   * Required. The collection of entities to override or supplement the custom entity
+   * type.
    * </pre>
    *
    * <code>
@@ -135,8 +135,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom
-   * entity type.
+   * Required. The collection of entities to override or supplement the custom entity
+   * type.
    * </pre>
    *
    * <code>
@@ -149,8 +149,8 @@ public interface SessionEntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom
-   * entity type.
+   * Required. The collection of entities to override or supplement the custom entity
+   * type.
    * </pre>
    *
    * <code>

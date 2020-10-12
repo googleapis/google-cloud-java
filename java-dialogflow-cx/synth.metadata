@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "6ee93932840fb3ccbaaa1527d549ddc04e4812fc",
-        "internalRef": "327289448"
+        "sha": "f7a34a4b51edcb758ee36e5fc580ac89ba2417fd",
+        "internalRef": "336005205"
       }
     },
     {
@@ -273,6 +273,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EnvironmentProto.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EventHandler.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EventHandlerOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EventInput.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EventInputOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ExportAgentRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ExportAgentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ExportAgentResponse.java",
@@ -311,6 +313,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetVersionRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetWebhookRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetWebhookRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ImportAgentResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ImportAgentResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/InputAudioConfig.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/InputAudioConfigOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/Intent.java",
@@ -396,6 +400,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ResponseMessageProto.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/RestoreAgentRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/RestoreAgentRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SentimentAnalysisResult.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SentimentAnalysisResultOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityType.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypeName.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypeOrBuilder.java",

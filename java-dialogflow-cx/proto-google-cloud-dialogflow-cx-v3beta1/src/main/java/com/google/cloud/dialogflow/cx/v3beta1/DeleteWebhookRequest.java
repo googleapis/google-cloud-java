@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
+ * The request message for [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest}
@@ -185,10 +184,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the referenced resources.
    * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-   *    as any references to the webhook (i.e.
-   *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
-   *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
-   *    that point to this webhook will be removed).
+   *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook]
+   *    and [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments that point to this webhook
+   *    will be removed).
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -373,8 +371,7 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for
-   * [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
+   * The request message for [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest}
@@ -671,10 +668,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
-     *    that point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -694,10 +690,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
-     *    that point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -720,10 +715,9 @@ public final class DeleteWebhookRequest extends com.google.protobuf.GeneratedMes
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments
-     *    that point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3beta1.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3beta1.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      * </pre>
      *
      * <code>bool force = 2;</code>

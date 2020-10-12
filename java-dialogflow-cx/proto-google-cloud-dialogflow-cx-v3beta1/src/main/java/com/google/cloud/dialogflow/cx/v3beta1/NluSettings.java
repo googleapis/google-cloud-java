@@ -90,11 +90,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
               modelTrainingMode_ = rawValue;
               break;
             }
-          case 40:
-            {
-              enableSpellCorrection_ = input.readBool();
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -559,26 +554,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int ENABLE_SPELL_CORRECTION_FIELD_NUMBER = 5;
-  private boolean enableSpellCorrection_;
-  /**
-   *
-   *
-   * <pre>
-   * Indicates if automatic spell correction is enabled in detect intent
-   * requests.
-   * </pre>
-   *
-   * <code>bool enable_spell_correction = 5 [deprecated = true];</code>
-   *
-   * @return The enableSpellCorrection.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean getEnableSpellCorrection() {
-    return enableSpellCorrection_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -607,9 +582,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(4, modelTrainingMode_);
     }
-    if (enableSpellCorrection_ != false) {
-      output.writeBool(5, enableSpellCorrection_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -633,9 +605,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, modelTrainingMode_);
     }
-    if (enableSpellCorrection_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableSpellCorrection_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -656,7 +625,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToIntBits(getClassificationThreshold())
         != java.lang.Float.floatToIntBits(other.getClassificationThreshold())) return false;
     if (modelTrainingMode_ != other.modelTrainingMode_) return false;
-    if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -674,8 +642,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getClassificationThreshold());
     hash = (37 * hash) + MODEL_TRAINING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + modelTrainingMode_;
-    hash = (37 * hash) + ENABLE_SPELL_CORRECTION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSpellCorrection());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -827,8 +793,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
 
       modelTrainingMode_ = 0;
 
-      enableSpellCorrection_ = false;
-
       return this;
     }
 
@@ -859,7 +823,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       result.modelType_ = modelType_;
       result.classificationThreshold_ = classificationThreshold_;
       result.modelTrainingMode_ = modelTrainingMode_;
-      result.enableSpellCorrection_ = enableSpellCorrection_;
       onBuilt();
       return result;
     }
@@ -918,9 +881,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.modelTrainingMode_ != 0) {
         setModelTrainingModeValue(other.getModelTrainingModeValue());
-      }
-      if (other.getEnableSpellCorrection() != false) {
-        setEnableSpellCorrection(other.getEnableSpellCorrection());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1215,64 +1175,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     public Builder clearModelTrainingMode() {
 
       modelTrainingMode_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private boolean enableSpellCorrection_;
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if automatic spell correction is enabled in detect intent
-     * requests.
-     * </pre>
-     *
-     * <code>bool enable_spell_correction = 5 [deprecated = true];</code>
-     *
-     * @return The enableSpellCorrection.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public boolean getEnableSpellCorrection() {
-      return enableSpellCorrection_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if automatic spell correction is enabled in detect intent
-     * requests.
-     * </pre>
-     *
-     * <code>bool enable_spell_correction = 5 [deprecated = true];</code>
-     *
-     * @param value The enableSpellCorrection to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setEnableSpellCorrection(boolean value) {
-
-      enableSpellCorrection_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if automatic spell correction is enabled in detect intent
-     * requests.
-     * </pre>
-     *
-     * <code>bool enable_spell_correction = 5 [deprecated = true];</code>
-     *
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearEnableSpellCorrection() {
-
-      enableSpellCorrection_ = false;
       onChanged();
       return this;
     }

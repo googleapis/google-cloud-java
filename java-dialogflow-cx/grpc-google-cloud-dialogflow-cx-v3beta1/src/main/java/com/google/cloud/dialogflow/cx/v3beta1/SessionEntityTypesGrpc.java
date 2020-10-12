@@ -26,8 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Service for managing
- * [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
+ * Service for managing [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -338,8 +337,7 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
+   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
    * </pre>
    */
   public abstract static class SessionEntityTypesImplBase implements io.grpc.BindableService {
@@ -461,8 +459,7 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
+   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesStub
@@ -569,8 +566,7 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
+   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesBlockingStub
@@ -659,8 +655,7 @@ public final class SessionEntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
+   * Service for managing [SessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityType].
    * </pre>
    */
   public static final class SessionEntityTypesFutureStub

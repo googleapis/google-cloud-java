@@ -25,9 +25,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * A form is a data model that groups related parameters that can be collected
  * from the user. The process in which the agent prompts the user and collects
  * parameter values from the user is called form filling. A form can be added to
- * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done,
- * the filled parameters will be written to the
- * [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+ * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done, the filled parameters will be
+ * written to the [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Form}
@@ -305,6 +304,21 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value default_value = 9;</code>
      */
     com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the parameter content is logged in text and audio. If
+     * it is set to true, the parameter content will be replaced to parameter
+     * name in both request and response. The default value is false.
+     * </pre>
+     *
+     * <code>bool redact = 11;</code>
+     *
+     * @return The redact.
+     */
+    boolean getRedact();
   }
   /**
    *
@@ -414,6 +428,11 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
                   defaultValue_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 88:
+              {
+                redact_ = input.readBool();
                 break;
               }
             default:
@@ -2899,6 +2918,26 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       return getDefaultValue();
     }
 
+    public static final int REDACT_FIELD_NUMBER = 11;
+    private boolean redact_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the parameter content is logged in text and audio. If
+     * it is set to true, the parameter content will be replaced to parameter
+     * name in both request and response. The default value is false.
+     * </pre>
+     *
+     * <code>bool redact = 11;</code>
+     *
+     * @return The redact.
+     */
+    @java.lang.Override
+    public boolean getRedact() {
+      return redact_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2931,6 +2970,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (defaultValue_ != null) {
         output.writeMessage(9, getDefaultValue());
       }
+      if (redact_ != false) {
+        output.writeBool(11, redact_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2957,6 +2999,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       }
       if (defaultValue_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getDefaultValue());
+      }
+      if (redact_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, redact_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2986,6 +3031,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
       if (hasDefaultValue()) {
         if (!getDefaultValue().equals(other.getDefaultValue())) return false;
       }
+      if (getRedact() != other.getRedact()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3013,6 +3059,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultValue().hashCode();
       }
+      hash = (37 * hash) + REDACT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRedact());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3181,6 +3229,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
           defaultValue_ = null;
           defaultValueBuilder_ = null;
         }
+        redact_ = false;
+
         return this;
       }
 
@@ -3222,6 +3272,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.defaultValue_ = defaultValueBuilder_.build();
         }
+        result.redact_ = redact_;
         onBuilt();
         return result;
       }
@@ -3293,6 +3344,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasDefaultValue()) {
           mergeDefaultValue(other.getDefaultValue());
+        }
+        if (other.getRedact() != false) {
+          setRedact(other.getRedact());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4090,6 +4144,64 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
         return defaultValueBuilder_;
       }
 
+      private boolean redact_;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * name in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 11;</code>
+       *
+       * @return The redact.
+       */
+      @java.lang.Override
+      public boolean getRedact() {
+        return redact_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * name in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 11;</code>
+       *
+       * @param value The redact to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRedact(boolean value) {
+
+        redact_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether the parameter content is logged in text and audio. If
+       * it is set to true, the parameter content will be replaced to parameter
+       * name in both request and response. The default value is false.
+       * </pre>
+       *
+       * <code>bool redact = 11;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRedact() {
+
+        redact_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4380,9 +4492,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * A form is a data model that groups related parameters that can be collected
    * from the user. The process in which the agent prompts the user and collects
    * parameter values from the user is called form filling. A form can be added to
-   * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done,
-   * the filled parameters will be written to the
-   * [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done, the filled parameters will be
+   * written to the [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Form}

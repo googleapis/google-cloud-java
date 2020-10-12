@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for
- * [Flows.GetFlow][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlow].
+ * The response message for [Flows.GetFlow][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetFlowRequest}
@@ -415,8 +414,7 @@ public final class GetFlowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response message for
-   * [Flows.GetFlow][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlow].
+   * The response message for [Flows.GetFlow][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetFlowRequest}
