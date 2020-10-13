@@ -69,14 +69,21 @@ integration)
     RETURN_CODE=$?
     ;;
 samples)
-    if [[ -f samples/pom.xml ]]
+    SAMPLES_DIR=samples
+    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    then
+      SAMPLES_DIR=samples/snapshot
+    fi
+
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
         if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]
         then
             source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
         fi
 
-        pushd samples
+        pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
           -DtrimStackTrace=false \
