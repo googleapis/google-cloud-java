@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.10.2...v0.11.0) (2020-10-13)
+
+
+### Dependencies
+
+* update dependency com.google.http-client:google-http-client-bom to v1.37.0 ([#166](https://www.github.com/googleapis/java-shared-dependencies/issues/166)) ([5721225](https://www.github.com/googleapis/java-shared-dependencies/commit/572122574ce8452b6a0fc6df919e9ce2d8ffd2ce))
+* update dependency io.grpc:grpc-bom to v1.32.2 ([#165](https://www.github.com/googleapis/java-shared-dependencies/issues/165)) ([b70ddb0](https://www.github.com/googleapis/java-shared-dependencies/commit/b70ddb00a3be97536cdd80bd57fe6bca1b0973e2))
+
 ### [0.10.2](https://www.github.com/googleapis/java-shared-dependencies/compare/0.10.1...v0.10.2) (2020-10-08)
 
 
