@@ -1089,9 +1089,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               serviceOptions.getClock());
       String cursor = result.getPageToken();
+      Map<BigQueryRpc.Option, ?> pageOptionMap =
+          Strings.isNullOrEmpty(cursor) ? optionsMap : optionMap(TableDataListOption.startIndex(0));
       return Tuple.of(
           new PageImpl<>(
-              new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, optionsMap),
+              new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, pageOptionMap),
               cursor,
               transformTableData(result.getRows(), schema)),
           result.getTotalRows());

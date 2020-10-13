@@ -26,6 +26,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -1468,6 +1469,40 @@ public class BigQueryImplTest {
     assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
     verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, TABLE_DATA_LIST_OPTIONS);
+  }
+
+  @Test
+  public void testListTableDataWithNextPage() {
+    doReturn(TABLE_DATA_PB)
+        .when(bigqueryRpcMock)
+        .listTableData(PROJECT, DATASET, TABLE, TABLE_DATA_LIST_OPTIONS);
+    bigquery = options.getService();
+    TableResult page =
+        bigquery.listTableData(
+            DATASET,
+            TABLE,
+            TABLE_DATA_LIST_PAGE_SIZE,
+            TABLE_DATA_LIST_PAGE_TOKEN,
+            TABLE_DATA_LIST_START_INDEX);
+    assertEquals(CURSOR, page.getNextPageToken());
+    verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, TABLE_DATA_LIST_OPTIONS);
+    assertArrayEquals(TABLE_DATA.toArray(), Iterables.toArray(page.getValues(), List.class));
+    Map<BigQueryRpc.Option, ?> SECOND_TABLE_DATA_LIST_OPTIONS =
+        ImmutableMap.of(BigQueryRpc.Option.PAGE_TOKEN, CURSOR, BigQueryRpc.Option.START_INDEX, 0L);
+    doReturn(
+            new TableDataList()
+                .setPageToken(null)
+                .setTotalRows(1L)
+                .setRows(
+                    ImmutableList.of(
+                        new TableRow().setF(ImmutableList.of(new TableCell().setV("Value3"))),
+                        new TableRow().setF(ImmutableList.of(new TableCell().setV("Value4"))))))
+        .when(bigqueryRpcMock)
+        .listTableData(PROJECT, DATASET, TABLE, SECOND_TABLE_DATA_LIST_OPTIONS);
+    assertTrue(page.hasNextPage());
+    page = page.getNextPage();
+    assertNull(page.getNextPageToken());
+    verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, SECOND_TABLE_DATA_LIST_OPTIONS);
   }
 
   // The "minimally initialized" Job that lets Job.fromPb run without throwing.

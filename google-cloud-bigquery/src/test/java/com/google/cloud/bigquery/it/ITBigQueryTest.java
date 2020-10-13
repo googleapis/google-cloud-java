@@ -112,6 +112,7 @@ import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -364,6 +365,9 @@ public class ITBigQueryTest {
 
   private static final Set<String> PUBLIC_DATASETS =
       ImmutableSet.of("github_repos", "hacker_news", "noaa_gsod", "samples", "usa_names");
+
+  private static final String PUBLIC_PROJECT = "bigquery-public-data";
+  private static final String PUBLIC_DATASET = "census_bureau_international";
 
   private static BigQuery bigquery;
   private static Storage storage;
@@ -1340,6 +1344,25 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
+  }
+
+  @Test
+  public void testListPageWithStartIndex() {
+    String tableName = "midyear_population_agespecific";
+    TableId tableId = TableId.of(PUBLIC_PROJECT, PUBLIC_DATASET, tableName);
+    Table table = bigquery.getTable(tableId);
+    long numRows = table.getNumRows().longValue();
+    Page<FieldValueList> tableResult =
+        bigquery.listTableData(
+            tableId,
+            BigQuery.TableDataListOption.startIndex(numRows - 300_000L),
+            BigQuery.TableDataListOption.pageSize(600_000L));
+    assertNotNull(tableResult.getNextPageToken());
+    long totalRows = ((Collection<?>) tableResult.getValues()).size();
+    tableResult = tableResult.getNextPage();
+    totalRows = totalRows + ((Collection<?>) tableResult.getValues()).size();
+    assertNull(tableResult.getNextPageToken());
+    assertEquals(300_000L, totalRows);
   }
 
   @Test
