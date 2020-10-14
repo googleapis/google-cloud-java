@@ -1150,7 +1150,7 @@ public class KeyManagementServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void asymmetricSignTest() {
-    ByteString signature = ByteString.copyFromUtf8("106");
+    ByteString signature = ByteString.copyFromUtf8("-72");
     boolean verifiedDigestCrc32c = true;
     String name2 = "name2-1052831874";
     AsymmetricSignResponse expectedResponse =
