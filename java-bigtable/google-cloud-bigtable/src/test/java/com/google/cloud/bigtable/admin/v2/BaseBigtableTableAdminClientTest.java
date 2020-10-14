@@ -526,7 +526,7 @@ public class BaseBigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void getIamPolicyTest() {
     int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("etag3123477");
+    ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -566,7 +566,7 @@ public class BaseBigtableTableAdminClientTest {
   @SuppressWarnings("all")
   public void setIamPolicyTest() {
     int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("etag3123477");
+    ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
