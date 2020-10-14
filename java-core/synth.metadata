@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-core.git",
-        "sha": "fd7bd2a05b5eb6e1b0c4d095fb9f9ca3378dc666"
+        "sha": "b3f9af8fd26dce76dbac4f1e0c086b3ed01a728f"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
+        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
       }
     }
   ],
@@ -26,6 +26,7 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
