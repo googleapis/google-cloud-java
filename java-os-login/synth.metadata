@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-login.git",
-        "sha": "6851ee82403a1e0f7b9e273934c091b19dd7edcf"
+        "sha": "2d1703260f9adcf2f1de888d97d06416dc6600da"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
+        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
       }
     }
   ],
@@ -45,6 +45,7 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
