@@ -474,7 +474,7 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Exports the specified agent to a ZIP file.
+     * Exports the specified agent to a binary file.
      * </pre>
      */
     public void exportAgent(
@@ -487,9 +487,9 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Restores the specified agent from a ZIP file.
-     * Note that all existing intents, intent routes, entity types, pages and
-     * webhooks in the agent will be deleted.
+     * Restores the specified agent from a binary file.
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
      * </pre>
      */
     public void restoreAgent(
@@ -649,7 +649,7 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Exports the specified agent to a ZIP file.
+     * Exports the specified agent to a binary file.
      * </pre>
      */
     public void exportAgent(
@@ -665,9 +665,9 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Restores the specified agent from a ZIP file.
-     * Note that all existing intents, intent routes, entity types, pages and
-     * webhooks in the agent will be deleted.
+     * Restores the specified agent from a binary file.
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
      * </pre>
      */
     public void restoreAgent(
@@ -762,7 +762,7 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Exports the specified agent to a ZIP file.
+     * Exports the specified agent to a binary file.
      * </pre>
      */
     public com.google.longrunning.Operation exportAgent(
@@ -774,9 +774,9 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Restores the specified agent from a ZIP file.
-     * Note that all existing intents, intent routes, entity types, pages and
-     * webhooks in the agent will be deleted.
+     * Restores the specified agent from a binary file.
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
      * </pre>
      */
     public com.google.longrunning.Operation restoreAgent(
@@ -875,7 +875,7 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Exports the specified agent to a ZIP file.
+     * Exports the specified agent to a binary file.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -888,9 +888,9 @@ public final class AgentsGrpc {
      *
      *
      * <pre>
-     * Restores the specified agent from a ZIP file.
-     * Note that all existing intents, intent routes, entity types, pages and
-     * webhooks in the agent will be deleted.
+     * Restores the specified agent from a binary file.
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

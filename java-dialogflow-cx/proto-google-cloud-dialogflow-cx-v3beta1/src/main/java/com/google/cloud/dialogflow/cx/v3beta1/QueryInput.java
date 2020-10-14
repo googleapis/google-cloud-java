@@ -22,9 +22,11 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Represents the query input. It can contain either:
+ * Represents the query input. It can contain one of:
  * 1.  A conversational query in the form of text.
  * 2.  An intent query that specifies which intent to trigger.
+ * 3.  Natural language speech audio to be processed.
+ * 4.  An event to be triggered.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}
@@ -728,9 +730,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents the query input. It can contain either:
+   * Represents the query input. It can contain one of:
    * 1.  A conversational query in the form of text.
    * 2.  An intent query that specifies which intent to trigger.
+   * 3.  Natural language speech audio to be processed.
+   * 4.  An event to be triggered.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}

@@ -654,7 +654,7 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports the specified agent to a ZIP file.
+   * Exports the specified agent to a binary file.
    *
    * <p>Sample code:
    *
@@ -680,7 +680,7 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports the specified agent to a ZIP file.
+   * Exports the specified agent to a binary file.
    *
    * <p>Sample code:
    *
@@ -704,7 +704,7 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports the specified agent to a ZIP file.
+   * Exports the specified agent to a binary file.
    *
    * <p>Sample code:
    *
@@ -726,10 +726,10 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Restores the specified agent from a ZIP file.
+   * Restores the specified agent from a binary file.
    *
-   * <p>Note that all existing intents, intent routes, entity types, pages and webhooks in the agent
-   * will be deleted.
+   * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
+   * intents, entity types, flows) will be removed.
    *
    * <p>Sample code:
    *
@@ -754,10 +754,10 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Restores the specified agent from a ZIP file.
+   * Restores the specified agent from a binary file.
    *
-   * <p>Note that all existing intents, intent routes, entity types, pages and webhooks in the agent
-   * will be deleted.
+   * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
+   * intents, entity types, flows) will be removed.
    *
    * <p>Sample code:
    *
@@ -781,10 +781,10 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Restores the specified agent from a ZIP file.
+   * Restores the specified agent from a binary file.
    *
-   * <p>Note that all existing intents, intent routes, entity types, pages and webhooks in the agent
-   * will be deleted.
+   * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
+   * intents, entity types, flows) will be removed.
    *
    * <p>Sample code:
    *
