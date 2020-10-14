@@ -16,7 +16,7 @@
 
 package com.example.bigquerydatatransfer;
 
-// [START bigquerydatatransfer_create_amazons3_transfer]
+// [START bigquerydatatransfer_create_cloudstorage_transfer]
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
@@ -28,42 +28,39 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-// Sample to create amazon s3 transfer config.
-public class CreateAmazonS3Transfer {
+// Sample to create google cloud storage transfer config
+public class CreateCloudStorageTransfer {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
     String tableId = "MY_TABLE_ID";
-    // Amazon S3 Bucket Uri with read role permission
-    String sourceUri = "s3://your-bucket-name/*";
-    String awsAccessKeyId = "MY_AWS_ACCESS_KEY_ID";
-    String awsSecretAccessId = "AWS_SECRET_ACCESS_ID";
-    String sourceFormat = "CSV";
+    // GCS Uri
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.csv";
+    String fileFormat = "CSV";
     String fieldDelimiter = ",";
     String skipLeadingRows = "1";
     Map<String, Value> params = new HashMap<>();
     params.put(
         "destination_table_name_template", Value.newBuilder().setStringValue(tableId).build());
-    params.put("data_path", Value.newBuilder().setStringValue(sourceUri).build());
-    params.put("access_key_id", Value.newBuilder().setStringValue(awsAccessKeyId).build());
-    params.put("secret_access_key", Value.newBuilder().setStringValue(awsSecretAccessId).build());
-    params.put("source_format", Value.newBuilder().setStringValue(sourceFormat).build());
+    params.put("data_path_template", Value.newBuilder().setStringValue(sourceUri).build());
+    params.put("write_disposition", Value.newBuilder().setStringValue("APPEND").build());
+    params.put("file_format", Value.newBuilder().setStringValue(fileFormat).build());
     params.put("field_delimiter", Value.newBuilder().setStringValue(fieldDelimiter).build());
     params.put("skip_leading_rows", Value.newBuilder().setStringValue(skipLeadingRows).build());
     TransferConfig transferConfig =
         TransferConfig.newBuilder()
             .setDestinationDatasetId(datasetId)
-            .setDisplayName("Your Aws S3 Config Name")
-            .setDataSourceId("amazon_s3")
+            .setDisplayName("Your Google Cloud Storage Config Name")
+            .setDataSourceId("google_cloud_storage")
             .setParams(Struct.newBuilder().putAllFields(params).build())
             .setSchedule("every 24 hours")
             .build();
-    createAmazonS3Transfer(projectId, transferConfig);
+    createCloudStorageTransfer(projectId, transferConfig);
   }
 
-  public static void createAmazonS3Transfer(String projectId, TransferConfig transferConfig)
+  public static void createCloudStorageTransfer(String projectId, TransferConfig transferConfig)
       throws IOException {
     try (DataTransferServiceClient client = DataTransferServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
@@ -73,10 +70,10 @@ public class CreateAmazonS3Transfer {
               .setTransferConfig(transferConfig)
               .build();
       TransferConfig config = client.createTransferConfig(request);
-      System.out.println("Amazon s3 transfer created successfully :" + config.getName());
+      System.out.println("Cloud storage transfer created successfully :" + config.getName());
     } catch (ApiException ex) {
-      System.out.print("Amazon s3 transfer was not created." + ex.toString());
+      System.out.print("Cloud storage transfer was not created." + ex.toString());
     }
   }
 }
-// [END bigquerydatatransfer_create_amazons3_transfer]
+// [END bigquerydatatransfer_create_cloudstorage_transfer]
