@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "393f52cc590151f4bdf6fd6f01ccd8e716d29332"
+        "sha": "a789c8fed3ef16e6aa8485b4ee5d08e6a0ca36dc"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
+        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
       }
     }
   ],
@@ -45,6 +45,7 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
