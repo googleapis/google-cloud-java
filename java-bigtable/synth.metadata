@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "f33c6746cf067378686c07ac8941b082ad7ba031"
+        "sha": "1fa6f62ee17fbd317cf18e68aae5dedabf2b21e3"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0762e8ee2ec21cdfc4d82020b985a104feb0453b"
+        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
       }
     }
   ],
@@ -53,6 +53,7 @@
     ".github/trusted-contribution.yml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
