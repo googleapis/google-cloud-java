@@ -247,6 +247,26 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               resultCase_ = 9;
               break;
             }
+          case 82:
+            {
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                      .Builder
+                  subBuilder = null;
+              if (requestedOptions_ != null) {
+                subBuilder = requestedOptions_.toBuilder();
+              }
+              requestedOptions_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+                          .RequestedRiskAnalysisOptions.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(requestedOptions_);
+                requestedOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -21947,6 +21967,820 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     }
   }
 
+  public interface RequestedRiskAnalysisOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     *
+     * @return Whether the jobConfig field is set.
+     */
+    boolean hasJobConfig();
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     *
+     * @return The jobConfig.
+     */
+    com.google.privacy.dlp.v2.RiskAnalysisJobConfig getJobConfig();
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     */
+    com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getJobConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Risk analysis options.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions}
+   */
+  public static final class RequestedRiskAnalysisOptions
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+      RequestedRiskAnalysisOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RequestedRiskAnalysisOptions.newBuilder() to construct.
+    private RequestedRiskAnalysisOptions(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RequestedRiskAnalysisOptions() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RequestedRiskAnalysisOptions();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private RequestedRiskAnalysisOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder subBuilder = null;
+                if (jobConfig_ != null) {
+                  subBuilder = jobConfig_.toBuilder();
+                }
+                jobConfig_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.RiskAnalysisJobConfig.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(jobConfig_);
+                  jobConfig_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                  .class,
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                  .Builder.class);
+    }
+
+    public static final int JOB_CONFIG_FIELD_NUMBER = 1;
+    private com.google.privacy.dlp.v2.RiskAnalysisJobConfig jobConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     *
+     * @return Whether the jobConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasJobConfig() {
+      return jobConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     *
+     * @return The jobConfig.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getJobConfig() {
+      return jobConfig_ == null
+          ? com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance()
+          : jobConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The job config for the risk job.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getJobConfigOrBuilder() {
+      return getJobConfig();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (jobConfig_ != null) {
+        output.writeMessage(1, getJobConfig());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (jobConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getJobConfig());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions other =
+          (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions) obj;
+
+      if (hasJobConfig() != other.hasJobConfig()) return false;
+      if (hasJobConfig()) {
+        if (!getJobConfig().equals(other.getJobConfig())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasJobConfig()) {
+        hash = (37 * hash) + JOB_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getJobConfig().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Risk analysis options.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                    .class,
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (jobConfigBuilder_ == null) {
+          jobConfig_ = null;
+        } else {
+          jobConfig_ = null;
+          jobConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_AnalyzeDataSourceRiskDetails_RequestedRiskAnalysisOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+          build() {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+          buildPartial() {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions result =
+            new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions(
+                this);
+        if (jobConfigBuilder_ == null) {
+          result.jobConfig_ = jobConfig_;
+        } else {
+          result.jobConfig_ = jobConfigBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+              other) {
+        if (other
+            == com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                .getDefaultInstance()) return this;
+        if (other.hasJobConfig()) {
+          mergeJobConfig(other.getJobConfig());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.privacy.dlp.v2.RiskAnalysisJobConfig jobConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfig,
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder,
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder>
+          jobConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       *
+       * @return Whether the jobConfig field is set.
+       */
+      public boolean hasJobConfig() {
+        return jobConfigBuilder_ != null || jobConfig_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       *
+       * @return The jobConfig.
+       */
+      public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getJobConfig() {
+        if (jobConfigBuilder_ == null) {
+          return jobConfig_ == null
+              ? com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance()
+              : jobConfig_;
+        } else {
+          return jobConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public Builder setJobConfig(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
+        if (jobConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          jobConfig_ = value;
+          onChanged();
+        } else {
+          jobConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public Builder setJobConfig(
+          com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder builderForValue) {
+        if (jobConfigBuilder_ == null) {
+          jobConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          jobConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public Builder mergeJobConfig(com.google.privacy.dlp.v2.RiskAnalysisJobConfig value) {
+        if (jobConfigBuilder_ == null) {
+          if (jobConfig_ != null) {
+            jobConfig_ =
+                com.google.privacy.dlp.v2.RiskAnalysisJobConfig.newBuilder(jobConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            jobConfig_ = value;
+          }
+          onChanged();
+        } else {
+          jobConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public Builder clearJobConfig() {
+        if (jobConfigBuilder_ == null) {
+          jobConfig_ = null;
+          onChanged();
+        } else {
+          jobConfig_ = null;
+          jobConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder getJobConfigBuilder() {
+
+        onChanged();
+        return getJobConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getJobConfigOrBuilder() {
+        if (jobConfigBuilder_ != null) {
+          return jobConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return jobConfig_ == null
+              ? com.google.privacy.dlp.v2.RiskAnalysisJobConfig.getDefaultInstance()
+              : jobConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The job config for the risk job.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig job_config = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfig,
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder,
+              com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder>
+          getJobConfigFieldBuilder() {
+        if (jobConfigBuilder_ == null) {
+          jobConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.RiskAnalysisJobConfig,
+                  com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder,
+                  com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder>(
+                  getJobConfig(), getParentForChildren(), isClean());
+          jobConfig_ = null;
+        }
+        return jobConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions)
+    private static final com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions();
+    }
+
+    public static com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RequestedRiskAnalysisOptions> PARSER =
+        new com.google.protobuf.AbstractParser<RequestedRiskAnalysisOptions>() {
+          @java.lang.Override
+          public RequestedRiskAnalysisOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new RequestedRiskAnalysisOptions(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<RequestedRiskAnalysisOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RequestedRiskAnalysisOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int resultCase_ = 0;
   private java.lang.Object result_;
 
@@ -22473,6 +23307,65 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         .getDefaultInstance();
   }
 
+  public static final int REQUESTED_OPTIONS_FIELD_NUMBER = 10;
+  private com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+      requestedOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   *
+   * @return Whether the requestedOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestedOptions() {
+    return requestedOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   *
+   * @return The requestedOptions.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+      getRequestedOptions() {
+    return requestedOptions_ == null
+        ? com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            .getDefaultInstance()
+        : requestedOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+          .RequestedRiskAnalysisOptionsOrBuilder
+      getRequestedOptionsOrBuilder() {
+    return getRequestedOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -22519,6 +23412,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           9,
           (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
               result_);
+    }
+    if (requestedOptions_ != null) {
+      output.writeMessage(10, getRequestedOptions());
     }
     unknownFields.writeTo(output);
   }
@@ -22575,6 +23471,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
               (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult)
                   result_);
     }
+    if (requestedOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRequestedOptions());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -22598,6 +23497,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     if (hasRequestedSourceTable() != other.hasRequestedSourceTable()) return false;
     if (hasRequestedSourceTable()) {
       if (!getRequestedSourceTable().equals(other.getRequestedSourceTable())) return false;
+    }
+    if (hasRequestedOptions() != other.hasRequestedOptions()) return false;
+    if (hasRequestedOptions()) {
+      if (!getRequestedOptions().equals(other.getRequestedOptions())) return false;
     }
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
@@ -22641,6 +23544,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
     if (hasRequestedSourceTable()) {
       hash = (37 * hash) + REQUESTED_SOURCE_TABLE_FIELD_NUMBER;
       hash = (53 * hash) + getRequestedSourceTable().hashCode();
+    }
+    if (hasRequestedOptions()) {
+      hash = (37 * hash) + REQUESTED_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestedOptions().hashCode();
     }
     switch (resultCase_) {
       case 3:
@@ -22828,6 +23735,12 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         requestedSourceTable_ = null;
         requestedSourceTableBuilder_ = null;
       }
+      if (requestedOptionsBuilder_ == null) {
+        requestedOptions_ = null;
+      } else {
+        requestedOptions_ = null;
+        requestedOptionsBuilder_ = null;
+      }
       resultCase_ = 0;
       result_ = null;
       return this;
@@ -22909,6 +23822,11 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           result.result_ = deltaPresenceEstimationResultBuilder_.build();
         }
       }
+      if (requestedOptionsBuilder_ == null) {
+        result.requestedOptions_ = requestedOptions_;
+      } else {
+        result.requestedOptions_ = requestedOptionsBuilder_.build();
+      }
       result.resultCase_ = resultCase_;
       onBuilt();
       return result;
@@ -22965,6 +23883,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
       if (other.hasRequestedSourceTable()) {
         mergeRequestedSourceTable(other.getRequestedSourceTable());
+      }
+      if (other.hasRequestedOptions()) {
+        mergeRequestedOptions(other.getRequestedOptions());
       }
       switch (other.getResultCase()) {
         case NUMERICAL_STATS_RESULT:
@@ -24898,6 +25819,228 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       onChanged();
       ;
       return deltaPresenceEstimationResultBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+        requestedOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions,
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                .Builder,
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+                .RequestedRiskAnalysisOptionsOrBuilder>
+        requestedOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     *
+     * @return Whether the requestedOptions field is set.
+     */
+    public boolean hasRequestedOptions() {
+      return requestedOptionsBuilder_ != null || requestedOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     *
+     * @return The requestedOptions.
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+        getRequestedOptions() {
+      if (requestedOptionsBuilder_ == null) {
+        return requestedOptions_ == null
+            ? com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                .getDefaultInstance()
+            : requestedOptions_;
+      } else {
+        return requestedOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public Builder setRequestedOptions(
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions value) {
+      if (requestedOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestedOptions_ = value;
+        onChanged();
+      } else {
+        requestedOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public Builder setRequestedOptions(
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions.Builder
+            builderForValue) {
+      if (requestedOptionsBuilder_ == null) {
+        requestedOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        requestedOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public Builder mergeRequestedOptions(
+        com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions value) {
+      if (requestedOptionsBuilder_ == null) {
+        if (requestedOptions_ != null) {
+          requestedOptions_ =
+              com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                  .newBuilder(requestedOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          requestedOptions_ = value;
+        }
+        onChanged();
+      } else {
+        requestedOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public Builder clearRequestedOptions() {
+      if (requestedOptionsBuilder_ == null) {
+        requestedOptions_ = null;
+        onChanged();
+      } else {
+        requestedOptions_ = null;
+        requestedOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+            .Builder
+        getRequestedOptionsBuilder() {
+
+      onChanged();
+      return getRequestedOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+            .RequestedRiskAnalysisOptionsOrBuilder
+        getRequestedOptionsOrBuilder() {
+      if (requestedOptionsBuilder_ != null) {
+        return requestedOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestedOptions_ == null
+            ? com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                .getDefaultInstance()
+            : requestedOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration used for this job.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions,
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                .Builder,
+            com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+                .RequestedRiskAnalysisOptionsOrBuilder>
+        getRequestedOptionsFieldBuilder() {
+      if (requestedOptionsBuilder_ == null) {
+        requestedOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions,
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+                    .Builder,
+                com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
+                    .RequestedRiskAnalysisOptionsOrBuilder>(
+                getRequestedOptions(), getParentForChildren(), isClean());
+        requestedOptions_ = null;
+      }
+      return requestedOptionsBuilder_;
     }
 
     @java.lang.Override

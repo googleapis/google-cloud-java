@@ -349,5 +349,48 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder
       getDeltaPresenceEstimationResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   *
+   * @return Whether the requestedOptions field is set.
+   */
+  boolean hasRequestedOptions();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   *
+   * @return The requestedOptions.
+   */
+  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions
+      getRequestedOptions();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration used for this job.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptions requested_options = 10;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptionsOrBuilder
+      getRequestedOptionsOrBuilder();
+
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.ResultCase getResultCase();
 }
