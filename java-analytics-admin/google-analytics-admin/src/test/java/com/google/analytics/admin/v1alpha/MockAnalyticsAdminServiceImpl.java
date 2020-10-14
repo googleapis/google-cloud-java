@@ -132,6 +132,22 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void listAccountSummaries(
+      ListAccountSummariesRequest request,
+      StreamObserver<ListAccountSummariesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListAccountSummariesResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListAccountSummariesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void getProperty(GetPropertyRequest request, StreamObserver<Property> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Property) {

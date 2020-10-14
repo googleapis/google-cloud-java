@@ -75,6 +75,14 @@ public final class ResourcesProto {
       internal_static_google_analytics_admin_v1alpha_DataSharingSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_admin_v1alpha_DataSharingSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_AccountSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_AccountSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_admin_v1alpha_PropertySummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_admin_v1alpha_PropertySummary_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -189,28 +197,38 @@ public final class ResourcesProto {
           + "ng_with_others_enabled\030\006 \001(\010:^\352A[\n1analy"
           + "ticsadmin.googleapis.com/DataSharingSett"
           + "ings\022&accounts/{account}/dataSharingSett"
-          + "ings*\252\004\n\020IndustryCategory\022!\n\035INDUSTRY_CA"
-          + "TEGORY_UNSPECIFIED\020\000\022\016\n\nAUTOMOTIVE\020\001\022#\n\037"
-          + "BUSINESS_AND_INDUSTRIAL_MARKETS\020\002\022\013\n\007FIN"
-          + "ANCE\020\003\022\016\n\nHEALTHCARE\020\004\022\016\n\nTECHNOLOGY\020\005\022\n"
-          + "\n\006TRAVEL\020\006\022\t\n\005OTHER\020\007\022\032\n\026ARTS_AND_ENTERT"
-          + "AINMENT\020\010\022\026\n\022BEAUTY_AND_FITNESS\020\t\022\030\n\024BOO"
-          + "KS_AND_LITERATURE\020\n\022\022\n\016FOOD_AND_DRINK\020\013\022"
-          + "\t\n\005GAMES\020\014\022\027\n\023HOBBIES_AND_LEISURE\020\r\022\023\n\017H"
-          + "OME_AND_GARDEN\020\016\022\030\n\024INTERNET_AND_TELECOM"
-          + "\020\017\022\026\n\022LAW_AND_GOVERNMENT\020\020\022\010\n\004NEWS\020\021\022\026\n\022"
-          + "ONLINE_COMMUNITIES\020\022\022\026\n\022PEOPLE_AND_SOCIE"
-          + "TY\020\023\022\024\n\020PETS_AND_ANIMALS\020\024\022\017\n\013REAL_ESTAT"
-          + "E\020\025\022\r\n\tREFERENCE\020\026\022\013\n\007SCIENCE\020\027\022\n\n\006SPORT"
-          + "S\020\030\022\026\n\022JOBS_AND_EDUCATION\020\031\022\014\n\010SHOPPING\020"
-          + "\032*\247\001\n\021MaximumUserAccess\022#\n\037MAXIMUM_USER_"
-          + "ACCESS_UNSPECIFIED\020\000\022\r\n\tNO_ACCESS\020\001\022\024\n\020R"
-          + "EAD_AND_ANALYZE\020\002\022\"\n\036EDITOR_WITHOUT_LINK"
-          + "_MANAGEMENT\020\003\022$\n EDITOR_INCLUDING_LINK_M"
-          + "ANAGEMENT\020\004B{\n\"com.google.analytics.admi"
-          + "n.v1alphaB\016ResourcesProtoP\001ZCgoogle.gola"
-          + "ng.org/genproto/googleapis/analytics/adm"
-          + "in/v1alpha;adminb\006proto3"
+          + "ings\"\225\002\n\016AccountSummary\022\014\n\004name\030\001 \001(\t\022;\n"
+          + "\007account\030\002 \001(\tB*\372A\'\n%analyticsadmin.goog"
+          + "leapis.com/Account\022\024\n\014display_name\030\003 \001(\t"
+          + "\022K\n\022property_summaries\030\004 \003(\0132/.google.an"
+          + "alytics.admin.v1alpha.PropertySummary:U\352"
+          + "AR\n,analyticsadmin.googleapis.com/Accoun"
+          + "tSummary\022\"accountSummaries/{account_summ"
+          + "ary}\"f\n\017PropertySummary\022=\n\010property\030\001 \001("
+          + "\tB+\372A(\n&analyticsadmin.googleapis.com/Pr"
+          + "operty\022\024\n\014display_name\030\002 \001(\t*\252\004\n\020Industr"
+          + "yCategory\022!\n\035INDUSTRY_CATEGORY_UNSPECIFI"
+          + "ED\020\000\022\016\n\nAUTOMOTIVE\020\001\022#\n\037BUSINESS_AND_IND"
+          + "USTRIAL_MARKETS\020\002\022\013\n\007FINANCE\020\003\022\016\n\nHEALTH"
+          + "CARE\020\004\022\016\n\nTECHNOLOGY\020\005\022\n\n\006TRAVEL\020\006\022\t\n\005OT"
+          + "HER\020\007\022\032\n\026ARTS_AND_ENTERTAINMENT\020\010\022\026\n\022BEA"
+          + "UTY_AND_FITNESS\020\t\022\030\n\024BOOKS_AND_LITERATUR"
+          + "E\020\n\022\022\n\016FOOD_AND_DRINK\020\013\022\t\n\005GAMES\020\014\022\027\n\023HO"
+          + "BBIES_AND_LEISURE\020\r\022\023\n\017HOME_AND_GARDEN\020\016"
+          + "\022\030\n\024INTERNET_AND_TELECOM\020\017\022\026\n\022LAW_AND_GO"
+          + "VERNMENT\020\020\022\010\n\004NEWS\020\021\022\026\n\022ONLINE_COMMUNITI"
+          + "ES\020\022\022\026\n\022PEOPLE_AND_SOCIETY\020\023\022\024\n\020PETS_AND"
+          + "_ANIMALS\020\024\022\017\n\013REAL_ESTATE\020\025\022\r\n\tREFERENCE"
+          + "\020\026\022\013\n\007SCIENCE\020\027\022\n\n\006SPORTS\020\030\022\026\n\022JOBS_AND_"
+          + "EDUCATION\020\031\022\014\n\010SHOPPING\020\032*\247\001\n\021MaximumUse"
+          + "rAccess\022#\n\037MAXIMUM_USER_ACCESS_UNSPECIFI"
+          + "ED\020\000\022\r\n\tNO_ACCESS\020\001\022\024\n\020READ_AND_ANALYZE\020"
+          + "\002\022\"\n\036EDITOR_WITHOUT_LINK_MANAGEMENT\020\003\022$\n"
+          + " EDITOR_INCLUDING_LINK_MANAGEMENT\020\004B{\n\"c"
+          + "om.google.analytics.admin.v1alphaB\016Resou"
+          + "rcesProtoP\001ZCgoogle.golang.org/genproto/"
+          + "googleapis/analytics/admin/v1alpha;admin"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -360,10 +378,27 @@ public final class ResourcesProto {
               "SharingWithGoogleProductsEnabled",
               "SharingWithOthersEnabled",
             });
+    internal_static_google_analytics_admin_v1alpha_AccountSummary_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_analytics_admin_v1alpha_AccountSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_AccountSummary_descriptor,
+            new java.lang.String[] {
+              "Name", "Account", "DisplayName", "PropertySummaries",
+            });
+    internal_static_google_analytics_admin_v1alpha_PropertySummary_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_analytics_admin_v1alpha_PropertySummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_admin_v1alpha_PropertySummary_descriptor,
+            new java.lang.String[] {
+              "Property", "DisplayName",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

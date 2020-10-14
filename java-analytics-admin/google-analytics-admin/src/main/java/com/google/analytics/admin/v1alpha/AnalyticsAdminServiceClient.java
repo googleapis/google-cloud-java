@@ -573,6 +573,80 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns summaries of all accounts accessible by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
+   *   ListAccountSummariesRequest request = ListAccountSummariesRequest.newBuilder().build();
+   *   for (AccountSummary element : analyticsAdminServiceClient.listAccountSummaries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccountSummariesPagedResponse listAccountSummaries(
+      ListAccountSummariesRequest request) {
+    return listAccountSummariesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns summaries of all accounts accessible by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
+   *   ListAccountSummariesRequest request = ListAccountSummariesRequest.newBuilder().build();
+   *   ApiFuture&lt;ListAccountSummariesPagedResponse&gt; future = analyticsAdminServiceClient.listAccountSummariesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (AccountSummary element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
+      listAccountSummariesPagedCallable() {
+    return stub.listAccountSummariesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns summaries of all accounts accessible by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
+   *   ListAccountSummariesRequest request = ListAccountSummariesRequest.newBuilder().build();
+   *   while (true) {
+   *     ListAccountSummariesResponse response = analyticsAdminServiceClient.listAccountSummariesCallable().call(request);
+   *     for (AccountSummary element : response.getAccountSummariesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
+      listAccountSummariesCallable() {
+    return stub.listAccountSummariesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lookup for a single "App+Web" Property.
    *
    * <p>Throws "Target not found" if no such property found, if property is not of the type
@@ -4721,6 +4795,95 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListAccountsFixedSizeCollection createCollection(
         List<ListAccountsPage> pages, int collectionSize) {
       return new ListAccountsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAccountSummariesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          AccountSummary,
+          ListAccountSummariesPage,
+          ListAccountSummariesFixedSizeCollection> {
+
+    public static ApiFuture<ListAccountSummariesPagedResponse> createAsync(
+        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+            context,
+        ApiFuture<ListAccountSummariesResponse> futureResponse) {
+      ApiFuture<ListAccountSummariesPage> futurePage =
+          ListAccountSummariesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListAccountSummariesPage, ListAccountSummariesPagedResponse>() {
+            @Override
+            public ListAccountSummariesPagedResponse apply(ListAccountSummariesPage input) {
+              return new ListAccountSummariesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAccountSummariesPagedResponse(ListAccountSummariesPage page) {
+      super(page, ListAccountSummariesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAccountSummariesPage
+      extends AbstractPage<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          AccountSummary,
+          ListAccountSummariesPage> {
+
+    private ListAccountSummariesPage(
+        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+            context,
+        ListAccountSummariesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAccountSummariesPage createEmptyPage() {
+      return new ListAccountSummariesPage(null, null);
+    }
+
+    @Override
+    protected ListAccountSummariesPage createPage(
+        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+            context,
+        ListAccountSummariesResponse response) {
+      return new ListAccountSummariesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAccountSummariesPage> createPageAsync(
+        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+            context,
+        ApiFuture<ListAccountSummariesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAccountSummariesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          AccountSummary,
+          ListAccountSummariesPage,
+          ListAccountSummariesFixedSizeCollection> {
+
+    private ListAccountSummariesFixedSizeCollection(
+        List<ListAccountSummariesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAccountSummariesFixedSizeCollection createEmptyCollection() {
+      return new ListAccountSummariesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAccountSummariesFixedSizeCollection createCollection(
+        List<ListAccountSummariesPage> pages, int collectionSize) {
+      return new ListAccountSummariesFixedSizeCollection(pages, collectionSize);
     }
   }
 

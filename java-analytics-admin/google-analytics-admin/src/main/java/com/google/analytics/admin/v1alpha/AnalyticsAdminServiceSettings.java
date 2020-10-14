@@ -16,6 +16,7 @@
 package com.google.analytics.admin.v1alpha;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -101,6 +102,15 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).provisionAccountTicketSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAccountSummaries. */
+  public PagedCallSettings<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          ListAccountSummariesPagedResponse>
+      listAccountSummariesSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listAccountSummariesSettings();
   }
 
   /** Returns the object with the settings used for calls to getProperty. */
@@ -479,6 +489,15 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
         provisionAccountTicketSettings() {
       return getStubSettingsBuilder().provisionAccountTicketSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAccountSummaries. */
+    public PagedCallSettings.Builder<
+            ListAccountSummariesRequest,
+            ListAccountSummariesResponse,
+            ListAccountSummariesPagedResponse>
+        listAccountSummariesSettings() {
+      return getStubSettingsBuilder().listAccountSummariesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getProperty. */

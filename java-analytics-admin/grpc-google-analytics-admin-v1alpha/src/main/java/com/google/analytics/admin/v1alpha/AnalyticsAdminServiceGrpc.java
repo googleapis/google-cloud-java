@@ -275,6 +275,57 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+          com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+      getListAccountSummariesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAccountSummaries",
+      requestType = com.google.analytics.admin.v1alpha.ListAccountSummariesRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListAccountSummariesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+          com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+      getListAccountSummariesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+            com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+        getListAccountSummariesMethod;
+    if ((getListAccountSummariesMethod = AnalyticsAdminServiceGrpc.getListAccountSummariesMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListAccountSummariesMethod =
+                AnalyticsAdminServiceGrpc.getListAccountSummariesMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListAccountSummariesMethod =
+              getListAccountSummariesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+                          com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAccountSummaries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAccountSummariesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAccountSummariesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListAccountSummaries"))
+                      .build();
+        }
+      }
+    }
+    return getListAccountSummariesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.GetPropertyRequest,
           com.google.analytics.admin.v1alpha.Property>
       getGetPropertyMethod;
@@ -2472,6 +2523,20 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public void listAccountSummaries(
+        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListAccountSummariesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single "App+Web" Property.
      * Throws "Target not found" if no such property found, if property is not
      * of the type "App+Web", or if caller does not have permissions to access it.
@@ -3125,6 +3190,13 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>(
                       this, METHODID_PROVISION_ACCOUNT_TICKET)))
           .addMethod(
+              getListAccountSummariesMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+                      com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>(
+                      this, METHODID_LIST_ACCOUNT_SUMMARIES)))
+          .addMethod(
               getGetPropertyMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -3518,6 +3590,23 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getProvisionAccountTicketMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public void listAccountSummaries(
+        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListAccountSummariesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4367,6 +4456,19 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAccountSummariesResponse listAccountSummaries(
+        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single "App+Web" Property.
      * Throws "Target not found" if no such property found, if property is not
      * of the type "App+Web", or if caller does not have permissions to access it.
@@ -5053,6 +5155,21 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
+        listAccountSummaries(
+            com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListAccountSummariesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single "App+Web" Property.
      * Throws "Target not found" if no such property found, if property is not
      * of the type "App+Web", or if caller does not have permissions to access it.
@@ -5697,48 +5814,49 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_ACCOUNT = 2;
   private static final int METHODID_UPDATE_ACCOUNT = 3;
   private static final int METHODID_PROVISION_ACCOUNT_TICKET = 4;
-  private static final int METHODID_GET_PROPERTY = 5;
-  private static final int METHODID_LIST_PROPERTIES = 6;
-  private static final int METHODID_CREATE_PROPERTY = 7;
-  private static final int METHODID_DELETE_PROPERTY = 8;
-  private static final int METHODID_UPDATE_PROPERTY = 9;
-  private static final int METHODID_GET_USER_LINK = 10;
-  private static final int METHODID_BATCH_GET_USER_LINKS = 11;
-  private static final int METHODID_LIST_USER_LINKS = 12;
-  private static final int METHODID_AUDIT_USER_LINKS = 13;
-  private static final int METHODID_CREATE_USER_LINK = 14;
-  private static final int METHODID_BATCH_CREATE_USER_LINKS = 15;
-  private static final int METHODID_UPDATE_USER_LINK = 16;
-  private static final int METHODID_BATCH_UPDATE_USER_LINKS = 17;
-  private static final int METHODID_DELETE_USER_LINK = 18;
-  private static final int METHODID_BATCH_DELETE_USER_LINKS = 19;
-  private static final int METHODID_GET_WEB_DATA_STREAM = 20;
-  private static final int METHODID_DELETE_WEB_DATA_STREAM = 21;
-  private static final int METHODID_UPDATE_WEB_DATA_STREAM = 22;
-  private static final int METHODID_CREATE_WEB_DATA_STREAM = 23;
-  private static final int METHODID_LIST_WEB_DATA_STREAMS = 24;
-  private static final int METHODID_GET_IOS_APP_DATA_STREAM = 25;
-  private static final int METHODID_DELETE_IOS_APP_DATA_STREAM = 26;
-  private static final int METHODID_UPDATE_IOS_APP_DATA_STREAM = 27;
-  private static final int METHODID_CREATE_IOS_APP_DATA_STREAM = 28;
-  private static final int METHODID_LIST_IOS_APP_DATA_STREAMS = 29;
-  private static final int METHODID_GET_ANDROID_APP_DATA_STREAM = 30;
-  private static final int METHODID_DELETE_ANDROID_APP_DATA_STREAM = 31;
-  private static final int METHODID_UPDATE_ANDROID_APP_DATA_STREAM = 32;
-  private static final int METHODID_CREATE_ANDROID_APP_DATA_STREAM = 33;
-  private static final int METHODID_LIST_ANDROID_APP_DATA_STREAMS = 34;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 35;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 36;
-  private static final int METHODID_CREATE_FIREBASE_LINK = 37;
-  private static final int METHODID_UPDATE_FIREBASE_LINK = 38;
-  private static final int METHODID_DELETE_FIREBASE_LINK = 39;
-  private static final int METHODID_LIST_FIREBASE_LINKS = 40;
-  private static final int METHODID_GET_GLOBAL_SITE_TAG = 41;
-  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 42;
-  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 43;
-  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 44;
-  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 45;
-  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 46;
+  private static final int METHODID_LIST_ACCOUNT_SUMMARIES = 5;
+  private static final int METHODID_GET_PROPERTY = 6;
+  private static final int METHODID_LIST_PROPERTIES = 7;
+  private static final int METHODID_CREATE_PROPERTY = 8;
+  private static final int METHODID_DELETE_PROPERTY = 9;
+  private static final int METHODID_UPDATE_PROPERTY = 10;
+  private static final int METHODID_GET_USER_LINK = 11;
+  private static final int METHODID_BATCH_GET_USER_LINKS = 12;
+  private static final int METHODID_LIST_USER_LINKS = 13;
+  private static final int METHODID_AUDIT_USER_LINKS = 14;
+  private static final int METHODID_CREATE_USER_LINK = 15;
+  private static final int METHODID_BATCH_CREATE_USER_LINKS = 16;
+  private static final int METHODID_UPDATE_USER_LINK = 17;
+  private static final int METHODID_BATCH_UPDATE_USER_LINKS = 18;
+  private static final int METHODID_DELETE_USER_LINK = 19;
+  private static final int METHODID_BATCH_DELETE_USER_LINKS = 20;
+  private static final int METHODID_GET_WEB_DATA_STREAM = 21;
+  private static final int METHODID_DELETE_WEB_DATA_STREAM = 22;
+  private static final int METHODID_UPDATE_WEB_DATA_STREAM = 23;
+  private static final int METHODID_CREATE_WEB_DATA_STREAM = 24;
+  private static final int METHODID_LIST_WEB_DATA_STREAMS = 25;
+  private static final int METHODID_GET_IOS_APP_DATA_STREAM = 26;
+  private static final int METHODID_DELETE_IOS_APP_DATA_STREAM = 27;
+  private static final int METHODID_UPDATE_IOS_APP_DATA_STREAM = 28;
+  private static final int METHODID_CREATE_IOS_APP_DATA_STREAM = 29;
+  private static final int METHODID_LIST_IOS_APP_DATA_STREAMS = 30;
+  private static final int METHODID_GET_ANDROID_APP_DATA_STREAM = 31;
+  private static final int METHODID_DELETE_ANDROID_APP_DATA_STREAM = 32;
+  private static final int METHODID_UPDATE_ANDROID_APP_DATA_STREAM = 33;
+  private static final int METHODID_CREATE_ANDROID_APP_DATA_STREAM = 34;
+  private static final int METHODID_LIST_ANDROID_APP_DATA_STREAMS = 35;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 36;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 37;
+  private static final int METHODID_CREATE_FIREBASE_LINK = 38;
+  private static final int METHODID_UPDATE_FIREBASE_LINK = 39;
+  private static final int METHODID_DELETE_FIREBASE_LINK = 40;
+  private static final int METHODID_LIST_FIREBASE_LINKS = 41;
+  private static final int METHODID_GET_GLOBAL_SITE_TAG = 42;
+  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 43;
+  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 44;
+  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 45;
+  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 46;
+  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 47;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5785,6 +5903,13 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ACCOUNT_SUMMARIES:
+          serviceImpl.listAccountSummaries(
+              (com.google.analytics.admin.v1alpha.ListAccountSummariesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_PROPERTY:
@@ -6113,6 +6238,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteAccountMethod())
                       .addMethod(getUpdateAccountMethod())
                       .addMethod(getProvisionAccountTicketMethod())
+                      .addMethod(getListAccountSummariesMethod())
                       .addMethod(getGetPropertyMethod())
                       .addMethod(getListPropertiesMethod())
                       .addMethod(getCreatePropertyMethod())

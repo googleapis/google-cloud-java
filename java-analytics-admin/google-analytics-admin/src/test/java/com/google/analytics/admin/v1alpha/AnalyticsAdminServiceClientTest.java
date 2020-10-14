@@ -16,6 +16,7 @@
 package com.google.analytics.admin.v1alpha;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -305,6 +306,53 @@ public class AnalyticsAdminServiceClientTest {
       ProvisionAccountTicketRequest request = ProvisionAccountTicketRequest.newBuilder().build();
 
       client.provisionAccountTicket(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listAccountSummariesTest() {
+    String nextPageToken = "";
+    AccountSummary accountSummariesElement = AccountSummary.newBuilder().build();
+    List<AccountSummary> accountSummaries = Arrays.asList(accountSummariesElement);
+    ListAccountSummariesResponse expectedResponse =
+        ListAccountSummariesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllAccountSummaries(accountSummaries)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ListAccountSummariesRequest request = ListAccountSummariesRequest.newBuilder().build();
+
+    ListAccountSummariesPagedResponse pagedListResponse = client.listAccountSummaries(request);
+
+    List<AccountSummary> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccountSummariesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAccountSummariesRequest actualRequest = (ListAccountSummariesRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listAccountSummariesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ListAccountSummariesRequest request = ListAccountSummariesRequest.newBuilder().build();
+
+      client.listAccountSummaries(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

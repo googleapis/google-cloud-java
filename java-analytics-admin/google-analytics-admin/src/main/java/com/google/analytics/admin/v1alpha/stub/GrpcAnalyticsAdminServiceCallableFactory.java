@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Analytics Admin API.
+ * gRPC callable factory implementation for Google Analytics Admin API.
  *
  * <p>This class is for advanced usage.
  */

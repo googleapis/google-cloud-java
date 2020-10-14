@@ -16,6 +16,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -65,6 +66,8 @@ import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
@@ -103,7 +106,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Analytics Admin API.
+ * Base stub class for Google Analytics Admin API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -134,6 +137,16 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketCallable() {
     throw new UnsupportedOperationException("Not implemented: provisionAccountTicketCallable()");
+  }
+
+  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
+      listAccountSummariesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAccountSummariesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
+      listAccountSummariesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAccountSummariesCallable()");
   }
 
   public UnaryCallable<GetPropertyRequest, Property> getPropertyCallable() {

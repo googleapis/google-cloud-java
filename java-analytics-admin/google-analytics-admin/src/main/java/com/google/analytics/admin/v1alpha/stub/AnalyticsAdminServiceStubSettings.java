@@ -16,6 +16,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -25,6 +26,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListWebDataStreamsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.Account;
+import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AndroidAppDataStream;
 import com.google.analytics.admin.v1alpha.AuditUserLink;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
@@ -66,6 +68,8 @@ import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
@@ -181,6 +185,11 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<UpdateAccountRequest, Account> updateAccountSettings;
   private final UnaryCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketSettings;
+  private final PagedCallSettings<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          ListAccountSummariesPagedResponse>
+      listAccountSummariesSettings;
   private final UnaryCallSettings<GetPropertyRequest, Property> getPropertySettings;
   private final PagedCallSettings<
           ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
@@ -290,6 +299,15 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketSettings() {
     return provisionAccountTicketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAccountSummaries. */
+  public PagedCallSettings<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          ListAccountSummariesPagedResponse>
+      listAccountSummariesSettings() {
+    return listAccountSummariesSettings;
   }
 
   /** Returns the object with the settings used for calls to getProperty. */
@@ -611,6 +629,7 @@ public class AnalyticsAdminServiceStubSettings
     deleteAccountSettings = settingsBuilder.deleteAccountSettings().build();
     updateAccountSettings = settingsBuilder.updateAccountSettings().build();
     provisionAccountTicketSettings = settingsBuilder.provisionAccountTicketSettings().build();
+    listAccountSummariesSettings = settingsBuilder.listAccountSummariesSettings().build();
     getPropertySettings = settingsBuilder.getPropertySettings().build();
     listPropertiesSettings = settingsBuilder.listPropertiesSettings().build();
     createPropertySettings = settingsBuilder.createPropertySettings().build();
@@ -693,6 +712,46 @@ public class AnalyticsAdminServiceStubSettings
               return payload.getAccountsList() != null
                   ? payload.getAccountsList()
                   : ImmutableList.<Account>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+      LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAccountSummariesRequest injectToken(
+                ListAccountSummariesRequest payload, String token) {
+              return ListAccountSummariesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAccountSummariesRequest injectPageSize(
+                ListAccountSummariesRequest payload, int pageSize) {
+              return ListAccountSummariesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAccountSummariesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAccountSummariesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AccountSummary> extractResources(ListAccountSummariesResponse payload) {
+              return payload.getAccountSummariesList() != null
+                  ? payload.getAccountSummariesList()
+                  : ImmutableList.<AccountSummary>of();
             }
           };
 
@@ -993,6 +1052,29 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          ListAccountSummariesPagedResponse>
+      LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAccountSummariesRequest,
+              ListAccountSummariesResponse,
+              ListAccountSummariesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAccountSummariesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse> callable,
+                ListAccountSummariesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAccountSummariesResponse> futureResponse) {
+              PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC, request, context);
+              return ListAccountSummariesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
       LIST_PROPERTIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1153,6 +1235,11 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
         provisionAccountTicketSettings;
+    private final PagedCallSettings.Builder<
+            ListAccountSummariesRequest,
+            ListAccountSummariesResponse,
+            ListAccountSummariesPagedResponse>
+        listAccountSummariesSettings;
     private final UnaryCallSettings.Builder<GetPropertyRequest, Property> getPropertySettings;
     private final PagedCallSettings.Builder<
             ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
@@ -1308,6 +1395,9 @@ public class AnalyticsAdminServiceStubSettings
 
       provisionAccountTicketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      listAccountSummariesSettings =
+          PagedCallSettings.newBuilder(LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT);
+
       getPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listPropertiesSettings = PagedCallSettings.newBuilder(LIST_PROPERTIES_PAGE_STR_FACT);
@@ -1403,6 +1493,7 @@ public class AnalyticsAdminServiceStubSettings
               deleteAccountSettings,
               updateAccountSettings,
               provisionAccountTicketSettings,
+              listAccountSummariesSettings,
               getPropertySettings,
               listPropertiesSettings,
               createPropertySettings,
@@ -1484,6 +1575,11 @@ public class AnalyticsAdminServiceStubSettings
           .provisionAccountTicketSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listAccountSummariesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getPropertySettings()
@@ -1706,6 +1802,7 @@ public class AnalyticsAdminServiceStubSettings
       deleteAccountSettings = settings.deleteAccountSettings.toBuilder();
       updateAccountSettings = settings.updateAccountSettings.toBuilder();
       provisionAccountTicketSettings = settings.provisionAccountTicketSettings.toBuilder();
+      listAccountSummariesSettings = settings.listAccountSummariesSettings.toBuilder();
       getPropertySettings = settings.getPropertySettings.toBuilder();
       listPropertiesSettings = settings.listPropertiesSettings.toBuilder();
       createPropertySettings = settings.createPropertySettings.toBuilder();
@@ -1758,6 +1855,7 @@ public class AnalyticsAdminServiceStubSettings
               deleteAccountSettings,
               updateAccountSettings,
               provisionAccountTicketSettings,
+              listAccountSummariesSettings,
               getPropertySettings,
               listPropertiesSettings,
               createPropertySettings,
@@ -1844,6 +1942,15 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
         provisionAccountTicketSettings() {
       return provisionAccountTicketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAccountSummaries. */
+    public PagedCallSettings.Builder<
+            ListAccountSummariesRequest,
+            ListAccountSummariesResponse,
+            ListAccountSummariesPagedResponse>
+        listAccountSummariesSettings() {
+      return listAccountSummariesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getProperty. */

@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "84ebe7c62f4c0875e001752fa84e87e629a1d418",
-        "internalRef": "321243814"
+        "sha": "71088f11302e80aae77751d5a915dd2e8b684ec8",
+        "internalRef": "336969301"
       }
     },
     {
@@ -113,6 +113,9 @@
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/Account.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountName.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountOrBuilder.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummary.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummaryName.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AccountSummaryOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminProto.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AndroidAppDataStream.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/AndroidAppDataStreamName.java",
@@ -204,6 +207,10 @@
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/IosAppDataStream.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/IosAppDataStreamName.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/IosAppDataStreamOrBuilder.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountSummariesRequest.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountSummariesRequestOrBuilder.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountSummariesResponse.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountSummariesResponseOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountsRequest.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountsRequestOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ListAccountsResponse.java",
@@ -240,6 +247,8 @@
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/Property.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/PropertyName.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/PropertyOrBuilder.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/PropertySummary.java",
+    "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/PropertySummaryOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ProvisionAccountTicketRequest.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ProvisionAccountTicketRequestOrBuilder.java",
     "proto-google-analytics-admin-v1alpha/src/main/java/com/google/analytics/admin/v1alpha/ProvisionAccountTicketResponse.java",

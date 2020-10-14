@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Analytics Admin API.
+ * A client to Google Analytics Admin API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

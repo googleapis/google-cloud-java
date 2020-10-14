@@ -16,6 +16,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -65,6 +66,8 @@ import com.google.analytics.admin.v1alpha.GetWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.IosAppDataStream;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
+import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAndroidAppDataStreamsRequest;
@@ -114,7 +117,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Analytics Admin API.
+ * gRPC stub implementation for Google Analytics Admin API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -168,6 +171,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ProvisionAccountTicketRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProvisionAccountTicketResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListAccountSummariesRequest, ListAccountSummariesResponse>
+      listAccountSummariesMethodDescriptor =
+          MethodDescriptor.<ListAccountSummariesRequest, ListAccountSummariesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAccountSummaries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAccountSummariesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAccountSummariesResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetPropertyRequest, Property> getPropertyMethodDescriptor =
       MethodDescriptor.<GetPropertyRequest, Property>newBuilder()
@@ -618,6 +632,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<UpdateAccountRequest, Account> updateAccountCallable;
   private final UnaryCallable<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketCallable;
+  private final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
+      listAccountSummariesCallable;
+  private final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
+      listAccountSummariesPagedCallable;
   private final UnaryCallable<GetPropertyRequest, Property> getPropertyCallable;
   private final UnaryCallable<ListPropertiesRequest, ListPropertiesResponse> listPropertiesCallable;
   private final UnaryCallable<ListPropertiesRequest, ListPropertiesPagedResponse>
@@ -787,6 +805,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings
                 .<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>newBuilder()
                 .setMethodDescriptor(provisionAccountTicketMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListAccountSummariesRequest, ListAccountSummariesResponse>
+        listAccountSummariesTransportSettings =
+            GrpcCallSettings.<ListAccountSummariesRequest, ListAccountSummariesResponse>newBuilder()
+                .setMethodDescriptor(listAccountSummariesMethodDescriptor)
                 .build();
     GrpcCallSettings<GetPropertyRequest, Property> getPropertyTransportSettings =
         GrpcCallSettings.<GetPropertyRequest, Property>newBuilder()
@@ -1381,6 +1404,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             provisionAccountTicketTransportSettings,
             settings.provisionAccountTicketSettings(),
             clientContext);
+    this.listAccountSummariesCallable =
+        callableFactory.createUnaryCallable(
+            listAccountSummariesTransportSettings,
+            settings.listAccountSummariesSettings(),
+            clientContext);
+    this.listAccountSummariesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAccountSummariesTransportSettings,
+            settings.listAccountSummariesSettings(),
+            clientContext);
     this.getPropertyCallable =
         callableFactory.createUnaryCallable(
             getPropertyTransportSettings, settings.getPropertySettings(), clientContext);
@@ -1621,6 +1654,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketCallable() {
     return provisionAccountTicketCallable;
+  }
+
+  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
+      listAccountSummariesPagedCallable() {
+    return listAccountSummariesPagedCallable;
+  }
+
+  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
+      listAccountSummariesCallable() {
+    return listAccountSummariesCallable;
   }
 
   public UnaryCallable<GetPropertyRequest, Property> getPropertyCallable() {
