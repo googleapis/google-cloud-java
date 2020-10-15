@@ -1,0 +1,25 @@
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+    branches:
+      - master
+name: format
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+    env:
+      ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - run: "mvn com.coveo:fmt-maven-plugin:format"
+      - uses: googleapis/code-suggester@v1.8.0
+        with:
+          command: review
+          pull_number: ${{ github.event.pull_request.number }}
+          git_dir: '.'
