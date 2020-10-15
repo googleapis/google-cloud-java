@@ -25,12 +25,11 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowSet;
+import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
@@ -39,7 +38,6 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Handler;
@@ -57,28 +55,20 @@ import org.mockito.internal.stubbing.answers.ThrowsException;
 public class BigtableChannelPrimerTest {
   private static final String TOKEN_VALUE = "fake-token";
 
-  int port;
-  Server server;
   FakeService fakeService;
   MetadataInterceptor metadataInterceptor;
   BigtableChannelPrimer primer;
   ManagedChannel channel;
   private LogHandler logHandler;
+  private FakeServiceHelper serviceHelper;
 
   @Before
   public void setup() throws IOException {
-    try (ServerSocket ss = new ServerSocket(0)) {
-      port = ss.getLocalPort();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
     fakeService = new FakeService();
     metadataInterceptor = new MetadataInterceptor();
-    server =
-        ServerBuilder.forPort(port).intercept(metadataInterceptor).addService(fakeService).build();
-    server.start();
 
+    serviceHelper = new FakeServiceHelper(metadataInterceptor, fakeService);
+    serviceHelper.start();
     primer =
         BigtableChannelPrimer.create(
             OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
@@ -87,8 +77,10 @@ public class BigtableChannelPrimerTest {
             "fake-app-profile",
             ImmutableList.of("table1", "table2"));
 
-    channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
-
+    channel =
+        ManagedChannelBuilder.forAddress("localhost", serviceHelper.getPort())
+            .usePlaintext()
+            .build();
     logHandler = new LogHandler();
     Logger.getLogger(BigtableChannelPrimer.class.toString()).addHandler(logHandler);
   }
@@ -97,7 +89,7 @@ public class BigtableChannelPrimerTest {
   public void teardown() {
     Logger.getLogger(BigtableChannelPrimer.class.toString()).removeHandler(logHandler);
     channel.shutdown();
-    server.shutdown();
+    serviceHelper.shutdown();
   }
 
   @Test

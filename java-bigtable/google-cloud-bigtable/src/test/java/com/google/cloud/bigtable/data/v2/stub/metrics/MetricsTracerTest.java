@@ -25,6 +25,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
@@ -35,8 +36,6 @@ import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -54,7 +53,6 @@ import io.opencensus.stats.ViewData;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tags;
-import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -95,7 +93,7 @@ public class MetricsTracerTest {
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  private Server server;
+  FakeServiceHelper serviceHelper;
 
   @Mock(answer = Answers.CALLS_REAL_METHODS)
   private BigtableGrpc.BigtableImplBase mockService;
@@ -105,17 +103,13 @@ public class MetricsTracerTest {
 
   @Before
   public void setUp() throws Exception {
-    int port;
-    try (ServerSocket ss = new ServerSocket(0)) {
-      port = ss.getLocalPort();
-    }
-    server = ServerBuilder.forPort(port).addService(mockService).build();
-    server.start();
+    serviceHelper = new FakeServiceHelper(mockService);
+    serviceHelper.start();
 
     RpcViews.registerBigtableClientViews(localStats.getViewManager());
 
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
@@ -130,7 +124,7 @@ public class MetricsTracerTest {
   @After
   public void tearDown() {
     stub.close();
-    server.shutdown();
+    serviceHelper.shutdown();
   }
 
   @Test

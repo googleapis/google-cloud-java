@@ -28,12 +28,9 @@ import com.google.bigtable.v2.MutateRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.net.ServerSocket;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -54,7 +51,7 @@ public class BigtableDataClientFactoryTest {
   private static final String DEFAULT_INSTANCE_ID = "fake-instance";
   private static final String DEFAULT_APP_PROFILE_ID = "fake-app-profile";
 
-  private Server fakeServer;
+  private FakeServiceHelper serviceHelper;
   private FakeBigtableService service;
 
   private TransportChannelProvider transportChannelProvider;
@@ -68,16 +65,11 @@ public class BigtableDataClientFactoryTest {
   public void setUp() throws IOException {
     service = new FakeBigtableService();
 
-    // Create a fake server for the client to connect to
-    final int port;
-    try (ServerSocket ss = new ServerSocket(0)) {
-      port = ss.getLocalPort();
-    }
-    fakeServer = ServerBuilder.forPort(port).addService(service).build();
-    fakeServer.start();
+    serviceHelper = new FakeServiceHelper(service);
+    serviceHelper.start();
 
     BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
             .setProjectId(DEFAULT_PROJECT_ID)
             .setInstanceId(DEFAULT_INSTANCE_ID)
             .setAppProfileId(DEFAULT_APP_PROFILE_ID);
@@ -122,9 +114,7 @@ public class BigtableDataClientFactoryTest {
 
   @After
   public void tearDown() {
-    if (fakeServer != null) {
-      fakeServer.shutdownNow();
-    }
+    serviceHelper.shutdown();
   }
 
   @Test

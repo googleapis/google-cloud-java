@@ -35,18 +35,16 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.*;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
-import java.net.ServerSocket;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import org.junit.After;
@@ -72,26 +70,18 @@ public class HeadersTest {
   private static final Metadata.Key<String> TEST_FIXED_HEADER =
       Metadata.Key.of(TEST_FIXED_HEADER_STRING, Metadata.ASCII_STRING_MARSHALLER);
 
-  private Server server;
+  FakeServiceHelper serviceHelper;
   private BlockingQueue<Metadata> sentMetadata = new ArrayBlockingQueue<>(10);
 
   private BigtableDataClient client;
 
   @Before
   public void setUp() throws Exception {
-    int port;
-    try (ServerSocket ss = new ServerSocket(0)) {
-      port = ss.getLocalPort();
-    }
-    server =
-        ServerBuilder.forPort(port)
-            .addService(new FakeBigtableService())
-            .intercept(new MetadataInterceptor())
-            .build();
-    server.start();
+    serviceHelper = new FakeServiceHelper(new MetadataInterceptor(), new FakeBigtableService());
+    serviceHelper.start();
 
     BigtableDataSettings.Builder settings =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID);
@@ -119,7 +109,7 @@ public class HeadersTest {
   @After
   public void tearDown() throws Exception {
     client.close();
-    server.shutdown();
+    serviceHelper.shutdown();
   }
 
   @Test

@@ -25,6 +25,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -34,15 +35,12 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
 import io.grpc.Metadata;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -60,7 +58,7 @@ public class EnhancedBigtableStubTest {
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table");
   private static final String APP_PROFILE_ID = "app-profile-id";
 
-  private Server server;
+  FakeServiceHelper serviceHelper;
   private MetadataInterceptor metadataInterceptor;
   private FakeDataService fakeDataService;
   private EnhancedBigtableStubSettings defaultSettings;
@@ -68,21 +66,13 @@ public class EnhancedBigtableStubTest {
 
   @Before
   public void setUp() throws IOException, IllegalAccessException, InstantiationException {
-    int port;
-    try (ServerSocket ss = new ServerSocket(0)) {
-      port = ss.getLocalPort();
-    }
     metadataInterceptor = new MetadataInterceptor();
     fakeDataService = new FakeDataService();
-    server =
-        ServerBuilder.forPort(port)
-            .intercept(metadataInterceptor)
-            .addService(fakeDataService)
-            .build();
-    server.start();
+    serviceHelper = new FakeServiceHelper(metadataInterceptor, fakeDataService);
+    serviceHelper.start();
 
     defaultSettings =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
@@ -95,7 +85,7 @@ public class EnhancedBigtableStubTest {
 
   @After
   public void tearDown() {
-    server.shutdown();
+    serviceHelper.shutdown();
   }
 
   @Test
