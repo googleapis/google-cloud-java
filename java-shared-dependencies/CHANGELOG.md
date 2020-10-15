@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.12.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.11.0...v0.12.0) (2020-10-15)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.30.11 ([#169](https://www.github.com/googleapis/java-shared-dependencies/issues/169)) ([a1b18d1](https://www.github.com/googleapis/java-shared-dependencies/commit/a1b18d1838c2ceca882615d574ab5d0245794820))
+* update dependency com.google.auth:google-auth-library-bom to v0.22.0 ([#171](https://www.github.com/googleapis/java-shared-dependencies/issues/171)) ([0c7635a](https://www.github.com/googleapis/java-shared-dependencies/commit/0c7635a82d922971ae6aac18dc2ee1879e017516))
+
 ## [0.11.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.10.2...v0.11.0) (2020-10-13)
 
 
