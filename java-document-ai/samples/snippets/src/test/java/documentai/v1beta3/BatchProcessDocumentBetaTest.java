@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package documentai.v1beta2;
+package documentai.v1beta3;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
@@ -31,35 +32,32 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
-public class BatchParseTableBetaTest {
+public class BatchProcessDocumentBetaTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String PROCESSOR_ID = "88541adc6eeec481";
+  private static final String BUCKET_NAME =
+      String.format("document-ai-output-test-%s", UUID.randomUUID());
   private static final String INPUT_URI = "gs://cloud-samples-data/documentai/invoice.pdf";
   private static final String OUTPUT_PREFIX = String.format("%s", UUID.randomUUID());
   private static final String OUTPUT_BUCKET_NAME = PROJECT_ID;
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            String.format("Environment variable '%s' must be set to perform these tests.", varName),
-            System.getenv(varName));
-  }
-
-  @Before
-  public void checkRequirements() {
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
   }
 
   private static void cleanUpBucket() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
     Page<Blob> blobs =
         storage.list(
-            PROJECT_ID,
+            BUCKET_NAME,
             Storage.BlobListOption.currentDirectory(),
             Storage.BlobListOption.prefix(OUTPUT_PREFIX));
 
@@ -68,11 +66,10 @@ public class BatchParseTableBetaTest {
 
   private static void deleteDirectory(Storage storage, Page<Blob> blobs) {
     for (Blob blob : blobs.iterateAll()) {
-      System.out.println(blob.getBlobId());
       if (!blob.delete()) {
         Page<Blob> subBlobs =
             storage.list(
-                PROJECT_ID,
+                BUCKET_NAME,
                 Storage.BlobListOption.currentDirectory(),
                 Storage.BlobListOption.prefix(blob.getName()));
 
@@ -82,30 +79,38 @@ public class BatchParseTableBetaTest {
   }
 
   @Before
+  public void checkRequirements() {
+    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+  }
+
+  @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+    storage.create(BucketInfo.of(BUCKET_NAME));
   }
 
   @Test
-  // https://github.com/googleapis/java-document-ai/issues/207
-  @Ignore
-  public void testBatchParseTable()
+  public void testBatchProcessDocument()
       throws InterruptedException, ExecutionException, TimeoutException, IOException {
-    // parse the GCS invoice as a table.
-    BatchParseTableBeta.batchParseTableGcs(
-        PROJECT_ID, "us", OUTPUT_BUCKET_NAME, OUTPUT_PREFIX, INPUT_URI);
+    // parse the GCS invoice as a form.
+    BatchProcessDocumentBeta.batchProcessDocument(
+        PROJECT_ID, "us", PROCESSOR_ID, INPUT_URI, OUTPUT_BUCKET_NAME, OUTPUT_PREFIX);
     String got = bout.toString();
 
-    assertThat(got).contains("Fetched file");
-    assertThat(got).contains("Results from first table processed:");
-    assertThat(got).contains("Header row");
+    assertThat(got).contains("Paragraph text:");
+    assertThat(got).contains("Extracted");
   }
 
   @After
   public void tearDown() {
     cleanUpBucket();
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

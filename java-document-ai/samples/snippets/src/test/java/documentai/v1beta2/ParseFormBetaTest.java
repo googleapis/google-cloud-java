@@ -56,7 +56,7 @@ public class ParseFormBetaTest {
   @Test
   public void testParseForm() throws InterruptedException, ExecutionException, IOException {
     // parse the GCS invoice as a form.
-    ParseFormBeta.parseForm(PROJECT_ID,"us", INPUT_URI);
+    ParseFormBeta.parseForm(PROJECT_ID, "us", INPUT_URI);
     String got = bout.toString();
 
     assertThat(got).contains("Extracted form fields pair:");

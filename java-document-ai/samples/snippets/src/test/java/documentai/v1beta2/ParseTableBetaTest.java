@@ -55,7 +55,7 @@ public class ParseTableBetaTest {
   @Test
   public void testParseTable() throws IOException {
     // parse the GCS invoice as a table.
-    ParseTableBeta.parseTable(PROJECT_ID,"us", INPUT_URI);
+    ParseTableBeta.parseTable(PROJECT_ID, "us", INPUT_URI);
     String got = bout.toString();
 
     assertThat(got).contains("First detected language");
