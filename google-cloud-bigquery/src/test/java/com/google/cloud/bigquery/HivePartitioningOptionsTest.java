@@ -24,9 +24,11 @@ public class HivePartitioningOptionsTest {
 
   private static final String MODE = "STRING";
   private static final String SOURCE_URI_PREFIX = "gs://bucket/path_to_table";
+  private static final Boolean REQUIRE_PARTITION_FILTER = true;
   private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
       HivePartitioningOptions.newBuilder()
           .setMode(MODE)
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .setSourceUriPrefix(SOURCE_URI_PREFIX)
           .build();
 
@@ -49,6 +51,8 @@ public class HivePartitioningOptionsTest {
   @Test
   public void testBuilder() {
     assertThat(HIVE_PARTITIONING_OPTIONS.getMode()).isEqualTo(MODE);
+    assertThat(HIVE_PARTITIONING_OPTIONS.getRequirePartitionFilter())
+        .isEqualTo(REQUIRE_PARTITION_FILTER);
     assertThat(HIVE_PARTITIONING_OPTIONS.getSourceUriPrefix()).isEqualTo(SOURCE_URI_PREFIX);
   }
 
@@ -62,6 +66,7 @@ public class HivePartitioningOptionsTest {
   private void compareHivePartitioningOptions(
       HivePartitioningOptions expected, HivePartitioningOptions value) {
     assertThat(value.getMode()).isEqualTo(expected.getMode());
+    assertThat(value.getRequirePartitionFilter()).isEqualTo(expected.getRequirePartitionFilter());
     assertThat(value.getSourceUriPrefix()).isEqualTo(expected.getSourceUriPrefix());
     assertThat(value.toString()).isEqualTo(expected.toString());
     assertThat(value.hashCode()).isEqualTo(expected.hashCode());

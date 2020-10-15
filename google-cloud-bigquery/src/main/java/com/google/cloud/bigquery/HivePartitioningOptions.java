@@ -23,17 +23,20 @@ import java.util.Objects;
 public final class HivePartitioningOptions {
 
   private final String mode;
+  private final Boolean requirePartitionFilter;
   private final String sourceUriPrefix;
 
   public static final class Builder {
 
     private String mode;
+    private Boolean requirePartitionFilter;
     private String sourceUriPrefix;
 
     private Builder() {}
 
     private Builder(HivePartitioningOptions options) {
       this.mode = options.mode;
+      this.requirePartitionFilter = options.requirePartitionFilter;
       this.sourceUriPrefix = options.sourceUriPrefix;
     }
 
@@ -47,6 +50,17 @@ public final class HivePartitioningOptions {
      */
     public Builder setMode(String mode) {
       this.mode = mode;
+      return this;
+    }
+
+    /**
+     * [Optional] If set to true, queries over this table require a partition filter that can be
+     * used for partition elimination to be specified. Note that this field should only be true when
+     * creating a permanent external table or querying a temporary external table. Hive-partitioned
+     * loads with requirePartitionFilter explicitly set to true will fail.
+     */
+    public Builder setRequirePartitionFilter(Boolean requirePartitionFilter) {
+      this.requirePartitionFilter = requirePartitionFilter;
       return this;
     }
 
@@ -72,12 +86,21 @@ public final class HivePartitioningOptions {
 
   private HivePartitioningOptions(Builder builder) {
     this.mode = builder.mode;
+    this.requirePartitionFilter = builder.requirePartitionFilter;
     this.sourceUriPrefix = builder.sourceUriPrefix;
   }
 
   /* Returns the mode of hive partitioning */
   public String getMode() {
     return mode;
+  }
+
+  /**
+   * Returns true if a partition filter (that can be used for partition elimination) is required for
+   * queries over this table.
+   */
+  public Boolean getRequirePartitionFilter() {
+    return requirePartitionFilter;
   }
 
   /* Returns the sourceUriPrefix of hive partitioning */
@@ -99,6 +122,7 @@ public final class HivePartitioningOptions {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("mode", mode)
+        .add("requirePartitionFilter", requirePartitionFilter)
         .add("sourceUriPrefix", sourceUriPrefix)
         .toString();
   }
@@ -109,6 +133,8 @@ public final class HivePartitioningOptions {
         || obj != null
             && obj.getClass().equals(HivePartitioningOptions.class)
             && Objects.equals(mode, ((HivePartitioningOptions) obj).getMode())
+            && Objects.equals(
+                requirePartitionFilter, ((HivePartitioningOptions) obj).getRequirePartitionFilter())
             && Objects.equals(
                 sourceUriPrefix, ((HivePartitioningOptions) obj).getSourceUriPrefix());
   }
@@ -122,6 +148,7 @@ public final class HivePartitioningOptions {
     com.google.api.services.bigquery.model.HivePartitioningOptions options =
         new com.google.api.services.bigquery.model.HivePartitioningOptions();
     options.setMode(mode);
+    options.setRequirePartitionFilter(requirePartitionFilter);
     options.setSourceUriPrefix(sourceUriPrefix);
     return options;
   }
@@ -131,6 +158,9 @@ public final class HivePartitioningOptions {
     Builder builder = newBuilder();
     if (options.getMode() != null) {
       builder.setMode(options.getMode());
+    }
+    if (options.getRequirePartitionFilter() != null) {
+      builder.setRequirePartitionFilter(options.getRequirePartitionFilter());
     }
     if (options.getSourceUriPrefix() != null) {
       builder.setSourceUriPrefix(options.getSourceUriPrefix());
