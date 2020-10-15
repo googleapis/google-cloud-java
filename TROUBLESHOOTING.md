@@ -65,7 +65,7 @@ in your pom.xml:
           <dependency>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>linkage-checker-enforcer-rules</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.4</version>
           </dependency>
         </dependencies>
         <executions>
@@ -93,13 +93,13 @@ as every server environment is different.
 
 ### Resolving the conflict
 
-There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts, e.g.:
+There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts. For example:
 - If you have control over the dependency tree, you can upgrade
   offending dependencies (e.g., upgrading Guava version). This is the 
   least hackish approach but it is a lot of work that can require multiple releases
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
-  `com.google.cloud:libraries-bom:12.0.0` (or a more recent version) and use that to
+  `com.google.cloud:libraries-bom:12.1.0` (or a more recent version) and use that to
   select consistent dependency versions. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
@@ -111,7 +111,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>12.0.0</version>
+        <version>12.1.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
