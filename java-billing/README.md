@@ -43,17 +43,14 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-billing:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-billing:1.1.4'
+compile 'com.google.cloud:google-cloud-billing:1.1.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-billing" % "1.1.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-billing" % "1.1.3"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
