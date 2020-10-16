@@ -44,8 +44,6 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-translate:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-translate:1.95.2'
@@ -54,7 +52,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.95.2"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
