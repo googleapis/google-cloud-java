@@ -149,7 +149,7 @@ public class EnhancedBigtableStubTest {
     assertThat(metadataInterceptor.headers).hasSize(1);
     Metadata metadata = metadataInterceptor.headers.take();
     assertThat(metadata.get(Metadata.Key.of("user-agent", Metadata.ASCII_STRING_MARSHALLER)))
-        .contains("bigtable-java/");
+        .containsMatch("bigtable-java/\\d+\\.\\d+\\.\\d+(?:-SNAPSHOT)?");
   }
 
   private static class MetadataInterceptor implements ServerInterceptor {

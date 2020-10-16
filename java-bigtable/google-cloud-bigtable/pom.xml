@@ -15,6 +15,9 @@
     <version>1.16.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <properties>
+    <!-- The version that will be embedded in the published jar via maven-resources-plugin -->
+    <java-bigtable.version>1.16.1-SNAPSHOT</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+
     <site.installationModule>google-cloud-bigtable</site.installationModule>
 
     <!-- Enable the ability to skip unit tests and only run integration tests,
@@ -383,7 +386,36 @@
   </profiles>
 
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/templates</directory>
+        <includes>
+          <include>**/*.java</include>
+        </includes>
+        <filtering>true</filtering>
+        <targetPath>${project.build.directory}/generated-sources/java</targetPath>
+      </resource>
+    </resources>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources/java/</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
