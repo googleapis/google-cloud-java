@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "2480b4eac1c46d1b2cd5da166fb05310890a2dba"
+        "sha": "47a3f2c0a79b18acd1aef43697c26890dcd53556"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
+        "sha": "7c5370937dd9ba9dcf9cd7d2af880a58b389b4f1"
       }
     }
   ],
@@ -60,12 +60,12 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
-    ".kokoro/build.sh",
     ".kokoro/coerce_logs.sh",
     ".kokoro/common.cfg",
     ".kokoro/common.sh",
@@ -81,7 +81,6 @@
     ".kokoro/nightly/java8-osx.cfg",
     ".kokoro/nightly/java8-win.cfg",
     ".kokoro/nightly/java8.cfg",
-    ".kokoro/nightly/samples.cfg",
     ".kokoro/populate-secrets.sh",
     ".kokoro/presubmit/clirr.cfg",
     ".kokoro/presubmit/common.cfg",
@@ -94,7 +93,6 @@
     ".kokoro/presubmit/java8.cfg",
     ".kokoro/presubmit/linkage-monitor.cfg",
     ".kokoro/presubmit/lint.cfg",
-    ".kokoro/presubmit/samples.cfg",
     ".kokoro/readme.sh",
     ".kokoro/release/bump_snapshot.cfg",
     ".kokoro/release/common.cfg",
