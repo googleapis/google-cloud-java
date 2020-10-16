@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-datalabeling.git",
+        "sha": "5e045ccbe50be837e8f1dd8be400e39cbcdf4e75"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "d5d03413e1879108b5ade8839ce38de01be652da"
+      }
+    }
+  ]
+}
