@@ -9,5 +9,6 @@
   "repo": "googleapis/java-logging-logback",
   "repo_short": "java-logging-logback",
   "distribution_name": "com.google.cloud:google-cloud-logging-logback",
+  "codeowner_team": "@googleapis/api-logging",
   "api_id": "logging.googleapis.com"
 }
