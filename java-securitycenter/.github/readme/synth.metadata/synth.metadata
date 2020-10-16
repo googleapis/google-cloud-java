@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-securitycenter.git",
+        "sha": "3b2c1da8f75115d64ff44ca1c13c78373b7a3938"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "d5d03413e1879108b5ade8839ce38de01be652da"
+      }
+    }
+  ]
+}
