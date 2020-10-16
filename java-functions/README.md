@@ -25,8 +25,6 @@ If you are using Maven, add this to your pom.xml file:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-functions:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-functions:0.1.0'
@@ -35,7 +33,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-functions" % "0.1.0"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
