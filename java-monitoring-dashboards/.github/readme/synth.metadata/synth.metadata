@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-monitoring-dashboards.git",
+        "sha": "e3939962f40cab7ffd284de4f2ad73d8a385aba2"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "d5d03413e1879108b5ade8839ce38de01be652da"
+      }
+    }
+  ]
+}

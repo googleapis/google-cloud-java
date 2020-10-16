@@ -17,11 +17,9 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-dashboard</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
 </dependency>
 ```
-
-[//]: # ({x-version-update-start:google-cloud-monitoring-dashboard:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -31,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-dashboard" % "1.0.2"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
