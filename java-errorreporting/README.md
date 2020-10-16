@@ -40,7 +40,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.13</version>
+    <version>4.13.1</version>
     <scope>test</scope>
   </dependency>
   <dependency>
@@ -65,8 +65,6 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-errorreporting:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-errorreporting:0.120.3-beta'
@@ -75,7 +73,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.3-beta"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
