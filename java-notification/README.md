@@ -24,8 +24,6 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
-[//]: # ({x-version-update-start:google-cloud-notification:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-notification:0.121.0-beta'
@@ -34,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-notification" % "0.121.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
