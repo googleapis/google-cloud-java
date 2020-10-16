@@ -73,7 +73,7 @@ public class DeleteConnectionIT {
     originalPrintStream = System.out;
     System.setOut(out);
     // create a temporary connection
-    connectionId = "MY_CONNECTION_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    connectionId = "DELETE_CONNECTION_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     String instanceId = String.format("%s:%s:%s", PROJECT_ID, REGION, MY_SQL_INSTANCE);
     CloudSqlCredential cloudSqlCredential =
         CloudSqlCredential.newBuilder().setUsername(DB_USER).setPassword(DB_PWD).build();

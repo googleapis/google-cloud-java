@@ -63,7 +63,7 @@ public class CreateAwsConnectionIT {
 
   @Before
   public void setUp() {
-    connectionId = "MY_CONNECTION_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    connectionId = "CREATE_AWS_CONNECTION_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
