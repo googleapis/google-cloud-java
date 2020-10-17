@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.12.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.12.0...v0.12.1) (2020-10-16)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.1 ([#180](https://www.github.com/googleapis/java-shared-dependencies/issues/180)) ([b1f2d5d](https://www.github.com/googleapis/java-shared-dependencies/commit/b1f2d5dfde24fcf683eeb5600fce7f51190ecce8))
+
 ## [0.12.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.11.0...v0.12.0) (2020-10-15)
 
 
