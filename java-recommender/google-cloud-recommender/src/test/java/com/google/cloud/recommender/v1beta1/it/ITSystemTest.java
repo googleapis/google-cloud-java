@@ -15,9 +15,7 @@
  */
 package com.google.cloud.recommender.v1beta1.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.ServiceOptions;
@@ -48,7 +46,7 @@ public class ITSystemTest {
   private static final String ETAG = "invalid-etag";
   private static final String FORMATTED_RECOMMENDATION_NAME =
       RecommendationName.of(LOCATION, PROJECT, RECOMMENDER, RECOMMENDATION).toString();
-  private static final String RESOURCE_MAY_NOT_EXISTS = "resource may not exist";
+  private static final String RESOURCE_MAY_NOT_EXISTS = "may not exist";
 
   @Before
   public void setUp() throws Exception {
@@ -66,8 +64,8 @@ public class ITSystemTest {
         ListRecommendationsRequest.newBuilder().setParent(FORMATTED_PARENT).setFilter("").build();
     List<Recommendation> recommendations =
         Lists.newArrayList(client.listRecommendations(request).iterateAll());
-    assertTrue(recommendations.size() > 0);
-    assertFalse(recommendations.contains(null));
+    assertThat(recommendations.size() > 0).isTrue();
+    assertThat(recommendations.contains(null)).isFalse();
   }
 
   @Test(expected = InvalidArgumentException.class)
@@ -88,8 +86,8 @@ public class ITSystemTest {
     try {
       client.getRecommendation(request);
     } catch (Exception e) {
-      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
-      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+      assertThat(StatusRuntimeException.class).isEqualTo(e.getCause().getClass());
+      assertThat(e.getCause().getMessage()).contains(RESOURCE_MAY_NOT_EXISTS);
     }
   }
 
@@ -103,8 +101,8 @@ public class ITSystemTest {
     try {
       client.markRecommendationClaimed(request);
     } catch (Exception e) {
-      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
-      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+      assertThat(StatusRuntimeException.class).isEqualTo(e.getCause().getClass());
+      assertThat(e.getCause().getMessage()).contains(RESOURCE_MAY_NOT_EXISTS);
     }
   }
 
@@ -118,8 +116,8 @@ public class ITSystemTest {
     try {
       client.markRecommendationSucceeded(request);
     } catch (Exception e) {
-      assertEquals(StatusRuntimeException.class, e.getCause().getClass());
-      assertTrue(e.getCause().getMessage().contains(RESOURCE_MAY_NOT_EXISTS));
+      assertThat(StatusRuntimeException.class).isEqualTo(e.getCause().getClass());
+      assertThat(e.getCause().getMessage()).contains(RESOURCE_MAY_NOT_EXISTS);
     }
   }
 }
