@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.storage.v1alpha2.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -517,9 +518,8 @@ public class ITBigQueryWriteManualClientTest {
         response2.get().getOffset();
         Assert.fail("Should fail");
       } catch (ExecutionException e) {
-        assertEquals(
-            "OUT_OF_RANGE: The offset is beyond stream, expected offset 1, received 100",
-            e.getCause().getMessage());
+        assertThat(e.getCause().getMessage())
+            .contains("OUT_OF_RANGE: The offset is beyond stream, expected offset 1, received 100");
       }
       // We can keep sending requests on the same stream.
       ApiFuture<AppendRowsResponse> response3 =
