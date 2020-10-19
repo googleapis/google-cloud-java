@@ -28,19 +28,21 @@ public class CreateDatasetAws {
 
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
+    String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
     // Note: As of now location only supports aws-us-east-1
     String location = "aws-us-east-1";
-    createDatasetAws(datasetName, location);
+    createDatasetAws(projectId, datasetName, location);
   }
 
-  public static void createDatasetAws(String datasetName, String location) {
+  public static void createDatasetAws(String projectId, String datasetName, String location) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).setLocation(location).build();
+      DatasetInfo datasetInfo =
+          DatasetInfo.newBuilder(projectId, datasetName).setLocation(location).build();
 
       Dataset dataset = bigquery.create(datasetInfo);
       System.out.println(
