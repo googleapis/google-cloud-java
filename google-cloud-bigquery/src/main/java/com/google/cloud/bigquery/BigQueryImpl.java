@@ -1239,7 +1239,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private TableResult queryRpc(
-      final String projectId, final QueryRequest content, JobOption... options) {
+      final String projectId, final QueryRequest content, JobOption... options)
+      throws InterruptedException {
     com.google.api.services.bigquery.model.QueryResponse results;
     try {
       results =
@@ -1265,14 +1266,22 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(bigQueryErrors);
     }
 
-    Schema schema = results.getSchema() == null ? null : Schema.fromPb(results.getSchema());
-    Long numRows;
-    if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
-      numRows = 0L;
-    } else if (results.getNumDmlAffectedRows() != null) {
-      numRows = results.getNumDmlAffectedRows();
+    long numRows;
+    Schema schema;
+    if (results.getSchema() == null && results.getJobComplete()) {
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      Job job = getJob(jobId, options);
+      TableResult tableResult = job.getQueryResults();
+      return tableResult;
     } else {
-      numRows = results.getTotalRows().longValue();
+      schema = results.getSchema() == null ? null : Schema.fromPb(results.getSchema());
+      if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
+        numRows = 0L;
+      } else if (results.getNumDmlAffectedRows() != null) {
+        numRows = results.getNumDmlAffectedRows();
+      } else {
+        numRows = results.getTotalRows().longValue();
+      }
     }
 
     if (results.getPageToken() != null) {
