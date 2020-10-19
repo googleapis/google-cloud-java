@@ -60,7 +60,7 @@
     <guava.version>29.0-android</guava.version>
     <protobuf.version>3.13.0</protobuf.version>
     <google.api-common.version>1.10.1</google.api-common.version>
-    <google.common-protos.version>1.18.1</google.common-protos.version>
+    <google.common-protos.version>2.0.0</google.common-protos.version>
     <google.core.version>1.93.9</google.core.version>
     <google.auth.version>0.22.0</google.auth.version>
     <google.http-client.version>1.37.0</google.http-client.version>
