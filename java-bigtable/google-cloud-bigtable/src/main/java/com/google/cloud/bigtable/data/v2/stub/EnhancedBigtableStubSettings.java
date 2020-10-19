@@ -85,9 +85,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
   private static final String SERVER_DEFAULT_APP_PROFILE_ID = "";
 
-  // TODO(weiranf): Remove this temporary endpoint once DirectPath goes to public beta
-  private static final String DIRECT_PATH_ENDPOINT = "test-bigtable.sandbox.googleapis.com:443";
-
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
 
@@ -166,12 +163,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
 
-    if (DIRECT_PATH_ENDPOINT.equals(builder.getEndpoint())) {
-      logger.warning(
-          "Connecting to Bigtable using DirectPath."
-              + " This is currently an experimental feature and should not be used in production.");
-    }
-
     // Since point reads, streaming reads, bulk reads share the same base callable that converts
     // grpc errors into ApiExceptions, they must have the same retry codes.
     Preconditions.checkState(
@@ -245,13 +236,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setKeepAliveTimeout(
             Duration.ofSeconds(10)) // wait this long before considering the connection dead
         .setKeepAliveWithoutCalls(true) // sends ping without active streams
-        // TODO(weiranf): Set this to true by default once DirectPath goes to public beta
-        .setAttemptDirectPath(isDirectPathEnabled());
-  }
-
-  // TODO(weiranf): Remove this once DirectPath goes to public beta
-  private static boolean isDirectPathEnabled() {
-    return Boolean.getBoolean("bigtable.attempt-directpath");
+        // Attempts direct access to CBT service over gRPC to improve throughput,
+        // whether the attempt is allowed is totally controlled by service owner.
+        .setAttemptDirectPath(true);
   }
 
   static int getDefaultChannelPoolSize() {
@@ -526,13 +513,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       // Defaults provider
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
-      // TODO(weiranf): remove this once DirectPath goes to public Beta and uses the default
-      // endpoint.
-      if (isDirectPathEnabled()) {
-        setEndpoint(DIRECT_PATH_ENDPOINT);
-      } else {
-        setEndpoint(baseDefaults.getEndpoint());
-      }
+      setEndpoint(baseDefaults.getEndpoint());
 
       setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
