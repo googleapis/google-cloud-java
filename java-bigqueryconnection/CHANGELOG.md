@@ -1,5 +1,23 @@
 # Changelog
 
+### [0.4.1](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.4.0...v0.4.1) (2020-10-16)
+
+
+### Documentation
+
+* **samples:** add create and delete connection ([#151](https://www.github.com/googleapis/java-bigqueryconnection/issues/151)) ([39a1f45](https://www.github.com/googleapis/java-bigqueryconnection/commit/39a1f45a97604d90a31d1a31412b6c90eb22069e))
+* **samples:** add create aws connection ([#163](https://www.github.com/googleapis/java-bigqueryconnection/issues/163)) ([59fa9ae](https://www.github.com/googleapis/java-bigqueryconnection/commit/59fa9aed468c9fa13e538ecdcff4c452d870ef49))
+* **samples:** add get connection ([#156](https://www.github.com/googleapis/java-bigqueryconnection/issues/156)) ([0cdb6ce](https://www.github.com/googleapis/java-bigqueryconnection/commit/0cdb6ce95bcb22084dfaf6a562783466398a3847))
+* **samples:** add list connections ([#157](https://www.github.com/googleapis/java-bigqueryconnection/issues/157)) ([d015a4e](https://www.github.com/googleapis/java-bigqueryconnection/commit/d015a4e5b435e07b5abbe35c4a61b609824227a8))
+* **samples:** add share connection ([#161](https://www.github.com/googleapis/java-bigqueryconnection/issues/161)) ([760c488](https://www.github.com/googleapis/java-bigqueryconnection/commit/760c4888d30f532df8abc725849190487c056d22))
+* **samples:** add update connection ([#158](https://www.github.com/googleapis/java-bigqueryconnection/issues/158)) ([068dbc0](https://www.github.com/googleapis/java-bigqueryconnection/commit/068dbc01aba88f7b13b483fa40a651e0d071822a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#167](https://www.github.com/googleapis/java-bigqueryconnection/issues/167)) ([19a482b](https://www.github.com/googleapis/java-bigqueryconnection/commit/19a482ba80ff342eeb70fba89b973b39c59f6422))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.11.0 ([#178](https://www.github.com/googleapis/java-bigqueryconnection/issues/178)) ([7cf25d0](https://www.github.com/googleapis/java-bigqueryconnection/commit/7cf25d082fecdbe5dc2efa7125cb30ee07595129))
+
 ## [0.4.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.3.4...v0.4.0) (2020-10-02)
 
 
