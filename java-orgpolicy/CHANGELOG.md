@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-orgpolicy/compare/v1.0.3...v1.0.4) (2020-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#88](https://www.github.com/googleapis/java-orgpolicy/issues/88)) ([c43a2d9](https://www.github.com/googleapis/java-orgpolicy/commit/c43a2d94b37c371814bbdb84af90c90d5ddf54c6))
+
 ### [1.0.3](https://www.github.com/googleapis/java-orgpolicy/compare/v1.0.2...v1.0.3) (2020-10-08)
 
 
