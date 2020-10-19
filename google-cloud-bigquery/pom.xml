@@ -82,6 +82,12 @@
       <artifactId>threetenbp</artifactId>
     </dependency>
 
+    <!-- auto-value creates a class that uses an annotation from error_prone_annotations -->
+    <dependency>
+      <groupId>com.google.errorprone</groupId>
+      <artifactId>error_prone_annotations</artifactId>
+    </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
