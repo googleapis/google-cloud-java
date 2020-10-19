@@ -20,5 +20,5 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 public final class Version {
   // The released version, populated by maven.
-  public static String VERSION="${java-bigtable.version}";
+  public static String VERSION = "${java-bigtable.version}";
 }

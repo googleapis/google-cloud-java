@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "d4a9c6455eb46277b4349ac5e31c927bec8293bf"
+        "sha": "a3bb37147c9123f47011526466cce0a7533aea18"
       }
     },
     {
@@ -117,6 +117,7 @@
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java",
+    "google-cloud-bigtable/src/main/templates/com/google/cloud/bigtable/Version.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClientTest.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClientTest.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableInstanceAdmin.java",
