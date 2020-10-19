@@ -39,20 +39,7 @@ class ListModels {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    AutoMlSettings.Builder autoMlSettingsBuilder = AutoMlSettings.newBuilder();
-
-    autoMlSettingsBuilder
-        .listModelsSettings()
-        .setRetrySettings(
-            autoMlSettingsBuilder
-                .listModelsSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
-
-    try (AutoMlClient client = AutoMlClient.create(autoMlSettings)) {
+    try (AutoMlClient client = AutoMlClient.create()) {
       // A resource that represents Google Cloud Platform location.
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
 
