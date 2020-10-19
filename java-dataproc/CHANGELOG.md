@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-dataproc/compare/v1.1.2...v1.1.3) (2020-10-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#326](https://www.github.com/googleapis/java-dataproc/issues/326)) ([31a6573](https://www.github.com/googleapis/java-dataproc/commit/31a6573fb32599020b4463643ba69847d23398c1))
+
 ### [1.1.2](https://www.github.com/googleapis/java-dataproc/compare/v1.1.1...v1.1.2) (2020-10-08)
 
 
