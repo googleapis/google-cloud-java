@@ -126,8 +126,6 @@ public class StreamWriter implements AutoCloseable {
   // Used for schema updates
   private OnSchemaUpdateRunnable onSchemaUpdateRunnable;
 
-  private final int REFRESH_STREAM_WAIT_TIME = 7;
-
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
     return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
@@ -356,12 +354,7 @@ public class StreamWriter implements AutoCloseable {
       }
     } catch (InterruptedException expected) {
     }
-    // Currently there is a bug that it took reconnected stream 5 seconds to pick up
-    // stream count. So wait at least 7 seconds before sending a new request.
-    Thread.sleep(
-        Math.max(
-            this.retrySettings.getInitialRetryDelay().toMillis(),
-            Duration.ofSeconds(REFRESH_STREAM_WAIT_TIME).toMillis()));
+    Thread.sleep(this.retrySettings.getInitialRetryDelay().toMillis());
     // Can only unlock here since need to sleep the full 7 seconds before stream can allow appends.
     appendAndRefreshAppendLock.unlock();
     LOG.info("Write Stream " + streamName + " connection established");
