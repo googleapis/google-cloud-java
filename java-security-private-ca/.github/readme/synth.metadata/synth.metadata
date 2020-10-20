@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-security-private-ca.git",
-        "sha": "54b7ede4038b2ca16f88825d5ca4b9e33f5db8ef"
+        "sha": "2dad3080c7912f17e60880863ae017dad10da394"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b6164c26a111f7f587099d31253abb96b5737bb2"
+        "sha": "6dc98b26a9c823e92fa21455fb6e5862613c49c2"
       }
     }
   ]
