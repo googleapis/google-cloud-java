@@ -20,11 +20,9 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-transcoder</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
-
-[//]: # ({x-version-update-start:google-cloud-video-transcoder:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -34,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-video-transcoder" % "0.1.1"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
