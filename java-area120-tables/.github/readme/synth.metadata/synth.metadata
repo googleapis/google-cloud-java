@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-area120-tables.git",
-        "sha": "3bcec1ed14b6e676c15ec24e0b3fadde57da7d79"
+        "sha": "2f8f3405c459a286f8a3b1cab484ad1efb1dac85"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5451633881133e5573cc271a18e73b18caca8b1b"
+        "sha": "6abb59097be84599a1d6091fe534a49e5c5cf948"
       }
     }
   ]

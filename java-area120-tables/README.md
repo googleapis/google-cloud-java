@@ -26,11 +26,11 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.area120:google-area120-tables:0.1.3'
+compile 'com.google.area120:google-area120-tables:0.1.2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.1.3"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.1.2"
 ```
 
 ## Authentication
