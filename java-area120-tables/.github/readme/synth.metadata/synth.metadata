@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-area120-tables.git",
+        "sha": "3bcec1ed14b6e676c15ec24e0b3fadde57da7d79"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5451633881133e5573cc271a18e73b18caca8b1b"
+      }
+    }
+  ]
+}

@@ -20,11 +20,9 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.2</version>
 </dependency>
 ```
-
-[//]: # ({x-version-update-start:google-area120-tables:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -34,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.1.3"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
