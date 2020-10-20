@@ -73,6 +73,7 @@
     <opencensus.version>0.24.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.4.0</errorprone.version>
+    <jackson.version>2.11.3</jackson.version>
   </properties>
 
   <dependencyManagement>
@@ -183,6 +184,13 @@
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <version>${errorprone.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
 
       <!-- TODO: replace with opencensus-bom when available -->
