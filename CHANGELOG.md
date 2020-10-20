@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.123.0](https://www.github.com/googleapis/java-bigquery/compare/v1.122.2...v1.123.0) (2020-10-20)
+
+
+### Features
+
+* add requirePartitionFilter field in HivePartitioningOptions ([#803](https://www.github.com/googleapis/java-bigquery/issues/803)) ([193c886](https://www.github.com/googleapis/java-bigquery/commit/193c8860d3a21e56b6ebe77240bd4eee3d19ee72))
+
+
+### Bug Fixes
+
+* fix start index with page size for list rows ([#793](https://www.github.com/googleapis/java-bigquery/issues/793)) ([71e7d48](https://www.github.com/googleapis/java-bigquery/commit/71e7d4804e1facfb921892dc702adaec35e47cd0))
+* schema and totalRows for duplicate request ids ([#804](https://www.github.com/googleapis/java-bigquery/issues/804)) ([f2799dd](https://www.github.com/googleapis/java-bigquery/commit/f2799dd9a4323460843aa6df7ac7c2f092c7f1b3))
+
+
+### Documentation
+
+* **samples:** add omni create aws dataset ([#821](https://www.github.com/googleapis/java-bigquery/issues/821)) ([477a8e3](https://www.github.com/googleapis/java-bigquery/commit/477a8e39ce85408c745ebcc72a136b31edf66f05))
+* **samples:** add omni create external table ([#823](https://www.github.com/googleapis/java-bigquery/issues/823)) ([fc3cf2a](https://www.github.com/googleapis/java-bigquery/commit/fc3cf2a4151e154e5240938579b50183242db1d8))
+
+
+### Dependencies
+
+* update core transport dependencies to v1.31.1 ([#811](https://www.github.com/googleapis/java-bigquery/issues/811)) ([27a86a0](https://www.github.com/googleapis/java-bigquery/commit/27a86a06de63fef62b63307e0e01060e91efe0f6))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20201007-1.30.10 ([#812](https://www.github.com/googleapis/java-bigquery/issues/812)) ([89f34c6](https://www.github.com/googleapis/java-bigquery/commit/89f34c6cd282d402a64e87614953491df3f1cdbe))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.16.2 ([#813](https://www.github.com/googleapis/java-bigquery/issues/813)) ([791bf25](https://www.github.com/googleapis/java-bigquery/commit/791bf253c7828daaf04fe5bec0ae8798e12dc2bc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#827](https://www.github.com/googleapis/java-bigquery/issues/827)) ([afe3b18](https://www.github.com/googleapis/java-bigquery/commit/afe3b185f26b1755b8c46bfb344b9041ee9641e7))
+* update jmh.version to v1.26 ([#815](https://www.github.com/googleapis/java-bigquery/issues/815)) ([e5fd40f](https://www.github.com/googleapis/java-bigquery/commit/e5fd40fdc6de483a0f063cde83af1a6e23173c29))
+
 ### [1.122.2](https://www.github.com/googleapis/java-bigquery/compare/v1.122.1...v1.122.2) (2020-10-08)
 
 
