@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>12.0.0</version>
+      <version>12.1.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.3</version>
     </dependency>
     <!-- [END recaptcha-enterprise_install_without_bom] -->
 
@@ -94,8 +94,6 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-[//]: # ({x-version-update-start:google-cloud-recaptchaenterprise:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-recaptchaenterprise:1.0.3'
@@ -104,7 +102,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "1.0.3"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
