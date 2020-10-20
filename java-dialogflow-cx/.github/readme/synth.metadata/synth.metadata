@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
+        "sha": "dbb09fc10f93be932f8408afb294c0fd9fa1579e"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "6dc98b26a9c823e92fa21455fb6e5862613c49c2"
+      }
+    }
+  ]
+}
