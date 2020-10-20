@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.13.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.12.1...v0.13.0) (2020-10-20)
+
+
+### Features
+
+* add jackson-core to the list of managed dependencies ([#190](https://www.github.com/googleapis/java-shared-dependencies/issues/190)) ([b37035e](https://www.github.com/googleapis/java-shared-dependencies/commit/b37035ed9b0beeb5e07d6e1c121154eece1a2c87))
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v30 ([#181](https://www.github.com/googleapis/java-shared-dependencies/issues/181)) ([bdb1e58](https://www.github.com/googleapis/java-shared-dependencies/commit/bdb1e582288d06a872e36ac8b778563f2d088468))
+* update gax.version to v1.60.0 ([#187](https://www.github.com/googleapis/java-shared-dependencies/issues/187)) ([8a8adf7](https://www.github.com/googleapis/java-shared-dependencies/commit/8a8adf7745d563c449bf095aad63b5e4a94e1a7d))
+* update google.common-protos.version to v2 ([#174](https://www.github.com/googleapis/java-shared-dependencies/issues/174)) ([3f7e3ff](https://www.github.com/googleapis/java-shared-dependencies/commit/3f7e3ffd5e07d2f11f0aa981dae2bdf5381e429f))
+
 ### [0.12.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.12.0...v0.12.1) (2020-10-16)
 
 
