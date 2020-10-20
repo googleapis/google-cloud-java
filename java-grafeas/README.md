@@ -21,8 +21,6 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
-[//]: # ({x-version-update-start:grafeas:released})
-
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'io.grafeas:grafeas:1.0.2'
@@ -31,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "io.grafeas" % "grafeas" % "1.0.2"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
