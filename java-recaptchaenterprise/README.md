@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
