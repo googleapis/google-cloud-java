@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-pubsub.git",
-        "sha": "3dc67db7f5213ea2543e52f21cb2eba6a75a9126"
+        "sha": "40ba7fc85f3cddbdd79029869cad02c1c5321e9e"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b65ef07d99946d23e900ef2cc490274a16edd336"
+        "sha": "7c5370937dd9ba9dcf9cd7d2af880a58b389b4f1"
       }
     }
   ],
@@ -43,6 +43,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/formatting.yaml",
