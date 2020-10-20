@@ -117,7 +117,6 @@
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java",
-    "google-cloud-bigtable/src/main/templates/com/google/cloud/bigtable/Version.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClientTest.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClientTest.java",
     "google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/admin/v2/MockBigtableInstanceAdmin.java",
