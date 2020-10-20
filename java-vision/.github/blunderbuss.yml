@@ -1,0 +1,5 @@
+assign_prs_by:
+- labels:
+  - samples
+  to:
+  - java-samples-reviewers
