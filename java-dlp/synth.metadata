@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "a11ef5e7b541284136e5dd15aadd57d387fa3cca"
+        "sha": "b00c1a312bfef30f831f2b1d3c9b063cb9dba8d5"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7c5370937dd9ba9dcf9cd7d2af880a58b389b4f1"
+        "sha": "5a506ec8765cc04f7e29f888b8e9b257d9a7ae11"
       }
     }
   ],
@@ -42,6 +42,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/readme/synth.py",
     ".github/release-please.yml",
+    ".github/snippet-bot.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
