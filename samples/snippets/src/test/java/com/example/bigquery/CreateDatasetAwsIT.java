@@ -39,7 +39,7 @@ public class CreateDatasetAwsIT {
   private PrintStream out;
   private PrintStream originalPrintStream;
 
-  private static final String PROJECT_ID = requireEnvVar("OMNI_PROJECT_ID");
+  private static final String OMNI_PROJECT_ID = requireEnvVar("OMNI_PROJECT_ID");
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -51,7 +51,7 @@ public class CreateDatasetAwsIT {
 
   @BeforeClass
   public static void checkRequirements() {
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar("OMNI_PROJECT_ID");
   }
 
   @Before
@@ -66,7 +66,7 @@ public class CreateDatasetAwsIT {
   @After
   public void tearDown() {
     // Clean up
-    DeleteDataset.deleteDataset(PROJECT_ID, datasetName);
+    DeleteDataset.deleteDataset(OMNI_PROJECT_ID, datasetName);
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);
@@ -75,7 +75,7 @@ public class CreateDatasetAwsIT {
 
   @Test
   public void testCreateDatasetAws() {
-    CreateDatasetAws.createDatasetAws(PROJECT_ID, datasetName, LOCATION);
+    CreateDatasetAws.createDatasetAws(OMNI_PROJECT_ID, datasetName, LOCATION);
     assertThat(bout.toString()).contains("Aws dataset created successfully :");
   }
 }
