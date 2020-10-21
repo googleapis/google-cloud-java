@@ -1,5 +1,37 @@
 # Changelog
 
+### [1.0.13](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.12...v1.0.13) (2020-10-21)
+
+
+### Documentation
+
+* **samples:** add copy dataset ([#389](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/389)) ([37097f8](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/37097f8d1e7745007f39533dc9fcd8256ac2ce3f))
+* **samples:** add create amazon s3 transfer ([#416](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/416)) ([52ac0a0](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/52ac0a029c1f47c5cdd9268e320a48ce80f7c212))
+* **samples:** add create cloud storage transfer ([#431](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/431)) ([0938236](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/093823687b6d870e3e443d349fe6a2ad035e6a85))
+* **samples:** add delete transfer config ([#388](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/388)) ([61ce27d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/61ce27d43653ce5f2ae8647370240ec80148399e))
+* **samples:** add disable transfer config ([#384](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/384)) ([533a681](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/533a68158dd92d083aba9e13493e4d66cd3d85df))
+* **samples:** add re-enable transfer config ([#385](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/385)) ([7d61025](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/7d61025046c6172dbe8f1f52bd90324f9a5357c4))
+* **samples:** add schedule backfill ([#390](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/390)) ([96eb331](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/96eb331fdf9d4862d9149bb84d6d2493218db2fc))
+* **samples:** add update credentials ([#425](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/425)) ([16022ea](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/16022eaa8f93b497fb569fe5be5ed996993adf02))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.0 ([#398](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/398)) ([e0edcd7](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/e0edcd7c1a7d22c158ea39ffcb4018dae181c6b0))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.1 ([#411](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/411)) ([41fb285](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/41fb285d233d9598e7b54e49b4a67b0c49bb4af3))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.122.2 ([#418](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/418)) ([ad92b1a](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ad92b1af71bbf747da57aae011f47bc5d7f07c27))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.123.0 ([#444](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/444)) ([85d78bc](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/85d78bc1770969e1e5feda76d3134ae3313a2652))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.108.3 ([#407](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/407)) ([78e055e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/78e055e61ead073bda37289043c350b93c8ace50))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.108.4 ([#423](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/423)) ([1807342](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/18073427ef4c0103949f6f7285c8869e08ff8205))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.108.5 ([#440](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/440)) ([5c33507](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/5c33507b9f9628eee84b1afcbebd54cc31b101a6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.1 ([#412](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/412)) ([0344c1e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/0344c1e844de6c82a48a8de0b4afcc188cbda1c5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#415](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/415)) ([4eb4530](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/4eb4530c54704eaf5418331746b84e5a895bf930))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.11.0 ([#428](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/428)) ([1247468](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/1247468d50dfc8a57b92a84974e8593293e88aeb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#439](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/439)) ([d9c7a5c](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d9c7a5c6b57b3a3564457d6d68d645bc20ef4b5b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#445](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/445)) ([e5027fc](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/e5027fceb9665e1a8849c95d4d67a8ee3d567cff))
+* update dependency com.google.truth:truth to v1.1 ([#443](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/443)) ([f966881](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/f96688152dcb2cac2e0dae6f4aa8527c86df9896))
+* update dependency junit:junit to v4.13.1 ([#421](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/421)) ([310122b](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/310122bb335e8f716d12890c8e06397e1b997ac3))
+
 ### [1.0.12](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.11...v1.0.12) (2020-09-23)
 
 
