@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 // [START video_detect_faces_beta]
 

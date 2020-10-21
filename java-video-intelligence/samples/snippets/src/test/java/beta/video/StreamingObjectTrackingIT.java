@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -26,31 +26,38 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingShotChangeDetection}. */
+/** Integration (system) tests for {@link StreamingObjectTracking}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingShotChangeDetectionIT {
+public class StreamingObjectTrackingIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testStreamingShotChangeDetection() {
-    StreamingShotChangeDetection.streamingShotChangeDetection("resources/cat.mp4");
+  public void testStreamingObjectTracking() {
+    StreamingObjectTracking.streamingObjectTracking("resources/cat.mp4");
     String got = bout.toString();
 
-    assertThat(got).contains("Shot: 0.0");
-    assertThat(got).contains("to 14.8");
+    assertThat(got).contains("cat");
+    assertThat(got).contains("Left: 0.1");
+    assertThat(got).contains("Top: 0.2");
+    assertThat(got).contains("Right: 0.7");
+    assertThat(got).contains("Bottom: 0.8");
   }
 }

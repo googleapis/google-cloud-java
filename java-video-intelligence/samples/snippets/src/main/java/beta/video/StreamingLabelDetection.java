@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
-// [START video_streaming_annotation_to_storage_beta]
+// [START video_streaming_label_detection_beta]
+
 import com.google.api.gax.rpc.BidiStream;
+import com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation;
+import com.google.cloud.videointelligence.v1p3beta1.LabelFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig;
-import com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
@@ -32,12 +35,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-public class StreamingAnnotationToStorage {
+class StreamingLabelDetection {
 
-  // Perform streaming video detection for explicit content
-  static void streamingAnnotationToStorage(String filePath, String gcsUri) {
+  // Perform streaming video label detection
+  static void streamingLabelDetection(String filePath) {
     // String filePath = "path_to_your_video_file";
-    // String gcsUri = "gs://BUCKET_ID";
 
     try (StreamingVideoIntelligenceServiceClient client =
         StreamingVideoIntelligenceServiceClient.create()) {
@@ -48,12 +50,6 @@ public class StreamingAnnotationToStorage {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      StreamingStorageConfig streamingStorageConfig =
-          StreamingStorageConfig.newBuilder()
-              .setEnableStorageAnnotationResult(true)
-              .setAnnotationResultStorageDirectory(gcsUri)
-              .build();
-
       StreamingLabelDetectionConfig labelConfig =
           StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
 
@@ -61,7 +57,6 @@ public class StreamingAnnotationToStorage {
           StreamingVideoConfig.newBuilder()
               .setFeature(StreamingFeature.STREAMING_LABEL_DETECTION)
               .setLabelDetectionConfig(labelConfig)
-              .setStorageConfig(streamingStorageConfig)
               .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
@@ -86,11 +81,23 @@ public class StreamingAnnotationToStorage {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
-        System.out.format("Storage Uri: %s\n", response.getAnnotationResultsUri());
+        StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
+
+        for (LabelAnnotation annotation : annotationResults.getLabelAnnotationsList()) {
+          String entity = annotation.getEntity().getDescription();
+
+          // There is only one frame per annotation
+          LabelFrame labelFrame = annotation.getFrames(0);
+          double offset =
+              labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
+          float confidence = labelFrame.getConfidence();
+
+          System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
+        }
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 }
-// [END video_streaming_annotation_to_storage_beta]
+// [END video_streaming_label_detection_beta]

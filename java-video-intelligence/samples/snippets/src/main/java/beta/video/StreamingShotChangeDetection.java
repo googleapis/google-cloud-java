@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
-// [START video_streaming_label_detection_beta]
+// [START video_streaming_shot_change_detection_beta]
+
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation;
-import com.google.cloud.videointelligence.v1p3beta1.LabelFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
@@ -27,6 +26,7 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfi
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,10 +34,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingLabelDetection {
+class StreamingShotChangeDetection {
 
-  // Perform streaming video label detection
-  static void streamingLabelDetection(String filePath) {
+  // Perform streaming video detection for shot changes
+  static void streamingShotChangeDetection(String filePath) {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -54,7 +54,7 @@ class StreamingLabelDetection {
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_LABEL_DETECTION)
+              .setFeature(StreamingFeature.STREAMING_SHOT_CHANGE_DETECTION)
               .setLabelDetectionConfig(labelConfig)
               .build();
 
@@ -82,16 +82,14 @@ class StreamingLabelDetection {
       for (StreamingAnnotateVideoResponse response : call) {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
-        for (LabelAnnotation annotation : annotationResults.getLabelAnnotationsList()) {
-          String entity = annotation.getEntity().getDescription();
+        for (VideoSegment segment : annotationResults.getShotAnnotationsList()) {
+          double startTimeOffset =
+              segment.getStartTimeOffset().getSeconds()
+                  + segment.getStartTimeOffset().getNanos() / 1e9;
+          double endTimeOffset =
+              segment.getEndTimeOffset().getSeconds() + segment.getEndTimeOffset().getNanos() / 1e9;
 
-          // There is only one frame per annotation
-          LabelFrame labelFrame = annotation.getFrames(0);
-          double offset =
-              labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
-          float confidence = labelFrame.getConfidence();
-
-          System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
+          System.out.format("Shot: %fs to %fs\n", startTimeOffset, endTimeOffset);
         }
       }
     } catch (IOException e) {
@@ -99,4 +97,4 @@ class StreamingLabelDetection {
     }
   }
 }
-// [END video_streaming_label_detection_beta]
+// [END video_streaming_shot_change_detection_beta]

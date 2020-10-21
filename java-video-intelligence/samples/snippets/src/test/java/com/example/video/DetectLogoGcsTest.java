@@ -19,32 +19,43 @@ package com.example.video;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class DetectLogoGcsTest {
-
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testDetectFaces() throws Exception {
-    DetectLogoGcs.detectLogoGcs("gs://cloud-samples-data/video/googlework_short.mp4");
+  public void testLogoDetectGcs()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    LogoDetectionGcs.detectLogoGcs("gs://cloud-samples-data/video/googlework_tiny.mp4");
     String got = bout.toString();
-    assertThat(got).contains("Entity Id");
+
+    assertThat(got).contains("Description");
+    assertThat(got).contains("Confidence");
+    assertThat(got).contains("Start Time Offset");
+    assertThat(got).contains("End Time Offset");
   }
 }

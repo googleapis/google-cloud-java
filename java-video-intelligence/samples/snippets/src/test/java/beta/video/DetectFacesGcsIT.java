@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -24,26 +24,31 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 public class DetectFacesGcsIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
   public void testDetectFacesGcs() throws Exception {
     DetectFacesGcs.detectFacesGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("Attribute");
+    assertThat(got).contains("Face detected:");
   }
 }

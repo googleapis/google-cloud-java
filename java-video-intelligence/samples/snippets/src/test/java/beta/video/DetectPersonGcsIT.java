@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -23,33 +23,33 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingExplicitContentDetection}. */
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingExplicitContentDetectionIT {
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+public class DetectPersonGcsIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testStreamingExplicitContent() {
-    StreamingExplicitContentDetection.streamingExplicitContentDetection("resources/cat.mp4");
+  public void testDetectPersonGcs() throws Exception {
+    DetectPersonGcs.detectPersonGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
-
-    assertThat(got).contains("UNLIKELY");
+    assertThat(got).contains("Landmark");
   }
 }

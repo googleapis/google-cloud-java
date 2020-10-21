@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DetectLogoTest {
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+public class DetectFacesIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -48,14 +47,9 @@ public class DetectLogoTest {
   }
 
   @Test
-  public void testLogoDetect()
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
-    LogoDetection.detectLogo("resources/googlework_short.mp4");
+  public void testDetectFaces() throws Exception {
+    DetectFaces.detectFaces("resources/googlework_short.mp4");
     String got = bout.toString();
-
-    assertThat(got).contains("Description");
-    assertThat(got).contains("Confidence");
-    assertThat(got).contains("Start Time Offset");
-    assertThat(got).contains("End Time Offset");
+    assertThat(got).contains("Face detected:");
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
-import com.google.cloud.videointelligence.v1.AnnotateVideoRequest;
-import com.google.cloud.videointelligence.v1.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1.Entity;
-import com.google.cloud.videointelligence.v1.Feature;
-import com.google.cloud.videointelligence.v1.NormalizedBoundingBox;
-import com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation;
-import com.google.cloud.videointelligence.v1.ObjectTrackingFrame;
-import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
-import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
-import com.google.cloud.videointelligence.v1.VideoSegment;
+import com.google.cloud.videointelligence.v1p2beta1.AnnotateVideoProgress;
+import com.google.cloud.videointelligence.v1p2beta1.AnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1p2beta1.AnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1p2beta1.Entity;
+import com.google.cloud.videointelligence.v1p2beta1.Feature;
+import com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox;
+import com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation;
+import com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame;
+import com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1p2beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import java.nio.file.Files;
@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TrackObjects {
 
-  // [START video_object_tracking]
+  // [START video_object_tracking_beta]
   /**
    * Track objects in a video.
    *
@@ -50,11 +50,12 @@ public class TrackObjects {
       byte[] data = Files.readAllBytes(path);
 
       // Create the request
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputContent(ByteString.copyFrom(data))
-          .addFeatures(Feature.OBJECT_TRACKING)
-          .setLocationId("us-east1")
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputContent(ByteString.copyFrom(data))
+              .addFeatures(Feature.OBJECT_TRACKING)
+              .setLocationId("us-east1")
+              .build();
 
       // asynchronously perform object tracking on videos
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
@@ -62,7 +63,7 @@ public class TrackObjects {
 
       System.out.println("Waiting for operation to complete...");
       // The first result is retrieved because a single video was processed.
-      AnnotateVideoResponse response = future.get(300, TimeUnit.SECONDS);
+      AnnotateVideoResponse response = future.get(600, TimeUnit.SECONDS);
       VideoAnnotationResults results = response.getAnnotationResults(0);
 
       // Get only the first annotation for demo purposes.
@@ -80,19 +81,21 @@ public class TrackObjects {
         Duration startTimeOffset = videoSegment.getStartTimeOffset();
         Duration endTimeOffset = videoSegment.getEndTimeOffset();
         // Display the segment time in seconds, 1e9 converts nanos to seconds
-        System.out.println(String.format(
-            "Segment: %.2fs to %.2fs",
-            startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9,
-            endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
+        System.out.println(
+            String.format(
+                "Segment: %.2fs to %.2fs",
+                startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9,
+                endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
       }
 
       // Here we print only the bounding box of the first frame in this segment.
       ObjectTrackingFrame frame = annotation.getFrames(0);
       // Display the offset time in seconds, 1e9 converts nanos to seconds
       Duration timeOffset = frame.getTimeOffset();
-      System.out.println(String.format(
-          "Time offset of the first frame: %.2fs",
-          timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Time offset of the first frame: %.2fs",
+              timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
 
       // Display the bounding box of the detected object
       NormalizedBoundingBox normalizedBoundingBox = frame.getNormalizedBoundingBox();
@@ -104,9 +107,9 @@ public class TrackObjects {
       return results;
     }
   }
-  // [END video_object_tracking]
+  // [END video_object_tracking_beta]
 
-  // [START video_object_tracking_gcs]
+  // [START video_object_tracking_gcs_beta]
   /**
    * Track objects in a video.
    *
@@ -115,11 +118,12 @@ public class TrackObjects {
   public static VideoAnnotationResults trackObjectsGcs(String gcsUri) throws Exception {
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Create the request
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputUri(gcsUri)
-          .addFeatures(Feature.OBJECT_TRACKING)
-          .setLocationId("us-east1")
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.OBJECT_TRACKING)
+              .setLocationId("us-east1")
+              .build();
 
       // asynchronously perform object tracking on videos
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
@@ -145,19 +149,21 @@ public class TrackObjects {
         Duration startTimeOffset = videoSegment.getStartTimeOffset();
         Duration endTimeOffset = videoSegment.getEndTimeOffset();
         // Display the segment time in seconds, 1e9 converts nanos to seconds
-        System.out.println(String.format(
-            "Segment: %.2fs to %.2fs",
-            startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9,
-            endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
+        System.out.println(
+            String.format(
+                "Segment: %.2fs to %.2fs",
+                startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9,
+                endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
       }
 
       // Here we print only the bounding box of the first frame in this segment.
       ObjectTrackingFrame frame = annotation.getFrames(0);
       // Display the offset time in seconds, 1e9 converts nanos to seconds
       Duration timeOffset = frame.getTimeOffset();
-      System.out.println(String.format(
-          "Time offset of the first frame: %.2fs",
-          timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Time offset of the first frame: %.2fs",
+              timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
 
       // Display the bounding box of the detected object
       NormalizedBoundingBox normalizedBoundingBox = frame.getNormalizedBoundingBox();
@@ -169,5 +175,5 @@ public class TrackObjects {
       return results;
     }
   }
-  // [END video_object_tracking_gcs]
+  // [END video_object_tracking_gcs_beta]
 }

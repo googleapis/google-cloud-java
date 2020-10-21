@@ -42,6 +42,10 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-video-intelligence</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
     <!-- [END videointelligence_install_with_bom] -->
 
     <dependency>

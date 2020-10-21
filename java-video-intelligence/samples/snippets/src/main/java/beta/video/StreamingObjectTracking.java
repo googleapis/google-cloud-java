@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
-// [START video_streaming_explicit_content_detection_beta]
+// [START video_streaming_object_tracking_beta]
+
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame;
+import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation;
+import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
@@ -33,10 +35,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingExplicitContentDetection {
+class StreamingObjectTracking {
 
-  // Perform streaming video detection for explicit content
-  static void streamingExplicitContentDetection(String filePath) {
+  // Perform streaming video object tracking
+  static void streamingObjectTracking(String filePath) {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -53,7 +55,7 @@ class StreamingExplicitContentDetection {
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_EXPLICIT_CONTENT_DETECTION)
+              .setFeature(StreamingFeature.STREAMING_OBJECT_TRACKING)
               .setLabelDetectionConfig(labelConfig)
               .build();
 
@@ -81,14 +83,25 @@ class StreamingExplicitContentDetection {
       for (StreamingAnnotateVideoResponse response : call) {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
-        for (ExplicitContentFrame frame :
-            annotationResults.getExplicitAnnotation().getFramesList()) {
+        for (ObjectTrackingAnnotation objectAnnotations :
+            annotationResults.getObjectAnnotationsList()) {
 
+          String entity = objectAnnotations.getEntity().getDescription();
+          float confidence = objectAnnotations.getConfidence();
+          long trackId = objectAnnotations.getTrackId();
+          System.out.format("%s: %f (ID: %d)\n", entity, confidence, trackId);
+
+          // In streaming, there is always one frame.
+          ObjectTrackingFrame frame = objectAnnotations.getFrames(0);
           double offset =
               frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
-
           System.out.format("Offset: %f\n", offset);
-          System.out.format("\tPornography: %s", frame.getPornographyLikelihood());
+
+          System.out.println("Bounding Box:");
+          System.out.format("\tLeft: %f\n", frame.getNormalizedBoundingBox().getLeft());
+          System.out.format("\tTop: %f\n", frame.getNormalizedBoundingBox().getTop());
+          System.out.format("\tRight: %f\n", frame.getNormalizedBoundingBox().getRight());
+          System.out.format("\tBottom: %f\n", frame.getNormalizedBoundingBox().getBottom());
         }
       }
     } catch (IOException e) {
@@ -96,4 +109,4 @@ class StreamingExplicitContentDetection {
     }
   }
 }
-// [END video_streaming_explicit_content_detection_beta]
+// [END video_streaming_object_tracking_beta]

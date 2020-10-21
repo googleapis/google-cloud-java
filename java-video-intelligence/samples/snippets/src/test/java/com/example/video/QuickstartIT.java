@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google Inc.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,28 +23,39 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class DetectFacesIT {
-
+/** Tests for video analysis sample. */
+@RunWith(JUnit4.class)
+@SuppressWarnings("checkstyle:abbreviationaswordinname")
+public class QuickstartIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testDetectFaces() throws Exception {
-    DetectFaces.detectFaces("resources/googlework_short.mp4");
+  public void test() throws Exception {
+    QuickstartSample.main(new String[0]);
     String got = bout.toString();
-    assertThat(got).contains("Attribute");
+
+    // Test that the video with a cat has the whiskers label (may change).
+    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
+    assertThat(got.toUpperCase()).contains("CONFIDENCE");
   }
 }

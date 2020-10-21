@@ -14,31 +14,36 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
-// [START video_streaming_object_tracking_beta]
+// [START video_streaming_automl_classification_beta]
+
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation;
-import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame;
+import com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation;
+import com.google.cloud.videointelligence.v1p3beta1.LabelFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
-import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingObjectTracking {
+class StreamingAutoMlClassification {
 
-  // Perform streaming video object tracking
-  static void streamingObjectTracking(String filePath) {
+  // Perform streaming video classification with an AutoML Model
+  static void streamingAutoMlClassification(String filePath, String projectId, String modelId)
+      throws StatusRuntimeException, IOException {
     // String filePath = "path_to_your_video_file";
+    // String projectId = "YOUR_GCP_PROJECT_ID";
+    // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";
 
     try (StreamingVideoIntelligenceServiceClient client =
         StreamingVideoIntelligenceServiceClient.create()) {
@@ -49,13 +54,18 @@ class StreamingObjectTracking {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      StreamingLabelDetectionConfig labelConfig =
-          StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
+      String modelPath =
+          String.format("projects/%s/locations/us-central1/models/%s", projectId, modelId);
+
+      System.out.println(modelPath);
+
+      StreamingAutomlClassificationConfig streamingAutomlClassificationConfig =
+          StreamingAutomlClassificationConfig.newBuilder().setModelName(modelPath).build();
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_OBJECT_TRACKING)
-              .setLabelDetectionConfig(labelConfig)
+              .setFeature(StreamingFeature.STREAMING_AUTOML_CLASSIFICATION)
+              .setAutomlClassificationConfig(streamingAutomlClassificationConfig)
               .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
@@ -80,32 +90,27 @@ class StreamingObjectTracking {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
+        if (response.hasError()) {
+          System.out.println(response.getError().getMessage());
+          break;
+        }
+
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
-        for (ObjectTrackingAnnotation objectAnnotations :
-            annotationResults.getObjectAnnotationsList()) {
+        for (LabelAnnotation annotation : annotationResults.getLabelAnnotationsList()) {
+          String entity = annotation.getEntity().getDescription();
 
-          String entity = objectAnnotations.getEntity().getDescription();
-          float confidence = objectAnnotations.getConfidence();
-          long trackId = objectAnnotations.getTrackId();
-          System.out.format("%s: %f (ID: %d)\n", entity, confidence, trackId);
-
-          // In streaming, there is always one frame.
-          ObjectTrackingFrame frame = objectAnnotations.getFrames(0);
+          // There is only one frame per annotation
+          LabelFrame labelFrame = annotation.getFrames(0);
           double offset =
-              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
-          System.out.format("Offset: %f\n", offset);
+              labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
+          float confidence = labelFrame.getConfidence();
 
-          System.out.println("Bounding Box:");
-          System.out.format("\tLeft: %f\n", frame.getNormalizedBoundingBox().getLeft());
-          System.out.format("\tTop: %f\n", frame.getNormalizedBoundingBox().getTop());
-          System.out.format("\tRight: %f\n", frame.getNormalizedBoundingBox().getRight());
-          System.out.format("\tBottom: %f\n", frame.getNormalizedBoundingBox().getBottom());
+          System.out.format("At %fs segment: %s (%f)\n", offset, entity, confidence);
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Video streamed successfully.");
     }
   }
 }
-// [END video_streaming_object_tracking_beta]
+// [END video_streaming_automl_classification_beta]

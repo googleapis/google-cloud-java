@@ -14,35 +14,31 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
-// [START video_streaming_automl_classification_beta]
+// [START video_streaming_explicit_content_detection_beta]
+
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation;
-import com.google.cloud.videointelligence.v1p3beta1.LabelFrame;
+import com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingAutoMlClassification {
+class StreamingExplicitContentDetection {
 
-  // Perform streaming video classification with an AutoML Model
-  static void streamingAutoMlClassification(String filePath, String projectId, String modelId)
-      throws StatusRuntimeException, IOException {
+  // Perform streaming video detection for explicit content
+  static void streamingExplicitContentDetection(String filePath) {
     // String filePath = "path_to_your_video_file";
-    // String projectId = "YOUR_GCP_PROJECT_ID";
-    // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";
 
     try (StreamingVideoIntelligenceServiceClient client =
         StreamingVideoIntelligenceServiceClient.create()) {
@@ -53,18 +49,13 @@ class StreamingAutoMlClassification {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      String modelPath =
-          String.format("projects/%s/locations/us-central1/models/%s", projectId, modelId);
-
-      System.out.println(modelPath);
-
-      StreamingAutomlClassificationConfig streamingAutomlClassificationConfig =
-          StreamingAutomlClassificationConfig.newBuilder().setModelName(modelPath).build();
+      StreamingLabelDetectionConfig labelConfig =
+          StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_AUTOML_CLASSIFICATION)
-              .setAutomlClassificationConfig(streamingAutomlClassificationConfig)
+              .setFeature(StreamingFeature.STREAMING_EXPLICIT_CONTENT_DETECTION)
+              .setLabelDetectionConfig(labelConfig)
               .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
@@ -89,27 +80,21 @@ class StreamingAutoMlClassification {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
-        if (response.hasError()) {
-          System.out.println(response.getError().getMessage());
-          break;
-        }
-
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
-        for (LabelAnnotation annotation : annotationResults.getLabelAnnotationsList()) {
-          String entity = annotation.getEntity().getDescription();
+        for (ExplicitContentFrame frame :
+            annotationResults.getExplicitAnnotation().getFramesList()) {
 
-          // There is only one frame per annotation
-          LabelFrame labelFrame = annotation.getFrames(0);
           double offset =
-              labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
-          float confidence = labelFrame.getConfidence();
+              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
 
-          System.out.format("At %fs segment: %s (%f)\n", offset, entity, confidence);
+          System.out.format("Offset: %f\n", offset);
+          System.out.format("\tPornography: %s", frame.getPornographyLikelihood());
         }
       }
-      System.out.println("Video streamed successfully.");
+    } catch (IOException e) {
+      e.printStackTrace();
     }
   }
 }
-// [END video_streaming_automl_classification_beta]
+// [END video_streaming_explicit_content_detection_beta]

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 // [START video_detect_logo_beta]
+
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute;
