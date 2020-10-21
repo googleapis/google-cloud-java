@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-language.git",
-        "sha": "2a7b20e59e6510834db33964b534391c3183abf5"
+        "sha": "a20085f342099fcda48e734f496b26d2b7cfbbd1"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5a506ec8765cc04f7e29f888b8e9b257d9a7ae11"
+        "sha": "6abb59097be84599a1d6091fe534a49e5c5cf948"
       }
     }
   ],
