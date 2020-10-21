@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_tables_predict_beta]
+// [START automl_tables_predict]
 import com.google.cloud.automl.v1beta1.AnnotationPayload;
 import com.google.cloud.automl.v1beta1.ExamplePayload;
 import com.google.cloud.automl.v1beta1.ModelName;
@@ -84,4 +84,4 @@ class TablesPredict {
     }
   }
 }
-// [END automl_tables_predict_beta]
+// [END automl_tables_predict]

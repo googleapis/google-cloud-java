@@ -18,6 +18,7 @@ package com.beta.automl;
 
 // [START automl_video_classification_get_model_evaluation_beta]
 // [START automl_video_object_tracking_get_model_evaluation_beta]
+// [START automl_tables_get_model_evaluation]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.ModelEvaluation;
 import com.google.cloud.automl.v1beta1.ModelEvaluationName;
@@ -69,5 +70,6 @@ class GetModelEvaluation {
     }
   }
 }
-// [END automl_video_classification_get_model_evaluation_beta]
+// [END automl_tables_get_model_evaluation]
 // [END automl_video_object_tracking_get_model_evaluation_beta]
+// [END automl_video_classification_get_model_evaluation_beta]

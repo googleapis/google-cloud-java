@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_import_dataset_beta]
+// [START automl_import_dataset]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.automl.v1beta1.AutoMlClient;
@@ -87,4 +87,4 @@ class ImportDataset {
     }
   }
 }
-// [END automl_import_dataset_beta]
+// [END automl_import_dataset]

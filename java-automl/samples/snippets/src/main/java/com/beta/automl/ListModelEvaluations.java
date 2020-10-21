@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_tables_list_model_evaluations_beta]
+// [START automl_tables_list_model_evaluations]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.automl.v1beta1.ModelEvaluation;
@@ -63,4 +63,4 @@ class ListModelEvaluations {
     }
   }
 }
-// [END automl_tables_list_model_evaluations_beta]
+// [END automl_tables_list_model_evaluations]

@@ -18,7 +18,7 @@ package com.beta.automl;
 
 // [START automl_video_classification_list_datasets_beta]
 // [START automl_video_object_tracking_list_datasets_beta]
-// [START automl_tables_list_datasets_beta]
+// [START automl_tables_list_datasets]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.AutoMlSettings;
 import com.google.cloud.automl.v1beta1.Dataset;
@@ -63,7 +63,7 @@ class ListDatasets {
         System.out.format("\tnanos: %s%n", dataset.getCreateTime().getNanos());
 
         // [END automl_video_object_tracking_list_datasets_beta]
-        // [END automl_tables_list_datasets_beta]
+        // [END automl_tables_list_datasets]
         System.out.format(
             "Video classification dataset metadata: %s%n",
             dataset.getVideoClassificationDatasetMetadata());
@@ -75,7 +75,7 @@ class ListDatasets {
             dataset.getVideoObjectTrackingDatasetMetadata());
         // [END automl_video_object_tracking_list_datasets_beta]
 
-        // [START automl_tables_list_datasets_beta]
+        // [START automl_tables_list_datasets]
         System.out.format("Tables dataset metadata: %s%n", dataset.getTablesDatasetMetadata());
 
         // [START automl_video_classification_list_datasets_beta]
@@ -86,4 +86,4 @@ class ListDatasets {
 }
 // [END automl_video_classification_list_datasets_beta]
 // [END automl_video_object_tracking_list_datasets_beta]
-// [END automl_tables_list_datasets_beta]
+// [END automl_tables_list_datasets]

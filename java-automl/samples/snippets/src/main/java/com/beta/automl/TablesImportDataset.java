@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_tables_import_dataset_beta]
+// [START automl_tables_import_data]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.BigQuerySource;
 import com.google.cloud.automl.v1beta1.DatasetName;
@@ -71,4 +71,4 @@ class TablesImportDataset {
     }
   }
 }
-// [END automl_tables_import_dataset_beta]
+// [END automl_tables_import_data]

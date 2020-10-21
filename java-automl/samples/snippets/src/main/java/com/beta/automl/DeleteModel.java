@@ -16,6 +16,7 @@
 
 package com.beta.automl;
 
+// [START automl_tables_delete_model]
 // [START automl_delete_model_beta]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.ModelName;
@@ -52,3 +53,4 @@ class DeleteModel {
   }
 }
 // [END automl_delete_model_beta]
+// [END automl_tables_delete_model]

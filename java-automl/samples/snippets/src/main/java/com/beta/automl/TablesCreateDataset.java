@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_tables_create_dataset_beta]
+// [START automl_tables_create_dataset]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.Dataset;
 import com.google.cloud.automl.v1beta1.LocationName;
@@ -60,4 +60,4 @@ class TablesCreateDataset {
     }
   }
 }
-// [END automl_tables_create_dataset_beta]
+// [END automl_tables_create_dataset]

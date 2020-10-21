@@ -16,7 +16,7 @@
 
 package com.beta.automl;
 
-// [START automl_tables_batch_predict_bigquery_beta]
+// [START automl_tables_batch_predict_bq]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.automl.v1beta1.BatchPredictInputConfig;
 import com.google.cloud.automl.v1beta1.BatchPredictOutputConfig;
@@ -79,4 +79,4 @@ class TablesBatchPredictBigQuery {
     }
   }
 }
-// [END automl_tables_batch_predict_bigquery_beta]
+// [END automl_tables_batch_predict_bq]

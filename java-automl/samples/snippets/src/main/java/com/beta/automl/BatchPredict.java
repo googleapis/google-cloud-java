@@ -16,6 +16,7 @@
 
 package com.beta.automl;
 
+// [START automl_tables_batch_predict]
 // [START automl_batch_predict_beta]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.automl.v1beta1.BatchPredictInputConfig;
@@ -80,3 +81,4 @@ class BatchPredict {
   }
 }
 // [END automl_batch_predict_beta]
+// [END automl_tables_batch_predict]
