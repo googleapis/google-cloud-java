@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.5.6](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.5...v1.5.6) (2020-10-20)
+
+
+### Bug Fixes
+
+* Due to backend issues resolved, we no longer need to wait for 5 seconds between reconnection ([#610](https://www.github.com/googleapis/java-bigquerystorage/issues/610)) ([f536fc7](https://www.github.com/googleapis/java-bigquerystorage/commit/f536fc7c998ac7d6c54e7d8b3bb7f9a2d6b5626b))
+* test failure due to message start appending entity ([#609](https://www.github.com/googleapis/java-bigquerystorage/issues/609)) ([63b1762](https://www.github.com/googleapis/java-bigquerystorage/commit/63b17629c62bb06f2651e914ff2988def5107ae7))
+
+
+### Dependencies
+
+* update arrow.version to v2 ([#613](https://www.github.com/googleapis/java-bigquerystorage/issues/613)) ([4b07ee2](https://www.github.com/googleapis/java-bigquerystorage/commit/4b07ee26fea5b58fbf18f342c3e9d5220361d45e))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.123.0 ([#618](https://www.github.com/googleapis/java-bigquerystorage/issues/618)) ([d565550](https://www.github.com/googleapis/java-bigquerystorage/commit/d56555042f886b81eb74701f3ed87cf4fea2fc72))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.11.0 ([#601](https://www.github.com/googleapis/java-bigquerystorage/issues/601)) ([0527f44](https://www.github.com/googleapis/java-bigquerystorage/commit/0527f447826e2829801bbdfcd6db55b6e79acb32))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#615](https://www.github.com/googleapis/java-bigquerystorage/issues/615)) ([dfc6436](https://www.github.com/googleapis/java-bigquerystorage/commit/dfc6436353ec2a00cd4ecb3c47503757177e33a9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#619](https://www.github.com/googleapis/java-bigquerystorage/issues/619)) ([4a24bf8](https://www.github.com/googleapis/java-bigquerystorage/commit/4a24bf881109d84318a3911a71cbff2657a61f7d))
+* update dependency com.google.truth:truth to v1.1 ([#617](https://www.github.com/googleapis/java-bigquerystorage/issues/617)) ([bcab936](https://www.github.com/googleapis/java-bigquerystorage/commit/bcab936673226f771dcfd77f07066d67b64e08dd))
+* update dependency junit:junit to v4.13.1 ([#598](https://www.github.com/googleapis/java-bigquerystorage/issues/598)) ([a732ae0](https://www.github.com/googleapis/java-bigquerystorage/commit/a732ae00dff2dde67478e0eb02308096ba6dc192))
+
 ### [1.5.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.4...v1.5.5) (2020-10-09)
 
 
