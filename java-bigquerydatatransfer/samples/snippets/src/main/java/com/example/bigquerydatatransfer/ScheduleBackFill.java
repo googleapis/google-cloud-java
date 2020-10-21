@@ -19,19 +19,15 @@ package com.example.bigquerydatatransfer;
 // [START bigquerydatatransfer_schedule_backfill]
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions;
-import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
-import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
-import com.google.common.collect.ImmutableList;
-import com.google.protobuf.FieldMask;
+import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest;
+import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse;
 import com.google.protobuf.Timestamp;
-import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 import org.threeten.bp.Clock;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
 
-// Sample to update schedule back fill for transfer config
+// Sample to run schedule back fill for transfer config
 public class ScheduleBackFill {
 
   public static void main(String[] args) throws IOException {
@@ -39,39 +35,32 @@ public class ScheduleBackFill {
     String configId = "MY_CONFIG_ID";
     Clock clock = Clock.systemDefaultZone();
     Instant instant = clock.instant();
-    Timestamp startDate =
+    Timestamp startTime =
         Timestamp.newBuilder()
-            .setSeconds(instant.getEpochSecond())
-            .setNanos(instant.getNano())
+            .setSeconds(instant.minus(5, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(5, ChronoUnit.DAYS).getNano())
             .build();
-    Timestamp endDate =
+    Timestamp endTime =
         Timestamp.newBuilder()
-            .setSeconds(instant.plus(10, ChronoUnit.DAYS).getEpochSecond())
-            .setNanos(instant.plus(10, ChronoUnit.DAYS).getNano())
+            .setSeconds(instant.minus(2, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(2, ChronoUnit.DAYS).getNano())
             .build();
-    TransferConfig transferConfig =
-        TransferConfig.newBuilder()
-            .setName(configId)
-            .setScheduleOptions(
-                ScheduleOptions.newBuilder().setStartTime(startDate).setEndTime(endDate).build())
-            .build();
-    FieldMask updateMask = FieldMaskUtil.fromStringList(ImmutableList.of("start_time", "end_time"));
-    scheduleBackFill(transferConfig, updateMask);
+    scheduleBackFill(configId, startTime, endTime);
   }
 
-  public static void scheduleBackFill(TransferConfig transferConfig, FieldMask updateMask)
+  public static void scheduleBackFill(String configId, Timestamp startTime, Timestamp endTime)
       throws IOException {
-    try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      UpdateTransferConfigRequest request =
-          UpdateTransferConfigRequest.newBuilder()
-              .setTransferConfig(transferConfig)
-              .setUpdateMask(updateMask)
+    try (DataTransferServiceClient client = DataTransferServiceClient.create()) {
+      ScheduleTransferRunsRequest request =
+          ScheduleTransferRunsRequest.newBuilder()
+              .setParent(configId)
+              .setStartTime(startTime)
+              .setEndTime(endTime)
               .build();
-      TransferConfig updateConfig = dataTransferServiceClient.updateTransferConfig(request);
-      System.out.println(
-          "Schedule backfill updated successfully :" + updateConfig.getDisplayName());
+      ScheduleTransferRunsResponse response = client.scheduleTransferRuns(request);
+      System.out.println("Schedule backfill run successfully :" + response.getRunsCount());
     } catch (ApiException ex) {
-      System.out.print("Schedule backfill was not updated." + ex.toString());
+      System.out.print("Schedule backfill was not run." + ex.toString());
     }
   }
 }

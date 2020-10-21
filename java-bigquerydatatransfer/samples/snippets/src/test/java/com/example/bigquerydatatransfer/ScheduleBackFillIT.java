@@ -19,9 +19,7 @@ package com.example.bigquerydatatransfer;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
-import com.google.common.collect.ImmutableList;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.FieldMaskUtil;
@@ -61,11 +59,16 @@ public class ScheduleBackFillIT {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+    // enable transfer config
+    TransferConfig transferConfig =
+        TransferConfig.newBuilder().setName(CONFIG_NAME).setDisabled(false).build();
+    FieldMask updateMask = FieldMaskUtil.fromString("disabled");
+    ReEnableTransferConfig.reEnableTransferConfig(transferConfig, updateMask);
   }
 
   @After
@@ -79,25 +82,18 @@ public class ScheduleBackFillIT {
   @Test
   public void testScheduleBackFill() throws IOException {
     Clock clock = Clock.systemDefaultZone();
-    Instant instant = clock.instant();
-    Timestamp startDate =
+    Instant instant = clock.instant().truncatedTo(ChronoUnit.DAYS);
+    Timestamp startTime =
         Timestamp.newBuilder()
-            .setSeconds(instant.getEpochSecond())
-            .setNanos(instant.getNano())
+            .setSeconds(instant.minus(5, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(5, ChronoUnit.DAYS).getNano())
             .build();
-    Timestamp endDate =
+    Timestamp endTime =
         Timestamp.newBuilder()
-            .setSeconds(instant.plus(10, ChronoUnit.DAYS).getEpochSecond())
-            .setNanos(instant.plus(10, ChronoUnit.DAYS).getNano())
+            .setSeconds(instant.minus(2, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(2, ChronoUnit.DAYS).getNano())
             .build();
-    TransferConfig transferConfig =
-        TransferConfig.newBuilder()
-            .setName(CONFIG_NAME)
-            .setScheduleOptions(
-                ScheduleOptions.newBuilder().setStartTime(startDate).setEndTime(endDate).build())
-            .build();
-    FieldMask updateMask = FieldMaskUtil.fromStringList(ImmutableList.of("start_time", "end_time"));
-    ScheduleBackFill.scheduleBackFill(transferConfig, updateMask);
-    assertThat(bout.toString()).contains("Schedule backfill updated successfully :");
+    ScheduleBackFill.scheduleBackFill(CONFIG_NAME, startTime, endTime);
+    assertThat(bout.toString()).contains("Schedule backfill run successfully :");
   }
 }
