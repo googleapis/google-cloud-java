@@ -44,6 +44,9 @@ import com.google.bigtable.admin.v2.RestoreSourceType;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
@@ -59,6 +62,7 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -94,7 +98,6 @@ public class BigtableTableAdminClientTest {
   private static final String CLUSTER_ID = "my-cluster";
   private static final String BACKUP_ID = "my-backup";
 
-  private static final String PROJECT_NAME = NameUtil.formatProjectName(PROJECT_ID);
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
   private static final String TABLE_NAME =
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
@@ -156,6 +159,19 @@ public class BigtableTableAdminClientTest {
           RestoreTableMetadata>
       mockRestoreTableOperationCallable;
 
+  @Mock
+  private UnaryCallable<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      mockGetIamPolicyCallable;
+
+  @Mock
+  private UnaryCallable<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      mockSetIamPolicyCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      mockTestIamPermissionsCallable;
+
   @Before
   public void setUp() {
     adminClient = BigtableTableAdminClient.create(PROJECT_ID, INSTANCE_ID, mockStub);
@@ -177,6 +193,9 @@ public class BigtableTableAdminClientTest {
     Mockito.when(mockStub.restoreTableCallable()).thenReturn(mockRestoreTableCallable);
     Mockito.when(mockStub.restoreTableOperationCallable())
         .thenReturn(mockRestoreTableOperationCallable);
+    Mockito.when(mockStub.getIamPolicyCallable()).thenReturn(mockGetIamPolicyCallable);
+    Mockito.when(mockStub.setIamPolicyCallable()).thenReturn(mockSetIamPolicyCallable);
+    Mockito.when(mockStub.testIamPermissionsCallable()).thenReturn(mockTestIamPermissionsCallable);
   }
 
   @Test
@@ -643,6 +662,107 @@ public class BigtableTableAdminClientTest {
     }
 
     assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testGetBackupIamPolicy() {
+    // Setup
+    com.google.iam.v1.GetIamPolicyRequest expectedRequest =
+        com.google.iam.v1.GetIamPolicyRequest.newBuilder()
+            .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
+            .build();
+
+    com.google.iam.v1.Policy expectedResponse =
+        com.google.iam.v1.Policy.newBuilder()
+            .addBindings(
+                com.google.iam.v1.Binding.newBuilder()
+                    .setRole("roles/bigtable.viewer")
+                    .addMembers("user:someone@example.com"))
+            .setEtag(ByteString.copyFromUtf8("my-etag"))
+            .build();
+
+    Mockito.when(mockGetIamPolicyCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    Policy actualResult = adminClient.getBackupIamPolicy(CLUSTER_ID, BACKUP_ID);
+
+    // Verify
+    assertThat(actualResult)
+        .isEqualTo(
+            Policy.newBuilder()
+                .addIdentity(Role.of("bigtable.viewer"), Identity.user("someone@example.com"))
+                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes()))
+                .build());
+  }
+
+  @Test
+  public void testSetIamPolicy() {
+    // Setup
+    com.google.iam.v1.SetIamPolicyRequest expectedRequest =
+        com.google.iam.v1.SetIamPolicyRequest.newBuilder()
+            .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
+            .setPolicy(
+                com.google.iam.v1.Policy.newBuilder()
+                    .addBindings(
+                        com.google.iam.v1.Binding.newBuilder()
+                            .setRole("roles/bigtable.viewer")
+                            .addMembers("user:someone@example.com")))
+            .build();
+
+    com.google.iam.v1.Policy expectedResponse =
+        com.google.iam.v1.Policy.newBuilder()
+            .addBindings(
+                com.google.iam.v1.Binding.newBuilder()
+                    .setRole("roles/bigtable.viewer")
+                    .addMembers("user:someone@example.com"))
+            .setEtag(ByteString.copyFromUtf8("my-etag"))
+            .build();
+
+    Mockito.when(mockSetIamPolicyCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    Policy actualResult =
+        adminClient.setBackupIamPolicy(
+            CLUSTER_ID,
+            BACKUP_ID,
+            Policy.newBuilder()
+                .addIdentity(Role.of("bigtable.viewer"), Identity.user("someone@example.com"))
+                .build());
+
+    // Verify
+    assertThat(actualResult)
+        .isEqualTo(
+            Policy.newBuilder()
+                .addIdentity(Role.of("bigtable.viewer"), Identity.user("someone@example.com"))
+                .setEtag(BaseEncoding.base64().encode("my-etag".getBytes()))
+                .build());
+  }
+
+  @Test
+  public void testTestIamPermissions() {
+    // Setup
+    com.google.iam.v1.TestIamPermissionsRequest expectedRequest =
+        com.google.iam.v1.TestIamPermissionsRequest.newBuilder()
+            .setResource(NameUtil.formatBackupName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
+            .addPermissions("bigtable.backups.get")
+            .build();
+
+    com.google.iam.v1.TestIamPermissionsResponse expectedResponse =
+        com.google.iam.v1.TestIamPermissionsResponse.newBuilder()
+            .addPermissions("bigtable.backups.get")
+            .build();
+
+    Mockito.when(mockTestIamPermissionsCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    List<String> actualResult =
+        adminClient.testBackupIamPermission(CLUSTER_ID, BACKUP_ID, "bigtable.backups.get");
+
+    // Verify
+    assertThat(actualResult).containsExactly("bigtable.backups.get");
   }
 
   private <ReqT, RespT, MetaT> void mockOperationResult(

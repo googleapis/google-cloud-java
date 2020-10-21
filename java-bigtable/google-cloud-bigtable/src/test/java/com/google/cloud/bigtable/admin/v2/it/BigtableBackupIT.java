@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static io.grpc.Status.Code.NOT_FOUND;
 import static org.junit.Assert.fail;
@@ -22,6 +23,7 @@ import static org.junit.Assert.fail;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.Policy;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
@@ -329,6 +331,33 @@ public class BigtableBackupIT {
       tableAdmin.deleteBackup(targetCluster, backupId);
       tableAdmin.deleteTable(tableId);
     }
+  }
+
+  @Test
+  public void backupIamTest() throws InterruptedException {
+    String backupId = generateId("iam-" + TEST_BACKUP_SUFFIX);
+    createBackupAndWait(backupId);
+
+    Policy policy = tableAdmin.getBackupIamPolicy(targetCluster, backupId);
+    assertThat(policy).isNotNull();
+
+    Exception actualEx = null;
+    try {
+      assertThat(tableAdmin.setBackupIamPolicy(targetCluster, backupId, policy)).isNotNull();
+    } catch (Exception iamException) {
+      actualEx = iamException;
+    }
+    assertThat(actualEx).isNull();
+
+    List<String> permissions =
+        tableAdmin.testBackupIamPermission(
+            targetCluster,
+            backupId,
+            "bigtable.backups.get",
+            "bigtable.backups.delete",
+            "bigtable.backups.update",
+            "bigtable.backups.restore");
+    assertThat(permissions).hasSize(4);
   }
 
   private CreateBackupRequest createBackupRequest(String backupName) {

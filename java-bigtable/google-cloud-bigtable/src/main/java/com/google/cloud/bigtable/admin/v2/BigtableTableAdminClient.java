@@ -1319,21 +1319,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Policy> getIamPolicyAsync(String tableId) {
-    String name = NameUtil.formatTableName(projectId, instanceId, tableId);
-
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).build();
-
-    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
-
-    return ApiFutures.transform(
-        stub.getIamPolicyCallable().futureCall(request),
-        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
-          @Override
-          public Policy apply(com.google.iam.v1.Policy proto) {
-            return marshaller.fromPb(proto);
-          }
-        },
-        MoreExecutors.directExecutor());
+    String tableName = NameUtil.formatTableName(projectId, instanceId, tableId);
+    return getResourceIamPolicy(tableName);
   }
 
   /**
@@ -1391,24 +1378,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Policy> setIamPolicyAsync(String tableId, Policy policy) {
-    String name = NameUtil.formatTableName(projectId, instanceId, tableId);
-    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
-
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder()
-            .setResource(name)
-            .setPolicy(marshaller.toPb(policy))
-            .build();
-
-    return ApiFutures.transform(
-        stub.setIamPolicyCallable().futureCall(request),
-        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
-          @Override
-          public Policy apply(com.google.iam.v1.Policy proto) {
-            return marshaller.fromPb(proto);
-          }
-        },
-        MoreExecutors.directExecutor());
+    String tableName = NameUtil.formatTableName(projectId, instanceId, tableId);
+    return setResourceIamPolicy(policy, tableName);
   }
 
   /**
@@ -1463,9 +1434,227 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings({"WeakerAccess"})
   public ApiFuture<List<String>> testIamPermissionAsync(String tableId, String... permissions) {
+    String tableName = NameUtil.formatTableName(projectId, instanceId, tableId);
+    return testResourceIamPermissions(tableName, permissions);
+  }
+
+  /**
+   * Gets the IAM access control policy for the specified backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy policy = client.getBackupIamPolicy("my-cluster-id", "my-backup-id");
+   * for(Map.Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *   System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   * }
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public Policy getBackupIamPolicy(String clusterId, String backupId) {
+    return ApiExceptions.callAndTranslateApiException(getBackupIamPolicyAsync(clusterId, backupId));
+  }
+
+  /**
+   * Asynchronously gets the IAM access control policy for the specified backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> policyFuture = client.getBackupIamPolicyAsync("my-cluster-id", "my-backup-id");
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Policy> getBackupIamPolicyAsync(String clusterId, String backupId) {
+    String backupName = NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId);
+    return getResourceIamPolicy(backupName);
+  }
+
+  /**
+   * Replaces the IAM policy associated with the specified backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy newPolicy = client.setBackupIamPolicy("my-cluster-id", "my-backup-id",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public Policy setBackupIamPolicy(String clusterId, String backupId, Policy policy) {
+    return ApiExceptions.callAndTranslateApiException(
+        setBackupIamPolicyAsync(clusterId, backupId, policy));
+  }
+
+  /**
+   * Asynchronously replaces the IAM policy associated with the specified backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> newPolicyFuture = client.setBackupIamPolicyAsync("my-cluster-id", "my-backup-id",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   *
+   * ApiFutures.addCallback(newPolicyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Policy> setBackupIamPolicyAsync(
+      String clusterId, String backupId, Policy policy) {
+    String backupName = NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId);
+    return setResourceIamPolicy(policy, backupName);
+  }
+
+  /**
+   * Tests whether the caller has the given permissions for the specified backup. Returns a subset
+   * of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> grantedPermissions = client.testBackupIamPermission("my-cluster-id", "my-backup-id",
+   *   "bigtable.backups.restore", "bigtable.backups.delete");
+   * }</pre>
+   *
+   * System.out.println("Has restore access: " +
+   * grantedPermissions.contains("bigtable.backups.restore"));
+   *
+   * <p>System.out.println("Has delete access: " +
+   * grantedPermissions.contains("bigtable.backups.delete"));
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  public List<String> testBackupIamPermission(
+      String clusterId, String backupId, String... permissions) {
+    return ApiExceptions.callAndTranslateApiException(
+        testBackupIamPermissionAsync(clusterId, backupId, permissions));
+  }
+
+  /**
+   * Asynchronously tests whether the caller has the given permissions for the specified backup.
+   * Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testBackupIamPermissionAsync("my-cluster-id", "my-backup-id",
+   *   "bigtable.backups.restore", "bigtable.backups.delete");
+   *
+   * ApiFutures.addCallback(grantedPermissionsFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> grantedPermissions) {
+   *       System.out.println("Has restore access: " + grantedPermissions.contains("bigtable.backups.restore"));
+   *       System.out.println("Has delete access: " + grantedPermissions.contains("bigtable.backups.delete"));
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  public ApiFuture<List<String>> testBackupIamPermissionAsync(
+      String clusterId, String backupId, String... permissions) {
+    String backupName = NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId);
+    return testResourceIamPermissions(backupName, permissions);
+  }
+
+  private ApiFuture<Policy> getResourceIamPolicy(String name) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).build();
+
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
+
+    return ApiFutures.transform(
+        stub.getIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  private ApiFuture<Policy> setResourceIamPolicy(Policy policy, String name) {
+    final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(name)
+            .setPolicy(marshaller.toPb(policy))
+            .build();
+
+    return ApiFutures.transform(
+        stub.setIamPolicyCallable().futureCall(request),
+        new ApiFunction<com.google.iam.v1.Policy, Policy>() {
+          @Override
+          public Policy apply(com.google.iam.v1.Policy proto) {
+            return marshaller.fromPb(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  private ApiFuture<List<String>> testResourceIamPermissions(
+      String resourceName, String[] permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(NameUtil.formatTableName(projectId, instanceId, tableId))
+            .setResource(resourceName)
             .addAllPermissions(Arrays.asList(permissions))
             .build();
 
