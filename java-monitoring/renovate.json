@@ -19,24 +19,6 @@
     },
     {
       "packagePatterns": [
-        "^com.google.api:gax",
-        "^com.google.auth:",
-        "^com.google.cloud:google-cloud-core",
-        "^io.grpc:",
-        "^com.google.guava:"
-      ],
-      "groupName": "core dependencies"
-    },
-    {
-      "packagePatterns": [
-        "^com.google.http-client:",
-        "^com.google.oauth-client:",
-        "^com.google.api-client:"
-      ],
-      "groupName": "core transport dependencies"
-    },
-    {
-      "packagePatterns": [
         "*"
       ],
       "semanticCommitType": "deps",
@@ -61,6 +43,16 @@
         "^com.google.cloud.samples:shared-configuration"
       ],
       "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
+    },
+    {
+      "packagePatterns": [
+        "^junit:junit",
+        "^com.google.truth:truth",
+        "^org.mockito:mockito-core",
+        "^org.objenesis:objenesis"
+      ],
+      "semanticCommitType": "test",
       "semanticCommitScope": "deps"
     },
     {
