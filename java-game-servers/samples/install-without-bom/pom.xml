@@ -29,19 +29,19 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
-      <version>0.21.2</version>
+      <version>0.21.3-SNAPSHOT</version>
     </dependency>
     <!-- [END game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>0.21.2</version>
+      <version>0.21.3-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>0.21.2</version>
+      <version>0.21.3-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
