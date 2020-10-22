@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-document-ai/compare/v0.3.1...v0.3.2) (2020-10-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#223](https://www.github.com/googleapis/java-document-ai/issues/223)) ([90916aa](https://www.github.com/googleapis/java-document-ai/commit/90916aad15493ce83fd5427f632a756c55213652))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#227](https://www.github.com/googleapis/java-document-ai/issues/227)) ([a3d8605](https://www.github.com/googleapis/java-document-ai/commit/a3d860512fc9a35737acd939d06518fbf7fd893b))
+
 ### [0.3.1](https://www.github.com/googleapis/java-document-ai/compare/v0.3.0...v0.3.1) (2020-10-08)
 
 
