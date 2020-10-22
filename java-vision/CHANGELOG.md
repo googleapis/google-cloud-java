@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.110.4](https://www.github.com/googleapis/java-vision/compare/v1.110.3...v1.110.4) (2020-10-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#276](https://www.github.com/googleapis/java-vision/issues/276)) ([c71190f](https://www.github.com/googleapis/java-vision/commit/c71190fd2b6fe0cd4d5957ed9bbadf6395dff6ff))
+
 ### [1.110.3](https://www.github.com/googleapis/java-vision/compare/v1.110.2...v1.110.3) (2020-10-19)
 
 
