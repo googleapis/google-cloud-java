@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-tasks</artifactId>
-      <version>1.30.4</version>
+      <version>1.30.6</version>
     </dependency>
     <!-- [END cloudtasks_install_without_bom] -->
 
