@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.1.1...v0.2.0) (2020-10-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove CreateCertificateRevocationList, create/delete/updateReusableConfig methods (#33)
+
+### Features
+
+* remove CreateCertificateRevocationList, create/delete/updateReusableConfig methods ([#33](https://www.github.com/googleapis/java-security-private-ca/issues/33)) ([24f60bc](https://www.github.com/googleapis/java-security-private-ca/commit/24f60bc2664cc0377ca354fe44a1a05103ffe08b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#48](https://www.github.com/googleapis/java-security-private-ca/issues/48)) ([2dad308](https://www.github.com/googleapis/java-security-private-ca/commit/2dad3080c7912f17e60880863ae017dad10da394))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#51](https://www.github.com/googleapis/java-security-private-ca/issues/51)) ([17c1c9e](https://www.github.com/googleapis/java-security-private-ca/commit/17c1c9e016801102d17e8ac8b1c25a518feb4b04))
+* update dependency com.google.truth:truth to v1.1 ([#50](https://www.github.com/googleapis/java-security-private-ca/issues/50)) ([c7be3c0](https://www.github.com/googleapis/java-security-private-ca/commit/c7be3c0e57c3da32e2bbfb5f714993836322bb66))
+
 ### [0.1.1](https://www.github.com/googleapis/java-security-private-ca/compare/v0.1.0...v0.1.1) (2020-10-08)
 
 
