@@ -29,25 +29,25 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
-      <version>0.21.2-SNAPSHOT</version>
+      <version>0.21.2</version>
     </dependency>
     <!-- [END game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>0.21.2-SNAPSHOT</version>
+      <version>0.21.2</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>0.21.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.0.1</version>
+      <version>0.21.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
