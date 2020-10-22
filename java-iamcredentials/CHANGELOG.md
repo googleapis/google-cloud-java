@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-iamcredentials/compare/v1.1.3...v1.1.4) (2020-10-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#255](https://www.github.com/googleapis/java-iamcredentials/issues/255)) ([a4846f3](https://www.github.com/googleapis/java-iamcredentials/commit/a4846f3cc54206983c62119b763036364092504f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#259](https://www.github.com/googleapis/java-iamcredentials/issues/259)) ([6e225ec](https://www.github.com/googleapis/java-iamcredentials/commit/6e225eca54e70fa26117f0872b2da67a25b48b2e))
+
 ### [1.1.3](https://www.github.com/googleapis/java-iamcredentials/compare/v1.1.2...v1.1.3) (2020-10-08)
 
 
