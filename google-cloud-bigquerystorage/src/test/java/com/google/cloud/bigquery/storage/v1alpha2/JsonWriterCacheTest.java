@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -40,8 +39,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.threeten.bp.Instant;
-import org.threeten.bp.temporal.ChronoUnit;
 
 @RunWith(JUnit4.class)
 public class JsonWriterCacheTest {
@@ -108,18 +105,6 @@ public class JsonWriterCacheTest {
             .setTableSchema(TABLE_SCHEMA)
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
-
-    // Response from GetWriteStream
-    Instant time = Instant.now();
-    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
-    Stream.WriteStream expectedResponse2 =
-        Stream.WriteStream.newBuilder()
-            .setName(testStreamName)
-            .setType(Stream.WriteStream.Type.COMMITTED)
-            .setCreateTime(timestamp)
-            .build();
-    mockBigQueryWrite.addResponse(expectedResponse2);
   }
 
   @After
@@ -144,47 +129,12 @@ public class JsonWriterCacheTest {
     WriterCreationResponseMock(TEST_STREAM);
     JsonStreamWriter writer = cache.getTableWriter(TEST_TABLE);
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    assertEquals(2, actualRequests.size());
+    assertEquals(1, actualRequests.size());
     assertEquals(
         TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
-    assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getWriteStream().getType());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
 
     assertEquals(TEST_STREAM, writer.getStreamName());
     assertEquals(1, cache.cachedTableCount());
-    cache.clear();
-  }
-
-  @Test
-  public void testWriterExpired() throws Exception {
-    JsonWriterCache cache = JsonWriterCache.getTestInstance(client, 10);
-    // Response from CreateWriteStream
-    Stream.WriteStream expectedResponse =
-        Stream.WriteStream.newBuilder().setName(TEST_STREAM).build();
-    mockBigQueryWrite.addResponse(expectedResponse);
-
-    // Response from GetWriteStream
-    Instant time = Instant.now().minus(2, ChronoUnit.DAYS);
-    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
-    Stream.WriteStream expectedResponse2 =
-        Stream.WriteStream.newBuilder()
-            .setName(TEST_STREAM)
-            .setType(Stream.WriteStream.Type.COMMITTED)
-            .setCreateTime(timestamp)
-            .build();
-    mockBigQueryWrite.addResponse(expectedResponse2);
-
-    try {
-      JsonStreamWriter writer = cache.getTableWriter(TEST_TABLE);
-      fail("Should fail");
-    } catch (IllegalStateException e) {
-      assertEquals(
-          "Cannot write to a stream that is already expired: projects/p/datasets/d/tables/t/streams/s",
-          e.getMessage());
-    }
     cache.clear();
   }
 
@@ -197,14 +147,11 @@ public class JsonWriterCacheTest {
     JsonStreamWriter writer2 = cache.getTableWriter(TEST_TABLE_2);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    assertEquals(4, actualRequests.size());
+    assertEquals(2, actualRequests.size());
     assertEquals(
         TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
     assertEquals(
-        TEST_TABLE_2, ((Storage.CreateWriteStreamRequest) actualRequests.get(2)).getParent());
-    Assert.assertEquals(
-        TEST_STREAM_21, ((Storage.GetWriteStreamRequest) actualRequests.get(3)).getName());
+        TEST_TABLE_2, ((Storage.CreateWriteStreamRequest) actualRequests.get(1)).getParent());
     assertEquals(TEST_STREAM, writer1.getStreamName());
     assertEquals(TEST_STREAM_21, writer2.getStreamName());
     assertEquals(2, cache.cachedTableCount());

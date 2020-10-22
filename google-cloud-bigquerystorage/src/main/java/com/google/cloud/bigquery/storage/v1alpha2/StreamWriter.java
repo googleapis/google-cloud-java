@@ -57,7 +57,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
@@ -117,9 +116,6 @@ public class StreamWriter implements AutoCloseable {
   private final Waiter messagesWaiter;
   private final AtomicBoolean activeAlarm;
   private ScheduledFuture<?> currentAlarmFuture;
-
-  private Instant createTime;
-  private Duration streamTTL = Duration.ofDays(1);
 
   private Integer currentRetries = 0;
 
@@ -182,19 +178,6 @@ public class StreamWriter implements AutoCloseable {
     }
 
     refreshAppend();
-    Stream.WriteStream stream =
-        stub.getWriteStream(Storage.GetWriteStreamRequest.newBuilder().setName(streamName).build());
-    createTime =
-        Instant.ofEpochSecond(
-            stream.getCreateTime().getSeconds(), stream.getCreateTime().getNanos());
-    if (stream.getType() == Stream.WriteStream.Type.PENDING && stream.hasCommitTime()) {
-      throw new IllegalStateException(
-          "Cannot write to a stream that is already committed: " + streamName);
-    }
-    if (createTime.plus(streamTTL).compareTo(Instant.now()) < 0) {
-      throw new IllegalStateException(
-          "Cannot write to a stream that is already expired: " + streamName);
-    }
   }
 
   /** Stream name we are writing to. */
@@ -210,11 +193,6 @@ public class StreamWriter implements AutoCloseable {
   /** OnSchemaUpdateRunnable for this streamWriter. */
   OnSchemaUpdateRunnable getOnSchemaUpdateRunnable() {
     return this.onSchemaUpdateRunnable;
-  }
-
-  /** Returns if a stream has expired. */
-  public Boolean expired() {
-    return createTime.plus(streamTTL).compareTo(Instant.now()) < 0;
   }
 
   private void setException(Throwable t) {

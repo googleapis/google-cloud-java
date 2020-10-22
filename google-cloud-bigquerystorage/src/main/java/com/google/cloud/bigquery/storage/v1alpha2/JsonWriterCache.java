@@ -113,11 +113,7 @@ public class JsonWriterCache {
     synchronized (this) {
       writer = jsonWriterCache.getIfPresent(tableName);
       if (writer != null) {
-        if (!writer.expired()) {
-          return writer;
-        } else {
-          writer.close();
-        }
+        return writer;
       }
       writeStream = CreateNewWriteStream(tableName);
       writer = CreateNewWriter(writeStream);

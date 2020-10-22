@@ -135,11 +135,7 @@ public class WriterCache {
       if (tableEntry != null) {
         writer = tableEntry.getIfPresent(userSchema);
         if (writer != null) {
-          if (!writer.expired()) {
-            return writer;
-          } else {
-            writer.close();
-          }
+          return writer;
         }
         compat.check(tableName, userSchema);
         streamName = CreateNewStream(tableName);

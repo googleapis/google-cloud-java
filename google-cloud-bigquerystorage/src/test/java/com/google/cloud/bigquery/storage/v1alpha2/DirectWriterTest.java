@@ -28,7 +28,6 @@ import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest;
 import com.google.common.collect.Sets;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -50,7 +49,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class DirectWriterTest {
@@ -115,18 +113,6 @@ public class DirectWriterTest {
         Stream.WriteStream.newBuilder().setName(testStreamName).build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
-    // Response from GetWriteStream
-    Instant time = Instant.now();
-    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
-    Stream.WriteStream expectedResponse2 =
-        Stream.WriteStream.newBuilder()
-            .setName(testStreamName)
-            .setType(Stream.WriteStream.Type.COMMITTED)
-            .setCreateTime(timestamp)
-            .build();
-    mockBigQueryWrite.addResponse(expectedResponse2);
-
     for (Long offset : responseOffsets) {
       Storage.AppendRowsResponse response =
           Storage.AppendRowsResponse.newBuilder().setOffset(offset).build();
@@ -143,18 +129,6 @@ public class DirectWriterTest {
             .setTableSchema(TABLE_SCHEMA)
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
-
-    // Response from GetWriteStream
-    Instant time = Instant.now();
-    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
-    Stream.WriteStream expectedResponse2 =
-        Stream.WriteStream.newBuilder()
-            .setName(testStreamName)
-            .setType(Stream.WriteStream.Type.COMMITTED)
-            .setCreateTime(timestamp)
-            .build();
-    mockBigQueryWrite.addResponse(expectedResponse2);
 
     for (Long offset : responseOffsets) {
       Storage.AppendRowsResponse response =
@@ -183,19 +157,15 @@ public class DirectWriterTest {
     ApiFuture<Long> ret = DirectWriter.append(TEST_TABLE, jsonArr);
     assertEquals(Long.valueOf(0L), ret.get());
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    Assert.assertEquals(3, actualRequests.size());
+    Assert.assertEquals(2, actualRequests.size());
     assertEquals(
         TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
     assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getWriteStream().getType());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
-    assertEquals(
         m1.toByteString(),
-        ((AppendRowsRequest) actualRequests.get(2)).getProtoRows().getRows().getSerializedRows(0));
+        ((AppendRowsRequest) actualRequests.get(1)).getProtoRows().getRows().getSerializedRows(0));
     assertEquals(
         m2.toByteString(),
-        ((AppendRowsRequest) actualRequests.get(2)).getProtoRows().getRows().getSerializedRows(1));
+        ((AppendRowsRequest) actualRequests.get(1)).getProtoRows().getRows().getSerializedRows(1));
 
     Storage.AppendRowsResponse response =
         Storage.AppendRowsResponse.newBuilder().setOffset(2).build();
@@ -205,7 +175,7 @@ public class DirectWriterTest {
     assertEquals(Long.valueOf(2L), ret.get());
     assertEquals(
         m1.toByteString(),
-        ((AppendRowsRequest) actualRequests.get(3)).getProtoRows().getRows().getSerializedRows(0));
+        ((AppendRowsRequest) actualRequests.get(2)).getProtoRows().getRows().getSerializedRows(0));
     DirectWriter.clearCache();
   }
 
@@ -220,13 +190,9 @@ public class DirectWriterTest {
     verify(schemaCheck).check(TEST_TABLE, FooType.getDescriptor());
     assertEquals(Long.valueOf(0L), ret.get());
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    Assert.assertEquals(3, actualRequests.size());
+    Assert.assertEquals(2, actualRequests.size());
     assertEquals(
         TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
-    assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getWriteStream().getType());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
 
     Storage.AppendRowsRequest.ProtoData.Builder dataBuilder =
         Storage.AppendRowsRequest.ProtoData.newBuilder();
@@ -241,7 +207,7 @@ public class DirectWriterTest {
             .setWriteStream(TEST_STREAM)
             .setProtoRows(dataBuilder.build())
             .build();
-    assertEquals(expectRequest.toString(), actualRequests.get(2).toString());
+    assertEquals(expectRequest.toString(), actualRequests.get(1).toString());
 
     Storage.AppendRowsResponse response =
         Storage.AppendRowsResponse.newBuilder().setOffset(2).build();
@@ -254,7 +220,7 @@ public class DirectWriterTest {
         ProtoBufProto.ProtoRows.newBuilder().addSerializedRows(m1.toByteString()).build());
     expectRequest =
         Storage.AppendRowsRequest.newBuilder().setProtoRows(dataBuilder.build()).build();
-    assertEquals(expectRequest.toString(), actualRequests.get(3).toString());
+    assertEquals(expectRequest.toString(), actualRequests.get(2).toString());
 
     // Write with a different schema.
     WriterCreationResponseMock(TEST_STREAM_2, Sets.newHashSet(Long.valueOf(0L)));
@@ -271,14 +237,10 @@ public class DirectWriterTest {
             .setWriteStream(TEST_STREAM_2)
             .setProtoRows(dataBuilder.build())
             .build();
-    Assert.assertEquals(7, actualRequests.size());
+    Assert.assertEquals(5, actualRequests.size());
     assertEquals(
-        TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(4)).getParent());
-    assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(4)).getWriteStream().getType());
-    assertEquals(TEST_STREAM_2, ((Storage.GetWriteStreamRequest) actualRequests.get(5)).getName());
-    assertEquals(expectRequest.toString(), actualRequests.get(6).toString());
+        TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(3)).getParent());
+    assertEquals(expectRequest.toString(), actualRequests.get(4).toString());
 
     DirectWriter.clearCache();
   }
@@ -433,13 +395,9 @@ public class DirectWriterTest {
     verify(schemaCheck).check(TEST_TABLE, FooType.getDescriptor());
     assertEquals(Long.valueOf(0L), ret.get());
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
-    Assert.assertEquals(3, actualRequests.size());
+    Assert.assertEquals(2, actualRequests.size());
     assertEquals(
         TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getParent());
-    assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(0)).getWriteStream().getType());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(1)).getName());
 
     Storage.AppendRowsRequest.ProtoData.Builder dataBuilder =
         Storage.AppendRowsRequest.ProtoData.newBuilder();
@@ -454,25 +412,19 @@ public class DirectWriterTest {
             .setWriteStream(TEST_STREAM)
             .setProtoRows(dataBuilder.build())
             .build();
-    assertEquals(expectRequest.toString(), actualRequests.get(2).toString());
+    assertEquals(expectRequest.toString(), actualRequests.get(1).toString());
 
     JsonWriterCreationResponseMock(TEST_STREAM, Sets.newHashSet(Long.valueOf(0L)));
     ret = DirectWriter.append(TEST_TABLE, jsonArr);
     assertEquals(Long.valueOf(0L), ret.get());
     actualRequests = mockBigQueryWrite.getRequests();
-    Assert.assertEquals(6, actualRequests.size());
-    assertEquals(
-        TEST_TABLE, ((Storage.CreateWriteStreamRequest) actualRequests.get(3)).getParent());
-    assertEquals(
-        Stream.WriteStream.Type.COMMITTED,
-        ((Storage.CreateWriteStreamRequest) actualRequests.get(3)).getWriteStream().getType());
-    assertEquals(TEST_STREAM, ((Storage.GetWriteStreamRequest) actualRequests.get(4)).getName());
+    Assert.assertEquals(4, actualRequests.size());
     assertEquals(
         m1.toByteString(),
-        ((AppendRowsRequest) actualRequests.get(5)).getProtoRows().getRows().getSerializedRows(0));
+        ((AppendRowsRequest) actualRequests.get(3)).getProtoRows().getRows().getSerializedRows(0));
     assertEquals(
         m2.toByteString(),
-        ((AppendRowsRequest) actualRequests.get(5)).getProtoRows().getRows().getSerializedRows(1));
+        ((AppendRowsRequest) actualRequests.get(3)).getProtoRows().getRows().getSerializedRows(1));
 
     DirectWriter.clearCache();
   }
