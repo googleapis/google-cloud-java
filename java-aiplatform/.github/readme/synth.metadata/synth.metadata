@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-aiplatform.git",
+        "sha": "559e606b6a22188024c8db2a847dd82bf8b201d7"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "901ddd44e9ef7887ee681b9183bbdea99437fdcc"
+      }
+    }
+  ]
+}

@@ -20,12 +20,10 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>0.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
 </dependency>
 
 ```
-
-[//]: # ({x-version-update-start:google-cloud-aiplatform:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -35,7 +33,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "0.0.0"
 ```
-[//]: # ({x-version-update-end})
 
 ## Authentication
 
