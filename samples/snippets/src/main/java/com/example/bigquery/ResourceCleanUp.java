@@ -49,10 +49,11 @@ public class ResourceCleanUp {
     for (Dataset dataset : datasets.getValues()) {
       String datasetName = dataset.getDatasetId().getDataset();
       if ((datasetName.contains("CREATE_DATASET_AWS_TEST_")
-              || datasetName.contains("MY_DATASET_NAME_TEST_")
+              || datasetName.contains("MY_DATASET_")
               || datasetName.contains("gcloud_test_")
               || datasetName.contains("SHARED_DATASET_TEST_"))
-          && dataset.getCreationTime() > sixHourAgo) {
+      // && dataset.getCreationTime() > sixHourAgo
+      ) {
         System.out.format("\tDeleting Dataset: %s\n", datasetName);
         bigquery.delete(
             DatasetId.of(PROJECT_ID, datasetName), BigQuery.DatasetDeleteOption.deleteContents());
@@ -67,7 +68,8 @@ public class ResourceCleanUp {
       if ((tableName.contains("TestTable_")
               || tableName.contains("_TEST")
               || tableName.contains("MY_")
-              || tableName.contains("gcloud_test_"))
+              || tableName.contains("gcloud_test_")
+              || tableName.contains("TESTTABLE_"))
           && table.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Table: %s\n", tableName);
         bigquery.delete(TableId.of(PROJECT_ID, BIGQUERY_DATASET_NAME, tableName));
