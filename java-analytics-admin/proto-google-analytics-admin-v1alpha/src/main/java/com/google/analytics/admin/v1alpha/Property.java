@@ -22,7 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A resource message representing a Google Analytics App+Web property.
+ * A resource message representing a Google Analytics GA4 property.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.Property}
@@ -865,7 +865,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A resource message representing a Google Analytics App+Web property.
+   * A resource message representing a Google Analytics GA4 property.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.Property}

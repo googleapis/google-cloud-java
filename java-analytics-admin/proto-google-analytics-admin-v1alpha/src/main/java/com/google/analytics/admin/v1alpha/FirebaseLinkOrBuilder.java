@@ -125,7 +125,7 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Maximum user access to the App + Web property allowed to admins of
+   * Maximum user access to the GA4 property allowed to admins of
    * the linked Firebase project.
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Maximum user access to the App + Web property allowed to admins of
+   * Maximum user access to the GA4 property allowed to admins of
    * the linked Firebase project.
    * </pre>
    *

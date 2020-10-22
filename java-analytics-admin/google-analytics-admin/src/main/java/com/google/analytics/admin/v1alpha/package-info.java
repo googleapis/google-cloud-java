@@ -21,7 +21,7 @@
  *
  * <p>=========================== AnalyticsAdminServiceClient ===========================
  *
- * <p>Service Description: Service Interface for the Analytics Admin API (App+Web).
+ * <p>Service Description: Service Interface for the Analytics Admin API (GA4).
  *
  * <p>Sample for AnalyticsAdminServiceClient:
  *

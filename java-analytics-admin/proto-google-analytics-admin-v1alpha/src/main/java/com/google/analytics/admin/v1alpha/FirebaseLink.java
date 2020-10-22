@@ -22,7 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between an App+Web property and a Firebase project.
+ * A link between an GA4 property and a Firebase project.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}
@@ -305,7 +305,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum user access to the App + Web property allowed to admins of
+   * Maximum user access to the GA4 property allowed to admins of
    * the linked Firebase project.
    * </pre>
    *
@@ -321,7 +321,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum user access to the App + Web property allowed to admins of
+   * Maximum user access to the GA4 property allowed to admins of
    * the linked Firebase project.
    * </pre>
    *
@@ -538,7 +538,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A link between an App+Web property and a Firebase project.
+   * A link between an GA4 property and a Firebase project.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}
@@ -1162,7 +1162,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum user access to the App + Web property allowed to admins of
+     * Maximum user access to the GA4 property allowed to admins of
      * the linked Firebase project.
      * </pre>
      *
@@ -1178,7 +1178,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum user access to the App + Web property allowed to admins of
+     * Maximum user access to the GA4 property allowed to admins of
      * the linked Firebase project.
      * </pre>
      *
@@ -1197,7 +1197,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum user access to the App + Web property allowed to admins of
+     * Maximum user access to the GA4 property allowed to admins of
      * the linked Firebase project.
      * </pre>
      *
@@ -1218,7 +1218,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum user access to the App + Web property allowed to admins of
+     * Maximum user access to the GA4 property allowed to admins of
      * the linked Firebase project.
      * </pre>
      *
@@ -1241,7 +1241,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum user access to the App + Web property allowed to admins of
+     * Maximum user access to the GA4 property allowed to admins of
      * the linked Firebase project.
      * </pre>
      *

@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  * <pre>
  * A virtual resource representing an overview of an account and
- * all its child App+Web properties.
+ * all its child GA4 properties.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.AccountSummary}
@@ -566,7 +566,7 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A virtual resource representing an overview of an account and
-   * all its child App+Web properties.
+   * all its child GA4 properties.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.AccountSummary}
