@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "6c0dc70e59c24db9918c6d18ac085e4284ba8653"
+        "sha": "47817fb126d18e3c8d020f79c4ba04424d060410"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "27e0e916cbfdb3d5ff6639b686cc04f78a0b0386"
+        "sha": "7c5370937dd9ba9dcf9cd7d2af880a58b389b4f1"
       }
     }
   ],
@@ -43,6 +43,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".github/workflows/formatting.yaml",
