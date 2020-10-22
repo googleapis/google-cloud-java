@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-trace.git",
-        "sha": "fcdf13f5de1520e42659335916d5f20b6c609559"
+        "sha": "5b9220922f182272854d910cc4d3a80a94d771f9"
       }
     },
     {
