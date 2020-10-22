@@ -26,8 +26,13 @@ import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Model;
 import com.google.cloud.bigquery.ModelId;
+import com.google.cloud.bigquery.Routine;
+import com.google.cloud.bigquery.RoutineId;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
+import org.threeten.bp.Clock;
+import org.threeten.bp.Instant;
+import org.threeten.bp.temporal.ChronoUnit;
 
 public class ResourceCleanUp {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
@@ -35,17 +40,22 @@ public class ResourceCleanUp {
 
   public static void main(String[] args) {
     BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    Clock clock = Clock.systemDefaultZone();
+    Instant instant = clock.instant().minus(6, ChronoUnit.HOURS);
+    long sixHourAgo = instant.getEpochSecond();
 
     // clean up stale test datasets
     Page<Dataset> datasets = bigquery.listDatasets(PROJECT_ID, DatasetListOption.pageSize(1000));
     for (Dataset dataset : datasets.getValues()) {
       String datasetName = dataset.getDatasetId().getDataset();
-      if (datasetName.contains("CREATE_DATASET_AWS_TEST_")
-          || datasetName.contains("MY_DATASET_NAME_TEST_")
-          || datasetName.contains("gcloud_test_")
-          || datasetName.contains("SHARED_DATASET_TEST_")) {
+      if ((datasetName.contains("CREATE_DATASET_AWS_TEST_")
+              || datasetName.contains("MY_DATASET_NAME_TEST_")
+              || datasetName.contains("gcloud_test_")
+              || datasetName.contains("SHARED_DATASET_TEST_"))
+          && dataset.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Dataset: %s\n", datasetName);
-        bigquery.delete(DatasetId.of(PROJECT_ID, datasetName));
+        bigquery.delete(
+            DatasetId.of(PROJECT_ID, datasetName), BigQuery.DatasetDeleteOption.deleteContents());
       }
     }
 
@@ -54,10 +64,11 @@ public class ResourceCleanUp {
         bigquery.listTables(BIGQUERY_DATASET_NAME, TableListOption.pageSize(10000));
     for (Table table : tables.getValues()) {
       String tableName = table.getTableId().getTable();
-      if (tableName.contains("TestTable_")
-          || tableName.contains("_TEST")
-          || tableName.contains("MY_")
-          || tableName.contains("gcloud_test_")) {
+      if ((tableName.contains("TestTable_")
+              || tableName.contains("_TEST")
+              || tableName.contains("MY_")
+              || tableName.contains("gcloud_test_"))
+          && table.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Table: %s\n", tableName);
         bigquery.delete(TableId.of(PROJECT_ID, BIGQUERY_DATASET_NAME, tableName));
       }
@@ -67,9 +78,20 @@ public class ResourceCleanUp {
     Page<Model> models = bigquery.listModels(BIGQUERY_DATASET_NAME, ModelListOption.pageSize(1000));
     for (Model model : models.getValues()) {
       String modelName = model.getModelId().getModel();
-      if (modelName.contains("MY_MODEL_NAME_")) {
+      if (modelName.contains("MY_MODEL_NAME_") && model.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Model: %s\n", modelName);
         bigquery.delete(ModelId.of(PROJECT_ID, BIGQUERY_DATASET_NAME, modelName));
+      }
+    }
+
+    // clean up stale test routines in the test dataset
+    Page<Routine> routines =
+        bigquery.listRoutines(BIGQUERY_DATASET_NAME, BigQuery.RoutineListOption.pageSize(1000));
+    for (Routine routine : routines.getValues()) {
+      String routineName = routine.getRoutineId().getRoutine();
+      if (routineName.contains("MY_ROUTINE_NAME_TEST_") && routine.getCreationTime() > sixHourAgo) {
+        System.out.format("\tDeleting Routine: %s\n", routineName);
+        bigquery.delete(RoutineId.of(PROJECT_ID, BIGQUERY_DATASET_NAME, routineName));
       }
     }
 
