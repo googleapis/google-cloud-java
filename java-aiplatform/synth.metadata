@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "251881f34babab9672b976b52a22ca49b3995a50"
+        "sha": "3de26d48b297f1bb7229a9ed3ca4edd4d66473cb"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8a7a3021fe97aa0a3641db642fe2b767f1c8110f"
+        "sha": "6abb59097be84599a1d6091fe534a49e5c5cf948"
       }
     }
   ],
@@ -42,9 +42,12 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/readme/synth.py",
     ".github/release-please.yml",
+    ".github/snippet-bot.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
