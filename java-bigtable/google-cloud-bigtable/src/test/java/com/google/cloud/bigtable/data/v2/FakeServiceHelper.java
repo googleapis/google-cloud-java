@@ -19,6 +19,7 @@ import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.ServerInterceptor;
+import io.grpc.ServerTransportFilter;
 import java.io.IOException;
 import java.net.ServerSocket;
 
@@ -33,12 +34,23 @@ public class FakeServiceHelper {
 
   public FakeServiceHelper(ServerInterceptor interceptor, BindableService... services)
       throws IOException {
+    this(interceptor, null, services);
+  }
+
+  public FakeServiceHelper(
+      ServerInterceptor interceptor,
+      ServerTransportFilter transportFilter,
+      BindableService... services)
+      throws IOException {
     try (ServerSocket ss = new ServerSocket(0)) {
       port = ss.getLocalPort();
     }
     ServerBuilder builder = ServerBuilder.forPort(port);
     if (interceptor != null) {
       builder = builder.intercept(interceptor);
+    }
+    if (transportFilter != null) {
+      builder = builder.addTransportFilter(transportFilter);
     }
     for (BindableService service : services) {
       builder = builder.addService(service);

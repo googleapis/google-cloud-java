@@ -18,19 +18,32 @@ package com.google.cloud.bigtable.data.v2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ReadRowsResponse;
+import com.google.bigtable.v2.RowFilter;
+import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.ByteString;
+import io.grpc.Attributes;
+import io.grpc.ServerTransportFilter;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -60,16 +73,33 @@ public class BigtableDataClientFactoryTest {
   private WatchdogProvider watchdogProvider;
   private ApiClock apiClock;
   private BigtableDataSettings defaultSettings;
+  private int port;
+
+  private final BlockingQueue<Attributes> setUpAttributes = new LinkedBlockingDeque<>();
+  private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
 
   @Before
   public void setUp() throws IOException {
     service = new FakeBigtableService();
+    ServerTransportFilter transportFilter =
+        new ServerTransportFilter() {
+          @Override
+          public Attributes transportReady(Attributes transportAttrs) {
+            setUpAttributes.add(transportAttrs);
+            return super.transportReady(transportAttrs);
+          }
 
-    serviceHelper = new FakeServiceHelper(service);
+          @Override
+          public void transportTerminated(Attributes transportAttrs) {
+            terminateAttributes.add(transportAttrs);
+          }
+        };
+    serviceHelper = new FakeServiceHelper(null, transportFilter, service);
+    port = serviceHelper.getPort();
     serviceHelper.start();
 
     BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(port)
             .setProjectId(DEFAULT_PROJECT_ID)
             .setInstanceId(DEFAULT_INSTANCE_ID)
             .setAppProfileId(DEFAULT_APP_PROFILE_ID);
@@ -191,8 +221,94 @@ public class BigtableDataClientFactoryTest {
     assertThat(service.lastRequest.getAppProfileId()).isEqualTo("other-app-profile");
   }
 
+  @Test
+  public void testCreateWithRefreshingChannel() throws Exception {
+    String[] tableIds = {"fake-table1", "fake-table2"};
+    int poolSize = 3;
+    BigtableDataSettings.Builder builder =
+        BigtableDataSettings.newBuilderForEmulator(port)
+            .setProjectId(DEFAULT_PROJECT_ID)
+            .setInstanceId(DEFAULT_INSTANCE_ID)
+            .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+            .setPrimingTableIds(tableIds)
+            .setRefreshingChannel(true);
+    builder
+        .stubSettings()
+        .setCredentialsProvider(credentialsProvider)
+        .setStreamWatchdogProvider(watchdogProvider)
+        .setExecutorProvider(executorProvider);
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
+    channelProviderBuilder.setPoolSize(poolSize);
+    builder.stubSettings().setTransportChannelProvider(channelProviderBuilder.build());
+
+    BigtableDataClientFactory factory = BigtableDataClientFactory.create(builder.build());
+    factory.createDefault();
+    factory.createForAppProfile("other-appprofile");
+    factory.createForInstance("other-project", "other-instance");
+
+    // Make sure that only 1 instance is created for all clients
+    Mockito.verify(credentialsProvider, Mockito.times(1)).getCredentials();
+    Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+    Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+
+    // Make sure that the clients are sharing the same ChannelPool
+    assertThat(setUpAttributes).hasSize(poolSize);
+
+    // Make sure that prime requests were sent only once per table per connection
+    assertThat(service.readRowsRequests).hasSize(poolSize * tableIds.length);
+    List<ReadRowsRequest> expectedRequests = new LinkedList<>();
+    for (String tableId : tableIds) {
+      for (int i = 0; i < poolSize; i++) {
+        expectedRequests.add(
+            ReadRowsRequest.newBuilder()
+                .setTableName(
+                    String.format(
+                        "projects/%s/instances/%s/tables/%s",
+                        DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, tableId))
+                .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+                .setRows(
+                    RowSet.newBuilder()
+                        .addRowKeys(ByteString.copyFromUtf8("nonexistent-priming-row")))
+                .setFilter(RowFilter.newBuilder().setBlockAllFilter(true).build())
+                .setRowsLimit(1)
+                .build());
+      }
+    }
+    assertThat(service.readRowsRequests).containsExactly(expectedRequests.toArray());
+
+    // Wait for all the connections to close asynchronously
+    factory.close();
+    long sleepTimeMs = 1000;
+    Thread.sleep(sleepTimeMs);
+    // Verify that all the channels are closed
+    assertThat(terminateAttributes).hasSize(poolSize);
+  }
+
   private static class FakeBigtableService extends BigtableGrpc.BigtableImplBase {
+
     volatile MutateRowRequest lastRequest;
+    BlockingQueue<ReadRowsRequest> readRowsRequests = new LinkedBlockingDeque<>();
+    private ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
+        new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
+          @Override
+          public ReadRowsResponse apply(ReadRowsRequest readRowsRequest) {
+            return ReadRowsResponse.getDefaultInstance();
+          }
+        };
+
+    @Override
+    public void readRows(
+        ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      try {
+        readRowsRequests.add(request);
+        responseObserver.onNext(readRowsCallback.apply(request));
+        responseObserver.onCompleted();
+      } catch (RuntimeException e) {
+        responseObserver.onError(e);
+      }
+    }
 
     @Override
     public void mutateRow(
@@ -204,6 +320,7 @@ public class BigtableDataClientFactoryTest {
   }
 
   private static class BuilderAnswer<T> implements Answer {
+
     private final Class<T> targetClass;
     private T targetInstance;
 

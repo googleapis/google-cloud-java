@@ -19,20 +19,27 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
+import java.io.IOException;
+import java.net.URI;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,7 +68,7 @@ public class EnhancedBigtableStubSettingsTest {
     String projectId = "my-project";
     String instanceId = "my-instance";
     String appProfileId = "my-app-profile-id";
-    boolean isRefreshingChannel = true;
+    boolean isRefreshingChannel = false;
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
     WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
@@ -611,5 +618,57 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.isRefreshingChannel()).isFalse();
     assertThat(builder.build().isRefreshingChannel()).isFalse();
     assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
+  }
+
+  @Test
+  public void refreshingChannelSetFixedCredentialProvider() throws Exception {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
+    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    FakeCredentials expectedCredentials = new FakeCredentials();
+    Mockito.when(credentialsProvider.getCredentials())
+        .thenReturn(expectedCredentials, new FakeCredentials(), new FakeCredentials());
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(true)
+            .setCredentialsProvider(credentialsProvider);
+    assertThat(builder.isRefreshingChannel()).isTrue();
+    // Verify that isRefreshing setting is not lost and stubSettings will always return the same
+    // credential
+    EnhancedBigtableStubSettings stubSettings = builder.build();
+    assertThat(stubSettings.isRefreshingChannel()).isTrue();
+    assertThat(stubSettings.getCredentialsProvider()).isInstanceOf(FixedCredentialsProvider.class);
+    assertThat(stubSettings.getCredentialsProvider().getCredentials())
+        .isEqualTo(expectedCredentials);
+    assertThat(stubSettings.toBuilder().isRefreshingChannel()).isTrue();
+    assertThat(stubSettings.toBuilder().getCredentialsProvider().getCredentials())
+        .isEqualTo(expectedCredentials);
+  }
+
+  private static class FakeCredentials extends Credentials {
+    @Override
+    public String getAuthenticationType() {
+      return "fake";
+    }
+
+    @Override
+    public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+      return ImmutableMap.of("my-header", Arrays.asList("fake-credential"));
+    }
+
+    @Override
+    public boolean hasRequestMetadata() {
+      return true;
+    }
+
+    @Override
+    public boolean hasRequestMetadataOnly() {
+      return true;
+    }
+
+    @Override
+    public void refresh() throws IOException {}
   }
 }

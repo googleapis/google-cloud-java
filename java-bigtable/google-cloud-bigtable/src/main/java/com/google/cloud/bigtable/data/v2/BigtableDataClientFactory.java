@@ -23,7 +23,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.FixedWatchdogProvider;
-import com.google.api.gax.rpc.StubSettings;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -189,8 +189,11 @@ public final class BigtableDataClientFactory implements AutoCloseable {
   }
 
   // Update stub settings to use shared resources in this factory
-  private void patchStubSettings(StubSettings.Builder stubSettings) {
+  private void patchStubSettings(EnhancedBigtableStubSettings.Builder stubSettings) {
     stubSettings
+        // Channel refreshing will be configured in the shared ClientContext. Derivative clients
+        // won't be able to reconfigure the refreshing logic
+        .setRefreshingChannel(false)
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(sharedClientContext.getTransportChannel()))
         .setCredentialsProvider(
