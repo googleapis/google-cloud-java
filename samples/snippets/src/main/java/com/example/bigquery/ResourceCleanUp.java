@@ -49,9 +49,9 @@ public class ResourceCleanUp {
     for (Dataset dataset : datasets.getValues()) {
       String datasetName = dataset.getDatasetId().getDataset();
       if ((datasetName.contains("CREATE_DATASET_AWS_TEST_")
-              || datasetName.contains("MY_DATASET_")
-              || datasetName.contains("gcloud_test_")
-              || datasetName.contains("SHARED_DATASET_TEST_"))
+          || datasetName.contains("MY_DATASET_")
+          || datasetName.contains("gcloud_test_")
+          || datasetName.contains("SHARED_DATASET_TEST_"))
       // && dataset.getCreationTime() > sixHourAgo
       ) {
         System.out.format("\tDeleting Dataset: %s\n", datasetName);
