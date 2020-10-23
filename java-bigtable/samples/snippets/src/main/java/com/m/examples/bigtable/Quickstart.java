@@ -26,11 +26,15 @@ import com.google.cloud.bigtable.data.v2.models.RowCell;
 
 public class Quickstart {
 
-  public static void quickstart(String projectId, String instanceId, String tableId) {
-    // String projectId = "my-project-id";
-    // String instanceId = "my-instance-id";
-    // String tableId = "my-table-id";
+  public static void main(String... args) {
+    String projectId = args[0];  // my-gcp-project-id
+    String instanceId = args[1]; // my-bigtable-instance-id
+    String tableId = args[2];    // my-bigtable-table-id
 
+    quickstart(projectId, instanceId, tableId);
+  }
+
+  public static void quickstart(String projectId, String instanceId, String tableId) {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
 
