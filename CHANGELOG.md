@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.123.1](https://www.github.com/googleapis/java-bigquery/compare/v1.123.0...v1.123.1) (2020-10-23)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20201015-1.30.10 ([#851](https://www.github.com/googleapis/java-bigquery/issues/851)) ([439eea9](https://www.github.com/googleapis/java-bigquery/commit/439eea95390b72e5aa84ddd9c208475074cf821c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#834](https://www.github.com/googleapis/java-bigquery/issues/834)) ([16a105b](https://www.github.com/googleapis/java-bigquery/commit/16a105bdcfbe61e78d79743aa216f281cf57040a))
+
+
+### Documentation
+
+* **samples:** add export query results to Amazon S3 sample and IT ([#853](https://www.github.com/googleapis/java-bigquery/issues/853)) ([5358620](https://www.github.com/googleapis/java-bigquery/commit/53586207c300002f6bbad3d67f4441729b109f8a))
+* **samples:** create and query Amazon s3 data using external table ([#835](https://www.github.com/googleapis/java-bigquery/issues/835)) ([53a56be](https://www.github.com/googleapis/java-bigquery/commit/53a56be8b0878edbc4bc5dd67ed63b48c96d3899))
+
 ## [1.123.0](https://www.github.com/googleapis/java-bigquery/compare/v1.122.2...v1.123.0) (2020-10-20)
 
 
