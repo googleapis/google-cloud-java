@@ -18,12 +18,15 @@ package com.google.cloud.bigtable.admin.v2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class BigtableInstanceAdminSettingsTest {
@@ -94,5 +97,64 @@ public class BigtableInstanceAdminSettingsTest {
                 .createInstanceSettings()
                 .getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
+  }
+
+  static final String[] SETTINGS_LIST = {
+    "createInstanceSettings",
+    "createInstanceOperationSettings",
+    "getInstanceSettings",
+    "listInstancesSettings",
+    "partialUpdateInstanceSettings",
+    "partialUpdateInstanceOperationSettings",
+    "deleteInstanceSettings",
+    "createClusterSettings",
+    "createClusterOperationSettings",
+    "getClusterSettings",
+    "listClustersSettings",
+    "updateClusterSettings",
+    "updateClusterOperationSettings",
+    "deleteClusterSettings",
+    "createAppProfileSettings",
+    "getAppProfileSettings",
+    "listAppProfilesSettings",
+    "updateAppProfileSettings",
+    "updateAppProfileOperationSettings",
+    "deleteAppProfileSettings",
+    "getIamPolicySettings",
+    "setIamPolicySettings",
+    "testIamPermissionsSettings",
+  };
+
+  @Test
+  public void testToString() throws IOException {
+    BigtableInstanceAdminSettings defaultSettings =
+        BigtableInstanceAdminSettings.newBuilder().setProjectId("our-project-212").build();
+
+    checkToString(defaultSettings);
+
+    BigtableInstanceAdminSettings.Builder builder = defaultSettings.toBuilder();
+    BigtableInstanceAdminStubSettings.Builder stubSettings =
+        builder.stubSettings().setEndpoint("example.com:1234");
+
+    stubSettings
+        .getInstanceSettings()
+        .setRetrySettings(
+            RetrySettings.newBuilder().setTotalTimeout(Duration.ofMinutes(812)).build());
+
+    BigtableInstanceAdminSettings settings = builder.build();
+    checkToString(settings);
+    assertThat(settings.toString()).contains("endpoint=example.com:1234");
+    assertThat(settings.toString()).contains("totalTimeout=PT13H32M");
+  }
+
+  void checkToString(BigtableInstanceAdminSettings settings) {
+    String projectId = settings.getProjectId();
+    String toString = settings.toString();
+    assertThat(toString).isEqualTo(settings.toString()); // no variety
+    assertThat(toString).startsWith("BigtableInstanceAdminSettings{projectId=" + projectId);
+    for (String subSettings : SETTINGS_LIST) {
+      assertThat(toString).contains(subSettings + "=");
+    }
+    assertThat(toString.contains(settings.getStubSettings().toString()));
   }
 }

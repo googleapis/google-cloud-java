@@ -18,12 +18,17 @@ package com.google.cloud.bigtable.admin.v2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class BigtableTableAdminSettingsTest {
@@ -96,5 +101,84 @@ public class BigtableTableAdminSettingsTest {
                 .createTableSettings()
                 .getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
+  }
+
+  static final String[] SETTINGS_LIST = {
+    "createTableSettings",
+    "createTableFromSnapshotSettings",
+    "createTableFromSnapshotOperationSettings",
+    "listTablesSettings",
+    "getTableSettings",
+    "deleteTableSettings",
+    "modifyColumnFamiliesSettings",
+    "dropRowRangeSettings",
+    "generateConsistencyTokenSettings",
+    "checkConsistencySettings",
+    "getIamPolicySettings",
+    "setIamPolicySettings",
+    "testIamPermissionsSettings",
+    "snapshotTableSettings",
+    "snapshotTableOperationSettings",
+    "getSnapshotSettings",
+    "listSnapshotsSettings",
+    "deleteSnapshotSettings",
+    "createBackupSettings",
+    "createBackupOperationSettings",
+    "getBackupSettings",
+    "listBackupsSettings",
+    "updateBackupSettings",
+    "deleteBackupSettings",
+    "restoreTableSettings",
+    "restoreTableOperationSettings",
+  };
+
+  @Test
+  public void testToString() throws IOException {
+    BigtableTableAdminSettings defaultSettings =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("our-project-85")
+            .setInstanceId("our-instance-06")
+            .build();
+
+    checkToString(defaultSettings);
+
+    BigtableTableAdminSettings.Builder builder = defaultSettings.toBuilder();
+    BigtableTableAdminStubSettings.Builder stubSettings =
+        builder.stubSettings().setEndpoint("example.com:1234");
+
+    stubSettings
+        .getBackupSettings()
+        .setRetrySettings(
+            RetrySettings.newBuilder().setTotalTimeout(Duration.ofMinutes(812)).build());
+
+    BigtableTableAdminSettings settings = builder.build();
+    checkToString(settings);
+    assertThat(defaultSettings.toString()).doesNotContain("endpoint=example.com:1234");
+    assertThat(settings.toString()).contains("endpoint=example.com:1234");
+    assertThat(defaultSettings.toString()).doesNotContain("totalTimeout=PT13H32M");
+    assertThat(settings.toString()).contains("totalTimeout=PT13H32M");
+
+    int nonStaticFields = 0;
+    for (Field field : BigtableTableAdminStubSettings.class.getDeclaredFields()) {
+      if (!Modifier.isStatic(field.getModifiers())) {
+        nonStaticFields++;
+      }
+    }
+    // failure will signal about adding a new settings property
+    assertThat(SETTINGS_LIST.length).isEqualTo(nonStaticFields);
+  }
+
+  void checkToString(BigtableTableAdminSettings settings) {
+    String projectId = settings.getProjectId();
+    String instanceId = settings.getInstanceId();
+    String toString = settings.toString();
+    assertThat(toString).isEqualTo(settings.toString()); // no variety
+    assertThat(toString)
+        .startsWith(
+            "BigtableTableAdminSettings{projectId=" + projectId + ", instanceId=" + instanceId);
+    for (String subSettings : SETTINGS_LIST) {
+      assertThat(toString).contains(subSettings + "=");
+    }
+    assertThat(toString.contains(settings.getStubSettings().toString()));
   }
 }

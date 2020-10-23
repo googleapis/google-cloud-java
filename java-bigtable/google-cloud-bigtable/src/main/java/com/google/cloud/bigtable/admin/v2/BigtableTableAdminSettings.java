@@ -20,6 +20,7 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Verify;
@@ -83,6 +84,43 @@ public final class BigtableTableAdminSettings {
   /** Gets the underlying RPC settings. */
   public BigtableTableAdminStubSettings getStubSettings() {
     return stubSettings;
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("projectId", projectId)
+        .add("instanceId", instanceId)
+        .add("createTableSettings", stubSettings.createTableSettings())
+        .add("createTableFromSnapshotSettings", stubSettings.createTableFromSnapshotSettings())
+        .add(
+            "createTableFromSnapshotOperationSettings",
+            stubSettings.createTableFromSnapshotOperationSettings())
+        .add("listTablesSettings", stubSettings.listTablesSettings())
+        .add("getTableSettings", stubSettings.getTableSettings())
+        .add("deleteTableSettings", stubSettings.deleteTableSettings())
+        .add("modifyColumnFamiliesSettings", stubSettings.modifyColumnFamiliesSettings())
+        .add("dropRowRangeSettings", stubSettings.dropRowRangeSettings())
+        .add("generateConsistencyTokenSettings", stubSettings.generateConsistencyTokenSettings())
+        .add("checkConsistencySettings", stubSettings.checkConsistencySettings())
+        .add("getIamPolicySettings", stubSettings.getIamPolicySettings())
+        .add("setIamPolicySettings", stubSettings.setIamPolicySettings())
+        .add("testIamPermissionsSettings", stubSettings.testIamPermissionsSettings())
+        .add("snapshotTableSettings", stubSettings.snapshotTableSettings())
+        .add("snapshotTableOperationSettings", stubSettings.snapshotTableOperationSettings())
+        .add("getSnapshotSettings", stubSettings.getSnapshotSettings())
+        .add("listSnapshotsSettings", stubSettings.listSnapshotsSettings())
+        .add("deleteSnapshotSettings", stubSettings.deleteSnapshotSettings())
+        .add("createBackupSettings", stubSettings.createBackupSettings())
+        .add("createBackupOperationSettings", stubSettings.createBackupOperationSettings())
+        .add("getBackupSettings", stubSettings.getBackupSettings())
+        .add("listBackupsSettings", stubSettings.listBackupsSettings())
+        .add("updateBackupSettings", stubSettings.updateBackupSettings())
+        .add("deleteBackupSettings", stubSettings.deleteBackupSettings())
+        .add("restoreTableSettings", stubSettings.restoreTableSettings())
+        .add("restoreTableOperationSettings", stubSettings.restoreTableOperationSettings())
+        .add("stubSettings", stubSettings)
+        .toString();
   }
 
   /** Returns a builder containing all the values of this settings class. */

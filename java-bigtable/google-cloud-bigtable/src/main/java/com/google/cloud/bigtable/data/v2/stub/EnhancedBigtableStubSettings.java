@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -810,5 +811,25 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return new EnhancedBigtableStubSettings(this);
     }
     // </editor-fold>
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("projectId", projectId)
+        .add("instanceId", instanceId)
+        .add("appProfileId", appProfileId)
+        .add("isRefreshingChannel", isRefreshingChannel)
+        .add("primedTableIds", primedTableIds)
+        .add("readRowsSettings", readRowsSettings)
+        .add("readRowSettings", readRowSettings)
+        .add("sampleRowKeysSettings", sampleRowKeysSettings)
+        .add("mutateRowSettings", mutateRowSettings)
+        .add("bulkMutateRowsSettings", bulkMutateRowsSettings)
+        .add("bulkReadRowsSettings", bulkReadRowsSettings)
+        .add("checkAndMutateRowSettings", checkAndMutateRowSettings)
+        .add("readModifyWriteRowSettings", readModifyWriteRowSettings)
+        .add("parent", super.toString())
+        .toString();
   }
 }

@@ -19,6 +19,7 @@ import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings.BIGT
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import java.io.IOException;
@@ -72,6 +73,39 @@ public final class BigtableInstanceAdminSettings {
   @Nonnull
   public BigtableInstanceAdminStubSettings getStubSettings() {
     return stubSettings;
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("projectId", projectId)
+        .add("createInstanceSettings", stubSettings.createInstanceSettings())
+        .add("createInstanceOperationSettings", stubSettings.createInstanceOperationSettings())
+        .add("getInstanceSettings", stubSettings.getInstanceSettings())
+        .add("listInstancesSettings", stubSettings.listInstancesSettings())
+        .add("partialUpdateInstanceSettings", stubSettings.partialUpdateInstanceSettings())
+        .add(
+            "partialUpdateInstanceOperationSettings",
+            stubSettings.partialUpdateInstanceOperationSettings())
+        .add("deleteInstanceSettings", stubSettings.deleteInstanceSettings())
+        .add("createClusterSettings", stubSettings.createClusterSettings())
+        .add("createClusterOperationSettings", stubSettings.createClusterOperationSettings())
+        .add("getClusterSettings", stubSettings.getClusterSettings())
+        .add("listClustersSettings", stubSettings.listClustersSettings())
+        .add("updateClusterSettings", stubSettings.updateClusterSettings())
+        .add("updateClusterOperationSettings", stubSettings.updateClusterOperationSettings())
+        .add("deleteClusterSettings", stubSettings.deleteClusterSettings())
+        .add("createAppProfileSettings", stubSettings.createAppProfileSettings())
+        .add("getAppProfileSettings", stubSettings.getAppProfileSettings())
+        .add("listAppProfilesSettings", stubSettings.listAppProfilesSettings())
+        .add("updateAppProfileSettings", stubSettings.updateAppProfileSettings())
+        .add("updateAppProfileOperationSettings", stubSettings.updateAppProfileOperationSettings())
+        .add("deleteAppProfileSettings", stubSettings.deleteAppProfileSettings())
+        .add("getIamPolicySettings", stubSettings.getIamPolicySettings())
+        .add("setIamPolicySettings", stubSettings.setIamPolicySettings())
+        .add("testIamPermissionsSettings", stubSettings.testIamPermissionsSettings())
+        .add("stubSettings", stubSettings)
+        .toString();
   }
 
   /** Returns a builder containing all the values of this settings class. */

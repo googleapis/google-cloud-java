@@ -36,6 +36,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
@@ -618,6 +620,77 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.isRefreshingChannel()).isFalse();
     assertThat(builder.build().isRefreshingChannel()).isFalse();
     assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
+  }
+
+  static final String[] SETTINGS_LIST = {
+    "projectId",
+    "instanceId",
+    "appProfileId",
+    "isRefreshingChannel",
+    "primedTableIds",
+    "readRowsSettings",
+    "readRowSettings",
+    "sampleRowKeysSettings",
+    "mutateRowSettings",
+    "bulkMutateRowsSettings",
+    "bulkReadRowsSettings",
+    "checkAndMutateRowSettings",
+    "readModifyWriteRowSettings",
+  };
+
+  @Test
+  public void testToString() {
+    EnhancedBigtableStubSettings defaultSettings =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("our-project-85")
+            .setInstanceId("our-instance-06")
+            .setAppProfileId("our-appProfile-06")
+            .build();
+
+    checkToString(defaultSettings);
+    assertThat(defaultSettings.toString()).contains("primedTableIds=[]");
+
+    EnhancedBigtableStubSettings settings =
+        defaultSettings
+            .toBuilder()
+            .setPrimedTableIds("2", "12", "85", "06")
+            .setEndpoint("example.com:1234")
+            .build();
+
+    checkToString(settings);
+    assertThat(settings.toString()).contains("endpoint=example.com:1234");
+    assertThat(settings.toString()).contains("primedTableIds=[2, 12, 85, 06]");
+
+    int nonStaticFields = 0;
+    for (Field field : EnhancedBigtableStubSettings.class.getDeclaredFields()) {
+      if (!Modifier.isStatic(field.getModifiers())) {
+        nonStaticFields++;
+      }
+    }
+    // failure will signal about adding a new settings property
+    assertThat(SETTINGS_LIST.length).isEqualTo(nonStaticFields);
+  }
+
+  void checkToString(EnhancedBigtableStubSettings settings) {
+    String projectId = settings.getProjectId();
+    String instanceId = settings.getInstanceId();
+    String appProfileId = settings.getAppProfileId();
+    String isRefreshingChannel = "" + settings.isRefreshingChannel();
+    String toString = settings.toString();
+    assertThat(toString).isEqualTo(settings.toString()); // no variety
+    assertThat(toString)
+        .startsWith(
+            "EnhancedBigtableStubSettings{projectId="
+                + projectId
+                + ", instanceId="
+                + instanceId
+                + ", appProfileId="
+                + appProfileId
+                + ", isRefreshingChannel="
+                + isRefreshingChannel);
+    for (String subSettings : SETTINGS_LIST) {
+      assertThat(toString).contains(subSettings + "=");
+    }
   }
 
   @Test
