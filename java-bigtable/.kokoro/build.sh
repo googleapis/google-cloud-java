@@ -69,16 +69,9 @@ integration)
     RETURN_CODE=$?
     ;;
 samples)
-    SAMPLES_DIR=samples
-    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
-    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    if [[ -f samples/pom.xml ]]
     then
-      SAMPLES_DIR=samples/snapshot
-    fi
-
-    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
-    then
-        pushd {SAMPLES_DIR}
+        pushd samples
         mvn -B \
           -Penable-samples \
           -DtrimStackTrace=false \
