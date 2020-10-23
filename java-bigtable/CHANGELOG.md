@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.17.0](https://www.github.com/googleapis/java-bigtable/compare/v1.16.2...v1.17.0) (2020-10-23)
+
+
+### Features
+
+* attemp DirectPath by default ([#467](https://www.github.com/googleapis/java-bigtable/issues/467)) ([89c622d](https://www.github.com/googleapis/java-bigtable/commit/89c622da6038067892687af3edafae743465eda7))
+* backup level IAM ([#450](https://www.github.com/googleapis/java-bigtable/issues/450)) ([f38a8ec](https://www.github.com/googleapis/java-bigtable/commit/f38a8ecdc6164d081ef96f748ea37bd62b29b419))
+* Implement toString for Bigtable*Settings ([#488](https://www.github.com/googleapis/java-bigtable/issues/488)) ([4d821f8](https://www.github.com/googleapis/java-bigtable/commit/4d821f85ceb237c8e449243ff8c80fb94e22ad51))
+
+
+### Bug Fixes
+
+* Make refreshing channel compatible with BigtableDataClientFactory ([#474](https://www.github.com/googleapis/java-bigtable/issues/474)) ([fc74164](https://www.github.com/googleapis/java-bigtable/commit/fc741645536e01fac772136bc8346f73ff95e600))
+
+
+### Documentation
+
+* fix formatting ([#476](https://www.github.com/googleapis/java-bigtable/issues/476)) ([eb24569](https://www.github.com/googleapis/java-bigtable/commit/eb24569e53f9d2b7fde50748c840c2c11f3f3c80))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#475](https://www.github.com/googleapis/java-bigtable/issues/475)) ([9e56edf](https://www.github.com/googleapis/java-bigtable/commit/9e56edfa7b0a78f14518a99130a7b319c5873be4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#484](https://www.github.com/googleapis/java-bigtable/issues/484)) ([aad648f](https://www.github.com/googleapis/java-bigtable/commit/aad648fec16b122092d394350822da742a2d7aa0))
+* update dependency com.google.truth:truth to v1.1 ([#483](https://www.github.com/googleapis/java-bigtable/issues/483)) ([cca1e0e](https://www.github.com/googleapis/java-bigtable/commit/cca1e0e16f2ec0cc887d81c1844f5395ce08b6ea))
+
 ### [1.16.2](https://www.github.com/googleapis/java-bigtable/compare/v1.16.1...v1.16.2) (2020-10-14)
 
 
