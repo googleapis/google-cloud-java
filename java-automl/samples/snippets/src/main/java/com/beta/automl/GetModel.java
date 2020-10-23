@@ -17,6 +17,7 @@
 package com.beta.automl;
 
 // [START automl_get_model_beta]
+// [START automl_tables_get_model]
 import com.google.cloud.automl.v1beta1.AutoMlClient;
 import com.google.cloud.automl.v1beta1.Model;
 import com.google.cloud.automl.v1beta1.ModelName;
@@ -59,4 +60,5 @@ class GetModel {
     }
   }
 }
+// [END automl_tables_get_model]
 // [END automl_get_model_beta]
