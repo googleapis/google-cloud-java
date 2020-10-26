@@ -448,12 +448,14 @@ public final class PrivateCaResourcesProto {
           + "ON_CHANGED\020\003\022\016\n\nSUPERSEDED\020\004\022\032\n\026CESSATIO"
           + "N_OF_OPERATION\020\005\022\024\n\020CERTIFICATE_HOLD\020\006\022\027"
           + "\n\023PRIVILEGE_WITHDRAWN\020\007\022\"\n\036ATTRIBUTE_AUT"
-          + "HORITY_COMPROMISE\020\010B\307\001\n+com.google.cloud"
+          + "HORITY_COMPROMISE\020\010B\237\002\n+com.google.cloud"
           + ".security.privateca.v1beta1B\027PrivateCaRe"
           + "sourcesProtoP\001ZPgoogle.golang.org/genpro"
           + "to/googleapis/cloud/security/privateca/v"
           + "1beta1;privateca\370\001\001\252\002\'Google.Cloud.Secur"
-          + "ity.PrivateCA.V1Beta1b\006proto3"
+          + "ity.PrivateCA.V1Beta1\312\002\'Google\\Cloud\\Sec"
+          + "urity\\PrivateCA\\V1beta1\352\002+Google::Cloud:"
+          + ":Security::PrivateCA::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

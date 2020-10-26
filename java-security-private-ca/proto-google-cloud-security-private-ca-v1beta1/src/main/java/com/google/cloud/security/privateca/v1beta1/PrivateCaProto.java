@@ -403,12 +403,14 @@ public final class PrivateCaProto {
           + "ects/*/locations/*}/reusableConfigs\332A\006pa"
           + "rent\032L\312A\030privateca.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\276\001\n+com.google.cloud.security.private"
+          + "rmB\226\002\n+com.google.cloud.security.private"
           + "ca.v1beta1B\016PrivateCaProtoP\001ZPgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/securi"
           + "ty/privateca/v1beta1;privateca\370\001\001\252\002\'Goog"
-          + "le.Cloud.Security.PrivateCA.V1Beta1b\006pro"
-          + "to3"
+          + "le.Cloud.Security.PrivateCA.V1Beta1\312\002\'Go"
+          + "ogle\\Cloud\\Security\\PrivateCA\\V1beta1\352\002+"
+          + "Google::Cloud::Security::PrivateCA::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
