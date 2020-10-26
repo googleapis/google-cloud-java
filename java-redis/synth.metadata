@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "19e39ca9b5ec6b5c04428e6d287fb00a63de6f96"
+        "sha": "43a2598196914f61c5298cedc7eaaf39173eea2a"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "8a7a3021fe97aa0a3641db642fe2b767f1c8110f"
+        "sha": "5f6ef0ec5501d33c4667885b37a7685a30d41a76"
       }
     }
   ],
@@ -59,9 +59,12 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/readme/synth.py",
     ".github/release-please.yml",
+    ".github/snippet-bot.yml",
     ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
+    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
