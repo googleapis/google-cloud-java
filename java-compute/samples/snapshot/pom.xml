@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
-    <version>1.0.18</version>
+    <version>1.0.12</version>
   </parent>
 
   <properties>
@@ -30,6 +30,7 @@
       <artifactId>google-cloud-compute</artifactId>
       <version>0.118.0-alpha</version>
     </dependency>
+  <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -44,7 +45,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
@@ -52,7 +52,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <id>add-snippets-source</id>

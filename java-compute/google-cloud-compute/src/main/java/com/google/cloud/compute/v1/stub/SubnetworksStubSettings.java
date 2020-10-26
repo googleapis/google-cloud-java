@@ -1,0 +1,796 @@
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.compute.v1.stub;
+
+import static com.google.cloud.compute.v1.SubnetworksClient.AggregatedListPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworksClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.SubnetworksClient.ListUsablePagedResponse;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSubnetworksRequest;
+import com.google.cloud.compute.v1.DeleteSubnetworkRequest;
+import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkRequest;
+import com.google.cloud.compute.v1.GetIamPolicySubnetworkRequest;
+import com.google.cloud.compute.v1.GetSubnetworkRequest;
+import com.google.cloud.compute.v1.InsertSubnetworkRequest;
+import com.google.cloud.compute.v1.ListSubnetworksRequest;
+import com.google.cloud.compute.v1.ListUsableSubnetworksRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchSubnetworkRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySubnetworkRequest;
+import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkRequest;
+import com.google.cloud.compute.v1.Subnetwork;
+import com.google.cloud.compute.v1.SubnetworkAggregatedList;
+import com.google.cloud.compute.v1.SubnetworkList;
+import com.google.cloud.compute.v1.SubnetworksScopedList;
+import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UsableSubnetwork;
+import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map.Entry;
+import javax.annotation.Generated;
+import org.threeten.bp.Duration;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS
+/**
+ * Settings class to configure an instance of {@link SubnetworksStub}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ *   <li>The default service address (compute.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of delete to 30 seconds:
+ *
+ * <pre>
+ * <code>
+ * SubnetworksStubSettings.Builder subnetworksSettingsBuilder =
+ *     SubnetworksStubSettings.newBuilder();
+ * subnetworksSettingsBuilder
+ *     .deleteSettings()
+ *     .setRetrySettings(
+ *         subnetworksSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
+ * SubnetworksStubSettings subnetworksSettings = subnetworksSettingsBuilder.build();
+ * </code>
+ * </pre>
+ */
+@Generated("by gapic-generator")
+@BetaApi
+public class SubnetworksStubSettings extends StubSettings<SubnetworksStubSettings> {
+  /** The default scopes of the service. */
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
+          .build();
+
+  private final PagedCallSettings<
+          AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
+      aggregatedListSettings;
+  private final UnaryCallSettings<DeleteSubnetworkRequest, Operation> deleteSettings;
+  private final UnaryCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
+      expandIpCidrRangeSettings;
+  private final UnaryCallSettings<GetSubnetworkRequest, Subnetwork> getSettings;
+  private final UnaryCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<InsertSubnetworkRequest, Operation> insertSettings;
+  private final PagedCallSettings<ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
+      listSettings;
+  private final PagedCallSettings<
+          ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
+      listUsableSettings;
+  private final UnaryCallSettings<PatchSubnetworkRequest, Operation> patchSettings;
+  private final UnaryCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
+      setPrivateIpGoogleAccessSettings;
+  private final UnaryCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to delete. */
+  public UnaryCallSettings<DeleteSubnetworkRequest, Operation> deleteSettings() {
+    return deleteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to expandIpCidrRange. */
+  public UnaryCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
+      expandIpCidrRangeSettings() {
+    return expandIpCidrRangeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to get. */
+  public UnaryCallSettings<GetSubnetworkRequest, Subnetwork> getSettings() {
+    return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to insert. */
+  public UnaryCallSettings<InsertSubnetworkRequest, Operation> insertSettings() {
+    return insertSettings;
+  }
+
+  /** Returns the object with the settings used for calls to list. */
+  public PagedCallSettings<ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
+      listSettings() {
+    return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
+      listUsableSettings() {
+    return listUsableSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchSubnetworkRequest, Operation> patchSettings() {
+    return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setPrivateIpGoogleAccess. */
+  public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
+      setPrivateIpGoogleAccessSettings() {
+    return setPrivateIpGoogleAccessSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public SubnetworksStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+      return HttpJsonSubnetworksStub.create(this);
+    } else {
+      throw new UnsupportedOperationException(
+          "Transport not supported: " + getTransportChannelProvider().getTransportName());
+    }
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "compute.googleapis.com";
+  }
+
+  /** Returns the default service port. */
+  public static int getDefaultServicePort() {
+    return 443;
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return InstantiatingHttpJsonChannelProvider.newBuilder();
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultHttpJsonTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(SubnetworksStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected SubnetworksStubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
+    deleteSettings = settingsBuilder.deleteSettings().build();
+    expandIpCidrRangeSettings = settingsBuilder.expandIpCidrRangeSettings().build();
+    getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    insertSettings = settingsBuilder.insertSettings().build();
+    listSettings = settingsBuilder.listSettings().build();
+    listUsableSettings = settingsBuilder.listUsableSettings().build();
+    patchSettings = settingsBuilder.patchSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    setPrivateIpGoogleAccessSettings = settingsBuilder.setPrivateIpGoogleAccessSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+  }
+
+  private static final PagedListDescriptor<
+          AggregatedListSubnetworksRequest,
+          SubnetworkAggregatedList,
+          Entry<String, SubnetworksScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListSubnetworksRequest,
+              SubnetworkAggregatedList,
+              Entry<String, SubnetworksScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListSubnetworksRequest injectToken(
+                AggregatedListSubnetworksRequest payload, String token) {
+              return AggregatedListSubnetworksRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListSubnetworksRequest injectPageSize(
+                AggregatedListSubnetworksRequest payload, int pageSize) {
+              return AggregatedListSubnetworksRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListSubnetworksRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SubnetworkAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Entry<String, SubnetworksScopedList>> extractResources(
+                SubnetworkAggregatedList payload) {
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().entrySet()
+                  : ImmutableList.<Entry<String, SubnetworksScopedList>>of();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSubnetworksRequest, SubnetworkList, Subnetwork>
+      LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSubnetworksRequest, SubnetworkList, Subnetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubnetworksRequest injectToken(
+                ListSubnetworksRequest payload, String token) {
+              return ListSubnetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSubnetworksRequest injectPageSize(
+                ListSubnetworksRequest payload, int pageSize) {
+              return ListSubnetworksRequest.newBuilder(payload).setMaxResults(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubnetworksRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SubnetworkList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Subnetwork> extractResources(SubnetworkList payload) {
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Subnetwork>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
+      LIST_USABLE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectToken(
+                ListUsableSubnetworksRequest payload, String token) {
+              return ListUsableSubnetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectPageSize(
+                ListUsableSubnetworksRequest payload, int pageSize) {
+              return ListUsableSubnetworksRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableSubnetworksRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(UsableSubnetworksAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UsableSubnetwork> extractResources(
+                UsableSubnetworksAggregatedList payload) {
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<UsableSubnetwork>of();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListSubnetworksRequest,
+              SubnetworkAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListSubnetworksRequest, SubnetworkAggregatedList> callable,
+                AggregatedListSubnetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<SubnetworkAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListSubnetworksRequest,
+                      SubnetworkAggregatedList,
+                      Entry<String, SubnetworksScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
+      LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubnetworksRequest, SubnetworkList, ListPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubnetworksRequest, SubnetworkList> callable,
+                ListSubnetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<SubnetworkList> futureResponse) {
+              PageContext<ListSubnetworksRequest, SubnetworkList, Subnetwork> pageContext =
+                  PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
+              return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
+      LIST_USABLE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableSubnetworksRequest,
+              UsableSubnetworksAggregatedList,
+              ListUsablePagedResponse>() {
+            @Override
+            public ApiFuture<ListUsablePagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
+                    callable,
+                ListUsableSubnetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
+              PageContext<
+                      ListUsableSubnetworksRequest,
+                      UsableSubnetworksAggregatedList,
+                      UsableSubnetwork>
+                  pageContext =
+                      PageContext.create(callable, LIST_USABLE_PAGE_STR_DESC, request, context);
+              return ListUsablePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Builder for SubnetworksStubSettings. */
+  public static class Builder extends StubSettings.Builder<SubnetworksStubSettings, Builder> {
+    private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+
+    private final PagedCallSettings.Builder<
+            AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
+        aggregatedListSettings;
+    private final UnaryCallSettings.Builder<DeleteSubnetworkRequest, Operation> deleteSettings;
+    private final UnaryCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation>
+        expandIpCidrRangeSettings;
+    private final UnaryCallSettings.Builder<GetSubnetworkRequest, Subnetwork> getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicySubnetworkRequest, Policy>
+        getIamPolicySettings;
+    private final UnaryCallSettings.Builder<InsertSubnetworkRequest, Operation> insertSettings;
+    private final PagedCallSettings.Builder<
+            ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
+        listSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
+        listUsableSettings;
+    private final UnaryCallSettings.Builder<PatchSubnetworkRequest, Operation> patchSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicySubnetworkRequest, Policy>
+        setIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
+        setPrivateIpGoogleAccessSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
+        RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
+          ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+      RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("default", settings);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    protected Builder() {
+      this((ClientContext) null);
+    }
+
+    protected Builder(ClientContext clientContext) {
+      super(clientContext);
+
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
+
+      deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      expandIpCidrRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+
+      listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
+
+      patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setPrivateIpGoogleAccessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
+              deleteSettings,
+              expandIpCidrRangeSettings,
+              getSettings,
+              getIamPolicySettings,
+              insertSettings,
+              listSettings,
+              listUsableSettings,
+              patchSettings,
+              setIamPolicySettings,
+              setPrivateIpGoogleAccessSettings,
+              testIamPermissionsSettings);
+
+      initDefaults(this);
+    }
+
+    private static Builder createDefault() {
+      Builder builder = new Builder((ClientContext) null);
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .expandIpCidrRangeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .insertSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listUsableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setPrivateIpGoogleAccessSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      return builder;
+    }
+
+    protected Builder(SubnetworksStubSettings settings) {
+      super(settings);
+
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
+      deleteSettings = settings.deleteSettings.toBuilder();
+      expandIpCidrRangeSettings = settings.expandIpCidrRangeSettings.toBuilder();
+      getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      insertSettings = settings.insertSettings.toBuilder();
+      listSettings = settings.listSettings.toBuilder();
+      listUsableSettings = settings.listUsableSettings.toBuilder();
+      patchSettings = settings.patchSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      setPrivateIpGoogleAccessSettings = settings.setPrivateIpGoogleAccessSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
+              deleteSettings,
+              expandIpCidrRangeSettings,
+              getSettings,
+              getIamPolicySettings,
+              insertSettings,
+              listSettings,
+              listUsableSettings,
+              patchSettings,
+              setIamPolicySettings,
+              setPrivateIpGoogleAccessSettings,
+              testIamPermissionsSettings);
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'
+    /**
+     * Applies the given settings updater function to all of the unary API methods in this service.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
+     */
+    public Builder applyToAllUnaryMethods(
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
+      return this;
+    }
+
+    public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
+      return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListSubnetworksRequest, SubnetworkAggregatedList, AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to delete. */
+    public UnaryCallSettings.Builder<DeleteSubnetworkRequest, Operation> deleteSettings() {
+      return deleteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to expandIpCidrRange. */
+    public UnaryCallSettings.Builder<ExpandIpCidrRangeSubnetworkRequest, Operation>
+        expandIpCidrRangeSettings() {
+      return expandIpCidrRangeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to get. */
+    public UnaryCallSettings.Builder<GetSubnetworkRequest, Subnetwork> getSettings() {
+      return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicySubnetworkRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to insert. */
+    public UnaryCallSettings.Builder<InsertSubnetworkRequest, Operation> insertSettings() {
+      return insertSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to list. */
+    public PagedCallSettings.Builder<ListSubnetworksRequest, SubnetworkList, ListPagedResponse>
+        listSettings() {
+      return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList, ListUsablePagedResponse>
+        listUsableSettings() {
+      return listUsableSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchSubnetworkRequest, Operation> patchSettings() {
+      return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicySubnetworkRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPrivateIpGoogleAccess. */
+    public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
+        setPrivateIpGoogleAccessSettings() {
+      return setPrivateIpGoogleAccessSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
+    @Override
+    public SubnetworksStubSettings build() throws IOException {
+      return new SubnetworksStubSettings(this);
+    }
+  }
+}

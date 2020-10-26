@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,28 +14,17 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
-
-AUTOSYNTH_MULTIPLE_COMMITS = True
-
-gapic = gcp.GAPICBazel()
 
 service = 'compute'
 versions = ['v1']
 
 for version in versions:
-  library = gapic.java_library(
+  java.bazel_library(
       service=service,
       version=version,
-      bazel_target=f'//gapic/google/{service}/{version}:google-cloud-{service}-{version}-java',
-      discogapic = True,
+      bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
+      diregapic = True,
   )
-
-  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
-  s.copy(library / f'google-cloud-{service}-{version}-java/gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
-
-  java.format_code('./src')
 
 java.common_templates()
