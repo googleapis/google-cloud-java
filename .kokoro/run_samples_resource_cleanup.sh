@@ -29,7 +29,7 @@ cd ${scriptDir}/..
 source ${scriptDir}/common.sh
 
 # Setup required env variables
-source ${KOKORO_GFILE_DIR}/bigquery_secrets.txt
+source ${KOKORO_GFILE_DIR}/secret_manager/java-bigquery-samples-secrets
 echo "********** Successfully Set All Environment Variables **********"
 
 # Activate service account
