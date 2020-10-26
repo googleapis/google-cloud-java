@@ -62,7 +62,7 @@ popd
 # V2
 mvn clean site -B -q -Ddevsite.template="${KOKORO_GFILE_DIR}/java/"
 
-pushd target/devsite
+pushd target/devsite/reference
 
 # create metadata
 python3 -m docuploader create-metadata \
