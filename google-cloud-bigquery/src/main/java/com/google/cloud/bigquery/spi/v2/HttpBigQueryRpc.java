@@ -145,7 +145,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setFilter(Option.LABEL_FILTER.getString(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
-              .setPageToken(Option.PAGE_TOKEN.getString(options))
               .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
       return Tuple.of(
