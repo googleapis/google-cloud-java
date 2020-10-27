@@ -104,7 +104,8 @@ public final class Acl implements Serializable {
       GROUP,
       USER,
       VIEW,
-      IAM_MEMBER
+      IAM_MEMBER,
+      ROUTINE
     }
 
     Entity(Type type) {
@@ -135,6 +136,9 @@ public final class Acl implements Serializable {
       }
       if (access.getIamMember() != null) {
         return new IamMember(access.getIamMember());
+      }
+      if (access.getRoutine() != null) {
+        return new Routine(RoutineId.fromPb(access.getRoutine()));
       }
       // Unreachable
       throw new BigQueryException(
@@ -388,6 +392,58 @@ public final class Acl implements Serializable {
   }
 
   /**
+   * Class for a BigQuery Routine entity. Objects of this class represent a routine from a different
+   * dataset to grant access to. Queries executed against that routine will have read access to
+   * views/tables/routines in this dataset. Only UDF is supported for now. The role field is not
+   * required when this field is set. If that routine is updated by any user, access to the routine
+   * needs to be granted again via an update operation.
+   */
+  public static final class Routine extends Entity {
+
+    private static final long serialVersionUID = -8392885851733136262L;
+
+    private final RoutineId id;
+
+    /** Creates a Routine entity given the routine's id. */
+    public Routine(RoutineId id) {
+      super(Type.ROUTINE);
+      this.id = id;
+    }
+
+    /** Returns routine's identity. */
+    public RoutineId getId() {
+      return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      Routine routine = (Routine) obj;
+      return Objects.equals(getType(), routine.getType()) && Objects.equals(id, routine.id);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(getType(), id);
+    }
+
+    @Override
+    public String toString() {
+      return toPb().toString();
+    }
+
+    @Override
+    Access toPb() {
+      return new Access().setRoutine(id.toPb());
+    }
+  }
+
+  /**
    * Class for a BigQuery IamMember entity. Objects of this class represent a iamMember to grant
    * access to given the IAM Policy.
    */
@@ -463,6 +519,11 @@ public final class Acl implements Serializable {
   /** Returns an Acl object for a view entity. */
   public static Acl of(View view) {
     return new Acl(view, null);
+  }
+
+  /** Returns an Acl object for a routine entity. */
+  public static Acl of(Routine routine) {
+    return new Acl(routine, null);
   }
 
   @Override

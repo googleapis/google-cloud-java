@@ -31,11 +31,13 @@ public class DatasetInfoTest {
   private static final List<Acl> ACCESS_RULES =
       ImmutableList.of(
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-          Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+          Acl.of(new Acl.View(TableId.of("dataset", "table"))),
+          Acl.of(new Acl.Routine(RoutineId.of("dataset", "routine"))));
   private static final List<Acl> ACCESS_RULES_COMPLETE =
       ImmutableList.of(
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-          Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
+          Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))),
+          Acl.of(new Acl.Routine(RoutineId.of("project", "dataset", "routine"))));
   private static final List<Acl> ACCESS_RULES_IAM_MEMBER =
       ImmutableList.of(Acl.of(new Acl.IamMember("allUsers"), Acl.Role.READER));
   private static final Map<String, String> LABELS =

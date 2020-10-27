@@ -49,7 +49,8 @@ public class DatasetTest {
   private static final List<Acl> ACCESS_RULES =
       ImmutableList.of(
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-          Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+          Acl.of(new Acl.View(TableId.of("dataset", "table"))),
+          Acl.of(new Acl.Routine(RoutineId.of("dataset", "routine"))));
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",

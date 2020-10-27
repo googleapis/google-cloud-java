@@ -36,8 +36,10 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Acl USER_ACCESS = Acl.of(new Acl.User("user"), Acl.Role.OWNER);
   private static final Acl VIEW_ACCESS =
       Acl.of(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER);
+  private static final Acl ROUTINE_ACCESS =
+      Acl.of(new Acl.Routine(RoutineId.of("project", "dataset", "routine")), Acl.Role.WRITER);
   private static final List<Acl> ACCESS_RULES =
-      ImmutableList.of(DOMAIN_ACCESS, GROUP_ACCESS, VIEW_ACCESS, USER_ACCESS);
+      ImmutableList.of(DOMAIN_ACCESS, GROUP_ACCESS, VIEW_ACCESS, ROUTINE_ACCESS, USER_ACCESS);
   private static final Long CREATION_TIME = System.currentTimeMillis() - 10;
   private static final Long DEFAULT_TABLE_EXPIRATION = 100L;
   private static final String DESCRIPTION = "Description";
@@ -225,6 +227,7 @@ public class SerializationTest extends BaseSerializationTest {
       GROUP_ACCESS,
       USER_ACCESS,
       VIEW_ACCESS,
+      ROUTINE_ACCESS,
       DATASET_ID,
       DATASET_INFO,
       TABLE_ID,

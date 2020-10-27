@@ -89,6 +89,16 @@ public class AclTest {
   }
 
   @Test
+  public void testRoutineEntity() {
+    RoutineId routineId = RoutineId.of("project", "dataset", "routine");
+    Acl.Routine entity = new Acl.Routine(routineId);
+    assertEquals(routineId, entity.getId());
+    assertEquals(Type.ROUTINE, entity.getType());
+    Dataset.Access pb = entity.toPb();
+    assertEquals(entity, Entity.fromPb(pb));
+  }
+
+  @Test
   public void testIamMemberEntity() {
     IamMember entity = new IamMember("member1");
     assertEquals("member1", entity.getIamMember());
@@ -106,6 +116,10 @@ public class AclTest {
     View view = new View(TableId.of("project", "dataset", "view"));
     acl = Acl.of(view);
     assertEquals(view, acl.getEntity());
+    assertEquals(null, acl.getRole());
+    Acl.Routine routine = new Acl.Routine(RoutineId.of("project", "dataset", "routine"));
+    acl = Acl.of(routine);
+    assertEquals(routine, acl.getEntity());
     assertEquals(null, acl.getRole());
   }
 }

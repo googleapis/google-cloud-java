@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Dataset;
+import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -509,6 +510,13 @@ public class DatasetInfo implements Serializable {
             viewReferencePb.setProjectId(projectId);
           }
           acls.add(Acl.of(new Acl.View(TableId.fromPb(viewReferencePb))));
+        } else if (acl.getEntity().getType() == Acl.Entity.Type.ROUTINE) {
+          Dataset.Access accessPb = acl.toPb();
+          RoutineReference routineReferencePb = accessPb.getRoutine();
+          if (routineReferencePb.getProjectId() == null) {
+            routineReferencePb.setProjectId(projectId);
+          }
+          acls.add(Acl.of(new Acl.Routine(RoutineId.fromPb(routineReferencePb))));
         } else {
           acls.add(acl);
         }

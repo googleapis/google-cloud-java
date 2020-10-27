@@ -112,6 +112,7 @@ import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -1489,6 +1490,32 @@ public class ITBigQueryTest {
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
     assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+  }
+
+  @Test
+  public void testAuthorizeRoutine() {
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    RoutineId routineId = RoutineId.of(PROJECT_ID, ROUTINE_DATASET, routineName);
+    RoutineInfo routineInfo =
+        RoutineInfo.newBuilder(routineId)
+            .setRoutineType("SCALAR_FUNCTION")
+            .setBody("x * 3")
+            .setLanguage("SQL")
+            .setArguments(
+                ImmutableList.of(
+                    RoutineArgument.newBuilder()
+                        .setName("x")
+                        .setDataType(StandardSQLDataType.newBuilder("INT64").build())
+                        .build()))
+            .build();
+    Routine routine = bigquery.create(routineInfo);
+    assertNotNull(routine);
+    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    Dataset routineDataset = bigquery.getDataset(ROUTINE_DATASET);
+    List<Acl> routineAcl = new ArrayList<>(routineDataset.getAcl());
+    routineAcl.add(Acl.of(new Acl.Routine(routineId)));
+    routineDataset = routineDataset.toBuilder().setAcl(routineAcl).build().update();
+    assertEquals(routineAcl, routineDataset.getAcl());
   }
 
   @Test
