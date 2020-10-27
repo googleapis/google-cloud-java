@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-redis.git",
+        "sha": "74e81ddef00a2358b3673bebda51c20a78dfbe09"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "fd3584b01cedd6c9f79d08be4e2365085f955aa5"
+      }
+    }
+  ]
+}
