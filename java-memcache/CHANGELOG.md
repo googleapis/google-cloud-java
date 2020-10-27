@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.2.5](https://www.github.com/googleapis/java-memcache/compare/v0.2.4...v0.2.5) (2020-10-27)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#193](https://www.github.com/googleapis/java-memcache/issues/193)) ([0661a11](https://www.github.com/googleapis/java-memcache/commit/0661a11d734d1e8a8b18f4545883e7078e7d7800))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#197](https://www.github.com/googleapis/java-memcache/issues/197)) ([8c9a8f1](https://www.github.com/googleapis/java-memcache/commit/8c9a8f169d6f879a00ca0ade0f735a48f7be2730))
+
 ### [0.2.4](https://www.github.com/googleapis/java-memcache/compare/v0.2.3...v0.2.4) (2020-10-09)
 
 
