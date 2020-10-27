@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-game-servers/compare/v0.21.2...v1.0.0) (2020-10-27)
+
+
+### Features
+
+* promote to 1.0.0 ([#229](https://www.github.com/googleapis/java-game-servers/issues/229)) ([589ce6b](https://www.github.com/googleapis/java-game-servers/commit/589ce6b78a408c62193fc704397a54929fc31997))
+
 ### [0.21.2](https://www.github.com/googleapis/java-game-servers/compare/v0.21.1...v0.21.2) (2020-10-22)
 
 
