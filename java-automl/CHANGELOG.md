@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-automl/compare/v1.2.3...v1.3.0) (2020-10-27)
+
+
+### Features
+
+* Added text extraction health care option in create model. ([#332](https://www.github.com/googleapis/java-automl/issues/332)) ([102614c](https://www.github.com/googleapis/java-automl/commit/102614c9e86e173ae13752c79b2f59c94708a62f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#328](https://www.github.com/googleapis/java-automl/issues/328)) ([970a32a](https://www.github.com/googleapis/java-automl/commit/970a32a412b9b3639dd86eb124209a48f4f39075))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#347](https://www.github.com/googleapis/java-automl/issues/347)) ([77d54c3](https://www.github.com/googleapis/java-automl/commit/77d54c39ea99fffa11473c1067cc6bb5413d6b0d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#352](https://www.github.com/googleapis/java-automl/issues/352)) ([1e5655f](https://www.github.com/googleapis/java-automl/commit/1e5655f22c3a26fd532b2afc74e37f5232878406))
+
 ### [1.2.3](https://www.github.com/googleapis/java-automl/compare/v1.2.2...v1.2.3) (2020-09-23)
 
 
