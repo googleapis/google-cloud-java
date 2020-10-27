@@ -23,25 +23,24 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start:google-cloud-game-servers:released} -->
   <dependencies>
     <!-- [START game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-game-servers</artifactId>
-      <version>0.21.3-SNAPSHOT</version>
+      <version>0.21.2</version>
     </dependency>
     <!-- [END game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>0.21.3-SNAPSHOT</version>
+      <version>2.8.6</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>0.21.3-SNAPSHOT</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -51,7 +50,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
