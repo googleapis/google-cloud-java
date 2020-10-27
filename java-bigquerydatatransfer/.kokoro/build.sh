@@ -69,8 +69,9 @@ integration)
     RETURN_CODE=$?
     ;;
 samples)
-    SAMPLES_DIR=samples
-    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+    # run ITs in snippets/ on nightly jobs
+    SAMPLES_DIR=samples/snippets
+    # run ITs in snapshot/ on presubmit PRs
     if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
     then
       SAMPLES_DIR=samples/snapshot
