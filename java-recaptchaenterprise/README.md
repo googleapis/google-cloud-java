@@ -29,68 +29,18 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recaptchaenterprise</artifactId>
   </dependency>
+</dependencies>
 
 ```
 
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-recaptchaenterprise</artifactId>
-      <version>1.0.4</version>
-    </dependency>
-    <!-- [END recaptcha-enterprise_install_without_bom] -->
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.truth</groupId>
-      <artifactId>truth</artifactId>
-      <version>1.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <!-- compile and run all snippet tests -->
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.2.0</version>
-        <executions>
-          <execution>
-            <id>add-snippets-source</id>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>../snippets/src/main/java</source>
-              </sources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>add-snippets-tests</id>
-            <goals>
-              <goal>add-test-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>../snippets/src/test/java</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</project>
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-recaptchaenterprise</artifactId>
+  <version>1.0.4</version>
+</dependency>
 
 ```
 
