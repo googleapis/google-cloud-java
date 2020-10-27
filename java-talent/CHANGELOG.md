@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-talent/compare/v0.39.4...v1.0.0) (2020-10-27)
+
+
+### Features
+
+* promote to 1.0.0 ([#308](https://www.github.com/googleapis/java-talent/issues/308)) ([736a31c](https://www.github.com/googleapis/java-talent/commit/736a31c489bf9af91c24091a81a1d72af1d6d463)), closes [#16](https://www.github.com/googleapis/java-talent/issues/16)
+
 ### [0.39.4](https://www.github.com/googleapis/java-talent/compare/v0.39.3...v0.39.4) (2020-10-21)
 
 
