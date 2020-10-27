@@ -10,6 +10,6 @@
   "repo": "googleapis/java-area120-tables",
   "repo_short": "java-area120-tables",
   "distribution_name": "com.google.area120:google-area120-tables",
-  "api_id": "area120-tables.googleapis.com",
+  "api_id": "area120tables.googleapis.com",
   "requires_billing": true
 }
