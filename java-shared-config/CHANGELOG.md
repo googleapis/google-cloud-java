@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.9.4](https://www.github.com/googleapis/java-shared-config/compare/v0.9.3...v0.9.4) (2020-10-21)
+
+
+### Documentation
+
+* Latest for Cloud-RAD ([#199](https://www.github.com/googleapis/java-shared-config/issues/199)) ([34712af](https://www.github.com/googleapis/java-shared-config/commit/34712afac58aa0d148f0843026b3ff770ee030c2))
+
 ### [0.9.3](https://www.github.com/googleapis/java-shared-config/compare/v0.9.2...v0.9.3) (2020-10-15)
 
 
