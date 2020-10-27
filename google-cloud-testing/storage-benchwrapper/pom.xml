@@ -8,7 +8,7 @@
 
   <properties>
     <grpcVersion>1.33.0</grpcVersion>
-    <protobufVersion>3.9.1</protobufVersion>
+    <protobufVersion>3.9.2</protobufVersion>
   </properties>
   
   <build>
