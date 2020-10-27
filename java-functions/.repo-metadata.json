@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/functions",
   "api_description": "is a scalable pay as you go Functions-as-a-Service (FaaS) to run your code with zero server management.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-functions/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-functions",
