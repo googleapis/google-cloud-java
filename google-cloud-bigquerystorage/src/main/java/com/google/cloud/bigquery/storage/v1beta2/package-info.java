@@ -25,6 +25,9 @@
  *
  * <p>The Read API can be used to read data from BigQuery.
  *
+ * <p>New code should use the v1 Read API going forward, if they don't use Write API at the same
+ * time.
+ *
  * <p>Sample for BaseBigQueryReadClient:
  *
  * <pre>
@@ -34,6 +37,24 @@
  *   ReadSession readSession = ReadSession.newBuilder().build();
  *   int maxStreamCount = 0;
  *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =================== BigQueryWriteClient ===================
+ *
+ * <p>Service Description: BigQuery Write API.
+ *
+ * <p>The Write API can be used to write data to BigQuery.
+ *
+ * <p>Sample for BigQueryWriteClient:
+ *
+ * <pre>
+ * <code>
+ * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   WriteStream writeStream = WriteStream.newBuilder().build();
+ *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
  * }
  * </code>
  * </pre>

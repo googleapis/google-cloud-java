@@ -43,6 +43,7 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class BaseBigQueryReadClientTest {
   private static MockBigQueryRead mockBigQueryRead;
+  private static MockBigQueryWrite mockBigQueryWrite;
   private static MockServiceHelper serviceHelper;
   private BaseBigQueryReadClient client;
   private LocalChannelProvider channelProvider;
@@ -50,9 +51,11 @@ public class BaseBigQueryReadClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockBigQueryRead = new MockBigQueryRead();
+    mockBigQueryWrite = new MockBigQueryWrite();
     serviceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockBigQueryRead));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockBigQueryRead, mockBigQueryWrite));
     serviceHelper.start();
   }
 

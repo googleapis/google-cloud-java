@@ -18,15 +18,7 @@
 
 package com.google.cloud.bigquery.storage.v1beta2;
 
-/**
- *
- *
- * <pre>
- * Response message for `SplitReadStream`.
- * </pre>
- *
- * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse}
- */
+/** Protobuf type {@code google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse} */
 public final class SplitReadStreamResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse)
@@ -422,15 +414,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Response message for `SplitReadStream`.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse}
-   */
+  /** Protobuf type {@code google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse)

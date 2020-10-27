@@ -43,6 +43,10 @@ public final class StreamProto {
       internal_static_google_cloud_bigquery_storage_v1beta2_ReadStream_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta2_ReadStream_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -58,44 +62,58 @@ public final class StreamProto {
           + "roto\032\031google/api/resource.proto\0321google/"
           + "cloud/bigquery/storage/v1beta2/arrow.pro"
           + "to\0320google/cloud/bigquery/storage/v1beta"
-          + "2/avro.proto\032\037google/protobuf/timestamp."
-          + "proto\"\362\007\n\013ReadSession\022\021\n\004name\030\001 \001(\tB\003\340A\003"
-          + "\0224\n\013expire_time\030\002 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022K\n\013data_format\030\003 \001(\01621.go"
-          + "ogle.cloud.bigquery.storage.v1beta2.Data"
-          + "FormatB\003\340A\005\022M\n\013avro_schema\030\004 \001(\01321.googl"
-          + "e.cloud.bigquery.storage.v1beta2.AvroSch"
-          + "emaB\003\340A\003H\000\022O\n\014arrow_schema\030\005 \001(\01322.googl"
-          + "e.cloud.bigquery.storage.v1beta2.ArrowSc"
-          + "hemaB\003\340A\003H\000\0224\n\005table\030\006 \001(\tB%\340A\005\372A\037\n\035bigq"
-          + "uery.googleapis.com/Table\022_\n\017table_modif"
-          + "iers\030\007 \001(\0132A.google.cloud.bigquery.stora"
-          + "ge.v1beta2.ReadSession.TableModifiersB\003\340"
-          + "A\001\022^\n\014read_options\030\010 \001(\0132C.google.cloud."
-          + "bigquery.storage.v1beta2.ReadSession.Tab"
-          + "leReadOptionsB\003\340A\001\022G\n\007streams\030\n \003(\01321.go"
+          + "2/avro.proto\0321google/cloud/bigquery/stor"
+          + "age/v1beta2/table.proto\032\037google/protobuf"
+          + "/timestamp.proto\"\362\007\n\013ReadSession\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\003\0224\n\013expire_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\022K\n\013data_format"
+          + "\030\003 \001(\01621.google.cloud.bigquery.storage.v"
+          + "1beta2.DataFormatB\003\340A\005\022M\n\013avro_schema\030\004 "
+          + "\001(\01321.google.cloud.bigquery.storage.v1be"
+          + "ta2.AvroSchemaB\003\340A\003H\000\022O\n\014arrow_schema\030\005 "
+          + "\001(\01322.google.cloud.bigquery.storage.v1be"
+          + "ta2.ArrowSchemaB\003\340A\003H\000\0224\n\005table\030\006 \001(\tB%\340"
+          + "A\005\372A\037\n\035bigquery.googleapis.com/Table\022_\n\017"
+          + "table_modifiers\030\007 \001(\0132A.google.cloud.big"
+          + "query.storage.v1beta2.ReadSession.TableM"
+          + "odifiersB\003\340A\001\022^\n\014read_options\030\010 \001(\0132C.go"
           + "ogle.cloud.bigquery.storage.v1beta2.Read"
-          + "StreamB\003\340A\003\032C\n\016TableModifiers\0221\n\rsnapsho"
-          + "t_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\032\260\001\n\020TableReadOptions\022\027\n\017selected_fields"
-          + "\030\001 \003(\t\022\027\n\017row_restriction\030\002 \001(\t\022j\n\033arrow"
-          + "_serialization_options\030\003 \001(\0132@.google.cl"
-          + "oud.bigquery.storage.v1beta2.ArrowSerial"
-          + "izationOptionsB\003\340A\001:k\352Ah\n*bigquerystorag"
-          + "e.googleapis.com/ReadSession\022:projects/{"
-          + "project}/locations/{location}/sessions/{"
-          + "session}B\010\n\006schema\"\234\001\n\nReadStream\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003:{\352Ax\n)bigquerystorage.googl"
-          + "eapis.com/ReadStream\022Kprojects/{project}"
-          + "/locations/{location}/sessions/{session}"
-          + "/streams/{stream}*>\n\nDataFormat\022\033\n\027DATA_"
-          + "FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020"
-          + "\002B\340\001\n)com.google.cloud.bigquery.storage."
-          + "v1beta2B\013StreamProtoP\001ZLgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/bigquery/sto"
-          + "rage/v1beta2;storage\352AU\n\035bigquery.google"
-          + "apis.com/Table\0224projects/{project}/datas"
-          + "ets/{dataset}/tables/{table}b\006proto3"
+          + "Session.TableReadOptionsB\003\340A\001\022G\n\007streams"
+          + "\030\n \003(\01321.google.cloud.bigquery.storage.v"
+          + "1beta2.ReadStreamB\003\340A\003\032C\n\016TableModifiers"
+          + "\0221\n\rsnapshot_time\030\001 \001(\0132\032.google.protobu"
+          + "f.Timestamp\032\260\001\n\020TableReadOptions\022\027\n\017sele"
+          + "cted_fields\030\001 \003(\t\022\027\n\017row_restriction\030\002 \001"
+          + "(\t\022j\n\033arrow_serialization_options\030\003 \001(\0132"
+          + "@.google.cloud.bigquery.storage.v1beta2."
+          + "ArrowSerializationOptionsB\003\340A\001:k\352Ah\n*big"
+          + "querystorage.googleapis.com/ReadSession\022"
+          + ":projects/{project}/locations/{location}"
+          + "/sessions/{session}B\010\n\006schema\"\234\001\n\nReadSt"
+          + "ream\022\021\n\004name\030\001 \001(\tB\003\340A\003:{\352Ax\n)bigqueryst"
+          + "orage.googleapis.com/ReadStream\022Kproject"
+          + "s/{project}/locations/{location}/session"
+          + "s/{session}/streams/{stream}\"\374\003\n\013WriteSt"
+          + "ream\022\021\n\004name\030\001 \001(\tB\003\340A\003\022J\n\004type\030\002 \001(\01627."
+          + "google.cloud.bigquery.storage.v1beta2.Wr"
+          + "iteStream.TypeB\003\340A\005\0224\n\013create_time\030\003 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013com"
+          + "mit_time\030\004 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\022M\n\014table_schema\030\005 \001(\01322.google.c"
+          + "loud.bigquery.storage.v1beta2.TableSchem"
+          + "aB\003\340A\003\022\023\n\013external_id\030\006 \001(\t\"F\n\004Type\022\024\n\020T"
+          + "YPE_UNSPECIFIED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PEND"
+          + "ING\020\002\022\014\n\010BUFFERED\020\003:v\352As\n*bigquerystorag"
+          + "e.googleapis.com/WriteStream\022Eprojects/{"
+          + "project}/datasets/{dataset}/tables/{tabl"
+          + "e}/streams/{stream}*>\n\nDataFormat\022\033\n\027DAT"
+          + "A_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARRO"
+          + "W\020\002B\340\001\n)com.google.cloud.bigquery.storag"
+          + "e.v1beta2B\013StreamProtoP\001ZLgoogle.golang."
+          + "org/genproto/googleapis/cloud/bigquery/s"
+          + "torage/v1beta2;storage\352AU\n\035bigquery.goog"
+          + "leapis.com/Table\0224projects/{project}/dat"
+          + "asets/{dataset}/tables/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,6 +123,7 @@ public final class StreamProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.bigquery.storage.v1beta2.ArrowProto.getDescriptor(),
               com.google.cloud.bigquery.storage.v1beta2.AvroProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta2.TableProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_bigquery_storage_v1beta2_ReadSession_descriptor =
@@ -152,6 +171,14 @@ public final class StreamProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_descriptor,
+            new java.lang.String[] {
+              "Name", "Type", "CreateTime", "CommitTime", "TableSchema", "ExternalId",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -164,6 +191,7 @@ public final class StreamProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta2.ArrowProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta2.AvroProto.getDescriptor();
+    com.google.cloud.bigquery.storage.v1beta2.TableProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

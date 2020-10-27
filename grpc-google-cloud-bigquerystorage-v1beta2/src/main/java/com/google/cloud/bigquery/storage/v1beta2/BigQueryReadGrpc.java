@@ -31,6 +31,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * BigQuery Read API.
  * The Read API can be used to read data from BigQuery.
+ * New code should use the v1 Read API going forward, if they don't use Write
+ * API at the same time.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -230,6 +232,8 @@ public final class BigQueryReadGrpc {
    * <pre>
    * BigQuery Read API.
    * The Read API can be used to read data from BigQuery.
+   * New code should use the v1 Read API going forward, if they don't use Write
+   * API at the same time.
    * </pre>
    */
   public abstract static class BigQueryReadImplBase implements io.grpc.BindableService {
@@ -341,6 +345,8 @@ public final class BigQueryReadGrpc {
    * <pre>
    * BigQuery Read API.
    * The Read API can be used to read data from BigQuery.
+   * New code should use the v1 Read API going forward, if they don't use Write
+   * API at the same time.
    * </pre>
    */
   public static final class BigQueryReadStub
@@ -441,6 +447,8 @@ public final class BigQueryReadGrpc {
    * <pre>
    * BigQuery Read API.
    * The Read API can be used to read data from BigQuery.
+   * New code should use the v1 Read API going forward, if they don't use Write
+   * API at the same time.
    * </pre>
    */
   public static final class BigQueryReadBlockingStub
@@ -530,6 +538,8 @@ public final class BigQueryReadGrpc {
    * <pre>
    * BigQuery Read API.
    * The Read API can be used to read data from BigQuery.
+   * New code should use the v1 Read API going forward, if they don't use Write
+   * API at the same time.
    * </pre>
    */
   public static final class BigQueryReadFutureStub
