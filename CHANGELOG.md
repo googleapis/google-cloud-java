@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.6...v1.6.0) (2020-10-27)
+
+
+### Features
+
+* bigquery Write API V1Beta2 public interface. ([#637](https://www.github.com/googleapis/java-bigquerystorage/issues/637)) ([bb21e7b](https://www.github.com/googleapis/java-bigquerystorage/commit/bb21e7bc2b206e7720855d032889f4bc45121f9a))
+
+
+### Bug Fixes
+
+* remove stream ttl in client library, since there is no very clear TTL defined. ([#627](https://www.github.com/googleapis/java-bigquerystorage/issues/627)) ([2ae69b6](https://www.github.com/googleapis/java-bigquerystorage/commit/2ae69b640adc48b79f0aab71c215eb3ef055a34c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.123.1 ([#632](https://www.github.com/googleapis/java-bigquerystorage/issues/632)) ([7b5fc9b](https://www.github.com/googleapis/java-bigquerystorage/commit/7b5fc9b917035ca3b419b71abb0f9d6a4ca59950))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.123.2 ([#633](https://www.github.com/googleapis/java-bigquerystorage/issues/633)) ([bf6260e](https://www.github.com/googleapis/java-bigquerystorage/commit/bf6260ebe01d040e42f3eb4b3b8262054f9316bf))
+
 ### [1.5.6](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.5.5...v1.5.6) (2020-10-20)
 
 
