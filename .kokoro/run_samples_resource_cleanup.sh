@@ -32,6 +32,11 @@ source ${scriptDir}/common.sh
 source ${KOKORO_GFILE_DIR}/secret_manager/java-bigquery-samples-secrets
 echo "********** Successfully Set All Environment Variables **********"
 
+# if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
+if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
+fi
+
 # Activate service account
 gcloud auth activate-service-account \
     --key-file="$GOOGLE_APPLICATION_CREDENTIALS" \
