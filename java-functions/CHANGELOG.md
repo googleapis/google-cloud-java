@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-functions/compare/v0.1.2...v1.0.0) (2020-10-27)
+
+
+### Features
+
+* promote to 1.0.0 ([#41](https://www.github.com/googleapis/java-functions/issues/41)) ([522d1b6](https://www.github.com/googleapis/java-functions/commit/522d1b6d1981960cee0747392dd3ff12e78f82e4))
+
 ### [0.1.2](https://www.github.com/googleapis/java-functions/compare/v0.1.1...v0.1.2) (2020-10-22)
 
 
