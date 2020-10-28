@@ -74,8 +74,8 @@ import java.util.Map;
 public class ComputeExample {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    final String project = "vam-veneer";
-    final String region = "us-central1";
+    final String project = "PROJECT_NAME";
+    final String region = "REGION";
     final String address = "test-address-21";
 
     AddressesClient addressesClient = AddressesClient.create();
