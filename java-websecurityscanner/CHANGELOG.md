@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.0.3...v1.0.4) (2020-10-28)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#255](https://www.github.com/googleapis/java-websecurityscanner/issues/255)) ([5781fb2](https://www.github.com/googleapis/java-websecurityscanner/commit/5781fb2f0a5cb3e98715e7147ccd8e29a51441b0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#260](https://www.github.com/googleapis/java-websecurityscanner/issues/260)) ([76de6af](https://www.github.com/googleapis/java-websecurityscanner/commit/76de6afd391814715ad3d31ace1090249a43400c))
+* update dependency joda-time:joda-time to v2.10.8 ([#262](https://www.github.com/googleapis/java-websecurityscanner/issues/262)) ([10681fa](https://www.github.com/googleapis/java-websecurityscanner/commit/10681fafaf69219f616f43060bfafa5c72f82275))
+
 ### [1.0.3](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.0.2...v1.0.3) (2020-10-09)
 
 
