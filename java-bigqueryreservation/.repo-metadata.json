@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/bigquery/docs/reference/reservations/rpc",
   "api_description": "allows users to manage their flat-rate BigQuery reservations.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-bigqueryreservation/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-bigqueryreservation",
