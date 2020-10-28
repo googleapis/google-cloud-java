@@ -21,11 +21,14 @@ import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.LoggingOptions;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
-/** List logs programmatically using the StackDriver Logging API. */
+/** List logs programmatically using the Cloud Logging API. */
 public class ListLogs {
 
-  /** Expects an existing Stackdriver log name as an argument. */
+  /** Expects an existing Cloud Logging log name as an argument. */
   public static void main(String... args) throws Exception {
     // [START logging_list_log_entries]
     // Instantiates a client
@@ -35,8 +38,15 @@ public class ListLogs {
 
     try (Logging logging = options.getService()) {
 
+      // When composing a filter, using indexed fields, such as
+      // timestamp, resource.type, logName and others can help accelerate the results
+      // Full list of indexed fields here: https://cloud.google.com/logging/docs/view/advanced-queries#finding-quickly
+      // Below we are restricting the results to only last hour to speedup getting the results back
+      Calendar calendar = Calendar.getInstance();
+      calendar.add(Calendar.HOUR, -1);
+      DateFormat rfc3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
       String logFilter = "logName=projects/" + options.getProjectId() + "/logs/" + logName
-          + " AND timestamp>=\"2020-09-01T00:00:00.000Z\"";
+          + " AND timestamp>=\"" + rfc3339.format(calendar.getTime()) + "\"";
 
       // List all log entries
       Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(logFilter));

@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>logging-snapshot</artifactId>
   <packaging>jar</packaging>
-  <name>Google Stackdriver Logging Snapshot Samples</name>
+  <name>Google Cloud Logging Snapshot Samples</name>
   <url>https://github.com/googleapis/java-logging</url>
 
   <!--

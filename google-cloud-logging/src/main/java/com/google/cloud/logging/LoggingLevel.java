@@ -19,8 +19,8 @@ package com.google.cloud.logging;
 import java.util.logging.Level;
 
 /**
- * This class adds some additional Java logging levels for Stackdriver Logging. Added levels fill in
- * the gap between Java logging levels and Stackdriver Logging severities.
+ * This class adds some additional Java logging levels for Cloud Logging. Added levels fill in the
+ * gap between Java logging levels and Cloud Logging severities.
  *
  * <p>Added levels in descending order are (between parenthesis the relation with Java logging
  * levels):
@@ -85,7 +85,7 @@ public final class LoggingLevel extends Level {
     this.severity = severity;
   }
 
-  /** Returns the Stackdriver Logging severity associated with this logging level. */
+  /** Returns the Cloud Logging severity associated with this logging level. */
   public Severity getSeverity() {
     return severity;
   }

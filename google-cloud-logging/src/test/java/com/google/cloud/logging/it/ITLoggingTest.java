@@ -49,6 +49,13 @@ public class ITLoggingTest extends BaseSystemTest {
   private static final Payload.JsonPayload SECOND_PAYLOAD =
       Payload.JsonPayload.of(ImmutableMap.<String, Object>of("jsonKey", "jsonValue"));
 
+  private static final MonitoredResource GLOBAL_RESOURCE =
+      MonitoredResource.newBuilder("global").build();
+  private static final MonitoredResource CLOUDSQL_RESOURCE =
+      MonitoredResource.newBuilder("cloudsql_database").build();
+  private static final MonitoredResource[] MONITORED_RESOURCES_IN_TEST =
+      new MonitoredResource[] {GLOBAL_RESOURCE, CLOUDSQL_RESOURCE};
+
   @BeforeClass
   public static void insertLogs() {
     LogEntry firstEntry =
@@ -56,7 +63,7 @@ public class ITLoggingTest extends BaseSystemTest {
             .addLabel("key1", "value1")
             .setLogName(LOG_ID)
             .setHttpRequest(HttpRequest.newBuilder().setStatus(500).build())
-            .setResource(MonitoredResource.newBuilder("global").build())
+            .setResource(GLOBAL_RESOURCE)
             .build();
 
     LogEntry secondEntry =
@@ -64,7 +71,7 @@ public class ITLoggingTest extends BaseSystemTest {
             .addLabel("key2", "value2")
             .setLogName(LOG_ID)
             .setOperation(Operation.of("operationId", "operationProducer"))
-            .setResource(MonitoredResource.newBuilder("cloudsql_database").build())
+            .setResource(CLOUDSQL_RESOURCE)
             .build();
     logging.write(ImmutableList.of(firstEntry));
     logging.write(ImmutableList.of(secondEntry));
@@ -90,7 +97,7 @@ public class ITLoggingTest extends BaseSystemTest {
     LogName logName = LogName.ofProjectLogName(loggingOptions.getProjectId(), LOG_ID);
 
     // Find the log name and wait until we have at least 2 entries
-    Iterator<LogEntry> iterator = waitForLogs(logName, 2);
+    Iterator<LogEntry> iterator = waitForLogs(logName, MONITORED_RESOURCES_IN_TEST, 2);
     assertThat(iterator.hasNext()).isTrue();
 
     LogEntry entry = iterator.next();
@@ -122,7 +129,10 @@ public class ITLoggingTest extends BaseSystemTest {
     LoggingOptions loggingOptions = logging.getOptions();
     LogName logName = LogName.ofProjectLogName(loggingOptions.getProjectId(), LOG_ID);
 
-    String filter = createEqualityFilter("logName", logName) + " AND " + createTimestampFilter(1);
+    String tempFilter =
+        createTimestampFilter(1) + " AND " + createEqualityFilter("logName", logName);
+    String filter = appendResourceTypeFilter(tempFilter, MONITORED_RESOURCES_IN_TEST);
+
     Logging.EntryListOption[] options =
         new Logging.EntryListOption[] {
           Logging.EntryListOption.filter(filter),

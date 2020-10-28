@@ -26,7 +26,7 @@ import com.google.cloud.logging.Severity;
 import java.util.Collections;
 
 /**
- * This sample demonstrates writing logs using the Stackdriver Logging API. The library also offers
+ * This sample demonstrates writing logs using the Cloud Logging API. The library also offers
  * a java.util.logging Handler `com.google.cloud.logging.LoggingHandler` Logback integration is also
  * available :
  * https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-logging-logback
@@ -35,7 +35,7 @@ import java.util.Collections;
  */
 public class QuickstartSample {
 
-  /** Expects a new or existing Stackdriver log name as the first argument. */
+  /** Expects a new or existing Cloud log name as the first argument. */
   public static void main(String... args) throws Exception {
 
     // Instantiates a client

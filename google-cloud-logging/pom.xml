@@ -7,7 +7,7 @@
   <packaging>jar</packaging>
   <name>Google Cloud Logging</name>
   <url>https://github.com/googleapis/java-logging</url>
-  <description>Java idiomatic client for Stackdriver Logging</description>
+  <description>Java idiomatic client for Cloud Logging</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-logging-parent</artifactId>

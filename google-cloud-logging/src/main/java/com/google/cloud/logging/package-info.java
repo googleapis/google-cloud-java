@@ -15,7 +15,7 @@
  */
 
 /**
- * A client for Stackdriver Logging - Real-time log management and analysis.
+ * A client for Cloud Logging - Real-time log management and analysis.
  *
  * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
  * This example shows how to write and list log entries. For the complete source code see <a
@@ -44,7 +44,7 @@
  * }</pre>
  *
  * <p>This second example shows how to use a {@link java.util.logging.Logger} to write log entries
- * to Stackdriver Logging. The snippet installs a Stackdriver Logging handler using {@code
+ * to Cloud Logging. The snippet installs a Cloud Logging handler using {@code
  * LoggingHandler.addHandler(Logger, LoggingHandler)}. Notice that this could also be done through
  * the {@code logging.properties} file, adding the following line:
  *
@@ -62,6 +62,6 @@
  * logger.warning("test warning");
  * }</pre>
  *
- * @see <a href="https://cloud.google.com/logging/">Stackdriver Logging</a>
+ * @see <a href="https://cloud.google.com/logging/">Cloud Logging</a>
  */
 package com.google.cloud.logging;

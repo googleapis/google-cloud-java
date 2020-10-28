@@ -35,14 +35,14 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- * A logging handler that outputs logs generated with {@link java.util.logging.Logger} to
- * Stackdriver Logging.
+ * A logging handler that outputs logs generated with {@link java.util.logging.Logger} to Cloud
+ * Logging.
  *
  * <p>Java logging levels (see {@link java.util.logging.Level}) are mapped to the following Google
- * Stackdriver Logging severities:
+ * Cloud Logging severities:
  *
- * <table summary="Mapping of Java logging level to Stackdriver Logging severities">
- * <tr><th width="50%">Java Level</th><th>Stackdriver Logging Severity</th></tr>
+ * <table summary="Mapping of Java logging level to Cloud Logging severities">
+ * <tr><th width="50%">Java Level</th><th>Cloud Logging Severity</th></tr>
  * <tr><td>SEVERE</td><td>ERROR</td></tr>
  * <tr><td>WARNING</td><td>WARNING</td></tr>
  * <tr><td>INFO</td><td>INFO</td></tr>
@@ -53,9 +53,9 @@ import java.util.logging.SimpleFormatter;
  * </table>
  *
  * <p>Original Java logging levels are added as labels (with {@code levelName} and {@code
- * levelValue} keys, respectively) to the corresponding Stackdriver Logging {@link LogEntry}. You
- * can read entry labels using {@link LogEntry#getLabels()}. To use logging levels that correspond
- * to Stackdriver Logging severities you can use {@link LoggingLevel}.
+ * levelValue} keys, respectively) to the corresponding Cloud Logging {@link LogEntry}. You can read
+ * entry labels using {@link LogEntry#getLabels()}. To use logging levels that correspond to Cloud
+ * Logging severities you can use {@link LoggingLevel}.
  *
  * <p><b>Configuration</b>: By default each {@code LoggingHandler} is initialized using the
  * following {@code LogManager} configuration properties (that you can set in the {@code
@@ -72,8 +72,8 @@ import java.util.logging.SimpleFormatter;
  *   <li>{@code com.google.cloud.logging.LoggingHandler.formatter} specifies the name of a {@link
  *       Formatter} class to use (defaults to {@link SimpleFormatter}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
- *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
- *       service (defaults to {@link LoggingLevel#ERROR}).
+ *       When a log with this level is published, logs are transmitted to the Cloud Logging service
+ *       (defaults to {@link LoggingLevel#ERROR}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
  *       of {@link LoggingEnhancer} classes. This handler will call each enhancer list whenever it
  *       builds a {@link LogEntry} instance (defaults to empty list).
@@ -81,7 +81,7 @@ import java.util.logging.SimpleFormatter;
  *       creating the default {@link MonitoredResource} (defaults to auto-detected resource type,
  *       else "global").
  *   <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
- *       to write logs to the Stackdriver Logging service (defaults to {@link Synchronicity#ASYNC}).
+ *       to write logs to the Cloud Logging service (defaults to {@link Synchronicity#ASYNC}).
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -105,7 +105,7 @@ public class LoggingHandler extends Handler {
 
   private volatile Logging logging;
 
-  // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
+  // Logs with the same severity with the base could be more efficiently sent to Cloud.
   // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
   // Currently there is no way to modify the base level, see
   // https://github.com/googleapis/google-cloud-java/issues/1740 .
@@ -115,13 +115,13 @@ public class LoggingHandler extends Handler {
 
   private WriteOption[] defaultWriteOptions;
 
-  /** Creates an handler that publishes messages to Stackdriver Logging. */
+  /** Creates an handler that publishes messages to Cloud Logging. */
   public LoggingHandler() {
     this(null, null, null);
   }
 
   /**
-   * Creates a handler that publishes messages to Stackdriver Logging.
+   * Creates a handler that publishes messages to Cloud Logging.
    *
    * @param log the name of the log to which log entries are written
    */
@@ -130,20 +130,20 @@ public class LoggingHandler extends Handler {
   }
 
   /**
-   * Creates a handler that publishes messages to Stackdriver Logging.
+   * Creates a handler that publishes messages to Cloud Logging.
    *
    * @param log the name of the log to which log entries are written
-   * @param options options for the Stackdriver Logging service
+   * @param options options for the Cloud Logging service
    */
   public LoggingHandler(String log, LoggingOptions options) {
     this(log, options, null);
   }
 
   /**
-   * Creates a handler that publishes messages to Stackdriver Logging.
+   * Creates a handler that publishes messages to Cloud Logging.
    *
    * @param log the name of the log to which log entries are written
-   * @param options options for the Stackdriver Logging service
+   * @param options options for the Cloud Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null then
    *     a default resource is created based on the project ID and deployment environment.
    */
@@ -152,10 +152,10 @@ public class LoggingHandler extends Handler {
   }
 
   /**
-   * Creates a handler that publishes messages to Stackdriver Logging.
+   * Creates a handler that publishes messages to Cloud Logging.
    *
    * @param log the name of the log to which log entries are written
-   * @param options options for the Stackdriver Logging service
+   * @param options options for the Cloud Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null then
    *     a default resource is created based on the project ID and deployment environment.
    * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any{@link LogEntry}

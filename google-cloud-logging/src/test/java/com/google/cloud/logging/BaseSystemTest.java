@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Iterators;
 import com.google.logging.v2.LogName;
@@ -59,7 +60,7 @@ public class BaseSystemTest {
    *     Filters Documentation</a>
    */
   protected static <V> String createEqualityFilter(String name, V value) {
-    return name + " = " + "\"" + value.toString() + "\"";
+    return name + "=" + "\"" + value.toString() + "\"";
   }
 
   /**
@@ -74,17 +75,47 @@ public class BaseSystemTest {
     return "timestamp>=\"" + RFC_3339.format(calendar.getTime()) + "\"";
   }
 
-  /** Helper to poll for logs until they are returned by the backend. */
-  protected static Iterator<LogEntry> waitForLogs(LogName logName) throws InterruptedException {
-    return waitForLogs(logName, 1);
+  protected static String appendResourceTypeFilter(
+      String currentFilter, MonitoredResource[] monitoredResources) {
+    StringBuilder filter = new StringBuilder(currentFilter);
+    if (monitoredResources != null && monitoredResources.length > 0) {
+      if (monitoredResources.length == 1) {
+        filter.append(" AND resource.type=");
+        filter.append(monitoredResources[0].getType());
+      } else {
+        filter.append(" AND resource.type=(");
+        filter.append(monitoredResources[0].getType());
+
+        // OR between all monitored resources we search
+        for (int i = 1; i < monitoredResources.length; i++) {
+          filter.append(" OR ");
+          filter.append(monitoredResources[i].getType());
+        }
+        filter.append(")");
+      }
+    }
+
+    return filter.toString();
   }
 
   /** Helper to poll for logs until they are returned by the backend. */
-  protected static Iterator<LogEntry> waitForLogs(LogName logName, int minLogs)
+  protected static Iterator<LogEntry> waitForLogs(
+      LogName logName, MonitoredResource[] monitoredResources, int minLogs)
       throws InterruptedException {
-    String filter = createEqualityFilter("logName", logName) + " AND " + createTimestampFilter(1);
-    Logging.EntryListOption[] options = {Logging.EntryListOption.filter(filter)};
+    StringBuilder filter = new StringBuilder();
+    filter.append(createTimestampFilter(1));
+    filter.append(" AND ");
+    filter.append(createEqualityFilter("logName", logName));
+
+    String monitoredResourceFilter =
+        appendResourceTypeFilter(filter.toString(), monitoredResources);
+
+    Logging.EntryListOption[] options = {Logging.EntryListOption.filter(monitoredResourceFilter)};
     return waitForLogs(options, minLogs);
+  }
+
+  protected static Iterator<LogEntry> waitForLogs(LogName logName) throws InterruptedException {
+    return waitForLogs(logName, null, 1);
   }
 
   private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

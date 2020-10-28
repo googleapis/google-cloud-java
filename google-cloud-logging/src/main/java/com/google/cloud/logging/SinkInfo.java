@@ -26,7 +26,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Stackdriver Logging sinks can be used to control the export of your logs. Each sink specifies the
+ * Cloud Logging sinks can be used to control the export of your logs. Each sink specifies the
  * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
  * project, a filter for choosing the log entries to export and a destination for the log entries.
  *
@@ -53,7 +53,7 @@ public class SinkInfo implements Serializable {
 
     private final Type type;
 
-    /** Type of destination for Stackdriver Logging sink. */
+    /** Type of destination for Cloud Logging sink. */
     public enum Type {
       /** Specifies a Google Cloud Storage bucket as destination for the sink. */
       BUCKET,
@@ -455,8 +455,8 @@ public class SinkInfo implements Serializable {
   }
 
   /**
-   * Available log entry formats. Log entries can be written to Stackdriver Logging in either format
-   * and can be exported in either format. Version 2 is the preferred format.
+   * Available log entry formats. Log entries can be written to Cloud Logging in either format and
+   * can be exported in either format. Version 2 is the preferred format.
    */
   public enum VersionFormat {
     V1(LogSink.VersionFormat.V1),
@@ -512,7 +512,7 @@ public class SinkInfo implements Serializable {
      * Sets an advanced logs filter. Only log entries matching that filter are exported. The filter
      * must be consistent with the log entry format specified with {@link
      * #setVersionFormat(VersionFormat)}, regardless of the format of the log entry that was
-     * originally written to Stackdriver Logging. Example (V2 format): {@code
+     * originally written to Cloud Logging. Example (V2 format): {@code
      * logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
      *
      * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
@@ -614,8 +614,8 @@ public class SinkInfo implements Serializable {
   /**
    * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
    * must be consistent with the log entry format specified in {@link #getVersionFormat()},
-   * regardless of the format of the log entry that wa originally written to Stackdriver Logging.
-   * Example (V2 format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
+   * regardless of the format of the log entry that wa originally written to Cloud Logging. Example
+   * (V2 format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
    *
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
    *     Filters</a>

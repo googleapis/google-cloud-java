@@ -1,6 +1,6 @@
-# Google Stackdriver Logging Client for Java
+# Google Cloud Logging Client for Java
 
-Java idiomatic client for [Stackdriver Logging][product-docs].
+Java idiomatic client for [Cloud Logging][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -61,7 +61,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Stackdriver Logging [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Logging [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -72,17 +72,17 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-logging` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-logging` as a dependency in your code.
 
-## About Stackdriver Logging
+## About Cloud Logging
 
 
-[Stackdriver Logging][product-docs] allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
+[Cloud Logging][product-docs] allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
 
-See the [Stackdriver Logging client library docs][javadocs] to learn how to
-use this Stackdriver Logging Client Library.
+See the [Cloud Logging client library docs][javadocs] to learn how to
+use this Cloud Logging Client Library.
 
 
 #### Creating an authorized service object
-To make authenticated requests to Stackdriver Logging, you must create a service object with
+To make authenticated requests to Cloud Logging, you must create a service object with
 credentials. You can then make API calls by calling methods on the Logging service object. The
 simplest way to authenticate is to use
 [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
@@ -160,9 +160,9 @@ while (entryIterator.hasNext()) {
 }
 ```
 
-#### Add a Stackdriver Logging handler to a logger
+#### Add a Cloud Logging handler to a logger
 You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
-to Stackdriver Logging. Given the following logger:
+to Cloud Logging. Given the following logger:
 ```java
 private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
 ```
@@ -170,7 +170,7 @@ You can register a `LoggingHandler` with the code:
 ```java
 LoggingHandler.addHandler(LOGGER, new LoggingHandler());
 ```
-After that, logs generated using `LOGGER` will be also directed to Stackdriver Logging.
+After that, logs generated using `LOGGER` will be also directed to Cloud Logging.
 
 Notice that you can also register a `LoggingHandler` via the `logging.properties` configuration
 file. Adding, for instance, the following line:
@@ -209,7 +209,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Stackdriver Logging uses gRPC for the transport layer.
+Cloud Logging uses gRPC for the transport layer.
 
 ## Java Versions
 

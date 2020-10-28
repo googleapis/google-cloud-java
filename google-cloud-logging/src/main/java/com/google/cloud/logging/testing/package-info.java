@@ -15,7 +15,7 @@
  */
 
 /**
- * A testing helper for Stackdriver Logging.
+ * A testing helper for Cloud Logging.
  *
  * <p>A simple usage example:
  *

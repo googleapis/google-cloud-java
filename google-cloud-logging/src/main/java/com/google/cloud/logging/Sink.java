@@ -26,7 +26,7 @@ import java.io.ObjectInputStream;
 import java.util.Objects;
 
 /**
- * Stackdriver Logging sinks can be used to control the export of your logs. Each sink specifies the
+ * Cloud Logging sinks can be used to control the export of your logs. Each sink specifies the
  * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
  * project, a filter for choosing the log entries to export and a destination for the log entries.
  *

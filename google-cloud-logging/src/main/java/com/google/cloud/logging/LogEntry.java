@@ -32,12 +32,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * A Stackdriver Logging log entry. All log entries are represented via objects of this class. Log
- * entries can have different type of payloads: an UTF-8 string (see {@link Payload.StringPayload}),
- * a JSON object (see {@link Payload.JsonPayload}, or a protobuf object (see {@link
- * Payload.ProtoPayload}). Entries can also store additional information about the operation or the
- * HTTP request that generated the log (see {@link LogEntry#getOperation()} and {@link
- * LogEntry#getHttpRequest()}, respectively).
+ * A Cloud Logging log entry. All log entries are represented via objects of this class. Log entries
+ * can have different type of payloads: an UTF-8 string (see {@link Payload.StringPayload}), a JSON
+ * object (see {@link Payload.JsonPayload}, or a protobuf object (see {@link Payload.ProtoPayload}).
+ * Entries can also store additional information about the operation or the HTTP request that
+ * generated the log (see {@link LogEntry#getOperation()} and {@link LogEntry#getHttpRequest()},
+ * respectively).
  *
  * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
  */
@@ -139,7 +139,7 @@ public class LogEntry implements Serializable {
       return this;
     }
 
-    /** Sets the time the log entry was received by Stackdriver Logging. */
+    /** Sets the time the log entry was received by Cloud Logging. */
     public Builder setReceiveTimestamp(long receiveTimestamp) {
       this.receiveTimestamp = receiveTimestamp;
       return this;
@@ -305,7 +305,7 @@ public class LogEntry implements Serializable {
     return timestamp;
   }
 
-  /** Returns the time the log entry was received by Stackdriver Logging. */
+  /** Returns the time the log entry was received by Cloud Logging. */
   public Long getReceiveTimestamp() {
     return receiveTimestamp;
   }

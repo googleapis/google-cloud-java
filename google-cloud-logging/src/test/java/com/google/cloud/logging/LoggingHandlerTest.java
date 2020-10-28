@@ -46,8 +46,10 @@ public class LoggingHandlerTest {
   private static final String LOG_NAME = "java.log";
   private static final String MESSAGE = "message";
   private static final String PROJECT = "project";
+
   private static final MonitoredResource DEFAULT_RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", PROJECT));
+
   private static final LogEntry FINEST_ENTRY =
       LogEntry.newBuilder(StringPayload.of(MESSAGE))
           .setSeverity(Severity.DEBUG)
@@ -153,6 +155,7 @@ public class LoggingHandlerTest {
           .setTrace("projects/projectId/traces/traceId")
           .setTimestamp(123456789L)
           .build();
+
   private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
   private static final ImmutableMap<String, String> CONFIG_MAP =
       ImmutableMap.<String, String>builder()

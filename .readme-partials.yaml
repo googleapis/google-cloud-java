@@ -1,6 +1,6 @@
 custom_content: |
   #### Creating an authorized service object
-  To make authenticated requests to Stackdriver Logging, you must create a service object with
+  To make authenticated requests to Cloud Logging, you must create a service object with
   credentials. You can then make API calls by calling methods on the Logging service object. The
   simplest way to authenticate is to use
   [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
@@ -78,9 +78,9 @@ custom_content: |
   }
   ```
 
-  #### Add a Stackdriver Logging handler to a logger
+  #### Add a Cloud Logging handler to a logger
   You can also register a `LoggingHandler` to a `java.util.logging.Logger` that publishes log entries
-  to Stackdriver Logging. Given the following logger:
+  to Cloud Logging. Given the following logger:
   ```java
   private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
   ```
@@ -88,7 +88,7 @@ custom_content: |
   ```java
   LoggingHandler.addHandler(LOGGER, new LoggingHandler());
   ```
-  After that, logs generated using `LOGGER` will be also directed to Stackdriver Logging.
+  After that, logs generated using `LOGGER` will be also directed to Cloud Logging.
 
   Notice that you can also register a `LoggingHandler` via the `logging.properties` configuration
   file. Adding, for instance, the following line:

@@ -17,9 +17,9 @@
 package com.google.cloud.logging;
 
 /**
- * Used to specify the behavior of write calls to the Stackdriver Logging service. Specifying SYNC
- * will make synchronous calls; specifying ASYNC will make asynchronous calls. The default behavior
- * is ASYNC.
+ * Used to specify the behavior of write calls to the Cloud Logging service. Specifying SYNC will
+ * make synchronous calls; specifying ASYNC will make asynchronous calls. The default behavior is
+ * ASYNC.
  */
 public enum Synchronicity {
   SYNC,

@@ -96,9 +96,9 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
   ApiFuture<Empty> delete(DeleteLogRequest request);
 
   /**
-   * Sends a request to write log entries to Stackdriver Logging. This method returns a {@code
-   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a response object for
-   * the write operation.
+   * Sends a request to write log entries to Cloud Logging. This method returns a {@code ApiFuture}
+   * object to consume the result. {@link ApiFuture#get()} returns a response object for the write
+   * operation.
    *
    * @param request the request object containing all of the parameters for the API call
    */

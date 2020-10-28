@@ -437,9 +437,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   ApiFuture<Boolean> deleteLogAsync(String log);
 
   /**
-   * Lists the monitored resource descriptors used by Stackdriver Logging. This method returns a
-   * {@link Page} object that can be used to consume paginated results. Use {@link ListOption} to
-   * specify the page size or the page token from which to start listing resource descriptors.
+   * Lists the monitored resource descriptors used by Cloud Logging. This method returns a {@link
+   * Page} object that can be used to consume paginated results. Use {@link ListOption} to specify
+   * the page size or the page token from which to start listing resource descriptors.
    *
    * <p>Example of listing monitored resource descriptors, specifying the page size.
    *
@@ -458,11 +458,11 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options);
 
   /**
-   * Sends a request for listing monitored resource descriptors used by Stackdriver Logging. This
-   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
-   * returns an {@link AsyncPage} object that can be used to asynchronously handle paginated
-   * results. Use {@link ListOption} to specify the page size or the page token from which to start
-   * listing resource descriptors.
+   * Sends a request for listing monitored resource descriptors used by Cloud Logging. This method
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns an
+   * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
+   * {@link ListOption} to specify the page size or the page token from which to start listing
+   * resource descriptors.
    *
    * <p>Example of asynchronously listing monitored resource descriptors, specifying the page size.
    *
@@ -678,8 +678,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   void flush();
 
   /**
-   * Sends a request to log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)}
-   * to provide a log name for those entries that do not specify one. Use {@link
+   * Sends a request to log entries to Cloud Logging. Use {@link WriteOption#logName(String)} to
+   * provide a log name for those entries that do not specify one. Use {@link
    * WriteOption#resource(MonitoredResource)} to provide a monitored resource for those entries that
    * do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels to be added to
    * every entry in {@code logEntries}.
