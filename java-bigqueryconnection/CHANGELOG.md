@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.4.2...v1.0.0) (2020-10-28)
+
+
+### Features
+
+* promote to 1.0.0 ([#205](https://www.github.com/googleapis/java-bigqueryconnection/issues/205)) ([c483db5](https://www.github.com/googleapis/java-bigqueryconnection/commit/c483db558cc6b547b550a628917ea505aa166622))
+
 ### [0.4.2](https://www.github.com/googleapis/java-bigqueryconnection/compare/v0.4.1...v0.4.2) (2020-10-20)
 
 
