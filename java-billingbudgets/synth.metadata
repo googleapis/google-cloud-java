@@ -1,32 +1,33 @@
 {
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "2.4.4",
-        "dockerImage": "googleapis/artman@sha256:0da97ae2ac274adc8ee147fd1eb6736f8186d1684b0f58bce91f4295797a5dcd"
-      }
-    },
-    {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-billingbudgets.git",
-        "sha": "c3c4dac7202283701b473c72fd3251a991e272b0"
+        "remote": "git@github.com:googleapis/java-billingbudgets.git",
+        "sha": "ad03f9f20e9d3ecd5d6d88dadb21a102dae83501"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "921ce41f94a74905ca753c72a4d4cc43600003d3",
-        "internalRef": "331675651"
+        "sha": "f4f491879fdf694fbd0c4a2a6e7628e0e100ddd5",
+        "internalRef": "339472806"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "f4f491879fdf694fbd0c4a2a6e7628e0e100ddd5",
+        "internalRef": "339472806"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "ea52b8a0bd560f72f376efcf45197fb7c8869120"
       }
     }
   ],
@@ -36,6 +37,15 @@
         "source": "googleapis",
         "apiName": "billing-budgets",
         "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "billing-budgets",
+        "apiVersion": "v1",
         "language": "java",
         "generator": "bazel"
       }
@@ -106,6 +116,13 @@
     "CONTRIBUTING.md",
     "LICENSE",
     "codecov.yaml",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/BudgetServiceClient.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/BudgetServiceSettings.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/package-info.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/stub/BudgetServiceStub.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/stub/BudgetServiceStubSettings.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/stub/GrpcBudgetServiceCallableFactory.java",
+    "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1/stub/GrpcBudgetServiceStub.java",
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceClient.java",
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceSettings.java",
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/package-info.java",
@@ -113,12 +130,46 @@
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/stub/BudgetServiceStubSettings.java",
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/stub/GrpcBudgetServiceCallableFactory.java",
     "google-cloud-billingbudgets/src/main/java/com/google/cloud/billing/budgets/v1beta1/stub/GrpcBudgetServiceStub.java",
+    "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1/BudgetServiceClientTest.java",
+    "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1/MockBudgetService.java",
+    "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1/MockBudgetServiceImpl.java",
     "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceClientTest.java",
     "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1beta1/MockBudgetService.java",
     "google-cloud-billingbudgets/src/test/java/com/google/cloud/billing/budgets/v1beta1/MockBudgetServiceImpl.java",
+    "grpc-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetServiceGrpc.java",
     "grpc-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceGrpc.java",
     "java.header",
     "license-checks.xml",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BillingAccountName.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/Budget.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetAmount.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetAmountOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetModelProto.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetName.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetServiceProto.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CreateBudgetRequest.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CreateBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/DeleteBudgetRequest.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/DeleteBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/Filter.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/FilterOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/GetBudgetRequest.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/GetBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/LastPeriodAmount.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/LastPeriodAmountOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ListBudgetsRequest.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ListBudgetsRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ListBudgetsResponse.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ListBudgetsResponseOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/NotificationsRule.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/NotificationsRuleOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ThresholdRule.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/ThresholdRuleOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/UpdateBudgetRequest.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/UpdateBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/proto/google/cloud/billing/budgets/v1/budget_model.proto",
+    "proto-google-cloud-billingbudgets-v1/src/main/proto/google/cloud/billing/budgets/v1/budget_service.proto",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/AllUpdatesRule.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/AllUpdatesRuleOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BillingAccountName.java",

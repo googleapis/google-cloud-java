@@ -19,10 +19,8 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICGenerator()
-
 service = 'billing-budgets'
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 
 for version in versions:
     java.bazel_library(

@@ -74,8 +74,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-billingbudgets-v1</artifactId>
+        <version>0.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-billingbudgets-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-billingbudgets-v1beta1</artifactId>
         <version>0.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-billingbudgets-v1</artifactId>
+        <version>0.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -125,7 +135,9 @@
 
   <modules>
     <module>proto-google-cloud-billingbudgets-v1beta1</module>
+    <module>proto-google-cloud-billingbudgets-v1</module>
     <module>grpc-google-cloud-billingbudgets-v1beta1</module>
+    <module>grpc-google-cloud-billingbudgets-v1</module>
     <module>google-cloud-billingbudgets</module>
     <module>google-cloud-billingbudgets-bom</module>
   </modules>
