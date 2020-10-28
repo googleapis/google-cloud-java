@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.analytics</groupId>
       <artifactId>google-analytics-data</artifactId>
-      <version>0.2.0</version>
+      <version>0.2.1</version>
     </dependency>
     <!-- [END analytics_data_install_without_bom] -->
 
