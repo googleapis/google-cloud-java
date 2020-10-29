@@ -39,6 +39,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
   private Filter() {
     projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creditTypesTreatment_ = 0;
     services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -87,9 +88,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 services_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               services_.add(s);
               break;
@@ -104,19 +105,19 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 subaccounts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               subaccounts_.add(s);
               break;
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ListValue>
                   labels__ =
@@ -124,6 +125,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                           LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
                           extensionRegistry);
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                creditTypes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              creditTypes_.add(s);
               break;
             }
           default:
@@ -143,11 +154,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         projects_ = projects_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         services_ = services_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         subaccounts_ = subaccounts_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        creditTypes_ = creditTypes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -215,6 +229,17 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>EXCLUDE_ALL_CREDITS = 2;</code>
      */
     EXCLUDE_ALL_CREDITS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Credit types specified in the credit_types field are subtracted from the
+     * gross cost to determine the spend for threshold calculations.
+     * </pre>
+     *
+     * <code>INCLUDE_SPECIFIED_CREDITS = 3;</code>
+     */
+    INCLUDE_SPECIFIED_CREDITS(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -242,6 +267,17 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>EXCLUDE_ALL_CREDITS = 2;</code>
      */
     public static final int EXCLUDE_ALL_CREDITS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Credit types specified in the credit_types field are subtracted from the
+     * gross cost to determine the spend for threshold calculations.
+     * </pre>
+     *
+     * <code>INCLUDE_SPECIFIED_CREDITS = 3;</code>
+     */
+    public static final int INCLUDE_SPECIFIED_CREDITS_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -273,6 +309,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           return INCLUDE_ALL_CREDITS;
         case 2:
           return EXCLUDE_ALL_CREDITS;
+        case 3:
+          return INCLUDE_SPECIFIED_CREDITS;
         default:
           return null;
       }
@@ -404,6 +442,91 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getProjectsBytes(int index) {
     return projects_.getByteString(index);
+  }
+
+  public static final int CREDIT_TYPES_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList creditTypes_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of credit types to be subtracted from gross cost to
+   * determine the spend for threshold calculations if and only if
+   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+   * empty. See credits.type at
+   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+   * for a list of acceptable credit type values in this field.
+   * </pre>
+   *
+   * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the creditTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getCreditTypesList() {
+    return creditTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of credit types to be subtracted from gross cost to
+   * determine the spend for threshold calculations if and only if
+   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+   * empty. See credits.type at
+   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+   * for a list of acceptable credit type values in this field.
+   * </pre>
+   *
+   * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of creditTypes.
+   */
+  public int getCreditTypesCount() {
+    return creditTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of credit types to be subtracted from gross cost to
+   * determine the spend for threshold calculations if and only if
+   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+   * empty. See credits.type at
+   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+   * for a list of acceptable credit type values in this field.
+   * </pre>
+   *
+   * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The creditTypes at the given index.
+   */
+  public java.lang.String getCreditTypes(int index) {
+    return creditTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of credit types to be subtracted from gross cost to
+   * determine the spend for threshold calculations if and only if
+   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+   * empty. See credits.type at
+   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+   * for a list of acceptable credit type values in this field.
+   * </pre>
+   *
+   * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the creditTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getCreditTypesBytes(int index) {
+    return creditTypes_.getByteString(index);
   }
 
   public static final int CREDIT_TYPES_TREATMENT_FIELD_NUMBER = 4;
@@ -767,6 +890,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
+    for (int i = 0; i < creditTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creditTypes_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -816,6 +942,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, labels__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < creditTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(creditTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCreditTypesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -833,6 +967,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.billing.budgets.v1beta1.Filter) obj;
 
     if (!getProjectsList().equals(other.getProjectsList())) return false;
+    if (!getCreditTypesList().equals(other.getCreditTypesList())) return false;
     if (creditTypesTreatment_ != other.creditTypesTreatment_) return false;
     if (!getServicesList().equals(other.getServicesList())) return false;
     if (!getSubaccountsList().equals(other.getSubaccountsList())) return false;
@@ -851,6 +986,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (getProjectsCount() > 0) {
       hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
       hash = (53 * hash) + getProjectsList().hashCode();
+    }
+    if (getCreditTypesCount() > 0) {
+      hash = (37 * hash) + CREDIT_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getCreditTypesList().hashCode();
     }
     hash = (37 * hash) + CREDIT_TYPES_TREATMENT_FIELD_NUMBER;
     hash = (53 * hash) + creditTypesTreatment_;
@@ -1033,12 +1172,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       creditTypesTreatment_ = 0;
 
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -1073,15 +1214,20 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.projects_ = projects_;
-      result.creditTypesTreatment_ = creditTypesTreatment_;
       if (((bitField0_ & 0x00000002) != 0)) {
-        services_ = services_.getUnmodifiableView();
+        creditTypes_ = creditTypes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
-      result.services_ = services_;
+      result.creditTypes_ = creditTypes_;
+      result.creditTypesTreatment_ = creditTypesTreatment_;
       if (((bitField0_ & 0x00000004) != 0)) {
-        subaccounts_ = subaccounts_.getUnmodifiableView();
+        services_ = services_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.services_ = services_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        subaccounts_ = subaccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.subaccounts_ = subaccounts_;
       result.labels_ = internalGetLabels();
@@ -1146,13 +1292,23 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.creditTypes_.isEmpty()) {
+        if (creditTypes_.isEmpty()) {
+          creditTypes_ = other.creditTypes_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureCreditTypesIsMutable();
+          creditTypes_.addAll(other.creditTypes_);
+        }
+        onChanged();
+      }
       if (other.creditTypesTreatment_ != 0) {
         setCreditTypesTreatmentValue(other.getCreditTypesTreatmentValue());
       }
       if (!other.services_.isEmpty()) {
         if (services_.isEmpty()) {
           services_ = other.services_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureServicesIsMutable();
           services_.addAll(other.services_);
@@ -1162,7 +1318,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.subaccounts_.isEmpty()) {
         if (subaccounts_.isEmpty()) {
           subaccounts_ = other.subaccounts_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSubaccountsIsMutable();
           subaccounts_.addAll(other.subaccounts_);
@@ -1405,6 +1561,228 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList creditTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCreditTypesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        creditTypes_ = new com.google.protobuf.LazyStringArrayList(creditTypes_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the creditTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getCreditTypesList() {
+      return creditTypes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of creditTypes.
+     */
+    public int getCreditTypesCount() {
+      return creditTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The creditTypes at the given index.
+     */
+    public java.lang.String getCreditTypes(int index) {
+      return creditTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the creditTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getCreditTypesBytes(int index) {
+      return creditTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The creditTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreditTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCreditTypesIsMutable();
+      creditTypes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The creditTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCreditTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCreditTypesIsMutable();
+      creditTypes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The creditTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCreditTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureCreditTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, creditTypes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreditTypes() {
+      creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of credit types to be subtracted from gross cost to
+     * determine the spend for threshold calculations if and only if
+     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
+     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
+     * empty. See credits.type at
+     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
+     * for a list of acceptable credit type values in this field.
+     * </pre>
+     *
+     * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the creditTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCreditTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCreditTypesIsMutable();
+      creditTypes_.add(value);
+      onChanged();
+      return this;
+    }
+
     private int creditTypesTreatment_ = 0;
     /**
      *
@@ -1515,9 +1893,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServicesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         services_ = new com.google.protobuf.LazyStringArrayList(services_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1692,7 +2070,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServices() {
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1728,9 +2106,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubaccountsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         subaccounts_ = new com.google.protobuf.LazyStringArrayList(subaccounts_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1905,7 +2283,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubaccounts() {
       subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

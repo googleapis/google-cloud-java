@@ -189,8 +189,9 @@ public interface AllUpdatesRuleOrBuilder
    *
    * <pre>
    * Optional. When set to true, disables default notifications sent when a
-   * threshold is exceeded. Recipients are those with Billing Account
-   * Administrators and Billing Account Users IAM roles for the target account.
+   * threshold is exceeded. Default notifications are sent to those with Billing
+   * Account Administrator and Billing Account User IAM roles for the target
+   * account.
    * </pre>
    *
    * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

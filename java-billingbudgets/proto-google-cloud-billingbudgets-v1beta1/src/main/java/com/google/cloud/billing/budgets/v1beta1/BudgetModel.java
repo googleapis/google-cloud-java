@@ -95,21 +95,23 @@ public final class BudgetModel {
           + "ic\030\001 \001(\tB\003\340A\001\022\033\n\016schema_version\030\002 \001(\tB\003\340"
           + "A\001\022-\n monitoring_notification_channels\030\003"
           + " \003(\tB\003\340A\001\022+\n\036disable_default_iam_recipie"
-          + "nts\030\004 \001(\010B\003\340A\001\"\304\003\n\006Filter\022\025\n\010projects\030\001 "
-          + "\003(\tB\003\340A\001\022f\n\026credit_types_treatment\030\004 \001(\016"
-          + "2A.google.cloud.billing.budgets.v1beta1."
-          + "Filter.CreditTypesTreatmentB\003\340A\001\022\025\n\010serv"
-          + "ices\030\003 \003(\tB\003\340A\001\022\030\n\013subaccounts\030\005 \003(\tB\003\340A"
-          + "\001\022M\n\006labels\030\006 \003(\01328.google.cloud.billing"
-          + ".budgets.v1beta1.Filter.LabelsEntryB\003\340A\001"
-          + "\032I\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 "
-          + "\001(\0132\032.google.protobuf.ListValue:\0028\001\"p\n\024C"
-          + "reditTypesTreatment\022&\n\"CREDIT_TYPES_TREA"
-          + "TMENT_UNSPECIFIED\020\000\022\027\n\023INCLUDE_ALL_CREDI"
-          + "TS\020\001\022\027\n\023EXCLUDE_ALL_CREDITS\020\002By\n(com.goo"
-          + "gle.cloud.billing.budgets.v1beta1P\001ZKgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/billing/budgets/v1beta1;budgetsb\006proto3"
+          + "nts\030\004 \001(\010B\003\340A\001\"\377\003\n\006Filter\022\025\n\010projects\030\001 "
+          + "\003(\tB\003\340A\001\022\031\n\014credit_types\030\007 \003(\tB\003\340A\001\022f\n\026c"
+          + "redit_types_treatment\030\004 \001(\0162A.google.clo"
+          + "ud.billing.budgets.v1beta1.Filter.Credit"
+          + "TypesTreatmentB\003\340A\001\022\025\n\010services\030\003 \003(\tB\003\340"
+          + "A\001\022\030\n\013subaccounts\030\005 \003(\tB\003\340A\001\022M\n\006labels\030\006"
+          + " \003(\01328.google.cloud.billing.budgets.v1be"
+          + "ta1.Filter.LabelsEntryB\003\340A\001\032I\n\013LabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.google."
+          + "protobuf.ListValue:\0028\001\"\217\001\n\024CreditTypesTr"
+          + "eatment\022&\n\"CREDIT_TYPES_TREATMENT_UNSPEC"
+          + "IFIED\020\000\022\027\n\023INCLUDE_ALL_CREDITS\020\001\022\027\n\023EXCL"
+          + "UDE_ALL_CREDITS\020\002\022\035\n\031INCLUDE_SPECIFIED_C"
+          + "REDITS\020\003By\n(com.google.cloud.billing.bud"
+          + "gets.v1beta1P\001ZKgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/billing/budgets/v1be"
+          + "ta1;budgetsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -173,7 +175,12 @@ public final class BudgetModel {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor,
             new java.lang.String[] {
-              "Projects", "CreditTypesTreatment", "Services", "Subaccounts", "Labels",
+              "Projects",
+              "CreditTypes",
+              "CreditTypesTreatment",
+              "Services",
+              "Subaccounts",
+              "Labels",
             });
     internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_descriptor =
         internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor
