@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.10...v1.0.0) (2020-10-28)
+
+
+### Features
+
+* promote to 1.0.0 ([#220](https://www.github.com/googleapis/java-bigqueryreservation/issues/220)) ([2301882](https://www.github.com/googleapis/java-bigqueryreservation/commit/23018828a800d6b4bcb8cf64ba9f3bda0dcc25e4)), closes [#181](https://www.github.com/googleapis/java-bigqueryreservation/issues/181)
+
 ### [0.3.10](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.3.9...v0.3.10) (2020-10-20)
 
 
