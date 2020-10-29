@@ -237,7 +237,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The session.
    */
@@ -277,7 +279,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for session.
    */
@@ -425,11 +429,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * This setting is ignored when `query_input` is a piece of text or an event.
    * </pre>
    *
-   * <code>bool single_utterance = 4;</code>
+   * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @return The singleUtterance.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getSingleUtterance() {
     return singleUtterance_;
   }
@@ -1084,7 +1089,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The session.
      */
@@ -1123,7 +1130,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for session.
      */
@@ -1162,7 +1171,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The session to set.
      * @return This builder for chaining.
@@ -1200,7 +1211,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1234,7 +1247,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * guide](https://cloud.google.com/dialogflow/docs/api-overview).
      * </pre>
      *
-     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for session to set.
      * @return This builder for chaining.
@@ -1692,11 +1707,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @return The singleUtterance.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
@@ -1715,11 +1731,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSingleUtterance(boolean value) {
 
       singleUtterance_ = value;
@@ -1741,10 +1758,11 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * This setting is ignored when `query_input` is a piece of text or an event.
      * </pre>
      *
-     * <code>bool single_utterance = 4;</code>
+     * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSingleUtterance() {
 
       singleUtterance_ = false;

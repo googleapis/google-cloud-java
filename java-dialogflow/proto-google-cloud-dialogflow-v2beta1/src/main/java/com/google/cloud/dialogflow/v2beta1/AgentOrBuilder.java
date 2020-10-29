@@ -32,7 +32,9 @@ public interface AgentOrBuilder
    *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -46,7 +48,9 @@ public interface AgentOrBuilder
    *         `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

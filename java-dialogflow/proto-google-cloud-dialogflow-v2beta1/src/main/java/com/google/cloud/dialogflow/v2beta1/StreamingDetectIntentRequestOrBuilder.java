@@ -47,7 +47,9 @@ public interface StreamingDetectIntentRequestOrBuilder
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The session.
    */
@@ -76,7 +78,9 @@ public interface StreamingDetectIntentRequestOrBuilder
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    *
-   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for session.
    */
@@ -185,10 +189,11 @@ public interface StreamingDetectIntentRequestOrBuilder
    * This setting is ignored when `query_input` is a piece of text or an event.
    * </pre>
    *
-   * <code>bool single_utterance = 4;</code>
+   * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @return The singleUtterance.
    */
+  @java.lang.Deprecated
   boolean getSingleUtterance();
 
   /**

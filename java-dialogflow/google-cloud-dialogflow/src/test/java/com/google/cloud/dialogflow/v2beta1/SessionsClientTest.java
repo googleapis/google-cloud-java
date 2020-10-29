@@ -164,11 +164,11 @@ public class SessionsClientTest {
             .setOutputAudio(outputAudio)
             .build();
     mockSessions.addResponse(expectedResponse);
-    String session = "session1984987798";
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
 
@@ -192,11 +192,11 @@ public class SessionsClientTest {
   public void streamingDetectIntentExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockSessions.addException(exception);
-    String session = "session1984987798";
+    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
     QueryInput queryInput = QueryInput.newBuilder().build();
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session)
+            .setSession(session.toString())
             .setQueryInput(queryInput)
             .build();
 

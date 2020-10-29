@@ -302,10 +302,10 @@ public class SessionsClient implements BackgroundResource {
    *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
    *       sessionsClient.streamingDetectIntentCallable().call();
    *
-   *   String session = "";
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
    *   StreamingDetectIntentRequest request = StreamingDetectIntentRequest.newBuilder()
-   *     .setSession(session)
+   *     .setSession(session.toString())
    *     .setQueryInput(queryInput)
    *     .build();
    *   bidiStream.send(request);

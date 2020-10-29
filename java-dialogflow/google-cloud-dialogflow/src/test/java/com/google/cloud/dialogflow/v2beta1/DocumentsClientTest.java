@@ -461,10 +461,9 @@ public class DocumentsClientTest {
     mockDocuments.addResponse(resultOperation);
 
     DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
-    ReloadDocumentRequest request =
-        ReloadDocumentRequest.newBuilder().setName(name.toString()).build();
+    GcsSource gcsSource = GcsSource.newBuilder().build();
 
-    Document actualResponse = client.reloadDocumentAsync(request).get();
+    Document actualResponse = client.reloadDocumentAsync(name, gcsSource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocuments.getRequests();
@@ -472,6 +471,7 @@ public class DocumentsClientTest {
     ReloadDocumentRequest actualRequest = (ReloadDocumentRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, DocumentName.parse(actualRequest.getName()));
+    Assert.assertEquals(gcsSource, actualRequest.getGcsSource());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -486,10 +486,9 @@ public class DocumentsClientTest {
 
     try {
       DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
-      ReloadDocumentRequest request =
-          ReloadDocumentRequest.newBuilder().setName(name.toString()).build();
+      GcsSource gcsSource = GcsSource.newBuilder().build();
 
-      client.reloadDocumentAsync(request).get();
+      client.reloadDocumentAsync(name, gcsSource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

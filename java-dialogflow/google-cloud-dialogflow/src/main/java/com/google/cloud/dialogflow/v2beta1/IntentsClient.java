@@ -951,6 +951,154 @@ public class IntentsClient implements BackgroundResource {
    * <pre><code>
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+   *   String intentBatchUri = "";
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * @param intentBatchUri The URI to a Google Cloud Storage file containing intents to update or
+   *     create. The file format can either be a serialized proto (of IntentBatch type) or JSON
+   *     object. Note: The URI must start with "gs://".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      AgentName parent, String intentBatchUri) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIntentBatchUri(intentBatchUri)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+   *   String intentBatchUri = "";
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent.toString(), intentBatchUri).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * @param intentBatchUri The URI to a Google Cloud Storage file containing intents to update or
+   *     create. The file format can either be a serialized proto (of IntentBatch type) or JSON
+   *     object. Note: The URI must start with "gs://".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      String parent, String intentBatchUri) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent)
+            .setIntentBatchUri(intentBatchUri)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+   *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * @param intentBatchInline The collection of intents to update or create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      AgentName parent, IntentBatch intentBatchInline) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIntentBatchInline(intentBatchInline)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+   *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+   *   BatchUpdateIntentsResponse response = intentsClient.batchUpdateIntentsAsync(parent.toString(), intentBatchInline).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the agent to update or create intents in. Supported
+   *     formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent`
+   * @param intentBatchInline The collection of intents to update or create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<BatchUpdateIntentsResponse, Struct> batchUpdateIntentsAsync(
+      String parent, IntentBatch intentBatchInline) {
+    BatchUpdateIntentsRequest request =
+        BatchUpdateIntentsRequest.newBuilder()
+            .setParent(parent)
+            .setIntentBatchInline(intentBatchInline)
+            .build();
+    return batchUpdateIntentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates/Creates multiple intents in the specified agent.
+   *
+   * <p>Operation &lt;response:
+   * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
    *   BatchUpdateIntentsRequest request = BatchUpdateIntentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();

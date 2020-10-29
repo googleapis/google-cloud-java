@@ -779,10 +779,10 @@ public class IntentsClientTest {
     mockIntents.addResponse(resultOperation);
 
     AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-    BatchUpdateIntentsRequest request =
-        BatchUpdateIntentsRequest.newBuilder().setParent(parent.toString()).build();
+    String intentBatchUri = "intentBatchUri-969851644";
 
-    BatchUpdateIntentsResponse actualResponse = client.batchUpdateIntentsAsync(request).get();
+    BatchUpdateIntentsResponse actualResponse =
+        client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
@@ -790,6 +790,7 @@ public class IntentsClientTest {
     BatchUpdateIntentsRequest actualRequest = (BatchUpdateIntentsRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(intentBatchUri, actualRequest.getIntentBatchUri());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -804,10 +805,59 @@ public class IntentsClientTest {
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-      BatchUpdateIntentsRequest request =
-          BatchUpdateIntentsRequest.newBuilder().setParent(parent.toString()).build();
+      String intentBatchUri = "intentBatchUri-969851644";
 
-      client.batchUpdateIntentsAsync(request).get();
+      client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateIntentsTest2() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse = BatchUpdateIntentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateIntentsTest2")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+    IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+
+    BatchUpdateIntentsResponse actualResponse =
+        client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateIntentsRequest actualRequest = (BatchUpdateIntentsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(intentBatchInline, actualRequest.getIntentBatchInline());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchUpdateIntentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+      IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+
+      client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

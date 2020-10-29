@@ -864,6 +864,79 @@ public class DocumentsClient implements BackgroundResource {
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   GcsSource gcsSource = GcsSource.newBuilder().build();
+   *   Document response = documentsClient.reloadDocumentAsync(name, gcsSource).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
+   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   * @param gcsSource The path for a Cloud Storage source file for reloading document content. If
+   *     not provided, the Document's existing source will be reloaded.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> reloadDocumentAsync(
+      DocumentName name, GcsSource gcsSource) {
+    ReloadDocumentRequest request =
+        ReloadDocumentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGcsSource(gcsSource)
+            .build();
+    return reloadDocumentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Reloads the specified document from its specified source, content_uri or content. The
+   * previously loaded content of the document will be deleted. Note: Even when the content of the
+   * document has not changed, there still may be side effects because of internal implementation
+   * changes.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   GcsSource gcsSource = GcsSource.newBuilder().build();
+   *   Document response = documentsClient.reloadDocumentAsync(name.toString(), gcsSource).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
+   *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
+   * @param gcsSource The path for a Cloud Storage source file for reloading document content. If
+   *     not provided, the Document's existing source will be reloaded.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Document, KnowledgeOperationMetadata> reloadDocumentAsync(
+      String name, GcsSource gcsSource) {
+    ReloadDocumentRequest request =
+        ReloadDocumentRequest.newBuilder().setName(name).setGcsSource(gcsSource).build();
+    return reloadDocumentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Reloads the specified document from its specified source, content_uri or content. The
+   * previously loaded content of the document will be deleted. Note: Even when the content of the
+   * document has not changed, there still may be side effects because of internal implementation
+   * changes.
+   *
+   * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
+   * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
    *   ReloadDocumentRequest request = ReloadDocumentRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

@@ -92,4 +92,57 @@ public interface ListDocumentsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The filter expression used to filter documents returned by the list method.
+   * The expression has the following syntax:
+   *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   * The following fields and operators are supported:
+   * * knowledge_types with has(:) operator
+   * * display_name with has(:) operator
+   * * state with equals(=) operator
+   * Examples:
+   * * "knowledge_types:FAQ" matches documents with FAQ knowledge type.
+   * * "display_name:customer" matches documents whose display name contains
+   *   "customer".
+   * * "state=ACTIVE" matches documents with ACTIVE state.
+   * * "knowledge_types:FAQ AND state=ACTIVE" matches all active FAQ documents.
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * The filter expression used to filter documents returned by the list method.
+   * The expression has the following syntax:
+   *   &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   * The following fields and operators are supported:
+   * * knowledge_types with has(:) operator
+   * * display_name with has(:) operator
+   * * state with equals(=) operator
+   * Examples:
+   * * "knowledge_types:FAQ" matches documents with FAQ knowledge type.
+   * * "display_name:customer" matches documents whose display name contains
+   *   "customer".
+   * * "state=ACTIVE" matches documents with ACTIVE state.
+   * * "knowledge_types:FAQ AND state=ACTIVE" matches all active FAQ documents.
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

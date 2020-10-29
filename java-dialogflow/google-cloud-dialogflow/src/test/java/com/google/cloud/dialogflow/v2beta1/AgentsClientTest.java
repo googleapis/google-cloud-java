@@ -111,7 +111,7 @@ public class AgentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAgentTest() {
-    String parent2 = "parent21175163357";
+    ProjectName parent2 = ProjectName.of("[PROJECT]");
     String displayName = "displayName1615086568";
     String defaultLanguageCode = "defaultLanguageCode856575222";
     String timeZone = "timeZone36848094";
@@ -121,7 +121,7 @@ public class AgentsClientTest {
     float classificationThreshold = 1.11581064E8F;
     Agent expectedResponse =
         Agent.newBuilder()
-            .setParent(parent2)
+            .setParent(parent2.toString())
             .setDisplayName(displayName)
             .setDefaultLanguageCode(defaultLanguageCode)
             .setTimeZone(timeZone)
@@ -167,7 +167,7 @@ public class AgentsClientTest {
   @Test
   @SuppressWarnings("all")
   public void setAgentTest() {
-    String parent = "parent-995424086";
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String displayName = "displayName1615086568";
     String defaultLanguageCode = "defaultLanguageCode856575222";
     String timeZone = "timeZone36848094";
@@ -177,7 +177,7 @@ public class AgentsClientTest {
     float classificationThreshold = 1.11581064E8F;
     Agent expectedResponse =
         Agent.newBuilder()
-            .setParent(parent)
+            .setParent(parent.toString())
             .setDisplayName(displayName)
             .setDefaultLanguageCode(defaultLanguageCode)
             .setTimeZone(timeZone)

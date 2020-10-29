@@ -516,7 +516,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *     without aliases).
      * </pre>
      *
-     * <code>string value = 1;</code>
+     * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The value.
      */
@@ -535,7 +535,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *     without aliases).
      * </pre>
      *
-     * <code>string value = 1;</code>
+     * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for value.
      */
@@ -732,7 +732,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *     without aliases).
      * </pre>
      *
-     * <code>string value = 1;</code>
+     * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The value.
      */
@@ -762,7 +762,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *     without aliases).
      * </pre>
      *
-     * <code>string value = 1;</code>
+     * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for value.
      */
@@ -1230,7 +1230,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *     without aliases).
        * </pre>
        *
-       * <code>string value = 1;</code>
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The value.
        */
@@ -1259,7 +1259,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *     without aliases).
        * </pre>
        *
-       * <code>string value = 1;</code>
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for value.
        */
@@ -1288,7 +1288,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *     without aliases).
        * </pre>
        *
-       * <code>string value = 1;</code>
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -1316,7 +1316,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *     without aliases).
        * </pre>
        *
-       * <code>string value = 1;</code>
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -1340,7 +1340,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
        *     without aliases).
        * </pre>
        *
-       * <code>string value = 1;</code>
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for value to set.
        * @return This builder for chaining.
