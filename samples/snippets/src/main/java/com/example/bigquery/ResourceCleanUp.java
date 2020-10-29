@@ -69,7 +69,8 @@ public class ResourceCleanUp {
               || tableName.contains("_TEST")
               || tableName.contains("MY_")
               || tableName.contains("gcloud_test_")
-              || tableName.contains("TESTTABLE_"))
+              || tableName.contains("TESTTABLE_")
+              || tableName.contains("NESTED_REPEATED_"))
           && table.getCreationTime() > sixHourAgo) {
         System.out.format("\tDeleting Table: %s\n", tableName);
         bigquery.delete(TableId.of(PROJECT_ID, BIGQUERY_DATASET_NAME, tableName));
