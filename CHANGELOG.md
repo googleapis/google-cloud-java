@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.124.0](https://www.github.com/googleapis/java-bigquery/compare/v1.123.2...v1.124.0) (2020-10-29)
+
+
+### Features
+
+* add acl for routine ([#875](https://www.github.com/googleapis/java-bigquery/issues/875)) ([b031447](https://www.github.com/googleapis/java-bigquery/commit/b031447d691de51678a0654c27b0f621672dd52a))
+
+
+### Bug Fixes
+
+* **samples:** dataset getcreatetime ([#866](https://www.github.com/googleapis/java-bigquery/issues/866)) ([992baaf](https://www.github.com/googleapis/java-bigquery/commit/992baaf85ae2904bb5900cfdfce6b447fd301b3b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.113.2 ([#871](https://www.github.com/googleapis/java-bigquery/issues/871)) ([66551c3](https://www.github.com/googleapis/java-bigquery/commit/66551c3955ec9ba58e5b7b3204539ff4cde07298))
+
+
+### Documentation
+
+* **samples:** fix typo ([#884](https://www.github.com/googleapis/java-bigquery/issues/884)) ([97573b5](https://www.github.com/googleapis/java-bigquery/commit/97573b574a84a1504baf3ad0fb0d30a321842a14))
+
 ### [1.123.2](https://www.github.com/googleapis/java-bigquery/compare/v1.123.1...v1.123.2) (2020-10-23)
 
 
