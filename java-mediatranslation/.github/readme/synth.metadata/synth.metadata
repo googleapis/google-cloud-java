@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-mediatranslation.git",
+        "sha": "f978a5f9903a7c885f70af7ab2479bd77c9fd28e"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
+      }
+    }
+  ]
+}
