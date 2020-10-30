@@ -369,6 +369,19 @@ public class TranslateImplTest {
   }
 
   @Test
+  public void testTranslateTextListWithModel() {
+    String text = "Hallo Welt!";
+    List<String> texts = ImmutableList.of(text);
+    EasyMock.expect(
+            translateRpcMock.translate(texts, ImmutableMap.of(TranslateRpc.Option.MODEL, "nmt")))
+        .andReturn(ImmutableList.of(TRANSLATION2_PB));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(ImmutableList.of(TRANSLATION2), translate.translate(texts, MODEL_OPTION));
+    verify();
+  }
+
+  @Test
   public void testRetryableException() {
     EasyMock.expect(translateRpcMock.listSupportedLanguages(EMPTY_RPC_OPTIONS))
         .andThrow(new TranslateException(500, "internalError"))

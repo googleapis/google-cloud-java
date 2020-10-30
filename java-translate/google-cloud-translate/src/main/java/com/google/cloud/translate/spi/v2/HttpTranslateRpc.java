@@ -98,8 +98,6 @@ public class HttpTranslateRpc implements TranslateRpc {
   @Override
   public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
-      // TODO use POST as soon as usage of "model" correctly reports an error in non-whitelisted
-      // projects
       String targetLanguage =
           firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
       final String sourceLanguage = Option.SOURCE_LANGUAGE.getString(optionMap);
@@ -109,7 +107,7 @@ public class HttpTranslateRpc implements TranslateRpc {
               .list(texts, targetLanguage)
               .setSource(sourceLanguage)
               .setKey(options.getApiKey())
-              .set("model", Option.MODEL.getString(optionMap))
+              .setModel(Option.MODEL.getString(optionMap))
               .setFormat(Option.FORMAT.getString(optionMap))
               .execute()
               .getTranslations();
