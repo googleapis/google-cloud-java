@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-recommender.git",
+        "sha": "4c85285242847fe9905b14639da82bdd414a6544"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5a506ec8765cc04f7e29f888b8e9b257d9a7ae11"
+      }
+    }
+  ]
+}
