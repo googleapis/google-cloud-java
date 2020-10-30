@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.93.10](https://www.github.com/googleapis/java-core/compare/v1.93.9...v1.93.10) (2020-10-30)
+
+
+### Dependencies
+
+* update core dependencies ([#294](https://www.github.com/googleapis/java-core/issues/294)) ([dcb6a67](https://www.github.com/googleapis/java-core/commit/dcb6a6767d245ac134a1985c450c7ce5a2f2ee29))
+* update core transport dependencies ([#295](https://www.github.com/googleapis/java-core/issues/295)) ([341c032](https://www.github.com/googleapis/java-core/commit/341c032e98c8aac1b6f82a2d026374eaa5cc4c3e))
+* update dependency com.google.api:api-common to v1.10.1 ([#302](https://www.github.com/googleapis/java-core/issues/302)) ([34260c0](https://www.github.com/googleapis/java-core/commit/34260c0befd0ff858c075cfd58da022a3d083ea9))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.0.2 ([#312](https://www.github.com/googleapis/java-core/issues/312)) ([16e375a](https://www.github.com/googleapis/java-core/commit/16e375abfb6d0bd41c42a785a3b7c19a2e71c483))
+* update dependency com.google.guava:guava-bom to v30 ([#310](https://www.github.com/googleapis/java-core/issues/310)) ([17962f8](https://www.github.com/googleapis/java-core/commit/17962f84301f6d630bc6cc85dcb5ebeb24d94561))
+* update dependency io.grpc:grpc-bom to v1.33.0 ([#309](https://www.github.com/googleapis/java-core/issues/309)) ([e9ac780](https://www.github.com/googleapis/java-core/commit/e9ac780d218928d78ba1fc225576dfe47d85bb8d))
+* update dependency org.threeten:threetenbp to v1.4.5 ([#297](https://www.github.com/googleapis/java-core/issues/297)) ([a0b878f](https://www.github.com/googleapis/java-core/commit/a0b878f8eeebb7e06efb6f8fc8e887d3ddb3e467))
+* update dependency org.threeten:threetenbp to v1.5.0 ([#314](https://www.github.com/googleapis/java-core/issues/314)) ([485b30f](https://www.github.com/googleapis/java-core/commit/485b30f47db8e18d153e6b27db9d39080aee285c))
+
 ### [1.93.9](https://www.github.com/googleapis/java-core/compare/v1.93.8...v1.93.9) (2020-09-23)
 
 
