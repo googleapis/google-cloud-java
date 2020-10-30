@@ -19,7 +19,7 @@ See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>13.3.0</version>
+      <version>13.4.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -47,11 +47,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:1.124.0'
+compile 'com.google.cloud:google-cloud-bigquery:1.124.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.124.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "1.124.1"
 ```
 
 ## Authentication
