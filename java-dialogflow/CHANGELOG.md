@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.3.0...v2.4.0) (2020-10-30)
+
+
+### Features
+
+* **v2beta1:** added filter for ListDocuments and ListKnowledgeBases ([#341](https://www.github.com/googleapis/java-dialogflow/issues/341)) ([487e1bf](https://www.github.com/googleapis/java-dialogflow/commit/487e1bf224defc4eae9ce7fe321c083275067d72))
+
+
+### Bug Fixes
+
+* **v2beta1:** removed ImportAgentResponse which was not ready for use yet. docs:  minor doc changes ([#343](https://www.github.com/googleapis/java-dialogflow/issues/343)) ([5ef9d64](https://www.github.com/googleapis/java-dialogflow/commit/5ef9d64f25a2ec231b1ce835cf377bf9d6cb7768))
+
+
+### Documentation
+
+* update OPTIONAL annotations for some fields ([#289](https://www.github.com/googleapis/java-dialogflow/issues/289)) ([69a18ce](https://www.github.com/googleapis/java-dialogflow/commit/69a18ce3488e1bc0e63d6ca0283080830247cce4))
+* update OPTIONAL annotations for some fields. ([#305](https://www.github.com/googleapis/java-dialogflow/issues/305)) ([4b4eb67](https://www.github.com/googleapis/java-dialogflow/commit/4b4eb67cb8d4f6938f7802ce7244dcdac72fbdc7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#298](https://www.github.com/googleapis/java-dialogflow/issues/298)) ([51efaed](https://www.github.com/googleapis/java-dialogflow/commit/51efaed7117990071bb8b1eeaa7efded34a5a7be))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#312](https://www.github.com/googleapis/java-dialogflow/issues/312)) ([0fc3d95](https://www.github.com/googleapis/java-dialogflow/commit/0fc3d955a8a03ca052aed26ac39f33d0d1c88ca5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#326](https://www.github.com/googleapis/java-dialogflow/issues/326)) ([d5ec640](https://www.github.com/googleapis/java-dialogflow/commit/d5ec6405254b7979230fd3e5a0acaaff77493bcb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#329](https://www.github.com/googleapis/java-dialogflow/issues/329)) ([232a23e](https://www.github.com/googleapis/java-dialogflow/commit/232a23ee1d5161944fe7cb8e2f854a970b3733ac))
+
 ## [2.3.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.2.0...v2.3.0) (2020-09-22)
 
 
