@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.124.1](https://www.github.com/googleapis/java-bigquery/compare/v1.124.0...v1.124.1) (2020-10-30)
+
+
+### Bug Fixes
+
+* nullpointerexception for listroutines and listmodels ([#890](https://www.github.com/googleapis/java-bigquery/issues/890)) ([9e5c7c7](https://www.github.com/googleapis/java-bigquery/commit/9e5c7c7a6a0e32ce145a727bcdc1493e149f3b14))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20201022-1.30.10 ([#892](https://www.github.com/googleapis/java-bigquery/issues/892)) ([ea4f45e](https://www.github.com/googleapis/java-bigquery/commit/ea4f45e00de6f8da8352f5a85513996475960f7c))
+
 ## [1.124.0](https://www.github.com/googleapis/java-bigquery/compare/v1.123.2...v1.124.0) (2020-10-29)
 
 
