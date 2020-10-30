@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>13.1.0</version>
+      <version>13.3.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -38,18 +38,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build</artifactId>
-  <version>2.1.1</version>
+  <version>2.1.4</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-build:2.1.3'
+compile 'com.google.cloud:google-cloud-build:2.1.4'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-build" % "2.1.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-build" % "2.1.4"
 ```
 
 ## Authentication
