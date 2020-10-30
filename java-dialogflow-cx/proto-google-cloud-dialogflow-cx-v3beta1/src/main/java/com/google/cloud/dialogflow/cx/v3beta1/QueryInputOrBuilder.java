@@ -167,6 +167,41 @@ public interface QueryInputOrBuilder
    *
    *
    * <pre>
+   * The DTMF event to be handled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 7;</code>
+   *
+   * @return Whether the dtmf field is set.
+   */
+  boolean hasDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF event to be handled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 7;</code>
+   *
+   * @return The dtmf.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF event to be handled.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 7;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DtmfInputOrBuilder getDtmfOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The language of the input. See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language) for a
    * list of the currently supported language codes. Note that queries in the

@@ -166,12 +166,14 @@ public class IntentsClientTest {
     String displayName = "displayName1615086568";
     int priority = 1165461084;
     boolean isFallback = false;
+    String description = "description-1724546052";
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(name2.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
+            .setDescription(description)
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -214,12 +216,14 @@ public class IntentsClientTest {
     String displayName = "displayName1615086568";
     int priority = 1165461084;
     boolean isFallback = false;
+    String description = "description-1724546052";
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
+            .setDescription(description)
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -265,12 +269,14 @@ public class IntentsClientTest {
     String displayName = "displayName1615086568";
     int priority = 1165461084;
     boolean isFallback = false;
+    String description = "description-1724546052";
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setPriority(priority)
             .setIsFallback(isFallback)
+            .setDescription(description)
             .build();
     mockIntents.addResponse(expectedResponse);
 

@@ -45,6 +45,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     trainingPhrases_ = java.util.Collections.emptyList();
     parameters_ = java.util.Collections.emptyList();
+    description_ = "";
   }
 
   @java.lang.Override
@@ -129,6 +130,26 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               isFallback_ = input.readBool();
               break;
             }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,6 +178,17 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.IntentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 7:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -4252,6 +4284,195 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     return isFallback_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 7;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dialogflow.cx.v3beta1.IntentProto
+                .internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Human readable description for better understanding an intent like its
+   * scope, content, result etc. Maximum character limit: 140 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Human readable description for better understanding an intent like its
+   * scope, content, result etc. Maximum character limit: 140 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4284,6 +4505,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     if (isFallback_ != false) {
       output.writeBool(6, isFallback_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -4311,6 +4537,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     if (isFallback_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, isFallback_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labels__);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4333,6 +4572,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     if (!getParametersList().equals(other.getParametersList())) return false;
     if (getPriority() != other.getPriority()) return false;
     if (getIsFallback() != other.getIsFallback()) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4360,6 +4601,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPriority();
     hash = (37 * hash) + IS_FALLBACK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFallback());
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4481,6 +4728,26 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -4530,6 +4797,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       priority_ = 0;
 
       isFallback_ = false;
+
+      internalGetMutableLabels().clear();
+      description_ = "";
 
       return this;
     }
@@ -4581,6 +4851,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       result.priority_ = priority_;
       result.isFallback_ = isFallback_;
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -4697,6 +4970,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getIsFallback() != false) {
         setIsFallback(other.getIsFallback());
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5882,6 +6160,344 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIsFallback() {
 
       isFallback_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key/value metadata to label an intent. Labels can contain
+     * lowercase letters, digits and the symbols '-' and '_'. International
+     * characters are allowed, including letters from unicase alphabets. Keys must
+     * start with a letter. Keys and values can be no longer than 63 characters
+     * and no more than 128 bytes.
+     * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+     * Dialogflow defined labels include:
+     * * sys-head
+     * * sys-contextual
+     * The above labels do not require value. "sys-head" means the intent is a
+     * head intent. "sys-contextual" means the intent is a contextual intent.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Human readable description for better understanding an intent like its
+     * scope, content, result etc. Maximum character limit: 140 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Human readable description for better understanding an intent like its
+     * scope, content, result etc. Maximum character limit: 140 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Human readable description for better understanding an intent like its
+     * scope, content, result etc. Maximum character limit: 140 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Human readable description for better understanding an intent like its
+     * scope, content, result etc. Maximum character limit: 140 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Human readable description for better understanding an intent like its
+     * scope, content, result etc. Maximum character limit: 140 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

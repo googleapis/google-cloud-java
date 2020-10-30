@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "d411e5cabe149965b64785658d1d27b526e37a58"
+        "sha": "f4726fa24215aaa0d62d2ab4599f7a196634ccdd"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "6ae1443d1eb0c17bcdbeaa1890960cbcd3b70010",
-        "internalRef": "336725904"
+        "sha": "52eaab535740117d17b81a43749cf2a16110c301",
+        "internalRef": "339485389"
       }
     },
     {
@@ -266,6 +266,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DetectIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DetectIntentResponse.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DetectIntentResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DtmfInput.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DtmfInputOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EntityType.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EntityTypeName.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/EntityTypeOrBuilder.java",
@@ -316,8 +318,6 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetVersionRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetWebhookRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetWebhookRequestOrBuilder.java",
-    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ImportAgentResponse.java",
-    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ImportAgentResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/InputAudioConfig.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/InputAudioConfigOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/Intent.java",

@@ -44,6 +44,10 @@ public final class IntentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_Parameter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_ListIntentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ListIntentsRequest_fieldAccessorTable;
@@ -82,80 +86,83 @@ public final class IntentProto {
           + "gle/api/client.proto\032\037google/api/field_b"
           + "ehavior.proto\032\031google/api/resource.proto"
           + "\032\033google/protobuf/empty.proto\032 google/pr"
-          + "otobuf/field_mask.proto\"\244\005\n\006Intent\022\014\n\004na"
+          + "otobuf/field_mask.proto\"\272\006\n\006Intent\022\014\n\004na"
           + "me\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022S\n\020t"
           + "raining_phrases\030\003 \003(\01329.google.cloud.dia"
           + "logflow.cx.v3beta1.Intent.TrainingPhrase"
           + "\022H\n\nparameters\030\004 \003(\01324.google.cloud.dial"
           + "ogflow.cx.v3beta1.Intent.Parameter\022\020\n\010pr"
-          + "iority\030\005 \001(\005\022\023\n\013is_fallback\030\006 \001(\010\032\267\001\n\016Tr"
-          + "ainingPhrase\022\n\n\002id\030\001 \001(\t\022R\n\005parts\030\002 \003(\0132"
-          + ">.google.cloud.dialogflow.cx.v3beta1.Int"
-          + "ent.TrainingPhrase.PartB\003\340A\002\022\024\n\014repeat_c"
-          + "ount\030\003 \001(\005\032/\n\004Part\022\021\n\004text\030\001 \001(\tB\003\340A\002\022\024\n"
-          + "\014parameter_id\030\002 \001(\t\032\200\001\n\tParameter\022\017\n\002id\030"
-          + "\001 \001(\tB\003\340A\002\022A\n\013entity_type\030\002 \001(\tB,\340A\002\372A&\n"
-          + "$dialogflow.googleapis.com/EntityType\022\017\n"
-          + "\007is_list\030\003 \001(\010\022\016\n\006redact\030\004 \001(\010:n\352Ak\n dia"
-          + "logflow.googleapis.com/Intent\022Gprojects/"
-          + "{project}/locations/{location}/agents/{a"
-          + "gent}/intents/{intent}\"\321\001\n\022ListIntentsRe"
-          + "quest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 dialogflo"
-          + "w.googleapis.com/Intent\022\025\n\rlanguage_code"
-          + "\030\002 \001(\t\022C\n\013intent_view\030\005 \001(\0162..google.clo"
-          + "ud.dialogflow.cx.v3beta1.IntentView\022\021\n\tp"
-          + "age_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"k\n\023Li"
-          + "stIntentsResponse\022;\n\007intents\030\001 \003(\0132*.goo"
-          + "gle.cloud.dialogflow.cx.v3beta1.Intent\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"a\n\020GetIntentRequ"
-          + "est\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n dialogflow.go"
-          + "ogleapis.com/Intent\022\025\n\rlanguage_code\030\002 \001"
-          + "(\t\"\247\001\n\023CreateIntentRequest\0228\n\006parent\030\001 \001"
-          + "(\tB(\340A\002\372A\"\022 dialogflow.googleapis.com/In"
-          + "tent\022?\n\006intent\030\002 \001(\0132*.google.cloud.dial"
-          + "ogflow.cx.v3beta1.IntentB\003\340A\002\022\025\n\rlanguag"
-          + "e_code\030\003 \001(\t\"\236\001\n\023UpdateIntentRequest\022?\n\006"
-          + "intent\030\001 \001(\0132*.google.cloud.dialogflow.c"
-          + "x.v3beta1.IntentB\003\340A\002\022\025\n\rlanguage_code\030\002"
-          + " \001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google.proto"
-          + "buf.FieldMask\"M\n\023DeleteIntentRequest\0226\n\004"
-          + "name\030\001 \001(\tB(\340A\002\372A\"\n dialogflow.googleapi"
-          + "s.com/Intent*X\n\nIntentView\022\033\n\027INTENT_VIE"
-          + "W_UNSPECIFIED\020\000\022\027\n\023INTENT_VIEW_PARTIAL\020\001"
-          + "\022\024\n\020INTENT_VIEW_FULL\020\0022\344\010\n\007Intents\022\312\001\n\013L"
-          + "istIntents\0226.google.cloud.dialogflow.cx."
-          + "v3beta1.ListIntentsRequest\0327.google.clou"
-          + "d.dialogflow.cx.v3beta1.ListIntentsRespo"
-          + "nse\"J\202\323\344\223\002;\0229/v3beta1/{parent=projects/*"
-          + "/locations/*/agents/*}/intents\332A\006parent\022"
-          + "\267\001\n\tGetIntent\0224.google.cloud.dialogflow."
-          + "cx.v3beta1.GetIntentRequest\032*.google.clo"
-          + "ud.dialogflow.cx.v3beta1.Intent\"H\202\323\344\223\002;\022"
-          + "9/v3beta1/{name=projects/*/locations/*/a"
-          + "gents/*/intents/*}\332A\004name\022\316\001\n\014CreateInte"
-          + "nt\0227.google.cloud.dialogflow.cx.v3beta1."
-          + "CreateIntentRequest\032*.google.cloud.dialo"
-          + "gflow.cx.v3beta1.Intent\"Y\202\323\344\223\002C\"9/v3beta"
-          + "1/{parent=projects/*/locations/*/agents/"
-          + "*}/intents:\006intent\332A\rparent,intent\022\332\001\n\014U"
-          + "pdateIntent\0227.google.cloud.dialogflow.cx"
-          + ".v3beta1.UpdateIntentRequest\032*.google.cl"
-          + "oud.dialogflow.cx.v3beta1.Intent\"e\202\323\344\223\002J"
-          + "2@/v3beta1/{intent.name=projects/*/locat"
-          + "ions/*/agents/*/intents/*}:\006intent\332A\022int"
-          + "ent,update_mask\022\251\001\n\014DeleteIntent\0227.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.DeleteInte"
-          + "ntRequest\032\026.google.protobuf.Empty\"H\202\323\344\223\002"
-          + ";*9/v3beta1/{name=projects/*/locations/*"
-          + "/agents/*/intents/*}\332A\004name\032x\312A\031dialogfl"
-          + "ow.googleapis.com\322AYhttps://www.googleap"
-          + "is.com/auth/cloud-platform,https://www.g"
-          + "oogleapis.com/auth/dialogflowB\252\001\n&com.go"
-          + "ogle.cloud.dialogflow.cx.v3beta1B\013Intent"
-          + "ProtoP\001ZDgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/dialogflow/cx/v3beta1;cx\370\001\001"
-          + "\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Bet"
-          + "a1b\006proto3"
+          + "iority\030\005 \001(\005\022\023\n\013is_fallback\030\006 \001(\010\022K\n\006lab"
+          + "els\030\007 \003(\01326.google.cloud.dialogflow.cx.v"
+          + "3beta1.Intent.LabelsEntryB\003\340A\001\022\030\n\013descri"
+          + "ption\030\010 \001(\tB\003\340A\001\032\267\001\n\016TrainingPhrase\022\n\n\002i"
+          + "d\030\001 \001(\t\022R\n\005parts\030\002 \003(\0132>.google.cloud.di"
+          + "alogflow.cx.v3beta1.Intent.TrainingPhras"
+          + "e.PartB\003\340A\002\022\024\n\014repeat_count\030\003 \001(\005\032/\n\004Par"
+          + "t\022\021\n\004text\030\001 \001(\tB\003\340A\002\022\024\n\014parameter_id\030\002 \001"
+          + "(\t\032\200\001\n\tParameter\022\017\n\002id\030\001 \001(\tB\003\340A\002\022A\n\013ent"
+          + "ity_type\030\002 \001(\tB,\340A\002\372A&\n$dialogflow.googl"
+          + "eapis.com/EntityType\022\017\n\007is_list\030\003 \001(\010\022\016\n"
+          + "\006redact\030\004 \001(\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n dialogflow.go"
+          + "ogleapis.com/Intent\022Gprojects/{project}/"
+          + "locations/{location}/agents/{agent}/inte"
+          + "nts/{intent}\"\321\001\n\022ListIntentsRequest\0228\n\006p"
+          + "arent\030\001 \001(\tB(\340A\002\372A\"\022 dialogflow.googleap"
+          + "is.com/Intent\022\025\n\rlanguage_code\030\002 \001(\t\022C\n\013"
+          + "intent_view\030\005 \001(\0162..google.cloud.dialogf"
+          + "low.cx.v3beta1.IntentView\022\021\n\tpage_size\030\003"
+          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\"k\n\023ListIntentsR"
+          + "esponse\022;\n\007intents\030\001 \003(\0132*.google.cloud."
+          + "dialogflow.cx.v3beta1.Intent\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"a\n\020GetIntentRequest\0226\n\004nam"
+          + "e\030\001 \001(\tB(\340A\002\372A\"\n dialogflow.googleapis.c"
+          + "om/Intent\022\025\n\rlanguage_code\030\002 \001(\t\"\247\001\n\023Cre"
+          + "ateIntentRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\""
+          + "\022 dialogflow.googleapis.com/Intent\022?\n\006in"
+          + "tent\030\002 \001(\0132*.google.cloud.dialogflow.cx."
+          + "v3beta1.IntentB\003\340A\002\022\025\n\rlanguage_code\030\003 \001"
+          + "(\t\"\236\001\n\023UpdateIntentRequest\022?\n\006intent\030\001 \001"
+          + "(\0132*.google.cloud.dialogflow.cx.v3beta1."
+          + "IntentB\003\340A\002\022\025\n\rlanguage_code\030\002 \001(\t\022/\n\013up"
+          + "date_mask\030\003 \001(\0132\032.google.protobuf.FieldM"
+          + "ask\"M\n\023DeleteIntentRequest\0226\n\004name\030\001 \001(\t"
+          + "B(\340A\002\372A\"\n dialogflow.googleapis.com/Inte"
+          + "nt*X\n\nIntentView\022\033\n\027INTENT_VIEW_UNSPECIF"
+          + "IED\020\000\022\027\n\023INTENT_VIEW_PARTIAL\020\001\022\024\n\020INTENT"
+          + "_VIEW_FULL\020\0022\344\010\n\007Intents\022\312\001\n\013ListIntents"
+          + "\0226.google.cloud.dialogflow.cx.v3beta1.Li"
+          + "stIntentsRequest\0327.google.cloud.dialogfl"
+          + "ow.cx.v3beta1.ListIntentsResponse\"J\202\323\344\223\002"
+          + ";\0229/v3beta1/{parent=projects/*/locations"
+          + "/*/agents/*}/intents\332A\006parent\022\267\001\n\tGetInt"
+          + "ent\0224.google.cloud.dialogflow.cx.v3beta1"
+          + ".GetIntentRequest\032*.google.cloud.dialogf"
+          + "low.cx.v3beta1.Intent\"H\202\323\344\223\002;\0229/v3beta1/"
+          + "{name=projects/*/locations/*/agents/*/in"
+          + "tents/*}\332A\004name\022\316\001\n\014CreateIntent\0227.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.CreateInte"
+          + "ntRequest\032*.google.cloud.dialogflow.cx.v"
+          + "3beta1.Intent\"Y\202\323\344\223\002C\"9/v3beta1/{parent="
+          + "projects/*/locations/*/agents/*}/intents"
+          + ":\006intent\332A\rparent,intent\022\332\001\n\014UpdateInten"
+          + "t\0227.google.cloud.dialogflow.cx.v3beta1.U"
+          + "pdateIntentRequest\032*.google.cloud.dialog"
+          + "flow.cx.v3beta1.Intent\"e\202\323\344\223\002J2@/v3beta1"
+          + "/{intent.name=projects/*/locations/*/age"
+          + "nts/*/intents/*}:\006intent\332A\022intent,update"
+          + "_mask\022\251\001\n\014DeleteIntent\0227.google.cloud.di"
+          + "alogflow.cx.v3beta1.DeleteIntentRequest\032"
+          + "\026.google.protobuf.Empty\"H\202\323\344\223\002;*9/v3beta"
+          + "1/{name=projects/*/locations/*/agents/*/"
+          + "intents/*}\332A\004name\032x\312A\031dialogflow.googlea"
+          + "pis.com\322AYhttps://www.googleapis.com/aut"
+          + "h/cloud-platform,https://www.googleapis."
+          + "com/auth/dialogflowB\252\001\n&com.google.cloud"
+          + ".dialogflow.cx.v3beta1B\013IntentProtoP\001ZDg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Go"
+          + "ogle.Cloud.Dialogflow.Cx.V3Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -174,7 +181,14 @@ public final class IntentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "TrainingPhrases", "Parameters", "Priority", "IsFallback",
+              "Name",
+              "DisplayName",
+              "TrainingPhrases",
+              "Parameters",
+              "Priority",
+              "IsFallback",
+              "Labels",
+              "Description",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_TrainingPhrase_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_descriptor
@@ -205,6 +219,16 @@ public final class IntentProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_Parameter_descriptor,
             new java.lang.String[] {
               "Id", "EntityType", "IsList", "Redact",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Intent_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListIntentsRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);

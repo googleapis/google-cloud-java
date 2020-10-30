@@ -234,4 +234,135 @@ public interface IntentOrBuilder
    * @return The isFallback.
    */
   boolean getIsFallback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key/value metadata to label an intent. Labels can contain
+   * lowercase letters, digits and the symbols '-' and '_'. International
+   * characters are allowed, including letters from unicase alphabets. Keys must
+   * start with a letter. Keys and values can be no longer than 63 characters
+   * and no more than 128 bytes.
+   * Prefix "sys-" is reserved for Dialogflow defined labels. Currently allowed
+   * Dialogflow defined labels include:
+   * * sys-head
+   * * sys-contextual
+   * The above labels do not require value. "sys-head" means the intent is a
+   * head intent. "sys-contextual" means the intent is a contextual intent.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Human readable description for better understanding an intent like its
+   * scope, content, result etc. Maximum character limit: 140 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Human readable description for better understanding an intent like its
+   * scope, content, result etc. Maximum character limit: 140 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }
