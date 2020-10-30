@@ -20,7 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,11 +30,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for quickstart sample. */
+/** Tests for delete metric descriptor sample. */
 @RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartSampleIT {
+public class DeleteMetricDescriptorIT {
+
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String suffix = UUID.randomUUID().toString().substring(0, 8);
+  private static final String METRIC_TYPE = "custom.googleapis.com/invoice/paid/amount" + suffix;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -48,7 +52,8 @@ public class QuickstartSampleIT {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
+    CreateMetricDescriptor.createMetricDescriptor(PROJECT_ID, METRIC_TYPE);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -56,13 +61,15 @@ public class QuickstartSampleIT {
 
   @After
   public void tearDown() {
-    // clean up
+    // restores print statements in the original method
+    bout.reset();
+    out.flush();
     System.out.flush();
   }
 
   @Test
-  public void testQuickstart() throws Exception {
-    QuickstartSample.quickstart(PROJECT_ID);
-    assertThat(bout.toString()).contains("Done writing time series data.");
+  public void testDeleteMetricDescriptor() throws IOException {
+    DeleteMetricDescriptor.deleteMetricDescriptor(PROJECT_ID, METRIC_TYPE);
+    assertThat(bout.toString()).contains("metric descriptor deleted successfully");
   }
 }

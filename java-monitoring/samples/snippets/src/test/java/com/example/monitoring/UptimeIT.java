@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package com.example.monitoring;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -30,7 +30,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
 
-/** Integration (system) tests for {@link UptimeSample}. */
+/** Integration (system) tests for {@link com.example.monitoring.UptimeSample}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

@@ -20,26 +20,25 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-/** Tests for quickstart sample. */
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartSampleIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+/** Tests for list an alert policy sample. */
+public class ListAlertPolicyIT {
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        "Environment variable '%s' is required to perform these tests.".format(varName),
+        "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -56,13 +55,15 @@ public class QuickstartSampleIT {
 
   @After
   public void tearDown() {
-    // clean up
+    // restores print statements in the original method
+    bout.reset();
+    out.flush();
     System.out.flush();
   }
 
   @Test
-  public void testQuickstart() throws Exception {
-    QuickstartSample.quickstart(PROJECT_ID);
-    assertThat(bout.toString()).contains("Done writing time series data.");
+  public void listAlertPolicyTest() throws IOException {
+    ListAlertPolicy.listAlertPolicy(PROJECT_ID);
+    assertThat(bout.toString()).contains("success! alert policy");
   }
 }

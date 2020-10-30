@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package com.example.monitoring;
 
 import com.google.api.MonitoredResource;
 import com.google.cloud.monitoring.v3.UptimeCheckServiceClient;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package com.example.monitoring;
 
 import com.google.cloud.monitoring.v3.NotificationChannelServiceClient;
 import com.google.monitoring.v3.NotificationChannelName;

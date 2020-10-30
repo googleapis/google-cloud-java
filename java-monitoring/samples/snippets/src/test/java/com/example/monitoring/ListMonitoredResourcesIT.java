@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
@@ -28,10 +29,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for quickstart sample. */
+/** Tests for monitor resources list sample. */
 @RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartSampleIT {
+public class ListMonitoredResourcesIT {
+
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -56,13 +57,12 @@ public class QuickstartSampleIT {
 
   @After
   public void tearDown() {
-    // clean up
-    System.out.flush();
+    System.setOut(null);
   }
 
   @Test
-  public void testQuickstart() throws Exception {
-    QuickstartSample.quickstart(PROJECT_ID);
-    assertThat(bout.toString()).contains("Done writing time series data.");
+  public void testListMonitoredResources() throws IOException {
+    MonitoredResourcesList.listMonitoredResources(PROJECT_ID);
+    assertThat(bout.toString()).contains("success! monitored resources type");
   }
 }

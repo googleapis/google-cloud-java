@@ -16,10 +16,10 @@
 
 package com.example.monitoring;
 
-// CHECKSTYLE OFF: VariableDeclarationUsageDistance
-// [START monitoring_quickstart]
+// [START monitoring_write_time_series]
 import com.google.api.Metric;
 import com.google.api.MonitoredResource;
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.Point;
@@ -34,19 +34,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class QuickstartSample {
+// Sample to create time series
+public class CreateTimeSeries {
 
-  public static void main(String... args) throws Exception {
+  public static void main(String[] args) throws ApiException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    quickstart(projectId);
+    createTimeSeries(projectId);
   }
 
-  public static void quickstart(String projectId) throws IOException {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests.
+  public static void createTimeSeries(String projectId) throws ApiException, IOException {
+    // Instantiates a client
     try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-
       // Prepares an individual data point
       TimeInterval interval =
           TimeInterval.newBuilder()
@@ -58,22 +57,24 @@ public class QuickstartSample {
       List<Point> pointList = new ArrayList<>();
       pointList.add(point);
 
-      ProjectName name = ProjectName.of(projectId);
-
       // Prepares the metric descriptor
-      Map<String, String> metricLabels = new HashMap<String, String>();
-      metricLabels.put("store_id", "Pittsburg");
+      Map<String, String> metricLabels = new HashMap<>();
       Metric metric =
           Metric.newBuilder()
-              .setType("custom.googleapis.com/stores/daily_sales")
+              .setType("custom.googleapis.com/my_metric")
               .putAllLabels(metricLabels)
               .build();
 
       // Prepares the monitored resource descriptor
-      Map<String, String> resourceLabels = new HashMap<String, String>();
-      resourceLabels.put("project_id", projectId);
+      Map<String, String> resourceLabels = new HashMap<>();
+      resourceLabels.put("instance_id", "1234567890123456789");
+      resourceLabels.put("zone", "us-central1-f");
+
       MonitoredResource resource =
-          MonitoredResource.newBuilder().setType("global").putAllLabels(resourceLabels).build();
+          MonitoredResource.newBuilder()
+              .setType("gce_instance")
+              .putAllLabels(resourceLabels)
+              .build();
 
       // Prepares the time series request
       TimeSeries timeSeries =
@@ -82,21 +83,20 @@ public class QuickstartSample {
               .setResource(resource)
               .addAllPoints(pointList)
               .build();
+
       List<TimeSeries> timeSeriesList = new ArrayList<>();
       timeSeriesList.add(timeSeries);
 
       CreateTimeSeriesRequest request =
           CreateTimeSeriesRequest.newBuilder()
-              .setName(name.toString())
+              .setName(ProjectName.of(projectId).toString())
               .addAllTimeSeries(timeSeriesList)
               .build();
 
       // Writes time series data
       metricServiceClient.createTimeSeries(request);
-
-      System.out.printf("Done writing time series data.%n");
+      System.out.println("Done writing time series value");
     }
   }
 }
-// [END monitoring_quickstart]
-// CHECKSTYLE ON: VariableDeclarationUsageDistance
+// [END monitoring_write_time_series]

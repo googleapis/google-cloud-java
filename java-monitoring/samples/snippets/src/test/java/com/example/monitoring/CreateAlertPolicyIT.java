@@ -20,7 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,18 +30,22 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for quickstart sample. */
+/** Tests for create alert policy sample. */
 @RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartSampleIT {
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+public class CreateAlertPolicyIT {
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
+  private final String suffix = UUID.randomUUID().toString().substring(0, 8);
   private ByteArrayOutputStream bout;
+  private String alertPolicyId;
+  private String alertPolicyDisplayName;
   private PrintStream out;
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
-        "Environment variable '%s' is required to perform these tests.".format(varName),
+        "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
@@ -49,20 +55,27 @@ public class QuickstartSampleIT {
 
   @Before
   public void setUp() {
+    alertPolicyDisplayName = "alert_policy_name_" + suffix;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
   }
 
   @After
-  public void tearDown() {
-    // clean up
+  public void tearDown() throws IOException {
+    // delete an alert policy for clean up
+    DeleteAlertPolicy.deleteAlertPolicy(alertPolicyId);
+    // restores print statements in the original method
+    bout.reset();
+    out.flush();
     System.out.flush();
   }
 
   @Test
-  public void testQuickstart() throws Exception {
-    QuickstartSample.quickstart(PROJECT_ID);
-    assertThat(bout.toString()).contains("Done writing time series data.");
+  public void createAlertPolicyTest() throws IOException {
+    CreateAlertPolicy.createAlertPolicy(PROJECT_ID, alertPolicyDisplayName);
+    String result = bout.toString();
+    alertPolicyId = result.substring(result.indexOf(":") + 1);
+    assertThat(bout.toString()).contains("alert policy created");
   }
 }
