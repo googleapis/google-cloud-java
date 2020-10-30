@@ -146,6 +146,7 @@ public class ITBigQueryTest {
   private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String ROUTINE_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
+  private static final String RANDOM_ID = UUID.randomUUID().toString().substring(0, 8);
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -1423,6 +1424,29 @@ public class ITBigQueryTest {
 
     // Delete the model.
     assertTrue(bigquery.delete(modelId));
+  }
+
+  @Test
+  public void testEmptyListModels() {
+    String datasetId = "test_empty_dataset_list_models_" + RANDOM_ID;
+    assertNotNull(bigquery.create(DatasetInfo.of(datasetId)));
+    Page<Model> models = bigquery.listModels(datasetId, BigQuery.ModelListOption.pageSize(100));
+    assertEquals(0, Iterables.size(models.getValues()));
+    assertFalse(models.hasNextPage());
+    assertNull(models.getNextPageToken());
+    assertTrue(bigquery.delete(datasetId));
+  }
+
+  @Test
+  public void testEmptyListRoutines() {
+    String datasetId = "test_empty_dataset_list_routines_" + RANDOM_ID;
+    assertNotNull(bigquery.create(DatasetInfo.of(datasetId)));
+    Page<Routine> routines =
+        bigquery.listRoutines(datasetId, BigQuery.RoutineListOption.pageSize(100));
+    assertEquals(0, Iterables.size(routines.getValues()));
+    assertFalse(routines.hasNextPage());
+    assertNull(routines.getNextPageToken());
+    assertTrue(bigquery.delete(datasetId));
   }
 
   @Test

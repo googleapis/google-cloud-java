@@ -388,7 +388,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .execute();
-      Iterable<Model> models = modelList.getModels();
+      Iterable<Model> models =
+          modelList.getModels() != null ? modelList.getModels() : ImmutableList.<Model>of();
       return Tuple.of(modelList.getNextPageToken(), models);
     } catch (IOException ex) {
       throw translate(ex);
@@ -456,7 +457,10 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
               .execute();
-      Iterable<Routine> routines = routineList.getRoutines();
+      Iterable<Routine> routines =
+          routineList.getRoutines() != null
+              ? routineList.getRoutines()
+              : ImmutableList.<Routine>of();
       return Tuple.of(routineList.getNextPageToken(), routines);
     } catch (IOException ex) {
       throw translate(ex);
