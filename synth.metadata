@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging-logback.git",
-        "sha": "7dfd62ac0dc03385122d867ad97edb06178e9fb6"
+        "sha": "fb12a917854cc5068753f81734bd166e073e89f2"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ],
@@ -21,6 +21,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
