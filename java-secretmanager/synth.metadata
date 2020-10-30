@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "67fa31c7fb7d51970605a7678ec98fa1c87e4afd"
+        "sha": "808387811d09aba41d36c2e3e4470c3cd888b9da"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ],
@@ -49,6 +49,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
