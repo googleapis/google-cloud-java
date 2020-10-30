@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "832848c89485ac645268e88c176de1a6bfe38dbf"
+        "sha": "8d4fb0a255710e3093aea95b962dc2535f9e82cc"
       }
     },
     {
@@ -35,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ],
@@ -74,6 +74,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
