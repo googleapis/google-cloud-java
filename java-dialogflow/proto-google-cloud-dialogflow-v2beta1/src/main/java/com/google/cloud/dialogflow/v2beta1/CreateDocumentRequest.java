@@ -133,7 +133,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The knoweldge base to create a document for.
+   * Required. The knowledge base to create a document for.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
@@ -159,7 +159,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The knoweldge base to create a document for.
+   * Required. The knowledge base to create a document for.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
@@ -588,7 +588,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The knoweldge base to create a document for.
+     * Required. The knowledge base to create a document for.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
@@ -613,7 +613,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The knoweldge base to create a document for.
+     * Required. The knowledge base to create a document for.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
@@ -638,7 +638,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The knoweldge base to create a document for.
+     * Required. The knowledge base to create a document for.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
@@ -662,7 +662,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The knoweldge base to create a document for.
+     * Required. The knowledge base to create a document for.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
@@ -682,7 +682,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The knoweldge base to create a document for.
+     * Required. The knowledge base to create a document for.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *

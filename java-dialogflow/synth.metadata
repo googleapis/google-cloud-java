@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "b63c45855193f87e41c2c0607f91c2986e51e2e0"
+        "sha": "487e1bf224defc4eae9ce7fe321c083275067d72"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d616167ada0a7195613efca5b44fe0aa188836d9",
-        "internalRef": "336721089"
+        "sha": "516017a89c1fbaf3f6ceb461170b9ff8aa952b05",
+        "internalRef": "339508652"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "d616167ada0a7195613efca5b44fe0aa188836d9",
-        "internalRef": "336721089"
+        "sha": "516017a89c1fbaf3f6ceb461170b9ff8aa952b05",
+        "internalRef": "339508652"
       }
     },
     {
@@ -477,8 +477,6 @@
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentProto.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AudioConfigProto.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AudioEncoding.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AutoApproveSmartMessagingEntriesResponse.java",
-    "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AutoApproveSmartMessagingEntriesResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/BatchCreateEntitiesRequest.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/BatchCreateEntitiesRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/BatchDeleteEntitiesRequest.java",

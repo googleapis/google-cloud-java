@@ -437,7 +437,7 @@ public class DocumentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The knoweldge base to create a document for. Format:
+   * @param parent Required. The knowledge base to create a document for. Format:
    *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @param document Required. The document to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -471,7 +471,7 @@ public class DocumentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The knoweldge base to create a document for. Format:
+   * @param parent Required. The knowledge base to create a document for. Format:
    *     `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * @param document Required. The document to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
