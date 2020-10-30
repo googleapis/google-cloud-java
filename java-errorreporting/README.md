@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>13.0.0</version>
+      <version>13.3.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -46,7 +46,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.truth</groupId>
     <artifactId>truth</artifactId>
-    <version>1.0.1</version>
+    <version>1.1</version>
     <scope>test</scope>
   </dependency>
   <!-- END_EXCLUDE -->
@@ -60,18 +60,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.120.3-beta</version>
+  <version>0.120.5-beta</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.120.4-beta'
+compile 'com.google.cloud:google-cloud-errorreporting:0.120.5-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.4-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.5-beta"
 ```
 
 ## Authentication
