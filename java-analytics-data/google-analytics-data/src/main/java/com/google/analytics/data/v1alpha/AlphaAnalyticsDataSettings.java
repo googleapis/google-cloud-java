@@ -45,16 +45,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runReport to 30 seconds:
+ * <p>For example, to set the total timeout of getMetadata to 30 seconds:
  *
  * <pre>
  * <code>
  * AlphaAnalyticsDataSettings.Builder alphaAnalyticsDataSettingsBuilder =
  *     AlphaAnalyticsDataSettings.newBuilder();
  * alphaAnalyticsDataSettingsBuilder
- *     .runReportSettings()
+ *     .getMetadataSettings()
  *     .setRetrySettings(
- *         alphaAnalyticsDataSettingsBuilder.runReportSettings().getRetrySettings().toBuilder()
+ *         alphaAnalyticsDataSettingsBuilder.getMetadataSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlphaAnalyticsDataSettings alphaAnalyticsDataSettings = alphaAnalyticsDataSettingsBuilder.build();
@@ -90,6 +90,11 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
   public UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getUniversalMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadata. */
+  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getMetadataSettings();
   }
 
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
@@ -216,6 +221,11 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     public UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
         getUniversalMetadataSettings() {
       return getStubSettingsBuilder().getUniversalMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadata. */
+    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
+      return getStubSettingsBuilder().getMetadataSettings();
     }
 
     @Override

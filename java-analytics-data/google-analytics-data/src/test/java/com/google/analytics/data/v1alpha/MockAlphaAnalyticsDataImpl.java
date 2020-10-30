@@ -131,4 +131,18 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
+
+  @Override
+  public void getMetadata(GetMetadataRequest request, StreamObserver<Metadata> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Metadata) {
+      requests.add(request);
+      responseObserver.onNext((Metadata) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
 }

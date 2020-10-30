@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
- *   RunReportRequest request = RunReportRequest.newBuilder().build();
- *   RunReportResponse response = alphaAnalyticsDataClient.runReport(request);
+ *   MetadataName name = MetadataName.of("[PROPERTY]");
+ *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
  * }
  * </code>
  * </pre>

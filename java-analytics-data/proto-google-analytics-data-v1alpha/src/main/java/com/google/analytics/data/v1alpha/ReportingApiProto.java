@@ -317,13 +317,16 @@ public final class ReportingApiProto {
           + "\nexpression\030\006 \001(\t*g\n\021MetricAggregation\022\""
           + "\n\036METRIC_AGGREGATION_UNSPECIFIED\020\000\022\t\n\005TO"
           + "TAL\020\001\022\013\n\007MINIMUM\020\005\022\013\n\007MAXIMUM\020\006\022\t\n\005COUNT"
-          + "\020\004*p\n\nMetricType\022\033\n\027METRIC_TYPE_UNSPECIF"
-          + "IED\020\000\022\020\n\014TYPE_INTEGER\020\001\022\016\n\nTYPE_FLOAT\020\002\022"
-          + "\020\n\014TYPE_SECONDS\020\004\022\021\n\rTYPE_CURRENCY\020\tB{\n!"
-          + "com.google.analytics.data.v1alphaB\021Repor"
-          + "tingApiProtoP\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/analytics/data/v1alpha;dat"
-          + "ab\006proto3"
+          + "\020\004*\201\002\n\nMetricType\022\033\n\027METRIC_TYPE_UNSPECI"
+          + "FIED\020\000\022\020\n\014TYPE_INTEGER\020\001\022\016\n\nTYPE_FLOAT\020\002"
+          + "\022\020\n\014TYPE_SECONDS\020\004\022\025\n\021TYPE_MILLISECONDS\020"
+          + "\005\022\020\n\014TYPE_MINUTES\020\006\022\016\n\nTYPE_HOURS\020\007\022\021\n\rT"
+          + "YPE_STANDARD\020\010\022\021\n\rTYPE_CURRENCY\020\t\022\r\n\tTYP"
+          + "E_FEET\020\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013TYPE_METERS\020"
+          + "\014\022\023\n\017TYPE_KILOMETERS\020\rB{\n!com.google.ana"
+          + "lytics.data.v1alphaB\021ReportingApiProtoP\001"
+          + "ZAgoogle.golang.org/genproto/googleapis/"
+          + "analytics/data/v1alpha;datab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -34,8 +34,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
- *   RunReportRequest request = RunReportRequest.newBuilder().build();
- *   RunReportResponse response = alphaAnalyticsDataClient.runReport(request);
+ *   MetadataName name = MetadataName.of("[PROPERTY]");
+ *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
  * }
  * </code>
  * </pre>
@@ -367,6 +367,128 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataCallable() {
     return stub.getUniversalMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * specified in the request, and the metadata response includes Custom dimensions and metrics as
+   * well as Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     App + Web Property identifier.
+   *     <p>Example: properties/1234/metadata
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(MetadataName name) {
+    GetMetadataRequest request =
+        GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * specified in the request, and the metadata response includes Custom dimensions and metrics as
+   * well as Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     App + Web Property identifier.
+   *     <p>Example: properties/1234/metadata
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(String name) {
+    GetMetadataRequest request = GetMetadataRequest.newBuilder().setName(name).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * specified in the request, and the metadata response includes Custom dimensions and metrics as
+   * well as Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   GetMetadataRequest request = GetMetadataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(GetMetadataRequest request) {
+    return getMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * specified in the request, and the metadata response includes Custom dimensions and metrics as
+   * well as Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   GetMetadataRequest request = GetMetadataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Metadata&gt; future = alphaAnalyticsDataClient.getMetadataCallable().futureCall(request);
+   *   // Do something
+   *   Metadata response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return stub.getMetadataCallable();
   }
 
   @Override

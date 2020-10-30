@@ -19,7 +19,9 @@ import com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1alpha.BatchRunReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunReportsResponse;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
 import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
+import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
@@ -64,16 +66,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runReport to 30 seconds:
+ * <p>For example, to set the total timeout of getMetadata to 30 seconds:
  *
  * <pre>
  * <code>
  * AlphaAnalyticsDataStubSettings.Builder alphaAnalyticsDataSettingsBuilder =
  *     AlphaAnalyticsDataStubSettings.newBuilder();
  * alphaAnalyticsDataSettingsBuilder
- *     .runReportSettings()
+ *     .getMetadataSettings()
  *     .setRetrySettings(
- *         alphaAnalyticsDataSettingsBuilder.runReportSettings().getRetrySettings().toBuilder()
+ *         alphaAnalyticsDataSettingsBuilder.getMetadataSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlphaAnalyticsDataStubSettings alphaAnalyticsDataSettings = alphaAnalyticsDataSettingsBuilder.build();
@@ -99,6 +101,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       batchRunPivotReportsSettings;
   private final UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataSettings;
+  private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
 
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
@@ -126,6 +129,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   public UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataSettings() {
     return getUniversalMetadataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetadata. */
+  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
+    return getMetadataSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -202,6 +210,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     batchRunReportsSettings = settingsBuilder.batchRunReportsSettings().build();
     batchRunPivotReportsSettings = settingsBuilder.batchRunPivotReportsSettings().build();
     getUniversalMetadataSettings = settingsBuilder.getUniversalMetadataSettings().build();
+    getMetadataSettings = settingsBuilder.getMetadataSettings().build();
   }
 
   /** Builder for AlphaAnalyticsDataStubSettings. */
@@ -219,6 +228,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
         batchRunPivotReportsSettings;
     private final UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
         getUniversalMetadataSettings;
+    private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -281,13 +291,16 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       getUniversalMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runReportSettings,
               runPivotReportSettings,
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
-              getUniversalMetadataSettings);
+              getUniversalMetadataSettings,
+              getMetadataSettings);
 
       initDefaults(this);
     }
@@ -328,6 +341,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .getMetadataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       return builder;
     }
 
@@ -339,6 +357,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       batchRunReportsSettings = settings.batchRunReportsSettings.toBuilder();
       batchRunPivotReportsSettings = settings.batchRunPivotReportsSettings.toBuilder();
       getUniversalMetadataSettings = settings.getUniversalMetadataSettings.toBuilder();
+      getMetadataSettings = settings.getMetadataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -346,7 +365,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               runPivotReportSettings,
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
-              getUniversalMetadataSettings);
+              getUniversalMetadataSettings,
+              getMetadataSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -392,6 +412,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     public UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
         getUniversalMetadataSettings() {
       return getUniversalMetadataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadata. */
+    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
+      return getMetadataSettings;
     }
 
     @Override
