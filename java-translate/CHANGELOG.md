@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.95.3](https://www.github.com/googleapis/java-translate/compare/v1.95.2...v1.95.3) (2020-10-30)
+
+
+### Bug Fixes
+
+* increase batch translate timeout to 300 ([#274](https://www.github.com/googleapis/java-translate/issues/274)) ([75736fe](https://www.github.com/googleapis/java-translate/commit/75736fe03ee1298ee153ce9baeb8c81ec82df8a0))
+* use setModel as rest api already support it ([#330](https://www.github.com/googleapis/java-translate/issues/330)) ([de5b5a8](https://www.github.com/googleapis/java-translate/commit/de5b5a80fb9e42cf698fd101cffd34474eda0ce9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#318](https://www.github.com/googleapis/java-translate/issues/318)) ([41293ce](https://www.github.com/googleapis/java-translate/commit/41293ce8a0e6cb410ba0f4a80a8027bc5ee49b3d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#281](https://www.github.com/googleapis/java-translate/issues/281)) ([e028946](https://www.github.com/googleapis/java-translate/commit/e02894607fea4edaa04486709a0e438a5f5beb20))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.2 ([#277](https://www.github.com/googleapis/java-translate/issues/277)) ([ed76cd5](https://www.github.com/googleapis/java-translate/commit/ed76cd53a5a2db0214b1c0986009c7cee7428384))
+
 ### [1.95.2](https://www.github.com/googleapis/java-translate/compare/v1.95.1...v1.95.2) (2020-08-21)
 
 
