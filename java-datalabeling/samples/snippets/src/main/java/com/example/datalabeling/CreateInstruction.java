@@ -43,32 +43,32 @@ class CreateInstruction {
     }
     // [START datalabeling_create_instruction_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_create_instruction_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_create_instruction_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_create_instruction_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_create_instruction_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
+        DataLabelingServiceClient.create(settings)) {
       ProjectName projectName = ProjectName.of(projectId);
 
       // There are two types of instructions: CSV (CsvInstruction) or PDF (PdfInstruction)
-      PdfInstruction pdfInstruction = PdfInstruction.newBuilder()
-          .setGcsFileUri(pdfUri)
-          .build();
+      PdfInstruction pdfInstruction = PdfInstruction.newBuilder().setGcsFileUri(pdfUri).build();
 
-      Instruction instruction = Instruction.newBuilder()
-          .setDisplayName("YOUR_INSTRUCTION_DISPLAY_NAME")
-          .setDescription("YOUR_DESCRIPTION")
-          .setDataType(DataType.IMAGE) // DataTypes: AUDIO, IMAGE, VIDEO, TEXT
-          .setPdfInstruction(pdfInstruction)  // .setCsvInstruction() or .setPdfInstruction()
-          .build();
+      Instruction instruction =
+          Instruction.newBuilder()
+              .setDisplayName("YOUR_INSTRUCTION_DISPLAY_NAME")
+              .setDescription("YOUR_DESCRIPTION")
+              .setDataType(DataType.IMAGE) // DataTypes: AUDIO, IMAGE, VIDEO, TEXT
+              .setPdfInstruction(pdfInstruction) // .setCsvInstruction() or .setPdfInstruction()
+              .build();
 
-      CreateInstructionRequest createInstructionRequest = CreateInstructionRequest.newBuilder()
-          .setInstruction(instruction)
-          .setParent(projectName.toString())
-          .build();
+      CreateInstructionRequest createInstructionRequest =
+          CreateInstructionRequest.newBuilder()
+              .setInstruction(instruction)
+              .setParent(projectName.toString())
+              .build();
 
       OperationFuture<Instruction, CreateInstructionMetadata> operation =
           dataLabelingServiceClient.createInstructionAsync(createInstructionRequest);

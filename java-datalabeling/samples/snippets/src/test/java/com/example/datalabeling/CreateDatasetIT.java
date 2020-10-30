@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link CreateDataset}.
- */
+/** Integration (system) tests for {@link CreateDataset}. */
 @RunWith(JUnit4.class)
 @Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -61,12 +59,10 @@ public class CreateDatasetIT {
     // Delete the Dataset
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       ProjectName projectName = ProjectName.of(PROJECT_ID);
-      ListDatasetsRequest listRequest = ListDatasetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
+      ListDatasetsRequest listRequest =
+          ListDatasetsRequest.newBuilder().setParent(projectName.toString()).build();
 
-      ListDatasetsPagedResponse response = dataLabelingServiceClient
-          .listDatasets(listRequest);
+      ListDatasetsPagedResponse response = dataLabelingServiceClient.listDatasets(listRequest);
 
       for (Dataset dataset : response.getPage().iterateAll()) {
         if (dataset.getDisplayName().equals(datasetName)) {
@@ -80,12 +76,11 @@ public class CreateDatasetIT {
 
   @Test
   public void testCreateDataset() throws IOException {
-    CreateDataset.createDataset(PROJECT_ID,datasetName);
+    CreateDataset.createDataset(PROJECT_ID, datasetName);
 
     String output = bout.toString();
 
-    assertThat(output, CoreMatchers.containsString(
-        "DisplayName: CREATE_DATASET_NAME"));
+    assertThat(output, CoreMatchers.containsString("DisplayName: CREATE_DATASET_NAME"));
     assertThat(output, CoreMatchers.containsString("Description: YOUR_DESCRIPTION"));
   }
 }

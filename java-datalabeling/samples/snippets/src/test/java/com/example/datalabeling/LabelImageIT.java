@@ -37,9 +37,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link LabelImage}.
- */
+/** Integration (system) tests for {@link LabelImage}. */
 @RunWith(JUnit4.class)
 @Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -62,15 +60,14 @@ public class LabelImageIT {
 
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       // Create the dataset
-      CreateDataset.createDataset(PROJECT_ID,datsetName);
+      CreateDataset.createDataset(PROJECT_ID, datsetName);
       ProjectName projectName = ProjectName.of(PROJECT_ID);
 
       // Get the Dataset
-      ListDatasetsRequest datasetsRequest = ListDatasetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
-      ListDatasetsPagedResponse datasetsResponse = dataLabelingServiceClient
-          .listDatasets(datasetsRequest);
+      ListDatasetsRequest datasetsRequest =
+          ListDatasetsRequest.newBuilder().setParent(projectName.toString()).build();
+      ListDatasetsPagedResponse datasetsResponse =
+          dataLabelingServiceClient.listDatasets(datasetsRequest);
       for (Dataset returnedDataset : datasetsResponse.getPage().iterateAll()) {
         if (returnedDataset.getDisplayName().equals("LABEL_IMAGE_DATASET_NAME")) {
           dataset = returnedDataset;
@@ -87,11 +84,10 @@ public class LabelImageIT {
       CreateAnnotationSpecSet.createAnnotationSpecSet(PROJECT_ID);
 
       // Get the instruction
-      ListInstructionsRequest instructionsRequest = ListInstructionsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
-      ListInstructionsPagedResponse instructionsResponse = dataLabelingServiceClient
-          .listInstructions(instructionsRequest);
+      ListInstructionsRequest instructionsRequest =
+          ListInstructionsRequest.newBuilder().setParent(projectName.toString()).build();
+      ListInstructionsPagedResponse instructionsResponse =
+          dataLabelingServiceClient.listInstructions(instructionsRequest);
       for (Instruction returnedInstruction : instructionsResponse.getPage().iterateAll()) {
         if (returnedInstruction.getDisplayName().equals("YOUR_INSTRUCTION_DISPLAY_NAME")) {
           instruction = returnedInstruction;
@@ -99,11 +95,10 @@ public class LabelImageIT {
       }
 
       // Get the annotation spec set
-      ListAnnotationSpecSetsRequest annotationRequest = ListAnnotationSpecSetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
-      ListAnnotationSpecSetsPagedResponse annotationsResponse = dataLabelingServiceClient
-          .listAnnotationSpecSets(annotationRequest);
+      ListAnnotationSpecSetsRequest annotationRequest =
+          ListAnnotationSpecSetsRequest.newBuilder().setParent(projectName.toString()).build();
+      ListAnnotationSpecSetsPagedResponse annotationsResponse =
+          dataLabelingServiceClient.listAnnotationSpecSets(annotationRequest);
       for (AnnotationSpecSet returnedAnnotation : annotationsResponse.getPage().iterateAll()) {
         if (returnedAnnotation.getDisplayName().equals("YOUR_ANNOTATION_SPEC_SET_DISPLAY_NAME")) {
           annotationSpecSet = returnedAnnotation;

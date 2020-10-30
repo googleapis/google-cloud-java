@@ -44,28 +44,25 @@ class ImportData {
     }
     // [START datalabeling_import_data_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_import_data_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_import_data_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_import_data_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_import_data_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
-      GcsSource gcsSource = GcsSource.newBuilder()
-          .setInputUri(gcsSourceUri)
-          .setMimeType("text/csv")
-          .build();
+        DataLabelingServiceClient.create(settings)) {
+      GcsSource gcsSource =
+          GcsSource.newBuilder().setInputUri(gcsSourceUri).setMimeType("text/csv").build();
 
-      InputConfig inputConfig = InputConfig.newBuilder()
-          .setDataType(DataType.IMAGE) // DataTypes: AUDIO, IMAGE, VIDEO, TEXT
-          .setGcsSource(gcsSource)
-          .build();
+      InputConfig inputConfig =
+          InputConfig.newBuilder()
+              .setDataType(DataType.IMAGE) // DataTypes: AUDIO, IMAGE, VIDEO, TEXT
+              .setGcsSource(gcsSource)
+              .build();
 
-      ImportDataRequest importDataRequest = ImportDataRequest.newBuilder()
-          .setName(datasetName)
-          .setInputConfig(inputConfig)
-          .build();
+      ImportDataRequest importDataRequest =
+          ImportDataRequest.newBuilder().setName(datasetName).setInputConfig(inputConfig).build();
 
       OperationFuture<ImportDataOperationResponse, ImportDataOperationMetadata> operation =
           dataLabelingServiceClient.importDataAsync(importDataRequest);

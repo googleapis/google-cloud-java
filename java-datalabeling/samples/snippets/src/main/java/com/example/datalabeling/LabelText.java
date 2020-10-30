@@ -36,7 +36,8 @@ class LabelText {
   static void labelText(
       String formattedInstructionName,
       String formattedAnnotationSpecSetName,
-      String formattedDatasetName) throws IOException {
+      String formattedDatasetName)
+      throws IOException {
     // String formattedInstructionName = DataLabelingServiceClient.formatInstructionName(
     //      "YOUR_PROJECT_ID", "YOUR_INSTRUCTION_UUID");
     // String formattedAnnotationSpecSetName =
@@ -52,14 +53,14 @@ class LabelText {
     }
     // [START datalabeling_label_text_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_label_text_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_label_text_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_label_text_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_label_text_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
+        DataLabelingServiceClient.create(settings)) {
       HumanAnnotationConfig humanAnnotationConfig =
           HumanAnnotationConfig.newBuilder()
               .setAnnotatedDatasetDisplayName("annotated_displayname")

@@ -47,14 +47,14 @@ class CreateAnnotationSpecSet {
     }
     // [START datalabeling_create_annotation_spec_set_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_create_annotation_spec_set_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_create_annotation_spec_set_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_create_annotation_spec_set_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_create_annotation_spec_set_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
+        DataLabelingServiceClient.create(settings)) {
       ProjectName projectName = ProjectName.of(projectId);
 
       List<AnnotationSpec> annotationSpecs = new ArrayList<>();

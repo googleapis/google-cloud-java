@@ -33,8 +33,11 @@ import java.util.concurrent.ExecutionException;
 class LabelVideo {
 
   // Start a Video Labeling Task
-  static void labelVideo(String formattedInstructionName, String formattedAnnotationSpecSetName,
-      String formattedDatasetName) throws IOException {
+  static void labelVideo(
+      String formattedInstructionName,
+      String formattedAnnotationSpecSetName,
+      String formattedDatasetName)
+      throws IOException {
     // String formattedInstructionName = DataLabelingServiceClient.formatInstructionName(
     //      "YOUR_PROJECT_ID", "YOUR_INSTRUCTION_UUID");
     // String formattedAnnotationSpecSetName =
@@ -50,36 +53,40 @@ class LabelVideo {
     }
     // [START datalabeling_label_video_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_label_video_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_label_video_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_label_video_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_label_video_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
-      HumanAnnotationConfig humanAnnotationConfig = HumanAnnotationConfig.newBuilder()
-          .setAnnotatedDatasetDisplayName("annotated_displayname")
-          .setAnnotatedDatasetDescription("annotated_description")
-          .setInstruction(formattedInstructionName)
-          .build();
+        DataLabelingServiceClient.create(settings)) {
+      HumanAnnotationConfig humanAnnotationConfig =
+          HumanAnnotationConfig.newBuilder()
+              .setAnnotatedDatasetDisplayName("annotated_displayname")
+              .setAnnotatedDatasetDescription("annotated_description")
+              .setInstruction(formattedInstructionName)
+              .build();
 
-      AnnotationSpecSetConfig annotationSpecSetConfig = AnnotationSpecSetConfig.newBuilder()
-          .setAnnotationSpecSet(formattedAnnotationSpecSetName)
-          .setAllowMultiLabel(true)
-          .build();
+      AnnotationSpecSetConfig annotationSpecSetConfig =
+          AnnotationSpecSetConfig.newBuilder()
+              .setAnnotationSpecSet(formattedAnnotationSpecSetName)
+              .setAllowMultiLabel(true)
+              .build();
 
-      VideoClassificationConfig videoClassificationConfig = VideoClassificationConfig.newBuilder()
-          .setApplyShotDetection(true)
-          .addAnnotationSpecSetConfigs(annotationSpecSetConfig)
-          .build();
+      VideoClassificationConfig videoClassificationConfig =
+          VideoClassificationConfig.newBuilder()
+              .setApplyShotDetection(true)
+              .addAnnotationSpecSetConfigs(annotationSpecSetConfig)
+              .build();
 
-      LabelVideoRequest labelVideoRequest = LabelVideoRequest.newBuilder()
-          .setParent(formattedDatasetName)
-          .setBasicConfig(humanAnnotationConfig)
-          .setVideoClassificationConfig(videoClassificationConfig)
-          .setFeature(Feature.CLASSIFICATION)
-          .build();
+      LabelVideoRequest labelVideoRequest =
+          LabelVideoRequest.newBuilder()
+              .setParent(formattedDatasetName)
+              .setBasicConfig(humanAnnotationConfig)
+              .setVideoClassificationConfig(videoClassificationConfig)
+              .setFeature(Feature.CLASSIFICATION)
+              .build();
 
       OperationFuture<AnnotatedDataset, LabelOperationMetadata> operation =
           dataLabelingServiceClient.labelVideoAsync(labelVideoRequest);

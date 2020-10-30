@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link ImportData}.
- */
+/** Integration (system) tests for {@link ImportData}. */
 @RunWith(JUnit4.class)
 @Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -56,17 +54,15 @@ public class ImportDataIT {
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
 
-    CreateDataset.createDataset(PROJECT_ID,datasetName);
+    CreateDataset.createDataset(PROJECT_ID, datasetName);
 
     // Get the Dataset
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       ProjectName projectName = ProjectName.of(PROJECT_ID);
-      ListDatasetsRequest listRequest = ListDatasetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
+      ListDatasetsRequest listRequest =
+          ListDatasetsRequest.newBuilder().setParent(projectName.toString()).build();
 
-      ListDatasetsPagedResponse response = dataLabelingServiceClient
-          .listDatasets(listRequest);
+      ListDatasetsPagedResponse response = dataLabelingServiceClient.listDatasets(listRequest);
 
       for (Dataset returnedDataset : response.getPage().iterateAll()) {
         if (returnedDataset.getDisplayName().equals("IMPORT_DATASET_NAME")) {
@@ -86,12 +82,10 @@ public class ImportDataIT {
     // Delete the Dataset
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       ProjectName projectName = ProjectName.of(PROJECT_ID);
-      ListDatasetsRequest listRequest = ListDatasetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
+      ListDatasetsRequest listRequest =
+          ListDatasetsRequest.newBuilder().setParent(projectName.toString()).build();
 
-      ListDatasetsPagedResponse response = dataLabelingServiceClient
-          .listDatasets(listRequest);
+      ListDatasetsPagedResponse response = dataLabelingServiceClient.listDatasets(listRequest);
 
       for (Dataset returnedDataset : response.getPage().iterateAll()) {
         if (returnedDataset.getDisplayName().equals("IMPORT_DATASET_NAME")) {

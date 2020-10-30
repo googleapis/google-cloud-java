@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link CreateAnnotationSpecSet}.
- */
+/** Integration (system) tests for {@link CreateAnnotationSpecSet}. */
 @RunWith(JUnit4.class)
 @Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -60,12 +58,11 @@ public class CreateAnnotationSpecSetIT {
     // Delete the Annotation Spec Sheet
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       ProjectName projectName = ProjectName.of(PROJECT_ID);
-      ListAnnotationSpecSetsRequest listRequest = ListAnnotationSpecSetsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
+      ListAnnotationSpecSetsRequest listRequest =
+          ListAnnotationSpecSetsRequest.newBuilder().setParent(projectName.toString()).build();
 
-      ListAnnotationSpecSetsPagedResponse response = dataLabelingServiceClient
-          .listAnnotationSpecSets(listRequest);
+      ListAnnotationSpecSetsPagedResponse response =
+          dataLabelingServiceClient.listAnnotationSpecSets(listRequest);
 
       for (AnnotationSpecSet annotationSpecSet : response.getPage().iterateAll()) {
         if (annotationSpecSet.getDisplayName().equals("YOUR_ANNOTATION_SPEC_SET_DISPLAY_NAME")) {
@@ -83,8 +80,8 @@ public class CreateAnnotationSpecSetIT {
 
     String output = bout.toString();
 
-    assertThat(output, CoreMatchers.containsString(
-        "DisplayName: YOUR_ANNOTATION_SPEC_SET_DISPLAY_NAME"));
+    assertThat(
+        output, CoreMatchers.containsString("DisplayName: YOUR_ANNOTATION_SPEC_SET_DISPLAY_NAME"));
     assertThat(output, CoreMatchers.containsString("Description: YOUR_DESCRIPTION"));
     assertThat(output, CoreMatchers.containsString("Annotation Count: 2"));
   }

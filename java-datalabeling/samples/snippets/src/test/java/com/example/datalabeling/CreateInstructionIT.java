@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration (system) tests for {@link CreateInstruction}.
- */
+/** Integration (system) tests for {@link CreateInstruction}. */
 @RunWith(JUnit4.class)
 @Ignore("b/146064330")
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -62,12 +60,11 @@ public class CreateInstructionIT {
     // Delete the Instruction
     try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
       ProjectName projectName = ProjectName.of(PROJECT_ID);
-      ListInstructionsRequest listRequest = ListInstructionsRequest.newBuilder()
-          .setParent(projectName.toString())
-          .build();
+      ListInstructionsRequest listRequest =
+          ListInstructionsRequest.newBuilder().setParent(projectName.toString()).build();
 
-      ListInstructionsPagedResponse response = dataLabelingServiceClient
-          .listInstructions(listRequest);
+      ListInstructionsPagedResponse response =
+          dataLabelingServiceClient.listInstructions(listRequest);
 
       for (Instruction instruction : response.getPage().iterateAll()) {
         if (instruction.getDisplayName().equals("YOUR_INSTRUCTION_DISPLAY_NAME")) {
@@ -85,10 +82,9 @@ public class CreateInstructionIT {
 
     String output = bout.toString();
 
-    assertThat(output, CoreMatchers.containsString(
-        "DisplayName: YOUR_INSTRUCTION_DISPLAY_NAME"));
+    assertThat(output, CoreMatchers.containsString("DisplayName: YOUR_INSTRUCTION_DISPLAY_NAME"));
     assertThat(output, CoreMatchers.containsString("Description: YOUR_DESCRIPTION"));
-    assertThat(output, CoreMatchers.containsString(
-        String.format("GCS SOURCE URI: %s", GCS_SOURCE_URI)));
+    assertThat(
+        output, CoreMatchers.containsString(String.format("GCS SOURCE URI: %s", GCS_SOURCE_URI)));
   }
 }

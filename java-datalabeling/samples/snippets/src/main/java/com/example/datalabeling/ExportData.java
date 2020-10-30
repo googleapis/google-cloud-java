@@ -51,28 +51,26 @@ class ExportData {
     }
     // [START datalabeling_export_data_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_export_data_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_export_data_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_export_data_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_export_data_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
-      GcsDestination gcsDestination = GcsDestination.newBuilder()
-          .setOutputUri(gcsOutputUri)
-          .setMimeType("text/csv")
-          .build();
+        DataLabelingServiceClient.create(settings)) {
+      GcsDestination gcsDestination =
+          GcsDestination.newBuilder().setOutputUri(gcsOutputUri).setMimeType("text/csv").build();
 
-      OutputConfig outputConfig = OutputConfig.newBuilder()
-          .setGcsDestination(gcsDestination)
-          .build();
+      OutputConfig outputConfig =
+          OutputConfig.newBuilder().setGcsDestination(gcsDestination).build();
 
-      ExportDataRequest exportDataRequest = ExportDataRequest.newBuilder()
-          .setName(datasetName)
-          .setOutputConfig(outputConfig)
-          .setAnnotatedDataset(annotatedDatasetName)
-          .build();
+      ExportDataRequest exportDataRequest =
+          ExportDataRequest.newBuilder()
+              .setName(datasetName)
+              .setOutputConfig(outputConfig)
+              .setAnnotatedDataset(annotatedDatasetName)
+              .build();
 
       OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata> operation =
           dataLabelingServiceClient.exportDataAsync(exportDataRequest);

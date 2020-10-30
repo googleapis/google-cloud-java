@@ -38,14 +38,14 @@ class CreateDataset {
     }
     // [START datalabeling_create_dataset_beta]
 
-    DataLabelingServiceSettings settings = DataLabelingServiceSettings
-        .newBuilder()
-        // [END datalabeling_create_dataset_beta]
-        .setEndpoint(endpoint)
-        // [START datalabeling_create_dataset_beta]
-        .build();
+    DataLabelingServiceSettings settings =
+        DataLabelingServiceSettings.newBuilder()
+            // [END datalabeling_create_dataset_beta]
+            .setEndpoint(endpoint)
+            // [START datalabeling_create_dataset_beta]
+            .build();
     try (DataLabelingServiceClient dataLabelingServiceClient =
-             DataLabelingServiceClient.create(settings)) {
+        DataLabelingServiceClient.create(settings)) {
       ProjectName projectName = ProjectName.of(projectId);
 
       Dataset dataset =
