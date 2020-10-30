@@ -27,7 +27,11 @@ import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig;
 import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest;
 import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse;
 import com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
@@ -52,6 +56,12 @@ public class ITSystemTest {
   @SuppressWarnings("all")
   public void streamingTranslateSpeechTest()
       throws ExecutionException, InterruptedException, IOException {
+    String filePath = "src/test/resources/audio.raw";
+
+    Path path = Paths.get(filePath);
+    byte[] content = Files.readAllBytes(path);
+    ByteString audioContent = ByteString.copyFrom(content);
+
     TranslateSpeechConfig translateSpeechConfig =
         TranslateSpeechConfig.newBuilder()
             .setAudioEncoding("linear16")
@@ -65,8 +75,13 @@ public class ITSystemTest {
             .build();
     BidiStream<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse> bidiStream =
         client.streamingTranslateSpeechCallable().call();
-    StreamingTranslateSpeechRequest request =
+    // The first request contains the configuration.
+    StreamingTranslateSpeechRequest requestConfig =
         StreamingTranslateSpeechRequest.newBuilder().setStreamingConfig(config).build();
+    // The second request contains the audio
+    StreamingTranslateSpeechRequest request =
+        StreamingTranslateSpeechRequest.newBuilder().setAudioContent(audioContent).build();
+    bidiStream.send(requestConfig);
     bidiStream.send(request);
     Iterator<StreamingTranslateSpeechResponse> iterator = bidiStream.iterator();
     assertTrue(iterator.hasNext());
