@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billing.git",
-        "sha": "5fe94bec8d108fd3d725fe87cceb1bcfc3b898fc"
+        "sha": "5ac94b6e5557382a83be74b98e5cc1b4fa1cb30f"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ea52b8a0bd560f72f376efcf45197fb7c8869120"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ]
