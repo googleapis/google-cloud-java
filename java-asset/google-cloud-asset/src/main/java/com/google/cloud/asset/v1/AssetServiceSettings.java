@@ -131,6 +131,30 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     return ((AssetServiceStubSettings) getStubSettings()).searchAllIamPoliciesSettings();
   }
 
+  /** Returns the object with the settings used for calls to analyzeIamPolicy. */
+  public UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeIamPolicyLongrunning. */
+  public UnaryCallSettings<AnalyzeIamPolicyLongrunningRequest, Operation>
+      analyzeIamPolicyLongrunningSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeIamPolicyLongrunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeIamPolicyLongrunning. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          AnalyzeIamPolicyLongrunningRequest,
+          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest>
+      analyzeIamPolicyLongrunningOperationSettings() {
+    return ((AssetServiceStubSettings) getStubSettings())
+        .analyzeIamPolicyLongrunningOperationSettings();
+  }
+
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
       throws IOException {
     return new AssetServiceSettings.Builder(stub.toBuilder()).build();
@@ -287,6 +311,29 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings() {
       return getStubSettingsBuilder().searchAllIamPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeIamPolicy. */
+    public UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+        analyzeIamPolicySettings() {
+      return getStubSettingsBuilder().analyzeIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeIamPolicyLongrunning. */
+    public UnaryCallSettings.Builder<AnalyzeIamPolicyLongrunningRequest, Operation>
+        analyzeIamPolicyLongrunningSettings() {
+      return getStubSettingsBuilder().analyzeIamPolicyLongrunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeIamPolicyLongrunning. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AnalyzeIamPolicyLongrunningRequest,
+            AnalyzeIamPolicyLongrunningResponse,
+            AnalyzeIamPolicyLongrunningRequest>
+        analyzeIamPolicyLongrunningOperationSettings() {
+      return getStubSettingsBuilder().analyzeIamPolicyLongrunningOperationSettings();
     }
 
     @Override

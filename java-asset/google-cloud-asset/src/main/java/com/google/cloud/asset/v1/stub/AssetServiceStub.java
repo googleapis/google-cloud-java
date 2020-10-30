@@ -22,6 +22,10 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
+import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
@@ -110,6 +114,27 @@ public abstract class AssetServiceStub implements BackgroundResource {
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchAllIamPoliciesCallable()");
+  }
+
+  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeIamPolicyCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          AnalyzeIamPolicyLongrunningRequest,
+          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest>
+      analyzeIamPolicyLongrunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeIamPolicyLongrunningOperationCallable()");
+  }
+
+  public UnaryCallable<AnalyzeIamPolicyLongrunningRequest, Operation>
+      analyzeIamPolicyLongrunningCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeIamPolicyLongrunningCallable()");
   }
 
   @Override

@@ -426,6 +426,104 @@ public final class AssetServiceGrpc {
     return getSearchAllIamPoliciesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeIamPolicyRequest,
+          com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+      getAnalyzeIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeIamPolicy",
+      requestType = com.google.cloud.asset.v1.AnalyzeIamPolicyRequest.class,
+      responseType = com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeIamPolicyRequest,
+          com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+      getAnalyzeIamPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeIamPolicyRequest,
+            com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+        getAnalyzeIamPolicyMethod;
+    if ((getAnalyzeIamPolicyMethod = AssetServiceGrpc.getAnalyzeIamPolicyMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeIamPolicyMethod = AssetServiceGrpc.getAnalyzeIamPolicyMethod) == null) {
+          AssetServiceGrpc.getAnalyzeIamPolicyMethod =
+              getAnalyzeIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeIamPolicyRequest,
+                          com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeIamPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeIamPolicyResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("AnalyzeIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
+          com.google.longrunning.Operation>
+      getAnalyzeIamPolicyLongrunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeIamPolicyLongrunning",
+      requestType = com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
+          com.google.longrunning.Operation>
+      getAnalyzeIamPolicyLongrunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
+            com.google.longrunning.Operation>
+        getAnalyzeIamPolicyLongrunningMethod;
+    if ((getAnalyzeIamPolicyLongrunningMethod =
+            AssetServiceGrpc.getAnalyzeIamPolicyLongrunningMethod)
+        == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeIamPolicyLongrunningMethod =
+                AssetServiceGrpc.getAnalyzeIamPolicyLongrunningMethod)
+            == null) {
+          AssetServiceGrpc.getAnalyzeIamPolicyLongrunningMethod =
+              getAnalyzeIamPolicyLongrunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AnalyzeIamPolicyLongrunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("AnalyzeIamPolicyLongrunning"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeIamPolicyLongrunningMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
@@ -618,6 +716,42 @@ public final class AssetServiceGrpc {
       asyncUnimplementedUnaryCall(getSearchAllIamPoliciesMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies to answer which identities have what accesses on
+     * which resources.
+     * </pre>
+     */
+    public void analyzeIamPolicy(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getAnalyzeIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies asynchronously to answer which identities have what
+     * accesses on which resources, and writes the analysis results to a Google
+     * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+     * output format is the JSON format that represents a
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+     * status. We recommend intervals of at least 2 seconds with exponential
+     * backoff retry to poll the operation result. The metadata contains the
+     * request to help callers to map responses to requests.
+     * </pre>
+     */
+    public void analyzeIamPolicyLongrunning(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getAnalyzeIamPolicyLongrunningMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -678,6 +812,20 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
                       com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>(
                       this, METHODID_SEARCH_ALL_IAM_POLICIES)))
+          .addMethod(
+              getAnalyzeIamPolicyMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeIamPolicyRequest,
+                      com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>(
+                      this, METHODID_ANALYZE_IAM_POLICY)))
+          .addMethod(
+              getAnalyzeIamPolicyLongrunningMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_ANALYZE_IAM_POLICY_LONGRUNNING)))
           .build();
     }
   }
@@ -858,6 +1006,48 @@ public final class AssetServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies to answer which identities have what accesses on
+     * which resources.
+     * </pre>
+     */
+    public void analyzeIamPolicy(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAnalyzeIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies asynchronously to answer which identities have what
+     * accesses on which resources, and writes the analysis results to a Google
+     * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+     * output format is the JSON format that represents a
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+     * status. We recommend intervals of at least 2 seconds with exponential
+     * backoff retry to poll the operation result. The metadata contains the
+     * request to help callers to map responses to requests.
+     * </pre>
+     */
+    public void analyzeIamPolicyLongrunning(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAnalyzeIamPolicyLongrunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1010,6 +1200,41 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request) {
       return blockingUnaryCall(
           getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies to answer which identities have what accesses on
+     * which resources.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse analyzeIamPolicy(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAnalyzeIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies asynchronously to answer which identities have what
+     * accesses on which resources, and writes the analysis results to a Google
+     * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+     * output format is the JSON format that represents a
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+     * status. We recommend intervals of at least 2 seconds with exponential
+     * backoff retry to poll the operation result. The metadata contains the
+     * request to help callers to map responses to requests.
+     * </pre>
+     */
+    public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAnalyzeIamPolicyLongrunningMethod(), getCallOptions(), request);
     }
   }
 
@@ -1172,6 +1397,43 @@ public final class AssetServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getSearchAllIamPoliciesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies to answer which identities have what accesses on
+     * which resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>
+        analyzeIamPolicy(com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAnalyzeIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes IAM policies asynchronously to answer which identities have what
+     * accesses on which resources, and writes the analysis results to a Google
+     * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+     * output format is the JSON format that represents a
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+     * status. We recommend intervals of at least 2 seconds with exponential
+     * backoff retry to poll the operation result. The metadata contains the
+     * request to help callers to map responses to requests.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        analyzeIamPolicyLongrunning(
+            com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAnalyzeIamPolicyLongrunningMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
@@ -1183,6 +1445,8 @@ public final class AssetServiceGrpc {
   private static final int METHODID_DELETE_FEED = 6;
   private static final int METHODID_SEARCH_ALL_RESOURCES = 7;
   private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 8;
+  private static final int METHODID_ANALYZE_IAM_POLICY = 9;
+  private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1249,6 +1513,17 @@ public final class AssetServiceGrpc {
               (com.google.cloud.asset.v1.SearchAllIamPoliciesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>)
                   responseObserver);
+          break;
+        case METHODID_ANALYZE_IAM_POLICY:
+          serviceImpl.analyzeIamPolicy(
+              (com.google.cloud.asset.v1.AnalyzeIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ANALYZE_IAM_POLICY_LONGRUNNING:
+          serviceImpl.analyzeIamPolicyLongrunning(
+              (com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1323,6 +1598,8 @@ public final class AssetServiceGrpc {
                       .addMethod(getDeleteFeedMethod())
                       .addMethod(getSearchAllResourcesMethod())
                       .addMethod(getSearchAllIamPoliciesMethod())
+                      .addMethod(getAnalyzeIamPolicyMethod())
+                      .addMethod(getAnalyzeIamPolicyLongrunningMethod())
                       .build();
         }
       }

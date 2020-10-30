@@ -67,6 +67,38 @@ public final class AssetProto {
       internal_static_google_cloud_asset_v1_IamPolicySearchResult_Explanation_MatchedPermissionsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_asset_v1_IamPolicySearchResult_Explanation_MatchedPermissionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Resource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Resource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Edge_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Edge_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_AccessControlList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_AccessControlList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_IdentityList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_IdentityList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -139,11 +171,41 @@ public final class AssetProto {
           + "\t\032\177\n\027MatchedPermissionsEntry\022\013\n\003key\030\001 \001("
           + "\t\022S\n\005value\030\002 \001(\0132D.google.cloud.asset.v1"
           + ".IamPolicySearchResult.Explanation.Permi"
-          + "ssions:\0028\001B\230\001\n\031com.google.cloud.asset.v1"
-          + "B\nAssetProtoP\001Z:google.golang.org/genpro"
-          + "to/googleapis/cloud/asset/v1;asset\370\001\001\252\002\025"
-          + "Google.Cloud.Asset.V1\312\002\025Google\\Cloud\\Ass"
-          + "et\\V1b\006proto3"
+          + "ssions:\0028\001\"G\n\026IamPolicyAnalysisState\022\036\n\004"
+          + "code\030\001 \001(\0162\020.google.rpc.Code\022\r\n\005cause\030\002 "
+          + "\001(\t\"\341\010\n\027IamPolicyAnalysisResult\022#\n\033attac"
+          + "hed_resource_full_name\030\001 \001(\t\022+\n\013iam_bind"
+          + "ing\030\002 \001(\0132\026.google.iam.v1.Binding\022^\n\024acc"
+          + "ess_control_lists\030\003 \003(\0132@.google.cloud.a"
+          + "sset.v1.IamPolicyAnalysisResult.AccessCo"
+          + "ntrolList\022R\n\ridentity_list\030\004 \001(\0132;.googl"
+          + "e.cloud.asset.v1.IamPolicyAnalysisResult"
+          + ".IdentityList\022\026\n\016fully_explored\030\005 \001(\010\032m\n"
+          + "\010Resource\022\032\n\022full_resource_name\030\001 \001(\t\022E\n"
+          + "\016analysis_state\030\002 \001(\0132-.google.cloud.ass"
+          + "et.v1.IamPolicyAnalysisState\032\205\001\n\006Access\022"
+          + "\016\n\004role\030\001 \001(\tH\000\022\024\n\npermission\030\002 \001(\tH\000\022E\n"
+          + "\016analysis_state\030\003 \001(\0132-.google.cloud.ass"
+          + "et.v1.IamPolicyAnalysisStateB\016\n\014oneof_ac"
+          + "cess\032_\n\010Identity\022\014\n\004name\030\001 \001(\t\022E\n\016analys"
+          + "is_state\030\002 \001(\0132-.google.cloud.asset.v1.I"
+          + "amPolicyAnalysisState\0320\n\004Edge\022\023\n\013source_"
+          + "node\030\001 \001(\t\022\023\n\013target_node\030\002 \001(\t\032\365\001\n\021Acce"
+          + "ssControlList\022J\n\tresources\030\001 \003(\01327.googl"
+          + "e.cloud.asset.v1.IamPolicyAnalysisResult"
+          + ".Resource\022G\n\010accesses\030\002 \003(\01325.google.clo"
+          + "ud.asset.v1.IamPolicyAnalysisResult.Acce"
+          + "ss\022K\n\016resource_edges\030\003 \003(\01323.google.clou"
+          + "d.asset.v1.IamPolicyAnalysisResult.Edge\032"
+          + "\245\001\n\014IdentityList\022K\n\nidentities\030\001 \003(\01327.g"
+          + "oogle.cloud.asset.v1.IamPolicyAnalysisRe"
+          + "sult.Identity\022H\n\013group_edges\030\002 \003(\01323.goo"
+          + "gle.cloud.asset.v1.IamPolicyAnalysisResu"
+          + "lt.EdgeB\230\001\n\031com.google.cloud.asset.v1B\nA"
+          + "ssetProtoP\001Z:google.golang.org/genproto/"
+          + "googleapis/cloud/asset/v1;asset\370\001\001\252\002\025Goo"
+          + "gle.Cloud.Asset.V1\312\002\025Google\\Cloud\\Asset\\"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -272,6 +334,86 @@ public final class AssetProto {
             internal_static_google_cloud_asset_v1_IamPolicySearchResult_Explanation_MatchedPermissionsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_descriptor,
+            new java.lang.String[] {
+              "Code", "Cause",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor,
+            new java.lang.String[] {
+              "AttachedResourceFullName",
+              "IamBinding",
+              "AccessControlLists",
+              "IdentityList",
+              "FullyExplored",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Resource_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Resource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Resource_descriptor,
+            new java.lang.String[] {
+              "FullResourceName", "AnalysisState",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Access_descriptor,
+            new java.lang.String[] {
+              "Role", "Permission", "AnalysisState", "OneofAccess",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Identity_descriptor,
+            new java.lang.String[] {
+              "Name", "AnalysisState",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Edge_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Edge_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_Edge_descriptor,
+            new java.lang.String[] {
+              "SourceNode", "TargetNode",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_AccessControlList_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_AccessControlList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_AccessControlList_descriptor,
+            new java.lang.String[] {
+              "Resources", "Accesses", "ResourceEdges",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_IdentityList_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_IdentityList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisResult_IdentityList_descriptor,
+            new java.lang.String[] {
+              "Identities", "GroupEdges",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

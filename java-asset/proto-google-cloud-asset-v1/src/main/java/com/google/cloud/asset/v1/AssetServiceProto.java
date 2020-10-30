@@ -119,6 +119,58 @@ public final class AssetServiceProto {
       internal_static_google_cloud_asset_v1_SearchAllIamPoliciesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_asset_v1_SearchAllIamPoliciesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ResourceSelector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ResourceSelector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_IdentitySelector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_IdentitySelector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_AccessSelector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_AccessSelector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_Options_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_Options_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_IamPolicyAnalysis_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_IamPolicyAnalysis_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_BigQueryDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_BigQueryDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -214,52 +266,121 @@ public final class AssetServiceProto {
           + "age_token\030\004 \001(\tB\003\340A\001\"v\n\034SearchAllIamPoli"
           + "ciesResponse\022=\n\007results\030\001 \003(\0132,.google.c"
           + "loud.asset.v1.IamPolicySearchResult\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t*l\n\013ContentType\022\034\n\030C"
-          + "ONTENT_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022"
-          + "\016\n\nIAM_POLICY\020\002\022\016\n\nORG_POLICY\020\004\022\021\n\rACCES"
-          + "S_POLICY\020\0052\360\013\n\014AssetService\022\336\001\n\014ExportAs"
-          + "sets\022*.google.cloud.asset.v1.ExportAsset"
-          + "sRequest\032\035.google.longrunning.Operation\""
-          + "\202\001\202\323\344\223\002\"\"\035/v1/{parent=*/*}:exportAssets:"
-          + "\001*\312AW\n*google.cloud.asset.v1.ExportAsset"
-          + "sResponse\022)google.cloud.asset.v1.ExportA"
-          + "ssetsRequest\022\262\001\n\025BatchGetAssetsHistory\0223"
-          + ".google.cloud.asset.v1.BatchGetAssetsHis"
-          + "toryRequest\0324.google.cloud.asset.v1.Batc"
-          + "hGetAssetsHistoryResponse\".\202\323\344\223\002(\022&/v1/{"
-          + "parent=*/*}:batchGetAssetsHistory\022\177\n\nCre"
-          + "ateFeed\022(.google.cloud.asset.v1.CreateFe"
-          + "edRequest\032\033.google.cloud.asset.v1.Feed\"*"
-          + "\202\323\344\223\002\033\"\026/v1/{parent=*/*}/feeds:\001*\332A\006pare"
-          + "nt\022t\n\007GetFeed\022%.google.cloud.asset.v1.Ge"
-          + "tFeedRequest\032\033.google.cloud.asset.v1.Fee"
-          + "d\"%\202\323\344\223\002\030\022\026/v1/{name=*/*/feeds/*}\332A\004name"
-          + "\022\207\001\n\tListFeeds\022\'.google.cloud.asset.v1.L"
-          + "istFeedsRequest\032(.google.cloud.asset.v1."
-          + "ListFeedsResponse\"\'\202\323\344\223\002\030\022\026/v1/{parent=*"
-          + "/*}/feeds\332A\006parent\022\202\001\n\nUpdateFeed\022(.goog"
-          + "le.cloud.asset.v1.UpdateFeedRequest\032\033.go"
-          + "ogle.cloud.asset.v1.Feed\"-\202\323\344\223\002 2\033/v1/{f"
-          + "eed.name=*/*/feeds/*}:\001*\332A\004feed\022u\n\nDelet"
-          + "eFeed\022(.google.cloud.asset.v1.DeleteFeed"
-          + "Request\032\026.google.protobuf.Empty\"%\202\323\344\223\002\030*"
-          + "\026/v1/{name=*/*/feeds/*}\332A\004name\022\277\001\n\022Searc"
-          + "hAllResources\0220.google.cloud.asset.v1.Se"
-          + "archAllResourcesRequest\0321.google.cloud.a"
-          + "sset.v1.SearchAllResourcesResponse\"D\202\323\344\223"
-          + "\002$\022\"/v1/{scope=*/*}:searchAllResources\332A"
-          + "\027scope,query,asset_types\022\273\001\n\024SearchAllIa"
-          + "mPolicies\0222.google.cloud.asset.v1.Search"
-          + "AllIamPoliciesRequest\0323.google.cloud.ass"
-          + "et.v1.SearchAllIamPoliciesResponse\":\202\323\344\223"
-          + "\002&\022$/v1/{scope=*/*}:searchAllIamPolicies"
-          + "\332A\013scope,query\032M\312A\031cloudasset.googleapis"
-          + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\234\001\n\031com.google.cloud.asset"
-          + ".v1B\021AssetServiceProtoP\001Z:google.golang."
-          + "org/genproto/googleapis/cloud/asset/v1;a"
-          + "sset\252\002\025Google.Cloud.Asset.V1\312\002\025Google\\Cl"
-          + "oud\\Asset\\V1b\006proto3"
+          + "ext_page_token\030\002 \001(\t\"\220\006\n\026IamPolicyAnalys"
+          + "isQuery\022\022\n\005scope\030\001 \001(\tB\003\340A\002\022^\n\021resource_"
+          + "selector\030\002 \001(\0132>.google.cloud.asset.v1.I"
+          + "amPolicyAnalysisQuery.ResourceSelectorB\003"
+          + "\340A\001\022^\n\021identity_selector\030\003 \001(\0132>.google."
+          + "cloud.asset.v1.IamPolicyAnalysisQuery.Id"
+          + "entitySelectorB\003\340A\001\022Z\n\017access_selector\030\004"
+          + " \001(\0132<.google.cloud.asset.v1.IamPolicyAn"
+          + "alysisQuery.AccessSelectorB\003\340A\001\022K\n\007optio"
+          + "ns\030\005 \001(\01325.google.cloud.asset.v1.IamPoli"
+          + "cyAnalysisQuery.OptionsB\003\340A\001\0323\n\020Resource"
+          + "Selector\022\037\n\022full_resource_name\030\001 \001(\tB\003\340A"
+          + "\002\032)\n\020IdentitySelector\022\025\n\010identity\030\001 \001(\tB"
+          + "\003\340A\002\032>\n\016AccessSelector\022\022\n\005roles\030\001 \003(\tB\003\340"
+          + "A\001\022\030\n\013permissions\030\002 \003(\tB\003\340A\001\032\330\001\n\007Options"
+          + "\022\032\n\rexpand_groups\030\001 \001(\010B\003\340A\001\022\031\n\014expand_r"
+          + "oles\030\002 \001(\010B\003\340A\001\022\035\n\020expand_resources\030\003 \001("
+          + "\010B\003\340A\001\022\"\n\025output_resource_edges\030\004 \001(\010B\003\340"
+          + "A\001\022\037\n\022output_group_edges\030\005 \001(\010B\003\340A\001\0222\n%a"
+          + "nalyze_service_account_impersonation\030\006 \001"
+          + "(\010B\003\340A\001\"\240\001\n\027AnalyzeIamPolicyRequest\022J\n\016a"
+          + "nalysis_query\030\001 \001(\0132-.google.cloud.asset"
+          + ".v1.IamPolicyAnalysisQueryB\003\340A\002\0229\n\021execu"
+          + "tion_timeout\030\002 \001(\0132\031.google.protobuf.Dur"
+          + "ationB\003\340A\001\"\212\004\n\030AnalyzeIamPolicyResponse\022"
+          + "X\n\rmain_analysis\030\001 \001(\0132A.google.cloud.as"
+          + "set.v1.AnalyzeIamPolicyResponse.IamPolic"
+          + "yAnalysis\022q\n&service_account_impersonati"
+          + "on_analysis\030\002 \003(\0132A.google.cloud.asset.v"
+          + "1.AnalyzeIamPolicyResponse.IamPolicyAnal"
+          + "ysis\022\026\n\016fully_explored\030\003 \001(\010\032\210\002\n\021IamPoli"
+          + "cyAnalysis\022E\n\016analysis_query\030\001 \001(\0132-.goo"
+          + "gle.cloud.asset.v1.IamPolicyAnalysisQuer"
+          + "y\022H\n\020analysis_results\030\002 \003(\0132..google.clo"
+          + "ud.asset.v1.IamPolicyAnalysisResult\022\026\n\016f"
+          + "ully_explored\030\003 \001(\010\022J\n\023non_critical_erro"
+          + "rs\030\005 \003(\0132-.google.cloud.asset.v1.IamPoli"
+          + "cyAnalysisState\"\264\004\n\035IamPolicyAnalysisOut"
+          + "putConfig\022^\n\017gcs_destination\030\001 \001(\0132C.goo"
+          + "gle.cloud.asset.v1.IamPolicyAnalysisOutp"
+          + "utConfig.GcsDestinationH\000\022h\n\024bigquery_de"
+          + "stination\030\002 \001(\0132H.google.cloud.asset.v1."
+          + "IamPolicyAnalysisOutputConfig.BigQueryDe"
+          + "stinationH\000\032\"\n\016GcsDestination\022\020\n\003uri\030\001 \001"
+          + "(\tB\003\340A\002\032\225\002\n\023BigQueryDestination\022\024\n\007datas"
+          + "et\030\001 \001(\tB\003\340A\002\022\031\n\014table_prefix\030\002 \001(\tB\003\340A\002"
+          + "\022l\n\rpartition_key\030\003 \001(\0162U.google.cloud.a"
+          + "sset.v1.IamPolicyAnalysisOutputConfig.Bi"
+          + "gQueryDestination.PartitionKey\022\036\n\021write_"
+          + "disposition\030\004 \001(\tB\003\340A\001\"?\n\014PartitionKey\022\035"
+          + "\n\031PARTITION_KEY_UNSPECIFIED\020\000\022\020\n\014REQUEST"
+          + "_TIME\020\001B\r\n\013destination\"\302\001\n\"AnalyzeIamPol"
+          + "icyLongrunningRequest\022J\n\016analysis_query\030"
+          + "\001 \001(\0132-.google.cloud.asset.v1.IamPolicyA"
+          + "nalysisQueryB\003\340A\002\022P\n\routput_config\030\002 \001(\013"
+          + "24.google.cloud.asset.v1.IamPolicyAnalys"
+          + "isOutputConfigB\003\340A\002\"%\n#AnalyzeIamPolicyL"
+          + "ongrunningResponse*l\n\013ContentType\022\034\n\030CON"
+          + "TENT_TYPE_UNSPECIFIED\020\000\022\014\n\010RESOURCE\020\001\022\016\n"
+          + "\nIAM_POLICY\020\002\022\016\n\nORG_POLICY\020\004\022\021\n\rACCESS_"
+          + "POLICY\020\0052\331\017\n\014AssetService\022\336\001\n\014ExportAsse"
+          + "ts\022*.google.cloud.asset.v1.ExportAssetsR"
+          + "equest\032\035.google.longrunning.Operation\"\202\001"
+          + "\202\323\344\223\002\"\"\035/v1/{parent=*/*}:exportAssets:\001*"
+          + "\312AW\n*google.cloud.asset.v1.ExportAssetsR"
+          + "esponse\022)google.cloud.asset.v1.ExportAss"
+          + "etsRequest\022\262\001\n\025BatchGetAssetsHistory\0223.g"
+          + "oogle.cloud.asset.v1.BatchGetAssetsHisto"
+          + "ryRequest\0324.google.cloud.asset.v1.BatchG"
+          + "etAssetsHistoryResponse\".\202\323\344\223\002(\022&/v1/{pa"
+          + "rent=*/*}:batchGetAssetsHistory\022\177\n\nCreat"
+          + "eFeed\022(.google.cloud.asset.v1.CreateFeed"
+          + "Request\032\033.google.cloud.asset.v1.Feed\"*\202\323"
+          + "\344\223\002\033\"\026/v1/{parent=*/*}/feeds:\001*\332A\006parent"
+          + "\022t\n\007GetFeed\022%.google.cloud.asset.v1.GetF"
+          + "eedRequest\032\033.google.cloud.asset.v1.Feed\""
+          + "%\202\323\344\223\002\030\022\026/v1/{name=*/*/feeds/*}\332A\004name\022\207"
+          + "\001\n\tListFeeds\022\'.google.cloud.asset.v1.Lis"
+          + "tFeedsRequest\032(.google.cloud.asset.v1.Li"
+          + "stFeedsResponse\"\'\202\323\344\223\002\030\022\026/v1/{parent=*/*"
+          + "}/feeds\332A\006parent\022\202\001\n\nUpdateFeed\022(.google"
+          + ".cloud.asset.v1.UpdateFeedRequest\032\033.goog"
+          + "le.cloud.asset.v1.Feed\"-\202\323\344\223\002 2\033/v1/{fee"
+          + "d.name=*/*/feeds/*}:\001*\332A\004feed\022u\n\nDeleteF"
+          + "eed\022(.google.cloud.asset.v1.DeleteFeedRe"
+          + "quest\032\026.google.protobuf.Empty\"%\202\323\344\223\002\030*\026/"
+          + "v1/{name=*/*/feeds/*}\332A\004name\022\277\001\n\022SearchA"
+          + "llResources\0220.google.cloud.asset.v1.Sear"
+          + "chAllResourcesRequest\0321.google.cloud.ass"
+          + "et.v1.SearchAllResourcesResponse\"D\202\323\344\223\002$"
+          + "\022\"/v1/{scope=*/*}:searchAllResources\332A\027s"
+          + "cope,query,asset_types\022\273\001\n\024SearchAllIamP"
+          + "olicies\0222.google.cloud.asset.v1.SearchAl"
+          + "lIamPoliciesRequest\0323.google.cloud.asset"
+          + ".v1.SearchAllIamPoliciesResponse\":\202\323\344\223\002&"
+          + "\022$/v1/{scope=*/*}:searchAllIamPolicies\332A"
+          + "\013scope,query\022\254\001\n\020AnalyzeIamPolicy\022..goog"
+          + "le.cloud.asset.v1.AnalyzeIamPolicyReques"
+          + "t\032/.google.cloud.asset.v1.AnalyzeIamPoli"
+          + "cyResponse\"7\202\323\344\223\0021\022//v1/{analysis_query."
+          + "scope=*/*}:analyzeIamPolicy\022\267\002\n\033AnalyzeI"
+          + "amPolicyLongrunning\0229.google.cloud.asset"
+          + ".v1.AnalyzeIamPolicyLongrunningRequest\032\035"
+          + ".google.longrunning.Operation\"\275\001\202\323\344\223\002?\":"
+          + "/v1/{analysis_query.scope=*/*}:analyzeIa"
+          + "mPolicyLongrunning:\001*\312Au\n9google.cloud.a"
+          + "sset.v1.AnalyzeIamPolicyLongrunningRespo"
+          + "nse\0228google.cloud.asset.v1.AnalyzeIamPol"
+          + "icyLongrunningRequest\032M\312A\031cloudasset.goo"
+          + "gleapis.com\322A.https://www.googleapis.com"
+          + "/auth/cloud-platformB\234\001\n\031com.google.clou"
+          + "d.asset.v1B\021AssetServiceProtoP\001Z:google."
+          + "golang.org/genproto/googleapis/cloud/ass"
+          + "et/v1;asset\252\002\025Google.Cloud.Asset.V1\312\002\025Go"
+          + "ogle\\Cloud\\Asset\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -461,6 +582,127 @@ public final class AssetServiceProto {
             new java.lang.String[] {
               "Results", "NextPageToken",
             });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor,
+            new java.lang.String[] {
+              "Scope", "ResourceSelector", "IdentitySelector", "AccessSelector", "Options",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ResourceSelector_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ResourceSelector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_ResourceSelector_descriptor,
+            new java.lang.String[] {
+              "FullResourceName",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_IdentitySelector_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_IdentitySelector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_IdentitySelector_descriptor,
+            new java.lang.String[] {
+              "Identity",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_AccessSelector_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_AccessSelector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_AccessSelector_descriptor,
+            new java.lang.String[] {
+              "Roles", "Permissions",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_Options_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_Options_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisQuery_Options_descriptor,
+            new java.lang.String[] {
+              "ExpandGroups",
+              "ExpandRoles",
+              "ExpandResources",
+              "OutputResourceEdges",
+              "OutputGroupEdges",
+              "AnalyzeServiceAccountImpersonation",
+            });
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_AnalyzeIamPolicyRequest_descriptor,
+            new java.lang.String[] {
+              "AnalysisQuery", "ExecutionTimeout",
+            });
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_descriptor,
+            new java.lang.String[] {
+              "MainAnalysis", "ServiceAccountImpersonationAnalysis", "FullyExplored",
+            });
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_IamPolicyAnalysis_descriptor =
+        internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_IamPolicyAnalysis_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_IamPolicyAnalysis_descriptor,
+            new java.lang.String[] {
+              "AnalysisQuery", "AnalysisResults", "FullyExplored", "NonCriticalErrors",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor,
+            new java.lang.String[] {
+              "GcsDestination", "BigqueryDestination", "Destination",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_GcsDestination_descriptor,
+            new java.lang.String[] {
+              "Uri",
+            });
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_BigQueryDestination_descriptor =
+        internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_BigQueryDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_IamPolicyAnalysisOutputConfig_BigQueryDestination_descriptor,
+            new java.lang.String[] {
+              "Dataset", "TablePrefix", "PartitionKey", "WriteDisposition",
+            });
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningRequest_descriptor,
+            new java.lang.String[] {
+              "AnalysisQuery", "OutputConfig",
+            });
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningResponse_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_asset_v1_AnalyzeIamPolicyLongrunningResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
