@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.30.7](https://www.github.com/googleapis/java-tasks/compare/v1.30.6...v1.30.7) (2020-10-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#287](https://www.github.com/googleapis/java-tasks/issues/287)) ([1adb43a](https://www.github.com/googleapis/java-tasks/commit/1adb43a3a50224b176d7ecb7788ef8da6631079f))
+
 ### [1.30.6](https://www.github.com/googleapis/java-tasks/compare/v1.30.5...v1.30.6) (2020-10-21)
 
 
