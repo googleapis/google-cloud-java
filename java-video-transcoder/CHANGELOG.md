@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.2...v0.1.3) (2020-10-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#51](https://www.github.com/googleapis/java-video-transcoder/issues/51)) ([c042fda](https://www.github.com/googleapis/java-video-transcoder/commit/c042fdaabc88dc28b7cebb5571bde6674b258804))
+
 ### [0.1.2](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.1...v0.1.2) (2020-10-22)
 
 
