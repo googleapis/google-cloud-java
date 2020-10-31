@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/java-talent/compare/v1.0.0...v1.0.1) (2020-10-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#318](https://www.github.com/googleapis/java-talent/issues/318)) ([8534678](https://www.github.com/googleapis/java-talent/commit/853467851a4050a946d27963e1332a27c7fd25d5))
+
 ## [1.0.0](https://www.github.com/googleapis/java-talent/compare/v0.39.4...v1.0.0) (2020-10-27)
 
 
