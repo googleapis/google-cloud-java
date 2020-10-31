@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.14.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.13.0...v0.14.0) (2020-10-31)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.33.1 ([#192](https://www.github.com/googleapis/java-shared-dependencies/issues/192)) ([b29384d](https://www.github.com/googleapis/java-shared-dependencies/commit/b29384dc40c812f1848f00695228d5437556f029))
+* update dependency org.threeten:threetenbp to v1.5.0 ([#196](https://www.github.com/googleapis/java-shared-dependencies/issues/196)) ([825a6fa](https://www.github.com/googleapis/java-shared-dependencies/commit/825a6fa375d12f1caa0a515b784ffde182bac98d))
+* update iam.version to v1.0.2 ([#194](https://www.github.com/googleapis/java-shared-dependencies/issues/194)) ([5c57239](https://www.github.com/googleapis/java-shared-dependencies/commit/5c572399a1b453f4dc5f6ef8d8850a35be2aef75))
+
 ## [0.13.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.12.1...v0.13.0) (2020-10-20)
 
 
