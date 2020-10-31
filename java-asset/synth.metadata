@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "7631fa1faa48fbcbfaeb1e07f743955e096da64c"
+        "sha": "dacfdc7b2db6fc58500eb53a161bde791d84c84f"
       }
     },
     {
@@ -59,7 +59,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ],
@@ -125,6 +125,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
