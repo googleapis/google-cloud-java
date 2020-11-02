@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.2.1...v0.3.0) (2020-10-31)
+
+
+### Features
+
+* added GetMetadata method for metadata including custom dimensions and metrics. ([#65](https://www.github.com/googleapis/java-analytics-data/issues/65)) ([609457a](https://www.github.com/googleapis/java-analytics-data/commit/609457a68abaf439803bf9f3e147cb27b21e4853))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#74](https://www.github.com/googleapis/java-analytics-data/issues/74)) ([a43d65d](https://www.github.com/googleapis/java-analytics-data/commit/a43d65dad4f7adb7c39e7110a9f8d1c181b2ea14))
+
 ### [0.2.1](https://www.github.com/googleapis/java-analytics-data/compare/v0.2.0...v0.2.1) (2020-10-22)
 
 
