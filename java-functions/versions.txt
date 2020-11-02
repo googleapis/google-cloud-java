@@ -3,4 +3,4 @@
 
 google-cloud-functions:1.0.0:1.0.0
 proto-google-cloud-functions-v1:1.0.0:1.0.0
-grpc-google-cloud-functions-v1:01.0.0:1.0.0
+grpc-google-cloud-functions-v1:1.0.0:1.0.0
