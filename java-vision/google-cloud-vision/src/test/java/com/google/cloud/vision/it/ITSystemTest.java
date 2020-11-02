@@ -500,7 +500,10 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertThat(actual).contains("Skyscraper");
+    List<String> expectedResults = new ArrayList<>();
+    expectedResults.add("Skyscraper");
+    expectedResults.add("Suburb");
+    assertThat(actual).containsAnyIn(expectedResults);
   }
 
   @Test
