@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-assured-workloads.git",
-        "sha": "99bc271703679bffe2c15503363ea64a022db408"
+        "sha": "8c20c9ebba9921e87a5231638ee80b8648119e16"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f68649c5f26bcff6817c6d21e90dac0fc71fef8e"
+        "sha": "b19b401571e77192f8dd38eab5fb2300a0de9324"
       }
     }
   ],
@@ -40,6 +40,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
