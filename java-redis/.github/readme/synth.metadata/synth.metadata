@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "bdd36880646b261b16afadfb555f5798cbe49191"
+        "sha": "5f307c33328f08d6ceab331c5f8a88556751660c"
       }
     },
     {
