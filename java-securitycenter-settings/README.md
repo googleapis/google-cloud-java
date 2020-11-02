@@ -20,17 +20,17 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings</artifactId>
-  <version>0.3.6</version>
+  <version>0.3.7</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-securitycenter-settings:0.3.6'
+compile 'com.google.cloud:google-cloud-securitycenter-settings:0.3.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.3.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.3.7"
 ```
 
 ## Authentication
