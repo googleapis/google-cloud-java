@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.2...v1.0.3) (2020-11-02)
+
+
+### Documentation
+
+* fix repo url in pom.xml ([#203](https://www.github.com/googleapis/java-monitoring-dashboards/issues/203)) ([fc43ab9](https://www.github.com/googleapis/java-monitoring-dashboards/commit/fc43ab9df2515beb55b68b9b47915e9a2e2d563f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#206](https://www.github.com/googleapis/java-monitoring-dashboards/issues/206)) ([4e8eed5](https://www.github.com/googleapis/java-monitoring-dashboards/commit/4e8eed5f4a942c453f09c87c4a98477b70a1e98b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#219](https://www.github.com/googleapis/java-monitoring-dashboards/issues/219)) ([b149fd3](https://www.github.com/googleapis/java-monitoring-dashboards/commit/b149fd309454d6e88a3ad46a8ef49cbfb702877b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#223](https://www.github.com/googleapis/java-monitoring-dashboards/issues/223)) ([adc4991](https://www.github.com/googleapis/java-monitoring-dashboards/commit/adc4991af7b1dc8d98c4c39d2c4988109280058f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#232](https://www.github.com/googleapis/java-monitoring-dashboards/issues/232)) ([e8acde2](https://www.github.com/googleapis/java-monitoring-dashboards/commit/e8acde208f0f008528e0676e23915ffa2f00903d))
+
 ### [1.0.2](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.1...v1.0.2) (2020-09-23)
 
 
