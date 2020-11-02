@@ -169,8 +169,6 @@ public class BatchParseTableBeta {
           Document.Page.Table table = page1.getTables(0);
 
           System.out.println("Results from first table processed:");
-          System.out.println(
-              "First detected language: " + page1.getDetectedLanguages(0).getLanguageCode());
           System.out.println("Header row:");
 
           Document.Page.Table.TableRow headerRow = table.getHeaderRows(0);
