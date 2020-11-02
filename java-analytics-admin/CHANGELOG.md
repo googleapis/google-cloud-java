@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.1.4...v0.2.0) (2020-11-02)
+
+
+### Features
+
+* added ListAccountSummaries method ([#74](https://www.github.com/googleapis/java-analytics-admin/issues/74)) ([128bb78](https://www.github.com/googleapis/java-analytics-admin/commit/128bb7882cf36b5ce05b81fbf63c7cc306d9b655))
+
+
+### Documentation
+
+* renamed App + Web to Google Analytics 4 (GA4) in public documentation ([#86](https://www.github.com/googleapis/java-analytics-admin/issues/86)) ([22e27ca](https://www.github.com/googleapis/java-analytics-admin/commit/22e27ca307e0b900c1eb89d9872685950ee9e44e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#81](https://www.github.com/googleapis/java-analytics-admin/issues/81)) ([58cb9b3](https://www.github.com/googleapis/java-analytics-admin/commit/58cb9b3a3bb64904fafae8ea414ddf729b6b6983))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#84](https://www.github.com/googleapis/java-analytics-admin/issues/84)) ([5db8220](https://www.github.com/googleapis/java-analytics-admin/commit/5db82207c3e1e056714dc2dbaf3cd62ae3d849c9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#91](https://www.github.com/googleapis/java-analytics-admin/issues/91)) ([ac21804](https://www.github.com/googleapis/java-analytics-admin/commit/ac21804451ac2fe557f4cec7b19a7cdb290475e1))
+
 ### [0.1.4](https://www.github.com/googleapis/java-analytics-admin/compare/v0.1.3...v0.1.4) (2020-10-08)
 
 
