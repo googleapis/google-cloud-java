@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-os-login/compare/v1.1.1...v1.1.2) (2020-11-02)
+
+
+### Bug Fixes
+
+* temporarily disable reporting to unblock releases ([#221](https://www.github.com/googleapis/java-os-login/issues/221)) ([9b060b8](https://www.github.com/googleapis/java-os-login/commit/9b060b8cf15380ab6880a8576c81fe3f17659fd7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#243](https://www.github.com/googleapis/java-os-login/issues/243)) ([2720e61](https://www.github.com/googleapis/java-os-login/commit/2720e6127a29a063ab46eda5ec9548a2382188ea))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#253](https://www.github.com/googleapis/java-os-login/issues/253)) ([1ede4e3](https://www.github.com/googleapis/java-os-login/commit/1ede4e3d94247a0a995604899cbd2e4e069fd78c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#264](https://www.github.com/googleapis/java-os-login/issues/264)) ([7468a52](https://www.github.com/googleapis/java-os-login/commit/7468a522d0583c092a8241737203b7b90fc0be82))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#268](https://www.github.com/googleapis/java-os-login/issues/268)) ([9c86ae9](https://www.github.com/googleapis/java-os-login/commit/9c86ae992a5bddc2eed17c168fd968fcb224d298))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#283](https://www.github.com/googleapis/java-os-login/issues/283)) ([12b9fe4](https://www.github.com/googleapis/java-os-login/commit/12b9fe40be0967c72e0f056ce210f565fb22475e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#229](https://www.github.com/googleapis/java-os-login/issues/229)) ([e7d2dad](https://www.github.com/googleapis/java-os-login/commit/e7d2dadd83071b716e8d61387d62699f854b8e74))
+
 ### [1.1.1](https://www.github.com/googleapis/java-os-login/compare/v1.1.0...v1.1.1) (2020-08-07)
 
 
