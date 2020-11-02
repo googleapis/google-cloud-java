@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.1.2...v0.2.0) (2020-10-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed enable_spell_correction from `NluSettings`
+
+### Features
+
+* added labels field and description field into Intent and Dtmf input to QueryInput ([#62](https://www.github.com/googleapis/java-dialogflow-cx/issues/62)) ([3220b26](https://www.github.com/googleapis/java-dialogflow-cx/commit/3220b26bba46fd83486df2bfd1603f0c770cdae6))
+* Remove flow level spell correction setting. feat: Change LRO response for ImportAgent from Empty to ImportAgentResponse, to include the created agent name. feat: Add parameter flag into page and intent parameters. feat: Add `allow_playback_interruption` to OutputAudioText to make it have feature parity with Text message type. feat: Enable sentiment analysis feature. feat: Enable EventInput. feat: Enable `trigger_event` in MatchIntentResponse. docs: Add documentation for sessions. ([#42](https://www.github.com/googleapis/java-dialogflow-cx/issues/42)) ([77f6650](https://www.github.com/googleapis/java-dialogflow-cx/commit/77f66504b74069e65eca3e2afddd495565c064af))
+
+
+### Documentation
+
+* clarified wording for restore APIs and query input ([#48](https://www.github.com/googleapis/java-dialogflow-cx/issues/48)) ([aac888c](https://www.github.com/googleapis/java-dialogflow-cx/commit/aac888cc0f977dad6b4dfb18111736020669a44d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#54](https://www.github.com/googleapis/java-dialogflow-cx/issues/54)) ([dbb09fc](https://www.github.com/googleapis/java-dialogflow-cx/commit/dbb09fc10f93be932f8408afb294c0fd9fa1579e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#57](https://www.github.com/googleapis/java-dialogflow-cx/issues/57)) ([bd56a97](https://www.github.com/googleapis/java-dialogflow-cx/commit/bd56a97904f6d7f9f64684060b808a74306f4d2f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#64](https://www.github.com/googleapis/java-dialogflow-cx/issues/64)) ([e45660d](https://www.github.com/googleapis/java-dialogflow-cx/commit/e45660d4acf0147979c1058cfc25a91bc9725653))
+
 ### [0.1.2](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.1.1...v0.1.2) (2020-10-08)
 
 
