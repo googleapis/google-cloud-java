@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.40.1](https://www.github.com/googleapis/java-kms/compare/v1.40.0...v1.40.1) (2020-11-02)
+
+
+### Bug Fixes
+
+* fix IAM retry settings ([#259](https://www.github.com/googleapis/java-kms/issues/259)) ([f02404d](https://www.github.com/googleapis/java-kms/commit/f02404dedf858319611767725f47fd6fad7761b6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#270](https://www.github.com/googleapis/java-kms/issues/270)) ([a700528](https://www.github.com/googleapis/java-kms/commit/a7005281c304ddadfa645d7f9a0449c9f20a4560))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#281](https://www.github.com/googleapis/java-kms/issues/281)) ([c6379ca](https://www.github.com/googleapis/java-kms/commit/c6379caa536f32169a96c3d9a8eb1a13e2dd846b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#295](https://www.github.com/googleapis/java-kms/issues/295)) ([34f52d2](https://www.github.com/googleapis/java-kms/commit/34f52d2a8e76bc55641175c8cbf51a6b2ff82341))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#299](https://www.github.com/googleapis/java-kms/issues/299)) ([18836a9](https://www.github.com/googleapis/java-kms/commit/18836a94cbc9a3bb2c1a65ebb7555bb068d410f9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#314](https://www.github.com/googleapis/java-kms/issues/314)) ([8a71a1d](https://www.github.com/googleapis/java-kms/commit/8a71a1d8e1b62377018232d845f1467935a4fba2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#252](https://www.github.com/googleapis/java-kms/issues/252)) ([5254922](https://www.github.com/googleapis/java-kms/commit/5254922d8398170e73afc4905b6054e0c1f88a8f))
+
 ## [1.40.0](https://www.github.com/googleapis/java-kms/compare/v1.39.1...v1.40.0) (2020-08-27)
 
 
