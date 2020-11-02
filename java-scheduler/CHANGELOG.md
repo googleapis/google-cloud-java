@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.23.2](https://www.github.com/googleapis/java-scheduler/compare/v1.23.1...v1.23.2) (2020-11-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#224](https://www.github.com/googleapis/java-scheduler/issues/224)) ([21e88bb](https://www.github.com/googleapis/java-scheduler/commit/21e88bbad8269de2e3f0017e2ffdc01aefe5630f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#236](https://www.github.com/googleapis/java-scheduler/issues/236)) ([6bb1987](https://www.github.com/googleapis/java-scheduler/commit/6bb19873e6ca8fe6aea22ed151a78ff82479dc30))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#249](https://www.github.com/googleapis/java-scheduler/issues/249)) ([0f393de](https://www.github.com/googleapis/java-scheduler/commit/0f393de77267c6fbe422e4166d806b59fbf9f2fd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#252](https://www.github.com/googleapis/java-scheduler/issues/252)) ([cf96301](https://www.github.com/googleapis/java-scheduler/commit/cf963018e952f3ae4ba14fe323acd429b5ffc169))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#266](https://www.github.com/googleapis/java-scheduler/issues/266)) ([7a5c3b1](https://www.github.com/googleapis/java-scheduler/commit/7a5c3b128bf3b1b989c5f506596d99dcefbdd641))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#211](https://www.github.com/googleapis/java-scheduler/issues/211)) ([f6b0cc8](https://www.github.com/googleapis/java-scheduler/commit/f6b0cc8a4b1eaeaccc54fb0a5b6997661eba5e45))
+
 ### [1.23.1](https://www.github.com/googleapis/java-scheduler/compare/v1.23.0...v1.23.1) (2020-08-07)
 
 
