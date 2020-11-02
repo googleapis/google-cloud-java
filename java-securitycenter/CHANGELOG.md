@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.3.1](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.0...v1.3.1) (2020-11-02)
+
+
+### Documentation
+
+* updated description of finding severity field ([#237](https://www.github.com/googleapis/java-securitycenter/issues/237)) ([574b243](https://www.github.com/googleapis/java-securitycenter/commit/574b2435657b828e5e5264f9900fe1c201d7b357))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#248](https://www.github.com/googleapis/java-securitycenter/issues/248)) ([7c232b6](https://www.github.com/googleapis/java-securitycenter/commit/7c232b6a8c51f3e30d705ac7a39900d583a18c7e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#260](https://www.github.com/googleapis/java-securitycenter/issues/260)) ([c4e6e4f](https://www.github.com/googleapis/java-securitycenter/commit/c4e6e4fae440b9d0e2979ffe20b6076889938523))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#273](https://www.github.com/googleapis/java-securitycenter/issues/273)) ([edde418](https://www.github.com/googleapis/java-securitycenter/commit/edde418137829b57dc55d65c3ca8603a20963926))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#276](https://www.github.com/googleapis/java-securitycenter/issues/276)) ([ddde42a](https://www.github.com/googleapis/java-securitycenter/commit/ddde42ab266c3a2bafc843b020f335a8953b1fcb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#291](https://www.github.com/googleapis/java-securitycenter/issues/291)) ([25e09ce](https://www.github.com/googleapis/java-securitycenter/commit/25e09cecbde01db980057fa07cba19b0026700f0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#232](https://www.github.com/googleapis/java-securitycenter/issues/232)) ([a53c6dd](https://www.github.com/googleapis/java-securitycenter/commit/a53c6dde0610941a463c2a631e8e6c04dfdf8581))
+
 ## [1.3.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.2.0...v1.3.0) (2020-08-19)
 
 
