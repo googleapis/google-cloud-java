@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.7](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.6...v1.0.7) (2020-11-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#108](https://www.github.com/googleapis/java-accesscontextmanager/issues/108)) ([2ec5331](https://www.github.com/googleapis/java-accesscontextmanager/commit/2ec53313928d34f0a94920f1e80d848069effb09))
+
 ### [1.0.6](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.5...v1.0.6) (2020-10-20)
 
 
