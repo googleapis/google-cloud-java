@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-grafeas/compare/v1.0.3...v1.0.4) (2020-11-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#184](https://www.github.com/googleapis/java-grafeas/issues/184)) ([0bd91e5](https://www.github.com/googleapis/java-grafeas/commit/0bd91e579d77dd774ec28cd81ef30eb9e6ac1227))
+
 ### [1.0.3](https://www.github.com/googleapis/java-grafeas/compare/v1.0.2...v1.0.3) (2020-10-30)
 
 
