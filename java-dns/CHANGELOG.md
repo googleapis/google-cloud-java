@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-dns/compare/v1.0.3...v1.0.4) (2020-11-02)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20201013-1.30.10 ([#216](https://www.github.com/googleapis/java-dns/issues/216)) ([76a6ef1](https://www.github.com/googleapis/java-dns/commit/76a6ef190c4c2dfca59a3818df08f1af27fd7f0b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.12.1 ([#228](https://www.github.com/googleapis/java-dns/issues/228)) ([f92c49f](https://www.github.com/googleapis/java-dns/commit/f92c49f8a155c5f421873a70aa7c894f17f722ca))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#233](https://www.github.com/googleapis/java-dns/issues/233)) ([3256cfe](https://www.github.com/googleapis/java-dns/commit/3256cfe92e9d4eb47090b4f67b57453e66276802))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#247](https://www.github.com/googleapis/java-dns/issues/247)) ([0bed182](https://www.github.com/googleapis/java-dns/commit/0bed1827815ac3df903566d1c09cc31017bfac5a))
+
 ### [1.0.3](https://www.github.com/googleapis/java-dns/compare/v1.0.2...v1.0.3) (2020-10-08)
 
 
