@@ -70,6 +70,12 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
+    <!-- used by ITs -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
@@ -77,7 +83,11 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigqueryconnection-v1</artifactId>
