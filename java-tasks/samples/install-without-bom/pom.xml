@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START cloudtasks_install_without_bom] -->
+    <!-- [START cloud_tasks_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-tasks</artifactId>
       <version>1.30.7</version>
     </dependency>
-    <!-- [END cloudtasks_install_without_bom] -->
+    <!-- [END cloud_tasks_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
