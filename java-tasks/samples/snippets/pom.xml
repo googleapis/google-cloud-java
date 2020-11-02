@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START cloudtasks_install_with_bom] -->
+  <!-- [START cloud_tasks_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -42,7 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-tasks</artifactId>
     </dependency>
-    <!-- [END cloudtasks_install_with_bom] -->
+    <!-- [END cloud_tasks_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
