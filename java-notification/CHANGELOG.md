@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.121.1](https://www.github.com/googleapis/java-notification/compare/v0.121.0...v0.121.1) (2020-11-02)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20200814-1.30.10 ([#100](https://www.github.com/googleapis/java-notification/issues/100)) ([bc6a28a](https://www.github.com/googleapis/java-notification/commit/bc6a28a961b3e8303aaa315f574a11a571521877))
+* update dependency com.google.apis:google-api-services-storage to v1-rev20200927-1.30.10 ([#142](https://www.github.com/googleapis/java-notification/issues/142)) ([67f08de](https://www.github.com/googleapis/java-notification/commit/67f08de215b09c2a4a4770d4f32569e6a5f1545c))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.108.1 ([#104](https://www.github.com/googleapis/java-notification/issues/104)) ([dda3967](https://www.github.com/googleapis/java-notification/commit/dda3967d784ae8f9df28f1805623703badbade41))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.108.7 ([#146](https://www.github.com/googleapis/java-notification/issues/146)) ([0caab71](https://www.github.com/googleapis/java-notification/commit/0caab71202c1c617ee7755347d0f0ea7cbebaf34))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#136](https://www.github.com/googleapis/java-notification/issues/136)) ([e1f2aa7](https://www.github.com/googleapis/java-notification/commit/e1f2aa7086d4491f4ba4d9c544b74dd7d4a8216c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#148](https://www.github.com/googleapis/java-notification/issues/148)) ([347fead](https://www.github.com/googleapis/java-notification/commit/347fead36e13426cd70bf21d8c3a6da2802b5cbc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#161](https://www.github.com/googleapis/java-notification/issues/161)) ([ad30564](https://www.github.com/googleapis/java-notification/commit/ad30564abd5dcc20eb8d758a02e3ffca0f20ae17))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#175](https://www.github.com/googleapis/java-notification/issues/175)) ([b709080](https://www.github.com/googleapis/java-notification/commit/b709080d39a335af3f4ced0f06ed7cc4f302e8de))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#119](https://www.github.com/googleapis/java-notification/issues/119)) ([627cfd1](https://www.github.com/googleapis/java-notification/commit/627cfd12ede741b81a597dc5a7436441daf5b5cc))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.1 ([#63](https://www.github.com/googleapis/java-notification/issues/63)) ([257fda2](https://www.github.com/googleapis/java-notification/commit/257fda2e5d8dffcd68c30274e3571a76d3fb95d5))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.2 ([#169](https://www.github.com/googleapis/java-notification/issues/169)) ([cc008ae](https://www.github.com/googleapis/java-notification/commit/cc008aea480b5d5e239c1485285e0c61fb2fa5e8))
+
 ## [0.121.0](https://www.github.com/googleapis/java-notification/compare/v0.120.2...v0.121.0) (2020-08-07)
 
 
