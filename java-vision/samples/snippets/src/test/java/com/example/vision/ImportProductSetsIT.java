@@ -49,6 +49,7 @@ public class ImportProductSetsIT {
   private Blob blob;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
@@ -67,6 +68,7 @@ public class ImportProductSetsIT {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -77,7 +79,8 @@ public class ImportProductSetsIT {
     Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
     // Delete the created blob
     storage.delete(blob.getBlobId());
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

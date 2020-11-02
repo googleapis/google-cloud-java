@@ -43,19 +43,22 @@ public class DetectBetaIT {
   private static final String OUTPUT_PREFIX = "OUTPUT_VISION_BETA_" + UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private DetectBeta app;
 
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
     app = new DetectBeta();
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

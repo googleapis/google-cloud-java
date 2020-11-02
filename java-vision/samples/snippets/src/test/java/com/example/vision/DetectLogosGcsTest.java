@@ -35,17 +35,20 @@ public class DetectLogosGcsTest {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

@@ -43,11 +43,13 @@ public class ReferenceImageManagementIT {
   private static final String GCS_URI = "gs://java-docs-samples-testing/product-search/shoes_1.jpg";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
     ProductManagement.createProduct(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
@@ -56,7 +58,8 @@ public class ReferenceImageManagementIT {
   @After
   public void tearDown() throws IOException {
     ProductManagement.deleteProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

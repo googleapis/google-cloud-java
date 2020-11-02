@@ -44,11 +44,13 @@ public class ProductInProductSetManagementIT {
   private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
     ProductSetManagement.createProductSet(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID, PRODUCT_SET_DISPLAY_NAME);
@@ -61,7 +63,8 @@ public class ProductInProductSetManagementIT {
   public void tearDown() throws IOException {
     ProductManagement.deleteProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
     ProductSetManagement.deleteProductSet(PROJECT_ID, COMPUTE_REGION, PRODUCT_SET_ID);
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

@@ -45,19 +45,22 @@ public class ProductSearchIT {
   private static final String FILTER = "style=womens";
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws Exception {
 
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
     bout.reset();
   }
 
   @After
   public void tearDown() throws Exception {
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

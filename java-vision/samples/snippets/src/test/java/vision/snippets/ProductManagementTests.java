@@ -41,18 +41,21 @@ public class ProductManagementTests {
   private static final String PRODUCT_ID = String.format("test_%s", UUID.randomUUID().toString());
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() throws IOException {
     ProductManagement.deleteProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

@@ -38,6 +38,7 @@ import org.junit.runners.JUnit4;
 public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private static final String ASSET_BUCKET = "cloud-samples-data";
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String OUTPUT_BUCKET = PROJECT_ID;
@@ -47,12 +48,14 @@ public class DetectIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

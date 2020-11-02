@@ -46,6 +46,7 @@ public class AsyncBatchAnnotateImagesTest {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -62,12 +63,14 @@ public class AsyncBatchAnnotateImagesTest {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.out.flush();
+    System.setOut(originalPrintStream);
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
