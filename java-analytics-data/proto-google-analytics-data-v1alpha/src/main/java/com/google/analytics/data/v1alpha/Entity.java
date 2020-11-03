@@ -117,7 +117,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Analytics App + Web property id.
+   * A Google Analytics 4 (GA4) property id.
    * </pre>
    *
    * <code>string property_id = 1;</code>
@@ -140,7 +140,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Analytics App + Web property id.
+   * A Google Analytics 4 (GA4) property id.
    * </pre>
    *
    * <code>string property_id = 1;</code>
@@ -480,7 +480,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Analytics App + Web property id.
+     * A Google Analytics 4 (GA4) property id.
      * </pre>
      *
      * <code>string property_id = 1;</code>
@@ -502,7 +502,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Analytics App + Web property id.
+     * A Google Analytics 4 (GA4) property id.
      * </pre>
      *
      * <code>string property_id = 1;</code>
@@ -524,7 +524,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Analytics App + Web property id.
+     * A Google Analytics 4 (GA4) property id.
      * </pre>
      *
      * <code>string property_id = 1;</code>
@@ -545,7 +545,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Analytics App + Web property id.
+     * A Google Analytics 4 (GA4) property id.
      * </pre>
      *
      * <code>string property_id = 1;</code>
@@ -562,7 +562,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Analytics App + Web property id.
+     * A Google Analytics 4 (GA4) property id.
      * </pre>
      *
      * <code>string property_id = 1;</code>

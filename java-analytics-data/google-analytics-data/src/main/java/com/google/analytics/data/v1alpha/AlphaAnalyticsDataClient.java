@@ -372,7 +372,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
    * specified in the request, and the metadata response includes Custom dimensions and metrics as
    * well as Universal metadata.
    *
@@ -390,8 +390,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name of the metadata to retrieve. This name field is
-   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
-   *     App + Web Property identifier.
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics 4
+   *     (GA4) Property identifier.
    *     <p>Example: properties/1234/metadata
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -404,7 +404,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
    * specified in the request, and the metadata response includes Custom dimensions and metrics as
    * well as Universal metadata.
    *
@@ -422,8 +422,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name of the metadata to retrieve. This name field is
-   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
-   *     App + Web Property identifier.
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics 4
+   *     (GA4) Property identifier.
    *     <p>Example: properties/1234/metadata
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -435,7 +435,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
    * specified in the request, and the metadata response includes Custom dimensions and metrics as
    * well as Universal metadata.
    *
@@ -465,7 +465,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics App + Web Property Identifier is
+   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
    * specified in the request, and the metadata response includes Custom dimensions and metrics as
    * well as Universal metadata.
    *
