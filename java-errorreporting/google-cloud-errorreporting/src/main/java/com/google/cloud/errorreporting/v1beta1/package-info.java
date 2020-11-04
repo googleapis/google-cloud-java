@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Stackdriver Error Reporting API.
+ * A client to Cloud Error Reporting API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
