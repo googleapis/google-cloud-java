@@ -491,6 +491,48 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     return stub.getMetadataCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * The Google Analytics Realtime API returns a customized report of realtime event data for your
+   * property. These reports show events and usage from the last 30 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunRealtimeReportRequest request = RunRealtimeReportRequest.newBuilder().build();
+   *   RunRealtimeReportResponse response = alphaAnalyticsDataClient.runRealtimeReport(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunRealtimeReportResponse runRealtimeReport(RunRealtimeReportRequest request) {
+    return runRealtimeReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * The Google Analytics Realtime API returns a customized report of realtime event data for your
+   * property. These reports show events and usage from the last 30 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunRealtimeReportRequest request = RunRealtimeReportRequest.newBuilder().build();
+   *   ApiFuture&lt;RunRealtimeReportResponse&gt; future = alphaAnalyticsDataClient.runRealtimeReportCallable().futureCall(request);
+   *   // Do something
+   *   RunRealtimeReportResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportCallable() {
+    return stub.runRealtimeReportCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

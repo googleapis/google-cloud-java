@@ -24,6 +24,8 @@ import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
+import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
+import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.analytics.data.v1alpha.UniversalMetadata;
@@ -109,6 +111,17 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetMetadataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Metadata.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportMethodDescriptor =
+          MethodDescriptor.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/RunRealtimeReport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunRealtimeReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RunRealtimeReportResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -121,6 +134,8 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private final UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataCallable;
   private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
+  private final UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -200,6 +215,20 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   }
                 })
             .build();
+    GrpcCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
+        runRealtimeReportTransportSettings =
+            GrpcCallSettings.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
+                .setMethodDescriptor(runRealtimeReportMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<RunRealtimeReportRequest>() {
+                      @Override
+                      public Map<String, String> extract(RunRealtimeReportRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("property", String.valueOf(request.getProperty()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.runReportCallable =
         callableFactory.createUnaryCallable(
@@ -223,6 +252,11 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     this.getMetadataCallable =
         callableFactory.createUnaryCallable(
             getMetadataTransportSettings, settings.getMetadataSettings(), clientContext);
+    this.runRealtimeReportCallable =
+        callableFactory.createUnaryCallable(
+            runRealtimeReportTransportSettings,
+            settings.runRealtimeReportSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -251,6 +285,11 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
 
   public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
     return getMetadataCallable;
+  }
+
+  public UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportCallable() {
+    return runRealtimeReportCallable;
   }
 
   @Override

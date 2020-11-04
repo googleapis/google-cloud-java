@@ -300,4 +300,43 @@ public class AlphaAnalyticsDataClientTest {
       // Expected exception
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void runRealtimeReportTest() {
+    int rowCount = 1340416618;
+    RunRealtimeReportResponse expectedResponse =
+        RunRealtimeReportResponse.newBuilder().setRowCount(rowCount).build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    RunRealtimeReportRequest request = RunRealtimeReportRequest.newBuilder().build();
+
+    RunRealtimeReportResponse actualResponse = client.runRealtimeReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunRealtimeReportRequest actualRequest = (RunRealtimeReportRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void runRealtimeReportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      RunRealtimeReportRequest request = RunRealtimeReportRequest.newBuilder().build();
+
+      client.runRealtimeReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
 }

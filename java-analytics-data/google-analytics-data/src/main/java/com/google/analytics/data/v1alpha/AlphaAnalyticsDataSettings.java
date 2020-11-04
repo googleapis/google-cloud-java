@@ -97,6 +97,12 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getMetadataSettings();
   }
 
+  /** Returns the object with the settings used for calls to runRealtimeReport. */
+  public UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).runRealtimeReportSettings();
+  }
+
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
       throws IOException {
     return new AlphaAnalyticsDataSettings.Builder(stub.toBuilder()).build();
@@ -226,6 +232,12 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     /** Returns the builder for the settings used for calls to getMetadata. */
     public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
       return getStubSettingsBuilder().getMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runRealtimeReport. */
+    public UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
+        runRealtimeReportSettings() {
+      return getStubSettingsBuilder().runRealtimeReportSettings();
     }
 
     @Override

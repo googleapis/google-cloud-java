@@ -22,9 +22,10 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Dimensions are attributes of your data. For example, the dimension City
- * indicates the city, for example, "Paris" or "New York", from which an event
- * originates. Requests are allowed up to 8 dimensions.
+ * Dimensions are attributes of your data. For example, the dimension city
+ * indicates the city from which an event originates. Dimension values in report
+ * responses are strings; for example, city could be "Paris" or "New York".
+ * Requests are allowed up to 8 dimensions.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.Dimension}
@@ -136,7 +137,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the dimension.
+   * The name of the dimension. See the [API
+   * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+   * for the list of dimension names.
+   * If `dimensionExpression` is specified, `name` can be any string that you
+   * would like. For example if a `dimensionExpression` concatenates `country`
+   * and `city`, you could call that dimension `countryAndCity`.
+   * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+   * `dimensionExpression`, and `pivots`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -159,7 +167,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the dimension.
+   * The name of the dimension. See the [API
+   * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+   * for the list of dimension names.
+   * If `dimensionExpression` is specified, `name` can be any string that you
+   * would like. For example if a `dimensionExpression` concatenates `country`
+   * and `city`, you could call that dimension `countryAndCity`.
+   * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+   * `dimensionExpression`, and `pivots`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -408,9 +423,10 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Dimensions are attributes of your data. For example, the dimension City
-   * indicates the city, for example, "Paris" or "New York", from which an event
-   * originates. Requests are allowed up to 8 dimensions.
+   * Dimensions are attributes of your data. For example, the dimension city
+   * indicates the city from which an event originates. Dimension values in report
+   * responses are strings; for example, city could be "Paris" or "New York".
+   * Requests are allowed up to 8 dimensions.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.Dimension}
@@ -582,7 +598,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the dimension.
+     * The name of the dimension. See the [API
+     * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+     * for the list of dimension names.
+     * If `dimensionExpression` is specified, `name` can be any string that you
+     * would like. For example if a `dimensionExpression` concatenates `country`
+     * and `city`, you could call that dimension `countryAndCity`.
+     * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+     * `dimensionExpression`, and `pivots`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -604,7 +627,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the dimension.
+     * The name of the dimension. See the [API
+     * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+     * for the list of dimension names.
+     * If `dimensionExpression` is specified, `name` can be any string that you
+     * would like. For example if a `dimensionExpression` concatenates `country`
+     * and `city`, you could call that dimension `countryAndCity`.
+     * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+     * `dimensionExpression`, and `pivots`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -626,7 +656,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the dimension.
+     * The name of the dimension. See the [API
+     * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+     * for the list of dimension names.
+     * If `dimensionExpression` is specified, `name` can be any string that you
+     * would like. For example if a `dimensionExpression` concatenates `country`
+     * and `city`, you could call that dimension `countryAndCity`.
+     * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+     * `dimensionExpression`, and `pivots`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -647,7 +684,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the dimension.
+     * The name of the dimension. See the [API
+     * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+     * for the list of dimension names.
+     * If `dimensionExpression` is specified, `name` can be any string that you
+     * would like. For example if a `dimensionExpression` concatenates `country`
+     * and `city`, you could call that dimension `countryAndCity`.
+     * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+     * `dimensionExpression`, and `pivots`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -664,7 +708,14 @@ public final class Dimension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the dimension.
+     * The name of the dimension. See the [API
+     * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+     * for the list of dimension names.
+     * If `dimensionExpression` is specified, `name` can be any string that you
+     * would like. For example if a `dimensionExpression` concatenates `country`
+     * and `city`, you could call that dimension `countryAndCity`.
+     * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+     * `dimensionExpression`, and `pivots`.
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -24,6 +24,8 @@ import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
+import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
+import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.analytics.data.v1alpha.UniversalMetadata;
@@ -102,6 +104,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   private final UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
       getUniversalMetadataSettings;
   private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
+  private final UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportSettings;
 
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
@@ -134,6 +138,12 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   /** Returns the object with the settings used for calls to getMetadata. */
   public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
     return getMetadataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runRealtimeReport. */
+  public UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportSettings() {
+    return runRealtimeReportSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -211,6 +221,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     batchRunPivotReportsSettings = settingsBuilder.batchRunPivotReportsSettings().build();
     getUniversalMetadataSettings = settingsBuilder.getUniversalMetadataSettings().build();
     getMetadataSettings = settingsBuilder.getMetadataSettings().build();
+    runRealtimeReportSettings = settingsBuilder.runRealtimeReportSettings().build();
   }
 
   /** Builder for AlphaAnalyticsDataStubSettings. */
@@ -229,6 +240,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     private final UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
         getUniversalMetadataSettings;
     private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
+    private final UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
+        runRealtimeReportSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -293,6 +306,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      runRealtimeReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runReportSettings,
@@ -300,7 +315,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
               getUniversalMetadataSettings,
-              getMetadataSettings);
+              getMetadataSettings,
+              runRealtimeReportSettings);
 
       initDefaults(this);
     }
@@ -346,6 +362,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .runRealtimeReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       return builder;
     }
 
@@ -358,6 +379,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       batchRunPivotReportsSettings = settings.batchRunPivotReportsSettings.toBuilder();
       getUniversalMetadataSettings = settings.getUniversalMetadataSettings.toBuilder();
       getMetadataSettings = settings.getMetadataSettings.toBuilder();
+      runRealtimeReportSettings = settings.runRealtimeReportSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -366,7 +388,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
               getUniversalMetadataSettings,
-              getMetadataSettings);
+              getMetadataSettings,
+              runRealtimeReportSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -417,6 +440,12 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     /** Returns the builder for the settings used for calls to getMetadata. */
     public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
       return getMetadataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runRealtimeReport. */
+    public UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
+        runRealtimeReportSettings() {
+      return runRealtimeReportSettings;
     }
 
     @Override

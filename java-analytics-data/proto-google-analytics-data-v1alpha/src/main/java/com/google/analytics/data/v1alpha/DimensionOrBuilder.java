@@ -27,7 +27,14 @@ public interface DimensionOrBuilder
    *
    *
    * <pre>
-   * The name of the dimension.
+   * The name of the dimension. See the [API
+   * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+   * for the list of dimension names.
+   * If `dimensionExpression` is specified, `name` can be any string that you
+   * would like. For example if a `dimensionExpression` concatenates `country`
+   * and `city`, you could call that dimension `countryAndCity`.
+   * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+   * `dimensionExpression`, and `pivots`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +46,14 @@ public interface DimensionOrBuilder
    *
    *
    * <pre>
-   * The name of the dimension.
+   * The name of the dimension. See the [API
+   * Dimensions](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#dimensions)
+   * for the list of dimension names.
+   * If `dimensionExpression` is specified, `name` can be any string that you
+   * would like. For example if a `dimensionExpression` concatenates `country`
+   * and `city`, you could call that dimension `countryAndCity`.
+   * Dimensions are referenced by `name` in `dimensionFilter`, `orderBys`,
+   * `dimensionExpression`, and `pivots`.
    * </pre>
    *
    * <code>string name = 1;</code>

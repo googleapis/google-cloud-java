@@ -24,6 +24,8 @@ import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
+import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
+import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.analytics.data.v1alpha.UniversalMetadata;
@@ -66,6 +68,11 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
 
   public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
     throw new UnsupportedOperationException("Not implemented: getMetadataCallable()");
+  }
+
+  public UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
+      runRealtimeReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: runRealtimeReportCallable()");
   }
 
   @Override

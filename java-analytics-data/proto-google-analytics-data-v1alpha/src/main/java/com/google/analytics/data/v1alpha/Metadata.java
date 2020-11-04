@@ -201,7 +201,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -214,7 +214,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -228,7 +228,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -241,7 +241,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -254,7 +254,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -890,7 +890,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -906,7 +906,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -922,7 +922,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -938,7 +938,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -961,7 +961,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -981,7 +981,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1003,7 +1003,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1026,7 +1026,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1046,7 +1046,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1066,7 +1066,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1086,7 +1086,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1105,7 +1105,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1124,7 +1124,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1137,7 +1137,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1154,7 +1154,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1171,7 +1171,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1184,7 +1184,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -1199,7 +1199,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The dimensions descriptions.
+     * The dimension descriptions.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>

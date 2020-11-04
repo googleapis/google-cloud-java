@@ -22,8 +22,9 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * The quantitative measurements of a report. For example, the metric eventCount
- * is the total number of events. Requests are allowed up to 10 metrics.
+ * The quantitative measurements of a report. For example, the metric
+ * `eventCount` is the total number of events. Requests are allowed up to 10
+ * metrics.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.Metric}
@@ -131,7 +132,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the metric.
+   * The name of the metric. See the [API
+   * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+   * for the list of metric names.
+   * If `expression` is specified, `name` can be any string that you would like.
+   * For example if `expression` is `screenPageViews/sessions`, you could call
+   * that metric's name = `viewsPerSession`.
+   * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+   * `expression`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -154,7 +162,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the metric.
+   * The name of the metric. See the [API
+   * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+   * for the list of metric names.
+   * If `expression` is specified, `name` can be any string that you would like.
+   * For example if `expression` is `screenPageViews/sessions`, you could call
+   * that metric's name = `viewsPerSession`.
+   * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+   * `expression`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -181,7 +196,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A mathematical expression for derived metrics. For example, the metric
-   * Event count per user is eventCount/totalUsers.
+   * Event count per user is `eventCount/totalUsers`.
    * </pre>
    *
    * <code>string expression = 2;</code>
@@ -205,7 +220,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A mathematical expression for derived metrics. For example, the metric
-   * Event count per user is eventCount/totalUsers.
+   * Event count per user is `eventCount/totalUsers`.
    * </pre>
    *
    * <code>string expression = 2;</code>
@@ -231,9 +246,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates if a metric is invisible.
-   * If a metric is invisible, the metric is not in the response, but can be
-   * used in filters, order_bys or being referred to in a metric expression.
+   * Indicates if a metric is invisible in the report response. If a metric is
+   * invisible, the metric will not produce a column in the response, but can be
+   * used in `metricFilter`, `orderBys`, or a metric `expression`.
    * </pre>
    *
    * <code>bool invisible = 3;</code>
@@ -425,8 +440,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The quantitative measurements of a report. For example, the metric eventCount
-   * is the total number of events. Requests are allowed up to 10 metrics.
+   * The quantitative measurements of a report. For example, the metric
+   * `eventCount` is the total number of events. Requests are allowed up to 10
+   * metrics.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.Metric}
@@ -597,7 +613,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the metric.
+     * The name of the metric. See the [API
+     * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+     * for the list of metric names.
+     * If `expression` is specified, `name` can be any string that you would like.
+     * For example if `expression` is `screenPageViews/sessions`, you could call
+     * that metric's name = `viewsPerSession`.
+     * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+     * `expression`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -619,7 +642,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the metric.
+     * The name of the metric. See the [API
+     * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+     * for the list of metric names.
+     * If `expression` is specified, `name` can be any string that you would like.
+     * For example if `expression` is `screenPageViews/sessions`, you could call
+     * that metric's name = `viewsPerSession`.
+     * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+     * `expression`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -641,7 +671,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the metric.
+     * The name of the metric. See the [API
+     * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+     * for the list of metric names.
+     * If `expression` is specified, `name` can be any string that you would like.
+     * For example if `expression` is `screenPageViews/sessions`, you could call
+     * that metric's name = `viewsPerSession`.
+     * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+     * `expression`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -662,7 +699,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the metric.
+     * The name of the metric. See the [API
+     * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+     * for the list of metric names.
+     * If `expression` is specified, `name` can be any string that you would like.
+     * For example if `expression` is `screenPageViews/sessions`, you could call
+     * that metric's name = `viewsPerSession`.
+     * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+     * `expression`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -679,7 +723,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the metric.
+     * The name of the metric. See the [API
+     * Metrics](https://developers.google.com/analytics/trusted-testing/analytics-data/api-schema#metrics)
+     * for the list of metric names.
+     * If `expression` is specified, `name` can be any string that you would like.
+     * For example if `expression` is `screenPageViews/sessions`, you could call
+     * that metric's name = `viewsPerSession`.
+     * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
+     * `expression`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -704,7 +755,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A mathematical expression for derived metrics. For example, the metric
-     * Event count per user is eventCount/totalUsers.
+     * Event count per user is `eventCount/totalUsers`.
      * </pre>
      *
      * <code>string expression = 2;</code>
@@ -727,7 +778,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A mathematical expression for derived metrics. For example, the metric
-     * Event count per user is eventCount/totalUsers.
+     * Event count per user is `eventCount/totalUsers`.
      * </pre>
      *
      * <code>string expression = 2;</code>
@@ -750,7 +801,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A mathematical expression for derived metrics. For example, the metric
-     * Event count per user is eventCount/totalUsers.
+     * Event count per user is `eventCount/totalUsers`.
      * </pre>
      *
      * <code>string expression = 2;</code>
@@ -772,7 +823,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A mathematical expression for derived metrics. For example, the metric
-     * Event count per user is eventCount/totalUsers.
+     * Event count per user is `eventCount/totalUsers`.
      * </pre>
      *
      * <code>string expression = 2;</code>
@@ -790,7 +841,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A mathematical expression for derived metrics. For example, the metric
-     * Event count per user is eventCount/totalUsers.
+     * Event count per user is `eventCount/totalUsers`.
      * </pre>
      *
      * <code>string expression = 2;</code>
@@ -814,9 +865,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a metric is invisible.
-     * If a metric is invisible, the metric is not in the response, but can be
-     * used in filters, order_bys or being referred to in a metric expression.
+     * Indicates if a metric is invisible in the report response. If a metric is
+     * invisible, the metric will not produce a column in the response, but can be
+     * used in `metricFilter`, `orderBys`, or a metric `expression`.
      * </pre>
      *
      * <code>bool invisible = 3;</code>
@@ -831,9 +882,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a metric is invisible.
-     * If a metric is invisible, the metric is not in the response, but can be
-     * used in filters, order_bys or being referred to in a metric expression.
+     * Indicates if a metric is invisible in the report response. If a metric is
+     * invisible, the metric will not produce a column in the response, but can be
+     * used in `metricFilter`, `orderBys`, or a metric `expression`.
      * </pre>
      *
      * <code>bool invisible = 3;</code>
@@ -851,9 +902,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a metric is invisible.
-     * If a metric is invisible, the metric is not in the response, but can be
-     * used in filters, order_bys or being referred to in a metric expression.
+     * Indicates if a metric is invisible in the report response. If a metric is
+     * invisible, the metric will not produce a column in the response, but can be
+     * used in `metricFilter`, `orderBys`, or a metric `expression`.
      * </pre>
      *
      * <code>bool invisible = 3;</code>

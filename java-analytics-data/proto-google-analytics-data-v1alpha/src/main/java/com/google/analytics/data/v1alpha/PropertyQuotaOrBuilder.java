@@ -27,7 +27,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 25,000 tokens per day;
+   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -40,7 +41,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 25,000 tokens per day;
+   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -53,7 +55,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 25,000 tokens per day;
+   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -65,9 +68,10 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 5,000 tokens per day. An API request
-   * consumes a single number of tokens, and that number is deducted from both
-   * the hourly and daily quotas.
+   * Standard Analytics Properties can use up to 5,000 tokens per day; Analytics
+   * 360 Properties can use 50,000 tokens per day. An API request consumes a
+   * single number of tokens, and that number is deducted from both the hourly
+   * and daily quotas.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus tokens_per_hour = 2;</code>
@@ -79,9 +83,10 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 5,000 tokens per day. An API request
-   * consumes a single number of tokens, and that number is deducted from both
-   * the hourly and daily quotas.
+   * Standard Analytics Properties can use up to 5,000 tokens per day; Analytics
+   * 360 Properties can use 50,000 tokens per day. An API request consumes a
+   * single number of tokens, and that number is deducted from both the hourly
+   * and daily quotas.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus tokens_per_hour = 2;</code>
@@ -93,9 +98,10 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 5,000 tokens per day. An API request
-   * consumes a single number of tokens, and that number is deducted from both
-   * the hourly and daily quotas.
+   * Standard Analytics Properties can use up to 5,000 tokens per day; Analytics
+   * 360 Properties can use 50,000 tokens per day. An API request consumes a
+   * single number of tokens, and that number is deducted from both the hourly
+   * and daily quotas.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus tokens_per_hour = 2;</code>
@@ -106,7 +112,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can send up to 10 concurrent requests.
+   * Standard Analytics Properties can send up to 10 concurrent requests;
+   * Analytics 360 Properties can use up to 50 concurrent requests.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus concurrent_requests = 3;</code>
@@ -118,7 +125,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can send up to 10 concurrent requests.
+   * Standard Analytics Properties can send up to 10 concurrent requests;
+   * Analytics 360 Properties can use up to 50 concurrent requests.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus concurrent_requests = 3;</code>
@@ -130,7 +138,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can send up to 10 concurrent requests.
+   * Standard Analytics Properties can send up to 10 concurrent requests;
+   * Analytics 360 Properties can use up to 50 concurrent requests.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus concurrent_requests = 3;</code>
@@ -141,8 +150,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties and cloud project pairs can have up to 10
-   * server errors per hour.
+   * Standard Analytics Properties and cloud project pairs can have up to 10
+   * server errors per hour; Analytics 360 Properties and cloud project pairs
+   * can have up to 50 server errors per hour.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus server_errors_per_project_per_hour = 4;</code>
@@ -154,8 +164,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties and cloud project pairs can have up to 10
-   * server errors per hour.
+   * Standard Analytics Properties and cloud project pairs can have up to 10
+   * server errors per hour; Analytics 360 Properties and cloud project pairs
+   * can have up to 50 server errors per hour.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus server_errors_per_project_per_hour = 4;</code>
@@ -167,8 +178,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties and cloud project pairs can have up to 10
-   * server errors per hour.
+   * Standard Analytics Properties and cloud project pairs can have up to 10
+   * server errors per hour; Analytics 360 Properties and cloud project pairs
+   * can have up to 50 server errors per hour.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.QuotaStatus server_errors_per_project_per_hour = 4;</code>

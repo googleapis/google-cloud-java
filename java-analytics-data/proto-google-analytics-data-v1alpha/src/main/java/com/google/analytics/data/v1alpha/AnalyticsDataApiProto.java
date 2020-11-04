@@ -75,6 +75,14 @@ public final class AnalyticsDataApiProto {
       internal_static_google_analytics_data_v1alpha_GetMetadataRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_GetMetadataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_RunRealtimeReportRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_RunRealtimeReportRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_RunRealtimeReportResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_RunRealtimeReportResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -173,40 +181,69 @@ public final class AnalyticsDataApiProto {
           + "ionMetadata\022>\n\007metrics\030\002 \003(\0132-.google.an"
           + "alytics.data.v1alpha.MetricMetadata\"Q\n\022G"
           + "etMetadataRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n"
-          + "%analyticsdata.googleapis.com/Metadata2\371"
-          + "\010\n\022AlphaAnalyticsData\022\215\001\n\tRunReport\022/.go"
-          + "ogle.analytics.data.v1alpha.RunReportReq"
-          + "uest\0320.google.analytics.data.v1alpha.Run"
-          + "ReportResponse\"\035\202\323\344\223\002\027\"\022/v1alpha:runRepo"
-          + "rt:\001*\022\241\001\n\016RunPivotReport\0224.google.analyt"
-          + "ics.data.v1alpha.RunPivotReportRequest\0325"
-          + ".google.analytics.data.v1alpha.RunPivotR"
-          + "eportResponse\"\"\202\323\344\223\002\034\"\027/v1alpha:runPivot"
-          + "Report:\001*\022\245\001\n\017BatchRunReports\0225.google.a"
-          + "nalytics.data.v1alpha.BatchRunReportsReq"
-          + "uest\0326.google.analytics.data.v1alpha.Bat"
-          + "chRunReportsResponse\"#\202\323\344\223\002\035\"\030/v1alpha:b"
-          + "atchRunReports:\001*\022\271\001\n\024BatchRunPivotRepor"
-          + "ts\022:.google.analytics.data.v1alpha.Batch"
-          + "RunPivotReportsRequest\032;.google.analytic"
-          + "s.data.v1alpha.BatchRunPivotReportsRespo"
-          + "nse\"(\202\323\344\223\002\"\"\035/v1alpha:batchRunPivotRepor"
-          + "ts:\001*\022\250\001\n\024GetUniversalMetadata\022:.google."
-          + "analytics.data.v1alpha.GetUniversalMetad"
-          + "ataRequest\0320.google.analytics.data.v1alp"
-          + "ha.UniversalMetadata\"\"\202\323\344\223\002\034\022\032/v1alpha/u"
-          + "niversalMetadata\022\237\001\n\013GetMetadata\0221.googl"
-          + "e.analytics.data.v1alpha.GetMetadataRequ"
-          + "est\032\'.google.analytics.data.v1alpha.Meta"
-          + "data\"4\202\323\344\223\002\'\022%/v1alpha/{name=properties/"
-          + "*/metadata}\332A\004name\032~\312A\034analyticsdata.goo"
-          + "gleapis.com\322A\\https://www.googleapis.com"
-          + "/auth/analytics,https://www.googleapis.c"
-          + "om/auth/analytics.readonlyB\177\n!com.google"
-          + ".analytics.data.v1alphaB\025AnalyticsDataAp"
-          + "iProtoP\001ZAgoogle.golang.org/genproto/goo"
-          + "gleapis/analytics/data/v1alpha;datab\006pro"
-          + "to3"
+          + "%analyticsdata.googleapis.com/Metadata\"\355"
+          + "\003\n\030RunRealtimeReportRequest\022\020\n\010property\030"
+          + "\001 \001(\t\022<\n\ndimensions\030\002 \003(\0132(.google.analy"
+          + "tics.data.v1alpha.Dimension\0226\n\007metrics\030\003"
+          + " \003(\0132%.google.analytics.data.v1alpha.Met"
+          + "ric\022\r\n\005limit\030\004 \001(\003\022I\n\020dimension_filter\030\005"
+          + " \001(\0132/.google.analytics.data.v1alpha.Fil"
+          + "terExpression\022F\n\rmetric_filter\030\006 \001(\0132/.g"
+          + "oogle.analytics.data.v1alpha.FilterExpre"
+          + "ssion\022M\n\023metric_aggregations\030\007 \003(\01620.goo"
+          + "gle.analytics.data.v1alpha.MetricAggrega"
+          + "tion\0229\n\torder_bys\030\010 \003(\0132&.google.analyti"
+          + "cs.data.v1alpha.OrderBy\022\035\n\025return_proper"
+          + "ty_quota\030\t \001(\010\"\326\003\n\031RunRealtimeReportResp"
+          + "onse\022I\n\021dimension_headers\030\001 \003(\0132..google"
+          + ".analytics.data.v1alpha.DimensionHeader\022"
+          + "C\n\016metric_headers\030\002 \003(\0132+.google.analyti"
+          + "cs.data.v1alpha.MetricHeader\0220\n\004rows\030\003 \003"
+          + "(\0132\".google.analytics.data.v1alpha.Row\0222"
+          + "\n\006totals\030\004 \003(\0132\".google.analytics.data.v"
+          + "1alpha.Row\0224\n\010maximums\030\005 \003(\0132\".google.an"
+          + "alytics.data.v1alpha.Row\0224\n\010minimums\030\006 \003"
+          + "(\0132\".google.analytics.data.v1alpha.Row\022\021"
+          + "\n\trow_count\030\007 \001(\005\022D\n\016property_quota\030\010 \001("
+          + "\0132,.google.analytics.data.v1alpha.Proper"
+          + "tyQuota2\301\n\n\022AlphaAnalyticsData\022\215\001\n\tRunRe"
+          + "port\022/.google.analytics.data.v1alpha.Run"
+          + "ReportRequest\0320.google.analytics.data.v1"
+          + "alpha.RunReportResponse\"\035\202\323\344\223\002\027\"\022/v1alph"
+          + "a:runReport:\001*\022\241\001\n\016RunPivotReport\0224.goog"
+          + "le.analytics.data.v1alpha.RunPivotReport"
+          + "Request\0325.google.analytics.data.v1alpha."
+          + "RunPivotReportResponse\"\"\202\323\344\223\002\034\"\027/v1alpha"
+          + ":runPivotReport:\001*\022\245\001\n\017BatchRunReports\0225"
+          + ".google.analytics.data.v1alpha.BatchRunR"
+          + "eportsRequest\0326.google.analytics.data.v1"
+          + "alpha.BatchRunReportsResponse\"#\202\323\344\223\002\035\"\030/"
+          + "v1alpha:batchRunReports:\001*\022\271\001\n\024BatchRunP"
+          + "ivotReports\022:.google.analytics.data.v1al"
+          + "pha.BatchRunPivotReportsRequest\032;.google"
+          + ".analytics.data.v1alpha.BatchRunPivotRep"
+          + "ortsResponse\"(\202\323\344\223\002\"\"\035/v1alpha:batchRunP"
+          + "ivotReports:\001*\022\250\001\n\024GetUniversalMetadata\022"
+          + ":.google.analytics.data.v1alpha.GetUnive"
+          + "rsalMetadataRequest\0320.google.analytics.d"
+          + "ata.v1alpha.UniversalMetadata\"\"\202\323\344\223\002\034\022\032/"
+          + "v1alpha/universalMetadata\022\237\001\n\013GetMetadat"
+          + "a\0221.google.analytics.data.v1alpha.GetMet"
+          + "adataRequest\032\'.google.analytics.data.v1a"
+          + "lpha.Metadata\"4\202\323\344\223\002\'\022%/v1alpha/{name=pr"
+          + "operties/*/metadata}\332A\004name\022\305\001\n\021RunRealt"
+          + "imeReport\0227.google.analytics.data.v1alph"
+          + "a.RunRealtimeReportRequest\0328.google.anal"
+          + "ytics.data.v1alpha.RunRealtimeReportResp"
+          + "onse\"=\202\323\344\223\0027\"2/v1alpha/{property=propert"
+          + "ies/*}:runRealtimeReport:\001*\032~\312A\034analytic"
+          + "sdata.googleapis.com\322A\\https://www.googl"
+          + "eapis.com/auth/analytics,https://www.goo"
+          + "gleapis.com/auth/analytics.readonlyB\177\n!c"
+          + "om.google.analytics.data.v1alphaB\025Analyt"
+          + "icsDataApiProtoP\001ZAgoogle.golang.org/gen"
+          + "proto/googleapis/analytics/data/v1alpha;"
+          + "datab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -348,6 +385,37 @@ public final class AnalyticsDataApiProto {
             internal_static_google_analytics_data_v1alpha_GetMetadataRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_analytics_data_v1alpha_RunRealtimeReportRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_analytics_data_v1alpha_RunRealtimeReportRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_RunRealtimeReportRequest_descriptor,
+            new java.lang.String[] {
+              "Property",
+              "Dimensions",
+              "Metrics",
+              "Limit",
+              "DimensionFilter",
+              "MetricFilter",
+              "MetricAggregations",
+              "OrderBys",
+              "ReturnPropertyQuota",
+            });
+    internal_static_google_analytics_data_v1alpha_RunRealtimeReportResponse_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_analytics_data_v1alpha_RunRealtimeReportResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_RunRealtimeReportResponse_descriptor,
+            new java.lang.String[] {
+              "DimensionHeaders",
+              "MetricHeaders",
+              "Rows",
+              "Totals",
+              "Maximums",
+              "Minimums",
+              "RowCount",
+              "PropertyQuota",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

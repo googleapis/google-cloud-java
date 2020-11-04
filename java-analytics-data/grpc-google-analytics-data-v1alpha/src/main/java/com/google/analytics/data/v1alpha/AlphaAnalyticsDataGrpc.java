@@ -326,6 +326,54 @@ public final class AlphaAnalyticsDataGrpc {
     return getGetMetadataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.RunRealtimeReportRequest,
+          com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+      getRunRealtimeReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunRealtimeReport",
+      requestType = com.google.analytics.data.v1alpha.RunRealtimeReportRequest.class,
+      responseType = com.google.analytics.data.v1alpha.RunRealtimeReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.RunRealtimeReportRequest,
+          com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+      getRunRealtimeReportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.RunRealtimeReportRequest,
+            com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+        getRunRealtimeReportMethod;
+    if ((getRunRealtimeReportMethod = AlphaAnalyticsDataGrpc.getRunRealtimeReportMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getRunRealtimeReportMethod = AlphaAnalyticsDataGrpc.getRunRealtimeReportMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getRunRealtimeReportMethod =
+              getRunRealtimeReportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.RunRealtimeReportRequest,
+                          com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunRealtimeReport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RunRealtimeReportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RunRealtimeReportResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("RunRealtimeReport"))
+                      .build();
+        }
+      }
+    }
+    return getRunRealtimeReportMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlphaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataStub> factory =
@@ -483,6 +531,22 @@ public final class AlphaAnalyticsDataGrpc {
       asyncUnimplementedUnaryCall(getGetMetadataMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The Google Analytics Realtime API returns a customized report of realtime
+     * event data for your property. These reports show events and usage from the
+     * last 30 minutes.
+     * </pre>
+     */
+    public void runRealtimeReport(
+        com.google.analytics.data.v1alpha.RunRealtimeReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getRunRealtimeReportMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -527,6 +591,13 @@ public final class AlphaAnalyticsDataGrpc {
                   new MethodHandlers<
                       com.google.analytics.data.v1alpha.GetMetadataRequest,
                       com.google.analytics.data.v1alpha.Metadata>(this, METHODID_GET_METADATA)))
+          .addMethod(
+              getRunRealtimeReportMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.data.v1alpha.RunRealtimeReportRequest,
+                      com.google.analytics.data.v1alpha.RunRealtimeReportResponse>(
+                      this, METHODID_RUN_REALTIME_REPORT)))
           .build();
     }
   }
@@ -672,6 +743,25 @@ public final class AlphaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Google Analytics Realtime API returns a customized report of realtime
+     * event data for your property. These reports show events and usage from the
+     * last 30 minutes.
+     * </pre>
+     */
+    public void runRealtimeReport(
+        com.google.analytics.data.v1alpha.RunRealtimeReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRunRealtimeReportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -790,6 +880,21 @@ public final class AlphaAnalyticsDataGrpc {
     public com.google.analytics.data.v1alpha.Metadata getMetadata(
         com.google.analytics.data.v1alpha.GetMetadataRequest request) {
       return blockingUnaryCall(getChannel(), getGetMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Google Analytics Realtime API returns a customized report of realtime
+     * event data for your property. These reports show events and usage from the
+     * last 30 minutes.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RunRealtimeReportResponse runRealtimeReport(
+        com.google.analytics.data.v1alpha.RunRealtimeReportRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
     }
   }
 
@@ -920,6 +1025,22 @@ public final class AlphaAnalyticsDataGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetMetadataMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Google Analytics Realtime API returns a customized report of realtime
+     * event data for your property. These reports show events and usage from the
+     * last 30 minutes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.RunRealtimeReportResponse>
+        runRealtimeReport(com.google.analytics.data.v1alpha.RunRealtimeReportRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRunRealtimeReportMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_REPORT = 0;
@@ -928,6 +1049,7 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_BATCH_RUN_PIVOT_REPORTS = 3;
   private static final int METHODID_GET_UNIVERSAL_METADATA = 4;
   private static final int METHODID_GET_METADATA = 5;
+  private static final int METHODID_RUN_REALTIME_REPORT = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -983,6 +1105,13 @@ public final class AlphaAnalyticsDataGrpc {
           serviceImpl.getMetadata(
               (com.google.analytics.data.v1alpha.GetMetadataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.Metadata>)
+                  responseObserver);
+          break;
+        case METHODID_RUN_REALTIME_REPORT:
+          serviceImpl.runRealtimeReport(
+              (com.google.analytics.data.v1alpha.RunRealtimeReportRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.RunRealtimeReportResponse>)
                   responseObserver);
           break;
         default:
@@ -1055,6 +1184,7 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getBatchRunPivotReportsMethod())
                       .addMethod(getGetUniversalMetadataMethod())
                       .addMethod(getGetMetadataMethod())
+                      .addMethod(getRunRealtimeReportMethod())
                       .build();
         }
       }

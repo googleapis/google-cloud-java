@@ -25,26 +25,36 @@ package com.google.analytics.data.v1alpha;
  * Report data for each row.
  * For example if RunReportRequest contains:
  * ```none
- * dimensions {
- *   name: "eventName"
- * }
- * dimensions {
- *   name: "countryId"
- * }
- * metrics {
- *   name: "eventCount"
- * }
+ * "dimensions": [
+ *   {
+ *     "name": "eventName"
+ *   },
+ *   {
+ *     "name": "countryId"
+ *   }
+ * ],
+ * "metrics": [
+ *   {
+ *     "name": "eventCount"
+ *   }
+ * ]
  * ```
- * One row with 'in_app_purchase' as the eventName, 'us' as the countryId, and
+ * One row with 'in_app_purchase' as the eventName, 'JP' as the countryId, and
  * 15 as the eventCount, would be:
  * ```none
- * dimension_values {
- *   name: 'in_app_purchase'
- *   name: 'us'
- * }
- * metric_values {
- *   int64_value: 15
- * }
+ * "dimensionValues": [
+ *   {
+ *     "value": "in_app_purchase"
+ *   },
+ *   {
+ *     "value": "JP"
+ *   }
+ * ],
+ * "metricValues": [
+ *   {
+ *     "value": "15"
+ *   }
+ * ]
  * ```
  * </pre>
  *
@@ -482,26 +492,36 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    * Report data for each row.
    * For example if RunReportRequest contains:
    * ```none
-   * dimensions {
-   *   name: "eventName"
-   * }
-   * dimensions {
-   *   name: "countryId"
-   * }
-   * metrics {
-   *   name: "eventCount"
-   * }
+   * "dimensions": [
+   *   {
+   *     "name": "eventName"
+   *   },
+   *   {
+   *     "name": "countryId"
+   *   }
+   * ],
+   * "metrics": [
+   *   {
+   *     "name": "eventCount"
+   *   }
+   * ]
    * ```
-   * One row with 'in_app_purchase' as the eventName, 'us' as the countryId, and
+   * One row with 'in_app_purchase' as the eventName, 'JP' as the countryId, and
    * 15 as the eventCount, would be:
    * ```none
-   * dimension_values {
-   *   name: 'in_app_purchase'
-   *   name: 'us'
-   * }
-   * metric_values {
-   *   int64_value: 15
-   * }
+   * "dimensionValues": [
+   *   {
+   *     "value": "in_app_purchase"
+   *   },
+   *   {
+   *     "value": "JP"
+   *   }
+   * ],
+   * "metricValues": [
+   *   {
+   *     "value": "15"
+   *   }
+   * ]
    * ```
    * </pre>
    *

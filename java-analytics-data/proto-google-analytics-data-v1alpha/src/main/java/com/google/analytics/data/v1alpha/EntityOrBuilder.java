@@ -27,7 +27,9 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics 4 (GA4) property id.
+   * A Google Analytics GA4 property id. To learn more, see [where to find your
+   * Property
+   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    * </pre>
    *
    * <code>string property_id = 1;</code>
@@ -39,7 +41,9 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * A Google Analytics 4 (GA4) property id.
+   * A Google Analytics GA4 property id. To learn more, see [where to find your
+   * Property
+   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    * </pre>
    *
    * <code>string property_id = 1;</code>

@@ -52,7 +52,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -62,7 +62,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -72,7 +72,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -82,7 +82,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>
@@ -93,7 +93,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The dimensions descriptions.
+   * The dimension descriptions.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.DimensionMetadata dimensions = 1;</code>

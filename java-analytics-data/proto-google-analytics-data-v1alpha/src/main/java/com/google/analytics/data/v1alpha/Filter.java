@@ -4641,7 +4641,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A filter for null values.
+   * A filter for null values. If True, a null dimension value is matched by
+   * this filter. Null filter is commonly used inside a NOT filter
+   * expression. For example, a NOT expression of a null filter removes rows
+   * when a dimension is null.
    * </pre>
    *
    * <code>bool null_filter = 2;</code>
@@ -5455,7 +5458,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A filter for null values.
+     * A filter for null values. If True, a null dimension value is matched by
+     * this filter. Null filter is commonly used inside a NOT filter
+     * expression. For example, a NOT expression of a null filter removes rows
+     * when a dimension is null.
      * </pre>
      *
      * <code>bool null_filter = 2;</code>
@@ -5472,7 +5478,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A filter for null values.
+     * A filter for null values. If True, a null dimension value is matched by
+     * this filter. Null filter is commonly used inside a NOT filter
+     * expression. For example, a NOT expression of a null filter removes rows
+     * when a dimension is null.
      * </pre>
      *
      * <code>bool null_filter = 2;</code>
@@ -5490,7 +5499,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A filter for null values.
+     * A filter for null values. If True, a null dimension value is matched by
+     * this filter. Null filter is commonly used inside a NOT filter
+     * expression. For example, a NOT expression of a null filter removes rows
+     * when a dimension is null.
      * </pre>
      *
      * <code>bool null_filter = 2;</code>
