@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-container.git",
-        "sha": "a54790277c600817e4194edd4fcef57358194c1e"
+        "sha": "5c4e6d92d7c575d282608166d7015c12d40066ad"
       }
     },
     {
