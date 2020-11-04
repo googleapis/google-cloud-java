@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.3.0...v0.4.0) (2020-11-04)
+
+
+### Features
+
+* added RunRealtimeReport method that returns a customized report of realtime event data for a GA4 property docs: minor documentation updates ([#80](https://www.github.com/googleapis/java-analytics-data/issues/80)) ([815fe2e](https://www.github.com/googleapis/java-analytics-data/commit/815fe2ed8456feef0d972f5610cf4ae73657a9fe))
+
+
+### Documentation
+
+* App+Web properties renamed to GA4 ([#78](https://www.github.com/googleapis/java-analytics-data/issues/78)) ([6a49d40](https://www.github.com/googleapis/java-analytics-data/commit/6a49d40411b4b51ba74e2632e736f239d933c6e5))
+
 ## [0.3.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.2.1...v0.3.0) (2020-10-31)
 
 
