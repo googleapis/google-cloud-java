@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-recommender/compare/v1.2.3...v1.2.4) (2020-11-04)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#325](https://www.github.com/googleapis/java-recommender/issues/325)) ([9c5e6eb](https://www.github.com/googleapis/java-recommender/commit/9c5e6eb79afecbd674196ab3273b42c4b45ff148))
+
 ### [1.2.3](https://www.github.com/googleapis/java-recommender/compare/v1.2.2...v1.2.3) (2020-10-27)
 
 
