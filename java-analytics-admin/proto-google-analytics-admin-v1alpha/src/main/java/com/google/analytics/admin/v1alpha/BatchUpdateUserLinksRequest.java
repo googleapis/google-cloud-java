@@ -142,7 +142,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -168,7 +170,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -191,11 +195,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.analytics.admin.v1alpha.UpdateUserLinkRequest>
@@ -206,11 +212,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.analytics.admin.v1alpha.UpdateUserLinkRequestOrBuilder>
@@ -221,11 +229,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public int getRequestsCount() {
@@ -235,11 +245,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest getRequests(int index) {
@@ -249,11 +261,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.UpdateUserLinkRequestOrBuilder getRequestsOrBuilder(
@@ -652,7 +666,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      * Example format: accounts/1234
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -677,7 +693,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      * Example format: accounts/1234
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -702,7 +720,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      * Example format: accounts/1234
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -726,7 +746,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      * Example format: accounts/1234
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -746,7 +768,9 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      * Example format: accounts/1234
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -784,11 +808,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.analytics.admin.v1alpha.UpdateUserLinkRequest>
         getRequestsList() {
@@ -802,11 +828,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getRequestsCount() {
       if (requestsBuilder_ == null) {
@@ -819,11 +847,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest getRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -836,11 +866,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.analytics.admin.v1alpha.UpdateUserLinkRequest value) {
@@ -860,11 +892,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index,
@@ -882,11 +916,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest value) {
       if (requestsBuilder_ == null) {
@@ -905,11 +941,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.analytics.admin.v1alpha.UpdateUserLinkRequest value) {
@@ -929,11 +967,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.Builder builderForValue) {
@@ -950,11 +990,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index,
@@ -972,11 +1014,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllRequests(
         java.lang.Iterable<? extends com.google.analytics.admin.v1alpha.UpdateUserLinkRequest>
@@ -994,11 +1038,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
@@ -1014,11 +1060,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -1034,11 +1082,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.Builder getRequestsBuilder(
         int index) {
@@ -1048,11 +1098,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequestOrBuilder getRequestsOrBuilder(
         int index) {
@@ -1066,11 +1118,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<
             ? extends com.google.analytics.admin.v1alpha.UpdateUserLinkRequestOrBuilder>
@@ -1085,11 +1139,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.Builder addRequestsBuilder() {
       return getRequestsFieldBuilder()
@@ -1100,11 +1156,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.Builder addRequestsBuilder(
         int index) {
@@ -1116,11 +1174,13 @@ public final class BatchUpdateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The requests specifying the user links to update.
+     * Required. The requests specifying the user links to update.
      * A maximum of 1000 user links can be updated in a batch.
      * </pre>
      *
-     * <code>repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2;</code>
+     * <code>
+     * repeated .google.analytics.admin.v1alpha.UpdateUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.Builder>
         getRequestsBuilderList() {

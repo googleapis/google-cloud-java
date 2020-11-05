@@ -1657,9 +1657,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;CreateUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchCreateUserLinksRequest request = BatchCreateUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   BatchCreateUserLinksResponse response = analyticsAdminServiceClient.batchCreateUserLinks(request);
    * }
@@ -1684,9 +1686,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;CreateUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchCreateUserLinksRequest request = BatchCreateUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   ApiFuture&lt;BatchCreateUserLinksResponse&gt; future = analyticsAdminServiceClient.batchCreateUserLinksCallable().futureCall(request);
    *   // Do something
@@ -1774,9 +1778,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;UpdateUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchUpdateUserLinksRequest request = BatchUpdateUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   BatchUpdateUserLinksResponse response = analyticsAdminServiceClient.batchUpdateUserLinks(request);
    * }
@@ -1798,9 +1804,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;UpdateUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchUpdateUserLinksRequest request = BatchUpdateUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   ApiFuture&lt;BatchUpdateUserLinksResponse&gt; future = analyticsAdminServiceClient.batchUpdateUserLinksCallable().futureCall(request);
    *   // Do something
@@ -1909,9 +1917,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;DeleteUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchDeleteUserLinksRequest request = BatchDeleteUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   analyticsAdminServiceClient.batchDeleteUserLinks(request);
    * }
@@ -1932,9 +1942,11 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.create()) {
-   *   String parent = "";
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   List&lt;DeleteUserLinkRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchDeleteUserLinksRequest request = BatchDeleteUserLinksRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
+   *     .addAllRequests(requests)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = analyticsAdminServiceClient.batchDeleteUserLinksCallable().futureCall(request);
    *   // Do something
@@ -3570,7 +3582,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
+   *     <p>properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
    *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3598,7 +3610,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
+   *     <p>properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
    *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -33,7 +33,9 @@ public interface BatchCreateUserLinksRequestOrBuilder
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -48,7 +50,9 @@ public interface BatchCreateUserLinksRequestOrBuilder
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,8 +62,9 @@ public interface BatchCreateUserLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If notify_new_users is set, then email new users that they've been given
-   * permissions on the resource.
+   * Optional. If set, then email the new users notifying them that they've been granted
+   * permissions to the resource. Regardless of whether this is set or not,
+   * notify_new_user field inside each individual request is ignored.
    * </pre>
    *
    * <code>bool notify_new_users = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -72,44 +77,52 @@ public interface BatchCreateUserLinksRequestOrBuilder
    *
    *
    * <pre>
-   * The requests specifying the user links to create.
+   * Required. The requests specifying the user links to create.
    * A maximum of 1000 user links can be created in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.CreateUserLinkRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to create.
+   * Required. The requests specifying the user links to create.
    * A maximum of 1000 user links can be created in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.analytics.admin.v1alpha.CreateUserLinkRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to create.
+   * Required. The requests specifying the user links to create.
    * A maximum of 1000 user links can be created in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to create.
+   * Required. The requests specifying the user links to create.
    * A maximum of 1000 user links can be created in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.CreateUserLinkRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -117,11 +130,13 @@ public interface BatchCreateUserLinksRequestOrBuilder
    *
    *
    * <pre>
-   * The requests specifying the user links to create.
+   * Required. The requests specifying the user links to create.
    * A maximum of 1000 user links can be created in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.CreateUserLinkRequest requests = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.analytics.admin.v1alpha.CreateUserLinkRequestOrBuilder getRequestsOrBuilder(int index);
 }

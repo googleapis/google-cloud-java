@@ -33,7 +33,9 @@ public interface BatchDeleteUserLinksRequestOrBuilder
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -48,7 +50,9 @@ public interface BatchDeleteUserLinksRequestOrBuilder
    * Example format: accounts/1234
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -58,44 +62,52 @@ public interface BatchDeleteUserLinksRequestOrBuilder
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.DeleteUserLinkRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.analytics.admin.v1alpha.DeleteUserLinkRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.DeleteUserLinkRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -103,11 +115,13 @@ public interface BatchDeleteUserLinksRequestOrBuilder
    *
    *
    * <pre>
-   * The requests specifying the user links to update.
+   * Required. The requests specifying the user links to update.
    * A maximum of 1000 user links can be updated in a batch.
    * </pre>
    *
-   * <code>repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2;</code>
+   * <code>
+   * repeated .google.analytics.admin.v1alpha.DeleteUserLinkRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.analytics.admin.v1alpha.DeleteUserLinkRequestOrBuilder getRequestsOrBuilder(int index);
 }

@@ -369,7 +369,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+   * https:
+   * //unicode.org/cldr/charts/latest/supplem
+   * // ental/territory_containment_un_m_49.html
    * </pre>
    *
    * <code>string country_code = 5;</code>
@@ -393,7 +395,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+   * https:
+   * //unicode.org/cldr/charts/latest/supplem
+   * // ental/territory_containment_un_m_49.html
    * </pre>
    *
    * <code>string country_code = 5;</code>
@@ -1481,7 +1485,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+     * https:
+     * //unicode.org/cldr/charts/latest/supplem
+     * // ental/territory_containment_un_m_49.html
      * </pre>
      *
      * <code>string country_code = 5;</code>
@@ -1504,7 +1510,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+     * https:
+     * //unicode.org/cldr/charts/latest/supplem
+     * // ental/territory_containment_un_m_49.html
      * </pre>
      *
      * <code>string country_code = 5;</code>
@@ -1527,7 +1535,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+     * https:
+     * //unicode.org/cldr/charts/latest/supplem
+     * // ental/territory_containment_un_m_49.html
      * </pre>
      *
      * <code>string country_code = 5;</code>
@@ -1549,7 +1559,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+     * https:
+     * //unicode.org/cldr/charts/latest/supplem
+     * // ental/territory_containment_un_m_49.html
      * </pre>
      *
      * <code>string country_code = 5;</code>
@@ -1567,7 +1579,9 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https://unicode.org/cldr/charts/latest/supplemental/territory_containment_un_m_49.html
+     * https:
+     * //unicode.org/cldr/charts/latest/supplem
+     * // ental/territory_containment_un_m_49.html
      * </pre>
      *
      * <code>string country_code = 5;</code>

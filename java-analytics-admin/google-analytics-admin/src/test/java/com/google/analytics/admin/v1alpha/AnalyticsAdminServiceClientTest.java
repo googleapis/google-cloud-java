@@ -848,9 +848,13 @@ public class AnalyticsAdminServiceClientTest {
         BatchCreateUserLinksResponse.newBuilder().build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    List<CreateUserLinkRequest> requests = new ArrayList<>();
     BatchCreateUserLinksRequest request =
-        BatchCreateUserLinksRequest.newBuilder().setParent(parent).build();
+        BatchCreateUserLinksRequest.newBuilder()
+            .setParent(parent.toString())
+            .addAllRequests(requests)
+            .build();
 
     BatchCreateUserLinksResponse actualResponse = client.batchCreateUserLinks(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -859,7 +863,8 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateUserLinksRequest actualRequest = (BatchCreateUserLinksRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, AccountName.parse(actualRequest.getParent()));
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -873,9 +878,13 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      List<CreateUserLinkRequest> requests = new ArrayList<>();
       BatchCreateUserLinksRequest request =
-          BatchCreateUserLinksRequest.newBuilder().setParent(parent).build();
+          BatchCreateUserLinksRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllRequests(requests)
+              .build();
 
       client.batchCreateUserLinks(request);
       Assert.fail("No exception raised");
@@ -932,9 +941,13 @@ public class AnalyticsAdminServiceClientTest {
         BatchUpdateUserLinksResponse.newBuilder().build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    List<UpdateUserLinkRequest> requests = new ArrayList<>();
     BatchUpdateUserLinksRequest request =
-        BatchUpdateUserLinksRequest.newBuilder().setParent(parent).build();
+        BatchUpdateUserLinksRequest.newBuilder()
+            .setParent(parent.toString())
+            .addAllRequests(requests)
+            .build();
 
     BatchUpdateUserLinksResponse actualResponse = client.batchUpdateUserLinks(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -943,7 +956,8 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchUpdateUserLinksRequest actualRequest = (BatchUpdateUserLinksRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, AccountName.parse(actualRequest.getParent()));
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -957,9 +971,13 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      List<UpdateUserLinkRequest> requests = new ArrayList<>();
       BatchUpdateUserLinksRequest request =
-          BatchUpdateUserLinksRequest.newBuilder().setParent(parent).build();
+          BatchUpdateUserLinksRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllRequests(requests)
+              .build();
 
       client.batchUpdateUserLinks(request);
       Assert.fail("No exception raised");
@@ -1011,9 +1029,13 @@ public class AnalyticsAdminServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    List<DeleteUserLinkRequest> requests = new ArrayList<>();
     BatchDeleteUserLinksRequest request =
-        BatchDeleteUserLinksRequest.newBuilder().setParent(parent).build();
+        BatchDeleteUserLinksRequest.newBuilder()
+            .setParent(parent.toString())
+            .addAllRequests(requests)
+            .build();
 
     client.batchDeleteUserLinks(request);
 
@@ -1021,7 +1043,8 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteUserLinksRequest actualRequest = (BatchDeleteUserLinksRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, AccountName.parse(actualRequest.getParent()));
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1035,9 +1058,13 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      List<DeleteUserLinkRequest> requests = new ArrayList<>();
       BatchDeleteUserLinksRequest request =
-          BatchDeleteUserLinksRequest.newBuilder().setParent(parent).build();
+          BatchDeleteUserLinksRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllRequests(requests)
+              .build();
 
       client.batchDeleteUserLinks(request);
       Assert.fail("No exception raised");

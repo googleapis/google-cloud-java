@@ -679,7 +679,7 @@ public enum IndustryCategory implements com.google.protobuf.ProtocolMessageEnum 
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.analytics.admin.v1alpha.ResourcesProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.analytics.admin.v1alpha.ResourcesProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final IndustryCategory[] VALUES = values();
