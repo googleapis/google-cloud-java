@@ -110,11 +110,13 @@ public final class ScanConfigProto {
           + "NORMAL\020\001\022\007\n\003LOW\020\002\"m\n\035ExportToSecurityCom"
           + "mandCenter\0221\n-EXPORT_TO_SECURITY_COMMAND"
           + "_CENTER_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DI"
-          + "SABLED\020\002B\221\001\n&com.google.cloud.websecurit"
+          + "SABLED\020\002B\203\002\n&com.google.cloud.websecurit"
           + "yscanner.v1B\017ScanConfigProtoP\001ZTgoogle.g"
           + "olang.org/genproto/googleapis/cloud/webs"
-          + "ecurityscanner/v1;websecurityscannerb\006pr"
-          + "oto3"
+          + "ecurityscanner/v1;websecurityscanner\252\002\"G"
+          + "oogle.Cloud.WebSecurityScanner.V1\312\002\"Goog"
+          + "le\\Cloud\\WebSecurityScanner\\V1\352\002%Google:"
+          + ":Cloud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

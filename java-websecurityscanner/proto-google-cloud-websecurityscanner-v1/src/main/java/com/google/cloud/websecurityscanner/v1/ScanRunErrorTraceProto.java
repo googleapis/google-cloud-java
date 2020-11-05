@@ -54,11 +54,13 @@ public final class ScanRunErrorTraceProto {
           + "SSUE\020\002\022\037\n\033AUTHENTICATION_CONFIG_ISSUE\020\003\022"
           + "\034\n\030TIMED_OUT_WHILE_SCANNING\020\004\022\026\n\022TOO_MAN"
           + "Y_REDIRECTS\020\005\022\030\n\024TOO_MANY_HTTP_ERRORS\020\006B"
-          + "\230\001\n&com.google.cloud.websecurityscanner."
+          + "\212\002\n&com.google.cloud.websecurityscanner."
           + "v1B\026ScanRunErrorTraceProtoP\001ZTgoogle.gol"
           + "ang.org/genproto/googleapis/cloud/websec"
-          + "urityscanner/v1;websecurityscannerb\006prot"
-          + "o3"
+          + "urityscanner/v1;websecurityscanner\252\002\"Goo"
+          + "gle.Cloud.WebSecurityScanner.V1\312\002\"Google"
+          + "\\Cloud\\WebSecurityScanner\\V1\352\002%Google::C"
+          + "loud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -104,12 +104,15 @@ public final class ScanConfigProto {
           + "OMMAND_CENTER_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001"
           + "\022\014\n\010DISABLED\020\002:_\352A\\\n,websecurityscanner."
           + "googleapis.com/ScanConfig\022,projects/{pro"
-          + "ject}/scanConfigs/{scan_config}B\302\001\n*com."
+          + "ject}/scanConfigs/{scan_config}B\227\002\n*com."
           + "google.cloud.websecurityscanner.v1betaB\017"
           + "ScanConfigProtoP\001ZXgoogle.golang.org/gen"
           + "proto/googleapis/cloud/websecurityscanne"
-          + "r/v1beta;websecurityscanner\312\002&Google\\Clo"
-          + "ud\\WebSecurityScanner\\V1betab\006proto3"
+          + "r/v1beta;websecurityscanner\252\002&Google.Clo"
+          + "ud.WebSecurityScanner.V1Beta\312\002&Google\\Cl"
+          + "oud\\WebSecurityScanner\\V1beta\352\002)Google::"
+          + "Cloud::WebSecurityScanner::V1betab\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

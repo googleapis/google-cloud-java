@@ -89,11 +89,14 @@ public final class FindingAddonProto {
           + "SSAGE\020\007\022\022\n\016GET_PARAMETERS\020\010\022\020\n\014URL_FRAGM"
           + "ENT\020\t\022\020\n\014HTML_COMMENT\020\n\022\023\n\017POST_PARAMETE"
           + "RS\020\013\022\014\n\010PROTOCOL\020\014\022\016\n\nSTORED_XSS\020\r\022\017\n\013SA"
-          + "ME_ORIGIN\020\016\022\031\n\025USER_CONTROLLABLE_URL\020\017B\223"
-          + "\001\n&com.google.cloud.websecurityscanner.v"
+          + "ME_ORIGIN\020\016\022\031\n\025USER_CONTROLLABLE_URL\020\017B\205"
+          + "\002\n&com.google.cloud.websecurityscanner.v"
           + "1B\021FindingAddonProtoP\001ZTgoogle.golang.or"
           + "g/genproto/googleapis/cloud/websecuritys"
-          + "canner/v1;websecurityscannerb\006proto3"
+          + "canner/v1;websecurityscanner\252\002\"Google.Cl"
+          + "oud.WebSecurityScanner.V1\312\002\"Google\\Cloud"
+          + "\\WebSecurityScanner\\V1\352\002%Google::Cloud::"
+          + "WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -68,12 +68,14 @@ public final class ScanRunProto {
           + "CCESS\020\001\022\t\n\005ERROR\020\002\022\n\n\006KILLED\020\003:p\352Am\n)web"
           + "securityscanner.googleapis.com/ScanRun\022@"
           + "projects/{project}/scanConfigs/{scan_con"
-          + "fig}/scanRuns/{scan_run}B\277\001\n*com.google."
+          + "fig}/scanRuns/{scan_run}B\224\002\n*com.google."
           + "cloud.websecurityscanner.v1betaB\014ScanRun"
           + "ProtoP\001ZXgoogle.golang.org/genproto/goog"
           + "leapis/cloud/websecurityscanner/v1beta;w"
-          + "ebsecurityscanner\312\002&Google\\Cloud\\WebSecu"
-          + "rityScanner\\V1betab\006proto3"
+          + "ebsecurityscanner\252\002&Google.Cloud.WebSecu"
+          + "rityScanner.V1Beta\312\002&Google\\Cloud\\WebSec"
+          + "urityScanner\\V1beta\352\002)Google::Cloud::Web"
+          + "SecurityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

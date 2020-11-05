@@ -64,12 +64,14 @@ public final class FindingProto {
           + "scanner.v1beta.Xss:\204\001\352A\200\001\n)websecuritysc"
           + "anner.googleapis.com/Finding\022Sprojects/{"
           + "project}/scanConfigs/{scan_config}/scanR"
-          + "uns/{scan_run}/findings/{finding}B\277\001\n*co"
+          + "uns/{scan_run}/findings/{finding}B\224\002\n*co"
           + "m.google.cloud.websecurityscanner.v1beta"
           + "B\014FindingProtoP\001ZXgoogle.golang.org/genp"
           + "roto/googleapis/cloud/websecurityscanner"
-          + "/v1beta;websecurityscanner\312\002&Google\\Clou"
-          + "d\\WebSecurityScanner\\V1betab\006proto3"
+          + "/v1beta;websecurityscanner\252\002&Google.Clou"
+          + "d.WebSecurityScanner.V1Beta\312\002&Google\\Clo"
+          + "ud\\WebSecurityScanner\\V1beta\352\002)Google::C"
+          + "loud::WebSecurityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

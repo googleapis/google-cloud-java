@@ -80,12 +80,14 @@ public final class ScanConfigErrorProto {
           + "E_PROJECT_INFO\020&\022(\n$UNSUPPORTED_BLACKLIS"
           + "T_PATTERN_FORMAT\020\'\022\026\n\022UNSUPPORTED_FILTER"
           + "\020(\022\034\n\030UNSUPPORTED_FINDING_TYPE\020)\022\032\n\026UNSU"
-          + "PPORTED_URL_SCHEME\020*\032\002\020\001B\307\001\n*com.google."
+          + "PPORTED_URL_SCHEME\020*\032\002\020\001B\234\002\n*com.google."
           + "cloud.websecurityscanner.v1betaB\024ScanCon"
           + "figErrorProtoP\001ZXgoogle.golang.org/genpr"
           + "oto/googleapis/cloud/websecurityscanner/"
-          + "v1beta;websecurityscanner\312\002&Google\\Cloud"
-          + "\\WebSecurityScanner\\V1betab\006proto3"
+          + "v1beta;websecurityscanner\252\002&Google.Cloud"
+          + ".WebSecurityScanner.V1Beta\312\002&Google\\Clou"
+          + "d\\WebSecurityScanner\\V1beta\352\002)Google::Cl"
+          + "oud::WebSecurityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

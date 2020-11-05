@@ -80,11 +80,14 @@ public final class ScanConfigErrorProto {
           + "FO\020&\022(\n$UNSUPPORTED_BLACKLIST_PATTERN_FO"
           + "RMAT\020\'\022\026\n\022UNSUPPORTED_FILTER\020(\022\034\n\030UNSUPP"
           + "ORTED_FINDING_TYPE\020)\022\032\n\026UNSUPPORTED_URL_"
-          + "SCHEME\020*\032\002\020\001B\226\001\n&com.google.cloud.websec"
+          + "SCHEME\020*\032\002\020\001B\210\002\n&com.google.cloud.websec"
           + "urityscanner.v1B\024ScanConfigErrorProtoP\001Z"
           + "Tgoogle.golang.org/genproto/googleapis/c"
           + "loud/websecurityscanner/v1;websecuritysc"
-          + "annerb\006proto3"
+          + "anner\252\002\"Google.Cloud.WebSecurityScanner."
+          + "V1\312\002\"Google\\Cloud\\WebSecurityScanner\\V1\352"
+          + "\002%Google::Cloud::WebSecurityScanner::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

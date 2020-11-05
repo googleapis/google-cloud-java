@@ -44,11 +44,13 @@ public final class FindingTypeStatsProto {
           + "ding_type_stats.proto\022\"google.cloud.webs"
           + "ecurityscanner.v1\"?\n\020FindingTypeStats\022\024\n"
           + "\014finding_type\030\001 \001(\t\022\025\n\rfinding_count\030\002 \001"
-          + "(\005B\227\001\n&com.google.cloud.websecurityscann"
+          + "(\005B\211\002\n&com.google.cloud.websecurityscann"
           + "er.v1B\025FindingTypeStatsProtoP\001ZTgoogle.g"
           + "olang.org/genproto/googleapis/cloud/webs"
-          + "ecurityscanner/v1;websecurityscannerb\006pr"
-          + "oto3"
+          + "ecurityscanner/v1;websecurityscanner\252\002\"G"
+          + "oogle.Cloud.WebSecurityScanner.V1\312\002\"Goog"
+          + "le\\Cloud\\WebSecurityScanner\\V1\352\002%Google:"
+          + ":Cloud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

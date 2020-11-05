@@ -54,12 +54,14 @@ public final class ScanRunErrorTraceProto {
           + "R\020\001\022\025\n\021SCAN_CONFIG_ISSUE\020\002\022\037\n\033AUTHENTICA"
           + "TION_CONFIG_ISSUE\020\003\022\034\n\030TIMED_OUT_WHILE_S"
           + "CANNING\020\004\022\026\n\022TOO_MANY_REDIRECTS\020\005\022\030\n\024TOO"
-          + "_MANY_HTTP_ERRORS\020\006B\311\001\n*com.google.cloud"
+          + "_MANY_HTTP_ERRORS\020\006B\236\002\n*com.google.cloud"
           + ".websecurityscanner.v1betaB\026ScanRunError"
           + "TraceProtoP\001ZXgoogle.golang.org/genproto"
           + "/googleapis/cloud/websecurityscanner/v1b"
-          + "eta;websecurityscanner\312\002&Google\\Cloud\\We"
-          + "bSecurityScanner\\V1betab\006proto3"
+          + "eta;websecurityscanner\252\002&Google.Cloud.We"
+          + "bSecurityScanner.V1Beta\312\002&Google\\Cloud\\W"
+          + "ebSecurityScanner\\V1beta\352\002)Google::Cloud"
+          + "::WebSecurityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

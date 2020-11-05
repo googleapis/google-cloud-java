@@ -64,11 +64,13 @@ public final class ScanRunProto {
           + "PECIFIED\020\000\022\n\n\006QUEUED\020\001\022\014\n\010SCANNING\020\002\022\014\n\010"
           + "FINISHED\020\003\"O\n\013ResultState\022\034\n\030RESULT_STAT"
           + "E_UNSPECIFIED\020\000\022\013\n\007SUCCESS\020\001\022\t\n\005ERROR\020\002\022"
-          + "\n\n\006KILLED\020\003B\216\001\n&com.google.cloud.websecu"
+          + "\n\n\006KILLED\020\003B\200\002\n&com.google.cloud.websecu"
           + "rityscanner.v1B\014ScanRunProtoP\001ZTgoogle.g"
           + "olang.org/genproto/googleapis/cloud/webs"
-          + "ecurityscanner/v1;websecurityscannerb\006pr"
-          + "oto3"
+          + "ecurityscanner/v1;websecurityscanner\252\002\"G"
+          + "oogle.Cloud.WebSecurityScanner.V1\312\002\"Goog"
+          + "le\\Cloud\\WebSecurityScanner\\V1\352\002%Google:"
+          + ":Cloud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

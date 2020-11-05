@@ -246,12 +246,14 @@ public final class WebSecurityScannerProto {
           + "onfigs/*/scanRuns/*}/findingTypeStats\332A\006"
           + "parent\032U\312A!websecurityscanner.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\312\001\n*com.google.cloud.webse"
+          + "loud-platformB\237\002\n*com.google.cloud.webse"
           + "curityscanner.v1betaB\027WebSecurityScanner"
           + "ProtoP\001ZXgoogle.golang.org/genproto/goog"
           + "leapis/cloud/websecurityscanner/v1beta;w"
-          + "ebsecurityscanner\312\002&Google\\Cloud\\WebSecu"
-          + "rityScanner\\V1betab\006proto3"
+          + "ebsecurityscanner\252\002&Google.Cloud.WebSecu"
+          + "rityScanner.V1Beta\312\002&Google\\Cloud\\WebSec"
+          + "urityScanner\\V1beta\352\002)Google::Cloud::Web"
+          + "SecurityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -44,12 +44,14 @@ public final class FindingTypeStatsProto {
           + "/finding_type_stats.proto\022&google.cloud."
           + "websecurityscanner.v1beta\"?\n\020FindingType"
           + "Stats\022\024\n\014finding_type\030\001 \001(\t\022\025\n\rfinding_c"
-          + "ount\030\002 \001(\005B\310\001\n*com.google.cloud.websecur"
+          + "ount\030\002 \001(\005B\235\002\n*com.google.cloud.websecur"
           + "ityscanner.v1betaB\025FindingTypeStatsProto"
           + "P\001ZXgoogle.golang.org/genproto/googleapi"
           + "s/cloud/websecurityscanner/v1beta;websec"
-          + "urityscanner\312\002&Google\\Cloud\\WebSecurityS"
-          + "canner\\V1betab\006proto3"
+          + "urityscanner\252\002&Google.Cloud.WebSecurityS"
+          + "canner.V1Beta\312\002&Google\\Cloud\\WebSecurity"
+          + "Scanner\\V1beta\352\002)Google::Cloud::WebSecur"
+          + "ityScanner::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
