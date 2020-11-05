@@ -18,10 +18,10 @@ package com.google.cloud.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.DeployModelRequest;
-import com.google.cloud.automl.v1beta1.Model;
-import com.google.cloud.automl.v1beta1.ModelName;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DeployModelRequest;
+import com.google.cloud.automl.v1.Model;
+import com.google.cloud.automl.v1.ModelName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -77,7 +77,7 @@ public class PredictionApiIT {
   }
 
   @Test
-  public void testPredict() {
+  public void testPredict() throws IOException {
     PredictionApi.predict(PROJECT_ID, COMPUTE_REGION, modelId, filePath, scoreThreshold);
     String got = bout.toString();
     assertThat(got).contains("dandelion");

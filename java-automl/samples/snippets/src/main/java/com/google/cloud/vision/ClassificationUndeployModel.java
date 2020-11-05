@@ -18,10 +18,10 @@ package com.google.cloud.vision;
 
 // [START automl_vision_classification_undeploy_model]
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.ModelName;
-import com.google.cloud.automl.v1beta1.OperationMetadata;
-import com.google.cloud.automl.v1beta1.UndeployModelRequest;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.ModelName;
+import com.google.cloud.automl.v1.OperationMetadata;
+import com.google.cloud.automl.v1.UndeployModelRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

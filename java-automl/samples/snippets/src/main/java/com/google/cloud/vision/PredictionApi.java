@@ -25,22 +25,18 @@
 package com.google.cloud.vision;
 
 // Imports the Google Cloud client library
-import com.google.cloud.automl.v1beta1.AnnotationPayload;
-import com.google.cloud.automl.v1beta1.ExamplePayload;
-import com.google.cloud.automl.v1beta1.Image;
-import com.google.cloud.automl.v1beta1.ModelName;
-import com.google.cloud.automl.v1beta1.PredictResponse;
-import com.google.cloud.automl.v1beta1.PredictionServiceClient;
+import com.google.cloud.automl.v1.AnnotationPayload;
+import com.google.cloud.automl.v1.ExamplePayload;
+import com.google.cloud.automl.v1.Image;
+import com.google.cloud.automl.v1.ModelName;
+import com.google.cloud.automl.v1.PredictResponse;
+import com.google.cloud.automl.v1.PredictionServiceClient;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
  * Google Cloud AutoML Vision API sample application. Example usage: mvn package exec:java
@@ -65,7 +61,7 @@ public class PredictionApi {
       String computeRegion,
       String modelId,
       String filePath,
-      String scoreThreshold) {
+      String scoreThreshold) throws IOException {
 
     // Instantiate client for prediction service.
     try (PredictionServiceClient predictionClient = PredictionServiceClient.create()) {
@@ -92,45 +88,7 @@ public class PredictionApi {
         System.out.println(
             "Predicted class score :" + annotationPayload.getClassification().getScore());
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
   // [END automl_vision_predict]
-
-  public static void main(String[] args) {
-    argsHelper(args);
-  }
-
-  static void argsHelper(String[] args) {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("PredictionApi")
-            .build()
-            .defaultHelp(true)
-            .description("Prediction API Operation");
-
-    parser.addArgument("modelId").required(true);
-    parser.addArgument("filePath").required(true);
-    parser.addArgument("scoreThreshold").nargs("?").type(String.class).setDefault("");
-
-    String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-    String computeRegion = System.getenv("REGION_NAME");
-
-    if (projectId == null || computeRegion == null) {
-      System.out.println("Set `GOOGLE_CLOUD_PROJECT` and `REGION_NAME` as specified in the README");
-      System.exit(-1);
-    }
-
-    try {
-      Namespace ns = parser.parseArgs(args);
-      predict(
-          projectId,
-          computeRegion,
-          ns.getString("modelId"),
-          ns.getString("filePath"),
-          ns.getString("scoreThreshold"));
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }

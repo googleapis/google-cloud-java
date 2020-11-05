@@ -75,18 +75,4 @@ public class ClassificationDeployModelIT {
       assertThat(e.getMessage()).contains("The model does not exist");
     }
   }
-
-  @Test
-  public void testClassificationDeployModelNodeCountApi() {
-    // As model deployment can take a long time, instead try to deploy a
-    // nonexistent model and confirm that the model was not found, but other
-    // elements of the request were valid.
-    try {
-      ClassificationDeployModelNodeCount.classificationDeployModelNodeCount(PROJECT_ID, MODEL_ID);
-      String got = bout.toString();
-      assertThat(got).contains("The model does not exist");
-    } catch (IOException | ExecutionException | InterruptedException e) {
-      assertThat(e.getMessage()).contains("The model does not exist");
-    }
-  }
 }

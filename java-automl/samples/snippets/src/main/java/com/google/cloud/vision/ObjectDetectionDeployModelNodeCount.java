@@ -18,11 +18,11 @@ package com.google.cloud.vision;
 
 // [START automl_vision_object_detection_deploy_model_node_count]
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.DeployModelRequest;
-import com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata;
-import com.google.cloud.automl.v1beta1.ModelName;
-import com.google.cloud.automl.v1beta1.OperationMetadata;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.DeployModelRequest;
+import com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata;
+import com.google.cloud.automl.v1.ModelName;
+import com.google.cloud.automl.v1.OperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

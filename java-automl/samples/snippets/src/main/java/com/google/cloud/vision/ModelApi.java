@@ -18,29 +18,13 @@ package com.google.cloud.vision;
 
 // Imports the Google Cloud client library
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics;
-import com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry;
-import com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata;
-import com.google.cloud.automl.v1beta1.ListModelEvaluationsRequest;
-import com.google.cloud.automl.v1beta1.ListModelsRequest;
-import com.google.cloud.automl.v1beta1.LocationName;
-import com.google.cloud.automl.v1beta1.Model;
-import com.google.cloud.automl.v1beta1.ModelEvaluation;
-import com.google.cloud.automl.v1beta1.ModelEvaluationName;
-import com.google.cloud.automl.v1beta1.ModelName;
-import com.google.cloud.automl.v1beta1.OperationMetadata;
-import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
+import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.ImageClassificationModelMetadata;
+import com.google.cloud.automl.v1.LocationName;
+import com.google.cloud.automl.v1.Model;
+import com.google.cloud.automl.v1.OperationMetadata;
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-import net.sourceforge.argparse4j.inf.Subparser;
-import net.sourceforge.argparse4j.inf.Subparsers;
 
 /**
  * Google Cloud AutoML Vision API sample application. Example usage: mvn package exec:java
@@ -64,7 +48,7 @@ public class ModelApi {
       String computeRegion,
       String dataSetId,
       String modelName,
-      String trainBudget) {
+      String trainBudget) throws IOException, ExecutionException, InterruptedException {
     // Instantiates a client
     try (AutoMlClient client = AutoMlClient.create()) {
 
@@ -76,7 +60,7 @@ public class ModelApi {
           Long.valueOf(trainBudget) == 0
               ? ImageClassificationModelMetadata.newBuilder().build()
               : ImageClassificationModelMetadata.newBuilder()
-                  .setTrainBudget(Long.valueOf(trainBudget))
+                  .setTrainBudgetMilliNodeHours(Long.valueOf(trainBudget))
                   .build();
 
       // Set model name and model metadata for the image dataset.
@@ -95,49 +79,7 @@ public class ModelApi {
           String.format(
               "Training operation name: %s", response.getInitialFuture().get().getName()));
       System.out.println("Training started...");
-    } catch (IOException | ExecutionException | InterruptedException e) {
-      e.printStackTrace();
     }
   }
   // [END automl_vision_create_model]
-
-  public static void main(String[] args) {
-    argsHelper(args);
-  }
-
-  static void argsHelper(String[] args) {
-    ArgumentParser parser =
-        ArgumentParsers.newFor("ModelApi")
-            .build()
-            .defaultHelp(true)
-            .description("Model API operations.");
-    Subparsers subparsers = parser.addSubparsers().dest("command");
-
-    Subparser createModelParser = subparsers.addParser("create_model");
-    createModelParser.addArgument("datasetId");
-    createModelParser.addArgument("modelName");
-    createModelParser.addArgument("trainBudget");
-
-    String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-    String computeRegion = System.getenv("REGION_NAME");
-
-    if (projectId == null || computeRegion == null) {
-      System.out.println("Set `GOOGLE_CLOUD_PROJECT` and `REGION_NAME` as specified in the README");
-      System.exit(-1);
-    }
-
-    try {
-      Namespace ns = parser.parseArgs(args);
-      if (ns.get("command").equals("create_model")) {
-        createModel(
-            projectId,
-            computeRegion,
-            ns.getString("datasetId"),
-            ns.getString("modelName"),
-            ns.getString("trainBudget"));
-      }
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }
