@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.0...v0.2.1) (2020-11-05)
+
+
+### Bug Fixes
+
+* 'requests' field of CreateUserLink, UpdateUserLink, DeleteUserLink methods is now required ([#96](https://www.github.com/googleapis/java-analytics-admin/issues/96)) ([c15a776](https://www.github.com/googleapis/java-analytics-admin/commit/c15a776d47eb4d28865453281ea7c36b2510892a))
+
 ## [0.2.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.1.4...v0.2.0) (2020-11-02)
 
 
