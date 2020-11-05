@@ -370,13 +370,13 @@ public final class DocumentProto {
           + "d.documentai.v1beta3.Document.TextAnchor"
           + "\022\024\n\014changed_text\030\002 \001(\t\022H\n\nprovenance\030\003 \003"
           + "(\01324.google.cloud.documentai.v1beta3.Doc"
-          + "ument.ProvenanceB\010\n\006sourceB\351\001\n#com.googl"
+          + "ument.ProvenanceB\010\n\006sourceB\352\001\n#com.googl"
           + "e.cloud.documentai.v1beta3B\rDocumentProt"
           + "oP\001ZIgoogle.golang.org/genproto/googleap"
           + "is/cloud/documentai/v1beta3;documentai\252\002"
-          + "\037Google.Cloud.DocumentAI.v1beta3\312\002\037Googl"
-          + "e\\Cloud\\DocumentAi\\v1beta3\352\002!Google::Clo"
-          + "ud::DocumentAI::masterb\006proto3"
+          + "\037Google.Cloud.DocumentAI.V1Beta3\312\002\037Googl"
+          + "e\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Clo"
+          + "ud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

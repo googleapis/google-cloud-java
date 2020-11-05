@@ -252,7 +252,7 @@ public final class DocumentProto {
           + "Igoogle.golang.org/genproto/googleapis/c"
           + "loud/documentai/v1beta1;documentai\252\002\037Goo"
           + "gle.Cloud.DocumentAI.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\DocumentAi\\V1beta1\352\002\"Google::Cloud::"
+          + "oud\\DocumentAI\\V1beta1\352\002\"Google::Cloud::"
           + "DocumentAI::V1beta1b\006proto3"
     };
     descriptor =

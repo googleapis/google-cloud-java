@@ -61,7 +61,7 @@ public final class GeometryProto {
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/documentai/v1beta2;documentai\252\002\037Goog"
           + "le.Cloud.DocumentAI.V1Beta2\312\002\037Google\\Clo"
-          + "ud\\DocumentAi\\V1beta2\352\002\"Google::Cloud::D"
+          + "ud\\DocumentAI\\V1beta2\352\002\"Google::Cloud::D"
           + "ocumentAI::V1beta2b\006proto3"
     };
     descriptor =
