@@ -79,7 +79,7 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
     <log>application.log</log>
 
     <!-- Optional: defaults to "ERROR" -->
-    <flushLevel>WARN</flushLevel>
+    <flushLevel>WARNING</flushLevel>
 
     <!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". See supported resource types  -->
     <resourceType></resourceType>
