@@ -40,6 +40,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   private Attribution() {
     outputIndex_ = emptyIntList();
     outputDisplayName_ = "";
+    outputName_ = "";
   }
 
   @java.lang.Override
@@ -132,6 +133,13 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
               approximationError_ = input.readDouble();
               break;
             }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              outputName_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -179,8 +187,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The field name of the output is determined by the key in
    * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-   * If the Model predicted output is a tensor value (for example, an ndarray),
-   * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
+   * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * If there are multiple baselines, their output values are averaged.
    * </pre>
    *
@@ -202,8 +210,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * Output only. Model predicted output on the corresponding [explanation
    * instance][ExplainRequest.instances]. The field name of the output is
    * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-   * If the Model predicted output is a tensor value (for example, an ndarray),
-   * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * If the Model predicted output has multiple dimensions, this is the value in
+   * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * </pre>
    *
    * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -223,7 +231,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -259,7 +267,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -297,7 +305,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -334,10 +342,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -354,10 +362,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -373,10 +381,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -457,10 +465,20 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
    * explanation method. Lower value means more precise attributions.
-   * For Sampled Shapley
-   * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-   * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-   * the error.
+   * * For [Sampled Shapley
+   * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
+   * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
+   * * For [Integrated Gradients
+   * attribution][ExplanationParameters.integrated_gradients_attribution],
+   * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+   * reduce the error.
+   * * For [XRAI
+   * attribution][ExplanationParameters.xrai_attribution], increasing
+   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
+   * Refer to  AI Explanations Whitepaper for more details:
+   * https:
+   * //storage.googleapis.com/cloud-ai-whitep
+   * // apers/AI%20Explainability%20Whitepaper.pdf
    * </pre>
    *
    * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -470,6 +488,57 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getApproximationError() {
     return approximationError_;
+  }
+
+  public static final int OUTPUT_NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object outputName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the explain output. Specified as the key in
+   * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+   * </pre>
+   *
+   * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The outputName.
+   */
+  @java.lang.Override
+  public java.lang.String getOutputName() {
+    java.lang.Object ref = outputName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      outputName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the explain output. Specified as the key in
+   * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+   * </pre>
+   *
+   * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for outputName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOutputNameBytes() {
+    java.lang.Object ref = outputName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      outputName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -509,6 +578,9 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (approximationError_ != 0D) {
       output.writeDouble(6, approximationError_);
     }
+    if (!getOutputNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, outputName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -546,6 +618,9 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (approximationError_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, approximationError_);
     }
+    if (!getOutputNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, outputName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -574,6 +649,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (!getOutputDisplayName().equals(other.getOutputDisplayName())) return false;
     if (java.lang.Double.doubleToLongBits(getApproximationError())
         != java.lang.Double.doubleToLongBits(other.getApproximationError())) return false;
+    if (!getOutputName().equals(other.getOutputName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -610,6 +686,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getApproximationError()));
+    hash = (37 * hash) + OUTPUT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOutputName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -771,6 +849,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
 
       approximationError_ = 0D;
 
+      outputName_ = "";
+
       return this;
     }
 
@@ -813,6 +893,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       result.outputIndex_ = outputIndex_;
       result.outputDisplayName_ = outputDisplayName_;
       result.approximationError_ = approximationError_;
+      result.outputName_ = outputName_;
       onBuilt();
       return result;
     }
@@ -889,6 +970,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       if (other.getApproximationError() != 0D) {
         setApproximationError(other.getApproximationError());
       }
+      if (!other.getOutputName().isEmpty()) {
+        outputName_ = other.outputName_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -929,8 +1014,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
+     * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -950,8 +1035,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
+     * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -974,8 +1059,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The field name of the output is determined by the key in
      * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
+     * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * If there are multiple baselines, their output values are averaged.
      * </pre>
      *
@@ -998,8 +1083,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. Model predicted output on the corresponding [explanation
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model predicted output has multiple dimensions, this is the value in
+     * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
      *
      * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1017,8 +1102,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. Model predicted output on the corresponding [explanation
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model predicted output has multiple dimensions, this is the value in
+     * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
      *
      * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1039,8 +1124,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * Output only. Model predicted output on the corresponding [explanation
      * instance][ExplainRequest.instances]. The field name of the output is
      * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-     * If the Model predicted output is a tensor value (for example, an ndarray),
-     * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+     * If the Model predicted output has multiple dimensions, this is the value in
+     * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
      * </pre>
      *
      * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1066,7 +1151,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1101,7 +1186,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1142,7 +1227,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1185,7 +1270,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1225,7 +1310,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1272,7 +1357,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1313,7 +1398,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1348,7 +1433,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1387,7 +1472,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Attributions of each explained feature. Features are extracted from
      * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-     * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+     * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
      * The value is a struct, whose keys are the name of the feature. The values
      * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * contributed to the predicted result.
@@ -1442,10 +1527,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1463,10 +1548,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1482,10 +1567,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1502,10 +1587,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1526,10 +1611,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1549,10 +1634,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1572,10 +1657,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The index that locates the explained prediction output.
      * If the prediction output is a scalar value, output_index is not populated.
-     * If the prediction output is a tensor value (for example, an ndarray),
-     * the length of output_index is the same as the number of dimensions of the
-     * output. The i-th element in output_index is the element index of the i-th
-     * dimension of the output vector. Indexes start from 0.
+     * If the prediction output has multiple dimensions, the length of the
+     * output_index list is the same as the number of dimensions of the output.
+     * The i-th element in output_index is the element index of the i-th dimension
+     * of the output vector. Indices start from 0.
      * </pre>
      *
      * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1727,10 +1812,20 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
      * explanation method. Lower value means more precise attributions.
-     * For Sampled Shapley
-     * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-     * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-     * the error.
+     * * For [Sampled Shapley
+     * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
+     * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
+     * * For [Integrated Gradients
+     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+     * reduce the error.
+     * * For [XRAI
+     * attribution][ExplanationParameters.xrai_attribution], increasing
+     * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
+     * Refer to  AI Explanations Whitepaper for more details:
+     * https:
+     * //storage.googleapis.com/cloud-ai-whitep
+     * // apers/AI%20Explainability%20Whitepaper.pdf
      * </pre>
      *
      * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1747,10 +1842,20 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
      * explanation method. Lower value means more precise attributions.
-     * For Sampled Shapley
-     * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-     * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-     * the error.
+     * * For [Sampled Shapley
+     * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
+     * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
+     * * For [Integrated Gradients
+     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+     * reduce the error.
+     * * For [XRAI
+     * attribution][ExplanationParameters.xrai_attribution], increasing
+     * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
+     * Refer to  AI Explanations Whitepaper for more details:
+     * https:
+     * //storage.googleapis.com/cloud-ai-whitep
+     * // apers/AI%20Explainability%20Whitepaper.pdf
      * </pre>
      *
      * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1770,10 +1875,20 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
      * explanation method. Lower value means more precise attributions.
-     * For Sampled Shapley
-     * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-     * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-     * the error.
+     * * For [Sampled Shapley
+     * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
+     * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
+     * * For [Integrated Gradients
+     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+     * reduce the error.
+     * * For [XRAI
+     * attribution][ExplanationParameters.xrai_attribution], increasing
+     * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
+     * Refer to  AI Explanations Whitepaper for more details:
+     * https:
+     * //storage.googleapis.com/cloud-ai-whitep
+     * // apers/AI%20Explainability%20Whitepaper.pdf
      * </pre>
      *
      * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1783,6 +1898,117 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     public Builder clearApproximationError() {
 
       approximationError_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object outputName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the explain output. Specified as the key in
+     * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+     * </pre>
+     *
+     * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The outputName.
+     */
+    public java.lang.String getOutputName() {
+      java.lang.Object ref = outputName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the explain output. Specified as the key in
+     * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+     * </pre>
+     *
+     * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for outputName.
+     */
+    public com.google.protobuf.ByteString getOutputNameBytes() {
+      java.lang.Object ref = outputName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        outputName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the explain output. Specified as the key in
+     * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+     * </pre>
+     *
+     * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The outputName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      outputName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the explain output. Specified as the key in
+     * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+     * </pre>
+     *
+     * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutputName() {
+
+      outputName_ = getDefaultInstance().getOutputName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the explain output. Specified as the key in
+     * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+     * </pre>
+     *
+     * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for outputName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      outputName_ = value;
       onChanged();
       return this;
     }

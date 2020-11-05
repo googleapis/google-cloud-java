@@ -142,6 +142,8 @@ public interface GenericOperationMetadataOrBuilder
    *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
+   * If the operation has finished (successfully or not), this is the finish
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -155,6 +157,8 @@ public interface GenericOperationMetadataOrBuilder
    *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
+   * If the operation has finished (successfully or not), this is the finish
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -168,6 +172,8 @@ public interface GenericOperationMetadataOrBuilder
    *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
+   * If the operation has finished (successfully or not), this is the finish
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

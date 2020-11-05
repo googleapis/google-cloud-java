@@ -41,6 +41,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     model_ = "";
     displayName_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -163,6 +164,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 explanationSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
               break;
             }
           case 96:
@@ -584,7 +592,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -607,7 +614,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -632,7 +638,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -641,6 +646,65 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder
       getExplanationSpecOrBuilder() {
     return getExplanationSpec();
+  }
+
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 11;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. Specify the
+   * email address of the service account. If this service account is not
+   * specified, the container runs as a service account that doesn't have access
+   * to the resource project.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 11;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. Specify the
+   * email address of the service account. If this service account is not
+   * specified, the container runs as a service account that doesn't have access
+   * to the resource project.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 11;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ENABLE_CONTAINER_LOGGING_FIELD_NUMBER = 12;
@@ -722,6 +786,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (explanationSpec_ != null) {
       output.writeMessage(9, getExplanationSpec());
     }
+    if (!getServiceAccountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, serviceAccount_);
+    }
     if (enableContainerLogging_ != false) {
       output.writeBool(12, enableContainerLogging_);
     }
@@ -762,6 +829,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (explanationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExplanationSpec());
     }
+    if (!getServiceAccountBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, serviceAccount_);
+    }
     if (enableContainerLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableContainerLogging_);
     }
@@ -795,6 +865,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasExplanationSpec()) {
       if (!getExplanationSpec().equals(other.getExplanationSpec())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (getEnableContainerLogging() != other.getEnableContainerLogging()) return false;
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
@@ -833,6 +904,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPLANATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getExplanationSpec().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + ENABLE_CONTAINER_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableContainerLogging());
     hash = (37 * hash) + ENABLE_ACCESS_LOGGING_FIELD_NUMBER;
@@ -1012,6 +1085,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         explanationSpec_ = null;
         explanationSpecBuilder_ = null;
       }
+      serviceAccount_ = "";
+
       enableContainerLogging_ = false;
 
       enableAccessLogging_ = false;
@@ -1072,6 +1147,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.explanationSpec_ = explanationSpecBuilder_.build();
       }
+      result.serviceAccount_ = serviceAccount_;
       result.enableContainerLogging_ = enableContainerLogging_;
       result.enableAccessLogging_ = enableAccessLogging_;
       result.predictionResourcesCase_ = predictionResourcesCase_;
@@ -1142,6 +1218,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExplanationSpec()) {
         mergeExplanationSpec(other.getExplanationSpec());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        onChanged();
       }
       if (other.getEnableContainerLogging() != false) {
         setEnableContainerLogging(other.getEnableContainerLogging());
@@ -2214,7 +2294,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2236,7 +2315,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2264,7 +2342,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2294,7 +2371,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2322,7 +2398,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2356,7 +2431,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2384,7 +2458,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2406,7 +2479,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2433,7 +2505,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
      * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
      * this Model is not allowed.
-     * Currently, only AutoML tabular Models support explanation_spec.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -2453,6 +2524,137 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         explanationSpec_ = null;
       }
       return explanationSpecBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. Specify the
+     * email address of the service account. If this service account is not
+     * specified, the container runs as a service account that doesn't have access
+     * to the resource project.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 11;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. Specify the
+     * email address of the service account. If this service account is not
+     * specified, the container runs as a service account that doesn't have access
+     * to the resource project.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 11;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. Specify the
+     * email address of the service account. If this service account is not
+     * specified, the container runs as a service account that doesn't have access
+     * to the resource project.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 11;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. Specify the
+     * email address of the service account. If this service account is not
+     * specified, the container runs as a service account that doesn't have access
+     * to the resource project.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the DeployedModel's container runs as. Specify the
+     * email address of the service account. If this service account is not
+     * specified, the container runs as a service account that doesn't have access
+     * to the resource project.
+     * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 11;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
     }
 
     private boolean enableContainerLogging_;

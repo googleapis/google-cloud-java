@@ -27,9 +27,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The URI of the Model serving container file in the Container Registry. The
-   * container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], stored
+   * Required. Immutable. URI of the Docker image to be used as the custom container for serving
+   * predictions. This URI must identify an image in Artifact Registry or
+   * Container Registry. Learn more about the container publishing
+   * requirements, including permissions requirements for the AI Platform
+   * Service Agent,
+   * [here](https://tinyurl.com/cust-cont-reqs#publishing).
+   * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], stored
    * internally, and this original path is afterwards not used.
+   * To learn about the requirements for the Docker image itself, see
+   * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
    * </pre>
    *
    * <code>
@@ -43,9 +50,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The URI of the Model serving container file in the Container Registry. The
-   * container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], stored
+   * Required. Immutable. URI of the Docker image to be used as the custom container for serving
+   * predictions. This URI must identify an image in Artifact Registry or
+   * Container Registry. Learn more about the container publishing
+   * requirements, including permissions requirements for the AI Platform
+   * Service Agent,
+   * [here](https://tinyurl.com/cust-cont-reqs#publishing).
+   * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], stored
    * internally, and this original path is afterwards not used.
+   * To learn about the requirements for the Docker image itself, see
+   * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
    * </pre>
    *
    * <code>
@@ -60,14 +74,38 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The command with which the container is run. Not executed within a shell.
-   * The Docker image's ENTRYPOINT is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies the command that runs when the container starts. This overrides
+   * the container's
+   * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
+   * Specify this field as an array of executable and arguments, similar to a
+   * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   * If you do not specify this field, then the container's `ENTRYPOINT` runs,
+   * in conjunction with the [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] field or the
+   * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
+   * if either exists. If this field is not specified and the container does not
+   * have an `ENTRYPOINT`, then refer to the Docker documentation about how
+   * `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * If you specify this field, then you can also specify the `args` field to
+   * provide additional arguments for this command. However, if you specify this
+   * field, then the container's `CMD` is ignored. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `command` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -79,14 +117,38 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The command with which the container is run. Not executed within a shell.
-   * The Docker image's ENTRYPOINT is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies the command that runs when the container starts. This overrides
+   * the container's
+   * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
+   * Specify this field as an array of executable and arguments, similar to a
+   * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   * If you do not specify this field, then the container's `ENTRYPOINT` runs,
+   * in conjunction with the [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] field or the
+   * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
+   * if either exists. If this field is not specified and the container does not
+   * have an `ENTRYPOINT`, then refer to the Docker documentation about how
+   * `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * If you specify this field, then you can also specify the `args` field to
+   * provide additional arguments for this command. However, if you specify this
+   * field, then the container's `CMD` is ignored. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `command` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -98,14 +160,38 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The command with which the container is run. Not executed within a shell.
-   * The Docker image's ENTRYPOINT is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies the command that runs when the container starts. This overrides
+   * the container's
+   * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
+   * Specify this field as an array of executable and arguments, similar to a
+   * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   * If you do not specify this field, then the container's `ENTRYPOINT` runs,
+   * in conjunction with the [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] field or the
+   * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
+   * if either exists. If this field is not specified and the container does not
+   * have an `ENTRYPOINT`, then refer to the Docker documentation about how
+   * `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * If you specify this field, then you can also specify the `args` field to
+   * provide additional arguments for this command. However, if you specify this
+   * field, then the container's `CMD` is ignored. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `command` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -118,14 +204,38 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The command with which the container is run. Not executed within a shell.
-   * The Docker image's ENTRYPOINT is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies the command that runs when the container starts. This overrides
+   * the container's
+   * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
+   * Specify this field as an array of executable and arguments, similar to a
+   * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
+   * If you do not specify this field, then the container's `ENTRYPOINT` runs,
+   * in conjunction with the [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] field or the
+   * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
+   * if either exists. If this field is not specified and the container does not
+   * have an `ENTRYPOINT`, then refer to the Docker documentation about how
+   * `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * If you specify this field, then you can also specify the `args` field to
+   * provide additional arguments for this command. However, if you specify this
+   * field, then the container's `CMD` is ignored. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `command` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string command = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -139,14 +249,37 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The arguments to the command.
-   * The Docker image's CMD is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies arguments for the command that runs when the container starts.
+   * This overrides the container's
+   * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
+   * this field as an array of executable and arguments, similar to a Docker
+   * `CMD`'s "default parameters" form.
+   * If you don't specify this field but do specify the
+   * [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] field, then the command from the
+   * `command` field runs without any additional arguments. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * If you don't specify this field and don't specify the `command` field,
+   * then the container's
+   * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
+   * `CMD` determine what runs based on their default behavior. See the Docker
+   * documentation about how `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `args` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -158,14 +291,37 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The arguments to the command.
-   * The Docker image's CMD is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies arguments for the command that runs when the container starts.
+   * This overrides the container's
+   * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
+   * this field as an array of executable and arguments, similar to a Docker
+   * `CMD`'s "default parameters" form.
+   * If you don't specify this field but do specify the
+   * [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] field, then the command from the
+   * `command` field runs without any additional arguments. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * If you don't specify this field and don't specify the `command` field,
+   * then the container's
+   * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
+   * `CMD` determine what runs based on their default behavior. See the Docker
+   * documentation about how `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `args` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -177,14 +333,37 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The arguments to the command.
-   * The Docker image's CMD is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies arguments for the command that runs when the container starts.
+   * This overrides the container's
+   * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
+   * this field as an array of executable and arguments, similar to a Docker
+   * `CMD`'s "default parameters" form.
+   * If you don't specify this field but do specify the
+   * [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] field, then the command from the
+   * `command` field runs without any additional arguments. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * If you don't specify this field and don't specify the `command` field,
+   * then the container's
+   * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
+   * `CMD` determine what runs based on their default behavior. See the Docker
+   * documentation about how `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `args` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -197,14 +376,37 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The arguments to the command.
-   * The Docker image's CMD is used if this is not provided.
-   * Variable references $(VAR_NAME) are expanded using the container's
-   * environment. If a variable cannot be resolved, the reference in the input
-   * string will be unchanged. The $(VAR_NAME) syntax can be escaped with a
-   * double $$, ie: $$(VAR_NAME). Escaped references will never be expanded,
-   * regardless of whether the variable exists or not.
-   * More info: https://tinyurl.com/y42hmlxe
+   * Immutable. Specifies arguments for the command that runs when the container starts.
+   * This overrides the container's
+   * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
+   * this field as an array of executable and arguments, similar to a Docker
+   * `CMD`'s "default parameters" form.
+   * If you don't specify this field but do specify the
+   * [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] field, then the command from the
+   * `command` field runs without any additional arguments. See the
+   * [Kubernetes documentation](https://tinyurl.com/y8bvllf4) about how the
+   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * `CMD`.
+   * If you don't specify this field and don't specify the `command` field,
+   * then the container's
+   * [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#cmd) and
+   * `CMD` determine what runs based on their default behavior. See the Docker
+   * documentation about how `CMD` and `ENTRYPOINT`
+   * [interact](https://tinyurl.com/h3kdcgs).
+   * In this field, you can reference environment variables
+   * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
+   * You cannot reference environment variables set in the Docker image. In
+   * order for environment variables to be expanded, reference them by using the
+   * following syntax:
+   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * Note that this differs from Bash variable expansion, which does not use
+   * parentheses. If a variable cannot be resolved, the reference in the input
+   * string is used unchanged. To avoid variable expansion, you can escape this
+   * syntax with `$$`; for example:
+   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
+   * This field corresponds to the `args` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>repeated string args = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -218,7 +420,29 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The environment variables that are to be present in the container.
+   * Immutable. List of environment variables to set in the container. After the container
+   * starts running, code running in the container can read these environment
+   * variables.
+   * Additionally, the [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] fields can reference these variables. Later
+   * entries in this list can also reference earlier entries. For example, the
+   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * ```json
+   * [
+   *   {
+   *     "name": "VAR_1",
+   *     "value": "foo"
+   *   },
+   *   {
+   *     "name": "VAR_2",
+   *     "value": "$(VAR_1) bar"
+   *   }
+   * ]
+   * ```
+   * If you switch the order of the variables in the example, then the expansion
+   * does not occur.
+   * This field corresponds to the `env` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -230,7 +454,29 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The environment variables that are to be present in the container.
+   * Immutable. List of environment variables to set in the container. After the container
+   * starts running, code running in the container can read these environment
+   * variables.
+   * Additionally, the [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] fields can reference these variables. Later
+   * entries in this list can also reference earlier entries. For example, the
+   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * ```json
+   * [
+   *   {
+   *     "name": "VAR_1",
+   *     "value": "foo"
+   *   },
+   *   {
+   *     "name": "VAR_2",
+   *     "value": "$(VAR_1) bar"
+   *   }
+   * ]
+   * ```
+   * If you switch the order of the variables in the example, then the expansion
+   * does not occur.
+   * This field corresponds to the `env` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -242,7 +488,29 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The environment variables that are to be present in the container.
+   * Immutable. List of environment variables to set in the container. After the container
+   * starts running, code running in the container can read these environment
+   * variables.
+   * Additionally, the [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] fields can reference these variables. Later
+   * entries in this list can also reference earlier entries. For example, the
+   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * ```json
+   * [
+   *   {
+   *     "name": "VAR_1",
+   *     "value": "foo"
+   *   },
+   *   {
+   *     "name": "VAR_2",
+   *     "value": "$(VAR_1) bar"
+   *   }
+   * ]
+   * ```
+   * If you switch the order of the variables in the example, then the expansion
+   * does not occur.
+   * This field corresponds to the `env` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -254,7 +522,29 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The environment variables that are to be present in the container.
+   * Immutable. List of environment variables to set in the container. After the container
+   * starts running, code running in the container can read these environment
+   * variables.
+   * Additionally, the [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] fields can reference these variables. Later
+   * entries in this list can also reference earlier entries. For example, the
+   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * ```json
+   * [
+   *   {
+   *     "name": "VAR_1",
+   *     "value": "foo"
+   *   },
+   *   {
+   *     "name": "VAR_2",
+   *     "value": "$(VAR_1) bar"
+   *   }
+   * ]
+   * ```
+   * If you switch the order of the variables in the example, then the expansion
+   * does not occur.
+   * This field corresponds to the `env` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -267,7 +557,29 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. The environment variables that are to be present in the container.
+   * Immutable. List of environment variables to set in the container. After the container
+   * starts running, code running in the container can read these environment
+   * variables.
+   * Additionally, the [command][google.cloud.aiplatform.v1beta1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1beta1.ModelContainerSpec.args] fields can reference these variables. Later
+   * entries in this list can also reference earlier entries. For example, the
+   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * ```json
+   * [
+   *   {
+   *     "name": "VAR_1",
+   *     "value": "foo"
+   *   },
+   *   {
+   *     "name": "VAR_2",
+   *     "value": "$(VAR_1) bar"
+   *   }
+   * ]
+   * ```
+   * If you switch the order of the variables in the example, then the expansion
+   * does not occur.
+   * This field corresponds to the `env` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -280,12 +592,22 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Declaration of ports that are exposed by the container. This field is
-   * primarily informational, it gives AI Platform information about the
-   * network connections the container uses. Listing or not a port
-   * here has no impact on whether the port is actually exposed, any port
-   * listening on the default "0.0.0.0" address inside a container will be
-   * accessible from the network.
+   * Immutable. List of ports to expose from the container. AI Platform sends any
+   * prediction requests that it receives to the first port on this list. AI
+   * Platform also sends
+   * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
+   * to this port.
+   * If you do not specify this field, it defaults to following value:
+   * ```json
+   * [
+   *   {
+   *     "containerPort": 8080
+   *   }
+   * ]
+   * ```
+   * AI Platform does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -297,12 +619,22 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Declaration of ports that are exposed by the container. This field is
-   * primarily informational, it gives AI Platform information about the
-   * network connections the container uses. Listing or not a port
-   * here has no impact on whether the port is actually exposed, any port
-   * listening on the default "0.0.0.0" address inside a container will be
-   * accessible from the network.
+   * Immutable. List of ports to expose from the container. AI Platform sends any
+   * prediction requests that it receives to the first port on this list. AI
+   * Platform also sends
+   * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
+   * to this port.
+   * If you do not specify this field, it defaults to following value:
+   * ```json
+   * [
+   *   {
+   *     "containerPort": 8080
+   *   }
+   * ]
+   * ```
+   * AI Platform does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -314,12 +646,22 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Declaration of ports that are exposed by the container. This field is
-   * primarily informational, it gives AI Platform information about the
-   * network connections the container uses. Listing or not a port
-   * here has no impact on whether the port is actually exposed, any port
-   * listening on the default "0.0.0.0" address inside a container will be
-   * accessible from the network.
+   * Immutable. List of ports to expose from the container. AI Platform sends any
+   * prediction requests that it receives to the first port on this list. AI
+   * Platform also sends
+   * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
+   * to this port.
+   * If you do not specify this field, it defaults to following value:
+   * ```json
+   * [
+   *   {
+   *     "containerPort": 8080
+   *   }
+   * ]
+   * ```
+   * AI Platform does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -331,12 +673,22 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Declaration of ports that are exposed by the container. This field is
-   * primarily informational, it gives AI Platform information about the
-   * network connections the container uses. Listing or not a port
-   * here has no impact on whether the port is actually exposed, any port
-   * listening on the default "0.0.0.0" address inside a container will be
-   * accessible from the network.
+   * Immutable. List of ports to expose from the container. AI Platform sends any
+   * prediction requests that it receives to the first port on this list. AI
+   * Platform also sends
+   * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
+   * to this port.
+   * If you do not specify this field, it defaults to following value:
+   * ```json
+   * [
+   *   {
+   *     "containerPort": 8080
+   *   }
+   * ]
+   * ```
+   * AI Platform does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -349,12 +701,22 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Declaration of ports that are exposed by the container. This field is
-   * primarily informational, it gives AI Platform information about the
-   * network connections the container uses. Listing or not a port
-   * here has no impact on whether the port is actually exposed, any port
-   * listening on the default "0.0.0.0" address inside a container will be
-   * accessible from the network.
+   * Immutable. List of ports to expose from the container. AI Platform sends any
+   * prediction requests that it receives to the first port on this list. AI
+   * Platform also sends
+   * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
+   * to this port.
+   * If you do not specify this field, it defaults to following value:
+   * ```json
+   * [
+   *   {
+   *     "containerPort": 8080
+   *   }
+   * ]
+   * ```
+   * AI Platform does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers
+   * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *
    * <code>
@@ -367,9 +729,31 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. An HTTP path to send prediction requests to the container, and which
-   * must be supported by it. If not specified a default HTTP path will be
-   * used by AI Platform.
+   * Immutable. HTTP path on the container to send prediction requests to. AI Platform
+   * forwards requests sent using
+   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
+   * path on the container's IP address and port. AI Platform then returns the
+   * container's response in the API response.
+   * For example, if you set this field to `/foo`, then when AI Platform
+   * receives a prediction request, it forwards the request body in a POST
+   * request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
+   * If you don't specify this field, it defaults to the following value when
+   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
+   * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
+   * The placeholders in this value are replaced as follows:
+   * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
+   *   Endpoint.name][] field of the Endpoint where this Model has been
+   *   deployed. (AI Platform makes this value available to your container code
+   *   as the
+   *  [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *  environment variable.)
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
+   *   (AI Platform makes this value available to your container code
+   *   as the [`AIP_DEPLOYED_MODEL_ID` environment
+   *   variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
    * </pre>
    *
    * <code>string predict_route = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -381,9 +765,31 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. An HTTP path to send prediction requests to the container, and which
-   * must be supported by it. If not specified a default HTTP path will be
-   * used by AI Platform.
+   * Immutable. HTTP path on the container to send prediction requests to. AI Platform
+   * forwards requests sent using
+   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
+   * path on the container's IP address and port. AI Platform then returns the
+   * container's response in the API response.
+   * For example, if you set this field to `/foo`, then when AI Platform
+   * receives a prediction request, it forwards the request body in a POST
+   * request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
+   * If you don't specify this field, it defaults to the following value when
+   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
+   * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
+   * The placeholders in this value are replaced as follows:
+   * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
+   *   Endpoint.name][] field of the Endpoint where this Model has been
+   *   deployed. (AI Platform makes this value available to your container code
+   *   as the
+   *  [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *  environment variable.)
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
+   *   (AI Platform makes this value available to your container code
+   *   as the [`AIP_DEPLOYED_MODEL_ID` environment
+   *   variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
    * </pre>
    *
    * <code>string predict_route = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -396,9 +802,30 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. An HTTP path to send health check requests to the container, and which
-   * must be supported by it. If not specified a standard HTTP path will be
-   * used by AI Platform.
+   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * intermittently sends GET requests to this path on the container's IP
+   * address and port to check that the container is healthy. Read more about
+   * [health
+   * checks](https://tinyurl.com/cust-cont-reqs#checks).
+   * For example, if you set this field to `/bar`, then AI Platform
+   * intermittently sends a GET request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
+   * If you don't specify this field, it defaults to the following value when
+   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
+   * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
+   * The placeholders in this value are replaced as follows:
+   * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
+   *   Endpoint.name][] field of the Endpoint where this Model has been
+   *   deployed. (AI Platform makes this value available to your container code
+   *   as the
+   *   [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *   environment variable.)
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
+   *   (AI Platform makes this value available to your container code as the
+   * [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *   environment variable.)
    * </pre>
    *
    * <code>string health_route = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -410,9 +837,30 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. An HTTP path to send health check requests to the container, and which
-   * must be supported by it. If not specified a standard HTTP path will be
-   * used by AI Platform.
+   * Immutable. HTTP path on the container to send health checkss to. AI Platform
+   * intermittently sends GET requests to this path on the container's IP
+   * address and port to check that the container is healthy. Read more about
+   * [health
+   * checks](https://tinyurl.com/cust-cont-reqs#checks).
+   * For example, if you set this field to `/bar`, then AI Platform
+   * intermittently sends a GET request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
+   * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
+   * If you don't specify this field, it defaults to the following value when
+   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
+   * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
+   * The placeholders in this value are replaced as follows:
+   * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
+   *   Endpoint.name][] field of the Endpoint where this Model has been
+   *   deployed. (AI Platform makes this value available to your container code
+   *   as the
+   *   [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *   environment variable.)
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
+   *   (AI Platform makes this value available to your container code as the
+   * [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
+   *   environment variable.)
    * </pre>
    *
    * <code>string health_route = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>

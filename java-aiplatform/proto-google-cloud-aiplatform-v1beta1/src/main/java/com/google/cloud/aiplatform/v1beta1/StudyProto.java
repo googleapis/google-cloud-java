@@ -64,6 +64,22 @@ public final class StudyProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_DiscreteValueSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_Measurement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Measurement_fieldAccessorTable;
@@ -101,7 +117,7 @@ public final class StudyProto {
           + "\n\005value\030\002 \001(\0132\026.google.protobuf.ValueB\003\340"
           + "A\003\"f\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tRE"
           + "QUESTED\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010STOPPING\020\003\022\r\n\tS"
-          + "UCCEEDED\020\004\022\016\n\nINFEASIBLE\020\005\"\224\013\n\tStudySpec"
+          + "UCCEEDED\020\004\022\016\n\nINFEASIBLE\020\005\"\310\021\n\tStudySpec"
           + "\022K\n\007metrics\030\001 \003(\01325.google.cloud.aiplatf"
           + "orm.v1beta1.StudySpec.MetricSpecB\003\340A\002\022Q\n"
           + "\nparameters\030\002 \003(\01328.google.cloud.aiplatf"
@@ -112,7 +128,7 @@ public final class StudyProto {
           + "\030\002 \001(\0162>.google.cloud.aiplatform.v1beta1"
           + ".StudySpec.MetricSpec.GoalTypeB\003\340A\002\"A\n\010G"
           + "oalType\022\031\n\025GOAL_TYPE_UNSPECIFIED\020\000\022\014\n\010MA"
-          + "XIMIZE\020\001\022\014\n\010MINIMIZE\020\002\032\224\007\n\rParameterSpec"
+          + "XIMIZE\020\001\022\014\n\010MINIMIZE\020\002\032\310\r\n\rParameterSpec"
           + "\022e\n\021double_value_spec\030\002 \001(\0132H.google.clo"
           + "ud.aiplatform.v1beta1.StudySpec.Paramete"
           + "rSpec.DoubleValueSpecH\000\022g\n\022integer_value"
@@ -126,26 +142,46 @@ public final class StudyProto {
           + "eterSpec.DiscreteValueSpecH\000\022\031\n\014paramete"
           + "r_id\030\001 \001(\tB\003\340A\002\022V\n\nscale_type\030\006 \001(\0162B.go"
           + "ogle.cloud.aiplatform.v1beta1.StudySpec."
-          + "ParameterSpec.ScaleType\032A\n\017DoubleValueSp"
+          + "ParameterSpec.ScaleType\022v\n\033conditional_p"
+          + "arameter_specs\030\n \003(\0132Q.google.cloud.aipl"
+          + "atform.v1beta1.StudySpec.ParameterSpec.C"
+          + "onditionalParameterSpec\032A\n\017DoubleValueSp"
           + "ec\022\026\n\tmin_value\030\001 \001(\001B\003\340A\002\022\026\n\tmax_value\030"
           + "\002 \001(\001B\003\340A\002\032B\n\020IntegerValueSpec\022\026\n\tmin_va"
           + "lue\030\001 \001(\003B\003\340A\002\022\026\n\tmax_value\030\002 \001(\003B\003\340A\002\032+"
           + "\n\024CategoricalValueSpec\022\023\n\006values\030\001 \003(\tB\003"
           + "\340A\002\032(\n\021DiscreteValueSpec\022\023\n\006values\030\001 \003(\001"
-          + "B\003\340A\002\"n\n\tScaleType\022\032\n\026SCALE_TYPE_UNSPECI"
-          + "FIED\020\000\022\025\n\021UNIT_LINEAR_SCALE\020\001\022\022\n\016UNIT_LO"
-          + "G_SCALE\020\002\022\032\n\026UNIT_REVERSE_LOG_SCALE\020\003B\026\n"
-          + "\024parameter_value_spec\"J\n\tAlgorithm\022\031\n\025AL"
-          + "GORITHM_UNSPECIFIED\020\000\022\017\n\013GRID_SEARCH\020\002\022\021"
-          + "\n\rRANDOM_SEARCH\020\003\"\247\001\n\013Measurement\022\027\n\nste"
-          + "p_count\030\002 \001(\003B\003\340A\003\022I\n\007metrics\030\003 \003(\01323.go"
-          + "ogle.cloud.aiplatform.v1beta1.Measuremen"
-          + "t.MetricB\003\340A\003\0324\n\006Metric\022\026\n\tmetric_id\030\001 \001"
-          + "(\tB\003\340A\003\022\022\n\005value\030\002 \001(\001B\003\340A\003B~\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\nStudyProtoP\001"
-          + "ZIgoogle.golang.org/genproto/googleapis/"
-          + "cloud/aiplatform/v1beta1;aiplatformb\006pro"
-          + "to3"
+          + "B\003\340A\002\032\271\005\n\030ConditionalParameterSpec\022\212\001\n\026p"
+          + "arent_discrete_values\030\002 \001(\0132h.google.clo"
+          + "ud.aiplatform.v1beta1.StudySpec.Paramete"
+          + "rSpec.ConditionalParameterSpec.DiscreteV"
+          + "alueConditionH\000\022\200\001\n\021parent_int_values\030\003 "
+          + "\001(\0132c.google.cloud.aiplatform.v1beta1.St"
+          + "udySpec.ParameterSpec.ConditionalParamet"
+          + "erSpec.IntValueConditionH\000\022\220\001\n\031parent_ca"
+          + "tegorical_values\030\004 \001(\0132k.google.cloud.ai"
+          + "platform.v1beta1.StudySpec.ParameterSpec"
+          + ".ConditionalParameterSpec.CategoricalVal"
+          + "ueConditionH\000\022U\n\016parameter_spec\030\001 \001(\01328."
+          + "google.cloud.aiplatform.v1beta1.StudySpe"
+          + "c.ParameterSpecB\003\340A\002\032-\n\026DiscreteValueCon"
+          + "dition\022\023\n\006values\030\001 \003(\001B\003\340A\002\032(\n\021IntValueC"
+          + "ondition\022\023\n\006values\030\001 \003(\003B\003\340A\002\0320\n\031Categor"
+          + "icalValueCondition\022\023\n\006values\030\001 \003(\tB\003\340A\002B"
+          + "\030\n\026parent_value_condition\"n\n\tScaleType\022\032"
+          + "\n\026SCALE_TYPE_UNSPECIFIED\020\000\022\025\n\021UNIT_LINEA"
+          + "R_SCALE\020\001\022\022\n\016UNIT_LOG_SCALE\020\002\022\032\n\026UNIT_RE"
+          + "VERSE_LOG_SCALE\020\003B\026\n\024parameter_value_spe"
+          + "c\"J\n\tAlgorithm\022\031\n\025ALGORITHM_UNSPECIFIED\020"
+          + "\000\022\017\n\013GRID_SEARCH\020\002\022\021\n\rRANDOM_SEARCH\020\003\"\247\001"
+          + "\n\013Measurement\022\027\n\nstep_count\030\002 \001(\003B\003\340A\003\022I"
+          + "\n\007metrics\030\003 \003(\01323.google.cloud.aiplatfor"
+          + "m.v1beta1.Measurement.MetricB\003\340A\003\0324\n\006Met"
+          + "ric\022\026\n\tmetric_id\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001"
+          + "(\001B\003\340A\003B~\n#com.google.cloud.aiplatform.v"
+          + "1beta1B\nStudyProtoP\001ZIgoogle.golang.org/"
+          + "genproto/googleapis/cloud/aiplatform/v1b"
+          + "eta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -206,6 +242,7 @@ public final class StudyProto {
               "DiscreteValueSpec",
               "ParameterId",
               "ScaleType",
+              "ConditionalParameterSpecs",
               "ParameterValueSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_DoubleValueSpec_descriptor =
@@ -245,6 +282,50 @@ public final class StudyProto {
     internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_DiscreteValueSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_DiscreteValueSpec_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor,
+            new java.lang.String[] {
+              "ParentDiscreteValues",
+              "ParentIntValues",
+              "ParentCategoricalValues",
+              "ParameterSpec",
+              "ParentValueCondition",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor,
             new java.lang.String[] {
               "Values",
             });

@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Specification of Model explanation.
- * Currently, only AutoML tabular Models support explanation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpec}
@@ -429,7 +428,6 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Specification of Model explanation.
-   * Currently, only AutoML tabular Models support explanation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpec}

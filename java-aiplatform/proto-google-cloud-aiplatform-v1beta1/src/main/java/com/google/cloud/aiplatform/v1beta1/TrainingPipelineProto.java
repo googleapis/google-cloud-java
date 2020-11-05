@@ -100,8 +100,8 @@ public final class TrainingPipelineProto {
           + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:~\352A{\n*aip"
           + "latform.googleapis.com/TrainingPipeline\022"
           + "Mprojects/{project}/locations/{location}"
-          + "/trainingPipelines/{training_pipeline}\"\363"
-          + "\003\n\017InputDataConfig\022H\n\016fraction_split\030\002 \001"
+          + "/trainingPipelines/{training_pipeline}\"\311"
+          + "\004\n\017InputDataConfig\022H\n\016fraction_split\030\002 \001"
           + "(\0132..google.cloud.aiplatform.v1beta1.Fra"
           + "ctionSplitH\000\022D\n\014filter_split\030\003 \001(\0132,.goo"
           + "gle.cloud.aiplatform.v1beta1.FilterSplit"
@@ -110,22 +110,25 @@ public final class TrainingPipelineProto {
           + "\022J\n\017timestamp_split\030\005 \001(\0132/.google.cloud"
           + ".aiplatform.v1beta1.TimestampSplitH\000\022J\n\017"
           + "gcs_destination\030\010 \001(\0132/.google.cloud.aip"
-          + "latform.v1beta1.GcsDestinationH\001\022\027\n\ndata"
-          + "set_id\030\001 \001(\tB\003\340A\002\022\032\n\022annotations_filter\030"
-          + "\006 \001(\t\022\035\n\025annotation_schema_uri\030\t \001(\tB\007\n\005"
-          + "splitB\r\n\013destination\"^\n\rFractionSplit\022\031\n"
-          + "\021training_fraction\030\001 \001(\001\022\033\n\023validation_f"
-          + "raction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\"e\n\013"
-          + "FilterSplit\022\034\n\017training_filter\030\001 \001(\tB\003\340A"
-          + "\002\022\036\n\021validation_filter\030\002 \001(\tB\003\340A\002\022\030\n\013tes"
-          + "t_filter\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedSplit\022\020"
-          + "\n\003key\030\001 \001(\tB\003\340A\002\"q\n\016TimestampSplit\022\031\n\021tr"
-          + "aining_fraction\030\001 \001(\001\022\033\n\023validation_frac"
-          + "tion\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key"
-          + "\030\004 \001(\tB\003\340A\002B\211\001\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\025TrainingPipelineProtoP\001ZIgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1beta1;aiplatformb\006proto3"
+          + "latform.v1beta1.GcsDestinationH\001\022T\n\024bigq"
+          + "uery_destination\030\n \001(\01324.google.cloud.ai"
+          + "platform.v1beta1.BigQueryDestinationH\001\022\027"
+          + "\n\ndataset_id\030\001 \001(\tB\003\340A\002\022\032\n\022annotations_f"
+          + "ilter\030\006 \001(\t\022\035\n\025annotation_schema_uri\030\t \001"
+          + "(\tB\007\n\005splitB\r\n\013destination\"^\n\rFractionSp"
+          + "lit\022\031\n\021training_fraction\030\001 \001(\001\022\033\n\023valida"
+          + "tion_fraction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001"
+          + "(\001\"e\n\013FilterSplit\022\034\n\017training_filter\030\001 \001"
+          + "(\tB\003\340A\002\022\036\n\021validation_filter\030\002 \001(\tB\003\340A\002\022"
+          + "\030\n\013test_filter\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedS"
+          + "plit\022\020\n\003key\030\001 \001(\tB\003\340A\002\"q\n\016TimestampSplit"
+          + "\022\031\n\021training_fraction\030\001 \001(\001\022\033\n\023validatio"
+          + "n_fraction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022"
+          + "\020\n\003key\030\004 \001(\tB\003\340A\002B\211\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\025TrainingPipelineProto"
+          + "P\001ZIgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -185,6 +188,7 @@ public final class TrainingPipelineProto {
               "PredefinedSplit",
               "TimestampSplit",
               "GcsDestination",
+              "BigqueryDestination",
               "DatasetId",
               "AnnotationsFilter",
               "AnnotationSchemaUri",

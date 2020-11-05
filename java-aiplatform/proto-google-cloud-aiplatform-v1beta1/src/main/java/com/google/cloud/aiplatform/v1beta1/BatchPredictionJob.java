@@ -346,6 +346,23 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               generateExplanation_ = input.readBool();
               break;
             }
+          case 202:
+            {
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder subBuilder = null;
+              if (explanationSpec_ != null) {
+                subBuilder = explanationSpec_.toBuilder();
+              }
+              explanationSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ExplanationSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(explanationSpec_);
+                explanationSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -5447,21 +5464,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Generate explanation along with the batch prediction results.
-   * This can only be set to true for AutoML tabular Models, and only when the
-   * output destination is BigQuery. When it's true, the batch prediction
-   * output will include a column named `feature_attributions`.
-   * For AutoML tabular Models, the value of the `feature_attributions` column
-   * is a struct that maps from string to number. The keys in the map are the
-   * names of the features. The values in the map are the how much the features
-   * contribute to the predicted result. Features are defined as follows:
-   * * A scalar column defines a feature of the same name as the column.
-   * * A struct column defines multiple features, one feature per leaf field.
-   *   The feature name is the fully qualified path for the leaf field,
-   *   separated by ".". For example a column `key1` in the format of
-   *   {"value1": {"prop1": number}, "value2": number} defines two features:
-   *   `key1.value1.prop1` and `key1.value2`
-   * Attributions of each feature is represented as an extra column in the
-   * batch prediction output BigQuery table.
+   * When it's true, the batch prediction output will change based on the
+   * [output format][BatchPredictionJob.output_config.predictions_format]:
+   *  * `bigquery`: output will include a column named `explanation`. The value
+   *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+   *  * `jsonl`: The JSON objects on each line will include an additional entry
+   *    keyed `explanation`. The value of the entry is a JSON object that
+   *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+   *  * `csv`: Generating explanations for CSV format is not supported.
    * </pre>
    *
    * <code>bool generate_explanation = 23;</code>
@@ -5471,6 +5481,79 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean getGenerateExplanation() {
     return generateExplanation_;
+  }
+
+  public static final int EXPLANATION_SPEC_FIELD_NUMBER = 25;
+  private com.google.cloud.aiplatform.v1beta1.ExplanationSpec explanationSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
+   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+   *
+   * @return Whether the explanationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplanationSpec() {
+    return explanationSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
+   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+   *
+   * @return The explanationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec() {
+    return explanationSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+        : explanationSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
+   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder
+      getExplanationSpecOrBuilder() {
+    return getExplanationSpec();
   }
 
   public static final int OUTPUT_INFO_FIELD_NUMBER = 9;
@@ -6222,6 +6305,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (generateExplanation_ != false) {
       output.writeBool(23, generateExplanation_);
     }
+    if (explanationSpec_ != null) {
+      output.writeMessage(25, getExplanationSpec());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6300,6 +6386,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (generateExplanation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, generateExplanation_);
     }
+    if (explanationSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getExplanationSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6341,6 +6430,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return false;
     }
     if (getGenerateExplanation() != other.getGenerateExplanation()) return false;
+    if (hasExplanationSpec() != other.hasExplanationSpec()) return false;
+    if (hasExplanationSpec()) {
+      if (!getExplanationSpec().equals(other.getExplanationSpec())) return false;
+    }
     if (hasOutputInfo() != other.hasOutputInfo()) return false;
     if (hasOutputInfo()) {
       if (!getOutputInfo().equals(other.getOutputInfo())) return false;
@@ -6415,6 +6508,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + GENERATE_EXPLANATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGenerateExplanation());
+    if (hasExplanationSpec()) {
+      hash = (37 * hash) + EXPLANATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanationSpec().hashCode();
+    }
     if (hasOutputInfo()) {
       hash = (37 * hash) + OUTPUT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getOutputInfo().hashCode();
@@ -6666,6 +6763,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       generateExplanation_ = false;
 
+      if (explanationSpecBuilder_ == null) {
+        explanationSpec_ = null;
+      } else {
+        explanationSpec_ = null;
+        explanationSpecBuilder_ = null;
+      }
       if (outputInfoBuilder_ == null) {
         outputInfo_ = null;
       } else {
@@ -6780,6 +6883,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         result.manualBatchTuningParameters_ = manualBatchTuningParametersBuilder_.build();
       }
       result.generateExplanation_ = generateExplanation_;
+      if (explanationSpecBuilder_ == null) {
+        result.explanationSpec_ = explanationSpec_;
+      } else {
+        result.explanationSpec_ = explanationSpecBuilder_.build();
+      }
       if (outputInfoBuilder_ == null) {
         result.outputInfo_ = outputInfo_;
       } else {
@@ -6911,6 +7019,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (other.getGenerateExplanation() != false) {
         setGenerateExplanation(other.getGenerateExplanation());
+      }
+      if (other.hasExplanationSpec()) {
+        mergeExplanationSpec(other.getExplanationSpec());
       }
       if (other.hasOutputInfo()) {
         mergeOutputInfo(other.getOutputInfo());
@@ -8548,21 +8659,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation along with the batch prediction results.
-     * This can only be set to true for AutoML tabular Models, and only when the
-     * output destination is BigQuery. When it's true, the batch prediction
-     * output will include a column named `feature_attributions`.
-     * For AutoML tabular Models, the value of the `feature_attributions` column
-     * is a struct that maps from string to number. The keys in the map are the
-     * names of the features. The values in the map are the how much the features
-     * contribute to the predicted result. Features are defined as follows:
-     * * A scalar column defines a feature of the same name as the column.
-     * * A struct column defines multiple features, one feature per leaf field.
-     *   The feature name is the fully qualified path for the leaf field,
-     *   separated by ".". For example a column `key1` in the format of
-     *   {"value1": {"prop1": number}, "value2": number} defines two features:
-     *   `key1.value1.prop1` and `key1.value2`
-     * Attributions of each feature is represented as an extra column in the
-     * batch prediction output BigQuery table.
+     * When it's true, the batch prediction output will change based on the
+     * [output format][BatchPredictionJob.output_config.predictions_format]:
+     *  * `bigquery`: output will include a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line will include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>
@@ -8578,21 +8682,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation along with the batch prediction results.
-     * This can only be set to true for AutoML tabular Models, and only when the
-     * output destination is BigQuery. When it's true, the batch prediction
-     * output will include a column named `feature_attributions`.
-     * For AutoML tabular Models, the value of the `feature_attributions` column
-     * is a struct that maps from string to number. The keys in the map are the
-     * names of the features. The values in the map are the how much the features
-     * contribute to the predicted result. Features are defined as follows:
-     * * A scalar column defines a feature of the same name as the column.
-     * * A struct column defines multiple features, one feature per leaf field.
-     *   The feature name is the fully qualified path for the leaf field,
-     *   separated by ".". For example a column `key1` in the format of
-     *   {"value1": {"prop1": number}, "value2": number} defines two features:
-     *   `key1.value1.prop1` and `key1.value2`
-     * Attributions of each feature is represented as an extra column in the
-     * batch prediction output BigQuery table.
+     * When it's true, the batch prediction output will change based on the
+     * [output format][BatchPredictionJob.output_config.predictions_format]:
+     *  * `bigquery`: output will include a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line will include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>
@@ -8611,21 +8708,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Generate explanation along with the batch prediction results.
-     * This can only be set to true for AutoML tabular Models, and only when the
-     * output destination is BigQuery. When it's true, the batch prediction
-     * output will include a column named `feature_attributions`.
-     * For AutoML tabular Models, the value of the `feature_attributions` column
-     * is a struct that maps from string to number. The keys in the map are the
-     * names of the features. The values in the map are the how much the features
-     * contribute to the predicted result. Features are defined as follows:
-     * * A scalar column defines a feature of the same name as the column.
-     * * A struct column defines multiple features, one feature per leaf field.
-     *   The feature name is the fully qualified path for the leaf field,
-     *   separated by ".". For example a column `key1` in the format of
-     *   {"value1": {"prop1": number}, "value2": number} defines two features:
-     *   `key1.value1.prop1` and `key1.value2`
-     * Attributions of each feature is represented as an extra column in the
-     * batch prediction output BigQuery table.
+     * When it's true, the batch prediction output will change based on the
+     * [output format][BatchPredictionJob.output_config.predictions_format]:
+     *  * `bigquery`: output will include a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line will include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
      * </pre>
      *
      * <code>bool generate_explanation = 23;</code>
@@ -8637,6 +8727,265 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       generateExplanation_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ExplanationSpec explanationSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>
+        explanationSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     *
+     * @return Whether the explanationSpec field is set.
+     */
+    public boolean hasExplanationSpec() {
+      return explanationSpecBuilder_ != null || explanationSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     *
+     * @return The explanationSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec() {
+      if (explanationSpecBuilder_ == null) {
+        return explanationSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+            : explanationSpec_;
+      } else {
+        return explanationSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public Builder setExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
+      if (explanationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explanationSpec_ = value;
+        onChanged();
+      } else {
+        explanationSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public Builder setExplanationSpec(
+        com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder builderForValue) {
+      if (explanationSpecBuilder_ == null) {
+        explanationSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        explanationSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public Builder mergeExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
+      if (explanationSpecBuilder_ == null) {
+        if (explanationSpec_ != null) {
+          explanationSpec_ =
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec.newBuilder(explanationSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          explanationSpec_ = value;
+        }
+        onChanged();
+      } else {
+        explanationSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public Builder clearExplanationSpec() {
+      if (explanationSpecBuilder_ == null) {
+        explanationSpec_ = null;
+        onChanged();
+      } else {
+        explanationSpec_ = null;
+        explanationSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder getExplanationSpecBuilder() {
+
+      onChanged();
+      return getExplanationSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder
+        getExplanationSpecOrBuilder() {
+      if (explanationSpecBuilder_ != null) {
+        return explanationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return explanationSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+            : explanationSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation configuration for this BatchPredictionJob. Can only be
+     * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+     * specified it with generate_explanation set to false or unset.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+     * this Model is not allowed.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>
+        getExplanationSpecFieldBuilder() {
+      if (explanationSpecBuilder_ == null) {
+        explanationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+                com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>(
+                getExplanationSpec(), getParentForChildren(), isClean());
+        explanationSpec_ = null;
+      }
+      return explanationSpecBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputInfo outputInfo_;

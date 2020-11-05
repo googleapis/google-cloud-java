@@ -248,6 +248,20 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 178:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -994,6 +1008,55 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     return getUpdateTime();
   }
 
+  public static final int ERROR_FIELD_NUMBER = 22;
+  private com.google.rpc.Status error_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  @java.lang.Override
+  public boolean hasError() {
+    return error_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getError() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+    return getError();
+  }
+
   public static final int LABELS_FIELD_NUMBER = 11;
 
   private static final class LabelsDefaultEntryHolder {
@@ -1300,6 +1363,9 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (activeLearningConfig_ != null) {
       output.writeMessage(21, getActiveLearningConfig());
     }
+    if (error_ != null) {
+      output.writeMessage(22, getError());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1382,6 +1448,9 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getActiveLearningConfig());
     }
+    if (error_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getError());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1422,6 +1491,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasError() != other.hasError()) return false;
+    if (hasError()) {
+      if (!getError().equals(other.getError())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getSpecialistPoolsList().equals(other.getSpecialistPoolsList())) return false;
@@ -1477,6 +1550,10 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasError()) {
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -1701,6 +1778,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (errorBuilder_ == null) {
+        error_ = null;
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       specialistPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1771,6 +1854,11 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (errorBuilder_ == null) {
+        result.error_ = error_;
+      } else {
+        result.error_ = errorBuilder_.build();
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -1881,6 +1969,9 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasError()) {
+        mergeError(other.getError());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (!other.specialistPools_.isEmpty()) {
@@ -3794,6 +3885,188 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.rpc.Status error_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    public boolean hasError() {
+      return errorBuilder_ != null || error_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    public com.google.rpc.Status getError() {
+      if (errorBuilder_ == null) {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      } else {
+        return errorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        error_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (error_ != null) {
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        } else {
+          error_ = value;
+        }
+        onChanged();
+      } else {
+        errorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearError() {
+      if (errorBuilder_ == null) {
+        error_ = null;
+        onChanged();
+      } else {
+        error_ = null;
+        errorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.Status.Builder getErrorBuilder() {
+
+      onChanged();
+      return getErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      if (errorBuilder_ != null) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DataLabelingJob errors. It is only populated when job's state is
+     * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+        error_ = null;
+      }
+      return errorBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;

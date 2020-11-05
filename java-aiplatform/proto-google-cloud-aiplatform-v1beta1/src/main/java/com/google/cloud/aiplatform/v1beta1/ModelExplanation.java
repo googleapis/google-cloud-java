@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Aggregated explanation metrics for a Model over a set of instances.
- * Currently, only AutoML tabular Models support aggregated explanation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelExplanation}
@@ -437,7 +436,6 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Aggregated explanation metrics for a Model over a set of instances.
-   * Currently, only AutoML tabular Models support aggregated explanation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelExplanation}

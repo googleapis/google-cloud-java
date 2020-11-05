@@ -92,31 +92,33 @@ public final class CustomJobProto {
           + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:i\352Af\n#aiplatform"
           + ".googleapis.com/CustomJob\022?projects/{pro"
           + "ject}/locations/{location}/customJobs/{c"
-          + "ustom_job}\"\361\001\n\rCustomJobSpec\022O\n\021worker_p"
+          + "ustom_job}\"\233\002\n\rCustomJobSpec\022O\n\021worker_p"
           + "ool_specs\030\001 \003(\0132/.google.cloud.aiplatfor"
           + "m.v1beta1.WorkerPoolSpecB\003\340A\002\022?\n\nschedul"
           + "ing\030\003 \001(\0132+.google.cloud.aiplatform.v1be"
-          + "ta1.Scheduling\022N\n\025base_output_directory\030"
-          + "\006 \001(\0132/.google.cloud.aiplatform.v1beta1."
-          + "GcsDestination\"\235\002\n\016WorkerPoolSpec\022H\n\016con"
-          + "tainer_spec\030\006 \001(\0132..google.cloud.aiplatf"
-          + "orm.v1beta1.ContainerSpecH\000\022Q\n\023python_pa"
-          + "ckage_spec\030\007 \001(\01322.google.cloud.aiplatfo"
-          + "rm.v1beta1.PythonPackageSpecH\000\022J\n\014machin"
-          + "e_spec\030\001 \001(\0132,.google.cloud.aiplatform.v"
-          + "1beta1.MachineSpecB\006\340A\002\340A\005\022\032\n\rreplica_co"
-          + "unt\030\002 \001(\003B\003\340A\002B\006\n\004task\"F\n\rContainerSpec\022"
-          + "\026\n\timage_uri\030\001 \001(\tB\003\340A\002\022\017\n\007command\030\002 \003(\t"
-          + "\022\014\n\004args\030\003 \003(\t\"y\n\021PythonPackageSpec\022\037\n\022e"
-          + "xecutor_image_uri\030\001 \001(\tB\003\340A\002\022\031\n\014package_"
-          + "uris\030\002 \003(\tB\003\340A\002\022\032\n\rpython_module\030\003 \001(\tB\003"
-          + "\340A\002\022\014\n\004args\030\004 \003(\t\"_\n\nScheduling\022*\n\007timeo"
-          + "ut\030\001 \001(\0132\031.google.protobuf.Duration\022%\n\035r"
-          + "estart_job_on_worker_restart\030\003 \001(\010B\202\001\n#c"
-          + "om.google.cloud.aiplatform.v1beta1B\016Cust"
-          + "omJobProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latformb\006proto3"
+          + "ta1.Scheduling\022\027\n\017service_account\030\004 \001(\t\022"
+          + "\017\n\007network\030\005 \001(\t\022N\n\025base_output_director"
+          + "y\030\006 \001(\0132/.google.cloud.aiplatform.v1beta"
+          + "1.GcsDestination\"\333\002\n\016WorkerPoolSpec\022H\n\016c"
+          + "ontainer_spec\030\006 \001(\0132..google.cloud.aipla"
+          + "tform.v1beta1.ContainerSpecH\000\022Q\n\023python_"
+          + "package_spec\030\007 \001(\01322.google.cloud.aiplat"
+          + "form.v1beta1.PythonPackageSpecH\000\022J\n\014mach"
+          + "ine_spec\030\001 \001(\0132,.google.cloud.aiplatform"
+          + ".v1beta1.MachineSpecB\006\340A\002\340A\005\022\032\n\rreplica_"
+          + "count\030\002 \001(\003B\003\340A\002\022<\n\tdisk_spec\030\005 \001(\0132).go"
+          + "ogle.cloud.aiplatform.v1beta1.DiskSpecB\006"
+          + "\n\004task\"F\n\rContainerSpec\022\026\n\timage_uri\030\001 \001"
+          + "(\tB\003\340A\002\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\"y"
+          + "\n\021PythonPackageSpec\022\037\n\022executor_image_ur"
+          + "i\030\001 \001(\tB\003\340A\002\022\031\n\014package_uris\030\002 \003(\tB\003\340A\002\022"
+          + "\032\n\rpython_module\030\003 \001(\tB\003\340A\002\022\014\n\004args\030\004 \003("
+          + "\t\"_\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.googl"
+          + "e.protobuf.Duration\022%\n\035restart_job_on_wo"
+          + "rker_restart\030\003 \001(\010B\202\001\n#com.google.cloud."
+          + "aiplatform.v1beta1B\016CustomJobProtoP\001ZIgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1beta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -166,7 +168,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CustomJobSpec_descriptor,
             new java.lang.String[] {
-              "WorkerPoolSpecs", "Scheduling", "BaseOutputDirectory",
+              "WorkerPoolSpecs", "Scheduling", "ServiceAccount", "Network", "BaseOutputDirectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_WorkerPoolSpec_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -174,7 +176,12 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_WorkerPoolSpec_descriptor,
             new java.lang.String[] {
-              "ContainerSpec", "PythonPackageSpec", "MachineSpec", "ReplicaCount", "Task",
+              "ContainerSpec",
+              "PythonPackageSpec",
+              "MachineSpec",
+              "ReplicaCount",
+              "DiskSpec",
+              "Task",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ContainerSpec_descriptor =
         getDescriptor().getMessageTypes().get(3);

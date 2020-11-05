@@ -34,6 +34,11 @@ public interface ExplanationOrBuilder
    * multiclass Models that predict multiple classes, each element explains one
    * specific item. [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] can be used to identify which
    * output this attribution is explaining.
+   * If users set [ExplanationParameters.top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k], the attributions are sorted
+   * by [instance_output_value][Attributions.instance_output_value] in
+   * descending order. If [ExplanationParameters.output_indices][google.cloud.aiplatform.v1beta1.ExplanationParameters.output_indices] is specified,
+   * the attributions are stored by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] in the same
+   * order as they appear in the output_indices.
    * </pre>
    *
    * <code>
@@ -52,6 +57,11 @@ public interface ExplanationOrBuilder
    * multiclass Models that predict multiple classes, each element explains one
    * specific item. [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] can be used to identify which
    * output this attribution is explaining.
+   * If users set [ExplanationParameters.top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k], the attributions are sorted
+   * by [instance_output_value][Attributions.instance_output_value] in
+   * descending order. If [ExplanationParameters.output_indices][google.cloud.aiplatform.v1beta1.ExplanationParameters.output_indices] is specified,
+   * the attributions are stored by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] in the same
+   * order as they appear in the output_indices.
    * </pre>
    *
    * <code>
@@ -70,6 +80,11 @@ public interface ExplanationOrBuilder
    * multiclass Models that predict multiple classes, each element explains one
    * specific item. [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] can be used to identify which
    * output this attribution is explaining.
+   * If users set [ExplanationParameters.top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k], the attributions are sorted
+   * by [instance_output_value][Attributions.instance_output_value] in
+   * descending order. If [ExplanationParameters.output_indices][google.cloud.aiplatform.v1beta1.ExplanationParameters.output_indices] is specified,
+   * the attributions are stored by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] in the same
+   * order as they appear in the output_indices.
    * </pre>
    *
    * <code>
@@ -88,6 +103,11 @@ public interface ExplanationOrBuilder
    * multiclass Models that predict multiple classes, each element explains one
    * specific item. [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] can be used to identify which
    * output this attribution is explaining.
+   * If users set [ExplanationParameters.top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k], the attributions are sorted
+   * by [instance_output_value][Attributions.instance_output_value] in
+   * descending order. If [ExplanationParameters.output_indices][google.cloud.aiplatform.v1beta1.ExplanationParameters.output_indices] is specified,
+   * the attributions are stored by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] in the same
+   * order as they appear in the output_indices.
    * </pre>
    *
    * <code>
@@ -107,6 +127,11 @@ public interface ExplanationOrBuilder
    * multiclass Models that predict multiple classes, each element explains one
    * specific item. [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] can be used to identify which
    * output this attribution is explaining.
+   * If users set [ExplanationParameters.top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k], the attributions are sorted
+   * by [instance_output_value][Attributions.instance_output_value] in
+   * descending order. If [ExplanationParameters.output_indices][google.cloud.aiplatform.v1beta1.ExplanationParameters.output_indices] is specified,
+   * the attributions are stored by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] in the same
+   * order as they appear in the output_indices.
    * </pre>
    *
    * <code>

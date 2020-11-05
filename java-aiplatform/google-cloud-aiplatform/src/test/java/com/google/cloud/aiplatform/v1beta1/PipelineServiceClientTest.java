@@ -49,6 +49,7 @@ public class PipelineServiceClientTest {
   private static MockDatasetService mockDatasetService;
   private static MockEndpointService mockEndpointService;
   private static MockJobService mockJobService;
+  private static MockMigrationService mockMigrationService;
   private static MockModelService mockModelService;
   private static MockPipelineService mockPipelineService;
   private static MockPredictionService mockPredictionService;
@@ -62,6 +63,7 @@ public class PipelineServiceClientTest {
     mockDatasetService = new MockDatasetService();
     mockEndpointService = new MockEndpointService();
     mockJobService = new MockJobService();
+    mockMigrationService = new MockMigrationService();
     mockModelService = new MockModelService();
     mockPipelineService = new MockPipelineService();
     mockPredictionService = new MockPredictionService();
@@ -73,6 +75,7 @@ public class PipelineServiceClientTest {
                 mockDatasetService,
                 mockEndpointService,
                 mockJobService,
+                mockMigrationService,
                 mockModelService,
                 mockPipelineService,
                 mockPredictionService,

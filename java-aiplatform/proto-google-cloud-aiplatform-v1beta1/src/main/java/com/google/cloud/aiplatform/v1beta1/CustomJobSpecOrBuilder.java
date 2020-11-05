@@ -125,6 +125,76 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * Specifies the service account for workload run-as account.
+   * Users submitting jobs must have act-as permission on this run-as account.
+   * </pre>
+   *
+   * <code>string service_account = 4;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the service account for workload run-as account.
+   * Users submitting jobs must have act-as permission on this run-as account.
+   * </pre>
+   *
+   * <code>string service_account = 4;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+   * should be peered. For example, projects/12345/global/networks/myVPC.
+   * [Format](https:
+   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the job is not peered with any network.
+   * </pre>
+   *
+   * <code>string network = 5;</code>
+   *
+   * @return The network.
+   */
+  java.lang.String getNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+   * should be peered. For example, projects/12345/global/networks/myVPC.
+   * [Format](https:
+   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the job is not peered with any network.
+   * </pre>
+   *
+   * <code>string network = 5;</code>
+   *
+   * @return The bytes for network.
+   */
+  com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The Google Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * [base_output_directory][CustomJob.job_spec.base_output_directory] of

@@ -147,5 +147,40 @@ public interface WorkerPoolSpecOrBuilder
    */
   long getReplicaCount();
 
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   *
+   * @return Whether the diskSpec field is set.
+   */
+  boolean hasDiskSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   *
+   * @return The diskSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.DiskSpec getDiskSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder();
+
   public com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec.TaskCase getTaskCase();
 }

@@ -75,7 +75,7 @@ public final class EndpointProto {
           + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
           + "\001(\t:\0028\001:e\352Ab\n\"aiplatform.googleapis.com/"
           + "Endpoint\022<projects/{project}/locations/{"
-          + "location}/endpoints/{endpoint}\"\361\003\n\rDeplo"
+          + "location}/endpoints/{endpoint}\"\212\004\n\rDeplo"
           + "yedModel\022R\n\023dedicated_resources\030\007 \001(\01323."
           + "google.cloud.aiplatform.v1beta1.Dedicate"
           + "dResourcesH\000\022R\n\023automatic_resources\030\010 \001("
@@ -86,12 +86,13 @@ public final class EndpointProto {
           + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
           + "B\003\340A\003\022J\n\020explanation_spec\030\t \001(\01320.google"
           + ".cloud.aiplatform.v1beta1.ExplanationSpe"
-          + "c\022 \n\030enable_container_logging\030\014 \001(\010\022\035\n\025e"
-          + "nable_access_logging\030\r \001(\010B\026\n\024prediction"
-          + "_resourcesB\201\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\rEndpointProtoP\001ZIgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1beta1;aiplatformb\006proto3"
+          + "c\022\027\n\017service_account\030\013 \001(\t\022 \n\030enable_con"
+          + "tainer_logging\030\014 \001(\010\022\035\n\025enable_access_lo"
+          + "gging\030\r \001(\010B\026\n\024prediction_resourcesB\201\001\n#"
+          + "com.google.cloud.aiplatform.v1beta1B\rEnd"
+          + "pointProtoP\001ZIgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1beta1;aip"
+          + "latformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -149,6 +150,7 @@ public final class EndpointProto {
               "DisplayName",
               "CreateTime",
               "ExplanationSpec",
+              "ServiceAccount",
               "EnableContainerLogging",
               "EnableAccessLogging",
               "PredictionResources",

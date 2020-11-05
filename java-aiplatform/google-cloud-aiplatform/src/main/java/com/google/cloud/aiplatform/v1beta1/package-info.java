@@ -65,6 +65,22 @@
  * </code>
  * </pre>
  *
+ * ====================== MigrationServiceClient ======================
+ *
+ * <p>Service Description: A service that migrates resources from automl.googleapis.com,
+ * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ *
+ * <p>Sample for MigrationServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   SearchMigratableResourcesPagedResponse response = migrationServiceClient.searchMigratableResources(parent);
+ * }
+ * </code>
+ * </pre>
+ *
  * ================== ModelServiceClient ==================
  *
  * <p>Service Description: A service for managing AI Platform's machine learning Models.

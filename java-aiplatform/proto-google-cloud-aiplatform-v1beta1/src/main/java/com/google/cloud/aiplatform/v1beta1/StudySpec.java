@@ -1563,6 +1563,90 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType getScaleType();
 
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
+        getConditionalParameterSpecsList();
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+        getConditionalParameterSpecs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    int getConditionalParameterSpecsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                    .ConditionalParameterSpecOrBuilder>
+        getConditionalParameterSpecsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpecOrBuilder
+        getConditionalParameterSpecsOrBuilder(int index);
+
     public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ParameterValueSpecCase
         getParameterValueSpecCase();
   }
@@ -1588,6 +1672,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     private ParameterSpec() {
       parameterId_ = "";
       scaleType_ = 0;
+      conditionalParameterSpecs_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1609,6 +1694,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1736,6 +1822,22 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 scaleType_ = rawValue;
                 break;
               }
+            case 82:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  conditionalParameterSpecs_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                              .ConditionalParameterSpec>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                conditionalParameterSpecs_.add(
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                            .ConditionalParameterSpec.parser(),
+                        extensionRegistry));
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1750,6 +1852,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          conditionalParameterSpecs_ =
+              java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -4971,6 +5077,4870 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ConditionalParameterSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       *
+       * @return Whether the parentDiscreteValues field is set.
+       */
+      boolean hasParentDiscreteValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       *
+       * @return The parentDiscreteValues.
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .DiscreteValueCondition
+          getParentDiscreteValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .DiscreteValueConditionOrBuilder
+          getParentDiscreteValuesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       *
+       * @return Whether the parentIntValues field is set.
+       */
+      boolean hasParentIntValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       *
+       * @return The parentIntValues.
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .IntValueCondition
+          getParentIntValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .IntValueConditionOrBuilder
+          getParentIntValuesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       *
+       * @return Whether the parentCategoricalValues field is set.
+       */
+      boolean hasParentCategoricalValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       *
+       * @return The parentCategoricalValues.
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .CategoricalValueCondition
+          getParentCategoricalValues();
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .CategoricalValueConditionOrBuilder
+          getParentCategoricalValuesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the parameterSpec field is set.
+       */
+      boolean hasParameterSpec();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The parameterSpec.
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec getParameterSpec();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder
+          getParameterSpecOrBuilder();
+
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .ParentValueConditionCase
+          getParentValueConditionCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a parameter spec with condition from its parent parameter.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec}
+     */
+    public static final class ConditionalParameterSpec
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+        ConditionalParameterSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ConditionalParameterSpec.newBuilder() to construct.
+      private ConditionalParameterSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ConditionalParameterSpec() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ConditionalParameterSpec();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private ConditionalParameterSpec(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder subBuilder =
+                      null;
+                  if (parameterSpec_ != null) {
+                    subBuilder = parameterSpec_.toBuilder();
+                  }
+                  parameterSpec_ =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(parameterSpec_);
+                    parameterSpec_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 18:
+                {
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.DiscreteValueCondition.Builder
+                      subBuilder = null;
+                  if (parentValueConditionCase_ == 2) {
+                    subBuilder =
+                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                    .ConditionalParameterSpec.DiscreteValueCondition)
+                                parentValueCondition_)
+                            .toBuilder();
+                  }
+                  parentValueCondition_ =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                              .ConditionalParameterSpec.DiscreteValueCondition.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                .ConditionalParameterSpec.DiscreteValueCondition)
+                            parentValueCondition_);
+                    parentValueCondition_ = subBuilder.buildPartial();
+                  }
+                  parentValueConditionCase_ = 2;
+                  break;
+                }
+              case 26:
+                {
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.IntValueCondition.Builder
+                      subBuilder = null;
+                  if (parentValueConditionCase_ == 3) {
+                    subBuilder =
+                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                    .ConditionalParameterSpec.IntValueCondition)
+                                parentValueCondition_)
+                            .toBuilder();
+                  }
+                  parentValueCondition_ =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                              .ConditionalParameterSpec.IntValueCondition.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                .ConditionalParameterSpec.IntValueCondition)
+                            parentValueCondition_);
+                    parentValueCondition_ = subBuilder.buildPartial();
+                  }
+                  parentValueConditionCase_ = 3;
+                  break;
+                }
+              case 34:
+                {
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.CategoricalValueCondition.Builder
+                      subBuilder = null;
+                  if (parentValueConditionCase_ == 4) {
+                    subBuilder =
+                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                    .ConditionalParameterSpec.CategoricalValueCondition)
+                                parentValueCondition_)
+                            .toBuilder();
+                  }
+                  parentValueCondition_ =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                              .ConditionalParameterSpec.CategoricalValueCondition.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                .ConditionalParameterSpec.CategoricalValueCondition)
+                            parentValueCondition_);
+                    parentValueCondition_ = subBuilder.buildPartial();
+                  }
+                  parentValueConditionCase_ = 4;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .Builder.class);
+      }
+
+      public interface DiscreteValueConditionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        java.util.List<java.lang.Double> getValuesList();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        int getValuesCount();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        double getValues(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the spec to match discrete values from parent parameter.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition}
+       */
+      public static final class DiscreteValueCondition
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition)
+          DiscreteValueConditionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use DiscreteValueCondition.newBuilder() to construct.
+        private DiscreteValueCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private DiscreteValueCondition() {
+          values_ = emptyDoubleList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new DiscreteValueCondition();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private DiscreteValueCondition(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 9:
+                  {
+                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                      values_ = newDoubleList();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    values_.addDouble(input.readDouble());
+                    break;
+                  }
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!((mutable_bitField0_ & 0x00000001) != 0)
+                        && input.getBytesUntilLimit() > 0) {
+                      values_ = newDoubleList();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      values_.addDouble(input.readDouble());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+              values_.makeImmutable(); // C
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition.class,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition.Builder.class);
+        }
+
+        public static final int VALUES_FIELD_NUMBER = 1;
+        private com.google.protobuf.Internal.DoubleList values_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Double> getValuesList() {
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'DISCRETE' type.
+         * All values must exist in `discrete_value_spec` of parent parameter.
+         * The Epsilon of the value matching is 1e-10.
+         * </pre>
+         *
+         * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public double getValues(int index) {
+          return values_.getDouble(index);
+        }
+
+        private int valuesMemoizedSerializedSize = -1;
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getSerializedSize();
+          if (getValuesList().size() > 0) {
+            output.writeUInt32NoTag(10);
+            output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+          }
+          for (int i = 0; i < values_.size(); i++) {
+            output.writeDoubleNoTag(values_.getDouble(i));
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          {
+            int dataSize = 0;
+            dataSize = 8 * getValuesList().size();
+            size += dataSize;
+            if (!getValuesList().isEmpty()) {
+              size += 1;
+              size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+            }
+            valuesMemoizedSerializedSize = dataSize;
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .DiscreteValueCondition)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .DiscreteValueCondition
+              other =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.DiscreteValueCondition)
+                      obj;
+
+          if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getValuesCount() > 0) {
+            hash = (37 * hash) + VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getValuesList().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents the spec to match discrete values from parent parameter.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition)
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .DiscreteValueConditionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition.class,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            values_ = emptyDoubleList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition
+              build() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition
+              buildPartial() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                result =
+                    new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition(this);
+            int from_bitField0_ = bitField0_;
+            if (((bitField0_ & 0x00000001) != 0)) {
+              values_.makeImmutable();
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.values_ = values_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.DiscreteValueCondition)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .DiscreteValueCondition
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                    .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance())
+              return this;
+            if (!other.values_.isEmpty()) {
+              if (values_.isEmpty()) {
+                values_ = other.values_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureValuesIsMutable();
+                values_.addAll(other.values_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.DiscreteValueCondition)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.Internal.DoubleList values_ = emptyDoubleList();
+
+          private void ensureValuesIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              values_ = mutableCopy(values_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return A list containing the values.
+           */
+          public java.util.List<java.lang.Double> getValuesList() {
+            return ((bitField0_ & 0x00000001) != 0)
+                ? java.util.Collections.unmodifiableList(values_)
+                : values_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The count of values.
+           */
+          public int getValuesCount() {
+            return values_.size();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index of the element to return.
+           * @return The values at the given index.
+           */
+          public double getValues(int index) {
+            return values_.getDouble(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The values to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValues(int index, double value) {
+            ensureValuesIsMutable();
+            values_.setDouble(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValues(double value) {
+            ensureValuesIsMutable();
+            values_.addDouble(value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param values The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllValues(java.lang.Iterable<? extends java.lang.Double> values) {
+            ensureValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'DISCRETE' type.
+           * All values must exist in `discrete_value_spec` of parent parameter.
+           * The Epsilon of the value matching is 1e-10.
+           * </pre>
+           *
+           * <code>repeated double values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValues() {
+            values_ = emptyDoubleList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition)
+        private static final com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition();
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DiscreteValueCondition> PARSER =
+            new com.google.protobuf.AbstractParser<DiscreteValueCondition>() {
+              @java.lang.Override
+              public DiscreteValueCondition parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new DiscreteValueCondition(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<DiscreteValueCondition> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DiscreteValueCondition> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .DiscreteValueCondition
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface IntValueConditionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        java.util.List<java.lang.Long> getValuesList();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        int getValuesCount();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        long getValues(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the spec to match integer values from parent parameter.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition}
+       */
+      public static final class IntValueCondition extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition)
+          IntValueConditionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use IntValueCondition.newBuilder() to construct.
+        private IntValueCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private IntValueCondition() {
+          values_ = emptyLongList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new IntValueCondition();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private IntValueCondition(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                      values_ = newLongList();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    values_.addLong(input.readInt64());
+                    break;
+                  }
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!((mutable_bitField0_ & 0x00000001) != 0)
+                        && input.getBytesUntilLimit() > 0) {
+                      values_ = newLongList();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      values_.addLong(input.readInt64());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+              values_.makeImmutable(); // C
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition.class,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition.Builder.class);
+        }
+
+        public static final int VALUES_FIELD_NUMBER = 1;
+        private com.google.protobuf.Internal.LongList values_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Long> getValuesList() {
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'INTEGER' type.
+         * All values must lie in `integer_value_spec` of parent parameter.
+         * </pre>
+         *
+         * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public long getValues(int index) {
+          return values_.getLong(index);
+        }
+
+        private int valuesMemoizedSerializedSize = -1;
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getSerializedSize();
+          if (getValuesList().size() > 0) {
+            output.writeUInt32NoTag(10);
+            output.writeUInt32NoTag(valuesMemoizedSerializedSize);
+          }
+          for (int i = 0; i < values_.size(); i++) {
+            output.writeInt64NoTag(values_.getLong(i));
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          {
+            int dataSize = 0;
+            for (int i = 0; i < values_.size(); i++) {
+              dataSize +=
+                  com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(values_.getLong(i));
+            }
+            size += dataSize;
+            if (!getValuesList().isEmpty()) {
+              size += 1;
+              size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+            }
+            valuesMemoizedSerializedSize = dataSize;
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .IntValueCondition)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .IntValueCondition
+              other =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.IntValueCondition)
+                      obj;
+
+          if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getValuesCount() > 0) {
+            hash = (37 * hash) + VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getValuesList().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents the spec to match integer values from parent parameter.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition)
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .IntValueConditionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition.class,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            values_ = emptyLongList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition
+              build() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition
+              buildPartial() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                result =
+                    new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition(this);
+            int from_bitField0_ = bitField0_;
+            if (((bitField0_ & 0x00000001) != 0)) {
+              values_.makeImmutable();
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.values_ = values_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.IntValueCondition)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .IntValueCondition
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                    .ConditionalParameterSpec.IntValueCondition.getDefaultInstance()) return this;
+            if (!other.values_.isEmpty()) {
+              if (values_.isEmpty()) {
+                values_ = other.values_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureValuesIsMutable();
+                values_.addAll(other.values_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.IntValueCondition)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.Internal.LongList values_ = emptyLongList();
+
+          private void ensureValuesIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              values_ = mutableCopy(values_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return A list containing the values.
+           */
+          public java.util.List<java.lang.Long> getValuesList() {
+            return ((bitField0_ & 0x00000001) != 0)
+                ? java.util.Collections.unmodifiableList(values_)
+                : values_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The count of values.
+           */
+          public int getValuesCount() {
+            return values_.size();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index of the element to return.
+           * @return The values at the given index.
+           */
+          public long getValues(int index) {
+            return values_.getLong(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The values to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValues(int index, long value) {
+            ensureValuesIsMutable();
+            values_.setLong(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValues(long value) {
+            ensureValuesIsMutable();
+            values_.addLong(value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param values The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllValues(java.lang.Iterable<? extends java.lang.Long> values) {
+            ensureValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'INTEGER' type.
+           * All values must lie in `integer_value_spec` of parent parameter.
+           * </pre>
+           *
+           * <code>repeated int64 values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValues() {
+            values_ = emptyLongList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition)
+        private static final com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition();
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<IntValueCondition> PARSER =
+            new com.google.protobuf.AbstractParser<IntValueCondition>() {
+              @java.lang.Override
+              public IntValueCondition parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new IntValueCondition(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<IntValueCondition> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<IntValueCondition> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .IntValueCondition
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface CategoricalValueConditionOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        java.util.List<java.lang.String> getValuesList();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        int getValuesCount();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        java.lang.String getValues(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        com.google.protobuf.ByteString getValuesBytes(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the spec to match categorical values from parent parameter.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition}
+       */
+      public static final class CategoricalValueCondition
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition)
+          CategoricalValueConditionOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use CategoricalValueCondition.newBuilder() to construct.
+        private CategoricalValueCondition(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private CategoricalValueCondition() {
+          values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new CategoricalValueCondition();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private CategoricalValueCondition(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                      values_ = new com.google.protobuf.LazyStringArrayList();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    values_.add(s);
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+              values_ = values_.getUnmodifiableView();
+            }
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition.class,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition.Builder.class);
+        }
+
+        public static final int VALUES_FIELD_NUMBER = 1;
+        private com.google.protobuf.LazyStringList values_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the values.
+         */
+        public com.google.protobuf.ProtocolStringList getValuesList() {
+          return values_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of values.
+         */
+        public int getValuesCount() {
+          return values_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The values at the given index.
+         */
+        public java.lang.String getValues(int index) {
+          return values_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+         * All values must exist in `categorical_value_spec` of parent
+         * parameter.
+         * </pre>
+         *
+         * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the values at the given index.
+         */
+        public com.google.protobuf.ByteString getValuesBytes(int index) {
+          return values_.getByteString(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < values_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          {
+            int dataSize = 0;
+            for (int i = 0; i < values_.size(); i++) {
+              dataSize += computeStringSizeNoTag(values_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getValuesList().size();
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .CategoricalValueCondition)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .CategoricalValueCondition
+              other =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.CategoricalValueCondition)
+                      obj;
+
+          if (!getValuesList().equals(other.getValuesList())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getValuesCount() > 0) {
+            hash = (37 * hash) + VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getValuesList().hashCode();
+          }
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents the spec to match categorical values from parent parameter.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition)
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .CategoricalValueConditionOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition.class,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudyProto
+                .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition
+              build() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition
+              buildPartial() {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                result =
+                    new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition(this);
+            int from_bitField0_ = bitField0_;
+            if (((bitField0_ & 0x00000001) != 0)) {
+              values_ = values_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.values_ = values_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.CategoricalValueCondition)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .CategoricalValueCondition
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                    .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance())
+              return this;
+            if (!other.values_.isEmpty()) {
+              if (values_.isEmpty()) {
+                values_ = other.values_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureValuesIsMutable();
+                values_.addAll(other.values_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.CategoricalValueCondition)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.LazyStringList values_ =
+              com.google.protobuf.LazyStringArrayList.EMPTY;
+
+          private void ensureValuesIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              values_ = new com.google.protobuf.LazyStringArrayList(values_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return A list containing the values.
+           */
+          public com.google.protobuf.ProtocolStringList getValuesList() {
+            return values_.getUnmodifiableView();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The count of values.
+           */
+          public int getValuesCount() {
+            return values_.size();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index of the element to return.
+           * @return The values at the given index.
+           */
+          public java.lang.String getValues(int index) {
+            return values_.get(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index of the value to return.
+           * @return The bytes of the values at the given index.
+           */
+          public com.google.protobuf.ByteString getValuesBytes(int index) {
+            return values_.getByteString(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The values to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValues(int index, java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureValuesIsMutable();
+            values_.set(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValues(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureValuesIsMutable();
+            values_.add(value);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param values The values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
+            ensureValuesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValues() {
+            values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
+           * All values must exist in `categorical_value_spec` of parent
+           * parameter.
+           * </pre>
+           *
+           * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes of the values to add.
+           * @return This builder for chaining.
+           */
+          public Builder addValuesBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            ensureValuesIsMutable();
+            values_.add(value);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition)
+        private static final com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition();
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CategoricalValueCondition> PARSER =
+            new com.google.protobuf.AbstractParser<CategoricalValueCondition>() {
+              @java.lang.Override
+              public CategoricalValueCondition parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new CategoricalValueCondition(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<CategoricalValueCondition> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CategoricalValueCondition> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .CategoricalValueCondition
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int parentValueConditionCase_ = 0;
+      private java.lang.Object parentValueCondition_;
+
+      public enum ParentValueConditionCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        PARENT_DISCRETE_VALUES(2),
+        PARENT_INT_VALUES(3),
+        PARENT_CATEGORICAL_VALUES(4),
+        PARENTVALUECONDITION_NOT_SET(0);
+        private final int value;
+
+        private ParentValueConditionCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ParentValueConditionCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ParentValueConditionCase forNumber(int value) {
+          switch (value) {
+            case 2:
+              return PARENT_DISCRETE_VALUES;
+            case 3:
+              return PARENT_INT_VALUES;
+            case 4:
+              return PARENT_CATEGORICAL_VALUES;
+            case 0:
+              return PARENTVALUECONDITION_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ParentValueConditionCase getParentValueConditionCase() {
+        return ParentValueConditionCase.forNumber(parentValueConditionCase_);
+      }
+
+      public static final int PARENT_DISCRETE_VALUES_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       *
+       * @return Whether the parentDiscreteValues field is set.
+       */
+      @java.lang.Override
+      public boolean hasParentDiscreteValues() {
+        return parentValueConditionCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       *
+       * @return The parentDiscreteValues.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .DiscreteValueCondition
+          getParentDiscreteValues() {
+        if (parentValueConditionCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .DiscreteValueCondition.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `DISCRETE` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .DiscreteValueConditionOrBuilder
+          getParentDiscreteValuesOrBuilder() {
+        if (parentValueConditionCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.DiscreteValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .DiscreteValueCondition.getDefaultInstance();
+      }
+
+      public static final int PARENT_INT_VALUES_FIELD_NUMBER = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       *
+       * @return Whether the parentIntValues field is set.
+       */
+      @java.lang.Override
+      public boolean hasParentIntValues() {
+        return parentValueConditionCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       *
+       * @return The parentIntValues.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .IntValueCondition
+          getParentIntValues() {
+        if (parentValueConditionCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .IntValueCondition.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of `INTEGER`
+       * type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .IntValueConditionOrBuilder
+          getParentIntValuesOrBuilder() {
+        if (parentValueConditionCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.IntValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .IntValueCondition.getDefaultInstance();
+      }
+
+      public static final int PARENT_CATEGORICAL_VALUES_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       *
+       * @return Whether the parentCategoricalValues field is set.
+       */
+      @java.lang.Override
+      public boolean hasParentCategoricalValues() {
+        return parentValueConditionCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       *
+       * @return The parentCategoricalValues.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .CategoricalValueCondition
+          getParentCategoricalValues() {
+        if (parentValueConditionCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .CategoricalValueCondition.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The spec for matching values from a parent parameter of
+       * `CATEGORICAL` type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .CategoricalValueConditionOrBuilder
+          getParentCategoricalValuesOrBuilder() {
+        if (parentValueConditionCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.CategoricalValueCondition)
+              parentValueCondition_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            .CategoricalValueCondition.getDefaultInstance();
+      }
+
+      public static final int PARAMETER_SPEC_FIELD_NUMBER = 1;
+      private com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameterSpec_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the parameterSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasParameterSpec() {
+        return parameterSpec_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The parameterSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec getParameterSpec() {
+        return parameterSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.getDefaultInstance()
+            : parameterSpec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The spec for a conditional parameter.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder
+          getParameterSpecOrBuilder() {
+        return getParameterSpec();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (parameterSpec_ != null) {
+          output.writeMessage(1, getParameterSpec());
+        }
+        if (parentValueConditionCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .DiscreteValueCondition)
+                  parentValueCondition_);
+        }
+        if (parentValueConditionCase_ == 3) {
+          output.writeMessage(
+              3,
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .IntValueCondition)
+                  parentValueCondition_);
+        }
+        if (parentValueConditionCase_ == 4) {
+          output.writeMessage(
+              4,
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                      .CategoricalValueCondition)
+                  parentValueCondition_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (parameterSpec_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getParameterSpec());
+        }
+        if (parentValueConditionCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.DiscreteValueCondition)
+                      parentValueCondition_);
+        }
+        if (parentValueConditionCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.IntValueCondition)
+                      parentValueCondition_);
+        }
+        if (parentValueConditionCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4,
+                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec.CategoricalValueCondition)
+                      parentValueCondition_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec other =
+            (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+                obj;
+
+        if (hasParameterSpec() != other.hasParameterSpec()) return false;
+        if (hasParameterSpec()) {
+          if (!getParameterSpec().equals(other.getParameterSpec())) return false;
+        }
+        if (!getParentValueConditionCase().equals(other.getParentValueConditionCase()))
+          return false;
+        switch (parentValueConditionCase_) {
+          case 2:
+            if (!getParentDiscreteValues().equals(other.getParentDiscreteValues())) return false;
+            break;
+          case 3:
+            if (!getParentIntValues().equals(other.getParentIntValues())) return false;
+            break;
+          case 4:
+            if (!getParentCategoricalValues().equals(other.getParentCategoricalValues()))
+              return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasParameterSpec()) {
+          hash = (37 * hash) + PARAMETER_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getParameterSpec().hashCode();
+        }
+        switch (parentValueConditionCase_) {
+          case 2:
+            hash = (37 * hash) + PARENT_DISCRETE_VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getParentDiscreteValues().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + PARENT_INT_VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getParentIntValues().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + PARENT_CATEGORICAL_VALUES_FIELD_NUMBER;
+            hash = (53 * hash) + getParentCategoricalValues().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a parameter spec with condition from its parent parameter.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.class,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (parameterSpecBuilder_ == null) {
+            parameterSpec_ = null;
+          } else {
+            parameterSpec_ = null;
+            parameterSpecBuilder_ = null;
+          }
+          parentValueConditionCase_ = 0;
+          parentValueCondition_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            build() {
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec(this);
+          if (parentValueConditionCase_ == 2) {
+            if (parentDiscreteValuesBuilder_ == null) {
+              result.parentValueCondition_ = parentValueCondition_;
+            } else {
+              result.parentValueCondition_ = parentDiscreteValuesBuilder_.build();
+            }
+          }
+          if (parentValueConditionCase_ == 3) {
+            if (parentIntValuesBuilder_ == null) {
+              result.parentValueCondition_ = parentValueCondition_;
+            } else {
+              result.parentValueCondition_ = parentIntValuesBuilder_.build();
+            }
+          }
+          if (parentValueConditionCase_ == 4) {
+            if (parentCategoricalValuesBuilder_ == null) {
+              result.parentValueCondition_ = parentValueCondition_;
+            } else {
+              result.parentValueCondition_ = parentCategoricalValuesBuilder_.build();
+            }
+          }
+          if (parameterSpecBuilder_ == null) {
+            result.parameterSpec_ = parameterSpec_;
+          } else {
+            result.parameterSpec_ = parameterSpecBuilder_.build();
+          }
+          result.parentValueConditionCase_ = parentValueConditionCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpec.getDefaultInstance()) return this;
+          if (other.hasParameterSpec()) {
+            mergeParameterSpec(other.getParameterSpec());
+          }
+          switch (other.getParentValueConditionCase()) {
+            case PARENT_DISCRETE_VALUES:
+              {
+                mergeParentDiscreteValues(other.getParentDiscreteValues());
+                break;
+              }
+            case PARENT_INT_VALUES:
+              {
+                mergeParentIntValues(other.getParentIntValues());
+                break;
+              }
+            case PARENT_CATEGORICAL_VALUES:
+              {
+                mergeParentCategoricalValues(other.getParentCategoricalValues());
+                break;
+              }
+            case PARENTVALUECONDITION_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int parentValueConditionCase_ = 0;
+        private java.lang.Object parentValueCondition_;
+
+        public ParentValueConditionCase getParentValueConditionCase() {
+          return ParentValueConditionCase.forNumber(parentValueConditionCase_);
+        }
+
+        public Builder clearParentValueCondition() {
+          parentValueConditionCase_ = 0;
+          parentValueCondition_ = null;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueConditionOrBuilder>
+            parentDiscreteValuesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         *
+         * @return Whether the parentDiscreteValues field is set.
+         */
+        @java.lang.Override
+        public boolean hasParentDiscreteValues() {
+          return parentValueConditionCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         *
+         * @return The parentDiscreteValues.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .DiscreteValueCondition
+            getParentDiscreteValues() {
+          if (parentDiscreteValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance();
+          } else {
+            if (parentValueConditionCase_ == 2) {
+              return parentDiscreteValuesBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        public Builder setParentDiscreteValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                value) {
+          if (parentDiscreteValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            parentValueCondition_ = value;
+            onChanged();
+          } else {
+            parentDiscreteValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        public Builder setParentDiscreteValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition.Builder
+                builderForValue) {
+          if (parentDiscreteValuesBuilder_ == null) {
+            parentValueCondition_ = builderForValue.build();
+            onChanged();
+          } else {
+            parentDiscreteValuesBuilder_.setMessage(builderForValue.build());
+          }
+          parentValueConditionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        public Builder mergeParentDiscreteValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition
+                value) {
+          if (parentDiscreteValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 2
+                && parentValueCondition_
+                    != com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance()) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                  .ConditionalParameterSpec.DiscreteValueCondition)
+                              parentValueCondition_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              parentValueCondition_ = value;
+            }
+            onChanged();
+          } else {
+            if (parentValueConditionCase_ == 2) {
+              parentDiscreteValuesBuilder_.mergeFrom(value);
+            }
+            parentDiscreteValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        public Builder clearParentDiscreteValues() {
+          if (parentDiscreteValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 2) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+              onChanged();
+            }
+          } else {
+            if (parentValueConditionCase_ == 2) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+            }
+            parentDiscreteValuesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .DiscreteValueCondition.Builder
+            getParentDiscreteValuesBuilder() {
+          return getParentDiscreteValuesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .DiscreteValueConditionOrBuilder
+            getParentDiscreteValuesOrBuilder() {
+          if ((parentValueConditionCase_ == 2) && (parentDiscreteValuesBuilder_ != null)) {
+            return parentDiscreteValuesBuilder_.getMessageOrBuilder();
+          } else {
+            if (parentValueConditionCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `DISCRETE` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition parent_discrete_values = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .DiscreteValueConditionOrBuilder>
+            getParentDiscreteValuesFieldBuilder() {
+          if (parentDiscreteValuesBuilder_ == null) {
+            if (!(parentValueConditionCase_ == 2)) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.DiscreteValueCondition.getDefaultInstance();
+            }
+            parentDiscreteValuesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueCondition.Builder,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.DiscreteValueConditionOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                            .ConditionalParameterSpec.DiscreteValueCondition)
+                        parentValueCondition_,
+                    getParentForChildren(),
+                    isClean());
+            parentValueCondition_ = null;
+          }
+          parentValueConditionCase_ = 2;
+          onChanged();
+          ;
+          return parentDiscreteValuesBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueConditionOrBuilder>
+            parentIntValuesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         *
+         * @return Whether the parentIntValues field is set.
+         */
+        @java.lang.Override
+        public boolean hasParentIntValues() {
+          return parentValueConditionCase_ == 3;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         *
+         * @return The parentIntValues.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .IntValueCondition
+            getParentIntValues() {
+          if (parentIntValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition.getDefaultInstance();
+          } else {
+            if (parentValueConditionCase_ == 3) {
+              return parentIntValuesBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        public Builder setParentIntValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                value) {
+          if (parentIntValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            parentValueCondition_ = value;
+            onChanged();
+          } else {
+            parentIntValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        public Builder setParentIntValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition.Builder
+                builderForValue) {
+          if (parentIntValuesBuilder_ == null) {
+            parentValueCondition_ = builderForValue.build();
+            onChanged();
+          } else {
+            parentIntValuesBuilder_.setMessage(builderForValue.build());
+          }
+          parentValueConditionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        public Builder mergeParentIntValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition
+                value) {
+          if (parentIntValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 3
+                && parentValueCondition_
+                    != com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition.getDefaultInstance()) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                  .ConditionalParameterSpec.IntValueCondition)
+                              parentValueCondition_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              parentValueCondition_ = value;
+            }
+            onChanged();
+          } else {
+            if (parentValueConditionCase_ == 3) {
+              parentIntValuesBuilder_.mergeFrom(value);
+            }
+            parentIntValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        public Builder clearParentIntValues() {
+          if (parentIntValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 3) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+              onChanged();
+            }
+          } else {
+            if (parentValueConditionCase_ == 3) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+            }
+            parentIntValuesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .IntValueCondition.Builder
+            getParentIntValuesBuilder() {
+          return getParentIntValuesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .IntValueConditionOrBuilder
+            getParentIntValuesOrBuilder() {
+          if ((parentValueConditionCase_ == 3) && (parentIntValuesBuilder_ != null)) {
+            return parentIntValuesBuilder_.getMessageOrBuilder();
+          } else {
+            if (parentValueConditionCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.IntValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of `INTEGER`
+         * type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition parent_int_values = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .IntValueConditionOrBuilder>
+            getParentIntValuesFieldBuilder() {
+          if (parentIntValuesBuilder_ == null) {
+            if (!(parentValueConditionCase_ == 3)) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.IntValueCondition.getDefaultInstance();
+            }
+            parentIntValuesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueCondition.Builder,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.IntValueConditionOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                            .ConditionalParameterSpec.IntValueCondition)
+                        parentValueCondition_,
+                    getParentForChildren(),
+                    isClean());
+            parentValueCondition_ = null;
+          }
+          parentValueConditionCase_ = 3;
+          onChanged();
+          ;
+          return parentIntValuesBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueConditionOrBuilder>
+            parentCategoricalValuesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         *
+         * @return Whether the parentCategoricalValues field is set.
+         */
+        @java.lang.Override
+        public boolean hasParentCategoricalValues() {
+          return parentValueConditionCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         *
+         * @return The parentCategoricalValues.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .CategoricalValueCondition
+            getParentCategoricalValues() {
+          if (parentCategoricalValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 4) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance();
+          } else {
+            if (parentValueConditionCase_ == 4) {
+              return parentCategoricalValuesBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        public Builder setParentCategoricalValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                value) {
+          if (parentCategoricalValuesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            parentValueCondition_ = value;
+            onChanged();
+          } else {
+            parentCategoricalValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        public Builder setParentCategoricalValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition.Builder
+                builderForValue) {
+          if (parentCategoricalValuesBuilder_ == null) {
+            parentValueCondition_ = builderForValue.build();
+            onChanged();
+          } else {
+            parentCategoricalValuesBuilder_.setMessage(builderForValue.build());
+          }
+          parentValueConditionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        public Builder mergeParentCategoricalValues(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition
+                value) {
+          if (parentCategoricalValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 4
+                && parentValueCondition_
+                    != com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance()) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                  .ConditionalParameterSpec.CategoricalValueCondition)
+                              parentValueCondition_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              parentValueCondition_ = value;
+            }
+            onChanged();
+          } else {
+            if (parentValueConditionCase_ == 4) {
+              parentCategoricalValuesBuilder_.mergeFrom(value);
+            }
+            parentCategoricalValuesBuilder_.setMessage(value);
+          }
+          parentValueConditionCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        public Builder clearParentCategoricalValues() {
+          if (parentCategoricalValuesBuilder_ == null) {
+            if (parentValueConditionCase_ == 4) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+              onChanged();
+            }
+          } else {
+            if (parentValueConditionCase_ == 4) {
+              parentValueConditionCase_ = 0;
+              parentValueCondition_ = null;
+            }
+            parentCategoricalValuesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .CategoricalValueCondition.Builder
+            getParentCategoricalValuesBuilder() {
+          return getParentCategoricalValuesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                .CategoricalValueConditionOrBuilder
+            getParentCategoricalValuesOrBuilder() {
+          if ((parentValueConditionCase_ == 4) && (parentCategoricalValuesBuilder_ != null)) {
+            return parentCategoricalValuesBuilder_.getMessageOrBuilder();
+          } else {
+            if (parentValueConditionCase_ == 4) {
+              return (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition)
+                  parentValueCondition_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The spec for matching values from a parent parameter of
+         * `CATEGORICAL` type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition parent_categorical_values = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueCondition.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .CategoricalValueConditionOrBuilder>
+            getParentCategoricalValuesFieldBuilder() {
+          if (parentCategoricalValuesBuilder_ == null) {
+            if (!(parentValueConditionCase_ == 4)) {
+              parentValueCondition_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.CategoricalValueCondition.getDefaultInstance();
+            }
+            parentCategoricalValuesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueCondition.Builder,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                        .ConditionalParameterSpec.CategoricalValueConditionOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                            .ConditionalParameterSpec.CategoricalValueCondition)
+                        parentValueCondition_,
+                    getParentForChildren(),
+                    isClean());
+            parentValueCondition_ = null;
+          }
+          parentValueConditionCase_ = 4;
+          onChanged();
+          ;
+          return parentCategoricalValuesBuilder_;
+        }
+
+        private com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameterSpec_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder>
+            parameterSpecBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the parameterSpec field is set.
+         */
+        public boolean hasParameterSpec() {
+          return parameterSpecBuilder_ != null || parameterSpec_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The parameterSpec.
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec getParameterSpec() {
+          if (parameterSpecBuilder_ == null) {
+            return parameterSpec_ == null
+                ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.getDefaultInstance()
+                : parameterSpec_;
+          } else {
+            return parameterSpecBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setParameterSpec(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec value) {
+          if (parameterSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            parameterSpec_ = value;
+            onChanged();
+          } else {
+            parameterSpecBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setParameterSpec(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder builderForValue) {
+          if (parameterSpecBuilder_ == null) {
+            parameterSpec_ = builderForValue.build();
+            onChanged();
+          } else {
+            parameterSpecBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeParameterSpec(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec value) {
+          if (parameterSpecBuilder_ == null) {
+            if (parameterSpec_ != null) {
+              parameterSpec_ =
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.newBuilder(
+                          parameterSpec_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              parameterSpec_ = value;
+            }
+            onChanged();
+          } else {
+            parameterSpecBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearParameterSpec() {
+          if (parameterSpecBuilder_ == null) {
+            parameterSpec_ = null;
+            onChanged();
+          } else {
+            parameterSpec_ = null;
+            parameterSpecBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder
+            getParameterSpecBuilder() {
+
+          onChanged();
+          return getParameterSpecFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder
+            getParameterSpecOrBuilder() {
+          if (parameterSpecBuilder_ != null) {
+            return parameterSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return parameterSpec_ == null
+                ? com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.getDefaultInstance()
+                : parameterSpec_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The spec for a conditional parameter.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parameter_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder>
+            getParameterSpecFieldBuilder() {
+          if (parameterSpecBuilder_ == null) {
+            parameterSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder,
+                    com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpecOrBuilder>(
+                    getParameterSpec(), getParentForChildren(), isClean());
+            parameterSpec_ = null;
+          }
+          return parameterSpecBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec)
+      private static final com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                .ConditionalParameterSpec();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ConditionalParameterSpec> PARSER =
+          new com.google.protobuf.AbstractParser<ConditionalParameterSpec>() {
+            @java.lang.Override
+            public ConditionalParameterSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new ConditionalParameterSpec(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<ConditionalParameterSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ConditionalParameterSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int parameterValueSpecCase_ = 0;
     private java.lang.Object parameterValueSpec_;
 
@@ -5369,6 +10339,110 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int CONDITIONAL_PARAMETER_SPECS_FIELD_NUMBER = 10;
+    private java.util.List<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
+        conditionalParameterSpecs_;
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
+        getConditionalParameterSpecsList() {
+      return conditionalParameterSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                    .ConditionalParameterSpecOrBuilder>
+        getConditionalParameterSpecsOrBuilderList() {
+      return conditionalParameterSpecs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public int getConditionalParameterSpecsCount() {
+      return conditionalParameterSpecs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+        getConditionalParameterSpecs(int index) {
+      return conditionalParameterSpecs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A conditional parameter node is active if the parameter's value matches
+     * the conditional node's parent_value_condition.
+     * If two items in conditional_parameter_specs have the same name, they
+     * must have disjoint parent_value_condition.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+            .ConditionalParameterSpecOrBuilder
+        getConditionalParameterSpecsOrBuilder(int index) {
+      return conditionalParameterSpecs_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5416,6 +10490,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(6, scaleType_);
       }
+      for (int i = 0; i < conditionalParameterSpecs_.size(); i++) {
+        output.writeMessage(10, conditionalParameterSpecs_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5462,6 +10539,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scaleType_);
       }
+      for (int i = 0; i < conditionalParameterSpecs_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, conditionalParameterSpecs_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5480,6 +10562,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       if (!getParameterId().equals(other.getParameterId())) return false;
       if (scaleType_ != other.scaleType_) return false;
+      if (!getConditionalParameterSpecsList().equals(other.getConditionalParameterSpecsList()))
+        return false;
       if (!getParameterValueSpecCase().equals(other.getParameterValueSpecCase())) return false;
       switch (parameterValueSpecCase_) {
         case 2:
@@ -5512,6 +10596,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getParameterId().hashCode();
       hash = (37 * hash) + SCALE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + scaleType_;
+      if (getConditionalParameterSpecsCount() > 0) {
+        hash = (37 * hash) + CONDITIONAL_PARAMETER_SPECS_FIELD_NUMBER;
+        hash = (53 * hash) + getConditionalParameterSpecsList().hashCode();
+      }
       switch (parameterValueSpecCase_) {
         case 2:
           hash = (37 * hash) + DOUBLE_VALUE_SPEC_FIELD_NUMBER;
@@ -5674,7 +10762,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getConditionalParameterSpecsFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -5684,6 +10774,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         scaleType_ = 0;
 
+        if (conditionalParameterSpecsBuilder_ == null) {
+          conditionalParameterSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          conditionalParameterSpecsBuilder_.clear();
+        }
         parameterValueSpecCase_ = 0;
         parameterValueSpec_ = null;
         return this;
@@ -5714,6 +10810,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec(this);
+        int from_bitField0_ = bitField0_;
         if (parameterValueSpecCase_ == 2) {
           if (doubleValueSpecBuilder_ == null) {
             result.parameterValueSpec_ = parameterValueSpec_;
@@ -5744,6 +10841,16 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         result.parameterId_ = parameterId_;
         result.scaleType_ = scaleType_;
+        if (conditionalParameterSpecsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            conditionalParameterSpecs_ =
+                java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.conditionalParameterSpecs_ = conditionalParameterSpecs_;
+        } else {
+          result.conditionalParameterSpecs_ = conditionalParameterSpecsBuilder_.build();
+        }
         result.parameterValueSpecCase_ = parameterValueSpecCase_;
         onBuilt();
         return result;
@@ -5804,6 +10911,33 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.scaleType_ != 0) {
           setScaleTypeValue(other.getScaleTypeValue());
+        }
+        if (conditionalParameterSpecsBuilder_ == null) {
+          if (!other.conditionalParameterSpecs_.isEmpty()) {
+            if (conditionalParameterSpecs_.isEmpty()) {
+              conditionalParameterSpecs_ = other.conditionalParameterSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureConditionalParameterSpecsIsMutable();
+              conditionalParameterSpecs_.addAll(other.conditionalParameterSpecs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.conditionalParameterSpecs_.isEmpty()) {
+            if (conditionalParameterSpecsBuilder_.isEmpty()) {
+              conditionalParameterSpecsBuilder_.dispose();
+              conditionalParameterSpecsBuilder_ = null;
+              conditionalParameterSpecs_ = other.conditionalParameterSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              conditionalParameterSpecsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getConditionalParameterSpecsFieldBuilder()
+                      : null;
+            } else {
+              conditionalParameterSpecsBuilder_.addAllMessages(other.conditionalParameterSpecs_);
+            }
+          }
         }
         switch (other.getParameterValueSpecCase()) {
           case DOUBLE_VALUE_SPEC:
@@ -5875,6 +11009,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec,
@@ -7092,6 +12228,502 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         scaleType_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
+          conditionalParameterSpecs_ = java.util.Collections.emptyList();
+
+      private void ensureConditionalParameterSpecsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          conditionalParameterSpecs_ =
+              new java.util.ArrayList<
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec>(conditionalParameterSpecs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpecOrBuilder>
+          conditionalParameterSpecsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec>
+          getConditionalParameterSpecsList() {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
+        } else {
+          return conditionalParameterSpecsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public int getConditionalParameterSpecsCount() {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          return conditionalParameterSpecs_.size();
+        } else {
+          return conditionalParameterSpecsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+          getConditionalParameterSpecs(int index) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          return conditionalParameterSpecs_.get(index);
+        } else {
+          return conditionalParameterSpecsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder setConditionalParameterSpecs(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              value) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.set(index, value);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder setConditionalParameterSpecs(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder
+              builderForValue) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder addConditionalParameterSpecs(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              value) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.add(value);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder addConditionalParameterSpecs(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              value) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.add(index, value);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder addConditionalParameterSpecs(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder
+              builderForValue) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder addConditionalParameterSpecs(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder
+              builderForValue) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder addAllConditionalParameterSpecs(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec>
+              values) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          ensureConditionalParameterSpecsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, conditionalParameterSpecs_);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder clearConditionalParameterSpecs() {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          conditionalParameterSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public Builder removeConditionalParameterSpecs(int index) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          ensureConditionalParameterSpecsIsMutable();
+          conditionalParameterSpecs_.remove(index);
+          onChanged();
+        } else {
+          conditionalParameterSpecsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .Builder
+          getConditionalParameterSpecsBuilder(int index) {
+        return getConditionalParameterSpecsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+              .ConditionalParameterSpecOrBuilder
+          getConditionalParameterSpecsOrBuilder(int index) {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          return conditionalParameterSpecs_.get(index);
+        } else {
+          return conditionalParameterSpecsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpecOrBuilder>
+          getConditionalParameterSpecsOrBuilderList() {
+        if (conditionalParameterSpecsBuilder_ != null) {
+          return conditionalParameterSpecsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .Builder
+          addConditionalParameterSpecsBuilder() {
+        return getConditionalParameterSpecsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+              .Builder
+          addConditionalParameterSpecsBuilder(int index) {
+        return getConditionalParameterSpecsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A conditional parameter node is active if the parameter's value matches
+       * the conditional node's parent_value_condition.
+       * If two items in conditional_parameter_specs have the same name, they
+       * must have disjoint parent_value_condition.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec conditional_parameter_specs = 10;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder>
+          getConditionalParameterSpecsBuilderList() {
+        return getConditionalParameterSpecsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                  .ConditionalParameterSpecOrBuilder>
+          getConditionalParameterSpecsFieldBuilder() {
+        if (conditionalParameterSpecsBuilder_ == null) {
+          conditionalParameterSpecsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpec.Builder,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                      .ConditionalParameterSpecOrBuilder>(
+                  conditionalParameterSpecs_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          conditionalParameterSpecs_ = null;
+        }
+        return conditionalParameterSpecsBuilder_;
       }
 
       @java.lang.Override

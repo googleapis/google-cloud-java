@@ -39,6 +39,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
 
   private CustomJobSpec() {
     workerPoolSpecs_ = java.util.Collections.emptyList();
+    serviceAccount_ = "";
+    network_ = "";
   }
 
   @java.lang.Override
@@ -98,6 +100,20 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 scheduling_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              network_ = s;
               break;
             }
           case 50:
@@ -283,6 +299,124 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     return getScheduling();
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the service account for workload run-as account.
+   * Users submitting jobs must have act-as permission on this run-as account.
+   * </pre>
+   *
+   * <code>string service_account = 4;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the service account for workload run-as account.
+   * Users submitting jobs must have act-as permission on this run-as account.
+   * </pre>
+   *
+   * <code>string service_account = 4;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 5;
+  private volatile java.lang.Object network_;
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+   * should be peered. For example, projects/12345/global/networks/myVPC.
+   * [Format](https:
+   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the job is not peered with any network.
+   * </pre>
+   *
+   * <code>string network = 5;</code>
+   *
+   * @return The network.
+   */
+  @java.lang.Override
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the Compute Engine
+   * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+   * should be peered. For example, projects/12345/global/networks/myVPC.
+   * [Format](https:
+   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form projects/{project}/global/networks/{network}.
+   * Where {project} is a project number, as in '12345', and {network} is
+   * network name.
+   * Private services access must already be configured for the network. If left
+   * unspecified, the job is not peered with any network.
+   * </pre>
+   *
+   * <code>string network = 5;</code>
+   *
+   * @return The bytes for network.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkBytes() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      network_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int BASE_OUTPUT_DIRECTORY_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.GcsDestination baseOutputDirectory_;
   /**
@@ -397,6 +531,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (scheduling_ != null) {
       output.writeMessage(3, getScheduling());
     }
+    if (!getServiceAccountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAccount_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, network_);
+    }
     if (baseOutputDirectory_ != null) {
       output.writeMessage(6, getBaseOutputDirectory());
     }
@@ -414,6 +554,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (scheduling_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getScheduling());
+    }
+    if (!getServiceAccountBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAccount_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, network_);
     }
     if (baseOutputDirectory_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBaseOutputDirectory());
@@ -439,6 +585,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (hasScheduling()) {
       if (!getScheduling().equals(other.getScheduling())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getNetwork().equals(other.getNetwork())) return false;
     if (hasBaseOutputDirectory() != other.hasBaseOutputDirectory()) return false;
     if (hasBaseOutputDirectory()) {
       if (!getBaseOutputDirectory().equals(other.getBaseOutputDirectory())) return false;
@@ -462,6 +610,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
       hash = (53 * hash) + getScheduling().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
     if (hasBaseOutputDirectory()) {
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
@@ -625,6 +777,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         scheduling_ = null;
         schedulingBuilder_ = null;
       }
+      serviceAccount_ = "";
+
+      network_ = "";
+
       if (baseOutputDirectoryBuilder_ == null) {
         baseOutputDirectory_ = null;
       } else {
@@ -673,6 +829,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
+      result.serviceAccount_ = serviceAccount_;
+      result.network_ = network_;
       if (baseOutputDirectoryBuilder_ == null) {
         result.baseOutputDirectory_ = baseOutputDirectory_;
       } else {
@@ -757,6 +915,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        onChanged();
+      }
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
+        onChanged();
       }
       if (other.hasBaseOutputDirectory()) {
         mergeBaseOutputDirectory(other.getBaseOutputDirectory());
@@ -1375,6 +1541,268 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         scheduling_ = null;
       }
       return schedulingBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the service account for workload run-as account.
+     * Users submitting jobs must have act-as permission on this run-as account.
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the service account for workload run-as account.
+     * Users submitting jobs must have act-as permission on this run-as account.
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the service account for workload run-as account.
+     * Users submitting jobs must have act-as permission on this run-as account.
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the service account for workload run-as account.
+     * Users submitting jobs must have act-as permission on this run-as account.
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the service account for workload run-as account.
+     * Users submitting jobs must have act-as permission on this run-as account.
+     * </pre>
+     *
+     * <code>string service_account = 4;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, projects/12345/global/networks/myVPC.
+     * [Format](https:
+     * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form projects/{project}/global/networks/{network}.
+     * Where {project} is a project number, as in '12345', and {network} is
+     * network name.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 5;</code>
+     *
+     * @return The network.
+     */
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, projects/12345/global/networks/myVPC.
+     * [Format](https:
+     * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form projects/{project}/global/networks/{network}.
+     * Where {project} is a project number, as in '12345', and {network} is
+     * network name.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 5;</code>
+     *
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, projects/12345/global/networks/myVPC.
+     * [Format](https:
+     * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form projects/{project}/global/networks/{network}.
+     * Where {project} is a project number, as in '12345', and {network} is
+     * network name.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 5;</code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      network_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, projects/12345/global/networks/myVPC.
+     * [Format](https:
+     * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form projects/{project}/global/networks/{network}.
+     * Where {project} is a project number, as in '12345', and {network} is
+     * network name.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+
+      network_ = getDefaultInstance().getNetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, projects/12345/global/networks/myVPC.
+     * [Format](https:
+     * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form projects/{project}/global/networks/{network}.
+     * Where {project} is a project number, as in '12345', and {network} is
+     * network name.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 5;</code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      network_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.aiplatform.v1beta1.GcsDestination baseOutputDirectory_;

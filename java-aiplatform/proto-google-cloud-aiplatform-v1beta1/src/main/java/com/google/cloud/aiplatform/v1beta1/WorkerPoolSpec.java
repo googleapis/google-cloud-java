@@ -89,6 +89,22 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
               replicaCount_ = input.readInt64();
               break;
             }
+          case 42:
+            {
+              com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder subBuilder = null;
+              if (diskSpec_ != null) {
+                subBuilder = diskSpec_.toBuilder();
+              }
+              diskSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.DiskSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diskSpec_);
+                diskSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 50:
             {
               com.google.cloud.aiplatform.v1beta1.ContainerSpec.Builder subBuilder = null;
@@ -381,6 +397,54 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     return replicaCount_;
   }
 
+  public static final int DISK_SPEC_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.DiskSpec diskSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   *
+   * @return Whether the diskSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskSpec() {
+    return diskSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   *
+   * @return The diskSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DiskSpec getDiskSpec() {
+    return diskSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()
+        : diskSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Disk spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder() {
+    return getDiskSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -400,6 +464,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (replicaCount_ != 0L) {
       output.writeInt64(2, replicaCount_);
+    }
+    if (diskSpec_ != null) {
+      output.writeMessage(5, getDiskSpec());
     }
     if (taskCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.aiplatform.v1beta1.ContainerSpec) task_);
@@ -421,6 +488,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (replicaCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, replicaCount_);
+    }
+    if (diskSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDiskSpec());
     }
     if (taskCase_ == 6) {
       size +=
@@ -453,6 +523,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getMachineSpec().equals(other.getMachineSpec())) return false;
     }
     if (getReplicaCount() != other.getReplicaCount()) return false;
+    if (hasDiskSpec() != other.hasDiskSpec()) return false;
+    if (hasDiskSpec()) {
+      if (!getDiskSpec().equals(other.getDiskSpec())) return false;
+    }
     if (!getTaskCase().equals(other.getTaskCase())) return false;
     switch (taskCase_) {
       case 6:
@@ -481,6 +555,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReplicaCount());
+    if (hasDiskSpec()) {
+      hash = (37 * hash) + DISK_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskSpec().hashCode();
+    }
     switch (taskCase_) {
       case 6:
         hash = (37 * hash) + CONTAINER_SPEC_FIELD_NUMBER;
@@ -646,6 +724,12 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       replicaCount_ = 0L;
 
+      if (diskSpecBuilder_ == null) {
+        diskSpec_ = null;
+      } else {
+        diskSpec_ = null;
+        diskSpecBuilder_ = null;
+      }
       taskCase_ = 0;
       task_ = null;
       return this;
@@ -695,6 +779,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         result.machineSpec_ = machineSpecBuilder_.build();
       }
       result.replicaCount_ = replicaCount_;
+      if (diskSpecBuilder_ == null) {
+        result.diskSpec_ = diskSpec_;
+      } else {
+        result.diskSpec_ = diskSpecBuilder_.build();
+      }
       result.taskCase_ = taskCase_;
       onBuilt();
       return result;
@@ -751,6 +840,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getReplicaCount() != 0L) {
         setReplicaCount(other.getReplicaCount());
+      }
+      if (other.hasDiskSpec()) {
+        mergeDiskSpec(other.getDiskSpec());
       }
       switch (other.getTaskCase()) {
         case CONTAINER_SPEC:
@@ -1489,6 +1581,192 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       replicaCount_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.DiskSpec diskSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DiskSpec,
+            com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder>
+        diskSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     *
+     * @return Whether the diskSpec field is set.
+     */
+    public boolean hasDiskSpec() {
+      return diskSpecBuilder_ != null || diskSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     *
+     * @return The diskSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.DiskSpec getDiskSpec() {
+      if (diskSpecBuilder_ == null) {
+        return diskSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()
+            : diskSpec_;
+      } else {
+        return diskSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public Builder setDiskSpec(com.google.cloud.aiplatform.v1beta1.DiskSpec value) {
+      if (diskSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diskSpec_ = value;
+        onChanged();
+      } else {
+        diskSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public Builder setDiskSpec(
+        com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder builderForValue) {
+      if (diskSpecBuilder_ == null) {
+        diskSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        diskSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public Builder mergeDiskSpec(com.google.cloud.aiplatform.v1beta1.DiskSpec value) {
+      if (diskSpecBuilder_ == null) {
+        if (diskSpec_ != null) {
+          diskSpec_ =
+              com.google.cloud.aiplatform.v1beta1.DiskSpec.newBuilder(diskSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          diskSpec_ = value;
+        }
+        onChanged();
+      } else {
+        diskSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public Builder clearDiskSpec() {
+      if (diskSpecBuilder_ == null) {
+        diskSpec_ = null;
+        onChanged();
+      } else {
+        diskSpec_ = null;
+        diskSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder getDiskSpecBuilder() {
+
+      onChanged();
+      return getDiskSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder getDiskSpecOrBuilder() {
+      if (diskSpecBuilder_ != null) {
+        return diskSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return diskSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DiskSpec.getDefaultInstance()
+            : diskSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk spec.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DiskSpec disk_spec = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DiskSpec,
+            com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder>
+        getDiskSpecFieldBuilder() {
+      if (diskSpecBuilder_ == null) {
+        diskSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DiskSpec,
+                com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.DiskSpecOrBuilder>(
+                getDiskSpec(), getParentForChildren(), isClean());
+        diskSpec_ = null;
+      }
+      return diskSpecBuilder_;
     }
 
     @java.lang.Override

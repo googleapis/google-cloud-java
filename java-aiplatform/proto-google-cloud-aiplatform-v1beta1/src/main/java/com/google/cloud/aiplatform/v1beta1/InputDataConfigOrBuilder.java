@@ -173,14 +173,22 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location.
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
+   * name:
+   * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
+   * All training input data will be written into that directory.
    * The AI Platform environment variables representing Google Cloud Storage
    * data URIs will always be represented in the Google Cloud Storage wildcard
-   * format to support sharded data. e.g.: "gs://.../training-*
-   * * AIP_DATA_FORMAT = "jsonl".
-   * * AIP_TRAINING_DATA_URI  = "gcs_destination/training-*"
-   * * AIP_VALIDATION_DATA_URI = "gcs_destination/validation-*"
-   * * AIP_TEST_DATA_URI = "gcs_destination/test-*"
+   * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
+   * * AIP_TRAINING_DATA_URI  =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   * * AIP_VALIDATION_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   * * AIP_TEST_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs_destination = 8;</code>
@@ -192,14 +200,22 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location.
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
+   * name:
+   * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
+   * All training input data will be written into that directory.
    * The AI Platform environment variables representing Google Cloud Storage
    * data URIs will always be represented in the Google Cloud Storage wildcard
-   * format to support sharded data. e.g.: "gs://.../training-*
-   * * AIP_DATA_FORMAT = "jsonl".
-   * * AIP_TRAINING_DATA_URI  = "gcs_destination/training-*"
-   * * AIP_VALIDATION_DATA_URI = "gcs_destination/validation-*"
-   * * AIP_TEST_DATA_URI = "gcs_destination/test-*"
+   * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
+   * * AIP_TRAINING_DATA_URI  =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   * * AIP_VALIDATION_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   * * AIP_TEST_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs_destination = 8;</code>
@@ -211,19 +227,99 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location.
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
+   * name:
+   * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
+   * All training input data will be written into that directory.
    * The AI Platform environment variables representing Google Cloud Storage
    * data URIs will always be represented in the Google Cloud Storage wildcard
-   * format to support sharded data. e.g.: "gs://.../training-*
-   * * AIP_DATA_FORMAT = "jsonl".
-   * * AIP_TRAINING_DATA_URI  = "gcs_destination/training-*"
-   * * AIP_VALIDATION_DATA_URI = "gcs_destination/validation-*"
-   * * AIP_TEST_DATA_URI = "gcs_destination/test-*"
+   * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
+   * * AIP_TRAINING_DATA_URI  =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   * * AIP_VALIDATION_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   * * AIP_TEST_DATA_URI =
+   * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs_destination = 8;</code>
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery project location where the training data is to be written
+   * to. In the given project a new dataset is created with name
+   * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
+   * * AIP_DATA_FORMAT = "bigquery".
+   * * AIP_TRAINING_DATA_URI  =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   * * AIP_VALIDATION_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   * * AIP_TEST_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 10;</code>
+   *
+   * @return Whether the bigqueryDestination field is set.
+   */
+  boolean hasBigqueryDestination();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery project location where the training data is to be written
+   * to. In the given project a new dataset is created with name
+   * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
+   * * AIP_DATA_FORMAT = "bigquery".
+   * * AIP_TRAINING_DATA_URI  =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   * * AIP_VALIDATION_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   * * AIP_TEST_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 10;</code>
+   *
+   * @return The bigqueryDestination.
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigqueryDestination();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery project location where the training data is to be written
+   * to. In the given project a new dataset is created with name
+   * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
+   * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
+   * * AIP_DATA_FORMAT = "bigquery".
+   * * AIP_TRAINING_DATA_URI  =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   * * AIP_VALIDATION_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   * * AIP_TEST_DATA_URI =
+   * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery_destination = 10;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+      getBigqueryDestinationOrBuilder();
 
   /**
    *

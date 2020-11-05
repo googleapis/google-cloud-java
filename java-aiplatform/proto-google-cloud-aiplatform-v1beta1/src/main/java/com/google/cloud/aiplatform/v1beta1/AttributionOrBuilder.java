@@ -31,8 +31,8 @@ public interface AttributionOrBuilder
    * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The field name of the output is determined by the key in
    * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-   * If the Model predicted output is a tensor value (for example, an ndarray),
-   * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
+   * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * If there are multiple baselines, their output values are averaged.
    * </pre>
    *
@@ -49,8 +49,8 @@ public interface AttributionOrBuilder
    * Output only. Model predicted output on the corresponding [explanation
    * instance][ExplainRequest.instances]. The field name of the output is
    * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
-   * If the Model predicted output is a tensor value (for example, an ndarray),
-   * this is the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * If the Model predicted output has multiple dimensions, this is the value in
+   * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * </pre>
    *
    * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,7 +65,7 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -98,7 +98,7 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -131,7 +131,7 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Attributions of each explained feature. Features are extracted from
    * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
    * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
@@ -163,10 +163,10 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -180,10 +180,10 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -197,10 +197,10 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. The index that locates the explained prediction output.
    * If the prediction output is a scalar value, output_index is not populated.
-   * If the prediction output is a tensor value (for example, an ndarray),
-   * the length of output_index is the same as the number of dimensions of the
-   * output. The i-th element in output_index is the element index of the i-th
-   * dimension of the output vector. Indexes start from 0.
+   * If the prediction output has multiple dimensions, the length of the
+   * output_index list is the same as the number of dimensions of the output.
+   * The i-th element in output_index is the element index of the i-th dimension
+   * of the output vector. Indices start from 0.
    * </pre>
    *
    * <code>repeated int32 output_index = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -251,10 +251,20 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
    * explanation method. Lower value means more precise attributions.
-   * For Sampled Shapley
-   * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-   * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-   * the error.
+   * * For [Sampled Shapley
+   * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
+   * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
+   * * For [Integrated Gradients
+   * attribution][ExplanationParameters.integrated_gradients_attribution],
+   * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+   * reduce the error.
+   * * For [XRAI
+   * attribution][ExplanationParameters.xrai_attribution], increasing
+   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
+   * Refer to  AI Explanations Whitepaper for more details:
+   * https:
+   * //storage.googleapis.com/cloud-ai-whitep
+   * // apers/AI%20Explainability%20Whitepaper.pdf
    * </pre>
    *
    * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -262,4 +272,31 @@ public interface AttributionOrBuilder
    * @return The approximationError.
    */
   double getApproximationError();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the explain output. Specified as the key in
+   * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+   * </pre>
+   *
+   * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The outputName.
+   */
+  java.lang.String getOutputName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the explain output. Specified as the key in
+   * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+   * </pre>
+   *
+   * <code>string output_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for outputName.
+   */
+  com.google.protobuf.ByteString getOutputNameBytes();
 }

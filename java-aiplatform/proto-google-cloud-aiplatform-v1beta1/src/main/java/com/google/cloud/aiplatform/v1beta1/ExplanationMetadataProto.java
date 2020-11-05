@@ -36,6 +36,14 @@ public final class ExplanationMetadataProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_FeatureValueDomain_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_FeatureValueDomain_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_Visualization_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_Visualization_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_OutputMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_OutputMetadata_fieldAccessorTable;
@@ -60,28 +68,71 @@ public final class ExplanationMetadataProto {
           + "ation_metadata.proto\022\037google.cloud.aipla"
           + "tform.v1beta1\032\037google/api/field_behavior"
           + ".proto\032\034google/protobuf/struct.proto\032\034go"
-          + "ogle/api/annotations.proto\"\245\005\n\023Explanati"
+          + "ogle/api/annotations.proto\"\351\022\n\023Explanati"
           + "onMetadata\022U\n\006inputs\030\001 \003(\0132@.google.clou"
           + "d.aiplatform.v1beta1.ExplanationMetadata"
           + ".InputsEntryB\003\340A\002\022W\n\007outputs\030\002 \003(\0132A.goo"
           + "gle.cloud.aiplatform.v1beta1.Explanation"
           + "Metadata.OutputsEntryB\003\340A\002\022\'\n\037feature_at"
-          + "tributions_schema_uri\030\003 \001(\t\032@\n\rInputMeta"
-          + "data\022/\n\017input_baselines\030\001 \003(\0132\026.google.p"
-          + "rotobuf.Value\032\212\001\n\016OutputMetadata\022<\n\032inde"
-          + "x_display_name_mapping\030\001 \001(\0132\026.google.pr"
-          + "otobuf.ValueH\000\022\"\n\030display_name_mapping_k"
-          + "ey\030\002 \001(\tH\000B\026\n\024display_name_mapping\032q\n\013In"
-          + "putsEntry\022\013\n\003key\030\001 \001(\t\022Q\n\005value\030\002 \001(\0132B."
-          + "google.cloud.aiplatform.v1beta1.Explanat"
-          + "ionMetadata.InputMetadata:\0028\001\032s\n\014Outputs"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022R\n\005value\030\002 \001(\0132C.goog"
-          + "le.cloud.aiplatform.v1beta1.ExplanationM"
-          + "etadata.OutputMetadata:\0028\001B\214\001\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\030ExplanationM"
-          + "etadataProtoP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1beta1;a"
-          + "iplatformb\006proto3"
+          + "tributions_schema_uri\030\003 \001(\t\032\347\r\n\rInputMet"
+          + "adata\022/\n\017input_baselines\030\001 \003(\0132\026.google."
+          + "protobuf.Value\022\031\n\021input_tensor_name\030\002 \001("
+          + "\t\022]\n\010encoding\030\003 \001(\0162K.google.cloud.aipla"
+          + "tform.v1beta1.ExplanationMetadata.InputM"
+          + "etadata.Encoding\022\020\n\010modality\030\004 \001(\t\022s\n\024fe"
+          + "ature_value_domain\030\005 \001(\0132U.google.cloud."
+          + "aiplatform.v1beta1.ExplanationMetadata.I"
+          + "nputMetadata.FeatureValueDomain\022\033\n\023indic"
+          + "es_tensor_name\030\006 \001(\t\022\037\n\027dense_shape_tens"
+          + "or_name\030\007 \001(\t\022\035\n\025index_feature_mapping\030\010"
+          + " \003(\t\022\033\n\023encoded_tensor_name\030\t \001(\t\0221\n\021enc"
+          + "oded_baselines\030\n \003(\0132\026.google.protobuf.V"
+          + "alue\022g\n\rvisualization\030\013 \001(\0132P.google.clo"
+          + "ud.aiplatform.v1beta1.ExplanationMetadat"
+          + "a.InputMetadata.Visualization\022\022\n\ngroup_n"
+          + "ame\030\014 \001(\t\032j\n\022FeatureValueDomain\022\021\n\tmin_v"
+          + "alue\030\001 \001(\002\022\021\n\tmax_value\030\002 \001(\002\022\025\n\rorigina"
+          + "l_mean\030\003 \001(\002\022\027\n\017original_stddev\030\004 \001(\002\032\352\006"
+          + "\n\rVisualization\022c\n\004type\030\001 \001(\0162U.google.c"
+          + "loud.aiplatform.v1beta1.ExplanationMetad"
+          + "ata.InputMetadata.Visualization.Type\022k\n\010"
+          + "polarity\030\002 \001(\0162Y.google.cloud.aiplatform"
+          + ".v1beta1.ExplanationMetadata.InputMetada"
+          + "ta.Visualization.Polarity\022l\n\tcolor_map\030\003"
+          + " \001(\0162Y.google.cloud.aiplatform.v1beta1.E"
+          + "xplanationMetadata.InputMetadata.Visuali"
+          + "zation.ColorMap\022\037\n\027clip_percent_upperbou"
+          + "nd\030\004 \001(\002\022\037\n\027clip_percent_lowerbound\030\005 \001("
+          + "\002\022r\n\014overlay_type\030\006 \001(\0162\\.google.cloud.a"
+          + "iplatform.v1beta1.ExplanationMetadata.In"
+          + "putMetadata.Visualization.OverlayType\"6\n"
+          + "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006PIXELS\020\001\022"
+          + "\014\n\010OUTLINES\020\002\"J\n\010Polarity\022\030\n\024POLARITY_UN"
+          + "SPECIFIED\020\000\022\014\n\010POSITIVE\020\001\022\014\n\010NEGATIVE\020\002\022"
+          + "\010\n\004BOTH\020\003\"{\n\010ColorMap\022\031\n\025COLOR_MAP_UNSPE"
+          + "CIFIED\020\000\022\016\n\nPINK_GREEN\020\001\022\013\n\007VIRIDIS\020\002\022\007\n"
+          + "\003RED\020\003\022\t\n\005GREEN\020\004\022\r\n\tRED_GREEN\020\006\022\024\n\020PINK"
+          + "_WHITE_GREEN\020\005\"b\n\013OverlayType\022\034\n\030OVERLAY"
+          + "_TYPE_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\014\n\010ORIGINA"
+          + "L\020\002\022\r\n\tGRAYSCALE\020\003\022\016\n\nMASK_BLACK\020\004\"\240\001\n\010E"
+          + "ncoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\014\n\010IDE"
+          + "NTITY\020\001\022\023\n\017BAG_OF_FEATURES\020\002\022\032\n\026BAG_OF_F"
+          + "EATURES_SPARSE\020\003\022\r\n\tINDICATOR\020\004\022\026\n\022COMBI"
+          + "NED_EMBEDDING\020\005\022\024\n\020CONCAT_EMBEDDING\020\006\032\246\001"
+          + "\n\016OutputMetadata\022<\n\032index_display_name_m"
+          + "apping\030\001 \001(\0132\026.google.protobuf.ValueH\000\022\""
+          + "\n\030display_name_mapping_key\030\002 \001(\tH\000\022\032\n\022ou"
+          + "tput_tensor_name\030\003 \001(\tB\026\n\024display_name_m"
+          + "apping\032q\n\013InputsEntry\022\013\n\003key\030\001 \001(\t\022Q\n\005va"
+          + "lue\030\002 \001(\0132B.google.cloud.aiplatform.v1be"
+          + "ta1.ExplanationMetadata.InputMetadata:\0028"
+          + "\001\032s\n\014OutputsEntry\022\013\n\003key\030\001 \001(\t\022R\n\005value\030"
+          + "\002 \001(\0132C.google.cloud.aiplatform.v1beta1."
+          + "ExplanationMetadata.OutputMetadata:\0028\001B\214"
+          + "\001\n#com.google.cloud.aiplatform.v1beta1B\030"
+          + "ExplanationMetadataProtoP\001ZIgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/aiplatfo"
+          + "rm/v1beta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -108,6 +159,42 @@ public final class ExplanationMetadataProto {
             internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_descriptor,
             new java.lang.String[] {
               "InputBaselines",
+              "InputTensorName",
+              "Encoding",
+              "Modality",
+              "FeatureValueDomain",
+              "IndicesTensorName",
+              "DenseShapeTensorName",
+              "IndexFeatureMapping",
+              "EncodedTensorName",
+              "EncodedBaselines",
+              "Visualization",
+              "GroupName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_FeatureValueDomain_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_FeatureValueDomain_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_FeatureValueDomain_descriptor,
+            new java.lang.String[] {
+              "MinValue", "MaxValue", "OriginalMean", "OriginalStddev",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_Visualization_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_Visualization_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputMetadata_Visualization_descriptor,
+            new java.lang.String[] {
+              "Type",
+              "Polarity",
+              "ColorMap",
+              "ClipPercentUpperbound",
+              "ClipPercentLowerbound",
+              "OverlayType",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_OutputMetadata_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_descriptor
@@ -117,7 +204,10 @@ public final class ExplanationMetadataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_OutputMetadata_descriptor,
             new java.lang.String[] {
-              "IndexDisplayNameMapping", "DisplayNameMappingKey", "DisplayNameMapping",
+              "IndexDisplayNameMapping",
+              "DisplayNameMappingKey",
+              "OutputTensorName",
+              "DisplayNameMapping",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_InputsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadata_descriptor

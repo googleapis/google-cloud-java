@@ -47,6 +47,10 @@ public final class MachineResourcesProto {
       internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -76,11 +80,13 @@ public final class MachineResourcesProto {
           + "platform.v1beta1.MachineSpecB\006\340A\002\340A\005\022#\n\026"
           + "starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n\021max"
           + "_replica_count\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesCo"
-          + "nsumed\022\032\n\rreplica_hours\030\001 \001(\001B\003\340A\003B\211\001\n#c"
-          + "om.google.cloud.aiplatform.v1beta1B\025Mach"
-          + "ineResourcesProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatformb\006proto3"
+          + "nsumed\022\032\n\rreplica_hours\030\001 \001(\001B\003\340A\003\"=\n\010Di"
+          + "skSpec\022\026\n\016boot_disk_type\030\001 \001(\t\022\031\n\021boot_d"
+          + "isk_size_gb\030\002 \001(\005B\211\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\025MachineResourcesProto"
+          + "P\001ZIgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,6 +135,14 @@ public final class MachineResourcesProto {
             internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor,
             new java.lang.String[] {
               "ReplicaHours",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor,
+            new java.lang.String[] {
+              "BootDiskType", "BootDiskSizeGb",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

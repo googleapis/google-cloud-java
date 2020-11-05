@@ -818,7 +818,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Model artifact and any of its supported files. Will be exported to the
-       * specified [ExportModelRequest.output_config.artifact_destination]
+       * location specified by the `artifactDestination` field of the
+       * [ExportModelRequest.output_config][google.cloud.aiplatform.v1beta1.ExportModelRequest.output_config] object.
        * </pre>
        *
        * <code>ARTIFACT = 1;</code>
@@ -829,8 +830,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The container image that is to be used when deploying this Model. Will
-       * be exported to the specified
-       * [ExportModelRequest.output_config.image_destination]
+       * be exported to the location specified by the `imageDestination` field
+       * of the [ExportModelRequest.output_config][google.cloud.aiplatform.v1beta1.ExportModelRequest.output_config] object.
        * </pre>
        *
        * <code>IMAGE = 2;</code>
@@ -854,7 +855,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Model artifact and any of its supported files. Will be exported to the
-       * specified [ExportModelRequest.output_config.artifact_destination]
+       * location specified by the `artifactDestination` field of the
+       * [ExportModelRequest.output_config][google.cloud.aiplatform.v1beta1.ExportModelRequest.output_config] object.
        * </pre>
        *
        * <code>ARTIFACT = 1;</code>
@@ -865,8 +867,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The container image that is to be used when deploying this Model. Will
-       * be exported to the specified
-       * [ExportModelRequest.output_config.image_destination]
+       * be exported to the location specified by the `imageDestination` field
+       * of the [ExportModelRequest.output_config][google.cloud.aiplatform.v1beta1.ExportModelRequest.output_config] object.
        * </pre>
        *
        * <code>IMAGE = 2;</code>
@@ -2343,7 +2345,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -2360,7 +2362,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -2377,7 +2379,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -2393,7 +2395,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -2410,7 +2412,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -5276,7 +5278,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5296,7 +5298,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5315,7 +5317,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5335,7 +5337,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5361,7 +5363,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5384,7 +5386,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5410,7 +5412,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5436,7 +5438,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5459,7 +5461,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5482,7 +5484,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5506,7 +5508,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5528,7 +5530,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5550,7 +5552,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5566,7 +5568,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5586,7 +5588,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5606,7 +5608,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5623,7 +5625,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>
@@ -5641,7 +5643,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The formats in which this Model may be exported. If empty, this Model is
-     * not avaiable for export.
+     * not available for export.
      * </pre>
      *
      * <code>

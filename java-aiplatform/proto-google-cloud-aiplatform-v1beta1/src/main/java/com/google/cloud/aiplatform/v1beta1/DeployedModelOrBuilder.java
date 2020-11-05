@@ -232,7 +232,6 @@ public interface DeployedModelOrBuilder
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -252,7 +251,6 @@ public interface DeployedModelOrBuilder
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
@@ -272,12 +270,46 @@ public interface DeployedModelOrBuilder
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
    * this Model is not allowed.
-   * Currently, only AutoML tabular Models support explanation_spec.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. Specify the
+   * email address of the service account. If this service account is not
+   * specified, the container runs as a service account that doesn't have access
+   * to the resource project.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 11;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. Specify the
+   * email address of the service account. If this service account is not
+   * specified, the container runs as a service account that doesn't have access
+   * to the resource project.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 11;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
 
   /**
    *

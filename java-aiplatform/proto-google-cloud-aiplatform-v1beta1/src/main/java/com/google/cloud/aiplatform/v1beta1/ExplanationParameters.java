@@ -72,16 +72,78 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             {
               com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.Builder subBuilder =
                   null;
-              if (sampledShapleyAttribution_ != null) {
-                subBuilder = sampledShapleyAttribution_.toBuilder();
+              if (methodCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_)
+                        .toBuilder();
               }
-              sampledShapleyAttribution_ =
+              method_ =
                   input.readMessage(
                       com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.parser(),
                       extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(sampledShapleyAttribution_);
-                sampledShapleyAttribution_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_);
+                method_ = subBuilder.buildPartial();
+              }
+              methodCase_ = 1;
+              break;
+            }
+          case 18:
+            {
+              com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder
+                  subBuilder = null;
+              if (methodCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_)
+                        .toBuilder();
+              }
+              method_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_);
+                method_ = subBuilder.buildPartial();
+              }
+              methodCase_ = 2;
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder subBuilder = null;
+              if (methodCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_).toBuilder();
+              }
+              method_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.XraiAttribution.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_);
+                method_ = subBuilder.buildPartial();
+              }
+              methodCase_ = 3;
+              break;
+            }
+          case 32:
+            {
+              topK_ = input.readInt32();
+              break;
+            }
+          case 42:
+            {
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (outputIndices_ != null) {
+                subBuilder = outputIndices_.toBuilder();
+              }
+              outputIndices_ =
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputIndices_);
+                outputIndices_ = subBuilder.buildPartial();
               }
 
               break;
@@ -120,8 +182,57 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.ExplanationParameters.Builder.class);
   }
 
+  private int methodCase_ = 0;
+  private java.lang.Object method_;
+
+  public enum MethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SAMPLED_SHAPLEY_ATTRIBUTION(1),
+    INTEGRATED_GRADIENTS_ATTRIBUTION(2),
+    XRAI_ATTRIBUTION(3),
+    METHOD_NOT_SET(0);
+    private final int value;
+
+    private MethodCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MethodCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static MethodCase forNumber(int value) {
+      switch (value) {
+        case 1:
+          return SAMPLED_SHAPLEY_ATTRIBUTION;
+        case 2:
+          return INTEGRATED_GRADIENTS_ATTRIBUTION;
+        case 3:
+          return XRAI_ATTRIBUTION;
+        case 0:
+          return METHOD_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public MethodCase getMethodCase() {
+    return MethodCase.forNumber(methodCase_);
+  }
+
   public static final int SAMPLED_SHAPLEY_ATTRIBUTION_FIELD_NUMBER = 1;
-  private com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution sampledShapleyAttribution_;
   /**
    *
    *
@@ -129,6 +240,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * An attribution method that approximates Shapley values for features that
    * contribute to the label being predicted. A sampling strategy is used to
    * approximate the value rather than considering all subsets of features.
+   * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
    * </pre>
    *
    * <code>
@@ -139,7 +251,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasSampledShapleyAttribution() {
-    return sampledShapleyAttribution_ != null;
+    return methodCase_ == 1;
   }
   /**
    *
@@ -148,6 +260,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * An attribution method that approximates Shapley values for features that
    * contribute to the label being predicted. A sampling strategy is used to
    * approximate the value rather than considering all subsets of features.
+   * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
    * </pre>
    *
    * <code>
@@ -159,9 +272,10 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution
       getSampledShapleyAttribution() {
-    return sampledShapleyAttribution_ == null
-        ? com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance()
-        : sampledShapleyAttribution_;
+    if (methodCase_ == 1) {
+      return (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
   }
   /**
    *
@@ -170,6 +284,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * An attribution method that approximates Shapley values for features that
    * contribute to the label being predicted. A sampling strategy is used to
    * approximate the value rather than considering all subsets of features.
+   * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
    * </pre>
    *
    * <code>
@@ -179,7 +294,241 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttributionOrBuilder
       getSampledShapleyAttributionOrBuilder() {
-    return getSampledShapleyAttribution();
+    if (methodCase_ == 1) {
+      return (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
+  }
+
+  public static final int INTEGRATED_GRADIENTS_ATTRIBUTION_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that computes Aumann-Shapley values taking
+   * advantage of the model's fully differentiable structure. Refer to this
+   * paper for more details: https://arxiv.org/abs/1703.01365
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+   * </code>
+   *
+   * @return Whether the integratedGradientsAttribution field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegratedGradientsAttribution() {
+    return methodCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that computes Aumann-Shapley values taking
+   * advantage of the model's fully differentiable structure. Refer to this
+   * paper for more details: https://arxiv.org/abs/1703.01365
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+   * </code>
+   *
+   * @return The integratedGradientsAttribution.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+      getIntegratedGradientsAttribution() {
+    if (methodCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that computes Aumann-Shapley values taking
+   * advantage of the model's fully differentiable structure. Refer to this
+   * paper for more details: https://arxiv.org/abs/1703.01365
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttributionOrBuilder
+      getIntegratedGradientsAttributionOrBuilder() {
+    if (methodCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.getDefaultInstance();
+  }
+
+  public static final int XRAI_ATTRIBUTION_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that redistributes Integrated Gradients
+   * attribution to segmented regions, taking advantage of the model's fully
+   * differentiable structure. Refer to this paper for
+   * more details: https://arxiv.org/abs/1906.02825
+   * XRAI currently performs better on natural images, like a picture of a
+   * house or an animal. If the images are taken in artificial environments,
+   * like a lab or manufacturing line, or from diagnostic equipment, like
+   * x-rays or quality-control cameras, use Integrated Gradients instead.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+   *
+   * @return Whether the xraiAttribution field is set.
+   */
+  @java.lang.Override
+  public boolean hasXraiAttribution() {
+    return methodCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that redistributes Integrated Gradients
+   * attribution to segmented regions, taking advantage of the model's fully
+   * differentiable structure. Refer to this paper for
+   * more details: https://arxiv.org/abs/1906.02825
+   * XRAI currently performs better on natural images, like a picture of a
+   * house or an animal. If the images are taken in artificial environments,
+   * like a lab or manufacturing line, or from diagnostic equipment, like
+   * x-rays or quality-control cameras, use Integrated Gradients instead.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+   *
+   * @return The xraiAttribution.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.XraiAttribution getXraiAttribution() {
+    if (methodCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An attribution method that redistributes Integrated Gradients
+   * attribution to segmented regions, taking advantage of the model's fully
+   * differentiable structure. Refer to this paper for
+   * more details: https://arxiv.org/abs/1906.02825
+   * XRAI currently performs better on natural images, like a picture of a
+   * house or an animal. If the images are taken in artificial environments,
+   * like a lab or manufacturing line, or from diagnostic equipment, like
+   * x-rays or quality-control cameras, use Integrated Gradients instead.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.XraiAttributionOrBuilder
+      getXraiAttributionOrBuilder() {
+    if (methodCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+  }
+
+  public static final int TOP_K_FIELD_NUMBER = 4;
+  private int topK_;
+  /**
+   *
+   *
+   * <pre>
+   * If populated, returns attributions for top K indices of outputs
+   * (defaults to 1). Only applies to Models that predicts more than one outputs
+   * (e,g, multi-class Models). When set to -1, returns explanations for all
+   * outputs.
+   * </pre>
+   *
+   * <code>int32 top_k = 4;</code>
+   *
+   * @return The topK.
+   */
+  @java.lang.Override
+  public int getTopK() {
+    return topK_;
+  }
+
+  public static final int OUTPUT_INDICES_FIELD_NUMBER = 5;
+  private com.google.protobuf.ListValue outputIndices_;
+  /**
+   *
+   *
+   * <pre>
+   * If populated, only returns attributions that have
+   * [output_index][Attributions.output_index] contained in output_indices. It
+   * must be an ndarray of integers, with the same shape of the output it's
+   * explaining.
+   * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+   * If neither top_k nor output_indeices is populated, returns the argmax
+   * index of the outputs.
+   * Only applicable to Models that predict multiple outputs (e,g, multi-class
+   * Models that predict multiple classes).
+   * </pre>
+   *
+   * <code>.google.protobuf.ListValue output_indices = 5;</code>
+   *
+   * @return Whether the outputIndices field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputIndices() {
+    return outputIndices_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If populated, only returns attributions that have
+   * [output_index][Attributions.output_index] contained in output_indices. It
+   * must be an ndarray of integers, with the same shape of the output it's
+   * explaining.
+   * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+   * If neither top_k nor output_indeices is populated, returns the argmax
+   * index of the outputs.
+   * Only applicable to Models that predict multiple outputs (e,g, multi-class
+   * Models that predict multiple classes).
+   * </pre>
+   *
+   * <code>.google.protobuf.ListValue output_indices = 5;</code>
+   *
+   * @return The outputIndices.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ListValue getOutputIndices() {
+    return outputIndices_ == null
+        ? com.google.protobuf.ListValue.getDefaultInstance()
+        : outputIndices_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If populated, only returns attributions that have
+   * [output_index][Attributions.output_index] contained in output_indices. It
+   * must be an ndarray of integers, with the same shape of the output it's
+   * explaining.
+   * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+   * If neither top_k nor output_indeices is populated, returns the argmax
+   * index of the outputs.
+   * Only applicable to Models that predict multiple outputs (e,g, multi-class
+   * Models that predict multiple classes).
+   * </pre>
+   *
+   * <code>.google.protobuf.ListValue output_indices = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ListValueOrBuilder getOutputIndicesOrBuilder() {
+    return getOutputIndices();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -196,8 +545,22 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (sampledShapleyAttribution_ != null) {
-      output.writeMessage(1, getSampledShapleyAttribution());
+    if (methodCase_ == 1) {
+      output.writeMessage(
+          1, (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_);
+    }
+    if (methodCase_ == 2) {
+      output.writeMessage(
+          2, (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_);
+    }
+    if (methodCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_);
+    }
+    if (topK_ != 0) {
+      output.writeInt32(4, topK_);
+    }
+    if (outputIndices_ != null) {
+      output.writeMessage(5, getOutputIndices());
     }
     unknownFields.writeTo(output);
   }
@@ -208,10 +571,26 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (sampledShapleyAttribution_ != null) {
+    if (methodCase_ == 1) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              1, getSampledShapleyAttribution());
+              1, (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_);
+    }
+    if (methodCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_);
+    }
+    if (methodCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_);
+    }
+    if (topK_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, topK_);
+    }
+    if (outputIndices_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getOutputIndices());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,10 +608,26 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     com.google.cloud.aiplatform.v1beta1.ExplanationParameters other =
         (com.google.cloud.aiplatform.v1beta1.ExplanationParameters) obj;
 
-    if (hasSampledShapleyAttribution() != other.hasSampledShapleyAttribution()) return false;
-    if (hasSampledShapleyAttribution()) {
-      if (!getSampledShapleyAttribution().equals(other.getSampledShapleyAttribution()))
-        return false;
+    if (getTopK() != other.getTopK()) return false;
+    if (hasOutputIndices() != other.hasOutputIndices()) return false;
+    if (hasOutputIndices()) {
+      if (!getOutputIndices().equals(other.getOutputIndices())) return false;
+    }
+    if (!getMethodCase().equals(other.getMethodCase())) return false;
+    switch (methodCase_) {
+      case 1:
+        if (!getSampledShapleyAttribution().equals(other.getSampledShapleyAttribution()))
+          return false;
+        break;
+      case 2:
+        if (!getIntegratedGradientsAttribution().equals(other.getIntegratedGradientsAttribution()))
+          return false;
+        break;
+      case 3:
+        if (!getXraiAttribution().equals(other.getXraiAttribution())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -245,9 +640,27 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasSampledShapleyAttribution()) {
-      hash = (37 * hash) + SAMPLED_SHAPLEY_ATTRIBUTION_FIELD_NUMBER;
-      hash = (53 * hash) + getSampledShapleyAttribution().hashCode();
+    hash = (37 * hash) + TOP_K_FIELD_NUMBER;
+    hash = (53 * hash) + getTopK();
+    if (hasOutputIndices()) {
+      hash = (37 * hash) + OUTPUT_INDICES_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputIndices().hashCode();
+    }
+    switch (methodCase_) {
+      case 1:
+        hash = (37 * hash) + SAMPLED_SHAPLEY_ATTRIBUTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSampledShapleyAttribution().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + INTEGRATED_GRADIENTS_ATTRIBUTION_FIELD_NUMBER;
+        hash = (53 * hash) + getIntegratedGradientsAttribution().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + XRAI_ATTRIBUTION_FIELD_NUMBER;
+        hash = (53 * hash) + getXraiAttribution().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -395,12 +808,16 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sampledShapleyAttributionBuilder_ == null) {
-        sampledShapleyAttribution_ = null;
+      topK_ = 0;
+
+      if (outputIndicesBuilder_ == null) {
+        outputIndices_ = null;
       } else {
-        sampledShapleyAttribution_ = null;
-        sampledShapleyAttributionBuilder_ = null;
+        outputIndices_ = null;
+        outputIndicesBuilder_ = null;
       }
+      methodCase_ = 0;
+      method_ = null;
       return this;
     }
 
@@ -428,11 +845,34 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.ExplanationParameters buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExplanationParameters result =
           new com.google.cloud.aiplatform.v1beta1.ExplanationParameters(this);
-      if (sampledShapleyAttributionBuilder_ == null) {
-        result.sampledShapleyAttribution_ = sampledShapleyAttribution_;
-      } else {
-        result.sampledShapleyAttribution_ = sampledShapleyAttributionBuilder_.build();
+      if (methodCase_ == 1) {
+        if (sampledShapleyAttributionBuilder_ == null) {
+          result.method_ = method_;
+        } else {
+          result.method_ = sampledShapleyAttributionBuilder_.build();
+        }
       }
+      if (methodCase_ == 2) {
+        if (integratedGradientsAttributionBuilder_ == null) {
+          result.method_ = method_;
+        } else {
+          result.method_ = integratedGradientsAttributionBuilder_.build();
+        }
+      }
+      if (methodCase_ == 3) {
+        if (xraiAttributionBuilder_ == null) {
+          result.method_ = method_;
+        } else {
+          result.method_ = xraiAttributionBuilder_.build();
+        }
+      }
+      result.topK_ = topK_;
+      if (outputIndicesBuilder_ == null) {
+        result.outputIndices_ = outputIndices_;
+      } else {
+        result.outputIndices_ = outputIndicesBuilder_.build();
+      }
+      result.methodCase_ = methodCase_;
       onBuilt();
       return result;
     }
@@ -483,8 +923,32 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ExplanationParameters other) {
       if (other == com.google.cloud.aiplatform.v1beta1.ExplanationParameters.getDefaultInstance())
         return this;
-      if (other.hasSampledShapleyAttribution()) {
-        mergeSampledShapleyAttribution(other.getSampledShapleyAttribution());
+      if (other.getTopK() != 0) {
+        setTopK(other.getTopK());
+      }
+      if (other.hasOutputIndices()) {
+        mergeOutputIndices(other.getOutputIndices());
+      }
+      switch (other.getMethodCase()) {
+        case SAMPLED_SHAPLEY_ATTRIBUTION:
+          {
+            mergeSampledShapleyAttribution(other.getSampledShapleyAttribution());
+            break;
+          }
+        case INTEGRATED_GRADIENTS_ATTRIBUTION:
+          {
+            mergeIntegratedGradientsAttribution(other.getIntegratedGradientsAttribution());
+            break;
+          }
+        case XRAI_ATTRIBUTION:
+          {
+            mergeXraiAttribution(other.getXraiAttribution());
+            break;
+          }
+        case METHOD_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -516,8 +980,20 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution
-        sampledShapleyAttribution_;
+    private int methodCase_ = 0;
+    private java.lang.Object method_;
+
+    public MethodCase getMethodCase() {
+      return MethodCase.forNumber(methodCase_);
+    }
+
+    public Builder clearMethod() {
+      methodCase_ = 0;
+      method_ = null;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution,
             com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.Builder,
@@ -530,6 +1006,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -538,8 +1015,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the sampledShapleyAttribution field is set.
      */
+    @java.lang.Override
     public boolean hasSampledShapleyAttribution() {
-      return sampledShapleyAttributionBuilder_ != null || sampledShapleyAttribution_ != null;
+      return methodCase_ == 1;
     }
     /**
      *
@@ -548,6 +1026,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -556,14 +1035,19 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      * @return The sampledShapleyAttribution.
      */
+    @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution
         getSampledShapleyAttribution() {
       if (sampledShapleyAttributionBuilder_ == null) {
-        return sampledShapleyAttribution_ == null
-            ? com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance()
-            : sampledShapleyAttribution_;
+        if (methodCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
       } else {
-        return sampledShapleyAttributionBuilder_.getMessage();
+        if (methodCase_ == 1) {
+          return sampledShapleyAttributionBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
       }
     }
     /**
@@ -573,6 +1057,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -585,12 +1070,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-        sampledShapleyAttribution_ = value;
+        method_ = value;
         onChanged();
       } else {
         sampledShapleyAttributionBuilder_.setMessage(value);
       }
-
+      methodCase_ = 1;
       return this;
     }
     /**
@@ -600,6 +1085,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -609,12 +1095,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder setSampledShapleyAttribution(
         com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.Builder builderForValue) {
       if (sampledShapleyAttributionBuilder_ == null) {
-        sampledShapleyAttribution_ = builderForValue.build();
+        method_ = builderForValue.build();
         onChanged();
       } else {
         sampledShapleyAttributionBuilder_.setMessage(builderForValue.build());
       }
-
+      methodCase_ = 1;
       return this;
     }
     /**
@@ -624,6 +1110,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -633,20 +1120,26 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder mergeSampledShapleyAttribution(
         com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution value) {
       if (sampledShapleyAttributionBuilder_ == null) {
-        if (sampledShapleyAttribution_ != null) {
-          sampledShapleyAttribution_ =
+        if (methodCase_ == 1
+            && method_
+                != com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution
+                    .getDefaultInstance()) {
+          method_ =
               com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.newBuilder(
-                      sampledShapleyAttribution_)
+                      (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          sampledShapleyAttribution_ = value;
+          method_ = value;
         }
         onChanged();
       } else {
-        sampledShapleyAttributionBuilder_.mergeFrom(value);
+        if (methodCase_ == 1) {
+          sampledShapleyAttributionBuilder_.mergeFrom(value);
+        }
+        sampledShapleyAttributionBuilder_.setMessage(value);
       }
-
+      methodCase_ = 1;
       return this;
     }
     /**
@@ -656,6 +1149,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -664,13 +1158,18 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      */
     public Builder clearSampledShapleyAttribution() {
       if (sampledShapleyAttributionBuilder_ == null) {
-        sampledShapleyAttribution_ = null;
-        onChanged();
+        if (methodCase_ == 1) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
       } else {
-        sampledShapleyAttribution_ = null;
-        sampledShapleyAttributionBuilder_ = null;
+        if (methodCase_ == 1) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        sampledShapleyAttributionBuilder_.clear();
       }
-
       return this;
     }
     /**
@@ -680,6 +1179,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -688,8 +1188,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.Builder
         getSampledShapleyAttributionBuilder() {
-
-      onChanged();
       return getSampledShapleyAttributionFieldBuilder().getBuilder();
     }
     /**
@@ -699,20 +1197,23 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
      * .google.cloud.aiplatform.v1beta1.SampledShapleyAttribution sampled_shapley_attribution = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.SampledShapleyAttributionOrBuilder
         getSampledShapleyAttributionOrBuilder() {
-      if (sampledShapleyAttributionBuilder_ != null) {
+      if ((methodCase_ == 1) && (sampledShapleyAttributionBuilder_ != null)) {
         return sampledShapleyAttributionBuilder_.getMessageOrBuilder();
       } else {
-        return sampledShapleyAttribution_ == null
-            ? com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance()
-            : sampledShapleyAttribution_;
+        if (methodCase_ == 1) {
+          return (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
       }
     }
     /**
@@ -722,6 +1223,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * An attribution method that approximates Shapley values for features that
      * contribute to the label being predicted. A sampling strategy is used to
      * approximate the value rather than considering all subsets of features.
+     * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
      * </pre>
      *
      * <code>
@@ -734,15 +1236,874 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.SampledShapleyAttributionOrBuilder>
         getSampledShapleyAttributionFieldBuilder() {
       if (sampledShapleyAttributionBuilder_ == null) {
+        if (!(methodCase_ == 1)) {
+          method_ =
+              com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.getDefaultInstance();
+        }
         sampledShapleyAttributionBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution,
                 com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.Builder,
                 com.google.cloud.aiplatform.v1beta1.SampledShapleyAttributionOrBuilder>(
-                getSampledShapleyAttribution(), getParentForChildren(), isClean());
-        sampledShapleyAttribution_ = null;
+                (com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
       }
+      methodCase_ = 1;
+      onChanged();
+      ;
       return sampledShapleyAttributionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution,
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder,
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttributionOrBuilder>
+        integratedGradientsAttributionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     *
+     * @return Whether the integratedGradientsAttribution field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntegratedGradientsAttribution() {
+      return methodCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     *
+     * @return The integratedGradientsAttribution.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+        getIntegratedGradientsAttribution() {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        if (methodCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+            .getDefaultInstance();
+      } else {
+        if (methodCase_ == 2) {
+          return integratedGradientsAttributionBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    public Builder setIntegratedGradientsAttribution(
+        com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution value) {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        method_ = value;
+        onChanged();
+      } else {
+        integratedGradientsAttributionBuilder_.setMessage(value);
+      }
+      methodCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    public Builder setIntegratedGradientsAttribution(
+        com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder
+            builderForValue) {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        method_ = builderForValue.build();
+        onChanged();
+      } else {
+        integratedGradientsAttributionBuilder_.setMessage(builderForValue.build());
+      }
+      methodCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    public Builder mergeIntegratedGradientsAttribution(
+        com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution value) {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        if (methodCase_ == 2
+            && method_
+                != com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+                    .getDefaultInstance()) {
+          method_ =
+              com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          method_ = value;
+        }
+        onChanged();
+      } else {
+        if (methodCase_ == 2) {
+          integratedGradientsAttributionBuilder_.mergeFrom(value);
+        }
+        integratedGradientsAttributionBuilder_.setMessage(value);
+      }
+      methodCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    public Builder clearIntegratedGradientsAttribution() {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        if (methodCase_ == 2) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+      } else {
+        if (methodCase_ == 2) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        integratedGradientsAttributionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder
+        getIntegratedGradientsAttributionBuilder() {
+      return getIntegratedGradientsAttributionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttributionOrBuilder
+        getIntegratedGradientsAttributionOrBuilder() {
+      if ((methodCase_ == 2) && (integratedGradientsAttributionBuilder_ != null)) {
+        return integratedGradientsAttributionBuilder_.getMessageOrBuilder();
+      } else {
+        if (methodCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that computes Aumann-Shapley values taking
+     * advantage of the model's fully differentiable structure. Refer to this
+     * paper for more details: https://arxiv.org/abs/1703.01365
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution integrated_gradients_attribution = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution,
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder,
+            com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttributionOrBuilder>
+        getIntegratedGradientsAttributionFieldBuilder() {
+      if (integratedGradientsAttributionBuilder_ == null) {
+        if (!(methodCase_ == 2)) {
+          method_ =
+              com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution
+                  .getDefaultInstance();
+        }
+        integratedGradientsAttributionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution,
+                com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.Builder,
+                com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttributionOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
+      }
+      methodCase_ = 2;
+      onChanged();
+      ;
+      return integratedGradientsAttributionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.XraiAttribution,
+            com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder,
+            com.google.cloud.aiplatform.v1beta1.XraiAttributionOrBuilder>
+        xraiAttributionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     *
+     * @return Whether the xraiAttribution field is set.
+     */
+    @java.lang.Override
+    public boolean hasXraiAttribution() {
+      return methodCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     *
+     * @return The xraiAttribution.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.XraiAttribution getXraiAttribution() {
+      if (xraiAttributionBuilder_ == null) {
+        if (methodCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+      } else {
+        if (methodCase_ == 3) {
+          return xraiAttributionBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    public Builder setXraiAttribution(com.google.cloud.aiplatform.v1beta1.XraiAttribution value) {
+      if (xraiAttributionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        method_ = value;
+        onChanged();
+      } else {
+        xraiAttributionBuilder_.setMessage(value);
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    public Builder setXraiAttribution(
+        com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder builderForValue) {
+      if (xraiAttributionBuilder_ == null) {
+        method_ = builderForValue.build();
+        onChanged();
+      } else {
+        xraiAttributionBuilder_.setMessage(builderForValue.build());
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    public Builder mergeXraiAttribution(com.google.cloud.aiplatform.v1beta1.XraiAttribution value) {
+      if (xraiAttributionBuilder_ == null) {
+        if (methodCase_ == 3
+            && method_
+                != com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance()) {
+          method_ =
+              com.google.cloud.aiplatform.v1beta1.XraiAttribution.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          method_ = value;
+        }
+        onChanged();
+      } else {
+        if (methodCase_ == 3) {
+          xraiAttributionBuilder_.mergeFrom(value);
+        }
+        xraiAttributionBuilder_.setMessage(value);
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    public Builder clearXraiAttribution() {
+      if (xraiAttributionBuilder_ == null) {
+        if (methodCase_ == 3) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+      } else {
+        if (methodCase_ == 3) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        xraiAttributionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder getXraiAttributionBuilder() {
+      return getXraiAttributionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.XraiAttributionOrBuilder
+        getXraiAttributionOrBuilder() {
+      if ((methodCase_ == 3) && (xraiAttributionBuilder_ != null)) {
+        return xraiAttributionBuilder_.getMessageOrBuilder();
+      } else {
+        if (methodCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An attribution method that redistributes Integrated Gradients
+     * attribution to segmented regions, taking advantage of the model's fully
+     * differentiable structure. Refer to this paper for
+     * more details: https://arxiv.org/abs/1906.02825
+     * XRAI currently performs better on natural images, like a picture of a
+     * house or an animal. If the images are taken in artificial environments,
+     * like a lab or manufacturing line, or from diagnostic equipment, like
+     * x-rays or quality-control cameras, use Integrated Gradients instead.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.XraiAttribution xrai_attribution = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.XraiAttribution,
+            com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder,
+            com.google.cloud.aiplatform.v1beta1.XraiAttributionOrBuilder>
+        getXraiAttributionFieldBuilder() {
+      if (xraiAttributionBuilder_ == null) {
+        if (!(methodCase_ == 3)) {
+          method_ = com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
+        }
+        xraiAttributionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.XraiAttribution,
+                com.google.cloud.aiplatform.v1beta1.XraiAttribution.Builder,
+                com.google.cloud.aiplatform.v1beta1.XraiAttributionOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.XraiAttribution) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
+      }
+      methodCase_ = 3;
+      onChanged();
+      ;
+      return xraiAttributionBuilder_;
+    }
+
+    private int topK_;
+    /**
+     *
+     *
+     * <pre>
+     * If populated, returns attributions for top K indices of outputs
+     * (defaults to 1). Only applies to Models that predicts more than one outputs
+     * (e,g, multi-class Models). When set to -1, returns explanations for all
+     * outputs.
+     * </pre>
+     *
+     * <code>int32 top_k = 4;</code>
+     *
+     * @return The topK.
+     */
+    @java.lang.Override
+    public int getTopK() {
+      return topK_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, returns attributions for top K indices of outputs
+     * (defaults to 1). Only applies to Models that predicts more than one outputs
+     * (e,g, multi-class Models). When set to -1, returns explanations for all
+     * outputs.
+     * </pre>
+     *
+     * <code>int32 top_k = 4;</code>
+     *
+     * @param value The topK to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTopK(int value) {
+
+      topK_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, returns attributions for top K indices of outputs
+     * (defaults to 1). Only applies to Models that predicts more than one outputs
+     * (e,g, multi-class Models). When set to -1, returns explanations for all
+     * outputs.
+     * </pre>
+     *
+     * <code>int32 top_k = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTopK() {
+
+      topK_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ListValue outputIndices_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        outputIndicesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     *
+     * @return Whether the outputIndices field is set.
+     */
+    public boolean hasOutputIndices() {
+      return outputIndicesBuilder_ != null || outputIndices_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     *
+     * @return The outputIndices.
+     */
+    public com.google.protobuf.ListValue getOutputIndices() {
+      if (outputIndicesBuilder_ == null) {
+        return outputIndices_ == null
+            ? com.google.protobuf.ListValue.getDefaultInstance()
+            : outputIndices_;
+      } else {
+        return outputIndicesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public Builder setOutputIndices(com.google.protobuf.ListValue value) {
+      if (outputIndicesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputIndices_ = value;
+        onChanged();
+      } else {
+        outputIndicesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public Builder setOutputIndices(com.google.protobuf.ListValue.Builder builderForValue) {
+      if (outputIndicesBuilder_ == null) {
+        outputIndices_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputIndicesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public Builder mergeOutputIndices(com.google.protobuf.ListValue value) {
+      if (outputIndicesBuilder_ == null) {
+        if (outputIndices_ != null) {
+          outputIndices_ =
+              com.google.protobuf.ListValue.newBuilder(outputIndices_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputIndices_ = value;
+        }
+        onChanged();
+      } else {
+        outputIndicesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public Builder clearOutputIndices() {
+      if (outputIndicesBuilder_ == null) {
+        outputIndices_ = null;
+        onChanged();
+      } else {
+        outputIndices_ = null;
+        outputIndicesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public com.google.protobuf.ListValue.Builder getOutputIndicesBuilder() {
+
+      onChanged();
+      return getOutputIndicesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    public com.google.protobuf.ListValueOrBuilder getOutputIndicesOrBuilder() {
+      if (outputIndicesBuilder_ != null) {
+        return outputIndicesBuilder_.getMessageOrBuilder();
+      } else {
+        return outputIndices_ == null
+            ? com.google.protobuf.ListValue.getDefaultInstance()
+            : outputIndices_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If populated, only returns attributions that have
+     * [output_index][Attributions.output_index] contained in output_indices. It
+     * must be an ndarray of integers, with the same shape of the output it's
+     * explaining.
+     * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
+     * If neither top_k nor output_indeices is populated, returns the argmax
+     * index of the outputs.
+     * Only applicable to Models that predict multiple outputs (e,g, multi-class
+     * Models that predict multiple classes).
+     * </pre>
+     *
+     * <code>.google.protobuf.ListValue output_indices = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        getOutputIndicesFieldBuilder() {
+      if (outputIndicesBuilder_ == null) {
+        outputIndicesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
+                getOutputIndices(), getParentForChildren(), isClean());
+        outputIndices_ = null;
+      }
+      return outputIndicesBuilder_;
     }
 
     @java.lang.Override

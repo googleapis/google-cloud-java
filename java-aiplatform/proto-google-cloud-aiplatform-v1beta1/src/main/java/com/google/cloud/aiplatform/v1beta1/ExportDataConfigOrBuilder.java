@@ -30,7 +30,7 @@ public interface ExportDataConfigOrBuilder
    * The Google Cloud Storage location where the output is to be written to.
    * In the given directory a new directory will be created with name:
    * `export-data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;` where
-   * timestamp is in YYYYMMDDHHMMSS format. All export
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory. Inside that directory,
    * annotations with the same schema will be grouped into sub directories
    * which are named with the corresponding annotations' schema title. Inside
@@ -50,7 +50,7 @@ public interface ExportDataConfigOrBuilder
    * The Google Cloud Storage location where the output is to be written to.
    * In the given directory a new directory will be created with name:
    * `export-data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;` where
-   * timestamp is in YYYYMMDDHHMMSS format. All export
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory. Inside that directory,
    * annotations with the same schema will be grouped into sub directories
    * which are named with the corresponding annotations' schema title. Inside
@@ -70,7 +70,7 @@ public interface ExportDataConfigOrBuilder
    * The Google Cloud Storage location where the output is to be written to.
    * In the given directory a new directory will be created with name:
    * `export-data-&lt;dataset-display-name&gt;-&lt;timestamp-of-export-call&gt;` where
-   * timestamp is in YYYYMMDDHHMMSS format. All export
+   * timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. All export
    * output will be written into that directory. Inside that directory,
    * annotations with the same schema will be grouped into sub directories
    * which are named with the corresponding annotations' schema title. Inside

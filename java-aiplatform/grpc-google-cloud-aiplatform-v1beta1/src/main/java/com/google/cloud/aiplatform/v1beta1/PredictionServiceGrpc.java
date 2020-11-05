@@ -200,10 +200,12 @@ public final class PredictionServiceGrpc {
      *
      * <pre>
      * Perform an online explanation.
-     * If [ExplainRequest.deployed_model_id] is specified, the corresponding
-     * DeployModel must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [ExplainRequest.deployed_model_id] is not specified, all
-     * DeployedModels must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * populated. Only deployed AutoML tabular Models have
      * explanation_spec.
      * </pre>
@@ -273,10 +275,12 @@ public final class PredictionServiceGrpc {
      *
      * <pre>
      * Perform an online explanation.
-     * If [ExplainRequest.deployed_model_id] is specified, the corresponding
-     * DeployModel must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [ExplainRequest.deployed_model_id] is not specified, all
-     * DeployedModels must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * populated. Only deployed AutoML tabular Models have
      * explanation_spec.
      * </pre>
@@ -327,10 +331,12 @@ public final class PredictionServiceGrpc {
      *
      * <pre>
      * Perform an online explanation.
-     * If [ExplainRequest.deployed_model_id] is specified, the corresponding
-     * DeployModel must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [ExplainRequest.deployed_model_id] is not specified, all
-     * DeployedModels must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * populated. Only deployed AutoML tabular Models have
      * explanation_spec.
      * </pre>
@@ -378,10 +384,12 @@ public final class PredictionServiceGrpc {
      *
      * <pre>
      * Perform an online explanation.
-     * If [ExplainRequest.deployed_model_id] is specified, the corresponding
-     * DeployModel must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
-     * populated. If [ExplainRequest.deployed_model_id] is not specified, all
-     * DeployedModels must have [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * populated. Only deployed AutoML tabular Models have
      * explanation_spec.
      * </pre>

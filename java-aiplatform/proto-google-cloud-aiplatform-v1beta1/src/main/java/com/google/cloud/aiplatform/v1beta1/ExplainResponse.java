@@ -40,6 +40,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
   private ExplainResponse() {
     explanations_ = java.util.Collections.emptyList();
     deployedModelId_ = "";
+    predictions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -91,6 +92,16 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
               deployedModelId_ = s;
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                predictions_ = new java.util.ArrayList<com.google.protobuf.Value>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              predictions_.add(
+                  input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -107,6 +118,9 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         explanations_ = java.util.Collections.unmodifiableList(explanations_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        predictions_ = java.util.Collections.unmodifiableList(predictions_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -134,8 +148,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -150,8 +163,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -167,8 +179,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -183,8 +194,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -199,8 +209,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -262,6 +271,80 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int PREDICTIONS_FIELD_NUMBER = 3;
+  private java.util.List<com.google.protobuf.Value> predictions_;
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.protobuf.Value> getPredictionsList() {
+    return predictions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.protobuf.ValueOrBuilder>
+      getPredictionsOrBuilderList() {
+    return predictions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  @java.lang.Override
+  public int getPredictionsCount() {
+    return predictions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getPredictions(int index) {
+    return predictions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getPredictionsOrBuilder(int index) {
+    return predictions_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -282,6 +365,9 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     if (!getDeployedModelIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedModelId_);
     }
+    for (int i = 0; i < predictions_.size(); i++) {
+      output.writeMessage(3, predictions_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -296,6 +382,9 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     }
     if (!getDeployedModelIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedModelId_);
+    }
+    for (int i = 0; i < predictions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, predictions_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,6 +404,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
 
     if (!getExplanationsList().equals(other.getExplanationsList())) return false;
     if (!getDeployedModelId().equals(other.getDeployedModelId())) return false;
+    if (!getPredictionsList().equals(other.getPredictionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -332,6 +422,10 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + DEPLOYED_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeployedModelId().hashCode();
+    if (getPredictionsCount() > 0) {
+      hash = (37 * hash) + PREDICTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictionsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -473,6 +567,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getExplanationsFieldBuilder();
+        getPredictionsFieldBuilder();
       }
     }
 
@@ -487,6 +582,12 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
       }
       deployedModelId_ = "";
 
+      if (predictionsBuilder_ == null) {
+        predictions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        predictionsBuilder_.clear();
+      }
       return this;
     }
 
@@ -525,6 +626,15 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         result.explanations_ = explanationsBuilder_.build();
       }
       result.deployedModelId_ = deployedModelId_;
+      if (predictionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          predictions_ = java.util.Collections.unmodifiableList(predictions_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.predictions_ = predictions_;
+      } else {
+        result.predictions_ = predictionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -606,6 +716,33 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         deployedModelId_ = other.deployedModelId_;
         onChanged();
       }
+      if (predictionsBuilder_ == null) {
+        if (!other.predictions_.isEmpty()) {
+          if (predictions_.isEmpty()) {
+            predictions_ = other.predictions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePredictionsIsMutable();
+            predictions_.addAll(other.predictions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.predictions_.isEmpty()) {
+          if (predictionsBuilder_.isEmpty()) {
+            predictionsBuilder_.dispose();
+            predictionsBuilder_ = null;
+            predictions_ = other.predictions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            predictionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPredictionsFieldBuilder()
+                    : null;
+          } else {
+            predictionsBuilder_.addAllMessages(other.predictions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -659,8 +796,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -678,8 +814,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -697,8 +832,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -716,8 +850,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -742,8 +875,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -765,8 +897,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -790,8 +921,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -816,8 +946,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -839,8 +968,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -862,8 +990,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -885,8 +1012,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -907,8 +1033,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -929,8 +1054,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -945,8 +1069,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -965,8 +1088,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -985,8 +1107,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -1001,8 +1122,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -1018,8 +1138,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The explanations of the [Model's
-     * predictions][PredictionResponse.predictions][].
+     * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
      * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
      * to be explained.
      * </pre>
@@ -1152,6 +1271,370 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
       deployedModelId_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.protobuf.Value> predictions_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePredictionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        predictions_ = new java.util.ArrayList<com.google.protobuf.Value>(predictions_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        predictionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public java.util.List<com.google.protobuf.Value> getPredictionsList() {
+      if (predictionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(predictions_);
+      } else {
+        return predictionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public int getPredictionsCount() {
+      if (predictionsBuilder_ == null) {
+        return predictions_.size();
+      } else {
+        return predictionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public com.google.protobuf.Value getPredictions(int index) {
+      if (predictionsBuilder_ == null) {
+        return predictions_.get(index);
+      } else {
+        return predictionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder setPredictions(int index, com.google.protobuf.Value value) {
+      if (predictionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePredictionsIsMutable();
+        predictions_.set(index, value);
+        onChanged();
+      } else {
+        predictionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder setPredictions(int index, com.google.protobuf.Value.Builder builderForValue) {
+      if (predictionsBuilder_ == null) {
+        ensurePredictionsIsMutable();
+        predictions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        predictionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder addPredictions(com.google.protobuf.Value value) {
+      if (predictionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePredictionsIsMutable();
+        predictions_.add(value);
+        onChanged();
+      } else {
+        predictionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder addPredictions(int index, com.google.protobuf.Value value) {
+      if (predictionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePredictionsIsMutable();
+        predictions_.add(index, value);
+        onChanged();
+      } else {
+        predictionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder addPredictions(com.google.protobuf.Value.Builder builderForValue) {
+      if (predictionsBuilder_ == null) {
+        ensurePredictionsIsMutable();
+        predictions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        predictionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder addPredictions(int index, com.google.protobuf.Value.Builder builderForValue) {
+      if (predictionsBuilder_ == null) {
+        ensurePredictionsIsMutable();
+        predictions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        predictionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder addAllPredictions(
+        java.lang.Iterable<? extends com.google.protobuf.Value> values) {
+      if (predictionsBuilder_ == null) {
+        ensurePredictionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, predictions_);
+        onChanged();
+      } else {
+        predictionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder clearPredictions() {
+      if (predictionsBuilder_ == null) {
+        predictions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        predictionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public Builder removePredictions(int index) {
+      if (predictionsBuilder_ == null) {
+        ensurePredictionsIsMutable();
+        predictions_.remove(index);
+        onChanged();
+      } else {
+        predictionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public com.google.protobuf.Value.Builder getPredictionsBuilder(int index) {
+      return getPredictionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public com.google.protobuf.ValueOrBuilder getPredictionsOrBuilder(int index) {
+      if (predictionsBuilder_ == null) {
+        return predictions_.get(index);
+      } else {
+        return predictionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public java.util.List<? extends com.google.protobuf.ValueOrBuilder>
+        getPredictionsOrBuilderList() {
+      if (predictionsBuilder_ != null) {
+        return predictionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(predictions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public com.google.protobuf.Value.Builder addPredictionsBuilder() {
+      return getPredictionsFieldBuilder()
+          .addBuilder(com.google.protobuf.Value.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public com.google.protobuf.Value.Builder addPredictionsBuilder(int index) {
+      return getPredictionsFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Value.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The predictions that are the output of the predictions call.
+     * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     * </pre>
+     *
+     * <code>repeated .google.protobuf.Value predictions = 3;</code>
+     */
+    public java.util.List<com.google.protobuf.Value.Builder> getPredictionsBuilderList() {
+      return getPredictionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getPredictionsFieldBuilder() {
+      if (predictionsBuilder_ == null) {
+        predictionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                predictions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        predictions_ = null;
+      }
+      return predictionsBuilder_;
     }
 
     @java.lang.Override

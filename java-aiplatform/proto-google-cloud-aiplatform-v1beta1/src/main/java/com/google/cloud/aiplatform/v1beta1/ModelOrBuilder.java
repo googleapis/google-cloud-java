@@ -232,7 +232,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -246,7 +246,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -259,7 +259,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -272,7 +272,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>
@@ -286,7 +286,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not avaiable for export.
+   * not available for export.
    * </pre>
    *
    * <code>

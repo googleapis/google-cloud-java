@@ -509,6 +509,44 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  boolean hasError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  com.google.rpc.Status getError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DataLabelingJob errors. It is only populated when job's state is
+   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The labels with user-defined metadata to organize your DataLabelingJobs.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric

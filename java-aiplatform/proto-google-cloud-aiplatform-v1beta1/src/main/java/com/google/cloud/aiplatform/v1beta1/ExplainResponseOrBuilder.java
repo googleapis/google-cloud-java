@@ -27,8 +27,7 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -40,8 +39,7 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -53,8 +51,7 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -66,8 +63,7 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -80,8 +76,7 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the [Model's
-   * predictions][PredictionResponse.predictions][].
+   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * to be explained.
    * </pre>
@@ -114,4 +109,60 @@ public interface ExplainResponseOrBuilder
    * @return The bytes for deployedModelId.
    */
   com.google.protobuf.ByteString getDeployedModelIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  java.util.List<com.google.protobuf.Value> getPredictionsList();
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  com.google.protobuf.Value getPredictions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  int getPredictionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  java.util.List<? extends com.google.protobuf.ValueOrBuilder> getPredictionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The predictions that are the output of the predictions call.
+   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * </pre>
+   *
+   * <code>repeated .google.protobuf.Value predictions = 3;</code>
+   */
+  com.google.protobuf.ValueOrBuilder getPredictionsOrBuilder(int index);
 }
