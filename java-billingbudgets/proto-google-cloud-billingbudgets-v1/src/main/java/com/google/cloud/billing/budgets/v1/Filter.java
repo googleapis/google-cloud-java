@@ -466,13 +466,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of credit types to be subtracted from gross cost to
-   * determine the spend for threshold calculations if and only if
-   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-   * empty. See credits.type on
-   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-   * for a list of acceptable credit type values in this field.
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations.
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+   * of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -486,13 +489,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of credit types to be subtracted from gross cost to
-   * determine the spend for threshold calculations if and only if
-   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-   * empty. See credits.type on
-   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-   * for a list of acceptable credit type values in this field.
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations.
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+   * of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -506,13 +512,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of credit types to be subtracted from gross cost to
-   * determine the spend for threshold calculations if and only if
-   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-   * empty. See credits.type on
-   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-   * for a list of acceptable credit type values in this field.
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations.
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+   * of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -527,13 +536,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of credit types to be subtracted from gross cost to
-   * determine the spend for threshold calculations if and only if
-   * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-   * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-   * empty. See credits.type on
-   * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-   * for a list of acceptable credit type values in this field.
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations.
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+   * of acceptable credit type
+   * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1588,13 +1600,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1608,13 +1623,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1628,13 +1646,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1649,13 +1670,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1670,13 +1694,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1698,13 +1725,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1725,13 +1755,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1749,13 +1782,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1772,13 +1808,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of credit types to be subtracted from gross cost to
-     * determine the spend for threshold calculations if and only if
-     * credit_types_treatment is INCLUDE_SPECIFIED_CREDITS. If
-     * credit_types_treatment is not INCLUDE_SPECIFIED_CREDITS, this field must be
-     * empty. See credits.type on
-     * https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#data-schema
-     * for a list of acceptable credit type values in this field.
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations.
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty. See [a list
+     * of acceptable credit type
+     * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
