@@ -13,8 +13,45 @@ Java idiomatic client for [AI Platform][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-aiplatform</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.113.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>4.0.0-rc-1</version>
+    </dependency>
 
-If you are using Maven, add this to your pom.xml file:
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+</project>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
 <dependency>
@@ -63,6 +100,38 @@ use this AI Platform Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-aiplatform/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Cancel Data Labeling Job Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CancelDataLabelingJobSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CancelDataLabelingJobSample.java) |
+| Cancel Training Pipeline Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CancelTrainingPipelineSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CancelTrainingPipelineSample.java) |
+| Create Data Labeling Job Image Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobImageSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobImageSample.java) |
+| Create Data Labeling Job Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobSample.java) |
+| Create Data Labeling Job Video Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobVideoSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateDataLabelingJobVideoSample.java) |
+| Create Dataset Tabular Bigquery Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateDatasetTabularBigquerySample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateDatasetTabularBigquerySample.java) |
+| Create Dataset Tabular Gcs Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateDatasetTabularGcsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateDatasetTabularGcsSample.java) |
+| Create Training Pipeline Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineSample.java) |
+| Create Training Pipeline Tabular Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineTabularClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineTabularClassificationSample.java) |
+| Create Training Pipeline Tabular Regression Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineTabularRegressionSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateTrainingPipelineTabularRegressionSample.java) |
+| Delete Data Labeling Job Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/DeleteDataLabelingJobSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/DeleteDataLabelingJobSample.java) |
+| Delete Dataset Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/DeleteDatasetSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/DeleteDatasetSample.java) |
+| Delete Export Model Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/DeleteExportModelSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/DeleteExportModelSample.java) |
+| Delete Model Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/DeleteModelSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/DeleteModelSample.java) |
+| Delete Training Pipeline Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/DeleteTrainingPipelineSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/DeleteTrainingPipelineSample.java) |
+| Export Model Tabular Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/ExportModelTabularClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/ExportModelTabularClassificationSample.java) |
+| Get Model Evaluation Tabular Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/GetModelEvaluationTabularClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/GetModelEvaluationTabularClassificationSample.java) |
+| Get Model Evaluation Tabular Regression Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/GetModelEvaluationTabularRegressionSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/GetModelEvaluationTabularRegressionSample.java) |
+| Get Training Pipeline Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/GetTrainingPipelineSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/GetTrainingPipelineSample.java) |
+| Predict Custom Trained Model Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/PredictCustomTrainedModelSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/PredictCustomTrainedModelSample.java) |
+| Predict Tabular Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/PredictTabularClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/PredictTabularClassificationSample.java) |
+| Predict Tabular Regression Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/PredictTabularRegressionSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/PredictTabularRegressionSample.java) |
+| Upload Model Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/UploadModelSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/UploadModelSample.java) |
 
 
 
