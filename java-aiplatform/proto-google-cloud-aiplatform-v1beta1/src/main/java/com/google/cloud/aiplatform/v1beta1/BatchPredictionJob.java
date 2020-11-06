@@ -2482,7 +2482,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * two tables will be created, `predictions`, and `errors`.
      * If the Model has both [instance][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
      * and [prediction][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri] schemata
-     * defined then the tables have columns as follows: The `predictions`
+     * defined then the tableshave columns as follows: The `predictions`
      * table contains instances for which the prediction succeeded, it
      * has columns as per a concatenation of the Model's instance and
      * prediction schemata. The `errors` table contains rows for which the
@@ -3418,7 +3418,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * BigQuery-dataset-name compatible (for example, most special characters
        * become underscores), and timestamp is in
        * YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In the dataset
-       * two tables will be created, `predictions`, and `errors`.
+       * two tableswill be created, `predictions`, and `errors`.
        * If the Model has both [instance][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
        * and [prediction][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri] schemata
        * defined then the tables have columns as follows: The `predictions`
@@ -3569,7 +3569,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * BigQuery-dataset-name compatible (for example, most special characters
        * become underscores), and timestamp is in
        * YYYY_MM_DDThh_mm_ss_sssZ "based on ISO-8601" format. In the dataset
-       * two tables will be created, `predictions`, and `errors`.
+       * two tableswill be created, `predictions`, and `errors`.
        * If the Model has both [instance][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
        * and [prediction][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri] schemata
        * defined then the tables have columns as follows: The `predictions`

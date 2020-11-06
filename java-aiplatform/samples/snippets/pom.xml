@@ -23,14 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+
+  <!-- [START aiplatform_install_with_bom] -->
   <dependencies>
-    <!-- TODO: switch to libraries-bom after this artifact is included -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-aiplatform</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
