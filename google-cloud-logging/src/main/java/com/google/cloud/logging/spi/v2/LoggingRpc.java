@@ -18,13 +18,18 @@ package com.google.cloud.logging.spi.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceRpc;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
@@ -33,8 +38,10 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
@@ -166,4 +173,49 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
    * @param request the request object containing all of the parameters for the API call
    */
   ApiFuture<Empty> delete(DeleteLogMetricRequest request);
+
+  /**
+   * Sends a request to create a new exclusion in a specified parent resource. This method returns
+   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the created
+   * exclusion.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  ApiFuture<LogExclusion> create(CreateExclusionRequest request);
+
+  /**
+   * Sends a request to get the description of an exclusion. This method returns an {@code
+   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the requested
+   * exclusion or {@code null} if not found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  ApiFuture<LogExclusion> get(GetExclusionRequest request);
+
+  /**
+   * Sends a request to change one or more properties of an existing exclusion. This method returns
+   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
+   * exclusion.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  ApiFuture<LogExclusion> update(UpdateExclusionRequest request);
+
+  /**
+   * Sends a request to list all the exclusions in parent resource. Use this method to retrieve
+   * exclusions from Cloud Logging. This method returns an {@code ApiFuture} object to consume the
+   * result. {@link ApiFuture#get()} returns a response object containing the listing result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  ApiFuture<ListExclusionsResponse> list(ListExclusionsRequest request);
+
+  /**
+   * Sends a request to delete an exclusion. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or
+   * {@code null} if the log exclusion was not found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  ApiFuture<Empty> delete(DeleteExclusionRequest request);
 }

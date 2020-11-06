@@ -45,13 +45,18 @@ import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.cloud.logging.v2.MetricsClient;
 import com.google.cloud.logging.v2.MetricsSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
@@ -60,8 +65,10 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
@@ -222,6 +229,35 @@ public class GrpcLoggingRpc implements LoggingRpc {
   public ApiFuture<Empty> delete(DeleteSinkRequest request) {
     return translate(
         configClient.deleteSinkCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+  }
+
+  @Override
+  public ApiFuture<LogExclusion> create(CreateExclusionRequest request) {
+    return translate(configClient.createExclusionCallable().futureCall(request), true);
+  }
+
+  @Override
+  public ApiFuture<LogExclusion> get(GetExclusionRequest request) {
+    return translate(
+        configClient.getExclusionCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+  }
+
+  @Override
+  public ApiFuture<LogExclusion> update(UpdateExclusionRequest request) {
+    return translate(configClient.updateExclusionCallable().futureCall(request), true);
+  }
+
+  @Override
+  public ApiFuture<ListExclusionsResponse> list(ListExclusionsRequest request) {
+    return translate(configClient.listExclusionsCallable().futureCall(request), true);
+  }
+
+  @Override
+  public ApiFuture<Empty> delete(DeleteExclusionRequest request) {
+    return translate(
+        configClient.deleteExclusionCallable().futureCall(request),
+        true,
+        StatusCode.Code.NOT_FOUND);
   }
 
   @Override

@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import static com.google.cloud.logging.SinkInfo.VersionFormat;
+import static com.google.protobuf.util.Timestamps.fromMillis;
 import static org.easymock.EasyMock.replay;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -46,13 +47,18 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListExclusionsRequest;
+import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
@@ -61,13 +67,16 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -135,6 +144,29 @@ public class LoggingImplTest {
               return descriptor.toPb();
             }
           };
+
+  private static final String EXCLUSION_NAME = "load-balancer-exclusion";
+  private static final String EXCLUSION_NAME_PB =
+      "projects/" + PROJECT + "/exclusions/" + EXCLUSION_NAME;
+  private static final String EXCLUSION_FILTER =
+      "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)";
+  private static final String CURSOR = "cursor";
+  private static final String NEXT_CURSOR = "nextCursor";
+  private static final Boolean DISABLED = Boolean.FALSE;
+  private static final Timestamp EXCLUSION_CREATED_TIME = fromMillis(System.currentTimeMillis());
+  private static final Timestamp EXCLUSION_UPDATED_TIME = fromMillis(System.currentTimeMillis());;
+  private static final Exclusion EXCLUSION =
+      Exclusion.newBuilder(EXCLUSION_NAME, EXCLUSION_FILTER)
+          .setDisabled(DISABLED)
+          .setDescription(DESCRIPTION)
+          .setCreateTime(EXCLUSION_CREATED_TIME)
+          .build();
+  private static final Exclusion EXCLUSION1 =
+      Exclusion.newBuilder(EXCLUSION_NAME, EXCLUSION_FILTER)
+          .setDisabled(DISABLED)
+          .setDescription(DESCRIPTION)
+          .setUpdateTime(EXCLUSION_UPDATED_TIME)
+          .build();
 
   private LoggingOptions options;
   private LoggingRpcFactory rpcFactoryMock;
@@ -886,6 +918,406 @@ public class LoggingImplTest {
         logging.listMetricsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.getValues(), Metric.class));
+  }
+
+  @Test
+  public void testCreateExclusion() {
+    LogExclusion exclusionPb = EXCLUSION.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder().setParent(PROJECT_PB).setExclusion(exclusionPb).build();
+    EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.create(EXCLUSION);
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_CREATED_TIME, exclusion.getCreateTime());
+  }
+
+  @Test
+  public void testCreateExclusionAsync() throws ExecutionException, InterruptedException {
+    LogExclusion exclusionPb = EXCLUSION.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder().setParent(PROJECT_PB).setExclusion(exclusionPb).build();
+    EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.createAsync(EXCLUSION).get();
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_CREATED_TIME, exclusion.getCreateTime());
+  }
+
+  @Test
+  public void testGetExclusion() {
+    LogExclusion exclusionPb = EXCLUSION.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.getExclusion(EXCLUSION_NAME);
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_CREATED_TIME, exclusion.getCreateTime());
+  }
+
+  @Test
+  public void testGetExclusion_Null() {
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(null);
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.getExclusion(EXCLUSION_NAME);
+    assertNull(exclusion);
+  }
+
+  @Test
+  public void testGetExclusionAsync() throws ExecutionException, InterruptedException {
+    LogExclusion exclusionPb = EXCLUSION.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.getExclusionAsync(EXCLUSION_NAME).get();
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_CREATED_TIME, exclusion.getCreateTime());
+  }
+
+  @Test
+  public void testGetExclusionAsync_Null() throws ExecutionException, InterruptedException {
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(null);
+    GetExclusionRequest request =
+        GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.getExclusionAsync(EXCLUSION_NAME).get();
+    assertNull(exclusion);
+  }
+
+  @Test
+  public void testUpdateExclusion() {
+    LogExclusion exclusionPb = EXCLUSION1.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    UpdateExclusionRequest request =
+        UpdateExclusionRequest.newBuilder()
+            .setName(EXCLUSION_NAME_PB)
+            .setExclusion(exclusionPb)
+            .build();
+    EasyMock.expect(loggingRpcMock.update(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.update(EXCLUSION1);
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_UPDATED_TIME, exclusion.getUpdateTime());
+  }
+
+  @Test
+  public void testUpdateExclusionAsync() throws ExecutionException, InterruptedException {
+    LogExclusion exclusionPb = EXCLUSION1.toProtobuf();
+    ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(exclusionPb);
+    UpdateExclusionRequest request =
+        UpdateExclusionRequest.newBuilder()
+            .setName(EXCLUSION_NAME_PB)
+            .setExclusion(exclusionPb)
+            .build();
+    EasyMock.expect(loggingRpcMock.update(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    Exclusion exclusion = logging.updateAsync(EXCLUSION1).get();
+    assertEquals(EXCLUSION_NAME, exclusion.getName());
+    assertEquals(DESCRIPTION, exclusion.getDescription());
+    assertEquals(EXCLUSION_FILTER, exclusion.getFilter());
+    assertEquals(DISABLED, exclusion.isDisabled());
+    assertEquals(EXCLUSION_UPDATED_TIME, exclusion.getUpdateTime());
+  }
+
+  @Test
+  public void testDeleteExclusion() {
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    assertTrue(logging.deleteExclusion(EXCLUSION_NAME));
+  }
+
+  @Test
+  public void testDeleteExclusion_Null() {
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    assertFalse(logging.deleteExclusion(EXCLUSION_NAME));
+  }
+
+  @Test
+  public void testDeleteExclusionAsync() throws ExecutionException, InterruptedException {
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    assertTrue(logging.deleteExclusionAsync(EXCLUSION_NAME).get());
+  }
+
+  @Test
+  public void testDeleteExclusionAsync_Null() throws ExecutionException, InterruptedException {
+    DeleteExclusionRequest request =
+        DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
+    ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    assertFalse(logging.deleteExclusionAsync(EXCLUSION_NAME).get());
+  }
+
+  @Test
+  public void testListExclusions() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList =
+        ImmutableList.of(
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER),
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Exclusion> page = logging.listExclusions();
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionEmpty() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList = ImmutableList.of();
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Exclusion> page = logging.listExclusions();
+    assertNull(page.getNextPageToken());
+    assertNull(page.getNextPage());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionNextPage() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request1 =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList1 =
+        ImmutableList.of(Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response1 =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList1, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ListExclusionsRequest request2 =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).setPageToken(CURSOR).build();
+    List<Exclusion> exclusionList2 =
+        ImmutableList.of(Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response2 =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(NEXT_CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList2, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListExclusionsResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    Page<Exclusion> page = logging.listExclusions();
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList1.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+    page = page.getNextPage();
+    assertEquals(NEXT_CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList2.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionWithOptions() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder()
+            .setPageToken(CURSOR)
+            .setPageSize(42)
+            .setParent(PROJECT_PB)
+            .build();
+    List<Exclusion> exclusionList =
+        ImmutableList.of(
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER),
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Exclusion> page =
+        logging.listExclusions(ListOption.pageSize(42), ListOption.pageToken(CURSOR));
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionsAsync() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList =
+        ImmutableList.of(
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER),
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Exclusion> page = logging.listExclusionsAsync().get();
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionAsyncEmpty() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList = ImmutableList.of();
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Exclusion> page = logging.listExclusionsAsync().get();
+    assertNull(page.getNextPageToken());
+    assertNull(page.getNextPage());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionAsyncNextPage() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request1 =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).build();
+    List<Exclusion> exclusionList1 =
+        ImmutableList.of(Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response1 =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList1, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ListExclusionsRequest request2 =
+        ListExclusionsRequest.newBuilder().setParent(PROJECT_PB).setPageToken(CURSOR).build();
+    List<Exclusion> exclusionList2 =
+        ImmutableList.of(Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response2 =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(NEXT_CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList2, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse1 = ApiFutures.immediateFuture(response1);
+    ApiFuture<ListExclusionsResponse> futureResponse2 = ApiFutures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Exclusion> page = logging.listExclusionsAsync().get();
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList1.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+    page = page.getNextPageAsync().get();
+    assertEquals(NEXT_CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList2.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
+  }
+
+  @Test
+  public void testListExclusionAsyncWithOptions() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.getService();
+    ListExclusionsRequest request =
+        ListExclusionsRequest.newBuilder()
+            .setPageToken(CURSOR)
+            .setPageSize(42)
+            .setParent(PROJECT_PB)
+            .build();
+    List<Exclusion> exclusionList =
+        ImmutableList.of(
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER),
+            Exclusion.of(EXCLUSION_NAME, EXCLUSION_FILTER));
+    ListExclusionsResponse response =
+        ListExclusionsResponse.newBuilder()
+            .setNextPageToken(CURSOR)
+            .addAllExclusions(Lists.transform(exclusionList, Exclusion.TO_PROTOBUF_FUNCTION))
+            .build();
+    ApiFuture<ListExclusionsResponse> futureResponse = ApiFutures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Exclusion> page =
+        logging.listExclusionsAsync(ListOption.pageSize(42), ListOption.pageToken(CURSOR)).get();
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(
+        exclusionList.toArray(), Iterables.toArray(page.getValues(), Exclusion.class));
   }
 
   @Test

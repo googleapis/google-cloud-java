@@ -669,6 +669,197 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   ApiFuture<Boolean> deleteMetricAsync(String metric);
 
   /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Example of creating the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion.of(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   * Exclusion exclusion = logging.create(exclusion);
+   * }</pre>
+   *
+   * @return the created exclusion
+   * @throws LoggingException upon failure
+   */
+  Exclusion create(Exclusion exclusion);
+
+  /**
+   * Sends a request to create the exclusion. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created exclusion.
+   *
+   * <p>Example of asynchronously creating the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion.of(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   * ApiFuture<Exclusion> future = logging.createAsync(exclusion);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * }</pre>
+   */
+  ApiFuture<Exclusion> createAsync(Exclusion exclusion);
+
+  /**
+   * Gets the description of an exclusion or {@code null} if not found.
+   *
+   * <p>Example of getting the description of an exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = logging.getExclusion(exclusionName);
+   * if (exclusion == null) {
+   *   // exclusion was not found
+   * }
+   * }</pre>
+   *
+   * @throws LoggingException upon failure
+   */
+  Exclusion getExclusion(String exclusion);
+
+  /**
+   * Sends a request to get the description of an exclusion . This method returns an {@code
+   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the requested
+   * exclusion or {@code null} if not found.
+   *
+   * <p>Example of asynchronously getting the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * ApiFuture<Exclusion> future = logging.getExclusionAsync(exclusionName);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * if (exclusion == null) {
+   *   // exclusion was not found
+   * }
+   * }</pre>
+   *
+   * @throws LoggingException upon failure
+   */
+  ApiFuture<Exclusion> getExclusionAsync(String exclusion);
+
+  /**
+   * Updates one or more properties of an existing exclusion.
+   *
+   * <p>Example of updating the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion.newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *     .setDescription("new description")
+   *     .setIsDisabled(false)
+   *     .build();
+   * Exclusion exclusion = logging.update(exclusion);
+   * }</pre>
+   *
+   * @return the updated exclusion
+   * @throws LoggingException upon failure
+   */
+  Exclusion update(Exclusion exclusion);
+
+  /**
+   * Sends a request to change one or more properties of an existing exclusion. This method returns
+   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
+   * exclusion or {@code null} if not found.
+   *
+   * <p>Example of asynchronous exclusion update:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * Exclusion exclusion = Exclusion.newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *     .setDescription("new description")
+   *     .setIsDisabled(false)
+   *     .build();
+   * ApiFuture<Exclusion> future = logging.updateAsync(exclusion);
+   * // ...
+   * Exclusion exclusion = future.get();
+   * }</pre>
+   */
+  ApiFuture<Exclusion> updateAsync(Exclusion exclusion);
+
+  /**
+   * Deletes the requested exclusion.
+   *
+   * <p>Example of deleting the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * boolean deleted = logging.deleteExclusion(exclusionName);
+   * if (deleted) {
+   *   // the exclusion was deleted
+   * } else {
+   *   // the exclusion was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if the exclusion was deleted, {@code false} if it was not found
+   */
+  boolean deleteExclusion(String exclusion);
+
+  /**
+   * Sends a request to delete an exclusion. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@code true} if the exclusion was deleted,
+   * {@code false} if it was not found.
+   *
+   * <p>Example of asynchronously deleting the exclusion:
+   *
+   * <pre>{@code
+   * String exclusionName = "my_exclusion_name";
+   * ApiFuture<Boolean> future = logging.deleteExclusionAsync(metricName);
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the exclusion was deleted
+   * } else {
+   *   // the exclusion was not found
+   * }
+   * }</pre>
+   */
+  ApiFuture<Boolean> deleteExclusionAsync(String exclusion);
+
+  /**
+   * Lists the exclusion. This method returns a {@link Page} object that can be used to consume
+   * paginated results. Use {@link ListOption} to specify the page size or the page token from which
+   * to start listing exclusion.
+   *
+   * <p>Example of listing exclusions, specifying the page size:
+   *
+   * <pre>{@code
+   * Page<Exclusion> exclusions = logging.listMetrics(ListOption.pageSize(100));
+   * Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
+   * while (exclusionIterator.hasNext()) {
+   *   Exclusion exclusion = exclusionIterator.next();
+   *   // do something with the exclusion
+   * }
+   * }</pre>
+   *
+   * @throws LoggingException upon failure
+   */
+  Page<Exclusion> listExclusions(ListOption... options);
+
+  /**
+   * Sends a request for listing exclusions. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be
+   * used to asynchronously handle paginated results. Use {@link ListOption} to specify the page
+   * size or the page token from which to start listing exclusions.
+   *
+   * <p>Example of asynchronously listing exclusions, specifying the page size:
+   *
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Exclusion>> future = logging.listExclusionsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Exclusion> exclusions = future.get();
+   * Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
+   * while (exclusionIterator.hasNext()) {
+   *   Exclusion exclusion = exclusionIterator.next();
+   *   // do something with the exclusion
+   * }
+   * }</pre>
+   */
+  ApiFuture<AsyncPage<Exclusion>> listExclusionsAsync(ListOption... options);
+
+  /**
    * Flushes any pending asynchronous logging writes. Logs are automatically flushed based on time
    * and message count that be configured via {@link com.google.api.gax.batching.BatchingSettings},
    * Logs are also flushed if enabled, at or above flush severity, see {@link #setFlushSeverity}.
