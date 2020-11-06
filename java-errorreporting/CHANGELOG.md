@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.120.7](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.6...v0.120.7) (2020-11-05)
+
+
+### Documentation
+
+* debrand 'Stackdriver' in favor of 'Cloud' ([#269](https://www.github.com/googleapis/java-errorreporting/issues/269)) ([64302fa](https://www.github.com/googleapis/java-errorreporting/commit/64302fa69c6a3f1dc6000f9909eed9bd2a736abe))
+
 ### [0.120.6](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.5...v0.120.6) (2020-10-31)
 
 
