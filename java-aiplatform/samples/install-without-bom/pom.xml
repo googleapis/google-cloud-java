@@ -42,7 +42,11 @@
       <artifactId>protobuf-java-util</artifactId>
       <version>4.0.0-rc-1</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.111.0</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

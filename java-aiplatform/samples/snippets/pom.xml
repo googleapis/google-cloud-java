@@ -22,14 +22,23 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-
   <!-- [START aiplatform_install_with_bom] -->
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-aiplatform</artifactId>
       <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <!-- [END aiplatform_install_with_bom] -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>4.0.0-rc-1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.111.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
