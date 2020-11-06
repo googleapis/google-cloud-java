@@ -17,7 +17,7 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.2.0 is released -->
+  <!-- TODO: remove after 0.3.0 is released -->
   <difference>
     <differenceType>6011</differenceType>
     <className>com/google/cloud/dialogflow/cx/v3beta1/NluSettings</className>
@@ -27,5 +27,13 @@
     <differenceType>7002</differenceType>
     <className>com/google/cloud/dialogflow/cx/v3beta1/NluSettings*</className>
     <method>* *EnableSpellCorrection(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/cx/v3beta1/GcsProto</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/cx/v3beta1/InteractiveVoiceResponseProto</className>
   </difference>
 </differences>
