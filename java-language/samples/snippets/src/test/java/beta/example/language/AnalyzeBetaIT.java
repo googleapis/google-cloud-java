@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.language;
+package beta.example.language;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.example.language.Analyze;
+import com.google.cloud.language.v1beta2.Sentiment;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -26,10 +28,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for quickstart sample. */
+/** Integration (system) tests for {@link Analyze}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartSampleIT {
+public class AnalyzeBetaIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,13 +53,28 @@ public class QuickstartSampleIT {
   }
 
   @Test
-  public void testQuickstart() throws Exception {
-    // Act
-    QuickstartSample.main();
+  public void analyzeSentiment_returnPositiveGerman() throws Exception {
+    Sentiment sentiment =
+        AnalyzeBeta.analyzeSentimentText("Ich hatte die schönste Erfahrung mit euch allen.", "DE");
+    assertThat(sentiment.getMagnitude()).isGreaterThan(0.0F);
+    assertThat(sentiment.getScore()).isGreaterThan(0.0F);
+  }
 
-    // Assert
+  @Test
+  public void analyzeCategoriesInTextReturnsExpectedResult() throws Exception {
+    AnalyzeBeta.classifyText(
+        "Android is a mobile operating system developed by Google, "
+            + "based on the Linux kernel and designed primarily for touchscreen "
+            + "mobile devices such as smartphones and tablets.");
     String got = bout.toString();
-    assertThat(got).contains("Text: Hello, world!");
-    assertThat(got).contains("Sentiment: ");
+    assertThat(got).contains("Computers & Electronics");
+  }
+
+  @Test
+  public void analyzeCategoriesInFileReturnsExpectedResult() throws Exception {
+    String gcsFile = "gs://cloud-samples-data/language/android.txt";
+    AnalyzeBeta.classifyFile(gcsFile);
+    String got = bout.toString();
+    assertThat(got).contains("Computers & Electronics");
   }
 }
