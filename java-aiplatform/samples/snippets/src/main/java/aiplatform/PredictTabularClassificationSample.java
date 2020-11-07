@@ -57,7 +57,7 @@ public class PredictTabularClassificationSample {
       JsonFormat.parser().merge(instance, listValue);
       List<Value> instanceList = listValue.getValuesList();
 
-      Value parameters = Value.newBuilder().build();
+      Value parameters = Value.newBuilder().setListValue(listValue).build();
       PredictResponse predictResponse =
           predictionServiceClient.predict(endpointName, instanceList, parameters);
       System.out.println("Predict Tabular Classification Response");

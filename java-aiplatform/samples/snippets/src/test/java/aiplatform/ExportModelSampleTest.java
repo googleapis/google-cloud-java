@@ -22,22 +22,23 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class PredictTabularClassificationSampleTest {
+@RunWith(JUnit4.class)
+public class ExportModelSampleTest {
 
-  private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String INSTANCE =
-      "[{\"petal_length\": '1.4',"
-          + " \"petal_width\": '1.3',"
-          + " \"sepal_length\": '5.1',"
-          + " \"sepal_width\": '2.8'}]";
-
-  private static final String ENDPOINT_ID =
-      System.getenv("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "5359002081594179584";
+  private static final String GCS_DESTINATION_URI_PREFIX =
+      "gs://ucaip-samples-test-output/tmp/export_model_test";
+  private static final String EXPORT_FORMAT = "tf-saved-model";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -51,8 +52,6 @@ public class PredictTabularClassificationSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
   }
 
   @Before
@@ -64,18 +63,31 @@ public class PredictTabularClassificationSampleTest {
   }
 
   @After
-  public void tearDown() {
+  public void tearDown()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    // Delete the export model
+    String bucketName;
+    String objectName;
+    bucketName = GCS_DESTINATION_URI_PREFIX.split("/", 4)[2];
+    objectName = (GCS_DESTINATION_URI_PREFIX.split("/", 4)[3]).concat("model-" + MODEL_ID);
+    DeleteExportModelSample.deleteExportModelSample(PROJECT_ID, bucketName, objectName);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Export Model Deleted");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testPredictTabularClassification() throws IOException {
+  public void testExportModelSample()
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act
-    PredictTabularClassificationSample.predictTabularClassification(INSTANCE, PROJECT, ENDPOINT_ID);
+    ExportModelSample.exportModelSample(
+        PROJECT_ID, MODEL_ID, GCS_DESTINATION_URI_PREFIX, EXPORT_FORMAT);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Predict Tabular Classification Response");
+    assertThat(got).contains("Export Model Response: ");
   }
 }

@@ -22,25 +22,24 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class PredictTabularClassificationSampleTest {
+@RunWith(JUnit4.class)
+public class CreateEndpointSampleTest {
 
-  private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String INSTANCE =
-      "[{\"petal_length\": '1.4',"
-          + " \"petal_width\": '1.3',"
-          + " \"sepal_length\": '5.1',"
-          + " \"sepal_width\": '2.8'}]";
-
-  private static final String ENDPOINT_ID =
-      System.getenv("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private String endpointId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -51,8 +50,6 @@ public class PredictTabularClassificationSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
   }
 
   @Before
@@ -64,18 +61,33 @@ public class PredictTabularClassificationSampleTest {
   }
 
   @After
-  public void tearDown() {
+  public void tearDown()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    // Delete the created endpoint
+    DeleteEndpointSample.deleteEndpointSample(PROJECT_ID, endpointId);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Delete Endpoint Response: ");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testPredictTabularClassification() throws IOException {
+  public void testCreateEndpointSample()
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Act
-    PredictTabularClassificationSample.predictTabularClassification(INSTANCE, PROJECT, ENDPOINT_ID);
+    String displayName =
+        String.format(
+            "temp_create_endpoint_test_%s",
+            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+
+    CreateEndpointSample.createEndpointSample(PROJECT_ID, displayName);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Predict Tabular Classification Response");
+    assertThat(got).contains("us-central1");
+    assertThat(got).contains("Create Endpoint Response");
+    endpointId = got.split("Name: ")[1].split("endpoints/")[1].split("\n")[0];
   }
 }

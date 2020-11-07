@@ -19,25 +19,23 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class PredictTabularClassificationSampleTest {
+public class DeployModelSampleTest {
 
-  private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String INSTANCE =
-      "[{\"petal_length\": '1.4',"
-          + " \"petal_width\": '1.3',"
-          + " \"sepal_length\": '5.1',"
-          + " \"sepal_width\": '2.8'}]";
-
-  private static final String ENDPOINT_ID =
-      System.getenv("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
+  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String MODEL_ID = "00000000000000000";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -51,8 +49,6 @@ public class PredictTabularClassificationSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("PREDICT_TABLES_CLASSIFCATION_ENDPOINT_ID");
   }
 
   @Before
@@ -70,12 +66,23 @@ public class PredictTabularClassificationSampleTest {
   }
 
   @Test
-  public void testPredictTabularClassification() throws IOException {
-    // Act
-    PredictTabularClassificationSample.predictTabularClassification(INSTANCE, PROJECT, ENDPOINT_ID);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Predict Tabular Classification Response");
+  public void testDeployModelSample()
+      throws TimeoutException {
+    // As model deployment can take a long time, instead try to deploy a
+    // nonexistent model and confirm that the model was not found, but other
+    // elements of the request were valid.
+    String deployedModelDisplayName =
+        String.format(
+            "temp_deploy_model_test_%s",
+            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+    try {
+      DeployModelSample.deployModelSample(PROJECT_ID, deployedModelDisplayName,
+          "4366591682456584192", MODEL_ID);
+      // Assert
+      String got = bout.toString();
+      assertThat(got).contains("is not found.");
+    } catch (StatusRuntimeException | ExecutionException | InterruptedException | IOException e) {
+      assertThat(e.getMessage()).contains("is not found.");
+    }
   }
 }
