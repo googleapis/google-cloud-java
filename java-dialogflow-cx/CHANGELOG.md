@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.2.0...v0.3.0) (2020-11-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove empty proto classes GcsProto and InteractiveVoiceResponseProto (#69)
+
+### Bug Fixes
+
+* remove empty proto classes GcsProto and InteractiveVoiceResponseProto ([#69](https://www.github.com/googleapis/java-dialogflow-cx/issues/69)) ([b62ff2d](https://www.github.com/googleapis/java-dialogflow-cx/commit/b62ff2d17c505f2846f83928e7b359d8d9617712))
+
 ## [0.2.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.1.2...v0.2.0) (2020-10-31)
 
 
