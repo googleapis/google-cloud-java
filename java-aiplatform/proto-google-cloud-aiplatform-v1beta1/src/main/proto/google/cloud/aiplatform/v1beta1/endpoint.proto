@@ -141,7 +141,7 @@ message DeployedModel {
   // If true, the container of the DeployedModel instances will send `stderr`
   // and `stdout` streams to Stackdriver Logging.
   //
-  // Only supported for custom-trained Models and AutoML Tabular Models.
+  // Only supported for custom-trained Models and AutoML Tables Models.
   bool enable_container_logging = 12;
 
   // These logs are like standard server access logs, containing
