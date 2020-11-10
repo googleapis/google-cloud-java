@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.5](https://www.github.com/googleapis/java-recommender/compare/v1.2.4...v1.2.5) (2020-11-10)
+
+
+### Bug Fixes
+
+* updating the v1 retry params name for ListInsights, GetInsight, and MarkInsightAccepted. ([#319](https://www.github.com/googleapis/java-recommender/issues/319)) ([1ed2edd](https://www.github.com/googleapis/java-recommender/commit/1ed2edd35ed61d7ab214a8352b3d71b2f3e077a9))
+
 ### [1.2.4](https://www.github.com/googleapis/java-recommender/compare/v1.2.3...v1.2.4) (2020-11-04)
 
 
