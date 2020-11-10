@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerydatatransfer.git",
-        "sha": "9e291a298562ff41c8b1cf2821ade49956abc8c8"
+        "sha": "bb93f6fe33879286cc5a906773c94cb97f60f2ae"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "1f1148d3c7a7a52f0c98077f976bd9b3c948ee2b"
+        "sha": "7db8a6c5ffb12a6e4c2f799c18f00f7f3d60e279"
       }
     }
   ]
