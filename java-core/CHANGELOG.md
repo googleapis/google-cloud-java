@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.94.0](https://www.github.com/googleapis/java-core/compare/v1.93.10...v1.94.0) (2020-11-10)
+
+
+### Features
+
+* **test:** add new MultipleAttemptRule, StdOutCaptureRule & StdErrCaptureRule JUnit 4 rules ([#327](https://www.github.com/googleapis/java-core/issues/327)) ([60f4a66](https://www.github.com/googleapis/java-core/commit/60f4a66ad907f4a838536e405326869487468f35))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.0.1 ([#323](https://www.github.com/googleapis/java-core/issues/323)) ([4b989e8](https://www.github.com/googleapis/java-core/commit/4b989e802f773794babd2403253c81d528c6f661))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.0.3 ([#324](https://www.github.com/googleapis/java-core/issues/324)) ([a40c71a](https://www.github.com/googleapis/java-core/commit/a40c71ab678c3ec267d43b5cb434b7cb302d1b7e))
+* update dependency com.google.http-client:google-http-client-bom to v1.38.0 ([#325](https://www.github.com/googleapis/java-core/issues/325)) ([48f1da7](https://www.github.com/googleapis/java-core/commit/48f1da709dbfbcffd8faad1f2342c85475ec4e93))
+* update dependency io.grpc:grpc-bom to v1.33.1 ([#319](https://www.github.com/googleapis/java-core/issues/319)) ([8a788a6](https://www.github.com/googleapis/java-core/commit/8a788a606c8a397121a4177e1004ddf582e112ae))
+
 ### [1.93.10](https://www.github.com/googleapis/java-core/compare/v1.93.9...v1.93.10) (2020-10-30)
 
 
