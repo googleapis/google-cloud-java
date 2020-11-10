@@ -28,9 +28,18 @@ echo "https://${GITHUB_TOKEN}:@github.com" >> ~/.git-credentials
 git config --global credential.helper 'store --file ~/.git-credentials'
 
 python3.6 -m pip install git+https://github.com/googleapis/synthtool.git#egg=gcp-synthtool
+
+set +e
 python3.6 -m autosynth.synth \
     --repository=googleapis/java-bigtable \
     --synth-file-name=.github/readme/synth.py \
     --metadata-path=.github/readme/synth.metadata \
     --pr-title="chore: regenerate README" \
     --branch-suffix="readme"
+
+# autosynth returns 28 to signal there are no changes
+RETURN_CODE=$?
+if [[ ${RETURN_CODE} -ne 0 && ${RETURN_CODE} -ne 28 ]]
+then
+    exit ${RETURN_CODE}
+fi
