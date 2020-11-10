@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.124.3](https://www.github.com/googleapis/java-bigquery/compare/v1.124.2...v1.124.3) (2020-11-10)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20201030-1.30.10 ([#917](https://www.github.com/googleapis/java-bigquery/issues/917)) ([3d55b36](https://www.github.com/googleapis/java-bigquery/commit/3d55b365d3b737290b4e9b2c11e69ae67711a1d3))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.17.1 ([#906](https://www.github.com/googleapis/java-bigquery/issues/906)) ([07a8e28](https://www.github.com/googleapis/java-bigquery/commit/07a8e2812ed4d1b6bde2fba55462f8df5c7993ef))
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.31.2 ([#912](https://www.github.com/googleapis/java-bigquery/issues/912)) ([fd584e3](https://www.github.com/googleapis/java-bigquery/commit/fd584e3f84b1d726850e098ad509cab1e6735191))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.31.2 ([#913](https://www.github.com/googleapis/java-bigquery/issues/913)) ([1ca3e90](https://www.github.com/googleapis/java-bigquery/commit/1ca3e9022354f2f5c96df004208979eabace90df))
+
 ### [1.124.2](https://www.github.com/googleapis/java-bigquery/compare/v1.124.1...v1.124.2) (2020-10-31)
 
 
