@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.17.2](https://www.github.com/googleapis/java-bigtable/compare/v1.17.1...v1.17.2) (2020-11-10)
+
+
+### Bug Fixes
+
+* readRowSettings use manual readRows settings instead of gapics ([#494](https://www.github.com/googleapis/java-bigtable/issues/494)) ([0ef7c5d](https://www.github.com/googleapis/java-bigtable/commit/0ef7c5d4aacacd2030a52efc148ead457719a927))
+
+
+### Reverts
+
+* Revert "feat: attemp DirectPath by default (#467)" (#520) ([b33b0fc](https://www.github.com/googleapis/java-bigtable/commit/b33b0fc1b5478934298db317c1168c1e9dc20599)), closes [#467](https://www.github.com/googleapis/java-bigtable/issues/467) [#520](https://www.github.com/googleapis/java-bigtable/issues/520)
+
 ### [1.17.1](https://www.github.com/googleapis/java-bigtable/compare/v1.17.0...v1.17.1) (2020-10-31)
 
 
