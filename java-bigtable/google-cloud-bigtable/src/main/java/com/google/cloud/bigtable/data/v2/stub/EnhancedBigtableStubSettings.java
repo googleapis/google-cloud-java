@@ -546,8 +546,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readRowSettings
           .setRetryableCodes(readRowsSettings.getRetryableCodes())
           .setRetrySettings(
-              baseDefaults
-                  .readRowsSettings()
+              readRowsSettings()
                   .getRetrySettings()
                   .toBuilder()
                   .setTotalTimeout(IDEMPOTENT_RETRY_SETTINGS.getTotalTimeout())
