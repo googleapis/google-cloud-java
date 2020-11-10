@@ -73,6 +73,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final MessageDispatcher messageDispatcher;
 
   private final FlowControlSettings flowControlSettings;
+  private final boolean useLegacyFlowControl;
 
   private final AtomicLong channelReconnectBackoffMillis =
       new AtomicLong(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
@@ -98,6 +99,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       SubscriberStub stub,
       int channelAffinity,
       FlowControlSettings flowControlSettings,
+      boolean useLegacyFlowControl,
       FlowController flowController,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
@@ -119,6 +121,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             systemExecutor,
             clock);
     this.flowControlSettings = flowControlSettings;
+    this.useLegacyFlowControl = useLegacyFlowControl;
   }
 
   @Override
@@ -217,9 +220,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             .setStreamAckDeadlineSeconds(60)
             .setClientId(clientId)
             .setMaxOutstandingMessages(
-                valueOrZero(flowControlSettings.getMaxOutstandingElementCount()))
+                this.useLegacyFlowControl
+                    ? 0
+                    : valueOrZero(flowControlSettings.getMaxOutstandingElementCount()))
             .setMaxOutstandingBytes(
-                valueOrZero(flowControlSettings.getMaxOutstandingRequestBytes()))
+                this.useLegacyFlowControl
+                    ? 0
+                    : valueOrZero(flowControlSettings.getMaxOutstandingRequestBytes()))
             .build());
 
     /**

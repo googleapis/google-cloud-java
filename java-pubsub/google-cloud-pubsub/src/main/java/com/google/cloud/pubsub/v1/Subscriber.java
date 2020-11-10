@@ -103,6 +103,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
+  private final boolean useLegacyFlowControl;
   private final Duration maxAckExtensionPeriod;
   private final Duration maxDurationPerAckExtension;
   // The ExecutorProvider used to generate executors for processing messages.
@@ -126,6 +127,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
+    useLegacyFlowControl = builder.useLegacyFlowControl;
     subscriptionName = builder.subscriptionName;
 
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
@@ -336,6 +338,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 subStub,
                 i,
                 flowControlSettings,
+                useLegacyFlowControl,
                 flowController,
                 executor,
                 alarmsExecutor,
@@ -420,6 +423,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
     private Duration maxDurationPerAckExtension = Duration.ofMillis(0);
 
+    private boolean useLegacyFlowControl = false;
     private FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder()
             .setMaxOutstandingElementCount(1000L)
@@ -501,6 +505,15 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
+      return this;
+    }
+
+    /**
+     * Disables enforcing flow control settings at the Cloud PubSub server and uses the less
+     * accurate method of only enforcing flow control at the client side.
+     */
+    public Builder setUseLegacyFlowControl(boolean value) {
+      this.useLegacyFlowControl = value;
       return this;
     }
 
