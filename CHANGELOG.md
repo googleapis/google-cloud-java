@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.118.5](https://www.github.com/googleapis/java-logging-logback/compare/v0.118.4...v0.118.5) (2020-11-10)
+
+
+### Documentation
+
+* update README.md ([#174](https://www.github.com/googleapis/java-logging-logback/issues/174)) ([7c70aa6](https://www.github.com/googleapis/java-logging-logback/commit/7c70aa6fb6d9a7e7bb1d7e725cc6ba0067ac1be8))
+
 ### [0.118.4](https://www.github.com/googleapis/java-logging-logback/compare/v0.118.3...v0.118.4) (2020-11-02)
 
 
