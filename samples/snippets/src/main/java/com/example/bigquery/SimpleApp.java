@@ -39,12 +39,10 @@ public class SimpleApp {
     // [START bigquery_simple_app_query]
     QueryJobConfiguration queryConfig =
         QueryJobConfiguration.newBuilder(
-                "SELECT "
-                    + "CONCAT('https://stackoverflow.com/questions/', CAST(id as STRING)) as url, "
-                    + "view_count "
-                    + "FROM `bigquery-public-data.stackoverflow.posts_questions` "
-                    + "WHERE tags like '%google-bigquery%' "
-                    + "ORDER BY favorite_count DESC LIMIT 10")
+                "SELECT commit, author, repo_name "
+                    + "FROM `bigquery-public-data.github_repos.commits` "
+                    + "WHERE subject like '%bigquery%' "
+                    + "ORDER BY subject DESC LIMIT 10")
             // Use standard SQL syntax for queries.
             // See: https://cloud.google.com/bigquery/sql-reference/
             .setUseLegacySql(false)
@@ -73,9 +71,16 @@ public class SimpleApp {
 
     // Print all pages of the results.
     for (FieldValueList row : result.iterateAll()) {
-      String url = row.get("url").getStringValue();
-      long viewCount = row.get("view_count").getLongValue();
-      System.out.printf("url: %s views: %d%n", url, viewCount);
+      // String type
+      String commit = row.get("commit").getStringValue();
+      // Record type
+      FieldValueList author = row.get("author").getRecordValue();
+      String name = author.get("name").getStringValue();
+      String email = author.get("email").getStringValue();
+      // String Repeated type
+      String repoName = row.get("repo_name").getRecordValue().get(0).getStringValue();
+      System.out.printf(
+          "Repo name: %s Author name: %s email: %s commit: %s\n", repoName, name, email, commit);
     }
     // [END bigquery_simple_app_print]
   }

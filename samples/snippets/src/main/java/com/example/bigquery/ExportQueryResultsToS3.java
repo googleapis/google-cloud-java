@@ -44,7 +44,7 @@ public class ExportQueryResultsToS3 {
     String query =
         String.format(
             "EXPORT DATA WITH CONNECTION `%s` OPTIONS(uri='%s', format='%s') "
-              + "AS SELECT * FROM %s.%s.%s WHERE name LIKE 'W%%'",
+                + "AS SELECT * FROM %s.%s.%s WHERE name LIKE 'W%%'",
             connectionName, destinationUri, format, projectId, datasetName, externalTableName);
     exportQueryResultsToS3(query);
   }
