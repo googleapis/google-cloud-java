@@ -154,7 +154,7 @@ public class LoggingImplTest {
   private static final String NEXT_CURSOR = "nextCursor";
   private static final Boolean DISABLED = Boolean.FALSE;
   private static final Timestamp EXCLUSION_CREATED_TIME = fromMillis(System.currentTimeMillis());
-  private static final Timestamp EXCLUSION_UPDATED_TIME = fromMillis(System.currentTimeMillis());;
+  private static final Timestamp EXCLUSION_UPDATED_TIME = fromMillis(System.currentTimeMillis());
   private static final Exclusion EXCLUSION =
       Exclusion.newBuilder(EXCLUSION_NAME, EXCLUSION_FILTER)
           .setDisabled(DISABLED)
@@ -185,6 +185,18 @@ public class LoggingImplTest {
             .setServiceRpcFactory(rpcFactoryMock)
             .setRetrySettings(ServiceOptions.getNoRetrySettings())
             .build();
+
+    // By default when calling ListLogEntries, we append a filter of last 24 hours.
+    // However when testing, the time when it was called by the test and by the method
+    // implementation might differ by microseconds so we use the same time filter implementation
+    // for test and in "real" method
+    LoggingImpl.defaultTimestampFilterCreator =
+        new ITimestampDefaultFilter() {
+          @Override
+          public String createDefaultTimestampFilter() {
+            return "timestamp>=\"2020-10-30T15:39:09Z\"";
+          }
+        };
   }
 
   @After
@@ -1585,7 +1597,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteLogAync() throws ExecutionException, InterruptedException {
+  public void testDeleteLogAsync() throws ExecutionException, InterruptedException {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
@@ -1621,7 +1633,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testWriteLogEntriesDoesnotEnableFlushByDefault() {
+  public void testWriteLogEntriesDoesNotEnableFlushByDefault() {
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .addAllEntries(
@@ -1679,7 +1691,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testWriteLogEntriesAsync() throws ExecutionException, InterruptedException {
+  public void testWriteLogEntriesAsync() {
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .addAllEntries(
@@ -1723,8 +1735,7 @@ public class LoggingImplTest {
     String cursor = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
-    ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1732,7 +1743,8 @@ public class LoggingImplTest {
             .addAllEntries(Lists.transform(entriesList, LogEntry.toPbFunction(PROJECT)))
             .build();
     ApiFuture<ListLogEntriesResponse> futureResponse = ApiFutures.immediateFuture(response);
-    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.expect(loggingRpcMock.list(EasyMock.anyObject(ListLogEntriesRequest.class)))
+        .andReturn(futureResponse);
     EasyMock.replay(loggingRpcMock);
     Page<LogEntry> page = logging.listLogEntries();
     assertEquals(cursor, page.getNextPageToken());
@@ -1744,11 +1756,18 @@ public class LoggingImplTest {
     String cursor1 = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
+
+    String defaultTimeFilter =
+        LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter();
     ListLogEntriesRequest request1 =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+        ListLogEntriesRequest.newBuilder()
+            .addResourceNames(PROJECT_PB)
+            .setFilter(defaultTimeFilter)
+            .build();
     ListLogEntriesRequest request2 =
         ListLogEntriesRequest.newBuilder()
             .addResourceNames(PROJECT_PB)
+            .setFilter(defaultTimeFilter)
             .setPageToken(cursor1)
             .build();
     List<LogEntry> descriptorList1 = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
@@ -1785,7 +1804,11 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+        ListLogEntriesRequest.newBuilder()
+            .addResourceNames(PROJECT_PB)
+            .setFilter(LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter())
+            .build();
+
     List<LogEntry> entriesList = ImmutableList.of();
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1809,7 +1832,10 @@ public class LoggingImplTest {
         ListLogEntriesRequest.newBuilder()
             .addResourceNames(PROJECT_PB)
             .setOrderBy("timestamp desc")
-            .setFilter("logName:syslog")
+            .setFilter(
+                String.format(
+                    "logName:syslog AND %s",
+                    LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter()))
             .build();
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
@@ -1834,7 +1860,10 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+        ListLogEntriesRequest.newBuilder()
+            .addResourceNames(PROJECT_PB)
+            .setFilter(LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter())
+            .build();
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1855,10 +1884,14 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request1 =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+        ListLogEntriesRequest.newBuilder()
+            .addResourceNames(PROJECT_PB)
+            .setFilter(LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter())
+            .build();
     ListLogEntriesRequest request2 =
         ListLogEntriesRequest.newBuilder()
             .addResourceNames(PROJECT_PB)
+            .setFilter(LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter())
             .setPageToken(cursor1)
             .build();
     List<LogEntry> descriptorList1 = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
@@ -1890,12 +1923,15 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testListLogEntriesAyncEmpty() throws ExecutionException, InterruptedException {
+  public void testListLogEntriesAsyncEmpty() throws ExecutionException, InterruptedException {
     String cursor = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
     ListLogEntriesRequest request =
-        ListLogEntriesRequest.newBuilder().addResourceNames(PROJECT_PB).build();
+        ListLogEntriesRequest.newBuilder()
+            .addResourceNames(PROJECT_PB)
+            .setFilter(LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter())
+            .build();
     List<LogEntry> entriesList = ImmutableList.of();
     ListLogEntriesResponse response =
         ListLogEntriesResponse.newBuilder()
@@ -1915,11 +1951,15 @@ public class LoggingImplTest {
     String cursor = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.getService();
+    String filter =
+        String.format(
+            "logName:syslog AND %s",
+            LoggingImpl.defaultTimestampFilterCreator.createDefaultTimestampFilter());
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
             .addResourceNames(PROJECT_PB)
             .setOrderBy("timestamp desc")
-            .setFilter("logName:syslog")
+            .setFilter(filter)
             .build();
     List<LogEntry> entriesList = ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2);
     ListLogEntriesResponse response =
@@ -1933,7 +1973,7 @@ public class LoggingImplTest {
     AsyncPage<LogEntry> page =
         logging
             .listLogEntriesAsync(
-                EntryListOption.filter("logName:syslog"),
+                EntryListOption.filter(filter),
                 EntryListOption.sortOrder(SortingField.TIMESTAMP, Logging.SortingOrder.DESCENDING))
             .get();
     assertEquals(cursor, page.getNextPageToken());
@@ -2011,8 +2051,8 @@ public class LoggingImplTest {
           };
       threads[i].start();
     }
-    for (int i = 0; i < threads.length; i++) {
-      threads[i].join();
+    for (Thread thread : threads) {
+      thread.join();
     }
     assertSame(0, exceptions.get());
   }

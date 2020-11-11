@@ -77,9 +77,7 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -110,6 +108,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         }
       };
   private static final ThreadLocal<Boolean> inWriteCall = new ThreadLocal<>();
+
+  @VisibleForTesting
+  static ITimestampDefaultFilter defaultTimestampFilterCreator = new TimestampDefaultFilter();
 
   LoggingImpl(LoggingOptions options) {
     super(options);
@@ -705,8 +706,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   public void flush() {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
-    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>();
-    writesToFlush.addAll(pendingWrites.values());
+    ArrayList<ApiFuture<Void>> writesToFlush = new ArrayList<>(pendingWrites.values());
 
     try {
       ApiFutures.allAsList(writesToFlush).get(FLUSH_WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
@@ -779,9 +779,21 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       builder.setOrderBy(orderBy);
     }
     String filter = FILTER.get(options);
+    // Make sure timestamp filter is either explicitly specified or we add a default time filter
+    // of 24 hours back to be inline with gcloud behavior for the same API
     if (filter != null) {
+      if (!filter.toLowerCase().contains("timestamp")) {
+        filter =
+            String.format(
+                "%s AND %s", filter, defaultTimestampFilterCreator.createDefaultTimestampFilter());
+      }
       builder.setFilter(filter);
+    } else {
+      // If filter is not specified, default filter is looking back 24 hours in line with gcloud
+      // behavior
+      builder.setFilter(defaultTimestampFilterCreator.createDefaultTimestampFilter());
     }
+
     return builder.build();
   }
 
@@ -794,16 +806,16 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         list,
         new Function<ListLogEntriesResponse, AsyncPage<LogEntry>>() {
           @Override
-          public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntrysResponse) {
+          public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntriesResponse) {
             List<LogEntry> entries =
-                listLogEntrysResponse.getEntriesList() == null
+                listLogEntriesResponse.getEntriesList() == null
                     ? ImmutableList.<LogEntry>of()
                     : Lists.transform(
-                        listLogEntrysResponse.getEntriesList(), LogEntry.FROM_PB_FUNCTION);
+                        listLogEntriesResponse.getEntriesList(), LogEntry.FROM_PB_FUNCTION);
             String cursor =
-                listLogEntrysResponse.getNextPageToken().equals("")
+                listLogEntriesResponse.getNextPageToken().equals("")
                     ? null
-                    : listLogEntrysResponse.getNextPageToken();
+                    : listLogEntriesResponse.getNextPageToken();
             return new AsyncPageImpl<>(
                 new LogEntryPageFetcher(serviceOptions, cursor, options), cursor, entries);
           }
