@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/googleapis/java-logging/compare/v1.101.2...v2.0.0) (2020-11-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* previously if the user called listLogEntries API with no parameters, the query would try to retrieve all log entries, taking up time and eventually crashing on projects with high volume logs. The new behavior complies with gcloud: if no timestamp filter was specified, it appends a filter covering last 24 hours.
+* remove Start/EndTime from LogSink, Metadata from LogEntry, implement multipattern resource names (#174)
+
+### Features
+
+* add logging bucket destination for log sinks ([#226](https://www.github.com/googleapis/java-logging/issues/226)) ([ef97aae](https://www.github.com/googleapis/java-logging/commit/ef97aae71c550c4501b231c32d6d58746af4d130))
+* expose log exclusion apis ([#162](https://www.github.com/googleapis/java-logging/issues/162)) ([0038828](https://www.github.com/googleapis/java-logging/commit/00388289e2dc379b65d790d3af1fc3520b6843e9))
+* remove Start/EndTime from LogSink, Metadata from LogEntry, implement multipattern resource names ([#174](https://www.github.com/googleapis/java-logging/issues/174)) ([d3d2370](https://www.github.com/googleapis/java-logging/commit/d3d2370a5b2ffcf012faba0a1b893a2321d58ba0))
+* update retry settings ([#201](https://www.github.com/googleapis/java-logging/issues/201)) ([6b9d382](https://www.github.com/googleapis/java-logging/commit/6b9d3824a1dde94ac6c4b05627737d8605340f1f))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#191](https://www.github.com/googleapis/java-logging/issues/191)) ([e1ece40](https://www.github.com/googleapis/java-logging/commit/e1ece4063dc1f022b043ed3209cfcae3f8323c71))
+
+
+### Bug Fixes
+
+* add default time range filter for ListLogEntries API ([#304](https://www.github.com/googleapis/java-logging/issues/304)) ([c2f40df](https://www.github.com/googleapis/java-logging/commit/c2f40df6ed815e2229e0381a993e7e94e2e651fc))
+* make TransportChannel autocloseable ([#212](https://www.github.com/googleapis/java-logging/issues/212)) ([e4853b1](https://www.github.com/googleapis/java-logging/commit/e4853b180193f8e5a5c1151917a74745b5dd4427))
+* remove usage of deprecated newInstance() method ([#203](https://www.github.com/googleapis/java-logging/issues/203)) ([039d9ba](https://www.github.com/googleapis/java-logging/commit/039d9ba17fff6f9851091166eeba1e7c8d0cd4bc))
+
+
+### Dependencies
+
+* update core dependencies ([#170](https://www.github.com/googleapis/java-logging/issues/170)) ([5ab9181](https://www.github.com/googleapis/java-logging/commit/5ab9181dd0774a631cd6997cb9d15bff1b83592f))
+* update dependency com.google.api:api-common to v1.9.2 ([#169](https://www.github.com/googleapis/java-logging/issues/169)) ([288a894](https://www.github.com/googleapis/java-logging/commit/288a894f3ec0bda774b1fbc6c81690a92c387757))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.0 ([#254](https://www.github.com/googleapis/java-logging/issues/254)) ([d63b4b4](https://www.github.com/googleapis/java-logging/commit/d63b4b4198235af54ed84d153be8229469690afa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.10.2 ([#273](https://www.github.com/googleapis/java-logging/issues/273)) ([870d7d7](https://www.github.com/googleapis/java-logging/commit/870d7d72a8938472354008fc9ea11bc36b5789ad))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#289](https://www.github.com/googleapis/java-logging/issues/289)) ([1488370](https://www.github.com/googleapis/java-logging/commit/148837000588892f8c92a9d9354a3c30f0b0faad))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#310](https://www.github.com/googleapis/java-logging/issues/310)) ([cc4b57f](https://www.github.com/googleapis/java-logging/commit/cc4b57f2e50df23bd85045fbd4b00462eb77969a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#320](https://www.github.com/googleapis/java-logging/issues/320)) ([e97dda7](https://www.github.com/googleapis/java-logging/commit/e97dda77029ed7cde83b4499e417468adc34ef58))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.6 ([#200](https://www.github.com/googleapis/java-logging/issues/200)) ([a4f19e8](https://www.github.com/googleapis/java-logging/commit/a4f19e8afa78ced9de5b2d2f96231373493e4ca8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.9.0 ([#224](https://www.github.com/googleapis/java-logging/issues/224)) ([506738c](https://www.github.com/googleapis/java-logging/commit/506738c61b1415edff0cec9970e2f7905b661059))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#168](https://www.github.com/googleapis/java-logging/issues/168)) ([2732f81](https://www.github.com/googleapis/java-logging/commit/2732f81d932410bc3e39d4add76bac542325a575))
+
 ### [1.101.2](https://www.github.com/googleapis/java-logging/compare/v1.101.1...v1.101.2) (2020-06-10)
 
 
