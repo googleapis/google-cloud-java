@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.29.8](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.7...v0.29.8) (2020-11-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#285](https://www.github.com/googleapis/java-phishingprotection/issues/285)) ([2ab989c](https://www.github.com/googleapis/java-phishingprotection/commit/2ab989cefffdbbad0ab3f5e475929119b8eedea0))
+
 ### [0.29.7](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.6...v0.29.7) (2020-11-04)
 
 
