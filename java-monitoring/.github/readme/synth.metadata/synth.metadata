@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "3b402f1789b0658a8359bd32ab3838e387604508"
+        "sha": "707f7dcab62133dfe1c5653265f1baf684fcb078"
       }
     },
     {
