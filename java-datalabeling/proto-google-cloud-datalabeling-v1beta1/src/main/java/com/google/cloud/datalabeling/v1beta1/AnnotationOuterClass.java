@@ -258,10 +258,13 @@ public final class AnnotationOuterClass {
           + "TATION\020\006\022\"\n\036TEXT_CLASSIFICATION_ANNOTATI"
           + "ON\020\010\022%\n!TEXT_ENTITY_EXTRACTION_ANNOTATIO"
           + "N\020\t\022%\n!GENERAL_CLASSIFICATION_ANNOTATION"
-          + "\020\016Bx\n%com.google.cloud.datalabeling.v1be"
-          + "ta1P\001ZMgoogle.golang.org/genproto/google"
-          + "apis/cloud/datalabeling/v1beta1;datalabe"
-          + "lingb\006proto3"
+          + "\020\016B\347\001\n%com.google.cloud.datalabeling.v1b"
+          + "eta1P\001ZMgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/datalabeling/v1beta1;datalab"
+          + "eling\252\002!Google.Cloud.DataLabeling.V1Beta"
+          + "1\312\002!Google\\Cloud\\DataLabeling\\V1beta1\352\002$"
+          + "Google::Cloud::DataLabeling::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

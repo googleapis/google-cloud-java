@@ -135,10 +135,13 @@ public final class HumanAnnotationConfigOuterClass {
           + "ion_spec_set\030\001 \001(\tB\003\340A\002*{\n\025StringAggrega"
           + "tionType\022\'\n#STRING_AGGREGATION_TYPE_UNSP"
           + "ECIFIED\020\000\022\021\n\rMAJORITY_VOTE\020\001\022\022\n\016UNANIMOU"
-          + "S_VOTE\020\002\022\022\n\016NO_AGGREGATION\020\003Bx\n%com.goog"
-          + "le.cloud.datalabeling.v1beta1P\001ZMgoogle."
-          + "golang.org/genproto/googleapis/cloud/dat"
-          + "alabeling/v1beta1;datalabelingb\006proto3"
+          + "S_VOTE\020\002\022\022\n\016NO_AGGREGATION\020\003B\347\001\n%com.goo"
+          + "gle.cloud.datalabeling.v1beta1P\001ZMgoogle"
+          + ".golang.org/genproto/googleapis/cloud/da"
+          + "talabeling/v1beta1;datalabeling\252\002!Google"
+          + ".Cloud.DataLabeling.V1Beta1\312\002!Google\\Clo"
+          + "ud\\DataLabeling\\V1beta1\352\002$Google::Cloud:"
+          + ":DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

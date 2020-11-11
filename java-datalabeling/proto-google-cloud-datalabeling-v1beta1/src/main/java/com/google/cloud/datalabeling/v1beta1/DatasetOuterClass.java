@@ -208,10 +208,13 @@ public final class DatasetOuterClass {
           + "ted_dataset}/examples/{example}B\t\n\007paylo"
           + "ad*W\n\010DataType\022\031\n\025DATA_TYPE_UNSPECIFIED\020"
           + "\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO\020\002\022\010\n\004TEXT\020\004\022\020\n\014GEN"
-          + "ERAL_DATA\020\006Bx\n%com.google.cloud.datalabe"
-          + "ling.v1beta1P\001ZMgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/datalabeling/v1beta1"
-          + ";datalabelingb\006proto3"
+          + "ERAL_DATA\020\006B\347\001\n%com.google.cloud.datalab"
+          + "eling.v1beta1P\001ZMgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/datalabeling/v1beta"
+          + "1;datalabeling\252\002!Google.Cloud.DataLabeli"
+          + "ng.V1Beta1\312\002!Google\\Cloud\\DataLabeling\\V"
+          + "1beta1\352\002$Google::Cloud::DataLabeling::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

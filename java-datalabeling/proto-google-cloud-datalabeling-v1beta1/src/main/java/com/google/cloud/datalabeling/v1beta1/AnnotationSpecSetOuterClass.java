@@ -56,11 +56,13 @@ public final class AnnotationSpecSetOuterClass {
           + "gleapis.com/AnnotationSpecSet\022;projects/"
           + "{project}/annotationSpecSets/{annotation"
           + "_spec_set}\";\n\016AnnotationSpec\022\024\n\014display_"
-          + "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\tBx\n%com.g"
-          + "oogle.cloud.datalabeling.v1beta1P\001ZMgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "datalabeling/v1beta1;datalabelingb\006proto"
-          + "3"
+          + "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\tB\347\001\n%com."
+          + "google.cloud.datalabeling.v1beta1P\001ZMgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/datalabeling/v1beta1;datalabeling\252\002!Goo"
+          + "gle.Cloud.DataLabeling.V1Beta1\312\002!Google\\"
+          + "Cloud\\DataLabeling\\V1beta1\352\002$Google::Clo"
+          + "ud::DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

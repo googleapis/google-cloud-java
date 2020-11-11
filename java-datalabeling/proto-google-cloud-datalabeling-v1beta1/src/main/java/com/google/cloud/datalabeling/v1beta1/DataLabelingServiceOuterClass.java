@@ -598,10 +598,13 @@ public final class DataLabelingServiceOuterClass {
           + "\022+/v1beta1/{parent=projects/*}/evaluatio"
           + "nJobs\332A\rparent,filter\032O\312A\033datalabeling.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformBx\n%com.google.clo"
-          + "ud.datalabeling.v1beta1P\001ZMgoogle.golang"
-          + ".org/genproto/googleapis/cloud/datalabel"
-          + "ing/v1beta1;datalabelingb\006proto3"
+          + "om/auth/cloud-platformB\347\001\n%com.google.cl"
+          + "oud.datalabeling.v1beta1P\001ZMgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/datalabe"
+          + "ling/v1beta1;datalabeling\252\002!Google.Cloud"
+          + ".DataLabeling.V1Beta1\312\002!Google\\Cloud\\Dat"
+          + "aLabeling\\V1beta1\352\002$Google::Cloud::DataL"
+          + "abeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

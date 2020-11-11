@@ -210,10 +210,13 @@ public final class Operations {
           + "fig\"\217\001\n\031CreateInstructionMetadata\022\023\n\013ins"
           + "truction\030\001 \001(\t\022,\n\020partial_failures\030\002 \003(\013"
           + "2\022.google.rpc.Status\022/\n\013create_time\030\003 \001("
-          + "\0132\032.google.protobuf.TimestampBx\n%com.goo"
-          + "gle.cloud.datalabeling.v1beta1P\001ZMgoogle"
-          + ".golang.org/genproto/googleapis/cloud/da"
-          + "talabeling/v1beta1;datalabelingb\006proto3"
+          + "\0132\032.google.protobuf.TimestampB\347\001\n%com.go"
+          + "ogle.cloud.datalabeling.v1beta1P\001ZMgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/d"
+          + "atalabeling/v1beta1;datalabeling\252\002!Googl"
+          + "e.Cloud.DataLabeling.V1Beta1\312\002!Google\\Cl"
+          + "oud\\DataLabeling\\V1beta1\352\002$Google::Cloud"
+          + "::DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
