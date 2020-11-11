@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.5.2](https://www.github.com/googleapis/java-billingbudgets/compare/v0.5.1...v0.5.2) (2020-11-11)
+
+
+### Documentation
+
+* Reworded comments for the new credit types filter ([#311](https://www.github.com/googleapis/java-billingbudgets/issues/311)) ([76298fe](https://www.github.com/googleapis/java-billingbudgets/commit/76298fe6d5e7fdb034d14c1949cd7d9498b7cf3e))
+* Reworded comments for the new credit types filter ([#314](https://www.github.com/googleapis/java-billingbudgets/issues/314)) ([eeef8a7](https://www.github.com/googleapis/java-billingbudgets/commit/eeef8a79665e4e40c52ae282fca25a5b6f1a5fad))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#316](https://www.github.com/googleapis/java-billingbudgets/issues/316)) ([2636f3d](https://www.github.com/googleapis/java-billingbudgets/commit/2636f3d5c72a0c7b93e3e30a868e060b5ead0645))
+
 ### [0.5.1](https://www.github.com/googleapis/java-billingbudgets/compare/v0.5.0...v0.5.1) (2020-10-31)
 
 
