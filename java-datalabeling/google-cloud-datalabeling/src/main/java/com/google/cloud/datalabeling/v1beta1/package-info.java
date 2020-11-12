@@ -21,7 +21,7 @@
  *
  * <p>========================= DataLabelingServiceClient =========================
  *
- * <p>Service Description:
+ * <p>Service Description: Service for the AI Platform Data Labeling API.
  *
  * <p>Sample for DataLabelingServiceClient:
  *

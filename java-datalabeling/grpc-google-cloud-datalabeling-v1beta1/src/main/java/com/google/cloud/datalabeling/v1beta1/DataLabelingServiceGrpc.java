@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for the AI Platform Data Labeling API.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datalabeling/v1beta1/data_labeling_service.proto")
@@ -1697,7 +1703,13 @@ public final class DataLabelingServiceGrpc {
     return DataLabelingServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
   public abstract static class DataLabelingServiceImplBase implements io.grpc.BindableService {
 
     /**
@@ -2416,7 +2428,13 @@ public final class DataLabelingServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
   public static final class DataLabelingServiceStub
       extends io.grpc.stub.AbstractAsyncStub<DataLabelingServiceStub> {
     private DataLabelingServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3004,7 +3022,13 @@ public final class DataLabelingServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
   public static final class DataLabelingServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataLabelingServiceBlockingStub> {
     private DataLabelingServiceBlockingStub(
@@ -3468,7 +3492,13 @@ public final class DataLabelingServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
   public static final class DataLabelingServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataLabelingServiceFutureStub> {
     private DataLabelingServiceFutureStub(

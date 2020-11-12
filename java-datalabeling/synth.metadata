@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datalabeling.git",
-        "sha": "33b2712cbb557a56af9ab65e646a2854a6a0fc4a"
+        "sha": "32e7ec6ec4ada8f266815a77905451d9d956100c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "04514253a93d1cfbc20f39a35786bb5349c1921d",
-        "internalRef": "341139481"
+        "sha": "038351107de08b8f2796ab1fc3be5b84ea0c2d87",
+        "internalRef": "341774308"
       }
     },
     {
