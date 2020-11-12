@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/googleapis/java-logging/compare/v2.0.0...v2.0.1) (2020-11-12)
+
+
+### Dependencies
+
+* update googleapis/code-suggester action to v1.8.1 ([#321](https://www.github.com/googleapis/java-logging/issues/321)) ([cc303c3](https://www.github.com/googleapis/java-logging/commit/cc303c3494cf10dc611ddd1901b2befcf54f32a4))
+
 ## [2.0.0](https://www.github.com/googleapis/java-logging/compare/v1.101.2...v2.0.0) (2020-11-11)
 
 
