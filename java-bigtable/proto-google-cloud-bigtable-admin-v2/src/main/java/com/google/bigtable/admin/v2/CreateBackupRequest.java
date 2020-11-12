@@ -22,8 +22,7 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * The request for
- * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
+ * The request for [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.CreateBackupRequest}
@@ -487,8 +486,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request for
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
+   * The request for [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.CreateBackupRequest}

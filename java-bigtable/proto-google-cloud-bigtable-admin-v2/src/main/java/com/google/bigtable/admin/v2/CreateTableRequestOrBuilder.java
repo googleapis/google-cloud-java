@@ -58,8 +58,8 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the
-   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * Maximum 50 characters.
    * </pre>
    *
@@ -72,8 +72,8 @@ public interface CreateTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the
-   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * Maximum 50 characters.
    * </pre>
    *

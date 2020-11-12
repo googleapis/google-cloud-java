@@ -32,7 +32,9 @@ public interface RestoreTableRequestOrBuilder
    * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -46,7 +48,9 @@ public interface RestoreTableRequestOrBuilder
    * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -62,7 +66,7 @@ public interface RestoreTableRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The tableId.
    */
@@ -77,7 +81,7 @@ public interface RestoreTableRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for tableId.
    */
@@ -87,11 +91,11 @@ public interface RestoreTableRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the backup from which to restore. Values are of the form
+   * Name of the backup from which to restore.  Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
    * </pre>
    *
-   * <code>string backup = 3;</code>
+   * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The backup.
    */
@@ -100,11 +104,11 @@ public interface RestoreTableRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the backup from which to restore. Values are of the form
+   * Name of the backup from which to restore.  Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
    * </pre>
    *
-   * <code>string backup = 3;</code>
+   * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for backup.
    */

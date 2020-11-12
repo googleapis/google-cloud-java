@@ -93,9 +93,9 @@ public interface SnapshotTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID by which the new snapshot should be referred to within the
-   * parent cluster, e.g., `mysnapshot` of the form:
-   * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
+   * Required. The ID by which the new snapshot should be referred to within the parent
+   * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
+   * rather than
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *
@@ -108,9 +108,9 @@ public interface SnapshotTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID by which the new snapshot should be referred to within the
-   * parent cluster, e.g., `mysnapshot` of the form:
-   * `[_a-zA-Z0-9][-_.a-zA-Z0-9]*` rather than
+   * Required. The ID by which the new snapshot should be referred to within the parent
+   * cluster, e.g., `mysnapshot` of the form: `[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
+   * rather than
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/mysnapshot`.
    * </pre>
    *

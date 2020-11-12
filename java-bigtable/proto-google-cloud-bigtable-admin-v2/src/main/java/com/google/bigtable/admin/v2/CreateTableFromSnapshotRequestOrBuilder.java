@@ -58,8 +58,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the
-   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * </pre>
    *
    * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,8 +71,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name by which the new table should be referred to within the
-   * parent instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
+   * Required. The name by which the new table should be referred to within the parent
+   * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
    * </pre>
    *
    * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,9 +85,9 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the snapshot from which to restore the table.
-   * The snapshot and the table must be in the same instance. Values are of the
-   * form
+   * Required. The unique name of the snapshot from which to restore the table. The
+   * snapshot and the table must be in the same instance.
+   * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *
@@ -102,9 +102,9 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the snapshot from which to restore the table.
-   * The snapshot and the table must be in the same instance. Values are of the
-   * form
+   * Required. The unique name of the snapshot from which to restore the table. The
+   * snapshot and the table must be in the same instance.
+   * Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}`.
    * </pre>
    *

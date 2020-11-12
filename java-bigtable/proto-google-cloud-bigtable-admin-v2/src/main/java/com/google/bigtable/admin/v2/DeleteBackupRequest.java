@@ -22,8 +22,7 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * The request for
- * [DeleteBackup][google.bigtable.admin.v2.BigtableTableAdmin.DeleteBackup].
+ * The request for [DeleteBackup][google.bigtable.admin.v2.BigtableTableAdmin.DeleteBackup].
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.DeleteBackupRequest}
@@ -332,8 +331,7 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request for
-   * [DeleteBackup][google.bigtable.admin.v2.BigtableTableAdmin.DeleteBackup].
+   * The request for [DeleteBackup][google.bigtable.admin.v2.BigtableTableAdmin.DeleteBackup].
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.DeleteBackupRequest}

@@ -22,8 +22,7 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * The response for
- * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups].
+ * The response for [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups].
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.ListBackupsResponse}
@@ -204,8 +203,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-   * to fetch more of the matching backups.
+   * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+   * of the matching backups.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -229,8 +228,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-   * to fetch more of the matching backups.
+   * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+   * of the matching backups.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -424,8 +423,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response for
-   * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups].
+   * The response for [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups].
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.ListBackupsResponse}
@@ -980,8 +978,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-     * to fetch more of the matching backups.
+     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+     * of the matching backups.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1004,8 +1002,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-     * to fetch more of the matching backups.
+     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+     * of the matching backups.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,8 +1026,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-     * to fetch more of the matching backups.
+     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+     * of the matching backups.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1051,8 +1049,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-     * to fetch more of the matching backups.
+     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+     * of the matching backups.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1070,8 +1068,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call
-     * to fetch more of the matching backups.
+     * [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups] call to fetch more
+     * of the matching backups.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

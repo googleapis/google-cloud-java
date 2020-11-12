@@ -1725,8 +1725,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   boolean ignoreWarnings = false;
    *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
    *     .setName(name.toString())
+   *     .setIgnoreWarnings(ignoreWarnings)
    *     .build();
    *   baseBigtableInstanceAdminClient.deleteAppProfile(request);
    * }
@@ -1748,8 +1750,10 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient = BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   boolean ignoreWarnings = false;
    *   DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder()
    *     .setName(name.toString())
+   *     .setIgnoreWarnings(ignoreWarnings)
    *     .build();
    *   ApiFuture&lt;Void&gt; future = baseBigtableInstanceAdminClient.deleteAppProfileCallable().futureCall(request);
    *   // Do something

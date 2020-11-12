@@ -182,7 +182,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -207,7 +209,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -236,7 +240,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The tableId.
    */
@@ -262,7 +266,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
    * </pre>
    *
-   * <code>string table_id = 2;</code>
+   * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for tableId.
    */
@@ -284,11 +288,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of the backup from which to restore. Values are of the form
+   * Name of the backup from which to restore.  Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
    * </pre>
    *
-   * <code>string backup = 3;</code>
+   * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The backup.
    */
@@ -312,11 +316,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of the backup from which to restore. Values are of the form
+   * Name of the backup from which to restore.  Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
    * </pre>
    *
-   * <code>string backup = 3;</code>
+   * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for backup.
    */
@@ -736,7 +740,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -760,7 +766,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -784,7 +792,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -807,7 +817,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -826,7 +838,9 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -853,7 +867,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The tableId.
      */
@@ -878,7 +892,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for tableId.
      */
@@ -903,7 +917,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The tableId to set.
      * @return This builder for chaining.
@@ -927,7 +941,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -947,7 +961,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table_id&gt;`.
      * </pre>
      *
-     * <code>string table_id = 2;</code>
+     * <code>string table_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for tableId to set.
      * @return This builder for chaining.
@@ -967,11 +981,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the backup from which to restore. Values are of the form
+     * Name of the backup from which to restore.  Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
      * </pre>
      *
-     * <code>string backup = 3;</code>
+     * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The backup.
      */
@@ -996,11 +1010,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the backup from which to restore. Values are of the form
+     * Name of the backup from which to restore.  Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
      * </pre>
      *
-     * <code>string backup = 3;</code>
+     * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for backup.
      */
@@ -1025,11 +1039,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the backup from which to restore. Values are of the form
+     * Name of the backup from which to restore.  Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
      * </pre>
      *
-     * <code>string backup = 3;</code>
+     * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The backup to set.
      * @return This builder for chaining.
@@ -1047,11 +1061,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the backup from which to restore. Values are of the form
+     * Name of the backup from which to restore.  Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
      * </pre>
      *
-     * <code>string backup = 3;</code>
+     * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1067,11 +1081,11 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of the backup from which to restore. Values are of the form
+     * Name of the backup from which to restore.  Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/clusters/&lt;cluster&gt;/backups/&lt;backup&gt;`.
      * </pre>
      *
-     * <code>string backup = 3;</code>
+     * <code>string backup = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for backup to set.
      * @return This builder for chaining.

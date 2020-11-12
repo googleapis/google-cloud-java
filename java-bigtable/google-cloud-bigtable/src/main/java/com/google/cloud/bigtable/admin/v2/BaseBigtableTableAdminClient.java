@@ -1157,8 +1157,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * but does not have a policy set.
+   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
+   * resource exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1183,8 +1183,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * but does not have a policy set.
+   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
+   * resource exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1206,8 +1206,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * but does not have a policy set.
+   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
+   * resource exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1230,8 +1230,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * but does not have a policy set.
+   * Gets the access control policy for a Table or Backup resource. Returns an empty policy if the
+   * resource exists but does not have a policy set.
    *
    * <p>Sample code:
    *
@@ -1359,7 +1359,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that the caller has on the specified table resource.
+   * Returns permissions that the caller has on the specified Table or Backup resource.
    *
    * <p>Sample code:
    *
@@ -1390,7 +1390,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that the caller has on the specified table resource.
+   * Returns permissions that the caller has on the specified Table or Backup resource.
    *
    * <p>Sample code:
    *
@@ -1421,7 +1421,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that the caller has on the specified table resource.
+   * Returns permissions that the caller has on the specified Table or Backup resource.
    *
    * <p>Sample code:
    *
@@ -1446,7 +1446,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that the caller has on the specified table resource.
+   * Returns permissions that the caller has on the specified Table or Backup resource.
    *
    * <p>Sample code:
    *
@@ -2646,7 +2646,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String tableId = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setTableId(tableId)
+   *     .build();
    *   Table response = baseBigtableTableAdminClient.restoreTableAsync(request).get();
    * }
    * </code></pre>
@@ -2675,7 +2680,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String tableId = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setTableId(tableId)
+   *     .build();
    *   OperationFuture&lt;Table, RestoreTableMetadata&gt; future = baseBigtableTableAdminClient.restoreTableOperationCallable().futureCall(request);
    *   // Do something
    *   Table response = future.get();
@@ -2702,7 +2712,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String tableId = "";
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setTableId(tableId)
+   *     .build();
    *   ApiFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.restoreTableCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();

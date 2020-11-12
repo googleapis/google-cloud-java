@@ -58,10 +58,10 @@ public interface DeleteAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * If true, ignore safety checks when deleting the app profile.
+   * Required. If true, ignore safety checks when deleting the app profile.
    * </pre>
    *
-   * <code>bool ignore_warnings = 2;</code>
+   * <code>bool ignore_warnings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The ignoreWarnings.
    */

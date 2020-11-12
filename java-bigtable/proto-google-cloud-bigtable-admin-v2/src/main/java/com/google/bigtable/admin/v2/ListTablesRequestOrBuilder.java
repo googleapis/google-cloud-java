@@ -27,8 +27,8 @@ public interface ListTablesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be
-   * listed. Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListTablesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be
-   * listed. Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>

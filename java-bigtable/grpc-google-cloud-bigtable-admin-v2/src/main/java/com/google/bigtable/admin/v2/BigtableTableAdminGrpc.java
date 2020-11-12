@@ -1278,14 +1278,14 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * Starts creating a new Cloud Bigtable Backup.  The returned backup
      * [long-running operation][google.longrunning.Operation] can be used to
      * track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
-     * returned operation will stop the creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
      * </pre>
      */
     public void createBackup(
@@ -1353,11 +1353,11 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup. The
+     * must be in the same instance as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
-     * be used to track the progress of the operation, and to cancel it. The
+     * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata].  The
      * [response][google.longrunning.Operation.response] type is
      * [Table][google.bigtable.admin.v2.Table], if successful.
      * </pre>
@@ -1372,7 +1372,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a resource.
+     * Gets the access control policy for a Table or Backup resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -1401,7 +1401,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified table resource.
+     * Returns permissions that the caller has on the specified Table or Backup resource.
      * </pre>
      */
     public void testIamPermissions(
@@ -1827,14 +1827,14 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * Starts creating a new Cloud Bigtable Backup.  The returned backup
      * [long-running operation][google.longrunning.Operation] can be used to
      * track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
-     * returned operation will stop the creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
      * </pre>
      */
     public void createBackup(
@@ -1915,11 +1915,11 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup. The
+     * must be in the same instance as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
-     * be used to track the progress of the operation, and to cancel it. The
+     * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata].  The
      * [response][google.longrunning.Operation.response] type is
      * [Table][google.bigtable.admin.v2.Table], if successful.
      * </pre>
@@ -1937,7 +1937,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a resource.
+     * Gets the access control policy for a Table or Backup resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -1972,7 +1972,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified table resource.
+     * Returns permissions that the caller has on the specified Table or Backup resource.
      * </pre>
      */
     public void testIamPermissions(
@@ -2211,14 +2211,14 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * Starts creating a new Cloud Bigtable Backup.  The returned backup
      * [long-running operation][google.longrunning.Operation] can be used to
      * track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
-     * returned operation will stop the creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
@@ -2280,11 +2280,11 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup. The
+     * must be in the same instance as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
-     * be used to track the progress of the operation, and to cancel it. The
+     * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata].  The
      * [response][google.longrunning.Operation.response] type is
      * [Table][google.bigtable.admin.v2.Table], if successful.
      * </pre>
@@ -2298,7 +2298,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a resource.
+     * Gets the access control policy for a Table or Backup resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -2323,7 +2323,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified table resource.
+     * Returns permissions that the caller has on the specified Table or Backup resource.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -2571,14 +2571,14 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Starts creating a new Cloud Bigtable Backup. The returned backup
+     * Starts creating a new Cloud Bigtable Backup.  The returned backup
      * [long-running operation][google.longrunning.Operation] can be used to
      * track creation of the backup. The
      * [metadata][google.longrunning.Operation.metadata] field type is
      * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
      * [response][google.longrunning.Operation.response] field type is
-     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
-     * returned operation will stop the creation and delete the backup.
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
+     * creation and delete the backup.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2645,11 +2645,11 @@ public final class BigtableTableAdminGrpc {
      *
      * <pre>
      * Create a new table by restoring from a completed backup. The new table
-     * must be in the same instance as the instance containing the backup. The
+     * must be in the same instance as the instance containing the backup.  The
      * returned table [long-running operation][google.longrunning.Operation] can
-     * be used to track the progress of the operation, and to cancel it. The
+     * be used to track the progress of the operation, and to cancel it.  The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata]. The
+     * [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata].  The
      * [response][google.longrunning.Operation.response] type is
      * [Table][google.bigtable.admin.v2.Table], if successful.
      * </pre>
@@ -2664,7 +2664,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a resource.
+     * Gets the access control policy for a Table or Backup resource.
      * Returns an empty policy if the resource exists but does not have a policy
      * set.
      * </pre>
@@ -2693,7 +2693,7 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
-     * Returns permissions that the caller has on the specified table resource.
+     * Returns permissions that the caller has on the specified Table or Backup resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

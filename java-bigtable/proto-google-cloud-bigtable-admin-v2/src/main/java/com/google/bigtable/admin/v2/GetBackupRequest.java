@@ -22,8 +22,7 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * The request for
- * [GetBackup][google.bigtable.admin.v2.BigtableTableAdmin.GetBackup].
+ * The request for [GetBackup][google.bigtable.admin.v2.BigtableTableAdmin.GetBackup].
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.GetBackupRequest}
@@ -332,8 +331,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request for
-   * [GetBackup][google.bigtable.admin.v2.BigtableTableAdmin.GetBackup].
+   * The request for [GetBackup][google.bigtable.admin.v2.BigtableTableAdmin.GetBackup].
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.GetBackupRequest}

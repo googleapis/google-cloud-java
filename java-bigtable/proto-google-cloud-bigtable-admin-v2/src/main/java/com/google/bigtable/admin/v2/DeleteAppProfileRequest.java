@@ -177,10 +177,10 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If true, ignore safety checks when deleting the app profile.
+   * Required. If true, ignore safety checks when deleting the app profile.
    * </pre>
    *
-   * <code>bool ignore_warnings = 2;</code>
+   * <code>bool ignore_warnings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The ignoreWarnings.
    */
@@ -648,10 +648,10 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If true, ignore safety checks when deleting the app profile.
+     * Required. If true, ignore safety checks when deleting the app profile.
      * </pre>
      *
-     * <code>bool ignore_warnings = 2;</code>
+     * <code>bool ignore_warnings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The ignoreWarnings.
      */
@@ -663,10 +663,10 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If true, ignore safety checks when deleting the app profile.
+     * Required. If true, ignore safety checks when deleting the app profile.
      * </pre>
      *
-     * <code>bool ignore_warnings = 2;</code>
+     * <code>bool ignore_warnings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The ignoreWarnings to set.
      * @return This builder for chaining.
@@ -681,10 +681,10 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If true, ignore safety checks when deleting the app profile.
+     * Required. If true, ignore safety checks when deleting the app profile.
      * </pre>
      *
-     * <code>bool ignore_warnings = 2;</code>
+     * <code>bool ignore_warnings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

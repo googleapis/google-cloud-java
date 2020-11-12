@@ -139,8 +139,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be
-   * listed. Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -165,8 +165,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the instance for which tables should be
-   * listed. Values are of the form `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance for which tables should be listed.
+   * Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -667,8 +667,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be
-     * listed. Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be listed.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -692,8 +692,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be
-     * listed. Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be listed.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -717,8 +717,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be
-     * listed. Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be listed.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -741,8 +741,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be
-     * listed. Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be listed.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>
@@ -761,8 +761,8 @@ public final class ListTablesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the instance for which tables should be
-     * listed. Values are of the form `projects/{project}/instances/{instance}`.
+     * Required. The unique name of the instance for which tables should be listed.
+     * Values are of the form `projects/{project}/instances/{instance}`.
      * </pre>
      *
      * <code>

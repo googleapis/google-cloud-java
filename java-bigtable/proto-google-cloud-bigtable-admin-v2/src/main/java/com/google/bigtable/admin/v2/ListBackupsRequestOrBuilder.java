@@ -27,7 +27,7 @@ public interface ListBackupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster to list backups from. Values are of the
+   * Required. The cluster to list backups from.  Values are of the
    * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * Use `{cluster} = '-'` to list backups for all clusters in an instance,
    * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -44,7 +44,7 @@ public interface ListBackupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The cluster to list backups from. Values are of the
+   * Required. The cluster to list backups from.  Values are of the
    * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * Use `{cluster} = '-'` to list backups for all clusters in an instance,
    * e.g., `projects/{project}/instances/{instance}/clusters/-`.
@@ -66,7 +66,7 @@ public interface ListBackupsRequestOrBuilder
    * The expression must specify the field name, a comparison operator,
    * and the value that you want to use for filtering. The value must be a
    * string, a number, or a boolean. The comparison operator must be
-   * &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+   * &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ':' represents a HAS operator which is
    * roughly synonymous with equality. Filter rules are case insensitive.
    * The fields eligible for filtering are:
    *   * `name`
@@ -105,7 +105,7 @@ public interface ListBackupsRequestOrBuilder
    * The expression must specify the field name, a comparison operator,
    * and the value that you want to use for filtering. The value must be a
    * string, a number, or a boolean. The comparison operator must be
-   * &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+   * &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ':' represents a HAS operator which is
    * roughly synonymous with equality. Filter rules are case insensitive.
    * The fields eligible for filtering are:
    *   * `name`
@@ -142,9 +142,8 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * An expression for specifying the sort order of the results of the request.
-   * The string value should specify one or more fields in
-   * [Backup][google.bigtable.admin.v2.Backup]. The full syntax is described at
-   * https://aip.dev/132#ordering.
+   * The string value should specify one or more fields in [Backup][google.bigtable.admin.v2.Backup]. The full
+   * syntax is described at https://aip.dev/132#ordering.
    * Fields supported are:
    *    * name
    *    * source_table
@@ -171,9 +170,8 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * An expression for specifying the sort order of the results of the request.
-   * The string value should specify one or more fields in
-   * [Backup][google.bigtable.admin.v2.Backup]. The full syntax is described at
-   * https://aip.dev/132#ordering.
+   * The string value should specify one or more fields in [Backup][google.bigtable.admin.v2.Backup]. The full
+   * syntax is described at https://aip.dev/132#ordering.
    * Fields supported are:
    *    * name
    *    * source_table
@@ -215,10 +213,9 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.bigtable.admin.v2.ListBackupsResponse.next_page_token]
-   * from a previous
-   * [ListBackupsResponse][google.bigtable.admin.v2.ListBackupsResponse] to the
-   * same `parent` and with the same `filter`.
+   * [next_page_token][google.bigtable.admin.v2.ListBackupsResponse.next_page_token] from a
+   * previous [ListBackupsResponse][google.bigtable.admin.v2.ListBackupsResponse] to the same `parent` and with the same
+   * `filter`.
    * </pre>
    *
    * <code>string page_token = 5;</code>
@@ -231,10 +228,9 @@ public interface ListBackupsRequestOrBuilder
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.bigtable.admin.v2.ListBackupsResponse.next_page_token]
-   * from a previous
-   * [ListBackupsResponse][google.bigtable.admin.v2.ListBackupsResponse] to the
-   * same `parent` and with the same `filter`.
+   * [next_page_token][google.bigtable.admin.v2.ListBackupsResponse.next_page_token] from a
+   * previous [ListBackupsResponse][google.bigtable.admin.v2.ListBackupsResponse] to the same `parent` and with the same
+   * `filter`.
    * </pre>
    *
    * <code>string page_token = 5;</code>
