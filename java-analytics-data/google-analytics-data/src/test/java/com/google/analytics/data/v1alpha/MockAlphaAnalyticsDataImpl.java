@@ -118,21 +118,6 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   }
 
   @Override
-  public void getUniversalMetadata(
-      GetUniversalMetadataRequest request, StreamObserver<UniversalMetadata> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof UniversalMetadata) {
-      requests.add(request);
-      responseObserver.onNext((UniversalMetadata) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void getMetadata(GetMetadataRequest request, StreamObserver<Metadata> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Metadata) {

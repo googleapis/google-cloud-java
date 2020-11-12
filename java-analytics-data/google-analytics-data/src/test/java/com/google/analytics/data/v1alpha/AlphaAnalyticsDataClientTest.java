@@ -227,43 +227,6 @@ public class AlphaAnalyticsDataClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getUniversalMetadataTest() {
-    UniversalMetadata expectedResponse = UniversalMetadata.newBuilder().build();
-    mockAlphaAnalyticsData.addResponse(expectedResponse);
-
-    GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
-
-    UniversalMetadata actualResponse = client.getUniversalMetadata(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetUniversalMetadataRequest actualRequest = (GetUniversalMetadataRequest) actualRequests.get(0);
-
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getUniversalMetadataExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAlphaAnalyticsData.addException(exception);
-
-    try {
-      GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
-
-      client.getUniversalMetadata(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void getMetadataTest() {
     MetadataName name2 = MetadataName.of("[PROPERTY]");
     Metadata expectedResponse = Metadata.newBuilder().setName(name2.toString()).build();

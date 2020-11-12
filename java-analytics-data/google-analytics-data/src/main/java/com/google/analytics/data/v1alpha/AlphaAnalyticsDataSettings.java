@@ -86,12 +86,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).batchRunPivotReportsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getUniversalMetadata. */
-  public UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataSettings() {
-    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getUniversalMetadataSettings();
-  }
-
   /** Returns the object with the settings used for calls to getMetadata. */
   public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getMetadataSettings();
@@ -221,12 +215,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     public UnaryCallSettings.Builder<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
         batchRunPivotReportsSettings() {
       return getStubSettingsBuilder().batchRunPivotReportsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getUniversalMetadata. */
-    public UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
-        getUniversalMetadataSettings() {
-      return getStubSettingsBuilder().getUniversalMetadataSettings();
     }
 
     /** Returns the builder for the settings used for calls to getMetadata. */

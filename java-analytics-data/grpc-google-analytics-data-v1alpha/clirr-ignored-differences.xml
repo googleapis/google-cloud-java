@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.5.0 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/data/v1alpha/AlphaAnalyticsDataGrpc*</className>
+    <method>* getUniversalMetadata(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/data/v1alpha/AlphaAnalyticsDataGrpc</className>
+    <method>* getGetUniversalMetadataMethod()</method>
+  </difference>
+</differences>

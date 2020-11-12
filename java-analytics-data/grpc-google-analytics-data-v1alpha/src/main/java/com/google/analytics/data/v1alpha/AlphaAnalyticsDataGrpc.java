@@ -231,56 +231,6 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.data.v1alpha.GetUniversalMetadataRequest,
-          com.google.analytics.data.v1alpha.UniversalMetadata>
-      getGetUniversalMetadataMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetUniversalMetadata",
-      requestType = com.google.analytics.data.v1alpha.GetUniversalMetadataRequest.class,
-      responseType = com.google.analytics.data.v1alpha.UniversalMetadata.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.data.v1alpha.GetUniversalMetadataRequest,
-          com.google.analytics.data.v1alpha.UniversalMetadata>
-      getGetUniversalMetadataMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.data.v1alpha.GetUniversalMetadataRequest,
-            com.google.analytics.data.v1alpha.UniversalMetadata>
-        getGetUniversalMetadataMethod;
-    if ((getGetUniversalMetadataMethod = AlphaAnalyticsDataGrpc.getGetUniversalMetadataMethod)
-        == null) {
-      synchronized (AlphaAnalyticsDataGrpc.class) {
-        if ((getGetUniversalMetadataMethod = AlphaAnalyticsDataGrpc.getGetUniversalMetadataMethod)
-            == null) {
-          AlphaAnalyticsDataGrpc.getGetUniversalMetadataMethod =
-              getGetUniversalMetadataMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.data.v1alpha.GetUniversalMetadataRequest,
-                          com.google.analytics.data.v1alpha.UniversalMetadata>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetUniversalMetadata"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.data.v1alpha.GetUniversalMetadataRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.data.v1alpha.UniversalMetadata
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AlphaAnalyticsDataMethodDescriptorSupplier("GetUniversalMetadata"))
-                      .build();
-        }
-      }
-    }
-    return getGetUniversalMetadataMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.data.v1alpha.GetMetadataRequest,
           com.google.analytics.data.v1alpha.Metadata>
       getGetMetadataMethod;
@@ -497,26 +447,8 @@ public final class AlphaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
-     * Used to explore the dimensions and metrics. Dimensions and metrics will be
-     * mostly added over time, but renames and deletions may occur.
-     * This method returns Universal Metadata. Universal Metadata are dimensions
-     * and metrics applicable to any property such as `country` and `totalUsers`.
-     * </pre>
-     */
-    public void getUniversalMetadata(
-        com.google.analytics.data.v1alpha.GetUniversalMetadataRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.UniversalMetadata>
-            responseObserver) {
-      asyncUnimplementedUnaryCall(getGetUniversalMetadataMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics 4 (GA4) Property Identifier is specified in the request, and
+     * Analytics GA4 Property Identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -578,13 +510,6 @@ public final class AlphaAnalyticsDataGrpc {
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest,
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse>(
                       this, METHODID_BATCH_RUN_PIVOT_REPORTS)))
-          .addMethod(
-              getGetUniversalMetadataMethod(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1alpha.GetUniversalMetadataRequest,
-                      com.google.analytics.data.v1alpha.UniversalMetadata>(
-                      this, METHODID_GET_UNIVERSAL_METADATA)))
           .addMethod(
               getGetMetadataMethod(),
               asyncUnaryCall(
@@ -704,29 +629,8 @@ public final class AlphaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
-     * Used to explore the dimensions and metrics. Dimensions and metrics will be
-     * mostly added over time, but renames and deletions may occur.
-     * This method returns Universal Metadata. Universal Metadata are dimensions
-     * and metrics applicable to any property such as `country` and `totalUsers`.
-     * </pre>
-     */
-    public void getUniversalMetadata(
-        com.google.analytics.data.v1alpha.GetUniversalMetadataRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.UniversalMetadata>
-            responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getGetUniversalMetadataMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics 4 (GA4) Property Identifier is specified in the request, and
+     * Analytics GA4 Property Identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -850,25 +754,8 @@ public final class AlphaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
-     * Used to explore the dimensions and metrics. Dimensions and metrics will be
-     * mostly added over time, but renames and deletions may occur.
-     * This method returns Universal Metadata. Universal Metadata are dimensions
-     * and metrics applicable to any property such as `country` and `totalUsers`.
-     * </pre>
-     */
-    public com.google.analytics.data.v1alpha.UniversalMetadata getUniversalMetadata(
-        com.google.analytics.data.v1alpha.GetUniversalMetadataRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetUniversalMetadataMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics 4 (GA4) Property Identifier is specified in the request, and
+     * Analytics GA4 Property Identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -990,27 +877,8 @@ public final class AlphaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
-     * Used to explore the dimensions and metrics. Dimensions and metrics will be
-     * mostly added over time, but renames and deletions may occur.
-     * This method returns Universal Metadata. Universal Metadata are dimensions
-     * and metrics applicable to any property such as `country` and `totalUsers`.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.data.v1alpha.UniversalMetadata>
-        getUniversalMetadata(
-            com.google.analytics.data.v1alpha.GetUniversalMetadataRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetUniversalMetadataMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics 4 (GA4) Property Identifier is specified in the request, and
+     * Analytics GA4 Property Identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1047,9 +915,8 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_RUN_PIVOT_REPORT = 1;
   private static final int METHODID_BATCH_RUN_REPORTS = 2;
   private static final int METHODID_BATCH_RUN_PIVOT_REPORTS = 3;
-  private static final int METHODID_GET_UNIVERSAL_METADATA = 4;
-  private static final int METHODID_GET_METADATA = 5;
-  private static final int METHODID_RUN_REALTIME_REPORT = 6;
+  private static final int METHODID_GET_METADATA = 4;
+  private static final int METHODID_RUN_REALTIME_REPORT = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1093,12 +960,6 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse>)
-                  responseObserver);
-          break;
-        case METHODID_GET_UNIVERSAL_METADATA:
-          serviceImpl.getUniversalMetadata(
-              (com.google.analytics.data.v1alpha.GetUniversalMetadataRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.UniversalMetadata>)
                   responseObserver);
           break;
         case METHODID_GET_METADATA:
@@ -1182,7 +1043,6 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getRunPivotReportMethod())
                       .addMethod(getBatchRunReportsMethod())
                       .addMethod(getBatchRunPivotReportsMethod())
-                      .addMethod(getGetUniversalMetadataMethod())
                       .addMethod(getGetMetadataMethod())
                       .addMethod(getRunRealtimeReportMethod())
                       .build();

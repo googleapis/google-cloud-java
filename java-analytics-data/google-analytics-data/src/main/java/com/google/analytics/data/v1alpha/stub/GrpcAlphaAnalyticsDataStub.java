@@ -20,7 +20,6 @@ import com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1alpha.BatchRunReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunReportsResponse;
 import com.google.analytics.data.v1alpha.GetMetadataRequest;
-import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
@@ -28,7 +27,6 @@ import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
 import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
-import com.google.analytics.data.v1alpha.UniversalMetadata;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -94,16 +92,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunPivotReportsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataMethodDescriptor =
-          MethodDescriptor.<GetUniversalMetadataRequest, UniversalMetadata>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.data.v1alpha.AlphaAnalyticsData/GetUniversalMetadata")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetUniversalMetadataRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(UniversalMetadata.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<GetMetadataRequest, Metadata> getMetadataMethodDescriptor =
       MethodDescriptor.<GetMetadataRequest, Metadata>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -131,8 +119,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       batchRunReportsCallable;
   private final UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable;
-  private final UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataCallable;
   private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
   private final UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable;
@@ -197,11 +183,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             GrpcCallSettings.<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunPivotReportsMethodDescriptor)
                 .build();
-    GrpcCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
-        getUniversalMetadataTransportSettings =
-            GrpcCallSettings.<GetUniversalMetadataRequest, UniversalMetadata>newBuilder()
-                .setMethodDescriptor(getUniversalMetadataMethodDescriptor)
-                .build();
     GrpcCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
         GrpcCallSettings.<GetMetadataRequest, Metadata>newBuilder()
             .setMethodDescriptor(getMetadataMethodDescriptor)
@@ -244,11 +225,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             batchRunPivotReportsTransportSettings,
             settings.batchRunPivotReportsSettings(),
             clientContext);
-    this.getUniversalMetadataCallable =
-        callableFactory.createUnaryCallable(
-            getUniversalMetadataTransportSettings,
-            settings.getUniversalMetadataSettings(),
-            clientContext);
     this.getMetadataCallable =
         callableFactory.createUnaryCallable(
             getMetadataTransportSettings, settings.getMetadataSettings(), clientContext);
@@ -276,11 +252,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable() {
     return batchRunPivotReportsCallable;
-  }
-
-  public UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataCallable() {
-    return getUniversalMetadataCallable;
   }
 
   public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {

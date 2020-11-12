@@ -242,6 +242,8 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * The row count of the start row. The first row is counted as row 0.
+   * To learn more about this pagination parameter, see
+   * [Pagination](basics#pagination).
    * </pre>
    *
    * <code>int64 offset = 5;</code>
@@ -256,6 +258,8 @@ public interface RunReportRequestOrBuilder
    * <pre>
    * The number of rows to return. If unspecified, 10 rows are returned. If
    * -1, all rows are returned.
+   * To learn more about this pagination parameter, see
+   * [Pagination](basics#pagination).
    * </pre>
    *
    * <code>int64 limit = 6;</code>

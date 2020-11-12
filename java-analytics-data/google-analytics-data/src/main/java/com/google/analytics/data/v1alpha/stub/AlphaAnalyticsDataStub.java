@@ -20,7 +20,6 @@ import com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1alpha.BatchRunReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunReportsResponse;
 import com.google.analytics.data.v1alpha.GetMetadataRequest;
-import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
@@ -28,7 +27,6 @@ import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
 import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
-import com.google.analytics.data.v1alpha.UniversalMetadata;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -59,11 +57,6 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
   public UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchRunPivotReportsCallable()");
-  }
-
-  public UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataCallable() {
-    throw new UnsupportedOperationException("Not implemented: getUniversalMetadataCallable()");
   }
 
   public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {

@@ -322,59 +322,9 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
-   * deletions may occur.
-   *
-   * <p>This method returns Universal Metadata. Universal Metadata are dimensions and metrics
-   * applicable to any property such as `country` and `totalUsers`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
-   *   UniversalMetadata response = alphaAnalyticsDataClient.getUniversalMetadata(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UniversalMetadata getUniversalMetadata(GetUniversalMetadataRequest request) {
-    return getUniversalMetadataCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. Dimensions and metrics will be mostly added over time, but renames and
-   * deletions may occur.
-   *
-   * <p>This method returns Universal Metadata. Universal Metadata are dimensions and metrics
-   * applicable to any property such as `country` and `totalUsers`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   GetUniversalMetadataRequest request = GetUniversalMetadataRequest.newBuilder().build();
-   *   ApiFuture&lt;UniversalMetadata&gt; future = alphaAnalyticsDataClient.getUniversalMetadataCallable().futureCall(request);
-   *   // Do something
-   *   UniversalMetadata response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataCallable() {
-    return stub.getUniversalMetadataCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
-   * specified in the request, and the metadata response includes Custom dimensions and metrics as
-   * well as Universal metadata.
+   * dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified
+   * in the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
    *
    * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
    * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
@@ -390,9 +340,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name of the metadata to retrieve. This name field is
-   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics 4
-   *     (GA4) Property identifier.
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     GA4 Property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Metadata getMetadata(MetadataName name) {
@@ -404,9 +357,9 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
-   * specified in the request, and the metadata response includes Custom dimensions and metrics as
-   * well as Universal metadata.
+   * dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified
+   * in the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
    *
    * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
    * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
@@ -422,9 +375,12 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name of the metadata to retrieve. This name field is
-   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics 4
-   *     (GA4) Property identifier.
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     GA4 Property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Metadata getMetadata(String name) {
@@ -435,9 +391,9 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
-   * specified in the request, and the metadata response includes Custom dimensions and metrics as
-   * well as Universal metadata.
+   * dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified
+   * in the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
    *
    * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
    * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
@@ -465,9 +421,9 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
-   * dimensions and metrics. In this method, a Google Analytics 4 (GA4) Property Identifier is
-   * specified in the request, and the metadata response includes Custom dimensions and metrics as
-   * well as Universal metadata.
+   * dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified
+   * in the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
    *
    * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
    * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata

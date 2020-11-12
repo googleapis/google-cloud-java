@@ -352,6 +352,8 @@ public interface RunReportResponseOrBuilder
    * rows returned in the response. For example if a query returns 175 rows and
    * includes limit = 50 in the API request, the response will contain row_count
    * = 175 but only 50 rows.
+   * To learn more about this pagination parameter, see
+   * [Pagination](basics#pagination).
    * </pre>
    *
    * <code>int32 row_count = 12;</code>

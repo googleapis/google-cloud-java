@@ -17,45 +17,9 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.2.0 -->
+  <!-- TODO: remove after 0.5.0 -->
   <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1alpha/DimensionHeader</className>
-    <field>DIMENSION_VALUES_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1alpha/DimensionHeader*</className>
-    <method>* *DimensionValues*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1alpha/PivotHeader</className>
-    <field>DIMENSION_HEADERS_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1alpha/PivotHeader*</className>
-    <method>* *DimensionHeaders*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1alpha/CohortReportSettings</className>
-    <field>MISSING_VALUE_AS_ZERO_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/analytics/data/v1alpha/CohortReportSettings</className>
-    <field>PIVOT_ON_USER_EVENT_FIELD_NUMBER</field>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1alpha/CohortReportSettings*</className>
-    <method>* *MissingValueAsZero*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/analytics/data/v1alpha/CohortReportSettings*</className>
-    <method>* *PivotOnUserEvent*(*)</method>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/data/v1alpha/*UniversalMetadata*</className>
   </difference>
 </differences>

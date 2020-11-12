@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-data.git",
-        "sha": "1778354e29559ad66afcab03ed39ec027280ac46"
+        "sha": "db31e732d5a153c820410de1872d50a7bfd0ab3a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "705962b5a317e083fdbb2311d4baa72df5816686",
-        "internalRef": "340463146"
+        "sha": "b7038c181dcaa75c4fe8270b842c941d1df3128c",
+        "internalRef": "341924087"
       }
     },
     {
@@ -152,8 +152,6 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/FilterOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequest.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetMetadataRequestOrBuilder.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetUniversalMetadataRequest.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/GetUniversalMetadataRequestOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/Metadata.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataName.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/MetadataOrBuilder.java",
@@ -198,8 +196,6 @@
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportRequestOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportResponse.java",
     "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/RunReportResponseOrBuilder.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/UniversalMetadata.java",
-    "proto-google-analytics-data-v1alpha/src/main/java/com/google/analytics/data/v1alpha/UniversalMetadataOrBuilder.java",
     "proto-google-analytics-data-v1alpha/src/main/proto/google/analytics/data/v1alpha/analytics_data_api.proto",
     "proto-google-analytics-data-v1alpha/src/main/proto/google/analytics/data/v1alpha/data.proto",
     "renovate.json",

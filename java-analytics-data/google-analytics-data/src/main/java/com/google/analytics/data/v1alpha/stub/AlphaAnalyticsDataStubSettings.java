@@ -20,7 +20,6 @@ import com.google.analytics.data.v1alpha.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1alpha.BatchRunReportsRequest;
 import com.google.analytics.data.v1alpha.BatchRunReportsResponse;
 import com.google.analytics.data.v1alpha.GetMetadataRequest;
-import com.google.analytics.data.v1alpha.GetUniversalMetadataRequest;
 import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.RunPivotReportRequest;
 import com.google.analytics.data.v1alpha.RunPivotReportResponse;
@@ -28,7 +27,6 @@ import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
 import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
-import com.google.analytics.data.v1alpha.UniversalMetadata;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
@@ -101,8 +99,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       batchRunReportsSettings;
   private final UnaryCallSettings<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsSettings;
-  private final UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataSettings;
   private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
   private final UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportSettings;
@@ -127,12 +123,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   public UnaryCallSettings<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsSettings() {
     return batchRunPivotReportsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getUniversalMetadata. */
-  public UnaryCallSettings<GetUniversalMetadataRequest, UniversalMetadata>
-      getUniversalMetadataSettings() {
-    return getUniversalMetadataSettings;
   }
 
   /** Returns the object with the settings used for calls to getMetadata. */
@@ -219,7 +209,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     runPivotReportSettings = settingsBuilder.runPivotReportSettings().build();
     batchRunReportsSettings = settingsBuilder.batchRunReportsSettings().build();
     batchRunPivotReportsSettings = settingsBuilder.batchRunPivotReportsSettings().build();
-    getUniversalMetadataSettings = settingsBuilder.getUniversalMetadataSettings().build();
     getMetadataSettings = settingsBuilder.getMetadataSettings().build();
     runRealtimeReportSettings = settingsBuilder.runRealtimeReportSettings().build();
   }
@@ -237,8 +226,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     private final UnaryCallSettings.Builder<
             BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
         batchRunPivotReportsSettings;
-    private final UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
-        getUniversalMetadataSettings;
     private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
     private final UnaryCallSettings.Builder<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportSettings;
@@ -302,8 +289,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       batchRunPivotReportsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getUniversalMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       runRealtimeReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -314,7 +299,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               runPivotReportSettings,
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
-              getUniversalMetadataSettings,
               getMetadataSettings,
               runRealtimeReportSettings);
 
@@ -353,11 +337,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .getUniversalMetadataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
           .getMetadataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -377,7 +356,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       runPivotReportSettings = settings.runPivotReportSettings.toBuilder();
       batchRunReportsSettings = settings.batchRunReportsSettings.toBuilder();
       batchRunPivotReportsSettings = settings.batchRunPivotReportsSettings.toBuilder();
-      getUniversalMetadataSettings = settings.getUniversalMetadataSettings.toBuilder();
       getMetadataSettings = settings.getMetadataSettings.toBuilder();
       runRealtimeReportSettings = settings.runRealtimeReportSettings.toBuilder();
 
@@ -387,7 +365,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               runPivotReportSettings,
               batchRunReportsSettings,
               batchRunPivotReportsSettings,
-              getUniversalMetadataSettings,
               getMetadataSettings,
               runRealtimeReportSettings);
     }
@@ -429,12 +406,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     public UnaryCallSettings.Builder<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
         batchRunPivotReportsSettings() {
       return batchRunPivotReportsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getUniversalMetadata. */
-    public UnaryCallSettings.Builder<GetUniversalMetadataRequest, UniversalMetadata>
-        getUniversalMetadataSettings() {
-      return getUniversalMetadataSettings;
     }
 
     /** Returns the builder for the settings used for calls to getMetadata. */

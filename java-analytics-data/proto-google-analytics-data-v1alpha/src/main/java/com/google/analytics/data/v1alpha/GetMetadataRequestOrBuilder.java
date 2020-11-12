@@ -29,8 +29,13 @@ public interface GetMetadataRequestOrBuilder
    * <pre>
    * Required. The resource name of the metadata to retrieve. This name field is
    * specified in the URL path and not URL parameters. Property is a numeric
-   * Google Analytics 4 (GA4) Property identifier.
+   * Google Analytics GA4 Property identifier. To learn more, see [where to find
+   * your Property
+   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    * Example: properties/1234/metadata
+   * Set the Property ID to 0 for dimensions and metrics common to all
+   * properties. In this special mode, this method will not return custom
+   * dimensions and metrics.
    * </pre>
    *
    * <code>
@@ -46,8 +51,13 @@ public interface GetMetadataRequestOrBuilder
    * <pre>
    * Required. The resource name of the metadata to retrieve. This name field is
    * specified in the URL path and not URL parameters. Property is a numeric
-   * Google Analytics 4 (GA4) Property identifier.
+   * Google Analytics GA4 Property identifier. To learn more, see [where to find
+   * your Property
+   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
    * Example: properties/1234/metadata
+   * Set the Property ID to 0 for dimensions and metrics common to all
+   * properties. In this special mode, this method will not return custom
+   * dimensions and metrics.
    * </pre>
    *
    * <code>
