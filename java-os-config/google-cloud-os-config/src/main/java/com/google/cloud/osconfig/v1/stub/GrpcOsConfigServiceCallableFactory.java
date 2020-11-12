@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Cloud OS Config API.
+ * gRPC callable factory implementation for OS Config API.
  *
  * <p>This class is for advanced usage.
  */

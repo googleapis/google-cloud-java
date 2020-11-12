@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Cloud OS Config API.
+ * A client to OS Config API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

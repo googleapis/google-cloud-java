@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-config.git",
-        "sha": "79c953b9619a1436d85d55cb81f3eb39a3bfc3ab"
+        "sha": "a7859ee6a9021d8c07811be40200ce2a763a50c6"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "02c23d62c7a133608fcf6ea33aea90ed0e0d098a",
-        "internalRef": "317658441"
+        "sha": "4b0ad15b0ff483486ae90d73092e7be00f8c1848",
+        "internalRef": "341842584"
       }
     },
     {
@@ -113,13 +113,19 @@
     "grpc-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/OsConfigServiceGrpc.java",
     "java.header",
     "license-checks.xml",
+    "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/Common.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/InstanceName.java",
+    "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/Inventories.java",
+    "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/Inventory.java",
+    "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/InventoryOrBuilder.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/OsConfigProto.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/PatchDeploymentName.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/PatchDeployments.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/PatchJobName.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/PatchJobs.java",
     "proto-google-cloud-os-config-v1/src/main/java/com/google/cloud/osconfig/v1/ProjectName.java",
+    "proto-google-cloud-os-config-v1/src/main/proto/google/cloud/osconfig/v1/inventory.proto",
+    "proto-google-cloud-os-config-v1/src/main/proto/google/cloud/osconfig/v1/osconfig_common.proto",
     "proto-google-cloud-os-config-v1/src/main/proto/google/cloud/osconfig/v1/osconfig_service.proto",
     "proto-google-cloud-os-config-v1/src/main/proto/google/cloud/osconfig/v1/patch_deployments.proto",
     "proto-google-cloud-os-config-v1/src/main/proto/google/cloud/osconfig/v1/patch_jobs.proto",

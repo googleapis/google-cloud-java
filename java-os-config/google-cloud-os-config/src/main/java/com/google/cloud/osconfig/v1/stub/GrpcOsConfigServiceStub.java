@@ -52,7 +52,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Cloud OS Config API.
+ * gRPC stub implementation for OS Config API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

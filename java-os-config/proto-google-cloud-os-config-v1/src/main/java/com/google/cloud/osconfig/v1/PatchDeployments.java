@@ -67,8 +67,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Description of the patch deployment. Length of the description is limited
-     * to 1024 characters.
+     * Optional. Description of the patch deployment. Length of the description is
+     * limited to 1024 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80,8 +80,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Description of the patch deployment. Length of the description is limited
-     * to 1024 characters.
+     * Optional. Description of the patch deployment. Length of the description is
+     * limited to 1024 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,7 +177,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -190,7 +191,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -203,7 +205,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -430,6 +433,47 @@ public final class PatchDeployments {
      */
     com.google.protobuf.TimestampOrBuilder getLastExecuteTimeOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    boolean hasRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rollout.
+     */
+    com.google.cloud.osconfig.v1.PatchJobs.PatchRollout getRollout();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
+
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.ScheduleCase
         getScheduleCase();
   }
@@ -641,6 +685,23 @@ public final class PatchDeployments {
 
                 break;
               }
+            case 90:
+              {
+                com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder subBuilder = null;
+                if (rollout_ != null) {
+                  subBuilder = rollout_.toBuilder();
+                }
+                rollout_ =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(rollout_);
+                  rollout_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -783,8 +844,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Description of the patch deployment. Length of the description is limited
-     * to 1024 characters.
+     * Optional. Description of the patch deployment. Length of the description is
+     * limited to 1024 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -807,8 +868,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Description of the patch deployment. Length of the description is limited
-     * to 1024 characters.
+     * Optional. Description of the patch deployment. Length of the description is
+     * limited to 1024 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -943,7 +1004,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -959,7 +1021,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -975,7 +1038,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. Duration of the patch. After the duration ends, the patch times out.
+     * Optional. Duration of the patch. After the duration ends, the patch times
+     * out.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1272,6 +1336,60 @@ public final class PatchDeployments {
       return getLastExecuteTime();
     }
 
+    public static final int ROLLOUT_FIELD_NUMBER = 11;
+    private com.google.cloud.osconfig.v1.PatchJobs.PatchRollout rollout_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rollout field is set.
+     */
+    @java.lang.Override
+    public boolean hasRollout() {
+      return rollout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rollout.
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchJobs.PatchRollout getRollout() {
+      return rollout_ == null
+          ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.getDefaultInstance()
+          : rollout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rollout strategy of the patch job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder() {
+      return getRollout();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1318,6 +1436,9 @@ public final class PatchDeployments {
       if (lastExecuteTime_ != null) {
         output.writeMessage(10, getLastExecuteTime());
       }
+      if (rollout_ != null) {
+        output.writeMessage(11, getRollout());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1361,6 +1482,9 @@ public final class PatchDeployments {
       if (lastExecuteTime_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLastExecuteTime());
       }
+      if (rollout_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getRollout());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1402,6 +1526,10 @@ public final class PatchDeployments {
       if (hasLastExecuteTime() != other.hasLastExecuteTime()) return false;
       if (hasLastExecuteTime()) {
         if (!getLastExecuteTime().equals(other.getLastExecuteTime())) return false;
+      }
+      if (hasRollout() != other.hasRollout()) return false;
+      if (hasRollout()) {
+        if (!getRollout().equals(other.getRollout())) return false;
       }
       if (!getScheduleCase().equals(other.getScheduleCase())) return false;
       switch (scheduleCase_) {
@@ -1452,6 +1580,10 @@ public final class PatchDeployments {
       if (hasLastExecuteTime()) {
         hash = (37 * hash) + LAST_EXECUTE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastExecuteTime().hashCode();
+      }
+      if (hasRollout()) {
+        hash = (37 * hash) + ROLLOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getRollout().hashCode();
       }
       switch (scheduleCase_) {
         case 6:
@@ -1657,6 +1789,12 @@ public final class PatchDeployments {
           lastExecuteTime_ = null;
           lastExecuteTimeBuilder_ = null;
         }
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
         scheduleCase_ = 0;
         schedule_ = null;
         return this;
@@ -1732,6 +1870,11 @@ public final class PatchDeployments {
           result.lastExecuteTime_ = lastExecuteTime_;
         } else {
           result.lastExecuteTime_ = lastExecuteTimeBuilder_.build();
+        }
+        if (rolloutBuilder_ == null) {
+          result.rollout_ = rollout_;
+        } else {
+          result.rollout_ = rolloutBuilder_.build();
         }
         result.scheduleCase_ = scheduleCase_;
         onBuilt();
@@ -1813,6 +1956,9 @@ public final class PatchDeployments {
         }
         if (other.hasLastExecuteTime()) {
           mergeLastExecuteTime(other.getLastExecuteTime());
+        }
+        if (other.hasRollout()) {
+          mergeRollout(other.getRollout());
         }
         switch (other.getScheduleCase()) {
           case ONE_TIME_SCHEDULE:
@@ -2001,8 +2147,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Description of the patch deployment. Length of the description is limited
-       * to 1024 characters.
+       * Optional. Description of the patch deployment. Length of the description is
+       * limited to 1024 characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2024,8 +2170,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Description of the patch deployment. Length of the description is limited
-       * to 1024 characters.
+       * Optional. Description of the patch deployment. Length of the description is
+       * limited to 1024 characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2047,8 +2193,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Description of the patch deployment. Length of the description is limited
-       * to 1024 characters.
+       * Optional. Description of the patch deployment. Length of the description is
+       * limited to 1024 characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2069,8 +2215,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Description of the patch deployment. Length of the description is limited
-       * to 1024 characters.
+       * Optional. Description of the patch deployment. Length of the description is
+       * limited to 1024 characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2087,8 +2233,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Description of the patch deployment. Length of the description is limited
-       * to 1024 characters.
+       * Optional. Description of the patch deployment. Length of the description is
+       * limited to 1024 characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2530,7 +2676,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2545,7 +2692,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2564,7 +2712,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2587,7 +2736,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2607,7 +2757,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2632,7 +2783,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2653,7 +2805,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2668,7 +2821,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -2685,7 +2839,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. Duration of the patch. After the duration ends, the patch times out.
+       * Optional. Duration of the patch. After the duration ends, the patch times
+       * out.
        * </pre>
        *
        * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -3826,6 +3981,210 @@ public final class PatchDeployments {
         return lastExecuteTimeBuilder_;
       }
 
+      private com.google.cloud.osconfig.v1.PatchJobs.PatchRollout rollout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder>
+          rolloutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rollout field is set.
+       */
+      public boolean hasRollout() {
+        return rolloutBuilder_ != null || rollout_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rollout.
+       */
+      public com.google.cloud.osconfig.v1.PatchJobs.PatchRollout getRollout() {
+        if (rolloutBuilder_ == null) {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        } else {
+          return rolloutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRollout(com.google.cloud.osconfig.v1.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rollout_ = value;
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRollout(
+          com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder builderForValue) {
+        if (rolloutBuilder_ == null) {
+          rollout_ = builderForValue.build();
+          onChanged();
+        } else {
+          rolloutBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRollout(com.google.cloud.osconfig.v1.PatchJobs.PatchRollout value) {
+        if (rolloutBuilder_ == null) {
+          if (rollout_ != null) {
+            rollout_ =
+                com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.newBuilder(rollout_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rollout_ = value;
+          }
+          onChanged();
+        } else {
+          rolloutBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRollout() {
+        if (rolloutBuilder_ == null) {
+          rollout_ = null;
+          onChanged();
+        } else {
+          rollout_ = null;
+          rolloutBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder getRolloutBuilder() {
+
+        onChanged();
+        return getRolloutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder() {
+        if (rolloutBuilder_ != null) {
+          return rolloutBuilder_.getMessageOrBuilder();
+        } else {
+          return rollout_ == null
+              ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.getDefaultInstance()
+              : rollout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Rollout strategy of the patch job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.osconfig.v1.PatchRollout rollout = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRollout,
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder,
+              com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder>
+          getRolloutFieldBuilder() {
+        if (rolloutBuilder_ == null) {
+          rolloutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.osconfig.v1.PatchJobs.PatchRollout,
+                  com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder,
+                  com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder>(
+                  getRollout(), getParentForChildren(), isClean());
+          rollout_ = null;
+        }
+        return rolloutBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4761,8 +5120,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -4775,8 +5134,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -4789,8 +5148,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -5577,8 +5936,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -5594,8 +5953,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -5611,8 +5970,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The end time at which a recurring patch deployment schedule is no longer
-     * active.
+     * Optional. The end time at which a recurring patch deployment schedule is no
+     * longer active.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -6931,8 +7290,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -6947,8 +7306,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -6967,8 +7326,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -6991,8 +7350,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7012,8 +7371,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7038,8 +7397,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7060,8 +7419,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7076,8 +7435,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7094,8 +7453,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The end time at which a recurring patch deployment schedule is no longer
-       * active.
+       * Optional. The end time at which a recurring patch deployment schedule is no
+       * longer active.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -9030,10 +9389,10 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-     * indicates the last day of the month.
-     * Months without the target day will be skipped. For example, a schedule to
-     * run "every month on the 31st" will not run in February, April, June, etc.
+     * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+     * -1 indicates the last day of the month. Months without the target day
+     * will be skipped. For example, a schedule to run "every month on the 31st"
+     * will not run in February, April, June, etc.
      * </pre>
      *
      * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9267,10 +9626,10 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-     * indicates the last day of the month.
-     * Months without the target day will be skipped. For example, a schedule to
-     * run "every month on the 31st" will not run in February, April, June, etc.
+     * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+     * -1 indicates the last day of the month. Months without the target day
+     * will be skipped. For example, a schedule to run "every month on the 31st"
+     * will not run in February, April, June, etc.
      * </pre>
      *
      * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9918,10 +10277,10 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-       * indicates the last day of the month.
-       * Months without the target day will be skipped. For example, a schedule to
-       * run "every month on the 31st" will not run in February, April, June, etc.
+       * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+       * -1 indicates the last day of the month. Months without the target day
+       * will be skipped. For example, a schedule to run "every month on the 31st"
+       * will not run in February, April, June, etc.
        * </pre>
        *
        * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9938,10 +10297,10 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-       * indicates the last day of the month.
-       * Months without the target day will be skipped. For example, a schedule to
-       * run "every month on the 31st" will not run in February, April, June, etc.
+       * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+       * -1 indicates the last day of the month. Months without the target day
+       * will be skipped. For example, a schedule to run "every month on the 31st"
+       * will not run in February, April, June, etc.
        * </pre>
        *
        * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9959,10 +10318,10 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. One day of the month. 1-31 indicates the 1st to the 31st day. -1
-       * indicates the last day of the month.
-       * Months without the target day will be skipped. For example, a schedule to
-       * run "every month on the 31st" will not run in February, April, June, etc.
+       * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+       * -1 indicates the last day of the month. Months without the target day
+       * will be skipped. For example, a schedule to run "every month on the 31st"
+       * will not run in February, April, June, etc.
        * </pre>
        *
        * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10042,8 +10401,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-     * indicates the last week of the month.
+     * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the
+     * month. -1 indicates the last week of the month.
      * </pre>
      *
      * <code>int32 week_ordinal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10183,8 +10542,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-     * indicates the last week of the month.
+     * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the
+     * month. -1 indicates the last week of the month.
      * </pre>
      *
      * <code>int32 week_ordinal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10578,8 +10937,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-       * indicates the last week of the month.
+       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the
+       * month. -1 indicates the last week of the month.
        * </pre>
        *
        * <code>int32 week_ordinal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10594,8 +10953,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-       * indicates the last week of the month.
+       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the
+       * month. -1 indicates the last week of the month.
        * </pre>
        *
        * <code>int32 week_ordinal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10613,8 +10972,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1
-       * indicates the last week of the month.
+       * Required. Week number in a month. 1-4 indicates the 1st to 4th week of the
+       * month. -1 indicates the last week of the month.
        * </pre>
        *
        * <code>int32 week_ordinal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10787,7 +11146,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+     * Required. The project to apply this patch deployment to in the form
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -10801,7 +11161,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+     * Required. The project to apply this patch deployment to in the form
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -10816,8 +11177,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. A name for the patch deployment in the project. When creating a name
-     * the following rules apply:
+     * Required. A name for the patch deployment in the project. When creating a
+     * name the following rules apply:
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -10834,8 +11195,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. A name for the patch deployment in the project. When creating a name
-     * the following rules apply:
+     * Required. A name for the patch deployment in the project. When creating a
+     * name the following rules apply:
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -11019,7 +11380,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+     * Required. The project to apply this patch deployment to in the form
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -11044,7 +11406,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+     * Required. The project to apply this patch deployment to in the form
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -11072,8 +11435,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. A name for the patch deployment in the project. When creating a name
-     * the following rules apply:
+     * Required. A name for the patch deployment in the project. When creating a
+     * name the following rules apply:
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -11101,8 +11464,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Required. A name for the patch deployment in the project. When creating a name
-     * the following rules apply:
+     * Required. A name for the patch deployment in the project. When creating a
+     * name the following rules apply:
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -11573,7 +11936,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+       * Required. The project to apply this patch deployment to in the form
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -11597,7 +11961,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+       * Required. The project to apply this patch deployment to in the form
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -11621,7 +11986,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+       * Required. The project to apply this patch deployment to in the form
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -11644,7 +12010,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+       * Required. The project to apply this patch deployment to in the form
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -11663,7 +12030,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. The project to apply this patch deployment to in the form `projects/&#42;`.
+       * Required. The project to apply this patch deployment to in the form
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -11689,8 +12057,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. A name for the patch deployment in the project. When creating a name
-       * the following rules apply:
+       * Required. A name for the patch deployment in the project. When creating a
+       * name the following rules apply:
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -11717,8 +12085,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. A name for the patch deployment in the project. When creating a name
-       * the following rules apply:
+       * Required. A name for the patch deployment in the project. When creating a
+       * name the following rules apply:
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -11745,8 +12113,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. A name for the patch deployment in the project. When creating a name
-       * the following rules apply:
+       * Required. A name for the patch deployment in the project. When creating a
+       * name the following rules apply:
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -11772,8 +12140,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. A name for the patch deployment in the project. When creating a name
-       * the following rules apply:
+       * Required. A name for the patch deployment in the project. When creating a
+       * name the following rules apply:
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -11795,8 +12163,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Required. A name for the patch deployment in the project. When creating a name
-       * the following rules apply:
+       * Required. A name for the patch deployment in the project. When creating a
+       * name the following rules apply:
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -12822,7 +13190,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The maximum number of patch deployments to return. Default is 100.
+     * Optional. The maximum number of patch deployments to return. Default is
+     * 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12835,8 +13204,9 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to ListPatchDeployments
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * ListPatchDeployments that indicates where this listing should continue
+     * from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12848,8 +13218,9 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to ListPatchDeployments
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * ListPatchDeployments that indicates where this listing should continue
+     * from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13025,7 +13396,8 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. The maximum number of patch deployments to return. Default is 100.
+     * Optional. The maximum number of patch deployments to return. Default is
+     * 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13043,8 +13415,9 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to ListPatchDeployments
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * ListPatchDeployments that indicates where this listing should continue
+     * from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13067,8 +13440,9 @@ public final class PatchDeployments {
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to ListPatchDeployments
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * ListPatchDeployments that indicates where this listing should continue
+     * from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13582,7 +13956,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The maximum number of patch deployments to return. Default is 100.
+       * Optional. The maximum number of patch deployments to return. Default is
+       * 100.
        * </pre>
        *
        * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13597,7 +13972,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The maximum number of patch deployments to return. Default is 100.
+       * Optional. The maximum number of patch deployments to return. Default is
+       * 100.
        * </pre>
        *
        * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13615,7 +13991,8 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. The maximum number of patch deployments to return. Default is 100.
+       * Optional. The maximum number of patch deployments to return. Default is
+       * 100.
        * </pre>
        *
        * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13634,8 +14011,9 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. A pagination token returned from a previous call to ListPatchDeployments
-       * that indicates where this listing should continue from.
+       * Optional. A pagination token returned from a previous call to
+       * ListPatchDeployments that indicates where this listing should continue
+       * from.
        * </pre>
        *
        * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13657,8 +14035,9 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. A pagination token returned from a previous call to ListPatchDeployments
-       * that indicates where this listing should continue from.
+       * Optional. A pagination token returned from a previous call to
+       * ListPatchDeployments that indicates where this listing should continue
+       * from.
        * </pre>
        *
        * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13680,8 +14059,9 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. A pagination token returned from a previous call to ListPatchDeployments
-       * that indicates where this listing should continue from.
+       * Optional. A pagination token returned from a previous call to
+       * ListPatchDeployments that indicates where this listing should continue
+       * from.
        * </pre>
        *
        * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13702,8 +14082,9 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. A pagination token returned from a previous call to ListPatchDeployments
-       * that indicates where this listing should continue from.
+       * Optional. A pagination token returned from a previous call to
+       * ListPatchDeployments that indicates where this listing should continue
+       * from.
        * </pre>
        *
        * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13720,8 +14101,9 @@ public final class PatchDeployments {
        *
        *
        * <pre>
-       * Optional. A pagination token returned from a previous call to ListPatchDeployments
-       * that indicates where this listing should continue from.
+       * Optional. A pagination token returned from a previous call to
+       * ListPatchDeployments that indicates where this listing should continue
+       * from.
        * </pre>
        *
        * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -15829,7 +16211,7 @@ public final class PatchDeployments {
           + "ation.proto\032\037google/protobuf/timestamp.p"
           + "roto\032\032google/type/datetime.proto\032\033google"
           + "/type/dayofweek.proto\032\033google/type/timeo"
-          + "fday.proto\"\261\005\n\017PatchDeployment\022\014\n\004name\030\001"
+          + "fday.proto\"\357\005\n\017PatchDeployment\022\014\n\004name\030\001"
           + " \001(\t\022\030\n\013description\030\002 \001(\tB\003\340A\001\022K\n\017instan"
           + "ce_filter\030\003 \001(\0132-.google.cloud.osconfig."
           + "v1.PatchInstanceFilterB\003\340A\002\022@\n\014patch_con"
@@ -15843,57 +16225,59 @@ public final class PatchDeployments {
           + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
           + "date_time\030\t \001(\0132\032.google.protobuf.Timest"
           + "ampB\003\340A\003\022:\n\021last_execute_time\030\n \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003:d\352Aa\n\'oscon"
-          + "fig.googleapis.com/PatchDeployment\0226proj"
-          + "ects/{project}/patchDeployments/{patch_d"
-          + "eployment}B\n\n\010schedule\"H\n\017OneTimeSchedul"
-          + "e\0225\n\014execute_time\030\001 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\002\"\373\004\n\021RecurringSchedule\022-"
-          + "\n\ttime_zone\030\001 \001(\0132\025.google.type.TimeZone"
-          + "B\003\340A\002\0223\n\nstart_time\030\002 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\001\0221\n\010end_time\030\003 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\001\0220\n\013time_of"
-          + "_day\030\004 \001(\0132\026.google.type.TimeOfDayB\003\340A\002\022"
-          + "M\n\tfrequency\030\005 \001(\01625.google.cloud.osconf"
-          + "ig.v1.RecurringSchedule.FrequencyB\003\340A\002\022?"
-          + "\n\006weekly\030\006 \001(\0132(.google.cloud.osconfig.v"
-          + "1.WeeklyScheduleB\003\340A\002H\000\022A\n\007monthly\030\007 \001(\013"
-          + "2).google.cloud.osconfig.v1.MonthlySched"
-          + "uleB\003\340A\002H\000\022:\n\021last_execute_time\030\t \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022:\n\021next_e"
-          + "xecute_time\030\n \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\"?\n\tFrequency\022\031\n\025FREQUENCY_UNS"
-          + "PECIFIED\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002B\021\n\017s"
-          + "chedule_config\"B\n\016WeeklySchedule\0220\n\013day_"
-          + "of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340"
-          + "A\002\"\207\001\n\017MonthlySchedule\022J\n\021week_day_of_mo"
-          + "nth\030\001 \001(\0132(.google.cloud.osconfig.v1.Wee"
-          + "kDayOfMonthB\003\340A\002H\000\022\030\n\tmonth_day\030\002 \001(\005B\003\340"
-          + "A\002H\000B\016\n\014day_of_month\"]\n\016WeekDayOfMonth\022\031"
-          + "\n\014week_ordinal\030\001 \001(\005B\003\340A\002\0220\n\013day_of_week"
-          + "\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"\317\001\n\034"
-          + "CreatePatchDeploymentRequest\022C\n\006parent\030\001"
-          + " \001(\tB3\340A\002\372A-\n+cloudresourcemanager.googl"
-          + "eapis.com/Project\022 \n\023patch_deployment_id"
-          + "\030\002 \001(\tB\003\340A\002\022H\n\020patch_deployment\030\003 \001(\0132)."
-          + "google.cloud.osconfig.v1.PatchDeployment"
-          + "B\003\340A\002\"Z\n\031GetPatchDeploymentRequest\022=\n\004na"
-          + "me\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleapis.co"
-          + "m/PatchDeployment\"\223\001\n\033ListPatchDeploymen"
-          + "tsRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloud"
-          + "resourcemanager.googleapis.com/Project\022\026"
-          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
-          + "(\tB\003\340A\001\"}\n\034ListPatchDeploymentsResponse\022"
-          + "D\n\021patch_deployments\030\001 \003(\0132).google.clou"
-          + "d.osconfig.v1.PatchDeployment\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\"]\n\034DeletePatchDeploymentR"
-          + "equest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.g"
-          + "oogleapis.com/PatchDeploymentB\306\001\n\034com.go"
-          + "ogle.cloud.osconfig.v1B\020PatchDeployments"
-          + "Z@google.golang.org/genproto/googleapis/"
-          + "cloud/osconfig/v1;osconfig\252\002\030Google.Clou"
-          + "d.OsConfig.V1\312\002\030Google\\Cloud\\OsConfig\\V1"
-          + "\352\002\033Google::Cloud::OsConfig::V1b\006proto3"
+          + "ogle.protobuf.TimestampB\003\340A\003\022<\n\007rollout\030"
+          + "\013 \001(\0132&.google.cloud.osconfig.v1.PatchRo"
+          + "lloutB\003\340A\001:d\352Aa\n\'osconfig.googleapis.com"
+          + "/PatchDeployment\0226projects/{project}/pat"
+          + "chDeployments/{patch_deployment}B\n\n\010sche"
+          + "dule\"H\n\017OneTimeSchedule\0225\n\014execute_time\030"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\"\373"
+          + "\004\n\021RecurringSchedule\022-\n\ttime_zone\030\001 \001(\0132"
+          + "\025.google.type.TimeZoneB\003\340A\002\0223\n\nstart_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001"
+          + "\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\001\0220\n\013time_of_day\030\004 \001(\0132\026.googl"
+          + "e.type.TimeOfDayB\003\340A\002\022M\n\tfrequency\030\005 \001(\016"
+          + "25.google.cloud.osconfig.v1.RecurringSch"
+          + "edule.FrequencyB\003\340A\002\022?\n\006weekly\030\006 \001(\0132(.g"
+          + "oogle.cloud.osconfig.v1.WeeklyScheduleB\003"
+          + "\340A\002H\000\022A\n\007monthly\030\007 \001(\0132).google.cloud.os"
+          + "config.v1.MonthlyScheduleB\003\340A\002H\000\022:\n\021last"
+          + "_execute_time\030\t \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\022:\n\021next_execute_time\030\n \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\"?\n\tFreq"
+          + "uency\022\031\n\025FREQUENCY_UNSPECIFIED\020\000\022\n\n\006WEEK"
+          + "LY\020\001\022\013\n\007MONTHLY\020\002B\021\n\017schedule_config\"B\n\016"
+          + "WeeklySchedule\0220\n\013day_of_week\030\001 \001(\0162\026.go"
+          + "ogle.type.DayOfWeekB\003\340A\002\"\207\001\n\017MonthlySche"
+          + "dule\022J\n\021week_day_of_month\030\001 \001(\0132(.google"
+          + ".cloud.osconfig.v1.WeekDayOfMonthB\003\340A\002H\000"
+          + "\022\030\n\tmonth_day\030\002 \001(\005B\003\340A\002H\000B\016\n\014day_of_mon"
+          + "th\"]\n\016WeekDayOfMonth\022\031\n\014week_ordinal\030\001 \001"
+          + "(\005B\003\340A\002\0220\n\013day_of_week\030\002 \001(\0162\026.google.ty"
+          + "pe.DayOfWeekB\003\340A\002\"\317\001\n\034CreatePatchDeploym"
+          + "entRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+clou"
+          + "dresourcemanager.googleapis.com/Project\022"
+          + " \n\023patch_deployment_id\030\002 \001(\tB\003\340A\002\022H\n\020pat"
+          + "ch_deployment\030\003 \001(\0132).google.cloud.oscon"
+          + "fig.v1.PatchDeploymentB\003\340A\002\"Z\n\031GetPatchD"
+          + "eploymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'"
+          + "osconfig.googleapis.com/PatchDeployment\""
+          + "\223\001\n\033ListPatchDeploymentsRequest\022C\n\006paren"
+          + "t\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager.go"
+          + "ogleapis.com/Project\022\026\n\tpage_size\030\002 \001(\005B"
+          + "\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"}\n\034ListPat"
+          + "chDeploymentsResponse\022D\n\021patch_deploymen"
+          + "ts\030\001 \003(\0132).google.cloud.osconfig.v1.Patc"
+          + "hDeployment\022\027\n\017next_page_token\030\002 \001(\t\"]\n\034"
+          + "DeletePatchDeploymentRequest\022=\n\004name\030\001 \001"
+          + "(\tB/\340A\002\372A)\n\'osconfig.googleapis.com/Patc"
+          + "hDeploymentB\306\001\n\034com.google.cloud.osconfi"
+          + "g.v1B\020PatchDeploymentsZ@google.golang.or"
+          + "g/genproto/googleapis/cloud/osconfig/v1;"
+          + "osconfig\252\002\030Google.Cloud.OsConfig.V1\312\002\030Go"
+          + "ogle\\Cloud\\OsConfig\\V1\352\002\033Google::Cloud::"
+          + "OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -15924,6 +16308,7 @@ public final class PatchDeployments {
               "CreateTime",
               "UpdateTime",
               "LastExecuteTime",
+              "Rollout",
               "Schedule",
             });
     internal_static_google_cloud_osconfig_v1_OneTimeSchedule_descriptor =
