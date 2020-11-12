@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.4.0...v0.5.0) (2020-11-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* GetUniversalMetadata method removed from the API, GetMetadata method should be used instead feat: reporting requests now support date ranges longer than one year docs: minor documentation updates (#89)
+
+### Bug Fixes
+
+* GetUniversalMetadata method removed from the API, GetMetadata method should be used instead feat: reporting requests now support date ranges longer than one year docs: minor documentation updates ([#89](https://www.github.com/googleapis/java-analytics-data/issues/89)) ([e3b69f6](https://www.github.com/googleapis/java-analytics-data/commit/e3b69f6ae443113244cd333e518d6fa79da4488c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#87](https://www.github.com/googleapis/java-analytics-data/issues/87)) ([04ad0c9](https://www.github.com/googleapis/java-analytics-data/commit/04ad0c9815ec03e00e1c6db120db7a3d049dbfb3))
+
 ## [0.4.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.3.0...v0.4.0) (2020-11-04)
 
 
