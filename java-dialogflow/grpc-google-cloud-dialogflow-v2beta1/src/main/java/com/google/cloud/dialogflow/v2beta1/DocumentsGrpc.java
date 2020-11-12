@@ -444,6 +444,9 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -615,6 +618,9 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -726,6 +732,9 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
@@ -839,6 +848,9 @@ public final class DocumentsGrpc {
      * content. The previously loaded content of the document will be deleted.
      * Note: Even when the content of the document has not changed, there still
      * may be side effects because of internal implementation changes.
+     * Note: If the document source is Google Cloud Storage URI, its metadata will
+     * be replaced with the custom metadata from Google Cloud Storage if the
+     * `import_gcs_custom_metadata` field is set to true in the request.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      * </pre>
