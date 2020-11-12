@@ -11,5 +11,6 @@
   "repo_short": "java-aiplatform",
   "distribution_name": "com.google.cloud:google-cloud-aiplatform",
   "api_id": "aiplatform.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/ml-apis"
 }
