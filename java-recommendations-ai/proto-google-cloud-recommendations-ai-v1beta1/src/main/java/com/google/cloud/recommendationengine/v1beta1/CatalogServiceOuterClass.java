@@ -157,7 +157,7 @@ public final class CatalogServiceOuterClass {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.recommendationengine.v1beta1.Catalog.getDescriptor(),
               com.google.cloud.recommendationengine.v1beta1.Import.getDescriptor(),
-              google.cloud.recommendationengine.v1beta1.RecommendationengineResources
+              com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources
                   .getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -228,7 +228,7 @@ public final class CatalogServiceOuterClass {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.recommendationengine.v1beta1.Catalog.getDescriptor();
     com.google.cloud.recommendationengine.v1beta1.Import.getDescriptor();
-    google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
+    com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

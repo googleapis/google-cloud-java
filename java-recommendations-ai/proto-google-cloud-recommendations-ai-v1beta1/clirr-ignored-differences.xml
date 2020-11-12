@@ -17,9 +17,9 @@
     <method>boolean has*(*)</method>
   </difference>
 
-  <!-- TODO: remove after 0.3.0 released -->
+  <!-- TODO: remove after 0.4.0 released -->
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/api/HttpBody*</className>
+    <className>google/cloud/recommendationengine/v1beta1/RecommendationengineResources</className>
   </difference>
 </differences>

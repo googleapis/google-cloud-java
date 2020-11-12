@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "29e752dfb8e80ed9cf96ebf7163828938ecfa851"
+        "sha": "b6d9a0a66c96f3ba85ee87bbde32c027266b36e2"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c1ba5ba3f24307ca5a6df350d0137c29d69983d5",
-        "internalRef": "316715576"
+        "sha": "7e17784e6465431981f36806e6376d69de1fc424",
+        "internalRef": "341987835"
       }
     },
     {
@@ -224,6 +224,7 @@
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/PurgeUserEventsRequestOrBuilder.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/PurgeUserEventsResponse.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/PurgeUserEventsResponseOrBuilder.java",
+    "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/RecommendationengineResources.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/UpdateCatalogItemRequest.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/UpdateCatalogItemRequestOrBuilder.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/UserEvent.java",
@@ -238,7 +239,6 @@
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/UserInfoOrBuilder.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/WriteUserEventRequest.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/com/google/cloud/recommendationengine/v1beta1/WriteUserEventRequestOrBuilder.java",
-    "proto-google-cloud-recommendations-ai-v1beta1/src/main/java/google/cloud/recommendationengine/v1beta1/RecommendationengineResources.java",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/proto/google/cloud/recommendationengine/v1beta1/catalog.proto",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/proto/google/cloud/recommendationengine/v1beta1/catalog_service.proto",
     "proto-google-cloud-recommendations-ai-v1beta1/src/main/proto/google/cloud/recommendationengine/v1beta1/common.proto",

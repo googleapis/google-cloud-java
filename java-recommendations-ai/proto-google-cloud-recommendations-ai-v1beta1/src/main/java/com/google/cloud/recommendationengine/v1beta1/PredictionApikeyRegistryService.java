@@ -128,7 +128,7 @@ public final class PredictionApikeyRegistryService {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
-              google.cloud.recommendationengine.v1beta1.RecommendationengineResources
+              com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources
                   .getDescriptor(),
             });
     internal_static_google_cloud_recommendationengine_v1beta1_PredictionApiKeyRegistration_descriptor =
@@ -186,7 +186,7 @@ public final class PredictionApikeyRegistryService {
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
-    google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
+    com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

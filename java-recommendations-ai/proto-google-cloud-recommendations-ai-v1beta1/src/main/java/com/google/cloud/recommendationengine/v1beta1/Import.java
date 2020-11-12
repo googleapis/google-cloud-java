@@ -156,7 +156,7 @@ public final class Import {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.recommendationengine.v1beta1.Catalog.getDescriptor(),
               com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass.getDescriptor(),
-              google.cloud.recommendationengine.v1beta1.RecommendationengineResources
+              com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources
                   .getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -265,7 +265,7 @@ public final class Import {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.recommendationengine.v1beta1.Catalog.getDescriptor();
     com.google.cloud.recommendationengine.v1beta1.UserEventOuterClass.getDescriptor();
-    google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
+    com.google.cloud.recommendationengine.v1beta1.RecommendationengineResources.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
