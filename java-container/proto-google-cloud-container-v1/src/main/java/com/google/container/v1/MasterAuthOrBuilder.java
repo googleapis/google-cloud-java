@@ -30,12 +30,17 @@ public interface MasterAuthOrBuilder
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, basic authentication can be disabled by
    * leaving username unspecified (or setting it to the empty string).
+   * Warning: basic authentication is deprecated, and will be removed in GKE
+   * control plane versions 1.19 and newer. For a list of recommended
+   * authentication methods, see:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
    * </pre>
    *
-   * <code>string username = 1;</code>
+   * <code>string username = 1 [deprecated = true];</code>
    *
    * @return The username.
    */
+  @java.lang.Deprecated
   java.lang.String getUsername();
   /**
    *
@@ -44,12 +49,17 @@ public interface MasterAuthOrBuilder
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, basic authentication can be disabled by
    * leaving username unspecified (or setting it to the empty string).
+   * Warning: basic authentication is deprecated, and will be removed in GKE
+   * control plane versions 1.19 and newer. For a list of recommended
+   * authentication methods, see:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
    * </pre>
    *
-   * <code>string username = 1;</code>
+   * <code>string username = 1 [deprecated = true];</code>
    *
    * @return The bytes for username.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getUsernameBytes();
 
   /**
@@ -60,12 +70,17 @@ public interface MasterAuthOrBuilder
    * Because the master endpoint is open to the Internet, you should create a
    * strong password.  If a password is provided for cluster creation, username
    * must be non-empty.
+   * Warning: basic authentication is deprecated, and will be removed in GKE
+   * control plane versions 1.19 and newer. For a list of recommended
+   * authentication methods, see:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
    * </pre>
    *
-   * <code>string password = 2;</code>
+   * <code>string password = 2 [deprecated = true];</code>
    *
    * @return The password.
    */
+  @java.lang.Deprecated
   java.lang.String getPassword();
   /**
    *
@@ -75,12 +90,17 @@ public interface MasterAuthOrBuilder
    * Because the master endpoint is open to the Internet, you should create a
    * strong password.  If a password is provided for cluster creation, username
    * must be non-empty.
+   * Warning: basic authentication is deprecated, and will be removed in GKE
+   * control plane versions 1.19 and newer. For a list of recommended
+   * authentication methods, see:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
    * </pre>
    *
-   * <code>string password = 2;</code>
+   * <code>string password = 2 [deprecated = true];</code>
    *
    * @return The bytes for password.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPasswordBytes();
 
   /**

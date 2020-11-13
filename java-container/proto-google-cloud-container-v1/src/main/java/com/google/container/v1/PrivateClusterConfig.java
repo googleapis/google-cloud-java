@@ -41,6 +41,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     masterIpv4CidrBlock_ = "";
     privateEndpoint_ = "";
     publicEndpoint_ = "";
+    peeringName_ = "";
   }
 
   @java.lang.Override
@@ -101,6 +102,31 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               publicEndpoint_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              peeringName_ = s;
+              break;
+            }
+          case 66:
+            {
+              com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder subBuilder =
+                  null;
+              if (masterGlobalAccessConfig_ != null) {
+                subBuilder = masterGlobalAccessConfig_.toBuilder();
+              }
+              masterGlobalAccessConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(masterGlobalAccessConfig_);
+                masterGlobalAccessConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -328,6 +354,111 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int PEERING_NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object peeringName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peering name in the customer VPC used by this cluster.
+   * </pre>
+   *
+   * <code>string peering_name = 7;</code>
+   *
+   * @return The peeringName.
+   */
+  @java.lang.Override
+  public java.lang.String getPeeringName() {
+    java.lang.Object ref = peeringName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      peeringName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peering name in the customer VPC used by this cluster.
+   * </pre>
+   *
+   * <code>string peering_name = 7;</code>
+   *
+   * @return The bytes for peeringName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPeeringNameBytes() {
+    java.lang.Object ref = peeringName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      peeringName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MASTER_GLOBAL_ACCESS_CONFIG_FIELD_NUMBER = 8;
+  private com.google.container.v1.PrivateClusterMasterGlobalAccessConfig masterGlobalAccessConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   *
+   * @return Whether the masterGlobalAccessConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMasterGlobalAccessConfig() {
+    return masterGlobalAccessConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   *
+   * @return The masterGlobalAccessConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig
+      getMasterGlobalAccessConfig() {
+    return masterGlobalAccessConfig_ == null
+        ? com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.getDefaultInstance()
+        : masterGlobalAccessConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder
+      getMasterGlobalAccessConfigOrBuilder() {
+    return getMasterGlobalAccessConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -357,6 +488,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (!getPublicEndpointBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, publicEndpoint_);
     }
+    if (!getPeeringNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, peeringName_);
+    }
+    if (masterGlobalAccessConfig_ != null) {
+      output.writeMessage(8, getMasterGlobalAccessConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -381,6 +518,14 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (!getPublicEndpointBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, publicEndpoint_);
     }
+    if (!getPeeringNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, peeringName_);
+    }
+    if (masterGlobalAccessConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getMasterGlobalAccessConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -402,6 +547,11 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (!getMasterIpv4CidrBlock().equals(other.getMasterIpv4CidrBlock())) return false;
     if (!getPrivateEndpoint().equals(other.getPrivateEndpoint())) return false;
     if (!getPublicEndpoint().equals(other.getPublicEndpoint())) return false;
+    if (!getPeeringName().equals(other.getPeeringName())) return false;
+    if (hasMasterGlobalAccessConfig() != other.hasMasterGlobalAccessConfig()) return false;
+    if (hasMasterGlobalAccessConfig()) {
+      if (!getMasterGlobalAccessConfig().equals(other.getMasterGlobalAccessConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -423,6 +573,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getPrivateEndpoint().hashCode();
     hash = (37 * hash) + PUBLIC_ENDPOINT_FIELD_NUMBER;
     hash = (53 * hash) + getPublicEndpoint().hashCode();
+    hash = (37 * hash) + PEERING_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPeeringName().hashCode();
+    if (hasMasterGlobalAccessConfig()) {
+      hash = (37 * hash) + MASTER_GLOBAL_ACCESS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterGlobalAccessConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -578,6 +734,14 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
       publicEndpoint_ = "";
 
+      peeringName_ = "";
+
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        masterGlobalAccessConfig_ = null;
+      } else {
+        masterGlobalAccessConfig_ = null;
+        masterGlobalAccessConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -610,6 +774,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
       result.privateEndpoint_ = privateEndpoint_;
       result.publicEndpoint_ = publicEndpoint_;
+      result.peeringName_ = peeringName_;
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        result.masterGlobalAccessConfig_ = masterGlobalAccessConfig_;
+      } else {
+        result.masterGlobalAccessConfig_ = masterGlobalAccessConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -676,6 +846,13 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (!other.getPublicEndpoint().isEmpty()) {
         publicEndpoint_ = other.publicEndpoint_;
         onChanged();
+      }
+      if (!other.getPeeringName().isEmpty()) {
+        peeringName_ = other.peeringName_;
+        onChanged();
+      }
+      if (other.hasMasterGlobalAccessConfig()) {
+        mergeMasterGlobalAccessConfig(other.getMasterGlobalAccessConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1147,6 +1324,323 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       publicEndpoint_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object peeringName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peering name in the customer VPC used by this cluster.
+     * </pre>
+     *
+     * <code>string peering_name = 7;</code>
+     *
+     * @return The peeringName.
+     */
+    public java.lang.String getPeeringName() {
+      java.lang.Object ref = peeringName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peeringName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peering name in the customer VPC used by this cluster.
+     * </pre>
+     *
+     * <code>string peering_name = 7;</code>
+     *
+     * @return The bytes for peeringName.
+     */
+    public com.google.protobuf.ByteString getPeeringNameBytes() {
+      java.lang.Object ref = peeringName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peeringName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peering name in the customer VPC used by this cluster.
+     * </pre>
+     *
+     * <code>string peering_name = 7;</code>
+     *
+     * @param value The peeringName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeeringName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      peeringName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peering name in the customer VPC used by this cluster.
+     * </pre>
+     *
+     * <code>string peering_name = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeeringName() {
+
+      peeringName_ = getDefaultInstance().getPeeringName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peering name in the customer VPC used by this cluster.
+     * </pre>
+     *
+     * <code>string peering_name = 7;</code>
+     *
+     * @param value The bytes for peeringName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeeringNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      peeringName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.PrivateClusterMasterGlobalAccessConfig
+        masterGlobalAccessConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfig,
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder,
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder>
+        masterGlobalAccessConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     *
+     * @return Whether the masterGlobalAccessConfig field is set.
+     */
+    public boolean hasMasterGlobalAccessConfig() {
+      return masterGlobalAccessConfigBuilder_ != null || masterGlobalAccessConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     *
+     * @return The masterGlobalAccessConfig.
+     */
+    public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig
+        getMasterGlobalAccessConfig() {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        return masterGlobalAccessConfig_ == null
+            ? com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.getDefaultInstance()
+            : masterGlobalAccessConfig_;
+      } else {
+        return masterGlobalAccessConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public Builder setMasterGlobalAccessConfig(
+        com.google.container.v1.PrivateClusterMasterGlobalAccessConfig value) {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        masterGlobalAccessConfig_ = value;
+        onChanged();
+      } else {
+        masterGlobalAccessConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public Builder setMasterGlobalAccessConfig(
+        com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder builderForValue) {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        masterGlobalAccessConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        masterGlobalAccessConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public Builder mergeMasterGlobalAccessConfig(
+        com.google.container.v1.PrivateClusterMasterGlobalAccessConfig value) {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        if (masterGlobalAccessConfig_ != null) {
+          masterGlobalAccessConfig_ =
+              com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.newBuilder(
+                      masterGlobalAccessConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          masterGlobalAccessConfig_ = value;
+        }
+        onChanged();
+      } else {
+        masterGlobalAccessConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public Builder clearMasterGlobalAccessConfig() {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        masterGlobalAccessConfig_ = null;
+        onChanged();
+      } else {
+        masterGlobalAccessConfig_ = null;
+        masterGlobalAccessConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder
+        getMasterGlobalAccessConfigBuilder() {
+
+      onChanged();
+      return getMasterGlobalAccessConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    public com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder
+        getMasterGlobalAccessConfigOrBuilder() {
+      if (masterGlobalAccessConfigBuilder_ != null) {
+        return masterGlobalAccessConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return masterGlobalAccessConfig_ == null
+            ? com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.getDefaultInstance()
+            : masterGlobalAccessConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls master global access settings.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfig,
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder,
+            com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder>
+        getMasterGlobalAccessConfigFieldBuilder() {
+      if (masterGlobalAccessConfigBuilder_ == null) {
+        masterGlobalAccessConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.PrivateClusterMasterGlobalAccessConfig,
+                com.google.container.v1.PrivateClusterMasterGlobalAccessConfig.Builder,
+                com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder>(
+                getMasterGlobalAccessConfig(), getParentForChildren(), isClean());
+        masterGlobalAccessConfig_ = null;
+      }
+      return masterGlobalAccessConfigBuilder_;
     }
 
     @java.lang.Override

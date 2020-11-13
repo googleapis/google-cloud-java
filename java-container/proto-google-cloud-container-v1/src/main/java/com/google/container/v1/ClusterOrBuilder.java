@@ -223,11 +223,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * `logging.googleapis.com` - the Google Cloud Logging service.
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
-   * * if left as an empty string,`logging.googleapis.com` will be used.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 6;</code>
@@ -241,11 +243,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * `logging.googleapis.com` - the Google Cloud Logging service.
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
-   * * if left as an empty string,`logging.googleapis.com` will be used.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 6;</code>
@@ -260,9 +264,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-   * * `none` - no metrics will be exported from the cluster.
-   * * if left as an empty string, `monitoring.googleapis.com` will be used.
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 7;</code>
@@ -276,9 +284,13 @@ public interface ClusterOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-   * * `none` - no metrics will be exported from the cluster.
-   * * if left as an empty string, `monitoring.googleapis.com` will be used.
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 7;</code>
@@ -292,9 +304,9 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-   * cluster is connected. If left unspecified, the `default` network
-   * will be used.
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. If left unspecified, the `default`
+   * network will be used.
    * </pre>
    *
    * <code>string network = 8;</code>
@@ -307,9 +319,9 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-   * cluster is connected. If left unspecified, the `default` network
-   * will be used.
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. If left unspecified, the `default`
+   * network will be used.
    * </pre>
    *
    * <code>string network = 8;</code>
@@ -389,8 +401,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-   * cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+   * the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -403,8 +415,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-   * cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+   * the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -479,8 +491,14 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -493,8 +511,14 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -507,8 +531,14 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -522,8 +552,14 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -1147,6 +1183,114 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   *
+   * @return Whether the shieldedNodes field is set.
+   */
+  boolean hasShieldedNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   *
+   * @return The shieldedNodes.
+   */
+  com.google.container.v1.ShieldedNodes getShieldedNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   */
+  com.google.container.v1.ShieldedNodesOrBuilder getShieldedNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   *
+   * @return Whether the releaseChannel field is set.
+   */
+  boolean hasReleaseChannel();
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   *
+   * @return The releaseChannel.
+   */
+  com.google.container.v1.ReleaseChannel getReleaseChannel();
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   */
+  com.google.container.v1.ReleaseChannelOrBuilder getReleaseChannelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.container.v1.WorkloadIdentityConfig getWorkloadIdentityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   */
+  com.google.container.v1.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
@@ -1173,9 +1317,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true];</code>
@@ -1189,9 +1332,8 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true];</code>
@@ -1309,7 +1451,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -1326,7 +1468,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -1395,27 +1537,31 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * cluster, if available.
    * </pre>
    *
-   * <code>string status_message = 108;</code>
+   * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @return The statusMessage.
    */
+  @java.lang.Deprecated
   java.lang.String getStatusMessage();
   /**
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * cluster, if available.
    * </pre>
    *
-   * <code>string status_message = 108;</code>
+   * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
@@ -1569,9 +1715,10 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 114;</code>
@@ -1584,9 +1731,10 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 114;</code>

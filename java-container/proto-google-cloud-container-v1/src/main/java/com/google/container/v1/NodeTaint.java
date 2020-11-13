@@ -24,8 +24,9 @@ package com.google.container.v1;
  * <pre>
  * Kubernetes taint is comprised of three fields: key, value, and effect. Effect
  * can only be one of three types:  NoSchedule, PreferNoSchedule or NoExecute.
- * For more information, including usage and the valid values, see:
- * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+ * See
+ * [here](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration)
+ * for more information, including usage and the valid values.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.NodeTaint}
@@ -624,8 +625,9 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Kubernetes taint is comprised of three fields: key, value, and effect. Effect
    * can only be one of three types:  NoSchedule, PreferNoSchedule or NoExecute.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+   * See
+   * [here](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration)
+   * for more information, including usage and the valid values.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.NodeTaint}

@@ -103,6 +103,85 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return A list containing the locations.
+   */
+  java.util.List<java.lang.String> getLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return The count of locations.
+   */
+  int getLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The locations at the given index.
+   */
+  java.lang.String getLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the locations at the given index.
+   */
+  com.google.protobuf.ByteString getLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
@@ -237,27 +316,31 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104;</code>
+   * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @return The statusMessage.
    */
+  @java.lang.Deprecated
   java.lang.String getStatusMessage();
   /**
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104;</code>
+   * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
@@ -435,4 +518,39 @@ public interface NodePoolOrBuilder
    * @return The podIpv4CidrSize.
    */
   int getPodIpv4CidrSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  boolean hasUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   */
+  com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
 }

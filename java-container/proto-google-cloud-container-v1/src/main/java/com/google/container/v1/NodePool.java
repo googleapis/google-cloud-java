@@ -44,6 +44,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
   private NodePool() {
     name_ = "";
+    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     selfLink_ = "";
     version_ = "";
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -162,6 +163,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               podIpv4CidrSize_ = input.readInt32();
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                locations_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              locations_.add(s);
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -179,9 +190,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           case 818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               instanceGroupUrls_.add(s);
               break;
@@ -202,13 +213,29 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             }
           case 842:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 conditions_ = new java.util.ArrayList<com.google.container.v1.StatusCondition>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               conditions_.add(
                   input.readMessage(
                       com.google.container.v1.StatusCondition.parser(), extensionRegistry));
+              break;
+            }
+          case 858:
+            {
+              com.google.container.v1.NodePool.UpgradeSettings.Builder subBuilder = null;
+              if (upgradeSettings_ != null) {
+                subBuilder = upgradeSettings_.toBuilder();
+              }
+              upgradeSettings_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePool.UpgradeSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upgradeSettings_);
+                upgradeSettings_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -226,9 +253,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
+        locations_ = locations_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
       this.unknownFields = unknownFields.build();
@@ -509,6 +539,708 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.container.v1.NodePool.Status)
   }
 
+  public interface UpgradeSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool.UpgradeSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of nodes that can be created beyond the current size
+     * of the node pool during the upgrade process.
+     * </pre>
+     *
+     * <code>int32 max_surge = 1;</code>
+     *
+     * @return The maxSurge.
+     */
+    int getMaxSurge();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of nodes that can be simultaneously unavailable during
+     * the upgrade process. A node is considered available if its status is
+     * Ready.
+     * </pre>
+     *
+     * <code>int32 max_unavailable = 2;</code>
+     *
+     * @return The maxUnavailable.
+     */
+    int getMaxUnavailable();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * These upgrade settings control the level of parallelism and the level of
+   * disruption caused by an upgrade.
+   * maxUnavailable controls the number of nodes that can be simultaneously
+   * unavailable.
+   * maxSurge controls the number of additional nodes that can be added to the
+   * node pool temporarily for the time of the upgrade to increase the number of
+   * available nodes.
+   * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+   * nodes are being upgraded at the same time).
+   * Note: upgrades inevitably introduce some disruption since workloads need to
+   * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+   * this holds true. (Disruption stays within the limits of
+   * PodDisruptionBudget, if it is configured.)
+   * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+   * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+   * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+   * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+   * there are always at least 4 nodes available.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.NodePool.UpgradeSettings}
+   */
+  public static final class UpgradeSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.NodePool.UpgradeSettings)
+      UpgradeSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UpgradeSettings.newBuilder() to construct.
+    private UpgradeSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpgradeSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpgradeSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private UpgradeSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                maxSurge_ = input.readInt32();
+                break;
+              }
+            case 16:
+              {
+                maxUnavailable_ = input.readInt32();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_UpgradeSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.NodePool.UpgradeSettings.class,
+              com.google.container.v1.NodePool.UpgradeSettings.Builder.class);
+    }
+
+    public static final int MAX_SURGE_FIELD_NUMBER = 1;
+    private int maxSurge_;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of nodes that can be created beyond the current size
+     * of the node pool during the upgrade process.
+     * </pre>
+     *
+     * <code>int32 max_surge = 1;</code>
+     *
+     * @return The maxSurge.
+     */
+    @java.lang.Override
+    public int getMaxSurge() {
+      return maxSurge_;
+    }
+
+    public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 2;
+    private int maxUnavailable_;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of nodes that can be simultaneously unavailable during
+     * the upgrade process. A node is considered available if its status is
+     * Ready.
+     * </pre>
+     *
+     * <code>int32 max_unavailable = 2;</code>
+     *
+     * @return The maxUnavailable.
+     */
+    @java.lang.Override
+    public int getMaxUnavailable() {
+      return maxUnavailable_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxSurge_ != 0) {
+        output.writeInt32(1, maxSurge_);
+      }
+      if (maxUnavailable_ != 0) {
+        output.writeInt32(2, maxUnavailable_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxSurge_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, maxSurge_);
+      }
+      if (maxUnavailable_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxUnavailable_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.NodePool.UpgradeSettings)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.NodePool.UpgradeSettings other =
+          (com.google.container.v1.NodePool.UpgradeSettings) obj;
+
+      if (getMaxSurge() != other.getMaxSurge()) return false;
+      if (getMaxUnavailable() != other.getMaxUnavailable()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_SURGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxSurge();
+      hash = (37 * hash) + MAX_UNAVAILABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxUnavailable();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.container.v1.NodePool.UpgradeSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * These upgrade settings control the level of parallelism and the level of
+     * disruption caused by an upgrade.
+     * maxUnavailable controls the number of nodes that can be simultaneously
+     * unavailable.
+     * maxSurge controls the number of additional nodes that can be added to the
+     * node pool temporarily for the time of the upgrade to increase the number of
+     * available nodes.
+     * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+     * nodes are being upgraded at the same time).
+     * Note: upgrades inevitably introduce some disruption since workloads need to
+     * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+     * this holds true. (Disruption stays within the limits of
+     * PodDisruptionBudget, if it is configured.)
+     * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+     * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+     * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+     * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+     * there are always at least 4 nodes available.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.NodePool.UpgradeSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool.UpgradeSettings)
+        com.google.container.v1.NodePool.UpgradeSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_UpgradeSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.NodePool.UpgradeSettings.class,
+                com.google.container.v1.NodePool.UpgradeSettings.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.NodePool.UpgradeSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        maxSurge_ = 0;
+
+        maxUnavailable_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.UpgradeSettings getDefaultInstanceForType() {
+        return com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.UpgradeSettings build() {
+        com.google.container.v1.NodePool.UpgradeSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.UpgradeSettings buildPartial() {
+        com.google.container.v1.NodePool.UpgradeSettings result =
+            new com.google.container.v1.NodePool.UpgradeSettings(this);
+        result.maxSurge_ = maxSurge_;
+        result.maxUnavailable_ = maxUnavailable_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.NodePool.UpgradeSettings) {
+          return mergeFrom((com.google.container.v1.NodePool.UpgradeSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.NodePool.UpgradeSettings other) {
+        if (other == com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance())
+          return this;
+        if (other.getMaxSurge() != 0) {
+          setMaxSurge(other.getMaxSurge());
+        }
+        if (other.getMaxUnavailable() != 0) {
+          setMaxUnavailable(other.getMaxUnavailable());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.container.v1.NodePool.UpgradeSettings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.container.v1.NodePool.UpgradeSettings) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int maxSurge_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be created beyond the current size
+       * of the node pool during the upgrade process.
+       * </pre>
+       *
+       * <code>int32 max_surge = 1;</code>
+       *
+       * @return The maxSurge.
+       */
+      @java.lang.Override
+      public int getMaxSurge() {
+        return maxSurge_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be created beyond the current size
+       * of the node pool during the upgrade process.
+       * </pre>
+       *
+       * <code>int32 max_surge = 1;</code>
+       *
+       * @param value The maxSurge to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxSurge(int value) {
+
+        maxSurge_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be created beyond the current size
+       * of the node pool during the upgrade process.
+       * </pre>
+       *
+       * <code>int32 max_surge = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxSurge() {
+
+        maxSurge_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxUnavailable_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be simultaneously unavailable during
+       * the upgrade process. A node is considered available if its status is
+       * Ready.
+       * </pre>
+       *
+       * <code>int32 max_unavailable = 2;</code>
+       *
+       * @return The maxUnavailable.
+       */
+      @java.lang.Override
+      public int getMaxUnavailable() {
+        return maxUnavailable_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be simultaneously unavailable during
+       * the upgrade process. A node is considered available if its status is
+       * Ready.
+       * </pre>
+       *
+       * <code>int32 max_unavailable = 2;</code>
+       *
+       * @param value The maxUnavailable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxUnavailable(int value) {
+
+        maxUnavailable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes that can be simultaneously unavailable during
+       * the upgrade process. A node is considered available if its status is
+       * Ready.
+       * </pre>
+       *
+       * <code>int32 max_unavailable = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxUnavailable() {
+
+        maxUnavailable_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool.UpgradeSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.NodePool.UpgradeSettings)
+    private static final com.google.container.v1.NodePool.UpgradeSettings DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.NodePool.UpgradeSettings();
+    }
+
+    public static com.google.container.v1.NodePool.UpgradeSettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpgradeSettings> PARSER =
+        new com.google.protobuf.AbstractParser<UpgradeSettings>() {
+          @java.lang.Override
+          public UpgradeSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new UpgradeSettings(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpgradeSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpgradeSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.NodePool.UpgradeSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -623,6 +1355,95 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getInitialNodeCount() {
     return initialNodeCount_;
+  }
+
+  public static final int LOCATIONS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList locations_;
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return A list containing the locations.
+   */
+  public com.google.protobuf.ProtocolStringList getLocationsList() {
+    return locations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return The count of locations.
+   */
+  public int getLocationsCount() {
+    return locations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The locations at the given index.
+   */
+  public java.lang.String getLocations(int index) {
+    return locations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes should be located.
+   * If this value is unspecified during node pool creation, the
+   * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+   * value will be used, instead.
+   * Warning: changing node pool locations will result in nodes being added
+   * and/or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the locations at the given index.
+   */
+  public com.google.protobuf.ByteString getLocationsBytes(int index) {
+    return locations_.getByteString(index);
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 100;
@@ -834,15 +1655,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104;</code>
+   * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @return The statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -858,15 +1681,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * node pool instance, if available.
    * </pre>
    *
-   * <code>string status_message = 104;</code>
+   * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1116,6 +1941,54 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     return podIpv4CidrSize_;
   }
 
+  public static final int UPGRADE_SETTINGS_FIELD_NUMBER = 107;
+  private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeSettings() {
+    return upgradeSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+    return upgradeSettings_ == null
+        ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+        : upgradeSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+    return getUpgradeSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1151,6 +2024,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (podIpv4CidrSize_ != 0) {
       output.writeInt32(7, podIpv4CidrSize_);
     }
+    for (int i = 0; i < locations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, locations_.getRaw(i));
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -1168,6 +2044,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < conditions_.size(); i++) {
       output.writeMessage(105, conditions_.get(i));
+    }
+    if (upgradeSettings_ != null) {
+      output.writeMessage(107, getUpgradeSettings());
     }
     unknownFields.writeTo(output);
   }
@@ -1199,6 +2078,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (podIpv4CidrSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, podIpv4CidrSize_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < locations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(locations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLocationsList().size();
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -1222,6 +2109,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < conditions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(105, conditions_.get(i));
     }
+    if (upgradeSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(107, getUpgradeSettings());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1243,6 +2133,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!getConfig().equals(other.getConfig())) return false;
     }
     if (getInitialNodeCount() != other.getInitialNodeCount()) return false;
+    if (!getLocationsList().equals(other.getLocationsList())) return false;
     if (!getSelfLink().equals(other.getSelfLink())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList())) return false;
@@ -1262,6 +2153,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getConditionsList().equals(other.getConditionsList())) return false;
     if (getPodIpv4CidrSize() != other.getPodIpv4CidrSize()) return false;
+    if (hasUpgradeSettings() != other.hasUpgradeSettings()) return false;
+    if (hasUpgradeSettings()) {
+      if (!getUpgradeSettings().equals(other.getUpgradeSettings())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1281,6 +2176,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + INITIAL_NODE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getInitialNodeCount();
+    if (getLocationsCount() > 0) {
+      hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationsList().hashCode();
+    }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -1311,6 +2210,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + POD_IPV4_CIDR_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPodIpv4CidrSize();
+    if (hasUpgradeSettings()) {
+      hash = (37 * hash) + UPGRADE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeSettings().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1472,12 +2375,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       initialNodeCount_ = 0;
 
+      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       selfLink_ = "";
 
       version_ = "";
 
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       status_ = 0;
 
       statusMessage_ = "";
@@ -1502,12 +2407,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         conditionsBuilder_.clear();
       }
       podIpv4CidrSize_ = 0;
 
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1542,11 +2453,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         result.config_ = configBuilder_.build();
       }
       result.initialNodeCount_ = initialNodeCount_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.locations_ = locations_;
       result.selfLink_ = selfLink_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
       result.status_ = status_;
@@ -1567,15 +2483,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         result.maxPodsConstraint_ = maxPodsConstraintBuilder_.build();
       }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
       result.podIpv4CidrSize_ = podIpv4CidrSize_;
+      if (upgradeSettingsBuilder_ == null) {
+        result.upgradeSettings_ = upgradeSettings_;
+      } else {
+        result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1635,6 +2556,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (other.getInitialNodeCount() != 0) {
         setInitialNodeCount(other.getInitialNodeCount());
       }
+      if (!other.locations_.isEmpty()) {
+        if (locations_.isEmpty()) {
+          locations_ = other.locations_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureLocationsIsMutable();
+          locations_.addAll(other.locations_);
+        }
+        onChanged();
+      }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
         onChanged();
@@ -1646,7 +2577,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -1673,7 +2604,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -1686,7 +2617,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -1698,6 +2629,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getPodIpv4CidrSize() != 0) {
         setPodIpv4CidrSize(other.getPodIpv4CidrSize());
+      }
+      if (other.hasUpgradeSettings()) {
+        mergeUpgradeSettings(other.getUpgradeSettings());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2078,6 +3012,237 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList locations_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return A list containing the locations.
+     */
+    public com.google.protobuf.ProtocolStringList getLocationsList() {
+      return locations_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return The count of locations.
+     */
+    public int getLocationsCount() {
+      return locations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The locations at the given index.
+     */
+    public java.lang.String getLocations(int index) {
+      return locations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the locations at the given index.
+     */
+    public com.google.protobuf.ByteString getLocationsBytes(int index) {
+      return locations_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The locations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
+      locations_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param value The locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
+      locations_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param values The locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
+      ensureLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocations() {
+      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * NodePool's nodes should be located.
+     * If this value is unspecified during node pool creation, the
+     * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
+     * value will be used, instead.
+     * Warning: changing node pool locations will result in nodes being added
+     * and/or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param value The bytes of the locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLocationsIsMutable();
+      locations_.add(value);
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -2294,9 +3459,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -2447,7 +3612,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2572,14 +3737,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104;</code>
+     * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @return The statusMessage.
      */
+    @java.lang.Deprecated
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
@@ -2595,14 +3762,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104;</code>
+     * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @return The bytes for statusMessage.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
@@ -2618,15 +3787,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104;</code>
+     * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2640,14 +3811,16 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104;</code>
+     * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearStatusMessage() {
 
       statusMessage_ = getDefaultInstance().getStatusMessage();
@@ -2658,15 +3831,17 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * node pool instance, if available.
      * </pre>
      *
-     * <code>string status_message = 104;</code>
+     * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3257,9 +4432,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.container.v1.StatusCondition>(conditions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3474,7 +4649,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -3596,7 +4771,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.StatusCondition,
                 com.google.container.v1.StatusCondition.Builder,
                 com.google.container.v1.StatusConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -3652,6 +4827,192 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       podIpv4CidrSize_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        upgradeSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     *
+     * @return Whether the upgradeSettings field is set.
+     */
+    public boolean hasUpgradeSettings() {
+      return upgradeSettingsBuilder_ != null || upgradeSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     *
+     * @return The upgradeSettings.
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      } else {
+        return upgradeSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public Builder setUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upgradeSettings_ = value;
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public Builder setUpgradeSettings(
+        com.google.container.v1.NodePool.UpgradeSettings.Builder builderForValue) {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public Builder mergeUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (upgradeSettings_ != null) {
+          upgradeSettings_ =
+              com.google.container.v1.NodePool.UpgradeSettings.newBuilder(upgradeSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          upgradeSettings_ = value;
+        }
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public Builder clearUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+        onChanged();
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings.Builder getUpgradeSettingsBuilder() {
+
+      onChanged();
+      return getUpgradeSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+      if (upgradeSettingsBuilder_ != null) {
+        return upgradeSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        getUpgradeSettingsFieldBuilder() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePool.UpgradeSettings,
+                com.google.container.v1.NodePool.UpgradeSettings.Builder,
+                com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>(
+                getUpgradeSettings(), getParentForChildren(), isClean());
+        upgradeSettings_ = null;
+      }
+      return upgradeSettingsBuilder_;
     }
 
     @java.lang.Override

@@ -59,9 +59,9 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -75,9 +75,9 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -239,4 +239,141 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return A list containing the locations.
+   */
+  java.util.List<java.lang.String> getLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return The count of locations.
+   */
+  int getLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The locations at the given index.
+   */
+  java.lang.String getLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the locations at the given index.
+   */
+  com.google.protobuf.ByteString getLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return Whether the workloadMetadataConfig field is set.
+   */
+  boolean hasWorkloadMetadataConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return The workloadMetadataConfig.
+   */
+  com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   */
+  com.google.container.v1.WorkloadMetadataConfigOrBuilder getWorkloadMetadataConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  boolean hasUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   */
+  com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
 }

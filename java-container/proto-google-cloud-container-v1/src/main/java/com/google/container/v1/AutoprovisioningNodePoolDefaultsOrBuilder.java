@@ -27,8 +27,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -40,8 +39,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -53,8 +51,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -67,8 +64,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -82,8 +78,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * service_account is specified, scopes should be empty.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
    * </pre>
    *
    * <code>string service_account = 2;</code>
@@ -95,8 +90,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * service_account is specified, scopes should be empty.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
    * </pre>
    *
    * <code>string service_account = 2;</code>
@@ -104,4 +98,229 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  boolean hasUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   */
+  com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   *
+   * @return Whether the management field is set.
+   */
+  boolean hasManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   *
+   * @return The management.
+   */
+  com.google.container.v1.NodeManagement getManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   */
+  com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * To unset the min cpu platform field pass "automatic"
+   * as field value.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 5;</code>
+   *
+   * @return The minCpuPlatform.
+   */
+  java.lang.String getMinCpuPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * To unset the min cpu platform field pass "automatic"
+   * as field value.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 5;</code>
+   *
+   * @return The bytes for minCpuPlatform.
+   */
+  com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Size of the disk attached to each node, specified in GB.
+   * The smallest allowed disk size is 10GB.
+   * If unspecified, the default disk size is 100GB.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 6;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  int getDiskSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 7;</code>
+   *
+   * @return The diskType.
+   */
+  java.lang.String getDiskType();
+  /**
+   *
+   *
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 7;</code>
+   *
+   * @return The bytes for diskType.
+   */
+  com.google.protobuf.ByteString getDiskTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  boolean hasShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   */
+  com.google.container.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 9;</code>
+   *
+   * @return The bootDiskKmsKey.
+   */
+  java.lang.String getBootDiskKmsKey();
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 9;</code>
+   *
+   * @return The bytes for bootDiskKmsKey.
+   */
+  com.google.protobuf.ByteString getBootDiskKmsKeyBytes();
 }

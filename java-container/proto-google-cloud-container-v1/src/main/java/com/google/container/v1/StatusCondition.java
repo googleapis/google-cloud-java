@@ -144,7 +144,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCE_STOCKOUT indicates a Google Compute Engine stockout.
+     * GCE_STOCKOUT indicates that Google Compute Engine resources are
+     * temporarily unavailable.
      * </pre>
      *
      * <code>GCE_STOCKOUT = 1;</code>
@@ -210,7 +211,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * GCE_STOCKOUT indicates a Google Compute Engine stockout.
+     * GCE_STOCKOUT indicates that Google Compute Engine resources are
+     * temporarily unavailable.
      * </pre>
      *
      * <code>GCE_STOCKOUT = 1;</code>

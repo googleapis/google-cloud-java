@@ -53,9 +53,8 @@ public interface OperationOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-   * is taking place.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -69,9 +68,8 @@ public interface OperationOrBuilder
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-   * is taking place.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -160,10 +158,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * If an error has occurred, a textual description of the error.
+   * Output only. If an error has occurred, a textual description of the error.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The statusMessage.
    */
@@ -172,10 +170,10 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * If an error has occurred, a textual description of the error.
+   * Output only. If an error has occurred, a textual description of the error.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -236,9 +234,10 @@ public interface OperationOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 9;</code>
@@ -251,9 +250,10 @@ public interface OperationOrBuilder
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 9;</code>
@@ -315,6 +315,47 @@ public interface OperationOrBuilder
    * @return The bytes for endTime.
    */
   com.google.protobuf.ByteString getEndTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the progress field is set.
+   */
+  boolean hasProgress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The progress.
+   */
+  com.google.container.v1.OperationProgress getProgress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.OperationProgressOrBuilder getProgressOrBuilder();
 
   /**
    *

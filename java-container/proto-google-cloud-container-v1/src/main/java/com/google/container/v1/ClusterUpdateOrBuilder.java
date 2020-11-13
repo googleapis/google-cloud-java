@@ -70,10 +70,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_monitoring_service = 5;</code>
@@ -87,10 +90,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_monitoring_service = 5;</code>
@@ -231,6 +237,77 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   *
+   * @return Whether the desiredWorkloadIdentityConfig field is set.
+   */
+  boolean hasDesiredWorkloadIdentityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   *
+   * @return The desiredWorkloadIdentityConfig.
+   */
+  com.google.container.v1.WorkloadIdentityConfig getDesiredWorkloadIdentityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   */
+  com.google.container.v1.WorkloadIdentityConfigOrBuilder
+      getDesiredWorkloadIdentityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   *
+   * @return Whether the desiredShieldedNodes field is set.
+   */
+  boolean hasDesiredShieldedNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   *
+   * @return The desiredShieldedNodes.
+   */
+  com.google.container.v1.ShieldedNodes getDesiredShieldedNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   */
+  com.google.container.v1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
    * cluster and desired_node_pool_id is not provided then
@@ -276,11 +353,11 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -293,11 +370,11 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -310,11 +387,11 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -328,11 +405,11 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -460,10 +537,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no logs will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_logging_service = 19;</code>
@@ -477,10 +557,13 @@ public interface ClusterUpdateOrBuilder
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no logs will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_logging_service = 19;</code>
@@ -568,6 +651,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   *
+   * @return Whether the desiredPrivateClusterConfig field is set.
+   */
+  boolean hasDesiredPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   *
+   * @return The desiredPrivateClusterConfig.
+   */
+  com.google.container.v1.PrivateClusterConfig getDesiredPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   */
+  com.google.container.v1.PrivateClusterConfigOrBuilder getDesiredPrivateClusterConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired config of Intra-node visibility.
    * </pre>
    *
@@ -602,6 +720,76 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1.IntraNodeVisibilityConfigOrBuilder
       getDesiredIntraNodeVisibilityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   *
+   * @return Whether the desiredDefaultSnatStatus field is set.
+   */
+  boolean hasDesiredDefaultSnatStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   *
+   * @return The desiredDefaultSnatStatus.
+   */
+  com.google.container.v1.DefaultSnatStatus getDesiredDefaultSnatStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   */
+  com.google.container.v1.DefaultSnatStatusOrBuilder getDesiredDefaultSnatStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   *
+   * @return Whether the desiredReleaseChannel field is set.
+   */
+  boolean hasDesiredReleaseChannel();
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   *
+   * @return The desiredReleaseChannel.
+   */
+  com.google.container.v1.ReleaseChannel getDesiredReleaseChannel();
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   */
+  com.google.container.v1.ReleaseChannelOrBuilder getDesiredReleaseChannelOrBuilder();
 
   /**
    *

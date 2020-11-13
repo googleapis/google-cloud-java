@@ -59,9 +59,9 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides, or "-" for all zones.
-   * This field has been deprecated and replaced by the parent field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides, or "-" for all zones. This field has been deprecated and
+   * replaced by the parent field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -75,9 +75,9 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides, or "-" for all zones.
-   * This field has been deprecated and replaced by the parent field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides, or "-" for all zones. This field has been deprecated and
+   * replaced by the parent field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>

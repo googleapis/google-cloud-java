@@ -161,6 +161,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               endTime_ = s;
               break;
             }
+          case 98:
+            {
+              com.google.container.v1.OperationProgress.Builder subBuilder = null;
+              if (progress_ != null) {
+                subBuilder = progress_.toBuilder();
+              }
+              progress_ =
+                  input.readMessage(
+                      com.google.container.v1.OperationProgress.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(progress_);
+                progress_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 106:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -947,9 +963,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-   * is taking place.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -974,9 +989,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-   * is taking place.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * operation is taking place. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -1124,10 +1138,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an error has occurred, a textual description of the error.
+   * Output only. If an error has occurred, a textual description of the error.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The statusMessage.
    */
@@ -1147,10 +1161,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If an error has occurred, a textual description of the error.
+   * Output only. If an error has occurred, a textual description of the error.
    * </pre>
    *
-   * <code>string status_message = 5;</code>
+   * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1272,9 +1286,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 9;</code>
@@ -1298,9 +1313,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 9;</code>
@@ -1420,6 +1436,60 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PROGRESS_FIELD_NUMBER = 12;
+  private com.google.container.v1.OperationProgress progress_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the progress field is set.
+   */
+  @java.lang.Override
+  public boolean hasProgress() {
+    return progress_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The progress.
+   */
+  @java.lang.Override
+  public com.google.container.v1.OperationProgress getProgress() {
+    return progress_ == null
+        ? com.google.container.v1.OperationProgress.getDefaultInstance()
+        : progress_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Progress information for an operation.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.OperationProgressOrBuilder getProgressOrBuilder() {
+    return getProgress();
   }
 
   public static final int CLUSTER_CONDITIONS_FIELD_NUMBER = 13;
@@ -1608,6 +1678,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getEndTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, endTime_);
     }
+    if (progress_ != null) {
+      output.writeMessage(12, getProgress());
+    }
     for (int i = 0; i < clusterConditions_.size(); i++) {
       output.writeMessage(13, clusterConditions_.get(i));
     }
@@ -1656,6 +1729,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getEndTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, endTime_);
     }
+    if (progress_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getProgress());
+    }
     for (int i = 0; i < clusterConditions_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, clusterConditions_.get(i));
@@ -1690,6 +1766,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getLocation().equals(other.getLocation())) return false;
     if (!getStartTime().equals(other.getStartTime())) return false;
     if (!getEndTime().equals(other.getEndTime())) return false;
+    if (hasProgress() != other.hasProgress()) return false;
+    if (hasProgress()) {
+      if (!getProgress().equals(other.getProgress())) return false;
+    }
     if (!getClusterConditionsList().equals(other.getClusterConditionsList())) return false;
     if (!getNodepoolConditionsList().equals(other.getNodepoolConditionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1725,6 +1805,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStartTime().hashCode();
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getEndTime().hashCode();
+    if (hasProgress()) {
+      hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getProgress().hashCode();
+    }
     if (getClusterConditionsCount() > 0) {
       hash = (37 * hash) + CLUSTER_CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getClusterConditionsList().hashCode();
@@ -1903,6 +1987,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
       endTime_ = "";
 
+      if (progressBuilder_ == null) {
+        progress_ = null;
+      } else {
+        progress_ = null;
+        progressBuilder_ = null;
+      }
       if (clusterConditionsBuilder_ == null) {
         clusterConditions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1953,6 +2043,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       result.location_ = location_;
       result.startTime_ = startTime_;
       result.endTime_ = endTime_;
+      if (progressBuilder_ == null) {
+        result.progress_ = progress_;
+      } else {
+        result.progress_ = progressBuilder_.build();
+      }
       if (clusterConditionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterConditions_ = java.util.Collections.unmodifiableList(clusterConditions_);
@@ -2061,6 +2156,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (!other.getEndTime().isEmpty()) {
         endTime_ = other.endTime_;
         onChanged();
+      }
+      if (other.hasProgress()) {
+        mergeProgress(other.getProgress());
       }
       if (clusterConditionsBuilder_ == null) {
         if (!other.clusterConditions_.isEmpty()) {
@@ -2259,9 +2357,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-     * is taking place.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * operation is taking place. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -2285,9 +2382,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-     * is taking place.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * operation is taking place. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -2311,9 +2407,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-     * is taking place.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * operation is taking place. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -2336,9 +2431,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-     * is taking place.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * operation is taking place. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -2357,9 +2451,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
-     * is taking place.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * operation is taking place. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -2672,10 +2765,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an error has occurred, a textual description of the error.
+     * Output only. If an error has occurred, a textual description of the error.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The statusMessage.
      */
@@ -2694,10 +2787,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an error has occurred, a textual description of the error.
+     * Output only. If an error has occurred, a textual description of the error.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -2716,10 +2809,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an error has occurred, a textual description of the error.
+     * Output only. If an error has occurred, a textual description of the error.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -2737,10 +2830,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an error has occurred, a textual description of the error.
+     * Output only. If an error has occurred, a textual description of the error.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2754,10 +2847,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an error has occurred, a textual description of the error.
+     * Output only. If an error has occurred, a textual description of the error.
      * </pre>
      *
-     * <code>string status_message = 5;</code>
+     * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
@@ -2991,9 +3084,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 9;</code>
@@ -3016,9 +3110,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 9;</code>
@@ -3041,9 +3136,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 9;</code>
@@ -3065,9 +3161,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 9;</code>
@@ -3085,9 +3182,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 9;</code>
@@ -3326,6 +3424,209 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       endTime_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.OperationProgress progress_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.OperationProgress,
+            com.google.container.v1.OperationProgress.Builder,
+            com.google.container.v1.OperationProgressOrBuilder>
+        progressBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the progress field is set.
+     */
+    public boolean hasProgress() {
+      return progressBuilder_ != null || progress_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The progress.
+     */
+    public com.google.container.v1.OperationProgress getProgress() {
+      if (progressBuilder_ == null) {
+        return progress_ == null
+            ? com.google.container.v1.OperationProgress.getDefaultInstance()
+            : progress_;
+      } else {
+        return progressBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProgress(com.google.container.v1.OperationProgress value) {
+      if (progressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        progress_ = value;
+        onChanged();
+      } else {
+        progressBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProgress(com.google.container.v1.OperationProgress.Builder builderForValue) {
+      if (progressBuilder_ == null) {
+        progress_ = builderForValue.build();
+        onChanged();
+      } else {
+        progressBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeProgress(com.google.container.v1.OperationProgress value) {
+      if (progressBuilder_ == null) {
+        if (progress_ != null) {
+          progress_ =
+              com.google.container.v1.OperationProgress.newBuilder(progress_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          progress_ = value;
+        }
+        onChanged();
+      } else {
+        progressBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearProgress() {
+      if (progressBuilder_ == null) {
+        progress_ = null;
+        onChanged();
+      } else {
+        progress_ = null;
+        progressBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.OperationProgress.Builder getProgressBuilder() {
+
+      onChanged();
+      return getProgressFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.OperationProgressOrBuilder getProgressOrBuilder() {
+      if (progressBuilder_ != null) {
+        return progressBuilder_.getMessageOrBuilder();
+      } else {
+        return progress_ == null
+            ? com.google.container.v1.OperationProgress.getDefaultInstance()
+            : progress_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Progress information for an operation.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.OperationProgress progress = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.OperationProgress,
+            com.google.container.v1.OperationProgress.Builder,
+            com.google.container.v1.OperationProgressOrBuilder>
+        getProgressFieldBuilder() {
+      if (progressBuilder_ == null) {
+        progressBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.OperationProgress,
+                com.google.container.v1.OperationProgress.Builder,
+                com.google.container.v1.OperationProgressOrBuilder>(
+                getProgress(), getParentForChildren(), isClean());
+        progress_ = null;
+      }
+      return progressBuilder_;
     }
 
     private java.util.List<com.google.container.v1.StatusCondition> clusterConditions_ =

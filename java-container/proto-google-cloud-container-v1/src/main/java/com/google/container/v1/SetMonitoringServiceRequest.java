@@ -205,9 +205,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -232,9 +232,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -316,10 +316,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -344,10 +347,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <pre>
    * Required. The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -927,9 +933,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -953,9 +959,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -979,9 +985,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1004,9 +1010,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1025,9 +1031,9 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1170,10 +1176,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1197,10 +1206,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1224,10 +1236,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1250,10 +1265,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1272,10 +1290,13 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <pre>
      * Required. The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>

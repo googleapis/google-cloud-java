@@ -28,6 +28,9 @@ public interface IPAllocationPolicyOrBuilder
    *
    * <pre>
    * Whether alias IPs will be used for pod IPs in the cluster.
+   * This is used in conjunction with use_routes. It cannot
+   * be true if use_routes is true. If both use_ip_aliases and use_routes are
+   * false, then the server picks the default IP allocation mode
    * </pre>
    *
    * <code>bool use_ip_aliases = 1;</code>
@@ -407,4 +410,20 @@ public interface IPAllocationPolicyOrBuilder
    * @return The bytes for tpuIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether routes will be used for pod IPs in the cluster.
+   * This is used in conjunction with use_ip_aliases. It cannot be true if
+   * use_ip_aliases is true. If both use_ip_aliases and use_routes are false,
+   * then the server picks the default IP allocation mode
+   * </pre>
+   *
+   * <code>bool use_routes = 15;</code>
+   *
+   * @return The useRoutes.
+   */
+  boolean getUseRoutes();
 }

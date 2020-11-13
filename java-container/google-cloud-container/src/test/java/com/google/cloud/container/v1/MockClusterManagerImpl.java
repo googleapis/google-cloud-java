@@ -25,6 +25,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -342,6 +344,21 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
     if (response instanceof ServerConfig) {
       requests.add(request);
       responseObserver.onNext((ServerConfig) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getJSONWebKeys(
+      GetJSONWebKeysRequest request, StreamObserver<GetJSONWebKeysResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof GetJSONWebKeysResponse) {
+      requests.add(request);
+      responseObserver.onNext((GetJSONWebKeysResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

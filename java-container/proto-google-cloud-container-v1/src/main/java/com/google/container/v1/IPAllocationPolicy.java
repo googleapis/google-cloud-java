@@ -159,6 +159,11 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
               tpuIpv4CidrBlock_ = s;
               break;
             }
+          case 120:
+            {
+              useRoutes_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -200,6 +205,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Whether alias IPs will be used for pod IPs in the cluster.
+   * This is used in conjunction with use_routes. It cannot
+   * be true if use_routes is true. If both use_ip_aliases and use_routes are
+   * false, then the server picks the default IP allocation mode
    * </pre>
    *
    * <code>bool use_ip_aliases = 1;</code>
@@ -828,6 +836,27 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int USE_ROUTES_FIELD_NUMBER = 15;
+  private boolean useRoutes_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether routes will be used for pod IPs in the cluster.
+   * This is used in conjunction with use_ip_aliases. It cannot be true if
+   * use_ip_aliases is true. If both use_ip_aliases and use_routes are false,
+   * then the server picks the default IP allocation mode
+   * </pre>
+   *
+   * <code>bool use_routes = 15;</code>
+   *
+   * @return The useRoutes.
+   */
+  @java.lang.Override
+  public boolean getUseRoutes() {
+    return useRoutes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -878,6 +907,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, tpuIpv4CidrBlock_);
     }
+    if (useRoutes_ != false) {
+      output.writeBool(15, useRoutes_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -925,6 +957,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getTpuIpv4CidrBlockBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, tpuIpv4CidrBlock_);
     }
+    if (useRoutes_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, useRoutes_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -954,6 +989,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getNodeIpv4CidrBlock().equals(other.getNodeIpv4CidrBlock())) return false;
     if (!getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock())) return false;
     if (!getTpuIpv4CidrBlock().equals(other.getTpuIpv4CidrBlock())) return false;
+    if (getUseRoutes() != other.getUseRoutes()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -989,6 +1025,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getServicesIpv4CidrBlock().hashCode();
     hash = (37 * hash) + TPU_IPV4_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getTpuIpv4CidrBlock().hashCode();
+    hash = (37 * hash) + USE_ROUTES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseRoutes());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1158,6 +1196,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
       tpuIpv4CidrBlock_ = "";
 
+      useRoutes_ = false;
+
       return this;
     }
 
@@ -1197,6 +1237,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       result.nodeIpv4CidrBlock_ = nodeIpv4CidrBlock_;
       result.servicesIpv4CidrBlock_ = servicesIpv4CidrBlock_;
       result.tpuIpv4CidrBlock_ = tpuIpv4CidrBlock_;
+      result.useRoutes_ = useRoutes_;
       onBuilt();
       return result;
     }
@@ -1292,6 +1333,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         tpuIpv4CidrBlock_ = other.tpuIpv4CidrBlock_;
         onChanged();
       }
+      if (other.getUseRoutes() != false) {
+        setUseRoutes(other.getUseRoutes());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1327,6 +1371,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_routes. It cannot
+     * be true if use_routes is true. If both use_ip_aliases and use_routes are
+     * false, then the server picks the default IP allocation mode
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
@@ -1342,6 +1389,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_routes. It cannot
+     * be true if use_routes is true. If both use_ip_aliases and use_routes are
+     * false, then the server picks the default IP allocation mode
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
@@ -1360,6 +1410,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_routes. It cannot
+     * be true if use_routes is true. If both use_ip_aliases and use_routes are
+     * false, then the server picks the default IP allocation mode
      * </pre>
      *
      * <code>bool use_ip_aliases = 1;</code>
@@ -2754,6 +2807,67 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       tpuIpv4CidrBlock_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean useRoutes_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether routes will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_ip_aliases. It cannot be true if
+     * use_ip_aliases is true. If both use_ip_aliases and use_routes are false,
+     * then the server picks the default IP allocation mode
+     * </pre>
+     *
+     * <code>bool use_routes = 15;</code>
+     *
+     * @return The useRoutes.
+     */
+    @java.lang.Override
+    public boolean getUseRoutes() {
+      return useRoutes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether routes will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_ip_aliases. It cannot be true if
+     * use_ip_aliases is true. If both use_ip_aliases and use_routes are false,
+     * then the server picks the default IP allocation mode
+     * </pre>
+     *
+     * <code>bool use_routes = 15;</code>
+     *
+     * @param value The useRoutes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseRoutes(boolean value) {
+
+      useRoutes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether routes will be used for pod IPs in the cluster.
+     * This is used in conjunction with use_ip_aliases. It cannot be true if
+     * use_ip_aliases is true. If both use_ip_aliases and use_routes are false,
+     * then the server picks the default IP allocation mode
+     * </pre>
+     *
+     * <code>bool use_routes = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseRoutes() {
+
+      useRoutes_ = false;
       onChanged();
       return this;
     }

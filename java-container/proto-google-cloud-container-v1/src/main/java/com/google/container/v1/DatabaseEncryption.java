@@ -154,7 +154,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Secrets in etcd are stored in plain text (at etcd level) - this is
-     * unrelated to GCE level full disk encryption.
+     * unrelated to Compute Engine level full disk encryption.
      * </pre>
      *
      * <code>DECRYPTED = 2;</code>
@@ -188,7 +188,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Secrets in etcd are stored in plain text (at etcd level) - this is
-     * unrelated to GCE level full disk encryption.
+     * unrelated to Compute Engine level full disk encryption.
      * </pre>
      *
      * <code>DECRYPTED = 2;</code>

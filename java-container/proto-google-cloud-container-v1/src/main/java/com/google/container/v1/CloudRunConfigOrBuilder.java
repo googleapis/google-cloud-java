@@ -35,4 +35,29 @@ public interface CloudRunConfigOrBuilder
    * @return The disabled.
    */
   boolean getDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Which load balancer type is installed for Cloud Run.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for loadBalancerType.
+   */
+  int getLoadBalancerTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Which load balancer type is installed for Cloud Run.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+   *
+   * @return The loadBalancerType.
+   */
+  com.google.container.v1.CloudRunConfig.LoadBalancerType getLoadBalancerType();
 }

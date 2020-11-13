@@ -35,6 +35,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -1770,6 +1772,70 @@ public class ClusterManagerClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getOperationTest2() {
+    String name = "name3373707";
+    String zone2 = "zone2-696322977";
+    String detail = "detail-1335224239";
+    String statusMessage = "statusMessage-239442758";
+    String selfLink = "selfLink-1691268851";
+    String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
+    String startTime = "startTime-1573145462";
+    String endTime = "endTime1725551537";
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setName(name)
+            .setZone(zone2)
+            .setDetail(detail)
+            .setStatusMessage(statusMessage)
+            .setSelfLink(selfLink)
+            .setTargetLink(targetLink)
+            .setLocation(location)
+            .setStartTime(startTime)
+            .setEndTime(endTime)
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    String projectId = "projectId-1969970175";
+    String zone = "zone3744684";
+    String operationId = "operationId-274116877";
+
+    Operation actualResponse = client.getOperation(projectId, zone, operationId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOperationRequest actualRequest = (GetOperationRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertEquals(operationId, actualRequest.getOperationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getOperationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String zone = "zone3744684";
+      String operationId = "operationId-274116877";
+
+      client.getOperation(projectId, zone, operationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void cancelOperationTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockClusterManager.addResponse(expectedResponse);
@@ -1942,6 +2008,43 @@ public class ClusterManagerClientTest {
       String zone = "zone3744684";
 
       client.getServerConfig(projectId, zone);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getJSONWebKeysTest() {
+    GetJSONWebKeysResponse expectedResponse = GetJSONWebKeysResponse.newBuilder().build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
+
+    GetJSONWebKeysResponse actualResponse = client.getJSONWebKeys(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetJSONWebKeysRequest actualRequest = (GetJSONWebKeysRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getJSONWebKeysExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
+
+      client.getJSONWebKeys(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

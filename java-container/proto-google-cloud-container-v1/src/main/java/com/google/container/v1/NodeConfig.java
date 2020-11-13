@@ -47,6 +47,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     diskType_ = "";
     minCpuPlatform_ = "";
     taints_ = java.util.Collections.emptyList();
+    nodeGroup_ = "";
+    bootDiskKmsKey_ = "";
   }
 
   @java.lang.Override
@@ -189,6 +191,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               minCpuPlatform_ = s;
               break;
             }
+          case 114:
+            {
+              com.google.container.v1.WorkloadMetadataConfig.Builder subBuilder = null;
+              if (workloadMetadataConfig_ != null) {
+                subBuilder = workloadMetadataConfig_.toBuilder();
+              }
+              workloadMetadataConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.WorkloadMetadataConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workloadMetadataConfig_);
+                workloadMetadataConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 122:
             {
               if (!((mutable_bitField0_ & 0x00000020) != 0)) {
@@ -197,6 +215,45 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               }
               taints_.add(
                   input.readMessage(com.google.container.v1.NodeTaint.parser(), extensionRegistry));
+              break;
+            }
+          case 138:
+            {
+              com.google.container.v1.SandboxConfig.Builder subBuilder = null;
+              if (sandboxConfig_ != null) {
+                subBuilder = sandboxConfig_.toBuilder();
+              }
+              sandboxConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.SandboxConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sandboxConfig_);
+                sandboxConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
+          case 154:
+            {
+              com.google.container.v1.ReservationAffinity.Builder subBuilder = null;
+              if (reservationAffinity_ != null) {
+                subBuilder = reservationAffinity_.toBuilder();
+              }
+              reservationAffinity_ =
+                  input.readMessage(
+                      com.google.container.v1.ReservationAffinity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reservationAffinity_);
+                reservationAffinity_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 162:
@@ -213,6 +270,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 shieldedInstanceConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 186:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bootDiskKmsKey_ = s;
               break;
             }
           default:
@@ -281,10 +345,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of a Google Compute Engine [machine
-   * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-   * `n1-standard-1`).
-   * If unspecified, the default machine type is
-   * `n1-standard-1`.
+   * type](https://cloud.google.com/compute/docs/machine-types)
+   * If unspecified, the default machine type is `e2-medium`.
    * </pre>
    *
    * <code>string machine_type = 1;</code>
@@ -308,10 +370,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of a Google Compute Engine [machine
-   * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-   * `n1-standard-1`).
-   * If unspecified, the default machine type is
-   * `n1-standard-1`.
+   * type](https://cloud.google.com/compute/docs/machine-types)
+   * If unspecified, the default machine type is `e2-medium`.
    * </pre>
    *
    * <code>string machine_type = 1;</code>
@@ -365,7 +425,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+   * (the [Google Container
+   * Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -389,7 +450,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+   * (the [Google Container
+   * Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -413,7 +475,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+   * (the [Google Container
+   * Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -438,7 +501,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+   * (the [Google Container
+   * Registry](https://cloud.google.com/container-registry/)).
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -458,8 +522,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * no Service Account is specified, the "default" service account is used.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
+   * Specify the email address of the Service Account; otherwise, if no Service
+   * Account is specified, the "default" service account is used.
    * </pre>
    *
    * <code>string service_account = 9;</code>
@@ -482,8 +547,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * no Service Account is specified, the "default" service account is used.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
+   * Specify the email address of the Service Account; otherwise, if no Service
+   * Account is specified, the "default" service account is used.
    * </pre>
    *
    * <code>string service_account = 9;</code>
@@ -533,29 +599,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
-   * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+   * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
-   *  "cluster-location"
-   *  "cluster-name"
-   *  "cluster-uid"
-   *  "configure-sh"
-   *  "containerd-configure-sh"
-   *  "enable-os-login"
-   *  "gci-update-strategy"
-   *  "gci-ensure-gke-docker"
-   *  "instance-template"
-   *  "kube-env"
-   *  "startup-script"
-   *  "user-data"
-   *  "disable-address-manager"
-   *  "windows-startup-script-ps1"
-   *  "common-psm1"
-   *  "k8s-node-setup-psm1"
-   *  "install-ssh-psm1"
-   *  "user-profile-psm1"
-   *  "serial-port-logging-enable"
+   *  - "cluster-location"
+   *  - "cluster-name"
+   *  - "cluster-uid"
+   *  - "configure-sh"
+   *  - "containerd-configure-sh"
+   *  - "enable-os-login"
+   *  - "gci-ensure-gke-docker"
+   *  - "gci-metrics-enabled"
+   *  - "gci-update-strategy"
+   *  - "instance-template"
+   *  - "kube-env"
+   *  - "startup-script"
+   *  - "user-data"
+   *  - "disable-address-manager"
+   *  - "windows-startup-script-ps1"
+   *  - "common-psm1"
+   *  - "k8s-node-setup-psm1"
+   *  - "install-ssh-psm1"
+   *  - "user-profile-psm1"
+   * The following keys are reserved for Windows nodes:
+   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -582,29 +650,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
-   * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+   * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
-   *  "cluster-location"
-   *  "cluster-name"
-   *  "cluster-uid"
-   *  "configure-sh"
-   *  "containerd-configure-sh"
-   *  "enable-os-login"
-   *  "gci-update-strategy"
-   *  "gci-ensure-gke-docker"
-   *  "instance-template"
-   *  "kube-env"
-   *  "startup-script"
-   *  "user-data"
-   *  "disable-address-manager"
-   *  "windows-startup-script-ps1"
-   *  "common-psm1"
-   *  "k8s-node-setup-psm1"
-   *  "install-ssh-psm1"
-   *  "user-profile-psm1"
-   *  "serial-port-logging-enable"
+   *  - "cluster-location"
+   *  - "cluster-name"
+   *  - "cluster-uid"
+   *  - "configure-sh"
+   *  - "containerd-configure-sh"
+   *  - "enable-os-login"
+   *  - "gci-ensure-gke-docker"
+   *  - "gci-metrics-enabled"
+   *  - "gci-update-strategy"
+   *  - "instance-template"
+   *  - "kube-env"
+   *  - "startup-script"
+   *  - "user-data"
+   *  - "disable-address-manager"
+   *  - "windows-startup-script-ps1"
+   *  - "common-psm1"
+   *  - "k8s-node-setup-psm1"
+   *  - "install-ssh-psm1"
+   *  - "user-profile-psm1"
+   * The following keys are reserved for Windows nodes:
+   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -622,29 +692,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
-   * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+   * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
-   *  "cluster-location"
-   *  "cluster-name"
-   *  "cluster-uid"
-   *  "configure-sh"
-   *  "containerd-configure-sh"
-   *  "enable-os-login"
-   *  "gci-update-strategy"
-   *  "gci-ensure-gke-docker"
-   *  "instance-template"
-   *  "kube-env"
-   *  "startup-script"
-   *  "user-data"
-   *  "disable-address-manager"
-   *  "windows-startup-script-ps1"
-   *  "common-psm1"
-   *  "k8s-node-setup-psm1"
-   *  "install-ssh-psm1"
-   *  "user-profile-psm1"
-   *  "serial-port-logging-enable"
+   *  - "cluster-location"
+   *  - "cluster-name"
+   *  - "cluster-uid"
+   *  - "configure-sh"
+   *  - "containerd-configure-sh"
+   *  - "enable-os-login"
+   *  - "gci-ensure-gke-docker"
+   *  - "gci-metrics-enabled"
+   *  - "gci-update-strategy"
+   *  - "instance-template"
+   *  - "kube-env"
+   *  - "startup-script"
+   *  - "user-data"
+   *  - "disable-address-manager"
+   *  - "windows-startup-script-ps1"
+   *  - "common-psm1"
+   *  - "k8s-node-setup-psm1"
+   *  - "install-ssh-psm1"
+   *  - "user-profile-psm1"
+   * The following keys are reserved for Windows nodes:
+   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -667,29 +739,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
-   * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+   * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
-   *  "cluster-location"
-   *  "cluster-name"
-   *  "cluster-uid"
-   *  "configure-sh"
-   *  "containerd-configure-sh"
-   *  "enable-os-login"
-   *  "gci-update-strategy"
-   *  "gci-ensure-gke-docker"
-   *  "instance-template"
-   *  "kube-env"
-   *  "startup-script"
-   *  "user-data"
-   *  "disable-address-manager"
-   *  "windows-startup-script-ps1"
-   *  "common-psm1"
-   *  "k8s-node-setup-psm1"
-   *  "install-ssh-psm1"
-   *  "user-profile-psm1"
-   *  "serial-port-logging-enable"
+   *  - "cluster-location"
+   *  - "cluster-name"
+   *  - "cluster-uid"
+   *  - "configure-sh"
+   *  - "containerd-configure-sh"
+   *  - "enable-os-login"
+   *  - "gci-ensure-gke-docker"
+   *  - "gci-metrics-enabled"
+   *  - "gci-update-strategy"
+   *  - "instance-template"
+   *  - "kube-env"
+   *  - "startup-script"
+   *  - "user-data"
+   *  - "disable-address-manager"
+   *  - "windows-startup-script-ps1"
+   *  - "common-psm1"
+   *  - "k8s-node-setup-psm1"
+   *  - "install-ssh-psm1"
+   *  - "user-profile-psm1"
+   * The following keys are reserved for Windows nodes:
+   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -1087,7 +1161,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -1111,7 +1186,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -1141,8 +1217,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Minimum CPU platform to be used by this instance. The instance may be
    * scheduled on the specified or newer CPU platform. Applicable values are the
    * friendly names of CPU platforms, such as
-   * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-   * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+   * `minCpuPlatform: "Intel Haswell"` or
+   * `minCpuPlatform: "Intel Sandy Bridge"`. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
@@ -1170,8 +1246,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Minimum CPU platform to be used by this instance. The instance may be
    * scheduled on the specified or newer CPU platform. Applicable values are the
    * friendly names of CPU platforms, such as
-   * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-   * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+   * `minCpuPlatform: "Intel Haswell"` or
+   * `minCpuPlatform: "Intel Sandy Bridge"`. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
@@ -1191,6 +1267,55 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int WORKLOAD_METADATA_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1.WorkloadMetadataConfig workloadMetadataConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The workload metadata configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return Whether the workloadMetadataConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadMetadataConfig() {
+    return workloadMetadataConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The workload metadata configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return The workloadMetadataConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig() {
+    return workloadMetadataConfig_ == null
+        ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+        : workloadMetadataConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The workload metadata configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadMetadataConfigOrBuilder
+      getWorkloadMetadataConfigOrBuilder() {
+    return getWorkloadMetadataConfig();
   }
 
   public static final int TAINTS_FIELD_NUMBER = 15;
@@ -1272,6 +1397,166 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return taints_.get(index);
   }
 
+  public static final int SANDBOX_CONFIG_FIELD_NUMBER = 17;
+  private com.google.container.v1.SandboxConfig sandboxConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Sandbox configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+   *
+   * @return Whether the sandboxConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSandboxConfig() {
+    return sandboxConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sandbox configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+   *
+   * @return The sandboxConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.SandboxConfig getSandboxConfig() {
+    return sandboxConfig_ == null
+        ? com.google.container.v1.SandboxConfig.getDefaultInstance()
+        : sandboxConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sandbox configuration for this node.
+   * </pre>
+   *
+   * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.SandboxConfigOrBuilder getSandboxConfigOrBuilder() {
+    return getSandboxConfig();
+  }
+
+  public static final int NODE_GROUP_FIELD_NUMBER = 18;
+  private volatile java.lang.Object nodeGroup_;
+  /**
+   *
+   *
+   * <pre>
+   * Setting this field will assign instances of this
+   * pool to run on the specified node group. This is useful for running
+   * workloads on [sole tenant
+   * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+   * </pre>
+   *
+   * <code>string node_group = 18;</code>
+   *
+   * @return The nodeGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getNodeGroup() {
+    java.lang.Object ref = nodeGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodeGroup_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Setting this field will assign instances of this
+   * pool to run on the specified node group. This is useful for running
+   * workloads on [sole tenant
+   * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+   * </pre>
+   *
+   * <code>string node_group = 18;</code>
+   *
+   * @return The bytes for nodeGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNodeGroupBytes() {
+    java.lang.Object ref = nodeGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nodeGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 19;
+  private com.google.container.v1.ReservationAffinity reservationAffinity_;
+  /**
+   *
+   *
+   * <pre>
+   * The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+   *
+   * @return Whether the reservationAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationAffinity() {
+    return reservationAffinity_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+   *
+   * @return The reservationAffinity.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReservationAffinity getReservationAffinity() {
+    return reservationAffinity_ == null
+        ? com.google.container.v1.ReservationAffinity.getDefaultInstance()
+        : reservationAffinity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder() {
+    return getReservationAffinity();
+  }
+
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 20;
   private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
   /**
@@ -1319,6 +1604,65 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
     return getShieldedInstanceConfig();
+  }
+
+  public static final int BOOT_DISK_KMS_KEY_FIELD_NUMBER = 23;
+  private volatile java.lang.Object bootDiskKmsKey_;
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 23;</code>
+   *
+   * @return The bootDiskKmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getBootDiskKmsKey() {
+    java.lang.Object ref = bootDiskKmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bootDiskKmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 23;</code>
+   *
+   * @return The bytes for bootDiskKmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+    java.lang.Object ref = bootDiskKmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bootDiskKmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1372,11 +1716,26 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getMinCpuPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
     }
+    if (workloadMetadataConfig_ != null) {
+      output.writeMessage(14, getWorkloadMetadataConfig());
+    }
     for (int i = 0; i < taints_.size(); i++) {
       output.writeMessage(15, taints_.get(i));
     }
+    if (sandboxConfig_ != null) {
+      output.writeMessage(17, getSandboxConfig());
+    }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, nodeGroup_);
+    }
+    if (reservationAffinity_ != null) {
+      output.writeMessage(19, getReservationAffinity());
+    }
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(20, getShieldedInstanceConfig());
+    }
+    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, bootDiskKmsKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -1450,12 +1809,29 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getMinCpuPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
     }
+    if (workloadMetadataConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getWorkloadMetadataConfig());
+    }
     for (int i = 0; i < taints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, taints_.get(i));
+    }
+    if (sandboxConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getSandboxConfig());
+    }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, nodeGroup_);
+    }
+    if (reservationAffinity_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(19, getReservationAffinity());
     }
     if (shieldedInstanceConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, getShieldedInstanceConfig());
+    }
+    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, bootDiskKmsKey_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1485,11 +1861,25 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (!getDiskType().equals(other.getDiskType())) return false;
     if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (hasWorkloadMetadataConfig() != other.hasWorkloadMetadataConfig()) return false;
+    if (hasWorkloadMetadataConfig()) {
+      if (!getWorkloadMetadataConfig().equals(other.getWorkloadMetadataConfig())) return false;
+    }
     if (!getTaintsList().equals(other.getTaintsList())) return false;
+    if (hasSandboxConfig() != other.hasSandboxConfig()) return false;
+    if (hasSandboxConfig()) {
+      if (!getSandboxConfig().equals(other.getSandboxConfig())) return false;
+    }
+    if (!getNodeGroup().equals(other.getNodeGroup())) return false;
+    if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
+    if (hasReservationAffinity()) {
+      if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
+    }
     if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
     if (hasShieldedInstanceConfig()) {
       if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
     }
+    if (!getBootDiskKmsKey().equals(other.getBootDiskKmsKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1537,14 +1927,30 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDiskType().hashCode();
     hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    if (hasWorkloadMetadataConfig()) {
+      hash = (37 * hash) + WORKLOAD_METADATA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadMetadataConfig().hashCode();
+    }
     if (getTaintsCount() > 0) {
       hash = (37 * hash) + TAINTS_FIELD_NUMBER;
       hash = (53 * hash) + getTaintsList().hashCode();
+    }
+    if (hasSandboxConfig()) {
+      hash = (37 * hash) + SANDBOX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSandboxConfig().hashCode();
+    }
+    hash = (37 * hash) + NODE_GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getNodeGroup().hashCode();
+    if (hasReservationAffinity()) {
+      hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationAffinity().hashCode();
     }
     if (hasShieldedInstanceConfig()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
     }
+    hash = (37 * hash) + BOOT_DISK_KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getBootDiskKmsKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1744,11 +2150,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
       minCpuPlatform_ = "";
 
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = null;
+      } else {
+        workloadMetadataConfig_ = null;
+        workloadMetadataConfigBuilder_ = null;
+      }
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         taintsBuilder_.clear();
+      }
+      if (sandboxConfigBuilder_ == null) {
+        sandboxConfig_ = null;
+      } else {
+        sandboxConfig_ = null;
+        sandboxConfigBuilder_ = null;
+      }
+      nodeGroup_ = "";
+
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = null;
+      } else {
+        reservationAffinity_ = null;
+        reservationAffinityBuilder_ = null;
       }
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = null;
@@ -1756,6 +2182,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceConfig_ = null;
         shieldedInstanceConfigBuilder_ = null;
       }
+      bootDiskKmsKey_ = "";
+
       return this;
     }
 
@@ -1814,6 +2242,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       result.diskType_ = diskType_;
       result.minCpuPlatform_ = minCpuPlatform_;
+      if (workloadMetadataConfigBuilder_ == null) {
+        result.workloadMetadataConfig_ = workloadMetadataConfig_;
+      } else {
+        result.workloadMetadataConfig_ = workloadMetadataConfigBuilder_.build();
+      }
       if (taintsBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           taints_ = java.util.Collections.unmodifiableList(taints_);
@@ -1823,11 +2256,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.taints_ = taintsBuilder_.build();
       }
+      if (sandboxConfigBuilder_ == null) {
+        result.sandboxConfig_ = sandboxConfig_;
+      } else {
+        result.sandboxConfig_ = sandboxConfigBuilder_.build();
+      }
+      result.nodeGroup_ = nodeGroup_;
+      if (reservationAffinityBuilder_ == null) {
+        result.reservationAffinity_ = reservationAffinity_;
+      } else {
+        result.reservationAffinity_ = reservationAffinityBuilder_.build();
+      }
       if (shieldedInstanceConfigBuilder_ == null) {
         result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
       } else {
         result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
       }
+      result.bootDiskKmsKey_ = bootDiskKmsKey_;
       onBuilt();
       return result;
     }
@@ -1955,6 +2400,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
+      if (other.hasWorkloadMetadataConfig()) {
+        mergeWorkloadMetadataConfig(other.getWorkloadMetadataConfig());
+      }
       if (taintsBuilder_ == null) {
         if (!other.taints_.isEmpty()) {
           if (taints_.isEmpty()) {
@@ -1982,8 +2430,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasSandboxConfig()) {
+        mergeSandboxConfig(other.getSandboxConfig());
+      }
+      if (!other.getNodeGroup().isEmpty()) {
+        nodeGroup_ = other.nodeGroup_;
+        onChanged();
+      }
+      if (other.hasReservationAffinity()) {
+        mergeReservationAffinity(other.getReservationAffinity());
+      }
       if (other.hasShieldedInstanceConfig()) {
         mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
+      }
+      if (!other.getBootDiskKmsKey().isEmpty()) {
+        bootDiskKmsKey_ = other.bootDiskKmsKey_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2022,10 +2484,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of a Google Compute Engine [machine
-     * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-     * `n1-standard-1`).
-     * If unspecified, the default machine type is
-     * `n1-standard-1`.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * If unspecified, the default machine type is `e2-medium`.
      * </pre>
      *
      * <code>string machine_type = 1;</code>
@@ -2048,10 +2508,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of a Google Compute Engine [machine
-     * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-     * `n1-standard-1`).
-     * If unspecified, the default machine type is
-     * `n1-standard-1`.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * If unspecified, the default machine type is `e2-medium`.
      * </pre>
      *
      * <code>string machine_type = 1;</code>
@@ -2074,10 +2532,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of a Google Compute Engine [machine
-     * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-     * `n1-standard-1`).
-     * If unspecified, the default machine type is
-     * `n1-standard-1`.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * If unspecified, the default machine type is `e2-medium`.
      * </pre>
      *
      * <code>string machine_type = 1;</code>
@@ -2099,10 +2555,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of a Google Compute Engine [machine
-     * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-     * `n1-standard-1`).
-     * If unspecified, the default machine type is
-     * `n1-standard-1`.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * If unspecified, the default machine type is `e2-medium`.
      * </pre>
      *
      * <code>string machine_type = 1;</code>
@@ -2120,10 +2574,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of a Google Compute Engine [machine
-     * type](https://cloud.google.com/compute/docs/machine-types) (e.g.
-     * `n1-standard-1`).
-     * If unspecified, the default machine type is
-     * `n1-standard-1`.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * If unspecified, the default machine type is `e2-medium`.
      * </pre>
      *
      * <code>string machine_type = 1;</code>
@@ -2221,7 +2673,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2245,7 +2698,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2269,7 +2723,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2294,7 +2749,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2319,7 +2775,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2351,7 +2808,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2382,7 +2840,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2410,7 +2869,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2437,7 +2897,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container Registry](https://cloud.google.com/container-registry/)).
+     * (the [Google Container
+     * Registry](https://cloud.google.com/container-registry/)).
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -2463,8 +2924,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * no Service Account is specified, the "default" service account is used.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
+     * Specify the email address of the Service Account; otherwise, if no Service
+     * Account is specified, the "default" service account is used.
      * </pre>
      *
      * <code>string service_account = 9;</code>
@@ -2486,8 +2948,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * no Service Account is specified, the "default" service account is used.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
+     * Specify the email address of the Service Account; otherwise, if no Service
+     * Account is specified, the "default" service account is used.
      * </pre>
      *
      * <code>string service_account = 9;</code>
@@ -2509,8 +2972,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * no Service Account is specified, the "default" service account is used.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
+     * Specify the email address of the Service Account; otherwise, if no Service
+     * Account is specified, the "default" service account is used.
      * </pre>
      *
      * <code>string service_account = 9;</code>
@@ -2531,8 +2995,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * no Service Account is specified, the "default" service account is used.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
+     * Specify the email address of the Service Account; otherwise, if no Service
+     * Account is specified, the "default" service account is used.
      * </pre>
      *
      * <code>string service_account = 9;</code>
@@ -2549,8 +3014,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * no Service Account is specified, the "default" service account is used.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
+     * Specify the email address of the Service Account; otherwise, if no Service
+     * Account is specified, the "default" service account is used.
      * </pre>
      *
      * <code>string service_account = 9;</code>
@@ -2600,29 +3066,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2649,29 +3117,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2689,29 +3159,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2734,29 +3206,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2786,29 +3260,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2834,29 +3310,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2880,29 +3358,31 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
-     * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
+     * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
-     *  "cluster-location"
-     *  "cluster-name"
-     *  "cluster-uid"
-     *  "configure-sh"
-     *  "containerd-configure-sh"
-     *  "enable-os-login"
-     *  "gci-update-strategy"
-     *  "gci-ensure-gke-docker"
-     *  "instance-template"
-     *  "kube-env"
-     *  "startup-script"
-     *  "user-data"
-     *  "disable-address-manager"
-     *  "windows-startup-script-ps1"
-     *  "common-psm1"
-     *  "k8s-node-setup-psm1"
-     *  "install-ssh-psm1"
-     *  "user-profile-psm1"
-     *  "serial-port-logging-enable"
+     *  - "cluster-location"
+     *  - "cluster-name"
+     *  - "cluster-uid"
+     *  - "configure-sh"
+     *  - "containerd-configure-sh"
+     *  - "enable-os-login"
+     *  - "gci-ensure-gke-docker"
+     *  - "gci-metrics-enabled"
+     *  - "gci-update-strategy"
+     *  - "instance-template"
+     *  - "kube-env"
+     *  - "startup-script"
+     *  - "user-data"
+     *  - "disable-address-manager"
+     *  - "windows-startup-script-ps1"
+     *  - "common-psm1"
+     *  - "k8s-node-setup-psm1"
+     *  - "install-ssh-psm1"
+     *  - "user-profile-psm1"
+     * The following keys are reserved for Windows nodes:
+     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3942,7 +4422,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -3965,7 +4446,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -3988,7 +4470,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -4010,7 +4493,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -4028,7 +4512,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -4056,8 +4541,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Minimum CPU platform to be used by this instance. The instance may be
      * scheduled on the specified or newer CPU platform. Applicable values are the
      * friendly names of CPU platforms, such as
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+     * `minCpuPlatform: "Intel Haswell"` or
+     * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
@@ -4084,8 +4569,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Minimum CPU platform to be used by this instance. The instance may be
      * scheduled on the specified or newer CPU platform. Applicable values are the
      * friendly names of CPU platforms, such as
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+     * `minCpuPlatform: "Intel Haswell"` or
+     * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
@@ -4112,8 +4597,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Minimum CPU platform to be used by this instance. The instance may be
      * scheduled on the specified or newer CPU platform. Applicable values are the
      * friendly names of CPU platforms, such as
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+     * `minCpuPlatform: "Intel Haswell"` or
+     * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
@@ -4139,8 +4624,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Minimum CPU platform to be used by this instance. The instance may be
      * scheduled on the specified or newer CPU platform. Applicable values are the
      * friendly names of CPU platforms, such as
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+     * `minCpuPlatform: "Intel Haswell"` or
+     * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
@@ -4162,8 +4647,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Minimum CPU platform to be used by this instance. The instance may be
      * scheduled on the specified or newer CPU platform. Applicable values are the
      * friendly names of CPU platforms, such as
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
-     * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
+     * `minCpuPlatform: "Intel Haswell"` or
+     * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
@@ -4182,6 +4667,195 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       minCpuPlatform_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.WorkloadMetadataConfig workloadMetadataConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadMetadataConfig,
+            com.google.container.v1.WorkloadMetadataConfig.Builder,
+            com.google.container.v1.WorkloadMetadataConfigOrBuilder>
+        workloadMetadataConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     *
+     * @return Whether the workloadMetadataConfig field is set.
+     */
+    public boolean hasWorkloadMetadataConfig() {
+      return workloadMetadataConfigBuilder_ != null || workloadMetadataConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     *
+     * @return The workloadMetadataConfig.
+     */
+    public com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        return workloadMetadataConfig_ == null
+            ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+            : workloadMetadataConfig_;
+      } else {
+        return workloadMetadataConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder setWorkloadMetadataConfig(com.google.container.v1.WorkloadMetadataConfig value) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadMetadataConfig_ = value;
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder setWorkloadMetadataConfig(
+        com.google.container.v1.WorkloadMetadataConfig.Builder builderForValue) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder mergeWorkloadMetadataConfig(
+        com.google.container.v1.WorkloadMetadataConfig value) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        if (workloadMetadataConfig_ != null) {
+          workloadMetadataConfig_ =
+              com.google.container.v1.WorkloadMetadataConfig.newBuilder(workloadMetadataConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          workloadMetadataConfig_ = value;
+        }
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder clearWorkloadMetadataConfig() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = null;
+        onChanged();
+      } else {
+        workloadMetadataConfig_ = null;
+        workloadMetadataConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public com.google.container.v1.WorkloadMetadataConfig.Builder
+        getWorkloadMetadataConfigBuilder() {
+
+      onChanged();
+      return getWorkloadMetadataConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public com.google.container.v1.WorkloadMetadataConfigOrBuilder
+        getWorkloadMetadataConfigOrBuilder() {
+      if (workloadMetadataConfigBuilder_ != null) {
+        return workloadMetadataConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadMetadataConfig_ == null
+            ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+            : workloadMetadataConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload metadata configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadMetadataConfig,
+            com.google.container.v1.WorkloadMetadataConfig.Builder,
+            com.google.container.v1.WorkloadMetadataConfigOrBuilder>
+        getWorkloadMetadataConfigFieldBuilder() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.WorkloadMetadataConfig,
+                com.google.container.v1.WorkloadMetadataConfig.Builder,
+                com.google.container.v1.WorkloadMetadataConfigOrBuilder>(
+                getWorkloadMetadataConfig(), getParentForChildren(), isClean());
+        workloadMetadataConfig_ = null;
+      }
+      return workloadMetadataConfigBuilder_;
     }
 
     private java.util.List<com.google.container.v1.NodeTaint> taints_ =
@@ -4566,6 +5240,525 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return taintsBuilder_;
     }
 
+    private com.google.container.v1.SandboxConfig sandboxConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SandboxConfig,
+            com.google.container.v1.SandboxConfig.Builder,
+            com.google.container.v1.SandboxConfigOrBuilder>
+        sandboxConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     *
+     * @return Whether the sandboxConfig field is set.
+     */
+    public boolean hasSandboxConfig() {
+      return sandboxConfigBuilder_ != null || sandboxConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     *
+     * @return The sandboxConfig.
+     */
+    public com.google.container.v1.SandboxConfig getSandboxConfig() {
+      if (sandboxConfigBuilder_ == null) {
+        return sandboxConfig_ == null
+            ? com.google.container.v1.SandboxConfig.getDefaultInstance()
+            : sandboxConfig_;
+      } else {
+        return sandboxConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public Builder setSandboxConfig(com.google.container.v1.SandboxConfig value) {
+      if (sandboxConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sandboxConfig_ = value;
+        onChanged();
+      } else {
+        sandboxConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public Builder setSandboxConfig(com.google.container.v1.SandboxConfig.Builder builderForValue) {
+      if (sandboxConfigBuilder_ == null) {
+        sandboxConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        sandboxConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public Builder mergeSandboxConfig(com.google.container.v1.SandboxConfig value) {
+      if (sandboxConfigBuilder_ == null) {
+        if (sandboxConfig_ != null) {
+          sandboxConfig_ =
+              com.google.container.v1.SandboxConfig.newBuilder(sandboxConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sandboxConfig_ = value;
+        }
+        onChanged();
+      } else {
+        sandboxConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public Builder clearSandboxConfig() {
+      if (sandboxConfigBuilder_ == null) {
+        sandboxConfig_ = null;
+        onChanged();
+      } else {
+        sandboxConfig_ = null;
+        sandboxConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public com.google.container.v1.SandboxConfig.Builder getSandboxConfigBuilder() {
+
+      onChanged();
+      return getSandboxConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    public com.google.container.v1.SandboxConfigOrBuilder getSandboxConfigOrBuilder() {
+      if (sandboxConfigBuilder_ != null) {
+        return sandboxConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sandboxConfig_ == null
+            ? com.google.container.v1.SandboxConfig.getDefaultInstance()
+            : sandboxConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sandbox configuration for this node.
+     * </pre>
+     *
+     * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SandboxConfig,
+            com.google.container.v1.SandboxConfig.Builder,
+            com.google.container.v1.SandboxConfigOrBuilder>
+        getSandboxConfigFieldBuilder() {
+      if (sandboxConfigBuilder_ == null) {
+        sandboxConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.SandboxConfig,
+                com.google.container.v1.SandboxConfig.Builder,
+                com.google.container.v1.SandboxConfigOrBuilder>(
+                getSandboxConfig(), getParentForChildren(), isClean());
+        sandboxConfig_ = null;
+      }
+      return sandboxConfigBuilder_;
+    }
+
+    private java.lang.Object nodeGroup_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Setting this field will assign instances of this
+     * pool to run on the specified node group. This is useful for running
+     * workloads on [sole tenant
+     * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+     * </pre>
+     *
+     * <code>string node_group = 18;</code>
+     *
+     * @return The nodeGroup.
+     */
+    public java.lang.String getNodeGroup() {
+      java.lang.Object ref = nodeGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this field will assign instances of this
+     * pool to run on the specified node group. This is useful for running
+     * workloads on [sole tenant
+     * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+     * </pre>
+     *
+     * <code>string node_group = 18;</code>
+     *
+     * @return The bytes for nodeGroup.
+     */
+    public com.google.protobuf.ByteString getNodeGroupBytes() {
+      java.lang.Object ref = nodeGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nodeGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this field will assign instances of this
+     * pool to run on the specified node group. This is useful for running
+     * workloads on [sole tenant
+     * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+     * </pre>
+     *
+     * <code>string node_group = 18;</code>
+     *
+     * @param value The nodeGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      nodeGroup_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this field will assign instances of this
+     * pool to run on the specified node group. This is useful for running
+     * workloads on [sole tenant
+     * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+     * </pre>
+     *
+     * <code>string node_group = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeGroup() {
+
+      nodeGroup_ = getDefaultInstance().getNodeGroup();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this field will assign instances of this
+     * pool to run on the specified node group. This is useful for running
+     * workloads on [sole tenant
+     * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
+     * </pre>
+     *
+     * <code>string node_group = 18;</code>
+     *
+     * @param value The bytes for nodeGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      nodeGroup_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.ReservationAffinity reservationAffinity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReservationAffinity,
+            com.google.container.v1.ReservationAffinity.Builder,
+            com.google.container.v1.ReservationAffinityOrBuilder>
+        reservationAffinityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     *
+     * @return Whether the reservationAffinity field is set.
+     */
+    public boolean hasReservationAffinity() {
+      return reservationAffinityBuilder_ != null || reservationAffinity_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     *
+     * @return The reservationAffinity.
+     */
+    public com.google.container.v1.ReservationAffinity getReservationAffinity() {
+      if (reservationAffinityBuilder_ == null) {
+        return reservationAffinity_ == null
+            ? com.google.container.v1.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      } else {
+        return reservationAffinityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public Builder setReservationAffinity(com.google.container.v1.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservationAffinity_ = value;
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public Builder setReservationAffinity(
+        com.google.container.v1.ReservationAffinity.Builder builderForValue) {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = builderForValue.build();
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public Builder mergeReservationAffinity(com.google.container.v1.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (reservationAffinity_ != null) {
+          reservationAffinity_ =
+              com.google.container.v1.ReservationAffinity.newBuilder(reservationAffinity_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reservationAffinity_ = value;
+        }
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public Builder clearReservationAffinity() {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = null;
+        onChanged();
+      } else {
+        reservationAffinity_ = null;
+        reservationAffinityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public com.google.container.v1.ReservationAffinity.Builder getReservationAffinityBuilder() {
+
+      onChanged();
+      return getReservationAffinityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    public com.google.container.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder() {
+      if (reservationAffinityBuilder_ != null) {
+        return reservationAffinityBuilder_.getMessageOrBuilder();
+      } else {
+        return reservationAffinity_ == null
+            ? com.google.container.v1.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReservationAffinity,
+            com.google.container.v1.ReservationAffinity.Builder,
+            com.google.container.v1.ReservationAffinityOrBuilder>
+        getReservationAffinityFieldBuilder() {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ReservationAffinity,
+                com.google.container.v1.ReservationAffinity.Builder,
+                com.google.container.v1.ReservationAffinityOrBuilder>(
+                getReservationAffinity(), getParentForChildren(), isClean());
+        reservationAffinity_ = null;
+      }
+      return reservationAffinityBuilder_;
+    }
+
     private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.ShieldedInstanceConfig,
@@ -4753,6 +5946,137 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceConfig_ = null;
       }
       return shieldedInstanceConfigBuilder_;
+    }
+
+    private java.lang.Object bootDiskKmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23;</code>
+     *
+     * @return The bootDiskKmsKey.
+     */
+    public java.lang.String getBootDiskKmsKey() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootDiskKmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23;</code>
+     *
+     * @return The bytes for bootDiskKmsKey.
+     */
+    public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bootDiskKmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23;</code>
+     *
+     * @param value The bootDiskKmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      bootDiskKmsKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootDiskKmsKey() {
+
+      bootDiskKmsKey_ = getDefaultInstance().getBootDiskKmsKey();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23;</code>
+     *
+     * @param value The bytes for bootDiskKmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      bootDiskKmsKey_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

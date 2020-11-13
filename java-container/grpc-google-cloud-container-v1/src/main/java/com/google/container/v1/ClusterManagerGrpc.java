@@ -765,6 +765,51 @@ public final class ClusterManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.GetJSONWebKeysRequest,
+          com.google.container.v1.GetJSONWebKeysResponse>
+      getGetJSONWebKeysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetJSONWebKeys",
+      requestType = com.google.container.v1.GetJSONWebKeysRequest.class,
+      responseType = com.google.container.v1.GetJSONWebKeysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.GetJSONWebKeysRequest,
+          com.google.container.v1.GetJSONWebKeysResponse>
+      getGetJSONWebKeysMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.GetJSONWebKeysRequest,
+            com.google.container.v1.GetJSONWebKeysResponse>
+        getGetJSONWebKeysMethod;
+    if ((getGetJSONWebKeysMethod = ClusterManagerGrpc.getGetJSONWebKeysMethod) == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getGetJSONWebKeysMethod = ClusterManagerGrpc.getGetJSONWebKeysMethod) == null) {
+          ClusterManagerGrpc.getGetJSONWebKeysMethod =
+              getGetJSONWebKeysMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.GetJSONWebKeysRequest,
+                          com.google.container.v1.GetJSONWebKeysResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetJSONWebKeys"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.GetJSONWebKeysRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.GetJSONWebKeysResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("GetJSONWebKeys"))
+                      .build();
+        }
+      }
+    }
+    return getGetJSONWebKeysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.container.v1.ListNodePoolsRequest,
           com.google.container.v1.ListNodePoolsResponse>
       getListNodePoolsMethod;
@@ -1461,7 +1506,8 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+     * [default
+     * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -1559,8 +1605,12 @@ public final class ClusterManagerGrpc {
      *
      * <pre>
      * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+     * instead.
      * </pre>
      */
+    @java.lang.Deprecated
     public void setLocations(
         com.google.container.v1.SetLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
@@ -1665,6 +1715,23 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.GetServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig> responseObserver) {
       asyncUnimplementedUnaryCall(getGetServerConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * This API is not yet intended for general use, and is not available for all
+     * clusters.
+     * </pre>
+     */
+    public void getJSONWebKeys(
+        com.google.container.v1.GetJSONWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetJSONWebKeysMethod(), responseObserver);
     }
 
     /**
@@ -1959,6 +2026,13 @@ public final class ClusterManagerGrpc {
                       com.google.container.v1.GetServerConfigRequest,
                       com.google.container.v1.ServerConfig>(this, METHODID_GET_SERVER_CONFIG)))
           .addMethod(
+              getGetJSONWebKeysMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.container.v1.GetJSONWebKeysRequest,
+                      com.google.container.v1.GetJSONWebKeysResponse>(
+                      this, METHODID_GET_JSONWEB_KEYS)))
+          .addMethod(
               getListNodePoolsMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -2106,7 +2180,8 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+     * [default
+     * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -2225,8 +2300,12 @@ public final class ClusterManagerGrpc {
      *
      * <pre>
      * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+     * instead.
      * </pre>
      */
+    @java.lang.Deprecated
     public void setLocations(
         com.google.container.v1.SetLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
@@ -2353,6 +2432,26 @@ public final class ClusterManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetServerConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * This API is not yet intended for general use, and is not available for all
+     * clusters.
+     * </pre>
+     */
+    public void getJSONWebKeys(
+        com.google.container.v1.GetJSONWebKeysRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2634,7 +2733,8 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+     * [default
+     * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -2728,8 +2828,12 @@ public final class ClusterManagerGrpc {
      *
      * <pre>
      * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+     * instead.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.Operation setLocations(
         com.google.container.v1.SetLocationsRequest request) {
       return blockingUnaryCall(getChannel(), getSetLocationsMethod(), getCallOptions(), request);
@@ -2825,6 +2929,21 @@ public final class ClusterManagerGrpc {
     public com.google.container.v1.ServerConfig getServerConfig(
         com.google.container.v1.GetServerConfigRequest request) {
       return blockingUnaryCall(getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * This API is not yet intended for general use, and is not available for all
+     * clusters.
+     * </pre>
+     */
+    public com.google.container.v1.GetJSONWebKeysResponse getJSONWebKeys(
+        com.google.container.v1.GetJSONWebKeysRequest request) {
+      return blockingUnaryCall(getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3057,7 +3176,8 @@ public final class ClusterManagerGrpc {
      * Creates a cluster, consisting of the specified number and type of Google
      * Compute Engine instances.
      * By default, the cluster is created in the project's
-     * [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+     * [default
+     * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
      * One firewall is added for the cluster. After cluster creation,
      * the Kubelet creates routes for each node to allow the containers
      * on that node to communicate with all other instances in the
@@ -3155,8 +3275,12 @@ public final class ClusterManagerGrpc {
      *
      * <pre>
      * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+     * instead.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setLocations(com.google.container.v1.SetLocationsRequest request) {
       return futureUnaryCall(
@@ -3261,6 +3385,23 @@ public final class ClusterManagerGrpc {
         getServerConfig(com.google.container.v1.GetServerConfigRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetServerConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * This API is not yet intended for general use, and is not available for all
+     * clusters.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.GetJSONWebKeysResponse>
+        getJSONWebKeys(com.google.container.v1.GetJSONWebKeysRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3465,20 +3606,21 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_GET_OPERATION = 14;
   private static final int METHODID_CANCEL_OPERATION = 15;
   private static final int METHODID_GET_SERVER_CONFIG = 16;
-  private static final int METHODID_LIST_NODE_POOLS = 17;
-  private static final int METHODID_GET_NODE_POOL = 18;
-  private static final int METHODID_CREATE_NODE_POOL = 19;
-  private static final int METHODID_DELETE_NODE_POOL = 20;
-  private static final int METHODID_ROLLBACK_NODE_POOL_UPGRADE = 21;
-  private static final int METHODID_SET_NODE_POOL_MANAGEMENT = 22;
-  private static final int METHODID_SET_LABELS = 23;
-  private static final int METHODID_SET_LEGACY_ABAC = 24;
-  private static final int METHODID_START_IPROTATION = 25;
-  private static final int METHODID_COMPLETE_IPROTATION = 26;
-  private static final int METHODID_SET_NODE_POOL_SIZE = 27;
-  private static final int METHODID_SET_NETWORK_POLICY = 28;
-  private static final int METHODID_SET_MAINTENANCE_POLICY = 29;
-  private static final int METHODID_LIST_USABLE_SUBNETWORKS = 30;
+  private static final int METHODID_GET_JSONWEB_KEYS = 17;
+  private static final int METHODID_LIST_NODE_POOLS = 18;
+  private static final int METHODID_GET_NODE_POOL = 19;
+  private static final int METHODID_CREATE_NODE_POOL = 20;
+  private static final int METHODID_DELETE_NODE_POOL = 21;
+  private static final int METHODID_ROLLBACK_NODE_POOL_UPGRADE = 22;
+  private static final int METHODID_SET_NODE_POOL_MANAGEMENT = 23;
+  private static final int METHODID_SET_LABELS = 24;
+  private static final int METHODID_SET_LEGACY_ABAC = 25;
+  private static final int METHODID_START_IPROTATION = 26;
+  private static final int METHODID_COMPLETE_IPROTATION = 27;
+  private static final int METHODID_SET_NODE_POOL_SIZE = 28;
+  private static final int METHODID_SET_NETWORK_POLICY = 29;
+  private static final int METHODID_SET_MAINTENANCE_POLICY = 30;
+  private static final int METHODID_LIST_USABLE_SUBNETWORKS = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3583,6 +3725,12 @@ public final class ClusterManagerGrpc {
           serviceImpl.getServerConfig(
               (com.google.container.v1.GetServerConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig>) responseObserver);
+          break;
+        case METHODID_GET_JSONWEB_KEYS:
+          serviceImpl.getJSONWebKeys(
+              (com.google.container.v1.GetJSONWebKeysRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>)
+                  responseObserver);
           break;
         case METHODID_LIST_NODE_POOLS:
           serviceImpl.listNodePools(
@@ -3737,6 +3885,7 @@ public final class ClusterManagerGrpc {
                       .addMethod(getGetOperationMethod())
                       .addMethod(getCancelOperationMethod())
                       .addMethod(getGetServerConfigMethod())
+                      .addMethod(getGetJSONWebKeysMethod())
                       .addMethod(getListNodePoolsMethod())
                       .addMethod(getGetNodePoolMethod())
                       .addMethod(getCreateNodePoolMethod())

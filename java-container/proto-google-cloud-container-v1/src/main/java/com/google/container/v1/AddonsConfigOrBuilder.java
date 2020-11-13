@@ -233,4 +233,77 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.CloudRunConfig cloud_run_config = 7;</code>
    */
   com.google.container.v1.CloudRunConfigOrBuilder getCloudRunConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   *
+   * @return Whether the dnsCacheConfig field is set.
+   */
+  boolean hasDnsCacheConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   *
+   * @return The dnsCacheConfig.
+   */
+  com.google.container.v1.DnsCacheConfig getDnsCacheConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   */
+  com.google.container.v1.DnsCacheConfigOrBuilder getDnsCacheConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   *
+   * @return Whether the configConnectorConfig field is set.
+   */
+  boolean hasConfigConnectorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   *
+   * @return The configConnectorConfig.
+   */
+  com.google.container.v1.ConfigConnectorConfig getConfigConnectorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   */
+  com.google.container.v1.ConfigConnectorConfigOrBuilder getConfigConnectorConfigOrBuilder();
 }

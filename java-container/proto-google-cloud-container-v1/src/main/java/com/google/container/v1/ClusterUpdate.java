@@ -238,6 +238,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 202:
+            {
+              com.google.container.v1.PrivateClusterConfig.Builder subBuilder = null;
+              if (desiredPrivateClusterConfig_ != null) {
+                subBuilder = desiredPrivateClusterConfig_.toBuilder();
+              }
+              desiredPrivateClusterConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.PrivateClusterConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredPrivateClusterConfig_);
+                desiredPrivateClusterConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 210:
             {
               com.google.container.v1.IntraNodeVisibilityConfig.Builder subBuilder = null;
@@ -255,6 +271,38 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 226:
+            {
+              com.google.container.v1.DefaultSnatStatus.Builder subBuilder = null;
+              if (desiredDefaultSnatStatus_ != null) {
+                subBuilder = desiredDefaultSnatStatus_.toBuilder();
+              }
+              desiredDefaultSnatStatus_ =
+                  input.readMessage(
+                      com.google.container.v1.DefaultSnatStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredDefaultSnatStatus_);
+                desiredDefaultSnatStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 250:
+            {
+              com.google.container.v1.ReleaseChannel.Builder subBuilder = null;
+              if (desiredReleaseChannel_ != null) {
+                subBuilder = desiredReleaseChannel_.toBuilder();
+              }
+              desiredReleaseChannel_ =
+                  input.readMessage(
+                      com.google.container.v1.ReleaseChannel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredReleaseChannel_);
+                desiredReleaseChannel_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 370:
             {
               com.google.container.v1.DatabaseEncryption.Builder subBuilder = null;
@@ -267,6 +315,38 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(desiredDatabaseEncryption_);
                 desiredDatabaseEncryption_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 378:
+            {
+              com.google.container.v1.WorkloadIdentityConfig.Builder subBuilder = null;
+              if (desiredWorkloadIdentityConfig_ != null) {
+                subBuilder = desiredWorkloadIdentityConfig_.toBuilder();
+              }
+              desiredWorkloadIdentityConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.WorkloadIdentityConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredWorkloadIdentityConfig_);
+                desiredWorkloadIdentityConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 386:
+            {
+              com.google.container.v1.ShieldedNodes.Builder subBuilder = null;
+              if (desiredShieldedNodes_ != null) {
+                subBuilder = desiredShieldedNodes_.toBuilder();
+              }
+              desiredShieldedNodes_ =
+                  input.readMessage(
+                      com.google.container.v1.ShieldedNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredShieldedNodes_);
+                desiredShieldedNodes_ = subBuilder.buildPartial();
               }
 
               break;
@@ -388,10 +468,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_monitoring_service = 5;</code>
@@ -416,10 +499,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-   * service with Kubernetes-native resource model
-   * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-   * * "none" - no metrics will be exported from the cluster
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_monitoring_service = 5;</code>
@@ -642,6 +728,103 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredDatabaseEncryption();
   }
 
+  public static final int DESIRED_WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 47;
+  private com.google.container.v1.WorkloadIdentityConfig desiredWorkloadIdentityConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   *
+   * @return Whether the desiredWorkloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredWorkloadIdentityConfig() {
+    return desiredWorkloadIdentityConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   *
+   * @return The desiredWorkloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadIdentityConfig getDesiredWorkloadIdentityConfig() {
+    return desiredWorkloadIdentityConfig_ == null
+        ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : desiredWorkloadIdentityConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Workload Identity.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadIdentityConfigOrBuilder
+      getDesiredWorkloadIdentityConfigOrBuilder() {
+    return getDesiredWorkloadIdentityConfig();
+  }
+
+  public static final int DESIRED_SHIELDED_NODES_FIELD_NUMBER = 48;
+  private com.google.container.v1.ShieldedNodes desiredShieldedNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   *
+   * @return Whether the desiredShieldedNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredShieldedNodes() {
+    return desiredShieldedNodes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   *
+   * @return The desiredShieldedNodes.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedNodes getDesiredShieldedNodes() {
+    return desiredShieldedNodes_ == null
+        ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+        : desiredShieldedNodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Shielded Nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder() {
+    return getDesiredShieldedNodes();
+  }
+
   public static final int DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER = 9;
   private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
   /**
@@ -707,11 +890,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -726,11 +909,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -745,11 +928,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -765,11 +948,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located. Changing the locations a cluster is in will result
-   * in nodes being either created or removed from the cluster, depending on
-   * whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
    * This list must always include the cluster's primary zone.
+   * Warning: changing cluster locations will update the locations of all node
+   * pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string desired_locations = 10;</code>
@@ -944,10 +1127,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no logs will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_logging_service = 19;</code>
@@ -972,10 +1158,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no logs will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string desired_logging_service = 19;</code>
@@ -1096,6 +1285,55 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredVerticalPodAutoscaling();
   }
 
+  public static final int DESIRED_PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 25;
+  private com.google.container.v1.PrivateClusterConfig desiredPrivateClusterConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   *
+   * @return Whether the desiredPrivateClusterConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredPrivateClusterConfig() {
+    return desiredPrivateClusterConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   *
+   * @return The desiredPrivateClusterConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivateClusterConfig getDesiredPrivateClusterConfig() {
+    return desiredPrivateClusterConfig_ == null
+        ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+        : desiredPrivateClusterConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired private cluster configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivateClusterConfigOrBuilder
+      getDesiredPrivateClusterConfigOrBuilder() {
+    return getDesiredPrivateClusterConfig();
+  }
+
   public static final int DESIRED_INTRA_NODE_VISIBILITY_CONFIG_FIELD_NUMBER = 26;
   private com.google.container.v1.IntraNodeVisibilityConfig desiredIntraNodeVisibilityConfig_;
   /**
@@ -1146,6 +1384,102 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.IntraNodeVisibilityConfigOrBuilder
       getDesiredIntraNodeVisibilityConfigOrBuilder() {
     return getDesiredIntraNodeVisibilityConfig();
+  }
+
+  public static final int DESIRED_DEFAULT_SNAT_STATUS_FIELD_NUMBER = 28;
+  private com.google.container.v1.DefaultSnatStatus desiredDefaultSnatStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   *
+   * @return Whether the desiredDefaultSnatStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredDefaultSnatStatus() {
+    return desiredDefaultSnatStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   *
+   * @return The desiredDefaultSnatStatus.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultSnatStatus getDesiredDefaultSnatStatus() {
+    return desiredDefaultSnatStatus_ == null
+        ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+        : desiredDefaultSnatStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired status of whether to disable default sNAT for this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultSnatStatusOrBuilder getDesiredDefaultSnatStatusOrBuilder() {
+    return getDesiredDefaultSnatStatus();
+  }
+
+  public static final int DESIRED_RELEASE_CHANNEL_FIELD_NUMBER = 31;
+  private com.google.container.v1.ReleaseChannel desiredReleaseChannel_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   *
+   * @return Whether the desiredReleaseChannel field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredReleaseChannel() {
+    return desiredReleaseChannel_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   *
+   * @return The desiredReleaseChannel.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReleaseChannel getDesiredReleaseChannel() {
+    return desiredReleaseChannel_ == null
+        ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+        : desiredReleaseChannel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReleaseChannelOrBuilder getDesiredReleaseChannelOrBuilder() {
+    return getDesiredReleaseChannel();
   }
 
   public static final int DESIRED_MASTER_VERSION_FIELD_NUMBER = 100;
@@ -1264,11 +1598,26 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredVerticalPodAutoscaling_ != null) {
       output.writeMessage(22, getDesiredVerticalPodAutoscaling());
     }
+    if (desiredPrivateClusterConfig_ != null) {
+      output.writeMessage(25, getDesiredPrivateClusterConfig());
+    }
     if (desiredIntraNodeVisibilityConfig_ != null) {
       output.writeMessage(26, getDesiredIntraNodeVisibilityConfig());
     }
+    if (desiredDefaultSnatStatus_ != null) {
+      output.writeMessage(28, getDesiredDefaultSnatStatus());
+    }
+    if (desiredReleaseChannel_ != null) {
+      output.writeMessage(31, getDesiredReleaseChannel());
+    }
     if (desiredDatabaseEncryption_ != null) {
       output.writeMessage(46, getDesiredDatabaseEncryption());
+    }
+    if (desiredWorkloadIdentityConfig_ != null) {
+      output.writeMessage(47, getDesiredWorkloadIdentityConfig());
+    }
+    if (desiredShieldedNodes_ != null) {
+      output.writeMessage(48, getDesiredShieldedNodes());
     }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
@@ -1339,15 +1688,38 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               22, getDesiredVerticalPodAutoscaling());
     }
+    if (desiredPrivateClusterConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, getDesiredPrivateClusterConfig());
+    }
     if (desiredIntraNodeVisibilityConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, getDesiredIntraNodeVisibilityConfig());
     }
+    if (desiredDefaultSnatStatus_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, getDesiredDefaultSnatStatus());
+    }
+    if (desiredReleaseChannel_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(31, getDesiredReleaseChannel());
+    }
     if (desiredDatabaseEncryption_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               46, getDesiredDatabaseEncryption());
+    }
+    if (desiredWorkloadIdentityConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              47, getDesiredWorkloadIdentityConfig());
+    }
+    if (desiredShieldedNodes_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(48, getDesiredShieldedNodes());
     }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
@@ -1379,6 +1751,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredDatabaseEncryption()) {
       if (!getDesiredDatabaseEncryption().equals(other.getDesiredDatabaseEncryption()))
         return false;
+    }
+    if (hasDesiredWorkloadIdentityConfig() != other.hasDesiredWorkloadIdentityConfig())
+      return false;
+    if (hasDesiredWorkloadIdentityConfig()) {
+      if (!getDesiredWorkloadIdentityConfig().equals(other.getDesiredWorkloadIdentityConfig()))
+        return false;
+    }
+    if (hasDesiredShieldedNodes() != other.hasDesiredShieldedNodes()) return false;
+    if (hasDesiredShieldedNodes()) {
+      if (!getDesiredShieldedNodes().equals(other.getDesiredShieldedNodes())) return false;
     }
     if (hasDesiredNodePoolAutoscaling() != other.hasDesiredNodePoolAutoscaling()) return false;
     if (hasDesiredNodePoolAutoscaling()) {
@@ -1415,11 +1797,24 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredVerticalPodAutoscaling().equals(other.getDesiredVerticalPodAutoscaling()))
         return false;
     }
+    if (hasDesiredPrivateClusterConfig() != other.hasDesiredPrivateClusterConfig()) return false;
+    if (hasDesiredPrivateClusterConfig()) {
+      if (!getDesiredPrivateClusterConfig().equals(other.getDesiredPrivateClusterConfig()))
+        return false;
+    }
     if (hasDesiredIntraNodeVisibilityConfig() != other.hasDesiredIntraNodeVisibilityConfig())
       return false;
     if (hasDesiredIntraNodeVisibilityConfig()) {
       if (!getDesiredIntraNodeVisibilityConfig()
           .equals(other.getDesiredIntraNodeVisibilityConfig())) return false;
+    }
+    if (hasDesiredDefaultSnatStatus() != other.hasDesiredDefaultSnatStatus()) return false;
+    if (hasDesiredDefaultSnatStatus()) {
+      if (!getDesiredDefaultSnatStatus().equals(other.getDesiredDefaultSnatStatus())) return false;
+    }
+    if (hasDesiredReleaseChannel() != other.hasDesiredReleaseChannel()) return false;
+    if (hasDesiredReleaseChannel()) {
+      if (!getDesiredReleaseChannel().equals(other.getDesiredReleaseChannel())) return false;
     }
     if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1448,6 +1843,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredDatabaseEncryption()) {
       hash = (37 * hash) + DESIRED_DATABASE_ENCRYPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredDatabaseEncryption().hashCode();
+    }
+    if (hasDesiredWorkloadIdentityConfig()) {
+      hash = (37 * hash) + DESIRED_WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredWorkloadIdentityConfig().hashCode();
+    }
+    if (hasDesiredShieldedNodes()) {
+      hash = (37 * hash) + DESIRED_SHIELDED_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredShieldedNodes().hashCode();
     }
     if (hasDesiredNodePoolAutoscaling()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER;
@@ -1479,9 +1882,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_VERTICAL_POD_AUTOSCALING_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredVerticalPodAutoscaling().hashCode();
     }
+    if (hasDesiredPrivateClusterConfig()) {
+      hash = (37 * hash) + DESIRED_PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredPrivateClusterConfig().hashCode();
+    }
     if (hasDesiredIntraNodeVisibilityConfig()) {
       hash = (37 * hash) + DESIRED_INTRA_NODE_VISIBILITY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredIntraNodeVisibilityConfig().hashCode();
+    }
+    if (hasDesiredDefaultSnatStatus()) {
+      hash = (37 * hash) + DESIRED_DEFAULT_SNAT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredDefaultSnatStatus().hashCode();
+    }
+    if (hasDesiredReleaseChannel()) {
+      hash = (37 * hash) + DESIRED_RELEASE_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredReleaseChannel().hashCode();
     }
     hash = (37 * hash) + DESIRED_MASTER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDesiredMasterVersion().hashCode();
@@ -1651,6 +2066,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredDatabaseEncryption_ = null;
         desiredDatabaseEncryptionBuilder_ = null;
       }
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        desiredWorkloadIdentityConfig_ = null;
+      } else {
+        desiredWorkloadIdentityConfig_ = null;
+        desiredWorkloadIdentityConfigBuilder_ = null;
+      }
+      if (desiredShieldedNodesBuilder_ == null) {
+        desiredShieldedNodes_ = null;
+      } else {
+        desiredShieldedNodes_ = null;
+        desiredShieldedNodesBuilder_ = null;
+      }
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         desiredNodePoolAutoscaling_ = null;
       } else {
@@ -1691,11 +2118,29 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredVerticalPodAutoscaling_ = null;
         desiredVerticalPodAutoscalingBuilder_ = null;
       }
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        desiredPrivateClusterConfig_ = null;
+      } else {
+        desiredPrivateClusterConfig_ = null;
+        desiredPrivateClusterConfigBuilder_ = null;
+      }
       if (desiredIntraNodeVisibilityConfigBuilder_ == null) {
         desiredIntraNodeVisibilityConfig_ = null;
       } else {
         desiredIntraNodeVisibilityConfig_ = null;
         desiredIntraNodeVisibilityConfigBuilder_ = null;
+      }
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        desiredDefaultSnatStatus_ = null;
+      } else {
+        desiredDefaultSnatStatus_ = null;
+        desiredDefaultSnatStatusBuilder_ = null;
+      }
+      if (desiredReleaseChannelBuilder_ == null) {
+        desiredReleaseChannel_ = null;
+      } else {
+        desiredReleaseChannel_ = null;
+        desiredReleaseChannelBuilder_ = null;
       }
       desiredMasterVersion_ = "";
 
@@ -1741,6 +2186,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredDatabaseEncryption_ = desiredDatabaseEncryptionBuilder_.build();
       }
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        result.desiredWorkloadIdentityConfig_ = desiredWorkloadIdentityConfig_;
+      } else {
+        result.desiredWorkloadIdentityConfig_ = desiredWorkloadIdentityConfigBuilder_.build();
+      }
+      if (desiredShieldedNodesBuilder_ == null) {
+        result.desiredShieldedNodes_ = desiredShieldedNodes_;
+      } else {
+        result.desiredShieldedNodes_ = desiredShieldedNodesBuilder_.build();
+      }
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         result.desiredNodePoolAutoscaling_ = desiredNodePoolAutoscaling_;
       } else {
@@ -1778,10 +2233,25 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredVerticalPodAutoscaling_ = desiredVerticalPodAutoscalingBuilder_.build();
       }
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        result.desiredPrivateClusterConfig_ = desiredPrivateClusterConfig_;
+      } else {
+        result.desiredPrivateClusterConfig_ = desiredPrivateClusterConfigBuilder_.build();
+      }
       if (desiredIntraNodeVisibilityConfigBuilder_ == null) {
         result.desiredIntraNodeVisibilityConfig_ = desiredIntraNodeVisibilityConfig_;
       } else {
         result.desiredIntraNodeVisibilityConfig_ = desiredIntraNodeVisibilityConfigBuilder_.build();
+      }
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        result.desiredDefaultSnatStatus_ = desiredDefaultSnatStatus_;
+      } else {
+        result.desiredDefaultSnatStatus_ = desiredDefaultSnatStatusBuilder_.build();
+      }
+      if (desiredReleaseChannelBuilder_ == null) {
+        result.desiredReleaseChannel_ = desiredReleaseChannel_;
+      } else {
+        result.desiredReleaseChannel_ = desiredReleaseChannelBuilder_.build();
       }
       result.desiredMasterVersion_ = desiredMasterVersion_;
       onBuilt();
@@ -1855,6 +2325,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredDatabaseEncryption()) {
         mergeDesiredDatabaseEncryption(other.getDesiredDatabaseEncryption());
       }
+      if (other.hasDesiredWorkloadIdentityConfig()) {
+        mergeDesiredWorkloadIdentityConfig(other.getDesiredWorkloadIdentityConfig());
+      }
+      if (other.hasDesiredShieldedNodes()) {
+        mergeDesiredShieldedNodes(other.getDesiredShieldedNodes());
+      }
       if (other.hasDesiredNodePoolAutoscaling()) {
         mergeDesiredNodePoolAutoscaling(other.getDesiredNodePoolAutoscaling());
       }
@@ -1888,8 +2364,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredVerticalPodAutoscaling()) {
         mergeDesiredVerticalPodAutoscaling(other.getDesiredVerticalPodAutoscaling());
       }
+      if (other.hasDesiredPrivateClusterConfig()) {
+        mergeDesiredPrivateClusterConfig(other.getDesiredPrivateClusterConfig());
+      }
       if (other.hasDesiredIntraNodeVisibilityConfig()) {
         mergeDesiredIntraNodeVisibilityConfig(other.getDesiredIntraNodeVisibilityConfig());
+      }
+      if (other.hasDesiredDefaultSnatStatus()) {
+        mergeDesiredDefaultSnatStatus(other.getDesiredDefaultSnatStatus());
+      }
+      if (other.hasDesiredReleaseChannel()) {
+        mergeDesiredReleaseChannel(other.getDesiredReleaseChannel());
       }
       if (!other.getDesiredMasterVersion().isEmpty()) {
         desiredMasterVersion_ = other.desiredMasterVersion_;
@@ -2079,10 +2564,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_monitoring_service = 5;</code>
@@ -2106,10 +2594,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_monitoring_service = 5;</code>
@@ -2133,10 +2624,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_monitoring_service = 5;</code>
@@ -2159,10 +2653,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_monitoring_service = 5;</code>
@@ -2181,10 +2678,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring
-     * service with Kubernetes-native resource model
-     * * "monitoring.googleapis.com" - the Google Cloud Monitoring service
-     * * "none" - no metrics will be exported from the cluster
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_monitoring_service = 5;</code>
@@ -2810,6 +3310,393 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredDatabaseEncryptionBuilder_;
     }
 
+    private com.google.container.v1.WorkloadIdentityConfig desiredWorkloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadIdentityConfig,
+            com.google.container.v1.WorkloadIdentityConfig.Builder,
+            com.google.container.v1.WorkloadIdentityConfigOrBuilder>
+        desiredWorkloadIdentityConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     *
+     * @return Whether the desiredWorkloadIdentityConfig field is set.
+     */
+    public boolean hasDesiredWorkloadIdentityConfig() {
+      return desiredWorkloadIdentityConfigBuilder_ != null
+          || desiredWorkloadIdentityConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     *
+     * @return The desiredWorkloadIdentityConfig.
+     */
+    public com.google.container.v1.WorkloadIdentityConfig getDesiredWorkloadIdentityConfig() {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        return desiredWorkloadIdentityConfig_ == null
+            ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : desiredWorkloadIdentityConfig_;
+      } else {
+        return desiredWorkloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public Builder setDesiredWorkloadIdentityConfig(
+        com.google.container.v1.WorkloadIdentityConfig value) {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredWorkloadIdentityConfig_ = value;
+        onChanged();
+      } else {
+        desiredWorkloadIdentityConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public Builder setDesiredWorkloadIdentityConfig(
+        com.google.container.v1.WorkloadIdentityConfig.Builder builderForValue) {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        desiredWorkloadIdentityConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredWorkloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public Builder mergeDesiredWorkloadIdentityConfig(
+        com.google.container.v1.WorkloadIdentityConfig value) {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        if (desiredWorkloadIdentityConfig_ != null) {
+          desiredWorkloadIdentityConfig_ =
+              com.google.container.v1.WorkloadIdentityConfig.newBuilder(
+                      desiredWorkloadIdentityConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredWorkloadIdentityConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredWorkloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public Builder clearDesiredWorkloadIdentityConfig() {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        desiredWorkloadIdentityConfig_ = null;
+        onChanged();
+      } else {
+        desiredWorkloadIdentityConfig_ = null;
+        desiredWorkloadIdentityConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public com.google.container.v1.WorkloadIdentityConfig.Builder
+        getDesiredWorkloadIdentityConfigBuilder() {
+
+      onChanged();
+      return getDesiredWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    public com.google.container.v1.WorkloadIdentityConfigOrBuilder
+        getDesiredWorkloadIdentityConfigOrBuilder() {
+      if (desiredWorkloadIdentityConfigBuilder_ != null) {
+        return desiredWorkloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredWorkloadIdentityConfig_ == null
+            ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : desiredWorkloadIdentityConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Workload Identity.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig desired_workload_identity_config = 47;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadIdentityConfig,
+            com.google.container.v1.WorkloadIdentityConfig.Builder,
+            com.google.container.v1.WorkloadIdentityConfigOrBuilder>
+        getDesiredWorkloadIdentityConfigFieldBuilder() {
+      if (desiredWorkloadIdentityConfigBuilder_ == null) {
+        desiredWorkloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.WorkloadIdentityConfig,
+                com.google.container.v1.WorkloadIdentityConfig.Builder,
+                com.google.container.v1.WorkloadIdentityConfigOrBuilder>(
+                getDesiredWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        desiredWorkloadIdentityConfig_ = null;
+      }
+      return desiredWorkloadIdentityConfigBuilder_;
+    }
+
+    private com.google.container.v1.ShieldedNodes desiredShieldedNodes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedNodes,
+            com.google.container.v1.ShieldedNodes.Builder,
+            com.google.container.v1.ShieldedNodesOrBuilder>
+        desiredShieldedNodesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     *
+     * @return Whether the desiredShieldedNodes field is set.
+     */
+    public boolean hasDesiredShieldedNodes() {
+      return desiredShieldedNodesBuilder_ != null || desiredShieldedNodes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     *
+     * @return The desiredShieldedNodes.
+     */
+    public com.google.container.v1.ShieldedNodes getDesiredShieldedNodes() {
+      if (desiredShieldedNodesBuilder_ == null) {
+        return desiredShieldedNodes_ == null
+            ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+            : desiredShieldedNodes_;
+      } else {
+        return desiredShieldedNodesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public Builder setDesiredShieldedNodes(com.google.container.v1.ShieldedNodes value) {
+      if (desiredShieldedNodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredShieldedNodes_ = value;
+        onChanged();
+      } else {
+        desiredShieldedNodesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public Builder setDesiredShieldedNodes(
+        com.google.container.v1.ShieldedNodes.Builder builderForValue) {
+      if (desiredShieldedNodesBuilder_ == null) {
+        desiredShieldedNodes_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredShieldedNodesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public Builder mergeDesiredShieldedNodes(com.google.container.v1.ShieldedNodes value) {
+      if (desiredShieldedNodesBuilder_ == null) {
+        if (desiredShieldedNodes_ != null) {
+          desiredShieldedNodes_ =
+              com.google.container.v1.ShieldedNodes.newBuilder(desiredShieldedNodes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredShieldedNodes_ = value;
+        }
+        onChanged();
+      } else {
+        desiredShieldedNodesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public Builder clearDesiredShieldedNodes() {
+      if (desiredShieldedNodesBuilder_ == null) {
+        desiredShieldedNodes_ = null;
+        onChanged();
+      } else {
+        desiredShieldedNodes_ = null;
+        desiredShieldedNodesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public com.google.container.v1.ShieldedNodes.Builder getDesiredShieldedNodesBuilder() {
+
+      onChanged();
+      return getDesiredShieldedNodesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    public com.google.container.v1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder() {
+      if (desiredShieldedNodesBuilder_ != null) {
+        return desiredShieldedNodesBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredShieldedNodes_ == null
+            ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+            : desiredShieldedNodes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Shielded Nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes desired_shielded_nodes = 48;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedNodes,
+            com.google.container.v1.ShieldedNodes.Builder,
+            com.google.container.v1.ShieldedNodesOrBuilder>
+        getDesiredShieldedNodesFieldBuilder() {
+      if (desiredShieldedNodesBuilder_ == null) {
+        desiredShieldedNodesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ShieldedNodes,
+                com.google.container.v1.ShieldedNodes.Builder,
+                com.google.container.v1.ShieldedNodesOrBuilder>(
+                getDesiredShieldedNodes(), getParentForChildren(), isClean());
+        desiredShieldedNodes_ = null;
+      }
+      return desiredShieldedNodesBuilder_;
+    }
+
     private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePoolAutoscaling,
@@ -3041,11 +3928,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3060,11 +3947,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3079,11 +3966,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3099,11 +3986,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3119,11 +4006,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3146,11 +4033,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3172,11 +4059,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3195,11 +4082,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3217,11 +4104,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located. Changing the locations a cluster is in will result
-     * in nodes being either created or removed from the cluster, depending on
-     * whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
      * This list must always include the cluster's primary zone.
+     * Warning: changing cluster locations will update the locations of all node
+     * pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string desired_locations = 10;</code>
@@ -3838,10 +4725,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * "logging.googleapis.com" - the Google Cloud Logging service
-     * * "none" - no logs will be exported from the cluster
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
+     * * `none` - no logs will be exported from the cluster.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_logging_service = 19;</code>
@@ -3865,10 +4755,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * "logging.googleapis.com" - the Google Cloud Logging service
-     * * "none" - no logs will be exported from the cluster
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
+     * * `none` - no logs will be exported from the cluster.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_logging_service = 19;</code>
@@ -3892,10 +4785,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * "logging.googleapis.com" - the Google Cloud Logging service
-     * * "none" - no logs will be exported from the cluster
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
+     * * `none` - no logs will be exported from the cluster.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_logging_service = 19;</code>
@@ -3918,10 +4814,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * "logging.googleapis.com" - the Google Cloud Logging service
-     * * "none" - no logs will be exported from the cluster
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
+     * * `none` - no logs will be exported from the cluster.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_logging_service = 19;</code>
@@ -3940,10 +4839,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * "logging.googleapis.com" - the Google Cloud Logging service
-     * * "none" - no logs will be exported from the cluster
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
+     * * `none` - no logs will be exported from the cluster.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string desired_logging_service = 19;</code>
@@ -4373,6 +5275,196 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredVerticalPodAutoscalingBuilder_;
     }
 
+    private com.google.container.v1.PrivateClusterConfig desiredPrivateClusterConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterConfig,
+            com.google.container.v1.PrivateClusterConfig.Builder,
+            com.google.container.v1.PrivateClusterConfigOrBuilder>
+        desiredPrivateClusterConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     *
+     * @return Whether the desiredPrivateClusterConfig field is set.
+     */
+    public boolean hasDesiredPrivateClusterConfig() {
+      return desiredPrivateClusterConfigBuilder_ != null || desiredPrivateClusterConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     *
+     * @return The desiredPrivateClusterConfig.
+     */
+    public com.google.container.v1.PrivateClusterConfig getDesiredPrivateClusterConfig() {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        return desiredPrivateClusterConfig_ == null
+            ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+            : desiredPrivateClusterConfig_;
+      } else {
+        return desiredPrivateClusterConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public Builder setDesiredPrivateClusterConfig(
+        com.google.container.v1.PrivateClusterConfig value) {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredPrivateClusterConfig_ = value;
+        onChanged();
+      } else {
+        desiredPrivateClusterConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public Builder setDesiredPrivateClusterConfig(
+        com.google.container.v1.PrivateClusterConfig.Builder builderForValue) {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        desiredPrivateClusterConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredPrivateClusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public Builder mergeDesiredPrivateClusterConfig(
+        com.google.container.v1.PrivateClusterConfig value) {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        if (desiredPrivateClusterConfig_ != null) {
+          desiredPrivateClusterConfig_ =
+              com.google.container.v1.PrivateClusterConfig.newBuilder(desiredPrivateClusterConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredPrivateClusterConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredPrivateClusterConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public Builder clearDesiredPrivateClusterConfig() {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        desiredPrivateClusterConfig_ = null;
+        onChanged();
+      } else {
+        desiredPrivateClusterConfig_ = null;
+        desiredPrivateClusterConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfig.Builder
+        getDesiredPrivateClusterConfigBuilder() {
+
+      onChanged();
+      return getDesiredPrivateClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfigOrBuilder
+        getDesiredPrivateClusterConfigOrBuilder() {
+      if (desiredPrivateClusterConfigBuilder_ != null) {
+        return desiredPrivateClusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredPrivateClusterConfig_ == null
+            ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+            : desiredPrivateClusterConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired private cluster configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig desired_private_cluster_config = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterConfig,
+            com.google.container.v1.PrivateClusterConfig.Builder,
+            com.google.container.v1.PrivateClusterConfigOrBuilder>
+        getDesiredPrivateClusterConfigFieldBuilder() {
+      if (desiredPrivateClusterConfigBuilder_ == null) {
+        desiredPrivateClusterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.PrivateClusterConfig,
+                com.google.container.v1.PrivateClusterConfig.Builder,
+                com.google.container.v1.PrivateClusterConfigOrBuilder>(
+                getDesiredPrivateClusterConfig(), getParentForChildren(), isClean());
+        desiredPrivateClusterConfig_ = null;
+      }
+      return desiredPrivateClusterConfigBuilder_;
+    }
+
     private com.google.container.v1.IntraNodeVisibilityConfig desiredIntraNodeVisibilityConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.IntraNodeVisibilityConfig,
@@ -4581,6 +5673,379 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredIntraNodeVisibilityConfig_ = null;
       }
       return desiredIntraNodeVisibilityConfigBuilder_;
+    }
+
+    private com.google.container.v1.DefaultSnatStatus desiredDefaultSnatStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultSnatStatus,
+            com.google.container.v1.DefaultSnatStatus.Builder,
+            com.google.container.v1.DefaultSnatStatusOrBuilder>
+        desiredDefaultSnatStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     *
+     * @return Whether the desiredDefaultSnatStatus field is set.
+     */
+    public boolean hasDesiredDefaultSnatStatus() {
+      return desiredDefaultSnatStatusBuilder_ != null || desiredDefaultSnatStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     *
+     * @return The desiredDefaultSnatStatus.
+     */
+    public com.google.container.v1.DefaultSnatStatus getDesiredDefaultSnatStatus() {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        return desiredDefaultSnatStatus_ == null
+            ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+            : desiredDefaultSnatStatus_;
+      } else {
+        return desiredDefaultSnatStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public Builder setDesiredDefaultSnatStatus(com.google.container.v1.DefaultSnatStatus value) {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredDefaultSnatStatus_ = value;
+        onChanged();
+      } else {
+        desiredDefaultSnatStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public Builder setDesiredDefaultSnatStatus(
+        com.google.container.v1.DefaultSnatStatus.Builder builderForValue) {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        desiredDefaultSnatStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredDefaultSnatStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public Builder mergeDesiredDefaultSnatStatus(com.google.container.v1.DefaultSnatStatus value) {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        if (desiredDefaultSnatStatus_ != null) {
+          desiredDefaultSnatStatus_ =
+              com.google.container.v1.DefaultSnatStatus.newBuilder(desiredDefaultSnatStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredDefaultSnatStatus_ = value;
+        }
+        onChanged();
+      } else {
+        desiredDefaultSnatStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public Builder clearDesiredDefaultSnatStatus() {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        desiredDefaultSnatStatus_ = null;
+        onChanged();
+      } else {
+        desiredDefaultSnatStatus_ = null;
+        desiredDefaultSnatStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public com.google.container.v1.DefaultSnatStatus.Builder getDesiredDefaultSnatStatusBuilder() {
+
+      onChanged();
+      return getDesiredDefaultSnatStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    public com.google.container.v1.DefaultSnatStatusOrBuilder
+        getDesiredDefaultSnatStatusOrBuilder() {
+      if (desiredDefaultSnatStatusBuilder_ != null) {
+        return desiredDefaultSnatStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredDefaultSnatStatus_ == null
+            ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+            : desiredDefaultSnatStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired status of whether to disable default sNAT for this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus desired_default_snat_status = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultSnatStatus,
+            com.google.container.v1.DefaultSnatStatus.Builder,
+            com.google.container.v1.DefaultSnatStatusOrBuilder>
+        getDesiredDefaultSnatStatusFieldBuilder() {
+      if (desiredDefaultSnatStatusBuilder_ == null) {
+        desiredDefaultSnatStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DefaultSnatStatus,
+                com.google.container.v1.DefaultSnatStatus.Builder,
+                com.google.container.v1.DefaultSnatStatusOrBuilder>(
+                getDesiredDefaultSnatStatus(), getParentForChildren(), isClean());
+        desiredDefaultSnatStatus_ = null;
+      }
+      return desiredDefaultSnatStatusBuilder_;
+    }
+
+    private com.google.container.v1.ReleaseChannel desiredReleaseChannel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReleaseChannel,
+            com.google.container.v1.ReleaseChannel.Builder,
+            com.google.container.v1.ReleaseChannelOrBuilder>
+        desiredReleaseChannelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     *
+     * @return Whether the desiredReleaseChannel field is set.
+     */
+    public boolean hasDesiredReleaseChannel() {
+      return desiredReleaseChannelBuilder_ != null || desiredReleaseChannel_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     *
+     * @return The desiredReleaseChannel.
+     */
+    public com.google.container.v1.ReleaseChannel getDesiredReleaseChannel() {
+      if (desiredReleaseChannelBuilder_ == null) {
+        return desiredReleaseChannel_ == null
+            ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+            : desiredReleaseChannel_;
+      } else {
+        return desiredReleaseChannelBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public Builder setDesiredReleaseChannel(com.google.container.v1.ReleaseChannel value) {
+      if (desiredReleaseChannelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredReleaseChannel_ = value;
+        onChanged();
+      } else {
+        desiredReleaseChannelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public Builder setDesiredReleaseChannel(
+        com.google.container.v1.ReleaseChannel.Builder builderForValue) {
+      if (desiredReleaseChannelBuilder_ == null) {
+        desiredReleaseChannel_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredReleaseChannelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public Builder mergeDesiredReleaseChannel(com.google.container.v1.ReleaseChannel value) {
+      if (desiredReleaseChannelBuilder_ == null) {
+        if (desiredReleaseChannel_ != null) {
+          desiredReleaseChannel_ =
+              com.google.container.v1.ReleaseChannel.newBuilder(desiredReleaseChannel_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredReleaseChannel_ = value;
+        }
+        onChanged();
+      } else {
+        desiredReleaseChannelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public Builder clearDesiredReleaseChannel() {
+      if (desiredReleaseChannelBuilder_ == null) {
+        desiredReleaseChannel_ = null;
+        onChanged();
+      } else {
+        desiredReleaseChannel_ = null;
+        desiredReleaseChannelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public com.google.container.v1.ReleaseChannel.Builder getDesiredReleaseChannelBuilder() {
+
+      onChanged();
+      return getDesiredReleaseChannelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    public com.google.container.v1.ReleaseChannelOrBuilder getDesiredReleaseChannelOrBuilder() {
+      if (desiredReleaseChannelBuilder_ != null) {
+        return desiredReleaseChannelBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredReleaseChannel_ == null
+            ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+            : desiredReleaseChannel_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel desired_release_channel = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReleaseChannel,
+            com.google.container.v1.ReleaseChannel.Builder,
+            com.google.container.v1.ReleaseChannelOrBuilder>
+        getDesiredReleaseChannelFieldBuilder() {
+      if (desiredReleaseChannelBuilder_ == null) {
+        desiredReleaseChannelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ReleaseChannel,
+                com.google.container.v1.ReleaseChannel.Builder,
+                com.google.container.v1.ReleaseChannelOrBuilder>(
+                getDesiredReleaseChannel(), getParentForChildren(), isClean());
+        desiredReleaseChannel_ = null;
+      }
+      return desiredReleaseChannelBuilder_;
     }
 
     private java.lang.Object desiredMasterVersion_ = "";

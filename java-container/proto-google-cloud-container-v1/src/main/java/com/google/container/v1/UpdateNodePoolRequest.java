@@ -45,6 +45,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     nodeVersion_ = "";
     imageType_ = "";
     name_ = "";
+    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -66,6 +67,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +127,48 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
               name_ = s;
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                locations_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              locations_.add(s);
+              break;
+            }
+          case 114:
+            {
+              com.google.container.v1.WorkloadMetadataConfig.Builder subBuilder = null;
+              if (workloadMetadataConfig_ != null) {
+                subBuilder = workloadMetadataConfig_.toBuilder();
+              }
+              workloadMetadataConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.WorkloadMetadataConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workloadMetadataConfig_);
+                workloadMetadataConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 122:
+            {
+              com.google.container.v1.NodePool.UpgradeSettings.Builder subBuilder = null;
+              if (upgradeSettings_ != null) {
+                subBuilder = upgradeSettings_.toBuilder();
+              }
+              upgradeSettings_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePool.UpgradeSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upgradeSettings_);
+                upgradeSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -139,6 +183,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -221,9 +268,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -248,9 +295,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -544,6 +591,180 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int LOCATIONS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList locations_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return A list containing the locations.
+   */
+  public com.google.protobuf.ProtocolStringList getLocationsList() {
+    return locations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @return The count of locations.
+   */
+  public int getLocationsCount() {
+    return locations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The locations at the given index.
+   */
+  public java.lang.String getLocations(int index) {
+    return locations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * node pool's nodes should be located. Changing the locations for a node pool
+   * will result in nodes being either created or removed from the node pool,
+   * depending on whether locations are being added or removed.
+   * </pre>
+   *
+   * <code>repeated string locations = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the locations at the given index.
+   */
+  public com.google.protobuf.ByteString getLocationsBytes(int index) {
+    return locations_.getByteString(index);
+  }
+
+  public static final int WORKLOAD_METADATA_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1.WorkloadMetadataConfig workloadMetadataConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return Whether the workloadMetadataConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadMetadataConfig() {
+    return workloadMetadataConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   *
+   * @return The workloadMetadataConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig() {
+    return workloadMetadataConfig_ == null
+        ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+        : workloadMetadataConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired workload metadata config for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadMetadataConfigOrBuilder
+      getWorkloadMetadataConfigOrBuilder() {
+    return getWorkloadMetadataConfig();
+  }
+
+  public static final int UPGRADE_SETTINGS_FIELD_NUMBER = 15;
+  private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeSettings() {
+    return upgradeSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+    return upgradeSettings_ == null
+        ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+        : upgradeSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Upgrade settings control disruption and speed of the upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+    return getUpgradeSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -579,6 +800,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
     }
+    for (int i = 0; i < locations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, locations_.getRaw(i));
+    }
+    if (workloadMetadataConfig_ != null) {
+      output.writeMessage(14, getWorkloadMetadataConfig());
+    }
+    if (upgradeSettings_ != null) {
+      output.writeMessage(15, getUpgradeSettings());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -609,6 +839,21 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < locations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(locations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLocationsList().size();
+    }
+    if (workloadMetadataConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getWorkloadMetadataConfig());
+    }
+    if (upgradeSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUpgradeSettings());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -632,6 +877,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (!getNodeVersion().equals(other.getNodeVersion())) return false;
     if (!getImageType().equals(other.getImageType())) return false;
     if (!getName().equals(other.getName())) return false;
+    if (!getLocationsList().equals(other.getLocationsList())) return false;
+    if (hasWorkloadMetadataConfig() != other.hasWorkloadMetadataConfig()) return false;
+    if (hasWorkloadMetadataConfig()) {
+      if (!getWorkloadMetadataConfig().equals(other.getWorkloadMetadataConfig())) return false;
+    }
+    if (hasUpgradeSettings() != other.hasUpgradeSettings()) return false;
+    if (hasUpgradeSettings()) {
+      if (!getUpgradeSettings().equals(other.getUpgradeSettings())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -657,6 +911,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getImageType().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (getLocationsCount() > 0) {
+      hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationsList().hashCode();
+    }
+    if (hasWorkloadMetadataConfig()) {
+      hash = (37 * hash) + WORKLOAD_METADATA_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadMetadataConfig().hashCode();
+    }
+    if (hasUpgradeSettings()) {
+      hash = (37 * hash) + UPGRADE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeSettings().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -816,6 +1082,20 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
       name_ = "";
 
+      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = null;
+      } else {
+        workloadMetadataConfig_ = null;
+        workloadMetadataConfigBuilder_ = null;
+      }
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -843,6 +1123,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public com.google.container.v1.UpdateNodePoolRequest buildPartial() {
       com.google.container.v1.UpdateNodePoolRequest result =
           new com.google.container.v1.UpdateNodePoolRequest(this);
+      int from_bitField0_ = bitField0_;
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
@@ -850,6 +1131,21 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       result.nodeVersion_ = nodeVersion_;
       result.imageType_ = imageType_;
       result.name_ = name_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.locations_ = locations_;
+      if (workloadMetadataConfigBuilder_ == null) {
+        result.workloadMetadataConfig_ = workloadMetadataConfig_;
+      } else {
+        result.workloadMetadataConfig_ = workloadMetadataConfigBuilder_.build();
+      }
+      if (upgradeSettingsBuilder_ == null) {
+        result.upgradeSettings_ = upgradeSettings_;
+      } else {
+        result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -927,6 +1223,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         name_ = other.name_;
         onChanged();
       }
+      if (!other.locations_.isEmpty()) {
+        if (locations_.isEmpty()) {
+          locations_ = other.locations_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureLocationsIsMutable();
+          locations_.addAll(other.locations_);
+        }
+        onChanged();
+      }
+      if (other.hasWorkloadMetadataConfig()) {
+        mergeWorkloadMetadataConfig(other.getWorkloadMetadataConfig());
+      }
+      if (other.hasUpgradeSettings()) {
+        mergeUpgradeSettings(other.getUpgradeSettings());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -955,6 +1267,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -1083,9 +1397,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1109,9 +1423,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1135,9 +1449,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1160,9 +1474,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1181,9 +1495,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field has been deprecated and replaced by the name field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field has been deprecated and replaced by the name
+     * field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
@@ -1801,6 +2115,585 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       name_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.LazyStringList locations_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return A list containing the locations.
+     */
+    public com.google.protobuf.ProtocolStringList getLocationsList() {
+      return locations_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return The count of locations.
+     */
+    public int getLocationsCount() {
+      return locations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The locations at the given index.
+     */
+    public java.lang.String getLocations(int index) {
+      return locations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the locations at the given index.
+     */
+    public com.google.protobuf.ByteString getLocationsBytes(int index) {
+      return locations_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The locations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
+      locations_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param value The locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
+      locations_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param values The locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
+      ensureLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocations() {
+      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired list of Google Compute Engine
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * node pool's nodes should be located. Changing the locations for a node pool
+     * will result in nodes being either created or removed from the node pool,
+     * depending on whether locations are being added or removed.
+     * </pre>
+     *
+     * <code>repeated string locations = 13;</code>
+     *
+     * @param value The bytes of the locations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLocationsIsMutable();
+      locations_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.WorkloadMetadataConfig workloadMetadataConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadMetadataConfig,
+            com.google.container.v1.WorkloadMetadataConfig.Builder,
+            com.google.container.v1.WorkloadMetadataConfigOrBuilder>
+        workloadMetadataConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     *
+     * @return Whether the workloadMetadataConfig field is set.
+     */
+    public boolean hasWorkloadMetadataConfig() {
+      return workloadMetadataConfigBuilder_ != null || workloadMetadataConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     *
+     * @return The workloadMetadataConfig.
+     */
+    public com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        return workloadMetadataConfig_ == null
+            ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+            : workloadMetadataConfig_;
+      } else {
+        return workloadMetadataConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder setWorkloadMetadataConfig(com.google.container.v1.WorkloadMetadataConfig value) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadMetadataConfig_ = value;
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder setWorkloadMetadataConfig(
+        com.google.container.v1.WorkloadMetadataConfig.Builder builderForValue) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder mergeWorkloadMetadataConfig(
+        com.google.container.v1.WorkloadMetadataConfig value) {
+      if (workloadMetadataConfigBuilder_ == null) {
+        if (workloadMetadataConfig_ != null) {
+          workloadMetadataConfig_ =
+              com.google.container.v1.WorkloadMetadataConfig.newBuilder(workloadMetadataConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          workloadMetadataConfig_ = value;
+        }
+        onChanged();
+      } else {
+        workloadMetadataConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public Builder clearWorkloadMetadataConfig() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfig_ = null;
+        onChanged();
+      } else {
+        workloadMetadataConfig_ = null;
+        workloadMetadataConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public com.google.container.v1.WorkloadMetadataConfig.Builder
+        getWorkloadMetadataConfigBuilder() {
+
+      onChanged();
+      return getWorkloadMetadataConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    public com.google.container.v1.WorkloadMetadataConfigOrBuilder
+        getWorkloadMetadataConfigOrBuilder() {
+      if (workloadMetadataConfigBuilder_ != null) {
+        return workloadMetadataConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadMetadataConfig_ == null
+            ? com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()
+            : workloadMetadataConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired workload metadata config for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadMetadataConfig,
+            com.google.container.v1.WorkloadMetadataConfig.Builder,
+            com.google.container.v1.WorkloadMetadataConfigOrBuilder>
+        getWorkloadMetadataConfigFieldBuilder() {
+      if (workloadMetadataConfigBuilder_ == null) {
+        workloadMetadataConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.WorkloadMetadataConfig,
+                com.google.container.v1.WorkloadMetadataConfig.Builder,
+                com.google.container.v1.WorkloadMetadataConfigOrBuilder>(
+                getWorkloadMetadataConfig(), getParentForChildren(), isClean());
+        workloadMetadataConfig_ = null;
+      }
+      return workloadMetadataConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        upgradeSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     *
+     * @return Whether the upgradeSettings field is set.
+     */
+    public boolean hasUpgradeSettings() {
+      return upgradeSettingsBuilder_ != null || upgradeSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     *
+     * @return The upgradeSettings.
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      } else {
+        return upgradeSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public Builder setUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upgradeSettings_ = value;
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public Builder setUpgradeSettings(
+        com.google.container.v1.NodePool.UpgradeSettings.Builder builderForValue) {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public Builder mergeUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (upgradeSettings_ != null) {
+          upgradeSettings_ =
+              com.google.container.v1.NodePool.UpgradeSettings.newBuilder(upgradeSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          upgradeSettings_ = value;
+        }
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public Builder clearUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+        onChanged();
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings.Builder getUpgradeSettingsBuilder() {
+
+      onChanged();
+      return getUpgradeSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+      if (upgradeSettingsBuilder_ != null) {
+        return upgradeSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade settings control disruption and speed of the upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        getUpgradeSettingsFieldBuilder() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePool.UpgradeSettings,
+                com.google.container.v1.NodePool.UpgradeSettings.Builder,
+                com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>(
+                getUpgradeSettings(), getParentForChildren(), isClean());
+        upgradeSettings_ = null;
+      }
+      return upgradeSettingsBuilder_;
     }
 
     @java.lang.Override

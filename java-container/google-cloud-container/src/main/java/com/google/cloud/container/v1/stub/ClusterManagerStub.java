@@ -28,6 +28,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -138,6 +140,10 @@ public abstract class ClusterManagerStub implements BackgroundResource {
 
   public UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getServerConfigCallable()");
+  }
+
+  public UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable() {
+    throw new UnsupportedOperationException("Not implemented: getJSONWebKeysCallable()");
   }
 
   public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {

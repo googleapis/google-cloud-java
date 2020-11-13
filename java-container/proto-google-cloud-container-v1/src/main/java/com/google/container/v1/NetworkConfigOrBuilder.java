@@ -28,9 +28,9 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-   * the cluster is connected.
-   * Example: projects/my-project/global/networks/my-network
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. Example:
+   * projects/my-project/global/networks/my-network
    * </pre>
    *
    * <code>string network = 1;</code>
@@ -43,9 +43,9 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-   * the cluster is connected.
-   * Example: projects/my-project/global/networks/my-network
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. Example:
+   * projects/my-project/global/networks/my-network
    * </pre>
    *
    * <code>string network = 1;</code>
@@ -59,8 +59,9 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-   * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+   * cluster is connected. Example:
+   * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
@@ -73,8 +74,9 @@ public interface NetworkConfigOrBuilder
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-   * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+   * cluster is connected. Example:
+   * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
@@ -96,4 +98,48 @@ public interface NetworkConfigOrBuilder
    * @return The enableIntraNodeVisibility.
    */
   boolean getEnableIntraNodeVisibility();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   *
+   * @return Whether the defaultSnatStatus field is set.
+   */
+  boolean hasDefaultSnatStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   *
+   * @return The defaultSnatStatus.
+   */
+  com.google.container.v1.DefaultSnatStatus getDefaultSnatStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   */
+  com.google.container.v1.DefaultSnatStatusOrBuilder getDefaultSnatStatusOrBuilder();
 }

@@ -131,4 +131,71 @@ public interface PrivateClusterConfigOrBuilder
    * @return The bytes for publicEndpoint.
    */
   com.google.protobuf.ByteString getPublicEndpointBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peering name in the customer VPC used by this cluster.
+   * </pre>
+   *
+   * <code>string peering_name = 7;</code>
+   *
+   * @return The peeringName.
+   */
+  java.lang.String getPeeringName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peering name in the customer VPC used by this cluster.
+   * </pre>
+   *
+   * <code>string peering_name = 7;</code>
+   *
+   * @return The bytes for peeringName.
+   */
+  com.google.protobuf.ByteString getPeeringNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   *
+   * @return Whether the masterGlobalAccessConfig field is set.
+   */
+  boolean hasMasterGlobalAccessConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   *
+   * @return The masterGlobalAccessConfig.
+   */
+  com.google.container.v1.PrivateClusterMasterGlobalAccessConfig getMasterGlobalAccessConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Controls master global access settings.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PrivateClusterMasterGlobalAccessConfig master_global_access_config = 8;
+   * </code>
+   */
+  com.google.container.v1.PrivateClusterMasterGlobalAccessConfigOrBuilder
+      getMasterGlobalAccessConfigOrBuilder();
 }

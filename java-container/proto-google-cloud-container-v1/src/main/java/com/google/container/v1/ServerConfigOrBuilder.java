@@ -52,7 +52,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -64,7 +64,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -76,7 +76,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -89,7 +89,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -179,7 +179,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -191,7 +191,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -203,7 +203,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -216,7 +216,7 @@ public interface ServerConfigOrBuilder
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -225,4 +225,57 @@ public interface ServerConfigOrBuilder
    * @return The bytes of the validMasterVersions at the given index.
    */
   com.google.protobuf.ByteString getValidMasterVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig> getChannelsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  com.google.container.v1.ServerConfig.ReleaseChannelConfig getChannels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  int getChannelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  java.util.List<? extends com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
+      getChannelsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder getChannelsOrBuilder(
+      int index);
 }

@@ -42,6 +42,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   private AutoprovisioningNodePoolDefaults() {
     oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     serviceAccount_ = "";
+    minCpuPlatform_ = "";
+    diskType_ = "";
+    bootDiskKmsKey_ = "";
   }
 
   @java.lang.Override
@@ -91,6 +94,80 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
               serviceAccount_ = s;
               break;
             }
+          case 26:
+            {
+              com.google.container.v1.NodePool.UpgradeSettings.Builder subBuilder = null;
+              if (upgradeSettings_ != null) {
+                subBuilder = upgradeSettings_.toBuilder();
+              }
+              upgradeSettings_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePool.UpgradeSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upgradeSettings_);
+                upgradeSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              com.google.container.v1.NodeManagement.Builder subBuilder = null;
+              if (management_ != null) {
+                subBuilder = management_.toBuilder();
+              }
+              management_ =
+                  input.readMessage(
+                      com.google.container.v1.NodeManagement.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(management_);
+                management_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minCpuPlatform_ = s;
+              break;
+            }
+          case 48:
+            {
+              diskSizeGb_ = input.readInt32();
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              diskType_ = s;
+              break;
+            }
+          case 66:
+            {
+              com.google.container.v1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfig_ != null) {
+                subBuilder = shieldedInstanceConfig_.toBuilder();
+              }
+              shieldedInstanceConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ShieldedInstanceConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfig_);
+                shieldedInstanceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bootDiskKmsKey_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -134,8 +211,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -149,8 +225,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -164,8 +239,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -180,8 +254,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-   * specified, service_account should be empty.
+   * Scopes that are used by NAP when creating node pools.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 1;</code>
@@ -199,8 +272,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * service_account is specified, scopes should be empty.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
    * </pre>
    *
    * <code>string service_account = 2;</code>
@@ -223,8 +295,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
-   * The Google Cloud Platform Service Account to be used by the node VMs. If
-   * service_account is specified, scopes should be empty.
+   * The Google Cloud Platform Service Account to be used by the node VMs.
    * </pre>
    *
    * <code>string service_account = 2;</code>
@@ -238,6 +309,348 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UPGRADE_SETTINGS_FIELD_NUMBER = 3;
+  private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   *
+   * @return Whether the upgradeSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeSettings() {
+    return upgradeSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   *
+   * @return The upgradeSettings.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+    return upgradeSettings_ == null
+        ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+        : upgradeSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the upgrade settings for NAP created node pools
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+    return getUpgradeSettings();
+  }
+
+  public static final int MANAGEMENT_FIELD_NUMBER = 4;
+  private com.google.container.v1.NodeManagement management_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   *
+   * @return Whether the management field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagement() {
+    return management_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   *
+   * @return The management.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeManagement getManagement() {
+    return management_ == null
+        ? com.google.container.v1.NodeManagement.getDefaultInstance()
+        : management_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node management options for NAP created node-pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeManagement management = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
+    return getManagement();
+  }
+
+  public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 5;
+  private volatile java.lang.Object minCpuPlatform_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * To unset the min cpu platform field pass "automatic"
+   * as field value.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 5;</code>
+   *
+   * @return The minCpuPlatform.
+   */
+  @java.lang.Override
+  public java.lang.String getMinCpuPlatform() {
+    java.lang.Object ref = minCpuPlatform_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      minCpuPlatform_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * To unset the min cpu platform field pass "automatic"
+   * as field value.
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 5;</code>
+   *
+   * @return The bytes for minCpuPlatform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
+    java.lang.Object ref = minCpuPlatform_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      minCpuPlatform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 6;
+  private int diskSizeGb_;
+  /**
+   *
+   *
+   * <pre>
+   * Size of the disk attached to each node, specified in GB.
+   * The smallest allowed disk size is 10GB.
+   * If unspecified, the default disk size is 100GB.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 6;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  @java.lang.Override
+  public int getDiskSizeGb() {
+    return diskSizeGb_;
+  }
+
+  public static final int DISK_TYPE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object diskType_;
+  /**
+   *
+   *
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 7;</code>
+   *
+   * @return The diskType.
+   */
+  @java.lang.Override
+  public java.lang.String getDiskType() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      diskType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 7;</code>
+   *
+   * @return The bytes for diskType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDiskTypeBytes() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      diskType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 8;
+  private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ == null
+        ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedInstanceConfigOrBuilder
+      getShieldedInstanceConfigOrBuilder() {
+    return getShieldedInstanceConfig();
+  }
+
+  public static final int BOOT_DISK_KMS_KEY_FIELD_NUMBER = 9;
+  private volatile java.lang.Object bootDiskKmsKey_;
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 9;</code>
+   *
+   * @return The bootDiskKmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getBootDiskKmsKey() {
+    java.lang.Object ref = bootDiskKmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bootDiskKmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Customer Managed Encryption Key used to encrypt the boot disk attached
+   * to each node in the node pool. This should be of the form
+   * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+   * For more information about protecting resources with Cloud KMS Keys please
+   * see:
+   * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+   * </pre>
+   *
+   * <code>string boot_disk_kms_key = 9;</code>
+   *
+   * @return The bytes for bootDiskKmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+    java.lang.Object ref = bootDiskKmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bootDiskKmsKey_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -264,6 +677,27 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     if (!getServiceAccountBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
     }
+    if (upgradeSettings_ != null) {
+      output.writeMessage(3, getUpgradeSettings());
+    }
+    if (management_ != null) {
+      output.writeMessage(4, getManagement());
+    }
+    if (!getMinCpuPlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, minCpuPlatform_);
+    }
+    if (diskSizeGb_ != 0) {
+      output.writeInt32(6, diskSizeGb_);
+    }
+    if (!getDiskTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, diskType_);
+    }
+    if (shieldedInstanceConfig_ != null) {
+      output.writeMessage(8, getShieldedInstanceConfig());
+    }
+    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, bootDiskKmsKey_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -284,6 +718,28 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     if (!getServiceAccountBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
     }
+    if (upgradeSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpgradeSettings());
+    }
+    if (management_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getManagement());
+    }
+    if (!getMinCpuPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, minCpuPlatform_);
+    }
+    if (diskSizeGb_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, diskSizeGb_);
+    }
+    if (!getDiskTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, diskType_);
+    }
+    if (shieldedInstanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getShieldedInstanceConfig());
+    }
+    if (!getBootDiskKmsKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, bootDiskKmsKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -302,6 +758,22 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
     if (!getOauthScopesList().equals(other.getOauthScopesList())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasUpgradeSettings() != other.hasUpgradeSettings()) return false;
+    if (hasUpgradeSettings()) {
+      if (!getUpgradeSettings().equals(other.getUpgradeSettings())) return false;
+    }
+    if (hasManagement() != other.hasManagement()) return false;
+    if (hasManagement()) {
+      if (!getManagement().equals(other.getManagement())) return false;
+    }
+    if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    if (!getDiskType().equals(other.getDiskType())) return false;
+    if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
+    if (hasShieldedInstanceConfig()) {
+      if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
+    }
+    if (!getBootDiskKmsKey().equals(other.getBootDiskKmsKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -319,6 +791,26 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasUpgradeSettings()) {
+      hash = (37 * hash) + UPGRADE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeSettings().hashCode();
+    }
+    if (hasManagement()) {
+      hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getManagement().hashCode();
+    }
+    hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskSizeGb();
+    hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskType().hashCode();
+    if (hasShieldedInstanceConfig()) {
+      hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
+    }
+    hash = (37 * hash) + BOOT_DISK_KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getBootDiskKmsKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -470,6 +962,32 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       bitField0_ = (bitField0_ & ~0x00000001);
       serviceAccount_ = "";
 
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
+      if (managementBuilder_ == null) {
+        management_ = null;
+      } else {
+        management_ = null;
+        managementBuilder_ = null;
+      }
+      minCpuPlatform_ = "";
+
+      diskSizeGb_ = 0;
+
+      diskType_ = "";
+
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
+      bootDiskKmsKey_ = "";
+
       return this;
     }
 
@@ -504,6 +1022,25 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       result.oauthScopes_ = oauthScopes_;
       result.serviceAccount_ = serviceAccount_;
+      if (upgradeSettingsBuilder_ == null) {
+        result.upgradeSettings_ = upgradeSettings_;
+      } else {
+        result.upgradeSettings_ = upgradeSettingsBuilder_.build();
+      }
+      if (managementBuilder_ == null) {
+        result.management_ = management_;
+      } else {
+        result.management_ = managementBuilder_.build();
+      }
+      result.minCpuPlatform_ = minCpuPlatform_;
+      result.diskSizeGb_ = diskSizeGb_;
+      result.diskType_ = diskType_;
+      if (shieldedInstanceConfigBuilder_ == null) {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
+      } else {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
+      }
+      result.bootDiskKmsKey_ = bootDiskKmsKey_;
       onBuilt();
       return result;
     }
@@ -568,6 +1105,30 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         serviceAccount_ = other.serviceAccount_;
         onChanged();
       }
+      if (other.hasUpgradeSettings()) {
+        mergeUpgradeSettings(other.getUpgradeSettings());
+      }
+      if (other.hasManagement()) {
+        mergeManagement(other.getManagement());
+      }
+      if (!other.getMinCpuPlatform().isEmpty()) {
+        minCpuPlatform_ = other.minCpuPlatform_;
+        onChanged();
+      }
+      if (other.getDiskSizeGb() != 0) {
+        setDiskSizeGb(other.getDiskSizeGb());
+      }
+      if (!other.getDiskType().isEmpty()) {
+        diskType_ = other.diskType_;
+        onChanged();
+      }
+      if (other.hasShieldedInstanceConfig()) {
+        mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
+      }
+      if (!other.getBootDiskKmsKey().isEmpty()) {
+        bootDiskKmsKey_ = other.bootDiskKmsKey_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -613,8 +1174,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -628,8 +1188,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -643,8 +1202,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -659,8 +1217,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -675,8 +1232,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -698,8 +1254,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -720,8 +1275,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -739,8 +1293,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -757,8 +1310,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * Scopes that are used by NAP when creating node pools. If oauth_scopes are
-     * specified, service_account should be empty.
+     * Scopes that are used by NAP when creating node pools.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 1;</code>
@@ -782,8 +1334,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * service_account is specified, scopes should be empty.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
      * </pre>
      *
      * <code>string service_account = 2;</code>
@@ -805,8 +1356,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * service_account is specified, scopes should be empty.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
      * </pre>
      *
      * <code>string service_account = 2;</code>
@@ -828,8 +1378,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * service_account is specified, scopes should be empty.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
      * </pre>
      *
      * <code>string service_account = 2;</code>
@@ -850,8 +1399,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * service_account is specified, scopes should be empty.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
      * </pre>
      *
      * <code>string service_account = 2;</code>
@@ -868,8 +1416,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Google Cloud Platform Service Account to be used by the node VMs. If
-     * service_account is specified, scopes should be empty.
+     * The Google Cloud Platform Service Account to be used by the node VMs.
      * </pre>
      *
      * <code>string service_account = 2;</code>
@@ -884,6 +1431,1017 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       checkByteStringIsUtf8(value);
 
       serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.NodePool.UpgradeSettings upgradeSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        upgradeSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     *
+     * @return Whether the upgradeSettings field is set.
+     */
+    public boolean hasUpgradeSettings() {
+      return upgradeSettingsBuilder_ != null || upgradeSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     *
+     * @return The upgradeSettings.
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      } else {
+        return upgradeSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public Builder setUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upgradeSettings_ = value;
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public Builder setUpgradeSettings(
+        com.google.container.v1.NodePool.UpgradeSettings.Builder builderForValue) {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public Builder mergeUpgradeSettings(com.google.container.v1.NodePool.UpgradeSettings value) {
+      if (upgradeSettingsBuilder_ == null) {
+        if (upgradeSettings_ != null) {
+          upgradeSettings_ =
+              com.google.container.v1.NodePool.UpgradeSettings.newBuilder(upgradeSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          upgradeSettings_ = value;
+        }
+        onChanged();
+      } else {
+        upgradeSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public Builder clearUpgradeSettings() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettings_ = null;
+        onChanged();
+      } else {
+        upgradeSettings_ = null;
+        upgradeSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettings.Builder getUpgradeSettingsBuilder() {
+
+      onChanged();
+      return getUpgradeSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    public com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder() {
+      if (upgradeSettingsBuilder_ != null) {
+        return upgradeSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return upgradeSettings_ == null
+            ? com.google.container.v1.NodePool.UpgradeSettings.getDefaultInstance()
+            : upgradeSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the upgrade settings for NAP created node pools
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.UpgradeSettings,
+            com.google.container.v1.NodePool.UpgradeSettings.Builder,
+            com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>
+        getUpgradeSettingsFieldBuilder() {
+      if (upgradeSettingsBuilder_ == null) {
+        upgradeSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePool.UpgradeSettings,
+                com.google.container.v1.NodePool.UpgradeSettings.Builder,
+                com.google.container.v1.NodePool.UpgradeSettingsOrBuilder>(
+                getUpgradeSettings(), getParentForChildren(), isClean());
+        upgradeSettings_ = null;
+      }
+      return upgradeSettingsBuilder_;
+    }
+
+    private com.google.container.v1.NodeManagement management_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeManagement,
+            com.google.container.v1.NodeManagement.Builder,
+            com.google.container.v1.NodeManagementOrBuilder>
+        managementBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     *
+     * @return Whether the management field is set.
+     */
+    public boolean hasManagement() {
+      return managementBuilder_ != null || management_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     *
+     * @return The management.
+     */
+    public com.google.container.v1.NodeManagement getManagement() {
+      if (managementBuilder_ == null) {
+        return management_ == null
+            ? com.google.container.v1.NodeManagement.getDefaultInstance()
+            : management_;
+      } else {
+        return managementBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public Builder setManagement(com.google.container.v1.NodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        management_ = value;
+        onChanged();
+      } else {
+        managementBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public Builder setManagement(com.google.container.v1.NodeManagement.Builder builderForValue) {
+      if (managementBuilder_ == null) {
+        management_ = builderForValue.build();
+        onChanged();
+      } else {
+        managementBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public Builder mergeManagement(com.google.container.v1.NodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (management_ != null) {
+          management_ =
+              com.google.container.v1.NodeManagement.newBuilder(management_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          management_ = value;
+        }
+        onChanged();
+      } else {
+        managementBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public Builder clearManagement() {
+      if (managementBuilder_ == null) {
+        management_ = null;
+        onChanged();
+      } else {
+        management_ = null;
+        managementBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public com.google.container.v1.NodeManagement.Builder getManagementBuilder() {
+
+      onChanged();
+      return getManagementFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
+      if (managementBuilder_ != null) {
+        return managementBuilder_.getMessageOrBuilder();
+      } else {
+        return management_ == null
+            ? com.google.container.v1.NodeManagement.getDefaultInstance()
+            : management_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node management options for NAP created node-pools.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeManagement management = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeManagement,
+            com.google.container.v1.NodeManagement.Builder,
+            com.google.container.v1.NodeManagementOrBuilder>
+        getManagementFieldBuilder() {
+      if (managementBuilder_ == null) {
+        managementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeManagement,
+                com.google.container.v1.NodeManagement.Builder,
+                com.google.container.v1.NodeManagementOrBuilder>(
+                getManagement(), getParentForChildren(), isClean());
+        management_ = null;
+      }
+      return managementBuilder_;
+    }
+
+    private java.lang.Object minCpuPlatform_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Minimum CPU platform to be used for NAP created node pools.
+     * The instance may be scheduled on the specified or newer CPU platform.
+     * Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: Intel Haswell or
+     * minCpuPlatform: Intel Sandy Bridge. For more
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * To unset the min cpu platform field pass "automatic"
+     * as field value.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 5;</code>
+     *
+     * @return The minCpuPlatform.
+     */
+    public java.lang.String getMinCpuPlatform() {
+      java.lang.Object ref = minCpuPlatform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minCpuPlatform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum CPU platform to be used for NAP created node pools.
+     * The instance may be scheduled on the specified or newer CPU platform.
+     * Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: Intel Haswell or
+     * minCpuPlatform: Intel Sandy Bridge. For more
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * To unset the min cpu platform field pass "automatic"
+     * as field value.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 5;</code>
+     *
+     * @return The bytes for minCpuPlatform.
+     */
+    public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
+      java.lang.Object ref = minCpuPlatform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        minCpuPlatform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum CPU platform to be used for NAP created node pools.
+     * The instance may be scheduled on the specified or newer CPU platform.
+     * Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: Intel Haswell or
+     * minCpuPlatform: Intel Sandy Bridge. For more
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * To unset the min cpu platform field pass "automatic"
+     * as field value.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 5;</code>
+     *
+     * @param value The minCpuPlatform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinCpuPlatform(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      minCpuPlatform_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum CPU platform to be used for NAP created node pools.
+     * The instance may be scheduled on the specified or newer CPU platform.
+     * Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: Intel Haswell or
+     * minCpuPlatform: Intel Sandy Bridge. For more
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * To unset the min cpu platform field pass "automatic"
+     * as field value.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinCpuPlatform() {
+
+      minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum CPU platform to be used for NAP created node pools.
+     * The instance may be scheduled on the specified or newer CPU platform.
+     * Applicable values are the friendly names of CPU platforms, such as
+     * minCpuPlatform: Intel Haswell or
+     * minCpuPlatform: Intel Sandy Bridge. For more
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * To unset the min cpu platform field pass "automatic"
+     * as field value.
+     * </pre>
+     *
+     * <code>string min_cpu_platform = 5;</code>
+     *
+     * @param value The bytes for minCpuPlatform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinCpuPlatformBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      minCpuPlatform_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int diskSizeGb_;
+    /**
+     *
+     *
+     * <pre>
+     * Size of the disk attached to each node, specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * If unspecified, the default disk size is 100GB.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 6;</code>
+     *
+     * @return The diskSizeGb.
+     */
+    @java.lang.Override
+    public int getDiskSizeGb() {
+      return diskSizeGb_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of the disk attached to each node, specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * If unspecified, the default disk size is 100GB.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 6;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskSizeGb(int value) {
+
+      diskSizeGb_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of the disk attached to each node, specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * If unspecified, the default disk size is 100GB.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskSizeGb() {
+
+      diskSizeGb_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object diskType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 7;</code>
+     *
+     * @return The diskType.
+     */
+    public java.lang.String getDiskType() {
+      java.lang.Object ref = diskType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diskType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 7;</code>
+     *
+     * @return The bytes for diskType.
+     */
+    public com.google.protobuf.ByteString getDiskTypeBytes() {
+      java.lang.Object ref = diskType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        diskType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 7;</code>
+     *
+     * @param value The diskType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      diskType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskType() {
+
+      diskType_ = getDefaultInstance().getDiskType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 7;</code>
+     *
+     * @param value The bytes for diskType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      diskType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedInstanceConfig,
+            com.google.container.v1.ShieldedInstanceConfig.Builder,
+            com.google.container.v1.ShieldedInstanceConfigOrBuilder>
+        shieldedInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     *
+     * @return Whether the shieldedInstanceConfig field is set.
+     */
+    public boolean hasShieldedInstanceConfig() {
+      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     *
+     * @return The shieldedInstanceConfig.
+     */
+    public com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        return shieldedInstanceConfig_ == null
+            ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      } else {
+        return shieldedInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public Builder setShieldedInstanceConfig(com.google.container.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedInstanceConfig_ = value;
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.container.v1.ShieldedInstanceConfig.Builder builderForValue) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public Builder mergeShieldedInstanceConfig(
+        com.google.container.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (shieldedInstanceConfig_ != null) {
+          shieldedInstanceConfig_ =
+              com.google.container.v1.ShieldedInstanceConfig.newBuilder(shieldedInstanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shieldedInstanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public Builder clearShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+        onChanged();
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public com.google.container.v1.ShieldedInstanceConfig.Builder
+        getShieldedInstanceConfigBuilder() {
+
+      onChanged();
+      return getShieldedInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    public com.google.container.v1.ShieldedInstanceConfigOrBuilder
+        getShieldedInstanceConfigOrBuilder() {
+      if (shieldedInstanceConfigBuilder_ != null) {
+        return shieldedInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedInstanceConfig_ == null
+            ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedInstanceConfig,
+            com.google.container.v1.ShieldedInstanceConfig.Builder,
+            com.google.container.v1.ShieldedInstanceConfigOrBuilder>
+        getShieldedInstanceConfigFieldBuilder() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ShieldedInstanceConfig,
+                com.google.container.v1.ShieldedInstanceConfig.Builder,
+                com.google.container.v1.ShieldedInstanceConfigOrBuilder>(
+                getShieldedInstanceConfig(), getParentForChildren(), isClean());
+        shieldedInstanceConfig_ = null;
+      }
+      return shieldedInstanceConfigBuilder_;
+    }
+
+    private java.lang.Object bootDiskKmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 9;</code>
+     *
+     * @return The bootDiskKmsKey.
+     */
+    public java.lang.String getBootDiskKmsKey() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootDiskKmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 9;</code>
+     *
+     * @return The bytes for bootDiskKmsKey.
+     */
+    public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bootDiskKmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 9;</code>
+     *
+     * @param value The bootDiskKmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      bootDiskKmsKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootDiskKmsKey() {
+
+      bootDiskKmsKey_ = getDefaultInstance().getBootDiskKmsKey();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Customer Managed Encryption Key used to encrypt the boot disk attached
+     * to each node in the node pool. This should be of the form
+     * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
+     * For more information about protecting resources with Cloud KMS Keys please
+     * see:
+     * https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 9;</code>
+     *
+     * @param value The bytes for bootDiskKmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      bootDiskKmsKey_ = value;
       onChanged();
       return this;
     }

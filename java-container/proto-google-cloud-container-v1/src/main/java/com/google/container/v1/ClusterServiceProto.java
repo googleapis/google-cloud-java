@@ -44,6 +44,14 @@ public final class ClusterServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_ShieldedInstanceConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_SandboxConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_SandboxConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_ReservationAffinity_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_ReservationAffinity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_NodeTaint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_NodeTaint_fieldAccessorTable;
@@ -76,6 +84,14 @@ public final class ClusterServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_NetworkPolicyConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_DnsCacheConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_DnsCacheConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_PrivateClusterMasterGlobalAccessConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_PrivateClusterMasterGlobalAccessConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_PrivateClusterConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable;
@@ -87,6 +103,10 @@ public final class ClusterServiceProto {
       internal_static_google_container_v1_CloudRunConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_CloudRunConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_ConfigConnectorConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_ConfigConnectorConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -127,6 +147,14 @@ public final class ClusterServiceProto {
       internal_static_google_container_v1_Operation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_Operation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_OperationProgress_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_OperationProgress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_OperationProgress_Metric_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_OperationProgress_Metric_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_CreateClusterRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -208,6 +236,10 @@ public final class ClusterServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_ServerConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_CreateNodePoolRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_CreateNodePoolRequest_fieldAccessorTable;
@@ -227,6 +259,10 @@ public final class ClusterServiceProto {
       internal_static_google_container_v1_NodePool_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_NodePool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_NodePool_UpgradeSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_NodeManagement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -316,6 +352,10 @@ public final class ClusterServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_AcceleratorConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_WorkloadMetadataConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_WorkloadMetadataConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_SetNetworkPolicyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_SetNetworkPolicyRequest_fieldAccessorTable;
@@ -332,6 +372,30 @@ public final class ClusterServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_NetworkConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_GetOpenIDConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_GetOpenIDConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_GetOpenIDConfigResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_GetOpenIDConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_GetJSONWebKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_GetJSONWebKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_Jwk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_Jwk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_GetJSONWebKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_GetJSONWebKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_ReleaseChannel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_ReleaseChannel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_IntraNodeVisibilityConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_IntraNodeVisibilityConfig_fieldAccessorTable;
@@ -339,6 +403,10 @@ public final class ClusterServiceProto {
       internal_static_google_container_v1_MaxPodsConstraint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_MaxPodsConstraint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_WorkloadIdentityConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_WorkloadIdentityConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_container_v1_DatabaseEncryption_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -375,6 +443,14 @@ public final class ClusterServiceProto {
       internal_static_google_container_v1_VerticalPodAutoscaling_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_container_v1_VerticalPodAutoscaling_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_DefaultSnatStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_DefaultSnatStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_container_v1_ShieldedNodes_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_container_v1_ShieldedNodes_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -389,7 +465,7 @@ public final class ClusterServiceProto {
           + "otations.proto\032\027google/api/client.proto\032"
           + "\037google/api/field_behavior.proto\032\033google"
           + "/protobuf/empty.proto\032\037google/protobuf/t"
-          + "imestamp.proto\"\377\004\n\nNodeConfig\022\024\n\014machine"
+          + "imestamp.proto\"\201\007\n\nNodeConfig\022\024\n\014machine"
           + "_type\030\001 \001(\t\022\024\n\014disk_size_gb\030\002 \001(\005\022\024\n\014oau"
           + "th_scopes\030\003 \003(\t\022\027\n\017service_account\030\t \001(\t"
           + "\022?\n\010metadata\030\004 \003(\0132-.google.container.v1"
@@ -399,157 +475,204 @@ public final class ClusterServiceProto {
           + "count\030\007 \001(\005\022\014\n\004tags\030\010 \003(\t\022\023\n\013preemptible"
           + "\030\n \001(\010\022<\n\014accelerators\030\013 \003(\0132&.google.co"
           + "ntainer.v1.AcceleratorConfig\022\021\n\tdisk_typ"
-          + "e\030\014 \001(\t\022\030\n\020min_cpu_platform\030\r \001(\t\022.\n\006tai"
-          + "nts\030\017 \003(\0132\036.google.container.v1.NodeTain"
-          + "t\022M\n\030shielded_instance_config\030\024 \001(\0132+.go"
-          + "ogle.container.v1.ShieldedInstanceConfig"
-          + "\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"Y\n\026ShieldedInstanceConf"
-          + "ig\022\032\n\022enable_secure_boot\030\001 \001(\010\022#\n\033enable"
-          + "_integrity_monitoring\030\002 \001(\010\"\271\001\n\tNodeTain"
-          + "t\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\0225\n\006effect\030"
-          + "\003 \001(\0162%.google.container.v1.NodeTaint.Ef"
-          + "fect\"Y\n\006Effect\022\026\n\022EFFECT_UNSPECIFIED\020\000\022\017"
-          + "\n\013NO_SCHEDULE\020\001\022\026\n\022PREFER_NO_SCHEDULE\020\002\022"
-          + "\016\n\nNO_EXECUTE\020\003\"\321\001\n\nMasterAuth\022\020\n\010userna"
-          + "me\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022O\n\031client_cer"
-          + "tificate_config\030\003 \001(\0132,.google.container"
-          + ".v1.ClientCertificateConfig\022\036\n\026cluster_c"
-          + "a_certificate\030d \001(\t\022\032\n\022client_certificat"
-          + "e\030e \001(\t\022\022\n\nclient_key\030f \001(\t\";\n\027ClientCer"
-          + "tificateConfig\022 \n\030issue_client_certifica"
-          + "te\030\001 \001(\010\"\372\002\n\014AddonsConfig\022C\n\023http_load_b"
-          + "alancing\030\001 \001(\0132&.google.container.v1.Htt"
-          + "pLoadBalancing\022Q\n\032horizontal_pod_autosca"
-          + "ling\030\002 \001(\0132-.google.container.v1.Horizon"
-          + "talPodAutoscaling\022J\n\024kubernetes_dashboar"
-          + "d\030\003 \001(\0132(.google.container.v1.Kubernetes"
-          + "DashboardB\002\030\001\022G\n\025network_policy_config\030\004"
-          + " \001(\0132(.google.container.v1.NetworkPolicy"
-          + "Config\022=\n\020cloud_run_config\030\007 \001(\0132#.googl"
-          + "e.container.v1.CloudRunConfig\"%\n\021HttpLoa"
-          + "dBalancing\022\020\n\010disabled\030\001 \001(\010\",\n\030Horizont"
-          + "alPodAutoscaling\022\020\n\010disabled\030\001 \001(\010\"\'\n\023Ku"
-          + "bernetesDashboard\022\020\n\010disabled\030\001 \001(\010\"\'\n\023N"
-          + "etworkPolicyConfig\022\020\n\010disabled\030\001 \001(\010\"\250\001\n"
-          + "\024PrivateClusterConfig\022\034\n\024enable_private_"
-          + "nodes\030\001 \001(\010\022\037\n\027enable_private_endpoint\030\002"
-          + " \001(\010\022\036\n\026master_ipv4_cidr_block\030\003 \001(\t\022\030\n\020"
-          + "private_endpoint\030\004 \001(\t\022\027\n\017public_endpoin"
-          + "t\030\005 \001(\t\"D\n\031AuthenticatorGroupsConfig\022\017\n\007"
-          + "enabled\030\001 \001(\010\022\026\n\016security_group\030\002 \001(\t\"\"\n"
-          + "\016CloudRunConfig\022\020\n\010disabled\030\001 \001(\010\"\274\001\n\036Ma"
-          + "sterAuthorizedNetworksConfig\022\017\n\007enabled\030"
-          + "\001 \001(\010\022R\n\013cidr_blocks\030\002 \003(\0132=.google.cont"
-          + "ainer.v1.MasterAuthorizedNetworksConfig."
-          + "CidrBlock\0325\n\tCidrBlock\022\024\n\014display_name\030\001"
-          + " \001(\t\022\022\n\ncidr_block\030\002 \001(\t\"\035\n\nLegacyAbac\022\017"
-          + "\n\007enabled\030\001 \001(\010\"\221\001\n\rNetworkPolicy\022=\n\010pro"
-          + "vider\030\001 \001(\0162+.google.container.v1.Networ"
-          + "kPolicy.Provider\022\017\n\007enabled\030\002 \001(\010\"0\n\010Pro"
-          + "vider\022\030\n\024PROVIDER_UNSPECIFIED\020\000\022\n\n\006CALIC"
-          + "O\020\001\"&\n\023BinaryAuthorization\022\017\n\007enabled\030\001 "
-          + "\001(\010\"\206\003\n\022IPAllocationPolicy\022\026\n\016use_ip_ali"
-          + "ases\030\001 \001(\010\022\031\n\021create_subnetwork\030\002 \001(\010\022\027\n"
-          + "\017subnetwork_name\030\003 \001(\t\022\035\n\021cluster_ipv4_c"
-          + "idr\030\004 \001(\tB\002\030\001\022\032\n\016node_ipv4_cidr\030\005 \001(\tB\002\030"
-          + "\001\022\036\n\022services_ipv4_cidr\030\006 \001(\tB\002\030\001\022$\n\034clu"
-          + "ster_secondary_range_name\030\007 \001(\t\022%\n\035servi"
-          + "ces_secondary_range_name\030\010 \001(\t\022\037\n\027cluste"
-          + "r_ipv4_cidr_block\030\t \001(\t\022\034\n\024node_ipv4_cid"
-          + "r_block\030\n \001(\t\022 \n\030services_ipv4_cidr_bloc"
-          + "k\030\013 \001(\t\022\033\n\023tpu_ipv4_cidr_block\030\r \001(\t\"\347\021\n"
-          + "\007Cluster\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 "
-          + "\001(\t\022\036\n\022initial_node_count\030\003 \001(\005B\002\030\001\0228\n\013n"
-          + "ode_config\030\004 \001(\0132\037.google.container.v1.N"
-          + "odeConfigB\002\030\001\0224\n\013master_auth\030\005 \001(\0132\037.goo"
-          + "gle.container.v1.MasterAuth\022\027\n\017logging_s"
-          + "ervice\030\006 \001(\t\022\032\n\022monitoring_service\030\007 \001(\t"
-          + "\022\017\n\007network\030\010 \001(\t\022\031\n\021cluster_ipv4_cidr\030\t"
-          + " \001(\t\0228\n\raddons_config\030\n \001(\0132!.google.con"
-          + "tainer.v1.AddonsConfig\022\022\n\nsubnetwork\030\013 \001"
-          + "(\t\0221\n\nnode_pools\030\014 \003(\0132\035.google.containe"
-          + "r.v1.NodePool\022\021\n\tlocations\030\r \003(\t\022\037\n\027enab"
-          + "le_kubernetes_alpha\030\016 \001(\010\022I\n\017resource_la"
-          + "bels\030\017 \003(\01320.google.container.v1.Cluster"
-          + ".ResourceLabelsEntry\022\031\n\021label_fingerprin"
-          + "t\030\020 \001(\t\0224\n\013legacy_abac\030\022 \001(\0132\037.google.co"
-          + "ntainer.v1.LegacyAbac\022:\n\016network_policy\030"
-          + "\023 \001(\0132\".google.container.v1.NetworkPolic"
-          + "y\022E\n\024ip_allocation_policy\030\024 \001(\0132\'.google"
-          + ".container.v1.IPAllocationPolicy\022^\n!mast"
-          + "er_authorized_networks_config\030\026 \001(\01323.go"
-          + "ogle.container.v1.MasterAuthorizedNetwor"
-          + "ksConfig\022B\n\022maintenance_policy\030\027 \001(\0132&.g"
-          + "oogle.container.v1.MaintenancePolicy\022F\n\024"
-          + "binary_authorization\030\030 \001(\0132(.google.cont"
-          + "ainer.v1.BinaryAuthorization\022<\n\013autoscal"
-          + "ing\030\032 \001(\0132\'.google.container.v1.ClusterA"
-          + "utoscaling\022:\n\016network_config\030\033 \001(\0132\".goo"
-          + "gle.container.v1.NetworkConfig\022K\n\033defaul"
-          + "t_max_pods_constraint\030\036 \001(\0132&.google.con"
-          + "tainer.v1.MaxPodsConstraint\022T\n\034resource_"
-          + "usage_export_config\030! \001(\0132..google.conta"
-          + "iner.v1.ResourceUsageExportConfig\022S\n\033aut"
-          + "henticator_groups_config\030\" \001(\0132..google."
-          + "container.v1.AuthenticatorGroupsConfig\022I"
-          + "\n\026private_cluster_config\030% \001(\0132).google."
-          + "container.v1.PrivateClusterConfig\022D\n\023dat"
-          + "abase_encryption\030& \001(\0132\'.google.containe"
-          + "r.v1.DatabaseEncryption\022M\n\030vertical_pod_"
-          + "autoscaling\030\' \001(\0132+.google.container.v1."
-          + "VerticalPodAutoscaling\022\021\n\tself_link\030d \001("
-          + "\t\022\020\n\004zone\030e \001(\tB\002\030\001\022\020\n\010endpoint\030f \001(\t\022\037\n"
-          + "\027initial_cluster_version\030g \001(\t\022\036\n\026curren"
-          + "t_master_version\030h \001(\t\022 \n\024current_node_v"
-          + "ersion\030i \001(\tB\002\030\001\022\023\n\013create_time\030j \001(\t\0223\n"
-          + "\006status\030k \001(\0162#.google.container.v1.Clus"
-          + "ter.Status\022\026\n\016status_message\030l \001(\t\022\033\n\023no"
-          + "de_ipv4_cidr_size\030m \001(\005\022\032\n\022services_ipv4"
-          + "_cidr\030n \001(\t\022\037\n\023instance_group_urls\030o \003(\t"
-          + "B\002\030\001\022\036\n\022current_node_count\030p \001(\005B\002\030\001\022\023\n\013"
-          + "expire_time\030q \001(\t\022\020\n\010location\030r \001(\t\022\022\n\ne"
-          + "nable_tpu\030s \001(\010\022\033\n\023tpu_ipv4_cidr_block\030t"
-          + " \001(\t\0228\n\nconditions\030v \003(\0132$.google.contai"
-          + "ner.v1.StatusCondition\0325\n\023ResourceLabels"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n"
-          + "\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\020\n\014PROVI"
-          + "SIONING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILING\020\003\022"
-          + "\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006\"\341"
-          + "\007\n\rClusterUpdate\022\034\n\024desired_node_version"
-          + "\030\004 \001(\t\022\"\n\032desired_monitoring_service\030\005 \001"
-          + "(\t\022@\n\025desired_addons_config\030\006 \001(\0132!.goog"
-          + "le.container.v1.AddonsConfig\022\034\n\024desired_"
-          + "node_pool_id\030\007 \001(\t\022\032\n\022desired_image_type"
-          + "\030\010 \001(\t\022L\n\033desired_database_encryption\030. "
-          + "\001(\0132\'.google.container.v1.DatabaseEncryp"
-          + "tion\022O\n\035desired_node_pool_autoscaling\030\t "
-          + "\001(\0132(.google.container.v1.NodePoolAutosc"
-          + "aling\022\031\n\021desired_locations\030\n \003(\t\022f\n)desi"
-          + "red_master_authorized_networks_config\030\014 "
-          + "\001(\01323.google.container.v1.MasterAuthoriz"
-          + "edNetworksConfig\022L\n\033desired_cluster_auto"
-          + "scaling\030\017 \001(\0132\'.google.container.v1.Clus"
-          + "terAutoscaling\022N\n\034desired_binary_authori"
-          + "zation\030\020 \001(\0132(.google.container.v1.Binar"
-          + "yAuthorization\022\037\n\027desired_logging_servic"
-          + "e\030\023 \001(\t\022\\\n$desired_resource_usage_export"
-          + "_config\030\025 \001(\0132..google.container.v1.Reso"
-          + "urceUsageExportConfig\022U\n desired_vertica"
-          + "l_pod_autoscaling\030\026 \001(\0132+.google.contain"
-          + "er.v1.VerticalPodAutoscaling\022\\\n$desired_"
-          + "intra_node_visibility_config\030\032 \001(\0132..goo"
-          + "gle.container.v1.IntraNodeVisibilityConf"
-          + "ig\022\036\n\026desired_master_version\030d \001(\t\"\200\007\n\tO"
-          + "peration\022\014\n\004name\030\001 \001(\t\022\020\n\004zone\030\002 \001(\tB\002\030\001"
-          + "\022;\n\016operation_type\030\003 \001(\0162#.google.contai"
-          + "ner.v1.Operation.Type\0225\n\006status\030\004 \001(\0162%."
-          + "google.container.v1.Operation.Status\022\016\n\006"
-          + "detail\030\010 \001(\t\022\026\n\016status_message\030\005 \001(\t\022\021\n\t"
-          + "self_link\030\006 \001(\t\022\023\n\013target_link\030\007 \001(\t\022\020\n\010"
-          + "location\030\t \001(\t\022\022\n\nstart_time\030\n \001(\t\022\020\n\010en"
-          + "d_time\030\013 \001(\t\022@\n\022cluster_conditions\030\r \003(\013"
+          + "e\030\014 \001(\t\022\030\n\020min_cpu_platform\030\r \001(\t\022M\n\030wor"
+          + "kload_metadata_config\030\016 \001(\0132+.google.con"
+          + "tainer.v1.WorkloadMetadataConfig\022.\n\006tain"
+          + "ts\030\017 \003(\0132\036.google.container.v1.NodeTaint"
+          + "\022:\n\016sandbox_config\030\021 \001(\0132\".google.contai"
+          + "ner.v1.SandboxConfig\022\022\n\nnode_group\030\022 \001(\t"
+          + "\022F\n\024reservation_affinity\030\023 \001(\0132(.google."
+          + "container.v1.ReservationAffinity\022M\n\030shie"
+          + "lded_instance_config\030\024 \001(\0132+.google.cont"
+          + "ainer.v1.ShieldedInstanceConfig\022\031\n\021boot_"
+          + "disk_kms_key\030\027 \001(\t\032/\n\rMetadataEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Y\n\026Sh"
+          + "ieldedInstanceConfig\022\032\n\022enable_secure_bo"
+          + "ot\030\001 \001(\010\022#\n\033enable_integrity_monitoring\030"
+          + "\002 \001(\010\"k\n\rSandboxConfig\0225\n\004type\030\002 \001(\0162\'.g"
+          + "oogle.container.v1.SandboxConfig.Type\"#\n"
+          + "\004Type\022\017\n\013UNSPECIFIED\020\000\022\n\n\006GVISOR\020\001\"\337\001\n\023R"
+          + "eservationAffinity\022O\n\030consume_reservatio"
+          + "n_type\030\001 \001(\0162-.google.container.v1.Reser"
+          + "vationAffinity.Type\022\013\n\003key\030\002 \001(\t\022\016\n\006valu"
+          + "es\030\003 \003(\t\"Z\n\004Type\022\017\n\013UNSPECIFIED\020\000\022\022\n\016NO_"
+          + "RESERVATION\020\001\022\023\n\017ANY_RESERVATION\020\002\022\030\n\024SP"
+          + "ECIFIC_RESERVATION\020\003\"\271\001\n\tNodeTaint\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\0225\n\006effect\030\003 \001(\0162%"
+          + ".google.container.v1.NodeTaint.Effect\"Y\n"
+          + "\006Effect\022\026\n\022EFFECT_UNSPECIFIED\020\000\022\017\n\013NO_SC"
+          + "HEDULE\020\001\022\026\n\022PREFER_NO_SCHEDULE\020\002\022\016\n\nNO_E"
+          + "XECUTE\020\003\"\331\001\n\nMasterAuth\022\024\n\010username\030\001 \001("
+          + "\tB\002\030\001\022\024\n\010password\030\002 \001(\tB\002\030\001\022O\n\031client_ce"
+          + "rtificate_config\030\003 \001(\0132,.google.containe"
+          + "r.v1.ClientCertificateConfig\022\036\n\026cluster_"
+          + "ca_certificate\030d \001(\t\022\032\n\022client_certifica"
+          + "te\030e \001(\t\022\022\n\nclient_key\030f \001(\t\";\n\027ClientCe"
+          + "rtificateConfig\022 \n\030issue_client_certific"
+          + "ate\030\001 \001(\010\"\206\004\n\014AddonsConfig\022C\n\023http_load_"
+          + "balancing\030\001 \001(\0132&.google.container.v1.Ht"
+          + "tpLoadBalancing\022Q\n\032horizontal_pod_autosc"
+          + "aling\030\002 \001(\0132-.google.container.v1.Horizo"
+          + "ntalPodAutoscaling\022J\n\024kubernetes_dashboa"
+          + "rd\030\003 \001(\0132(.google.container.v1.Kubernete"
+          + "sDashboardB\002\030\001\022G\n\025network_policy_config\030"
+          + "\004 \001(\0132(.google.container.v1.NetworkPolic"
+          + "yConfig\022=\n\020cloud_run_config\030\007 \001(\0132#.goog"
+          + "le.container.v1.CloudRunConfig\022=\n\020dns_ca"
+          + "che_config\030\010 \001(\0132#.google.container.v1.D"
+          + "nsCacheConfig\022K\n\027config_connector_config"
+          + "\030\n \001(\0132*.google.container.v1.ConfigConne"
+          + "ctorConfig\"%\n\021HttpLoadBalancing\022\020\n\010disab"
+          + "led\030\001 \001(\010\",\n\030HorizontalPodAutoscaling\022\020\n"
+          + "\010disabled\030\001 \001(\010\"\'\n\023KubernetesDashboard\022\020"
+          + "\n\010disabled\030\001 \001(\010\"\'\n\023NetworkPolicyConfig\022"
+          + "\020\n\010disabled\030\001 \001(\010\"!\n\016DnsCacheConfig\022\017\n\007e"
+          + "nabled\030\001 \001(\010\"9\n&PrivateClusterMasterGlob"
+          + "alAccessConfig\022\017\n\007enabled\030\001 \001(\010\"\240\002\n\024Priv"
+          + "ateClusterConfig\022\034\n\024enable_private_nodes"
+          + "\030\001 \001(\010\022\037\n\027enable_private_endpoint\030\002 \001(\010\022"
+          + "\036\n\026master_ipv4_cidr_block\030\003 \001(\t\022\030\n\020priva"
+          + "te_endpoint\030\004 \001(\t\022\027\n\017public_endpoint\030\005 \001"
+          + "(\t\022\024\n\014peering_name\030\007 \001(\t\022`\n\033master_globa"
+          + "l_access_config\030\010 \001(\0132;.google.container"
+          + ".v1.PrivateClusterMasterGlobalAccessConf"
+          + "ig\"D\n\031AuthenticatorGroupsConfig\022\017\n\007enabl"
+          + "ed\030\001 \001(\010\022\026\n\016security_group\030\002 \001(\t\"\356\001\n\016Clo"
+          + "udRunConfig\022\020\n\010disabled\030\001 \001(\010\022P\n\022load_ba"
+          + "lancer_type\030\003 \001(\01624.google.container.v1."
+          + "CloudRunConfig.LoadBalancerType\"x\n\020LoadB"
+          + "alancerType\022\"\n\036LOAD_BALANCER_TYPE_UNSPEC"
+          + "IFIED\020\000\022\037\n\033LOAD_BALANCER_TYPE_EXTERNAL\020\001"
+          + "\022\037\n\033LOAD_BALANCER_TYPE_INTERNAL\020\002\"(\n\025Con"
+          + "figConnectorConfig\022\017\n\007enabled\030\001 \001(\010\"\274\001\n\036"
+          + "MasterAuthorizedNetworksConfig\022\017\n\007enable"
+          + "d\030\001 \001(\010\022R\n\013cidr_blocks\030\002 \003(\0132=.google.co"
+          + "ntainer.v1.MasterAuthorizedNetworksConfi"
+          + "g.CidrBlock\0325\n\tCidrBlock\022\024\n\014display_name"
+          + "\030\001 \001(\t\022\022\n\ncidr_block\030\002 \001(\t\"\035\n\nLegacyAbac"
+          + "\022\017\n\007enabled\030\001 \001(\010\"\221\001\n\rNetworkPolicy\022=\n\010p"
+          + "rovider\030\001 \001(\0162+.google.container.v1.Netw"
+          + "orkPolicy.Provider\022\017\n\007enabled\030\002 \001(\010\"0\n\010P"
+          + "rovider\022\030\n\024PROVIDER_UNSPECIFIED\020\000\022\n\n\006CAL"
+          + "ICO\020\001\"&\n\023BinaryAuthorization\022\017\n\007enabled\030"
+          + "\001 \001(\010\"\232\003\n\022IPAllocationPolicy\022\026\n\016use_ip_a"
+          + "liases\030\001 \001(\010\022\031\n\021create_subnetwork\030\002 \001(\010\022"
+          + "\027\n\017subnetwork_name\030\003 \001(\t\022\035\n\021cluster_ipv4"
+          + "_cidr\030\004 \001(\tB\002\030\001\022\032\n\016node_ipv4_cidr\030\005 \001(\tB"
+          + "\002\030\001\022\036\n\022services_ipv4_cidr\030\006 \001(\tB\002\030\001\022$\n\034c"
+          + "luster_secondary_range_name\030\007 \001(\t\022%\n\035ser"
+          + "vices_secondary_range_name\030\010 \001(\t\022\037\n\027clus"
+          + "ter_ipv4_cidr_block\030\t \001(\t\022\034\n\024node_ipv4_c"
+          + "idr_block\030\n \001(\t\022 \n\030services_ipv4_cidr_bl"
+          + "ock\030\013 \001(\t\022\033\n\023tpu_ipv4_cidr_block\030\r \001(\t\022\022"
+          + "\n\nuse_routes\030\017 \001(\010\"\264\023\n\007Cluster\022\014\n\004name\030\001"
+          + " \001(\t\022\023\n\013description\030\002 \001(\t\022\036\n\022initial_nod"
+          + "e_count\030\003 \001(\005B\002\030\001\0228\n\013node_config\030\004 \001(\0132\037"
+          + ".google.container.v1.NodeConfigB\002\030\001\0224\n\013m"
+          + "aster_auth\030\005 \001(\0132\037.google.container.v1.M"
+          + "asterAuth\022\027\n\017logging_service\030\006 \001(\t\022\032\n\022mo"
+          + "nitoring_service\030\007 \001(\t\022\017\n\007network\030\010 \001(\t\022"
+          + "\031\n\021cluster_ipv4_cidr\030\t \001(\t\0228\n\raddons_con"
+          + "fig\030\n \001(\0132!.google.container.v1.AddonsCo"
+          + "nfig\022\022\n\nsubnetwork\030\013 \001(\t\0221\n\nnode_pools\030\014"
+          + " \003(\0132\035.google.container.v1.NodePool\022\021\n\tl"
+          + "ocations\030\r \003(\t\022\037\n\027enable_kubernetes_alph"
+          + "a\030\016 \001(\010\022I\n\017resource_labels\030\017 \003(\01320.googl"
+          + "e.container.v1.Cluster.ResourceLabelsEnt"
+          + "ry\022\031\n\021label_fingerprint\030\020 \001(\t\0224\n\013legacy_"
+          + "abac\030\022 \001(\0132\037.google.container.v1.LegacyA"
+          + "bac\022:\n\016network_policy\030\023 \001(\0132\".google.con"
+          + "tainer.v1.NetworkPolicy\022E\n\024ip_allocation"
+          + "_policy\030\024 \001(\0132\'.google.container.v1.IPAl"
+          + "locationPolicy\022^\n!master_authorized_netw"
+          + "orks_config\030\026 \001(\01323.google.container.v1."
+          + "MasterAuthorizedNetworksConfig\022B\n\022mainte"
+          + "nance_policy\030\027 \001(\0132&.google.container.v1"
+          + ".MaintenancePolicy\022F\n\024binary_authorizati"
+          + "on\030\030 \001(\0132(.google.container.v1.BinaryAut"
+          + "horization\022<\n\013autoscaling\030\032 \001(\0132\'.google"
+          + ".container.v1.ClusterAutoscaling\022:\n\016netw"
+          + "ork_config\030\033 \001(\0132\".google.container.v1.N"
+          + "etworkConfig\022K\n\033default_max_pods_constra"
+          + "int\030\036 \001(\0132&.google.container.v1.MaxPodsC"
+          + "onstraint\022T\n\034resource_usage_export_confi"
+          + "g\030! \001(\0132..google.container.v1.ResourceUs"
+          + "ageExportConfig\022S\n\033authenticator_groups_"
+          + "config\030\" \001(\0132..google.container.v1.Authe"
+          + "nticatorGroupsConfig\022I\n\026private_cluster_"
+          + "config\030% \001(\0132).google.container.v1.Priva"
+          + "teClusterConfig\022D\n\023database_encryption\030&"
+          + " \001(\0132\'.google.container.v1.DatabaseEncry"
+          + "ption\022M\n\030vertical_pod_autoscaling\030\' \001(\0132"
+          + "+.google.container.v1.VerticalPodAutosca"
+          + "ling\022:\n\016shielded_nodes\030( \001(\0132\".google.co"
+          + "ntainer.v1.ShieldedNodes\022<\n\017release_chan"
+          + "nel\030) \001(\0132#.google.container.v1.ReleaseC"
+          + "hannel\022M\n\030workload_identity_config\030+ \001(\013"
+          + "2+.google.container.v1.WorkloadIdentityC"
+          + "onfig\022\021\n\tself_link\030d \001(\t\022\020\n\004zone\030e \001(\tB\002"
+          + "\030\001\022\020\n\010endpoint\030f \001(\t\022\037\n\027initial_cluster_"
+          + "version\030g \001(\t\022\036\n\026current_master_version\030"
+          + "h \001(\t\022 \n\024current_node_version\030i \001(\tB\002\030\001\022"
+          + "\023\n\013create_time\030j \001(\t\0223\n\006status\030k \001(\0162#.g"
+          + "oogle.container.v1.Cluster.Status\022\032\n\016sta"
+          + "tus_message\030l \001(\tB\002\030\001\022\033\n\023node_ipv4_cidr_"
+          + "size\030m \001(\005\022\032\n\022services_ipv4_cidr\030n \001(\t\022\037"
+          + "\n\023instance_group_urls\030o \003(\tB\002\030\001\022\036\n\022curre"
+          + "nt_node_count\030p \001(\005B\002\030\001\022\023\n\013expire_time\030q"
+          + " \001(\t\022\020\n\010location\030r \001(\t\022\022\n\nenable_tpu\030s \001"
+          + "(\010\022\033\n\023tpu_ipv4_cidr_block\030t \001(\t\0228\n\ncondi"
+          + "tions\030v \003(\0132$.google.container.v1.Status"
+          + "Condition\0325\n\023ResourceLabelsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\006Status\022\026\n\022ST"
+          + "ATUS_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007"
+          + "RUNNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010STOPPING\020\004"
+          + "\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006\"\342\n\n\rClusterUpd"
+          + "ate\022\034\n\024desired_node_version\030\004 \001(\t\022\"\n\032des"
+          + "ired_monitoring_service\030\005 \001(\t\022@\n\025desired"
+          + "_addons_config\030\006 \001(\0132!.google.container."
+          + "v1.AddonsConfig\022\034\n\024desired_node_pool_id\030"
+          + "\007 \001(\t\022\032\n\022desired_image_type\030\010 \001(\t\022L\n\033des"
+          + "ired_database_encryption\030. \001(\0132\'.google."
+          + "container.v1.DatabaseEncryption\022U\n desir"
+          + "ed_workload_identity_config\030/ \001(\0132+.goog"
+          + "le.container.v1.WorkloadIdentityConfig\022B"
+          + "\n\026desired_shielded_nodes\0300 \001(\0132\".google."
+          + "container.v1.ShieldedNodes\022O\n\035desired_no"
+          + "de_pool_autoscaling\030\t \001(\0132(.google.conta"
+          + "iner.v1.NodePoolAutoscaling\022\031\n\021desired_l"
+          + "ocations\030\n \003(\t\022f\n)desired_master_authori"
+          + "zed_networks_config\030\014 \001(\01323.google.conta"
+          + "iner.v1.MasterAuthorizedNetworksConfig\022L"
+          + "\n\033desired_cluster_autoscaling\030\017 \001(\0132\'.go"
+          + "ogle.container.v1.ClusterAutoscaling\022N\n\034"
+          + "desired_binary_authorization\030\020 \001(\0132(.goo"
+          + "gle.container.v1.BinaryAuthorization\022\037\n\027"
+          + "desired_logging_service\030\023 \001(\t\022\\\n$desired"
+          + "_resource_usage_export_config\030\025 \001(\0132..go"
+          + "ogle.container.v1.ResourceUsageExportCon"
+          + "fig\022U\n desired_vertical_pod_autoscaling\030"
+          + "\026 \001(\0132+.google.container.v1.VerticalPodA"
+          + "utoscaling\022Q\n\036desired_private_cluster_co"
+          + "nfig\030\031 \001(\0132).google.container.v1.Private"
+          + "ClusterConfig\022\\\n$desired_intra_node_visi"
+          + "bility_config\030\032 \001(\0132..google.container.v"
+          + "1.IntraNodeVisibilityConfig\022K\n\033desired_d"
+          + "efault_snat_status\030\034 \001(\0132&.google.contai"
+          + "ner.v1.DefaultSnatStatus\022D\n\027desired_rele"
+          + "ase_channel\030\037 \001(\0132#.google.container.v1."
+          + "ReleaseChannel\022\036\n\026desired_master_version"
+          + "\030d \001(\t\"\304\007\n\tOperation\022\014\n\004name\030\001 \001(\t\022\020\n\004zo"
+          + "ne\030\002 \001(\tB\002\030\001\022;\n\016operation_type\030\003 \001(\0162#.g"
+          + "oogle.container.v1.Operation.Type\0225\n\006sta"
+          + "tus\030\004 \001(\0162%.google.container.v1.Operatio"
+          + "n.Status\022\016\n\006detail\030\010 \001(\t\022\033\n\016status_messa"
+          + "ge\030\005 \001(\tB\003\340A\003\022\021\n\tself_link\030\006 \001(\t\022\023\n\013targ"
+          + "et_link\030\007 \001(\t\022\020\n\010location\030\t \001(\t\022\022\n\nstart"
+          + "_time\030\n \001(\t\022\020\n\010end_time\030\013 \001(\t\022=\n\010progres"
+          + "s\030\014 \001(\0132&.google.container.v1.OperationP"
+          + "rogressB\003\340A\003\022@\n\022cluster_conditions\030\r \003(\013"
           + "2$.google.container.v1.StatusCondition\022A"
           + "\n\023nodepool_conditions\030\016 \003(\0132$.google.con"
           + "tainer.v1.StatusCondition\"R\n\006Status\022\026\n\022S"
@@ -564,450 +687,508 @@ public final class ClusterServiceProto {
           + "AUTO_UPGRADE_NODES\020\013\022\016\n\nSET_LABELS\020\014\022\023\n\017"
           + "SET_MASTER_AUTH\020\r\022\026\n\022SET_NODE_POOL_SIZE\020"
           + "\016\022\026\n\022SET_NETWORK_POLICY\020\017\022\032\n\026SET_MAINTEN"
-          + "ANCE_POLICY\020\020\"\204\001\n\024CreateClusterRequest\022\026"
-          + "\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001"
-          + "\0222\n\007cluster\030\003 \001(\0132\034.google.container.v1."
-          + "ClusterB\003\340A\002\022\016\n\006parent\030\005 \001(\t\"c\n\021GetClust"
-          + "erRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zon"
-          + "e\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\014\n\004n"
-          + "ame\030\005 \001(\t\"\237\001\n\024UpdateClusterRequest\022\026\n\npr"
-          + "oject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\n"
-          + "cluster_id\030\003 \001(\tB\002\030\001\0227\n\006update\030\004 \001(\0132\".g"
-          + "oogle.container.v1.ClusterUpdateB\003\340A\002\022\014\n"
-          + "\004name\030\005 \001(\t\"\265\001\n\025UpdateNodePoolRequest\022\026\n"
-          + "\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022"
-          + "\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030"
-          + "\004 \001(\tB\002\030\001\022\031\n\014node_version\030\005 \001(\tB\003\340A\002\022\027\n\n"
-          + "image_type\030\006 \001(\tB\003\340A\002\022\014\n\004name\030\010 \001(\t\"\315\001\n\035"
-          + "SetNodePoolAutoscalingRequest\022\026\n\nproject"
-          + "_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\nclust"
-          + "er_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004 \001(\tB\002\030"
-          + "\001\022B\n\013autoscaling\030\005 \001(\0132(.google.containe"
-          + "r.v1.NodePoolAutoscalingB\003\340A\002\022\014\n\004name\030\006 "
-          + "\001(\t\"\210\001\n\030SetLoggingServiceRequest\022\026\n\nproj"
+          + "ANCE_POLICY\020\020\"\273\002\n\021OperationProgress\022\014\n\004n"
+          + "ame\030\001 \001(\t\0225\n\006status\030\002 \001(\0162%.google.conta"
+          + "iner.v1.Operation.Status\022>\n\007metrics\030\003 \003("
+          + "\0132-.google.container.v1.OperationProgres"
+          + "s.Metric\0226\n\006stages\030\004 \003(\0132&.google.contai"
+          + "ner.v1.OperationProgress\032i\n\006Metric\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\002\022\023\n\tint_value\030\002 \001(\003H\000\022\026\n\014do"
+          + "uble_value\030\003 \001(\001H\000\022\026\n\014string_value\030\004 \001(\t"
+          + "H\000B\007\n\005value\"\204\001\n\024CreateClusterRequest\022\026\n\n"
+          + "project_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\0222"
+          + "\n\007cluster\030\003 \001(\0132\034.google.container.v1.Cl"
+          + "usterB\003\340A\002\022\016\n\006parent\030\005 \001(\t\"c\n\021GetCluster"
+          + "Request\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030"
+          + "\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\014\n\004nam"
+          + "e\030\005 \001(\t\"\237\001\n\024UpdateClusterRequest\022\026\n\nproj"
           + "ect_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncl"
-          + "uster_id\030\003 \001(\tB\002\030\001\022\034\n\017logging_service\030\004 "
-          + "\001(\tB\003\340A\002\022\014\n\004name\030\005 \001(\t\"\216\001\n\033SetMonitoring"
-          + "ServiceRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020"
-          + "\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001"
-          + "\022\037\n\022monitoring_service\030\004 \001(\tB\003\340A\002\022\014\n\004nam"
-          + "e\030\006 \001(\t\"\247\001\n\026SetAddonsConfigRequest\022\026\n\npr"
-          + "oject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\n"
-          + "cluster_id\030\003 \001(\tB\002\030\001\022=\n\raddons_config\030\004 "
-          + "\001(\0132!.google.container.v1.AddonsConfigB\003"
-          + "\340A\002\022\014\n\004name\030\006 \001(\t\"}\n\023SetLocationsRequest"
-          + "\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002"
-          + "\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\026\n\tlocations\030"
-          + "\004 \003(\tB\003\340A\002\022\014\n\004name\030\006 \001(\t\"\202\001\n\023UpdateMaste"
-          + "rRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone"
-          + "\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\033\n\016ma"
-          + "ster_version\030\004 \001(\tB\003\340A\002\022\014\n\004name\030\007 \001(\t\"\265\002"
-          + "\n\024SetMasterAuthRequest\022\026\n\nproject_id\030\001 \001"
+          + "uster_id\030\003 \001(\tB\002\030\001\0227\n\006update\030\004 \001(\0132\".goo"
+          + "gle.container.v1.ClusterUpdateB\003\340A\002\022\014\n\004n"
+          + "ame\030\005 \001(\t\"\340\002\n\025UpdateNodePoolRequest\022\026\n\np"
+          + "roject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n"
+          + "\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004 "
+          + "\001(\tB\002\030\001\022\031\n\014node_version\030\005 \001(\tB\003\340A\002\022\027\n\nim"
+          + "age_type\030\006 \001(\tB\003\340A\002\022\014\n\004name\030\010 \001(\t\022\021\n\tloc"
+          + "ations\030\r \003(\t\022M\n\030workload_metadata_config"
+          + "\030\016 \001(\0132+.google.container.v1.WorkloadMet"
+          + "adataConfig\022G\n\020upgrade_settings\030\017 \001(\0132-."
+          + "google.container.v1.NodePool.UpgradeSett"
+          + "ings\"\315\001\n\035SetNodePoolAutoscalingRequest\022\026"
+          + "\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001"
+          + "\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id"
+          + "\030\004 \001(\tB\002\030\001\022B\n\013autoscaling\030\005 \001(\0132(.google"
+          + ".container.v1.NodePoolAutoscalingB\003\340A\002\022\014"
+          + "\n\004name\030\006 \001(\t\"\210\001\n\030SetLoggingServiceReques"
+          + "t\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB"
+          + "\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\034\n\017logging_s"
+          + "ervice\030\004 \001(\tB\003\340A\002\022\014\n\004name\030\005 \001(\t\"\216\001\n\033SetM"
+          + "onitoringServiceRequest\022\026\n\nproject_id\030\001 "
+          + "\001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030"
+          + "\003 \001(\tB\002\030\001\022\037\n\022monitoring_service\030\004 \001(\tB\003\340"
+          + "A\002\022\014\n\004name\030\006 \001(\t\"\247\001\n\026SetAddonsConfigRequ"
+          + "est\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001("
+          + "\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022=\n\raddons_"
+          + "config\030\004 \001(\0132!.google.container.v1.Addon"
+          + "sConfigB\003\340A\002\022\014\n\004name\030\006 \001(\t\"}\n\023SetLocatio"
+          + "nsRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zon"
+          + "e\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\026\n\tl"
+          + "ocations\030\004 \003(\tB\003\340A\002\022\014\n\004name\030\006 \001(\t\"\202\001\n\023Up"
+          + "dateMasterRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030"
+          + "\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB"
+          + "\002\030\001\022\033\n\016master_version\030\004 \001(\tB\003\340A\002\022\014\n\004name"
+          + "\030\007 \001(\t\"\265\002\n\024SetMasterAuthRequest\022\026\n\nproje"
+          + "ct_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\nclu"
+          + "ster_id\030\003 \001(\tB\002\030\001\022E\n\006action\030\004 \001(\01620.goog"
+          + "le.container.v1.SetMasterAuthRequest.Act"
+          + "ionB\003\340A\002\0224\n\006update\030\005 \001(\0132\037.google.contai"
+          + "ner.v1.MasterAuthB\003\340A\002\022\014\n\004name\030\007 \001(\t\"P\n\006"
+          + "Action\022\013\n\007UNKNOWN\020\000\022\020\n\014SET_PASSWORD\020\001\022\025\n"
+          + "\021GENERATE_PASSWORD\020\002\022\020\n\014SET_USERNAME\020\003\"f"
+          + "\n\024DeleteClusterRequest\022\026\n\nproject_id\030\001 \001"
           + "(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003"
-          + " \001(\tB\002\030\001\022E\n\006action\030\004 \001(\01620.google.contai"
-          + "ner.v1.SetMasterAuthRequest.ActionB\003\340A\002\022"
-          + "4\n\006update\030\005 \001(\0132\037.google.container.v1.Ma"
-          + "sterAuthB\003\340A\002\022\014\n\004name\030\007 \001(\t\"P\n\006Action\022\013\n"
-          + "\007UNKNOWN\020\000\022\020\n\014SET_PASSWORD\020\001\022\025\n\021GENERATE"
-          + "_PASSWORD\020\002\022\020\n\014SET_USERNAME\020\003\"f\n\024DeleteC"
-          + "lusterRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n"
-          + "\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022"
-          + "\014\n\004name\030\004 \001(\t\"O\n\023ListClustersRequest\022\026\n\n"
-          + "project_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\016"
-          + "\n\006parent\030\004 \001(\t\"]\n\024ListClustersResponse\022."
-          + "\n\010clusters\030\001 \003(\0132\034.google.container.v1.C"
-          + "luster\022\025\n\rmissing_zones\030\002 \003(\t\"g\n\023GetOper"
+          + " \001(\tB\002\030\001\022\014\n\004name\030\004 \001(\t\"O\n\023ListClustersRe"
+          + "quest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 "
+          + "\001(\tB\002\030\001\022\016\n\006parent\030\004 \001(\t\"]\n\024ListClustersR"
+          + "esponse\022.\n\010clusters\030\001 \003(\0132\034.google.conta"
+          + "iner.v1.Cluster\022\025\n\rmissing_zones\030\002 \003(\t\"g"
+          + "\n\023GetOperationRequest\022\026\n\nproject_id\030\001 \001("
+          + "\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\030\n\014operation_id\030"
+          + "\003 \001(\tB\002\030\001\022\014\n\004name\030\005 \001(\t\"Q\n\025ListOperation"
+          + "sRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone"
+          + "\030\002 \001(\tB\002\030\001\022\016\n\006parent\030\004 \001(\t\"j\n\026CancelOper"
           + "ationRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004"
           + "zone\030\002 \001(\tB\002\030\001\022\030\n\014operation_id\030\003 \001(\tB\002\030\001"
-          + "\022\014\n\004name\030\005 \001(\t\"Q\n\025ListOperationsRequest\022"
-          + "\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030"
-          + "\001\022\016\n\006parent\030\004 \001(\t\"j\n\026CancelOperationRequ"
-          + "est\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001("
-          + "\tB\002\030\001\022\030\n\014operation_id\030\003 \001(\tB\002\030\001\022\014\n\004name\030"
-          + "\004 \001(\t\"c\n\026ListOperationsResponse\0222\n\nopera"
-          + "tions\030\001 \003(\0132\036.google.container.v1.Operat"
-          + "ion\022\025\n\rmissing_zones\030\002 \003(\t\"P\n\026GetServerC"
-          + "onfigRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004"
-          + "zone\030\002 \001(\tB\002\030\001\022\014\n\004name\030\004 \001(\t\"\242\001\n\014ServerC"
-          + "onfig\022\037\n\027default_cluster_version\030\001 \001(\t\022\033"
-          + "\n\023valid_node_versions\030\003 \003(\t\022\032\n\022default_i"
-          + "mage_type\030\004 \001(\t\022\031\n\021valid_image_types\030\005 \003"
-          + "(\t\022\035\n\025valid_master_versions\030\006 \003(\t\"\240\001\n\025Cr"
-          + "eateNodePoolRequest\022\026\n\nproject_id\030\001 \001(\tB"
+          + "\022\014\n\004name\030\004 \001(\t\"c\n\026ListOperationsResponse"
+          + "\0222\n\noperations\030\001 \003(\0132\036.google.container."
+          + "v1.Operation\022\025\n\rmissing_zones\030\002 \003(\t\"P\n\026G"
+          + "etServerConfigRequest\022\026\n\nproject_id\030\001 \001("
+          + "\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\014\n\004name\030\004 \001(\t\"\364\002"
+          + "\n\014ServerConfig\022\037\n\027default_cluster_versio"
+          + "n\030\001 \001(\t\022\033\n\023valid_node_versions\030\003 \003(\t\022\032\n\022"
+          + "default_image_type\030\004 \001(\t\022\031\n\021valid_image_"
+          + "types\030\005 \003(\t\022\035\n\025valid_master_versions\030\006 \003"
+          + "(\t\022H\n\010channels\030\t \003(\01326.google.container."
+          + "v1.ServerConfig.ReleaseChannelConfig\032\205\001\n"
+          + "\024ReleaseChannelConfig\022<\n\007channel\030\001 \001(\0162+"
+          + ".google.container.v1.ReleaseChannel.Chan"
+          + "nel\022\027\n\017default_version\030\002 \001(\t\022\026\n\016valid_ve"
+          + "rsions\030\004 \003(\t\"\240\001\n\025CreateNodePoolRequest\022\026"
+          + "\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001"
+          + "\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\0225\n\tnode_pool\030\004 "
+          + "\001(\0132\035.google.container.v1.NodePoolB\003\340A\002\022"
+          + "\016\n\006parent\030\006 \001(\t\"\201\001\n\025DeleteNodePoolReques"
+          + "t\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB"
+          + "\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool"
+          + "_id\030\004 \001(\tB\002\030\001\022\014\n\004name\030\006 \001(\t\"h\n\024ListNodeP"
+          + "oolsRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004z"
+          + "one\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\016\n"
+          + "\006parent\030\005 \001(\t\"~\n\022GetNodePoolRequest\022\026\n\np"
+          + "roject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n"
+          + "\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004 "
+          + "\001(\tB\002\030\001\022\014\n\004name\030\006 \001(\t\"\252\006\n\010NodePool\022\014\n\004na"
+          + "me\030\001 \001(\t\022/\n\006config\030\002 \001(\0132\037.google.contai"
+          + "ner.v1.NodeConfig\022\032\n\022initial_node_count\030"
+          + "\003 \001(\005\022\021\n\tlocations\030\r \003(\t\022\021\n\tself_link\030d "
+          + "\001(\t\022\017\n\007version\030e \001(\t\022\033\n\023instance_group_u"
+          + "rls\030f \003(\t\0224\n\006status\030g \001(\0162$.google.conta"
+          + "iner.v1.NodePool.Status\022\032\n\016status_messag"
+          + "e\030h \001(\tB\002\030\001\022=\n\013autoscaling\030\004 \001(\0132(.googl"
+          + "e.container.v1.NodePoolAutoscaling\0227\n\nma"
+          + "nagement\030\005 \001(\0132#.google.container.v1.Nod"
+          + "eManagement\022C\n\023max_pods_constraint\030\006 \001(\013"
+          + "2&.google.container.v1.MaxPodsConstraint"
+          + "\0228\n\nconditions\030i \003(\0132$.google.container."
+          + "v1.StatusCondition\022\032\n\022pod_ipv4_cidr_size"
+          + "\030\007 \001(\005\022G\n\020upgrade_settings\030k \001(\0132-.googl"
+          + "e.container.v1.NodePool.UpgradeSettings\032"
+          + "=\n\017UpgradeSettings\022\021\n\tmax_surge\030\001 \001(\005\022\027\n"
+          + "\017max_unavailable\030\002 \001(\005\"\201\001\n\006Status\022\026\n\022STA"
+          + "TUS_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007R"
+          + "UNNING\020\002\022\026\n\022RUNNING_WITH_ERROR\020\003\022\017\n\013RECO"
+          + "NCILING\020\004\022\014\n\010STOPPING\020\005\022\t\n\005ERROR\020\006\"}\n\016No"
+          + "deManagement\022\024\n\014auto_upgrade\030\001 \001(\010\022\023\n\013au"
+          + "to_repair\030\002 \001(\010\022@\n\017upgrade_options\030\n \001(\013"
+          + "2\'.google.container.v1.AutoUpgradeOption"
+          + "s\"J\n\022AutoUpgradeOptions\022\037\n\027auto_upgrade_"
+          + "start_time\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"e\n"
+          + "\021MaintenancePolicy\0226\n\006window\030\001 \001(\0132&.goo"
+          + "gle.container.v1.MaintenanceWindow\022\030\n\020re"
+          + "source_version\030\003 \001(\t\"\366\002\n\021MaintenanceWind"
+          + "ow\022O\n\030daily_maintenance_window\030\002 \001(\0132+.g"
+          + "oogle.container.v1.DailyMaintenanceWindo"
+          + "wH\000\022D\n\020recurring_window\030\003 \001(\0132(.google.c"
+          + "ontainer.v1.RecurringTimeWindowH\000\022a\n\026mai"
+          + "ntenance_exclusions\030\004 \003(\0132A.google.conta"
+          + "iner.v1.MaintenanceWindow.MaintenanceExc"
+          + "lusionsEntry\032]\n\032MaintenanceExclusionsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.google."
+          + "container.v1.TimeWindow:\0028\001B\010\n\006policy\"j\n"
+          + "\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032."
+          + "google.protobuf.Timestamp\"Z\n\023RecurringTi"
+          + "meWindow\022/\n\006window\030\001 \001(\0132\037.google.contai"
+          + "ner.v1.TimeWindow\022\022\n\nrecurrence\030\002 \001(\t\">\n"
+          + "\026DailyMaintenanceWindow\022\022\n\nstart_time\030\002 "
+          + "\001(\t\022\020\n\010duration\030\003 \001(\t\"\306\001\n\034SetNodePoolMan"
+          + "agementRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020"
+          + "\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001"
+          + "\022\030\n\014node_pool_id\030\004 \001(\tB\002\030\001\022<\n\nmanagement"
+          + "\030\005 \001(\0132#.google.container.v1.NodeManagem"
+          + "entB\003\340A\002\022\014\n\004name\030\007 \001(\t\"\233\001\n\026SetNodePoolSi"
+          + "zeRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zon"
+          + "e\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014n"
+          + "ode_pool_id\030\004 \001(\tB\002\030\001\022\027\n\nnode_count\030\005 \001("
+          + "\005B\003\340A\002\022\014\n\004name\030\007 \001(\t\"\212\001\n\036RollbackNodePoo"
+          + "lUpgradeRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022"
+          + "\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030"
+          + "\001\022\030\n\014node_pool_id\030\004 \001(\tB\002\030\001\022\014\n\004name\030\006 \001("
+          + "\t\"J\n\025ListNodePoolsResponse\0221\n\nnode_pools"
+          + "\030\001 \003(\0132\035.google.container.v1.NodePool\"\377\001"
+          + "\n\022ClusterAutoscaling\022$\n\034enable_node_auto"
+          + "provisioning\030\001 \001(\010\022;\n\017resource_limits\030\002 "
+          + "\003(\0132\".google.container.v1.ResourceLimit\022"
+          + "b\n#autoprovisioning_node_pool_defaults\030\004"
+          + " \001(\01325.google.container.v1.Autoprovision"
+          + "ingNodePoolDefaults\022\"\n\032autoprovisioning_"
+          + "locations\030\005 \003(\t\"\200\003\n AutoprovisioningNode"
+          + "PoolDefaults\022\024\n\014oauth_scopes\030\001 \003(\t\022\027\n\017se"
+          + "rvice_account\030\002 \001(\t\022G\n\020upgrade_settings\030"
+          + "\003 \001(\0132-.google.container.v1.NodePool.Upg"
+          + "radeSettings\0227\n\nmanagement\030\004 \001(\0132#.googl"
+          + "e.container.v1.NodeManagement\022\030\n\020min_cpu"
+          + "_platform\030\005 \001(\t\022\024\n\014disk_size_gb\030\006 \001(\005\022\021\n"
+          + "\tdisk_type\030\007 \001(\t\022M\n\030shielded_instance_co"
+          + "nfig\030\010 \001(\0132+.google.container.v1.Shielde",
+      "dInstanceConfig\022\031\n\021boot_disk_kms_key\030\t \001"
+          + "(\t\"H\n\rResourceLimit\022\025\n\rresource_type\030\001 \001"
+          + "(\t\022\017\n\007minimum\030\002 \001(\003\022\017\n\007maximum\030\003 \001(\003\"o\n\023"
+          + "NodePoolAutoscaling\022\017\n\007enabled\030\001 \001(\010\022\026\n\016"
+          + "min_node_count\030\002 \001(\005\022\026\n\016max_node_count\030\003"
+          + " \001(\005\022\027\n\017autoprovisioned\030\004 \001(\010\"\222\002\n\020SetLab"
+          + "elsRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zo"
+          + "ne\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022W\n\017"
+          + "resource_labels\030\004 \003(\01329.google.container"
+          + ".v1.SetLabelsRequest.ResourceLabelsEntry"
+          + "B\003\340A\002\022\036\n\021label_fingerprint\030\005 \001(\tB\003\340A\002\022\014\n"
+          + "\004name\030\007 \001(\t\0325\n\023ResourceLabelsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\024SetLegacyA"
+          + "bacRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zo"
+          + "ne\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\024\n\007"
+          + "enabled\030\004 \001(\010B\003\340A\002\022\014\n\004name\030\006 \001(\t\"\204\001\n\026Sta"
+          + "rtIPRotationRequest\022\026\n\nproject_id\030\001 \001(\tB"
           + "\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001("
-          + "\tB\002\030\001\0225\n\tnode_pool\030\004 \001(\0132\035.google.contai"
-          + "ner.v1.NodePoolB\003\340A\002\022\016\n\006parent\030\006 \001(\t\"\201\001\n"
-          + "\025DeleteNodePoolRequest\022\026\n\nproject_id\030\001 \001"
-          + "(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003"
-          + " \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004 \001(\tB\002\030\001\022\014\n\004na"
-          + "me\030\006 \001(\t\"h\n\024ListNodePoolsRequest\022\026\n\nproj"
-          + "ect_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncl"
-          + "uster_id\030\003 \001(\tB\002\030\001\022\016\n\006parent\030\005 \001(\t\"~\n\022Ge"
-          + "tNodePoolRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001"
-          + "\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002"
-          + "\030\001\022\030\n\014node_pool_id\030\004 \001(\tB\002\030\001\022\014\n\004name\030\006 \001"
-          + "(\t\"\213\005\n\010NodePool\022\014\n\004name\030\001 \001(\t\022/\n\006config\030"
-          + "\002 \001(\0132\037.google.container.v1.NodeConfig\022\032"
-          + "\n\022initial_node_count\030\003 \001(\005\022\021\n\tself_link\030"
-          + "d \001(\t\022\017\n\007version\030e \001(\t\022\033\n\023instance_group"
-          + "_urls\030f \003(\t\0224\n\006status\030g \001(\0162$.google.con"
-          + "tainer.v1.NodePool.Status\022\026\n\016status_mess"
-          + "age\030h \001(\t\022=\n\013autoscaling\030\004 \001(\0132(.google."
-          + "container.v1.NodePoolAutoscaling\0227\n\nmana"
-          + "gement\030\005 \001(\0132#.google.container.v1.NodeM"
-          + "anagement\022C\n\023max_pods_constraint\030\006 \001(\0132&"
-          + ".google.container.v1.MaxPodsConstraint\0228"
-          + "\n\nconditions\030i \003(\0132$.google.container.v1"
-          + ".StatusCondition\022\032\n\022pod_ipv4_cidr_size\030\007"
-          + " \001(\005\"\201\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022"
-          + "\020\n\014PROVISIONING\020\001\022\013\n\007RUNNING\020\002\022\026\n\022RUNNIN"
-          + "G_WITH_ERROR\020\003\022\017\n\013RECONCILING\020\004\022\014\n\010STOPP"
-          + "ING\020\005\022\t\n\005ERROR\020\006\"}\n\016NodeManagement\022\024\n\014au"
-          + "to_upgrade\030\001 \001(\010\022\023\n\013auto_repair\030\002 \001(\010\022@\n"
-          + "\017upgrade_options\030\n \001(\0132\'.google.containe"
-          + "r.v1.AutoUpgradeOptions\"J\n\022AutoUpgradeOp"
-          + "tions\022\037\n\027auto_upgrade_start_time\030\001 \001(\t\022\023"
-          + "\n\013description\030\002 \001(\t\"e\n\021MaintenancePolicy"
-          + "\0226\n\006window\030\001 \001(\0132&.google.container.v1.M"
-          + "aintenanceWindow\022\030\n\020resource_version\030\003 \001"
-          + "(\t\"\366\002\n\021MaintenanceWindow\022O\n\030daily_mainte"
-          + "nance_window\030\002 \001(\0132+.google.container.v1"
-          + ".DailyMaintenanceWindowH\000\022D\n\020recurring_w"
-          + "indow\030\003 \001(\0132(.google.container.v1.Recurr"
-          + "ingTimeWindowH\000\022a\n\026maintenance_exclusion"
-          + "s\030\004 \003(\0132A.google.container.v1.Maintenanc"
-          + "eWindow.MaintenanceExclusionsEntry\032]\n\032Ma"
-          + "intenanceExclusionsEntry\022\013\n\003key\030\001 \001(\t\022.\n"
-          + "\005value\030\002 \001(\0132\037.google.container.v1.TimeW"
-          + "indow:\0028\001B\010\n\006policy\"j\n\nTimeWindow\022.\n\nsta"
-          + "rt_time\030\001 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\"Z\n\023RecurringTimeWindow\022/\n\006window"
-          + "\030\001 \001(\0132\037.google.container.v1.TimeWindow\022"
-          + "\022\n\nrecurrence\030\002 \001(\t\">\n\026DailyMaintenanceW"
-          + "indow\022\022\n\nstart_time\030\002 \001(\t\022\020\n\010duration\030\003 "
-          + "\001(\t\"\306\001\n\034SetNodePoolManagementRequest\022\026\n\n"
+          + "\tB\002\030\001\022\014\n\004name\030\006 \001(\t\022\032\n\022rotate_credential"
+          + "s\030\007 \001(\010\"k\n\031CompleteIPRotationRequest\022\026\n\n"
           + "project_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026"
-          + "\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004"
-          + " \001(\tB\002\030\001\022<\n\nmanagement\030\005 \001(\0132#.google.co"
-          + "ntainer.v1.NodeManagementB\003\340A\002\022\014\n\004name\030\007"
-          + " \001(\t\"\233\001\n\026SetNodePoolSizeRequest\022\026\n\nproje"
-          + "ct_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\nclu"
-          + "ster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030\004 \001(\tB"
-          + "\002\030\001\022\027\n\nnode_count\030\005 \001(\005B\003\340A\002\022\014\n\004name\030\007 \001"
-          + "(\t\"\212\001\n\036RollbackNodePoolUpgradeRequest\022\026\n"
-          + "\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022"
-          + "\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\030\n\014node_pool_id\030"
-          + "\004 \001(\tB\002\030\001\022\014\n\004name\030\006 \001(\t\"J\n\025ListNodePools"
-          + "Response\0221\n\nnode_pools\030\001 \003(\0132\035.google.co"
-          + "ntainer.v1.NodePool\"\377\001\n\022ClusterAutoscali"
-          + "ng\022$\n\034enable_node_autoprovisioning\030\001 \001(\010"
-          + "\022;\n\017resource_limits\030\002 \003(\0132\".google.conta"
-          + "iner.v1.ResourceLimit\022b\n#autoprovisionin"
-          + "g_node_pool_defaults\030\004 \001(\01325.google.cont"
-          + "ainer.v1.AutoprovisioningNodePoolDefault"
-          + "s\022\"\n\032autoprovisioning_locations\030\005 \003(\t\"Q\n"
-          + " AutoprovisioningNodePoolDefaults\022\024\n\014oau"
-          + "th_scopes\030\001 \003(\t\022\027\n\017service_account\030\002 \001(\t"
-          + "\"H\n\rResourceLimit\022\025\n\rresource_type\030\001 \001(\t"
-          + "\022\017\n\007minimum\030\002 \001(\003\022\017\n\007maximum\030\003 \001(\003\"o\n\023No"
-          + "dePoolAutoscaling\022\017\n\007enabled\030\001 \001(\010\022\026\n\016mi"
-          + "n_node_count\030\002 \001(\005\022\026\n\016max_node_count\030\003 \001"
-          + "(\005\022\027\n\017autoprovisioned\030\004 \001(\010\"\222\002\n\020SetLabel"
-          + "sRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone"
-          + "\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022W\n\017re"
-          + "source_labels\030\004 \003(\01329.google.container.v"
-          + "1.SetLabelsRequest.ResourceLabelsEntryB\003"
-          + "\340A\002\022\036\n\021label_fingerprint\030\005 \001(\tB\003\340A\002\022\014\n\004n"
-          + "ame\030\007 \001(\t\0325\n\023ResourceLabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"|\n\024SetLegacyAba"
-          + "cRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone"
-          + "\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030\001\022\024\n\007en"
-          + "abled\030\004 \001(\010B\003\340A\002\022\014\n\004name\030\006 \001(\t\"\204\001\n\026Start"
-          + "IPRotationRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030"
-          + "\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB"
-          + "\002\030\001\022\014\n\004name\030\006 \001(\t\022\032\n\022rotate_credentials\030"
-          + "\007 \001(\010\"k\n\031CompleteIPRotationRequest\022\026\n\npr"
-          + "oject_id\030\001 \001(\tB\002\030\001\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\n"
-          + "cluster_id\030\003 \001(\tB\002\030\001\022\014\n\004name\030\007 \001(\t\"H\n\021Ac"
-          + "celeratorConfig\022\031\n\021accelerator_count\030\001 \001"
-          + "(\003\022\030\n\020accelerator_type\030\002 \001(\t\"\252\001\n\027SetNetw"
-          + "orkPolicyRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001"
-          + "\022\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002"
-          + "\030\001\022?\n\016network_policy\030\004 \001(\0132\".google.cont"
-          + "ainer.v1.NetworkPolicyB\003\340A\002\022\014\n\004name\030\006 \001("
-          + "\t\"\271\001\n\033SetMaintenancePolicyRequest\022\027\n\npro"
-          + "ject_id\030\001 \001(\tB\003\340A\002\022\021\n\004zone\030\002 \001(\tB\003\340A\002\022\027\n"
-          + "\ncluster_id\030\003 \001(\tB\003\340A\002\022G\n\022maintenance_po"
-          + "licy\030\004 \001(\0132&.google.container.v1.Mainten"
-          + "ancePolicyB\003\340A\002\022\014\n\004name\030\005 \001(\t\"\352\001\n\017Status"
-          + "Condition\0227\n\004code\030\001 \001(\0162).google.contain"
-          + "er.v1.StatusCondition.Code\022\017\n\007message\030\002 "
-          + "\001(\t\"\214\001\n\004Code\022\013\n\007UNKNOWN\020\000\022\020\n\014GCE_STOCKOU"
-          + "T\020\001\022\037\n\033GKE_SERVICE_ACCOUNT_DELETED\020\002\022\026\n\022"
-          + "GCE_QUOTA_EXCEEDED\020\003\022\023\n\017SET_BY_OPERATOR\020"
-          + "\004\022\027\n\023CLOUD_KMS_KEY_ERROR\020\007\"Z\n\rNetworkCon"
+          + "\n\ncluster_id\030\003 \001(\tB\002\030\001\022\014\n\004name\030\007 \001(\t\"H\n\021"
+          + "AcceleratorConfig\022\031\n\021accelerator_count\030\001"
+          + " \001(\003\022\030\n\020accelerator_type\030\002 \001(\t\"\232\001\n\026Workl"
+          + "oadMetadataConfig\022>\n\004mode\030\002 \001(\01620.google"
+          + ".container.v1.WorkloadMetadataConfig.Mod"
+          + "e\"@\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n\014GCE_M"
+          + "ETADATA\020\001\022\020\n\014GKE_METADATA\020\002\"\252\001\n\027SetNetwo"
+          + "rkPolicyRequest\022\026\n\nproject_id\030\001 \001(\tB\002\030\001\022"
+          + "\020\n\004zone\030\002 \001(\tB\002\030\001\022\026\n\ncluster_id\030\003 \001(\tB\002\030"
+          + "\001\022?\n\016network_policy\030\004 \001(\0132\".google.conta"
+          + "iner.v1.NetworkPolicyB\003\340A\002\022\014\n\004name\030\006 \001(\t"
+          + "\"\271\001\n\033SetMaintenancePolicyRequest\022\027\n\nproj"
+          + "ect_id\030\001 \001(\tB\003\340A\002\022\021\n\004zone\030\002 \001(\tB\003\340A\002\022\027\n\n"
+          + "cluster_id\030\003 \001(\tB\003\340A\002\022G\n\022maintenance_pol"
+          + "icy\030\004 \001(\0132&.google.container.v1.Maintena"
+          + "ncePolicyB\003\340A\002\022\014\n\004name\030\005 \001(\t\"\352\001\n\017StatusC"
+          + "ondition\0227\n\004code\030\001 \001(\0162).google.containe"
+          + "r.v1.StatusCondition.Code\022\017\n\007message\030\002 \001"
+          + "(\t\"\214\001\n\004Code\022\013\n\007UNKNOWN\020\000\022\020\n\014GCE_STOCKOUT"
+          + "\020\001\022\037\n\033GKE_SERVICE_ACCOUNT_DELETED\020\002\022\026\n\022G"
+          + "CE_QUOTA_EXCEEDED\020\003\022\023\n\017SET_BY_OPERATOR\020\004"
+          + "\022\027\n\023CLOUD_KMS_KEY_ERROR\020\007\"\237\001\n\rNetworkCon"
           + "fig\022\017\n\007network\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001(\t"
-          + "\022$\n\034enable_intra_node_visibility\030\005 \001(\010\","
-          + "\n\031IntraNodeVisibilityConfig\022\017\n\007enabled\030\001"
-          + " \001(\010\".\n\021MaxPodsConstraint\022\031\n\021max_pods_pe"
-          + "r_node\030\001 \001(\003\"\230\001\n\022DatabaseEncryption\022<\n\005s"
-          + "tate\030\002 \001(\0162-.google.container.v1.Databas"
-          + "eEncryption.State\022\020\n\010key_name\030\001 \001(\t\"2\n\005S"
-          + "tate\022\013\n\007UNKNOWN\020\000\022\r\n\tENCRYPTED\020\001\022\r\n\tDECR"
-          + "YPTED\020\002\"e\n\034ListUsableSubnetworksRequest\022"
-          + "\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_"
-          + "size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"t\n\035ListUs"
-          + "ableSubnetworksResponse\022:\n\013subnetworks\030\001"
-          + " \003(\0132%.google.container.v1.UsableSubnetw"
-          + "ork\022\027\n\017next_page_token\030\002 \001(\t\"\200\002\n\036UsableS"
-          + "ubnetworkSecondaryRange\022\022\n\nrange_name\030\001 "
-          + "\001(\t\022\025\n\rip_cidr_range\030\002 \001(\t\022J\n\006status\030\003 \001"
-          + "(\0162:.google.container.v1.UsableSubnetwor"
-          + "kSecondaryRange.Status\"g\n\006Status\022\013\n\007UNKN"
-          + "OWN\020\000\022\n\n\006UNUSED\020\001\022\022\n\016IN_USE_SERVICE\020\002\022\030\n"
-          + "\024IN_USE_SHAREABLE_POD\020\003\022\026\n\022IN_USE_MANAGE"
-          + "D_POD\020\004\"\270\001\n\020UsableSubnetwork\022\022\n\nsubnetwo"
-          + "rk\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rip_cidr_ran"
-          + "ge\030\003 \001(\t\022P\n\023secondary_ip_ranges\030\004 \003(\01323."
-          + "google.container.v1.UsableSubnetworkSeco"
-          + "ndaryRange\022\026\n\016status_message\030\005 \001(\t\"\355\002\n\031R"
-          + "esourceUsageExportConfig\022`\n\024bigquery_des"
-          + "tination\030\001 \001(\0132B.google.container.v1.Res"
-          + "ourceUsageExportConfig.BigQueryDestinati"
-          + "on\022&\n\036enable_network_egress_metering\030\002 \001"
-          + "(\010\022m\n\033consumption_metering_config\030\003 \001(\0132"
-          + "H.google.container.v1.ResourceUsageExpor"
-          + "tConfig.ConsumptionMeteringConfig\032)\n\023Big"
-          + "QueryDestination\022\022\n\ndataset_id\030\001 \001(\t\032,\n\031"
-          + "ConsumptionMeteringConfig\022\017\n\007enabled\030\001 \001"
-          + "(\010\")\n\026VerticalPodAutoscaling\022\017\n\007enabled\030"
-          + "\001 \001(\0102\322D\n\016ClusterManager\022\350\001\n\014ListCluster"
-          + "s\022(.google.container.v1.ListClustersRequ",
-      "est\032).google.container.v1.ListClustersRe"
-          + "sponse\"\202\001\202\323\344\223\002a\022,/v1/{parent=projects/*/"
-          + "locations/*}/clustersZ1\022//v1/projects/{p"
-          + "roject_id}/zones/{zone}/clusters\332A\017proje"
-          + "ct_id,zone\332A\006parent\022\355\001\n\nGetCluster\022&.goo"
-          + "gle.container.v1.GetClusterRequest\032\034.goo"
-          + "gle.container.v1.Cluster\"\230\001\202\323\344\223\002n\022,/v1/{"
-          + "name=projects/*/locations/*/clusters/*}Z"
-          + ">\022</v1/projects/{project_id}/zones/{zone"
-          + "}/clusters/{cluster_id}\332A\032project_id,zon"
-          + "e,cluster_id\332A\004name\022\365\001\n\rCreateCluster\022)."
-          + "google.container.v1.CreateClusterRequest"
-          + "\032\036.google.container.v1.Operation\"\230\001\202\323\344\223\002"
-          + "g\",/v1/{parent=projects/*/locations/*}/c"
-          + "lusters:\001*Z4\"//v1/projects/{project_id}/"
-          + "zones/{zone}/clusters:\001*\332A\027project_id,zo"
-          + "ne,cluster\332A\016parent,cluster\022\211\002\n\rUpdateCl"
-          + "uster\022).google.container.v1.UpdateCluste"
-          + "rRequest\032\036.google.container.v1.Operation"
-          + "\"\254\001\202\323\344\223\002t\032,/v1/{name=projects/*/location"
-          + "s/*/clusters/*}:\001*ZA\032</v1/projects/{proj"
-          + "ect_id}/zones/{zone}/clusters/{cluster_i"
-          + "d}:\001*\332A!project_id,zone,cluster_id,updat"
-          + "e\332A\013name,update\022\206\002\n\016UpdateNodePool\022*.goo"
-          + "gle.container.v1.UpdateNodePoolRequest\032\036"
-          + ".google.container.v1.Operation\"\247\001\202\323\344\223\002\240\001"
-          + "\0328/v1/{name=projects/*/locations/*/clust"
-          + "ers/*/nodePools/*}:\001*Za\"\\/v1/projects/{p"
-          + "roject_id}/zones/{zone}/clusters/{cluste"
-          + "r_id}/nodePools/{node_pool_id}/update:\001*"
-          + "\022\252\002\n\026SetNodePoolAutoscaling\0222.google.con"
-          + "tainer.v1.SetNodePoolAutoscalingRequest\032"
-          + "\036.google.container.v1.Operation\"\273\001\202\323\344\223\002\264"
-          + "\001\"G/v1/{name=projects/*/locations/*/clus"
-          + "ters/*/nodePools/*}:setAutoscaling:\001*Zf\""
-          + "a/v1/projects/{project_id}/zones/{zone}/"
-          + "clusters/{cluster_id}/nodePools/{node_po"
-          + "ol_id}/autoscaling:\001*\022\267\002\n\021SetLoggingServ"
-          + "ice\022-.google.container.v1.SetLoggingServ"
-          + "iceRequest\032\036.google.container.v1.Operati"
-          + "on\"\322\001\202\323\344\223\002\207\001\"7/v1/{name=projects/*/locat"
-          + "ions/*/clusters/*}:setLogging:\001*ZI\"D/v1/"
-          + "projects/{project_id}/zones/{zone}/clust"
-          + "ers/{cluster_id}/logging:\001*\332A*project_id"
-          + ",zone,cluster_id,logging_service\332A\024name,"
-          + "logging_service\022\311\002\n\024SetMonitoringService"
-          + "\0220.google.container.v1.SetMonitoringServ"
-          + "iceRequest\032\036.google.container.v1.Operati"
-          + "on\"\336\001\202\323\344\223\002\215\001\":/v1/{name=projects/*/locat"
-          + "ions/*/clusters/*}:setMonitoring:\001*ZL\"G/"
-          + "v1/projects/{project_id}/zones/{zone}/cl"
-          + "usters/{cluster_id}/monitoring:\001*\332A-proj"
-          + "ect_id,zone,cluster_id,monitoring_servic"
-          + "e\332A\027name,monitoring_service\022\255\002\n\017SetAddon"
-          + "sConfig\022+.google.container.v1.SetAddonsC"
-          + "onfigRequest\032\036.google.container.v1.Opera"
-          + "tion\"\314\001\202\323\344\223\002\205\001\"6/v1/{name=projects/*/loc"
-          + "ations/*/clusters/*}:setAddons:\001*ZH\"C/v1"
-          + "/projects/{project_id}/zones/{zone}/clus"
-          + "ters/{cluster_id}/addons:\001*\332A(project_id"
-          + ",zone,cluster_id,addons_config\332A\022name,ad"
-          + "dons_config\022\245\002\n\014SetLocations\022(.google.co"
-          + "ntainer.v1.SetLocationsRequest\032\036.google."
-          + "container.v1.Operation\"\312\001\202\323\344\223\002\213\001\"9/v1/{n"
-          + "ame=projects/*/locations/*/clusters/*}:s"
-          + "etLocations:\001*ZK\"F/v1/projects/{project_"
-          + "id}/zones/{zone}/clusters/{cluster_id}/l"
-          + "ocations:\001*\332A$project_id,zone,cluster_id"
-          + ",locations\332A\016name,locations\022\254\002\n\014UpdateMa"
-          + "ster\022(.google.container.v1.UpdateMasterR"
-          + "equest\032\036.google.container.v1.Operation\"\321"
-          + "\001\202\323\344\223\002\210\001\"9/v1/{name=projects/*/locations"
-          + "/*/clusters/*}:updateMaster:\001*ZH\"C/v1/pr"
-          + "ojects/{project_id}/zones/{zone}/cluster"
-          + "s/{cluster_id}/master:\001*\332A)project_id,zo"
-          + "ne,cluster_id,master_version\332A\023name,mast"
-          + "er_version\022\364\001\n\rSetMasterAuth\022).google.co"
-          + "ntainer.v1.SetMasterAuthRequest\032\036.google"
-          + ".container.v1.Operation\"\227\001\202\323\344\223\002\220\001\":/v1/{"
+          + "\022$\n\034enable_intra_node_visibility\030\005 \001(\010\022C"
+          + "\n\023default_snat_status\030\007 \001(\0132&.google.con"
+          + "tainer.v1.DefaultSnatStatus\"(\n\026GetOpenID"
+          + "ConfigRequest\022\016\n\006parent\030\001 \001(\t\"\334\001\n\027GetOpe"
+          + "nIDConfigResponse\022\016\n\006issuer\030\001 \001(\t\022\020\n\010jwk"
+          + "s_uri\030\002 \001(\t\022 \n\030response_types_supported\030"
+          + "\003 \003(\t\022\037\n\027subject_types_supported\030\004 \003(\t\022-"
+          + "\n%id_token_signing_alg_values_supported\030"
+          + "\005 \003(\t\022\030\n\020claims_supported\030\006 \003(\t\022\023\n\013grant"
+          + "_types\030\007 \003(\t\"\'\n\025GetJSONWebKeysRequest\022\016\n"
+          + "\006parent\030\001 \001(\t\"r\n\003Jwk\022\013\n\003kty\030\001 \001(\t\022\013\n\003alg"
+          + "\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\013\n\003kid\030\004 \001(\t\022\t\n\001n\030\005 "
+          + "\001(\t\022\t\n\001e\030\006 \001(\t\022\t\n\001x\030\007 \001(\t\022\t\n\001y\030\010 \001(\t\022\013\n\003"
+          + "crv\030\t \001(\t\"@\n\026GetJSONWebKeysResponse\022&\n\004k"
+          + "eys\030\001 \003(\0132\030.google.container.v1.Jwk\"\216\001\n\016"
+          + "ReleaseChannel\022<\n\007channel\030\001 \001(\0162+.google"
+          + ".container.v1.ReleaseChannel.Channel\">\n\007"
+          + "Channel\022\017\n\013UNSPECIFIED\020\000\022\t\n\005RAPID\020\001\022\013\n\007R"
+          + "EGULAR\020\002\022\n\n\006STABLE\020\003\",\n\031IntraNodeVisibil"
+          + "ityConfig\022\017\n\007enabled\030\001 \001(\010\".\n\021MaxPodsCon"
+          + "straint\022\031\n\021max_pods_per_node\030\001 \001(\003\"/\n\026Wo"
+          + "rkloadIdentityConfig\022\025\n\rworkload_pool\030\002 "
+          + "\001(\t\"\230\001\n\022DatabaseEncryption\022<\n\005state\030\002 \001("
+          + "\0162-.google.container.v1.DatabaseEncrypti"
+          + "on.State\022\020\n\010key_name\030\001 \001(\t\"2\n\005State\022\013\n\007U"
+          + "NKNOWN\020\000\022\r\n\tENCRYPTED\020\001\022\r\n\tDECRYPTED\020\002\"e"
+          + "\n\034ListUsableSubnetworksRequest\022\016\n\006parent"
+          + "\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001("
+          + "\005\022\022\n\npage_token\030\004 \001(\t\"t\n\035ListUsableSubne"
+          + "tworksResponse\022:\n\013subnetworks\030\001 \003(\0132%.go"
+          + "ogle.container.v1.UsableSubnetwork\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"\200\002\n\036UsableSubnetwork"
+          + "SecondaryRange\022\022\n\nrange_name\030\001 \001(\t\022\025\n\rip"
+          + "_cidr_range\030\002 \001(\t\022J\n\006status\030\003 \001(\0162:.goog"
+          + "le.container.v1.UsableSubnetworkSecondar"
+          + "yRange.Status\"g\n\006Status\022\013\n\007UNKNOWN\020\000\022\n\n\006"
+          + "UNUSED\020\001\022\022\n\016IN_USE_SERVICE\020\002\022\030\n\024IN_USE_S"
+          + "HAREABLE_POD\020\003\022\026\n\022IN_USE_MANAGED_POD\020\004\"\270"
+          + "\001\n\020UsableSubnetwork\022\022\n\nsubnetwork\030\001 \001(\t\022"
+          + "\017\n\007network\030\002 \001(\t\022\025\n\rip_cidr_range\030\003 \001(\t\022"
+          + "P\n\023secondary_ip_ranges\030\004 \003(\01323.google.co"
+          + "ntainer.v1.UsableSubnetworkSecondaryRang"
+          + "e\022\026\n\016status_message\030\005 \001(\t\"\355\002\n\031ResourceUs"
+          + "ageExportConfig\022`\n\024bigquery_destination\030"
+          + "\001 \001(\0132B.google.container.v1.ResourceUsag"
+          + "eExportConfig.BigQueryDestination\022&\n\036ena"
+          + "ble_network_egress_metering\030\002 \001(\010\022m\n\033con"
+          + "sumption_metering_config\030\003 \001(\0132H.google."
+          + "container.v1.ResourceUsageExportConfig.C"
+          + "onsumptionMeteringConfig\032)\n\023BigQueryDest"
+          + "ination\022\022\n\ndataset_id\030\001 \001(\t\032,\n\031Consumpti"
+          + "onMeteringConfig\022\017\n\007enabled\030\001 \001(\010\")\n\026Ver"
+          + "ticalPodAutoscaling\022\017\n\007enabled\030\001 \001(\010\"%\n\021"
+          + "DefaultSnatStatus\022\020\n\010disabled\030\001 \001(\010\" \n\rS"
+          + "hieldedNodes\022\017\n\007enabled\030\001 \001(\0102\205F\n\016Cluste"
+          + "rManager\022\350\001\n\014ListClusters\022(.google.conta"
+          + "iner.v1.ListClustersRequest\032).google.con"
+          + "tainer.v1.ListClustersResponse\"\202\001\202\323\344\223\002a\022"
+          + ",/v1/{parent=projects/*/locations/*}/clu"
+          + "stersZ1\022//v1/projects/{project_id}/zones"
+          + "/{zone}/clusters\332A\017project_id,zone\332A\006par"
+          + "ent\022\355\001\n\nGetCluster\022&.google.container.v1"
+          + ".GetClusterRequest\032\034.google.container.v1"
+          + ".Cluster\"\230\001\202\323\344\223\002n\022,/v1/{name=projects/*/"
+          + "locations/*/clusters/*}Z>\022</v1/projects/"
+          + "{project_id}/zones/{zone}/clusters/{clus"
+          + "ter_id}\332A\032project_id,zone,cluster_id\332A\004n"
+          + "ame\022\365\001\n\rCreateCluster\022).google.container"
+          + ".v1.CreateClusterRequest\032\036.google.contai"
+          + "ner.v1.Operation\"\230\001\202\323\344\223\002g\",/v1/{parent=p"
+          + "rojects/*/locations/*}/clusters:\001*Z4\"//v"
+          + "1/projects/{project_id}/zones/{zone}/clu"
+          + "sters:\001*\332A\027project_id,zone,cluster\332A\016par"
+          + "ent,cluster\022\211\002\n\rUpdateCluster\022).google.c"
+          + "ontainer.v1.UpdateClusterRequest\032\036.googl"
+          + "e.container.v1.Operation\"\254\001\202\323\344\223\002t\032,/v1/{"
           + "name=projects/*/locations/*/clusters/*}:"
-          + "setMasterAuth:\001*ZO\"J/v1/projects/{projec"
+          + "\001*ZA\032</v1/projects/{project_id}/zones/{z"
+          + "one}/clusters/{cluster_id}:\001*\332A!project_"
+          + "id,zone,cluster_id,update\332A\013name,update\022"
+          + "\206\002\n\016UpdateNodePool\022*.google.container.v1"
+          + ".UpdateNodePoolRequest\032\036.google.containe"
+          + "r.v1.Operation\"\247\001\202\323\344\223\002\240\001\0328/v1/{name=proj"
+          + "ects/*/locations/*/clusters/*/nodePools/"
+          + "*}:\001*Za\"\\/v1/projects/{project_id}/zones"
+          + "/{zone}/clusters/{cluster_id}/nodePools/"
+          + "{node_pool_id}/update:\001*\022\252\002\n\026SetNodePool"
+          + "Autoscaling\0222.google.container.v1.SetNod"
+          + "ePoolAutoscalingRequest\032\036.google.contain"
+          + "er.v1.Operation\"\273\001\202\323\344\223\002\264\001\"G/v1/{name=pro"
+          + "jects/*/locations/*/clusters/*/nodePools"
+          + "/*}:setAutoscaling:\001*Zf\"a/v1/projects/{p"
+          + "roject_id}/zones/{zone}/clusters/{cluste"
+          + "r_id}/nodePools/{node_pool_id}/autoscali"
+          + "ng:\001*\022\267\002\n\021SetLoggingService\022-.google.con"
+          + "tainer.v1.SetLoggingServiceRequest\032\036.goo"
+          + "gle.container.v1.Operation\"\322\001\202\323\344\223\002\207\001\"7/v"
+          + "1/{name=projects/*/locations/*/clusters/"
+          + "*}:setLogging:\001*ZI\"D/v1/projects/{projec"
           + "t_id}/zones/{zone}/clusters/{cluster_id}"
-          + ":setMasterAuth:\001*\022\365\001\n\rDeleteCluster\022).go"
-          + "ogle.container.v1.DeleteClusterRequest\032\036"
-          + ".google.container.v1.Operation\"\230\001\202\323\344\223\002n*"
-          + ",/v1/{name=projects/*/locations/*/cluste"
-          + "rs/*}Z>*</v1/projects/{project_id}/zones"
-          + "/{zone}/clusters/{cluster_id}\332A\032project_"
-          + "id,zone,cluster_id\332A\004name\022\350\001\n\016ListOperat"
-          + "ions\022*.google.container.v1.ListOperation"
-          + "sRequest\032+.google.container.v1.ListOpera"
-          + "tionsResponse\"}\202\323\344\223\002e\022./v1/{parent=proje"
-          + "cts/*/locations/*}/operationsZ3\0221/v1/pro"
-          + "jects/{project_id}/zones/{zone}/operatio"
-          + "ns\332A\017project_id,zone\022\364\001\n\014GetOperation\022(."
-          + "google.container.v1.GetOperationRequest\032"
-          + "\036.google.container.v1.Operation\"\231\001\202\323\344\223\002t"
-          + "\022./v1/{name=projects/*/locations/*/opera"
-          + "tions/*}ZB\022@/v1/projects/{project_id}/zo"
-          + "nes/{zone}/operations/{operation_id}\332A\034p"
-          + "roject_id,zone,operation_id\022\216\002\n\017CancelOp"
-          + "eration\022+.google.container.v1.CancelOper"
-          + "ationRequest\032\026.google.protobuf.Empty\"\265\001\202"
-          + "\323\344\223\002\210\001\"5/v1/{name=projects/*/locations/*"
-          + "/operations/*}:cancel:\001*ZL\"G/v1/projects"
-          + "/{project_id}/zones/{zone}/operations/{o"
-          + "peration_id}:cancel:\001*\332A\034project_id,zone"
-          + ",operation_id\332A\004name\022\352\001\n\017GetServerConfig"
-          + "\022+.google.container.v1.GetServerConfigRe"
-          + "quest\032!.google.container.v1.ServerConfig"
-          + "\"\206\001\202\323\344\223\002g\022./v1/{name=projects/*/location"
-          + "s/*}/serverConfigZ5\0223/v1/projects/{proje"
-          + "ct_id}/zones/{zone}/serverconfig\332A\017proje"
-          + "ct_id,zone\332A\004name\022\232\002\n\rListNodePools\022).go"
-          + "ogle.container.v1.ListNodePoolsRequest\032*"
-          + ".google.container.v1.ListNodePoolsRespon"
-          + "se\"\261\001\202\323\344\223\002\204\001\0228/v1/{parent=projects/*/loc"
-          + "ations/*/clusters/*}/nodePoolsZH\022F/v1/pr"
-          + "ojects/{project_id}/zones/{zone}/cluster"
-          + "s/{cluster_id}/nodePools\332A\032project_id,zo"
-          + "ne,cluster_id\332A\006parent\022\243\002\n\013GetNodePool\022\'"
-          + ".google.container.v1.GetNodePoolRequest\032"
-          + "\035.google.container.v1.NodePool\"\313\001\202\323\344\223\002\223\001"
-          + "\0228/v1/{name=projects/*/locations/*/clust"
-          + "ers/*/nodePools/*}ZW\022U/v1/projects/{proj"
-          + "ect_id}/zones/{zone}/clusters/{cluster_i"
-          + "d}/nodePools/{node_pool_id}\332A\'project_id"
-          + ",zone,cluster_id,node_pool_id\332A\004name\022\252\002\n"
-          + "\016CreateNodePool\022*.google.container.v1.Cr"
-          + "eateNodePoolRequest\032\036.google.container.v"
-          + "1.Operation\"\313\001\202\323\344\223\002\212\001\"8/v1/{parent=proje"
-          + "cts/*/locations/*/clusters/*}/nodePools:"
-          + "\001*ZK\"F/v1/projects/{project_id}/zones/{z"
-          + "one}/clusters/{cluster_id}/nodePools:\001*\332"
-          + "A$project_id,zone,cluster_id,node_pool\332A"
-          + "\020parent,node_pool\022\252\002\n\016DeleteNodePool\022*.g"
-          + "oogle.container.v1.DeleteNodePoolRequest"
-          + "\032\036.google.container.v1.Operation\"\313\001\202\323\344\223\002"
-          + "\223\001*8/v1/{name=projects/*/locations/*/clu"
-          + "sters/*/nodePools/*}ZW*U/v1/projects/{pr"
-          + "oject_id}/zones/{zone}/clusters/{cluster"
-          + "_id}/nodePools/{node_pool_id}\332A\'project_"
-          + "id,zone,cluster_id,node_pool_id\332A\004name\022\324"
-          + "\002\n\027RollbackNodePoolUpgrade\0223.google.cont"
-          + "ainer.v1.RollbackNodePoolUpgradeRequest\032"
-          + "\036.google.container.v1.Operation\"\343\001\202\323\344\223\002\253"
-          + "\001\"A/v1/{name=projects/*/locations/*/clus"
-          + "ters/*/nodePools/*}:rollback:\001*Zc\"^/v1/p"
-          + "rojects/{project_id}/zones/{zone}/cluste"
-          + "rs/{cluster_id}/nodePools/{node_pool_id}"
-          + ":rollback:\001*\332A\'project_id,zone,cluster_i"
-          + "d,node_pool_id\332A\004name\022\251\002\n\025SetNodePoolMan"
-          + "agement\0221.google.container.v1.SetNodePoo"
-          + "lManagementRequest\032\036.google.container.v1"
-          + ".Operation\"\274\001\202\323\344\223\002\265\001\"F/v1/{name=projects"
-          + "/*/locations/*/clusters/*/nodePools/*}:s"
-          + "etManagement:\001*Zh\"c/v1/projects/{project"
-          + "_id}/zones/{zone}/clusters/{cluster_id}/"
-          + "nodePools/{node_pool_id}/setManagement:\001"
-          + "*\022\361\001\n\tSetLabels\022%.google.container.v1.Se"
-          + "tLabelsRequest\032\036.google.container.v1.Ope"
-          + "ration\"\234\001\202\323\344\223\002\225\001\">/v1/{name=projects/*/l"
-          + "ocations/*/clusters/*}:setResourceLabels"
-          + ":\001*ZP\"K/v1/projects/{project_id}/zones/{"
-          + "zone}/clusters/{cluster_id}/resourceLabe"
-          + "ls:\001*\022\245\002\n\rSetLegacyAbac\022).google.contain"
-          + "er.v1.SetLegacyAbacRequest\032\036.google.cont"
-          + "ainer.v1.Operation\"\310\001\202\323\344\223\002\215\001\":/v1/{name="
-          + "projects/*/locations/*/clusters/*}:setLe"
-          + "gacyAbac:\001*ZL\"G/v1/projects/{project_id}"
-          + "/zones/{zone}/clusters/{cluster_id}/lega"
-          + "cyAbac:\001*\332A\"project_id,zone,cluster_id,e"
-          + "nabled\332A\014name,enabled\022\240\002\n\017StartIPRotatio"
-          + "n\022+.google.container.v1.StartIPRotationR"
-          + "equest\032\036.google.container.v1.Operation\"\277"
-          + "\001\202\323\344\223\002\224\001\"</v1/{name=projects/*/locations"
-          + "/*/clusters/*}:startIpRotation:\001*ZQ\"L/v1"
+          + "/logging:\001*\332A*project_id,zone,cluster_id"
+          + ",logging_service\332A\024name,logging_service\022"
+          + "\311\002\n\024SetMonitoringService\0220.google.contai"
+          + "ner.v1.SetMonitoringServiceRequest\032\036.goo"
+          + "gle.container.v1.Operation\"\336\001\202\323\344\223\002\215\001\":/v"
+          + "1/{name=projects/*/locations/*/clusters/"
+          + "*}:setMonitoring:\001*ZL\"G/v1/projects/{pro"
+          + "ject_id}/zones/{zone}/clusters/{cluster_"
+          + "id}/monitoring:\001*\332A-project_id,zone,clus"
+          + "ter_id,monitoring_service\332A\027name,monitor"
+          + "ing_service\022\255\002\n\017SetAddonsConfig\022+.google"
+          + ".container.v1.SetAddonsConfigRequest\032\036.g"
+          + "oogle.container.v1.Operation\"\314\001\202\323\344\223\002\205\001\"6"
+          + "/v1/{name=projects/*/locations/*/cluster"
+          + "s/*}:setAddons:\001*ZH\"C/v1/projects/{proje"
+          + "ct_id}/zones/{zone}/clusters/{cluster_id"
+          + "}/addons:\001*\332A(project_id,zone,cluster_id"
+          + ",addons_config\332A\022name,addons_config\022\250\002\n\014"
+          + "SetLocations\022(.google.container.v1.SetLo"
+          + "cationsRequest\032\036.google.container.v1.Ope"
+          + "ration\"\315\001\210\002\001\202\323\344\223\002\213\001\"9/v1/{name=projects/"
+          + "*/locations/*/clusters/*}:setLocations:\001"
+          + "*ZK\"F/v1/projects/{project_id}/zones/{zo"
+          + "ne}/clusters/{cluster_id}/locations:\001*\332A"
+          + "$project_id,zone,cluster_id,locations\332A\016"
+          + "name,locations\022\254\002\n\014UpdateMaster\022(.google"
+          + ".container.v1.UpdateMasterRequest\032\036.goog"
+          + "le.container.v1.Operation\"\321\001\202\323\344\223\002\210\001\"9/v1"
+          + "/{name=projects/*/locations/*/clusters/*"
+          + "}:updateMaster:\001*ZH\"C/v1/projects/{proje"
+          + "ct_id}/zones/{zone}/clusters/{cluster_id"
+          + "}/master:\001*\332A)project_id,zone,cluster_id"
+          + ",master_version\332A\023name,master_version\022\364\001"
+          + "\n\rSetMasterAuth\022).google.container.v1.Se"
+          + "tMasterAuthRequest\032\036.google.container.v1"
+          + ".Operation\"\227\001\202\323\344\223\002\220\001\":/v1/{name=projects"
+          + "/*/locations/*/clusters/*}:setMasterAuth"
+          + ":\001*ZO\"J/v1/projects/{project_id}/zones/{"
+          + "zone}/clusters/{cluster_id}:setMasterAut"
+          + "h:\001*\022\365\001\n\rDeleteCluster\022).google.containe"
+          + "r.v1.DeleteClusterRequest\032\036.google.conta"
+          + "iner.v1.Operation\"\230\001\202\323\344\223\002n*,/v1/{name=pr"
+          + "ojects/*/locations/*/clusters/*}Z>*</v1/"
+          + "projects/{project_id}/zones/{zone}/clust"
+          + "ers/{cluster_id}\332A\032project_id,zone,clust"
+          + "er_id\332A\004name\022\350\001\n\016ListOperations\022*.google"
+          + ".container.v1.ListOperationsRequest\032+.go"
+          + "ogle.container.v1.ListOperationsResponse"
+          + "\"}\202\323\344\223\002e\022./v1/{parent=projects/*/locatio"
+          + "ns/*}/operationsZ3\0221/v1/projects/{projec"
+          + "t_id}/zones/{zone}/operations\332A\017project_"
+          + "id,zone\022\373\001\n\014GetOperation\022(.google.contai"
+          + "ner.v1.GetOperationRequest\032\036.google.cont"
+          + "ainer.v1.Operation\"\240\001\202\323\344\223\002t\022./v1/{name=p"
+          + "rojects/*/locations/*/operations/*}ZB\022@/"
+          + "v1/projects/{project_id}/zones/{zone}/op"
+          + "erations/{operation_id}\332A\034project_id,zon"
+          + "e,operation_id\332A\004name\022\216\002\n\017CancelOperatio"
+          + "n\022+.google.container.v1.CancelOperationR"
+          + "equest\032\026.google.protobuf.Empty\"\265\001\202\323\344\223\002\210\001"
+          + "\"5/v1/{name=projects/*/locations/*/opera"
+          + "tions/*}:cancel:\001*ZL\"G/v1/projects/{proj"
+          + "ect_id}/zones/{zone}/operations/{operati"
+          + "on_id}:cancel:\001*\332A\034project_id,zone,opera"
+          + "tion_id\332A\004name\022\352\001\n\017GetServerConfig\022+.goo"
+          + "gle.container.v1.GetServerConfigRequest\032"
+          + "!.google.container.v1.ServerConfig\"\206\001\202\323\344"
+          + "\223\002g\022./v1/{name=projects/*/locations/*}/s"
+          + "erverConfigZ5\0223/v1/projects/{project_id}"
+          + "/zones/{zone}/serverconfig\332A\017project_id,"
+          + "zone\332A\004name\022\246\001\n\016GetJSONWebKeys\022*.google."
+          + "container.v1.GetJSONWebKeysRequest\032+.goo"
+          + "gle.container.v1.GetJSONWebKeysResponse\""
+          + ";\202\323\344\223\0025\0223/v1/{parent=projects/*/location"
+          + "s/*/clusters/*}/jwks\022\232\002\n\rListNodePools\022)"
+          + ".google.container.v1.ListNodePoolsReques"
+          + "t\032*.google.container.v1.ListNodePoolsRes"
+          + "ponse\"\261\001\202\323\344\223\002\204\001\0228/v1/{parent=projects/*/"
+          + "locations/*/clusters/*}/nodePoolsZH\022F/v1"
           + "/projects/{project_id}/zones/{zone}/clus"
-          + "ters/{cluster_id}:startIpRotation:\001*\332A\032p"
-          + "roject_id,zone,cluster_id\332A\004name\022\254\002\n\022Com"
-          + "pleteIPRotation\022..google.container.v1.Co"
-          + "mpleteIPRotationRequest\032\036.google.contain"
-          + "er.v1.Operation\"\305\001\202\323\344\223\002\232\001\"?/v1/{name=pro"
-          + "jects/*/locations/*/clusters/*}:complete"
-          + "IpRotation:\001*ZT\"O/v1/projects/{project_i"
-          + "d}/zones/{zone}/clusters/{cluster_id}:co"
-          + "mpleteIpRotation:\001*\332A\032project_id,zone,cl"
-          + "uster_id\332A\004name\022\221\002\n\017SetNodePoolSize\022+.go"
-          + "ogle.container.v1.SetNodePoolSizeRequest"
-          + "\032\036.google.container.v1.Operation\"\260\001\202\323\344\223\002"
-          + "\251\001\"@/v1/{name=projects/*/locations/*/clu"
-          + "sters/*/nodePools/*}:setSize:\001*Zb\"]/v1/p"
-          + "rojects/{project_id}/zones/{zone}/cluste"
-          + "rs/{cluster_id}/nodePools/{node_pool_id}"
-          + "/setSize:\001*\022\302\002\n\020SetNetworkPolicy\022,.googl"
-          + "e.container.v1.SetNetworkPolicyRequest\032\036"
-          + ".google.container.v1.Operation\"\337\001\202\323\344\223\002\226\001"
-          + "\"=/v1/{name=projects/*/locations/*/clust"
-          + "ers/*}:setNetworkPolicy:\001*ZR\"M/v1/projec"
-          + "ts/{project_id}/zones/{zone}/clusters/{c"
-          + "luster_id}:setNetworkPolicy:\001*\332A)project"
-          + "_id,zone,cluster_id,network_policy\332A\023nam"
-          + "e,network_policy\022\332\002\n\024SetMaintenancePolic"
-          + "y\0220.google.container.v1.SetMaintenancePo"
-          + "licyRequest\032\036.google.container.v1.Operat"
-          + "ion\"\357\001\202\323\344\223\002\236\001\"A/v1/{name=projects/*/loca"
-          + "tions/*/clusters/*}:setMaintenancePolicy"
-          + ":\001*ZV\"Q/v1/projects/{project_id}/zones/{"
-          + "zone}/clusters/{cluster_id}:setMaintenan"
-          + "cePolicy:\001*\332A-project_id,zone,cluster_id"
-          + ",maintenance_policy\332A\027name,maintenance_p"
-          + "olicy\022\274\001\n\025ListUsableSubnetworks\0221.google"
-          + ".container.v1.ListUsableSubnetworksReque"
-          + "st\0322.google.container.v1.ListUsableSubne"
-          + "tworksResponse\"<\202\323\344\223\0026\0224/v1/{parent=proj"
-          + "ects/*}/aggregated/usableSubnetworks\032L\312A"
-          + "\030container.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\305\001\n\027c"
-          + "om.google.container.v1B\023ClusterServicePr"
-          + "otoP\001Z<google.golang.org/genproto/google"
-          + "apis/container/v1;container\252\002\031Google.Clo"
-          + "ud.Container.V1\312\002\031Google\\Cloud\\Container"
-          + "\\V1\352\002\034Google::Cloud::Container::V1b\006prot"
-          + "o3"
+          + "ters/{cluster_id}/nodePools\332A\032project_id"
+          + ",zone,cluster_id\332A\006parent\022\243\002\n\013GetNodePoo"
+          + "l\022\'.google.container.v1.GetNodePoolReque"
+          + "st\032\035.google.container.v1.NodePool\"\313\001\202\323\344\223"
+          + "\002\223\001\0228/v1/{name=projects/*/locations/*/cl"
+          + "usters/*/nodePools/*}ZW\022U/v1/projects/{p"
+          + "roject_id}/zones/{zone}/clusters/{cluste"
+          + "r_id}/nodePools/{node_pool_id}\332A\'project"
+          + "_id,zone,cluster_id,node_pool_id\332A\004name\022"
+          + "\252\002\n\016CreateNodePool\022*.google.container.v1"
+          + ".CreateNodePoolRequest\032\036.google.containe"
+          + "r.v1.Operation\"\313\001\202\323\344\223\002\212\001\"8/v1/{parent=pr"
+          + "ojects/*/locations/*/clusters/*}/nodePoo"
+          + "ls:\001*ZK\"F/v1/projects/{project_id}/zones"
+          + "/{zone}/clusters/{cluster_id}/nodePools:"
+          + "\001*\332A$project_id,zone,cluster_id,node_poo"
+          + "l\332A\020parent,node_pool\022\252\002\n\016DeleteNodePool\022"
+          + "*.google.container.v1.DeleteNodePoolRequ"
+          + "est\032\036.google.container.v1.Operation\"\313\001\202\323"
+          + "\344\223\002\223\001*8/v1/{name=projects/*/locations/*/"
+          + "clusters/*/nodePools/*}ZW*U/v1/projects/"
+          + "{project_id}/zones/{zone}/clusters/{clus"
+          + "ter_id}/nodePools/{node_pool_id}\332A\'proje"
+          + "ct_id,zone,cluster_id,node_pool_id\332A\004nam"
+          + "e\022\324\002\n\027RollbackNodePoolUpgrade\0223.google.c"
+          + "ontainer.v1.RollbackNodePoolUpgradeReque"
+          + "st\032\036.google.container.v1.Operation\"\343\001\202\323\344"
+          + "\223\002\253\001\"A/v1/{name=projects/*/locations/*/c"
+          + "lusters/*/nodePools/*}:rollback:\001*Zc\"^/v"
+          + "1/projects/{project_id}/zones/{zone}/clu"
+          + "sters/{cluster_id}/nodePools/{node_pool_"
+          + "id}:rollback:\001*\332A\'project_id,zone,cluste"
+          + "r_id,node_pool_id\332A\004name\022\251\002\n\025SetNodePool"
+          + "Management\0221.google.container.v1.SetNode"
+          + "PoolManagementRequest\032\036.google.container"
+          + ".v1.Operation\"\274\001\202\323\344\223\002\265\001\"F/v1/{name=proje"
+          + "cts/*/locations/*/clusters/*/nodePools/*"
+          + "}:setManagement:\001*Zh\"c/v1/projects/{proj"
+          + "ect_id}/zones/{zone}/clusters/{cluster_i"
+          + "d}/nodePools/{node_pool_id}/setManagemen"
+          + "t:\001*\022\361\001\n\tSetLabels\022%.google.container.v1"
+          + ".SetLabelsRequest\032\036.google.container.v1."
+          + "Operation\"\234\001\202\323\344\223\002\225\001\">/v1/{name=projects/"
+          + "*/locations/*/clusters/*}:setResourceLab"
+          + "els:\001*ZP\"K/v1/projects/{project_id}/zone"
+          + "s/{zone}/clusters/{cluster_id}/resourceL"
+          + "abels:\001*\022\245\002\n\rSetLegacyAbac\022).google.cont"
+          + "ainer.v1.SetLegacyAbacRequest\032\036.google.c"
+          + "ontainer.v1.Operation\"\310\001\202\323\344\223\002\215\001\":/v1/{na"
+          + "me=projects/*/locations/*/clusters/*}:se"
+          + "tLegacyAbac:\001*ZL\"G/v1/projects/{project_"
+          + "id}/zones/{zone}/clusters/{cluster_id}/l"
+          + "egacyAbac:\001*\332A\"project_id,zone,cluster_i"
+          + "d,enabled\332A\014name,enabled\022\240\002\n\017StartIPRota"
+          + "tion\022+.google.container.v1.StartIPRotati"
+          + "onRequest\032\036.google.container.v1.Operatio"
+          + "n\"\277\001\202\323\344\223\002\224\001\"</v1/{name=projects/*/locati"
+          + "ons/*/clusters/*}:startIpRotation:\001*ZQ\"L"
+          + "/v1/projects/{project_id}/zones/{zone}/c"
+          + "lusters/{cluster_id}:startIpRotation:\001*\332"
+          + "A\032project_id,zone,cluster_id\332A\004name\022\254\002\n\022"
+          + "CompleteIPRotation\022..google.container.v1"
+          + ".CompleteIPRotationRequest\032\036.google.cont"
+          + "ainer.v1.Operation\"\305\001\202\323\344\223\002\232\001\"?/v1/{name="
+          + "projects/*/locations/*/clusters/*}:compl"
+          + "eteIpRotation:\001*ZT\"O/v1/projects/{projec"
+          + "t_id}/zones/{zone}/clusters/{cluster_id}"
+          + ":completeIpRotation:\001*\332A\032project_id,zone"
+          + ",cluster_id\332A\004name\022\221\002\n\017SetNodePoolSize\022+"
+          + ".google.container.v1.SetNodePoolSizeRequ"
+          + "est\032\036.google.container.v1.Operation\"\260\001\202\323"
+          + "\344\223\002\251\001\"@/v1/{name=projects/*/locations/*/"
+          + "clusters/*/nodePools/*}:setSize:\001*Zb\"]/v"
+          + "1/projects/{project_id}/zones/{zone}/clu"
+          + "sters/{cluster_id}/nodePools/{node_pool_"
+          + "id}/setSize:\001*\022\302\002\n\020SetNetworkPolicy\022,.go"
+          + "ogle.container.v1.SetNetworkPolicyReques"
+          + "t\032\036.google.container.v1.Operation\"\337\001\202\323\344\223"
+          + "\002\226\001\"=/v1/{name=projects/*/locations/*/cl"
+          + "usters/*}:setNetworkPolicy:\001*ZR\"M/v1/pro"
+          + "jects/{project_id}/zones/{zone}/clusters"
+          + "/{cluster_id}:setNetworkPolicy:\001*\332A)proj"
+          + "ect_id,zone,cluster_id,network_policy\332A\023"
+          + "name,network_policy\022\332\002\n\024SetMaintenancePo"
+          + "licy\0220.google.container.v1.SetMaintenanc"
+          + "ePolicyRequest\032\036.google.container.v1.Ope"
+          + "ration\"\357\001\202\323\344\223\002\236\001\"A/v1/{name=projects/*/l"
+          + "ocations/*/clusters/*}:setMaintenancePol"
+          + "icy:\001*ZV\"Q/v1/projects/{project_id}/zone"
+          + "s/{zone}/clusters/{cluster_id}:setMainte"
+          + "nancePolicy:\001*\332A-project_id,zone,cluster"
+          + "_id,maintenance_policy\332A\027name,maintenanc"
+          + "e_policy\022\274\001\n\025ListUsableSubnetworks\0221.goo"
+          + "gle.container.v1.ListUsableSubnetworksRe"
+          + "quest\0322.google.container.v1.ListUsableSu"
+          + "bnetworksResponse\"<\202\323\344\223\0026\0224/v1/{parent=p"
+          + "rojects/*}/aggregated/usableSubnetworks\032"
+          + "L\312A\030container.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\305\001"
+          + "\n\027com.google.container.v1B\023ClusterServic"
+          + "eProtoP\001Z<google.golang.org/genproto/goo"
+          + "gleapis/container/v1;container\252\002\031Google."
+          + "Cloud.Container.V1\312\002\031Google\\Cloud\\Contai"
+          + "ner\\V1\352\002\034Google::Cloud::Container::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1038,8 +1219,13 @@ public final class ClusterServiceProto {
               "Accelerators",
               "DiskType",
               "MinCpuPlatform",
+              "WorkloadMetadataConfig",
               "Taints",
+              "SandboxConfig",
+              "NodeGroup",
+              "ReservationAffinity",
               "ShieldedInstanceConfig",
+              "BootDiskKmsKey",
             });
     internal_static_google_container_v1_NodeConfig_MetadataEntry_descriptor =
         internal_static_google_container_v1_NodeConfig_descriptor.getNestedTypes().get(0);
@@ -1065,8 +1251,24 @@ public final class ClusterServiceProto {
             new java.lang.String[] {
               "EnableSecureBoot", "EnableIntegrityMonitoring",
             });
-    internal_static_google_container_v1_NodeTaint_descriptor =
+    internal_static_google_container_v1_SandboxConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_container_v1_SandboxConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_SandboxConfig_descriptor,
+            new java.lang.String[] {
+              "Type",
+            });
+    internal_static_google_container_v1_ReservationAffinity_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_container_v1_ReservationAffinity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_ReservationAffinity_descriptor,
+            new java.lang.String[] {
+              "ConsumeReservationType", "Key", "Values",
+            });
+    internal_static_google_container_v1_NodeTaint_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_container_v1_NodeTaint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NodeTaint_descriptor,
@@ -1074,7 +1276,7 @@ public final class ClusterServiceProto {
               "Key", "Value", "Effect",
             });
     internal_static_google_container_v1_MasterAuth_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_container_v1_MasterAuth_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_MasterAuth_descriptor,
@@ -1087,7 +1289,7 @@ public final class ClusterServiceProto {
               "ClientKey",
             });
     internal_static_google_container_v1_ClientCertificateConfig_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_container_v1_ClientCertificateConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ClientCertificateConfig_descriptor,
@@ -1095,7 +1297,7 @@ public final class ClusterServiceProto {
               "IssueClientCertificate",
             });
     internal_static_google_container_v1_AddonsConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_container_v1_AddonsConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_AddonsConfig_descriptor,
@@ -1105,9 +1307,11 @@ public final class ClusterServiceProto {
               "KubernetesDashboard",
               "NetworkPolicyConfig",
               "CloudRunConfig",
+              "DnsCacheConfig",
+              "ConfigConnectorConfig",
             });
     internal_static_google_container_v1_HttpLoadBalancing_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_container_v1_HttpLoadBalancing_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_HttpLoadBalancing_descriptor,
@@ -1115,7 +1319,7 @@ public final class ClusterServiceProto {
               "Disabled",
             });
     internal_static_google_container_v1_HorizontalPodAutoscaling_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_container_v1_HorizontalPodAutoscaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_HorizontalPodAutoscaling_descriptor,
@@ -1123,7 +1327,7 @@ public final class ClusterServiceProto {
               "Disabled",
             });
     internal_static_google_container_v1_KubernetesDashboard_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_container_v1_KubernetesDashboard_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_KubernetesDashboard_descriptor,
@@ -1131,15 +1335,31 @@ public final class ClusterServiceProto {
               "Disabled",
             });
     internal_static_google_container_v1_NetworkPolicyConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_container_v1_NetworkPolicyConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NetworkPolicyConfig_descriptor,
             new java.lang.String[] {
               "Disabled",
             });
+    internal_static_google_container_v1_DnsCacheConfig_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_container_v1_DnsCacheConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_DnsCacheConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
+    internal_static_google_container_v1_PrivateClusterMasterGlobalAccessConfig_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_container_v1_PrivateClusterMasterGlobalAccessConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_PrivateClusterMasterGlobalAccessConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
     internal_static_google_container_v1_PrivateClusterConfig_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_PrivateClusterConfig_descriptor,
@@ -1149,9 +1369,11 @@ public final class ClusterServiceProto {
               "MasterIpv4CidrBlock",
               "PrivateEndpoint",
               "PublicEndpoint",
+              "PeeringName",
+              "MasterGlobalAccessConfig",
             });
     internal_static_google_container_v1_AuthenticatorGroupsConfig_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_container_v1_AuthenticatorGroupsConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_AuthenticatorGroupsConfig_descriptor,
@@ -1159,15 +1381,23 @@ public final class ClusterServiceProto {
               "Enabled", "SecurityGroup",
             });
     internal_static_google_container_v1_CloudRunConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_container_v1_CloudRunConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_CloudRunConfig_descriptor,
             new java.lang.String[] {
-              "Disabled",
+              "Disabled", "LoadBalancerType",
+            });
+    internal_static_google_container_v1_ConfigConnectorConfig_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_container_v1_ConfigConnectorConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_ConfigConnectorConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled",
             });
     internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_container_v1_MasterAuthorizedNetworksConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor,
@@ -1185,7 +1415,7 @@ public final class ClusterServiceProto {
               "DisplayName", "CidrBlock",
             });
     internal_static_google_container_v1_LegacyAbac_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_container_v1_LegacyAbac_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_LegacyAbac_descriptor,
@@ -1193,7 +1423,7 @@ public final class ClusterServiceProto {
               "Enabled",
             });
     internal_static_google_container_v1_NetworkPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_container_v1_NetworkPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NetworkPolicy_descriptor,
@@ -1201,7 +1431,7 @@ public final class ClusterServiceProto {
               "Provider", "Enabled",
             });
     internal_static_google_container_v1_BinaryAuthorization_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_container_v1_BinaryAuthorization_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_BinaryAuthorization_descriptor,
@@ -1209,7 +1439,7 @@ public final class ClusterServiceProto {
               "Enabled",
             });
     internal_static_google_container_v1_IPAllocationPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_container_v1_IPAllocationPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_IPAllocationPolicy_descriptor,
@@ -1226,9 +1456,10 @@ public final class ClusterServiceProto {
               "NodeIpv4CidrBlock",
               "ServicesIpv4CidrBlock",
               "TpuIpv4CidrBlock",
+              "UseRoutes",
             });
     internal_static_google_container_v1_Cluster_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_container_v1_Cluster_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_Cluster_descriptor,
@@ -1263,6 +1494,9 @@ public final class ClusterServiceProto {
               "PrivateClusterConfig",
               "DatabaseEncryption",
               "VerticalPodAutoscaling",
+              "ShieldedNodes",
+              "ReleaseChannel",
+              "WorkloadIdentityConfig",
               "SelfLink",
               "Zone",
               "Endpoint",
@@ -1291,7 +1525,7 @@ public final class ClusterServiceProto {
               "Key", "Value",
             });
     internal_static_google_container_v1_ClusterUpdate_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_container_v1_ClusterUpdate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ClusterUpdate_descriptor,
@@ -1302,6 +1536,8 @@ public final class ClusterServiceProto {
               "DesiredNodePoolId",
               "DesiredImageType",
               "DesiredDatabaseEncryption",
+              "DesiredWorkloadIdentityConfig",
+              "DesiredShieldedNodes",
               "DesiredNodePoolAutoscaling",
               "DesiredLocations",
               "DesiredMasterAuthorizedNetworksConfig",
@@ -1310,11 +1546,14 @@ public final class ClusterServiceProto {
               "DesiredLoggingService",
               "DesiredResourceUsageExportConfig",
               "DesiredVerticalPodAutoscaling",
+              "DesiredPrivateClusterConfig",
               "DesiredIntraNodeVisibilityConfig",
+              "DesiredDefaultSnatStatus",
+              "DesiredReleaseChannel",
               "DesiredMasterVersion",
             });
     internal_static_google_container_v1_Operation_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_container_v1_Operation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_Operation_descriptor,
@@ -1330,11 +1569,28 @@ public final class ClusterServiceProto {
               "Location",
               "StartTime",
               "EndTime",
+              "Progress",
               "ClusterConditions",
               "NodepoolConditions",
             });
+    internal_static_google_container_v1_OperationProgress_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_container_v1_OperationProgress_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_OperationProgress_descriptor,
+            new java.lang.String[] {
+              "Name", "Status", "Metrics", "Stages",
+            });
+    internal_static_google_container_v1_OperationProgress_Metric_descriptor =
+        internal_static_google_container_v1_OperationProgress_descriptor.getNestedTypes().get(0);
+    internal_static_google_container_v1_OperationProgress_Metric_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_OperationProgress_Metric_descriptor,
+            new java.lang.String[] {
+              "Name", "IntValue", "DoubleValue", "StringValue", "Value",
+            });
     internal_static_google_container_v1_CreateClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_container_v1_CreateClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_CreateClusterRequest_descriptor,
@@ -1342,7 +1598,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "Cluster", "Parent",
             });
     internal_static_google_container_v1_GetClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_container_v1_GetClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_GetClusterRequest_descriptor,
@@ -1350,7 +1606,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Name",
             });
     internal_static_google_container_v1_UpdateClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_container_v1_UpdateClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_UpdateClusterRequest_descriptor,
@@ -1358,15 +1614,24 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Update", "Name",
             });
     internal_static_google_container_v1_UpdateNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_container_v1_UpdateNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_UpdateNodePoolRequest_descriptor,
             new java.lang.String[] {
-              "ProjectId", "Zone", "ClusterId", "NodePoolId", "NodeVersion", "ImageType", "Name",
+              "ProjectId",
+              "Zone",
+              "ClusterId",
+              "NodePoolId",
+              "NodeVersion",
+              "ImageType",
+              "Name",
+              "Locations",
+              "WorkloadMetadataConfig",
+              "UpgradeSettings",
             });
     internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_container_v1_SetNodePoolAutoscalingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor,
@@ -1374,7 +1639,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "Autoscaling", "Name",
             });
     internal_static_google_container_v1_SetLoggingServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_container_v1_SetLoggingServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetLoggingServiceRequest_descriptor,
@@ -1382,7 +1647,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "LoggingService", "Name",
             });
     internal_static_google_container_v1_SetMonitoringServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_container_v1_SetMonitoringServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetMonitoringServiceRequest_descriptor,
@@ -1390,7 +1655,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "MonitoringService", "Name",
             });
     internal_static_google_container_v1_SetAddonsConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_container_v1_SetAddonsConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetAddonsConfigRequest_descriptor,
@@ -1398,7 +1663,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "AddonsConfig", "Name",
             });
     internal_static_google_container_v1_SetLocationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_container_v1_SetLocationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetLocationsRequest_descriptor,
@@ -1406,7 +1671,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Locations", "Name",
             });
     internal_static_google_container_v1_UpdateMasterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_container_v1_UpdateMasterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_UpdateMasterRequest_descriptor,
@@ -1414,7 +1679,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "MasterVersion", "Name",
             });
     internal_static_google_container_v1_SetMasterAuthRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_container_v1_SetMasterAuthRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetMasterAuthRequest_descriptor,
@@ -1422,7 +1687,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Action", "Update", "Name",
             });
     internal_static_google_container_v1_DeleteClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_container_v1_DeleteClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_DeleteClusterRequest_descriptor,
@@ -1430,7 +1695,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Name",
             });
     internal_static_google_container_v1_ListClustersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_container_v1_ListClustersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListClustersRequest_descriptor,
@@ -1438,7 +1703,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "Parent",
             });
     internal_static_google_container_v1_ListClustersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_container_v1_ListClustersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListClustersResponse_descriptor,
@@ -1446,7 +1711,7 @@ public final class ClusterServiceProto {
               "Clusters", "MissingZones",
             });
     internal_static_google_container_v1_GetOperationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_container_v1_GetOperationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_GetOperationRequest_descriptor,
@@ -1454,7 +1719,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "OperationId", "Name",
             });
     internal_static_google_container_v1_ListOperationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_container_v1_ListOperationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListOperationsRequest_descriptor,
@@ -1462,7 +1727,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "Parent",
             });
     internal_static_google_container_v1_CancelOperationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_container_v1_CancelOperationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_CancelOperationRequest_descriptor,
@@ -1470,7 +1735,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "OperationId", "Name",
             });
     internal_static_google_container_v1_ListOperationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_container_v1_ListOperationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListOperationsResponse_descriptor,
@@ -1478,7 +1743,7 @@ public final class ClusterServiceProto {
               "Operations", "MissingZones",
             });
     internal_static_google_container_v1_GetServerConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_container_v1_GetServerConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_GetServerConfigRequest_descriptor,
@@ -1486,7 +1751,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "Name",
             });
     internal_static_google_container_v1_ServerConfig_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_container_v1_ServerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ServerConfig_descriptor,
@@ -1496,9 +1761,18 @@ public final class ClusterServiceProto {
               "DefaultImageType",
               "ValidImageTypes",
               "ValidMasterVersions",
+              "Channels",
+            });
+    internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor =
+        internal_static_google_container_v1_ServerConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor,
+            new java.lang.String[] {
+              "Channel", "DefaultVersion", "ValidVersions",
             });
     internal_static_google_container_v1_CreateNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_container_v1_CreateNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_CreateNodePoolRequest_descriptor,
@@ -1506,7 +1780,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePool", "Parent",
             });
     internal_static_google_container_v1_DeleteNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_container_v1_DeleteNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_DeleteNodePoolRequest_descriptor,
@@ -1514,7 +1788,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "Name",
             });
     internal_static_google_container_v1_ListNodePoolsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_container_v1_ListNodePoolsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListNodePoolsRequest_descriptor,
@@ -1522,7 +1796,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Parent",
             });
     internal_static_google_container_v1_GetNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_container_v1_GetNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_GetNodePoolRequest_descriptor,
@@ -1530,7 +1804,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "Name",
             });
     internal_static_google_container_v1_NodePool_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_container_v1_NodePool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NodePool_descriptor,
@@ -1538,6 +1812,7 @@ public final class ClusterServiceProto {
               "Name",
               "Config",
               "InitialNodeCount",
+              "Locations",
               "SelfLink",
               "Version",
               "InstanceGroupUrls",
@@ -1548,9 +1823,18 @@ public final class ClusterServiceProto {
               "MaxPodsConstraint",
               "Conditions",
               "PodIpv4CidrSize",
+              "UpgradeSettings",
+            });
+    internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor =
+        internal_static_google_container_v1_NodePool_descriptor.getNestedTypes().get(0);
+    internal_static_google_container_v1_NodePool_UpgradeSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_NodePool_UpgradeSettings_descriptor,
+            new java.lang.String[] {
+              "MaxSurge", "MaxUnavailable",
             });
     internal_static_google_container_v1_NodeManagement_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_container_v1_NodeManagement_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NodeManagement_descriptor,
@@ -1558,7 +1842,7 @@ public final class ClusterServiceProto {
               "AutoUpgrade", "AutoRepair", "UpgradeOptions",
             });
     internal_static_google_container_v1_AutoUpgradeOptions_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_container_v1_AutoUpgradeOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_AutoUpgradeOptions_descriptor,
@@ -1566,7 +1850,7 @@ public final class ClusterServiceProto {
               "AutoUpgradeStartTime", "Description",
             });
     internal_static_google_container_v1_MaintenancePolicy_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_container_v1_MaintenancePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_MaintenancePolicy_descriptor,
@@ -1574,7 +1858,7 @@ public final class ClusterServiceProto {
               "Window", "ResourceVersion",
             });
     internal_static_google_container_v1_MaintenanceWindow_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_container_v1_MaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_MaintenanceWindow_descriptor,
@@ -1590,7 +1874,7 @@ public final class ClusterServiceProto {
               "Key", "Value",
             });
     internal_static_google_container_v1_TimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_container_v1_TimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_TimeWindow_descriptor,
@@ -1598,7 +1882,7 @@ public final class ClusterServiceProto {
               "StartTime", "EndTime",
             });
     internal_static_google_container_v1_RecurringTimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_container_v1_RecurringTimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_RecurringTimeWindow_descriptor,
@@ -1606,7 +1890,7 @@ public final class ClusterServiceProto {
               "Window", "Recurrence",
             });
     internal_static_google_container_v1_DailyMaintenanceWindow_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_container_v1_DailyMaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_DailyMaintenanceWindow_descriptor,
@@ -1614,7 +1898,7 @@ public final class ClusterServiceProto {
               "StartTime", "Duration",
             });
     internal_static_google_container_v1_SetNodePoolManagementRequest_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_container_v1_SetNodePoolManagementRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetNodePoolManagementRequest_descriptor,
@@ -1622,7 +1906,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "Management", "Name",
             });
     internal_static_google_container_v1_SetNodePoolSizeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_container_v1_SetNodePoolSizeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetNodePoolSizeRequest_descriptor,
@@ -1630,7 +1914,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "NodeCount", "Name",
             });
     internal_static_google_container_v1_RollbackNodePoolUpgradeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_container_v1_RollbackNodePoolUpgradeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_RollbackNodePoolUpgradeRequest_descriptor,
@@ -1638,7 +1922,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NodePoolId", "Name",
             });
     internal_static_google_container_v1_ListNodePoolsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(56);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_container_v1_ListNodePoolsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListNodePoolsResponse_descriptor,
@@ -1646,7 +1930,7 @@ public final class ClusterServiceProto {
               "NodePools",
             });
     internal_static_google_container_v1_ClusterAutoscaling_descriptor =
-        getDescriptor().getMessageTypes().get(57);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_container_v1_ClusterAutoscaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ClusterAutoscaling_descriptor,
@@ -1657,15 +1941,23 @@ public final class ClusterServiceProto {
               "AutoprovisioningLocations",
             });
     internal_static_google_container_v1_AutoprovisioningNodePoolDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(58);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_container_v1_AutoprovisioningNodePoolDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_AutoprovisioningNodePoolDefaults_descriptor,
             new java.lang.String[] {
-              "OauthScopes", "ServiceAccount",
+              "OauthScopes",
+              "ServiceAccount",
+              "UpgradeSettings",
+              "Management",
+              "MinCpuPlatform",
+              "DiskSizeGb",
+              "DiskType",
+              "ShieldedInstanceConfig",
+              "BootDiskKmsKey",
             });
     internal_static_google_container_v1_ResourceLimit_descriptor =
-        getDescriptor().getMessageTypes().get(59);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_container_v1_ResourceLimit_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ResourceLimit_descriptor,
@@ -1673,7 +1965,7 @@ public final class ClusterServiceProto {
               "ResourceType", "Minimum", "Maximum",
             });
     internal_static_google_container_v1_NodePoolAutoscaling_descriptor =
-        getDescriptor().getMessageTypes().get(60);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_container_v1_NodePoolAutoscaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NodePoolAutoscaling_descriptor,
@@ -1681,7 +1973,7 @@ public final class ClusterServiceProto {
               "Enabled", "MinNodeCount", "MaxNodeCount", "Autoprovisioned",
             });
     internal_static_google_container_v1_SetLabelsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(61);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_container_v1_SetLabelsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetLabelsRequest_descriptor,
@@ -1697,7 +1989,7 @@ public final class ClusterServiceProto {
               "Key", "Value",
             });
     internal_static_google_container_v1_SetLegacyAbacRequest_descriptor =
-        getDescriptor().getMessageTypes().get(62);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_container_v1_SetLegacyAbacRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetLegacyAbacRequest_descriptor,
@@ -1705,7 +1997,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Enabled", "Name",
             });
     internal_static_google_container_v1_StartIPRotationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(63);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_container_v1_StartIPRotationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_StartIPRotationRequest_descriptor,
@@ -1713,7 +2005,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Name", "RotateCredentials",
             });
     internal_static_google_container_v1_CompleteIPRotationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(64);
+        getDescriptor().getMessageTypes().get(70);
     internal_static_google_container_v1_CompleteIPRotationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_CompleteIPRotationRequest_descriptor,
@@ -1721,15 +2013,23 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "Name",
             });
     internal_static_google_container_v1_AcceleratorConfig_descriptor =
-        getDescriptor().getMessageTypes().get(65);
+        getDescriptor().getMessageTypes().get(71);
     internal_static_google_container_v1_AcceleratorConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_AcceleratorConfig_descriptor,
             new java.lang.String[] {
               "AcceleratorCount", "AcceleratorType",
             });
+    internal_static_google_container_v1_WorkloadMetadataConfig_descriptor =
+        getDescriptor().getMessageTypes().get(72);
+    internal_static_google_container_v1_WorkloadMetadataConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_WorkloadMetadataConfig_descriptor,
+            new java.lang.String[] {
+              "Mode",
+            });
     internal_static_google_container_v1_SetNetworkPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(66);
+        getDescriptor().getMessageTypes().get(73);
     internal_static_google_container_v1_SetNetworkPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetNetworkPolicyRequest_descriptor,
@@ -1737,7 +2037,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "NetworkPolicy", "Name",
             });
     internal_static_google_container_v1_SetMaintenancePolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(67);
+        getDescriptor().getMessageTypes().get(74);
     internal_static_google_container_v1_SetMaintenancePolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_SetMaintenancePolicyRequest_descriptor,
@@ -1745,7 +2045,7 @@ public final class ClusterServiceProto {
               "ProjectId", "Zone", "ClusterId", "MaintenancePolicy", "Name",
             });
     internal_static_google_container_v1_StatusCondition_descriptor =
-        getDescriptor().getMessageTypes().get(68);
+        getDescriptor().getMessageTypes().get(75);
     internal_static_google_container_v1_StatusCondition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_StatusCondition_descriptor,
@@ -1753,15 +2053,68 @@ public final class ClusterServiceProto {
               "Code", "Message",
             });
     internal_static_google_container_v1_NetworkConfig_descriptor =
-        getDescriptor().getMessageTypes().get(69);
+        getDescriptor().getMessageTypes().get(76);
     internal_static_google_container_v1_NetworkConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_NetworkConfig_descriptor,
             new java.lang.String[] {
-              "Network", "Subnetwork", "EnableIntraNodeVisibility",
+              "Network", "Subnetwork", "EnableIntraNodeVisibility", "DefaultSnatStatus",
+            });
+    internal_static_google_container_v1_GetOpenIDConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(77);
+    internal_static_google_container_v1_GetOpenIDConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_GetOpenIDConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_container_v1_GetOpenIDConfigResponse_descriptor =
+        getDescriptor().getMessageTypes().get(78);
+    internal_static_google_container_v1_GetOpenIDConfigResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_GetOpenIDConfigResponse_descriptor,
+            new java.lang.String[] {
+              "Issuer",
+              "JwksUri",
+              "ResponseTypesSupported",
+              "SubjectTypesSupported",
+              "IdTokenSigningAlgValuesSupported",
+              "ClaimsSupported",
+              "GrantTypes",
+            });
+    internal_static_google_container_v1_GetJSONWebKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(79);
+    internal_static_google_container_v1_GetJSONWebKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_GetJSONWebKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_container_v1_Jwk_descriptor = getDescriptor().getMessageTypes().get(80);
+    internal_static_google_container_v1_Jwk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_Jwk_descriptor,
+            new java.lang.String[] {
+              "Kty", "Alg", "Use", "Kid", "N", "E", "X", "Y", "Crv",
+            });
+    internal_static_google_container_v1_GetJSONWebKeysResponse_descriptor =
+        getDescriptor().getMessageTypes().get(81);
+    internal_static_google_container_v1_GetJSONWebKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_GetJSONWebKeysResponse_descriptor,
+            new java.lang.String[] {
+              "Keys",
+            });
+    internal_static_google_container_v1_ReleaseChannel_descriptor =
+        getDescriptor().getMessageTypes().get(82);
+    internal_static_google_container_v1_ReleaseChannel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_ReleaseChannel_descriptor,
+            new java.lang.String[] {
+              "Channel",
             });
     internal_static_google_container_v1_IntraNodeVisibilityConfig_descriptor =
-        getDescriptor().getMessageTypes().get(70);
+        getDescriptor().getMessageTypes().get(83);
     internal_static_google_container_v1_IntraNodeVisibilityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_IntraNodeVisibilityConfig_descriptor,
@@ -1769,15 +2122,23 @@ public final class ClusterServiceProto {
               "Enabled",
             });
     internal_static_google_container_v1_MaxPodsConstraint_descriptor =
-        getDescriptor().getMessageTypes().get(71);
+        getDescriptor().getMessageTypes().get(84);
     internal_static_google_container_v1_MaxPodsConstraint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_MaxPodsConstraint_descriptor,
             new java.lang.String[] {
               "MaxPodsPerNode",
             });
+    internal_static_google_container_v1_WorkloadIdentityConfig_descriptor =
+        getDescriptor().getMessageTypes().get(85);
+    internal_static_google_container_v1_WorkloadIdentityConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_WorkloadIdentityConfig_descriptor,
+            new java.lang.String[] {
+              "WorkloadPool",
+            });
     internal_static_google_container_v1_DatabaseEncryption_descriptor =
-        getDescriptor().getMessageTypes().get(72);
+        getDescriptor().getMessageTypes().get(86);
     internal_static_google_container_v1_DatabaseEncryption_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_DatabaseEncryption_descriptor,
@@ -1785,7 +2146,7 @@ public final class ClusterServiceProto {
               "State", "KeyName",
             });
     internal_static_google_container_v1_ListUsableSubnetworksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(73);
+        getDescriptor().getMessageTypes().get(87);
     internal_static_google_container_v1_ListUsableSubnetworksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListUsableSubnetworksRequest_descriptor,
@@ -1793,7 +2154,7 @@ public final class ClusterServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_container_v1_ListUsableSubnetworksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(74);
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_container_v1_ListUsableSubnetworksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ListUsableSubnetworksResponse_descriptor,
@@ -1801,7 +2162,7 @@ public final class ClusterServiceProto {
               "Subnetworks", "NextPageToken",
             });
     internal_static_google_container_v1_UsableSubnetworkSecondaryRange_descriptor =
-        getDescriptor().getMessageTypes().get(75);
+        getDescriptor().getMessageTypes().get(89);
     internal_static_google_container_v1_UsableSubnetworkSecondaryRange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_UsableSubnetworkSecondaryRange_descriptor,
@@ -1809,7 +2170,7 @@ public final class ClusterServiceProto {
               "RangeName", "IpCidrRange", "Status",
             });
     internal_static_google_container_v1_UsableSubnetwork_descriptor =
-        getDescriptor().getMessageTypes().get(76);
+        getDescriptor().getMessageTypes().get(90);
     internal_static_google_container_v1_UsableSubnetwork_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_UsableSubnetwork_descriptor,
@@ -1817,7 +2178,7 @@ public final class ClusterServiceProto {
               "Subnetwork", "Network", "IpCidrRange", "SecondaryIpRanges", "StatusMessage",
             });
     internal_static_google_container_v1_ResourceUsageExportConfig_descriptor =
-        getDescriptor().getMessageTypes().get(77);
+        getDescriptor().getMessageTypes().get(91);
     internal_static_google_container_v1_ResourceUsageExportConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_ResourceUsageExportConfig_descriptor,
@@ -1845,10 +2206,26 @@ public final class ClusterServiceProto {
               "Enabled",
             });
     internal_static_google_container_v1_VerticalPodAutoscaling_descriptor =
-        getDescriptor().getMessageTypes().get(78);
+        getDescriptor().getMessageTypes().get(92);
     internal_static_google_container_v1_VerticalPodAutoscaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_container_v1_VerticalPodAutoscaling_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
+    internal_static_google_container_v1_DefaultSnatStatus_descriptor =
+        getDescriptor().getMessageTypes().get(93);
+    internal_static_google_container_v1_DefaultSnatStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_DefaultSnatStatus_descriptor,
+            new java.lang.String[] {
+              "Disabled",
+            });
+    internal_static_google_container_v1_ShieldedNodes_descriptor =
+        getDescriptor().getMessageTypes().get(94);
+    internal_static_google_container_v1_ShieldedNodes_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_container_v1_ShieldedNodes_descriptor,
             new java.lang.String[] {
               "Enabled",
             });

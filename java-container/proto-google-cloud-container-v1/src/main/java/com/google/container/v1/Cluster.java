@@ -470,6 +470,54 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 322:
+            {
+              com.google.container.v1.ShieldedNodes.Builder subBuilder = null;
+              if (shieldedNodes_ != null) {
+                subBuilder = shieldedNodes_.toBuilder();
+              }
+              shieldedNodes_ =
+                  input.readMessage(
+                      com.google.container.v1.ShieldedNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedNodes_);
+                shieldedNodes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 330:
+            {
+              com.google.container.v1.ReleaseChannel.Builder subBuilder = null;
+              if (releaseChannel_ != null) {
+                subBuilder = releaseChannel_.toBuilder();
+              }
+              releaseChannel_ =
+                  input.readMessage(
+                      com.google.container.v1.ReleaseChannel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(releaseChannel_);
+                releaseChannel_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 346:
+            {
+              com.google.container.v1.WorkloadIdentityConfig.Builder subBuilder = null;
+              if (workloadIdentityConfig_ != null) {
+                subBuilder = workloadIdentityConfig_.toBuilder();
+              }
+              workloadIdentityConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.WorkloadIdentityConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workloadIdentityConfig_);
+                workloadIdentityConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 802:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -720,8 +768,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ERROR state indicates the cluster may be unusable. Details
-     * can be found in the `statusMessage` field.
+     * The ERROR state indicates the cluster is unusable. It will be
+     * automatically deleted. Details can be found in the `statusMessage` field.
      * </pre>
      *
      * <code>ERROR = 5;</code>
@@ -798,8 +846,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ERROR state indicates the cluster may be unusable. Details
-     * can be found in the `statusMessage` field.
+     * The ERROR state indicates the cluster is unusable. It will be
+     * automatically deleted. Details can be found in the `statusMessage` field.
      * </pre>
      *
      * <code>ERROR = 5;</code>
@@ -1189,11 +1237,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * `logging.googleapis.com` - the Google Cloud Logging service.
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
-   * * if left as an empty string,`logging.googleapis.com` will be used.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 6;</code>
@@ -1218,11 +1268,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-   * service with Kubernetes-native resource model
-   * * `logging.googleapis.com` - the Google Cloud Logging service.
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
-   * * if left as an empty string,`logging.googleapis.com` will be used.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 6;</code>
@@ -1250,9 +1302,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-   * * `none` - no metrics will be exported from the cluster.
-   * * if left as an empty string, `monitoring.googleapis.com` will be used.
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 7;</code>
@@ -1277,9 +1333,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
-   * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-   * * `none` - no metrics will be exported from the cluster.
-   * * if left as an empty string, `monitoring.googleapis.com` will be used.
+   * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+   * service with a Kubernetes-native resource model
+   * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+   *   longer available as of GKE 1.15).
+   * * `none` - No metrics will be exported from the cluster.
+   * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string monitoring_service = 7;</code>
@@ -1306,9 +1366,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-   * cluster is connected. If left unspecified, the `default` network
-   * will be used.
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. If left unspecified, the `default`
+   * network will be used.
    * </pre>
    *
    * <code>string network = 8;</code>
@@ -1332,9 +1392,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-   * cluster is connected. If left unspecified, the `default` network
-   * will be used.
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. If left unspecified, the `default`
+   * network will be used.
    * </pre>
    *
    * <code>string network = 8;</code>
@@ -1464,8 +1524,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-   * cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+   * the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -1489,8 +1549,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-   * cluster is connected.
+   * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+   * the cluster is connected.
    * </pre>
    *
    * <code>string subnetwork = 11;</code>
@@ -1596,8 +1656,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -1612,8 +1678,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -1628,8 +1700,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -1645,8 +1723,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-   * should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster's nodes should be located.
+   * This field provides a default value if
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * are not specified during node pool creation.
+   * Warning: changing cluster locations will update the
+   * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+   * of all node pools and will result in nodes being added and/or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -2527,6 +2611,154 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return getVerticalPodAutoscaling();
   }
 
+  public static final int SHIELDED_NODES_FIELD_NUMBER = 40;
+  private com.google.container.v1.ShieldedNodes shieldedNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   *
+   * @return Whether the shieldedNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasShieldedNodes() {
+    return shieldedNodes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   *
+   * @return The shieldedNodes.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedNodes getShieldedNodes() {
+    return shieldedNodes_ == null
+        ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+        : shieldedNodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Nodes configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ShieldedNodesOrBuilder getShieldedNodesOrBuilder() {
+    return getShieldedNodes();
+  }
+
+  public static final int RELEASE_CHANNEL_FIELD_NUMBER = 41;
+  private com.google.container.v1.ReleaseChannel releaseChannel_;
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   *
+   * @return Whether the releaseChannel field is set.
+   */
+  @java.lang.Override
+  public boolean hasReleaseChannel() {
+    return releaseChannel_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   *
+   * @return The releaseChannel.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReleaseChannel getReleaseChannel() {
+    return releaseChannel_ == null
+        ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+        : releaseChannel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Release channel configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ReleaseChannelOrBuilder getReleaseChannelOrBuilder() {
+    return getReleaseChannel();
+  }
+
+  public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 43;
+  private com.google.container.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ == null
+        ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+   * policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.WorkloadIdentityConfigOrBuilder
+      getWorkloadIdentityConfigOrBuilder() {
+    return getWorkloadIdentityConfig();
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 100;
   private volatile java.lang.Object selfLink_;
   /**
@@ -2583,9 +2815,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true];</code>
@@ -2610,9 +2841,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field is deprecated, use location instead.
    * </pre>
    *
    * <code>string zone = 101 [deprecated = true];</code>
@@ -2815,7 +3045,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -2843,7 +3073,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] Deprecated, use
-   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+   * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
    * instead. The current version of the node software components. If they are
    * currently at multiple versions because they're in the process of being
    * upgraded, this reflects the minimum version of all nodes.
@@ -2960,15 +3190,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * cluster, if available.
    * </pre>
    *
-   * <code>string status_message = 108;</code>
+   * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @return The statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -2984,15 +3216,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Additional information about the current status of this
+   * [Output only] Deprecated. Use conditions instead.
+   * Additional information about the current status of this
    * cluster, if available.
    * </pre>
    *
-   * <code>string status_message = 108;</code>
+   * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -3226,9 +3460,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 114;</code>
@@ -3252,9 +3487,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * [Output only] The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-   * the cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * or
+   * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string location = 114;</code>
@@ -3517,6 +3753,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (verticalPodAutoscaling_ != null) {
       output.writeMessage(39, getVerticalPodAutoscaling());
     }
+    if (shieldedNodes_ != null) {
+      output.writeMessage(40, getShieldedNodes());
+    }
+    if (releaseChannel_ != null) {
+      output.writeMessage(41, getReleaseChannel());
+    }
+    if (workloadIdentityConfig_ != null) {
+      output.writeMessage(43, getWorkloadIdentityConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -3693,6 +3938,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(39, getVerticalPodAutoscaling());
     }
+    if (shieldedNodes_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(40, getShieldedNodes());
+    }
+    if (releaseChannel_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getReleaseChannel());
+    }
+    if (workloadIdentityConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(43, getWorkloadIdentityConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -3852,6 +4107,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasVerticalPodAutoscaling()) {
       if (!getVerticalPodAutoscaling().equals(other.getVerticalPodAutoscaling())) return false;
     }
+    if (hasShieldedNodes() != other.hasShieldedNodes()) return false;
+    if (hasShieldedNodes()) {
+      if (!getShieldedNodes().equals(other.getShieldedNodes())) return false;
+    }
+    if (hasReleaseChannel() != other.hasReleaseChannel()) return false;
+    if (hasReleaseChannel()) {
+      if (!getReleaseChannel().equals(other.getReleaseChannel())) return false;
+    }
+    if (hasWorkloadIdentityConfig() != other.hasWorkloadIdentityConfig()) return false;
+    if (hasWorkloadIdentityConfig()) {
+      if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
+    }
     if (!getSelfLink().equals(other.getSelfLink())) return false;
     if (!getZone().equals(other.getZone())) return false;
     if (!getEndpoint().equals(other.getEndpoint())) return false;
@@ -3980,6 +4247,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasVerticalPodAutoscaling()) {
       hash = (37 * hash) + VERTICAL_POD_AUTOSCALING_FIELD_NUMBER;
       hash = (53 * hash) + getVerticalPodAutoscaling().hashCode();
+    }
+    if (hasShieldedNodes()) {
+      hash = (37 * hash) + SHIELDED_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedNodes().hashCode();
+    }
+    if (hasReleaseChannel()) {
+      hash = (37 * hash) + RELEASE_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getReleaseChannel().hashCode();
+    }
+    if (hasWorkloadIdentityConfig()) {
+      hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
     }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
@@ -4318,6 +4597,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         verticalPodAutoscaling_ = null;
         verticalPodAutoscalingBuilder_ = null;
       }
+      if (shieldedNodesBuilder_ == null) {
+        shieldedNodes_ = null;
+      } else {
+        shieldedNodes_ = null;
+        shieldedNodesBuilder_ = null;
+      }
+      if (releaseChannelBuilder_ == null) {
+        releaseChannel_ = null;
+      } else {
+        releaseChannel_ = null;
+        releaseChannelBuilder_ = null;
+      }
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = null;
+      } else {
+        workloadIdentityConfig_ = null;
+        workloadIdentityConfigBuilder_ = null;
+      }
       selfLink_ = "";
 
       zone_ = "";
@@ -4495,6 +4792,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         result.verticalPodAutoscaling_ = verticalPodAutoscaling_;
       } else {
         result.verticalPodAutoscaling_ = verticalPodAutoscalingBuilder_.build();
+      }
+      if (shieldedNodesBuilder_ == null) {
+        result.shieldedNodes_ = shieldedNodes_;
+      } else {
+        result.shieldedNodes_ = shieldedNodesBuilder_.build();
+      }
+      if (releaseChannelBuilder_ == null) {
+        result.releaseChannel_ = releaseChannel_;
+      } else {
+        result.releaseChannel_ = releaseChannelBuilder_.build();
+      }
+      if (workloadIdentityConfigBuilder_ == null) {
+        result.workloadIdentityConfig_ = workloadIdentityConfig_;
+      } else {
+        result.workloadIdentityConfig_ = workloadIdentityConfigBuilder_.build();
       }
       result.selfLink_ = selfLink_;
       result.zone_ = zone_;
@@ -4701,6 +5013,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasVerticalPodAutoscaling()) {
         mergeVerticalPodAutoscaling(other.getVerticalPodAutoscaling());
+      }
+      if (other.hasShieldedNodes()) {
+        mergeShieldedNodes(other.getShieldedNodes());
+      }
+      if (other.hasReleaseChannel()) {
+        mergeReleaseChannel(other.getReleaseChannel());
+      }
+      if (other.hasWorkloadIdentityConfig()) {
+        mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
@@ -5648,11 +5969,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * `logging.googleapis.com` - the Google Cloud Logging service.
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
-     * * if left as an empty string,`logging.googleapis.com` will be used.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string logging_service = 6;</code>
@@ -5676,11 +5999,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * `logging.googleapis.com` - the Google Cloud Logging service.
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
-     * * if left as an empty string,`logging.googleapis.com` will be used.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string logging_service = 6;</code>
@@ -5704,11 +6029,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * `logging.googleapis.com` - the Google Cloud Logging service.
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
-     * * if left as an empty string,`logging.googleapis.com` will be used.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string logging_service = 6;</code>
@@ -5731,11 +6058,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * `logging.googleapis.com` - the Google Cloud Logging service.
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
-     * * if left as an empty string,`logging.googleapis.com` will be used.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string logging_service = 6;</code>
@@ -5754,11 +6083,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
-     * * "logging.googleapis.com/kubernetes" - the Google Cloud Logging
-     * service with Kubernetes-native resource model
-     * * `logging.googleapis.com` - the Google Cloud Logging service.
+     * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+     * service with a Kubernetes-native resource model
+     * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+     *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
-     * * if left as an empty string,`logging.googleapis.com` will be used.
+     * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string logging_service = 6;</code>
@@ -5784,9 +6115,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-     * * `none` - no metrics will be exported from the cluster.
-     * * if left as an empty string, `monitoring.googleapis.com` will be used.
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 7;</code>
@@ -5810,9 +6145,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-     * * `none` - no metrics will be exported from the cluster.
-     * * if left as an empty string, `monitoring.googleapis.com` will be used.
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 7;</code>
@@ -5836,9 +6175,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-     * * `none` - no metrics will be exported from the cluster.
-     * * if left as an empty string, `monitoring.googleapis.com` will be used.
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 7;</code>
@@ -5861,9 +6204,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-     * * `none` - no metrics will be exported from the cluster.
-     * * if left as an empty string, `monitoring.googleapis.com` will be used.
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 7;</code>
@@ -5882,9 +6229,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
-     * * `monitoring.googleapis.com` - the Google Cloud Monitoring service.
-     * * `none` - no metrics will be exported from the cluster.
-     * * if left as an empty string, `monitoring.googleapis.com` will be used.
+     * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
+     * service with a Kubernetes-native resource model
+     * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
+     *   longer available as of GKE 1.15).
+     * * `none` - No metrics will be exported from the cluster.
+     * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
+     * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
      *
      * <code>string monitoring_service = 7;</code>
@@ -5909,9 +6260,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-     * cluster is connected. If left unspecified, the `default` network
-     * will be used.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. If left unspecified, the `default`
+     * network will be used.
      * </pre>
      *
      * <code>string network = 8;</code>
@@ -5934,9 +6285,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-     * cluster is connected. If left unspecified, the `default` network
-     * will be used.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. If left unspecified, the `default`
+     * network will be used.
      * </pre>
      *
      * <code>string network = 8;</code>
@@ -5959,9 +6310,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-     * cluster is connected. If left unspecified, the `default` network
-     * will be used.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. If left unspecified, the `default`
+     * network will be used.
      * </pre>
      *
      * <code>string network = 8;</code>
@@ -5983,9 +6334,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-     * cluster is connected. If left unspecified, the `default` network
-     * will be used.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. If left unspecified, the `default`
+     * network will be used.
      * </pre>
      *
      * <code>string network = 8;</code>
@@ -6003,9 +6354,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the
-     * cluster is connected. If left unspecified, the `default` network
-     * will be used.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. If left unspecified, the `default`
+     * network will be used.
      * </pre>
      *
      * <code>string network = 8;</code>
@@ -6336,8 +6687,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-     * cluster is connected.
+     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+     * the cluster is connected.
      * </pre>
      *
      * <code>string subnetwork = 11;</code>
@@ -6360,8 +6711,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-     * cluster is connected.
+     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+     * the cluster is connected.
      * </pre>
      *
      * <code>string subnetwork = 11;</code>
@@ -6384,8 +6735,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-     * cluster is connected.
+     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+     * the cluster is connected.
      * </pre>
      *
      * <code>string subnetwork = 11;</code>
@@ -6407,8 +6758,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-     * cluster is connected.
+     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+     * the cluster is connected.
      * </pre>
      *
      * <code>string subnetwork = 11;</code>
@@ -6426,8 +6777,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the
-     * cluster is connected.
+     * [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which
+     * the cluster is connected.
      * </pre>
      *
      * <code>string subnetwork = 11;</code>
@@ -6844,8 +7195,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6860,8 +7217,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6876,8 +7239,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6893,8 +7262,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6910,8 +7285,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6934,8 +7315,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6957,8 +7344,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6977,8 +7370,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -6996,8 +7395,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes
-     * should be located.
+     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster's nodes should be located.
+     * This field provides a default value if
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * are not specified during node pool creation.
+     * Warning: changing cluster locations will update the
+     * [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations)
+     * of all node pools and will result in nodes being added and/or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -10033,6 +10438,575 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return verticalPodAutoscalingBuilder_;
     }
 
+    private com.google.container.v1.ShieldedNodes shieldedNodes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedNodes,
+            com.google.container.v1.ShieldedNodes.Builder,
+            com.google.container.v1.ShieldedNodesOrBuilder>
+        shieldedNodesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     *
+     * @return Whether the shieldedNodes field is set.
+     */
+    public boolean hasShieldedNodes() {
+      return shieldedNodesBuilder_ != null || shieldedNodes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     *
+     * @return The shieldedNodes.
+     */
+    public com.google.container.v1.ShieldedNodes getShieldedNodes() {
+      if (shieldedNodesBuilder_ == null) {
+        return shieldedNodes_ == null
+            ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+            : shieldedNodes_;
+      } else {
+        return shieldedNodesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public Builder setShieldedNodes(com.google.container.v1.ShieldedNodes value) {
+      if (shieldedNodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedNodes_ = value;
+        onChanged();
+      } else {
+        shieldedNodesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public Builder setShieldedNodes(com.google.container.v1.ShieldedNodes.Builder builderForValue) {
+      if (shieldedNodesBuilder_ == null) {
+        shieldedNodes_ = builderForValue.build();
+        onChanged();
+      } else {
+        shieldedNodesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public Builder mergeShieldedNodes(com.google.container.v1.ShieldedNodes value) {
+      if (shieldedNodesBuilder_ == null) {
+        if (shieldedNodes_ != null) {
+          shieldedNodes_ =
+              com.google.container.v1.ShieldedNodes.newBuilder(shieldedNodes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shieldedNodes_ = value;
+        }
+        onChanged();
+      } else {
+        shieldedNodesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public Builder clearShieldedNodes() {
+      if (shieldedNodesBuilder_ == null) {
+        shieldedNodes_ = null;
+        onChanged();
+      } else {
+        shieldedNodes_ = null;
+        shieldedNodesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public com.google.container.v1.ShieldedNodes.Builder getShieldedNodesBuilder() {
+
+      onChanged();
+      return getShieldedNodesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    public com.google.container.v1.ShieldedNodesOrBuilder getShieldedNodesOrBuilder() {
+      if (shieldedNodesBuilder_ != null) {
+        return shieldedNodesBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedNodes_ == null
+            ? com.google.container.v1.ShieldedNodes.getDefaultInstance()
+            : shieldedNodes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Nodes configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ShieldedNodes shielded_nodes = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ShieldedNodes,
+            com.google.container.v1.ShieldedNodes.Builder,
+            com.google.container.v1.ShieldedNodesOrBuilder>
+        getShieldedNodesFieldBuilder() {
+      if (shieldedNodesBuilder_ == null) {
+        shieldedNodesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ShieldedNodes,
+                com.google.container.v1.ShieldedNodes.Builder,
+                com.google.container.v1.ShieldedNodesOrBuilder>(
+                getShieldedNodes(), getParentForChildren(), isClean());
+        shieldedNodes_ = null;
+      }
+      return shieldedNodesBuilder_;
+    }
+
+    private com.google.container.v1.ReleaseChannel releaseChannel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReleaseChannel,
+            com.google.container.v1.ReleaseChannel.Builder,
+            com.google.container.v1.ReleaseChannelOrBuilder>
+        releaseChannelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     *
+     * @return Whether the releaseChannel field is set.
+     */
+    public boolean hasReleaseChannel() {
+      return releaseChannelBuilder_ != null || releaseChannel_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     *
+     * @return The releaseChannel.
+     */
+    public com.google.container.v1.ReleaseChannel getReleaseChannel() {
+      if (releaseChannelBuilder_ == null) {
+        return releaseChannel_ == null
+            ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+            : releaseChannel_;
+      } else {
+        return releaseChannelBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public Builder setReleaseChannel(com.google.container.v1.ReleaseChannel value) {
+      if (releaseChannelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        releaseChannel_ = value;
+        onChanged();
+      } else {
+        releaseChannelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public Builder setReleaseChannel(
+        com.google.container.v1.ReleaseChannel.Builder builderForValue) {
+      if (releaseChannelBuilder_ == null) {
+        releaseChannel_ = builderForValue.build();
+        onChanged();
+      } else {
+        releaseChannelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public Builder mergeReleaseChannel(com.google.container.v1.ReleaseChannel value) {
+      if (releaseChannelBuilder_ == null) {
+        if (releaseChannel_ != null) {
+          releaseChannel_ =
+              com.google.container.v1.ReleaseChannel.newBuilder(releaseChannel_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          releaseChannel_ = value;
+        }
+        onChanged();
+      } else {
+        releaseChannelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public Builder clearReleaseChannel() {
+      if (releaseChannelBuilder_ == null) {
+        releaseChannel_ = null;
+        onChanged();
+      } else {
+        releaseChannel_ = null;
+        releaseChannelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public com.google.container.v1.ReleaseChannel.Builder getReleaseChannelBuilder() {
+
+      onChanged();
+      return getReleaseChannelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    public com.google.container.v1.ReleaseChannelOrBuilder getReleaseChannelOrBuilder() {
+      if (releaseChannelBuilder_ != null) {
+        return releaseChannelBuilder_.getMessageOrBuilder();
+      } else {
+        return releaseChannel_ == null
+            ? com.google.container.v1.ReleaseChannel.getDefaultInstance()
+            : releaseChannel_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Release channel configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel release_channel = 41;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ReleaseChannel,
+            com.google.container.v1.ReleaseChannel.Builder,
+            com.google.container.v1.ReleaseChannelOrBuilder>
+        getReleaseChannelFieldBuilder() {
+      if (releaseChannelBuilder_ == null) {
+        releaseChannelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ReleaseChannel,
+                com.google.container.v1.ReleaseChannel.Builder,
+                com.google.container.v1.ReleaseChannelOrBuilder>(
+                getReleaseChannel(), getParentForChildren(), isClean());
+        releaseChannel_ = null;
+      }
+      return releaseChannelBuilder_;
+    }
+
+    private com.google.container.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadIdentityConfig,
+            com.google.container.v1.WorkloadIdentityConfig.Builder,
+            com.google.container.v1.WorkloadIdentityConfigOrBuilder>
+        workloadIdentityConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     *
+     * @return Whether the workloadIdentityConfig field is set.
+     */
+    public boolean hasWorkloadIdentityConfig() {
+      return workloadIdentityConfigBuilder_ != null || workloadIdentityConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     *
+     * @return The workloadIdentityConfig.
+     */
+    public com.google.container.v1.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        return workloadIdentityConfig_ == null
+            ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      } else {
+        return workloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public Builder setWorkloadIdentityConfig(com.google.container.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadIdentityConfig_ = value;
+        onChanged();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.container.v1.WorkloadIdentityConfig.Builder builderForValue) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public Builder mergeWorkloadIdentityConfig(
+        com.google.container.v1.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (workloadIdentityConfig_ != null) {
+          workloadIdentityConfig_ =
+              com.google.container.v1.WorkloadIdentityConfig.newBuilder(workloadIdentityConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          workloadIdentityConfig_ = value;
+        }
+        onChanged();
+      } else {
+        workloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public Builder clearWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = null;
+        onChanged();
+      } else {
+        workloadIdentityConfig_ = null;
+        workloadIdentityConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public com.google.container.v1.WorkloadIdentityConfig.Builder
+        getWorkloadIdentityConfigBuilder() {
+
+      onChanged();
+      return getWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    public com.google.container.v1.WorkloadIdentityConfigOrBuilder
+        getWorkloadIdentityConfigOrBuilder() {
+      if (workloadIdentityConfigBuilder_ != null) {
+        return workloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadIdentityConfig_ == null
+            ? com.google.container.v1.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the use of Kubernetes Service Accounts in GCP IAM
+     * policies.
+     * </pre>
+     *
+     * <code>.google.container.v1.WorkloadIdentityConfig workload_identity_config = 43;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.WorkloadIdentityConfig,
+            com.google.container.v1.WorkloadIdentityConfig.Builder,
+            com.google.container.v1.WorkloadIdentityConfigOrBuilder>
+        getWorkloadIdentityConfigFieldBuilder() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.WorkloadIdentityConfig,
+                com.google.container.v1.WorkloadIdentityConfig.Builder,
+                com.google.container.v1.WorkloadIdentityConfigOrBuilder>(
+                getWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        workloadIdentityConfig_ = null;
+      }
+      return workloadIdentityConfigBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -10145,9 +11119,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 101 [deprecated = true];</code>
@@ -10171,9 +11144,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 101 [deprecated = true];</code>
@@ -10197,9 +11169,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 101 [deprecated = true];</code>
@@ -10222,9 +11193,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 101 [deprecated = true];</code>
@@ -10243,9 +11213,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-     * resides.
-     * This field is deprecated, use location instead.
+     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+     * cluster resides. This field is deprecated, use location instead.
      * </pre>
      *
      * <code>string zone = 101 [deprecated = true];</code>
@@ -10659,7 +11628,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] Deprecated, use
-     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
      * instead. The current version of the node software components. If they are
      * currently at multiple versions because they're in the process of being
      * upgraded, this reflects the minimum version of all nodes.
@@ -10686,7 +11655,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] Deprecated, use
-     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
      * instead. The current version of the node software components. If they are
      * currently at multiple versions because they're in the process of being
      * upgraded, this reflects the minimum version of all nodes.
@@ -10713,7 +11682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] Deprecated, use
-     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
      * instead. The current version of the node software components. If they are
      * currently at multiple versions because they're in the process of being
      * upgraded, this reflects the minimum version of all nodes.
@@ -10739,7 +11708,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] Deprecated, use
-     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
      * instead. The current version of the node software components. If they are
      * currently at multiple versions because they're in the process of being
      * upgraded, this reflects the minimum version of all nodes.
@@ -10761,7 +11730,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] Deprecated, use
-     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools)
+     * [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools)
      * instead. The current version of the node software components. If they are
      * currently at multiple versions because they're in the process of being
      * upgraded, this reflects the minimum version of all nodes.
@@ -10991,14 +11960,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * cluster, if available.
      * </pre>
      *
-     * <code>string status_message = 108;</code>
+     * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @return The statusMessage.
      */
+    @java.lang.Deprecated
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
@@ -11014,14 +11985,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * cluster, if available.
      * </pre>
      *
-     * <code>string status_message = 108;</code>
+     * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @return The bytes for statusMessage.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
@@ -11037,15 +12010,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * cluster, if available.
      * </pre>
      *
-     * <code>string status_message = 108;</code>
+     * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -11059,14 +12034,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * cluster, if available.
      * </pre>
      *
-     * <code>string status_message = 108;</code>
+     * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearStatusMessage() {
 
       statusMessage_ = getDefaultInstance().getStatusMessage();
@@ -11077,15 +12054,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Additional information about the current status of this
+     * [Output only] Deprecated. Use conditions instead.
+     * Additional information about the current status of this
      * cluster, if available.
      * </pre>
      *
-     * <code>string status_message = 108;</code>
+     * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -11636,9 +12615,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 114;</code>
@@ -11661,9 +12641,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 114;</code>
@@ -11686,9 +12667,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 114;</code>
@@ -11710,9 +12692,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 114;</code>
@@ -11730,9 +12713,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * [Output only] The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or
-     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which
-     * the cluster resides.
+     * [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * or
+     * [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available)
+     * in which the cluster resides.
      * </pre>
      *
      * <code>string location = 114;</code>

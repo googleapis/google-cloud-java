@@ -149,6 +149,38 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 66:
+            {
+              com.google.container.v1.DnsCacheConfig.Builder subBuilder = null;
+              if (dnsCacheConfig_ != null) {
+                subBuilder = dnsCacheConfig_.toBuilder();
+              }
+              dnsCacheConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.DnsCacheConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dnsCacheConfig_);
+                dnsCacheConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 82:
+            {
+              com.google.container.v1.ConfigConnectorConfig.Builder subBuilder = null;
+              if (configConnectorConfig_ != null) {
+                subBuilder = configConnectorConfig_.toBuilder();
+              }
+              configConnectorConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ConfigConnectorConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(configConnectorConfig_);
+                configConnectorConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -460,6 +492,106 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return getCloudRunConfig();
   }
 
+  public static final int DNS_CACHE_CONFIG_FIELD_NUMBER = 8;
+  private com.google.container.v1.DnsCacheConfig dnsCacheConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   *
+   * @return Whether the dnsCacheConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDnsCacheConfig() {
+    return dnsCacheConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   *
+   * @return The dnsCacheConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DnsCacheConfig getDnsCacheConfig() {
+    return dnsCacheConfig_ == null
+        ? com.google.container.v1.DnsCacheConfig.getDefaultInstance()
+        : dnsCacheConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DnsCacheConfigOrBuilder getDnsCacheConfigOrBuilder() {
+    return getDnsCacheConfig();
+  }
+
+  public static final int CONFIG_CONNECTOR_CONFIG_FIELD_NUMBER = 10;
+  private com.google.container.v1.ConfigConnectorConfig configConnectorConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   *
+   * @return Whether the configConnectorConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfigConnectorConfig() {
+    return configConnectorConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   *
+   * @return The configConnectorConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfigConnectorConfig getConfigConnectorConfig() {
+    return configConnectorConfig_ == null
+        ? com.google.container.v1.ConfigConnectorConfig.getDefaultInstance()
+        : configConnectorConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the ConfigConnector add-on, a Kubernetes
+   * extension to manage hosted GCP services through the Kubernetes API
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfigConnectorConfigOrBuilder
+      getConfigConnectorConfigOrBuilder() {
+    return getConfigConnectorConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -489,6 +621,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (cloudRunConfig_ != null) {
       output.writeMessage(7, getCloudRunConfig());
     }
+    if (dnsCacheConfig_ != null) {
+      output.writeMessage(8, getDnsCacheConfig());
+    }
+    if (configConnectorConfig_ != null) {
+      output.writeMessage(10, getConfigConnectorConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -514,6 +652,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (cloudRunConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCloudRunConfig());
+    }
+    if (dnsCacheConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDnsCacheConfig());
+    }
+    if (configConnectorConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getConfigConnectorConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -550,6 +695,14 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasCloudRunConfig()) {
       if (!getCloudRunConfig().equals(other.getCloudRunConfig())) return false;
     }
+    if (hasDnsCacheConfig() != other.hasDnsCacheConfig()) return false;
+    if (hasDnsCacheConfig()) {
+      if (!getDnsCacheConfig().equals(other.getDnsCacheConfig())) return false;
+    }
+    if (hasConfigConnectorConfig() != other.hasConfigConnectorConfig()) return false;
+    if (hasConfigConnectorConfig()) {
+      if (!getConfigConnectorConfig().equals(other.getConfigConnectorConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -580,6 +733,14 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasCloudRunConfig()) {
       hash = (37 * hash) + CLOUD_RUN_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCloudRunConfig().hashCode();
+    }
+    if (hasDnsCacheConfig()) {
+      hash = (37 * hash) + DNS_CACHE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDnsCacheConfig().hashCode();
+    }
+    if (hasConfigConnectorConfig()) {
+      hash = (37 * hash) + CONFIG_CONNECTOR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigConnectorConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -756,6 +917,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         cloudRunConfig_ = null;
         cloudRunConfigBuilder_ = null;
       }
+      if (dnsCacheConfigBuilder_ == null) {
+        dnsCacheConfig_ = null;
+      } else {
+        dnsCacheConfig_ = null;
+        dnsCacheConfigBuilder_ = null;
+      }
+      if (configConnectorConfigBuilder_ == null) {
+        configConnectorConfig_ = null;
+      } else {
+        configConnectorConfig_ = null;
+        configConnectorConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -806,6 +979,16 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         result.cloudRunConfig_ = cloudRunConfig_;
       } else {
         result.cloudRunConfig_ = cloudRunConfigBuilder_.build();
+      }
+      if (dnsCacheConfigBuilder_ == null) {
+        result.dnsCacheConfig_ = dnsCacheConfig_;
+      } else {
+        result.dnsCacheConfig_ = dnsCacheConfigBuilder_.build();
+      }
+      if (configConnectorConfigBuilder_ == null) {
+        result.configConnectorConfig_ = configConnectorConfig_;
+      } else {
+        result.configConnectorConfig_ = configConnectorConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -870,6 +1053,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCloudRunConfig()) {
         mergeCloudRunConfig(other.getCloudRunConfig());
+      }
+      if (other.hasDnsCacheConfig()) {
+        mergeDnsCacheConfig(other.getDnsCacheConfig());
+      }
+      if (other.hasConfigConnectorConfig()) {
+        mergeConfigConnectorConfig(other.getConfigConnectorConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1939,6 +2128,388 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         cloudRunConfig_ = null;
       }
       return cloudRunConfigBuilder_;
+    }
+
+    private com.google.container.v1.DnsCacheConfig dnsCacheConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DnsCacheConfig,
+            com.google.container.v1.DnsCacheConfig.Builder,
+            com.google.container.v1.DnsCacheConfigOrBuilder>
+        dnsCacheConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     *
+     * @return Whether the dnsCacheConfig field is set.
+     */
+    public boolean hasDnsCacheConfig() {
+      return dnsCacheConfigBuilder_ != null || dnsCacheConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     *
+     * @return The dnsCacheConfig.
+     */
+    public com.google.container.v1.DnsCacheConfig getDnsCacheConfig() {
+      if (dnsCacheConfigBuilder_ == null) {
+        return dnsCacheConfig_ == null
+            ? com.google.container.v1.DnsCacheConfig.getDefaultInstance()
+            : dnsCacheConfig_;
+      } else {
+        return dnsCacheConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public Builder setDnsCacheConfig(com.google.container.v1.DnsCacheConfig value) {
+      if (dnsCacheConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dnsCacheConfig_ = value;
+        onChanged();
+      } else {
+        dnsCacheConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public Builder setDnsCacheConfig(
+        com.google.container.v1.DnsCacheConfig.Builder builderForValue) {
+      if (dnsCacheConfigBuilder_ == null) {
+        dnsCacheConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dnsCacheConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public Builder mergeDnsCacheConfig(com.google.container.v1.DnsCacheConfig value) {
+      if (dnsCacheConfigBuilder_ == null) {
+        if (dnsCacheConfig_ != null) {
+          dnsCacheConfig_ =
+              com.google.container.v1.DnsCacheConfig.newBuilder(dnsCacheConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dnsCacheConfig_ = value;
+        }
+        onChanged();
+      } else {
+        dnsCacheConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public Builder clearDnsCacheConfig() {
+      if (dnsCacheConfigBuilder_ == null) {
+        dnsCacheConfig_ = null;
+        onChanged();
+      } else {
+        dnsCacheConfig_ = null;
+        dnsCacheConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public com.google.container.v1.DnsCacheConfig.Builder getDnsCacheConfigBuilder() {
+
+      onChanged();
+      return getDnsCacheConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    public com.google.container.v1.DnsCacheConfigOrBuilder getDnsCacheConfigOrBuilder() {
+      if (dnsCacheConfigBuilder_ != null) {
+        return dnsCacheConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dnsCacheConfig_ == null
+            ? com.google.container.v1.DnsCacheConfig.getDefaultInstance()
+            : dnsCacheConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for NodeLocalDNS, a dns cache running on cluster nodes
+     * </pre>
+     *
+     * <code>.google.container.v1.DnsCacheConfig dns_cache_config = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DnsCacheConfig,
+            com.google.container.v1.DnsCacheConfig.Builder,
+            com.google.container.v1.DnsCacheConfigOrBuilder>
+        getDnsCacheConfigFieldBuilder() {
+      if (dnsCacheConfigBuilder_ == null) {
+        dnsCacheConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DnsCacheConfig,
+                com.google.container.v1.DnsCacheConfig.Builder,
+                com.google.container.v1.DnsCacheConfigOrBuilder>(
+                getDnsCacheConfig(), getParentForChildren(), isClean());
+        dnsCacheConfig_ = null;
+      }
+      return dnsCacheConfigBuilder_;
+    }
+
+    private com.google.container.v1.ConfigConnectorConfig configConnectorConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfigConnectorConfig,
+            com.google.container.v1.ConfigConnectorConfig.Builder,
+            com.google.container.v1.ConfigConnectorConfigOrBuilder>
+        configConnectorConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     *
+     * @return Whether the configConnectorConfig field is set.
+     */
+    public boolean hasConfigConnectorConfig() {
+      return configConnectorConfigBuilder_ != null || configConnectorConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     *
+     * @return The configConnectorConfig.
+     */
+    public com.google.container.v1.ConfigConnectorConfig getConfigConnectorConfig() {
+      if (configConnectorConfigBuilder_ == null) {
+        return configConnectorConfig_ == null
+            ? com.google.container.v1.ConfigConnectorConfig.getDefaultInstance()
+            : configConnectorConfig_;
+      } else {
+        return configConnectorConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public Builder setConfigConnectorConfig(com.google.container.v1.ConfigConnectorConfig value) {
+      if (configConnectorConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configConnectorConfig_ = value;
+        onChanged();
+      } else {
+        configConnectorConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public Builder setConfigConnectorConfig(
+        com.google.container.v1.ConfigConnectorConfig.Builder builderForValue) {
+      if (configConnectorConfigBuilder_ == null) {
+        configConnectorConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        configConnectorConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public Builder mergeConfigConnectorConfig(com.google.container.v1.ConfigConnectorConfig value) {
+      if (configConnectorConfigBuilder_ == null) {
+        if (configConnectorConfig_ != null) {
+          configConnectorConfig_ =
+              com.google.container.v1.ConfigConnectorConfig.newBuilder(configConnectorConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          configConnectorConfig_ = value;
+        }
+        onChanged();
+      } else {
+        configConnectorConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public Builder clearConfigConnectorConfig() {
+      if (configConnectorConfigBuilder_ == null) {
+        configConnectorConfig_ = null;
+        onChanged();
+      } else {
+        configConnectorConfig_ = null;
+        configConnectorConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public com.google.container.v1.ConfigConnectorConfig.Builder getConfigConnectorConfigBuilder() {
+
+      onChanged();
+      return getConfigConnectorConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    public com.google.container.v1.ConfigConnectorConfigOrBuilder
+        getConfigConnectorConfigOrBuilder() {
+      if (configConnectorConfigBuilder_ != null) {
+        return configConnectorConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return configConnectorConfig_ == null
+            ? com.google.container.v1.ConfigConnectorConfig.getDefaultInstance()
+            : configConnectorConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the ConfigConnector add-on, a Kubernetes
+     * extension to manage hosted GCP services through the Kubernetes API
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfigConnectorConfig,
+            com.google.container.v1.ConfigConnectorConfig.Builder,
+            com.google.container.v1.ConfigConnectorConfigOrBuilder>
+        getConfigConnectorConfigFieldBuilder() {
+      if (configConnectorConfigBuilder_ == null) {
+        configConnectorConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ConfigConnectorConfig,
+                com.google.container.v1.ConfigConnectorConfig.Builder,
+                com.google.container.v1.ConfigConnectorConfigOrBuilder>(
+                getConfigConnectorConfig(), getParentForChildren(), isClean());
+        configConnectorConfig_ = null;
+      }
+      return configConnectorConfigBuilder_;
     }
 
     @java.lang.Override

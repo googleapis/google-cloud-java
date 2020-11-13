@@ -43,6 +43,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     defaultImageType_ = "";
     validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    channels_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -119,6 +120,20 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
               validMasterVersions_.add(s);
               break;
             }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                channels_ =
+                    new java.util.ArrayList<
+                        com.google.container.v1.ServerConfig.ReleaseChannelConfig>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              channels_.add(
+                  input.readMessage(
+                      com.google.container.v1.ServerConfig.ReleaseChannelConfig.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -142,6 +157,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         validMasterVersions_ = validMasterVersions_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        channels_ = java.util.Collections.unmodifiableList(channels_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -160,6 +178,1167 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.ServerConfig.class,
             com.google.container.v1.ServerConfig.Builder.class);
+  }
+
+  public interface ReleaseChannelConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.ServerConfig.ReleaseChannelConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The release channel this configuration applies to.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+     *
+     * @return The enum numeric value on the wire for channel.
+     */
+    int getChannelValue();
+    /**
+     *
+     *
+     * <pre>
+     * The release channel this configuration applies to.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+     *
+     * @return The channel.
+     */
+    com.google.container.v1.ReleaseChannel.Channel getChannel();
+
+    /**
+     *
+     *
+     * <pre>
+     * The default version for newly created clusters on the channel.
+     * </pre>
+     *
+     * <code>string default_version = 2;</code>
+     *
+     * @return The defaultVersion.
+     */
+    java.lang.String getDefaultVersion();
+    /**
+     *
+     *
+     * <pre>
+     * The default version for newly created clusters on the channel.
+     * </pre>
+     *
+     * <code>string default_version = 2;</code>
+     *
+     * @return The bytes for defaultVersion.
+     */
+    com.google.protobuf.ByteString getDefaultVersionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @return A list containing the validVersions.
+     */
+    java.util.List<java.lang.String> getValidVersionsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @return The count of validVersions.
+     */
+    int getValidVersionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The validVersions at the given index.
+     */
+    java.lang.String getValidVersions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validVersions at the given index.
+     */
+    com.google.protobuf.ByteString getValidVersionsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ReleaseChannelConfig exposes configuration for a release channel.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.ServerConfig.ReleaseChannelConfig}
+   */
+  public static final class ReleaseChannelConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.ServerConfig.ReleaseChannelConfig)
+      ReleaseChannelConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReleaseChannelConfig.newBuilder() to construct.
+    private ReleaseChannelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReleaseChannelConfig() {
+      channel_ = 0;
+      defaultVersion_ = "";
+      validVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReleaseChannelConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ReleaseChannelConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                channel_ = rawValue;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                defaultVersion_ = s;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  validVersions_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                validVersions_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          validVersions_ = validVersions_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.ServerConfig.ReleaseChannelConfig.class,
+              com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder.class);
+    }
+
+    public static final int CHANNEL_FIELD_NUMBER = 1;
+    private int channel_;
+    /**
+     *
+     *
+     * <pre>
+     * The release channel this configuration applies to.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+     *
+     * @return The enum numeric value on the wire for channel.
+     */
+    @java.lang.Override
+    public int getChannelValue() {
+      return channel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The release channel this configuration applies to.
+     * </pre>
+     *
+     * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+     *
+     * @return The channel.
+     */
+    @java.lang.Override
+    public com.google.container.v1.ReleaseChannel.Channel getChannel() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.ReleaseChannel.Channel result =
+          com.google.container.v1.ReleaseChannel.Channel.valueOf(channel_);
+      return result == null ? com.google.container.v1.ReleaseChannel.Channel.UNRECOGNIZED : result;
+    }
+
+    public static final int DEFAULT_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object defaultVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * The default version for newly created clusters on the channel.
+     * </pre>
+     *
+     * <code>string default_version = 2;</code>
+     *
+     * @return The defaultVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getDefaultVersion() {
+      java.lang.Object ref = defaultVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default version for newly created clusters on the channel.
+     * </pre>
+     *
+     * <code>string default_version = 2;</code>
+     *
+     * @return The bytes for defaultVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDefaultVersionBytes() {
+      java.lang.Object ref = defaultVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALID_VERSIONS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList validVersions_;
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @return A list containing the validVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getValidVersionsList() {
+      return validVersions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @return The count of validVersions.
+     */
+    public int getValidVersionsCount() {
+      return validVersions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The validVersions at the given index.
+     */
+    public java.lang.String getValidVersions(int index) {
+      return validVersions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of valid versions for the channel.
+     * </pre>
+     *
+     * <code>repeated string valid_versions = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getValidVersionsBytes(int index) {
+      return validVersions_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (channel_ != com.google.container.v1.ReleaseChannel.Channel.UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, channel_);
+      }
+      if (!getDefaultVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, defaultVersion_);
+      }
+      for (int i = 0; i < validVersions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, validVersions_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (channel_ != com.google.container.v1.ReleaseChannel.Channel.UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, channel_);
+      }
+      if (!getDefaultVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, defaultVersion_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < validVersions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(validVersions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getValidVersionsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.ServerConfig.ReleaseChannelConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.ServerConfig.ReleaseChannelConfig other =
+          (com.google.container.v1.ServerConfig.ReleaseChannelConfig) obj;
+
+      if (channel_ != other.channel_) return false;
+      if (!getDefaultVersion().equals(other.getDefaultVersion())) return false;
+      if (!getValidVersionsList().equals(other.getValidVersionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + channel_;
+      hash = (37 * hash) + DEFAULT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultVersion().hashCode();
+      if (getValidVersionsCount() > 0) {
+        hash = (37 * hash) + VALID_VERSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getValidVersionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ReleaseChannelConfig exposes configuration for a release channel.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.ServerConfig.ReleaseChannelConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.ServerConfig.ReleaseChannelConfig)
+        com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.ServerConfig.ReleaseChannelConfig.class,
+                com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.ServerConfig.ReleaseChannelConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        channel_ = 0;
+
+        defaultVersion_ = "";
+
+        validVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_ServerConfig_ReleaseChannelConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.ServerConfig.ReleaseChannelConfig getDefaultInstanceForType() {
+        return com.google.container.v1.ServerConfig.ReleaseChannelConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.ServerConfig.ReleaseChannelConfig build() {
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.ServerConfig.ReleaseChannelConfig buildPartial() {
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig result =
+            new com.google.container.v1.ServerConfig.ReleaseChannelConfig(this);
+        int from_bitField0_ = bitField0_;
+        result.channel_ = channel_;
+        result.defaultVersion_ = defaultVersion_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          validVersions_ = validVersions_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.validVersions_ = validVersions_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.ServerConfig.ReleaseChannelConfig) {
+          return mergeFrom((com.google.container.v1.ServerConfig.ReleaseChannelConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.ServerConfig.ReleaseChannelConfig other) {
+        if (other == com.google.container.v1.ServerConfig.ReleaseChannelConfig.getDefaultInstance())
+          return this;
+        if (other.channel_ != 0) {
+          setChannelValue(other.getChannelValue());
+        }
+        if (!other.getDefaultVersion().isEmpty()) {
+          defaultVersion_ = other.defaultVersion_;
+          onChanged();
+        }
+        if (!other.validVersions_.isEmpty()) {
+          if (validVersions_.isEmpty()) {
+            validVersions_ = other.validVersions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureValidVersionsIsMutable();
+            validVersions_.addAll(other.validVersions_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.container.v1.ServerConfig.ReleaseChannelConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int channel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The release channel this configuration applies to.
+       * </pre>
+       *
+       * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+       *
+       * @return The enum numeric value on the wire for channel.
+       */
+      @java.lang.Override
+      public int getChannelValue() {
+        return channel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The release channel this configuration applies to.
+       * </pre>
+       *
+       * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for channel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelValue(int value) {
+
+        channel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The release channel this configuration applies to.
+       * </pre>
+       *
+       * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+       *
+       * @return The channel.
+       */
+      @java.lang.Override
+      public com.google.container.v1.ReleaseChannel.Channel getChannel() {
+        @SuppressWarnings("deprecation")
+        com.google.container.v1.ReleaseChannel.Channel result =
+            com.google.container.v1.ReleaseChannel.Channel.valueOf(channel_);
+        return result == null
+            ? com.google.container.v1.ReleaseChannel.Channel.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The release channel this configuration applies to.
+       * </pre>
+       *
+       * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+       *
+       * @param value The channel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannel(com.google.container.v1.ReleaseChannel.Channel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        channel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The release channel this configuration applies to.
+       * </pre>
+       *
+       * <code>.google.container.v1.ReleaseChannel.Channel channel = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearChannel() {
+
+        channel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object defaultVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The default version for newly created clusters on the channel.
+       * </pre>
+       *
+       * <code>string default_version = 2;</code>
+       *
+       * @return The defaultVersion.
+       */
+      public java.lang.String getDefaultVersion() {
+        java.lang.Object ref = defaultVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The default version for newly created clusters on the channel.
+       * </pre>
+       *
+       * <code>string default_version = 2;</code>
+       *
+       * @return The bytes for defaultVersion.
+       */
+      public com.google.protobuf.ByteString getDefaultVersionBytes() {
+        java.lang.Object ref = defaultVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          defaultVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The default version for newly created clusters on the channel.
+       * </pre>
+       *
+       * <code>string default_version = 2;</code>
+       *
+       * @param value The defaultVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        defaultVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The default version for newly created clusters on the channel.
+       * </pre>
+       *
+       * <code>string default_version = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultVersion() {
+
+        defaultVersion_ = getDefaultInstance().getDefaultVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The default version for newly created clusters on the channel.
+       * </pre>
+       *
+       * <code>string default_version = 2;</code>
+       *
+       * @param value The bytes for defaultVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        defaultVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList validVersions_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureValidVersionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          validVersions_ = new com.google.protobuf.LazyStringArrayList(validVersions_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @return A list containing the validVersions.
+       */
+      public com.google.protobuf.ProtocolStringList getValidVersionsList() {
+        return validVersions_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @return The count of validVersions.
+       */
+      public int getValidVersionsCount() {
+        return validVersions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The validVersions at the given index.
+       */
+      public java.lang.String getValidVersions(int index) {
+        return validVersions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the validVersions at the given index.
+       */
+      public com.google.protobuf.ByteString getValidVersionsBytes(int index) {
+        return validVersions_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The validVersions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidVersions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureValidVersionsIsMutable();
+        validVersions_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param value The validVersions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValidVersions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureValidVersionsIsMutable();
+        validVersions_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param values The validVersions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValidVersions(java.lang.Iterable<java.lang.String> values) {
+        ensureValidVersionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validVersions_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValidVersions() {
+        validVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of valid versions for the channel.
+       * </pre>
+       *
+       * <code>repeated string valid_versions = 4;</code>
+       *
+       * @param value The bytes of the validVersions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValidVersionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureValidVersionsIsMutable();
+        validVersions_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.ServerConfig.ReleaseChannelConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.ServerConfig.ReleaseChannelConfig)
+    private static final com.google.container.v1.ServerConfig.ReleaseChannelConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.ServerConfig.ReleaseChannelConfig();
+    }
+
+    public static com.google.container.v1.ServerConfig.ReleaseChannelConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReleaseChannelConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ReleaseChannelConfig>() {
+          @java.lang.Override
+          public ReleaseChannelConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ReleaseChannelConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReleaseChannelConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReleaseChannelConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int DEFAULT_CLUSTER_VERSION_FIELD_NUMBER = 1;
@@ -217,7 +1396,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -231,7 +1410,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -245,7 +1424,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -260,7 +1439,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid node upgrade target versions.
+   * List of valid node upgrade target versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
@@ -388,7 +1567,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -402,7 +1581,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -416,7 +1595,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -431,7 +1610,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of valid master versions.
+   * List of valid master versions, in descending order.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
@@ -441,6 +1620,78 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getValidMasterVersionsBytes(int index) {
     return validMasterVersions_.getByteString(index);
+  }
+
+  public static final int CHANNELS_FIELD_NUMBER = 9;
+  private java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig> channels_;
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig>
+      getChannelsList() {
+    return channels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
+      getChannelsOrBuilderList() {
+    return channels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  @java.lang.Override
+  public int getChannelsCount() {
+    return channels_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ServerConfig.ReleaseChannelConfig getChannels(int index) {
+    return channels_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of release channel configurations.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder getChannelsOrBuilder(
+      int index) {
+    return channels_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -471,6 +1722,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < validMasterVersions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, validMasterVersions_.getRaw(i));
+    }
+    for (int i = 0; i < channels_.size(); i++) {
+      output.writeMessage(9, channels_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -511,6 +1765,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getValidMasterVersionsList().size();
     }
+    for (int i = 0; i < channels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, channels_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -531,6 +1788,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDefaultImageType().equals(other.getDefaultImageType())) return false;
     if (!getValidImageTypesList().equals(other.getValidImageTypesList())) return false;
     if (!getValidMasterVersionsList().equals(other.getValidMasterVersionsList())) return false;
+    if (!getChannelsList().equals(other.getChannelsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -557,6 +1815,10 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     if (getValidMasterVersionsCount() > 0) {
       hash = (37 * hash) + VALID_MASTER_VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getValidMasterVersionsList().hashCode();
+    }
+    if (getChannelsCount() > 0) {
+      hash = (37 * hash) + CHANNELS_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -696,7 +1958,9 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getChannelsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -712,6 +1976,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (channelsBuilder_ == null) {
+        channels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        channelsBuilder_.clear();
+      }
       return this;
     }
 
@@ -756,6 +2026,15 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.validMasterVersions_ = validMasterVersions_;
+      if (channelsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          channels_ = java.util.Collections.unmodifiableList(channels_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.channels_ = channels_;
+      } else {
+        result.channels_ = channelsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -842,6 +2121,33 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           validMasterVersions_.addAll(other.validMasterVersions_);
         }
         onChanged();
+      }
+      if (channelsBuilder_ == null) {
+        if (!other.channels_.isEmpty()) {
+          if (channels_.isEmpty()) {
+            channels_ = other.channels_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureChannelsIsMutable();
+            channels_.addAll(other.channels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.channels_.isEmpty()) {
+          if (channelsBuilder_.isEmpty()) {
+            channelsBuilder_.dispose();
+            channelsBuilder_ = null;
+            channels_ = other.channels_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            channelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getChannelsFieldBuilder()
+                    : null;
+          } else {
+            channelsBuilder_.addAllMessages(other.channels_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -993,7 +2299,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1007,7 +2313,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1021,7 +2327,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1036,7 +2342,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1051,7 +2357,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1073,7 +2379,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1094,7 +2400,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1112,7 +2418,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1129,7 +2435,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid node upgrade target versions.
+     * List of valid node upgrade target versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
@@ -1435,7 +2741,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1449,7 +2755,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1463,7 +2769,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1478,7 +2784,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1493,7 +2799,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1515,7 +2821,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1536,7 +2842,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1554,7 +2860,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1571,7 +2877,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of valid master versions.
+     * List of valid master versions, in descending order.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
@@ -1588,6 +2894,371 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       validMasterVersions_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig> channels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureChannelsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        channels_ =
+            new java.util.ArrayList<com.google.container.v1.ServerConfig.ReleaseChannelConfig>(
+                channels_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.ServerConfig.ReleaseChannelConfig,
+            com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder,
+            com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
+        channelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig>
+        getChannelsList() {
+      if (channelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(channels_);
+      } else {
+        return channelsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public int getChannelsCount() {
+      if (channelsBuilder_ == null) {
+        return channels_.size();
+      } else {
+        return channelsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfig getChannels(int index) {
+      if (channelsBuilder_ == null) {
+        return channels_.get(index);
+      } else {
+        return channelsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder setChannels(
+        int index, com.google.container.v1.ServerConfig.ReleaseChannelConfig value) {
+      if (channelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChannelsIsMutable();
+        channels_.set(index, value);
+        onChanged();
+      } else {
+        channelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder setChannels(
+        int index,
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder builderForValue) {
+      if (channelsBuilder_ == null) {
+        ensureChannelsIsMutable();
+        channels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        channelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder addChannels(com.google.container.v1.ServerConfig.ReleaseChannelConfig value) {
+      if (channelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChannelsIsMutable();
+        channels_.add(value);
+        onChanged();
+      } else {
+        channelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder addChannels(
+        int index, com.google.container.v1.ServerConfig.ReleaseChannelConfig value) {
+      if (channelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChannelsIsMutable();
+        channels_.add(index, value);
+        onChanged();
+      } else {
+        channelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder addChannels(
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder builderForValue) {
+      if (channelsBuilder_ == null) {
+        ensureChannelsIsMutable();
+        channels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        channelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder addChannels(
+        int index,
+        com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder builderForValue) {
+      if (channelsBuilder_ == null) {
+        ensureChannelsIsMutable();
+        channels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        channelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder addAllChannels(
+        java.lang.Iterable<? extends com.google.container.v1.ServerConfig.ReleaseChannelConfig>
+            values) {
+      if (channelsBuilder_ == null) {
+        ensureChannelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, channels_);
+        onChanged();
+      } else {
+        channelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder clearChannels() {
+      if (channelsBuilder_ == null) {
+        channels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        channelsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public Builder removeChannels(int index) {
+      if (channelsBuilder_ == null) {
+        ensureChannelsIsMutable();
+        channels_.remove(index);
+        onChanged();
+      } else {
+        channelsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder getChannelsBuilder(
+        int index) {
+      return getChannelsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder getChannelsOrBuilder(
+        int index) {
+      if (channelsBuilder_ == null) {
+        return channels_.get(index);
+      } else {
+        return channelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public java.util.List<
+            ? extends com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
+        getChannelsOrBuilderList() {
+      if (channelsBuilder_ != null) {
+        return channelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(channels_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder addChannelsBuilder() {
+      return getChannelsFieldBuilder()
+          .addBuilder(
+              com.google.container.v1.ServerConfig.ReleaseChannelConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder addChannelsBuilder(
+        int index) {
+      return getChannelsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.container.v1.ServerConfig.ReleaseChannelConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of release channel configurations.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
+     */
+    public java.util.List<com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder>
+        getChannelsBuilderList() {
+      return getChannelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1.ServerConfig.ReleaseChannelConfig,
+            com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder,
+            com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>
+        getChannelsFieldBuilder() {
+      if (channelsBuilder_ == null) {
+        channelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.ServerConfig.ReleaseChannelConfig,
+                com.google.container.v1.ServerConfig.ReleaseChannelConfig.Builder,
+                com.google.container.v1.ServerConfig.ReleaseChannelConfigOrBuilder>(
+                channels_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        channels_ = null;
+      }
+      return channelsBuilder_;
     }
 
     @java.lang.Override

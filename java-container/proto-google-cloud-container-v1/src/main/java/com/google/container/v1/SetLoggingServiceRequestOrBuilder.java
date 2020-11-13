@@ -59,9 +59,9 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -75,9 +75,9 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster
-   * resides.
-   * This field has been deprecated and replaced by the name field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
+   * cluster resides. This field has been deprecated and replaced by the name
+   * field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
@@ -120,10 +120,15 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The logging service the cluster should use to write metrics.
+   * Required. The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no metrics will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -135,10 +140,15 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The logging service the cluster should use to write metrics.
+   * Required. The logging service the cluster should use to write logs.
    * Currently available options:
-   * * "logging.googleapis.com" - the Google Cloud Logging service
-   * * "none" - no metrics will be exported from the cluster
+   * * `logging.googleapis.com/kubernetes` - The Cloud Logging
+   * service with a Kubernetes-native resource model
+   * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
+   *   available as of GKE 1.15).
+   * * `none` - no logs will be exported from the cluster.
+   * If left as an empty string,`logging.googleapis.com/kubernetes` will be
+   * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
    *
    * <code>string logging_service = 4 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -37,7 +37,9 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private CloudRunConfig() {}
+  private CloudRunConfig() {
+    loadBalancerType_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -71,6 +73,13 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
           case 8:
             {
               disabled_ = input.readBool();
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              loadBalancerType_ = rawValue;
               break;
             }
           default:
@@ -107,6 +116,165 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.CloudRunConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Load balancer type of ingress service of Cloud Run.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.CloudRunConfig.LoadBalancerType}
+   */
+  public enum LoadBalancerType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Load balancer type for Cloud Run is unspecified.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    LOAD_BALANCER_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Install external load balancer for Cloud Run.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_EXTERNAL = 1;</code>
+     */
+    LOAD_BALANCER_TYPE_EXTERNAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Install internal load balancer for Cloud Run.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_INTERNAL = 2;</code>
+     */
+    LOAD_BALANCER_TYPE_INTERNAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Load balancer type for Cloud Run is unspecified.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int LOAD_BALANCER_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Install external load balancer for Cloud Run.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_EXTERNAL = 1;</code>
+     */
+    public static final int LOAD_BALANCER_TYPE_EXTERNAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Install internal load balancer for Cloud Run.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_TYPE_INTERNAL = 2;</code>
+     */
+    public static final int LOAD_BALANCER_TYPE_INTERNAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LoadBalancerType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static LoadBalancerType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return LOAD_BALANCER_TYPE_UNSPECIFIED;
+        case 1:
+          return LOAD_BALANCER_TYPE_EXTERNAL;
+        case 2:
+          return LOAD_BALANCER_TYPE_INTERNAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LoadBalancerType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<LoadBalancerType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LoadBalancerType>() {
+              public LoadBalancerType findValueByNumber(int number) {
+                return LoadBalancerType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.CloudRunConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LoadBalancerType[] VALUES = values();
+
+    public static LoadBalancerType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LoadBalancerType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.CloudRunConfig.LoadBalancerType)
+  }
+
   public static final int DISABLED_FIELD_NUMBER = 1;
   private boolean disabled_;
   /**
@@ -123,6 +291,44 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
+  }
+
+  public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 3;
+  private int loadBalancerType_;
+  /**
+   *
+   *
+   * <pre>
+   * Which load balancer type is installed for Cloud Run.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for loadBalancerType.
+   */
+  @java.lang.Override
+  public int getLoadBalancerTypeValue() {
+    return loadBalancerType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Which load balancer type is installed for Cloud Run.
+   * </pre>
+   *
+   * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+   *
+   * @return The loadBalancerType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.CloudRunConfig.LoadBalancerType getLoadBalancerType() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.CloudRunConfig.LoadBalancerType result =
+        com.google.container.v1.CloudRunConfig.LoadBalancerType.valueOf(loadBalancerType_);
+    return result == null
+        ? com.google.container.v1.CloudRunConfig.LoadBalancerType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -142,6 +348,11 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       output.writeBool(1, disabled_);
     }
+    if (loadBalancerType_
+        != com.google.container.v1.CloudRunConfig.LoadBalancerType.LOAD_BALANCER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, loadBalancerType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -153,6 +364,11 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (disabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
+    }
+    if (loadBalancerType_
+        != com.google.container.v1.CloudRunConfig.LoadBalancerType.LOAD_BALANCER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, loadBalancerType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,6 +386,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.container.v1.CloudRunConfig other = (com.google.container.v1.CloudRunConfig) obj;
 
     if (getDisabled() != other.getDisabled()) return false;
+    if (loadBalancerType_ != other.loadBalancerType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,6 +400,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+    hash = (37 * hash) + LOAD_BALANCER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + loadBalancerType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,6 +549,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       disabled_ = false;
 
+      loadBalancerType_ = 0;
+
       return this;
     }
 
@@ -358,6 +579,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.container.v1.CloudRunConfig result =
           new com.google.container.v1.CloudRunConfig(this);
       result.disabled_ = disabled_;
+      result.loadBalancerType_ = loadBalancerType_;
       onBuilt();
       return result;
     }
@@ -409,6 +631,9 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.container.v1.CloudRunConfig.getDefaultInstance()) return this;
       if (other.getDisabled() != false) {
         setDisabled(other.getDisabled());
+      }
+      if (other.loadBalancerType_ != 0) {
+        setLoadBalancerTypeValue(other.getLoadBalancerTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -487,6 +712,100 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDisabled() {
 
       disabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int loadBalancerType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Which load balancer type is installed for Cloud Run.
+     * </pre>
+     *
+     * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for loadBalancerType.
+     */
+    @java.lang.Override
+    public int getLoadBalancerTypeValue() {
+      return loadBalancerType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which load balancer type is installed for Cloud Run.
+     * </pre>
+     *
+     * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for loadBalancerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerTypeValue(int value) {
+
+      loadBalancerType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which load balancer type is installed for Cloud Run.
+     * </pre>
+     *
+     * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+     *
+     * @return The loadBalancerType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.CloudRunConfig.LoadBalancerType getLoadBalancerType() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.CloudRunConfig.LoadBalancerType result =
+          com.google.container.v1.CloudRunConfig.LoadBalancerType.valueOf(loadBalancerType_);
+      return result == null
+          ? com.google.container.v1.CloudRunConfig.LoadBalancerType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which load balancer type is installed for Cloud Run.
+     * </pre>
+     *
+     * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+     *
+     * @param value The loadBalancerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerType(
+        com.google.container.v1.CloudRunConfig.LoadBalancerType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      loadBalancerType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Which load balancer type is installed for Cloud Run.
+     * </pre>
+     *
+     * <code>.google.container.v1.CloudRunConfig.LoadBalancerType load_balancer_type = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancerType() {
+
+      loadBalancerType_ = 0;
       onChanged();
       return this;
     }

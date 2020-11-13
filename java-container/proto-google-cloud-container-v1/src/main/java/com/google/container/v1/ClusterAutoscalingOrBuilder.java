@@ -142,8 +142,9 @@ public interface ClusterAutoscalingOrBuilder
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
-   * in which the NodePool's nodes can be created by NAP.
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -155,8 +156,9 @@ public interface ClusterAutoscalingOrBuilder
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
-   * in which the NodePool's nodes can be created by NAP.
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -168,8 +170,9 @@ public interface ClusterAutoscalingOrBuilder
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
-   * in which the NodePool's nodes can be created by NAP.
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -182,8 +185,9 @@ public interface ClusterAutoscalingOrBuilder
    *
    *
    * <pre>
-   * The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available)
-   * in which the NodePool's nodes can be created by NAP.
+   * The list of Google Compute Engine
+   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   * NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>

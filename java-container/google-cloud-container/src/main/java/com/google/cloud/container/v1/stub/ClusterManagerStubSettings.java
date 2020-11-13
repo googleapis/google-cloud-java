@@ -51,6 +51,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -147,6 +149,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings;
   private final UnaryCallSettings<CancelOperationRequest, Empty> cancelOperationSettings;
   private final UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings;
+  private final UnaryCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+      getJSONWebKeysSettings;
   private final UnaryCallSettings<ListNodePoolsRequest, ListNodePoolsResponse>
       listNodePoolsSettings;
   private final UnaryCallSettings<GetNodePoolRequest, NodePool> getNodePoolSettings;
@@ -254,6 +258,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   /** Returns the object with the settings used for calls to getServerConfig. */
   public UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings() {
     return getServerConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getJSONWebKeys. */
+  public UnaryCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysSettings() {
+    return getJSONWebKeysSettings;
   }
 
   /** Returns the object with the settings used for calls to listNodePools. */
@@ -418,6 +427,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     getOperationSettings = settingsBuilder.getOperationSettings().build();
     cancelOperationSettings = settingsBuilder.cancelOperationSettings().build();
     getServerConfigSettings = settingsBuilder.getServerConfigSettings().build();
+    getJSONWebKeysSettings = settingsBuilder.getJSONWebKeysSettings().build();
     listNodePoolsSettings = settingsBuilder.listNodePoolsSettings().build();
     getNodePoolSettings = settingsBuilder.getNodePoolSettings().build();
     createNodePoolSettings = settingsBuilder.createNodePoolSettings().build();
@@ -528,6 +538,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<CancelOperationRequest, Empty> cancelOperationSettings;
     private final UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
         getServerConfigSettings;
+    private final UnaryCallSettings.Builder<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+        getJSONWebKeysSettings;
     private final UnaryCallSettings.Builder<ListNodePoolsRequest, ListNodePoolsResponse>
         listNodePoolsSettings;
     private final UnaryCallSettings.Builder<GetNodePoolRequest, NodePool> getNodePoolSettings;
@@ -644,6 +656,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       getServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getJSONWebKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listNodePoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -692,6 +706,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               getOperationSettings,
               cancelOperationSettings,
               getServerConfigSettings,
+              getJSONWebKeysSettings,
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
@@ -807,6 +822,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .getJSONWebKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listNodePoolsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -899,6 +919,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       getOperationSettings = settings.getOperationSettings.toBuilder();
       cancelOperationSettings = settings.cancelOperationSettings.toBuilder();
       getServerConfigSettings = settings.getServerConfigSettings.toBuilder();
+      getJSONWebKeysSettings = settings.getJSONWebKeysSettings.toBuilder();
       listNodePoolsSettings = settings.listNodePoolsSettings.toBuilder();
       getNodePoolSettings = settings.getNodePoolSettings.toBuilder();
       createNodePoolSettings = settings.createNodePoolSettings.toBuilder();
@@ -933,6 +954,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               getOperationSettings,
               cancelOperationSettings,
               getServerConfigSettings,
+              getJSONWebKeysSettings,
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
@@ -1054,6 +1076,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     public UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
         getServerConfigSettings() {
       return getServerConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getJSONWebKeys. */
+    public UnaryCallSettings.Builder<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+        getJSONWebKeysSettings() {
+      return getJSONWebKeysSettings;
     }
 
     /** Returns the builder for the settings used for calls to listNodePools. */

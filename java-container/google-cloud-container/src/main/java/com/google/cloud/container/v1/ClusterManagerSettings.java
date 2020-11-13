@@ -37,6 +37,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -191,6 +193,11 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   /** Returns the object with the settings used for calls to getServerConfig. */
   public UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).getServerConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getJSONWebKeys. */
+  public UnaryCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).getJSONWebKeysSettings();
   }
 
   /** Returns the object with the settings used for calls to listNodePools. */
@@ -455,6 +462,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
         getServerConfigSettings() {
       return getStubSettingsBuilder().getServerConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getJSONWebKeys. */
+    public UnaryCallSettings.Builder<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+        getJSONWebKeysSettings() {
+      return getStubSettingsBuilder().getJSONWebKeysSettings();
     }
 
     /** Returns the builder for the settings used for calls to listNodePools. */

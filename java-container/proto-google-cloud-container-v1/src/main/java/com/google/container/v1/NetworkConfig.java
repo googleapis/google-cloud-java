@@ -90,6 +90,22 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               enableIntraNodeVisibility_ = input.readBool();
               break;
             }
+          case 58:
+            {
+              com.google.container.v1.DefaultSnatStatus.Builder subBuilder = null;
+              if (defaultSnatStatus_ != null) {
+                subBuilder = defaultSnatStatus_.toBuilder();
+              }
+              defaultSnatStatus_ =
+                  input.readMessage(
+                      com.google.container.v1.DefaultSnatStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(defaultSnatStatus_);
+                defaultSnatStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -131,9 +147,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-   * the cluster is connected.
-   * Example: projects/my-project/global/networks/my-network
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. Example:
+   * projects/my-project/global/networks/my-network
    * </pre>
    *
    * <code>string network = 1;</code>
@@ -157,9 +173,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-   * the cluster is connected.
-   * Example: projects/my-project/global/networks/my-network
+   * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * to which the cluster is connected. Example:
+   * projects/my-project/global/networks/my-network
    * </pre>
    *
    * <code>string network = 1;</code>
@@ -186,8 +202,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-   * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+   * cluster is connected. Example:
+   * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
@@ -211,8 +228,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-   * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+   * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+   * cluster is connected. Example:
+   * projects/my-project/regions/us-central1/subnetworks/my-subnet
    * </pre>
    *
    * <code>string subnetwork = 2;</code>
@@ -251,6 +269,63 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return enableIntraNodeVisibility_;
   }
 
+  public static final int DEFAULT_SNAT_STATUS_FIELD_NUMBER = 7;
+  private com.google.container.v1.DefaultSnatStatus defaultSnatStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   *
+   * @return Whether the defaultSnatStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultSnatStatus() {
+    return defaultSnatStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   *
+   * @return The defaultSnatStatus.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultSnatStatus getDefaultSnatStatus() {
+    return defaultSnatStatus_ == null
+        ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+        : defaultSnatStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+   * will be disabled when default_snat_status is disabled. When disabled is set
+   * to false, default IP masquerade rules will be applied to the nodes to
+   * prevent sNAT on cluster internal traffic.
+   * </pre>
+   *
+   * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DefaultSnatStatusOrBuilder getDefaultSnatStatusOrBuilder() {
+    return getDefaultSnatStatus();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -274,6 +349,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableIntraNodeVisibility_ != false) {
       output.writeBool(5, enableIntraNodeVisibility_);
     }
+    if (defaultSnatStatus_ != null) {
+      output.writeMessage(7, getDefaultSnatStatus());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -291,6 +369,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableIntraNodeVisibility_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableIntraNodeVisibility_);
+    }
+    if (defaultSnatStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDefaultSnatStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +391,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (getEnableIntraNodeVisibility() != other.getEnableIntraNodeVisibility()) return false;
+    if (hasDefaultSnatStatus() != other.hasDefaultSnatStatus()) return false;
+    if (hasDefaultSnatStatus()) {
+      if (!getDefaultSnatStatus().equals(other.getDefaultSnatStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -327,6 +412,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSubnetwork().hashCode();
     hash = (37 * hash) + ENABLE_INTRA_NODE_VISIBILITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIntraNodeVisibility());
+    if (hasDefaultSnatStatus()) {
+      hash = (37 * hash) + DEFAULT_SNAT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultSnatStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -477,6 +566,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
       enableIntraNodeVisibility_ = false;
 
+      if (defaultSnatStatusBuilder_ == null) {
+        defaultSnatStatus_ = null;
+      } else {
+        defaultSnatStatus_ = null;
+        defaultSnatStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -507,6 +602,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       result.network_ = network_;
       result.subnetwork_ = subnetwork_;
       result.enableIntraNodeVisibility_ = enableIntraNodeVisibility_;
+      if (defaultSnatStatusBuilder_ == null) {
+        result.defaultSnatStatus_ = defaultSnatStatus_;
+      } else {
+        result.defaultSnatStatus_ = defaultSnatStatusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -567,6 +667,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableIntraNodeVisibility() != false) {
         setEnableIntraNodeVisibility(other.getEnableIntraNodeVisibility());
       }
+      if (other.hasDefaultSnatStatus()) {
+        mergeDefaultSnatStatus(other.getDefaultSnatStatus());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -602,9 +705,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-     * the cluster is connected.
-     * Example: projects/my-project/global/networks/my-network
+     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. Example:
+     * projects/my-project/global/networks/my-network
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -627,9 +730,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-     * the cluster is connected.
-     * Example: projects/my-project/global/networks/my-network
+     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. Example:
+     * projects/my-project/global/networks/my-network
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -652,9 +755,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-     * the cluster is connected.
-     * Example: projects/my-project/global/networks/my-network
+     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. Example:
+     * projects/my-project/global/networks/my-network
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -676,9 +779,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-     * the cluster is connected.
-     * Example: projects/my-project/global/networks/my-network
+     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. Example:
+     * projects/my-project/global/networks/my-network
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -696,9 +799,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which
-     * the cluster is connected.
-     * Example: projects/my-project/global/networks/my-network
+     * [network][google.container.v1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the cluster is connected. Example:
+     * projects/my-project/global/networks/my-network
      * </pre>
      *
      * <code>string network = 1;</code>
@@ -723,8 +826,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-     * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+     * cluster is connected. Example:
+     * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -747,8 +851,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-     * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+     * cluster is connected. Example:
+     * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -771,8 +876,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-     * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+     * cluster is connected. Example:
+     * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -794,8 +900,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-     * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+     * cluster is connected. Example:
+     * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -813,8 +920,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected.
-     * Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
+     * [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the
+     * cluster is connected. Example:
+     * projects/my-project/regions/us-central1/subnetworks/my-subnet
      * </pre>
      *
      * <code>string subnetwork = 2;</code>
@@ -886,6 +994,219 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       enableIntraNodeVisibility_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.DefaultSnatStatus defaultSnatStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultSnatStatus,
+            com.google.container.v1.DefaultSnatStatus.Builder,
+            com.google.container.v1.DefaultSnatStatusOrBuilder>
+        defaultSnatStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     *
+     * @return Whether the defaultSnatStatus field is set.
+     */
+    public boolean hasDefaultSnatStatus() {
+      return defaultSnatStatusBuilder_ != null || defaultSnatStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     *
+     * @return The defaultSnatStatus.
+     */
+    public com.google.container.v1.DefaultSnatStatus getDefaultSnatStatus() {
+      if (defaultSnatStatusBuilder_ == null) {
+        return defaultSnatStatus_ == null
+            ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+            : defaultSnatStatus_;
+      } else {
+        return defaultSnatStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public Builder setDefaultSnatStatus(com.google.container.v1.DefaultSnatStatus value) {
+      if (defaultSnatStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultSnatStatus_ = value;
+        onChanged();
+      } else {
+        defaultSnatStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public Builder setDefaultSnatStatus(
+        com.google.container.v1.DefaultSnatStatus.Builder builderForValue) {
+      if (defaultSnatStatusBuilder_ == null) {
+        defaultSnatStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        defaultSnatStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public Builder mergeDefaultSnatStatus(com.google.container.v1.DefaultSnatStatus value) {
+      if (defaultSnatStatusBuilder_ == null) {
+        if (defaultSnatStatus_ != null) {
+          defaultSnatStatus_ =
+              com.google.container.v1.DefaultSnatStatus.newBuilder(defaultSnatStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          defaultSnatStatus_ = value;
+        }
+        onChanged();
+      } else {
+        defaultSnatStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public Builder clearDefaultSnatStatus() {
+      if (defaultSnatStatusBuilder_ == null) {
+        defaultSnatStatus_ = null;
+        onChanged();
+      } else {
+        defaultSnatStatus_ = null;
+        defaultSnatStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public com.google.container.v1.DefaultSnatStatus.Builder getDefaultSnatStatusBuilder() {
+
+      onChanged();
+      return getDefaultSnatStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    public com.google.container.v1.DefaultSnatStatusOrBuilder getDefaultSnatStatusOrBuilder() {
+      if (defaultSnatStatusBuilder_ != null) {
+        return defaultSnatStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultSnatStatus_ == null
+            ? com.google.container.v1.DefaultSnatStatus.getDefaultInstance()
+            : defaultSnatStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether the cluster disables default in-node sNAT rules. In-node sNAT rules
+     * will be disabled when default_snat_status is disabled. When disabled is set
+     * to false, default IP masquerade rules will be applied to the nodes to
+     * prevent sNAT on cluster internal traffic.
+     * </pre>
+     *
+     * <code>.google.container.v1.DefaultSnatStatus default_snat_status = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DefaultSnatStatus,
+            com.google.container.v1.DefaultSnatStatus.Builder,
+            com.google.container.v1.DefaultSnatStatusOrBuilder>
+        getDefaultSnatStatusFieldBuilder() {
+      if (defaultSnatStatusBuilder_ == null) {
+        defaultSnatStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DefaultSnatStatus,
+                com.google.container.v1.DefaultSnatStatus.Builder,
+                com.google.container.v1.DefaultSnatStatusOrBuilder>(
+                getDefaultSnatStatus(), getParentForChildren(), isClean());
+        defaultSnatStatus_ = null;
+      }
+      return defaultSnatStatusBuilder_;
     }
 
     @java.lang.Override

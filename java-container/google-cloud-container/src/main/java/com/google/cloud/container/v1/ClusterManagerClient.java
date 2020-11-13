@@ -38,6 +38,8 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
+import com.google.container.v1.GetJSONWebKeysRequest;
+import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
@@ -418,7 +420,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the parent field.
    * @param cluster Required. A [cluster
-   *     resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
+   *     resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.locations.clusters)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createCluster(String projectId, String zone, Cluster cluster) {
@@ -459,7 +461,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param parent The parent (project and location) where the cluster will be created. Specified in
    *     the format `projects/&#42;/locations/&#42;`.
    * @param cluster Required. A [cluster
-   *     resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters)
+   *     resource](https://cloud.google.com/container-engine/reference/rest/v1/projects.locations.clusters)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createCluster(String parent, Cluster cluster) {
@@ -763,10 +765,14 @@ public class ClusterManagerClient implements BackgroundResource {
    *     This field has been deprecated and replaced by the name field.
    * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
    *     and replaced by the name field.
-   * @param loggingService Required. The logging service the cluster should use to write metrics.
+   * @param loggingService Required. The logging service the cluster should use to write logs.
    *     Currently available options:
-   *     <p>&#42; "logging.googleapis.com" - the Google Cloud Logging service &#42; "none" - no
-   *     metrics will be exported from the cluster
+   *     <p>&#42; `logging.googleapis.com/kubernetes` - The Cloud Logging service with a
+   *     Kubernetes-native resource model &#42; `logging.googleapis.com` - The legacy Cloud Logging
+   *     service (no longer available as of GKE 1.15). &#42; `none` - no logs will be exported from
+   *     the cluster.
+   *     <p>If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE
+   *     1.14+ or `logging.googleapis.com` for earlier versions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLoggingService(
@@ -797,10 +803,14 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * @param name The name (project, location, cluster) of the cluster to set logging. Specified in
    *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
-   * @param loggingService Required. The logging service the cluster should use to write metrics.
+   * @param loggingService Required. The logging service the cluster should use to write logs.
    *     Currently available options:
-   *     <p>&#42; "logging.googleapis.com" - the Google Cloud Logging service &#42; "none" - no
-   *     metrics will be exported from the cluster
+   *     <p>&#42; `logging.googleapis.com/kubernetes` - The Cloud Logging service with a
+   *     Kubernetes-native resource model &#42; `logging.googleapis.com` - The legacy Cloud Logging
+   *     service (no longer available as of GKE 1.15). &#42; `none` - no logs will be exported from
+   *     the cluster.
+   *     <p>If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE
+   *     1.14+ or `logging.googleapis.com` for earlier versions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLoggingService(String name, String loggingService) {
@@ -883,9 +893,12 @@ public class ClusterManagerClient implements BackgroundResource {
    *     and replaced by the name field.
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
-   *     <p>&#42; "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring service with
-   *     Kubernetes-native resource model &#42; "monitoring.googleapis.com" - the Google Cloud
-   *     Monitoring service &#42; "none" - no metrics will be exported from the cluster
+   *     <p>&#42; "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *     Kubernetes-native resource model &#42; `monitoring.googleapis.com` - The legacy Cloud
+   *     Monitoring service (no longer available as of GKE 1.15). &#42; `none` - No metrics will be
+   *     exported from the cluster.
+   *     <p>If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE
+   *     1.14+ or `monitoring.googleapis.com` for earlier versions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMonitoringService(
@@ -918,9 +931,12 @@ public class ClusterManagerClient implements BackgroundResource {
    *     in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
-   *     <p>&#42; "monitoring.googleapis.com/kubernetes" - the Google Cloud Monitoring service with
-   *     Kubernetes-native resource model &#42; "monitoring.googleapis.com" - the Google Cloud
-   *     Monitoring service &#42; "none" - no metrics will be exported from the cluster
+   *     <p>&#42; "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *     Kubernetes-native resource model &#42; `monitoring.googleapis.com` - The legacy Cloud
+   *     Monitoring service (no longer available as of GKE 1.15). &#42; `none` - No metrics will be
+   *     exported from the cluster.
+   *     <p>If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE
+   *     1.14+ or `monitoring.googleapis.com` for earlier versions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMonitoringService(String name, String monitoringService) {
@@ -1091,7 +1107,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations for a specific cluster.
+   * Sets the locations for a specific cluster. Deprecated. Use
+   * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+   * instead.
    *
    * <p>Sample code:
    *
@@ -1135,7 +1153,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations for a specific cluster.
+   * Sets the locations for a specific cluster. Deprecated. Use
+   * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+   * instead.
    *
    * <p>Sample code:
    *
@@ -1165,7 +1185,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations for a specific cluster.
+   * Sets the locations for a specific cluster. Deprecated. Use
+   * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+   * instead.
    *
    * <p>Sample code:
    *
@@ -1188,7 +1210,9 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations for a specific cluster.
+   * Sets the locations for a specific cluster. Deprecated. Use
+   * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
+   * instead.
    *
    * <p>Sample code:
    *
@@ -1611,6 +1635,28 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "";
+   *   Operation response = clusterManagerClient.getOperation(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The name (project, location, operation id) of the operation to get. Specified in
+   *     the format `projects/&#42;/locations/&#42;/operations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation getOperation(String name) {
+    GetOperationRequest request = GetOperationRequest.newBuilder().setName(name).build();
+    return getOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the specified operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetOperationRequest request = GetOperationRequest.newBuilder().build();
    *   Operation response = clusterManagerClient.getOperation(request);
    * }
@@ -1825,6 +1871,48 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
     return stub.getServerConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
+   * yet intended for general use, and is not available for all clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
+   *   GetJSONWebKeysResponse response = clusterManagerClient.getJSONWebKeys(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetJSONWebKeysResponse getJSONWebKeys(GetJSONWebKeysRequest request) {
+    return getJSONWebKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
+   * yet intended for general use, and is not available for all clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
+   *   ApiFuture&lt;GetJSONWebKeysResponse&gt; future = clusterManagerClient.getJSONWebKeysCallable().futureCall(request);
+   *   // Do something
+   *   GetJSONWebKeysResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+      getJSONWebKeysCallable() {
+    return stub.getJSONWebKeysCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
