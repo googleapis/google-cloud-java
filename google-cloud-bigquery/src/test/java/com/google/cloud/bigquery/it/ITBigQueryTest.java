@@ -1814,6 +1814,36 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testFastQuerySlowDDL() throws InterruptedException {
+    String tableName =
+        "test_table_fast_query_ddl_slow_" + UUID.randomUUID().toString().substring(0, 8);
+    // This query take more than 10s to run and should fall back on the old query path
+    String slowDdlQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s AS SELECT unique_key, agency, complaint_type, descriptor, street_name, city, landmark FROM `bigquery-public-data.new_york.311_service_requests`",
+            tableName);
+    QueryJobConfiguration ddlConfig =
+        QueryJobConfiguration.newBuilder(slowDdlQuery)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .build();
+    TableResult result = bigquery.query(ddlConfig);
+    assertEquals(0, result.getTotalRows());
+    assertNotNull(result.getSchema());
+    // Verify correctness of table content
+    String sqlQuery = String.format("SELECT * FROM %s.%s", DATASET, tableName);
+    QueryJobConfiguration sqlConfig = QueryJobConfiguration.newBuilder(sqlQuery).build();
+    TableResult resultAfterDDL = bigquery.query(sqlConfig);
+    for (FieldValueList row : resultAfterDDL.getValues()) {
+      FieldValue unique_key = row.get(0);
+      assertEquals(unique_key, row.get("unique_key"));
+      FieldValue agency = row.get(1);
+      assertEquals(agency, row.get("agency"));
+      FieldValue complaint_type = row.get(2);
+      assertEquals(complaint_type, row.get("complaint_type"));
+    }
+  }
+
+  @Test
   public void testFastQueryHTTPException() throws InterruptedException {
     String queryInvalid =
         "CREATE OR REPLACE SELECT * FROM UPDATE TABLE SET " + TABLE_ID_FASTQUERY.getTable();

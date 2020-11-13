@@ -1268,13 +1268,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     long numRows;
     Schema schema;
-    if (results.getSchema() == null && results.getJobComplete()) {
-      JobId jobId = JobId.fromPb(results.getJobReference());
-      Job job = getJob(jobId, options);
-      TableResult tableResult = job.getQueryResults();
-      return tableResult;
-    } else {
-      schema = results.getSchema() == null ? null : Schema.fromPb(results.getSchema());
+    if (results.getJobComplete() && results.getSchema() != null) {
+      schema = Schema.fromPb(results.getSchema());
       if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
         numRows = 0L;
       } else if (results.getNumDmlAffectedRows() != null) {
@@ -1282,6 +1277,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       } else {
         numRows = results.getTotalRows().longValue();
       }
+    } else {
+      // Query is long running (> 10s) and hasn't completed yet, or query completed but didn't
+      // return the schema, fallback. Some operations don't return the schema and can be optimized
+      // here, but this is left as future work.
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      Job job = getJob(jobId, options);
+      return job.getQueryResults();
     }
 
     if (results.getPageToken() != null) {

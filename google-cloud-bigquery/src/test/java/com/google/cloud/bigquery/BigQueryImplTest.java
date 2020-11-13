@@ -1956,6 +1956,63 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testFastQuerySlowDdl() throws InterruptedException {
+    // mock new fast query path response when running a query that takes more than 10s
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setJobComplete(false) // false when query does not complete in 10s
+            .setJobReference(queryJob.toPb()) // backend sends back a jobReference
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb());
+
+    // mock job response from backend
+    com.google.api.services.bigquery.model.Job responseJob =
+        new com.google.api.services.bigquery.model.Job()
+            .setConfiguration(QUERY_JOB_CONFIGURATION_FOR_QUERY.toPb())
+            .setJobReference(queryJob.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+
+    // mock old query path response when falling back
+    GetQueryResultsResponse queryResultsResponsePb =
+        new GetQueryResultsResponse()
+            .setJobReference(responseJob.getJobReference())
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setJobComplete(true)
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setSchema(TABLE_SCHEMA.toPb());
+
+    QueryRequestInfo requestInfo = new QueryRequestInfo(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    QueryRequest requestPb = requestInfo.toPb();
+
+    when(bigqueryRpcMock.queryRpc(PROJECT, requestPb)).thenReturn(queryResponsePb);
+    responseJob.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
+    when(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS)).thenReturn(responseJob);
+    when(bigqueryRpcMock.getQueryResults(
+            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+        .thenReturn(queryResultsResponsePb);
+    when(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .thenReturn(new TableDataList().setRows(ImmutableList.of(TABLE_ROW)).setTotalRows(1L));
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    verify(bigqueryRpcMock).queryRpc(PROJECT, requestInfo.toPb());
+    verify(bigqueryRpcMock).getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
+    verify(bigqueryRpcMock)
+        .getQueryResults(
+            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+    verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
   public void testQueryRequestCompletedOptions() throws InterruptedException {
     JobId queryJob = JobId.of(PROJECT, JOB);
     com.google.api.services.bigquery.model.Job jobResponsePb =
