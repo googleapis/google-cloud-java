@@ -68,6 +68,33 @@ public interface MatchOrBuilder
    *
    *
    * <pre>
+   * The event that matched the query. Only filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * </pre>
+   *
+   * <code>string event = 6;</code>
+   *
+   * @return The event.
+   */
+  java.lang.String getEvent();
+  /**
+   *
+   *
+   * <pre>
+   * The event that matched the query. Only filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * </pre>
+   *
+   * <code>string event = 6;</code>
+   *
+   * @return The bytes for event.
+   */
+  com.google.protobuf.ByteString getEventBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The collection of parameters extracted from the query.
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object

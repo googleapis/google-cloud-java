@@ -38,6 +38,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Match() {
+    event_ = "";
     resolvedInput_ = "";
     matchType_ = 0;
   }
@@ -119,6 +120,13 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           case 45:
             {
               confidence_ = input.readFloat();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              event_ = s;
               break;
             }
           default:
@@ -225,6 +233,16 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_INPUT = 5;</code>
      */
     NO_INPUT(5),
+    /**
+     *
+     *
+     * <pre>
+     * The query directly triggered an event.
+     * </pre>
+     *
+     * <code>EVENT = 6;</code>
+     */
+    EVENT(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -288,6 +306,16 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_INPUT = 5;</code>
      */
     public static final int NO_INPUT_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The query directly triggered an event.
+     * </pre>
+     *
+     * <code>EVENT = 6;</code>
+     */
+    public static final int EVENT_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -325,6 +353,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
           return NO_MATCH;
         case 5:
           return NO_INPUT;
+        case 6:
+          return EVENT;
         default:
           return null;
       }
@@ -430,6 +460,57 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder getIntentOrBuilder() {
     return getIntent();
+  }
+
+  public static final int EVENT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object event_;
+  /**
+   *
+   *
+   * <pre>
+   * The event that matched the query. Only filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * </pre>
+   *
+   * <code>string event = 6;</code>
+   *
+   * @return The event.
+   */
+  @java.lang.Override
+  public java.lang.String getEvent() {
+    java.lang.Object ref = event_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      event_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The event that matched the query. Only filled for
+   * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * </pre>
+   *
+   * <code>string event = 6;</code>
+   *
+   * @return The bytes for event.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEventBytes() {
+    java.lang.Object ref = event_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      event_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
@@ -659,6 +740,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (confidence_ != 0F) {
       output.writeFloat(5, confidence_);
     }
+    if (!getEventBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, event_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -685,6 +769,9 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (confidence_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
+    if (!getEventBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, event_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -705,6 +792,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
     if (hasIntent()) {
       if (!getIntent().equals(other.getIntent())) return false;
     }
+    if (!getEvent().equals(other.getEvent())) return false;
     if (hasParameters() != other.hasParameters()) return false;
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
@@ -728,6 +816,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INTENT_FIELD_NUMBER;
       hash = (53 * hash) + getIntent().hashCode();
     }
+    hash = (37 * hash) + EVENT_FIELD_NUMBER;
+    hash = (53 * hash) + getEvent().hashCode();
     if (hasParameters()) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
@@ -889,6 +979,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         intent_ = null;
         intentBuilder_ = null;
       }
+      event_ = "";
+
       if (parametersBuilder_ == null) {
         parameters_ = null;
       } else {
@@ -933,6 +1025,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.intent_ = intentBuilder_.build();
       }
+      result.event_ = event_;
       if (parametersBuilder_ == null) {
         result.parameters_ = parameters_;
       } else {
@@ -992,6 +1085,10 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3beta1.Match.getDefaultInstance()) return this;
       if (other.hasIntent()) {
         mergeIntent(other.getIntent());
+      }
+      if (!other.getEvent().isEmpty()) {
+        event_ = other.event_;
+        onChanged();
       }
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
@@ -1237,6 +1334,117 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         intent_ = null;
       }
       return intentBuilder_;
+    }
+
+    private java.lang.Object event_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The event that matched the query. Only filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * </pre>
+     *
+     * <code>string event = 6;</code>
+     *
+     * @return The event.
+     */
+    public java.lang.String getEvent() {
+      java.lang.Object ref = event_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        event_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event that matched the query. Only filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * </pre>
+     *
+     * <code>string event = 6;</code>
+     *
+     * @return The bytes for event.
+     */
+    public com.google.protobuf.ByteString getEventBytes() {
+      java.lang.Object ref = event_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        event_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event that matched the query. Only filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * </pre>
+     *
+     * <code>string event = 6;</code>
+     *
+     * @param value The event to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      event_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event that matched the query. Only filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * </pre>
+     *
+     * <code>string event = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvent() {
+
+      event_ = getDefaultInstance().getEvent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The event that matched the query. Only filled for
+     * [`EVENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * </pre>
+     *
+     * <code>string event = 6;</code>
+     *
+     * @param value The bytes for event to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      event_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.Struct parameters_;
