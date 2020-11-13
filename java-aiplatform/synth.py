@@ -29,4 +29,8 @@ for version in versions:
       bazel_target=f'//google/cloud/aiplatform/{version}:google-cloud-{service}-{version}-java',
   )
 
-java.common_templates()
+java.common_templates(excludes=[
+  '.kokoro/build.sh',
+  '.kokoro/nightly/samples.cfg',
+  '.kokoro/presubmit/samples.cfg',
+])
