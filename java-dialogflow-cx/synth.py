@@ -19,7 +19,7 @@ import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'dialogflow-cx'
-versions = ['v3beta1']
+versions = ['v3beta1', 'v3']
 
 for version in versions:
   java.bazel_library(
