@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter-settings.git",
-        "sha": "b57c43e37546dd6f478698bee2c645f540680e9b"
+        "sha": "91e4790904206b5fa1665c6306035915207e65aa"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7db8a6c5ffb12a6e4c2f799c18f00f7f3d60e279"
+        "sha": "7d652819519dfa24da9e14548232e4aaba71a11c"
       }
     }
   ],
