@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.3.1...v0.4.0) (2020-11-13)
+
+
+### Features
+
+* add v3 client ([#74](https://www.github.com/googleapis/java-dialogflow-cx/issues/74)) ([f1c6142](https://www.github.com/googleapis/java-dialogflow-cx/commit/f1c614229b458d18d1f631edb9a69b087a8ebbba))
+* expose matched event in Sessions API. ([#83](https://www.github.com/googleapis/java-dialogflow-cx/issues/83)) ([22344ef](https://www.github.com/googleapis/java-dialogflow-cx/commit/22344ef0df7361dcb56b0b34d369b30b5bf482bd))
+
 ### [0.3.1](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.3.0...v0.3.1) (2020-11-11)
 
 
