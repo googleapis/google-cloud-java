@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.124.6](https://www.github.com/googleapis/java-bigquery/compare/v1.124.5...v1.124.6) (2020-11-13)
+
+
+### Bug Fixes
+
+* make sure to fall back to old query path when query job is incomplete ([#941](https://www.github.com/googleapis/java-bigquery/issues/941)) ([bd7d85c](https://www.github.com/googleapis/java-bigquery/commit/bd7d85c489cd260feeabbdc9ecbb8dcdc8d9ae77))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v1.17.3 ([#936](https://www.github.com/googleapis/java-bigquery/issues/936)) ([0b34a50](https://www.github.com/googleapis/java-bigquery/commit/0b34a5095b2bad4ac02b3d40937dd1a3ab3f2154))
+
 ### [1.124.5](https://www.github.com/googleapis/java-bigquery/compare/v1.124.4...v1.124.5) (2020-11-11)
 
 
