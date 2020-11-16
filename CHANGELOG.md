@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.105.1](https://www.github.com/googleapis/java-datastore/compare/v1.105.0...v1.105.1) (2020-11-16)
+
+
+### Documentation
+
+* update google cloud libraries-bom ([#236](https://www.github.com/googleapis/java-datastore/issues/236)) ([7325fa0](https://www.github.com/googleapis/java-datastore/commit/7325fa0ba489efe31a58f64c2d3e2b55cd156822))
+* update libraries-bom ([#220](https://www.github.com/googleapis/java-datastore/issues/220)) ([593fc66](https://www.github.com/googleapis/java-datastore/commit/593fc662e11ea446cd3fc7864cfa9a1b75480fba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.13.0 ([#243](https://www.github.com/googleapis/java-datastore/issues/243)) ([d275db8](https://www.github.com/googleapis/java-datastore/commit/d275db8e3f14783acfebb9dff7347a871dcd9727))
+* update dependency com.google.oauth-client:google-oauth-client to v1.31.1 ([#244](https://www.github.com/googleapis/java-datastore/issues/244)) ([b984e36](https://www.github.com/googleapis/java-datastore/commit/b984e360ccaf30f55b239f831430256f3231036f))
+* update google-cloud-shared-dependencies to 0.15.0 ([#259](https://www.github.com/googleapis/java-datastore/issues/259)) ([d6c68e7](https://www.github.com/googleapis/java-datastore/commit/d6c68e7e09f5e5728f2f082d5e95503df04a2ec2))
+
 ## [1.105.0](https://www.github.com/googleapis/java-datastore/compare/v1.104.0...v1.105.0) (2020-09-01)
 
 
