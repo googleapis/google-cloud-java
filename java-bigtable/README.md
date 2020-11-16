@@ -16,16 +16,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>1.17.3</version>
+  <version>1.18.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:1.17.3'
+compile 'com.google.cloud:google-cloud-bigtable:1.18.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.17.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.18.0"
 ```
 [//]: # ({x-version-update-end})
 
