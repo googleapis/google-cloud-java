@@ -153,8 +153,32 @@ class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
+  public BigtableDataClient getDataClientForInstance(String instanceId) throws IOException {
+    BigtableDataSettings.Builder settings =
+        BigtableDataSettings.newBuilder()
+            .setProjectId(dataSettings.getProjectId())
+            .setInstanceId(instanceId);
+    settings
+        .stubSettings()
+        .setEndpoint(dataSettings.stubSettings().getEndpoint())
+        .setTransportChannelProvider(dataSettings.stubSettings().getTransportChannelProvider());
+    return BigtableDataClient.create(settings.build());
+  }
+
+  @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
+  }
+
+  @Override
+  public BigtableTableAdminClient getTableAdminClientForInstance(String instanceId)
+      throws IOException {
+    BigtableTableAdminSettings.Builder settings =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId(tableAdminSettings.getProjectId())
+            .setInstanceId(instanceId);
+    settings.stubSettings().setEndpoint(tableAdminSettings.stubSettings().getEndpoint());
+    return BigtableTableAdminClient.create(settings.build());
   }
 
   @Override

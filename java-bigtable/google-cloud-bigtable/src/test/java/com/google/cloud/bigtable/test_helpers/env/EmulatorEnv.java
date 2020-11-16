@@ -23,6 +23,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.emulator.v2.Emulator;
 import com.google.common.base.Strings;
+import java.io.IOException;
 import java.nio.file.Paths;
 
 public class EmulatorEnv extends AbstractTestEnv {
@@ -105,8 +106,19 @@ public class EmulatorEnv extends AbstractTestEnv {
   }
 
   @Override
+  public BigtableDataClient getDataClientForInstance(String instanceId) throws IOException {
+    throw new UnsupportedOperationException("Could not create a data client for another instance.");
+  }
+
+  @Override
   public BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
+  }
+
+  @Override
+  public BigtableTableAdminClient getTableAdminClientForInstance(String instanceId)
+      throws IOException {
+    throw new UnsupportedOperationException("Could not create a table admin for another instance.");
   }
 
   @Override

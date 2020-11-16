@@ -22,6 +22,7 @@ import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import java.io.IOException;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
 
@@ -42,7 +43,12 @@ public abstract class AbstractTestEnv {
 
   public abstract BigtableDataClient getDataClient();
 
+  public abstract BigtableDataClient getDataClientForInstance(String instanceId) throws IOException;
+
   public abstract BigtableTableAdminClient getTableAdminClient();
+
+  public abstract BigtableTableAdminClient getTableAdminClientForInstance(String instanceId)
+      throws IOException;
 
   public abstract BigtableInstanceAdminClient getInstanceAdminClient();
 

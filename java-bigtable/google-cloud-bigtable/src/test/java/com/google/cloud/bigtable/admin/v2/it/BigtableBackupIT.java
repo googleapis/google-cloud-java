@@ -102,14 +102,14 @@ public class BigtableBackupIT {
     // Setup a prefix to avoid collisions between concurrent test runs
     prefix = String.format("020%d", System.currentTimeMillis());
 
-    tableAdmin = BigtableTableAdminClient.create(testEnvRule.env().getProjectId(), targetInstance);
+    tableAdmin = testEnvRule.env().getTableAdminClientForInstance(targetInstance);
 
     testTable =
         tableAdmin.createTable(
             CreateTableRequest.of(generateId(TEST_TABLE_SUFFIX)).addFamily("cf1"));
 
     // Populate test data.
-    dataClient = BigtableDataClient.create(testEnvRule.env().getProjectId(), targetInstance);
+    dataClient = testEnvRule.env().getDataClientForInstance(targetInstance);
     byte[] rowBytes = new byte[1024];
     Random random = new Random();
     random.nextBytes(rowBytes);
