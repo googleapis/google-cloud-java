@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-servicedirectory/compare/v0.2.8...v0.3.0) (2020-11-16)
+
+
+### Features
+
+* add v1 client ([#227](https://www.github.com/googleapis/java-servicedirectory/issues/227)) ([c06a272](https://www.github.com/googleapis/java-servicedirectory/commit/c06a272c0fa377ddde4965fb45f0121dab6f6367))
+
 ### [0.2.8](https://www.github.com/googleapis/java-servicedirectory/compare/v0.2.7...v0.2.8) (2020-11-11)
 
 
