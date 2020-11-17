@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.1.1](https://www.github.com/googleapis/java-asset/compare/v2.1.0...v2.1.1) (2020-11-17)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.90.7 ([#434](https://www.github.com/googleapis/java-asset/issues/434)) ([8720d27](https://www.github.com/googleapis/java-asset/commit/8720d2701c7d9b9a9614d7d1fcbf441a9a7dfd8d))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.0.7 ([#433](https://www.github.com/googleapis/java-asset/issues/433)) ([d64a9c2](https://www.github.com/googleapis/java-asset/commit/d64a9c223fd82b161e555f1594942401cd8545f3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.14.1 ([#430](https://www.github.com/googleapis/java-asset/issues/430)) ([28ef85c](https://www.github.com/googleapis/java-asset/commit/28ef85cc78709859a5942cfcc3da914ffbb1f123))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#446](https://www.github.com/googleapis/java-asset/issues/446)) ([1ce828d](https://www.github.com/googleapis/java-asset/commit/1ce828de135a16a8c5f7769ecab7864912523594))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.4 ([#444](https://www.github.com/googleapis/java-asset/issues/444)) ([784b17b](https://www.github.com/googleapis/java-asset/commit/784b17b496d99161507736c7d9923a177128b8dd))
+
 ## [2.1.0](https://www.github.com/googleapis/java-asset/compare/v2.0.2...v2.1.0) (2020-10-30)
 
 
