@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.2.6](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.5...v1.2.6) (2020-11-17)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#331](https://www.github.com/googleapis/java-containeranalysis/issues/331)) ([fae167b](https://www.github.com/googleapis/java-containeranalysis/commit/fae167bb5d025916d2e2fac1dd4fb02800d411fe))
+* update dependency io.grafeas:grafeas to v1.0.5 ([#335](https://www.github.com/googleapis/java-containeranalysis/issues/335)) ([7451c46](https://www.github.com/googleapis/java-containeranalysis/commit/7451c461a8aff819e1c3a2b6f74c564fe8bef220))
+
 ### [1.2.5](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.4...v1.2.5) (2020-11-02)
 
 
