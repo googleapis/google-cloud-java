@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-config.git",
-        "sha": "2f3af66716f4492fdd418a304ffcc42797734172"
+        "sha": "fad81f1124473671c8fe1655e90c3c5aa0d4b8f9"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ba9918cd22874245b55734f57470c719b577e591"
+        "sha": "7fcc405a579d5d53a726ff3da1b7c8c08f0f2d58"
       }
     }
   ]
