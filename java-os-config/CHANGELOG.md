@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-os-config/compare/v1.0.5...v1.1.0) (2020-11-13)
+
+
+### Features
+
+* Added PatchRollout feature to PatchDeployments feat: Added Inventory proto definitions for VM Manager Inventory. ([#160](https://www.github.com/googleapis/java-os-config/issues/160)) ([8bc3480](https://www.github.com/googleapis/java-os-config/commit/8bc3480df37eb0ccc4a7345197cb6ca0c28fc401))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#158](https://www.github.com/googleapis/java-os-config/issues/158)) ([a7859ee](https://www.github.com/googleapis/java-os-config/commit/a7859ee6a9021d8c07811be40200ce2a763a50c6))
+
 ### [1.0.5](https://www.github.com/googleapis/java-os-config/compare/v1.0.4...v1.0.5) (2020-11-02)
 
 
