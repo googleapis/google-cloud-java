@@ -43,7 +43,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.108.8-SNAPSHOT</version>
+      <version>1.109.0</version>
     </dependency>
     <!-- {x-version-update-end} -->
 

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-  <version>1.90.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
+  <version>1.91.0</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
   <name>grpc-google-cloud-pubsub-v1</name>
   <description>GRPC library for grpc-google-cloud-pubsub-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pubsub-parent</artifactId>
-    <version>1.108.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+    <version>1.109.0</version><!-- {x-version-update:google-cloud-pubsub:current} -->
   </parent>
   <dependencies>
     <dependency>
