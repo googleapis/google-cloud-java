@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.0.19](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.18...v1.0.19) (2020-11-17)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.124.4 ([#500](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/500)) ([7422ff7](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/7422ff79fe9fb0e56c2a2ac788367148903e6033))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.124.5 ([#505](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/505)) ([c4d64d3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c4d64d3acda52d37f9a2eca19840faad710add71))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.124.6 ([#512](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/512)) ([0e28a9c](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/0e28a9c08eaf762a70bd2479c1e1f88897758e57))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.124.7 ([#514](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/514)) ([6d064d4](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6d064d4e2a9c1103533bf5d96248691c215f6742))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#501](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/501)) ([9c9a540](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/9c9a5403c617aa869b4563225f69078908f87f4d))
+* update dependency com.google.protobuf:protobuf-java-util to v3.14.0 ([#513](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/513)) ([c7f721e](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c7f721e014239c0d6dd4896db65f0a86f9e0602f))
+
+
+### Documentation
+
+* **samples:** add create redshift transfer config ([#507](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/507)) ([6c88965](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6c88965c9fb6f6b9079e03b7b6aa6c466fb8570e))
+* **samples:** add create teradata transfer ([#502](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/502)) ([8f3cce0](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/8f3cce0038745f7d2136117813e67e8299146791))
+
 ### [1.0.18](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.17...v1.0.18) (2020-11-10)
 
 
