@@ -36,14 +36,14 @@ public class CreateTeradataTransfer {
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
     String databaseType = "Teradata";
-    String bucketLocation = "gs://cloud-sample-data/";
+    String bucket = "cloud-sample-data";
     String databaseName = "MY_DATABASE_NAME";
     String tableNamePatterns = "*";
     String serviceAccount = "MY_SERVICE_ACCOUNT";
     String schemaFilePath = "/your-schema-path";
     Map<String, Value> params = new HashMap<>();
     params.put("database_type", Value.newBuilder().setStringValue(databaseType).build());
-    params.put("location", Value.newBuilder().setStringValue(bucketLocation).build());
+    params.put("bucket", Value.newBuilder().setStringValue(bucket).build());
     params.put("database_name", Value.newBuilder().setStringValue(databaseName).build());
     params.put("table_name_patterns", Value.newBuilder().setStringValue(tableNamePatterns).build());
     params.put("agent_service_account", Value.newBuilder().setStringValue(serviceAccount).build());
