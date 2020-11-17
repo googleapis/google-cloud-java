@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.4.2](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.1...v2.4.2) (2020-11-17)
+
+
+### Documentation
+
+* Update doc on ReloadDocument method. ([#358](https://www.github.com/googleapis/java-dialogflow/issues/358)) ([a6bef9e](https://www.github.com/googleapis/java-dialogflow/commit/a6bef9eeacc69e7d2fa80432a7bd13a170d85535))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#366](https://www.github.com/googleapis/java-dialogflow/issues/366)) ([3ce3814](https://www.github.com/googleapis/java-dialogflow/commit/3ce3814ca1fda87c6480e780fd796534f19f4996))
+
 ### [2.4.1](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.0...v2.4.1) (2020-11-02)
 
 
