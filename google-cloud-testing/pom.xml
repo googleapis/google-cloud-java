@@ -37,7 +37,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.93.10</version>
+        <version>1.94.0</version>
         <type>test-jar</type>
       </dependency>
       <dependency>
