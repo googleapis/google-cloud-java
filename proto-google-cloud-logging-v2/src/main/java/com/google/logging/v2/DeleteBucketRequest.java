@@ -22,29 +22,29 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `GetBucket`.
+ * The parameters to `DeleteBucket`.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.GetBucketRequest}
+ * Protobuf type {@code google.logging.v2.DeleteBucketRequest}
  */
-public final class GetBucketRequest extends com.google.protobuf.GeneratedMessageV3
+public final class DeleteBucketRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.GetBucketRequest)
-    GetBucketRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.DeleteBucketRequest)
+    DeleteBucketRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetBucketRequest.newBuilder() to construct.
-  private GetBucketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteBucketRequest.newBuilder() to construct.
+  private DeleteBucketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetBucketRequest() {
+  private DeleteBucketRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetBucketRequest();
+    return new DeleteBucketRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private GetBucketRequest(
+  private DeleteBucketRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -98,17 +98,17 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_GetBucketRequest_descriptor;
+        .internal_static_google_logging_v2_DeleteBucketRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_GetBucketRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_DeleteBucketRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.GetBucketRequest.class,
-            com.google.logging.v2.GetBucketRequest.Builder.class);
+            com.google.logging.v2.DeleteBucketRequest.class,
+            com.google.logging.v2.DeleteBucketRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -117,7 +117,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The resource name of the bucket:
+   * Required. The full resource name of the bucket to delete.
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -148,7 +148,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The resource name of the bucket:
+   * Required. The full resource name of the bucket to delete.
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -215,10 +215,11 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.GetBucketRequest)) {
+    if (!(obj instanceof com.google.logging.v2.DeleteBucketRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.GetBucketRequest other = (com.google.logging.v2.GetBucketRequest) obj;
+    com.google.logging.v2.DeleteBucketRequest other =
+        (com.google.logging.v2.DeleteBucketRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -239,71 +240,71 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     return hash;
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.logging.v2.DeleteBucketRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseDelimitedFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.GetBucketRequest parseFrom(
+  public static com.google.logging.v2.DeleteBucketRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -320,7 +321,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.GetBucketRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.DeleteBucketRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -338,31 +339,31 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The parameters to `GetBucket`.
+   * The parameters to `DeleteBucket`.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.GetBucketRequest}
+   * Protobuf type {@code google.logging.v2.DeleteBucketRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.GetBucketRequest)
-      com.google.logging.v2.GetBucketRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.DeleteBucketRequest)
+      com.google.logging.v2.DeleteBucketRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetBucketRequest_descriptor;
+          .internal_static_google_logging_v2_DeleteBucketRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetBucketRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_DeleteBucketRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.GetBucketRequest.class,
-              com.google.logging.v2.GetBucketRequest.Builder.class);
+              com.google.logging.v2.DeleteBucketRequest.class,
+              com.google.logging.v2.DeleteBucketRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.GetBucketRequest.newBuilder()
+    // Construct using com.google.logging.v2.DeleteBucketRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -387,17 +388,17 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_GetBucketRequest_descriptor;
+          .internal_static_google_logging_v2_DeleteBucketRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetBucketRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.GetBucketRequest.getDefaultInstance();
+    public com.google.logging.v2.DeleteBucketRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.DeleteBucketRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetBucketRequest build() {
-      com.google.logging.v2.GetBucketRequest result = buildPartial();
+    public com.google.logging.v2.DeleteBucketRequest build() {
+      com.google.logging.v2.DeleteBucketRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -405,9 +406,9 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.logging.v2.GetBucketRequest buildPartial() {
-      com.google.logging.v2.GetBucketRequest result =
-          new com.google.logging.v2.GetBucketRequest(this);
+    public com.google.logging.v2.DeleteBucketRequest buildPartial() {
+      com.google.logging.v2.DeleteBucketRequest result =
+          new com.google.logging.v2.DeleteBucketRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -448,16 +449,16 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.GetBucketRequest) {
-        return mergeFrom((com.google.logging.v2.GetBucketRequest) other);
+      if (other instanceof com.google.logging.v2.DeleteBucketRequest) {
+        return mergeFrom((com.google.logging.v2.DeleteBucketRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.GetBucketRequest other) {
-      if (other == com.google.logging.v2.GetBucketRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.DeleteBucketRequest other) {
+      if (other == com.google.logging.v2.DeleteBucketRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -477,11 +478,11 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.GetBucketRequest parsedMessage = null;
+      com.google.logging.v2.DeleteBucketRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.GetBucketRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.DeleteBucketRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -496,7 +497,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the bucket:
+     * Required. The full resource name of the bucket to delete.
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -526,7 +527,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the bucket:
+     * Required. The full resource name of the bucket to delete.
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -556,7 +557,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the bucket:
+     * Required. The full resource name of the bucket to delete.
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -585,7 +586,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the bucket:
+     * Required. The full resource name of the bucket to delete.
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -610,7 +611,7 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the bucket:
+     * Required. The full resource name of the bucket to delete.
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
@@ -648,42 +649,42 @@ public final class GetBucketRequest extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.GetBucketRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.DeleteBucketRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.GetBucketRequest)
-  private static final com.google.logging.v2.GetBucketRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.DeleteBucketRequest)
+  private static final com.google.logging.v2.DeleteBucketRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.GetBucketRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.DeleteBucketRequest();
   }
 
-  public static com.google.logging.v2.GetBucketRequest getDefaultInstance() {
+  public static com.google.logging.v2.DeleteBucketRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetBucketRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetBucketRequest>() {
+  private static final com.google.protobuf.Parser<DeleteBucketRequest> PARSER =
+      new com.google.protobuf.AbstractParser<DeleteBucketRequest>() {
         @java.lang.Override
-        public GetBucketRequest parsePartialFrom(
+        public DeleteBucketRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetBucketRequest(input, extensionRegistry);
+          return new DeleteBucketRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetBucketRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteBucketRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetBucketRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteBucketRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.GetBucketRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.DeleteBucketRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -24,8 +24,8 @@ package com.google.logging.v2;
  * <pre>
  * Describes a logs-based metric. The value of the metric is the number of log
  * entries that match a logs filter in a given time interval.
- * Logs-based metric can also be used to extract values from logs and create a
- * a distribution of the values. The distribution records the statistics of the
+ * Logs-based metrics can also be used to extract values from logs and create a
+ * distribution of the values. The distribution records the statistics of the
  * extracted values along with an optional histogram of the values as specified
  * by the bucket options.
  * </pre>
@@ -1357,8 +1357,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes a logs-based metric. The value of the metric is the number of log
    * entries that match a logs filter in a given time interval.
-   * Logs-based metric can also be used to extract values from logs and create a
-   * a distribution of the values. The distribution records the statistics of the
+   * Logs-based metrics can also be used to extract values from logs and create a
+   * distribution of the values. The distribution records the statistics of the
    * extracted values along with an optional histogram of the values as specified
    * by the bucket options.
    * </pre>

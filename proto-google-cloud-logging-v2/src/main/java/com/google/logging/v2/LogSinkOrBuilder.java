@@ -179,6 +179,78 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.logging.v2.LogExclusion getExclusions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getExclusionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
+      getExclusionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Deprecated. This field is unused.
    * </pre>
    *
@@ -208,7 +280,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
    * writes the exported log entries to the sink's destination. This field is
    * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -230,7 +302,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
    * writes the exported log entries to the sink's destination. This field is
    * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the

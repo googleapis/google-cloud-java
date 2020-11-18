@@ -22,30 +22,30 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The response from ListBuckets.
+ * The response from ListViews.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.ListBucketsResponse}
+ * Protobuf type {@code google.logging.v2.ListViewsResponse}
  */
-public final class ListBucketsResponse extends com.google.protobuf.GeneratedMessageV3
+public final class ListViewsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.ListBucketsResponse)
-    ListBucketsResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.ListViewsResponse)
+    ListViewsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListBucketsResponse.newBuilder() to construct.
-  private ListBucketsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListViewsResponse.newBuilder() to construct.
+  private ListViewsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListBucketsResponse() {
-    buckets_ = java.util.Collections.emptyList();
+  private ListViewsResponse() {
+    views_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListBucketsResponse();
+    return new ListViewsResponse();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private ListBucketsResponse(
+  private ListViewsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,11 +75,11 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                buckets_ = new java.util.ArrayList<com.google.logging.v2.LogBucket>();
+                views_ = new java.util.ArrayList<com.google.logging.v2.LogView>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              buckets_.add(
-                  input.readMessage(com.google.logging.v2.LogBucket.parser(), extensionRegistry));
+              views_.add(
+                  input.readMessage(com.google.logging.v2.LogView.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -104,7 +104,7 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        buckets_ = java.util.Collections.unmodifiableList(buckets_);
+        views_ = java.util.Collections.unmodifiableList(views_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -113,86 +113,85 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsResponse_descriptor;
+        .internal_static_google_logging_v2_ListViewsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsResponse_fieldAccessorTable
+        .internal_static_google_logging_v2_ListViewsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.ListBucketsResponse.class,
-            com.google.logging.v2.ListBucketsResponse.Builder.class);
+            com.google.logging.v2.ListViewsResponse.class,
+            com.google.logging.v2.ListViewsResponse.Builder.class);
   }
 
-  public static final int BUCKETS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.logging.v2.LogBucket> buckets_;
+  public static final int VIEWS_FIELD_NUMBER = 1;
+  private java.util.List<com.google.logging.v2.LogView> views_;
   /**
    *
    *
    * <pre>
-   * A list of buckets.
+   * A list of views.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+   * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.logging.v2.LogBucket> getBucketsList() {
-    return buckets_;
+  public java.util.List<com.google.logging.v2.LogView> getViewsList() {
+    return views_;
   }
   /**
    *
    *
    * <pre>
-   * A list of buckets.
+   * A list of views.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+   * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.logging.v2.LogBucketOrBuilder>
-      getBucketsOrBuilderList() {
-    return buckets_;
+  public java.util.List<? extends com.google.logging.v2.LogViewOrBuilder> getViewsOrBuilderList() {
+    return views_;
   }
   /**
    *
    *
    * <pre>
-   * A list of buckets.
+   * A list of views.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+   * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   @java.lang.Override
-  public int getBucketsCount() {
-    return buckets_.size();
+  public int getViewsCount() {
+    return views_.size();
   }
   /**
    *
    *
    * <pre>
-   * A list of buckets.
+   * A list of views.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+   * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   @java.lang.Override
-  public com.google.logging.v2.LogBucket getBuckets(int index) {
-    return buckets_.get(index);
+  public com.google.logging.v2.LogView getViews(int index) {
+    return views_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * A list of buckets.
+   * A list of views.
    * </pre>
    *
-   * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+   * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   @java.lang.Override
-  public com.google.logging.v2.LogBucketOrBuilder getBucketsOrBuilder(int index) {
-    return buckets_.get(index);
+  public com.google.logging.v2.LogViewOrBuilder getViewsOrBuilder(int index) {
+    return views_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
@@ -262,8 +261,8 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < buckets_.size(); i++) {
-      output.writeMessage(1, buckets_.get(i));
+    for (int i = 0; i < views_.size(); i++) {
+      output.writeMessage(1, views_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
@@ -277,8 +276,8 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < buckets_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, buckets_.get(i));
+    for (int i = 0; i < views_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, views_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -293,13 +292,12 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.ListBucketsResponse)) {
+    if (!(obj instanceof com.google.logging.v2.ListViewsResponse)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.ListBucketsResponse other =
-        (com.google.logging.v2.ListBucketsResponse) obj;
+    com.google.logging.v2.ListViewsResponse other = (com.google.logging.v2.ListViewsResponse) obj;
 
-    if (!getBucketsList().equals(other.getBucketsList())) return false;
+    if (!getViewsList().equals(other.getViewsList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -312,9 +310,9 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getBucketsCount() > 0) {
-      hash = (37 * hash) + BUCKETS_FIELD_NUMBER;
-      hash = (53 * hash) + getBucketsList().hashCode();
+    if (getViewsCount() > 0) {
+      hash = (37 * hash) + VIEWS_FIELD_NUMBER;
+      hash = (53 * hash) + getViewsList().hashCode();
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
@@ -323,71 +321,71 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     return hash;
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.ListViewsResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(byte[] data)
+  public static com.google.logging.v2.ListViewsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.ListViewsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseDelimitedFrom(
+  public static com.google.logging.v2.ListViewsResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseDelimitedFrom(
+  public static com.google.logging.v2.ListViewsResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsResponse parseFrom(
+  public static com.google.logging.v2.ListViewsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -404,7 +402,7 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.ListBucketsResponse prototype) {
+  public static Builder newBuilder(com.google.logging.v2.ListViewsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -422,31 +420,31 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response from ListBuckets.
+   * The response from ListViews.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.ListBucketsResponse}
+   * Protobuf type {@code google.logging.v2.ListViewsResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListBucketsResponse)
-      com.google.logging.v2.ListBucketsResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListViewsResponse)
+      com.google.logging.v2.ListViewsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsResponse_descriptor;
+          .internal_static_google_logging_v2_ListViewsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsResponse_fieldAccessorTable
+          .internal_static_google_logging_v2_ListViewsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.ListBucketsResponse.class,
-              com.google.logging.v2.ListBucketsResponse.Builder.class);
+              com.google.logging.v2.ListViewsResponse.class,
+              com.google.logging.v2.ListViewsResponse.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.ListBucketsResponse.newBuilder()
+    // Construct using com.google.logging.v2.ListViewsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -458,18 +456,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getBucketsFieldBuilder();
+        getViewsFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bucketsBuilder_ == null) {
-        buckets_ = java.util.Collections.emptyList();
+      if (viewsBuilder_ == null) {
+        views_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        bucketsBuilder_.clear();
+        viewsBuilder_.clear();
       }
       nextPageToken_ = "";
 
@@ -479,17 +477,17 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsResponse_descriptor;
+          .internal_static_google_logging_v2_ListViewsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsResponse getDefaultInstanceForType() {
-      return com.google.logging.v2.ListBucketsResponse.getDefaultInstance();
+    public com.google.logging.v2.ListViewsResponse getDefaultInstanceForType() {
+      return com.google.logging.v2.ListViewsResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsResponse build() {
-      com.google.logging.v2.ListBucketsResponse result = buildPartial();
+    public com.google.logging.v2.ListViewsResponse build() {
+      com.google.logging.v2.ListViewsResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -497,18 +495,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsResponse buildPartial() {
-      com.google.logging.v2.ListBucketsResponse result =
-          new com.google.logging.v2.ListBucketsResponse(this);
+    public com.google.logging.v2.ListViewsResponse buildPartial() {
+      com.google.logging.v2.ListViewsResponse result =
+          new com.google.logging.v2.ListViewsResponse(this);
       int from_bitField0_ = bitField0_;
-      if (bucketsBuilder_ == null) {
+      if (viewsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          buckets_ = java.util.Collections.unmodifiableList(buckets_);
+          views_ = java.util.Collections.unmodifiableList(views_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.buckets_ = buckets_;
+        result.views_ = views_;
       } else {
-        result.buckets_ = bucketsBuilder_.build();
+        result.views_ = viewsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
       onBuilt();
@@ -550,40 +548,40 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.ListBucketsResponse) {
-        return mergeFrom((com.google.logging.v2.ListBucketsResponse) other);
+      if (other instanceof com.google.logging.v2.ListViewsResponse) {
+        return mergeFrom((com.google.logging.v2.ListViewsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.ListBucketsResponse other) {
-      if (other == com.google.logging.v2.ListBucketsResponse.getDefaultInstance()) return this;
-      if (bucketsBuilder_ == null) {
-        if (!other.buckets_.isEmpty()) {
-          if (buckets_.isEmpty()) {
-            buckets_ = other.buckets_;
+    public Builder mergeFrom(com.google.logging.v2.ListViewsResponse other) {
+      if (other == com.google.logging.v2.ListViewsResponse.getDefaultInstance()) return this;
+      if (viewsBuilder_ == null) {
+        if (!other.views_.isEmpty()) {
+          if (views_.isEmpty()) {
+            views_ = other.views_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureBucketsIsMutable();
-            buckets_.addAll(other.buckets_);
+            ensureViewsIsMutable();
+            views_.addAll(other.views_);
           }
           onChanged();
         }
       } else {
-        if (!other.buckets_.isEmpty()) {
-          if (bucketsBuilder_.isEmpty()) {
-            bucketsBuilder_.dispose();
-            bucketsBuilder_ = null;
-            buckets_ = other.buckets_;
+        if (!other.views_.isEmpty()) {
+          if (viewsBuilder_.isEmpty()) {
+            viewsBuilder_.dispose();
+            viewsBuilder_ = null;
+            views_ = other.views_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            bucketsBuilder_ =
+            viewsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getBucketsFieldBuilder()
+                    ? getViewsFieldBuilder()
                     : null;
           } else {
-            bucketsBuilder_.addAllMessages(other.buckets_);
+            viewsBuilder_.addAllMessages(other.views_);
           }
         }
       }
@@ -606,11 +604,11 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.ListBucketsResponse parsedMessage = null;
+      com.google.logging.v2.ListViewsResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.ListBucketsResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.ListViewsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -622,89 +620,89 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private java.util.List<com.google.logging.v2.LogBucket> buckets_ =
+    private java.util.List<com.google.logging.v2.LogView> views_ =
         java.util.Collections.emptyList();
 
-    private void ensureBucketsIsMutable() {
+    private void ensureViewsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        buckets_ = new java.util.ArrayList<com.google.logging.v2.LogBucket>(buckets_);
+        views_ = new java.util.ArrayList<com.google.logging.v2.LogView>(views_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.logging.v2.LogBucket,
-            com.google.logging.v2.LogBucket.Builder,
-            com.google.logging.v2.LogBucketOrBuilder>
-        bucketsBuilder_;
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        viewsBuilder_;
 
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public java.util.List<com.google.logging.v2.LogBucket> getBucketsList() {
-      if (bucketsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(buckets_);
+    public java.util.List<com.google.logging.v2.LogView> getViewsList() {
+      if (viewsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(views_);
       } else {
-        return bucketsBuilder_.getMessageList();
+        return viewsBuilder_.getMessageList();
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public int getBucketsCount() {
-      if (bucketsBuilder_ == null) {
-        return buckets_.size();
+    public int getViewsCount() {
+      if (viewsBuilder_ == null) {
+        return views_.size();
       } else {
-        return bucketsBuilder_.getCount();
+        return viewsBuilder_.getCount();
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public com.google.logging.v2.LogBucket getBuckets(int index) {
-      if (bucketsBuilder_ == null) {
-        return buckets_.get(index);
+    public com.google.logging.v2.LogView getViews(int index) {
+      if (viewsBuilder_ == null) {
+        return views_.get(index);
       } else {
-        return bucketsBuilder_.getMessage(index);
+        return viewsBuilder_.getMessage(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder setBuckets(int index, com.google.logging.v2.LogBucket value) {
-      if (bucketsBuilder_ == null) {
+    public Builder setViews(int index, com.google.logging.v2.LogView value) {
+      if (viewsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBucketsIsMutable();
-        buckets_.set(index, value);
+        ensureViewsIsMutable();
+        views_.set(index, value);
         onChanged();
       } else {
-        bucketsBuilder_.setMessage(index, value);
+        viewsBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -712,18 +710,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder setBuckets(int index, com.google.logging.v2.LogBucket.Builder builderForValue) {
-      if (bucketsBuilder_ == null) {
-        ensureBucketsIsMutable();
-        buckets_.set(index, builderForValue.build());
+    public Builder setViews(int index, com.google.logging.v2.LogView.Builder builderForValue) {
+      if (viewsBuilder_ == null) {
+        ensureViewsIsMutable();
+        views_.set(index, builderForValue.build());
         onChanged();
       } else {
-        bucketsBuilder_.setMessage(index, builderForValue.build());
+        viewsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -731,21 +729,21 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder addBuckets(com.google.logging.v2.LogBucket value) {
-      if (bucketsBuilder_ == null) {
+    public Builder addViews(com.google.logging.v2.LogView value) {
+      if (viewsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBucketsIsMutable();
-        buckets_.add(value);
+        ensureViewsIsMutable();
+        views_.add(value);
         onChanged();
       } else {
-        bucketsBuilder_.addMessage(value);
+        viewsBuilder_.addMessage(value);
       }
       return this;
     }
@@ -753,21 +751,21 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder addBuckets(int index, com.google.logging.v2.LogBucket value) {
-      if (bucketsBuilder_ == null) {
+    public Builder addViews(int index, com.google.logging.v2.LogView value) {
+      if (viewsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBucketsIsMutable();
-        buckets_.add(index, value);
+        ensureViewsIsMutable();
+        views_.add(index, value);
         onChanged();
       } else {
-        bucketsBuilder_.addMessage(index, value);
+        viewsBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -775,18 +773,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder addBuckets(com.google.logging.v2.LogBucket.Builder builderForValue) {
-      if (bucketsBuilder_ == null) {
-        ensureBucketsIsMutable();
-        buckets_.add(builderForValue.build());
+    public Builder addViews(com.google.logging.v2.LogView.Builder builderForValue) {
+      if (viewsBuilder_ == null) {
+        ensureViewsIsMutable();
+        views_.add(builderForValue.build());
         onChanged();
       } else {
-        bucketsBuilder_.addMessage(builderForValue.build());
+        viewsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -794,18 +792,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder addBuckets(int index, com.google.logging.v2.LogBucket.Builder builderForValue) {
-      if (bucketsBuilder_ == null) {
-        ensureBucketsIsMutable();
-        buckets_.add(index, builderForValue.build());
+    public Builder addViews(int index, com.google.logging.v2.LogView.Builder builderForValue) {
+      if (viewsBuilder_ == null) {
+        ensureViewsIsMutable();
+        views_.add(index, builderForValue.build());
         onChanged();
       } else {
-        bucketsBuilder_.addMessage(index, builderForValue.build());
+        viewsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -813,19 +811,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder addAllBuckets(
-        java.lang.Iterable<? extends com.google.logging.v2.LogBucket> values) {
-      if (bucketsBuilder_ == null) {
-        ensureBucketsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, buckets_);
+    public Builder addAllViews(java.lang.Iterable<? extends com.google.logging.v2.LogView> values) {
+      if (viewsBuilder_ == null) {
+        ensureViewsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, views_);
         onChanged();
       } else {
-        bucketsBuilder_.addAllMessages(values);
+        viewsBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -833,18 +830,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder clearBuckets() {
-      if (bucketsBuilder_ == null) {
-        buckets_ = java.util.Collections.emptyList();
+    public Builder clearViews() {
+      if (viewsBuilder_ == null) {
+        views_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        bucketsBuilder_.clear();
+        viewsBuilder_.clear();
       }
       return this;
     }
@@ -852,18 +849,18 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public Builder removeBuckets(int index) {
-      if (bucketsBuilder_ == null) {
-        ensureBucketsIsMutable();
-        buckets_.remove(index);
+    public Builder removeViews(int index) {
+      if (viewsBuilder_ == null) {
+        ensureViewsIsMutable();
+        views_.remove(index);
         onChanged();
       } else {
-        bucketsBuilder_.remove(index);
+        viewsBuilder_.remove(index);
       }
       return this;
     }
@@ -871,101 +868,100 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public com.google.logging.v2.LogBucket.Builder getBucketsBuilder(int index) {
-      return getBucketsFieldBuilder().getBuilder(index);
+    public com.google.logging.v2.LogView.Builder getViewsBuilder(int index) {
+      return getViewsFieldBuilder().getBuilder(index);
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public com.google.logging.v2.LogBucketOrBuilder getBucketsOrBuilder(int index) {
-      if (bucketsBuilder_ == null) {
-        return buckets_.get(index);
+    public com.google.logging.v2.LogViewOrBuilder getViewsOrBuilder(int index) {
+      if (viewsBuilder_ == null) {
+        return views_.get(index);
       } else {
-        return bucketsBuilder_.getMessageOrBuilder(index);
+        return viewsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public java.util.List<? extends com.google.logging.v2.LogBucketOrBuilder>
-        getBucketsOrBuilderList() {
-      if (bucketsBuilder_ != null) {
-        return bucketsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.logging.v2.LogViewOrBuilder>
+        getViewsOrBuilderList() {
+      if (viewsBuilder_ != null) {
+        return viewsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(buckets_);
+        return java.util.Collections.unmodifiableList(views_);
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public com.google.logging.v2.LogBucket.Builder addBucketsBuilder() {
-      return getBucketsFieldBuilder()
-          .addBuilder(com.google.logging.v2.LogBucket.getDefaultInstance());
+    public com.google.logging.v2.LogView.Builder addViewsBuilder() {
+      return getViewsFieldBuilder().addBuilder(com.google.logging.v2.LogView.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public com.google.logging.v2.LogBucket.Builder addBucketsBuilder(int index) {
-      return getBucketsFieldBuilder()
-          .addBuilder(index, com.google.logging.v2.LogBucket.getDefaultInstance());
+    public com.google.logging.v2.LogView.Builder addViewsBuilder(int index) {
+      return getViewsFieldBuilder()
+          .addBuilder(index, com.google.logging.v2.LogView.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * A list of buckets.
+     * A list of views.
      * </pre>
      *
-     * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
+     * <code>repeated .google.logging.v2.LogView views = 1;</code>
      */
-    public java.util.List<com.google.logging.v2.LogBucket.Builder> getBucketsBuilderList() {
-      return getBucketsFieldBuilder().getBuilderList();
+    public java.util.List<com.google.logging.v2.LogView.Builder> getViewsBuilderList() {
+      return getViewsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.logging.v2.LogBucket,
-            com.google.logging.v2.LogBucket.Builder,
-            com.google.logging.v2.LogBucketOrBuilder>
-        getBucketsFieldBuilder() {
-      if (bucketsBuilder_ == null) {
-        bucketsBuilder_ =
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        getViewsFieldBuilder() {
+      if (viewsBuilder_ == null) {
+        viewsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.logging.v2.LogBucket,
-                com.google.logging.v2.LogBucket.Builder,
-                com.google.logging.v2.LogBucketOrBuilder>(
-                buckets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
-        buckets_ = null;
+                com.google.logging.v2.LogView,
+                com.google.logging.v2.LogView.Builder,
+                com.google.logging.v2.LogViewOrBuilder>(
+                views_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        views_ = null;
       }
-      return bucketsBuilder_;
+      return viewsBuilder_;
     }
 
     private java.lang.Object nextPageToken_ = "";
@@ -1095,42 +1091,42 @@ public final class ListBucketsResponse extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListBucketsResponse)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListViewsResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.ListBucketsResponse)
-  private static final com.google.logging.v2.ListBucketsResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.ListViewsResponse)
+  private static final com.google.logging.v2.ListViewsResponse DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.ListBucketsResponse();
+    DEFAULT_INSTANCE = new com.google.logging.v2.ListViewsResponse();
   }
 
-  public static com.google.logging.v2.ListBucketsResponse getDefaultInstance() {
+  public static com.google.logging.v2.ListViewsResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBucketsResponse> PARSER =
-      new com.google.protobuf.AbstractParser<ListBucketsResponse>() {
+  private static final com.google.protobuf.Parser<ListViewsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListViewsResponse>() {
         @java.lang.Override
-        public ListBucketsResponse parsePartialFrom(
+        public ListViewsResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListBucketsResponse(input, extensionRegistry);
+          return new ListViewsResponse(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListBucketsResponse> parser() {
+  public static com.google.protobuf.Parser<ListViewsResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBucketsResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListViewsResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.ListBucketsResponse getDefaultInstanceForType() {
+  public com.google.logging.v2.ListViewsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

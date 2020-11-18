@@ -22,22 +22,22 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `ListBuckets`.
+ * The parameters to `ListViews`.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+ * Protobuf type {@code google.logging.v2.ListViewsRequest}
  */
-public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListViewsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.ListBucketsRequest)
-    ListBucketsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.ListViewsRequest)
+    ListViewsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListBucketsRequest.newBuilder() to construct.
-  private ListBucketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListViewsRequest.newBuilder() to construct.
+  private ListViewsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListBucketsRequest() {
+  private ListViewsRequest() {
     parent_ = "";
     pageToken_ = "";
   }
@@ -45,7 +45,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListBucketsRequest();
+    return new ListViewsRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ListBucketsRequest(
+  private ListViewsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -111,17 +111,17 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+        .internal_static_google_logging_v2_ListViewsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_ListViewsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.ListBucketsRequest.class,
-            com.google.logging.v2.ListBucketsRequest.Builder.class);
+            com.google.logging.v2.ListViewsRequest.class,
+            com.google.logging.v2.ListViewsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -130,19 +130,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Required. The bucket whose views are to be listed:
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -162,19 +154,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Required. The bucket whose views are to be listed:
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
    * </pre>
    *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -317,10 +301,10 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.ListBucketsRequest)) {
+    if (!(obj instanceof com.google.logging.v2.ListViewsRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.ListBucketsRequest other = (com.google.logging.v2.ListBucketsRequest) obj;
+    com.google.logging.v2.ListViewsRequest other = (com.google.logging.v2.ListViewsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
@@ -347,71 +331,71 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return hash;
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.ListViewsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.ListViewsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.ListViewsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.logging.v2.ListViewsRequest parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
+  public static com.google.logging.v2.ListViewsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.ListViewsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -428,7 +412,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.ListBucketsRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.ListViewsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -446,31 +430,31 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The parameters to `ListBuckets`.
+   * The parameters to `ListViews`.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+   * Protobuf type {@code google.logging.v2.ListViewsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListBucketsRequest)
-      com.google.logging.v2.ListBucketsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListViewsRequest)
+      com.google.logging.v2.ListViewsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_ListViewsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_ListViewsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.ListBucketsRequest.class,
-              com.google.logging.v2.ListBucketsRequest.Builder.class);
+              com.google.logging.v2.ListViewsRequest.class,
+              com.google.logging.v2.ListViewsRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.ListBucketsRequest.newBuilder()
+    // Construct using com.google.logging.v2.ListViewsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -499,17 +483,17 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_ListViewsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.ListBucketsRequest.getDefaultInstance();
+    public com.google.logging.v2.ListViewsRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.ListViewsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest build() {
-      com.google.logging.v2.ListBucketsRequest result = buildPartial();
+    public com.google.logging.v2.ListViewsRequest build() {
+      com.google.logging.v2.ListViewsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -517,9 +501,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest buildPartial() {
-      com.google.logging.v2.ListBucketsRequest result =
-          new com.google.logging.v2.ListBucketsRequest(this);
+    public com.google.logging.v2.ListViewsRequest buildPartial() {
+      com.google.logging.v2.ListViewsRequest result =
+          new com.google.logging.v2.ListViewsRequest(this);
       result.parent_ = parent_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
@@ -562,16 +546,16 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.ListBucketsRequest) {
-        return mergeFrom((com.google.logging.v2.ListBucketsRequest) other);
+      if (other instanceof com.google.logging.v2.ListViewsRequest) {
+        return mergeFrom((com.google.logging.v2.ListViewsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.ListBucketsRequest other) {
-      if (other == com.google.logging.v2.ListBucketsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.ListViewsRequest other) {
+      if (other == com.google.logging.v2.ListViewsRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -598,11 +582,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.ListBucketsRequest parsedMessage = null;
+      com.google.logging.v2.ListViewsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.ListBucketsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.ListViewsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -617,19 +601,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket whose views are to be listed:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The parent.
      */
@@ -648,19 +624,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket whose views are to be listed:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for parent.
      */
@@ -679,19 +647,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket whose views are to be listed:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -709,19 +669,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket whose views are to be listed:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -735,19 +687,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket whose views are to be listed:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -953,42 +897,42 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListBucketsRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListViewsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.ListBucketsRequest)
-  private static final com.google.logging.v2.ListBucketsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.ListViewsRequest)
+  private static final com.google.logging.v2.ListViewsRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.ListBucketsRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.ListViewsRequest();
   }
 
-  public static com.google.logging.v2.ListBucketsRequest getDefaultInstance() {
+  public static com.google.logging.v2.ListViewsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBucketsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListBucketsRequest>() {
+  private static final com.google.protobuf.Parser<ListViewsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListViewsRequest>() {
         @java.lang.Override
-        public ListBucketsRequest parsePartialFrom(
+        public ListViewsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListBucketsRequest(input, extensionRegistry);
+          return new ListViewsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListBucketsRequest> parser() {
+  public static com.google.protobuf.Parser<ListViewsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBucketsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListViewsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.ListViewsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

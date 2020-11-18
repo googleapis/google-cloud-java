@@ -122,6 +122,47 @@ public final class ConfigServiceV2Grpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>
+      getCreateBucketMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBucket",
+      requestType = com.google.logging.v2.CreateBucketRequest.class,
+      responseType = com.google.logging.v2.LogBucket.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>
+      getCreateBucketMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>
+        getCreateBucketMethod;
+    if ((getCreateBucketMethod = ConfigServiceV2Grpc.getCreateBucketMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getCreateBucketMethod = ConfigServiceV2Grpc.getCreateBucketMethod) == null) {
+          ConfigServiceV2Grpc.getCreateBucketMethod =
+              getCreateBucketMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBucket"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CreateBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogBucket.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("CreateBucket"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBucketMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>
       getUpdateBucketMethod;
 
@@ -160,6 +201,286 @@ public final class ConfigServiceV2Grpc {
       }
     }
     return getUpdateBucketMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteBucketRequest, com.google.protobuf.Empty>
+      getDeleteBucketMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBucket",
+      requestType = com.google.logging.v2.DeleteBucketRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteBucketRequest, com.google.protobuf.Empty>
+      getDeleteBucketMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.DeleteBucketRequest, com.google.protobuf.Empty>
+        getDeleteBucketMethod;
+    if ((getDeleteBucketMethod = ConfigServiceV2Grpc.getDeleteBucketMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getDeleteBucketMethod = ConfigServiceV2Grpc.getDeleteBucketMethod) == null) {
+          ConfigServiceV2Grpc.getDeleteBucketMethod =
+              getDeleteBucketMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.DeleteBucketRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBucket"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.DeleteBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("DeleteBucket"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBucketMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UndeleteBucketRequest, com.google.protobuf.Empty>
+      getUndeleteBucketMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UndeleteBucket",
+      requestType = com.google.logging.v2.UndeleteBucketRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UndeleteBucketRequest, com.google.protobuf.Empty>
+      getUndeleteBucketMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.UndeleteBucketRequest, com.google.protobuf.Empty>
+        getUndeleteBucketMethod;
+    if ((getUndeleteBucketMethod = ConfigServiceV2Grpc.getUndeleteBucketMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUndeleteBucketMethod = ConfigServiceV2Grpc.getUndeleteBucketMethod) == null) {
+          ConfigServiceV2Grpc.getUndeleteBucketMethod =
+              getUndeleteBucketMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UndeleteBucketRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UndeleteBucket"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UndeleteBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UndeleteBucket"))
+                      .build();
+        }
+      }
+    }
+    return getUndeleteBucketMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListViewsRequest, com.google.logging.v2.ListViewsResponse>
+      getListViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListViews",
+      requestType = com.google.logging.v2.ListViewsRequest.class,
+      responseType = com.google.logging.v2.ListViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListViewsRequest, com.google.logging.v2.ListViewsResponse>
+      getListViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.ListViewsRequest, com.google.logging.v2.ListViewsResponse>
+        getListViewsMethod;
+    if ((getListViewsMethod = ConfigServiceV2Grpc.getListViewsMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getListViewsMethod = ConfigServiceV2Grpc.getListViewsMethod) == null) {
+          ConfigServiceV2Grpc.getListViewsMethod =
+              getListViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.ListViewsRequest,
+                          com.google.logging.v2.ListViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListViewsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListViewsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigServiceV2MethodDescriptorSupplier("ListViews"))
+                      .build();
+        }
+      }
+    }
+    return getListViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetViewRequest, com.google.logging.v2.LogView>
+      getGetViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetView",
+      requestType = com.google.logging.v2.GetViewRequest.class,
+      responseType = com.google.logging.v2.LogView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetViewRequest, com.google.logging.v2.LogView>
+      getGetViewMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.GetViewRequest, com.google.logging.v2.LogView>
+        getGetViewMethod;
+    if ((getGetViewMethod = ConfigServiceV2Grpc.getGetViewMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getGetViewMethod = ConfigServiceV2Grpc.getGetViewMethod) == null) {
+          ConfigServiceV2Grpc.getGetViewMethod =
+              getGetViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.GetViewRequest, com.google.logging.v2.LogView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.GetViewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogView.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigServiceV2MethodDescriptorSupplier("GetView"))
+                      .build();
+        }
+      }
+    }
+    return getGetViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateViewRequest, com.google.logging.v2.LogView>
+      getCreateViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateView",
+      requestType = com.google.logging.v2.CreateViewRequest.class,
+      responseType = com.google.logging.v2.LogView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateViewRequest, com.google.logging.v2.LogView>
+      getCreateViewMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.CreateViewRequest, com.google.logging.v2.LogView>
+        getCreateViewMethod;
+    if ((getCreateViewMethod = ConfigServiceV2Grpc.getCreateViewMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getCreateViewMethod = ConfigServiceV2Grpc.getCreateViewMethod) == null) {
+          ConfigServiceV2Grpc.getCreateViewMethod =
+              getCreateViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.CreateViewRequest, com.google.logging.v2.LogView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CreateViewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogView.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("CreateView"))
+                      .build();
+        }
+      }
+    }
+    return getCreateViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateViewRequest, com.google.logging.v2.LogView>
+      getUpdateViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateView",
+      requestType = com.google.logging.v2.UpdateViewRequest.class,
+      responseType = com.google.logging.v2.LogView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateViewRequest, com.google.logging.v2.LogView>
+      getUpdateViewMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.UpdateViewRequest, com.google.logging.v2.LogView>
+        getUpdateViewMethod;
+    if ((getUpdateViewMethod = ConfigServiceV2Grpc.getUpdateViewMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUpdateViewMethod = ConfigServiceV2Grpc.getUpdateViewMethod) == null) {
+          ConfigServiceV2Grpc.getUpdateViewMethod =
+              getUpdateViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UpdateViewRequest, com.google.logging.v2.LogView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UpdateViewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.LogView.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UpdateView"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteViewRequest, com.google.protobuf.Empty>
+      getDeleteViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteView",
+      requestType = com.google.logging.v2.DeleteViewRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteViewRequest, com.google.protobuf.Empty>
+      getDeleteViewMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.DeleteViewRequest, com.google.protobuf.Empty>
+        getDeleteViewMethod;
+    if ((getDeleteViewMethod = ConfigServiceV2Grpc.getDeleteViewMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getDeleteViewMethod = ConfigServiceV2Grpc.getDeleteViewMethod) == null) {
+          ConfigServiceV2Grpc.getDeleteViewMethod =
+              getDeleteViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.DeleteViewRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.DeleteViewRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("DeleteView"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteViewMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -711,7 +1032,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets (Beta).
+     * Lists buckets.
      * </pre>
      */
     public void listBuckets(
@@ -724,13 +1045,27 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket (Beta).
+     * Gets a bucket.
      * </pre>
      */
     public void getBucket(
         com.google.logging.v2.GetBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
       asyncUnimplementedUnaryCall(getGetBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a bucket that can be used to store log entries. Once a bucket has
+     * been created, the region cannot be changed.
+     * </pre>
+     */
+    public void createBucket(
+        com.google.logging.v2.CreateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateBucketMethod(), responseObserver);
     }
 
     /**
@@ -744,13 +1079,109 @@ public final class ConfigServiceV2Grpc {
      * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
      * will be returned.
      * A buckets region may not be modified after it is created.
-     * This method is in Beta.
      * </pre>
      */
     public void updateBucket(
         com.google.logging.v2.UpdateBucketRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a bucket.
+     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
+     * bucket will be purged and all logs in the bucket will be permanently
+     * deleted.
+     * </pre>
+     */
+    public void deleteBucket(
+        com.google.logging.v2.DeleteBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
+     * the grace period of 7 days.
+     * </pre>
+     */
+    public void undeleteBucket(
+        com.google.logging.v2.UndeleteBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getUndeleteBucketMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views on a bucket.
+     * </pre>
+     */
+    public void listViews(
+        com.google.logging.v2.ListViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListViewsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public void getView(
+        com.google.logging.v2.GetViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view over logs in a bucket. A bucket may contain a maximum of
+     * 50 views.
+     * </pre>
+     */
+    public void createView(
+        com.google.logging.v2.CreateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view. This method replaces the following fields in the existing
+     * view with values from the new view: `filter`.
+     * </pre>
+     */
+    public void updateView(
+        com.google.logging.v2.UpdateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view from a bucket.
+     * </pre>
+     */
+    public void deleteView(
+        com.google.logging.v2.DeleteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteViewMethod(), responseObserver);
     }
 
     /**
@@ -952,11 +1383,59 @@ public final class ConfigServiceV2Grpc {
                       com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>(
                       this, METHODID_GET_BUCKET)))
           .addMethod(
+              getCreateBucketMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>(
+                      this, METHODID_CREATE_BUCKET)))
+          .addMethod(
               getUpdateBucketMethod(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.logging.v2.UpdateBucketRequest, com.google.logging.v2.LogBucket>(
                       this, METHODID_UPDATE_BUCKET)))
+          .addMethod(
+              getDeleteBucketMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.DeleteBucketRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_BUCKET)))
+          .addMethod(
+              getUndeleteBucketMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.UndeleteBucketRequest, com.google.protobuf.Empty>(
+                      this, METHODID_UNDELETE_BUCKET)))
+          .addMethod(
+              getListViewsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.ListViewsRequest,
+                      com.google.logging.v2.ListViewsResponse>(this, METHODID_LIST_VIEWS)))
+          .addMethod(
+              getGetViewMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.GetViewRequest, com.google.logging.v2.LogView>(
+                      this, METHODID_GET_VIEW)))
+          .addMethod(
+              getCreateViewMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.CreateViewRequest, com.google.logging.v2.LogView>(
+                      this, METHODID_CREATE_VIEW)))
+          .addMethod(
+              getUpdateViewMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.UpdateViewRequest, com.google.logging.v2.LogView>(
+                      this, METHODID_UPDATE_VIEW)))
+          .addMethod(
+              getDeleteViewMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.DeleteViewRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_VIEW)))
           .addMethod(
               getListSinksMethod(),
               asyncUnaryCall(
@@ -1056,7 +1535,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets (Beta).
+     * Lists buckets.
      * </pre>
      */
     public void listBuckets(
@@ -1072,7 +1551,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket (Beta).
+     * Gets a bucket.
      * </pre>
      */
     public void getBucket(
@@ -1086,6 +1565,23 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Creates a bucket that can be used to store log entries. Once a bucket has
+     * been created, the region cannot be changed.
+     * </pre>
+     */
+    public void createBucket(
+        com.google.logging.v2.CreateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateBucketMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a bucket. This method replaces the following fields in the
      * existing bucket with values from the new bucket: `retention_period`
      * If the retention period is decreased and the bucket is locked,
@@ -1093,7 +1589,6 @@ public final class ConfigServiceV2Grpc {
      * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
      * will be returned.
      * A buckets region may not be modified after it is created.
-     * This method is in Beta.
      * </pre>
      */
     public void updateBucket(
@@ -1103,6 +1598,114 @@ public final class ConfigServiceV2Grpc {
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a bucket.
+     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
+     * bucket will be purged and all logs in the bucket will be permanently
+     * deleted.
+     * </pre>
+     */
+    public void deleteBucket(
+        com.google.logging.v2.DeleteBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteBucketMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
+     * the grace period of 7 days.
+     * </pre>
+     */
+    public void undeleteBucket(
+        com.google.logging.v2.UndeleteBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUndeleteBucketMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views on a bucket.
+     * </pre>
+     */
+    public void listViews(
+        com.google.logging.v2.ListViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListViewsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListViewsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public void getView(
+        com.google.logging.v2.GetViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view over logs in a bucket. A bucket may contain a maximum of
+     * 50 views.
+     * </pre>
+     */
+    public void createView(
+        com.google.logging.v2.CreateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view. This method replaces the following fields in the existing
+     * view with values from the new view: `filter`.
+     * </pre>
+     */
+    public void updateView(
+        com.google.logging.v2.UpdateViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.LogView> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view from a bucket.
+     * </pre>
+     */
+    public void deleteView(
+        com.google.logging.v2.DeleteViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1338,7 +1941,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets (Beta).
+     * Lists buckets.
      * </pre>
      */
     public com.google.logging.v2.ListBucketsResponse listBuckets(
@@ -1350,12 +1953,25 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket (Beta).
+     * Gets a bucket.
      * </pre>
      */
     public com.google.logging.v2.LogBucket getBucket(
         com.google.logging.v2.GetBucketRequest request) {
       return blockingUnaryCall(getChannel(), getGetBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a bucket that can be used to store log entries. Once a bucket has
+     * been created, the region cannot be changed.
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket createBucket(
+        com.google.logging.v2.CreateBucketRequest request) {
+      return blockingUnaryCall(getChannel(), getCreateBucketMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1369,12 +1985,99 @@ public final class ConfigServiceV2Grpc {
      * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
      * will be returned.
      * A buckets region may not be modified after it is created.
-     * This method is in Beta.
      * </pre>
      */
     public com.google.logging.v2.LogBucket updateBucket(
         com.google.logging.v2.UpdateBucketRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a bucket.
+     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
+     * bucket will be purged and all logs in the bucket will be permanently
+     * deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBucket(
+        com.google.logging.v2.DeleteBucketRequest request) {
+      return blockingUnaryCall(getChannel(), getDeleteBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
+     * the grace period of 7 days.
+     * </pre>
+     */
+    public com.google.protobuf.Empty undeleteBucket(
+        com.google.logging.v2.UndeleteBucketRequest request) {
+      return blockingUnaryCall(getChannel(), getUndeleteBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views on a bucket.
+     * </pre>
+     */
+    public com.google.logging.v2.ListViewsResponse listViews(
+        com.google.logging.v2.ListViewsRequest request) {
+      return blockingUnaryCall(getChannel(), getListViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public com.google.logging.v2.LogView getView(com.google.logging.v2.GetViewRequest request) {
+      return blockingUnaryCall(getChannel(), getGetViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view over logs in a bucket. A bucket may contain a maximum of
+     * 50 views.
+     * </pre>
+     */
+    public com.google.logging.v2.LogView createView(
+        com.google.logging.v2.CreateViewRequest request) {
+      return blockingUnaryCall(getChannel(), getCreateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view. This method replaces the following fields in the existing
+     * view with values from the new view: `filter`.
+     * </pre>
+     */
+    public com.google.logging.v2.LogView updateView(
+        com.google.logging.v2.UpdateViewRequest request) {
+      return blockingUnaryCall(getChannel(), getUpdateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view from a bucket.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteView(com.google.logging.v2.DeleteViewRequest request) {
+      return blockingUnaryCall(getChannel(), getDeleteViewMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1570,7 +2273,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Lists buckets (Beta).
+     * Lists buckets.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1584,12 +2287,26 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Gets a bucket (Beta).
+     * Gets a bucket.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
         getBucket(com.google.logging.v2.GetBucketRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a bucket that can be used to store log entries. Once a bucket has
+     * been created, the region cannot be changed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
+        createBucket(com.google.logging.v2.CreateBucketRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateBucketMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1603,13 +2320,108 @@ public final class ConfigServiceV2Grpc {
      * If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
      * will be returned.
      * A buckets region may not be modified after it is created.
-     * This method is in Beta.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogBucket>
         updateBucket(com.google.logging.v2.UpdateBucketRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a bucket.
+     * Moves the bucket to the DELETE_REQUESTED state. After 7 days, the
+     * bucket will be purged and all logs in the bucket will be permanently
+     * deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteBucket(com.google.logging.v2.DeleteBucketRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes a bucket. A bucket that has been deleted may be undeleted within
+     * the grace period of 7 days.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        undeleteBucket(com.google.logging.v2.UndeleteBucketRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUndeleteBucketMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views on a bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.logging.v2.ListViewsResponse>
+        listViews(com.google.logging.v2.ListViewsRequest request) {
+      return futureUnaryCall(getChannel().newCall(getListViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
+        getView(com.google.logging.v2.GetViewRequest request) {
+      return futureUnaryCall(getChannel().newCall(getGetViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view over logs in a bucket. A bucket may contain a maximum of
+     * 50 views.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
+        createView(com.google.logging.v2.CreateViewRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view. This method replaces the following fields in the existing
+     * view with values from the new view: `filter`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.LogView>
+        updateView(com.google.logging.v2.UpdateViewRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view from a bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteView(
+        com.google.logging.v2.DeleteViewRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteViewMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1797,19 +2609,27 @@ public final class ConfigServiceV2Grpc {
 
   private static final int METHODID_LIST_BUCKETS = 0;
   private static final int METHODID_GET_BUCKET = 1;
-  private static final int METHODID_UPDATE_BUCKET = 2;
-  private static final int METHODID_LIST_SINKS = 3;
-  private static final int METHODID_GET_SINK = 4;
-  private static final int METHODID_CREATE_SINK = 5;
-  private static final int METHODID_UPDATE_SINK = 6;
-  private static final int METHODID_DELETE_SINK = 7;
-  private static final int METHODID_LIST_EXCLUSIONS = 8;
-  private static final int METHODID_GET_EXCLUSION = 9;
-  private static final int METHODID_CREATE_EXCLUSION = 10;
-  private static final int METHODID_UPDATE_EXCLUSION = 11;
-  private static final int METHODID_DELETE_EXCLUSION = 12;
-  private static final int METHODID_GET_CMEK_SETTINGS = 13;
-  private static final int METHODID_UPDATE_CMEK_SETTINGS = 14;
+  private static final int METHODID_CREATE_BUCKET = 2;
+  private static final int METHODID_UPDATE_BUCKET = 3;
+  private static final int METHODID_DELETE_BUCKET = 4;
+  private static final int METHODID_UNDELETE_BUCKET = 5;
+  private static final int METHODID_LIST_VIEWS = 6;
+  private static final int METHODID_GET_VIEW = 7;
+  private static final int METHODID_CREATE_VIEW = 8;
+  private static final int METHODID_UPDATE_VIEW = 9;
+  private static final int METHODID_DELETE_VIEW = 10;
+  private static final int METHODID_LIST_SINKS = 11;
+  private static final int METHODID_GET_SINK = 12;
+  private static final int METHODID_CREATE_SINK = 13;
+  private static final int METHODID_UPDATE_SINK = 14;
+  private static final int METHODID_DELETE_SINK = 15;
+  private static final int METHODID_LIST_EXCLUSIONS = 16;
+  private static final int METHODID_GET_EXCLUSION = 17;
+  private static final int METHODID_CREATE_EXCLUSION = 18;
+  private static final int METHODID_UPDATE_EXCLUSION = 19;
+  private static final int METHODID_DELETE_EXCLUSION = 20;
+  private static final int METHODID_GET_CMEK_SETTINGS = 21;
+  private static final int METHODID_UPDATE_CMEK_SETTINGS = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1839,10 +2659,51 @@ public final class ConfigServiceV2Grpc {
               (com.google.logging.v2.GetBucketRequest) request,
               (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
           break;
+        case METHODID_CREATE_BUCKET:
+          serviceImpl.createBucket(
+              (com.google.logging.v2.CreateBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
+          break;
         case METHODID_UPDATE_BUCKET:
           serviceImpl.updateBucket(
               (com.google.logging.v2.UpdateBucketRequest) request,
               (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
+          break;
+        case METHODID_DELETE_BUCKET:
+          serviceImpl.deleteBucket(
+              (com.google.logging.v2.DeleteBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UNDELETE_BUCKET:
+          serviceImpl.undeleteBucket(
+              (com.google.logging.v2.UndeleteBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_VIEWS:
+          serviceImpl.listViews(
+              (com.google.logging.v2.ListViewsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.ListViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_VIEW:
+          serviceImpl.getView(
+              (com.google.logging.v2.GetViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogView>) responseObserver);
+          break;
+        case METHODID_CREATE_VIEW:
+          serviceImpl.createView(
+              (com.google.logging.v2.CreateViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogView>) responseObserver);
+          break;
+        case METHODID_UPDATE_VIEW:
+          serviceImpl.updateView(
+              (com.google.logging.v2.UpdateViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.LogView>) responseObserver);
+          break;
+        case METHODID_DELETE_VIEW:
+          serviceImpl.deleteView(
+              (com.google.logging.v2.DeleteViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_SINKS:
           serviceImpl.listSinks(
@@ -1972,7 +2833,15 @@ public final class ConfigServiceV2Grpc {
                       .setSchemaDescriptor(new ConfigServiceV2FileDescriptorSupplier())
                       .addMethod(getListBucketsMethod())
                       .addMethod(getGetBucketMethod())
+                      .addMethod(getCreateBucketMethod())
                       .addMethod(getUpdateBucketMethod())
+                      .addMethod(getDeleteBucketMethod())
+                      .addMethod(getUndeleteBucketMethod())
+                      .addMethod(getListViewsMethod())
+                      .addMethod(getGetViewMethod())
+                      .addMethod(getCreateViewMethod())
+                      .addMethod(getUpdateViewMethod())
+                      .addMethod(getDeleteViewMethod())
                       .addMethod(getListSinksMethod())
                       .addMethod(getGetSinkMethod())
                       .addMethod(getCreateSinkMethod())

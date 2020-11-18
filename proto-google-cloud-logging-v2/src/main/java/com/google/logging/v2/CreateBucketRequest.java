@@ -22,30 +22,30 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `ListBuckets`.
+ * The parameters to `CreateBucket`.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+ * Protobuf type {@code google.logging.v2.CreateBucketRequest}
  */
-public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class CreateBucketRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.ListBucketsRequest)
-    ListBucketsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.CreateBucketRequest)
+    CreateBucketRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListBucketsRequest.newBuilder() to construct.
-  private ListBucketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateBucketRequest.newBuilder() to construct.
+  private CreateBucketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListBucketsRequest() {
+  private CreateBucketRequest() {
     parent_ = "";
-    pageToken_ = "";
+    bucketId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListBucketsRequest();
+    return new CreateBucketRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ListBucketsRequest(
+  private CreateBucketRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,12 +82,22 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pageToken_ = s;
+              bucketId_ = s;
               break;
             }
-          case 24:
+          case 26:
             {
-              pageSize_ = input.readInt32();
+              com.google.logging.v2.LogBucket.Builder subBuilder = null;
+              if (bucket_ != null) {
+                subBuilder = bucket_.toBuilder();
+              }
+              bucket_ =
+                  input.readMessage(com.google.logging.v2.LogBucket.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bucket_);
+                bucket_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -111,17 +121,17 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+        .internal_static_google_logging_v2_CreateBucketRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_CreateBucketRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.ListBucketsRequest.class,
-            com.google.logging.v2.ListBucketsRequest.Builder.class);
+            com.google.logging.v2.CreateBucketRequest.class,
+            com.google.logging.v2.CreateBucketRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -130,14 +140,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
+   * Required. The resource in which to create the bucket:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Example: `"projects/my-logging-project/locations/global"`
    * </pre>
    *
    * <code>
@@ -162,14 +167,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
+   * Required. The resource in which to create the bucket:
    *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Example: `"projects/my-logging-project/locations/global"`
    * </pre>
    *
    * <code>
@@ -191,31 +191,30 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageToken_;
+  public static final int BUCKET_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object bucketId_;
   /**
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+   * limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The pageToken.
+   * @return The bucketId.
    */
   @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
+  public java.lang.String getBucketId() {
+    java.lang.Object ref = bucketId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
+      bucketId_ = s;
       return s;
     }
   }
@@ -223,47 +222,78 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+   * limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The bytes for pageToken.
+   * @return The bytes for bucketId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
+  public com.google.protobuf.ByteString getBucketIdBytes() {
+    java.lang.Object ref = bucketId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pageToken_ = b;
+      bucketId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  public static final int BUCKET_FIELD_NUMBER = 3;
+  private com.google.logging.v2.LogBucket bucket_;
   /**
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.
-   * Non-positive values are ignored. The presence of `nextPageToken` in the
-   * response indicates that more results might be available.
+   * Required. The new bucket. The region specified in the new bucket must be compliant
+   * with any Location Restriction Org Policy. The name field in the bucket is
+   * ignored.
    * </pre>
    *
-   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The pageSize.
+   * @return Whether the bucket field is set.
    */
   @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
+  public boolean hasBucket() {
+    return bucket_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The new bucket. The region specified in the new bucket must be compliant
+   * with any Location Restriction Org Policy. The name field in the bucket is
+   * ignored.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bucket.
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogBucket getBucket() {
+    return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The new bucket. The region specified in the new bucket must be compliant
+   * with any Location Restriction Org Policy. The name field in the bucket is
+   * ignored.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
+    return getBucket();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -283,11 +313,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
+    if (!getBucketIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bucketId_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(3, pageSize_);
+    if (bucket_ != null) {
+      output.writeMessage(3, getBucket());
     }
     unknownFields.writeTo(output);
   }
@@ -301,11 +331,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
+    if (!getBucketIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bucketId_);
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
+    if (bucket_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBucket());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,14 +347,18 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.ListBucketsRequest)) {
+    if (!(obj instanceof com.google.logging.v2.CreateBucketRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.ListBucketsRequest other = (com.google.logging.v2.ListBucketsRequest) obj;
+    com.google.logging.v2.CreateBucketRequest other =
+        (com.google.logging.v2.CreateBucketRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
-    if (getPageSize() != other.getPageSize()) return false;
+    if (!getBucketId().equals(other.getBucketId())) return false;
+    if (hasBucket() != other.hasBucket()) return false;
+    if (hasBucket()) {
+      if (!getBucket().equals(other.getBucket())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -338,80 +372,82 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + BUCKET_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBucketId().hashCode();
+    if (hasBucket()) {
+      hash = (37 * hash) + BUCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getBucket().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateBucketRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -428,7 +464,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.ListBucketsRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.CreateBucketRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -446,31 +482,31 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The parameters to `ListBuckets`.
+   * The parameters to `CreateBucket`.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+   * Protobuf type {@code google.logging.v2.CreateBucketRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListBucketsRequest)
-      com.google.logging.v2.ListBucketsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.CreateBucketRequest)
+      com.google.logging.v2.CreateBucketRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_CreateBucketRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_CreateBucketRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.ListBucketsRequest.class,
-              com.google.logging.v2.ListBucketsRequest.Builder.class);
+              com.google.logging.v2.CreateBucketRequest.class,
+              com.google.logging.v2.CreateBucketRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.ListBucketsRequest.newBuilder()
+    // Construct using com.google.logging.v2.CreateBucketRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -489,27 +525,31 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       parent_ = "";
 
-      pageToken_ = "";
+      bucketId_ = "";
 
-      pageSize_ = 0;
-
+      if (bucketBuilder_ == null) {
+        bucket_ = null;
+      } else {
+        bucket_ = null;
+        bucketBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_CreateBucketRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.ListBucketsRequest.getDefaultInstance();
+    public com.google.logging.v2.CreateBucketRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.CreateBucketRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest build() {
-      com.google.logging.v2.ListBucketsRequest result = buildPartial();
+    public com.google.logging.v2.CreateBucketRequest build() {
+      com.google.logging.v2.CreateBucketRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -517,12 +557,16 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest buildPartial() {
-      com.google.logging.v2.ListBucketsRequest result =
-          new com.google.logging.v2.ListBucketsRequest(this);
+    public com.google.logging.v2.CreateBucketRequest buildPartial() {
+      com.google.logging.v2.CreateBucketRequest result =
+          new com.google.logging.v2.CreateBucketRequest(this);
       result.parent_ = parent_;
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
+      result.bucketId_ = bucketId_;
+      if (bucketBuilder_ == null) {
+        result.bucket_ = bucket_;
+      } else {
+        result.bucket_ = bucketBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -562,26 +606,26 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.ListBucketsRequest) {
-        return mergeFrom((com.google.logging.v2.ListBucketsRequest) other);
+      if (other instanceof com.google.logging.v2.CreateBucketRequest) {
+        return mergeFrom((com.google.logging.v2.CreateBucketRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.ListBucketsRequest other) {
-      if (other == com.google.logging.v2.ListBucketsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.CreateBucketRequest other) {
+      if (other == com.google.logging.v2.CreateBucketRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
       }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
+      if (!other.getBucketId().isEmpty()) {
+        bucketId_ = other.bucketId_;
         onChanged();
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
+      if (other.hasBucket()) {
+        mergeBucket(other.getBucket());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -598,11 +642,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.ListBucketsRequest parsedMessage = null;
+      com.google.logging.v2.CreateBucketRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.ListBucketsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.CreateBucketRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -617,14 +661,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
+     * Required. The resource in which to create the bucket:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Example: `"projects/my-logging-project/locations/global"`
      * </pre>
      *
      * <code>
@@ -648,14 +687,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
+     * Required. The resource in which to create the bucket:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Example: `"projects/my-logging-project/locations/global"`
      * </pre>
      *
      * <code>
@@ -679,14 +713,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
+     * Required. The resource in which to create the bucket:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Example: `"projects/my-logging-project/locations/global"`
      * </pre>
      *
      * <code>
@@ -709,14 +738,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
+     * Required. The resource in which to create the bucket:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Example: `"projects/my-logging-project/locations/global"`
      * </pre>
      *
      * <code>
@@ -735,14 +759,9 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
+     * Required. The resource in which to create the bucket:
      *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Example: `"projects/my-logging-project/locations/global"`
      * </pre>
      *
      * <code>
@@ -763,27 +782,26 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private java.lang.Object pageToken_ = "";
+    private java.lang.Object bucketId_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The pageToken.
+     * @return The bucketId.
      */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
+    public java.lang.String getBucketId() {
+      java.lang.Object ref = bucketId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
+        bucketId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -793,22 +811,21 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The bytes for pageToken.
+     * @return The bytes for bucketId.
      */
-    public com.google.protobuf.ByteString getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
+    public com.google.protobuf.ByteString getBucketIdBytes() {
+      java.lang.Object ref = bucketId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pageToken_ = b;
+        bucketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -818,23 +835,22 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The pageToken to set.
+     * @param value The bucketId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageToken(java.lang.String value) {
+    public Builder setBucketId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      pageToken_ = value;
+      bucketId_ = value;
       onChanged();
       return this;
     }
@@ -842,19 +858,18 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageToken() {
+    public Builder clearBucketId() {
 
-      pageToken_ = getDefaultInstance().getPageToken();
+      bucketId_ = getDefaultInstance().getBucketId();
       onChanged();
       return this;
     }
@@ -862,84 +877,231 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The bytes for pageToken to set.
+     * @param value The bytes for bucketId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setBucketIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      pageToken_ = value;
+      bucketId_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_;
+    private com.google.logging.v2.LogBucket bucket_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogBucket,
+            com.google.logging.v2.LogBucket.Builder,
+            com.google.logging.v2.LogBucketOrBuilder>
+        bucketBuilder_;
     /**
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
      * </pre>
      *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
-     * @return The pageSize.
+     * @return Whether the bucket field is set.
      */
-    @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
-     * </pre>
-     *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      onChanged();
-      return this;
+    public boolean hasBucket() {
+      return bucketBuilder_ != null || bucket_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
      * </pre>
      *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
-     * @return This builder for chaining.
+     * @return The bucket.
      */
-    public Builder clearPageSize() {
+    public com.google.logging.v2.LogBucket getBucket() {
+      if (bucketBuilder_ == null) {
+        return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+      } else {
+        return bucketBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setBucket(com.google.logging.v2.LogBucket value) {
+      if (bucketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bucket_ = value;
+        onChanged();
+      } else {
+        bucketBuilder_.setMessage(value);
+      }
 
-      pageSize_ = 0;
-      onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setBucket(com.google.logging.v2.LogBucket.Builder builderForValue) {
+      if (bucketBuilder_ == null) {
+        bucket_ = builderForValue.build();
+        onChanged();
+      } else {
+        bucketBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeBucket(com.google.logging.v2.LogBucket value) {
+      if (bucketBuilder_ == null) {
+        if (bucket_ != null) {
+          bucket_ =
+              com.google.logging.v2.LogBucket.newBuilder(bucket_).mergeFrom(value).buildPartial();
+        } else {
+          bucket_ = value;
+        }
+        onChanged();
+      } else {
+        bucketBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearBucket() {
+      if (bucketBuilder_ == null) {
+        bucket_ = null;
+        onChanged();
+      } else {
+        bucket_ = null;
+        bucketBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.logging.v2.LogBucket.Builder getBucketBuilder() {
+
+      onChanged();
+      return getBucketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
+      if (bucketBuilder_ != null) {
+        return bucketBuilder_.getMessageOrBuilder();
+      } else {
+        return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new bucket. The region specified in the new bucket must be compliant
+     * with any Location Restriction Org Policy. The name field in the bucket is
+     * ignored.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogBucket,
+            com.google.logging.v2.LogBucket.Builder,
+            com.google.logging.v2.LogBucketOrBuilder>
+        getBucketFieldBuilder() {
+      if (bucketBuilder_ == null) {
+        bucketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.LogBucket,
+                com.google.logging.v2.LogBucket.Builder,
+                com.google.logging.v2.LogBucketOrBuilder>(
+                getBucket(), getParentForChildren(), isClean());
+        bucket_ = null;
+      }
+      return bucketBuilder_;
     }
 
     @java.lang.Override
@@ -953,42 +1115,42 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListBucketsRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.CreateBucketRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.ListBucketsRequest)
-  private static final com.google.logging.v2.ListBucketsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.CreateBucketRequest)
+  private static final com.google.logging.v2.CreateBucketRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.ListBucketsRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.CreateBucketRequest();
   }
 
-  public static com.google.logging.v2.ListBucketsRequest getDefaultInstance() {
+  public static com.google.logging.v2.CreateBucketRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBucketsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListBucketsRequest>() {
+  private static final com.google.protobuf.Parser<CreateBucketRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateBucketRequest>() {
         @java.lang.Override
-        public ListBucketsRequest parsePartialFrom(
+        public CreateBucketRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListBucketsRequest(input, extensionRegistry);
+          return new CreateBucketRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListBucketsRequest> parser() {
+  public static com.google.protobuf.Parser<CreateBucketRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBucketsRequest> getParserForType() {
+  public com.google.protobuf.Parser<CreateBucketRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.CreateBucketRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

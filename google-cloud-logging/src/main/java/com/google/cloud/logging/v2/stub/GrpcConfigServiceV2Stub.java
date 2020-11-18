@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2.stub;
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,27 +30,37 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.CreateViewRequest;
+import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.ListViewsRequest;
+import com.google.logging.v2.ListViewsResponse;
 import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.LogView;
+import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.logging.v2.UpdateViewRequest;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -107,6 +118,14 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetBucketRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(LogBucket.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<CreateBucketRequest, LogBucket>
+      createBucketMethodDescriptor =
+          MethodDescriptor.<CreateBucketRequest, LogBucket>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateBucket")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateBucketRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogBucket.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<UpdateBucketRequest, LogBucket>
       updateBucketMethodDescriptor =
           MethodDescriptor.<UpdateBucketRequest, LogBucket>newBuilder()
@@ -115,6 +134,58 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBucketRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LogBucket.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteBucketRequest, Empty> deleteBucketMethodDescriptor =
+      MethodDescriptor.<DeleteBucketRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/DeleteBucket")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteBucketRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UndeleteBucketRequest, Empty>
+      undeleteBucketMethodDescriptor =
+          MethodDescriptor.<UndeleteBucketRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/UndeleteBucket")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UndeleteBucketRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListViewsRequest, ListViewsResponse>
+      listViewsMethodDescriptor =
+          MethodDescriptor.<ListViewsRequest, ListViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/ListViews")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListViewsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetViewRequest, LogView> getViewMethodDescriptor =
+      MethodDescriptor.<GetViewRequest, LogView>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/GetView")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogView.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<CreateViewRequest, LogView> createViewMethodDescriptor =
+      MethodDescriptor.<CreateViewRequest, LogView>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateView")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogView.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateViewRequest, LogView> updateViewMethodDescriptor =
+      MethodDescriptor.<UpdateViewRequest, LogView>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateView")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LogView.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteViewRequest, Empty> deleteViewMethodDescriptor =
+      MethodDescriptor.<DeleteViewRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/DeleteView")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteViewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ListSinksRequest, ListSinksResponse>
       listSinksMethodDescriptor =
           MethodDescriptor.<ListSinksRequest, ListSinksResponse>newBuilder()
@@ -201,7 +272,16 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse>
       listBucketsPagedCallable;
   private final UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable;
+  private final UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable;
   private final UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable;
+  private final UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable;
+  private final UnaryCallable<UndeleteBucketRequest, Empty> undeleteBucketCallable;
+  private final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable;
+  private final UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable;
+  private final UnaryCallable<GetViewRequest, LogView> getViewCallable;
+  private final UnaryCallable<CreateViewRequest, LogView> createViewCallable;
+  private final UnaryCallable<UpdateViewRequest, LogView> updateViewCallable;
+  private final UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable;
   private final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
   private final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable;
   private final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable;
@@ -321,6 +401,19 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   }
                 })
             .build();
+    GrpcCallSettings<CreateBucketRequest, LogBucket> createBucketTransportSettings =
+        GrpcCallSettings.<CreateBucketRequest, LogBucket>newBuilder()
+            .setMethodDescriptor(createBucketMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateBucketRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateBucketRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateBucketRequest, LogBucket> updateBucketTransportSettings =
         GrpcCallSettings.<UpdateBucketRequest, LogBucket>newBuilder()
             .setMethodDescriptor(updateBucketMethodDescriptor)
@@ -328,6 +421,97 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                 new RequestParamsExtractor<UpdateBucketRequest>() {
                   @Override
                   public Map<String, String> extract(UpdateBucketRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteBucketRequest, Empty> deleteBucketTransportSettings =
+        GrpcCallSettings.<DeleteBucketRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBucketMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteBucketRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteBucketRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UndeleteBucketRequest, Empty> undeleteBucketTransportSettings =
+        GrpcCallSettings.<UndeleteBucketRequest, Empty>newBuilder()
+            .setMethodDescriptor(undeleteBucketMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UndeleteBucketRequest>() {
+                  @Override
+                  public Map<String, String> extract(UndeleteBucketRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListViewsRequest, ListViewsResponse> listViewsTransportSettings =
+        GrpcCallSettings.<ListViewsRequest, ListViewsResponse>newBuilder()
+            .setMethodDescriptor(listViewsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListViewsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListViewsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetViewRequest, LogView> getViewTransportSettings =
+        GrpcCallSettings.<GetViewRequest, LogView>newBuilder()
+            .setMethodDescriptor(getViewMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetViewRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetViewRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateViewRequest, LogView> createViewTransportSettings =
+        GrpcCallSettings.<CreateViewRequest, LogView>newBuilder()
+            .setMethodDescriptor(createViewMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateViewRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateViewRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateViewRequest, LogView> updateViewTransportSettings =
+        GrpcCallSettings.<UpdateViewRequest, LogView>newBuilder()
+            .setMethodDescriptor(updateViewMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateViewRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateViewRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteViewRequest, Empty> deleteViewTransportSettings =
+        GrpcCallSettings.<DeleteViewRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteViewMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteViewRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteViewRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -471,9 +655,36 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     this.getBucketCallable =
         callableFactory.createUnaryCallable(
             getBucketTransportSettings, settings.getBucketSettings(), clientContext);
+    this.createBucketCallable =
+        callableFactory.createUnaryCallable(
+            createBucketTransportSettings, settings.createBucketSettings(), clientContext);
     this.updateBucketCallable =
         callableFactory.createUnaryCallable(
             updateBucketTransportSettings, settings.updateBucketSettings(), clientContext);
+    this.deleteBucketCallable =
+        callableFactory.createUnaryCallable(
+            deleteBucketTransportSettings, settings.deleteBucketSettings(), clientContext);
+    this.undeleteBucketCallable =
+        callableFactory.createUnaryCallable(
+            undeleteBucketTransportSettings, settings.undeleteBucketSettings(), clientContext);
+    this.listViewsCallable =
+        callableFactory.createUnaryCallable(
+            listViewsTransportSettings, settings.listViewsSettings(), clientContext);
+    this.listViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listViewsTransportSettings, settings.listViewsSettings(), clientContext);
+    this.getViewCallable =
+        callableFactory.createUnaryCallable(
+            getViewTransportSettings, settings.getViewSettings(), clientContext);
+    this.createViewCallable =
+        callableFactory.createUnaryCallable(
+            createViewTransportSettings, settings.createViewSettings(), clientContext);
+    this.updateViewCallable =
+        callableFactory.createUnaryCallable(
+            updateViewTransportSettings, settings.updateViewSettings(), clientContext);
+    this.deleteViewCallable =
+        callableFactory.createUnaryCallable(
+            deleteViewTransportSettings, settings.deleteViewSettings(), clientContext);
     this.listSinksCallable =
         callableFactory.createUnaryCallable(
             listSinksTransportSettings, settings.listSinksSettings(), clientContext);
@@ -537,8 +748,44 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     return getBucketCallable;
   }
 
+  public UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable() {
+    return createBucketCallable;
+  }
+
   public UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable() {
     return updateBucketCallable;
+  }
+
+  public UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
+    return deleteBucketCallable;
+  }
+
+  public UnaryCallable<UndeleteBucketRequest, Empty> undeleteBucketCallable() {
+    return undeleteBucketCallable;
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
+    return listViewsPagedCallable;
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
+    return listViewsCallable;
+  }
+
+  public UnaryCallable<GetViewRequest, LogView> getViewCallable() {
+    return getViewCallable;
+  }
+
+  public UnaryCallable<CreateViewRequest, LogView> createViewCallable() {
+    return createViewCallable;
+  }
+
+  public UnaryCallable<UpdateViewRequest, LogView> updateViewCallable() {
+    return updateViewCallable;
+  }
+
+  public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
+    return deleteViewCallable;
   }
 
   public UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {

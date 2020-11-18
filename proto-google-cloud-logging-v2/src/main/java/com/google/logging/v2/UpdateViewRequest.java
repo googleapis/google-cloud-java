@@ -22,29 +22,29 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `UpdateBucket`.
+ * The parameters to `UpdateView`.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.UpdateBucketRequest}
+ * Protobuf type {@code google.logging.v2.UpdateViewRequest}
  */
-public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateViewRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.UpdateBucketRequest)
-    UpdateBucketRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.UpdateViewRequest)
+    UpdateViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpdateBucketRequest.newBuilder() to construct.
-  private UpdateBucketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateViewRequest.newBuilder() to construct.
+  private UpdateViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpdateBucketRequest() {
+  private UpdateViewRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateBucketRequest();
+    return new UpdateViewRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private UpdateBucketRequest(
+  private UpdateViewRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -79,15 +79,14 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
             }
           case 18:
             {
-              com.google.logging.v2.LogBucket.Builder subBuilder = null;
-              if (bucket_ != null) {
-                subBuilder = bucket_.toBuilder();
+              com.google.logging.v2.LogView.Builder subBuilder = null;
+              if (view_ != null) {
+                subBuilder = view_.toBuilder();
               }
-              bucket_ =
-                  input.readMessage(com.google.logging.v2.LogBucket.parser(), extensionRegistry);
+              view_ = input.readMessage(com.google.logging.v2.LogView.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(bucket_);
-                bucket_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(view_);
+                view_ = subBuilder.buildPartial();
               }
 
               break;
@@ -128,17 +127,17 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_UpdateBucketRequest_descriptor;
+        .internal_static_google_logging_v2_UpdateViewRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_UpdateBucketRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_UpdateViewRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.UpdateBucketRequest.class,
-            com.google.logging.v2.UpdateBucketRequest.Builder.class);
+            com.google.logging.v2.UpdateViewRequest.class,
+            com.google.logging.v2.UpdateViewRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -147,20 +146,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The full resource name of the bucket to update.
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * Required. The full resource name of the view to update
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
    * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-   * requires permission "resourcemanager.projects.updateLiens" to set the
-   * locked property
+   *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -180,20 +172,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The full resource name of the bucket to update.
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * Required. The full resource name of the view to update
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
    * Example:
-   * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-   * requires permission "resourcemanager.projects.updateLiens" to set the
-   * locked property
+   *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -210,50 +195,50 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int BUCKET_FIELD_NUMBER = 2;
-  private com.google.logging.v2.LogBucket bucket_;
+  public static final int VIEW_FIELD_NUMBER = 2;
+  private com.google.logging.v2.LogView view_;
   /**
    *
    *
    * <pre>
-   * Required. The updated bucket.
+   * Required. The updated view.
    * </pre>
    *
-   * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return Whether the bucket field is set.
+   * @return Whether the view field is set.
    */
   @java.lang.Override
-  public boolean hasBucket() {
-    return bucket_ != null;
+  public boolean hasView() {
+    return view_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Required. The updated bucket.
+   * Required. The updated view.
    * </pre>
    *
-   * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The bucket.
+   * @return The view.
    */
   @java.lang.Override
-  public com.google.logging.v2.LogBucket getBucket() {
-    return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+  public com.google.logging.v2.LogView getView() {
+    return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
   }
   /**
    *
    *
    * <pre>
-   * Required. The updated bucket.
+   * Required. The updated view.
    * </pre>
    *
-   * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
-  public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
-    return getBucket();
+  public com.google.logging.v2.LogViewOrBuilder getViewOrBuilder() {
+    return getView();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
@@ -262,15 +247,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
+   * Optional. Field mask that specifies the fields in `view` that need
+   * an update. A field will be overwritten if, and only if, it is
+   * in the update mask. `name` and output only fields cannot be updated.
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -283,15 +268,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
+   * Optional. Field mask that specifies the fields in `view` that need
+   * an update. A field will be overwritten if, and only if, it is
+   * in the update mask. `name` and output only fields cannot be updated.
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -304,15 +289,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Field mask that specifies the fields in `bucket` that need an update. A
-   * bucket field will be overwritten if, and only if, it is in the update
-   * mask. `name` and output only fields cannot be updated.
+   * Optional. Field mask that specifies the fields in `view` that need
+   * an update. A field will be overwritten if, and only if, it is
+   * in the update mask. `name` and output only fields cannot be updated.
    * For a detailed `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-   * Example: `updateMask=retention_days`.
+   * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -337,8 +322,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (bucket_ != null) {
-      output.writeMessage(2, getBucket());
+    if (view_ != null) {
+      output.writeMessage(2, getView());
     }
     if (updateMask_ != null) {
       output.writeMessage(4, getUpdateMask());
@@ -355,8 +340,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (bucket_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBucket());
+    if (view_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getView());
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateMask());
@@ -371,16 +356,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.UpdateBucketRequest)) {
+    if (!(obj instanceof com.google.logging.v2.UpdateViewRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.UpdateBucketRequest other =
-        (com.google.logging.v2.UpdateBucketRequest) obj;
+    com.google.logging.v2.UpdateViewRequest other = (com.google.logging.v2.UpdateViewRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (hasBucket() != other.hasBucket()) return false;
-    if (hasBucket()) {
-      if (!getBucket().equals(other.getBucket())) return false;
+    if (hasView() != other.hasView()) return false;
+    if (hasView()) {
+      if (!getView().equals(other.getView())) return false;
     }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
@@ -399,9 +383,9 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (hasBucket()) {
-      hash = (37 * hash) + BUCKET_FIELD_NUMBER;
-      hash = (53 * hash) + getBucket().hashCode();
+    if (hasView()) {
+      hash = (37 * hash) + VIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getView().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -412,71 +396,71 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     return hash;
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseDelimitedFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseDelimitedFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest parseFrom(
+  public static com.google.logging.v2.UpdateViewRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -493,7 +477,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.UpdateBucketRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.UpdateViewRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -511,31 +495,31 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The parameters to `UpdateBucket`.
+   * The parameters to `UpdateView`.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.UpdateBucketRequest}
+   * Protobuf type {@code google.logging.v2.UpdateViewRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.UpdateBucketRequest)
-      com.google.logging.v2.UpdateBucketRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.UpdateViewRequest)
+      com.google.logging.v2.UpdateViewRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_UpdateBucketRequest_descriptor;
+          .internal_static_google_logging_v2_UpdateViewRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_UpdateBucketRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_UpdateViewRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.UpdateBucketRequest.class,
-              com.google.logging.v2.UpdateBucketRequest.Builder.class);
+              com.google.logging.v2.UpdateViewRequest.class,
+              com.google.logging.v2.UpdateViewRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.UpdateBucketRequest.newBuilder()
+    // Construct using com.google.logging.v2.UpdateViewRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -554,11 +538,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       super.clear();
       name_ = "";
 
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
+      if (viewBuilder_ == null) {
+        view_ = null;
       } else {
-        bucket_ = null;
-        bucketBuilder_ = null;
+        view_ = null;
+        viewBuilder_ = null;
       }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
@@ -572,17 +556,17 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_UpdateBucketRequest_descriptor;
+          .internal_static_google_logging_v2_UpdateViewRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.UpdateBucketRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.UpdateBucketRequest.getDefaultInstance();
+    public com.google.logging.v2.UpdateViewRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.UpdateViewRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.UpdateBucketRequest build() {
-      com.google.logging.v2.UpdateBucketRequest result = buildPartial();
+    public com.google.logging.v2.UpdateViewRequest build() {
+      com.google.logging.v2.UpdateViewRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -590,14 +574,14 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.logging.v2.UpdateBucketRequest buildPartial() {
-      com.google.logging.v2.UpdateBucketRequest result =
-          new com.google.logging.v2.UpdateBucketRequest(this);
+    public com.google.logging.v2.UpdateViewRequest buildPartial() {
+      com.google.logging.v2.UpdateViewRequest result =
+          new com.google.logging.v2.UpdateViewRequest(this);
       result.name_ = name_;
-      if (bucketBuilder_ == null) {
-        result.bucket_ = bucket_;
+      if (viewBuilder_ == null) {
+        result.view_ = view_;
       } else {
-        result.bucket_ = bucketBuilder_.build();
+        result.view_ = viewBuilder_.build();
       }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
@@ -643,22 +627,22 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.UpdateBucketRequest) {
-        return mergeFrom((com.google.logging.v2.UpdateBucketRequest) other);
+      if (other instanceof com.google.logging.v2.UpdateViewRequest) {
+        return mergeFrom((com.google.logging.v2.UpdateViewRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.UpdateBucketRequest other) {
-      if (other == com.google.logging.v2.UpdateBucketRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.UpdateViewRequest other) {
+      if (other == com.google.logging.v2.UpdateViewRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasBucket()) {
-        mergeBucket(other.getBucket());
+      if (other.hasView()) {
+        mergeView(other.getView());
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
@@ -678,11 +662,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.UpdateBucketRequest parsedMessage = null;
+      com.google.logging.v2.UpdateViewRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.UpdateBucketRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.UpdateViewRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -697,20 +681,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The full resource name of the bucket to update.
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Required. The full resource name of the view to update
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
      * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The name.
      */
@@ -729,20 +706,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The full resource name of the bucket to update.
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Required. The full resource name of the view to update
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
      * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for name.
      */
@@ -761,20 +731,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The full resource name of the bucket to update.
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Required. The full resource name of the view to update
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
      * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -792,20 +755,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The full resource name of the bucket to update.
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Required. The full resource name of the view to update
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
      * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -819,20 +775,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The full resource name of the bucket to update.
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Required. The full resource name of the view to update
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]"
      * Example:
-     * `"projects/my-project-id/locations/my-location/buckets/my-bucket-id"`. Also
-     * requires permission "resourcemanager.projects.updateLiens" to set the
-     * locked property
+     *   `"projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view-id"`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -848,65 +797,62 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.logging.v2.LogBucket bucket_;
+    private com.google.logging.v2.LogView view_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.logging.v2.LogBucket,
-            com.google.logging.v2.LogBucket.Builder,
-            com.google.logging.v2.LogBucketOrBuilder>
-        bucketBuilder_;
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        viewBuilder_;
     /**
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return Whether the bucket field is set.
+     * @return Whether the view field is set.
      */
-    public boolean hasBucket() {
-      return bucketBuilder_ != null || bucket_ != null;
+    public boolean hasView() {
+      return viewBuilder_ != null || view_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The bucket.
+     * @return The view.
      */
-    public com.google.logging.v2.LogBucket getBucket() {
-      if (bucketBuilder_ == null) {
-        return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+    public com.google.logging.v2.LogView getView() {
+      if (viewBuilder_ == null) {
+        return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
       } else {
-        return bucketBuilder_.getMessage();
+        return viewBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setBucket(com.google.logging.v2.LogBucket value) {
-      if (bucketBuilder_ == null) {
+    public Builder setView(com.google.logging.v2.LogView value) {
+      if (viewBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        bucket_ = value;
+        view_ = value;
         onChanged();
       } else {
-        bucketBuilder_.setMessage(value);
+        viewBuilder_.setMessage(value);
       }
 
       return this;
@@ -915,18 +861,17 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setBucket(com.google.logging.v2.LogBucket.Builder builderForValue) {
-      if (bucketBuilder_ == null) {
-        bucket_ = builderForValue.build();
+    public Builder setView(com.google.logging.v2.LogView.Builder builderForValue) {
+      if (viewBuilder_ == null) {
+        view_ = builderForValue.build();
         onChanged();
       } else {
-        bucketBuilder_.setMessage(builderForValue.build());
+        viewBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -935,23 +880,21 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeBucket(com.google.logging.v2.LogBucket value) {
-      if (bucketBuilder_ == null) {
-        if (bucket_ != null) {
-          bucket_ =
-              com.google.logging.v2.LogBucket.newBuilder(bucket_).mergeFrom(value).buildPartial();
+    public Builder mergeView(com.google.logging.v2.LogView value) {
+      if (viewBuilder_ == null) {
+        if (view_ != null) {
+          view_ = com.google.logging.v2.LogView.newBuilder(view_).mergeFrom(value).buildPartial();
         } else {
-          bucket_ = value;
+          view_ = value;
         }
         onChanged();
       } else {
-        bucketBuilder_.mergeFrom(value);
+        viewBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -960,19 +903,18 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearBucket() {
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
+    public Builder clearView() {
+      if (viewBuilder_ == null) {
+        view_ = null;
         onChanged();
       } else {
-        bucket_ = null;
-        bucketBuilder_ = null;
+        view_ = null;
+        viewBuilder_ = null;
       }
 
       return this;
@@ -981,59 +923,56 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public com.google.logging.v2.LogBucket.Builder getBucketBuilder() {
+    public com.google.logging.v2.LogView.Builder getViewBuilder() {
 
       onChanged();
-      return getBucketFieldBuilder().getBuilder();
+      return getViewFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
-      if (bucketBuilder_ != null) {
-        return bucketBuilder_.getMessageOrBuilder();
+    public com.google.logging.v2.LogViewOrBuilder getViewOrBuilder() {
+      if (viewBuilder_ != null) {
+        return viewBuilder_.getMessageOrBuilder();
       } else {
-        return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
+        return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Required. The updated bucket.
+     * Required. The updated view.
      * </pre>
      *
-     * <code>.google.logging.v2.LogBucket bucket = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.logging.v2.LogView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.logging.v2.LogBucket,
-            com.google.logging.v2.LogBucket.Builder,
-            com.google.logging.v2.LogBucketOrBuilder>
-        getBucketFieldBuilder() {
-      if (bucketBuilder_ == null) {
-        bucketBuilder_ =
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        getViewFieldBuilder() {
+      if (viewBuilder_ == null) {
+        viewBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.logging.v2.LogBucket,
-                com.google.logging.v2.LogBucket.Builder,
-                com.google.logging.v2.LogBucketOrBuilder>(
-                getBucket(), getParentForChildren(), isClean());
-        bucket_ = null;
+                com.google.logging.v2.LogView,
+                com.google.logging.v2.LogView.Builder,
+                com.google.logging.v2.LogViewOrBuilder>(
+                getView(), getParentForChildren(), isClean());
+        view_ = null;
       }
-      return bucketBuilder_;
+      return viewBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_;
@@ -1046,15 +985,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -1066,15 +1005,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -1092,15 +1031,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -1120,15 +1059,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -1145,15 +1084,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -1175,15 +1114,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -1201,15 +1140,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -1221,15 +1160,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -1245,15 +1184,15 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Field mask that specifies the fields in `bucket` that need an update. A
-     * bucket field will be overwritten if, and only if, it is in the update
-     * mask. `name` and output only fields cannot be updated.
+     * Optional. Field mask that specifies the fields in `view` that need
+     * an update. A field will be overwritten if, and only if, it is
+     * in the update mask. `name` and output only fields cannot be updated.
      * For a detailed `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
-     * Example: `updateMask=retention_days`.
+     * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1284,42 +1223,42 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.UpdateBucketRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.UpdateViewRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.UpdateBucketRequest)
-  private static final com.google.logging.v2.UpdateBucketRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.UpdateViewRequest)
+  private static final com.google.logging.v2.UpdateViewRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.UpdateBucketRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.UpdateViewRequest();
   }
 
-  public static com.google.logging.v2.UpdateBucketRequest getDefaultInstance() {
+  public static com.google.logging.v2.UpdateViewRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateBucketRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpdateBucketRequest>() {
+  private static final com.google.protobuf.Parser<UpdateViewRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateViewRequest>() {
         @java.lang.Override
-        public UpdateBucketRequest parsePartialFrom(
+        public UpdateViewRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateBucketRequest(input, extensionRegistry);
+          return new UpdateViewRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpdateBucketRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateViewRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateBucketRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateViewRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.UpdateBucketRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.UpdateViewRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

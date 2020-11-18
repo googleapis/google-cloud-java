@@ -18,32 +18,43 @@ package com.google.cloud.logging.v2.stub;
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.CreateViewRequest;
+import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.ListViewsRequest;
+import com.google.logging.v2.ListViewsResponse;
 import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.LogView;
+import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.logging.v2.UpdateViewRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -81,8 +92,44 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getBucketCallable()");
   }
 
+  public UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBucketCallable()");
+  }
+
   public UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBucketCallable()");
+  }
+
+  public UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBucketCallable()");
+  }
+
+  public UnaryCallable<UndeleteBucketRequest, Empty> undeleteBucketCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeleteBucketCallable()");
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViewsCallable()");
+  }
+
+  public UnaryCallable<GetViewRequest, LogView> getViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getViewCallable()");
+  }
+
+  public UnaryCallable<CreateViewRequest, LogView> createViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: createViewCallable()");
+  }
+
+  public UnaryCallable<UpdateViewRequest, LogView> updateViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateViewCallable()");
+  }
+
+  public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteViewCallable()");
   }
 
   public UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {

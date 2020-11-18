@@ -46,6 +46,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     destination_ = "";
     filter_ = "";
     description_ = "";
+    exclusions_ = java.util.Collections.emptyList();
     outputVersionFormat_ = 0;
     writerIdentity_ = "";
   }
@@ -69,6 +70,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -165,6 +167,17 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                exclusions_ = new java.util.ArrayList<com.google.logging.v2.LogExclusion>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              exclusions_.add(
+                  input.readMessage(
+                      com.google.logging.v2.LogExclusion.parser(), extensionRegistry));
+              break;
+            }
           case 146:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -191,6 +204,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        exclusions_ = java.util.Collections.unmodifiableList(exclusions_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -664,6 +680,95 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     return disabled_;
   }
 
+  public static final int EXCLUSIONS_FIELD_NUMBER = 16;
+  private java.util.List<com.google.logging.v2.LogExclusion> exclusions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList() {
+    return exclusions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
+      getExclusionsOrBuilderList() {
+    return exclusions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getExclusionsCount() {
+    return exclusions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogExclusion getExclusions(int index) {
+    return exclusions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Log entries that match any of the exclusion filters will not be exported.
+   * If a log entry is matched by both `filter` and one of `exclusion_filters`
+   * it will not be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(int index) {
+    return exclusions_.get(index);
+  }
+
   public static final int OUTPUT_VERSION_FORMAT_FIELD_NUMBER = 6;
   private int outputVersionFormat_;
   /**
@@ -710,7 +815,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
    * writes the exported log entries to the sink's destination. This field is
    * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -743,7 +848,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
    * writes the exported log entries to the sink's destination. This field is
    * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -1005,6 +1110,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(14, getUpdateTime());
     }
+    for (int i = 0; i < exclusions_.size(); i++) {
+      output.writeMessage(16, exclusions_.get(i));
+    }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, description_);
     }
@@ -1050,6 +1158,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getUpdateTime());
     }
+    for (int i = 0; i < exclusions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, exclusions_.get(i));
+    }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, description_);
     }
@@ -1076,6 +1187,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getDisabled() != other.getDisabled()) return false;
+    if (!getExclusionsList().equals(other.getExclusionsList())) return false;
     if (outputVersionFormat_ != other.outputVersionFormat_) return false;
     if (!getWriterIdentity().equals(other.getWriterIdentity())) return false;
     if (getIncludeChildren() != other.getIncludeChildren()) return false;
@@ -1116,6 +1228,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+    if (getExclusionsCount() > 0) {
+      hash = (37 * hash) + EXCLUSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getExclusionsList().hashCode();
+    }
     hash = (37 * hash) + OUTPUT_VERSION_FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + outputVersionFormat_;
     hash = (37 * hash) + WRITER_IDENTITY_FIELD_NUMBER;
@@ -1279,7 +1395,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getExclusionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1295,6 +1413,12 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
       disabled_ = false;
 
+      if (exclusionsBuilder_ == null) {
+        exclusions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        exclusionsBuilder_.clear();
+      }
       outputVersionFormat_ = 0;
 
       writerIdentity_ = "";
@@ -1341,11 +1465,21 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.logging.v2.LogSink buildPartial() {
       com.google.logging.v2.LogSink result = new com.google.logging.v2.LogSink(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.destination_ = destination_;
       result.filter_ = filter_;
       result.description_ = description_;
       result.disabled_ = disabled_;
+      if (exclusionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          exclusions_ = java.util.Collections.unmodifiableList(exclusions_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.exclusions_ = exclusions_;
+      } else {
+        result.exclusions_ = exclusionsBuilder_.build();
+      }
       result.outputVersionFormat_ = outputVersionFormat_;
       result.writerIdentity_ = writerIdentity_;
       result.includeChildren_ = includeChildren_;
@@ -1435,6 +1569,33 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       if (other.getDisabled() != false) {
         setDisabled(other.getDisabled());
       }
+      if (exclusionsBuilder_ == null) {
+        if (!other.exclusions_.isEmpty()) {
+          if (exclusions_.isEmpty()) {
+            exclusions_ = other.exclusions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureExclusionsIsMutable();
+            exclusions_.addAll(other.exclusions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.exclusions_.isEmpty()) {
+          if (exclusionsBuilder_.isEmpty()) {
+            exclusionsBuilder_.dispose();
+            exclusionsBuilder_ = null;
+            exclusions_ = other.exclusions_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            exclusionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getExclusionsFieldBuilder()
+                    : null;
+          } else {
+            exclusionsBuilder_.addAllMessages(other.exclusions_);
+          }
+        }
+      }
       if (other.outputVersionFormat_ != 0) {
         setOutputVersionFormatValue(other.getOutputVersionFormatValue());
       }
@@ -1504,6 +1665,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2079,6 +2242,426 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.logging.v2.LogExclusion> exclusions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureExclusionsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        exclusions_ = new java.util.ArrayList<com.google.logging.v2.LogExclusion>(exclusions_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.logging.v2.LogExclusion,
+            com.google.logging.v2.LogExclusion.Builder,
+            com.google.logging.v2.LogExclusionOrBuilder>
+        exclusionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList() {
+      if (exclusionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(exclusions_);
+      } else {
+        return exclusionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getExclusionsCount() {
+      if (exclusionsBuilder_ == null) {
+        return exclusions_.size();
+      } else {
+        return exclusionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogExclusion getExclusions(int index) {
+      if (exclusionsBuilder_ == null) {
+        return exclusions_.get(index);
+      } else {
+        return exclusionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExclusions(int index, com.google.logging.v2.LogExclusion value) {
+      if (exclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExclusionsIsMutable();
+        exclusions_.set(index, value);
+        onChanged();
+      } else {
+        exclusionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExclusions(
+        int index, com.google.logging.v2.LogExclusion.Builder builderForValue) {
+      if (exclusionsBuilder_ == null) {
+        ensureExclusionsIsMutable();
+        exclusions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        exclusionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExclusions(com.google.logging.v2.LogExclusion value) {
+      if (exclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExclusionsIsMutable();
+        exclusions_.add(value);
+        onChanged();
+      } else {
+        exclusionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExclusions(int index, com.google.logging.v2.LogExclusion value) {
+      if (exclusionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExclusionsIsMutable();
+        exclusions_.add(index, value);
+        onChanged();
+      } else {
+        exclusionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExclusions(com.google.logging.v2.LogExclusion.Builder builderForValue) {
+      if (exclusionsBuilder_ == null) {
+        ensureExclusionsIsMutable();
+        exclusions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        exclusionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExclusions(
+        int index, com.google.logging.v2.LogExclusion.Builder builderForValue) {
+      if (exclusionsBuilder_ == null) {
+        ensureExclusionsIsMutable();
+        exclusions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        exclusionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllExclusions(
+        java.lang.Iterable<? extends com.google.logging.v2.LogExclusion> values) {
+      if (exclusionsBuilder_ == null) {
+        ensureExclusionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusions_);
+        onChanged();
+      } else {
+        exclusionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExclusions() {
+      if (exclusionsBuilder_ == null) {
+        exclusions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        exclusionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeExclusions(int index) {
+      if (exclusionsBuilder_ == null) {
+        ensureExclusionsIsMutable();
+        exclusions_.remove(index);
+        onChanged();
+      } else {
+        exclusionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogExclusion.Builder getExclusionsBuilder(int index) {
+      return getExclusionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(int index) {
+      if (exclusionsBuilder_ == null) {
+        return exclusions_.get(index);
+      } else {
+        return exclusionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
+        getExclusionsOrBuilderList() {
+      if (exclusionsBuilder_ != null) {
+        return exclusionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(exclusions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogExclusion.Builder addExclusionsBuilder() {
+      return getExclusionsFieldBuilder()
+          .addBuilder(com.google.logging.v2.LogExclusion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.logging.v2.LogExclusion.Builder addExclusionsBuilder(int index) {
+      return getExclusionsFieldBuilder()
+          .addBuilder(index, com.google.logging.v2.LogExclusion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Log entries that match any of the exclusion filters will not be exported.
+     * If a log entry is matched by both `filter` and one of `exclusion_filters`
+     * it will not be exported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.logging.v2.LogExclusion exclusions = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.logging.v2.LogExclusion.Builder> getExclusionsBuilderList() {
+      return getExclusionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.logging.v2.LogExclusion,
+            com.google.logging.v2.LogExclusion.Builder,
+            com.google.logging.v2.LogExclusionOrBuilder>
+        getExclusionsFieldBuilder() {
+      if (exclusionsBuilder_ == null) {
+        exclusionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.logging.v2.LogExclusion,
+                com.google.logging.v2.LogExclusion.Builder,
+                com.google.logging.v2.LogExclusionOrBuilder>(
+                exclusions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        exclusions_ = null;
+      }
+      return exclusionsBuilder_;
+    }
+
     private int outputVersionFormat_ = 0;
     /**
      *
@@ -2185,7 +2768,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
      * writes the exported log entries to the sink's destination. This field is
      * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -2217,7 +2800,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
      * writes the exported log entries to the sink's destination. This field is
      * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -2249,7 +2832,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
      * writes the exported log entries to the sink's destination. This field is
      * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -2280,7 +2863,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
      * writes the exported log entries to the sink's destination. This field is
      * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
@@ -2307,7 +2890,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Logging
      * writes the exported log entries to the sink's destination. This field is
      * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
      * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the

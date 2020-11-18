@@ -22,7 +22,7 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * LogBucket lifecycle states (Beta).
+ * LogBucket lifecycle states.
  * </pre>
  *
  * Protobuf enum {@code google.logging.v2.LifecycleState}

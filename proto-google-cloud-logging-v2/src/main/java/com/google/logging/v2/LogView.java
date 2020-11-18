@@ -22,31 +22,31 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * Describes a repository of logs.
+ * Describes a view over logs in a bucket.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.LogBucket}
+ * Protobuf type {@code google.logging.v2.LogView}
  */
-public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
+public final class LogView extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.LogBucket)
-    LogBucketOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.LogView)
+    LogViewOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use LogBucket.newBuilder() to construct.
-  private LogBucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use LogView.newBuilder() to construct.
+  private LogView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private LogBucket() {
+  private LogView() {
     name_ = "";
     description_ = "";
-    lifecycleState_ = 0;
+    filter_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new LogBucket();
+    return new LogView();
   }
 
   @java.lang.Override
@@ -54,7 +54,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private LogBucket(
+  private LogView(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -116,21 +116,11 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 72:
+          case 58:
             {
-              locked_ = input.readBool();
-              break;
-            }
-          case 88:
-            {
-              retentionDays_ = input.readInt32();
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
 
-              lifecycleState_ = rawValue;
+              filter_ = s;
               break;
             }
           default:
@@ -154,16 +144,16 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_LogBucket_descriptor;
+        .internal_static_google_logging_v2_LogView_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_LogBucket_fieldAccessorTable
+        .internal_static_google_logging_v2_LogView_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.LogBucket.class, com.google.logging.v2.LogBucket.Builder.class);
+            com.google.logging.v2.LogView.class, com.google.logging.v2.LogView.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -172,14 +162,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the bucket.
-   * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   * The resource name of the view.
+   * For example
+   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -202,14 +187,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the bucket.
-   * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   * The resource name of the view.
+   * For example
+   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -235,7 +215,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes this bucket.
+   * Describes this view.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -258,7 +238,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes this bucket.
+   * Describes this view.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -284,8 +264,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -301,8 +280,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -318,8 +296,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -336,7 +313,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -352,7 +329,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -368,7 +345,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -379,85 +356,67 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
-  public static final int RETENTION_DAYS_FIELD_NUMBER = 11;
-  private int retentionDays_;
+  public static final int FILTER_FIELD_NUMBER = 7;
+  private volatile java.lang.Object filter_;
   /**
    *
    *
    * <pre>
-   * Logs will be retained by default for this amount of time, after which they
-   * will automatically be deleted. The minimum retention period is 1 day.
-   * If this value is set to zero at bucket creation time, the default time of
-   * 30 days will be used.
+   * Filter that restricts which log entries in a bucket are visible in this
+   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * following:
+   *   originating project/folder/organization/billing account.
+   *   resource type
+   *   log id
+   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *             AND LOG_ID("stdout")
    * </pre>
    *
-   * <code>int32 retention_days = 11;</code>
+   * <code>string filter = 7;</code>
    *
-   * @return The retentionDays.
+   * @return The filter.
    */
   @java.lang.Override
-  public int getRetentionDays() {
-    return retentionDays_;
-  }
-
-  public static final int LOCKED_FIELD_NUMBER = 9;
-  private boolean locked_;
-  /**
-   *
-   *
-   * <pre>
-   * Whether the bucket has been locked.
-   * The retention period on a locked bucket may not be changed.
-   * Locked buckets may only be deleted if they are empty.
-   * </pre>
-   *
-   * <code>bool locked = 9;</code>
-   *
-   * @return The locked.
-   */
-  @java.lang.Override
-  public boolean getLocked() {
-    return locked_;
-  }
-
-  public static final int LIFECYCLE_STATE_FIELD_NUMBER = 12;
-  private int lifecycleState_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The bucket lifecycle state.
-   * </pre>
-   *
-   * <code>
-   * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for lifecycleState.
-   */
-  @java.lang.Override
-  public int getLifecycleStateValue() {
-    return lifecycleState_;
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Output only. The bucket lifecycle state.
+   * Filter that restricts which log entries in a bucket are visible in this
+   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * following:
+   *   originating project/folder/organization/billing account.
+   *   resource type
+   *   log id
+   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *             AND LOG_ID("stdout")
    * </pre>
    *
-   * <code>
-   * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>string filter = 7;</code>
    *
-   * @return The lifecycleState.
+   * @return The bytes for filter.
    */
   @java.lang.Override
-  public com.google.logging.v2.LifecycleState getLifecycleState() {
-    @SuppressWarnings("deprecation")
-    com.google.logging.v2.LifecycleState result =
-        com.google.logging.v2.LifecycleState.valueOf(lifecycleState_);
-    return result == null ? com.google.logging.v2.LifecycleState.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -486,15 +445,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(5, getUpdateTime());
     }
-    if (locked_ != false) {
-      output.writeBool(9, locked_);
-    }
-    if (retentionDays_ != 0) {
-      output.writeInt32(11, retentionDays_);
-    }
-    if (lifecycleState_
-        != com.google.logging.v2.LifecycleState.LIFECYCLE_STATE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(12, lifecycleState_);
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, filter_);
     }
     unknownFields.writeTo(output);
   }
@@ -517,15 +469,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateTime());
     }
-    if (locked_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, locked_);
-    }
-    if (retentionDays_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, retentionDays_);
-    }
-    if (lifecycleState_
-        != com.google.logging.v2.LifecycleState.LIFECYCLE_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, lifecycleState_);
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -537,10 +482,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.LogBucket)) {
+    if (!(obj instanceof com.google.logging.v2.LogView)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.LogBucket other = (com.google.logging.v2.LogBucket) obj;
+    com.google.logging.v2.LogView other = (com.google.logging.v2.LogView) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
@@ -552,9 +497,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    if (getRetentionDays() != other.getRetentionDays()) return false;
-    if (getLocked() != other.getLocked()) return false;
-    if (lifecycleState_ != other.lifecycleState_) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -578,81 +521,77 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
-    hash = (37 * hash) + RETENTION_DAYS_FIELD_NUMBER;
-    hash = (53 * hash) + getRetentionDays();
-    hash = (37 * hash) + LOCKED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
-    hash = (37 * hash) + LIFECYCLE_STATE_FIELD_NUMBER;
-    hash = (53 * hash) + lifecycleState_;
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.LogView parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
+  public static com.google.logging.v2.LogView parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.logging.v2.LogView parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
+  public static com.google.logging.v2.LogView parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(byte[] data)
+  public static com.google.logging.v2.LogView parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
+  public static com.google.logging.v2.LogView parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.LogView parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
+  public static com.google.logging.v2.LogView parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.LogBucket parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.logging.v2.LogView parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.LogBucket parseDelimitedFrom(
+  public static com.google.logging.v2.LogView parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+  public static com.google.logging.v2.LogView parseFrom(com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.LogBucket parseFrom(
+  public static com.google.logging.v2.LogView parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -669,7 +608,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.LogBucket prototype) {
+  public static Builder newBuilder(com.google.logging.v2.LogView prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -687,30 +626,30 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes a repository of logs.
+   * Describes a view over logs in a bucket.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.LogBucket}
+   * Protobuf type {@code google.logging.v2.LogView}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.LogBucket)
-      com.google.logging.v2.LogBucketOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.LogView)
+      com.google.logging.v2.LogViewOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_LogBucket_descriptor;
+          .internal_static_google_logging_v2_LogView_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_LogBucket_fieldAccessorTable
+          .internal_static_google_logging_v2_LogView_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.LogBucket.class, com.google.logging.v2.LogBucket.Builder.class);
+              com.google.logging.v2.LogView.class, com.google.logging.v2.LogView.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.LogBucket.newBuilder()
+    // Construct using com.google.logging.v2.LogView.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -743,11 +682,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
-      retentionDays_ = 0;
-
-      locked_ = false;
-
-      lifecycleState_ = 0;
+      filter_ = "";
 
       return this;
     }
@@ -755,17 +690,17 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_LogBucket_descriptor;
+          .internal_static_google_logging_v2_LogView_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.LogBucket getDefaultInstanceForType() {
-      return com.google.logging.v2.LogBucket.getDefaultInstance();
+    public com.google.logging.v2.LogView getDefaultInstanceForType() {
+      return com.google.logging.v2.LogView.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.LogBucket build() {
-      com.google.logging.v2.LogBucket result = buildPartial();
+    public com.google.logging.v2.LogView build() {
+      com.google.logging.v2.LogView result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -773,8 +708,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.logging.v2.LogBucket buildPartial() {
-      com.google.logging.v2.LogBucket result = new com.google.logging.v2.LogBucket(this);
+    public com.google.logging.v2.LogView buildPartial() {
+      com.google.logging.v2.LogView result = new com.google.logging.v2.LogView(this);
       result.name_ = name_;
       result.description_ = description_;
       if (createTimeBuilder_ == null) {
@@ -787,9 +722,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      result.retentionDays_ = retentionDays_;
-      result.locked_ = locked_;
-      result.lifecycleState_ = lifecycleState_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -829,16 +762,16 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.LogBucket) {
-        return mergeFrom((com.google.logging.v2.LogBucket) other);
+      if (other instanceof com.google.logging.v2.LogView) {
+        return mergeFrom((com.google.logging.v2.LogView) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.LogBucket other) {
-      if (other == com.google.logging.v2.LogBucket.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.LogView other) {
+      if (other == com.google.logging.v2.LogView.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -853,14 +786,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
-      if (other.getRetentionDays() != 0) {
-        setRetentionDays(other.getRetentionDays());
-      }
-      if (other.getLocked() != false) {
-        setLocked(other.getLocked());
-      }
-      if (other.lifecycleState_ != 0) {
-        setLifecycleStateValue(other.getLifecycleStateValue());
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -877,11 +805,11 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.LogBucket parsedMessage = null;
+      com.google.logging.v2.LogView parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.LogBucket) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.LogView) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -896,14 +824,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the bucket.
-     * For example:
-     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-     * supported locations are:
-     *   "global"
-     * For the location of `global` it is unspecified where logs are actually
-     * stored.
-     * Once a bucket has been created, the location can not be changed.
+     * The resource name of the view.
+     * For example
+     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -925,14 +848,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the bucket.
-     * For example:
-     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-     * supported locations are:
-     *   "global"
-     * For the location of `global` it is unspecified where logs are actually
-     * stored.
-     * Once a bucket has been created, the location can not be changed.
+     * The resource name of the view.
+     * For example
+     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -954,14 +872,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the bucket.
-     * For example:
-     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-     * supported locations are:
-     *   "global"
-     * For the location of `global` it is unspecified where logs are actually
-     * stored.
-     * Once a bucket has been created, the location can not be changed.
+     * The resource name of the view.
+     * For example
+     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -982,14 +895,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the bucket.
-     * For example:
-     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-     * supported locations are:
-     *   "global"
-     * For the location of `global` it is unspecified where logs are actually
-     * stored.
-     * Once a bucket has been created, the location can not be changed.
+     * The resource name of the view.
+     * For example
+     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1006,14 +914,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the bucket.
-     * For example:
-     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-     * supported locations are:
-     *   "global"
-     * For the location of `global` it is unspecified where logs are actually
-     * stored.
-     * Once a bucket has been created, the location can not be changed.
+     * The resource name of the view.
+     * For example
+     * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1037,7 +940,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes this bucket.
+     * Describes this view.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1059,7 +962,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes this bucket.
+     * Describes this view.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1081,7 +984,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes this bucket.
+     * Describes this view.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1102,7 +1005,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes this bucket.
+     * Describes this view.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1119,7 +1022,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes this bucket.
+     * Describes this view.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1148,8 +1051,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1165,8 +1067,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1188,8 +1089,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1213,8 +1113,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1235,8 +1134,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1262,8 +1160,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1285,8 +1182,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1302,8 +1198,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1323,8 +1218,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1358,7 +1252,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1374,7 +1268,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1396,7 +1290,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1420,7 +1314,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1441,7 +1335,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1467,7 +1361,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1489,7 +1383,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1505,7 +1399,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1525,7 +1419,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last update timestamp of the bucket.
+     * Output only. The last update timestamp of the view.
      * </pre>
      *
      * <code>
@@ -1549,203 +1443,90 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
-    private int retentionDays_;
+    private java.lang.Object filter_ = "";
     /**
      *
      *
      * <pre>
-     * Logs will be retained by default for this amount of time, after which they
-     * will automatically be deleted. The minimum retention period is 1 day.
-     * If this value is set to zero at bucket creation time, the default time of
-     * 30 days will be used.
+     * Filter that restricts which log entries in a bucket are visible in this
+     * view. Filters are restricted to be a logical AND of ==/!= of any of the
+     * following:
+     *   originating project/folder/organization/billing account.
+     *   resource type
+     *   log id
+     * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+     *             AND LOG_ID("stdout")
      * </pre>
      *
-     * <code>int32 retention_days = 11;</code>
+     * <code>string filter = 7;</code>
      *
-     * @return The retentionDays.
+     * @return The filter.
      */
-    @java.lang.Override
-    public int getRetentionDays() {
-      return retentionDays_;
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Logs will be retained by default for this amount of time, after which they
-     * will automatically be deleted. The minimum retention period is 1 day.
-     * If this value is set to zero at bucket creation time, the default time of
-     * 30 days will be used.
+     * Filter that restricts which log entries in a bucket are visible in this
+     * view. Filters are restricted to be a logical AND of ==/!= of any of the
+     * following:
+     *   originating project/folder/organization/billing account.
+     *   resource type
+     *   log id
+     * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+     *             AND LOG_ID("stdout")
      * </pre>
      *
-     * <code>int32 retention_days = 11;</code>
+     * <code>string filter = 7;</code>
      *
-     * @param value The retentionDays to set.
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter that restricts which log entries in a bucket are visible in this
+     * view. Filters are restricted to be a logical AND of ==/!= of any of the
+     * following:
+     *   originating project/folder/organization/billing account.
+     *   resource type
+     *   log id
+     * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+     *             AND LOG_ID("stdout")
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @param value The filter to set.
      * @return This builder for chaining.
      */
-    public Builder setRetentionDays(int value) {
-
-      retentionDays_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Logs will be retained by default for this amount of time, after which they
-     * will automatically be deleted. The minimum retention period is 1 day.
-     * If this value is set to zero at bucket creation time, the default time of
-     * 30 days will be used.
-     * </pre>
-     *
-     * <code>int32 retention_days = 11;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRetentionDays() {
-
-      retentionDays_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private boolean locked_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether the bucket has been locked.
-     * The retention period on a locked bucket may not be changed.
-     * Locked buckets may only be deleted if they are empty.
-     * </pre>
-     *
-     * <code>bool locked = 9;</code>
-     *
-     * @return The locked.
-     */
-    @java.lang.Override
-    public boolean getLocked() {
-      return locked_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether the bucket has been locked.
-     * The retention period on a locked bucket may not be changed.
-     * Locked buckets may only be deleted if they are empty.
-     * </pre>
-     *
-     * <code>bool locked = 9;</code>
-     *
-     * @param value The locked to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLocked(boolean value) {
-
-      locked_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether the bucket has been locked.
-     * The retention period on a locked bucket may not be changed.
-     * Locked buckets may only be deleted if they are empty.
-     * </pre>
-     *
-     * <code>bool locked = 9;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearLocked() {
-
-      locked_ = false;
-      onChanged();
-      return this;
-    }
-
-    private int lifecycleState_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The bucket lifecycle state.
-     * </pre>
-     *
-     * <code>
-     * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for lifecycleState.
-     */
-    @java.lang.Override
-    public int getLifecycleStateValue() {
-      return lifecycleState_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The bucket lifecycle state.
-     * </pre>
-     *
-     * <code>
-     * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for lifecycleState to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLifecycleStateValue(int value) {
-
-      lifecycleState_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The bucket lifecycle state.
-     * </pre>
-     *
-     * <code>
-     * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The lifecycleState.
-     */
-    @java.lang.Override
-    public com.google.logging.v2.LifecycleState getLifecycleState() {
-      @SuppressWarnings("deprecation")
-      com.google.logging.v2.LifecycleState result =
-          com.google.logging.v2.LifecycleState.valueOf(lifecycleState_);
-      return result == null ? com.google.logging.v2.LifecycleState.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The bucket lifecycle state.
-     * </pre>
-     *
-     * <code>
-     * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @param value The lifecycleState to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLifecycleState(com.google.logging.v2.LifecycleState value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      lifecycleState_ = value.getNumber();
+      filter_ = value;
       onChanged();
       return this;
     }
@@ -1753,18 +1534,52 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The bucket lifecycle state.
+     * Filter that restricts which log entries in a bucket are visible in this
+     * view. Filters are restricted to be a logical AND of ==/!= of any of the
+     * following:
+     *   originating project/folder/organization/billing account.
+     *   resource type
+     *   log id
+     * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+     *             AND LOG_ID("stdout")
      * </pre>
      *
-     * <code>
-     * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string filter = 7;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearLifecycleState() {
+    public Builder clearFilter() {
 
-      lifecycleState_ = 0;
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter that restricts which log entries in a bucket are visible in this
+     * view. Filters are restricted to be a logical AND of ==/!= of any of the
+     * following:
+     *   originating project/folder/organization/billing account.
+     *   resource type
+     *   log id
+     * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+     *             AND LOG_ID("stdout")
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
       onChanged();
       return this;
     }
@@ -1780,42 +1595,42 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.LogBucket)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.LogView)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.LogBucket)
-  private static final com.google.logging.v2.LogBucket DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.LogView)
+  private static final com.google.logging.v2.LogView DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.LogBucket();
+    DEFAULT_INSTANCE = new com.google.logging.v2.LogView();
   }
 
-  public static com.google.logging.v2.LogBucket getDefaultInstance() {
+  public static com.google.logging.v2.LogView getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogBucket> PARSER =
-      new com.google.protobuf.AbstractParser<LogBucket>() {
+  private static final com.google.protobuf.Parser<LogView> PARSER =
+      new com.google.protobuf.AbstractParser<LogView>() {
         @java.lang.Override
-        public LogBucket parsePartialFrom(
+        public LogView parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LogBucket(input, extensionRegistry);
+          return new LogView(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<LogBucket> parser() {
+  public static com.google.protobuf.Parser<LogView> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LogBucket> getParserForType() {
+  public com.google.protobuf.Parser<LogView> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.LogBucket getDefaultInstanceForType() {
+  public com.google.logging.v2.LogView getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

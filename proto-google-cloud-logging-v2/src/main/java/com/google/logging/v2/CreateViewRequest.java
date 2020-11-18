@@ -22,30 +22,30 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * The parameters to `ListBuckets`.
+ * The parameters to `CreateView`.
  * </pre>
  *
- * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+ * Protobuf type {@code google.logging.v2.CreateViewRequest}
  */
-public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class CreateViewRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.logging.v2.ListBucketsRequest)
-    ListBucketsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.logging.v2.CreateViewRequest)
+    CreateViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListBucketsRequest.newBuilder() to construct.
-  private ListBucketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateViewRequest.newBuilder() to construct.
+  private CreateViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListBucketsRequest() {
+  private CreateViewRequest() {
     parent_ = "";
-    pageToken_ = "";
+    viewId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListBucketsRequest();
+    return new CreateViewRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ListBucketsRequest(
+  private CreateViewRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,12 +82,21 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pageToken_ = s;
+              viewId_ = s;
               break;
             }
-          case 24:
+          case 26:
             {
-              pageSize_ = input.readInt32();
+              com.google.logging.v2.LogView.Builder subBuilder = null;
+              if (view_ != null) {
+                subBuilder = view_.toBuilder();
+              }
+              view_ = input.readMessage(com.google.logging.v2.LogView.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(view_);
+                view_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -111,17 +120,17 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+        .internal_static_google_logging_v2_CreateViewRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LoggingConfigProto
-        .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+        .internal_static_google_logging_v2_CreateViewRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.ListBucketsRequest.class,
-            com.google.logging.v2.ListBucketsRequest.Builder.class);
+            com.google.logging.v2.CreateViewRequest.class,
+            com.google.logging.v2.CreateViewRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -130,19 +139,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Required. The bucket in which to create the view
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * Example:
+   * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
    * </pre>
    *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The parent.
    */
@@ -162,19 +165,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource whose buckets are to be listed:
-   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-   * Note: The locations portion of the resource must be specified, but
-   * supplying the character `-` in place of [LOCATION_ID] will return all
-   * buckets.
+   * Required. The bucket in which to create the view
+   *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * Example:
+   * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
    * </pre>
    *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for parent.
    */
@@ -191,31 +188,28 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object pageToken_;
+  public static final int VIEW_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object viewId_;
   /**
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Required. The id to use for this view.
    * </pre>
    *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The pageToken.
+   * @return The viewId.
    */
   @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
+  public java.lang.String getViewId() {
+    java.lang.Object ref = viewId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
+      viewId_ = s;
       return s;
     }
   }
@@ -223,47 +217,70 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `pageToken` must be the value of
-   * `nextPageToken` from the previous response. The values of other method
-   * parameters should be identical to those in the previous call.
+   * Required. The id to use for this view.
    * </pre>
    *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The bytes for pageToken.
+   * @return The bytes for viewId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
+  public com.google.protobuf.ByteString getViewIdBytes() {
+    java.lang.Object ref = viewId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pageToken_ = b;
+      viewId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  public static final int VIEW_FIELD_NUMBER = 3;
+  private com.google.logging.v2.LogView view_;
   /**
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.
-   * Non-positive values are ignored. The presence of `nextPageToken` in the
-   * response indicates that more results might be available.
+   * Required. The new view.
    * </pre>
    *
-   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The pageSize.
+   * @return Whether the view field is set.
    */
   @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
+  public boolean hasView() {
+    return view_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The new view.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogView getView() {
+    return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The new view.
+   * </pre>
+   *
+   * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.LogViewOrBuilder getViewOrBuilder() {
+    return getView();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -283,11 +300,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
+    if (!getViewIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, viewId_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(3, pageSize_);
+    if (view_ != null) {
+      output.writeMessage(3, getView());
     }
     unknownFields.writeTo(output);
   }
@@ -301,11 +318,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
+    if (!getViewIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, viewId_);
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
+    if (view_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getView());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,14 +334,17 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.logging.v2.ListBucketsRequest)) {
+    if (!(obj instanceof com.google.logging.v2.CreateViewRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.ListBucketsRequest other = (com.google.logging.v2.ListBucketsRequest) obj;
+    com.google.logging.v2.CreateViewRequest other = (com.google.logging.v2.CreateViewRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
-    if (getPageSize() != other.getPageSize()) return false;
+    if (!getViewId().equals(other.getViewId())) return false;
+    if (hasView() != other.hasView()) return false;
+    if (hasView()) {
+      if (!getView().equals(other.getView())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -338,80 +358,82 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + VIEW_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getViewId().hashCode();
+    if (hasView()) {
+      hash = (37 * hash) + VIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getView().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.logging.v2.CreateViewRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(byte[] data)
+  public static com.google.logging.v2.CreateViewRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(java.io.InputStream input)
+  public static com.google.logging.v2.CreateViewRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
+  public static com.google.logging.v2.CreateViewRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseDelimitedFrom(
+  public static com.google.logging.v2.CreateViewRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.logging.v2.ListBucketsRequest parseFrom(
+  public static com.google.logging.v2.CreateViewRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -428,7 +450,7 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.logging.v2.ListBucketsRequest prototype) {
+  public static Builder newBuilder(com.google.logging.v2.CreateViewRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -446,31 +468,31 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The parameters to `ListBuckets`.
+   * The parameters to `CreateView`.
    * </pre>
    *
-   * Protobuf type {@code google.logging.v2.ListBucketsRequest}
+   * Protobuf type {@code google.logging.v2.CreateViewRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.logging.v2.ListBucketsRequest)
-      com.google.logging.v2.ListBucketsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.logging.v2.CreateViewRequest)
+      com.google.logging.v2.CreateViewRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_CreateViewRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable
+          .internal_static_google_logging_v2_CreateViewRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.ListBucketsRequest.class,
-              com.google.logging.v2.ListBucketsRequest.Builder.class);
+              com.google.logging.v2.CreateViewRequest.class,
+              com.google.logging.v2.CreateViewRequest.Builder.class);
     }
 
-    // Construct using com.google.logging.v2.ListBucketsRequest.newBuilder()
+    // Construct using com.google.logging.v2.CreateViewRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -489,27 +511,31 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       parent_ = "";
 
-      pageToken_ = "";
+      viewId_ = "";
 
-      pageSize_ = 0;
-
+      if (viewBuilder_ == null) {
+        view_ = null;
+      } else {
+        view_ = null;
+        viewBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.logging.v2.LoggingConfigProto
-          .internal_static_google_logging_v2_ListBucketsRequest_descriptor;
+          .internal_static_google_logging_v2_CreateViewRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
-      return com.google.logging.v2.ListBucketsRequest.getDefaultInstance();
+    public com.google.logging.v2.CreateViewRequest getDefaultInstanceForType() {
+      return com.google.logging.v2.CreateViewRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest build() {
-      com.google.logging.v2.ListBucketsRequest result = buildPartial();
+    public com.google.logging.v2.CreateViewRequest build() {
+      com.google.logging.v2.CreateViewRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -517,12 +543,16 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.logging.v2.ListBucketsRequest buildPartial() {
-      com.google.logging.v2.ListBucketsRequest result =
-          new com.google.logging.v2.ListBucketsRequest(this);
+    public com.google.logging.v2.CreateViewRequest buildPartial() {
+      com.google.logging.v2.CreateViewRequest result =
+          new com.google.logging.v2.CreateViewRequest(this);
       result.parent_ = parent_;
-      result.pageToken_ = pageToken_;
-      result.pageSize_ = pageSize_;
+      result.viewId_ = viewId_;
+      if (viewBuilder_ == null) {
+        result.view_ = view_;
+      } else {
+        result.view_ = viewBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -562,26 +592,26 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.logging.v2.ListBucketsRequest) {
-        return mergeFrom((com.google.logging.v2.ListBucketsRequest) other);
+      if (other instanceof com.google.logging.v2.CreateViewRequest) {
+        return mergeFrom((com.google.logging.v2.CreateViewRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.logging.v2.ListBucketsRequest other) {
-      if (other == com.google.logging.v2.ListBucketsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.logging.v2.CreateViewRequest other) {
+      if (other == com.google.logging.v2.CreateViewRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
       }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
+      if (!other.getViewId().isEmpty()) {
+        viewId_ = other.viewId_;
         onChanged();
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
+      if (other.hasView()) {
+        mergeView(other.getView());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -598,11 +628,11 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.ListBucketsRequest parsedMessage = null;
+      com.google.logging.v2.CreateViewRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.ListBucketsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.logging.v2.CreateViewRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -617,19 +647,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket in which to create the view
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Example:
+     * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The parent.
      */
@@ -648,19 +672,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket in which to create the view
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Example:
+     * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for parent.
      */
@@ -679,19 +697,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket in which to create the view
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Example:
+     * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -709,19 +721,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket in which to create the view
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Example:
+     * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -735,19 +741,13 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource whose buckets are to be listed:
-     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
-     *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
-     *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
-     *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
-     * Note: The locations portion of the resource must be specified, but
-     * supplying the character `-` in place of [LOCATION_ID] will return all
-     * buckets.
+     * Required. The bucket in which to create the view
+     *     "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+     * Example:
+     * `"projects/my-logging-project/locations/my-location/buckets/my-bucket"`
      * </pre>
      *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -763,27 +763,24 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private java.lang.Object pageToken_ = "";
+    private java.lang.Object viewId_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. The id to use for this view.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The pageToken.
+     * @return The viewId.
      */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
+    public java.lang.String getViewId() {
+      java.lang.Object ref = viewId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
+        viewId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -793,22 +790,19 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. The id to use for this view.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The bytes for pageToken.
+     * @return The bytes for viewId.
      */
-    public com.google.protobuf.ByteString getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
+    public com.google.protobuf.ByteString getViewIdBytes() {
+      java.lang.Object ref = viewId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pageToken_ = b;
+        viewId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -818,23 +812,20 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. The id to use for this view.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The pageToken to set.
+     * @param value The viewId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageToken(java.lang.String value) {
+    public Builder setViewId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      pageToken_ = value;
+      viewId_ = value;
       onChanged();
       return this;
     }
@@ -842,19 +833,16 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. The id to use for this view.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageToken() {
+    public Builder clearViewId() {
 
-      pageToken_ = getDefaultInstance().getPageToken();
+      viewId_ = getDefaultInstance().getViewId();
       onChanged();
       return this;
     }
@@ -862,84 +850,201 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `pageToken` must be the value of
-     * `nextPageToken` from the previous response. The values of other method
-     * parameters should be identical to those in the previous call.
+     * Required. The id to use for this view.
      * </pre>
      *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The bytes for pageToken to set.
+     * @param value The bytes for viewId to set.
      * @return This builder for chaining.
      */
-    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setViewIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      pageToken_ = value;
+      viewId_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_;
+    private com.google.logging.v2.LogView view_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        viewBuilder_;
     /**
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
+     * Required. The new view.
      * </pre>
      *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The pageSize.
+     * @return Whether the view field is set.
      */
-    @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
-     * </pre>
-     *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      onChanged();
-      return this;
+    public boolean hasView() {
+      return viewBuilder_ != null || view_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.
-     * Non-positive values are ignored. The presence of `nextPageToken` in the
-     * response indicates that more results might be available.
+     * Required. The new view.
      * </pre>
      *
-     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return This builder for chaining.
+     * @return The view.
      */
-    public Builder clearPageSize() {
+    public com.google.logging.v2.LogView getView() {
+      if (viewBuilder_ == null) {
+        return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
+      } else {
+        return viewBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setView(com.google.logging.v2.LogView value) {
+      if (viewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        view_ = value;
+        onChanged();
+      } else {
+        viewBuilder_.setMessage(value);
+      }
 
-      pageSize_ = 0;
-      onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder setView(com.google.logging.v2.LogView.Builder builderForValue) {
+      if (viewBuilder_ == null) {
+        view_ = builderForValue.build();
+        onChanged();
+      } else {
+        viewBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeView(com.google.logging.v2.LogView value) {
+      if (viewBuilder_ == null) {
+        if (view_ != null) {
+          view_ = com.google.logging.v2.LogView.newBuilder(view_).mergeFrom(value).buildPartial();
+        } else {
+          view_ = value;
+        }
+        onChanged();
+      } else {
+        viewBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder clearView() {
+      if (viewBuilder_ == null) {
+        view_ = null;
+        onChanged();
+      } else {
+        view_ = null;
+        viewBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.logging.v2.LogView.Builder getViewBuilder() {
+
+      onChanged();
+      return getViewFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.logging.v2.LogViewOrBuilder getViewOrBuilder() {
+      if (viewBuilder_ != null) {
+        return viewBuilder_.getMessageOrBuilder();
+      } else {
+        return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The new view.
+     * </pre>
+     *
+     * <code>.google.logging.v2.LogView view = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.LogView,
+            com.google.logging.v2.LogView.Builder,
+            com.google.logging.v2.LogViewOrBuilder>
+        getViewFieldBuilder() {
+      if (viewBuilder_ == null) {
+        viewBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.LogView,
+                com.google.logging.v2.LogView.Builder,
+                com.google.logging.v2.LogViewOrBuilder>(
+                getView(), getParentForChildren(), isClean());
+        view_ = null;
+      }
+      return viewBuilder_;
     }
 
     @java.lang.Override
@@ -953,42 +1058,42 @@ public final class ListBucketsRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.logging.v2.ListBucketsRequest)
+    // @@protoc_insertion_point(builder_scope:google.logging.v2.CreateViewRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.logging.v2.ListBucketsRequest)
-  private static final com.google.logging.v2.ListBucketsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.logging.v2.CreateViewRequest)
+  private static final com.google.logging.v2.CreateViewRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.logging.v2.ListBucketsRequest();
+    DEFAULT_INSTANCE = new com.google.logging.v2.CreateViewRequest();
   }
 
-  public static com.google.logging.v2.ListBucketsRequest getDefaultInstance() {
+  public static com.google.logging.v2.CreateViewRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBucketsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListBucketsRequest>() {
+  private static final com.google.protobuf.Parser<CreateViewRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateViewRequest>() {
         @java.lang.Override
-        public ListBucketsRequest parsePartialFrom(
+        public CreateViewRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListBucketsRequest(input, extensionRegistry);
+          return new CreateViewRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListBucketsRequest> parser() {
+  public static com.google.protobuf.Parser<CreateViewRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBucketsRequest> getParserForType() {
+  public com.google.protobuf.Parser<CreateViewRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.logging.v2.ListBucketsRequest getDefaultInstanceForType() {
+  public com.google.logging.v2.CreateViewRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

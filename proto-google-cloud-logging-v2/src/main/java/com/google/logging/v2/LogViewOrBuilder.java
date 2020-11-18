@@ -18,23 +18,18 @@
 
 package com.google.logging.v2;
 
-public interface LogBucketOrBuilder
+public interface LogViewOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.logging.v2.LogBucket)
+    // @@protoc_insertion_point(interface_extends:google.logging.v2.LogView)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * The resource name of the bucket.
-   * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   * The resource name of the view.
+   * For example
+   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -46,14 +41,9 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * The resource name of the bucket.
-   * For example:
-   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id The
-   * supported locations are:
-   *   "global"
-   * For the location of `global` it is unspecified where logs are actually
-   * stored.
-   * Once a bucket has been created, the location can not be changed.
+   * The resource name of the view.
+   * For example
+   * "projects/my-project-id/locations/my-location/buckets/my-bucket-id/views/my-view
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -66,7 +56,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Describes this bucket.
+   * Describes this view.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -78,7 +68,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Describes this bucket.
+   * Describes this view.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -91,8 +81,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -105,8 +94,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -119,8 +107,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -132,7 +119,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -145,7 +132,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -158,7 +145,7 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the bucket.
+   * Output only. The last update timestamp of the view.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -170,59 +157,38 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Logs will be retained by default for this amount of time, after which they
-   * will automatically be deleted. The minimum retention period is 1 day.
-   * If this value is set to zero at bucket creation time, the default time of
-   * 30 days will be used.
+   * Filter that restricts which log entries in a bucket are visible in this
+   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * following:
+   *   originating project/folder/organization/billing account.
+   *   resource type
+   *   log id
+   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *             AND LOG_ID("stdout")
    * </pre>
    *
-   * <code>int32 retention_days = 11;</code>
+   * <code>string filter = 7;</code>
    *
-   * @return The retentionDays.
+   * @return The filter.
    */
-  int getRetentionDays();
-
+  java.lang.String getFilter();
   /**
    *
    *
    * <pre>
-   * Whether the bucket has been locked.
-   * The retention period on a locked bucket may not be changed.
-   * Locked buckets may only be deleted if they are empty.
+   * Filter that restricts which log entries in a bucket are visible in this
+   * view. Filters are restricted to be a logical AND of ==/!= of any of the
+   * following:
+   *   originating project/folder/organization/billing account.
+   *   resource type
+   *   log id
+   * Example: SOURCE("projects/myproject") AND resource.type = "gce_instance"
+   *             AND LOG_ID("stdout")
    * </pre>
    *
-   * <code>bool locked = 9;</code>
+   * <code>string filter = 7;</code>
    *
-   * @return The locked.
+   * @return The bytes for filter.
    */
-  boolean getLocked();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The bucket lifecycle state.
-   * </pre>
-   *
-   * <code>
-   * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for lifecycleState.
-   */
-  int getLifecycleStateValue();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The bucket lifecycle state.
-   * </pre>
-   *
-   * <code>
-   * .google.logging.v2.LifecycleState lifecycle_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The lifecycleState.
-   */
-  com.google.logging.v2.LifecycleState getLifecycleState();
+  com.google.protobuf.ByteString getFilterBytes();
 }

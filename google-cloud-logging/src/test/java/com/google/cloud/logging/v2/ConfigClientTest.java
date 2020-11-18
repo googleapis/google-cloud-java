@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2;
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -31,32 +32,43 @@ import com.google.common.collect.Lists;
 import com.google.logging.v2.BillingAccountName;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CmekSettingsName;
+import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.CreateViewRequest;
+import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.ListViewsRequest;
+import com.google.logging.v2.ListViewsResponse;
 import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogBucketName;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogExclusionName;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.LogSinkName;
+import com.google.logging.v2.LogView;
+import com.google.logging.v2.LogViewName;
 import com.google.logging.v2.OrganizationLocationName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.logging.v2.UpdateViewRequest;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -363,11 +375,13 @@ public class ConfigClientTest {
         LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
     String description = "description-1724546052";
     int retentionDays = 1544391896;
+    boolean locked = true;
     LogBucket expectedResponse =
         LogBucket.newBuilder()
             .setName(name2.toString())
             .setDescription(description)
             .setRetentionDays(retentionDays)
+            .setLocked(locked)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -409,16 +423,85 @@ public class ConfigClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void createBucketTest() {
+    LogBucketName name =
+        LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+    String description = "description-1724546052";
+    int retentionDays = 1544391896;
+    boolean locked = true;
+    LogBucket expectedResponse =
+        LogBucket.newBuilder()
+            .setName(name.toString())
+            .setDescription(description)
+            .setRetentionDays(retentionDays)
+            .setLocked(locked)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    String bucketId = "bucketId1837164432";
+    LogBucket bucket = LogBucket.newBuilder().build();
+    CreateBucketRequest request =
+        CreateBucketRequest.newBuilder()
+            .setParent(parent.toString())
+            .setBucketId(bucketId)
+            .setBucket(bucket)
+            .build();
+
+    LogBucket actualResponse = client.createBucket(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBucketRequest actualRequest = (CreateBucketRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, OrganizationLocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(bucketId, actualRequest.getBucketId());
+    Assert.assertEquals(bucket, actualRequest.getBucket());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createBucketExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      String bucketId = "bucketId1837164432";
+      LogBucket bucket = LogBucket.newBuilder().build();
+      CreateBucketRequest request =
+          CreateBucketRequest.newBuilder()
+              .setParent(parent.toString())
+              .setBucketId(bucketId)
+              .setBucket(bucket)
+              .build();
+
+      client.createBucket(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateBucketTest() {
     LogBucketName name2 =
         LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
     String description = "description-1724546052";
     int retentionDays = 1544391896;
+    boolean locked = true;
     LogBucket expectedResponse =
         LogBucket.newBuilder()
             .setName(name2.toString())
             .setDescription(description)
             .setRetentionDays(retentionDays)
+            .setLocked(locked)
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -468,6 +551,345 @@ public class ConfigClientTest {
               .build();
 
       client.updateBucket(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteBucketTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LogBucketName name =
+        LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+    DeleteBucketRequest request = DeleteBucketRequest.newBuilder().setName(name.toString()).build();
+
+    client.deleteBucket(request);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBucketRequest actualRequest = (DeleteBucketRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, LogBucketName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteBucketExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogBucketName name =
+          LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+      DeleteBucketRequest request =
+          DeleteBucketRequest.newBuilder().setName(name.toString()).build();
+
+      client.deleteBucket(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void undeleteBucketTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LogBucketName name =
+        LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+    UndeleteBucketRequest request =
+        UndeleteBucketRequest.newBuilder().setName(name.toString()).build();
+
+    client.undeleteBucket(request);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UndeleteBucketRequest actualRequest = (UndeleteBucketRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, LogBucketName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void undeleteBucketExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogBucketName name =
+          LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+      UndeleteBucketRequest request =
+          UndeleteBucketRequest.newBuilder().setName(name.toString()).build();
+
+      client.undeleteBucket(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listViewsTest() {
+    String nextPageToken = "";
+    LogView viewsElement = LogView.newBuilder().build();
+    List<LogView> views = Arrays.asList(viewsElement);
+    ListViewsResponse expectedResponse =
+        ListViewsResponse.newBuilder().setNextPageToken(nextPageToken).addAllViews(views).build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListViewsPagedResponse pagedListResponse = client.listViews(parent);
+
+    List<LogView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListViewsRequest actualRequest = (ListViewsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listViewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+
+      client.listViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getViewTest() {
+    LogViewName name2 =
+        LogViewName.ofProjectLocationBucketViewName(
+            "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    LogView expectedResponse =
+        LogView.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setFilter(filter)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LogViewName name =
+        LogViewName.ofProjectLocationBucketViewName(
+            "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+    GetViewRequest request = GetViewRequest.newBuilder().setName(name.toString()).build();
+
+    LogView actualResponse = client.getView(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetViewRequest actualRequest = (GetViewRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, LogViewName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogViewName name =
+          LogViewName.ofProjectLocationBucketViewName(
+              "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+      GetViewRequest request = GetViewRequest.newBuilder().setName(name.toString()).build();
+
+      client.getView(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createViewTest() {
+    LogViewName name =
+        LogViewName.ofProjectLocationBucketViewName(
+            "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    LogView expectedResponse =
+        LogView.newBuilder()
+            .setName(name.toString())
+            .setDescription(description)
+            .setFilter(filter)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String viewId = "viewId454228213";
+    LogView view = LogView.newBuilder().build();
+    CreateViewRequest request =
+        CreateViewRequest.newBuilder().setParent(parent).setViewId(viewId).setView(view).build();
+
+    LogView actualResponse = client.createView(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateViewRequest actualRequest = (CreateViewRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(viewId, actualRequest.getViewId());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String viewId = "viewId454228213";
+      LogView view = LogView.newBuilder().build();
+      CreateViewRequest request =
+          CreateViewRequest.newBuilder().setParent(parent).setViewId(viewId).setView(view).build();
+
+      client.createView(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateViewTest() {
+    LogViewName name2 =
+        LogViewName.ofProjectLocationBucketViewName(
+            "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+    String description = "description-1724546052";
+    String filter = "filter-1274492040";
+    LogView expectedResponse =
+        LogView.newBuilder()
+            .setName(name2.toString())
+            .setDescription(description)
+            .setFilter(filter)
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    LogView view = LogView.newBuilder().build();
+    UpdateViewRequest request = UpdateViewRequest.newBuilder().setName(name).setView(view).build();
+
+    LogView actualResponse = client.updateView(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateViewRequest actualRequest = (UpdateViewRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String name = "name3373707";
+      LogView view = LogView.newBuilder().build();
+      UpdateViewRequest request =
+          UpdateViewRequest.newBuilder().setName(name).setView(view).build();
+
+      client.updateView(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteViewTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LogViewName name =
+        LogViewName.ofProjectLocationBucketViewName(
+            "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+    DeleteViewRequest request = DeleteViewRequest.newBuilder().setName(name.toString()).build();
+
+    client.deleteView(request);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteViewRequest actualRequest = (DeleteViewRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, LogViewName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogViewName name =
+          LogViewName.ofProjectLocationBucketViewName(
+              "[PROJECT]", "[LOCATION]", "[BUCKET]", "[VIEW]");
+      DeleteViewRequest request = DeleteViewRequest.newBuilder().setName(name.toString()).build();
+
+      client.deleteView(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

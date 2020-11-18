@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2.stub;
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -46,27 +47,37 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.CmekSettings;
+import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.CreateViewRequest;
+import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.GetViewRequest;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.ListViewsRequest;
+import com.google.logging.v2.ListViewsResponse;
 import com.google.logging.v2.LogBucket;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.LogView;
+import com.google.logging.v2.UndeleteBucketRequest;
 import com.google.logging.v2.UpdateBucketRequest;
 import com.google.logging.v2.UpdateCmekSettingsRequest;
 import com.google.logging.v2.UpdateExclusionRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.logging.v2.UpdateViewRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -123,7 +134,16 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   private final PagedCallSettings<ListBucketsRequest, ListBucketsResponse, ListBucketsPagedResponse>
       listBucketsSettings;
   private final UnaryCallSettings<GetBucketRequest, LogBucket> getBucketSettings;
+  private final UnaryCallSettings<CreateBucketRequest, LogBucket> createBucketSettings;
   private final UnaryCallSettings<UpdateBucketRequest, LogBucket> updateBucketSettings;
+  private final UnaryCallSettings<DeleteBucketRequest, Empty> deleteBucketSettings;
+  private final UnaryCallSettings<UndeleteBucketRequest, Empty> undeleteBucketSettings;
+  private final PagedCallSettings<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      listViewsSettings;
+  private final UnaryCallSettings<GetViewRequest, LogView> getViewSettings;
+  private final UnaryCallSettings<CreateViewRequest, LogView> createViewSettings;
+  private final UnaryCallSettings<UpdateViewRequest, LogView> updateViewSettings;
+  private final UnaryCallSettings<DeleteViewRequest, Empty> deleteViewSettings;
   private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
   private final UnaryCallSettings<GetSinkRequest, LogSink> getSinkSettings;
@@ -164,9 +184,50 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     return getBucketSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBucket. */
+  public UnaryCallSettings<CreateBucketRequest, LogBucket> createBucketSettings() {
+    return createBucketSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateBucket. */
   public UnaryCallSettings<UpdateBucketRequest, LogBucket> updateBucketSettings() {
     return updateBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBucket. */
+  public UnaryCallSettings<DeleteBucketRequest, Empty> deleteBucketSettings() {
+    return deleteBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to undeleteBucket. */
+  public UnaryCallSettings<UndeleteBucketRequest, Empty> undeleteBucketSettings() {
+    return undeleteBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listViews. */
+  public PagedCallSettings<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      listViewsSettings() {
+    return listViewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getView. */
+  public UnaryCallSettings<GetViewRequest, LogView> getViewSettings() {
+    return getViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createView. */
+  public UnaryCallSettings<CreateViewRequest, LogView> createViewSettings() {
+    return createViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateView. */
+  public UnaryCallSettings<UpdateViewRequest, LogView> updateViewSettings() {
+    return updateViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteView. */
+  public UnaryCallSettings<DeleteViewRequest, Empty> deleteViewSettings() {
+    return deleteViewSettings;
   }
 
   /** Returns the object with the settings used for calls to listSinks. */
@@ -291,7 +352,15 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     deleteExclusionSettings = settingsBuilder.deleteExclusionSettings().build();
     listBucketsSettings = settingsBuilder.listBucketsSettings().build();
     getBucketSettings = settingsBuilder.getBucketSettings().build();
+    createBucketSettings = settingsBuilder.createBucketSettings().build();
     updateBucketSettings = settingsBuilder.updateBucketSettings().build();
+    deleteBucketSettings = settingsBuilder.deleteBucketSettings().build();
+    undeleteBucketSettings = settingsBuilder.undeleteBucketSettings().build();
+    listViewsSettings = settingsBuilder.listViewsSettings().build();
+    getViewSettings = settingsBuilder.getViewSettings().build();
+    createViewSettings = settingsBuilder.createViewSettings().build();
+    updateViewSettings = settingsBuilder.updateViewSettings().build();
+    deleteViewSettings = settingsBuilder.deleteViewSettings().build();
     listSinksSettings = settingsBuilder.listSinksSettings().build();
     getSinkSettings = settingsBuilder.getSinkSettings().build();
     createSinkSettings = settingsBuilder.createSinkSettings().build();
@@ -336,6 +405,42 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               return payload.getBucketsList() != null
                   ? payload.getBucketsList()
                   : ImmutableList.<LogBucket>of();
+            }
+          };
+
+  private static final PagedListDescriptor<ListViewsRequest, ListViewsResponse, LogView>
+      LIST_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListViewsRequest, ListViewsResponse, LogView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListViewsRequest injectToken(ListViewsRequest payload, String token) {
+              return ListViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListViewsRequest injectPageSize(ListViewsRequest payload, int pageSize) {
+              return ListViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<LogView> extractResources(ListViewsResponse payload) {
+              return payload.getViewsList() != null
+                  ? payload.getViewsList()
+                  : ImmutableList.<LogView>of();
             }
           };
 
@@ -431,6 +536,23 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           };
 
   private static final PagedListResponseFactory<
+          ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+      LIST_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListViewsRequest, ListViewsResponse> callable,
+                ListViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListViewsResponse> futureResponse) {
+              PageContext<ListViewsRequest, ListViewsResponse, LogView> pageContext =
+                  PageContext.create(callable, LIST_VIEWS_PAGE_STR_DESC, request, context);
+              return ListViewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       LIST_SINKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -475,7 +597,17 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
             ListBucketsRequest, ListBucketsResponse, ListBucketsPagedResponse>
         listBucketsSettings;
     private final UnaryCallSettings.Builder<GetBucketRequest, LogBucket> getBucketSettings;
+    private final UnaryCallSettings.Builder<CreateBucketRequest, LogBucket> createBucketSettings;
     private final UnaryCallSettings.Builder<UpdateBucketRequest, LogBucket> updateBucketSettings;
+    private final UnaryCallSettings.Builder<DeleteBucketRequest, Empty> deleteBucketSettings;
+    private final UnaryCallSettings.Builder<UndeleteBucketRequest, Empty> undeleteBucketSettings;
+    private final PagedCallSettings.Builder<
+            ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+        listViewsSettings;
+    private final UnaryCallSettings.Builder<GetViewRequest, LogView> getViewSettings;
+    private final UnaryCallSettings.Builder<CreateViewRequest, LogView> createViewSettings;
+    private final UnaryCallSettings.Builder<UpdateViewRequest, LogView> updateViewSettings;
+    private final UnaryCallSettings.Builder<DeleteViewRequest, Empty> deleteViewSettings;
     private final PagedCallSettings.Builder<
             ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings;
@@ -559,7 +691,23 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
       getBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      undeleteBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listViewsSettings = PagedCallSettings.newBuilder(LIST_VIEWS_PAGE_STR_FACT);
+
+      getViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSinksSettings = PagedCallSettings.newBuilder(LIST_SINKS_PAGE_STR_FACT);
 
@@ -586,7 +734,15 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               deleteExclusionSettings,
               listBucketsSettings,
               getBucketSettings,
+              createBucketSettings,
               updateBucketSettings,
+              deleteBucketSettings,
+              undeleteBucketSettings,
+              listViewsSettings,
+              getViewSettings,
+              createViewSettings,
+              updateViewSettings,
+              deleteViewSettings,
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -637,7 +793,47 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .undeleteBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteViewSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -697,7 +893,15 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
       deleteExclusionSettings = settings.deleteExclusionSettings.toBuilder();
       listBucketsSettings = settings.listBucketsSettings.toBuilder();
       getBucketSettings = settings.getBucketSettings.toBuilder();
+      createBucketSettings = settings.createBucketSettings.toBuilder();
       updateBucketSettings = settings.updateBucketSettings.toBuilder();
+      deleteBucketSettings = settings.deleteBucketSettings.toBuilder();
+      undeleteBucketSettings = settings.undeleteBucketSettings.toBuilder();
+      listViewsSettings = settings.listViewsSettings.toBuilder();
+      getViewSettings = settings.getViewSettings.toBuilder();
+      createViewSettings = settings.createViewSettings.toBuilder();
+      updateViewSettings = settings.updateViewSettings.toBuilder();
+      deleteViewSettings = settings.deleteViewSettings.toBuilder();
       listSinksSettings = settings.listSinksSettings.toBuilder();
       getSinkSettings = settings.getSinkSettings.toBuilder();
       createSinkSettings = settings.createSinkSettings.toBuilder();
@@ -715,7 +919,15 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               deleteExclusionSettings,
               listBucketsSettings,
               getBucketSettings,
+              createBucketSettings,
               updateBucketSettings,
+              deleteBucketSettings,
+              undeleteBucketSettings,
+              listViewsSettings,
+              getViewSettings,
+              createViewSettings,
+              updateViewSettings,
+              deleteViewSettings,
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -770,9 +982,50 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
       return getBucketSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createBucket. */
+    public UnaryCallSettings.Builder<CreateBucketRequest, LogBucket> createBucketSettings() {
+      return createBucketSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateBucket. */
     public UnaryCallSettings.Builder<UpdateBucketRequest, LogBucket> updateBucketSettings() {
       return updateBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBucket. */
+    public UnaryCallSettings.Builder<DeleteBucketRequest, Empty> deleteBucketSettings() {
+      return deleteBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to undeleteBucket. */
+    public UnaryCallSettings.Builder<UndeleteBucketRequest, Empty> undeleteBucketSettings() {
+      return undeleteBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listViews. */
+    public PagedCallSettings.Builder<ListViewsRequest, ListViewsResponse, ListViewsPagedResponse>
+        listViewsSettings() {
+      return listViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getView. */
+    public UnaryCallSettings.Builder<GetViewRequest, LogView> getViewSettings() {
+      return getViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createView. */
+    public UnaryCallSettings.Builder<CreateViewRequest, LogView> createViewSettings() {
+      return createViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateView. */
+    public UnaryCallSettings.Builder<UpdateViewRequest, LogView> updateViewSettings() {
+      return updateViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteView. */
+    public UnaryCallSettings.Builder<DeleteViewRequest, Empty> deleteViewSettings() {
+      return deleteViewSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSinks. */
