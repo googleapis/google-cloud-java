@@ -91,12 +91,14 @@ public class AssuredWorkloadsServiceClientTest {
     String displayName = "displayName1615086568";
     String billingAccount = "billingAccount-545871767";
     String etag = "etag3123477";
+    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
     Workload expectedResponse =
         Workload.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setBillingAccount(billingAccount)
             .setEtag(etag)
+            .setProvisionedResourcesParent(provisionedResourcesParent)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -150,12 +152,14 @@ public class AssuredWorkloadsServiceClientTest {
     String displayName = "displayName1615086568";
     String billingAccount = "billingAccount-545871767";
     String etag = "etag3123477";
+    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
     Workload expectedResponse =
         Workload.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setBillingAccount(billingAccount)
             .setEtag(etag)
+            .setProvisionedResourcesParent(provisionedResourcesParent)
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -238,12 +242,14 @@ public class AssuredWorkloadsServiceClientTest {
     String displayName = "displayName1615086568";
     String billingAccount = "billingAccount-545871767";
     String etag = "etag3123477";
+    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
     Workload expectedResponse =
         Workload.newBuilder()
             .setName(name2.toString())
             .setDisplayName(displayName)
             .setBillingAccount(billingAccount)
             .setEtag(etag)
+            .setProvisionedResourcesParent(provisionedResourcesParent)
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 

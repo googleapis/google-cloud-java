@@ -45,6 +45,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     complianceRegime_ = 0;
     billingAccount_ = "";
     etag_ = "";
+    provisionedResourcesParent_ = "";
   }
 
   @java.lang.Override
@@ -246,6 +247,31 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 complianceRegimeSettings_ = subBuilder.buildPartial();
               }
               complianceRegimeSettingsCase_ = 12;
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              provisionedResourcesParent_ = s;
+              break;
+            }
+          case 114:
+            {
+              com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder subBuilder =
+                  null;
+              if (kmsSettings_ != null) {
+                subBuilder = kmsSettings_.toBuilder();
+              }
+              kmsSettings_ =
+                  input.readMessage(
+                      com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kmsSettings_);
+                kmsSettings_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -2619,6 +2645,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface IL4SettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings)
@@ -2675,6 +2702,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings}
    */
+  @java.lang.Deprecated
   public static final class IL4Settings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings)
@@ -3426,6 +3454,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface CJISSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings)
@@ -3482,6 +3511,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings}
    */
+  @java.lang.Deprecated
   public static final class CJISSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings)
@@ -4235,6 +4265,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface FedrampHighSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings)
@@ -4291,6 +4322,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings}
    */
+  @java.lang.Deprecated
   public static final class FedrampHighSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings)
@@ -5051,6 +5083,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface FedrampModerateSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings)
@@ -5107,6 +5140,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings}
    */
+  @java.lang.Deprecated
   public static final class FedrampModerateSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings)
@@ -5882,9 +5916,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     IL4_SETTINGS(7),
+    @java.lang.Deprecated
     CJIS_SETTINGS(8),
+    @java.lang.Deprecated
     FEDRAMP_HIGH_SETTINGS(11),
+    @java.lang.Deprecated
     FEDRAMP_MODERATE_SETTINGS(12),
     COMPLIANCEREGIMESETTINGS_NOT_SET(0);
     private final int value;
@@ -5992,7 +6030,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * Required. The user-assigned display name of the Workload.
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
-   * hyphen, single-quote, double-quote, space, and exclamation point.
+   * hyphen, and spaces.
    * Example: My Workload
    * </pre>
    *
@@ -6019,7 +6057,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * Required. The user-assigned display name of the Workload.
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
-   * hyphen, single-quote, double-quote, space, and exclamation point.
+   * hyphen, and spaces.
    * Example: My Workload
    * </pre>
    *
@@ -6309,12 +6347,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasIl4Settings() {
     return complianceRegimeSettingsCase_ == 7;
   }
@@ -6326,12 +6365,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The il4Settings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings getIl4Settings() {
     if (complianceRegimeSettingsCase_ == 7) {
       return (com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings)
@@ -6347,10 +6387,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4SettingsOrBuilder
       getIl4SettingsOrBuilder() {
     if (complianceRegimeSettingsCase_ == 7) {
@@ -6369,12 +6410,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCjisSettings() {
     return complianceRegimeSettingsCase_ == 8;
   }
@@ -6386,12 +6428,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The cjisSettings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings getCjisSettings() {
     if (complianceRegimeSettingsCase_ == 8) {
       return (com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings)
@@ -6407,10 +6450,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettingsOrBuilder
       getCjisSettingsOrBuilder() {
     if (complianceRegimeSettingsCase_ == 8) {
@@ -6429,12 +6473,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasFedrampHighSettings() {
     return complianceRegimeSettingsCase_ == 11;
   }
@@ -6446,12 +6491,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The fedrampHighSettings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings
       getFedrampHighSettings() {
     if (complianceRegimeSettingsCase_ == 11) {
@@ -6469,10 +6515,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettingsOrBuilder
       getFedrampHighSettingsOrBuilder() {
     if (complianceRegimeSettingsCase_ == 11) {
@@ -6492,12 +6539,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasFedrampModerateSettings() {
     return complianceRegimeSettingsCase_ == 12;
   }
@@ -6509,12 +6557,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The fedrampModerateSettings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings
       getFedrampModerateSettings() {
     if (complianceRegimeSettingsCase_ == 12) {
@@ -6532,10 +6581,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettingsOrBuilder
       getFedrampModerateSettingsOrBuilder() {
     if (complianceRegimeSettingsCase_ == 12) {
@@ -6695,6 +6745,130 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int PROVISIONED_RESOURCES_PARENT_FIELD_NUMBER = 13;
+  private volatile java.lang.Object provisionedResourcesParent_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either an organization or a folder. Must be the same or a child of the
+   * Workload parent. If not specified all resources are created under the
+   * Workload parent.
+   * Formats:
+   * folders/{folder_id}
+   * organizations/{organization_id}
+   * </pre>
+   *
+   * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The provisionedResourcesParent.
+   */
+  @java.lang.Override
+  public java.lang.String getProvisionedResourcesParent() {
+    java.lang.Object ref = provisionedResourcesParent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provisionedResourcesParent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either an organization or a folder. Must be the same or a child of the
+   * Workload parent. If not specified all resources are created under the
+   * Workload parent.
+   * Formats:
+   * folders/{folder_id}
+   * organizations/{organization_id}
+   * </pre>
+   *
+   * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for provisionedResourcesParent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProvisionedResourcesParentBytes() {
+    java.lang.Object ref = provisionedResourcesParent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      provisionedResourcesParent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KMS_SETTINGS_FIELD_NUMBER = 14;
+  private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the kmsSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsSettings() {
+    return kmsSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The kmsSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings() {
+    return kmsSettings_ == null
+        ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+        : kmsSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
+      getKmsSettingsOrBuilder() {
+    return getKmsSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6758,6 +6932,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           12,
           (com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings)
               complianceRegimeSettings_);
+    }
+    if (!getProvisionedResourcesParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, provisionedResourcesParent_);
+    }
+    if (kmsSettings_ != null) {
+      output.writeMessage(14, getKmsSettings());
     }
     unknownFields.writeTo(output);
   }
@@ -6830,6 +7010,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings)
                   complianceRegimeSettings_);
     }
+    if (!getProvisionedResourcesParentBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(13, provisionedResourcesParent_);
+    }
+    if (kmsSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getKmsSettings());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6857,6 +7044,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (!getBillingAccount().equals(other.getBillingAccount())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getProvisionedResourcesParent().equals(other.getProvisionedResourcesParent()))
+      return false;
+    if (hasKmsSettings() != other.hasKmsSettings()) return false;
+    if (hasKmsSettings()) {
+      if (!getKmsSettings().equals(other.getKmsSettings())) return false;
+    }
     if (!getComplianceRegimeSettingsCase().equals(other.getComplianceRegimeSettingsCase()))
       return false;
     switch (complianceRegimeSettingsCase_) {
@@ -6907,6 +7100,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + PROVISIONED_RESOURCES_PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getProvisionedResourcesParent().hashCode();
+    if (hasKmsSettings()) {
+      hash = (37 * hash) + KMS_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsSettings().hashCode();
     }
     switch (complianceRegimeSettingsCase_) {
       case 7:
@@ -7119,6 +7318,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       etag_ = "";
 
       internalGetMutableLabels().clear();
+      provisionedResourcesParent_ = "";
+
+      if (kmsSettingsBuilder_ == null) {
+        kmsSettings_ = null;
+      } else {
+        kmsSettings_ = null;
+        kmsSettingsBuilder_ = null;
+      }
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
       return this;
@@ -7198,6 +7405,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       result.etag_ = etag_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.provisionedResourcesParent_ = provisionedResourcesParent_;
+      if (kmsSettingsBuilder_ == null) {
+        result.kmsSettings_ = kmsSettings_;
+      } else {
+        result.kmsSettings_ = kmsSettingsBuilder_.build();
+      }
       result.complianceRegimeSettingsCase_ = complianceRegimeSettingsCase_;
       onBuilt();
       return result;
@@ -7299,6 +7512,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (!other.getProvisionedResourcesParent().isEmpty()) {
+        provisionedResourcesParent_ = other.provisionedResourcesParent_;
+        onChanged();
+      }
+      if (other.hasKmsSettings()) {
+        mergeKmsSettings(other.getKmsSettings());
+      }
       switch (other.getComplianceRegimeSettingsCase()) {
         case IL4_SETTINGS:
           {
@@ -7500,7 +7720,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Required. The user-assigned display name of the Workload.
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
-     * hyphen, single-quote, double-quote, space, and exclamation point.
+     * hyphen, and spaces.
      * Example: My Workload
      * </pre>
      *
@@ -7526,7 +7746,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Required. The user-assigned display name of the Workload.
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
-     * hyphen, single-quote, double-quote, space, and exclamation point.
+     * hyphen, and spaces.
      * Example: My Workload
      * </pre>
      *
@@ -7552,7 +7772,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Required. The user-assigned display name of the Workload.
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
-     * hyphen, single-quote, double-quote, space, and exclamation point.
+     * hyphen, and spaces.
      * Example: My Workload
      * </pre>
      *
@@ -7577,7 +7797,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Required. The user-assigned display name of the Workload.
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
-     * hyphen, single-quote, double-quote, space, and exclamation point.
+     * hyphen, and spaces.
      * Example: My Workload
      * </pre>
      *
@@ -7598,7 +7818,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Required. The user-assigned display name of the Workload.
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
-     * hyphen, single-quote, double-quote, space, and exclamation point.
+     * hyphen, and spaces.
      * Example: My Workload
      * </pre>
      *
@@ -8547,12 +8767,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the il4Settings field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasIl4Settings() {
       return complianceRegimeSettingsCase_ == 7;
     }
@@ -8564,12 +8785,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The il4Settings.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings getIl4Settings() {
       if (il4SettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 7) {
@@ -8592,9 +8814,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setIl4Settings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings value) {
       if (il4SettingsBuilder_ == null) {
@@ -8617,9 +8840,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setIl4Settings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings.Builder builderForValue) {
       if (il4SettingsBuilder_ == null) {
@@ -8639,9 +8863,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeIl4Settings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings value) {
       if (il4SettingsBuilder_ == null) {
@@ -8676,9 +8901,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearIl4Settings() {
       if (il4SettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 7) {
@@ -8703,9 +8929,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings.Builder
         getIl4SettingsBuilder() {
       return getIl4SettingsFieldBuilder().getBuilder();
@@ -8718,10 +8945,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4SettingsOrBuilder
         getIl4SettingsOrBuilder() {
       if ((complianceRegimeSettingsCase_ == 7) && (il4SettingsBuilder_ != null)) {
@@ -8742,7 +8970,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8785,12 +9013,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the cjisSettings field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasCjisSettings() {
       return complianceRegimeSettingsCase_ == 8;
     }
@@ -8802,12 +9031,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The cjisSettings.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings getCjisSettings() {
       if (cjisSettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 8) {
@@ -8830,9 +9060,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCjisSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings value) {
       if (cjisSettingsBuilder_ == null) {
@@ -8855,9 +9086,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCjisSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings.Builder builderForValue) {
       if (cjisSettingsBuilder_ == null) {
@@ -8877,9 +9109,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeCjisSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings value) {
       if (cjisSettingsBuilder_ == null) {
@@ -8914,9 +9147,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCjisSettings() {
       if (cjisSettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 8) {
@@ -8941,9 +9175,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings.Builder
         getCjisSettingsBuilder() {
       return getCjisSettingsFieldBuilder().getBuilder();
@@ -8956,10 +9191,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettingsOrBuilder
         getCjisSettingsOrBuilder() {
       if ((complianceRegimeSettingsCase_ == 8) && (cjisSettingsBuilder_ != null)) {
@@ -8980,7 +9216,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9023,12 +9259,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the fedrampHighSettings field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasFedrampHighSettings() {
       return complianceRegimeSettingsCase_ == 11;
     }
@@ -9040,12 +9277,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The fedrampHighSettings.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings
         getFedrampHighSettings() {
       if (fedrampHighSettingsBuilder_ == null) {
@@ -9071,9 +9309,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFedrampHighSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings value) {
       if (fedrampHighSettingsBuilder_ == null) {
@@ -9096,9 +9335,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFedrampHighSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings.Builder
             builderForValue) {
@@ -9119,9 +9359,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeFedrampHighSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings value) {
       if (fedrampHighSettingsBuilder_ == null) {
@@ -9156,9 +9397,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearFedrampHighSettings() {
       if (fedrampHighSettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 11) {
@@ -9183,9 +9425,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings.Builder
         getFedrampHighSettingsBuilder() {
       return getFedrampHighSettingsFieldBuilder().getBuilder();
@@ -9198,10 +9441,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettingsOrBuilder
         getFedrampHighSettingsOrBuilder() {
       if ((complianceRegimeSettingsCase_ == 11) && (fedrampHighSettingsBuilder_ != null)) {
@@ -9223,7 +9467,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9267,12 +9511,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the fedrampModerateSettings field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasFedrampModerateSettings() {
       return complianceRegimeSettingsCase_ == 12;
     }
@@ -9284,12 +9529,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The fedrampModerateSettings.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings
         getFedrampModerateSettings() {
       if (fedrampModerateSettingsBuilder_ == null) {
@@ -9315,9 +9561,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFedrampModerateSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings value) {
       if (fedrampModerateSettingsBuilder_ == null) {
@@ -9340,9 +9587,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFedrampModerateSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings.Builder
             builderForValue) {
@@ -9363,9 +9611,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeFedrampModerateSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings value) {
       if (fedrampModerateSettingsBuilder_ == null) {
@@ -9400,9 +9649,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearFedrampModerateSettings() {
       if (fedrampModerateSettingsBuilder_ == null) {
         if (complianceRegimeSettingsCase_ == 12) {
@@ -9427,9 +9677,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings.Builder
         getFedrampModerateSettingsBuilder() {
       return getFedrampModerateSettingsFieldBuilder().getBuilder();
@@ -9442,10 +9693,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettingsOrBuilder
         getFedrampModerateSettingsOrBuilder() {
       if ((complianceRegimeSettingsCase_ == 12) && (fedrampModerateSettingsBuilder_ != null)) {
@@ -9467,7 +9719,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9765,6 +10017,374 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private java.lang.Object provisionedResourcesParent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either an organization or a folder. Must be the same or a child of the
+     * Workload parent. If not specified all resources are created under the
+     * Workload parent.
+     * Formats:
+     * folders/{folder_id}
+     * organizations/{organization_id}
+     * </pre>
+     *
+     * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The provisionedResourcesParent.
+     */
+    public java.lang.String getProvisionedResourcesParent() {
+      java.lang.Object ref = provisionedResourcesParent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provisionedResourcesParent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either an organization or a folder. Must be the same or a child of the
+     * Workload parent. If not specified all resources are created under the
+     * Workload parent.
+     * Formats:
+     * folders/{folder_id}
+     * organizations/{organization_id}
+     * </pre>
+     *
+     * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for provisionedResourcesParent.
+     */
+    public com.google.protobuf.ByteString getProvisionedResourcesParentBytes() {
+      java.lang.Object ref = provisionedResourcesParent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        provisionedResourcesParent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either an organization or a folder. Must be the same or a child of the
+     * Workload parent. If not specified all resources are created under the
+     * Workload parent.
+     * Formats:
+     * folders/{folder_id}
+     * organizations/{organization_id}
+     * </pre>
+     *
+     * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The provisionedResourcesParent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisionedResourcesParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      provisionedResourcesParent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either an organization or a folder. Must be the same or a child of the
+     * Workload parent. If not specified all resources are created under the
+     * Workload parent.
+     * Formats:
+     * folders/{folder_id}
+     * organizations/{organization_id}
+     * </pre>
+     *
+     * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisionedResourcesParent() {
+
+      provisionedResourcesParent_ = getDefaultInstance().getProvisionedResourcesParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either an organization or a folder. Must be the same or a child of the
+     * Workload parent. If not specified all resources are created under the
+     * Workload parent.
+     * Formats:
+     * folders/{folder_id}
+     * organizations/{organization_id}
+     * </pre>
+     *
+     * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for provisionedResourcesParent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisionedResourcesParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      provisionedResourcesParent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder>
+        kmsSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the kmsSettings field is set.
+     */
+    public boolean hasKmsSettings() {
+      return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The kmsSettings.
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings() {
+      if (kmsSettingsBuilder_ == null) {
+        return kmsSettings_ == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+            : kmsSettings_;
+      } else {
+        return kmsSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setKmsSettings(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
+      if (kmsSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kmsSettings_ = value;
+        onChanged();
+      } else {
+        kmsSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setKmsSettings(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
+      if (kmsSettingsBuilder_ == null) {
+        kmsSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        kmsSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeKmsSettings(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
+      if (kmsSettingsBuilder_ == null) {
+        if (kmsSettings_ != null) {
+          kmsSettings_ =
+              com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
+                      kmsSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kmsSettings_ = value;
+        }
+        onChanged();
+      } else {
+        kmsSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearKmsSettings() {
+      if (kmsSettingsBuilder_ == null) {
+        kmsSettings_ = null;
+        onChanged();
+      } else {
+        kmsSettings_ = null;
+        kmsSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
+        getKmsSettingsBuilder() {
+
+      onChanged();
+      return getKmsSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
+        getKmsSettingsOrBuilder() {
+      if (kmsSettingsBuilder_ != null) {
+        return kmsSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return kmsSettings_ == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+            : kmsSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+     * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+     * Regimes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder>
+        getKmsSettingsFieldBuilder() {
+      if (kmsSettingsBuilder_ == null) {
+        kmsSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder>(
+                getKmsSettings(), getParentForChildren(), isClean());
+        kmsSettings_ = null;
+      }
+      return kmsSettingsBuilder_;
     }
 
     @java.lang.Override

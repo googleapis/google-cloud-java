@@ -61,7 +61,7 @@ public interface WorkloadOrBuilder
    * Required. The user-assigned display name of the Workload.
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
-   * hyphen, single-quote, double-quote, space, and exclamation point.
+   * hyphen, and spaces.
    * Example: My Workload
    * </pre>
    *
@@ -77,7 +77,7 @@ public interface WorkloadOrBuilder
    * Required. The user-assigned display name of the Workload.
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
-   * hyphen, single-quote, double-quote, space, and exclamation point.
+   * hyphen, and spaces.
    * Example: My Workload
    * </pre>
    *
@@ -287,11 +287,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the il4Settings field is set.
    */
+  @java.lang.Deprecated
   boolean hasIl4Settings();
   /**
    *
@@ -301,11 +302,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The il4Settings.
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings getIl4Settings();
   /**
    *
@@ -315,9 +317,10 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.IL4SettingsOrBuilder getIl4SettingsOrBuilder();
 
   /**
@@ -328,11 +331,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the cjisSettings field is set.
    */
+  @java.lang.Deprecated
   boolean hasCjisSettings();
   /**
    *
@@ -342,11 +346,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The cjisSettings.
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings getCjisSettings();
   /**
    *
@@ -356,9 +361,10 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettingsOrBuilder
       getCjisSettingsOrBuilder();
 
@@ -370,11 +376,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the fedrampHighSettings field is set.
    */
+  @java.lang.Deprecated
   boolean hasFedrampHighSettings();
   /**
    *
@@ -384,11 +391,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The fedrampHighSettings.
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings getFedrampHighSettings();
   /**
    *
@@ -398,9 +406,10 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettingsOrBuilder
       getFedrampHighSettingsOrBuilder();
 
@@ -412,11 +421,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the fedrampModerateSettings field is set.
    */
+  @java.lang.Deprecated
   boolean hasFedrampModerateSettings();
   /**
    *
@@ -426,11 +436,12 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The fedrampModerateSettings.
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings
       getFedrampModerateSettings();
   /**
@@ -441,9 +452,10 @@ public interface WorkloadOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettingsOrBuilder
       getFedrampModerateSettingsOrBuilder();
 
@@ -527,6 +539,92 @@ public interface WorkloadOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either an organization or a folder. Must be the same or a child of the
+   * Workload parent. If not specified all resources are created under the
+   * Workload parent.
+   * Formats:
+   * folders/{folder_id}
+   * organizations/{organization_id}
+   * </pre>
+   *
+   * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The provisionedResourcesParent.
+   */
+  java.lang.String getProvisionedResourcesParent();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either an organization or a folder. Must be the same or a child of the
+   * Workload parent. If not specified all resources are created under the
+   * Workload parent.
+   * Formats:
+   * folders/{folder_id}
+   * organizations/{organization_id}
+   * </pre>
+   *
+   * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for provisionedResourcesParent.
+   */
+  com.google.protobuf.ByteString getProvisionedResourcesParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the kmsSettings field is set.
+   */
+  boolean hasKmsSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The kmsSettings.
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
+   * CMEK key is provisioned. This field is mandatory for a subset of Compliance
+   * Regimes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder getKmsSettingsOrBuilder();
 
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
       getComplianceRegimeSettingsCase();
