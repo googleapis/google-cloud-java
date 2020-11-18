@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.0.2...v1.0.3) (2020-11-18)
+
+
+### Dependencies
+
+* update googleapis/code-suggester action to v1.8.1 ([#243](https://www.github.com/googleapis/java-bigqueryreservation/issues/243)) ([b94eb26](https://www.github.com/googleapis/java-bigqueryreservation/commit/b94eb26912b72be919f86498aabeed20ef35b0a3))
+
 ### [1.0.2](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.0.1...v1.0.2) (2020-11-11)
 
 
