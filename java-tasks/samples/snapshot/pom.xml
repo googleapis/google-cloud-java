@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-tasks</artifactId>
-      <version>1.30.7</version>
+      <version>1.30.8</version>
     </dependency>
 
     <dependency>
