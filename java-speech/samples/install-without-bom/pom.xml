@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
-      <version>1.24.6</version>
+      <version>1.24.7</version>
     </dependency>
     <!-- [END speech_install_without_bom] -->
     <dependency>
