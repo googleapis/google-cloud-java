@@ -61,6 +61,11 @@ public final class LegacySQLTypeName extends StringEnumValue {
    */
   public static final LegacySQLTypeName NUMERIC =
       type.createAndRegister("NUMERIC").setStandardType(StandardSQLTypeName.NUMERIC);
+  /**
+   * A decimal value with 76+ digits of precision (the 77th digit is partial) and 38 digits of scale
+   */
+  public static final LegacySQLTypeName BIGNUMERIC =
+      type.createAndRegister("BIGNUMERIC").setStandardType(StandardSQLTypeName.BIGNUMERIC);
   /** A Boolean value (true or false). */
   public static final LegacySQLTypeName BOOLEAN =
       type.createAndRegister("BOOLEAN").setStandardType(StandardSQLTypeName.BOOL);

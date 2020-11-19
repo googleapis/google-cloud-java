@@ -142,6 +142,49 @@ public class QueryParameterValueTest {
   }
 
   @Test
+  public void testBigNumeric() {
+    QueryParameterValue value =
+        QueryParameterValue.bigNumeric(new BigDecimal("0.33333333333333333333333333333333333333"));
+    QueryParameterValue value1 =
+        QueryParameterValue.bigNumeric(new BigDecimal("0.50000000000000000000000000000000000000"));
+    QueryParameterValue value2 =
+        QueryParameterValue.bigNumeric(new BigDecimal("0.00000000500000000000000000000000000000"));
+    QueryParameterValue value3 =
+        QueryParameterValue.bigNumeric(new BigDecimal("-0.00000000500000000000000000000000000000"));
+    QueryParameterValue value4 =
+        QueryParameterValue.bigNumeric(
+            new BigDecimal("0.33333333333333333333333333333333333333888888888888888"));
+    QueryParameterValue value5 = QueryParameterValue.bigNumeric(new BigDecimal("1e-38"));
+    QueryParameterValue value6 = QueryParameterValue.bigNumeric(new BigDecimal("-1e38"));
+    QueryParameterValue value7 =
+        QueryParameterValue.bigNumeric(
+            new BigDecimal(
+                "578960446186580977117854925043439539266.34992332820282019728792003956564819967"));
+    QueryParameterValue value8 =
+        QueryParameterValue.bigNumeric(
+            new BigDecimal(
+                "-578960446186580977117854925043439539266.34992332820282019728792003956564819968"));
+
+    assertThat(value.getValue()).isEqualTo("0.33333333333333333333333333333333333333");
+    assertThat(value1.getValue()).isEqualTo("0.50000000000000000000000000000000000000");
+    assertThat(value2.getValue()).isEqualTo("5.00000000000000000000000000000E-9");
+    assertThat(value3.getValue()).isEqualTo("-5.00000000000000000000000000000E-9");
+    assertThat(value4.getValue())
+        .isEqualTo("0.33333333333333333333333333333333333333888888888888888");
+    assertThat(value5.getValue()).isEqualTo("1E-38");
+    assertThat(value6.getValue()).isEqualTo("-1E+38");
+    assertThat(value7.getValue())
+        .isEqualTo(
+            "578960446186580977117854925043439539266.34992332820282019728792003956564819967");
+    assertThat(value8.getValue())
+        .isEqualTo(
+            "-578960446186580977117854925043439539266.34992332820282019728792003956564819968");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.BIGNUMERIC);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
   public void testString() {
     QueryParameterValue value = QueryParameterValue.string("foo");
     assertThat(value.getValue()).isEqualTo("foo");

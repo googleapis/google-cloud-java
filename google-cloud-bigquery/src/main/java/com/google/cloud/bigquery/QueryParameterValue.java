@@ -60,6 +60,7 @@ import org.threeten.bp.format.DateTimeParseException;
  *   <li>Double: StandardSQLTypeName.FLOAT64
  *   <li>Float: StandardSQLTypeName.FLOAT64
  *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
+ *   <li>BigNumeric: StandardSQLTypeName.BIGNUMERIC
  * </ul>
  *
  * <p>No other types are supported through that entry point. The other types can be created by
@@ -197,7 +198,10 @@ public abstract class QueryParameterValue implements Serializable {
   @Nullable
   abstract Map<String, QueryParameterValue> getStructTypesInner();
 
-  /** Creates a {@code QueryParameterValue} object with the given value and type. */
+  /**
+   * Creates a {@code QueryParameterValue} object with the given value and type. Note: this does not
+   * support BigNumeric
+   */
   public static <T> QueryParameterValue of(T value, Class<T> type) {
     return of(value, classToType(type));
   }
@@ -238,6 +242,11 @@ public abstract class QueryParameterValue implements Serializable {
   /** Creates a {@code QueryParameterValue} object with a type of NUMERIC. */
   public static QueryParameterValue numeric(BigDecimal value) {
     return of(value, StandardSQLTypeName.NUMERIC);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of BIGNUMERIC. */
+  public static QueryParameterValue bigNumeric(BigDecimal value) {
+    return of(value, StandardSQLTypeName.BIGNUMERIC);
   }
 
   /** Creates a {@code QueryParameterValue} object with a type of STRING. */
@@ -363,6 +372,7 @@ public abstract class QueryParameterValue implements Serializable {
         }
         break;
       case NUMERIC:
+      case BIGNUMERIC:
         if (value instanceof BigDecimal) {
           return value.toString();
         }

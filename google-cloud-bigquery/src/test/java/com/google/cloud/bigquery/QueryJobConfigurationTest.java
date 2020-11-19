@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
@@ -101,8 +102,10 @@ public class QueryJobConfigurationTest {
       QueryParameterValue.string("stringValue");
   private static final QueryParameterValue TIMESTAMP_PARAMETER =
       QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00");
+  private static final QueryParameterValue BIGNUMERIC_PARAMETER =
+      QueryParameterValue.bigNumeric(new BigDecimal(1 / 3));
   private static final List<QueryParameterValue> POSITIONAL_PARAMETER =
-      ImmutableList.of(STRING_PARAMETER, TIMESTAMP_PARAMETER);
+      ImmutableList.of(STRING_PARAMETER, TIMESTAMP_PARAMETER, BIGNUMERIC_PARAMETER);
   private static final Map<String, QueryParameterValue> NAME_PARAMETER =
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
