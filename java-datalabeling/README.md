@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling</artifactId>
-  <version>0.119.5</version>
+  <version>0.119.6</version>
 </dependency>
 
 ```
