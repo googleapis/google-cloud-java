@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-mediatranslation</artifactId>
-  <version>0.2.4</version>
+  <version>0.2.6</version>
 </dependency>
 
 ```
