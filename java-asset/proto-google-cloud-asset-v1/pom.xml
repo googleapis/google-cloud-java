@@ -41,6 +41,10 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-os-config-v1</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

@@ -225,6 +225,22 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 98:
+            {
+              com.google.cloud.osconfig.v1.Inventory.Builder subBuilder = null;
+              if (osInventory_ != null) {
+                subBuilder = osInventory_.toBuilder();
+              }
+              osInventory_ =
+                  input.readMessage(
+                      com.google.cloud.osconfig.v1.Inventory.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(osInventory_);
+                osInventory_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -840,6 +856,60 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
   }
 
+  public static final int OS_INVENTORY_FIELD_NUMBER = 12;
+  private com.google.cloud.osconfig.v1.Inventory osInventory_;
+  /**
+   *
+   *
+   * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   *
+   * @return Whether the osInventory field is set.
+   */
+  @java.lang.Override
+  public boolean hasOsInventory() {
+    return osInventory_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   *
+   * @return The osInventory.
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.v1.Inventory getOsInventory() {
+    return osInventory_ == null
+        ? com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()
+        : osInventory_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.osconfig.v1.InventoryOrBuilder getOsInventoryOrBuilder() {
+    return getOsInventory();
+  }
+
   public static final int ANCESTORS_FIELD_NUMBER = 10;
   private com.google.protobuf.LazyStringList ancestors_;
   /**
@@ -972,6 +1042,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(11, getUpdateTime());
     }
+    if (osInventory_ != null) {
+      output.writeMessage(12, getOsInventory());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1023,6 +1096,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
     }
+    if (osInventory_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getOsInventory());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1053,6 +1129,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (!getIamPolicy().equals(other.getIamPolicy())) return false;
     }
     if (!getOrgPolicyList().equals(other.getOrgPolicyList())) return false;
+    if (hasOsInventory() != other.hasOsInventory()) return false;
+    if (hasOsInventory()) {
+      if (!getOsInventory().equals(other.getOsInventory())) return false;
+    }
     if (!getAncestorsList().equals(other.getAncestorsList())) return false;
     if (!getAccessContextPolicyCase().equals(other.getAccessContextPolicyCase())) return false;
     switch (accessContextPolicyCase_) {
@@ -1098,6 +1178,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (getOrgPolicyCount() > 0) {
       hash = (37 * hash) + ORG_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getOrgPolicyList().hashCode();
+    }
+    if (hasOsInventory()) {
+      hash = (37 * hash) + OS_INVENTORY_FIELD_NUMBER;
+      hash = (53 * hash) + getOsInventory().hashCode();
     }
     if (getAncestorsCount() > 0) {
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
@@ -1299,6 +1383,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       } else {
         orgPolicyBuilder_.clear();
       }
+      if (osInventoryBuilder_ == null) {
+        osInventory_ = null;
+      } else {
+        osInventory_ = null;
+        osInventoryBuilder_ = null;
+      }
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       accessContextPolicyCase_ = 0;
@@ -1376,6 +1466,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.accessContextPolicy_ = servicePerimeterBuilder_.build();
         }
+      }
+      if (osInventoryBuilder_ == null) {
+        result.osInventory_ = osInventory_;
+      } else {
+        result.osInventory_ = osInventoryBuilder_.build();
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
@@ -1475,6 +1570,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             orgPolicyBuilder_.addAllMessages(other.orgPolicy_);
           }
         }
+      }
+      if (other.hasOsInventory()) {
+        mergeOsInventory(other.getOsInventory());
       }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
@@ -3501,6 +3599,209 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return servicePerimeterBuilder_;
+    }
+
+    private com.google.cloud.osconfig.v1.Inventory osInventory_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.osconfig.v1.Inventory,
+            com.google.cloud.osconfig.v1.Inventory.Builder,
+            com.google.cloud.osconfig.v1.InventoryOrBuilder>
+        osInventoryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     *
+     * @return Whether the osInventory field is set.
+     */
+    public boolean hasOsInventory() {
+      return osInventoryBuilder_ != null || osInventory_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     *
+     * @return The osInventory.
+     */
+    public com.google.cloud.osconfig.v1.Inventory getOsInventory() {
+      if (osInventoryBuilder_ == null) {
+        return osInventory_ == null
+            ? com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()
+            : osInventory_;
+      } else {
+        return osInventoryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public Builder setOsInventory(com.google.cloud.osconfig.v1.Inventory value) {
+      if (osInventoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        osInventory_ = value;
+        onChanged();
+      } else {
+        osInventoryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public Builder setOsInventory(com.google.cloud.osconfig.v1.Inventory.Builder builderForValue) {
+      if (osInventoryBuilder_ == null) {
+        osInventory_ = builderForValue.build();
+        onChanged();
+      } else {
+        osInventoryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public Builder mergeOsInventory(com.google.cloud.osconfig.v1.Inventory value) {
+      if (osInventoryBuilder_ == null) {
+        if (osInventory_ != null) {
+          osInventory_ =
+              com.google.cloud.osconfig.v1.Inventory.newBuilder(osInventory_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          osInventory_ = value;
+        }
+        onChanged();
+      } else {
+        osInventoryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public Builder clearOsInventory() {
+      if (osInventoryBuilder_ == null) {
+        osInventory_ = null;
+        onChanged();
+      } else {
+        osInventory_ = null;
+        osInventoryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public com.google.cloud.osconfig.v1.Inventory.Builder getOsInventoryBuilder() {
+
+      onChanged();
+      return getOsInventoryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    public com.google.cloud.osconfig.v1.InventoryOrBuilder getOsInventoryOrBuilder() {
+      if (osInventoryBuilder_ != null) {
+        return osInventoryBuilder_.getMessageOrBuilder();
+      } else {
+        return osInventory_ == null
+            ? com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()
+            : osInventory_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A representation of runtime OS Inventory information. See [this
+     * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+     * for more information.
+     * </pre>
+     *
+     * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.osconfig.v1.Inventory,
+            com.google.cloud.osconfig.v1.Inventory.Builder,
+            com.google.cloud.osconfig.v1.InventoryOrBuilder>
+        getOsInventoryFieldBuilder() {
+      if (osInventoryBuilder_ == null) {
+        osInventoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.osconfig.v1.Inventory,
+                com.google.cloud.osconfig.v1.Inventory.Builder,
+                com.google.cloud.osconfig.v1.InventoryOrBuilder>(
+                getOsInventory(), getParentForChildren(), isClean());
+        osInventory_ = null;
+      }
+      return osInventoryBuilder_;
     }
 
     private com.google.protobuf.LazyStringList ancestors_ =

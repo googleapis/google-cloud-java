@@ -405,6 +405,47 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   *
+   * @return Whether the osInventory field is set.
+   */
+  boolean hasOsInventory();
+  /**
+   *
+   *
+   * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   *
+   * @return The osInventory.
+   */
+  com.google.cloud.osconfig.v1.Inventory getOsInventory();
+  /**
+   *
+   *
+   * <pre>
+   * A representation of runtime OS Inventory information. See [this
+   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-management)
+   * for more information.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
+   */
+  com.google.cloud.osconfig.v1.InventoryOrBuilder getOsInventoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts

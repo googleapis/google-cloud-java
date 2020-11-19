@@ -150,6 +150,11 @@
         <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
         <version>1.0.7</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-os-config-v1</artifactId>
+        <version>1.1.0</version>
+      </dependency>
 
       <dependency>
         <groupId>junit</groupId>

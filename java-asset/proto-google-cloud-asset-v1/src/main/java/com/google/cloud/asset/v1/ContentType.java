@@ -78,6 +78,16 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_POLICY = 5;</code>
    */
   ACCESS_POLICY(5),
+  /**
+   *
+   *
+   * <pre>
+   * The runtime OS Inventory information.
+   * </pre>
+   *
+   * <code>OS_INVENTORY = 6;</code>
+   */
+  OS_INVENTORY(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -131,6 +141,16 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_POLICY = 5;</code>
    */
   public static final int ACCESS_POLICY_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The runtime OS Inventory information.
+   * </pre>
+   *
+   * <code>OS_INVENTORY = 6;</code>
+   */
+  public static final int OS_INVENTORY_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -166,6 +186,8 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
         return ORG_POLICY;
       case 5:
         return ACCESS_POLICY;
+      case 6:
+        return OS_INVENTORY;
       default:
         return null;
     }
