@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bigquery:1.124.7:1.124.8-SNAPSHOT
+google-cloud-bigquery:1.125.0:1.125.0

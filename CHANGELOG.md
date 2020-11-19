@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.125.0](https://www.github.com/googleapis/java-bigquery/compare/v1.124.7...v1.125.0) (2020-11-19)
+
+
+### Features
+
+* add BIGNUMERIC support ([#703](https://www.github.com/googleapis/java-bigquery/issues/703)) ([718ec2a](https://www.github.com/googleapis/java-bigquery/commit/718ec2ae25150dceef8fb9bc3e2fcf6238fc2220))
+
 ### [1.124.7](https://www.github.com/googleapis/java-bigquery/compare/v1.124.6...v1.124.7) (2020-11-16)
 
 
