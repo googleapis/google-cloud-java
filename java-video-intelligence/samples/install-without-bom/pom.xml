@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-video-intelligence</artifactId>
-      <version>1.5.4</version>
+      <version>1.5.5</version>
     </dependency>
     <!-- [END videointelligence_install_without_bom] -->
 
