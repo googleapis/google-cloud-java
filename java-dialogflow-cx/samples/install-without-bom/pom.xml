@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow-cx</artifactId>
-      <version>0.3.1</version>
+      <version>0.4.0</version>
     </dependency>
     <!-- [END dialogflow_cx_install_without_bom] -->
 
