@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-container/compare/v1.1.2...v1.2.0) (2020-11-19)
+
+
+### Features
+
+* **v1:** sync v1 GKE API ([#289](https://www.github.com/googleapis/java-container/issues/289)) ([8882a96](https://www.github.com/googleapis/java-container/commit/8882a9691e6dc1e588a4283c3f4abaa7cd4852cd))
+
 ### [1.1.2](https://www.github.com/googleapis/java-container/compare/v1.1.1...v1.1.2) (2020-11-11)
 
 
