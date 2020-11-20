@@ -20,19 +20,22 @@ python3 -m pip install gcp-releasetool
 python3 -m releasetool publish-reporter-script > /tmp/publisher-script; source /tmp/publisher-script
 
 source $(dirname "$0")/common.sh
+source $(dirname "$0")/../common.sh
 MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../../)/settings.xml
 pushd $(dirname "$0")/../../
 
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
-mvn clean install deploy -B \
-  --settings ${MAVEN_SETTINGS_FILE} \
-  -DskipTests=true \
-  -DperformRelease=true \
-  -Dgpg.executable=gpg \
-  -Dgpg.passphrase=${GPG_PASSPHRASE} \
-  -Dgpg.homedir=${GPG_HOMEDIR}
+# attempt to stage 3 times with exponential backoff (starting with 10 seconds)
+retry_with_backoff 3 10 \
+  mvn clean install deploy -B \
+    --settings ${MAVEN_SETTINGS_FILE} \
+    -DskipTests=true \
+    -DperformRelease=true \
+    -Dgpg.executable=gpg \
+    -Dgpg.passphrase=${GPG_PASSPHRASE} \
+    -Dgpg.homedir=${GPG_HOMEDIR}
 
 if [[ -n "${AUTORELEASE_PR}" ]]
 then
