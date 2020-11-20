@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.105.2](https://www.github.com/googleapis/java-datastore/compare/v1.105.1...v1.105.2) (2020-11-20)
+
+
+### Dependencies
+
+* update dependency com.google.oauth-client:google-oauth-client to v1.31.2 ([#265](https://www.github.com/googleapis/java-datastore/issues/265)) ([3f165c7](https://www.github.com/googleapis/java-datastore/commit/3f165c7843b7241340eae8e9ad391357e36df237))
+
 ### [1.105.1](https://www.github.com/googleapis/java-datastore/compare/v1.105.0...v1.105.1) (2020-11-16)
 
 
