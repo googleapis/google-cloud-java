@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.0.20](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.19...v1.0.20) (2020-11-20)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.125.0 ([#528](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/528)) ([8a8e174](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/8a8e174c7a2943773896ee5aba06db0ab4401e9f))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.109.0 ([#520](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/520)) ([b12ce3d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/b12ce3db0d615d48ce443cd457293518a1d50a41))
+
+
+### Documentation
+
+* **samples:** add create ad manager transfer config ([#530](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/530)) ([caac326](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/caac326028df9ff51e3f68c4159e2fff5828c6cd))
+* **samples:** add create ads transfer config ([#524](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/524)) ([2cd17cf](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2cd17cf1daa89de5015e9eda291afebc4d590c4e))
+* **samples:** add create campaign manager transfer ([#525](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/525)) ([5fe9ff7](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/5fe9ff76698835618b3bc434067864e623c0331b))
+
 ### [1.0.19](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.18...v1.0.19) (2020-11-17)
 
 
