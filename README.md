@@ -288,6 +288,8 @@ public CloudTasksClient getService() throws IOException {
 ## Java Versions
 
 Java 7 or above is required for using the clients in this repository.
+Beginning on July 1, 2021, new versions of most of these libraries will
+require Java 8 or above. 
 
 ## Supported Platforms
 
