@@ -45,11 +45,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.0.19'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.0.20'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.0.19"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.0.20"
 ```
 
 ## Authentication
