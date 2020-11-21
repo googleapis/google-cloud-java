@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-  <version>1.0.20</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
+  <version>1.0.21-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
   <name>grpc-google-cloud-bigquerydatatransfer-v1</name>
   <description>GRPC library for grpc-google-cloud-bigquerydatatransfer-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatatransfer-parent</artifactId>
-    <version>1.0.20</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+    <version>1.0.21-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   </parent>
   <dependencies>
     <dependency>
