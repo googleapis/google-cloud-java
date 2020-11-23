@@ -25,7 +25,6 @@ function retry_with_backoff {
     
     # allow a failures to continue
     set +e
-    echo "${command}"
     ${command}
     exit_code=$?
 
