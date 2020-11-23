@@ -51,6 +51,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   private final AtomicInteger messageAckDeadline =
       new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   private final AtomicInteger getSubscriptionCalled = new AtomicInteger();
+  private StreamingPullRequest lastSeenRequest;
   private final List<Stream> openedStreams = new ArrayList<>();
   private final List<Stream> closedStreams = new ArrayList<>();
   private final List<String> acks = new ArrayList<>();
@@ -139,6 +140,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
               subscriptionInitialized.notifyAll();
             }
           }
+          setLastSeenRequest(request);
           addOpenedStream(stream);
           stream.notifyAll();
         }
@@ -289,6 +291,18 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
         throw new IllegalStateException("timed out, last state: " + collection);
       }
       collection.wait(untilMillis - now);
+    }
+  }
+
+  public StreamingPullRequest getLastSeenRequest() {
+    synchronized (lastSeenRequest) {
+      return lastSeenRequest;
+    }
+  }
+
+  public void setLastSeenRequest(StreamingPullRequest lastSeenRequest) {
+    synchronized (lastSeenRequest) {
+      this.lastSeenRequest = lastSeenRequest;
     }
   }
 

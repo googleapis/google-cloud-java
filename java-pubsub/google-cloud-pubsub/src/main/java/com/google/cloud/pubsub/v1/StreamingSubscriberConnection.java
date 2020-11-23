@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.Subscriber.DEFAULT_MAX_DURATION_PER_ACK_EXTENSION;
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.AbstractApiService;
@@ -23,6 +24,7 @@ import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -62,10 +64,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
+  @InternalApi static final Duration DEFAULT_STREAM_ACK_DEADLINE = Duration.ofSeconds(60);
+  @InternalApi static final Duration MAX_STREAM_ACK_DEADLINE = Duration.ofSeconds(600);
+  @InternalApi static final Duration MIN_STREAM_ACK_DEADLINE = Duration.ofSeconds(10);
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = Duration.ofMillis(100);
   private static final Duration MAX_CHANNEL_RECONNECT_BACKOFF = Duration.ofSeconds(10);
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
 
+  private final Duration streamAckDeadline;
   private final SubscriberStub stub;
   private final int channelAffinity;
   private final String subscription;
@@ -106,6 +112,15 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ApiClock clock) {
     this.subscription = subscription;
     this.systemExecutor = systemExecutor;
+    if (maxDurationPerAckExtension.compareTo(DEFAULT_MAX_DURATION_PER_ACK_EXTENSION) == 0) {
+      this.streamAckDeadline = DEFAULT_STREAM_ACK_DEADLINE;
+    } else if (maxDurationPerAckExtension.compareTo(MIN_STREAM_ACK_DEADLINE) < 0) {
+      this.streamAckDeadline = MIN_STREAM_ACK_DEADLINE;
+    } else if (maxDurationPerAckExtension.compareTo(MAX_STREAM_ACK_DEADLINE) > 0) {
+      this.streamAckDeadline = MAX_STREAM_ACK_DEADLINE;
+    } else {
+      this.streamAckDeadline = maxDurationPerAckExtension;
+    }
     this.stub = stub;
     this.channelAffinity = channelAffinity;
     this.messageDispatcher =
@@ -217,7 +232,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     initClientStream.send(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(60)
+            .setStreamAckDeadlineSeconds((int) streamAckDeadline.getSeconds())
             .setClientId(clientId)
             .setMaxOutstandingMessages(
                 this.useLegacyFlowControl

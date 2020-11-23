@@ -91,6 +91,7 @@ import org.threeten.bp.Duration;
  * details.
  */
 public class Subscriber extends AbstractApiService implements SubscriberInterface {
+  @InternalApi static final Duration DEFAULT_MAX_DURATION_PER_ACK_EXTENSION = Duration.ofMillis(0);
   private static final int THREADS_PER_CHANNEL = 5;
   private static final int MAX_INBOUND_MESSAGE_SIZE =
       20 * 1024 * 1024; // 20MB API maximum message size.
@@ -421,7 +422,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private MessageReceiver receiver;
 
     private Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
-    private Duration maxDurationPerAckExtension = Duration.ofMillis(0);
+    private Duration maxDurationPerAckExtension = DEFAULT_MAX_DURATION_PER_ACK_EXTENSION;
 
     private boolean useLegacyFlowControl = false;
     private FlowControlSettings flowControlSettings =
