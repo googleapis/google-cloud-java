@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "3cf80aa21e1e3218ed52a61abbefbc0c0ff03db4"
+        "sha": "fa4f016b415a05af9bc945dd241128a2083d0eb8"
       }
     },
     {
@@ -50,7 +50,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "68742c6016bf0d16948a572633d17955a8737414"
+        "sha": "943bb78606d035001123030067dffcc34f4645f2"
       }
     }
   ],
@@ -98,6 +98,7 @@
     ".github/ISSUE_TEMPLATE/feature_request.md",
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/blunderbuss.yml",
     ".github/generated-files-bot.yml",
     ".github/readme/synth.py",
     ".github/release-please.yml",
