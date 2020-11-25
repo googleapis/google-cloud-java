@@ -848,8 +848,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public List<String> listPartitions(TableId tableId) {
     List<String> partitions = new ArrayList<String>();
-    Table metaTable =
-        getTable(TableId.of(tableId.getDataset(), tableId.getTable() + "$__PARTITIONS_SUMMARY__"));
+    String partitionsTable = tableId.getTable() + "$__PARTITIONS_SUMMARY__";
+    TableId metaTableId =
+        tableId.getProject() == null
+            ? TableId.of(tableId.getDataset(), partitionsTable)
+            : TableId.of(tableId.getProject(), tableId.getDataset(), partitionsTable);
+    Table metaTable = getTable(metaTableId);
     Schema metaSchema = metaTable.getDefinition().getSchema();
     String partition_id = null;
     for (Field field : metaSchema.getFields()) {
