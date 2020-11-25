@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.110.0](https://www.github.com/googleapis/java-pubsub/compare/v1.109.0...v1.110.0) (2020-11-24)
+
+
+### Features
+
+* make the stream ack deadline congruent with maxDurationPerAckExtension ([#447](https://www.github.com/googleapis/java-pubsub/issues/447)) ([c63dc25](https://www.github.com/googleapis/java-pubsub/commit/c63dc255dff55982fca2e4cf0e955c47614dc291))
+
 ## [1.109.0](https://www.github.com/googleapis/java-pubsub/compare/v1.108.7...v1.109.0) (2020-11-17)
 
 
