@@ -17,12 +17,12 @@ package com.google.cloud.examples.storage.objects;
 
 // [START storage_generate_encryption_key]
 import com.google.common.io.BaseEncoding;
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class GenerateEncryptionKey {
   public static void generateEncryptionKey() {
     byte[] key = new byte[32];
-    new Random().nextBytes(key);
+    new SecureRandom().nextBytes(key);
     String encryptionKey = BaseEncoding.base64().encode(key);
 
     System.out.println("Generated Base64-encoded AES-256 encryption key: " + encryptionKey);
