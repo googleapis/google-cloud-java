@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/service-directory/",
   "api_description": "allows the registration and lookup of service endpoints.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-servicedirectory/latest/index.html",
-  "release_level": "beta",
+  "release_level": "ga",
   "transport": "grpc",
   "language": "java",
   "repo": "googleapis/java-servicedirectory",
