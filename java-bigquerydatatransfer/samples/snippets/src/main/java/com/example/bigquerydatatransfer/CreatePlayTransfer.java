@@ -46,7 +46,6 @@ public class CreatePlayTransfer {
             .setDisplayName("Your Play Config Name")
             .setDataSourceId("play")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createPlayTransfer(projectId, transferConfig);
   }

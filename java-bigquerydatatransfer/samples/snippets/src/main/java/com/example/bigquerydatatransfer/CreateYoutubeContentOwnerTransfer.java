@@ -46,7 +46,6 @@ public class CreateYoutubeContentOwnerTransfer {
             .setDisplayName("Your Youtube Owner Channel Config Name")
             .setDataSourceId("youtube_content_owner")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createYoutubeContentOwnerTransfer(projectId, transferConfig);
   }

@@ -36,7 +36,8 @@ public class CreateAdManagerTransfer {
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
     String bucket = "gs://cloud-sample-data";
-    String networkCode = "MY_NETWORK_CODE";
+    // the network_code can only be digits with length 1 to 15
+    String networkCode = "12345678";
     Map<String, Value> params = new HashMap<>();
     params.put("bucket", Value.newBuilder().setStringValue(bucket).build());
     params.put("network_code", Value.newBuilder().setStringValue(networkCode).build());
@@ -46,7 +47,6 @@ public class CreateAdManagerTransfer {
             .setDisplayName("Your Ad Manager Config Name")
             .setDataSourceId("dfp_dt")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createAdManagerTransfer(projectId, transferConfig);
   }

@@ -36,7 +36,8 @@ public class CreateCampaignmanagerTransfer {
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
     String bucket = "gs://cloud-sample-data";
-    String networkId = "MY_DOUBLE_CLICK_ID";
+    // the network_id only allows digits
+    String networkId = "7878";
     String fileNamePrefix = "test_";
     Map<String, Value> params = new HashMap<>();
     params.put("bucket", Value.newBuilder().setStringValue(bucket).build());
@@ -48,7 +49,6 @@ public class CreateCampaignmanagerTransfer {
             .setDisplayName("Your Campaignmanager Config Name")
             .setDataSourceId("dcm_dt")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createCampaignmanagerTransfer(projectId, transferConfig);
   }

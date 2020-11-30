@@ -35,8 +35,9 @@ public class CreateAdsTransfer {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
-    String customerId = "MY_CUSTOMER_ID";
-    String refreshWindow = "MY_REFRESH_WINDOW";
+    // the customer_id only allows digits and hyphen ('-').
+    String customerId = "012-345-6789";
+    String refreshWindow = "100";
     Map<String, Value> params = new HashMap<>();
     params.put("customer_id", Value.newBuilder().setStringValue(customerId).build());
     params.put("refreshWindow", Value.newBuilder().setStringValue(refreshWindow).build());
@@ -46,7 +47,6 @@ public class CreateAdsTransfer {
             .setDisplayName("Your Ads Transfer Config Name")
             .setDataSourceId("adwords")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createAdsTransfer(projectId, transferConfig);
   }

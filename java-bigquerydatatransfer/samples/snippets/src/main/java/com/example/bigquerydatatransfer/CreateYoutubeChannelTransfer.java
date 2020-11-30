@@ -44,7 +44,6 @@ public class CreateYoutubeChannelTransfer {
             .setDisplayName("Your Youtube Channel Config Name")
             .setDataSourceId("youtube_channel")
             .setParams(Struct.newBuilder().putAllFields(params).build())
-            .setSchedule("every 24 hours")
             .build();
     createYoutubeChannelTransfer(projectId, transferConfig);
   }
