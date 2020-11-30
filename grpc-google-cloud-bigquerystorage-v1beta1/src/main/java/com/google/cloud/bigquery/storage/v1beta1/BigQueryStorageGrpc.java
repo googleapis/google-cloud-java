@@ -25,14 +25,7 @@ import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * BigQuery storage API.
- * The BigQuery storage API can be used to read data stored in BigQuery.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/storage/v1beta1/storage.proto")
@@ -331,32 +324,10 @@ public final class BigQueryStorageGrpc {
     return BigQueryStorageFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery storage API.
-   * The BigQuery storage API can be used to read data stored in BigQuery.
-   * </pre>
-   */
+  /** */
   public abstract static class BigQueryStorageImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new read session. A read session divides the contents of a
-     * BigQuery table into one or more streams, which can then be used to read
-     * data from the table. The read session also specifies properties of the
-     * data to be read, such as a list of columns or a push-down filter describing
-     * the rows to be returned.
-     * A particular row can be read by at most one stream. When the caller has
-     * reached the end of each stream in the session, then all the data in the
-     * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
-     * not require manual clean-up by the caller.
-     * </pre>
-     */
+    /** */
     public void createReadSession(
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
@@ -364,20 +335,7 @@ public final class BigQueryStorageGrpc {
       asyncUnimplementedUnaryCall(getCreateReadSessionMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Reads rows from the table in the format prescribed by the read session.
-     * Each response contains one or more table rows, up to a maximum of 10 MiB
-     * per response; read requests which attempt to read individual rows larger
-     * than this will fail.
-     * Each request also returns a set of stream statistics reflecting the
-     * estimated total number of rows in the read stream. This number is computed
-     * based on the total table size and the number of active streams in the read
-     * session, and may change as other streams continue to read data.
-     * </pre>
-     */
+    /** */
     public void readRows(
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<
@@ -386,15 +344,7 @@ public final class BigQueryStorageGrpc {
       asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates additional streams for a ReadSession. This API can be used to
-     * dynamically adjust the parallelism of a batch processing task upwards by
-     * adding additional workers.
-     * </pre>
-     */
+    /** */
     public void batchCreateReadSessionStreams(
         com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
             request,
@@ -405,47 +355,14 @@ public final class BigQueryStorageGrpc {
       asyncUnimplementedUnaryCall(getBatchCreateReadSessionStreamsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
-     * API can be used to dynamically adjust the parallelism of a batch processing
-     * task downwards without losing data.
-     * This API does not delete the stream -- it remains visible in the
-     * ReadSession, and any data processed by the stream is not released to other
-     * streams. However, no additional data will be assigned to the stream once
-     * this call completes. Callers must continue reading data on the stream until
-     * the end of the stream is reached so that data which has already been
-     * assigned to the stream will be processed.
-     * This method will return an error if there are no other live streams
-     * in the Session, or if SplitReadStream() has been called on the given
-     * Stream.
-     * </pre>
-     */
+    /** */
     public void finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getFinalizeStreamMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Splits a given read stream into two Streams. These streams are referred to
-     * as the primary and the residual of the split. The original stream can still
-     * be read from in the same manner as before. Both of the returned streams can
-     * also be read from, and the total rows return by both child streams will be
-     * the same as the rows read from the original stream.
-     * Moreover, the two child streams will be allocated back to back in the
-     * original Stream. Concretely, it is guaranteed that for streams Original,
-     * Primary, and Residual, that Original[0-j] = Primary[0-j] and
-     * Original[j-n] = Residual[0-m] once the streams have been read to
-     * completion.
-     * This method is guaranteed to be idempotent.
-     * </pre>
-     */
+    /** */
     public void splitReadStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -497,14 +414,7 @@ public final class BigQueryStorageGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery storage API.
-   * The BigQuery storage API can be used to read data stored in BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryStorageStub
       extends io.grpc.stub.AbstractAsyncStub<BigQueryStorageStub> {
     private BigQueryStorageStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -516,22 +426,7 @@ public final class BigQueryStorageGrpc {
       return new BigQueryStorageStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new read session. A read session divides the contents of a
-     * BigQuery table into one or more streams, which can then be used to read
-     * data from the table. The read session also specifies properties of the
-     * data to be read, such as a list of columns or a push-down filter describing
-     * the rows to be returned.
-     * A particular row can be read by at most one stream. When the caller has
-     * reached the end of each stream in the session, then all the data in the
-     * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
-     * not require manual clean-up by the caller.
-     * </pre>
-     */
+    /** */
     public void createReadSession(
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
@@ -542,20 +437,7 @@ public final class BigQueryStorageGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Reads rows from the table in the format prescribed by the read session.
-     * Each response contains one or more table rows, up to a maximum of 10 MiB
-     * per response; read requests which attempt to read individual rows larger
-     * than this will fail.
-     * Each request also returns a set of stream statistics reflecting the
-     * estimated total number of rows in the read stream. This number is computed
-     * based on the total table size and the number of active streams in the read
-     * session, and may change as other streams continue to read data.
-     * </pre>
-     */
+    /** */
     public void readRows(
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<
@@ -565,15 +447,7 @@ public final class BigQueryStorageGrpc {
           getChannel().newCall(getReadRowsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates additional streams for a ReadSession. This API can be used to
-     * dynamically adjust the parallelism of a batch processing task upwards by
-     * adding additional workers.
-     * </pre>
-     */
+    /** */
     public void batchCreateReadSessionStreams(
         com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
             request,
@@ -587,24 +461,7 @@ public final class BigQueryStorageGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
-     * API can be used to dynamically adjust the parallelism of a batch processing
-     * task downwards without losing data.
-     * This API does not delete the stream -- it remains visible in the
-     * ReadSession, and any data processed by the stream is not released to other
-     * streams. However, no additional data will be assigned to the stream once
-     * this call completes. Callers must continue reading data on the stream until
-     * the end of the stream is reached so that data which has already been
-     * assigned to the stream will be processed.
-     * This method will return an error if there are no other live streams
-     * in the Session, or if SplitReadStream() has been called on the given
-     * Stream.
-     * </pre>
-     */
+    /** */
     public void finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -614,23 +471,7 @@ public final class BigQueryStorageGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Splits a given read stream into two Streams. These streams are referred to
-     * as the primary and the residual of the split. The original stream can still
-     * be read from in the same manner as before. Both of the returned streams can
-     * also be read from, and the total rows return by both child streams will be
-     * the same as the rows read from the original stream.
-     * Moreover, the two child streams will be allocated back to back in the
-     * original Stream. Concretely, it is guaranteed that for streams Original,
-     * Primary, and Residual, that Original[0-j] = Primary[0-j] and
-     * Original[j-n] = Residual[0-m] once the streams have been read to
-     * completion.
-     * This method is guaranteed to be idempotent.
-     * </pre>
-     */
+    /** */
     public void splitReadStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -643,14 +484,7 @@ public final class BigQueryStorageGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery storage API.
-   * The BigQuery storage API can be used to read data stored in BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryStorageBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BigQueryStorageBlockingStub> {
     private BigQueryStorageBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -663,57 +497,21 @@ public final class BigQueryStorageGrpc {
       return new BigQueryStorageBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new read session. A read session divides the contents of a
-     * BigQuery table into one or more streams, which can then be used to read
-     * data from the table. The read session also specifies properties of the
-     * data to be read, such as a list of columns or a push-down filter describing
-     * the rows to be returned.
-     * A particular row can be read by at most one stream. When the caller has
-     * reached the end of each stream in the session, then all the data in the
-     * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
-     * not require manual clean-up by the caller.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession createReadSession(
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Reads rows from the table in the format prescribed by the read session.
-     * Each response contains one or more table rows, up to a maximum of 10 MiB
-     * per response; read requests which attempt to read individual rows larger
-     * than this will fail.
-     * Each request also returns a set of stream statistics reflecting the
-     * estimated total number of rows in the read stream. This number is computed
-     * based on the total table size and the number of active streams in the read
-     * session, and may change as other streams continue to read data.
-     * </pre>
-     */
+    /** */
     public java.util.Iterator<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
         readRows(com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getReadRowsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates additional streams for a ReadSession. This API can be used to
-     * dynamically adjust the parallelism of a batch processing task upwards by
-     * adding additional workers.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
         batchCreateReadSessionStreams(
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
@@ -722,46 +520,13 @@ public final class BigQueryStorageGrpc {
           getChannel(), getBatchCreateReadSessionStreamsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
-     * API can be used to dynamically adjust the parallelism of a batch processing
-     * task downwards without losing data.
-     * This API does not delete the stream -- it remains visible in the
-     * ReadSession, and any data processed by the stream is not released to other
-     * streams. However, no additional data will be assigned to the stream once
-     * this call completes. Callers must continue reading data on the stream until
-     * the end of the stream is reached so that data which has already been
-     * assigned to the stream will be processed.
-     * This method will return an error if there are no other live streams
-     * in the Session, or if SplitReadStream() has been called on the given
-     * Stream.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
       return blockingUnaryCall(getChannel(), getFinalizeStreamMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Splits a given read stream into two Streams. These streams are referred to
-     * as the primary and the residual of the split. The original stream can still
-     * be read from in the same manner as before. Both of the returned streams can
-     * also be read from, and the total rows return by both child streams will be
-     * the same as the rows read from the original stream.
-     * Moreover, the two child streams will be allocated back to back in the
-     * original Stream. Concretely, it is guaranteed that for streams Original,
-     * Primary, and Residual, that Original[0-j] = Primary[0-j] and
-     * Original[j-n] = Residual[0-m] once the streams have been read to
-     * completion.
-     * This method is guaranteed to be idempotent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
         splitReadStream(
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request) {
@@ -769,14 +534,7 @@ public final class BigQueryStorageGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery storage API.
-   * The BigQuery storage API can be used to read data stored in BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryStorageFutureStub
       extends io.grpc.stub.AbstractFutureStub<BigQueryStorageFutureStub> {
     private BigQueryStorageFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -789,22 +547,7 @@ public final class BigQueryStorageGrpc {
       return new BigQueryStorageFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new read session. A read session divides the contents of a
-     * BigQuery table into one or more streams, which can then be used to read
-     * data from the table. The read session also specifies properties of the
-     * data to be read, such as a list of columns or a push-down filter describing
-     * the rows to be returned.
-     * A particular row can be read by at most one stream. When the caller has
-     * reached the end of each stream in the session, then all the data in the
-     * table has been read.
-     * Read sessions automatically expire 24 hours after they are created and do
-     * not require manual clean-up by the caller.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
         createReadSession(
@@ -813,15 +556,7 @@ public final class BigQueryStorageGrpc {
           getChannel().newCall(getCreateReadSessionMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates additional streams for a ReadSession. This API can be used to
-     * dynamically adjust the parallelism of a batch processing task upwards by
-     * adding additional workers.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreams(
@@ -832,24 +567,7 @@ public final class BigQueryStorageGrpc {
           request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Triggers the graceful termination of a single stream in a ReadSession. This
-     * API can be used to dynamically adjust the parallelism of a batch processing
-     * task downwards without losing data.
-     * This API does not delete the stream -- it remains visible in the
-     * ReadSession, and any data processed by the stream is not released to other
-     * streams. However, no additional data will be assigned to the stream once
-     * this call completes. Callers must continue reading data on the stream until
-     * the end of the stream is reached so that data which has already been
-     * assigned to the stream will be processed.
-     * This method will return an error if there are no other live streams
-     * in the Session, or if SplitReadStream() has been called on the given
-     * Stream.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         finalizeStream(
             com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
@@ -857,23 +575,7 @@ public final class BigQueryStorageGrpc {
           getChannel().newCall(getFinalizeStreamMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Splits a given read stream into two Streams. These streams are referred to
-     * as the primary and the residual of the split. The original stream can still
-     * be read from in the same manner as before. Both of the returned streams can
-     * also be read from, and the total rows return by both child streams will be
-     * the same as the rows read from the original stream.
-     * Moreover, the two child streams will be allocated back to back in the
-     * original Stream. Concretely, it is guaranteed that for streams Original,
-     * Primary, and Residual, that Original[0-j] = Primary[0-j] and
-     * Original[j-n] = Residual[0-m] once the streams have been read to
-     * completion.
-     * This method is guaranteed to be idempotent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
         splitReadStream(

@@ -25,14 +25,7 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * BigQuery Write API.
- * The Write API can be used to write data to BigQuery.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/storage/v1beta2/storage.proto")
@@ -370,28 +363,10 @@ public final class BigQueryWriteGrpc {
     return BigQueryWriteFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery Write API.
-   * The Write API can be used to write data to BigQuery.
-   * </pre>
-   */
+  /** */
   public abstract static class BigQueryWriteImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a write stream to the given table.
-     * Additionally, every table has a special COMMITTED stream named '_default'
-     * to which data can be written. This stream doesn't need to be created using
-     * CreateWriteStream. It is a stream that can be used simultaneously by any
-     * number of clients. Data written to this stream is considered committed as
-     * soon as an acknowledgement is received.
-     * </pre>
-     */
+    /** */
     public void createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -399,28 +374,7 @@ public final class BigQueryWriteGrpc {
       asyncUnimplementedUnaryCall(getCreateWriteStreamMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Appends data to the given stream.
-     * If `offset` is specified, the `offset` is checked against the end of
-     * stream. The server returns `OUT_OF_RANGE` in `AppendRowsResponse` if an
-     * attempt is made to append to an offset beyond the current end of the stream
-     * or `ALREADY_EXISTS` if user provids an `offset` that has already been
-     * written to. User can retry with adjusted offset within the same RPC
-     * stream. If `offset` is not specified, append happens at the end of the
-     * stream.
-     * The response contains the offset at which the append happened. Responses
-     * are received in the same order in which requests are sent. There will be
-     * one response for each successful request. If the `offset` is not set in
-     * response, it means append didn't happen due to some errors. If one request
-     * fails, all the subsequent requests will also fail until a success request
-     * is made again.
-     * If the stream is of `PENDING` type, data will only be available for read
-     * operations after the stream is committed.
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest>
         appendRows(
             io.grpc.stub.StreamObserver<
@@ -429,13 +383,7 @@ public final class BigQueryWriteGrpc {
       return asyncUnimplementedStreamingCall(getAppendRowsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a write stream.
-     * </pre>
-     */
+    /** */
     public void getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -443,14 +391,7 @@ public final class BigQueryWriteGrpc {
       asyncUnimplementedUnaryCall(getGetWriteStreamMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Finalize a write stream so that no new data can be appended to the
-     * stream. Finalize is not supported on the '_default' stream.
-     * </pre>
-     */
+    /** */
     public void finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -459,17 +400,7 @@ public final class BigQueryWriteGrpc {
       asyncUnimplementedUnaryCall(getFinalizeWriteStreamMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Atomically commits a group of `PENDING` streams that belong to the same
-     * `parent` table.
-     * Streams must be finalized before commit and cannot be committed multiple
-     * times. Once a stream is committed, data in the stream becomes available
-     * for read operations.
-     * </pre>
-     */
+    /** */
     public void batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -478,18 +409,7 @@ public final class BigQueryWriteGrpc {
       asyncUnimplementedUnaryCall(getBatchCommitWriteStreamsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Flushes rows to a BUFFERED stream.
-     * If users are appending rows to BUFFERED stream, flush operation is
-     * required in order for the rows to become available for reading. A
-     * Flush operation flushes up to any previously flushed offset in a BUFFERED
-     * stream, to the offset specified in the request.
-     * Flush is not supported on the _default stream, since it is not BUFFERED.
-     * </pre>
-     */
+    /** */
     public void flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
@@ -546,14 +466,7 @@ public final class BigQueryWriteGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery Write API.
-   * The Write API can be used to write data to BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryWriteStub
       extends io.grpc.stub.AbstractAsyncStub<BigQueryWriteStub> {
     private BigQueryWriteStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -565,18 +478,7 @@ public final class BigQueryWriteGrpc {
       return new BigQueryWriteStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a write stream to the given table.
-     * Additionally, every table has a special COMMITTED stream named '_default'
-     * to which data can be written. This stream doesn't need to be created using
-     * CreateWriteStream. It is a stream that can be used simultaneously by any
-     * number of clients. Data written to this stream is considered committed as
-     * soon as an acknowledgement is received.
-     * </pre>
-     */
+    /** */
     public void createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -587,28 +489,7 @@ public final class BigQueryWriteGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Appends data to the given stream.
-     * If `offset` is specified, the `offset` is checked against the end of
-     * stream. The server returns `OUT_OF_RANGE` in `AppendRowsResponse` if an
-     * attempt is made to append to an offset beyond the current end of the stream
-     * or `ALREADY_EXISTS` if user provids an `offset` that has already been
-     * written to. User can retry with adjusted offset within the same RPC
-     * stream. If `offset` is not specified, append happens at the end of the
-     * stream.
-     * The response contains the offset at which the append happened. Responses
-     * are received in the same order in which requests are sent. There will be
-     * one response for each successful request. If the `offset` is not set in
-     * response, it means append didn't happen due to some errors. If one request
-     * fails, all the subsequent requests will also fail until a success request
-     * is made again.
-     * If the stream is of `PENDING` type, data will only be available for read
-     * operations after the stream is committed.
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest>
         appendRows(
             io.grpc.stub.StreamObserver<
@@ -618,13 +499,7 @@ public final class BigQueryWriteGrpc {
           getChannel().newCall(getAppendRowsMethod(), getCallOptions()), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a write stream.
-     * </pre>
-     */
+    /** */
     public void getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.WriteStream>
@@ -635,14 +510,7 @@ public final class BigQueryWriteGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Finalize a write stream so that no new data can be appended to the
-     * stream. Finalize is not supported on the '_default' stream.
-     * </pre>
-     */
+    /** */
     public void finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<
@@ -654,17 +522,7 @@ public final class BigQueryWriteGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Atomically commits a group of `PENDING` streams that belong to the same
-     * `parent` table.
-     * Streams must be finalized before commit and cannot be committed multiple
-     * times. Once a stream is committed, data in the stream becomes available
-     * for read operations.
-     * </pre>
-     */
+    /** */
     public void batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<
@@ -676,18 +534,7 @@ public final class BigQueryWriteGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Flushes rows to a BUFFERED stream.
-     * If users are appending rows to BUFFERED stream, flush operation is
-     * required in order for the rows to become available for reading. A
-     * Flush operation flushes up to any previously flushed offset in a BUFFERED
-     * stream, to the offset specified in the request.
-     * Flush is not supported on the _default stream, since it is not BUFFERED.
-     * </pre>
-     */
+    /** */
     public void flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
@@ -697,14 +544,7 @@ public final class BigQueryWriteGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery Write API.
-   * The Write API can be used to write data to BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryWriteBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BigQueryWriteBlockingStub> {
     private BigQueryWriteBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -717,44 +557,20 @@ public final class BigQueryWriteGrpc {
       return new BigQueryWriteBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a write stream to the given table.
-     * Additionally, every table has a special COMMITTED stream named '_default'
-     * to which data can be written. This stream doesn't need to be created using
-     * CreateWriteStream. It is a stream that can be used simultaneously by any
-     * number of clients. Data written to this stream is considered committed as
-     * soon as an acknowledgement is received.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream createWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateWriteStreamMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a write stream.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream getWriteStream(
         com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request) {
       return blockingUnaryCall(getChannel(), getGetWriteStreamMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Finalize a write stream so that no new data can be appended to the
-     * stream. Finalize is not supported on the '_default' stream.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse
         finalizeWriteStream(
             com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request) {
@@ -762,17 +578,7 @@ public final class BigQueryWriteGrpc {
           getChannel(), getFinalizeWriteStreamMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Atomically commits a group of `PENDING` streams that belong to the same
-     * `parent` table.
-     * Streams must be finalized before commit and cannot be committed multiple
-     * times. Once a stream is committed, data in the stream becomes available
-     * for read operations.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse
         batchCommitWriteStreams(
             com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request) {
@@ -780,32 +586,14 @@ public final class BigQueryWriteGrpc {
           getChannel(), getBatchCommitWriteStreamsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Flushes rows to a BUFFERED stream.
-     * If users are appending rows to BUFFERED stream, flush operation is
-     * required in order for the rows to become available for reading. A
-     * Flush operation flushes up to any previously flushed offset in a BUFFERED
-     * stream, to the offset specified in the request.
-     * Flush is not supported on the _default stream, since it is not BUFFERED.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse flushRows(
         com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request) {
       return blockingUnaryCall(getChannel(), getFlushRowsMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * BigQuery Write API.
-   * The Write API can be used to write data to BigQuery.
-   * </pre>
-   */
+  /** */
   public static final class BigQueryWriteFutureStub
       extends io.grpc.stub.AbstractFutureStub<BigQueryWriteFutureStub> {
     private BigQueryWriteFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -818,18 +606,7 @@ public final class BigQueryWriteGrpc {
       return new BigQueryWriteFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a write stream to the given table.
-     * Additionally, every table has a special COMMITTED stream named '_default'
-     * to which data can be written. This stream doesn't need to be created using
-     * CreateWriteStream. It is a stream that can be used simultaneously by any
-     * number of clients. Data written to this stream is considered committed as
-     * soon as an acknowledgement is received.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.WriteStream>
         createWriteStream(
@@ -838,13 +615,7 @@ public final class BigQueryWriteGrpc {
           getChannel().newCall(getCreateWriteStreamMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets a write stream.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.WriteStream>
         getWriteStream(com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request) {
@@ -852,14 +623,7 @@ public final class BigQueryWriteGrpc {
           getChannel().newCall(getGetWriteStreamMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Finalize a write stream so that no new data can be appended to the
-     * stream. Finalize is not supported on the '_default' stream.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse>
         finalizeWriteStream(
@@ -868,17 +632,7 @@ public final class BigQueryWriteGrpc {
           getChannel().newCall(getFinalizeWriteStreamMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Atomically commits a group of `PENDING` streams that belong to the same
-     * `parent` table.
-     * Streams must be finalized before commit and cannot be committed multiple
-     * times. Once a stream is committed, data in the stream becomes available
-     * for read operations.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse>
         batchCommitWriteStreams(
@@ -887,18 +641,7 @@ public final class BigQueryWriteGrpc {
           getChannel().newCall(getBatchCommitWriteStreamsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Flushes rows to a BUFFERED stream.
-     * If users are appending rows to BUFFERED stream, flush operation is
-     * required in order for the rows to become available for reading. A
-     * Flush operation flushes up to any previously flushed offset in a BUFFERED
-     * stream, to the offset specified in the request.
-     * Flush is not supported on the _default stream, since it is not BUFFERED.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse>
         flushRows(com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request) {
