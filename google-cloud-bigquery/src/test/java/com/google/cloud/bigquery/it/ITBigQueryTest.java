@@ -62,6 +62,7 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
+import com.google.cloud.bigquery.HivePartitioningOptions;
 import com.google.cloud.bigquery.InsertAllRequest;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
@@ -1701,6 +1702,65 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
+  }
+
+  @Test
+  public void testQueryExternalHivePartitioningOptionAutoLayout() throws InterruptedException {
+    String tableName = "test_queryexternalhivepartition_autolayout_table";
+    String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/autolayout/*";
+    String sourceUriPrefix =
+        "gs://cloud-samples-data/bigquery/hive-partitioning-samples/autolayout/";
+    HivePartitioningOptions hivePartitioningOptions =
+        HivePartitioningOptions.newBuilder()
+            .setMode("AUTO")
+            .setRequirePartitionFilter(true)
+            .setSourceUriPrefix(sourceUriPrefix)
+            .build();
+    TableId tableId = TableId.of(DATASET, tableName);
+    ExternalTableDefinition externalTable =
+        ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.parquet())
+            .setAutodetect(true)
+            .setHivePartitioningOptions(hivePartitioningOptions)
+            .build();
+    assertNotNull(bigquery.create(TableInfo.of(tableId, externalTable)));
+    String query =
+        String.format(
+            "SELECT COUNT(*) as ct FROM %s.%s WHERE dt=\"2020-11-15\"", DATASET, tableName);
+    TableResult result = bigquery.query(QueryJobConfiguration.of(query));
+    for (FieldValueList fieldValues : result.iterateAll()) {
+      assertEquals(50, fieldValues.get("ct").getLongValue());
+    }
+    assertEquals(1, result.getTotalRows());
+    assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
+  public void testQueryExternalHivePartitioningOptionCustomLayout() throws InterruptedException {
+    String tableName = "test_queryexternalhivepartition_customlayout_table";
+    String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/*";
+    String sourceUriPrefix =
+        "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
+    HivePartitioningOptions hivePartitioningOptions =
+        HivePartitioningOptions.newBuilder()
+            .setMode("CUSTOM")
+            .setRequirePartitionFilter(true)
+            .setSourceUriPrefix(sourceUriPrefix)
+            .build();
+    TableId tableId = TableId.of(DATASET, tableName);
+    ExternalTableDefinition externalTable =
+        ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.parquet())
+            .setAutodetect(true)
+            .setHivePartitioningOptions(hivePartitioningOptions)
+            .build();
+    assertNotNull(bigquery.create(TableInfo.of(tableId, externalTable)));
+    String query =
+        String.format("SELECT COUNT(*) as ct FROM %s.%s WHERE pkey=\"foo\"", DATASET, tableName);
+    TableResult result = bigquery.query(QueryJobConfiguration.of(query));
+    for (FieldValueList fieldValues : result.iterateAll()) {
+      assertEquals(50, fieldValues.get("ct").getLongValue());
+    }
+    assertEquals(1, result.getTotalRows());
+    assertTrue(bigquery.delete(tableId));
   }
 
   @Test
